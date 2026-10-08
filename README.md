@@ -19,7 +19,7 @@ Gli stati distinguono bozze, file creati e programmi verificati. I byte degli es
 
 Le 836 voci comprendono 563 programming, 71 markup, 184 data e 18 prose. Linguist conta normalmente programming e markup: 634 voci candidate, aggregate in 578 gruppi possibili nello snapshot. Il riconoscimento effettivo va misurato sul repository.
 
-La barra compatta raggruppa parte dei linguaggi in `Other`. Le percentuali dipendono dai byte riconosciuti. `.gitattributes` esclude documentazione, tracker e script di verifica; i tipi data e prose mantengono il comportamento predefinito.
+La barra compatta raggruppa parte dei linguaggi in `Other`. Le percentuali dipendono dai byte riconosciuti. `.gitattributes` identifica i campioni in `examples/` come codice del repository, superando l’esclusione predefinita di quella cartella come documentazione. README, tracker, log e script di verifica restano esclusi; i tipi data e prose mantengono il comportamento predefinito.
 
 [Candidati alle statistiche](tracking/GITHUB_STATS.md) · [Stato dei programmi](tracking/STATUS.md) · [Estensioni](tracking/EXTENSIONS.md)
 

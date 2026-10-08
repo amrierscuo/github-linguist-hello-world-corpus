@@ -4,6 +4,9 @@
 
 # Repository language statistics focus on the language examples.
 # https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#detectable
+# These source samples are the repository's code, rather than documentation.
+# Linguist otherwise excludes examples/ by its default documentation rules.
+/examples/** linguist-documentation=false
 /index.html linguist-detectable=false
 /tools/** linguist-detectable=false
 /reference/** linguist-detectable=false
