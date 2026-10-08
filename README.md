@@ -6,6 +6,14 @@ Repository privato di prova per osservare le statistiche Languages di GitHub sug
 
 SHA-256 del riferimento: `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`.
 
+Per usare il corpus con altri agenti: [istruzioni AGENTS.md](AGENTS.md), [guida operativa](docs/AGENT_GUIDE.md) e [indice JSON delle 836 voci](tracking/agent_index.json). La ricerca locale restituisce percorsi, toolchain, comandi e prove registrate senza attendere l’indicizzazione GitHub:
+
+```sh
+python tools/query_corpus.py APL --json
+python tools/query_corpus.py --extension .h --json
+python tools/query_corpus.py --type programming --status pending --json
+```
+
 | Copertura | Stato |
 | --- | ---: |
 | Voci con artefatti o bozze | 836 / 836 |
