@@ -6,6 +6,6 @@ Il file Lean 4 contiene prove elementari numerate e un main che stampa Hello, Wo
 
 Il corpus originale con 836 voci e le sue verifiche restano invariati. I contatori del corpus non includono questo esperimento.
 
-Baseline GitHub: 569 linguaggi, 259622 byte totali, 375 byte Lean. Il file aggiuntivo è dimensionato per superare leggermente il 5%, con margine vicino al 5,1%. Il risultato effettivo va controllato dopo il push.
+Baseline GitHub: 569 linguaggi, 259622 byte totali, 375 byte Lean. Dopo il push, l’API GitHub Languages ha misurato **13966 byte Lean su 273213 byte**, cioè **5,11176%**. I linguaggi rilevati restano **569**; solo i byte di Lean sono cambiati. Il [risultato completo](verification/github_languages.json) conserva commit e momento della misurazione.
 
 Verifica eseguita con Lean 4.0.0: `lean LeanShare.lean` termina con codice 0; `lean --run LeanShare.lean` termina con codice 0 e stampa `Hello, World!`. La [prova registrata](verification/lean4.json) include versione, output e SHA-256 del sorgente.

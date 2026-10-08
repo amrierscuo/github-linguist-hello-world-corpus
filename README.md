@@ -46,4 +46,4 @@ Il progetto è indipendente da GitHub e dagli autori dei linguaggi. Il commit e 
 
 ## Esperimento Lean
 
-GitHub ha rilevato 569 linguaggi dopo aver incluso i campioni `examples/` nelle statistiche. È stato aggiunto un [esperimento separato](experiments/lean-share/README.md) per portare Lean ad almeno il 5% dei byte riconosciuti. Gli esempi canonici e i contatori delle loro verifiche restano invariati.
+GitHub ha rilevato 569 linguaggi dopo aver incluso i campioni `examples/` nelle statistiche. Il [campione aggiuntivo Lean](experiments/lean-share/README.md), verificato con Lean 4.0.0, ha portato la quota a **5,11%** dei byte riconosciuti. L’API continua a rilevare **569 linguaggi**. Gli esempi canonici e i contatori delle loro verifiche restano invariati.
