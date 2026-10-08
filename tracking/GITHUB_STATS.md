@@ -18,10 +18,10 @@ La barra compatta di GitHub raggruppa i linguaggi meno rappresentati in `Other`.
 
 Le percentuali dipendono dai byte rilevati, non dal numero di file, cartelle, loghi o programmi. La sola presenza di un’estensione non prova il corretto riconoscimento.
 
-`.gitattributes` esclude dalle statistiche il catalogo HTML, le icone, i riferimenti, i tracker, gli strumenti del corpus, la documentazione e i log di verifica. I file conservano i propri byte e il catalogo resta utilizzabile con GitHub Pages.
-I tipi data e prose conservano il comportamento predefinito. Non sono stati applicati override `linguist-language` agli esempi. Il passo successivo è una prova con il vero GitHub Linguist, seguita dalla correzione delle classificazioni ambigue con attributi specifici e documentati.
+`.gitattributes` esclude dalle statistiche riferimenti, tracker, strumenti del corpus, documentazione e log di verifica. La regola `/examples/** linguist-documentation=false` include i campioni come sorgente del repository, superando l’esclusione predefinita della cartella `examples/` come documentazione. Loghi e catalogo HTML sono esclusi da questa esportazione privata; GitHub Pages non è attivo.
+I tipi data e prose conservano il comportamento predefinito. Non sono stati applicati override `linguist-language` agli esempi.
 
-La sintassi e la semantica registrate riguardano le toolchain dei campioni; non costituiscono una prova delle statistiche GitHub. Nessun repository è stato pubblicato e non è ancora disponibile un risultato Languages su GitHub per questo corpus.
+La sintassi e la semantica registrate riguardano le toolchain dei campioni; sono distinte dal rilevamento GitHub. Nel repository privato, al commit `05dfed82885e7a03369f8d1b8a30a84831cf1e70`, l’API Languages ha rilevato **569 linguaggi** e **259622 byte**. La [baseline completa](github_languages_baseline.json) conserva i risultati precedenti all’esperimento Lean, inclusi i 375 byte attribuiti a Lean.
 
 Nelle 634 voci candidate ci sono 352 campioni con sintassi verificata e 313 con semantica verificata. Le verifiche restanti dei candidati hanno priorità rispetto ai formati data e prose per questo obiettivo.
 

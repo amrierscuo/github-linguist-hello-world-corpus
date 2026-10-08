@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-10-08T22:49:24.422133+00:00",
+  "artifact_sha256": "7a8b7e5f334b355e332ad7524abca58e411730bcbffafe5a8770dad42700152e",
+  "bytes": 13591,
+  "loc": 299,
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "version",
+      "command": [
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Lean (version 4.0.0, commit ec941735c80d, Release)\n",
+      "stderr": ""
+    },
+    {
+      "label": "kernel_check",
+      "command": [
+        "lean",
+        "LeanShare.lean"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "execution",
+      "command": [
+        "lean",
+        "--run",
+        "LeanShare.lean"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "environment": "Lean 4.0.0 on Ubuntu; command paths normalized for portability",
+  "original_receipt_sha256": "51d9f33f4bd9108011ae7550ef20b8c61f44256fcb51b6c77912651e699e80be"
+}

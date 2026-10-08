@@ -43,3 +43,7 @@ Gli audit controllano integrità, contatori e prove registrate. Per eseguire un 
 La licenza MIT del riferimento GitHub Linguist è in `LICENSES/GitHub-Linguist-MIT.txt`. Gli adattamenti di terzi conservano le rispettive licenze e attribuzioni nelle proprie cartelle. Non è stata scelta una licenza generale per il nuovo materiale del corpus. La pubblicazione pubblica richiederà una revisione separata.
 
 Il progetto è indipendente da GitHub e dagli autori dei linguaggi. Il commit e la data upstream dello snapshot ricevuto non sono noti; l’identità del riferimento è fissata dall’impronta.
+
+## Esperimento Lean
+
+GitHub ha rilevato 569 linguaggi dopo aver incluso i campioni `examples/` nelle statistiche. È stato aggiunto un [esperimento separato](experiments/lean-share/README.md) per portare Lean ad almeno il 5% dei byte riconosciuti. Gli esempi canonici e i contatori delle loro verifiche restano invariati.
