@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:45:46.073542+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Original Rouge interpreter attempt",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_625_154546067853",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "-I",
+        "<workspace>/work/tools_621_640/rouge/rouge-master/lib",
+        "run.rb",
+        "hello.rg"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_625_154546067853",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Rouge interpreter source",
+    "distribution": {
+      "url": "https://codeload.github.com/vic/rouge/zip/refs/heads/master",
+      "sha256": "e1722d4f8bea8668cb91b94767c7d8aede6364c8b2e94e86339e6e6a4210f148"
+    },
+    "ruby_version": "3.2.3"
+  },
+  "artifact_sha256": {
+    "examples/0625_rouge/hello.rg": "345780de74a6739182be7dafddd8aea14fa7841ae6ae9480d3e3fab14d5d81c8",
+    "examples/0625_rouge/run.rb": "70d67b04aaf37af2c298a6126cdbf9b71313d545ed55b7ef1680acbad8465bd4"
+  }
+}

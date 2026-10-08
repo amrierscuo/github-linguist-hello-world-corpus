@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:31:55.863010+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0044_augeas/hello.aug": "e0611d9cb6a5d99541aa49303e6200bfa263a5d6e9e75fbd59cc580adf352914"
+  },
+  "commands": [
+    {
+      "label": "Augeas version",
+      "cwd": "<corpus>/examples/0044_augeas",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/bin/augparse",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "augparse 1.14.1 <http://augeas.net/>\nCopyright (C) 2007-2016 David Lutterkort\nLicense LGPLv2+: GNU LGPL version 2.1 or later\n                 <http://www.gnu.org/licenses/lgpl-2.1.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by David Lutterkort\n"
+    },
+    {
+      "label": "Native lens typecheck and get/put tests",
+      "cwd": "<corpus>/examples/0044_augeas",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/bin/augparse",
+        "-I",
+        "<workspace>/work/tools_41_60/linux/usr/share/augeas/lenses/dist",
+        "-I",
+        "<corpus>/examples/0044_augeas",
+        "<corpus>/examples/0044_augeas/hello.aug"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "augparse / libaugeas Ubuntu package extracted locally",
+    "version": "augparse 1.14.1 <http://augeas.net/>"
+  }
+}

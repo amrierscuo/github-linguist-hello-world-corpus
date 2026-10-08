@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:39.073528+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0057_ballerina/hello.bal": "bb3fcf247f2e1c4b5fcafe1ee6e347adfa8668cc107ea5a8e803cda9c6ed1cb4"
+  },
+  "commands": [
+    {
+      "label": "Windows tool availability only",
+      "cwd": "<corpus>/examples/0057_ballerina",
+      "command": [
+        "<python>",
+        "-c",
+        "import json,shutil;print(json.dumps({\"bal\":shutil.which(\"bal\")}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"bal\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "bal toolchain not installed or not available in this isolated verification environment."
+  ],
+  "toolchain": {
+    "name": "bal",
+    "version": null
+  },
+  "scope": "Tool availability only; no genuine language parse or execution has been performed."
+}

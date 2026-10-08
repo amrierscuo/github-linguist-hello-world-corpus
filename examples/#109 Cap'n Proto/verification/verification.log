@@ -1,0 +1,25 @@
+{
+  "ordinal": 109,
+  "name": "Cap'n Proto",
+  "timestamp_utc": "2026-10-08T11:42:06.925551+00:00",
+  "platform": "Windows 11 x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "artifact_sha256": {
+    "examples/0109_cap-n-proto/hello.capnp": "d148a11f861d1d360bcee7643e4d40f55225820ae218351eea2dc683309a1a41",
+    "examples/0109_cap-n-proto/verify.py": "e5465315e2f6008303cdba52e12cb05140307980bb9fbff2a1ad62f6e838fb1c"
+  },
+  "toolchain": "Python 3.13.9 + pycapnp 2.2.4 (native Cap’n Proto parser/runtime)",
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only machine-specific absolute path prefixes are replaced; source digests, tool output, exit codes and timestamps are preserved. Raw record retained outside deliverable."
+}

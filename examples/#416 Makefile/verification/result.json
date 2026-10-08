@@ -1,0 +1,44 @@
+{
+  "ordinal": 416,
+  "name": "Makefile",
+  "timestamp_utc": "2026-10-08T12:26:35.461764+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "GNU Make on Ubuntu 24.04",
+  "artifact_sha256": {
+    "examples/0416_makefile/Makefile": "522f2f7a71537199972884632c2535e8f3e0d2fb4222a5e952528af1c0037c57"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "make",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "make",
+        "--no-print-directory",
+        "-C",
+        "${WORKSPACE_WSL}/work/staging_401_420/examples/0416_makefile",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

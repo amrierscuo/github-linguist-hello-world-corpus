@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.854330+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "PlantUML genuine version",
+      "cwd": "<corpus>/examples/0540_plantuml",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_521_540/plantuml-1.2026.8.jar",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "PlantUML version 1.2026.8 / 149874a [2026-09-05 15:59:17 UTC]\n(MIT source distribution)\n\nBuild Version: 1.2026.8\nGit Commit: 149874a\nCompile Time: 2026-09-05 15:59:17 UTC\n\nJava Runtime: OpenJDK Runtime Environment\nJVM: OpenJDK 64-Bit Server VM\nDefault Encoding: UTF-8\nLanguage: en\nCountry: US\n \nPLANTUML_LIMIT_SIZE: 4096\n\nGraphViz: dot - graphviz version 2.44.1 (20200629.0846)\nInstallation seems OK. File generation OK\n",
+      "stderr": ""
+    },
+    {
+      "label": "Render original PlantUML sequence diagram as SVG",
+      "cwd": "<workspace>/work/tools_521_540/540",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_521_540/plantuml-1.2026.8.jar",
+        "-tsvg",
+        "<workspace>/work/tools_521_540/540/hello.puml"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official PlantUML MIT Light sequence-diagram parser/renderer",
+    "version": "PlantUML version 1.2026.8 / 149874a [2026-09-05 15:59:17 UTC]",
+    "jar_sha256": "9075d755f70977a0851c42efdded7fe435503e950cbef6c75a8d1566beedc216"
+  },
+  "generated_svg_sha256": "e4d8b7c8f84f16fba95dc91487f471b5e6a7dff390e6deb3dd356830abedf3a3",
+  "observed_svg_texts": [
+    "Alice",
+    "World",
+    "Alice",
+    "World",
+    "Hello, World!"
+  ],
+  "artifact_sha256": {
+    "examples/0540_plantuml/hello.puml": "2bf9c506da220ed07b52a992b480af135eb7f9852dde165255630713d602f75f"
+  }
+}

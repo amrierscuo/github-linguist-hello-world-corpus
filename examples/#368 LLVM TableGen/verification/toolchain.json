@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:48.030462+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "LLVM version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_368_150648017891",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/llvm-tblgen",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_368_150648017891",
+      "exit_code": 0,
+      "stdout": "Ubuntu LLVM version 18.1.3\n  Optimized build.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native LLVM TableGen parse and record evaluation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_368_150648017891",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/llvm-tblgen",
+        "hello.td",
+        "-print-records"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_368_150648017891",
+      "exit_code": 0,
+      "stdout": "------------- Classes -----------------\nclass Greeting<string Greeting:audience = ?> {\n  string Text = !strconcat(\"Hello, \", !strconcat(Greeting:audience, \"!\"));\n}\n------------- Defs -----------------\ndef Hello {\t// Greeting\n  string Text = \"Hello, World!\";\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original LLVM tools",
+    "packages": [
+      {
+        "file": "llvm-18_18.1.3-1ubuntu1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/llvm-toolchain-18/llvm-18_18.1.3-1ubuntu1_amd64.deb",
+        "sha256": "139cb82e16e75fcdd4a56562804ff9bfb482b65d0929580d621d28088075a27e",
+        "package": "llvm-18",
+        "version": "1:18.1.3-1ubuntu1"
+      },
+      {
+        "file": "llvm-18-tools_18.1.3-1ubuntu1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/llvm-toolchain-18/llvm-18-tools_18.1.3-1ubuntu1_amd64.deb",
+        "sha256": "e7fd06b3b8ba4b9327bebfc1b0f2293ceaf6896da9d054bf3fdc510f21445df5",
+        "package": "llvm-18-tools",
+        "version": "1:18.1.3-1ubuntu1"
+      },
+      {
+        "file": "llvm-18-runtime_18.1.3-1ubuntu1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/llvm-toolchain-18/llvm-18-runtime_18.1.3-1ubuntu1_amd64.deb",
+        "sha256": "1ad04ff658929491f8bf30fcf6454e07b1815a2b04164f1894156e92c91ef895",
+        "package": "llvm-18-runtime",
+        "version": "1:18.1.3-1ubuntu1"
+      },
+      {
+        "file": "libllvm18_18.1.3-1ubuntu1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-18/libllvm18_18.1.3-1ubuntu1_amd64.deb",
+        "sha256": "af6197096ce3b89aab86de59f01c1b5feb008b2ae1514a03906c0664edb8b0b1",
+        "package": "libllvm18",
+        "version": "1:18.1.3-1ubuntu1"
+      },
+      {
+        "file": "libpfm4_4.13.0+git32-g0d4ed0e-1ubuntu0.1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/libp/libpfm4/libpfm4_4.13.0+git32-g0d4ed0e-1ubuntu0.1_amd64.deb",
+        "sha256": "35bfadd7153aed69c963c0bfedb8023668a8e0d3dcc314c472123c132a8d8438",
+        "package": "libpfm4",
+        "version": "4.13.0+git32-g0d4ed0e-1ubuntu0.1"
+      },
+      {
+        "file": "libmlir-18_18.1.3-1ubuntu1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/llvm-toolchain-18/libmlir-18_18.1.3-1ubuntu1_amd64.deb",
+        "sha256": "824574d1ed3dca4e361ad02e49d87ecafe13b55dd30ae2398e302c3a51b0d464",
+        "package": "libmlir-18",
+        "version": "1:18.1.3-1ubuntu1"
+      },
+      {
+        "file": "mlir-18-tools_18.1.3-1ubuntu1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/llvm-toolchain-18/mlir-18-tools_18.1.3-1ubuntu1_amd64.deb",
+        "sha256": "846ca959e01b66b8c14f8c6d9109397e98694f09f4dfb11a1e5897e31dcc988f",
+        "package": "mlir-18-tools",
+        "version": "1:18.1.3-1ubuntu1"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0368_llvm-tablegen/hello.td": "8ad5d459d7a1d15793d1f77548dfa7b45692abc8303eeca36ba7d9c4ebef3977"
+  }
+}

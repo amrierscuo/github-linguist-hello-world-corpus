@@ -1,0 +1,34 @@
+{
+  "ordinal": 583,
+  "name": "RAML",
+  "timestamp_utc": "2026-10-08T13:20:40.920668+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + raml-1-parser",
+  "artifact_sha256": {
+    "examples/0583_raml/hello.raml": "c49861d58a8cf31123613562008dd4602a475953791cccbed2e01602c5835386",
+    "examples/0583_raml/verify.cjs": "67b0ce55eb49775656b9adf0810149c3d3646f9cfa2457974f8c62cc41f5bac4"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,1 @@
+constant Greeting = "Hello, World!"

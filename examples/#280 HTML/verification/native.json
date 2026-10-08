@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:25.498432+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Existing parser version",
+      "cwd": "<corpus>/examples/0280_html",
+      "command": [
+        "<python>",
+        "-c",
+        "import html5lib;print(html5lib.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "1.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse original format and assert semantic fields",
+      "cwd": "<corpus>/examples/0280_html",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.html"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing HTML5 parser, strict document and visible heading DOM\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing html5lib strict HTML5 tree builder",
+    "version": "1.1"
+  },
+  "semantic_scope": "Strict HTML5 parsing and DOM visible heading text; no pixel rendering is claimed.",
+  "artifact_sha256": {
+    "examples/0280_html/hello.html": "d98e5884f40a42170746514c8e19df5345b6a58c6ae00f13e72d3cee8c22dcde",
+    "examples/0280_html/verify.py": "55f124b2a9bc971323d996f5030b6a385d0610bbfb2a372780aa72118709602f"
+  }
+}

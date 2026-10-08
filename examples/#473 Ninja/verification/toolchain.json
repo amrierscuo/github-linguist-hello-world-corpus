@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:18:52.162846+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Ninja version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_473_151852159830",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ninja",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_473_151852159830",
+      "exit_code": 0,
+      "stdout": "1.11.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse Ninja graph and execute its original fixture",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_473_151852159830",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ninja",
+        "-f",
+        "hello.ninja"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_473_151852159830",
+      "exit_code": 0,
+      "stdout": "[1/1] Generate original greeting\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Ninja build executor with CPython fixture",
+    "source": "https://ninja-build.org/manual.html",
+    "binary_sha256": "5965527e09fe2b3787772aa4f711d6a36b393e7f2fcaa744a7a96c5a4ddf59cb"
+  },
+  "result": {
+    "output_sha256": "dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f",
+    "value": "Hello, World!"
+  },
+  "artifact_sha256": {
+    "examples/0473_ninja/greet.py": "c9c72e5ac058ff2fa28a803c1409f976e0e4f4020d1f2664fe3db01d1b32f36a",
+    "examples/0473_ninja/hello.ninja": "ac0e727d52897b466243b3b6443219897d9b72554a28d3e10c8ae6848f6c8521"
+  }
+}

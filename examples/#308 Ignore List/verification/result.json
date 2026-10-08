@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ordinal": 308,
+  "language": "Ignore List",
+  "timestamp_utc": "2026-10-08T12:29:57.452856+00:00",
+  "platform": "Windows x64",
+  "toolchain": "git version 2.51.0.windows.1",
+  "working_directory": "examples/0308_ignore-list",
+  "source_sha256": {
+    "examples/0308_ignore-list/.gitignore": "0a14a2cc152ebf67b0a3c32fd656237a993a17bbf83942fb6b48d835a674068c",
+    "examples/0308_ignore-list/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0308_ignore-list/verify.py": "c6356a013feea0447b5af6b3f58fbf3d392950610798a0a987ff8395b6cfb550"
+  },
+  "steps": [
+    {
+      "command": "git --version",
+      "exit_code": 0,
+      "stdout": "git version 2.51.0.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "git init --quiet",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git check-ignore --no-index --verbose build/disposable.txt other.generated.txt hello.generated.txt",
+      "exit_code": 0,
+      "stdout": ".gitignore:1:build/\tbuild/disposable.txt\n.gitignore:2:*.generated.txt\tother.generated.txt\n.gitignore:3:!hello.generated.txt\thello.generated.txt\n",
+      "stderr": ""
+    },
+    {
+      "command": "git check-ignore hello.generated.txt",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native Git creates temporary repository and applies directory/wildcard/negation ignore rules; original hello.generated.txt is explicitly kept. No corpus repo/global config changes.",
+  "blockers": []
+}

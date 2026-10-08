@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:06.487705+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Official KCL CLI version",
+      "cwd": "<corpus>/examples/0350_kcl",
+      "command": [
+        "<workspace>/work/tools_341_360/kcl_cli/kcl.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "kcl version 0.13.0-windows-amd64\n",
+      "stderr": ""
+    },
+    {
+      "label": "KCL schema typecheck and evaluation",
+      "cwd": "<corpus>/examples/0350_kcl",
+      "command": [
+        "<workspace>/work/tools_341_360/kcl_cli/kcl.exe",
+        "run",
+        "hello.k"
+      ],
+      "exit_code": 0,
+      "stdout": "greeting:\n  name: World\n  message: Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official KCL configuration language compiler/evaluator",
+    "version": "kcl version 0.13.0-windows-amd64",
+    "executable_sha256": "70c18ed53c7dcda3b187082c5b748f8d3ea274927619326d4fa70a9e2398b5a6"
+  },
+  "artifact_sha256": {
+    "examples/0350_kcl/hello.k": "238252364afd078bc9138e2cd83bd0760ae2724063d7e98a5a2654789027de7b"
+  }
+}

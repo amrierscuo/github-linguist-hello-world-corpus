@@ -1,0 +1,30 @@
+{
+  "ordinal": 329,
+  "name": "Jac",
+  "timestamp_utc": "2026-10-08T12:18:30.408294+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + jaclang 0.16.7",
+  "artifact_sha256": {
+    "examples/0329_jac/hello.jac": "d1281e6595f53c29d95cc60b27e948510b0e790637dc5b4312a1fe0f36b5c353"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "-c",
+        "from jaclang.cli.cli import start_cli; start_cli()",
+        "run",
+        "hello.jac"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "dependency_metadata_observed": {
+    "jaclang": "0.16.7"
+  }
+}

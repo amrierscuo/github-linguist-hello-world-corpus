@@ -1,0 +1,38 @@
+{
+  "timestamp_utc": "2026-10-08T16:19:05.978933+00:00",
+  "ordinal": 754,
+  "extension": ".vba",
+  "platform": "Windows 11 / WSL Ubuntu 24.04",
+  "toolchain": "VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Aug 24 2026 22:13:04)",
+  "artifact_sha256": {
+    "examples/0754_vim-script/variants/vba-e8141d49/manifest.txt": "4b546a59b6601a39b4f6757e9b633edb3d6cd8a4488736199a7f7f538e1dafb4",
+    "examples/0754_vim-script/variants/vba-e8141d49/make.vim": "ac43c70eecba78a9543e1a0b1c4964d49b6e24c92a6037e95a8c3a6840762de8",
+    "examples/0754_vim-script/variants/vba-e8141d49/greeting.vim": "d2d98805161cdc3b3700bf91f55b4a51192b6b53fcf08cbb312cebe4c1b98da9",
+    "examples/0754_vim-script/variants/vba-e8141d49/hello.vba": "33c45685fa28439d56fd1e9ddcf3ab320f0bbe543f913653906bfd683fe733ff"
+  },
+  "verification_helper_sha256": "908b782d7df4a7d3051231c029a063b207891adc102bf3b2e785d83aaf3bb0db",
+  "steps": [
+    {
+      "command": "vim --version",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/754_7d7e8091",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Aug 24 2026 22:13:04)\nIncluded patches: 1-16, 647, 678, 697\nModified by team+vim@tracker.debian.org\nCompiled by team+vim@tracker.debian.org\nHuge version without GUI.  Features included (+) or not (-):\n+acl               +file_in_path      +mouse_urxvt       -tag_any_white\n+arabic            +find_in_path      +mouse_xterm       -tcl\n+autocmd           +float             +multi_byte        +termguicolors\n+autochdir         +folding           +multi_lang        +terminal\n-autoservername    -footer            -mzscheme          +terminfo\n-balloon_eval      +fork()            +netbeans_intg     +termresponse\n+balloon_eval_term +gettext           +num64             +textobjects\n-browse            -hangul_input      +packages          +textprop\n++builtin_terms    +iconv             +path_extra        +timers\n+byte_offset       +insert_expand     -perl              +title\n+channel           +ipv6              +persistent_undo   -toolbar\n+cindent           +job               +popupwin          +user_commands\n-clientserver      +jumplist          +postscript        +vartabs\n-clipboard         +keymap            +printer           +vertsplit\n+cmdline_compl     +lambda            +profile           +vim9script\n+cmdline_hist      +langmap           -python            +viminfo\n+cmdline_info      +libcall           +python3           +virtualedit\n+comments          +linebreak         +quickfix          +visual\n+conceal           +lispindent        +reltime           +visualextra\n+cryptv            +listcmds          +rightleft         +vreplace\n+cscope            +localmap          -ruby              +wildignore\n+cursorbind        -lua               +scrollbind        +wildmenu\n+cursorshape       +menu              +signs             +windows\n+dialog_con        +mksession         +smartindent       +writebackup\n+diff              +modify_fname      +sodium            -X11\n+digraphs          +mouse             -sound             +xattr\n-dnd               -mouseshape        +spell             -xfontset\n-ebcdic            +mouse_dec         +startuptime       -xim\n+emacs_tags        +mouse_gpm         +statusline        -xpm\n+eval              -mouse_jsbterm     -sun_workshop      -xsmp\n+ex_extra          +mouse_netterm     +syntax            -xterm_clipboard\n+extra_search      +mouse_sgr         +tag_binary        -xterm_save\n-farsi             -mouse_sysmouse    -tag_old_static    \n   system vimrc file: \"/etc/vim/vimrc\"\n     user vimrc file: \"$HOME/.vimrc\"\n 2nd user vimrc file: \"~/.vim/vimrc\"\n      user exrc file: \"$HOME/.exrc\"\n       defaults file: \"$VIMRUNTIME/defaults.vim\"\n  fall-back for $VIM: \"/usr/share/vim\"\nCompilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H -Wdate-time -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/vim-tepDcz/vim-9.1.0016=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/vim-tepDcz/vim-9.1.0016=/usr/src/vim-2:9.1.0016-1ubuntu7.20 -DSYS_VIMRC_FILE=\\\"/etc/vim/vimrc\\\" -DSYS_GVIMRC_FILE=\\\"/etc/vim/gvimrc\\\" -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 \nLinking: gcc -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim -lm -ltinfo -lselinux -lsodium -lacl -lattr -lgpm -L/usr/lib/python3.12/config-3.12-x86_64-linux-gnu -lpython3.12 -ldl -lm \n",
+      "stderr": ""
+    },
+    {
+      "command": "vim -Nu NONE -i NONE -n -es -S make.vim",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/754_7d7e8091",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "scope": "Generatore originale MkVimball produce il vero archivio testuale con payload originale. Il tentativo batch di estrazione termina prima del controllo finale: nessun esito di parser/estrazione/esecuzione viene dichiarato.",
+  "blockers": [
+    "Estrazione/importazione del Vimball non verificati: il comando Vim batch termina prima di scrivere il risultato di controllo."
+  ]
+}

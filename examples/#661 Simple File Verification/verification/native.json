@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T14:07:00.806075+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "native RHash version",
+      "cwd": "<corpus>/examples/0661_simple-file-verification",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0661_simple-file-verification",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_recheck_661/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_recheck_661/linux/usr/bin/rhash",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "RHash v1.4.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "native SFV syntax and payload CRC32 check",
+      "cwd": "<corpus>/examples/0661_simple-file-verification",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0661_simple-file-verification",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_recheck_661/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_recheck_661/linux/usr/bin/rhash",
+        "-c",
+        "hello.sfv"
+      ],
+      "exit_code": 0,
+      "stdout": "\n--( Verifying hello.sfv )-------------------------------------------------------\ngreeting.txt                                        OK \n--------------------------------------------------------------------------------\nEverything OK\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "RHash SFV checker, Ubuntu amd64 package 1.4.3-3build1",
+    "version": "RHash v1.4.3"
+  },
+  "verification_scope": "Integrity of original greeting.txt bytes (Hello, World! followed by LF) against the SFV CRC32 B4E89E84; no authenticity or cryptographic security claim.",
+  "tool_archive_sha256": {
+    "librhash0_1.4.3-3build1_amd64.deb": "e9ee69963ff1a56378b9c5ffdd21ea0feaec9647c522349b7612b25103490528",
+    "rhash_1.4.3-3build1_amd64.deb": "74d90340cb3f5685dfb9ce7d4d3f9052bcb0661c4a88f602a1d770c697959060"
+  },
+  "artifact_sha256": {
+    "examples/0661_simple-file-verification/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0661_simple-file-verification/hello.sfv": "cec6a95dd953617c18f09e9c5a713994e54e275a20f12865e9c5005f47efd480"
+  }
+}

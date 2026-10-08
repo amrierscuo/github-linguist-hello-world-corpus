@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T09:49:40.114870+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Percorsi della macchina normalizzati: radice del corpus sostituita con <corpus>, radice di lavoro con <workspace>, home con <user-home>, eseguibili con <python>, <node>, <java>; i soli argomenti di percorso dei comandi usano separatori POSIX. Gli output sono conservati salvo queste sostituzioni, che non modificano i byte degli artefatti o i risultati.",
+  "commands": [
+    {
+      "label": "Node.js version",
+      "cwd": "examples/0021_adblock-filter-list",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "ABP parser and matcher assertions",
+      "cwd": "examples/0021_adblock-filter-list",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_21_26/node/node_modules"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"url\":\"https://example.org/ads/banner.png\",\"resourceType\":4,\"decision\":\"blocking\"}\n{\"url\":\"https://example.org/ads/hello-world.png\",\"resourceType\":4,\"decision\":\"allowing\"}\n{\"url\":\"https://example.org/ads/banner.png\",\"resourceType\":2,\"decision\":null}\n{\"url\":\"https://example.org/content/hello-world.png\",\"resourceType\":4,\"decision\":null}\n{\"url\":\"https://notexample.org/ads/banner.png\",\"resourceType\":4,\"decision\":null}\nPASS: 2 active filters; 5 engine decisions; invalid-option rejected\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0021_adblock-filter-list/hello.txt": "dbdaceea6960292d001068ffc2dbe363b043085e59839d717435863310243a8d",
+    "examples/0021_adblock-filter-list/verify.cjs": "658ab91efcc60cb3d13700b855b71c6588d9180a0c529940047ea461c1f5a9be"
+  },
+  "toolchain": {
+    "distribution": "npm adblockpluscore",
+    "version": "0.11.1",
+    "source": "https://github.com/adblockplus/adblockpluscore",
+    "package_manifest_sha256": "3ee7ad9b5617a452188b70b83f2fdcbb31017177a83489e82298f2cbe4d05307"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true
+}

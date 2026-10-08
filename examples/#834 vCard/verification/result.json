@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 834,
+  "language": "vCard",
+  "timestamp_utc": "2026-10-08T13:48:50.935305+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython3.13.9; vobject0.9.9",
+  "working_directory": "examples/0834_vcard",
+  "source_sha256": {
+    "examples/0834_vcard/hello.vcf": "c4bccbc29144dfe6441808c849923c536b5d98eb749aaa1c904558612bdf9feb",
+    "examples/0834_vcard/verify.py": "e521f96ec97d88f7ab2b98e09befcb992f6185dc1529d8db704ce9f4677e1808"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Actual vobject parser decodes FN, checks genuine CRLF and serializes/reparses original vCard without losing salutation. No address-book import.",
+  "blockers": []
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:28:00.353523+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Genuine Rebol3 version",
+      "cwd": "<corpus>/examples/0605_rebol",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_601_620/rebol3-linux",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "Rebol/Bulk 3.22.1 (2026-05-27 19:59:00 UTC)\nCopyright (c) 2012 REBOL Technologies\nCopyright (c) 2012-2026 Rebol Open Source Contributors\nSource:       https://github.com/Oldes/Rebol3\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Evaluate original Rebol source without console interaction",
+      "cwd": "<corpus>/examples/0605_rebol",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_601_620/rebol3-linux",
+        "-q",
+        "<corpus>/examples/0605_rebol/hello.reb"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original Rebol3 Oldes branch interpreter",
+    "version": "Rebol/Bulk 3.22.1 (2026-05-27 19:59:00 UTC)\nCopyright (c) 2012 REBOL Technologies\nCopyright (c) 2012-2026 Rebol Open Source Contributors\nSource:       https://github.com/Oldes/Rebol3",
+    "runtime_sha256": "06e6c299c5da28c3f6298b91e4a07a5b6a4a672f4fc7bc6fa9c1136cd9924ad1"
+  },
+  "artifact_sha256": {
+    "examples/0605_rebol/hello.reb": "ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:56:46.629655+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0775_wolfram-language",
+      "command": [
+        "<python>",
+        "-m",
+        "mathics",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Mathics3 10.0.1\nRunning on win32 CPython 3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]\nusing SymPy 1.14.0, mpmath 1.3.0, numpy 2.3.5, cython Not installed, scipy 1.16.3, skimage 0.25.2\n",
+      "stderr": ""
+    },
+    {
+      "label": "evaluate Wolfram Language expression with Mathics3",
+      "cwd": "<corpus>/examples/0775_wolfram-language",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine Mathics3 Wolfram Language evaluator runs StringJoin and Print\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Mathics3 (compatible Wolfram Language evaluator)",
+    "version": "Mathics3 10.0.1\nRunning on win32 CPython 3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]\nusing SymPy 1.14.0, mpmath 1.3.0, numpy 2.3.5, cython Not installed, scipy 1.16.3, skimage 0.25.2"
+  },
+  "artifact_sha256": {
+    "examples/0775_wolfram-language/hello.wl": "da6af2d870fb3a75e871f74c566f9c8892f05ac507aff4b3681d33896b34e3b6",
+    "examples/0775_wolfram-language/verify.py": "424a5616f92c0aed00630b82dbbf0743c7f39e6453d82358871afe706f43e88d"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 730,
+  "language": "TypeScript",
+  "timestamp_utc": "2026-10-08T13:30:07.173282+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Version 7.0.2; Node.js22.20.0",
+  "working_directory": "examples/0730_typescript",
+  "source_sha256": {
+    "examples/0730_typescript/hello.ts": "4a2e2323130da6707e9a44981f0d68bd658f45f6bb44096a74271d7145e58898"
+  },
+  "steps": [
+    {
+      "command": "tsc --version",
+      "exit_code": 0,
+      "stdout": "Version 7.0.2\n",
+      "stderr": ""
+    },
+    {
+      "command": "tsc hello.ts --strict --target ES2022 --outDir <build>/js",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node <build>/js/hello.js",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original TypeScript compiler checks strict types/emits JavaScript; actual Node runtime prints greeting.",
+  "blockers": []
+}

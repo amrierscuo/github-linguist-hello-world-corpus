@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "ordinal": 382,
+  "language": "Lex",
+  "timestamp_utc": "2026-10-08T12:48:20.760493+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "flex 2.6.4; GCC 13.3.0",
+  "working_directory": "examples/0382_lex",
+  "source_sha256": {
+    "examples/0382_lex/hello.l": "4ab326b779b681bd4737c8cd30b9bd6cc36af946eb36e6d82fb0b138a904c067",
+    "examples/0382_lex/input.txt": "5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03"
+  },
+  "steps": [
+    {
+      "command": "flex --version",
+      "exit_code": 0,
+      "stdout": "flex 2.6.4\n",
+      "stderr": ""
+    },
+    {
+      "command": "flex -o <build>/hello.c hello.l",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "gcc <build>/hello.c -o <build>/hello",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello < input.txt",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Actual Flex parses regex/actions and generates native lexer C; GCC compiles; scanner recognizes hello token and prints greeting; nodefault error rule prevents accepting unknown tokens.",
+  "blockers": []
+}

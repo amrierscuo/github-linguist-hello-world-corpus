@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "2026-10-08T16:19:17.673891+00:00",
+  "ordinal": 807,
+  "extension": ".zig.zon",
+  "platform": "Windows 11 / WSL Ubuntu 24.04",
+  "toolchain": "Zig 0.15.2",
+  "artifact_sha256": {
+    "examples/0807_zig/variants/zig-zon-af1980a8/build.zig.zon": "63c7032f9d3f4760abcdd3c192410f8669f2a315f0fe7dfcddf87e951ee7dd91",
+    "examples/0807_zig/variants/zig-zon-af1980a8/hello.zig": "c3991d5bc39404c60eb5ac0fd8942458a0a97a6e33cecf019e9b0e8bcc8642d7",
+    "examples/0807_zig/variants/zig-zon-af1980a8/build.zig": "72c4f6ad08c4bd3073202d8c31d82a946db6afe4c332cf9a5abaa989d8120fa0"
+  },
+  "verification_helper_sha256": "908b782d7df4a7d3051231c029a063b207891adc102bf3b2e785d83aaf3bb0db",
+  "steps": [
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe version",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8",
+      "environment": {
+        "ZIG_GLOBAL_CACHE_DIR": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\global-cache",
+        "ZIG_LOCAL_CACHE_DIR": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\local-cache"
+      },
+      "exit_code": 0,
+      "stdout": "0.15.2\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe fmt build.zig.zon build.zig hello.zig",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8",
+      "environment": {
+        "ZIG_GLOBAL_CACHE_DIR": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\global-cache",
+        "ZIG_LOCAL_CACHE_DIR": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\local-cache"
+      },
+      "exit_code": 0,
+      "stdout": "build.zig.zon\nbuild.zig\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe build --prefix ${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\installed",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8",
+      "environment": {
+        "ZIG_GLOBAL_CACHE_DIR": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\global-cache",
+        "ZIG_LOCAL_CACHE_DIR": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\local-cache"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8\\installed\\bin\\corpus-greeting.exe",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\807_af1980a8",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Hello, World!\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Manifest ZON originale con fingerprint assegnato da zig init; zig build accetta il package locale e il programma produce Hello, World! su stderr.",
+  "blockers": []
+}

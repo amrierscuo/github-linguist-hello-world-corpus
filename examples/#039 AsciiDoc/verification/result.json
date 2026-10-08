@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "language": "AsciiDoc",
+  "ordinal": 39,
+  "timestamp_utc": "2026-10-08T11:01:56.068379+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; @asciidoctor/core 4.1.1",
+  "working_directory": "examples/0039_asciidoc",
+  "source_sha256": {
+    "examples/0039_asciidoc/hello.adoc": "333dd8318a7736f11f1e30e83cefcac66c4602618a26a8f5f63a764d185041c0",
+    "examples/0039_asciidoc/check.cjs": "8c4dc744bb4277308c5697acc42712e56d93f580811ba2ebbfd3a2cece55a7b5",
+    "examples/0039_asciidoc/package.json": "566c0628c942252542d27ff50c6454fe8574489fa2de4f1273d1e5ffb6810a3b"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Asciidoctor.js 4.1.1: title, paragraph and rendered HTML assertions passed; 0 diagnostics.\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Document title Greeting.",
+    "Exactly one paragraph block, source exactly Hello, World!.",
+    "Converted HTML contains <p>Hello, World!</p>.",
+    "MemoryLogger contains zero diagnostics; exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Real AsciiDoc parsing and HTML conversion using Asciidoctor.js 4.1.1; the generated HTML is checked in memory."
+}

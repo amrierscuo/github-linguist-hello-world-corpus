@@ -1,0 +1,57 @@
+{
+  "ordinal": 103,
+  "name": "Caddyfile",
+  "timestamp_utc": "2026-10-08T11:43:16.631180+00:00",
+  "platform": "Windows 11 x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "artifact_sha256": {
+    "examples/0103_caddyfile/Caddyfile": "429bd1ba0f90315cb2b828767e96fdcec17732edd4157f20dee7eb3615eff2e1"
+  },
+  "toolchain": "Caddy 2.11.7 windows/amd64",
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_101_120\\caddy\\caddy.exe",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "v2.11.7 h1:yj0Y4fYZGPkSvibBJ1sTWE33xC0fxztVyXEW5iIdUT4=\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_101_120\\caddy\\caddy.exe",
+        "validate",
+        "--config",
+        "${WORKSPACE}\\outputs\\github_linguist_hello_world_corpus\\examples\\0103_caddyfile\\Caddyfile",
+        "--adapter",
+        "caddyfile"
+      ],
+      "exit_code": 0,
+      "stdout": "Valid configuration\n",
+      "stderr": "{\"level\":\"info\",\"ts\":1791459798.08357,\"msg\":\"using config from file\",\"file\":\"${WORKSPACE}\\\\outputs\\\\github_linguist_hello_world_corpus\\\\examples\\\\0103_caddyfile\\\\Caddyfile\"}\n{\"level\":\"info\",\"ts\":1791459798.0964956,\"msg\":\"adapted config to JSON\",\"adapter\":\"caddyfile\"}\n{\"level\":\"warn\",\"ts\":1791459798.0964956,\"msg\":\"Caddyfile input is not formatted; run 'caddy fmt --overwrite' to fix inconsistencies\",\"adapter\":\"caddyfile\",\"file\":\"${WORKSPACE}\\\\outputs\\\\github_linguist_hello_world_corpus\\\\examples\\\\0103_caddyfile\\\\Caddyfile\",\"line\":2}\n{\"level\":\"info\",\"ts\":1791459798.0984962,\"logger\":\"tls.cache.maintenance\",\"msg\":\"started background certificate maintenance\",\"cache\":\"0xef7958c8400\"}\n{\"level\":\"info\",\"ts\":1791459798.0984962,\"logger\":\"tls.cache.maintenance\",\"msg\":\"stopped background certificate maintenance\",\"cache\":\"0xef7958c8400\"}\n{\"level\":\"info\",\"ts\":1791459798.0984962,\"logger\":\"http\",\"msg\":\"servers shutting down with eternal grace period\"}\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_101_120\\caddy\\caddy.exe",
+        "run",
+        "--config",
+        "${WORKSPACE}\\outputs\\github_linguist_hello_world_corpus\\examples\\0103_caddyfile\\Caddyfile",
+        "--adapter",
+        "caddyfile"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "{\"level\":\"info\",\"ts\":1791459798.8056495,\"msg\":\"maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined\"}\n{\"level\":\"info\",\"ts\":1791459798.8056495,\"msg\":\"GOMEMLIMIT is updated\",\"GOMEMLIMIT\":30855739392,\"previous\":9223372036854775807}\n{\"level\":\"info\",\"ts\":1791459798.8056495,\"msg\":\"using config from file\",\"file\":\"${WORKSPACE}\\\\outputs\\\\github_linguist_hello_world_corpus\\\\examples\\\\0103_caddyfile\\\\Caddyfile\"}\n{\"level\":\"info\",\"ts\":1791459798.8056495,\"msg\":\"adapted config to JSON\",\"adapter\":\"caddyfile\"}\n{\"level\":\"warn\",\"ts\":1791459798.8056495,\"msg\":\"Caddyfile input is not formatted; run 'caddy fmt --overwrite' to fix inconsistencies\",\"adapter\":\"caddyfile\",\"file\":\"${WORKSPACE}\\\\outputs\\\\github_linguist_hello_world_corpus\\\\examples\\\\0103_caddyfile\\\\Caddyfile\",\"line\":2}\n{\"level\":\"warn\",\"ts\":1791459798.8056495,\"logger\":\"admin\",\"msg\":\"admin endpoint disabled\"}\n{\"level\":\"info\",\"ts\":1791459798.8094907,\"logger\":\"tls.cache.maintenance\",\"msg\":\"started background certificate maintenance\",\"cache\":\"0xf782eec2280\"}\n{\"level\":\"warn\",\"ts\":1791459798.8251197,\"logger\":\"http\",\"msg\":\"HTTP/2 skipped because it requires TLS\",\"network\":\"tcp\",\"addr\":\"127.0.0.1:18763\"}\n{\"level\":\"warn\",\"ts\":1791459798.8251197,\"logger\":\"http\",\"msg\":\"HTTP/3 skipped because it requires TLS\",\"network\":\"tcp\",\"addr\":\"127.0.0.1:18763\"}\n{\"level\":\"info\",\"ts\":1791459798.8251197,\"logger\":\"http.log\",\"msg\":\"server running\",\"name\":\"srv0\",\"protocols\":[\"h1\",\"h2\",\"h3\"]}\n{\"level\":\"info\",\"ts\":1791459798.8251197,\"msg\":\"serving initial configuration\"}\n{\"level\":\"info\",\"ts\":1791459798.8297453,\"logger\":\"tls\",\"msg\":\"storage cleaning happened too recently; skipping for now\",\"storage\":\"FileStorage:${USERPROFILE}\\\\AppData\\\\Roaming\\\\Caddy\",\"instance\":\"5cb9e164-8a5a-430d-b5b1-2938d164c3e1\",\"try_again\":1791546198.8297453,\"try_again_in\":86400}\n{\"level\":\"info\",\"ts\":1791459798.8297453,\"logger\":\"tls\",\"msg\":\"finished cleaning storage units\"}\n",
+      "termination": "own temporary process terminated after HTTP assertion"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "http_result": {
+    "status": 200,
+    "body_utf8": "Hello, World!",
+    "body_bytes": 13
+  },
+  "cleanup": "Own process ended; loopback listening port released.",
+  "normalization_note": "Only machine-specific absolute path prefixes are replaced; source digests, tool output, exit codes and timestamps are preserved. Raw record retained outside deliverable."
+}

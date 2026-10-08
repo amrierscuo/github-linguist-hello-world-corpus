@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 725,
+  "language": "Tree-sitter Query",
+  "timestamp_utc": "2026-10-08T13:30:04.904502+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython3.13.9; tree-sitter0.26.0/tree-sitter-python0.25.0",
+  "working_directory": "examples/0725_tree-sitter-query",
+  "source_sha256": {
+    "examples/0725_tree-sitter-query/hello.py": "07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782",
+    "examples/0725_tree-sitter-query/hello.scm": "fb7982ad93b8c025ba1968b7980e9e9f120c842b81b35f5fc111f7d924b62f9c",
+    "examples/0725_tree-sitter-query/verify.py": "f502aa4205568da5b1d888bf1673749f99e5e4f5a53f60ffe772c6531a1d7ea9"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Tree-sitter compiler/QueryCursor matches capture from actual Python AST.",
+  "blockers": []
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:55.128170+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "FlatBuffers compiler version",
+      "cwd": "<corpus>/examples/0211_flatbuffers",
+      "command": [
+        "<workspace>/work/tools_201_220/flatbuffers/flatc.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "flatc version 25.12.19\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse schema and encode greeting JSON to FlatBuffer",
+      "cwd": "<corpus>/examples/0211_flatbuffers",
+      "command": [
+        "<workspace>/work/tools_201_220/flatbuffers/flatc.exe",
+        "--binary",
+        "--strict-json",
+        "-o",
+        "<workspace>/work/tools_201_220/211",
+        "hello.fbs",
+        "greeting.json"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Decode genuine FlatBuffer to JSON",
+      "cwd": "<corpus>/examples/0211_flatbuffers",
+      "command": [
+        "<workspace>/work/tools_201_220/flatbuffers/flatc.exe",
+        "--json",
+        "--strict-json",
+        "-o",
+        "<workspace>/work/tools_201_220/211",
+        "hello.fbs",
+        "--",
+        "<workspace>/work/tools_201_220/211/greeting.bin"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official FlatBuffers flatc binary schema compiler and codec",
+    "version": "flatc version 25.12.19",
+    "executable_sha256": "d873c85d970314177574b9bb468daea2084ae6198232a7045207bff2abd69aec"
+  },
+  "observed_binary": {
+    "size": 44,
+    "sha256": "f1dffef2d5b6084e8d6d17bd5cabb6556b85831a96dda20f4c30a170f017d2fb",
+    "decoded_json": {
+      "message": "Hello, World!"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0211_flatbuffers/greeting.json": "70dbc765776f844b46bc819706f1b7245f6029ec1babefaf3e257fcd8f5398fc",
+    "examples/0211_flatbuffers/hello.fbs": "7c955d2591096c01f253bc34392c0da28019138bdb00e691d75121c6a14c88a5"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:18:49.278194+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Pike version",
+      "cwd": "<corpus>/examples/0537_pike",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PIKE_MODULE_PATH=<workspace>/work/tools_521_540/linux/usr/lib/pike8.0/modules",
+        "PIKE_INCLUDE_PATH=<workspace>/work/tools_521_540/linux/usr/lib/pike8.0/include",
+        "<workspace>/work/tools_521_540/linux/usr/bin/pike8.0",
+        "-m",
+        "<workspace>/work/tools_521_540/linux/usr/lib/pike8.0/master.pike",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Pike v8.0 release 1738 Copyright © 1994-2022 Linköping University\nPike comes with ABSOLUTELY NO WARRANTY; This is free software and you are\nwelcome to redistribute it under certain conditions; read the files\nCOPYING and COPYRIGHT in the Pike distribution for more details.\n"
+    },
+    {
+      "label": "Execute original Pike main",
+      "cwd": "<corpus>/examples/0537_pike",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PIKE_MODULE_PATH=<workspace>/work/tools_521_540/linux/usr/lib/pike8.0/modules",
+        "PIKE_INCLUDE_PATH=<workspace>/work/tools_521_540/linux/usr/lib/pike8.0/include",
+        "<workspace>/work/tools_521_540/linux/usr/bin/pike8.0",
+        "-m",
+        "<workspace>/work/tools_521_540/linux/usr/lib/pike8.0/master.pike",
+        "<corpus>/examples/0537_pike/hello.pike"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Genuine Pike language interpreter",
+    "version": "Pike v8.0 release 1738 Copyright © 1994-2022 Linköping University\nPike comes with ABSOLUTELY NO WARRANTY; This is free software and you are\nwelcome to redistribute it under certain conditions; read the files\nCOPYING and COPYRIGHT in the Pike distribution for more details.",
+    "executable_sha256": "cf39a8afc6b7df11487b8f782b0ab8e093651870e16dc07f3159347769261c22"
+  },
+  "artifact_sha256": {
+    "examples/0537_pike/hello.pike": "1f929986f253cc465d4c66f515ead6c414033e6fa5b7f61ecee878e8d08a2827"
+  }
+}

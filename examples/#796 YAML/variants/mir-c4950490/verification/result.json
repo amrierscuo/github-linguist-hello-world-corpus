@@ -1,0 +1,74 @@
+{
+  "timestamp_utc": "2026-10-08T16:15:40.743650+00:00",
+  "ordinal": 796,
+  "extension": ".mir",
+  "platform": "Windows 11 / WSL Ubuntu 24.04",
+  "toolchain": "Ubuntu LLVM version 18.1.3",
+  "artifact_sha256": {
+    "examples/0796_yaml/variants/mir-c4950490/hello.mir": "04b340d3934832c4c0dea447007ec5848d92d38d8d111de2efb397f158290999",
+    "examples/0796_yaml/variants/mir-c4950490/greeting.ll": "dff1d3dbee5a3dc3d253b5fa4b63f047d4e2517451afd07b5c6f4aa81f959839"
+  },
+  "verification_helper_sha256": "0439ecb31a5f977eb1e1af463ce379e0e2263fa0c530c5c4708492e599906972",
+  "steps": [
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/llc --version",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/796_c4950490",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu"
+      },
+      "exit_code": 0,
+      "stdout": "Ubuntu LLVM version 18.1.3\n  Optimized build.\n  Default target: x86_64-pc-linux-gnu\n  Host CPU: skylake\n\n  Registered Targets:\n    aarch64     - AArch64 (little endian)\n    aarch64_32  - AArch64 (little endian ILP32)\n    aarch64_be  - AArch64 (big endian)\n    amdgcn      - AMD GCN GPUs\n    arm         - ARM\n    arm64       - ARM64 (little endian)\n    arm64_32    - ARM64 (little endian ILP32)\n    armeb       - ARM (big endian)\n    avr         - Atmel AVR Microcontroller\n    bpf         - BPF (host endian)\n    bpfeb       - BPF (big endian)\n    bpfel       - BPF (little endian)\n    hexagon     - Hexagon\n    lanai       - Lanai\n    loongarch32 - 32-bit LoongArch\n    loongarch64 - 64-bit LoongArch\n    m68k        - Motorola 68000 family\n    mips        - MIPS (32-bit big endian)\n    mips64      - MIPS (64-bit big endian)\n    mips64el    - MIPS (64-bit little endian)\n    mipsel      - MIPS (32-bit little endian)\n    msp430      - MSP430 [experimental]\n    nvptx       - NVIDIA PTX 32-bit\n    nvptx64     - NVIDIA PTX 64-bit\n    ppc32       - PowerPC 32\n    ppc32le     - PowerPC 32 LE\n    ppc64       - PowerPC 64\n    ppc64le     - PowerPC 64 LE\n    r600        - AMD GPUs HD2XXX-HD6XXX\n    riscv32     - 32-bit RISC-V\n    riscv64     - 64-bit RISC-V\n    sparc       - Sparc\n    sparcel     - Sparc LE\n    sparcv9     - Sparc V9\n    systemz     - SystemZ\n    thumb       - Thumb\n    thumbeb     - Thumb (big endian)\n    ve          - VE\n    wasm32      - WebAssembly 32-bit\n    wasm64      - WebAssembly 64-bit\n    x86         - 32-bit X86: Pentium-Pro and above\n    x86-64      - 64-bit X86: EM64T and AMD64\n    xcore       - XCore\n    xtensa      - Xtensa 32\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/llc -stop-after=finalize-isel greeting.ll -o hello.mir",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/796_c4950490",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/llc -run-pass=none hello.mir -o parsed.mir",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/796_c4950490",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/llc hello.mir -o hello.s",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/796_c4950490",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "gcc -no-pie hello.s -o hello",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/796_c4950490",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "./hello",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/796_c4950490",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "llc originale rilegge il MIR generato, genera assembly reale, GCC linka e il processo eseguito stampa il saluto esatto.",
+  "blockers": []
+}

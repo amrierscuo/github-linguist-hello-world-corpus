@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "ordinal": 87,
+  "language": "C2hs Haskell",
+  "timestamp_utc": "2026-10-08T11:33:13.575372+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "C2HS 0.28.8; GCC C preprocessor; GHC runtime not installed",
+  "working_directory": "examples/0087_c2hs-haskell",
+  "source_sha256": {
+    "examples/0087_c2hs-haskell/Hello.chs": "4d6ac1a50653b98780c0b886d5c685e61033b817473fad29aca0e3005dbb8037",
+    "examples/0087_c2hs-haskell/hello.h": "408107d02171b40f3fb63ab4f9bbb0597ab78715513620eca04822511f969ec9"
+  },
+  "steps": [
+    {
+      "command": "c2hs --version",
+      "exit_code": 0,
+      "stdout": "C->Haskell Compiler, version 0.28.8 Switcheroo, 25 November 2017\n  build platform is \"x86_64-linux\" <1, True, True, 1>\n",
+      "stderr": ""
+    },
+    {
+      "command": "c2hs Hello.chs -o <build>/Hello.hs",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "c2hs parsed the C header and binding hook; generated Haskell replaces HELLO_SENTINEL with constant value."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "scope": "Actual c2hs preprocessing/code generation only. Generated Haskell is a scratch artifact; it has not been compiled or run by GHC.",
+  "blockers": [
+    "GHC absent: compile and execute generated Haskell to complete the greeting runtime proof."
+  ]
+}

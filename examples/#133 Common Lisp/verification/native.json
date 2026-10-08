@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:59:04.201323+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "SBCL version",
+      "cwd": "<corpus>/examples/0133_common-lisp",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_121_140/linux/usr/bin/sbcl",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "SBCL 2.2.9.debian\n",
+      "stderr": ""
+    },
+    {
+      "label": "SBCL native reader/compiler and script execution",
+      "cwd": "<corpus>/examples/0133_common-lisp",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "SBCL_HOME=<workspace>/work/tools_121_140/linux/usr/lib/sbcl",
+        "<workspace>/work/tools_121_140/linux/usr/bin/sbcl",
+        "--script",
+        "<corpus>/examples/0133_common-lisp/hello.lisp"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Native SBCL Ubuntu distribution extracted locally",
+    "version": "SBCL 2.2.9.debian",
+    "executable_sha256": "2409c8befe0ca3d6309fcce4f820d8257ceff316a437b38115e228d9259f5670"
+  },
+  "artifact_sha256": {
+    "examples/0133_common-lisp/hello.lisp": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45"
+  }
+}

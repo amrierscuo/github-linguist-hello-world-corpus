@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:42.860474+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Original YARA rule compiler and matcher",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_798_155942843584",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "yara-python",
+    "version": "4.5.4",
+    "metadata_sha256": "218b01a0ad4b30bd9673d630d9d38ca997d368d88e82450eb6b7e61b225b3fbc",
+    "source": "https://pypi.org/project/yara-python/"
+  },
+  "semantic_scope": "YARA rules compile and match the greeting fixture, with a distinct negative fixture.",
+  "artifact_sha256": {
+    "examples/0798_yara/hello.yar": "655358f1e5a685250f8ab63ecc732511db95b5ede522dacf8bf1f1ec318024ea",
+    "examples/0798_yara/verify.py": "9551bd3693641eb0bc46aa863d24cc89572fce0bc5c7f8b920688edcda4309a6"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "yara-python",
+        "old_version": "4.5.4.dist",
+        "version": "4.5.4",
+        "original_metadata_sha256": "218b01a0ad4b30bd9673d630d9d38ca997d368d88e82450eb6b7e61b225b3fbc",
+        "original_metadata_file": "work/tools_781_800/python/yara_python-4.5.4.dist-info/METADATA"
+      }
+    ]
+  }
+}

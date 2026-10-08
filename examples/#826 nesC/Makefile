@@ -1,0 +1,2 @@
+COMPONENT=HelloAppC
+include $(MAKERULES)

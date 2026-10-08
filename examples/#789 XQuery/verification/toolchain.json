@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:41.875617+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native XQuery3.1 compilation and evaluation",
+      "command": [
+        "java",
+        "-cp",
+        "<workspace>\\work\\tools_781_800\\saxon-he.jar;<workspace>\\work\\tools_781_800\\xmlresolver.jar",
+        "net.sf.saxon.Query",
+        "-q:hello.xq",
+        "!method=text"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_789_155941865920",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Saxon-HE12.9 XQuery3.1 engine",
+    "distributions": [
+      {
+        "name": "saxon-he.jar",
+        "url": "https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/12.9/Saxon-HE-12.9.jar",
+        "sha256": "8f3a9216a537367132293eacbba9df062eace8f8b16a184af59e2e4839d4cd41"
+      },
+      {
+        "name": "xmlresolver.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.3.3/xmlresolver-5.3.3.jar",
+        "sha256": "1fe4d5b92f708dcdb82dbce12919e0171e6b5ca62c6dca6220483625098feb5f"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0789_xquery/hello.xq": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388"
+  }
+}

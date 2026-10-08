@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "ordinal": 86,
+  "language": "C-ObjDump",
+  "timestamp_utc": "2026-10-08T11:33:36.476099+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0 / GNU objdump (GNU Binutils for Ubuntu) 2.42",
+  "working_directory": "examples/0086_c-objdump",
+  "source_sha256": {
+    "examples/0086_c-objdump/hello.c": "351116b93db646b5413a114cd4066a84e0e71b352d495072065a59710fb1efc8",
+    "examples/0086_c-objdump/hello.c-objdump": "2d625374f91637fbf818f195a8acf96bff60e4d565b03129861b2d2418ca8ccd"
+  },
+  "steps": [
+    {
+      "command": "gcc --version",
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "gcc -std=c11 -Wall -Wextra -Werror -g -O0 -fno-pie -no-pie -o <build>/hello hello.c",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": "objdump --version",
+      "exit_code": 0,
+      "stdout": "GNU objdump (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": ""
+    },
+    {
+      "command": "objdump -d -S hello",
+      "exit_code": 0,
+      "stdout": "\nhello:     file format elf64-x86-64\n\n\nDisassembly of section .init:\n\n0000000000401000 <_init>:\n  401000:\tf3 0f 1e fa          \tendbr64\n  401004:\t48 83 ec 08          \tsub    $0x8,%rsp\n  401008:\t48 8b 05 d1 2f 00 00 \tmov    0x2fd1(%rip),%rax        # 403fe0 <__gmon_start__@Base>\n  40100f:\t48 85 c0             \ttest   %rax,%rax\n  401012:\t74 02                \tje     401016 <_init+0x16>\n  401014:\tff d0                \tcall   *%rax\n  401016:\t48 83 c4 08          \tadd    $0x8,%rsp\n  40101a:\tc3                   \tret\n\nDisassembly of section .plt:\n\n0000000000401020 <.plt>:\n  401020:\tff 35 ca 2f 00 00    \tpush   0x2fca(%rip)        # 403ff0 <_GLOBAL_OFFSET_TABLE_+0x8>\n  401026:\tff 25 cc 2f 00 00    \tjmp    *0x2fcc(%rip)        # 403ff8 <_GLOBAL_OFFSET_TABLE_+0x10>\n  40102c:\t0f 1f 40 00          \tnopl   0x0(%rax)\n  401030:\tf3 0f 1e fa          \tendbr64\n  401034:\t68 00 00 00 00       \tpush   $0x0\n  401039:\te9 e2 ff ff ff       \tjmp    401020 <_init+0x20>\n  40103e:\t66 90                \txchg   %ax,%ax\n\nDisassembly of section .plt.sec:\n\n0000000000401040 <puts@plt>:\n  401040:\tf3 0f 1e fa          \tendbr64\n  401044:\tff 25 b6 2f 00 00    \tjmp    *0x2fb6(%rip)        # 404000 <puts@GLIBC_2.2.5>\n  40104a:\t66 0f 1f 44 00 00    \tnopw   0x0(%rax,%rax,1)\n\nDisassembly of section .text:\n\n0000000000401050 <_start>:\n  401050:\tf3 0f 1e fa          \tendbr64\n  401054:\t31 ed                \txor    %ebp,%ebp\n  401056:\t49 89 d1             \tmov    %rdx,%r9\n  401059:\t5e                   \tpop    %rsi\n  40105a:\t48 89 e2             \tmov    %rsp,%rdx\n  40105d:\t48 83 e4 f0          \tand    $0xfffffffffffffff0,%rsp\n  401061:\t50                   \tpush   %rax\n  401062:\t54                   \tpush   %rsp\n  401063:\t45 31 c0             \txor    %r8d,%r8d\n  401066:\t31 c9                \txor    %ecx,%ecx\n  401068:\t48 c7 c7 36 11 40 00 \tmov    $0x401136,%rdi\n  40106f:\tff 15 63 2f 00 00    \tcall   *0x2f63(%rip)        # 403fd8 <__libc_start_main@GLIBC_2.34>\n  401075:\tf4                   \thlt\n  401076:\t66 2e 0f 1f 84 00 00 \tcs nopw 0x0(%rax,%rax,1)\n  40107d:\t00 00 00 \n\n0000000000401080 <_dl_relocate_static_pie>:\n  401080:\tf3 0f 1e fa          \tendbr64\n  401084:\tc3                   \tret\n  401085:\t66 2e 0f 1f 84 00 00 \tcs nopw 0x0(%rax,%rax,1)\n  40108c:\t00 00 00 \n  40108f:\t90                   \tnop\n\n0000000000401090 <deregister_tm_clones>:\n  401090:\tb8 18 40 40 00       \tmov    $0x404018,%eax\n  401095:\t48 3d 18 40 40 00    \tcmp    $0x404018,%rax\n  40109b:\t74 13                \tje     4010b0 <deregister_tm_clones+0x20>\n  40109d:\tb8 00 00 00 00       \tmov    $0x0,%eax\n  4010a2:\t48 85 c0             \ttest   %rax,%rax\n  4010a5:\t74 09                \tje     4010b0 <deregister_tm_clones+0x20>\n  4010a7:\tbf 18 40 40 00       \tmov    $0x404018,%edi\n  4010ac:\tff e0                \tjmp    *%rax\n  4010ae:\t66 90                \txchg   %ax,%ax\n  4010b0:\tc3                   \tret\n  4010b1:\t66 66 2e 0f 1f 84 00 \tdata16 cs nopw 0x0(%rax,%rax,1)\n  4010b8:\t00 00 00 00 \n  4010bc:\t0f 1f 40 00          \tnopl   0x0(%rax)\n\n00000000004010c0 <register_tm_clones>:\n  4010c0:\tbe 18 40 40 00       \tmov    $0x404018,%esi\n  4010c5:\t48 81 ee 18 40 40 00 \tsub    $0x404018,%rsi\n  4010cc:\t48 89 f0             \tmov    %rsi,%rax\n  4010cf:\t48 c1 ee 3f          \tshr    $0x3f,%rsi\n  4010d3:\t48 c1 f8 03          \tsar    $0x3,%rax\n  4010d7:\t48 01 c6             \tadd    %rax,%rsi\n  4010da:\t48 d1 fe             \tsar    $1,%rsi\n  4010dd:\t74 11                \tje     4010f0 <register_tm_clones+0x30>\n  4010df:\tb8 00 00 00 00       \tmov    $0x0,%eax\n  4010e4:\t48 85 c0             \ttest   %rax,%rax\n  4010e7:\t74 07                \tje     4010f0 <register_tm_clones+0x30>\n  4010e9:\tbf 18 40 40 00       \tmov    $0x404018,%edi\n  4010ee:\tff e0                \tjmp    *%rax\n  4010f0:\tc3                   \tret\n  4010f1:\t66 66 2e 0f 1f 84 00 \tdata16 cs nopw 0x0(%rax,%rax,1)\n  4010f8:\t00 00 00 00 \n  4010fc:\t0f 1f 40 00          \tnopl   0x0(%rax)\n\n0000000000401100 <__do_global_dtors_aux>:\n  401100:\tf3 0f 1e fa          \tendbr64\n  401104:\t80 3d 0d 2f 00 00 00 \tcmpb   $0x0,0x2f0d(%rip)        # 404018 <__TMC_END__>\n  40110b:\t75 13                \tjne    401120 <__do_global_dtors_aux+0x20>\n  40110d:\t55                   \tpush   %rbp\n  40110e:\t48 89 e5             \tmov    %rsp,%rbp\n  401111:\te8 7a ff ff ff       \tcall   401090 <deregister_tm_clones>\n  401116:\tc6 05 fb 2e 00 00 01 \tmovb   $0x1,0x2efb(%rip)        # 404018 <__TMC_END__>\n  40111d:\t5d                   \tpop    %rbp\n  40111e:\tc3                   \tret\n  40111f:\t90                   \tnop\n  401120:\tc3                   \tret\n  401121:\t66 66 2e 0f 1f 84 00 \tdata16 cs nopw 0x0(%rax,%rax,1)\n  401128:\t00 00 00 00 \n  40112c:\t0f 1f 40 00          \tnopl   0x0(%rax)\n\n0000000000401130 <frame_dummy>:\n  401130:\tf3 0f 1e fa          \tendbr64\n  401134:\teb 8a                \tjmp    4010c0 <register_tm_clones>\n\n0000000000401136 <main>:\n#include <stdio.h>\n\nint main(void) {\n  401136:\tf3 0f 1e fa          \tendbr64\n  40113a:\t55                   \tpush   %rbp\n  40113b:\t48 89 e5             \tmov    %rsp,%rbp\n    puts(\"Hello, World!\");\n  40113e:\tbf 04 20 40 00       \tmov    $0x402004,%edi\n  401143:\te8 f8 fe ff ff       \tcall   401040 <puts@plt>\n    return 0;\n  401148:\tb8 00 00 00 00       \tmov    $0x0,%eax\n}\n  40114d:\t5d                   \tpop    %rbp\n  40114e:\tc3                   \tret\n\nDisassembly of section .fini:\n\n0000000000401150 <_fini>:\n  401150:\tf3 0f 1e fa          \tendbr64\n  401154:\t48 83 ec 08          \tsub    $0x8,%rsp\n  401158:\t48 83 c4 08          \tadd    $0x8,%rsp\n  40115c:\tc3                   \tret\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Compilation exit 0; execution stdout exactly Hello, World! plus newline, exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Authentic GNU objdump text generated from GCC-built ELF executable. The corresponding C program ran and printed the greeting. Listing is not an independently executable language.",
+  "blockers": []
+}

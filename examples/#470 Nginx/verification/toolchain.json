@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:20:36.868461+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Nginx version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_470_152036865319",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_461_480/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_461_480/ubuntu/usr/sbin/nginx",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_470_152036865319",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "nginx version: nginx/1.24.0 (Ubuntu)\n"
+    },
+    {
+      "label": "Native nginx configuration check and loopback HTTP greeting",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_470_152036865319",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_461_480/ubuntu/usr/lib/x86_64-linux-gnu",
+        "NGINX_BINARY=<workspace>/work/tools_461_480/ubuntu/usr/sbin/nginx",
+        "python3",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_470_152036865319",
+      "exit_code": 0,
+      "stdout": "nginx: the configuration file <workspace>/work/tools_461_480/verify_470_152036865319/hello.nginxconf syntax is ok\nnginx: configuration file <workspace>/work/tools_461_480/verify_470_152036865319/hello.nginxconf test is successful\nHello, World!\nCLEANUP: dedicated nginx process stopped; loopback listener closed.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "nginx",
+    "version": "1.24.0-2ubuntu7.18",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/nginx/nginx_1.24.0-2ubuntu7.18_amd64.deb",
+    "sha256": "6a169148442f2180cd9676f92e033ec8411d3a82d39c5613d380aaab06226f5b"
+  },
+  "cleanup_verified": true,
+  "artifact_sha256": {
+    "examples/0470_nginx/hello.nginxconf": "41ef8b7f6b42418b067520314e2e5d2a710e0ec8f45adbac64988d5253ec981d",
+    "examples/0470_nginx/verify.py": "f7ab7c02d101a33043f7fa37b15e3002d33bfb117de7c73f822689fdde98f2c5"
+  }
+}

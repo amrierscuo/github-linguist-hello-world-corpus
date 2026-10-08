@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:55.030079+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node.js version",
+      "cwd": "<corpus>/examples/0767_webidl",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "genuine parser/runtime and semantic assertions",
+      "cwd": "<corpus>/examples/0767_webidl",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_761_780/node"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine WebIDL parser/validator and enum-return contract; no generated browser binding execution\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "webidl2 / Node.js 22.20.0",
+    "version": "24.5.0"
+  },
+  "artifact_sha256": {
+    "examples/0767_webidl/hello.webidl": "38f168f75d3e68749c23c32babf4938f28b5d44a4d5b4dc1416ea7262191792e",
+    "examples/0767_webidl/verify.cjs": "73bcdf6f404c361bc69988600912aa675bc762940cdc20d4cae84334c2c50553"
+  }
+}

@@ -1,0 +1,26 @@
+Timestamp UTC: 2026-10-08T09:33:59+00:00
+Platform: Windows x64
+Toolchain: dzaima/APL authentic Java interpreter; Microsoft OpenJDK 21.0.12
+Working directory: corpus root
+Source: https://github.com/dzaima/APL
+Commit: 5eb0a4205e27afa6122096a25008474eec562dc0
+Archive: https://codeload.github.com/dzaima/APL/zip/5eb0a4205e27afa6122096a25008474eec562dc0
+Source archive SHA-256: bf526d48bed89424d8c2938721b1b6d59e2e31421c2e6a32df45e2dff977ee85
+Build: javac -encoding UTF-8 -d <classes> @<source-file-list>
+Build: jar --create --file <APL.jar> --main-class APL.Main -C <classes> .
+Build completed; one warning for deprecated finalize().
+Dialect scope: dzaima/APL only; no whole-language cross-dialect compatibility claim.
+
+$ python examples/0014_apl/verify.py --jar '..\..\work\toolchains_08_14\dzaima-APL.jar'
+Exit code: 0
+stdout:
+dzaima/APL interpreter: exit 0, stderr empty
+stdout bytes: b'Hello, World!\r\n'
+stdout matches exact greeting and one line ending (LF or CRLF)
+stderr:
+(empty)
+
+Artifact SHA-256 (files present in this example):
+ac5377c47c3a15e492c6c82b887068bd02d58abfc40f5722ef43c7913024c355  examples/0014_apl/hello.apl
+ebf3f1f835d9db9052949926b69ce0fea8548088e4e6c491dddd80f40aee0fe7  examples/0014_apl/README.md
+c7da083760fa1e50de825772f2c7925ba3cd3843301166425be2c0cac59ce36e  examples/0014_apl/verify.py

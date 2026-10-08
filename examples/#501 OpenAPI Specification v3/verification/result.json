@@ -1,0 +1,25 @@
+{
+  "ordinal": 501,
+  "name": "OpenAPI Specification v3",
+  "timestamp_utc": "2026-10-08T13:25:33.514686+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + openapi-spec-validator 0.9.0 + PyYAML",
+  "artifact_sha256": {
+    "examples/0501_openapi-specification-v3/hello.yaml": "96b8611c3437bcc417e1a7f1c4c6d93f3ef4b1050eeb3b944ae6e866bbd4bfa1",
+    "examples/0501_openapi-specification-v3/verify.py": "5b53a046c8ba2eb13c51a667ef0a6c131f22c107137823eb6b654677fae71eff"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

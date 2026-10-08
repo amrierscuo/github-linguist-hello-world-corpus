@@ -1,0 +1,35 @@
+Timestamp UTC: 2026-10-08T09:33:59+00:00
+Platform: Windows x64
+Toolchain: ANTLR 4.13.2 complete JAR; Microsoft OpenJDK 21.0.12
+Working directory: corpus root
+Distribution: https://www.antlr.org/download/antlr-4.13.2-complete.jar
+Distribution SHA-256: eae2dfa119a64327444672aff63e9ec35a20180dc5b8090b7a6ab85125df4d76
+Generated Java/classes remain outside corpus.
+
+$ java -jar '..\..\work\toolchains_08_14\antlr-4.13.2-complete.jar' -Werror -Xexact-output-dir -o '..\..\work\toolchains_08_14\hello-antlr' examples/0012_antlr/Hello.g4
+Exit code: 0
+stdout:
+(empty)
+stderr:
+(empty)
+
+$ javac -encoding UTF-8 -cp '..\..\work\toolchains_08_14\antlr-4.13.2-complete.jar' -d '..\..\work\toolchains_08_14\hello-antlr' '..\..\work\toolchains_08_14\hello-antlr\HelloLexer.java' '..\..\work\toolchains_08_14\hello-antlr\HelloParser.java' '..\..\work\toolchains_08_14\hello-antlr\HelloListener.java' '..\..\work\toolchains_08_14\hello-antlr\HelloBaseListener.java' examples/0012_antlr/CheckHello.java
+Exit code: 0
+stdout:
+(empty)
+stderr:
+(empty)
+
+$ java -cp '..\..\work\toolchains_08_14\hello-antlr;..\..\work\toolchains_08_14\antlr-4.13.2-complete.jar' CheckHello examples/0012_antlr/hello.txt
+Exit code: 0
+stdout:
+(message Hello, World! <EOF>)
+Negative controls rejected: wrong greeting, trailing text, empty input
+stderr:
+(empty)
+
+Artifact SHA-256 (files present in this example):
+917268c1da4b93108ef61804dbfa431320e10cf3583dc0868f1e4bccb2db687b  examples/0012_antlr/CheckHello.java
+6db50ee76cef00dbefcce0f0ed9735a15f24763e3844508b83687a0447946372  examples/0012_antlr/Hello.g4
+c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31  examples/0012_antlr/hello.txt
+4683deb441287446a7bb20d9697715a9ea8e2f7518fa66918b37e69ffa630198  examples/0012_antlr/README.md

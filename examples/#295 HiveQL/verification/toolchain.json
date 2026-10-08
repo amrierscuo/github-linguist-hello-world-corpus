@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:52:31.671947+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Original SQLGlot Hive dialect parser",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "check.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_295_145231668837",
+      "exit_code": 0,
+      "stdout": "SELECT CONCAT('Hello, ', 'World!') AS greeting\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "sqlglot",
+    "version": "30.21.0",
+    "metadata_sha256": "d115ff63c0daffc10980bda20053f815efb24155e97ec377c16c322ea7790b03",
+    "record_sha256": "3f53c784d5e5d567fde41ffbe3036d5ffba4ef23827b1ee171b53d76a8994660",
+    "source": "https://pypi.org/project/sqlglot/"
+  },
+  "semantic_scope": "Actual Hive dialect AST parsed; Apache Hive query execution not performed.",
+  "artifact_sha256": {
+    "examples/0295_hiveql/check.py": "4b5b0f638205786e633d8d9cd1c4a0b2421c547d626e46ffbaf71946db0515b0",
+    "examples/0295_hiveql/hello.hql": "a5e3aa59529003186d0f7666d6387cefdae6fda7380a1838406f2bf7b6e47952"
+  }
+}

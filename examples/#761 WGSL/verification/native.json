@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:12.316922+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "rustc version",
+      "cwd": "<corpus>/examples/0761_wgsl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "CARGO_HOME=<workspace>/work/tools_761_780/cargo_home",
+        "CARGO_TARGET_DIR=<workspace>/work/tools_761_780/761/target",
+        "<workspace>/work/rust_portable/runtime/bin/rustc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.90.0 (1159e78c4 2025-09-14)\n",
+      "stderr": ""
+    },
+    {
+      "label": "official parser/validator",
+      "cwd": "<corpus>/examples/0761_wgsl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "CARGO_HOME=<workspace>/work/tools_761_780/cargo_home",
+        "CARGO_TARGET_DIR=<workspace>/work/tools_761_780/761/target",
+        "<workspace>/work/rust_portable/runtime/bin/cargo",
+        "run",
+        "--manifest-path",
+        "<corpus>/examples/0761_wgsl/Cargo.toml",
+        "--",
+        "<corpus>/examples/0761_wgsl/hello.wgsl"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: genuine Naga WGSL parser and validator; GPU execution/readback pending\n",
+      "stderr": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 32 packages to latest compatible versions\n      Adding naga v27.0.3 (available: v30.0.1)\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n Downloading crates ...\n  Downloaded bit-set v0.8.0\n  Downloaded num-traits v0.2.19\n  Downloaded rustc-hash v1.1.0\n  Downloaded thiserror-impl v2.0.21\n  Downloaded once_cell v1.21.4\n  Downloaded half v2.7.1\n  Downloaded codespan-reporting v0.12.0\n  Downloaded arrayvec v0.7.8\n  Downloaded thiserror v2.0.21\n  Downloaded zerocopy-derive v0.8.62\n  Downloaded hashbrown v0.16.1\n  Downloaded libm v0.2.16\n  Downloaded foldhash v0.2.0\n  Downloaded bit-vec v0.8.0\n  Downloaded hexf-parse v0.2.1\n  Downloaded cfg_aliases v0.2.2\n  Downloaded unicode-width v0.2.2\n  Downloaded cfg-if v1.0.5\n  Downloaded autocfg v1.5.1\n  Downloaded zerocopy v0.8.62\n  Downloaded syn v2.0.119\n  Downloaded naga v27.0.3\n   Compiling proc-macro2 v1.0.107\n   Compiling unicode-ident v1.0.26\n   Compiling quote v1.0.47\n   Compiling autocfg v1.5.1\n   Compiling libm v0.2.16\n   Compiling zerocopy v0.8.62\n   Compiling cfg_aliases v0.2.2\n   Compiling thiserror v2.0.21\n   Compiling unicode-width v0.2.2\n   Compiling bit-vec v0.8.0\n   Compiling cfg-if v1.0.5\n   Compiling equivalent v1.0.2\n   Compiling hashbrown v0.17.1\n   Compiling foldhash v0.2.0\n   Compiling rustc-hash v1.1.0\n   Compiling arrayvec v0.7.8\n   Compiling bit-set v0.8.0\n   Compiling naga v27.0.3\n   Compiling codespan-reporting v0.12.0\n   Compiling hashbrown v0.16.1\n   Compiling indexmap v2.14.2\n   Compiling once_cell v1.21.4\n   Compiling bitflags v2.13.2\n   Compiling hexf-parse v0.2.1\n   Compiling log v0.4.34\n   Compiling num-traits v0.2.19\n   Compiling syn v2.0.119\n   Compiling syn v3.0.6\n   Compiling thiserror-impl v2.0.21\n   Compiling zerocopy-derive v0.8.62\n   Compiling half v2.7.1\n   Compiling corpus-wgsl-greeting v0.0.1 (<corpus>/examples/0761_wgsl)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 15s\n     Running `<workspace>/work/tools_761_780/761/target/debug/corpus-wgsl-greeting <corpus>/examples/0761_wgsl/hello.wgsl`\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "GPU compatibile ed esecuzione con lettura del buffer WGSL non disponibili."
+  ],
+  "toolchain": {
+    "name": "naga 27.0.3 / official Rust",
+    "version": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+  },
+  "artifact_sha256": {
+    "examples/0761_wgsl/Cargo.lock": "bbce05fbfd6fd4c01e688e00efc03281d5b412642bd0b77b0a4d6df7d0eaca1a",
+    "examples/0761_wgsl/Cargo.toml": "03dc554d30bb18647806afcc1933e3599d8c1005b34196953273c34107ca1e7f",
+    "examples/0761_wgsl/hello.wgsl": "40f15af2ed9ca9314e2f6a2dc91480845b1a8975425ca2c79d8557ccf3bae381",
+    "examples/0761_wgsl/src/main.rs": "45a90b7bbe1ef18f728480a2963dbe8933adf157d43089f12ede1a6c8b8bd637"
+  }
+}

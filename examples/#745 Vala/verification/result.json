@@ -1,0 +1,220 @@
+{
+  "ordinal": 745,
+  "name": "Vala",
+  "timestamp_utc": "2026-10-08T14:06:43.513603+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "artifact_sha256": {
+    "examples/0745_vala/hello.vala": "825d769dfd90c4e5cd51ba1fa317b507eca67cf902052d007a70f381fa81f72b"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/valac-0.56",
+        "--version"
+      ],
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/valac-0.56: error while loading shared libraries: libvalaccodegen.so: cannot open shared object file: No such file or directory\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "apt-get",
+        "download",
+        "libvalacodegen-0.56-0"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE_WSL}/work/tools_741_760/debs/libvalacodegen-0.56-0_0.56.16-3build1_amd64.deb",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "apt-get",
+        "download",
+        "libpcre2-dev"
+      ],
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpcre2-dev amd64 10.42-4ubuntu2.1 [736 kB]\nFetched 736 kB in 1s (664 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE_WSL}/work/tools_741_760/debs/libpcre2-dev_10.42-4ubuntu2.1_amd64.deb",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "apt-get",
+        "download",
+        "libffi-dev"
+      ],
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libffi-dev amd64 3.4.6-1build1 [62.8 kB]\nFetched 62.8 kB in 0s (224 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE_WSL}/work/tools_741_760/debs/libffi-dev_3.4.6-1build1_amd64.deb",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "PKG_CONFIG_SYSROOT_DIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu",
+        "PKG_CONFIG_LIBDIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/valac-0.56",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Vala 0.56.16\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "PKG_CONFIG_SYSROOT_DIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu",
+        "PKG_CONFIG_LIBDIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig",
+        "gcc",
+        "-dumpfullversion"
+      ],
+      "exit_code": 0,
+      "stdout": "13.3.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "PKG_CONFIG_SYSROOT_DIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu",
+        "PKG_CONFIG_LIBDIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig",
+        "pkg-config",
+        "--modversion",
+        "glib-2.0"
+      ],
+      "exit_code": 0,
+      "stdout": "2.80.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "PKG_CONFIG_SYSROOT_DIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu",
+        "PKG_CONFIG_LIBDIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/valac-0.56",
+        "--vapidir=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/share/vala-0.56/vapi",
+        "--directory=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "-o",
+        "hello",
+        "${WORKSPACE_WSL}/work/staging_741_760/examples/0745_vala/hello.vala"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0745",
+        "PKG_CONFIG_SYSROOT_DIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu",
+        "PKG_CONFIG_LIBDIR=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig",
+        "${WORKSPACE_WSL}/work/tools_741_760/build_0745/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "tool_package_sha256": {
+    "work/tools_741_760/debs/libvalacodegen-0.56-0_0.56.16-3build1_amd64.deb": "cf2fee8bc427192e916a72b8059d600ff98bc9d81c23703e89158b6d165aafcc",
+    "work/tools_741_760/debs/libpcre2-dev_10.42-4ubuntu2.1_amd64.deb": "933ac2723142126b6e01b588803dc6fa15a26205468524548e14af3cd48027e9",
+    "work/tools_741_760/debs/libffi-dev_3.4.6-1build1_amd64.deb": "7009959b8a3b77206325026917fb45150ac81bf6139468abc0841d5a29c8619d"
+  },
+  "toolchain": "Vala 0.56.16; GLib2.80.0; GCC13.3.0; WSL Ubuntu24.04",
+  "tool_binary_sha256": {
+    "work/tools_741_760/ubuntu/usr/bin/valac-0.56": "c0019d0216967f0187f7d952bdfcc985843c0e99f8b40bd9fbe1e62d1a096f49"
+  },
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

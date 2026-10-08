@@ -1,0 +1,41 @@
+{
+  "ordinal": 184,
+  "name": "Ecmarkup",
+  "timestamp_utc": "2026-10-08T12:05:08.798625+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Node.js 22.20.0 + ecmarkup 23.0.2",
+  "artifact_sha256": {
+    "examples/0184_ecmarkup/hello.html": "00aafe45a972842874457241b3a409f88ffac164d6ae0444cbf6a611d4280eca"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_181_200\\npm\\node_modules\\ecmarkup\\bin\\ecmarkup.js",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "ecmarkup v23.0.2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_181_200\\npm\\node_modules\\ecmarkup\\bin\\ecmarkup.js",
+        "${WORKSPACE}\\work\\staging_181_200\\examples\\0184_ecmarkup\\hello.html",
+        "${WORKSPACE}\\work\\tools_181_200\\ecmarkup_build\\hello.html"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Warning: inlining assets; this should not be done for production builds.\n[2026-10-08T12:07:17.908Z] Warning: hello.html: contributors not specified, skipping copyright boilerplate. specify contributors in your frontmatter metadata\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "html_assertions": {
+    "clause_id": "sec-greeting",
+    "paragraph": "Hello, World!",
+    "html_sha256": "eab976a39245e3b39780208c1cd79799efcd6be21f3bdb79c5c9c5aac69deb49"
+  },
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

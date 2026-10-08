@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ordinal": 648,
+  "language": "Sass",
+  "timestamp_utc": "2026-10-08T13:24:10.648526+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Dart Sass 1.105.1; Node.js22.20.0; Chrome154.0.8037.98",
+  "working_directory": "examples/0648_sass",
+  "source_sha256": {
+    "examples/0648_sass/hello.sass": "2dc304a67ccd0447956bc61d3630db137577b0acdf7425a8a489e840db87c15a",
+    "examples/0648_sass/verify.cjs": "fab0d2e25eca0a42a548488b471ef969681fff0a0d24a5870f820fe6b7ffcab3",
+    "examples/0648_sass/verify.html": "57af2f2ed7ef1eb1cb7eba6194de2ee45c4b008f1bf9f428794cd2d31f7d2b6d"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs <build>/hello.css",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": "Chrome 154.0.8037.98 --headless --dump-dom <build>/verify.html",
+      "exit_code": 0,
+      "stdout": "<!DOCTYPE html>\n<html><head><meta charset=\"utf-8\"><link rel=\"stylesheet\" href=\"hello.css\"></head><body data-pass=\"true\"><div id=\"greeting\"></div><script>window.addEventListener(\"load\",()=>{const content=getComputedStyle(document.getElementById(\"greeting\"),\"::before\").content;document.body.setAttribute(\"data-pass\",String(content==='\"Hello, World!\"'));});</script>\n</body></html>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Dart Sass compiles indented source and native Chromium CSS engine computes exact pseudo-element greeting.",
+  "blockers": []
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:28:00.618074+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Parse original Netlify rules and resolve local greeting target",
+      "cwd": "<corpus>/examples/0609_redirect-rules",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_601_620/node"
+      ],
+      "exit_code": 0,
+      "stdout": "EXPORTS: [ 'parseAllRedirects' ]\n{\n  \"redirects\": [\n    {\n      \"from\": \"/hello\",\n      \"query\": {},\n      \"to\": \"/hello.txt\",\n      \"status\": 200,\n      \"force\": false,\n      \"conditions\": {},\n      \"headers\": {}\n    }\n  ],\n  \"errors\": []\n}\nPASS: official Netlify parser and local target data; hosting execution pending outside this scope\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Netlify Redirect Parser",
+    "version": "16.1.1"
+  },
+  "semantic_scope": "Configuration parsing and target-data lookup; hosted HTTP serving not performed.",
+  "artifact_sha256": {
+    "examples/0609_redirect-rules/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0609_redirect-rules/verify.cjs": "b21dead06cbac60b53e1dc8920a4ec279bdb6c3135368486b9e42a8caf40d47d",
+    "examples/0609_redirect-rules/_redirects": "20090f7679bb1fee17485848c01dbe973c8cf0440d0e0ee9f45b9118cf085720"
+  }
+}

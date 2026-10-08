@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:13.113083+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "rustc version",
+      "cwd": "<corpus>/examples/0766_webassembly-interface-type",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "CARGO_HOME=<workspace>/work/tools_761_780/cargo_home",
+        "CARGO_TARGET_DIR=<workspace>/work/tools_761_780/766/target",
+        "<workspace>/work/rust_portable/runtime/bin/rustc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.90.0 (1159e78c4 2025-09-14)\n",
+      "stderr": ""
+    },
+    {
+      "label": "official parser/validator",
+      "cwd": "<corpus>/examples/0766_webassembly-interface-type",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "CARGO_HOME=<workspace>/work/tools_761_780/cargo_home",
+        "CARGO_TARGET_DIR=<workspace>/work/tools_761_780/766/target",
+        "<workspace>/work/rust_portable/runtime/bin/cargo",
+        "run",
+        "--manifest-path",
+        "<corpus>/examples/0766_webassembly-interface-type/Cargo.toml",
+        "--",
+        "<corpus>/examples/0766_webassembly-interface-type/hello.wit"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: official wit-parser resolves greeter interface/world; component implementation and Hello, World! execution pending\n",
+      "stderr": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 22 packages to latest compatible versions\n      Adding wit-parser v0.240.0 (available: v0.261.0)\n    Blocking waiting for file lock on package cache\n Downloading crates ...\n  Downloaded anyhow v1.0.104\n  Downloaded unicode-xid v0.2.6\n  Downloaded zmij v1.0.23\n  Downloaded unicode-ident v1.0.26\n  Downloaded serde_derive v1.0.229\n  Downloaded bitflags v2.13.2\n  Downloaded serde_core v1.0.229\n  Downloaded serde v1.0.229\n  Downloaded memchr v2.8.3\n  Downloaded serde_json v1.0.151\n  Downloaded hashbrown v0.17.1\n  Downloaded indexmap v2.14.2\n  Downloaded proc-macro2 v1.0.107\n  Downloaded wasmparser v0.240.0\n  Downloaded syn v3.0.6\n  Downloaded semver v1.0.28\n  Downloaded quote v1.0.47\n  Downloaded itoa v1.0.18\n  Downloaded id-arena v2.3.0\n  Downloaded wit-parser v0.240.0\n  Downloaded log v0.4.34\n  Downloaded equivalent v1.0.2\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on shared package cache\n   Compiling proc-macro2 v1.0.107\n   Compiling serde_core v1.0.229\n   Compiling unicode-ident v1.0.26\n   Compiling quote v1.0.47\n   Compiling zmij v1.0.23\n   Compiling serde_json v1.0.151\n   Compiling serde v1.0.229\n   Compiling anyhow v1.0.104\n   Compiling wasmparser v0.240.0\n   Compiling hashbrown v0.17.1\n   Compiling semver v1.0.28\n   Compiling memchr v2.8.3\n   Compiling equivalent v1.0.2\n   Compiling itoa v1.0.18\n   Compiling bitflags v2.13.2\n   Compiling log v0.4.34\n   Compiling id-arena v2.3.0\n   Compiling unicode-xid v0.2.6\n   Compiling syn v3.0.6\n   Compiling indexmap v2.14.2\n   Compiling serde_derive v1.0.229\n   Compiling wit-parser v0.240.0\n   Compiling corpus-wit-greeting v0.0.1 (<corpus>/examples/0766_webassembly-interface-type)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 04s\n     Running `<workspace>/work/tools_761_780/766/target/debug/corpus-wit-greeting <corpus>/examples/0766_webassembly-interface-type/hello.wit`\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "Implementazione del componente e runtime Component Model assenti: verificata soltanto l’interfaccia."
+  ],
+  "toolchain": {
+    "name": "wit-parser 0.240.0 / official Rust",
+    "version": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+  },
+  "artifact_sha256": {
+    "examples/0766_webassembly-interface-type/Cargo.lock": "de825ff9a95a5a17975173e116a4705cc30278aa8e6a8ee6f7f3ae8c7d9af0d3",
+    "examples/0766_webassembly-interface-type/Cargo.toml": "49505c2fb1d64b7d9adc050637c6512415736b25e5fea6ed6f40c0f9184718b9",
+    "examples/0766_webassembly-interface-type/hello.wit": "d10b4ab5065a39c47095dffdc382c56fc065026ee190194a1e9053daca882311",
+    "examples/0766_webassembly-interface-type/src/main.rs": "94cf269a4dc37d00f550d8326faeac3dbf0d2e5a230bc598910c79632821c896"
+  }
+}

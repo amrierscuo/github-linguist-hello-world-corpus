@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:35:16.535128+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0077_brainfuck/hello.bf": "cb10f906f106b8e136bc132ad9d7a0d2836db72b291bc23b52321806cfb4d52f"
+  },
+  "commands": [
+    {
+      "label": "Build original Brainfuck 2.7.3 CLI without optional editline",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "gcc",
+        "-std=c99",
+        "-O2",
+        "-I<workspace>/work/tools_61_80/brainfuck-master/include",
+        "-DBRAINFUCK_VERSION_MAJOR=2",
+        "-DBRAINFUCK_VERSION_MINOR=7",
+        "-DBRAINFUCK_VERSION_PATCH=3",
+        "<workspace>/work/tools_61_80/brainfuck-master/src/main.c",
+        "<workspace>/work/tools_61_80/brainfuck-master/src/brainfuck.c",
+        "-o",
+        "<workspace>/work/tools_61_80/brainfuck"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_77",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Brainfuck version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/brainfuck",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_77",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "brainfuck 2.7.3 (Oct  8 2026, 13:35:17)\nCopyright (c) 2016 Fabian Mastenbroek.\nDistributed under the Apache License Version 2.0.\n"
+    },
+    {
+      "label": "Native Brainfuck parser and execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/brainfuck",
+        "<workspace>/work/tools_61_80/verify_77/hello.bf"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_77",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "fabianishere/brainfuck original C interpreter",
+    "version": "2.7.3",
+    "archive_sha256": "8e7b530d3d1d347b8a01703e7bd6edb4e8a6c32c80b32fff58ee7d498318c8a7",
+    "build_configuration": "Optional BRAINFUCK_EDITLINE_LIB macro omitted; native file parser and execution core unchanged."
+  }
+}

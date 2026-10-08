@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:09:32.528582+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "Native Cypher engine parses and executes original query",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "<workspace>\\work\\tools_141_160\\verify_149_140932511405\\verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_149_140932511405",
+      "exit_code": 0,
+      "stdout": "Kuzu 0.11.3\nPASS: one row, greeting = Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Kuzu original embedded Cypher engine via official Python package",
+    "version": "0.11.3",
+    "source": "https://github.com/kuzudb/kuzu",
+    "metadata_sha256": "3b528e062d502f6a73d9b4befb1669f9c659cb9fa1c2335561960b14328f574f"
+  },
+  "artifact_sha256": {
+    "examples/0149_cypher/hello.cypher": "7a7466ab449a9fdaf85234f1339b0d162b0b5ffd59cc5ce9fdab41f38e4024d3",
+    "examples/0149_cypher/verify.py": "622882ada46117fe7969547731592c1da9552701be14c9dc49eda70552f3cbbf"
+  }
+}

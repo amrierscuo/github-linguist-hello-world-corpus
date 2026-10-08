@@ -1,0 +1,1 @@
+val%server greeting : string

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ordinal": 243,
+  "language": "Gerber Image",
+  "timestamp_utc": "2026-10-08T12:15:43.803158+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; PyGerber 2.4.3 genuine parser/renderer",
+  "working_directory": "examples/0243_gerber-image",
+  "source_sha256": {
+    "examples/0243_gerber-image/glyphs.json": "ba04e24b962ed764b2a4d67b7ebd8ac9de210fd3f8a92cf3a9376305e41f0fe6",
+    "examples/0243_gerber-image/hello.gbr": "a30cdaac1c9f6289429be1cd5047f9848b60f319ca87452d99f2d1ea83b4f42c",
+    "examples/0243_gerber-image/requirements.txt": "91f4ec8091817509a23ac74a2101feb7e142129a7135b473ae7bb541a56885ea",
+    "examples/0243_gerber-image/verify.py": "2ae0c2ef3d788a206d9c34dba744234840c4fb4ca304748afbd8fc4b17be1608"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <build>/hello.png",
+      "exit_code": 0,
+      "stdout": "PyGerber 2.4.3 tokenizer/parser/renderer PASS.\nRendered original Hello, World! dot vectors: (1196, 108)\n",
+      "stderr": "WARNING:root:It is recommended to use at least 5 decimal places for coordinate data when using metric units and 6 decimal places for imperial units. (Detected for X)(See 4.2.2 in Gerber Layer Format Specification)\nWARNING:root:It is recommended to use at least 5 decimal places for coordinate data when using metric units and 6 decimal places for imperial units. (Detected for Y)(See 4.2.2 in Gerber Layer Format Specification)\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Real Gerber tokenizer/parser/renderer interprets original circular-aperture flash vectors; visual inspection of the actual rendered PNG reads Hello, World!. No PCB fabrication or circuit operation claimed.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_241_260/243/hello.png",
+      "sha256": "d79b5c1b6f8f72cb401926e4b27c103e64fd702f2f745ad2fdb0da76b66702cb"
+    }
+  ],
+  "visual_inspection": {
+    "artifact": "work/verify_241_260/243/hello.png",
+    "result": "The rendered original dot glyphs read Hello, World! including comma and exclamation mark.",
+    "timestamp_utc": "2026-10-08T12:17:31.368543+00:00"
+  }
+}

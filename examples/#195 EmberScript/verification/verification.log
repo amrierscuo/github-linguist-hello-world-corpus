@@ -1,0 +1,34 @@
+{
+  "ordinal": 195,
+  "name": "EmberScript",
+  "timestamp_utc": "2026-10-08T12:07:21.619845+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Node.js 22.20.0 + ember-script 0.0.14",
+  "artifact_sha256": {
+    "examples/0195_emberscript/hello.em": "33203c74a6fbb3111e2b37c48450591e5cac75e7791f5fefe3ece1d553470efd",
+    "examples/0195_emberscript/verify.cjs": "f818e6c304feb6053cbe561c29bbee719a075185ae4a5f96111c156bfb955633"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

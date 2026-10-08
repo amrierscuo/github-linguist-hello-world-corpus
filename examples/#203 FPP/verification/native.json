@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.397930+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for fpp-check",
+      "cwd": "<corpus>/examples/0203_fpp",
+      "command": [
+        "where.exe",
+        "fpp-check"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "FPP analysis/translation tools are unavailable; current upstream build requires Scala sbt and JDK 25."
+  ],
+  "toolchain": {
+    "name": "Required authentic toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0203_fpp/hello.fpp": "5013aa9a27564fc3e7d815f7d3911c925c2e2ebf5712522378094660523bc0ca"
+  }
+}

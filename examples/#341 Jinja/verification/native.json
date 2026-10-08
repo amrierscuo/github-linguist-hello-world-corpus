@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:05.698838+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Existing official Python runtime libraries",
+      "cwd": "<corpus>/examples/0341_jinja",
+      "command": [
+        "<python>",
+        "-c",
+        "import jinja2;print(\"jinja2\",jinja2.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "jinja2 3.1.6\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native template render/controls",
+      "cwd": "<corpus>/examples/0341_jinja",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.jinja"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native Jinja compile/render and parameter controls\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Jinja compiler/runtime",
+    "version": "jinja2 3.1.6"
+  },
+  "artifact_sha256": {
+    "examples/0341_jinja/hello.jinja": "193487ca91af7ec5fdfd1d0850dfae6f0bbe25258cc0378905c24e65099f8cfb",
+    "examples/0341_jinja/verify.py": "e65c4372f6fcde0a04087628c1c84fc91a740aa4a7beadce3906f994e8727d5d"
+  }
+}

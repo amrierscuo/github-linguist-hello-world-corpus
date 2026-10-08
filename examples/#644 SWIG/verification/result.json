@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "ordinal": 644,
+  "language": "SWIG",
+  "timestamp_utc": "2026-10-08T13:23:07.256159+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "SWIG Version 4.1.0\n\nCompiled with g++ [x86_64-pc-linux-gnu]\n\nConfigured options: +pcre\n\nPlease see https://www.swig.org for reporting bugs and further information; Python 3.12.3; GCC13.3.0",
+  "working_directory": "examples/0644_swig",
+  "source_sha256": {
+    "examples/0644_swig/hello.i": "21d972805148089d0f47a716359859c41fb341787146d15857dcdd8120e2d192",
+    "examples/0644_swig/verify.py": "9e47dca3b2a5966b27d4c089449d023021adff9bf84a50773af596e8014d3e98"
+  },
+  "steps": [
+    {
+      "command": "swig -version",
+      "exit_code": 0,
+      "stdout": "\nSWIG Version 4.1.0\n\nCompiled with g++ [x86_64-pc-linux-gnu]\n\nConfigured options: +pcre\n\nPlease see https://www.swig.org for reporting bugs and further information\n",
+      "stderr": ""
+    },
+    {
+      "command": "swig -python -o <build>/hello_wrap.c hello.i",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "gcc -shared -fPIC -I<portable-python-headers> <build>/hello_wrap.c -o <build>/_hello.so",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python3 --version",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "command": "PYTHONPATH=<build> python3 verify.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original SWIG emits Python C extension; GCC builds genuine CPython module and actual runtime calls wrapped greeting.",
+  "blockers": []
+}

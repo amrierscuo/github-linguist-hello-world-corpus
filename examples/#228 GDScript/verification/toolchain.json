@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:38.974451+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Godot version",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_228_143438959712",
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native GDScript parser check",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "<workspace>\\work\\tools_221_240\\verify_228_143438959712",
+        "--check-only",
+        "--script",
+        "hello.gd"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_228_143438959712",
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native SceneTree program execution",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "<workspace>\\work\\tools_221_240\\verify_228_143438959712",
+        "--script",
+        "hello.gd"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_228_143438959712",
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Godot Engine official headless runtime",
+    "distribution": {
+      "file": "godot.zip",
+      "url": "https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip",
+      "sha256": "731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0228_gdscript/hello.gd": "7da961d840ccf70fb2be413da5817a7c6923777941107ed2a6385cae630984a5",
+    "examples/0228_gdscript/project.godot": "ca007654c7998b90c54ef3b170ebe6685f3dd1d3e490001bba3714c9012b336f"
+  }
+}

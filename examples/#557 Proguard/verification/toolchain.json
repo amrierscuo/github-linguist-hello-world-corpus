@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:20.425821+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Compile original Java fixture",
+      "command": [
+        "javac",
+        "Hello.java"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_557_152620403167",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Package genuine Java bytecode fixture",
+      "command": [
+        "jar",
+        "--create",
+        "--file",
+        "input.jar",
+        "--main-class",
+        "Hello",
+        "Hello.class"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_557_152620403167",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native ProGuard rules interpretation and bytecode processing",
+      "command": [
+        "java",
+        "-jar",
+        "<workspace>\\work\\tools_541_560\\proguard\\proguard-7.10.0\\lib\\proguard.jar",
+        "@hello.pro"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_557_152620403167",
+      "exit_code": 0,
+      "stdout": "ProGuard, version 7.10.0\nNote: the configuration refers to the unknown class 'java.lang.String'\n",
+      "stderr": ""
+    },
+    {
+      "label": "Run ProGuard processed fixture",
+      "command": [
+        "java",
+        "-cp",
+        "output.jar",
+        "Hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_557_152620403167",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original ProGuard shrinker/configuration parser",
+    "distribution": {
+      "version": "v7.10.0",
+      "url": "https://github.com/Guardsquare/proguard/releases/download/v7.10.0/proguard-7.10.0.zip",
+      "sha256": "5aa88c434766a057a2ead3412acc01022bb444f9f1bfbae690a1d48b2006b242"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0557_proguard/Hello.java": "cb3653b5523a370fbc8d4c86ea70acaf3dcee869a7c5158f9b8c65d702fef257",
+    "examples/0557_proguard/hello.pro": "0018de1e2d330c14a41b69b7acdb7765708b863c89ca3eddb55626781a623212"
+  }
+}

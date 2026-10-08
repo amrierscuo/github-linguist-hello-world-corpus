@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:30.792405+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0045_autohotkey/hello.ahk": "ba01135496c1e0d46a61049bcadc33a376b9de43b11920891378a94e2ce93436"
+  },
+  "commands": [
+    {
+      "label": "AutoHotkey version",
+      "cwd": "<corpus>/examples/0045_autohotkey",
+      "command": [
+        "<workspace>/work/tools_41_60/ahk/AutoHotkey64.exe",
+        "/ErrorStdOut",
+        "<workspace>/work/tools_41_60/45/version.ahk"
+      ],
+      "exit_code": 0,
+      "stdout": "2.0.27\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native AHK v2 parse and run",
+      "cwd": "<corpus>/examples/0045_autohotkey",
+      "command": [
+        "<workspace>/work/tools_41_60/ahk/AutoHotkey64.exe",
+        "/ErrorStdOut",
+        "hello.ahk"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official AutoHotkey 64-bit portable interpreter v2",
+    "version": "2.0.27",
+    "download": {
+      "url": "https://www.autohotkey.com/download/2.0/AutoHotkey_2.0.27.zip",
+      "bytes": 3188074,
+      "sha256": "f72cad4b98a7b5aa050b35d6deaa0b0e3949929b2aaff7d0d69858f1f380b3ef"
+    }
+  }
+}

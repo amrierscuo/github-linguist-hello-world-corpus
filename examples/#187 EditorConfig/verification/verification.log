@@ -1,0 +1,26 @@
+{
+  "ordinal": 187,
+  "name": "EditorConfig",
+  "timestamp_utc": "2026-10-08T12:00:13.574921+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Python 3.13.9 + editorconfig-core-py 0.17.1",
+  "artifact_sha256": {
+    "examples/0187_editorconfig/.editorconfig": "78e1d0610eeefa38c0306c4fdccc73753df73bf0ec13d24b15fb13eb6ff7efe2",
+    "examples/0187_editorconfig/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0187_editorconfig/verify.py": "ef7f14ba20ee1a9f66ae677a6d367f63d885145d04c1143f02b0864cdbe36826"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "EditorConfig resolved greeting.txt: UTF-8, LF, final newline, 2 spaces\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:31:18.517573+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0067_bison/hello.bison": "1f1ab37b11ee18621870eb7414eac9c36e9bdb28272a20749102e7b74ad6cf5f"
+  },
+  "commands": [
+    {
+      "label": "Bison version",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\winflexbison\\win_bison.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_67",
+      "exit_code": 0,
+      "stdout": "bison (GNU Bison) 3.8.2\nWritten by Robert Corbett and Richard Stallman.\n\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n",
+      "stderr": ""
+    },
+    {
+      "label": "GNU Bison grammar validation and parser generation",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\winflexbison\\win_bison.exe",
+        "-Wall",
+        "-Werror",
+        "--output=hello.c",
+        "hello.bison"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_67",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "GNU C compiler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "gcc",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_67",
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile generated parser",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "<workspace>/work/tools_61_80/verify_67/hello.c",
+        "-o",
+        "<workspace>/work/tools_61_80/verify_67/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_67",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute generated parser with EOF input",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/verify_67/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_67",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "version": "v2.5.25",
+    "url": "https://github.com/lexxmark/winflexbison/releases/download/v2.5.25/win_flex_bison-2.5.25.zip",
+    "archive_sha256": "8d324b62be33604b2c45ad1dd34ab93d722534448f55a16ca7292de32b6ac135"
+  }
+}

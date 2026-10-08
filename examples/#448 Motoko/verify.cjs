@@ -1,0 +1,10 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const mo=require(path.resolve(process.argv[2],'node_modules/motoko'));
+mo.write('hello.mo',fs.readFileSync('hello.mo','utf8'));
+const check=mo.check('hello.mo'); console.log('CHECK: '+JSON.stringify(check));
+assert.equal(check.filter(d=>d.severity===1).length,0);
+mo.setRunStepLimit(10000);
+const result=mo.run('hello.mo');console.log(JSON.stringify(result));
+assert.equal(result.stderr,'');
+assert.ok(result.stdout.includes('"Hello, World!"'));
+console.log('PASS: actual Motoko compiler check and actor-query interpreter with Reader control');

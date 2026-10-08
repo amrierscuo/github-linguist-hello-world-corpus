@@ -1,0 +1,34 @@
+{
+  "ordinal": 198,
+  "name": "F#",
+  "timestamp_utc": "2026-10-08T12:01:01.987656+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "FSharp.Compiler.Tools 10.2.3 — FSI standalone on .NET Framework",
+  "artifact_sha256": {
+    "examples/0198_f/hello.fsx": "33b093fb97baf710e165b3affc16776c7164ff7f88668a8b4c524bd2649ee079"
+  },
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_181_200\\fsharp\\tools\\fsi.exe",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "Microsoft (R) F# Interactive version 10.2.3 for F# 4.5\nCopyright (c) Microsoft Corporation. All Rights Reserved.\n\nUsage: fsi.exe <options> [script.fsx [<arguments>]]\n\n\n\t\t- INPUT FILES -\n--use:<file>                             Use the given file on startup as initial input\n--load:<file>                            #load the given file on startup\n--reference:<file>                       Reference an assembly (Short form: -r)\n-- ...                                   Treat remaining arguments as command line\n                                         arguments, accessed using fsi.CommandLineArgs\n\n\n\t\t- CODE GENERATION -\n--debug[+|-]                             Emit debug information (Short form: -g)\n--debug:{full|pdbonly|portable|embedded} Specify debugging type: full, portable,\n                                         embedded, pdbonly. ('pdbonly' is the default if\n                                         no debuggging type specified and enables\n                                         attaching a debugger to a running program,\n                                         'portable' is a cross-platform format,\n                                         'embedded' is a cross-platform format embedded\n                                         into the output file).\n--optimize[+|-]                          Enable optimizations (Short form: -O)\n--tailcalls[+|-]                         Enable or disable tailcalls\n--deterministic[+|-]                     Produce a deterministic assembly (including\n                                         module version GUID and timestamp)\n--crossoptimize[+|-]                     Enable or disable cross-module optimizations\n\n\n\t\t- ERRORS AND WARNINGS -\n--warnaserror[+|-]                       Report all warnings as errors\n--warnaserror[+|-]:<warn;...>            Report specific warnings as errors\n--warn:<n>                               Set a warning level (0-5)\n--nowarn:<warn;...>                      Disable specific warning messages\n--warnon:<warn;...>                      Enable specific warnings that may be off by\n                                         default\n--consolecolors[+|-]                     Output warning and error messages in color\n\n\n\t\t- LANGUAGE -\n--checked[+|-]                           Generate overflow checks\n--define:<string>                        Define conditional compilation symbols (Short\n                                         form: -d)\n--mlcompatibility                        Ignore ML compatibility warnings\n\n\n\t\t- MISCELLANEOUS -\n--nologo                                 Suppress compiler copyright message\n--help                                   Display this usage message (Short form: -?)\n\n\n\t\t- ADVANCED -\n--codepage:<n>                           Specify the codepage used to read source files\n--utf8output                             Output messages in UTF-8 encoding\n--preferreduilang:<string>               Specify the preferred output language culture\n                                         name (e.g. es-ES, ja-JP)\n--fullpaths                              Output messages with fully qualified paths\n--lib:<dir;...>                          Specify a directory for the include path which\n                                         is used to resolve source files and assemblies\n                                         (Short form: -I)\n--simpleresolution                       Resolve assembly references using\n                                         directory-based rules rather than MSBuild\n                                         resolution\n--targetprofile:<string>                 Specify target framework profile of this\n                                         assembly. Valid values are mscorlib, netcore or\n                                         netstandard. Default - mscorlib\n--noframework                            Do not reference the default CLI assemblies by\n                                         default\n--exec                                   Exit fsi after loading the files or running the\n                                         .fsx script given on the command line\n--gui[+|-]                               Execute interactions on a Windows Forms event\n                                         loop (on by default)\n--quiet                                  Suppress fsi writing to stdout\n--readline[+|-]                          Support TAB completion in console (on by\n                                         default)\n--quotations-debug[+|-]                  Emit debug information in quotations\n--shadowcopyreferences[+|-]              Prevents references from being locked by the F#\n                                         Interactive process\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_181_200\\fsharp\\tools\\fsi.exe",
+        "--exec",
+        "${WORKSPACE}\\work\\staging_181_200\\examples\\0198_f\\hello.fsx"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

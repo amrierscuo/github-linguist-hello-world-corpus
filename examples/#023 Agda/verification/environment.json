@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:01:35.107240+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Percorsi della macchina normalizzati: radice del corpus sostituita con <corpus>, radice di lavoro con <workspace>, home con <user-home>, eseguibili con <python>, <node>, <java>; i soli argomenti di percorso dei comandi usano separatori POSIX. Gli output sono conservati salvo queste sostituzioni, che non modificano i byte degli artefatti o i risultati.",
+  "commands": [
+    {
+      "label": "Agda and GHC executable availability",
+      "cwd": "examples/0023_agda",
+      "command": [
+        "<python>",
+        "-c",
+        "import json,shutil;print(json.dumps({name:shutil.which(name) for name in (\"agda\",\"ghc\")}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"agda\": null, \"ghc\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0023_agda/Hello.agda": "8b4073c7fbe309b4e28f5f341a66accdb49bd1675f34af540eb3b362b1bb366b"
+  },
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "scope": "Environment probe only: no Agda parse/typecheck or GHC compilation has been performed."
+}

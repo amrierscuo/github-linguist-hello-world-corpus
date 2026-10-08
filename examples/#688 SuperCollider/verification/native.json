@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:45.614479+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0688_supercollider",
+      "command": [
+        "where.exe",
+        "sclang"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required sclang toolchain and matching execution/format resources are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine sclang compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0688_supercollider/hello.scd": "f65e10d2d1c1cf3bd23460b5f58e41ac76a253e8e95c17f1ee79155561e90069"
+  }
+}

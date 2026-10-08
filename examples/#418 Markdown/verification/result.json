@@ -1,0 +1,25 @@
+{
+  "ordinal": 418,
+  "name": "Markdown",
+  "timestamp_utc": "2026-10-08T12:26:39.505864+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + markdown-it-py 4.2.0",
+  "artifact_sha256": {
+    "examples/0418_markdown/hello.md": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae",
+    "examples/0418_markdown/verify.py": "15742dee2f16d75391c568fb98ce295b5d3c6263fabb03a446f738c1a86b377a"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

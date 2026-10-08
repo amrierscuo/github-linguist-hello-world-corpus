@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:14.760610+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0771_wikitext",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata as m; print(m.version('mwparserfromhell'))"
+      ],
+      "exit_code": 0,
+      "stdout": "0.7.2\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing format parser and original semantic assertions",
+      "cwd": "<corpus>/examples/0771_wikitext",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Greeting \n\nHello, World!\nPASS: existing MediaWiki source parser and plain-text/body model\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "mwparserfromhell / Python 3.13.9",
+    "version": "0.7.2"
+  },
+  "artifact_sha256": {
+    "examples/0771_wikitext/hello.mediawiki": "0c5439c44e70738091090a1793d06cc4c8756cb652021c68690959fd1d01aae0",
+    "examples/0771_wikitext/verify.py": "5876c7e23d2ca65da1fcad438b1e9b965449864c80b7c355f6bb4bd871433a3d"
+  }
+}

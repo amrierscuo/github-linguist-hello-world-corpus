@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 89,
+  "language": "CAP CDS",
+  "timestamp_utc": "2026-10-08T11:33:47.627864+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; @sap/cds-compiler 7.1.1",
+  "working_directory": "examples/0089_cap-cds",
+  "source_sha256": {
+    "examples/0089_cap-cds/hello.cds": "513ebfb62bd304275ad2f72616f67c418abd58965f50e0f186c1186dd4c63d8b",
+    "examples/0089_cap-cds/check.cjs": "2b61d13edbc06aef550c2af43c87bb2ba7d70efd89a60b05ddbdbcf6164e4c54",
+    "examples/0089_cap-cds/package.json": "844a1b826a9846a87f34c94103cde6d6d5de3500c9720026d552dba9300e8d9f"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "CDS compiler 7.1.1: typed CSN and SQL default greeting PASS.\nCREATE TABLE hello_Greeting (\n  ID INTEGER NOT NULL,\n  message NVARCHAR(13) DEFAULT 'Hello, World!',\n  PRIMARY KEY(ID)\n);\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Parser/compiler and assertions executed, exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Actual SAP CDS compiler resolves the entity/default and generates SQLite SQL containing the greeting default. No server deployment or database operation is claimed.",
+  "blockers": []
+}

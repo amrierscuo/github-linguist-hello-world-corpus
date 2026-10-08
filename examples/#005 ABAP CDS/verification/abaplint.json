@@ -1,0 +1,54 @@
+{
+  "timestamp_utc": "2026-10-08T09:31:17.733927+00:00",
+  "platform": "Windows x64",
+  "scope": "abaplint cds_parser_error; grammar parsing only, no table resolution or SAP activation",
+  "passed": true,
+  "checks": [
+    {
+      "command_argv": [
+        "<NODE_EXE>",
+        "--version"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0005_abap-cds",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command_argv": [
+        "<NODE_EXE>",
+        "<WORKSPACE_ROOT>/work/tools_01_07/node/node_modules/@abaplint/cli/abaplint",
+        "abaplint.json",
+        "-f",
+        "json"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0005_abap-cds",
+      "exit_code": 0,
+      "stdout": "[]\n",
+      "stderr": "abaplint 2.120.70\nUsing config: abaplint.json\nABAP release: v793 (SAP_BASIS 7.93, kernel 793, on-premise 758, cloud 793, CE 2308)\nABAP language version: Normal\n\n\n\n\n\n"
+    },
+    {
+      "command_argv": [
+        "<NODE_EXE>",
+        "<WORKSPACE_ROOT>/work/tools_01_07/node/node_modules/@abaplint/cli/abaplint",
+        "abaplint.json",
+        "-f",
+        "json"
+      ],
+      "cwd": "<WORKSPACE_ROOT>/work/tools_01_07/negative_controls/0005_abap-cds",
+      "exit_code": 1,
+      "stdout": "[{\"description\":\"CDS Parser error\",\"key\":\"cds_parser_error\",\"file\":\"<WORKSPACE_ROOT>/work/tools_01_07/negative_controls/0005_abap-cds/zi_hello_world.ddls.asddls\",\"start\":{\"row\":1,\"col\":1},\"end\":{\"row\":1,\"col\":51},\"severity\":\"Error\"}]\n",
+      "stderr": "abaplint 2.120.70\nUsing config: abaplint.json\nABAP release: v793 (SAP_BASIS 7.93, kernel 793, on-premise 758, cloud 793, CE 2308)\nABAP language version: Normal\n\n\n\n\n\n"
+    }
+  ],
+  "artifact_sha256": {
+    "zi_hello_world.ddls.asddls": "f5b00f836607d70badcaf1a90590839aedacc9bd88725c082696fd4a8134fe37"
+  },
+  "normalization_note": "Only machine-specific filesystem paths in command_argv, cwd and diagnostic output were normalized to portable placeholders. No other output text, timestamps, exit codes, verification outcomes or artifact SHA-256 values were changed. This log records the original run; no verification was rerun.",
+  "path_placeholders": {
+    "<CORPUS_ROOT>": "root of github_linguist_hello_world_corpus",
+    "<WORKSPACE_ROOT>": "local workspace containing the corpus and isolated work tools",
+    "<NODE_EXE>": "Node.js executable used for this run; version recorded in checks",
+    "<PYTHON_EXE>": "Python executable used for this run; version recorded in checks"
+  }
+}

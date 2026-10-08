@@ -1,0 +1,39 @@
+{
+  "timestamp_utc": "2026-10-08T09:31:17.916783+00:00",
+  "platform": "Windows x64",
+  "scope": "abnf 2.9.0 external parser loads RFC 5234/7405 grammar; accepts exact greeting and rejects 3 counterexamples",
+  "passed": true,
+  "checks": [
+    {
+      "command_argv": [
+        "<PYTHON_EXE>",
+        "--version"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0006_abnf",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command_argv": [
+        "<PYTHON_EXE>",
+        "verify.py"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0006_abnf",
+      "exit_code": 0,
+      "stdout": "abnf 2.9.0: grammar parsed\nACCEPT: Hello, World!\nREJECT: 'hello, World!'\nREJECT: 'Hello World!'\nREJECT: 'Hello, World! '\nPASS: syntax and exact greeting semantics\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "hello.abnf": "0554d998fe934b12ba28424c37b83ca46fb5123ddcd217c0987dcf67d00ab6ca",
+    "verify.py": "172e4f7fcab0199926500006c7ae86ceeeb815a9ea4bb6e3be805abfb6ba14dc"
+  },
+  "normalization_note": "Only machine-specific filesystem paths in command_argv, cwd and diagnostic output were normalized to portable placeholders. No other output text, timestamps, exit codes, verification outcomes or artifact SHA-256 values were changed. This log records the original run; no verification was rerun.",
+  "path_placeholders": {
+    "<CORPUS_ROOT>": "root of github_linguist_hello_world_corpus",
+    "<WORKSPACE_ROOT>": "local workspace containing the corpus and isolated work tools",
+    "<NODE_EXE>": "Node.js executable used for this run; version recorded in checks",
+    "<PYTHON_EXE>": "Python executable used for this run; version recorded in checks"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:05:07.231412+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "Cuetools version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_145_140507118278",
+        "--",
+        "<workspace>/work/tools_141_160/ubuntu/usr/bin/cueprint",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_145_140507118278",
+      "exit_code": 0,
+      "stdout": "cuetools 1.4.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Create original one-second silent PCM fixture in temporary directory",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "make_fixture.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_145_140507118278",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native CUE parser extracts track title",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_145_140507118278",
+        "--",
+        "<workspace>/work/tools_141_160/ubuntu/usr/bin/cueprint",
+        "-i",
+        "cue",
+        "-n",
+        "1",
+        "-t",
+        "%t",
+        "hello.cue"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_145_140507118278",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original cuetools cueprint",
+    "packages": [
+      {
+        "file": "cuetools_1.4.1-0.2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/cuetools/cuetools_1.4.1-0.2_amd64.deb",
+        "sha256": "3bc9ea1807143f784ff9c0fb0c949ca0b7b184b4189920ed8238a76316218d27",
+        "package": "cuetools",
+        "version": "1.4.1-0.2"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0145_cue-sheet/hello.cue": "e8db11b584eec930f2129d60edeff65a6abf5290ba5e27a4811c3c576c92d514",
+    "examples/0145_cue-sheet/make_fixture.py": "4c7ffa4c00e192f2bec2fd07203bbc980a36474667935b4c388464dbe013c7b2"
+  }
+}

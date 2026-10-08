@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:24.029565+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for required native tool",
+      "cwd": "<corpus>/examples/0277_hip",
+      "command": [
+        "where.exe",
+        "hipcc"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "HIP compiler, compatible GPU and HIP runtime are not available."
+  ],
+  "toolchain": {
+    "name": "Required genuine toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0277_hip/hello.hip": "ec485380f711b38dba6b96038d4fc0c2de85b69b76e00f985923bfc5473f2f04"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "ordinal": 421,
+  "name": "Mathematical Programming System",
+  "timestamp_utc": "2026-10-08T12:45:11.862931+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + HiGHS/highspy 1.15.1",
+  "artifact_sha256": {
+    "examples/0421_mathematical-programming-system/hello.mps": "f3bb8dfc9fc8c5a0daa5615ef8e419fbd0961c4cafe8157434b6806969420a11",
+    "examples/0421_mathematical-programming-system/verify.py": "d8da8f4799ff9514ae7cbdb6700721b2a005ec21f33b9ddb1fc2364b41850f15"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 311,
+  "language": "Imba",
+  "timestamp_utc": "2026-10-08T12:30:00.143794+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Imba 2.0.0-alpha.253; Node.js 22.20.0",
+  "working_directory": "examples/0311_imba",
+  "source_sha256": {
+    "examples/0311_imba/hello.imba": "88f3edde83d49c7e1e3c49a41948d6e87205f4d29613b7c46eda7eaa0898b3b2",
+    "examples/0311_imba/package.json": "c89479ac86324a9c612022dc0d6d902355677337ef4589a5d9a3e45e472f50b5"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "imba --version",
+      "exit_code": 0,
+      "stdout": "2.0.0-alpha.253\n",
+      "stderr": ""
+    },
+    {
+      "command": "imba hello.imba",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Imba CLI compiles/bundles .imba source and runs it on Node; console.log emits exact greeting. Generated cache/bundle only in work.",
+  "blockers": []
+}

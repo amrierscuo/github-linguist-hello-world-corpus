@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "ordinal": 387,
+  "language": "Linker Script",
+  "timestamp_utc": "2026-10-08T12:48:20.800152+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "GNU ld (GNU Binutils for Ubuntu) 2.42; GCC 13.3.0",
+  "working_directory": "examples/0387_linker-script",
+  "source_sha256": {
+    "examples/0387_linker-script/hello.ld": "875d299c757ca4e4a919954f4dc92b066675884ee38f9b7d74ddcc7dd47d8328",
+    "examples/0387_linker-script/main.c": "31d41a950b832df6e7397dc331bb032117b0eaa03571bc833af6cf63267c8e8b"
+  },
+  "steps": [
+    {
+      "command": "ld --version",
+      "exit_code": 0,
+      "stdout": "GNU ld (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty.\n",
+      "stderr": ""
+    },
+    {
+      "command": "gcc main.c -Wl,-T,hello.ld -o <build>/hello",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "readelf -p .greeting <build>/hello",
+      "exit_code": 0,
+      "stdout": "\nString dump of section '.greeting':\n  [     0]  Hello, World!\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "GNU ld consumes INSERT AFTER linker script, creates .greeting output section/boundary symbols, readelf sees greeting and real runtime prints section content after checking 14-byte boundary.",
+  "blockers": []
+}

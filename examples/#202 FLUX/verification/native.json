@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.396765+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for flux",
+      "cwd": "<corpus>/examples/0202_flux",
+      "command": [
+        "where.exe",
+        "flux"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Historical UMass Flux Java compiler and generated C++ runtime are not built; mImpl.cpp depends on generated mImpl.h."
+  ],
+  "toolchain": {
+    "name": "Required authentic toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0202_flux/hello.fx": "056443fc420f9ce0d6451959e65d1973d2decb29b637927cd002d8cf21aefff7",
+    "examples/0202_flux/mImpl.cpp": "6b3e6e78d9209aece2e6e7e722d91d6973f3e65936320ac0023794fb2f38a078"
+  }
+}

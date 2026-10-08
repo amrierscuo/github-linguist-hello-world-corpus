@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:06.353577+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Existing official Python runtime libraries",
+      "cwd": "<corpus>/examples/0348_jupyter-notebook",
+      "command": [
+        "<python>",
+        "-c",
+        "import nbformat;import nbclient;import ipykernel;print(\"nbformat\",nbformat.__version__);print(\"nbclient\",nbclient.__version__);print(\"ipykernel\",ipykernel.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "nbformat 5.10.4\nnbclient 0.10.2\nipykernel 7.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Validate original notebook and execute real Jupyter kernel",
+      "cwd": "<corpus>/examples/0348_jupyter-notebook",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.ipynb",
+        "<workspace>/work/tools_341_360/348"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native nbformat validation and actual Jupyter kernel execution\n",
+      "stderr": "<user-home>\\AppData\\Roaming\\Python\\Python313\\site-packages\\zmq\\_future.py:718: RuntimeWarning: Proactor event loop does not implement add_reader family of methods required for zmq. Registering an additional selector thread for add_reader support via tornado. Use `asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())` to avoid this warning.\n  self._get_loop()\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official nbformat, nbclient and genuine Jupyter Python kernel",
+    "version": "nbformat 5.10.4\nnbclient 0.10.2\nipykernel 7.1.0"
+  },
+  "executed_notebook_sha256": "3936614c2f6d1ad22c3ee67970bcb9c73d72e90ff51631e59a11aeae5b6548de",
+  "artifact_sha256": {
+    "examples/0348_jupyter-notebook/hello.ipynb": "7a7e7f0b58c4e436e64e497e1ac2f8f3ef060da6eed9ac38b9d90ea846062a2d",
+    "examples/0348_jupyter-notebook/verify.py": "fef76dbf5d43b40323f059f2cf5c19038ee9d7ce327511a21fe741fc2d59650e"
+  }
+}

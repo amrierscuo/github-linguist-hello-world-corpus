@@ -1,0 +1,61 @@
+{
+  "timestamp_utc": "2026-10-08T16:15:38.532166+00:00",
+  "ordinal": 802,
+  "extension": ".xzap",
+  "platform": "Windows 11 / WSL Ubuntu 24.04",
+  "toolchain": "ZILF 1.9; ZAPF 1.9; Frotz 2.54",
+  "artifact_sha256": {
+    "examples/0802_zap/variants/xzap-675bdbe5/hello_str.xzap": "344a17562c72f8a8b62ed6dd68e355ea0138648dc59882fe496c0c890cac5ada",
+    "examples/0802_zap/variants/xzap-675bdbe5/hello_freq.xzap": "3460223b4d65c83d6c78cdf0446a01cabcbcd110565fbe7e5bea5386280b2bbb",
+    "examples/0802_zap/variants/xzap-675bdbe5/hello_data.xzap": "74f8e019a79a13bb507bf67251ac96c29826f8e326d2a58c77a99553c402df99",
+    "examples/0802_zap/variants/xzap-675bdbe5/hello.xzap": "11ce56a91be953efbef586d05642a1c9a70b082eaedf7de653cb8f6e04af8bd0",
+    "examples/0802_zap/variants/xzap-675bdbe5/greeting.zil": "55a0333f89fdbd9958d7c0a0abb16748f368ede84700ff812174104477fababd"
+  },
+  "verification_helper_sha256": "0439ecb31a5f977eb1e1af463ce379e0e2263fa0c530c5c4708492e599906972",
+  "steps": [
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zilf\\bin\\zilf.exe --version",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\802_675bdbe5",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "1.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zilf\\bin\\zapf.exe --version",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\802_675bdbe5",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "1.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zilf\\bin\\zilf.exe build greeting.zil hello.xzap -S",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\802_675bdbe5",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "ZILF 1.9 built 6/13/2026 6:35:35 PM\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE}\\work\\tools_801_820\\zilf\\bin\\zapf.exe hello.xzap",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\802_675bdbe5",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "ZAPF 1.9\nReading hello.xzap\nReading hello_freq.xzap\nReading hello_data.xzap\nReading hello_str.xzap\nMeasuring...\nAssembling\nWrote 964 bytes to hello.z5\n"
+    },
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_301_320/apt-root/usr/games/dfrotz -m hello.z5",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/802_675bdbe5",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "Using normal formatting.\nLoading hello.z5.\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Compilatore ZILF originale produce assembly XZIP, assembler ZAPF rilegge il file consegnato e interprete Frotz esegue il binario reale. Story binary resta sotto work.",
+  "blockers": []
+}

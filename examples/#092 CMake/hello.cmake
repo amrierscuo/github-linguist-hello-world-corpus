@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+set(greeting "Hello, World!")
+if(NOT greeting STREQUAL "Hello, World!")
+  message(FATAL_ERROR "Greeting mismatch")
+endif()
+message("${greeting}")

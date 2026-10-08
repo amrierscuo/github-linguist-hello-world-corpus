@@ -1,0 +1,13 @@
+const fs = require("node:fs");
+const Module = require("node:module");
+const assert = require("node:assert/strict");
+const {compileSync} = require("@marko/compiler");
+const filename = require("node:path").resolve("hello.marko");
+const compiled = compileSync(fs.readFileSync(filename, "utf8"), filename, {output: "html", modules: "cjs"});
+const loaded = new Module(filename, module);
+loaded.filename = filename; loaded.paths = module.paths;
+loaded._compile(compiled.code, filename);
+const template = loaded.exports.default || loaded.exports;
+const html = template.renderToString({target: "World"});
+assert.equal(html.trim(), "<p>Hello, World!</p>");
+console.log("Hello, World!");

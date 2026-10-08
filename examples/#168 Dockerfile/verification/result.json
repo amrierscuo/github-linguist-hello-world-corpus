@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "ordinal": 168,
+  "language": "Dockerfile",
+  "timestamp_utc": "2026-10-08T12:00:44.301455+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; dockerfile-ast 0.7.1",
+  "working_directory": "examples/0168_dockerfile",
+  "source_sha256": {
+    "examples/0168_dockerfile/check.cjs": "5c5a06cec466b0e0d9fb81450c36e64e489dd8082fbc03f9900790b92102b593",
+    "examples/0168_dockerfile/Dockerfile": "0844c698d5b57de9917f49b6955e71c0c8231ddc34b1e015f3e1e7c4662b77ba",
+    "examples/0168_dockerfile/package.json": "f89d8e442efc4b789624c7e3635ef006c744af6c8f13f6b91fabe4e751ef1d3d"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Dockerfile community AST parser PASS; container execution remains pending.\n",
+      "stderr": ""
+    },
+    {
+      "command": "docker version --format \"{{.Client.Version}} {{.Server.Version}}\"",
+      "exit_code": 1,
+      "stdout": "28.3.3 \n",
+      "stderr": "error during connect: Get \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/version\": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Community dockerfile-ast parser returns the FROM and exec-form CMD AST. Docker build and container execution not performed.",
+  "blockers": [
+    "Docker Engine not running: named pipe dockerDesktopLinuxEngine absent; build/run pending."
+  ]
+}

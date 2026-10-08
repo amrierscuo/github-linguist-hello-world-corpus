@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T09:49:42.876738+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Percorsi della macchina normalizzati: radice del corpus sostituita con <corpus>, radice di lavoro con <workspace>, home con <user-home>, eseguibili con <python>, <node>, <java>; i soli argomenti di percorso dei comandi usano separatori POSIX. Gli output sono conservati salvo queste sostituzioni, che non modificano i byte degli artefatti o i risultati.",
+  "commands": [
+    {
+      "label": "Aiken version",
+      "cwd": "examples/0024_aiken",
+      "command": [
+        "<workspace>/work/tools_21_26/aiken/aiken-x86_64-pc-windows-msvc/aiken.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "aiken v1.1.23+8949565\n",
+      "stderr": ""
+    },
+    {
+      "label": "Aiken parse and typecheck",
+      "cwd": "examples/0024_aiken",
+      "command": [
+        "<workspace>/work/tools_21_26/aiken/aiken-x86_64-pc-windows-msvc/aiken.exe",
+        "check",
+        "--skip-tests",
+        "<workspace>/work/tools_21_26/aiken_positive"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "    Compiling corpus/hello-world 0.0.0 (<workspace>\\work\\tools_21_26\\aiken_positive)\n    Resolving dependencies\n"
+    },
+    {
+      "label": "Aiken Plutus VM test execution",
+      "cwd": "examples/0024_aiken",
+      "command": [
+        "<workspace>/work/tools_21_26/aiken/aiken-x86_64-pc-windows-msvc/aiken.exe",
+        "check",
+        "<workspace>/work/tools_21_26/aiken_positive"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"seed\": 1617262000,\n  \"summary\": {\n    \"total\": 2,\n    \"passed\": 2,\n    \"failed\": 0,\n    \"kind\": {\n      \"unit\": 2,\n      \"property\": 0\n    }\n  },\n  \"modules\": [\n    {\n      \"name\": \"hello\",\n      \"summary\": {\n        \"total\": 2,\n        \"passed\": 2,\n        \"failed\": 0,\n        \"kind\": {\n          \"unit\": 2,\n          \"property\": 0\n        }\n      },\n      \"tests\": [\n        {\n          \"title\": \"greeting_has_exact_bytes\",\n          \"status\": \"pass\",\n          \"on_failure\": \"fail_immediately\",\n          \"execution_units\": {\n            \"mem\": 200,\n            \"cpu\": 16100\n          }\n        },\n        {\n          \"title\": \"greeting_rejects_other_text\",\n          \"status\": \"pass\",\n          \"on_failure\": \"fail_immediately\",\n          \"execution_units\": {\n            \"mem\": 801,\n            \"cpu\": 188149\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+      "stderr": "    Compiling corpus/hello-world 0.0.0 (<workspace>\\work\\tools_21_26\\aiken_positive)\n   Collecting all tests scenarios across all modules\n      Testing ...\n"
+    },
+    {
+      "label": "Malformed Aiken negative control",
+      "cwd": "examples/0024_aiken",
+      "command": [
+        "<workspace>/work/tools_21_26/aiken/aiken-x86_64-pc-windows-msvc/aiken.exe",
+        "check",
+        "--skip-tests",
+        "<workspace>/work/tools_21_26/aiken_negative"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "    Compiling corpus/hello-world 0.0.0 (<workspace>\\work\\tools_21_26\\aiken_negative)\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0024_aiken/aiken.toml": "5e9d515da39cc4e340653281041a278174428c201dcb607fdbf8c028fa8cffc3",
+    "examples/0024_aiken/lib/hello.ak": "2f6b2c967fb4782bb4f999c2f7f5741305983848a5cf6dc0e304fe1ddf66331c"
+  },
+  "toolchain": {
+    "distribution": "Official Aiken Windows x86_64 MSVC archive",
+    "version": "aiken v1.1.23+8949565",
+    "source": "https://github.com/aiken-lang/aiken/releases/tag/v1.1.23",
+    "archive_sha256": "8f91dfea06a80ddab139db6bce788c7f1a6cc3850c21b44ae6350afe181239ee",
+    "official_archive_sha256": "8f91dfea06a80ddab139db6bce788c7f1a6cc3850c21b44ae6350afe181239ee"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "test_report": {
+    "seed": 1617262000,
+    "summary": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "kind": {
+        "unit": 2,
+        "property": 0
+      }
+    },
+    "modules": [
+      {
+        "name": "hello",
+        "summary": {
+          "total": 2,
+          "passed": 2,
+          "failed": 0,
+          "kind": {
+            "unit": 2,
+            "property": 0
+          }
+        },
+        "tests": [
+          {
+            "title": "greeting_has_exact_bytes",
+            "status": "pass",
+            "on_failure": "fail_immediately",
+            "execution_units": {
+              "mem": 200,
+              "cpu": 16100
+            }
+          },
+          {
+            "title": "greeting_rejects_other_text",
+            "status": "pass",
+            "on_failure": "fail_immediately",
+            "execution_units": {
+              "mem": 801,
+              "cpu": 188149
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

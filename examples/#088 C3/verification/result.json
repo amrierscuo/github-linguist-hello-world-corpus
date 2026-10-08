@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 88,
+  "language": "C3",
+  "timestamp_utc": "2026-10-08T11:34:07.737503+00:00",
+  "platform": "Windows x64",
+  "toolchain": "C3 0.8.4 / LLVM 22.1.8 (Windows)",
+  "working_directory": "examples/0088_c3",
+  "source_sha256": {
+    "examples/0088_c3/hello.c3": "794cdb7315e0c55aa11371ef0edc2e9b02d98bfd3e3af9ab4d980bd6a71eb5e8"
+  },
+  "steps": [
+    {
+      "command": "c3c --version",
+      "exit_code": 0,
+      "stdout": "C3 Compiler Version:       0.8.4\nInstalled directory:       <workspace>/work/tools_81_100/c3/c3\nGit Hash:                  3c446b5af28f79cef0204c86fbd2c1c4a8b75d32\nBackends:                  LLVM\nLLVM version:              22.1.8\nLLVM default target:       x86_64-pc-windows-msvc\n",
+      "stderr": ""
+    },
+    {
+      "command": "c3c compile hello.c3 -o hello",
+      "exit_code": 0,
+      "stdout": "Program linked to executable './hello.exe'.\n",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello.exe",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Compilation and execution passed."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Actual C3 compiler attempted; no simulated parser.",
+  "blockers": []
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 835,
+  "language": "wisp",
+  "timestamp_utc": "2026-10-08T13:50:50.760897+00:00",
+  "platform": "WSL Ubuntu24.04.3",
+  "toolchain": "guile (GNU Guile) 3.0.9; original Wisp1.0.13 reader",
+  "working_directory": "examples/0835_wisp",
+  "source_sha256": {
+    "examples/0835_wisp/hello.wisp": "2024bdf4ee5c8a09483b3a17c8169c476f9e309c367a3714665f910f7f07cc74"
+  },
+  "steps": [
+    {
+      "command": "guile --version",
+      "exit_code": 0,
+      "stdout": "guile (GNU Guile) 3.0.9\nPackaged by Debian (3.0.9-deb+3.0.9-1build2)\nCopyright (C) 2023 Free Software Foundation, Inc.\n\nLicense LGPLv3+: GNU LGPL 3 or later <http://gnu.org/licenses/lgpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "command": "guile --language=wisp hello.wisp",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Wisp reader translates indentation to actual Scheme forms; Guile evaluates display/newline. No handwritten reader.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/tools_821_836/wisp.tar.gz",
+      "sha256": "05eca981b0cb363374dfab1c832e8927be8a1f9c932268991b26d4558f8143ae"
+    }
+  ]
+}

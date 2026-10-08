@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:45:30.239553+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0074_bluespec-bh/Hello.bs": "061857bb34fe5b21354128f1fe401a504084cf822b5d2bf98ee43e6ec0046b9b"
+  },
+  "commands": [
+    {
+      "label": "Bluespec compiler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/bsc-2026.07.1-ubuntu-24.04/bin/bsc",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_74",
+      "exit_code": 0,
+      "stdout": "Bluespec Compiler, version 2026.07.1 (build 63665af1)\nThis is free software; for source code and copying conditions, see\nhttps://github.com/B-Lang-org/bsc\n\nInvoking command line:\nbsc -v\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Bluespec typecheck and Bluesim code generation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/bsc-2026.07.1-ubuntu-24.04/bin/bsc",
+        "-u",
+        "-sim",
+        "-g",
+        "mkHello",
+        "-bdir",
+        "<workspace>/work/tools_61_80/verify_74",
+        "-simdir",
+        "<workspace>/work/tools_61_80/verify_74",
+        "-info-dir",
+        "<workspace>/work/tools_61_80/verify_74",
+        "<workspace>/work/tools_61_80/verify_74/Hello.bs"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_74",
+      "exit_code": 0,
+      "stdout": "checking package dependencies\ncompiling <workspace>/work/tools_61_80/verify_74/Hello.bs\ncode generation for mkHello starts\nElaborated module file created: <workspace>/work/tools_61_80/verify_74/mkHello.ba\nAll packages are up to date.\n",
+      "stderr": "Warning: Command line: (S0073)\n  Duplicate directories were found in the path specified with the -p flag.\n  Only the first occurrence will be used. The duplicates are:\n    <workspace>/work/tools_61_80/verify_74\n  Note that when the -bdir flag is used, that directory is automatically added\n  to the head of the path.\n"
+    },
+    {
+      "label": "Link Bluesim simulation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/bsc-2026.07.1-ubuntu-24.04/bin/bsc",
+        "-sim",
+        "-e",
+        "mkHello",
+        "-bdir",
+        "<workspace>/work/tools_61_80/verify_74",
+        "-simdir",
+        "<workspace>/work/tools_61_80/verify_74",
+        "-o",
+        "<workspace>/work/tools_61_80/verify_74/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_74",
+      "exit_code": 0,
+      "stdout": "Bluesim object created: <workspace>/work/tools_61_80/verify_74/mkHello.{h,o}\nBluesim object created: <workspace>/work/tools_61_80/verify_74/model_mkHello.{h,o}\nSimulation shared library created: <workspace>/work/tools_61_80/verify_74/hello.so\nSimulation executable created: <workspace>/work/tools_61_80/verify_74/hello\n",
+      "stderr": "Warning: Command line: (S0073)\n  Duplicate directories were found in the path specified with the -p flag.\n  Only the first occurrence will be used. The duplicates are:\n    <workspace>/work/tools_61_80/verify_74\n  Note that when the -bdir flag is used, that directory is automatically added\n  to the head of the path.\n"
+    },
+    {
+      "label": "Run Bluesim to greeting and finish",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "env",
+        "PATH=<workspace>/work/tools_61_80/bsc-2026.07.1-ubuntu-24.04/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_61_80/tcl/usr/lib/x86_64-linux-gnu",
+        "TCL_LIBRARY=<workspace>/work/tools_61_80/tcl/usr/share/tcltk/tcl8.6",
+        "<workspace>/work/tools_61_80/verify_74/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_74",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "B-Lang BSC official Ubuntu 24.04 release",
+    "version": "2026.07.1",
+    "archive_sha256": "4e69030f3a28cb819192a3780e20fd174ff7caf30cacf1cdbf2195cce913a933",
+    "isolated_dependency": {
+      "name": "Ubuntu libtcl8.6 8.6.14+dfsg-1build1",
+      "source": "https://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/libtcl8.6_8.6.14+dfsg-1build1_amd64.deb",
+      "archive_sha256": "7534eb825f6317514d747ce53b4d6c23bf24df1dc1785f9599610ece5515e685"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:13.094035+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native ERB template parsing and NetLinx source rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_466_151613076266",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "render.rb"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_466_151613076266",
+      "exit_code": 0,
+      "stdout": "PROGRAM_NAME='CorpusGreeting'\n\nDEFINE_START\nSEND_STRING 0,\"'Hello, World!'\"\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Original ERB renderer",
+    "ruby_version": "3.2.3",
+    "compiler_sha256": "ead53704d7da35c85a28db19070d34e7ecef9461ecf8ae5e9d51ae79125bb731"
+  },
+  "semantic_scope": "ERB renderer executed; NetLinx target compiler/controller unavailable.",
+  "artifact_sha256": {
+    "examples/0466_netlinx-erb/hello.axs.erb": "8d2c192359c4b05c6b27f070e92d7694821f80b2af1e73faac9e15b1d68e3fe6",
+    "examples/0466_netlinx-erb/render.rb": "03b5b78b183bb53aa6c8acc9fc05dac6523fa2ce3a9084f32187b242ca6592d8"
+  }
+}

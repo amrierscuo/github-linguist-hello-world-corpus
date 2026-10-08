@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:30.308945+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0041_assembly/hello.s": "9f9e08a4d86899b1feb3e1fe1eacb7bb297162787031a793bf2f28dbe0383f1e"
+  },
+  "commands": [
+    {
+      "label": "GAS version",
+      "cwd": "<corpus>/examples/0041_assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "as",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU assembler (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `x86_64-linux-gnu'.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Assemble original source",
+      "cwd": "<corpus>/examples/0041_assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "as",
+        "--64",
+        "-o",
+        "<workspace>/work/tools_41_60/41/hello.o",
+        "<corpus>/examples/0041_assembly/hello.s"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Link ELF executable",
+      "cwd": "<corpus>/examples/0041_assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "ld",
+        "-o",
+        "<workspace>/work/tools_41_60/41/hello",
+        "<workspace>/work/tools_41_60/41/hello.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run ELF executable",
+      "cwd": "<corpus>/examples/0041_assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_41_60/41/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "GNU GAS and ld, Linux x86_64 syscall ABI",
+    "version": "GNU assembler (GNU Binutils for Ubuntu) 2.42"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:12.439252+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Existing parser version",
+      "cwd": "<corpus>/examples/0269_graph-modeling-language",
+      "command": [
+        "<python>",
+        "-c",
+        "import networkx;print(networkx.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "3.5\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse original format and assert semantic fields",
+      "cwd": "<corpus>/examples/0269_graph-modeling-language",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.gml"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing GML parser, directed graph and node label\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "NetworkX native GML reader",
+    "version": "3.5"
+  },
+  "artifact_sha256": {
+    "examples/0269_graph-modeling-language/hello.gml": "b526882848aeee8807fc6f35b73ca7c5c99cbea2a7d19c40bad5203ffd3c51cf",
+    "examples/0269_graph-modeling-language/verify.py": "5b351aa262b9f7c378aaa2fe4afa24f3f56fe2d091b170a761f69ee734e4bf19"
+  }
+}

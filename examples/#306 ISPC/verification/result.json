@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "ordinal": 306,
+  "language": "ISPC",
+  "timestamp_utc": "2026-10-08T12:31:12.168007+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.31.0 (build commit c6adb4f86f5678ce @ 20260625, LLVM 23.0.0); g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "working_directory": "examples/0306_ispc",
+  "source_sha256": {
+    "examples/0306_ispc/hello.ispc": "df0843aa9d75543bb03c995a053b706bc7e50da10a8343e81efea17195959646",
+    "examples/0306_ispc/main.cpp": "d92a8be45f16a6e90e17a4d0d7736a68ec963f52bc141089953d71f6c35628c7"
+  },
+  "steps": [
+    {
+      "command": "ispc --version",
+      "exit_code": 0,
+      "stdout": "Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.31.0 (build commit c6adb4f86f5678ce @ 20260625, LLVM 23.0.0)\n",
+      "stderr": ""
+    },
+    {
+      "command": "ispc hello.ispc --pic --target=sse2-i32x4 -h <build>/hello_ispc.h -o <build>/hello.o",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "g++ --version",
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "g++ main.cpp <build>/hello.o -o <build>/hello",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Official ISPC compiler emits SIMD object and C++ API header; GCC harness calls genuine ISPC greet, whose builtin print writes greeting once per gang.",
+  "blockers": []
+}

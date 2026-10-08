@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /greetings/{greetingId} {
+      allow read: if greetingId == 'hello';
+      allow create: if request.auth != null
+                    && greetingId == 'hello'
+                    && request.resource.data.keys().hasOnly(['message'])
+                    && request.resource.data.message == 'Hello, World!';
+      allow update, delete: if false;
+    }
+  }
+}

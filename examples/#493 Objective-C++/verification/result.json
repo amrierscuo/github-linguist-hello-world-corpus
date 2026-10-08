@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 493,
+  "language": "Objective-C++",
+  "timestamp_utc": "2026-10-08T13:11:33.760305+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0; GNU libobjc4 14.2.0",
+  "working_directory": "examples/0493_objective-c",
+  "source_sha256": {
+    "examples/0493_objective-c/hello.mm": "66c15864ab3bdadae9046c4369619f901be6e0fd9b3f076eb0ed7141a9ca3e39"
+  },
+  "steps": [
+    {
+      "command": "g++ --version",
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "g++ -B<portable-gobjc-engine> -I<objc-headers> hello.mm -L<objc-runtime> -l:libobjc.so.4 -o <build>/hello",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "La classe usa Object del runtime GNU e un metodo di classe; Objective-C++ usa realmente anche std::string/std::cout. Nessuna libreria Foundation necessaria.",
+  "blockers": []
+}

@@ -1,0 +1,41 @@
+{
+  "ordinal": 332,
+  "name": "Jasmin",
+  "timestamp_utc": "2026-10-08T12:17:02.338547+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Jasmin 3.0.3 + CUP 0.9.2 + OpenJDK 21.0.12",
+  "artifact_sha256": {
+    "examples/0332_jasmin/Hello.j": "a242130446a98b042d547bfd823612fba83d54c9aeb9522660b0f1049c0974df"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\jasmin-3.0.3.jar;${WORKSPACE}\\work\\tools_321_340\\java_cup-0.9.2.jar",
+        "jasmin.Main",
+        "-d",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0332",
+        "Hello.j"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-Xverify:all",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0332",
+        "Hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

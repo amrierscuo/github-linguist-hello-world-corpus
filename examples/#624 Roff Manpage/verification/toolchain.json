@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:40.352865+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Groff version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_624_154440346471",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/x86_64-linux-gnu",
+        "PATH=<workspace>/work/tools_621_640/ubuntu/usr/bin:/usr/bin:/bin",
+        "GROFF_FONT_PATH=<workspace>/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/font",
+        "GROFF_TMAC_PATH=<workspace>/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/tmac",
+        "GROFF_NO_SGR=1",
+        "<workspace>/work/tools_621_640/ubuntu/usr/bin/groff",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_624_154440346471",
+      "exit_code": 0,
+      "stdout": "GNU groff version 1.23.0\nCopyright (C) 2022 Free Software Foundation, Inc.\nGNU groff comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute copies of groff and its subprograms\nunder the terms of the GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING.\n\ncalled subprograms:\n\nGNU grops (groff) version 1.23.0\nGNU troff (groff) version 1.23.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native roff rendering with man macros",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_624_154440346471",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/x86_64-linux-gnu",
+        "PATH=<workspace>/work/tools_621_640/ubuntu/usr/bin:/usr/bin:/bin",
+        "GROFF_FONT_PATH=<workspace>/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/font",
+        "GROFF_TMAC_PATH=<workspace>/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/tmac",
+        "GROFF_NO_SGR=1",
+        "<workspace>/work/tools_621_640/ubuntu/usr/bin/groff",
+        "-Tascii",
+        "-man",
+        "hello.1"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_624_154440346471",
+      "exit_code": 0,
+      "stdout": "_\bH_\bE_\bL_\bL_\bO(1)                         User Commands                        _\bH_\bE_\bL_\bL_\bO(1)\n\nN\bNA\bAM\bME\bE\n       hello - corpus greeting\n\nD\bDE\bES\bSC\bCR\bRI\bIP\bPT\bTI\bIO\bON\bN\n       Hello, World!\n\nCorpus Example                    2026-10-08                          _\bH_\bE_\bL_\bL_\bO(1)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original GNU groff",
+    "packages": [
+      {
+        "name": "groff",
+        "version": "1.23.0-3build2",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/groff/groff_1.23.0-3build2_amd64.deb",
+        "sha256": "fa1a261ddd06e18e265b9d584ea79af35eeb65d139ceeea4e212169338748cf8"
+      },
+      {
+        "name": "groff-base",
+        "version": "1.23.0-3build2",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/groff/groff-base_1.23.0-3build2_amd64.deb",
+        "sha256": "1cd698c64bb1100a505a71894321716d807dc976c26d488b339f0b6289aad2fc"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0624_roff-manpage/hello.1": "bd236a07c5613063d46bde03fa2fc6e7beae7c126729dac9f8b260b7606585db"
+  }
+}

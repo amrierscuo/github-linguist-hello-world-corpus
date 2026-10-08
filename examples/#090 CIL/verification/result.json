@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 90,
+  "language": "CIL",
+  "timestamp_utc": "2026-10-08T11:33:17.269986+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "SELinux secilc 3.5-1; Ubuntu libsepol 3.5",
+  "working_directory": "examples/0090_cil",
+  "source_sha256": {
+    "examples/0090_cil/hello.cil": "5cb5ad64e9a954a8b5586748372c78ddcf06624adb6f56ac513bc3c91625aa7d"
+  },
+  "steps": [
+    {
+      "command": "dpkg-deb -f secilc.deb Package Version",
+      "exit_code": 0,
+      "stdout": "Package: secilc\nVersion: 3.5-1\n",
+      "stderr": ""
+    },
+    {
+      "command": "secilc hello.cil -o <build>/hello.policy -f <build>/file_contexts",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Native CIL compiler resolves declarations, security context and allow rule; binary policy produced, exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "SELinux Common Intermediate Language, not CLR IL. Goal is successful standalone policy compilation; no policy is loaded into the machine.",
+  "blockers": []
+}

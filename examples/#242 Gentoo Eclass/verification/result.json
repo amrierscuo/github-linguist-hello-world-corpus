@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "ordinal": 242,
+  "language": "Gentoo Eclass",
+  "timestamp_utc": "2026-10-08T12:15:43.041537+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+  "working_directory": "examples/0242_gentoo-eclass",
+  "source_sha256": {
+    "examples/0242_gentoo-eclass/hello-world-1.0.ebuild": "dcccdfc7c714563f84cfd0078231b4b3937c2ef1e8dceabb8d344b487392f7df",
+    "examples/0242_gentoo-eclass/hello-world.eclass": "9878c5345b185827e6ed30cdf1f125f74ecdf179e415d403f25c10cb022baee6",
+    "examples/0242_gentoo-eclass/files/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6"
+  },
+  "steps": [
+    {
+      "command": "bash --version",
+      "exit_code": 0,
+      "stdout": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "command": "bash -n hello-world-1.0.ebuild",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "bash -n files/hello.sh",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "bash -n hello-world.eclass",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "sh files/hello.sh",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Bash parses the Bash-based ebuild/eclass and standalone shell fixture runs. Portage EAPI metadata, inheritance, newbin and installation are not evaluated.",
+  "blockers": [
+    "Gentoo Portage package environment not available: native install/inherit phases pending."
+  ]
+}

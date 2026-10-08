@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:16.715632+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0617_ring",
+      "command": [
+        "where.exe",
+        "ring"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required ring compiler/runtime and matching host resources are not available/configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine ring compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0617_ring/hello.ring": "5a6210e5752c0043497bcb4373121aab82f1c579c568547511229f43c8f2e0d0"
+  }
+}

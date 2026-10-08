@@ -1,0 +1,25 @@
+{
+  "ordinal": 120,
+  "name": "Clarity",
+  "timestamp_utc": "2026-10-08T11:46:43.059345+00:00",
+  "platform": "Windows 11 x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "artifact_sha256": {
+    "examples/0120_clarity/hello.clar": "0429c166f59e5c740f2b3fd2b1c316c3a582d0a2bdb393c396e2acadf19d180c",
+    "examples/0120_clarity/verify.cjs": "2aa815c683e6be28cbe70da0c83e2e9f692b76ef9b959dd3f941d9396904d2b4"
+  },
+  "toolchain": "Node.js 22.20.0 + @stacks/clarinet-sdk 3.24.1 + @stacks/transactions 7.6.0",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Clarity local read-only result: Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only machine-specific absolute path prefixes are replaced; source digests, tool output, exit codes and timestamps are preserved. Raw record retained outside deliverable."
+}

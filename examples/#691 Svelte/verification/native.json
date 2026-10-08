@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:46.247810+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native source parsing and output model/render verification",
+      "cwd": "<corpus>/examples/0691_svelte",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_681_700/node",
+        "<workspace>/work/tools_681_700/691"
+      ],
+      "exit_code": 0,
+      "stdout": "<!--[--><p>Hello, World!</p><!--]-->\nPASS: official Svelte compiler and SSR render with parameter control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official svelte compiler/parser and server renderer",
+    "version": "5.57.2"
+  },
+  "generated_artifact_sha256": "6e596ce30b9481ecceec43e8136289764442bbf2d758800aded559ec95d722b5",
+  "artifact_sha256": {
+    "examples/0691_svelte/Greeting.svelte": "7a1c18d7b301c7f0b4097ea16e42c99e8a7c5ed235e79c62ae0dfc53a1bbd976",
+    "examples/0691_svelte/verify.cjs": "bf330c8dcc9245193463b50977690522586ac6dc05176c0e3ae3cf6ff8554bf0"
+  }
+}

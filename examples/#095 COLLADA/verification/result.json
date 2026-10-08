@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "ordinal": 95,
+  "language": "COLLADA",
+  "timestamp_utc": "2026-10-08T11:35:41.649498+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; pycollada 0.9.3; lxml 6.0.2; Khronos COLLADA 1.4.1 XSD",
+  "working_directory": "examples/0095_collada",
+  "source_sha256": {
+    "examples/0095_collada/hello.dae": "bae8640838fffcbec9689ad865cc329575f6fc3c06277186f6e2adec9ea04642",
+    "examples/0095_collada/verify.py": "9e1eca4fdaac94f07b357a148c7af102864f1801fe10122b10db338caee7ab95",
+    "examples/0095_collada/requirements.txt": "ae69510e9aa7a5f96be1428cf9ad74d97b44b51e459b25ff9bcd523bea9145ed"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <Khronos-COLLADA-1.4.1-XSD>",
+      "exit_code": 0,
+      "stdout": "Khronos COLLADA 1.4.1 XSD: valid; pycollada 0.9.3: greeting title, scene node and identity transform PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Khronos XMLSchema validation passes.",
+    "pycollada reads exact greeting title, selected scene, named node and identity transform."
+  ],
+  "scope": "Actual Khronos XSD validator and genuine pycollada scene loader. Asset title contains the greeting; NCName node names are valid identifiers, not rendered text.",
+  "blockers": [],
+  "schema_sources": [
+    {
+      "url": "https://www.khronos.org/files/collada_schema_1_4_1.xsd",
+      "sha256": "49266165027329388e710ade6a424116570cda6776cbf3623f7b8c78c727b0ff"
+    }
+  ]
+}

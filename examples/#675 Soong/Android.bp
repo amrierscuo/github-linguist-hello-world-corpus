@@ -1,0 +1,5 @@
+genrule {
+    name: "corpus_hello_world",
+    out: ["hello.txt"],
+    cmd: "printf 'Hello, World!\n' > $(out)",
+}

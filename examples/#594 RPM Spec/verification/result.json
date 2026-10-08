@@ -1,0 +1,36 @@
+{
+  "ordinal": 594,
+  "name": "RPM Spec",
+  "timestamp_utc": "2026-10-08T13:46:57.302300+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "RPM4.18.2 original rpmbuild native prep",
+  "artifact_sha256": {
+    "examples/0594_rpm-spec/hello.spec": "ab28f931e32e49cd33d922367c7d5432b561ab3f413ba7a9d36900e1b5a020a3"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "RPM_CONFIGDIR=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/rpm",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/blas:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/lapack:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/R/lib",
+        "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild",
+        "-bp",
+        "--nodeps",
+        "--define",
+        "_topdir ${WORKSPACE_WSL}/work/tools_581_600/build_0594",
+        "${WORKSPACE_WSL}/work/staging_581_600/examples/0594_rpm-spec/hello.spec"
+      ],
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "error": "exit 127: ${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory\n",
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

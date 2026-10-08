@@ -1,0 +1,48 @@
+{
+  "variant_extension": ".al",
+  "timestamp_utc": "2026-10-08T16:05:30.640371+00:00",
+  "scope": "Perl originale: compile check; esecuzione del driver o TAP con prove. Il .al ha solo sintassi verificata perché AutoLoader non esercitato.",
+  "toolchain": {
+    "name": "Perl WSL Ubuntu",
+    "version": "This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi",
+    "version_command": {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/al-ceb20bd5",
+        "--exec",
+        "perl",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    }
+  },
+  "artifact_sha256": {
+    "examples/0532_perl/variants/al-ceb20bd5/greeting.al": "e8369f9c7386527631e57d8265ac04998c4c42157d95a75d6b21f25f0ac7ecb1"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/al-ceb20bd5",
+        "--exec",
+        "perl",
+        "-I.",
+        "-c",
+        "greeting.al"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "greeting.al syntax OK\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "sha256": {
+    "examples/0532_perl/variants/al-ceb20bd5/greeting.al": "e8369f9c7386527631e57d8265ac04998c4c42157d95a75d6b21f25f0ac7ecb1"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

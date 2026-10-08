@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:09:13.643194+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for required genuine toolchain",
+      "cwd": "<corpus>/examples/0444_monkey-c",
+      "command": [
+        "where.exe",
+        "monkeyc"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Garmin Connect IQ SDK, target-device simulator and local developer signing key are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0444_monkey-c/manifest.xml": "c9365758227243fc93679e98eff9c3b8eddf3006ea7236f05746d8289a73db89",
+    "examples/0444_monkey-c/monkey.jungle": "f3b7481625aa5612d799bace04e16b551870157881221686bf692735f5d7c4c3",
+    "examples/0444_monkey-c/resources/drawables.xml": "e14e27f07c46096d564c6eef4198e0ff370f603ef0bdbe246680e561cee82c66",
+    "examples/0444_monkey-c/resources/icon.png": "e78124e097cf9c040a09dd3b91c4321edf1494927249e54e948073cb296500dc",
+    "examples/0444_monkey-c/resources/strings.xml": "897e672948dc4afe8dd3792bac56c124d7dea7156e8d7b9f47bc1dcd4e6b6ff0",
+    "examples/0444_monkey-c/source/GreetingApp.mc": "4907877ea453e1eeee56f2cccbb4934af64e3a444c6e9a150937fd81d550d119"
+  }
+}

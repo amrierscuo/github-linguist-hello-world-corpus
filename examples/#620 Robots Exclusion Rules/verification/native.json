@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:19.226670+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native engine with acceptance/rejection controls",
+      "cwd": "<corpus>/examples/0620_robots-exclusion-rules",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native robots parser permits local greeting path and rejects private control; no network access\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Python standard-library urllib.robotparser policy engine",
+    "version": "3.13.9"
+  },
+  "artifact_sha256": {
+    "examples/0620_robots-exclusion-rules/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0620_robots-exclusion-rules/robots.txt": "e3bcfc16307a1575445fc4b1c7614a51b390554c5b8cb51da86bcbfff6f35e50",
+    "examples/0620_robots-exclusion-rules/verify.py": "46644b914b33154d749ee90cde6ebda63993d3bc2945874e9b094e1e8db60f84"
+  }
+}

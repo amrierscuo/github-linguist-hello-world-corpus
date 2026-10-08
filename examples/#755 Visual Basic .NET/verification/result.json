@@ -1,0 +1,37 @@
+{
+  "ordinal": 755,
+  "name": "Visual Basic .NET",
+  "timestamp_utc": "2026-10-08T13:46:50.458167+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Microsoft .NET Framework vbc 4.8 + CLR",
+  "artifact_sha256": {
+    "examples/0755_visual-basic-net/Hello.vb": "7bdf9a824e28cb8e16f1d91558ca59f963ad727fdc3bcae8747bda9cf67742eb"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\vbc.exe",
+        "/nologo",
+        "/target:exe",
+        "/vbruntime-",
+        "/define:_MYTYPE=\"Empty\"",
+        "/out:${WORKSPACE}\\work\\tools_741_760\\build_0755\\Hello.exe",
+        "Hello.vb"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_741_760\\build_0755\\Hello.exe"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

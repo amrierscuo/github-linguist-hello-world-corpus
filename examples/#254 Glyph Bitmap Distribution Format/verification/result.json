@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "ordinal": 254,
+  "language": "Glyph Bitmap Distribution Format",
+  "timestamp_utc": "2026-10-08T12:15:39.471165+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; freetype-py 2.5.1 genuine FreeType rasterizer",
+  "working_directory": "examples/0254_glyph-bitmap-distribution-format",
+  "source_sha256": {
+    "examples/0254_glyph-bitmap-distribution-format/glyphs.json": "ba04e24b962ed764b2a4d67b7ebd8ac9de210fd3f8a92cf3a9376305e41f0fe6",
+    "examples/0254_glyph-bitmap-distribution-format/hello.bdf": "2e40f89cddb293721006607a9b4014c08dc360055dd6809993241a25c8376258",
+    "examples/0254_glyph-bitmap-distribution-format/requirements.txt": "3ad2f49038621466cdc525a6794d603edcafe1d5d5959f4a96ea7f9117cce553",
+    "examples/0254_glyph-bitmap-distribution-format/verify.py": "0e16091ebf7c524d703680a10887f42fd1b88737843633d27100b6893814234c"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <build>/hello.png",
+      "exit_code": 0,
+      "stdout": "FreeType 2.13.2 original BDF load and every greeting glyph bitmap PASS.\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native FreeType BDF driver loads original bitmap font; every greeting glyph and pixel bitmap match original design; rendered greeting PNG produced.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_241_260/254/hello.png",
+      "sha256": "fd177e07aa280568e804decbddeb3fd2dd22175aff98ef19f239ad0ecc07b7f1"
+    }
+  ]
+}

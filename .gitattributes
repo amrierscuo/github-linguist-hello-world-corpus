@@ -1,0 +1,23 @@
+# Preserve byte-identical references, language artifacts and recorded hashes.
+# https://git-scm.com/docs/gitattributes (text attribute: Unset)
+* -text
+
+# Repository language statistics focus on the language examples.
+# https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#detectable
+/index.html linguist-detectable=false
+/tools/** linguist-detectable=false
+/reference/** linguist-detectable=false
+/tracking/** linguist-detectable=false
+/icons/** linguist-detectable=false
+/LICENSES/** linguist-detectable=false
+/README.md linguist-detectable=false
+/SHA256SUMS.txt linguist-detectable=false
+/examples/**/README.md linguist-detectable=false
+/examples/**/verification/** linguist-detectable=false
+/examples/**/verification.log linguist-detectable=false
+/examples/**/verify.* linguist-detectable=false
+/examples/**/verify_* linguist-detectable=false
+/examples/**/Verify.* linguist-detectable=false
+/examples/**/VerifyHost.cs linguist-detectable=false
+/examples/**/VerifyManifest.java linguist-detectable=false
+/examples/**/desktop.ini linguist-detectable=false

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 170,
+  "language": "Dotenv",
+  "timestamp_utc": "2026-10-08T11:56:13.144812+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; dotenv 18.0.6",
+  "working_directory": "examples/0170_dotenv",
+  "source_sha256": {
+    "examples/0170_dotenv/.env.example": "f5d0357e0d50e9d8d30c4cf6e7dfbb4ad2f18303cbbbca5bd075ae39e439b40e",
+    "examples/0170_dotenv/check.cjs": "7aee2a2b6b2c3dd61b1070a66ee6a29894056f785410f1910f5450c24e310633",
+    "examples/0170_dotenv/package.json": "5353cae000456a51473bed3af686222ea93115e31d57770ee2359c26398a7357"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\ndotenv parsing and populate into an isolated object PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Official dotenv parser decodes quoted GREETING and populates an isolated object; no host environment change or credentials.",
+  "blockers": []
+}

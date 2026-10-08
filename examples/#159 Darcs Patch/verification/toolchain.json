@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:19:33.227452+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "Darcs version",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964",
+      "exit_code": 0,
+      "stdout": "2.16.3 (release)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Initialize isolated original patch repository",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "init"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\origin",
+      "exit_code": 0,
+      "stdout": "Finished initializing repository.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Initialize isolated receiving repository",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "init"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\receiver",
+      "exit_code": 0,
+      "stdout": "Finished initializing repository.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Add original greeting text",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "add",
+        "greeting.txt"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\origin",
+      "exit_code": 0,
+      "stdout": "Adding './greeting.txt'\nFinished adding:\n./greeting.txt\n",
+      "stderr": ""
+    },
+    {
+      "label": "Record original Darcs patch",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "record",
+        "--all",
+        "--name",
+        "Add original corpus greeting",
+        "--author",
+        "Corpus Example <corpus@example.invalid>"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\origin",
+      "exit_code": 0,
+      "stdout": "Finished recording patch 'Add original corpus greeting'\n",
+      "stderr": ""
+    },
+    {
+      "label": "Export actual empty receiver context",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "log",
+        "--context"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\receiver",
+      "exit_code": 0,
+      "stdout": "\nContext:\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Generate native Darcs patch bundle for local receiver context",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "send",
+        "--all",
+        "--no-edit-description",
+        "--no-set-default",
+        "--context",
+        "receiver.context",
+        "--output",
+        "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\hello.dpatch",
+        "../receiver"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\origin",
+      "exit_code": 0,
+      "stdout": "Minimizing context, to send with full context hit ctrl-C...\nWrote patch to <workspace>/work/tools_141_160/verify_159_141933223964/hello.dpatch.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Darcs parser applies original patch bundle",
+      "command": [
+        "<workspace>\\work\\tools_141_160\\darcs.exe",
+        "apply",
+        "--all",
+        "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\hello.dpatch"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_159_141933223964\\receiver",
+      "exit_code": 0,
+      "stdout": "Finished applying.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Official Darcs 2.16.3 Windows binary",
+    "distribution": {
+      "file": "darcs.exe",
+      "url": "https://darcs.net/binaries/windows/darcs-2.16.3.exe",
+      "sha256": "9003fe97e154db1bb4e028c0e93d8cc4eae9fa69a9752b04a2e6c24a5be1764b"
+    }
+  },
+  "receiver_file_sha256": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+  "artifact_sha256": {
+    "examples/0159_darcs-patch/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0159_darcs-patch/hello.dpatch": "c14e5dd0471da49ac788ff8148effc068d74ce0dea0cefdc01797e81a8fb8993"
+  },
+  "privacy_check": {
+    "bundle_contains_local_username": false,
+    "illustrative_author": "Corpus Example <corpus@example.invalid>",
+    "bundle_destination_header": "CONTEXT",
+    "receiver_content_exact": true
+  }
+}

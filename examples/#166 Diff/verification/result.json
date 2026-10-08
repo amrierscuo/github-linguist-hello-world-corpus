@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 166,
+  "language": "Diff",
+  "timestamp_utc": "2026-10-08T11:56:12.780978+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "GNU GNU patch 2.7.6; diff (GNU diffutils) 3.10",
+  "working_directory": "examples/0166_diff",
+  "source_sha256": {
+    "examples/0166_diff/hello.diff": "e37a5519cb866ca7321c0ab61968e15198db0aa428ed35cbf68df85912ffc486",
+    "examples/0166_diff/after/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0166_diff/before/hello.txt": "66a045b452102c59d840ec097d59d9467e13a3f34f6494e539ffd32c1bb35f18"
+  },
+  "steps": [
+    {
+      "command": "patch --version",
+      "exit_code": 0,
+      "stdout": "GNU patch 2.7.6\nCopyright (C) 2003, 2009-2012 Free Software Foundation, Inc.\nCopyright (C) 1988 Larry Wall\n\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Larry Wall and Paul Eggert\n",
+      "stderr": ""
+    },
+    {
+      "command": "diff --version",
+      "exit_code": 0,
+      "stdout": "diff (GNU diffutils) 3.10\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Paul Eggert, Mike Haertel, David Hayes,\nRichard Stallman, and Len Tower.\n",
+      "stderr": ""
+    },
+    {
+      "command": "diff -u --label a/hello.txt before/hello.txt --label b/hello.txt after/hello.txt",
+      "exit_code": 1,
+      "stdout": "--- a/hello.txt\n+++ b/hello.txt\n@@ -1 +1 @@\n-Hello\n+Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": "patch --batch -p1 -i hello.diff",
+      "exit_code": 0,
+      "stdout": "patching file hello.txt\n",
+      "stderr": ""
+    },
+    {
+      "command": "cat <build>/hello.txt",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Authentic unified diff equals GNU diff output; GNU patch applied it in an isolated directory, yielding exact Hello, World! bytes.",
+  "blockers": []
+}

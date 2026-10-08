@@ -1,0 +1,69 @@
+{
+  "ordinal": 101,
+  "name": "CWeb",
+  "timestamp_utc": "2026-10-08T11:41:42.629354+00:00",
+  "platform": "Windows 11 x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "artifact_sha256": {
+    "examples/0101_cweb/hello.w": "be5ee05747ffe2251ed189b4f2374d89bb73815f0c88d6cea94eae4049ae80ca"
+  },
+  "toolchain": "MiKTeX CTANGLE (version banner in log) + GCC 13.3.0 on WSL Ubuntu 24.04",
+  "steps": [
+    {
+      "command": [
+        "${MIKTEX_HOME}\\miktex\\bin\\x64\\ctangle.exe",
+        "${WORKSPACE}\\outputs\\github_linguist_hello_world_corpus\\examples\\0101_cweb\\hello.w",
+        "-",
+        "${WORKSPACE}\\work\\tools_101_120\\cweb_build\\hello.c"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "ctangle: major issue: So far, you have not checked for MiKTeX updates.\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "${WORKSPACE_WSL}/work/tools_101_120/cweb_build/hello.c",
+        "-o",
+        "${WORKSPACE_WSL}/work/tools_101_120/cweb_build/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_101_120/cweb_build/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only machine-specific absolute path prefixes are replaced; source digests, tool output, exit codes and timestamps are preserved. Raw record retained outside deliverable."
+}

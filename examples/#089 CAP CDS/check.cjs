@@ -1,0 +1,15 @@
+const assert = require('node:assert/strict');
+const compiler = require('@sap/cds-compiler');
+const messages = [];
+const csn = compiler.compileSync(['hello.cds'], '.', { messages });
+assert.equal(messages.filter(m => m.severity === 'Error').length, 0);
+const entity = csn.definitions['hello.Greeting'];
+assert.equal(entity.kind, 'entity');
+assert.equal(entity['@greeting'], 'Hello, World!');
+assert.equal(entity.elements.message.type, 'cds.String');
+assert.equal(entity.elements.message.length, 13);
+assert.equal(entity.elements.message.default.val, 'Hello, World!');
+const sql = compiler.to.sql(csn, { sqlDialect: 'sqlite' });
+assert.ok(sql.join('\n').includes("DEFAULT 'Hello, World!'"));
+console.log(`CDS compiler ${compiler.version()}: typed CSN and SQL default greeting PASS.`);
+console.log(sql.join('\n'));

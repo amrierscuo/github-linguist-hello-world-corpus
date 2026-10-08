@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:43:24.631835+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Icarus SystemVerilog version",
+      "cwd": "<corpus>/examples/0695_systemverilog",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_681_700/linux/usr/bin/iverilog",
+        "-B<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu/ivl",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "Icarus Verilog version 12.0 (stable) ()\n\nCopyright (c) 2000-2021 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 12.0 (stable) ()\n\nCopyright (c) 1999-2021 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 12.0 (stable) ()\n\nCopyright (c) 1998-2021 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 12.0 (stable) ()\n\nCopyright (c) 2001-2021 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original SystemVerilog 2012 testbench",
+      "cwd": "<corpus>/examples/0695_systemverilog",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_681_700/linux/usr/bin/iverilog",
+        "-B<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu/ivl",
+        "-g2012",
+        "-o",
+        "<workspace>/work/tools_681_700/695/hello.vvp",
+        "<corpus>/examples/0695_systemverilog/hello.sv"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Simulate original testbench display and finish",
+      "cwd": "<corpus>/examples/0695_systemverilog",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_681_700/linux/usr/bin/vvp",
+        "<workspace>/work/tools_681_700/695/hello.vvp"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n<corpus>/examples/0695_systemverilog/hello.sv:5: $finish called at 0 (1s)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic Icarus SystemVerilog compiler and vvp simulator",
+    "version": "Icarus 12.0-2build2",
+    "compiler_sha256": "a6071e4b4a68feafca0c8ee0e6aa275eee9a43a108c62801cfd1eca6eab6d8a3"
+  },
+  "generated_vvp_sha256": "73d84f0144d88732cd11fc5d6a8fd778b1048d5d9f88ef19502edd410cd95b5e",
+  "artifact_sha256": {
+    "examples/0695_systemverilog/hello.sv": "d00dad239cd0a581ed8a9a55a28f8ac95cacf178a6a05d325042246b7ee918fd"
+  }
+}

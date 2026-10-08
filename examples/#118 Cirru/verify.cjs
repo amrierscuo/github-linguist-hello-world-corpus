@@ -1,0 +1,10 @@
+const fs = require("node:fs");
+const vm = require("node:vm");
+const assert = require("node:assert/strict");
+const cirru = require("cirru-script");
+const source = fs.readFileSync("hello.cirru", "utf8");
+const code = cirru.compile(source);
+const lines = [];
+vm.runInNewContext(code, {console: {log: (...parts) => lines.push(parts.join(" "))}});
+assert.deepEqual(lines, ["Hello, World!"]);
+console.log(lines[0]);

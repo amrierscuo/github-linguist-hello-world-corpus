@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "ordinal": 801,
+  "language": "Yul",
+  "timestamp_utc": "2026-10-08T13:38:33.424893+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Solc 0.8.37+commit.f401782d.Emscripten.clang; Node22.20.0",
+  "working_directory": "examples/0801_yul",
+  "source_sha256": {
+    "examples/0801_yul/hello.yul": "eaf3c7c86dc1f963e9abe8ac97e2c74787f1f55ef1711d7ce069d1f0cdb2f4f4",
+    "examples/0801_yul/verify.cjs": "b07601221ca9271a63c94ff2c1839f2c415c6cf5f75101594adc41b00c202c24"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs <build>/compiled.json",
+      "exit_code": 0,
+      "stdout": "0.8.37+commit.f401782d.Emscripten.clang\nCompilation PASS\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original solc WASM compiler parses Yul and emits actual EVM bytecode; return bytes execution pending.",
+  "blockers": [
+    "Offline EVM execution pending."
+  ],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_801_820/801/compiled.json",
+      "sha256": "b008d1ac1d5fc887b3b0c4c2b97c508b639f6b0eb63696f8bd5dc983052f15c6"
+    }
+  ]
+}

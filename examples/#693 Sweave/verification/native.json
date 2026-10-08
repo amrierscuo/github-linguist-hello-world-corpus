@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:46.431529+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU R version",
+      "cwd": "<corpus>/examples/0693_sweave",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "R_HOME=<workspace>/work/tools_581_600/r_home",
+        "R_PROFILE_USER=/dev/null",
+        "R_ENVIRON_USER=/dev/null",
+        "R_LIBS_USER=<workspace>/work/tools_581_600/r_library",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/blas:<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/lapack:<workspace>/work/tools_581_600/ubuntu/usr/lib/R/lib",
+        "<workspace>/work/tools_581_600/ubuntu/usr/lib/R/bin/exec/R",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "R version 4.3.3 (2024-02-29) -- \"Angel Food Cake\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under the terms of the\nGNU General Public License versions 2 or 3.\nFor more information about these matters see\nhttps://www.gnu.org/licenses/.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute original Sweave R chunk and generate LaTeX",
+      "cwd": "<corpus>/examples/0693_sweave",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_681_700/693",
+        "--exec",
+        "env",
+        "R_HOME=<workspace>/work/tools_581_600/r_home",
+        "R_PROFILE_USER=/dev/null",
+        "R_ENVIRON_USER=/dev/null",
+        "R_LIBS_USER=<workspace>/work/tools_581_600/r_library",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/blas:<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/lapack:<workspace>/work/tools_581_600/ubuntu/usr/lib/R/lib",
+        "<workspace>/work/tools_581_600/ubuntu/usr/lib/R/bin/exec/R",
+        "--vanilla",
+        "--slave",
+        "-e",
+        "utils::Sweave(\"<corpus>/examples/0693_sweave/hello.rnw\",output=\"<workspace>/work/tools_681_700/693/hello.tex\")"
+      ],
+      "exit_code": 0,
+      "stdout": "Writing to file <workspace>/work/tools_681_700/693/hello.tex\nProcessing code chunks with options ...\n 1 : keep.source term tex (label = greeting, hello.rnw:3)\n\nYou can now run (pdf)latex on ‘<workspace>/work/tools_681_700/693/hello.tex’\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original R Sweave document engine",
+    "version": "R version 4.3.3 (2024-02-29) -- \"Angel Food Cake\""
+  },
+  "generated_tex_sha256": "eeab0fce7b393c65a372c51f6eb1d70f20520c04564cdcf3f47d9ebf66c4df71",
+  "semantic_scope": "Sweave chunk execution and generated LaTeX content; TeX compilation/layout not in this scope.",
+  "artifact_sha256": {
+    "examples/0693_sweave/hello.rnw": "184dbebb3456c61bcb6d561623a0922fdd24d3ac9f35086a50b05f4e418fdcde"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:26.267248+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU m68k assembler version",
+      "cwd": "<corpus>/examples/0449_motorola-68k-assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU assembler (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `m68k-linux-gnu'.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Assemble original 68K source into object bytecodes",
+      "cwd": "<corpus>/examples/0449_motorola-68k-assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/tools_441_460/449/hello.o",
+        "<corpus>/examples/0449_motorola-68k-assembly/hello.s"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Link genuine m68k ELF",
+      "cwd": "<corpus>/examples/0449_motorola-68k-assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/tools_441_460/449/hello",
+        "<workspace>/work/tools_441_460/449/hello.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Inspect produced 68K instructions",
+      "cwd": "<corpus>/examples/0449_motorola-68k-assembly",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-objdump",
+        "-d",
+        "<workspace>/work/tools_441_460/449/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "\n<workspace>/work/tools_441_460/449/hello:     file format elf32-m68k\n\n\nDisassembly of section .text:\n\n80000074 <_start>:\n80000074:\t7004           \tmoveq #4,%d0\n80000076:\t7201           \tmoveq #1,%d1\n80000078:\t41f9 8000 208c \tlea 8000208c <message>,%a0\n8000007e:\t2408           \tmovel %a0,%d2\n80000080:\t760e           \tmoveq #14,%d3\n80000082:\t4e40           \ttrap #0\n80000084:\t7001           \tmoveq #1,%d0\n80000086:\t4281           \tclrl %d1\n80000088:\t4e40           \ttrap #0\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "Native 68000 bytecodes assembled/linked; execution on a Linux m68k runtime/emulator is not performed."
+  ],
+  "toolchain": {
+    "name": "Genuine GNU Binutils Motorola 68000 cross assembler/linker",
+    "version": "GNU assembler (GNU Binutils for Ubuntu) 2.42",
+    "assembler_sha256": "c52857325edf2697b7434a0c053c3952b31a8698f8d57f6bc6cd1dec7aa1c6d9"
+  },
+  "elf_sha256": "782de6fa0cc3254388486dfe1e077e7b36be18122d76fdb2ca7de5cdcf385cac",
+  "artifact_sha256": {
+    "examples/0449_motorola-68k-assembly/hello.s": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150"
+  }
+}

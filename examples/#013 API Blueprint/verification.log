@@ -1,0 +1,23 @@
+Timestamp UTC: 2026-10-08T09:33:59+00:00
+Platform: Windows x64
+Toolchain: Official Drafter.js 3.2.0; Node.js 22.20.0
+Working directory: corpus root
+Distribution: https://registry.npmjs.org/drafter.js/-/drafter.js-3.2.0.tgz
+Upstream: https://github.com/apiaryio/drafter.js
+Distribution SHA-256: 873d137f3057a875ab4c632995357ecb34d19a81e1cc460ef7863c71b8985e9a
+Validation scope: reference parser diagnostics and assertions on API contract AST.
+Assertions: exactly one GET /hello resource; status 200; text/plain body; exact greeting + LF.
+No HTTP server or endpoint request is part of this example.
+
+$ node examples/0013_api-blueprint/verify.cjs '..\..\work\toolchains_08_14\drafter\package'
+Exit code: 0
+stdout:
+Drafter: valid, no warnings
+AST: GET /hello -> 200 text/plain; body = Hello, World! + LF
+stderr:
+(empty)
+
+Artifact SHA-256 (files present in this example):
+d35eb2a499f0efc2cd3a73849a13350a5943be1dd6f054a3023fedfe00f827e2  examples/0013_api-blueprint/hello.apib
+7a0e015ddf7f956e100029c6bfa5b1c376db4a1422cc59a363447157e7614b34  examples/0013_api-blueprint/README.md
+afd1abffe9174c467092878a9d57df44ce2a93bd1b4559cef44c728bd3b1f009  examples/0013_api-blueprint/verify.cjs

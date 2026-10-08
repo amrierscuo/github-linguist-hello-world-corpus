@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "ordinal": 578,
+  "language": "QuakeC",
+  "timestamp_utc": "2026-10-08T13:16:51.441635+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "FTEQCC package 3343+svn3400-4; compiler version in stdout",
+  "working_directory": "examples/0578_quakec",
+  "source_sha256": {
+    "examples/0578_quakec/hello.qc": "c7850dad4664d33d60c460612433c2e994e65af949db79442ceedb88b9e83a60",
+    "examples/0578_quakec/progs.src": "a5f55e6cfbfa1f9bfe6b534bed53125b1bb7a6f404094510ea4438380e28667a"
+  },
+  "steps": [
+    {
+      "command": "fteqcc",
+      "exit_code": 0,
+      "stdout": "Source file: progs.src\noutputfile: progs.dat\ncompiling hello.qc\nWarning: progs CRC not recognised from quake nor clones\nProgs should run on any Quake executor\n    72 strofs (of 1000000)\n     4 numstatements (of 524288)\n     3 numfunctions (of 16384)\n     4 numglobaldefs (of 32768)\n     1 numfielddefs (0 unique) (of 2048)\n    34 numpr_globals (of 65536)\nWriting progs.dat\n   576 TOTAL SIZE\nWriting progs.lno\nCompile Complete\n\noptres_nonvec_parms 1\nnumtemps 0\n0 warnings\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original FTEQCC parses and compiles original QuakeC; VM builtin bprint and worldspawn runtime pending.",
+  "blockers": [
+    "Quake VM fixture not available; native execution pending."
+  ],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_561_580/578/progs.dat",
+      "sha256": "bb14e0e79d5b6734ea375f484e39a15fd7f8ad45663268c8fb17d9d307f21a11"
+    }
+  ]
+}

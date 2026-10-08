@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:38.335139+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0054_bbcode/hello.bbcode": "f8f61dcf725eab749eb33ff42d75cc1e8c4d3257c63706928bbfce456545c794",
+    "examples/0054_bbcode/verify.py": "2eb363ddd76597df44db95981be3c1e8160bf5f2a28089352f99922f8fd756bf"
+  },
+  "commands": [
+    {
+      "label": "Python and renderer versions",
+      "cwd": "<corpus>/examples/0054_bbcode",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,bbcode;print(sys.version);print(\"bbcode 1.1.0\")"
+      ],
+      "exit_code": 0,
+      "stdout": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]\nbbcode 1.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine BBCode renderer assertions",
+      "cwd": "<corpus>/examples/0054_bbcode",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.bbcode"
+      ],
+      "exit_code": 0,
+      "stdout": "<strong>Hello, World!</strong>\nPASS: genuine bbcode renderer, bold greeting and italic control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original dcwatson/bbcode Python parser/renderer",
+    "version": "1.1.0"
+  }
+}

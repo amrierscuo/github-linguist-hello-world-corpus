@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:49:31.266179+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Official Julia version",
+      "cwd": "<corpus>/examples/0347_julia-repl",
+      "command": [
+        "<workspace>/work/julia_portable/julia-1.13.1/bin/julia.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "julia version 1.13.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Drive actual Julia terminal REPL with ConPTY and assert prompts/results",
+      "cwd": "<corpus>/examples/0347_julia-repl",
+      "command": [
+        "<python>",
+        "verify_repl.py",
+        "<workspace>/work/julia_portable/julia-1.13.1/bin/julia.exe",
+        "<workspace>/work/tools_341_360/347"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"exit_code\": 0, \"raw_terminal_output\": \"\\u001b[1t\\u001b[c\\u001b[?1004h\\u001b[?9001h\\u250c Warning: Terminal not fully functional\\r\\n\\u2514 @ Base client.jl:490\\r\\njulia> \\u001b[3;8Hname = \\\"World\\\"\\u001b[3;22H\\r\\n\\\"World\\\"\\r\\n\\r\\njulia> \\u001b[6;8Hprintln(\\\"Hello, \\\", name, \\\"!\\\")\\u001b[6;37H\\u001b[6;37H\\r\\nHello, World!\\r\\n\\r\\njulia> \\u001b[9;8Hexit()\\u001b[9;14H\\u001b[9;14H\\r\\n\", \"transcript\": \"julia> name = \\\"World\\\"\\n\\\"World\\\"\\n\\njulia> println(\\\"Hello, \\\", name, \\\"!\\\")\\nHello, World!\\n\\njulia> exit()\\n\"}\nPASS: genuine native Julia terminal REPL, prompts, value display and greeting\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Julia native runtime and actual terminal REPL",
+    "version": "julia version 1.13.1",
+    "executable_sha256": "d8804b0d175337edbe69db6dba8a71b389335b06ce82382ce6dd614c429675b6",
+    "official_archive_sha256": "648e39c58158c5c8dde08bb0df0b5bce51d517be1396a37a539bb61bc241c8b4"
+  },
+  "repl_capture_sha256": "2f2aa6b461727d96f6e0eb152e011daafc48b1b5705829ff9b197f664b669ccc",
+  "transcript_normalization": "Captured native ConPTY output; only VT cursor/control sequences and CRLF are normalized, extra empty lines collapse to one separator, and startup terminal warning before first julia> stays in raw evidence but is omitted from the transcript artifact.",
+  "artifact_sha256": {
+    "examples/0347_julia-repl/hello.julia-repl.txt": "a2bc43ad0afdbb5ab619622a82d49a00df94a3660a571e330236921f1c40c659",
+    "examples/0347_julia-repl/repl-input.txt": "87b5b01d6a41318ee5e627c9f6f790168f66e3d0ce2f64372704f5ca5fa86bf9",
+    "examples/0347_julia-repl/replay.jl": "b52af6ce2aa519b2c4ec36c0c671cec35705cae5fac3b2c32caaf4b291544daa",
+    "examples/0347_julia-repl/verify_repl.py": "a128cb16510f9fa0ec2f4ca44c9943c2ae4e0b934a8e97a4ace59895dab6e883"
+  }
+}

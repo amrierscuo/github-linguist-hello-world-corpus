@@ -1,0 +1,25 @@
+{
+  "ordinal": 510,
+  "name": "Org",
+  "timestamp_utc": "2026-10-08T13:25:38.701603+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + orgparse 0.5.20260926",
+  "artifact_sha256": {
+    "examples/0510_org/hello.org": "a23a3485490a6b7745ebfec146a88adc06c6e66a997c200959c544be6bec2f80",
+    "examples/0510_org/verify.py": "3c020c4c58f94233cc76a3ff8fb3494597620e57a6cec46db45606b30d250306"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

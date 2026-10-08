@@ -1,0 +1,62 @@
+{
+  "variant_extension": ".cgi",
+  "timestamp_utc": "2026-10-08T16:05:30.971466+00:00",
+  "scope": "Perl originale: compile check; esecuzione del driver o TAP con prove. Il .al ha solo sintassi verificata perché AutoLoader non esercitato.",
+  "toolchain": {
+    "name": "Perl WSL Ubuntu",
+    "version": "This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi",
+    "version_command": {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/cgi-89feb572",
+        "--exec",
+        "perl",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    }
+  },
+  "artifact_sha256": {
+    "examples/0532_perl/variants/cgi-89feb572/hello.cgi": "387a87b72d7862dd9aff2aa0986ca12f1de529cd88bcb74cce0e3226ca5be5bd"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/cgi-89feb572",
+        "--exec",
+        "perl",
+        "-I.",
+        "-c",
+        "hello.cgi"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "hello.cgi syntax OK\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/cgi-89feb572",
+        "--exec",
+        "perl",
+        "-I.",
+        "hello.cgi"
+      ],
+      "exit_code": 0,
+      "stdout": "Content-Type: text/plain\n\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "sha256": {
+    "examples/0532_perl/variants/cgi-89feb572/hello.cgi": "387a87b72d7862dd9aff2aa0986ca12f1de529cd88bcb74cce0e3226ca5be5bd"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

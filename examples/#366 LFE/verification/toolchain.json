@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:07:04.541980+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native LFE compilation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_366_150704534710",
+        "--",
+        "env",
+        "PATH=<workspace>/work/tools_281_300/portable-bin:/usr/bin:/bin",
+        "ERL_CRASH_DUMP=<workspace>/work/tools_361_380/verify_366_150704534710/erl_crash.dump",
+        "<workspace>/work/tools_281_300/portable-bin/erl",
+        "-noshell",
+        "-pa",
+        "<workspace>/work/tools_361_380/lfe.tar/lfe-2.2.2/ebin",
+        "-eval",
+        "case lfe_comp:file(\"hello.lfe\",[report]) of {ok,_,_}->halt(0); {ok,_}->halt(0); Other->io:format(\"~p~n\",[Other]),halt(1) end."
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_366_150704534710",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute LFE compiled BEAM",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_366_150704534710",
+        "--",
+        "env",
+        "PATH=<workspace>/work/tools_281_300/portable-bin:/usr/bin:/bin",
+        "ERL_CRASH_DUMP=<workspace>/work/tools_361_380/verify_366_150704534710/erl_crash.dump",
+        "<workspace>/work/tools_281_300/portable-bin/erl",
+        "-noshell",
+        "-pa",
+        ".",
+        "-eval",
+        "hello:main(), halt(0)."
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_366_150704534710",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original LFE compiler and BEAM runtime",
+    "distribution": {
+      "file": "lfe.tar.gz",
+      "url": "https://codeload.github.com/lfe/lfe/tar.gz/refs/tags/v2.2.2",
+      "sha256": "19a51ad759a547c35535f8bbbafd982aab647ebfb15b438d233e4102fd8761a3"
+    },
+    "runtime": "ErlangOTP25/ERTS13.2.2.5"
+  },
+  "artifact_sha256": {
+    "examples/0366_lfe/hello.lfe": "46901a8eee07b9955f5e80b3637f90842a917816076beac076329d9b8fe6ff7e"
+  }
+}

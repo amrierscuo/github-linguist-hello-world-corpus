@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:04:05.029123+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Lua version",
+      "cwd": "<corpus>/examples/0447_moonscript",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LUA_PATH=<workspace>/work/tools_441_460/moonscript/moonscript-0.5.0/?.lua;<workspace>/work/tools_441_460/moonscript/moonscript-0.5.0/?/init.lua;;",
+        "LUA_CPATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu/lua/5.4/?.so;;",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile MoonScript through original compiler and execute generated Lua",
+      "cwd": "<corpus>/examples/0447_moonscript",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LUA_PATH=<workspace>/work/tools_441_460/moonscript/moonscript-0.5.0/?.lua;<workspace>/work/tools_441_460/moonscript/moonscript-0.5.0/?/init.lua;;",
+        "LUA_CPATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu/lua/5.4/?.so;;",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<corpus>/examples/0447_moonscript/verify.lua",
+        "<corpus>/examples/0447_moonscript/hello.moon",
+        "<workspace>/work/tools_441_460/447/hello.lua"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official MoonScript compiler with LPeg and genuine Lua",
+    "version": "MoonScript 0.5.0; Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio",
+    "base_lua_sha256": "5536dd448a3243aa3d0eed5b86e049cc7ba3d676d5bed0edcdcfe287ec3a474a",
+    "lpeg_sha256": "b8fa426d77435686b877b706e49b3774ff4314fa77b418bb964a278134f4a4fe"
+  },
+  "generated_lua_sha256": "af8bcedefb4259a41628cd95e18b41c844d431c244630006614b9b4c82e09233",
+  "artifact_sha256": {
+    "examples/0447_moonscript/hello.moon": "87aba6d4f8ba454a8747a47347fa1f31f66d66c8e802c569f8bbad435695ec80",
+    "examples/0447_moonscript/verify.lua": "e06d1ea54f45ba48268d9fe4053802a29bb0d0c787c2d1d8bccdf8b5a454db89"
+  }
+}

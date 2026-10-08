@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:41.374139+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native source parsing and output model/render verification",
+      "cwd": "<corpus>/examples/0685_stylus",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_681_700/node",
+        "<workspace>/work/tools_681_700/685"
+      ],
+      "exit_code": 0,
+      "stdout": ".greeting::before {\n  content: \"Hello, World!\";\n}\n\nPASS: authentic Stylus compiler emits CSS content declaration\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official stylus compiler/parser",
+    "version": "0.64.0"
+  },
+  "generated_artifact_sha256": "68f49421b7443aa317cfbe3b6910395ff8d48f3e38804c2cd46ee3ad1ec82faa",
+  "semantic_scope": "Authentic generated CSS/AST content declaration; browser visual presentation not exercised.",
+  "artifact_sha256": {
+    "examples/0685_stylus/hello.styl": "24dda2f0fe6360a7704584c71071aeb2548b315914e8135566ac99e57c51ff53",
+    "examples/0685_stylus/verify.cjs": "01686c6553a8027a9d90b50ea17a90b82cb21b4b4ff8de60101151ab92631b45"
+  }
+}

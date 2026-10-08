@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "ordinal": 735,
+  "language": "Unix Assembly",
+  "timestamp_utc": "2026-10-08T13:30:06.052119+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "GNU assembler (GNU Binutils for Ubuntu) 2.42",
+  "working_directory": "examples/0735_unix-assembly",
+  "source_sha256": {
+    "examples/0735_unix-assembly/hello.s": "eb65c0e052417c0a481674ecdbb49cea84441a450a7460eff56c94138702567e"
+  },
+  "steps": [
+    {
+      "command": "as --version",
+      "exit_code": 0,
+      "stdout": "GNU assembler (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `x86_64-linux-gnu'.\n",
+      "stderr": ""
+    },
+    {
+      "command": "as -o <build>/hello.o hello.s",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "ld -o <build>/hello <build>/hello.o",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "GNU assembler/linker accept original AT&T program; actual ELF uses Linux write syscall to emit greeting.",
+  "blockers": []
+}

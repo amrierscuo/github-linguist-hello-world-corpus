@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:07.506857+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Availability probe for cscript.exe",
+      "cwd": "<corpus>/examples/0121_classic-asp",
+      "command": [
+        "where.exe",
+        "cscript.exe"
+      ],
+      "exit_code": 0,
+      "stdout": "C:\\Windows\\System32\\cscript.exe\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Classic ASP requires IIS ASP request context; cscript/WScript VBScript alone does not provide Response."
+  ],
+  "toolchain": {
+    "name": "Required native toolchain unavailable or not configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0121_classic-asp/hello.asp": "dc4ec2177dbe4f87dc304c3c9f1c160c8f5b8ce1e41e80ee3ce7d92dbbdf1d5f"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ordinal": 505,
+  "name": "OpenRC runscript",
+  "timestamp_utc": "2026-10-08T13:13:29.866715+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Ubuntu POSIX sh syntax only",
+  "artifact_sha256": {
+    "examples/0505_openrc-runscript/hello": "edcb9bc786254373872ffadac0e581e6c121c1952039c682e5540c9fa1b1b2ae"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "sh",
+        "-n",
+        "${WORKSPACE_WSL}/work/staging_501_520/examples/0505_openrc-runscript/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "error": "Sintassi POSIX shell verificata; openrc-run non eseguito. Semantica e funzioni OpenRC pendenti.",
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

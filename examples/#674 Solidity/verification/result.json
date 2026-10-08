@@ -1,0 +1,38 @@
+{
+  "ordinal": 674,
+  "name": "Solidity",
+  "timestamp_utc": "2026-10-08T13:49:59.142695+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Solidity solc0.8.37 + eth-tester0.14.0b1/PyEVM0.12.1b1 in-memory EVM",
+  "artifact_sha256": {
+    "examples/0674_solidity/Hello.sol": "cfb95df83e5d608f5da5dde651027de43e01cc7f7303cb5b4a89cc9c568c09b6",
+    "examples/0674_solidity/verify.cjs": "520209df191ee7c0ccd0f4eac3e1976556667519cc243c9f86a831b5d72a9191",
+    "examples/0674_solidity/verify_evm.py": "2fd04939305e81c162587265bc54c914ef8b1aafb059eb586ed9adb06b049014"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs",
+        "${WORKSPACE}\\work\\tools_661_680\\build_0674\\contract.json"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: original Solidity compiler produced bytecode\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify_evm.py",
+        "${WORKSPACE}\\work\\tools_661_680\\build_0674\\contract.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:54.957581+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Lean version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_379_150654948013",
+        "--",
+        "<workspace>/work/tools_361_380/lean4/lean-4.0.0-linux/bin/lean",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_379_150654948013",
+      "exit_code": 0,
+      "stdout": "Lean (version 4.0.0, commit ec941735c80d, Release)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Lean elaborator and kernel checking",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_379_150654948013",
+        "--",
+        "<workspace>/work/tools_361_380/lean4/lean-4.0.0-linux/bin/lean",
+        "hello.lean"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_379_150654948013",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Original Lean IO execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_379_150654948013",
+        "--",
+        "<workspace>/work/tools_361_380/lean4/lean-4.0.0-linux/bin/lean",
+        "--run",
+        "hello.lean"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_379_150654948013",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Lean4 compiler/kernel/runtime",
+    "distribution": {
+      "file": "lean4.tar.zst",
+      "url": "https://github.com/leanprover/lean4/releases/download/v4.0.0/lean-4.0.0-linux.tar.zst",
+      "sha256": "e074c3b4e4694b2f93864e755096ffa3bcddf1b59c85154fa3cb116bdd778616"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0379_lean-4/hello.lean": "ee978a16b772a7dd85b889d89145f26ff6460db8f42d2841bb75a3fbccbff9c9"
+  }
+}

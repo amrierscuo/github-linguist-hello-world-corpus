@@ -1,0 +1,47 @@
+{
+  "ordinal": 581,
+  "name": "Quint",
+  "timestamp_utc": "2026-10-08T13:20:27.137290+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + original Quint CLI",
+  "artifact_sha256": {
+    "examples/0581_quint/hello.qnt": "bfc16ac3dbdda940ad09ac3fa8a4489a6f1ba80aa046bcd140724563599469e6"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_581_600\\npm\\node_modules\\@informalsystems\\quint\\dist\\src\\cli.js",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "0.33.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_581_600\\npm\\node_modules\\@informalsystems\\quint\\dist\\src\\cli.js",
+        "typecheck",
+        "hello.qnt"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_581_600\\npm\\node_modules\\@informalsystems\\quint\\dist\\src\\cli.js",
+        "test",
+        "hello.qnt"
+      ],
+      "exit_code": 0,
+      "stdout": "\n  hello\nFetching Rust evaluator v0.7.0...\n  Downloading Rust evaluator from https://api.github.com/repos/quint-co/quint/releases/assets/596492362...\n  Extracting ${USERPROFILE}\\.quint\\rust-evaluator-v0.7.0\\quint_evaluator-x86_64-pc-windows-msvc.zip...\n  [ok] Rust evaluator installed at: ${USERPROFILE}\\.quint\\rust-evaluator-v0.7.0\\quint_evaluator.exe\n\n    ok greetingTest passed 1 test(s)\n\n  1 passing (1327ms)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

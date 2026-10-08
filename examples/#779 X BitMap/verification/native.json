@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:23.635943+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0779_x-bitmap",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata as m; print(m.version('Pillow'))"
+      ],
+      "exit_code": 0,
+      "stdout": "12.0.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing format parser and original semantic assertions",
+      "cwd": "<corpus>/examples/0779_x-bitmap",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing Pillow XBM image decoder and ASCII-packed pixel row\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Pillow / Python 3.13.9",
+    "version": "12.0.0"
+  },
+  "artifact_sha256": {
+    "examples/0779_x-bitmap/hello.xbm": "89bebaa00caf442ce49c6ada311175e2cd5787195be963b42911fae5ab81b9d6",
+    "examples/0779_x-bitmap/verify.py": "ce6ec80ec2ef13b184acb41a1b2f3bc5eba723c83fd63430562ecc2aed9c0102"
+  }
+}

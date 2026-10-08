@@ -1,0 +1,4 @@
+`ifndef CORPUS_GREETING_HEADER
+`define CORPUS_GREETING_HEADER
+`define CORPUS_GREETING "Hello, World!"
+`endif

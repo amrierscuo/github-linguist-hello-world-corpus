@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 570,
+  "language": "Python",
+  "timestamp_utc": "2026-10-08T13:16:51.063653+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython Python 3.13.9",
+  "working_directory": "examples/0570_python",
+  "source_sha256": {
+    "examples/0570_python/hello.py": "17e5b95a8f4eb8d4105ee8f0d2d6c5394e58f9fd0f62033da2619d2ece5481df"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python hello.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original CPython executes f-string greeting.",
+  "blockers": []
+}

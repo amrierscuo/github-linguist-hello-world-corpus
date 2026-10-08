@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:12.279223+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for required native tool",
+      "cwd": "<corpus>/examples/0268_grammatical-framework",
+      "command": [
+        "where.exe",
+        "gf"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "GF compiler and interactive grammar runtime are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0268_grammatical-framework/Greeting.gf": "a4916aff68b1d62ad1b6e22a6fb576f2846659f70b90acdd2246a68d4b44c7ca",
+    "examples/0268_grammatical-framework/GreetingEng.gf": "185b5568ffeba8622ffd71d7fda7ec5294627a0c62bda449a95c46cb76653ee2"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:27.486589+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "PHP CLI version",
+      "cwd": "<corpus>/examples/0456_neon",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/php8.3",
+        "-n",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read actual NEON with native Nette decoder",
+      "cwd": "<corpus>/examples/0456_neon",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/php8.3",
+        "-n",
+        "<corpus>/examples/0456_neon/verify.php",
+        "<workspace>/work/tools_441_460/neon/neon-master",
+        "<corpus>/examples/0456_neon/hello.neon"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine Nette NEON decoder and data model\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Nette NEON PHP decoder source snapshot",
+    "version": "nette/neon 3.5-dev snapshot; PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)",
+    "source_archive_sha256": "d29af23371715bbf1228fd337ffb7cc8a12e1d789838e78a8f01361b248fc9dc",
+    "decoder_sha256": "adfa09d5d8547a276604540dc93f06ef969a9e421f5e2ecb2cd1bc8f97ea16f7"
+  },
+  "artifact_sha256": {
+    "examples/0456_neon/hello.neon": "2fdf324295cf6121e47c02c70caa41f3c646e10d74f9df527bfc97400a8344ae",
+    "examples/0456_neon/verify.php": "278aa88bb62afd341f5e61a7a75d3eee13edefd9685fa214a89f8b1bdc7df614"
+  }
+}

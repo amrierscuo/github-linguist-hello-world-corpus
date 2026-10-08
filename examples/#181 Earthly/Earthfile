@@ -1,0 +1,6 @@
+VERSION 0.8
+
+greeting:
+    FROM alpine:3.20
+    RUN printf 'Hello, World!\n' > /greeting.txt
+    SAVE ARTIFACT /greeting.txt AS LOCAL greeting.txt

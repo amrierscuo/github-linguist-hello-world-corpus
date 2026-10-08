@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:08.139903+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for genuine toolchain",
+      "cwd": "<corpus>/examples/0352_kframework",
+      "command": [
+        "where.exe",
+        "kompile"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "K Framework kompile/krun and backend are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0352_kframework/hello.k": "0d6026583e5f20baa1805d0b0f2d54dff78bc1303b2549ff954f5420d8d201c7",
+    "examples/0352_kframework/input.hello": "5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03"
+  }
+}

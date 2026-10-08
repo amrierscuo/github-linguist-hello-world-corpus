@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:48:15.289561+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node version",
+      "cwd": "<corpus>/examples/0351_kdl",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine parser/generator acceptance and declared checks",
+      "cwd": "<corpus>/examples/0351_kdl",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_341_360/node",
+        "<workspace>/work/tools_341_360/351"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing KDL parser and node data\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing KDL-JS document parser",
+    "version": "kdljs 0.3.0",
+    "package_metadata_sha256": "7ac878f1a22d40ad6bbc91dca297e0fece7f3f6fedb3a62095825c2a0e44e436"
+  },
+  "semantic_scope": "KDL document nodes and literal data, accepted by KDL-JS 0.3.0; no additional application schema is asserted.",
+  "artifact_sha256": {
+    "examples/0351_kdl/hello.kdl": "24a6291a7d5fe24c46501da2f1dfc09b3ac6165679c93fd373fb2c3372fc6d62",
+    "examples/0351_kdl/verify.cjs": "89b68bef7d592cb1de6ea8f8858247466becda2ab8a6376c4d0ed207c27ea119"
+  }
+}

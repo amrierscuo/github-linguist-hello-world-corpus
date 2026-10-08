@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:59:50.603804+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "Cython version",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-m",
+        "cython",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_150_135950568528",
+      "exit_code": 0,
+      "stdout": "Cython version 3.3.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Cython parse, typecheck and C generation",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-m",
+        "cython",
+        "-3",
+        "hello.pyx",
+        "-o",
+        "hello.c"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_150_135950568528",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Python native extension runtime version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_150_135950568528",
+        "--",
+        "python3",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_150_135950568528",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile actual CPython extension from Cython-generated C",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_150_135950568528",
+        "--",
+        "gcc",
+        "-std=c11",
+        "-shared",
+        "-fPIC",
+        "-I<workspace>/work/tools_141_160/ubuntu/usr/include/python3.12",
+        "-I<workspace>/work/tools_141_160/ubuntu/usr/include/x86_64-linux-gnu/python3.12",
+        "hello.c",
+        "-o",
+        "hello.so"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_150_135950568528",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Import and execute compiled Cython extension",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_150_135950568528",
+        "--",
+        "python3",
+        "-c",
+        "import hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_150_135950568528",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Cython 3.3.0 compiler; GNU C 13.3; Ubuntu Python 3.12.3 native extension runtime",
+    "cython_metadata_sha256": "a24705e708476ddea0fe4a8ce063210600a8dc7fc3afe7e4d2a0ea301e0fde4f",
+    "python_headers": [
+      {
+        "file": "libpython3.12-dev_3.12.3-1ubuntu0.17_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/python3.12/libpython3.12-dev_3.12.3-1ubuntu0.17_amd64.deb",
+        "sha256": "c123ddab7763e45199e21b4ac8545e705f20a0315b9ada4c236b52fb088c4e16",
+        "package": "libpython3.12-dev",
+        "version": "3.12.3-1ubuntu0.17"
+      }
+    ],
+    "source": "https://github.com/cython/cython"
+  },
+  "artifact_sha256": {
+    "examples/0150_cython/hello.pyx": "29c659a779fc1ca4313a8210e1ac2faa04ce530ec3a9cccde1819838318d7a85",
+    "examples/0150_cython/setup.py": "6e73f6ba43016dbafddb0cf5147d1d218652f20d946051a712df653f935dff6c"
+  }
+}

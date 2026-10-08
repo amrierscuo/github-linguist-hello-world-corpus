@@ -1,0 +1,25 @@
+{
+  "ordinal": 324,
+  "name": "JSON",
+  "timestamp_utc": "2026-10-08T12:17:02.069166+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 json standard library",
+  "artifact_sha256": {
+    "examples/0324_json/hello.json": "ea6a04019de5767c9316a9ae80fd4542ed54fb1a46621d4d70e007299d1000fa",
+    "examples/0324_json/verify.py": "444cacf9cbda43350c1fd66f6d632a9b01afbd8cd2fd65ed30dd1644457d0860"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

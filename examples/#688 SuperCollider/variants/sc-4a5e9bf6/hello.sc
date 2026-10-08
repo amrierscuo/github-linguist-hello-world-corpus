@@ -1,0 +1,3 @@
+CorpusGreeting {
+    *message { ^"Hello, World!" }
+}

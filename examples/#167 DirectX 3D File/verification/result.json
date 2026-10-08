@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 167,
+  "language": "DirectX 3D File",
+  "timestamp_utc": "2026-10-08T11:56:11.594568+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Assimp native importer ------------------------------------------------------ \nOpen Asset Import Library (\"Assimp\", https://github.com/assimp/assimp) \n -- Commandline toolchain --\n------------------------------------------------------ \n\nVersion 5.3 -debug -shared -st (GIT commit 0)",
+  "working_directory": "examples/0167_directx-3d-file",
+  "source_sha256": {
+    "examples/0167_directx-3d-file/hello.x": "72bc42dc17806998a97e1cf634cd65a7aba99089dd6db586cf4a84036feb8fc1"
+  },
+  "steps": [
+    {
+      "command": "assimp version",
+      "exit_code": 0,
+      "stdout": "------------------------------------------------------ \nOpen Asset Import Library (\"Assimp\", https://github.com/assimp/assimp) \n -- Commandline toolchain --\n------------------------------------------------------ \n\nVersion 5.3 -debug -shared -st (GIT commit 0)\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "assimp info hello.x",
+      "exit_code": 0,
+      "stdout": "Launching asset import ...           OK\nValidating postprocessing flags ...  OK\n\n0 %\n50 %\n50 %\n51.5152 %\n53.0303 %\n54.5455 %\n56.0606 %\n57.5758 %\n59.0909 %\n60.6061 %\n62.1212 %\n63.6364 %\n65.1515 %\n66.6667 %\n68.1818 %\n69.697 %\n71.2121 %\n72.7273 %\n74.2424 %\n75.7576 %\n77.2727 %\n78.7879 %\n80.303 %\n81.8182 %\n83.3333 %\n84.8485 %\n86.3636 %\n87.8788 %\n89.3939 %\n90.9091 %\n92.4242 %\n93.9394 %\n95.4546 %\n96.9697 %\n98.4848 %\n100 %Importing file ...                   OK \n   import took approx. 0.00490 seconds\n\nMemory consumption: 3836 B\nNodes:              1\nMaximum depth       1\nMeshes:             1\nAnimations:         0\nTextures (embed.):  0\nMaterials:          1\nCameras:            0\nLights:             0\nVertices:           3\nFaces:              1\nBones:              0\nAnimation Channels: 0\nPrimitive Types:    triangles\nAverage faces/mesh  1\nAverage verts/mesh  3\nMinimum point      (0.000000 0.000000 0.000000)\nMaximum point      (1.000000 1.000000 0.000000)\nCenter point       (0.500000 0.500000 0.000000)\n\nMeshes:  (name) [vertices / bones / faces | primitive_types]\n    0 (HelloWorld): [3 / 0 / 1 | triangle]\n\nNamed Materials:\n    '' (prop) [index / bytes | texture semantic]\n        0 ($mat.shadingm): [0 / 4 | n/a]\n        1 ($clr.emissive): [0 / 12 | n/a]\n        2 ($clr.specular): [0 / 12 | n/a]\n        3 ($clr.diffuse): [0 / 12 | n/a]\n        4 ($mat.shininess): [0 / 4 | n/a]\n\nNode hierarchy:\nHelloWorld (mesh 0)\n\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Real Assimp DirectX .x importer loaded HelloWorld node and one mesh with three vertices and one face. Geometry import, no rendered image claimed.",
+  "blockers": []
+}

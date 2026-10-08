@@ -1,0 +1,10 @@
+const fs = require("node:fs");
+const assert = require("node:assert/strict");
+const carto = require("carto");
+const result = new carto.Renderer({}).renderMSS(fs.readFileSync("hello.mss", "utf8"));
+assert.ok(result.data, JSON.stringify(result.msg));
+const xml = result.data;
+assert.match(xml, /TextSymbolizer/);
+assert.match(xml, /Hello, World!/);
+assert.match(xml, /DejaVu Sans Book/);
+console.log("Mapnik TextSymbolizer: Hello, World!");

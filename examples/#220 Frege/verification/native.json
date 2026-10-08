@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:22:00.066018+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Frege compiler version",
+      "cwd": "<corpus>/examples/0220_frege",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_201_220/frege-3.25.153.jar",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "3.25.153\ncommit 2abfb8f17a795185503b537625afc0cd57e1fac9\nMerge: 067cad05 ea4fe246\nAuthor: Ingo Wechsung \nDate:   Sat Jul 11 10:33:45 2026 +0200\n\n    Merge pull request #401 from poeik/native-gen-fixes\n    \n    Native gen fixes\n",
+      "stderr": ""
+    },
+    {
+      "label": "Frege compile to Java and JVM classes",
+      "cwd": "<corpus>/examples/0220_frege",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_201_220/frege-3.25.153.jar",
+        "-d",
+        "<workspace>/work/tools_201_220/220",
+        "Hello.fr"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "calling: javac -cp <workspace>\\work\\tools_201_220\\frege-3.25.153.jar;<workspace>\\work\\tools_201_220\\220 -d <workspace>\\work\\tools_201_220\\220 -sourcepath . -encoding UTF-8 <workspace>\\work\\tools_201_220\\220/Hello.java \n"
+    },
+    {
+      "label": "Run generated Frege Hello main",
+      "cwd": "<corpus>/examples/0220_frege",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_201_220/frege-3.25.153.jar;<workspace>/work/tools_201_220/220",
+        "Hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Frege compiler and runtime JVM jar",
+    "version": "3.25.153\ncommit 2abfb8f17a795185503b537625afc0cd57e1fac9\nMerge: 067cad05 ea4fe246\nAuthor: Ingo Wechsung \nDate:   Sat Jul 11 10:33:45 2026 +0200\n\n    Merge pull request #401 from poeik/native-gen-fixes\n    \n    Native gen fixes",
+    "jar_sha256": "b20ad848df6368740c448758e9a4622592b5d2e213bb43456690538212844d1e"
+  },
+  "artifact_sha256": {
+    "examples/0220_frege/Hello.fr": "8b3bc8b9b2d315bbc5fa20ef7178ebfbee1e26ac61a9f3ec875682c92f03e29c"
+  }
+}

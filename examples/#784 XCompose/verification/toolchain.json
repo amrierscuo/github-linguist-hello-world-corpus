@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:41.635435+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native XCompose parsing and state-machine evaluation without X server or OS installation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_784_155941621246",
+        "--",
+        "python3",
+        "verify.py",
+        "<workspace>/work/tools_781_800/ubuntu/usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_784_155941621246",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "libxkbcommon0",
+    "version": "1.6.0-1build1",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon0_1.6.0-1build1_amd64.deb",
+    "sha256": "2b9caeb423efb540296a1cb20b872cc630c23908407ecb5c1c787a617622d664"
+  },
+  "artifact_sha256": {
+    "examples/0784_xcompose/verify.py": "b6b367f0163168e885b0df994659169cd61c2967b0027ece9f3ca119bada2941",
+    "examples/0784_xcompose/XCompose": "e2673764ecb8212600f74748d1ccd7635274f326986c8dddb6996ed34a1de0a0"
+  }
+}

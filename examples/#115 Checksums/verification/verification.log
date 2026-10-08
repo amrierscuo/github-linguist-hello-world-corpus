@@ -1,0 +1,45 @@
+{
+  "ordinal": 115,
+  "name": "Checksums",
+  "timestamp_utc": "2026-10-08T11:42:11.931932+00:00",
+  "platform": "Windows 11 x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "artifact_sha256": {
+    "examples/0115_checksums/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0115_checksums/SHA256SUMS": "65bbca30ff94b822a2f1569fe870db65e58f2fc8890127e1bef3baf5e58b4c12"
+  },
+  "toolchain": "GNU Coreutils sha256sum 9.4, WSL Ubuntu 24.04",
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "sha256sum",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "sha256sum (GNU coreutils) 9.4\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Ulrich Drepper, Scott Miller, and David Madore.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "${WORKSPACE_WSL}/outputs/github_linguist_hello_world_corpus/examples/0115_checksums",
+        "--exec",
+        "sha256sum",
+        "--check",
+        "SHA256SUMS"
+      ],
+      "exit_code": 0,
+      "stdout": "greeting.txt: OK\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only machine-specific absolute path prefixes are replaced; source digests, tool output, exit codes and timestamps are preserved. Raw record retained outside deliverable."
+}

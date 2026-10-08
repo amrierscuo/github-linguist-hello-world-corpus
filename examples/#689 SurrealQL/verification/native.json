@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:45.808170+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0689_surrealql",
+      "command": [
+        "where.exe",
+        "surreal"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required surreal toolchain and matching execution/format resources are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine surreal compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0689_surrealql/hello.surql": "e72a74ea508ec2fa7e0463d6077efba7502fb90d537ef74ada870e755627075b"
+  }
+}

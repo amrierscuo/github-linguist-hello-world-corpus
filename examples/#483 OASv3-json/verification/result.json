@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 483,
+  "language": "OASv3-json",
+  "timestamp_utc": "2026-10-08T13:10:39.706810+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; {'@apidevtools/swagger-parser': '13.1.0', 'ajv': '8.20.0'}",
+  "working_directory": "examples/0483_oasv3-json",
+  "source_sha256": {
+    "examples/0483_oasv3-json/hello.json": "8a95115eff3e558c4b02ecb16c34ded08069b7d5edce0096ae009fcde1968f72",
+    "examples/0483_oasv3-json/package.json": "02af28fa803a896a950d899f50bbc58f5a37142b119ef825a8882ec7b717774a",
+    "examples/0483_oasv3-json/verify.cjs": "0abc61b66cac54cb7966da230a2f0de76d1bbd56a25c9800abba2b223f63db97"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs hello.json",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Il parser originale valida e dereferenzia il documento; Ajv valida lo schema e respinge un saluto diverso. HTTP loopback consuma l’esempio del contratto. example.invalid è soltanto metadata; nessun servizio esterno viene contattato.",
+  "blockers": []
+}

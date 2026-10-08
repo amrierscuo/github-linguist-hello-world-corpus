@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:26.927840+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for required genuine toolchain",
+      "cwd": "<corpus>/examples/0451_muse",
+      "command": [
+        "where.exe",
+        "emacs"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Emacs Muse publishing engine is not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0451_muse/hello.muse": "ce241c4ee2b6e7c5fa36c9c6b6327c58dc069176cca9aad9ff3ed35834f79b3b"
+  }
+}

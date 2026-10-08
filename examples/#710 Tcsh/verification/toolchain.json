@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:52:41.816054+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Tcsh version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_710_155241813725",
+        "--",
+        "<workspace>/work/tools_701_720/ubuntu/bin/tcsh",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_710_155241813725",
+      "exit_code": 0,
+      "stdout": "tcsh 6.24.10 (Astron) 2023-04-14 (x86_64-unknown-linux) options wide,nls,dl,al,kan,sm,rh,nd,color,filec\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Tcsh parsing and execution without startup files",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_710_155241813725",
+        "--",
+        "<workspace>/work/tools_701_720/ubuntu/bin/tcsh",
+        "-f",
+        "hello.tcsh"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_710_155241813725",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "tcsh",
+    "version": "6.24.10-4build1",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/tcsh/tcsh_6.24.10-4build1_amd64.deb",
+    "sha256": "57f5e7814a058f8162149de24b977407ff6075d11615e0b31e43522c32883705"
+  },
+  "artifact_sha256": {
+    "examples/0710_tcsh/hello.tcsh": "37217a280de17626408b3e9b2406d693463f728dda7fd8de73544354a4fb01ac"
+  }
+}

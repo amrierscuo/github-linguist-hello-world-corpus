@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 500,
+  "language": "OpenAPI Specification v2",
+  "timestamp_utc": "2026-10-08T13:10:39.703765+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; {'@apidevtools/swagger-parser': '13.1.0', 'ajv': '8.20.0'}",
+  "working_directory": "examples/0500_openapi-specification-v2",
+  "source_sha256": {
+    "examples/0500_openapi-specification-v2/hello.yaml": "69f7c1b92a9e78cb976d08dde918a7c3ba0ed18a332456891fd80e7e60c83d9b",
+    "examples/0500_openapi-specification-v2/package.json": "02af28fa803a896a950d899f50bbc58f5a37142b119ef825a8882ec7b717774a",
+    "examples/0500_openapi-specification-v2/verify.cjs": "0abc61b66cac54cb7966da230a2f0de76d1bbd56a25c9800abba2b223f63db97"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs hello.yaml",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Il parser originale valida e dereferenzia il documento; Ajv valida lo schema e respinge un saluto diverso. HTTP loopback consuma l’esempio del contratto. example.invalid è soltanto metadata; nessun servizio esterno viene contattato.",
+  "blockers": []
+}

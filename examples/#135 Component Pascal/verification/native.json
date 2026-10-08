@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:10.867265+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Availability probe for BlackBox.exe",
+      "cwd": "<corpus>/examples/0135_component-pascal",
+      "command": [
+        "where.exe",
+        "BlackBox.exe"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "BlackBox Component Builder with StdLog library is unavailable; module compilation/invocation is pending."
+  ],
+  "toolchain": {
+    "name": "Required native toolchain unavailable or not configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0135_component-pascal/Hello.cp": "62422c43b8fbd5a25120b7629d67814ae414e89f1d2d327f2ae061d22a3e4fe7"
+  }
+}

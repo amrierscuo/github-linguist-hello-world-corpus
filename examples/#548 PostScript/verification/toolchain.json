@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:18.446268+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Ghostscript version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_548_152618433459",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_541_560/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GS_LIB=<workspace>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/Resource/Init:<workspace>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/lib",
+        "<workspace>/work/tools_541_560/ubuntu/usr/bin/gs",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_548_152618433459",
+      "exit_code": 0,
+      "stdout": "10.02.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native PostScript interpreter execution without display",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_548_152618433459",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_541_560/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GS_LIB=<workspace>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/Resource/Init:<workspace>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/lib",
+        "<workspace>/work/tools_541_560/ubuntu/usr/bin/gs",
+        "-q",
+        "-dNODISPLAY",
+        "-dBATCH",
+        "-dNOPAUSE",
+        "hello.ps"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_548_152618433459",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Ghostscript interpreter",
+    "packages": [
+      {
+        "name": "ghostscript",
+        "version": "10.02.1~dfsg1-0ubuntu7.9",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_10.02.1~dfsg1-0ubuntu7.9_amd64.deb",
+        "sha256": "eaa43b9e3ecdae3aa5b6fcfed5a4ca6a12275dd5d6a0c83b0d3360c7c2f9d530"
+      },
+      {
+        "name": "libgs10",
+        "version": "10.02.1~dfsg1-0ubuntu7.9",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/libgs10_10.02.1~dfsg1-0ubuntu7.9_amd64.deb",
+        "sha256": "7002777e60dbd922aa7f1159f16bbf4aa1fb6cafa4d2967831e72c651accccc6"
+      },
+      {
+        "name": "libgs10-common",
+        "version": "10.02.1~dfsg1-0ubuntu7.9",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/libgs10-common_10.02.1~dfsg1-0ubuntu7.9_all.deb",
+        "sha256": "26d4f70b2ce6c1aceb745c0931e4d9d1b39bd5a089aa2893bf756be833d53792"
+      },
+      {
+        "name": "libgs-common",
+        "version": "10.02.1~dfsg1-0ubuntu7.9",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/libgs-common_10.02.1~dfsg1-0ubuntu7.9_all.deb",
+        "sha256": "c45d0534100c2f74435a21560cc5eff6a6c26bc2757d26be8912d2c0d372f12a"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0548_postscript/hello.ps": "d06f545febc32b1aea2211ba5611662e256884eeeb80a2744702f880daa8a787"
+  }
+}

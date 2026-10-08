@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.586910+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Fantom version",
+      "cwd": "<corpus>/examples/0206_fantom",
+      "command": [
+        "<java>",
+        "-Dfan.home=<workspace>/work/tools_201_220/fantom/fantom-1.0.83",
+        "-cp",
+        "<workspace>/work/tools_201_220/fantom/fantom-1.0.83/lib/java/sys.jar",
+        "fanx.tools.Fan",
+        "-version"
+      ],
+      "exit_code": 3,
+      "stdout": "Fantom Launcher\nCopyright (c) 2006-2025, Brian Frank and Andy Frank\nLicensed under the Academic Free License version 3.0\n\nJava Runtime:\n  java.version:    21.0.12.1\n  java.vm.name:    OpenJDK 64-Bit Server VM\n  java.vm.vendor:  Microsoft\n  java.vm.version: 21.0.12.1+1-LTS\n  java.home:       C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\n  fan.platform:    win32-x86_64\n  fan.version:     1.0.83\n  fan.env:         sys::BootEnv\n  fan.home:        <workspace>\\work\\tools_201_220\\fantom\\fantom-1.0.83\n\nEnv Path:\n  <workspace>\\work\\tools_201_220\\fantom\\fantom-1.0.83 (work) (home)\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Fantom compile and script run",
+      "cwd": "<corpus>/examples/0206_fantom",
+      "command": [
+        "<java>",
+        "-Dfan.home=<workspace>/work/tools_201_220/fantom/fantom-1.0.83",
+        "-cp",
+        "<workspace>/work/tools_201_220/fantom/fantom-1.0.83/lib/java/sys.jar",
+        "fanx.tools.Fan",
+        "hello.fan"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Fantom JVM distribution",
+    "version": "1.0.83",
+    "version_output": "Fantom Launcher\nCopyright (c) 2006-2025, Brian Frank and Andy Frank\nLicensed under the Academic Free License version 3.0\n\nJava Runtime:\n  java.version:    21.0.12.1\n  java.vm.name:    OpenJDK 64-Bit Server VM\n  java.vm.vendor:  Microsoft\n  java.vm.version: 21.0.12.1+1-LTS\n  java.home:       C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\n  fan.platform:    win32-x86_64\n  fan.version:     1.0.83\n  fan.env:         sys::BootEnv\n  fan.home:        <workspace>\\work\\tools_201_220\\fantom\\fantom-1.0.83\n\nEnv Path:\n  <workspace>\\work\\tools_201_220\\fantom\\fantom-1.0.83 (work) (home)\n\n",
+    "sys_jar_sha256": "f942159803c9b4c53b6c4924f09a21ba686aa5bc0eff1a97867472222d453788"
+  },
+  "artifact_sha256": {
+    "examples/0206_fantom/hello.fan": "26d5b094bdf10e0f4b41e1780b303c5413af498a72ede95f5b39719de8074c9b"
+  }
+}

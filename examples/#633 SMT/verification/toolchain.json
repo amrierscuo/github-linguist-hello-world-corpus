@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:44.189232+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Z3 version",
+      "command": [
+        "<workspace>\\work\\tools_621_640\\python\\bin\\z3.exe",
+        "-version"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_633_154444181410",
+      "exit_code": 0,
+      "stdout": "Z3 version 5.1.0 - 64 bit\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native SMT-LIB parsing, string solving and model evaluation",
+      "command": [
+        "<workspace>\\work\\tools_621_640\\python\\bin\\z3.exe",
+        "hello.smt2"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_633_154444181410",
+      "exit_code": 0,
+      "stdout": "sat\n((greeting \"Hello, World!\"))\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "z3-solver",
+    "version": "5.1.0.0",
+    "metadata_sha256": "b86aec419a41a2aa44e790eecfbfb1a970e2adb346dc24e6c6db79c89c0ccac2",
+    "source": "https://pypi.org/project/z3-solver/"
+  },
+  "artifact_sha256": {
+    "examples/0633_smt/hello.smt2": "7b5485088413b539add98ddaf289a504364c8612a423494286076f39a03ffef9"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "z3-solver",
+        "old_version": "5.1.0.0.dist",
+        "version": "5.1.0.0",
+        "original_metadata_sha256": "b86aec419a41a2aa44e790eecfbfb1a970e2adb346dc24e6c6db79c89c0ccac2",
+        "original_metadata_file": "work/tools_621_640/python/z3_solver-5.1.0.0.dist-info/METADATA"
+      }
+    ]
+  }
+}

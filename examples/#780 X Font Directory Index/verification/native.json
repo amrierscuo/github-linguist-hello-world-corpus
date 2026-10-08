@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:24.071955+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Xvfb version probe",
+      "cwd": "<corpus>/examples/0780_x-font-directory-index",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "Xvfb",
+        "-version"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Unrecognized option: -version\nuse: X [:<display>] [option]\n-a #                   default pointer acceleration (factor)\n-ac                    disable access control restrictions\n-audit int             set audit trail level\n-auth file             select authorization file\n-br                    create root window with black background\n+bs                    enable any backing store support\n-bs                    disable any backing store support\n+byteswappedclients    Allow clients with endianess different to that of the server\n-byteswappedclients    Prohibit clients with endianess different to that of the server\n-c                     turns off key-click\nc #                    key-click volume (0-100)\n-cc int                default color visual class\n-nocursor              disable the cursor\n-core                  generate core dump on fatal error\n-displayfd fd          file descriptor to write display number to when ready to connect\n-dpi int               screen resolution in dots per inch\n-dpms                  disables VESA DPMS monitor control\n-deferglyphs [none|all|16] defer loading of [no|all|16-bit] glyphs\n-f #                   bell base (0-100)\n-fakescreenfps #       fake screen default fps (1-600)\n-fp string             default font path\n-help                  prints message with these options\n+iglx                  Allow creating indirect GLX contexts\n-iglx                  Prohibit creating indirect GLX contexts (default)\n-I                     ignore all remaining arguments\n-ld int                limit data space to N Kb\n-lf int                limit number of open files to N\n-ls int                limit stack space to N Kb\n-nolock                disable the locking mechanism\n-maxclients n          set maximum number of clients (power of two)\n-nolisten string       don't listen on protocol\n-listen string         listen on protocol\n-noreset               don't reset after last client exists\n-background [none]     create root window with no background\n-reset                 reset after last client exists\n-p #                   screen-saver pattern duration (minutes)\n-pn                    accept failure to listen on all ports\n-nopn                  reject failure to listen on all ports\n-r                     turns off auto-repeat\nr                      turns on auto-repeat \n-render [default|mono|gray|color] set render color alloc policy\n-retro                 start with classic stipple and cursor\n-s #                   screen-saver timeout (minutes)\n-seat string           seat to run on\n-t #                   default pointer threshold (pixels/t)\n-terminate [delay]     terminate at server reset (optional delay in sec)\n-tst                   disable testing extensions\nttyxx                  server started from init on /dev/ttyxx\nv                      video blanking for screen-saver\n-v                     screen-saver without video blanking\n-wr                    create root window with white background\n-maxbigreqsize         set maximal bigrequest size \n+xinerama              Enable XINERAMA extension\n-xinerama              Disable XINERAMA extension\n-dumbSched             Disable smart scheduling and threaded input, enable old behavior\n-schedInterval int     Set scheduler interval in msec\n-sigstop               Enable SIGSTOP based startup\n+extension name        Enable extension\n-extension name        Disable extension\n Only the following extensions can be run-time enabled/disabled:\n\tGeneric Event Extension\n\tMIT-SHM\n\tXTEST\n\tSECURITY\n\tXINERAMA\n\tXFIXES\n\tRENDER\n\tRANDR\n\tCOMPOSITE\n\tDAMAGE\n\tMIT-SCREEN-SAVER\n\tDOUBLE-BUFFER\n\tRECORD\n\tDPMS\n\tX-Resource\n\tXVideo\n\tXVideo-MotionCompensation\n\tSELinux\n\tGLX\n-query host-name       contact named host for XDMCP\n-broadcast             broadcast for XDMCP\n-multicast [addr [hops]] IPv6 multicast for XDMCP\n-indirect host-name    contact named host for indirect XDMCP\n-port port-num         UDP port number to send messages to\n-from local-address    specify the local address to connect from\n-once                  Terminate server after one session\n-class display-class   specify display class to send in manage\n-cookie xdm-auth-bits  specify the magic cookie for XDMCP\n-displayID display-id  manufacturer display ID for request\n[+-]accessx [ timeout [ timeout_mask [ feedback [ options_mask] ] ] ]\n                       enable/disable accessx key sequences\n-ardelay               set XKB autorepeat delay\n-arinterval            set XKB autorepeat interval\n-screen scrn WxHxD     set screen's width, height, depth\n-pixdepths list-of-int support given pixmap depths\n+/-render\t\t   turn on/off RENDER extension support(default on)\n-linebias n            adjust thin line pixelization\n-blackpixel n          pixel value for black\n-whitepixel n          pixel value for white\n-fbdir directory       put framebuffers in mmap'ed files in directory\n-shmem                 put framebuffers in shared memory\n(EE) \nFatal server error:\n(EE) Unrecognized option: -version\n(EE) \n"
+    },
+    {
+      "label": "installed package versions",
+      "cwd": "<corpus>/examples/0780_x-font-directory-index",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "dpkg-query",
+        "-W",
+        "-f=${Version}\n",
+        "xvfb",
+        "xfonts-utils",
+        "x11-utils"
+      ],
+      "exit_code": 0,
+      "stdout": "7.7+6build2\n1:7.7+6build3\n2:21.1.12-1ubuntu1.6\n",
+      "stderr": ""
+    },
+    {
+      "label": "authentic X font index generation and headless server alias lookup",
+      "cwd": "<corpus>/examples/0780_x-font-directory-index",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0780_x-font-directory-index",
+        "--exec",
+        "python3",
+        "<corpus>/examples/0780_x-font-directory-index/verify.py",
+        "<workspace>/work/tools_761_780/780/fonts"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"command\": [\"mkfontdir\", \"<workspace>/work/tools_761_780/780/fonts\"], \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"xlsfonts\", \"-ll\", \"-fn\", \"Hello, World!\"], \"exit_code\": 0, \"stdout\": \"name:  hello, world!\\n  direction:\\t\\tleft to right\\n  indexing:\\t\\tlinear\\n  rows:\\t\\t\\t0x00 thru 0x00 (0 thru 0)\\n  columns:\\t\\t0x20 thru 0x20 (32 thru 32)\\n  all chars exist:\\tyes\\n  default char:\\t\\t0x0020 (32)\\n  ascent:\\t\\t8\\n  descent:\\t\\t0\\n  font type:\\t\\tCharacter Cell\\n  bounds:\\t\\twidth left  right  asc  desc   attr   keysym\\n\\tmin\\t\\t   8     0     0     0     0  0x0000\\n\\tmax\\t\\t   8     0     0     0     0  0x0000\\n  properties:\\t\\t9\\n      FAMILY_NAME           Hello, World!\\n      POINT_SIZE            80\\n      FONT                  -corpus-greeting-medium-r-normal--8-80-75-75-c-80-iso10646-1\\n      WEIGHT                10\\n      RESOLUTION            103\\n      RESOLUTION_X          75\\n      RESOLUTION_Y          75\\n      X_HEIGHT              0\\n      QUAD_WIDTH            8\\n\\n\", \"stderr\": \"\"}\nPASS: authentic X font index generation and Xvfb font alias/property resolution\n{\"xvfb_exit_code\": 0, \"stdout\": \"\", \"stderr\": \"_XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777\\n_XSERVTransSocketCreateListener: failed to bind listener\\n_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed\\n_XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix\\nThe XKEYBOARD keymap compiler (xkbcomp) reports:\\n> Warning:          Could not resolve keysym XF86CameraAccessEnable\\n> Warning:          Could not resolve keysym XF86CameraAccessDisable\\n> Warning:          Could not resolve keysym XF86CameraAccessToggle\\n> Warning:          Could not resolve keysym XF86NextElement\\n> Warning:          Could not resolve keysym XF86PreviousElement\\n> Warning:          Could not resolve keysym XF86AutopilotEngageToggle\\n> Warning:          Could not resolve keysym XF86MarkWaypoint\\n> Warning:          Could not resolve keysym XF86Sos\\n> Warning:          Could not resolve keysym XF86NavChart\\n> Warning:          Could not resolve keysym XF86FishingChart\\n> Warning:          Could not resolve keysym XF86SingleRangeRadar\\n> Warning:          Could not resolve keysym XF86DualRangeRadar\\n> Warning:          Could not resolve keysym XF86RadarOverlay\\n> Warning:          Could not resolve keysym XF86TraditionalSonar\\n> Warning:          Could not resolve keysym XF86ClearvuSonar\\n> Warning:          Could not resolve keysym XF86SidevuSonar\\n> Warning:          Could not resolve keysym XF86NavInfo\\nErrors from xkbcomp are not fatal to the X server\\n\"}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "mkfontdir / Xvfb / xlsfonts",
+    "version": "7.7+6build2\n1:7.7+6build3\n2:21.1.12-1ubuntu1.6"
+  },
+  "artifact_sha256": {
+    "examples/0780_x-font-directory-index/fonts.alias": "e6d683501ca7a0cc1f0a3d15cb5fc605bb5a07b9d46e77008744b7159e502c65",
+    "examples/0780_x-font-directory-index/fonts.dir": "88c503ced7227fe7e1340796edcf93923a9abf09fc9b56e74240cdef9bb8abe1",
+    "examples/0780_x-font-directory-index/hello.bdf": "7dc9cb985bd2f957d69ae32f34cca591cab82c206c18fad744c497cbf591f24a",
+    "examples/0780_x-font-directory-index/verify.py": "1df612cbe2870ab05d4e33272ce991693c3eead5941523f8cf29b11a00ee06d1"
+  }
+}

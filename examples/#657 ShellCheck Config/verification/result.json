@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 657,
+  "language": "ShellCheck Config",
+  "timestamp_utc": "2026-10-08T13:23:05.420327+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "ShellCheck - shell script analysis tool\nversion: 0.9.0\nlicense: GNU General Public License, version 3\nwebsite: https://www.shellcheck.net",
+  "working_directory": "examples/0657_shellcheck-config",
+  "source_sha256": {
+    "examples/0657_shellcheck-config/.shellcheckrc": "a9afa061ae1e4c0fadf73cfeb9a9ae3d2abc82b8ff211cf87b0c34593181af80",
+    "examples/0657_shellcheck-config/arrays.sh": "6ec0932dc3f2dc9f4e5ed3a692b2a5f5fa7edcec643d09bc59660834561226fc",
+    "examples/0657_shellcheck-config/hello.sh": "cdddfa048067403dd23e05348c0991517883c440c076cb61db1f5916c86f7c50"
+  },
+  "steps": [
+    {
+      "command": "shellcheck --version",
+      "exit_code": 0,
+      "stdout": "ShellCheck - shell script analysis tool\nversion: 0.9.0\nlicense: GNU General Public License, version 3\nwebsite: https://www.shellcheck.net\n",
+      "stderr": ""
+    },
+    {
+      "command": "shellcheck hello.sh",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "shellcheck arrays.sh (expected POSIX-shell errors)",
+      "exit_code": 1,
+      "stdout": "\nIn arrays.sh line 2:\nitems=(Hello World)\n      ^-----------^ SC3030 (warning): In POSIX sh, arrays are undefined.\n\n\nIn arrays.sh line 3:\nprintf \"%s\\n\" \"${items[0]}\"\n               ^---------^ SC3054 (warning): In POSIX sh, array references are undefined.\n\nFor more information:\n  https://www.shellcheck.net/wiki/SC3030 -- In POSIX sh, arrays are undefined.\n  https://www.shellcheck.net/wiki/SC3054 -- In POSIX sh, array references are...\n",
+      "stderr": ""
+    },
+    {
+      "command": "shellcheck --shell=bash arrays.sh",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "sh hello.sh",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native ShellCheck loads .shellcheckrc: local shell=sh flags Bash array syntax; explicit shell=bash override passes. Valid POSIX greeting script executes.",
+  "blockers": []
+}

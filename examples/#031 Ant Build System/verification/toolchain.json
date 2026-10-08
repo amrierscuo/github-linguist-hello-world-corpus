@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T10:58:21.290573+00:00",
+  "platform": "Windows x64",
+  "commands": [
+    {
+      "label": "JVM version",
+      "cwd": "examples/0031_ant-build-system",
+      "command": [
+        "<java>",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "Ant version",
+      "cwd": "examples/0031_ant-build-system",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>\\work\\tools_27_33\\apache-ant-1.10.18\\lib\\ant-launcher.jar",
+        "org.apache.tools.ant.launch.Launcher",
+        "-nouserlib",
+        "-noclasspath",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "Apache Ant(TM) version 1.10.18 compiled on September 3 2026\n",
+      "stderr": ""
+    },
+    {
+      "label": "Ant project parse",
+      "cwd": "examples/0031_ant-build-system",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>\\work\\tools_27_33\\apache-ant-1.10.18\\lib\\ant-launcher.jar",
+        "org.apache.tools.ant.launch.Launcher",
+        "-nouserlib",
+        "-noclasspath",
+        "-f",
+        "build.xml",
+        "-projecthelp"
+      ],
+      "exit_code": 0,
+      "stdout": "Buildfile: <workspace>\\outputs\\github_linguist_hello_world_corpus\\examples\\0031_ant-build-system\\build.xml\n\nMain targets:\n\nOther targets:\n\n hello\nDefault target: hello\n",
+      "stderr": ""
+    },
+    {
+      "label": "Ant target execution",
+      "cwd": "examples/0031_ant-build-system",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>\\work\\tools_27_33\\apache-ant-1.10.18\\lib\\ant-launcher.jar",
+        "org.apache.tools.ant.launch.Launcher",
+        "-nouserlib",
+        "-noclasspath",
+        "-f",
+        "build.xml",
+        "-silent",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Buildfile: <workspace>\\outputs\\github_linguist_hello_world_corpus\\examples\\0031_ant-build-system\\build.xml\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0031_ant-build-system/build.xml": "696c0d1a2ca905103bc6e661935442e3351a3aeb4c0e63d5367476b112cb9e7a"
+  },
+  "path_normalization": "Absolute workspace, user-home and tool paths replaced by placeholders. Source bytes and command output otherwise unchanged.",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Apache Ant official binary distribution",
+    "version": "Apache Ant(TM) version 1.10.18 compiled on September 3 2026",
+    "archive_sha256": "d3d2009bc815e8fe4808e3af2f2aa7019cd666a26d112a3d9ea5a45345edf236",
+    "distribution_sha512": "f86d7b263bc7c6903a91532943f1c8ecccc17dd999851a796617e79795908d7a666cbe999b9ecf06735cc7e830f50dca9f49b37bb5f6f02a0a3803cd22b558b0",
+    "published_sha512": "f86d7b263bc7c6903a91532943f1c8ecccc17dd999851a796617e79795908d7a666cbe999b9ecf06735cc7e830f50dca9f49b37bb5f6f02a0a3803cd22b558b0"
+  }
+}

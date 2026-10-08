@@ -1,0 +1,36 @@
+# 0083 C — variante `.idc`
+
+Ruolo: Script IDC per IDA: API Message e entry point main del runtime IDC.
+
+Tipo variante: **adapted**. Modello di partenza: examples/#083 C/hello.c; contenuto adattato/originale per questo suffisso.
+
+Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+
+## Comando o procedura di verifica
+
+Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
+indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
+parte del deliverable.
+
+```text
+IDA in ambiente di prova: eseguire hello.idc con il motore IDC e leggere il messaggio nella console.
+```
+
+Risultato atteso: Hello, World!
+
+## Stato
+
+Artefatto: **creato**.
+Sintassi: **non verificata**. Semantica: **non verificata**.
+Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
+Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+
+Requisiti residui:
+- La variante non è ancora stata controllata con la toolchain nativa indicata.
+
+## Fonti primarie
+
+- [https://gcc.gnu.org/onlinedocs/gcc/Standards.html](https://gcc.gnu.org/onlinedocs/gcc/Standards.html)
+- [https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html](https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html)
+- [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)
+- [https://docs.hex-rays.com/developer-guide/idc](https://docs.hex-rays.com/developer-guide/idc)

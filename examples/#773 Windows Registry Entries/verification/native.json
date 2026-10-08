@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:17.173362+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "availability only: Windows registry utility",
+      "cwd": "<corpus>/examples/0773_windows-registry-entries",
+      "command": [
+        "reg",
+        "/?"
+      ],
+      "exit_code": 0,
+      "stdout": "\nREG Operation [Parameter List]\n\n\n\n  Operation  [ QUERY   | ADD    | DELETE  | COPY    |\n\n               SAVE    | LOAD   | UNLOAD  | RESTORE |\n\n               COMPARE | EXPORT | IMPORT  | FLAGS ]\n\n\n\nReturn Code: (Except for REG COMPARE)\n\n\n\n  0 - Successful\n\n  1 - Failed\n\n\n\nFor help on a specific operation type:\n\n\n\n  REG Operation /?\n\n\n\nExamples:\n\n\n\n  REG QUERY /?\n\n  REG ADD /?\n\n  REG DELETE /?\n\n  REG COPY /?\n\n  REG SAVE /?\n\n  REG RESTORE /?\n\n  REG LOAD /?\n\n  REG UNLOAD /?\n\n  REG COMPARE /?\n\n  REG EXPORT /?\n\n  REG IMPORT /?\n\n  REG FLAGS /?\n\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Importazione nativa richiede un hive Windows usa e getta; nessuna modifica al registro corrente eseguita."
+  ],
+  "toolchain": {
+    "name": "Windows .reg import parser in disposable Windows registry hive",
+    "version": "non disponibile / non verificata"
+  },
+  "artifact_sha256": {
+    "examples/0773_windows-registry-entries/hello.reg": "0fba7ab574c108af3a2f969a429a4162e50b0261fb2decc60c155ff7acd2bc5a"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:19.421773+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GCC version",
+      "cwd": "<corpus>/examples/0778_wren",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "compile official Wren VM with original embedding host",
+      "cwd": "<corpus>/examples/0778_wren",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "gcc",
+        "-std=c99",
+        "-I<workspace>/work/tools_761_780/wren/wren-0.4.0/src/include",
+        "-I<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm",
+        "-I<workspace>/work/tools_761_780/wren/wren-0.4.0/src/optional",
+        "<corpus>/examples/0778_wren/host.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_compiler.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_core.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_debug.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_primitive.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_utils.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_value.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/vm/wren_vm.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/optional/wren_opt_meta.c",
+        "<workspace>/work/tools_761_780/wren/wren-0.4.0/src/optional/wren_opt_random.c",
+        "-lm",
+        "-o",
+        "<workspace>/work/tools_761_780/778/wrenhost"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "official Wren VM interprets source",
+      "cwd": "<corpus>/examples/0778_wren",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_761_780/778/wrenhost",
+        "<corpus>/examples/0778_wren/hello.wren"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original Wren 0.4.0 C VM / GCC",
+    "version": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "compiled_artifact_sha256": {
+    "<work>/778/wrenhost": "3798f863830db907e0817dbdcae46c74befa3a492f78a7965f8d4a256cb88c6c"
+  },
+  "artifact_sha256": {
+    "examples/0778_wren/hello.wren": "595826db9db92bc6fbcc7ac2a49d2077d6e201b757453ed152f179295f6b7c71",
+    "examples/0778_wren/host.c": "7475e9a87ad6520aeda72f837ba13983a77198debf19493dd6b63f0bf0259fbe"
+  }
+}

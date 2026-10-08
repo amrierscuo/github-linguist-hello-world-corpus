@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:45.208537+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Koka version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_363_150645199827",
+        "--",
+        "<workspace>/work/tools_361_380/koka.tar/bin/koka",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_363_150645199827",
+      "exit_code": 0,
+      "stdout": "Koka 3.2.9, 05:27:08 Sep 18 2026 (ghc release version)\nversion: 3.2.9\nbin    : <workspace>/work/tools_361_380/koka.tar/bin\nlib    : <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9\nshare  : <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9\noutput : .koka/v3.2.9-ubuntu/gcc-debug-7bc3ea\ncc     : /usr/bin/gcc\nflags  : 7bc3ea\nCopyright 2019-2024, Microsoft Research, Daan Leijen, and others.\nThis program is free software; see the source for copying conditions.\nThis program is distributed in the hope that it will be useful,\nbut without any warranty; without even the implied warranty\nof merchantability or fitness for a particular purpose.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Koka compiler",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_363_150645199827",
+        "--",
+        "<workspace>/work/tools_361_380/koka.tar/bin/koka",
+        "--builddir=<workspace>/work/tools_361_380/verify_363_150645199827/build",
+        "-o",
+        "<workspace>/work/tools_361_380/verify_363_150645199827/hello",
+        "hello.kk"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_363_150645199827",
+      "exit_code": 0,
+      "stdout": "load    : std/core from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core.kki\nload    : std/core/exn from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_exn.kki\nload    : std/core/order from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_order.kki\nload    : std/core/bool from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_bool.kki\nload    : std/core/types from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_types.kki\nload    : std/core/unsafe from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_unsafe.kki\nload    : std/core/hnd from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_hnd.kki\nload    : std/core/undiv from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_undiv.kki\nload    : std/core/int from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_int.kki\nload    : std/core/char from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_char.kki\nload    : std/core/bslice from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_bslice.kki\nload    : std/core/vector from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_vector.kki\nload    : std/core/bytes from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_bytes.kki\nload    : std/core/sslice from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_sslice.kki\nload    : std/core/string from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_string.kki\nload    : std/core/list from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_list.kki\nload    : std/core/result from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_result.kki\nload    : std/core/maybe from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_maybe.kki\nload    : std/core/maybe2 from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_maybe2.kki\nload    : std/core/show from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_show.kki\nload    : std/core/debug from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_debug.kki\nload    : std/core/tuple from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_tuple.kki\nload    : std/core/either from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_either.kki\nload    : std/core/delayed from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_delayed.kki\nload    : std/core/console from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_console.kki\nload    : std/core/lazy from: <workspace>/work/tools_361_380/koka.tar/lib/koka/v3.2.9/gcc-debug/std_core_lazy.kki\nparse   : .../hello.kk\ncheck   : hello\nlinking : hello/@main\ncompile : kklib from: <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib\ncreated : <workspace>/work/tools_361_380/verify_363_150645199827/hello\n",
+      "stderr": "vfs: [\"/@virtual/hello/@main.kk\"]\nvfs: [\"/@virtual/hello/@main.kk\"]\nIn file included from <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/static.c:17,\n                 from <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/all.c:23:\nIn function ‘mi_free_nonnull’,\n    inlined from ‘_mi_free_subproc_safe’ at <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:326:5:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:37: warning: ‘page’ may be used uninitialized [-Wmaybe-uninitialized]\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |                                     ^\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/mimalloc/include/mimalloc/internal.h:372:31: note: in definition of macro ‘mi_assert’\n  372 | #define mi_assert(expr)     ((expr) ? (void)0 : _mi_assert_fail(#expr,__FILE__,__LINE__,__func__))\n      |                               ^~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:3: note: in expansion of macro ‘mi_assert_internal’\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |   ^~~~~~~~~~~~~~~~~~\nIn file included from <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/alloc.c:21,\n                 from <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/static.c:23:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c: In function ‘_mi_free_subproc_safe’:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:323:14: note: ‘page’ was declared here\n  323 |   mi_page_t* page;\n      |              ^~~~\nIn function ‘mi_free_nonnull’,\n    inlined from ‘mi_free’ at <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:292:5:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:37: warning: ‘page’ may be used uninitialized [-Wmaybe-uninitialized]\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |                                     ^\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/mimalloc/include/mimalloc/internal.h:372:31: note: in definition of macro ‘mi_assert’\n  372 | #define mi_assert(expr)     ((expr) ? (void)0 : _mi_assert_fail(#expr,__FILE__,__LINE__,__func__))\n      |                               ^~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:3: note: in expansion of macro ‘mi_assert_internal’\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |   ^~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c: In function ‘mi_free’:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:290:14: note: ‘page’ was declared here\n  290 |   mi_page_t* page;\n      |              ^~~~\nIn function ‘mi_free_nonnull’,\n    inlined from ‘mi_ufree’ at <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:299:5:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:37: warning: ‘page’ may be used uninitialized [-Wmaybe-uninitialized]\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |                                     ^\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/mimalloc/include/mimalloc/internal.h:372:31: note: in definition of macro ‘mi_assert’\n  372 | #define mi_assert(expr)     ((expr) ? (void)0 : _mi_assert_fail(#expr,__FILE__,__LINE__,__func__))\n      |                               ^~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:3: note: in expansion of macro ‘mi_assert_internal’\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |   ^~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c: In function ‘mi_ufree’:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:297:14: note: ‘page’ was declared here\n  297 |   mi_page_t* page;\n      |              ^~~~\nIn function ‘mi_free_nonnull’,\n    inlined from ‘mi_free_small’ at <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:309:5:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:37: warning: ‘page’ may be used uninitialized [-Wmaybe-uninitialized]\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |                                     ^\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/mimalloc/include/mimalloc/internal.h:372:31: note: in definition of macro ‘mi_assert’\n  372 | #define mi_assert(expr)     ((expr) ? (void)0 : _mi_assert_fail(#expr,__FILE__,__LINE__,__func__))\n      |                               ^~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:3: note: in expansion of macro ‘mi_assert_internal’\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |   ^~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c: In function ‘mi_free_small’:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:307:14: note: ‘page’ was declared here\n  307 |   mi_page_t* page;\n      |              ^~~~\nIn function ‘mi_free_nonnull’,\n    inlined from ‘mi_free_small_nonnull’ at <workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:317:5:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/mimalloc/include/mimalloc/internal.h:372:47: warning: ‘page’ may be used uninitialized [-Wmaybe-uninitialized]\n  372 | #define mi_assert(expr)     ((expr) ? (void)0 : _mi_assert_fail(#expr,__FILE__,__LINE__,__func__))\n      |                             ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/mimalloc/include/mimalloc/internal.h:378:31: note: in expansion of macro ‘mi_assert’\n  378 | #define mi_assert_internal    mi_assert\n      |                               ^~~~~~~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:263:3: note: in expansion of macro ‘mi_assert_internal’\n  263 |   mi_assert_internal(p!=NULL && page!=NULL);\n      |   ^~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c: In function ‘mi_free_small_nonnull’:\n<workspace>/work/tools_361_380/koka.tar/share/koka/v3.2.9/kklib/src/../mimalloc/src/free.c:315:14: note: ‘page’ was declared here\n  315 |   mi_page_t* page;\n      |              ^~~~\n"
+    },
+    {
+      "label": "Run compiled Koka greeting",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_363_150645199827",
+        "--",
+        "<workspace>/work/tools_361_380/verify_363_150645199827/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_363_150645199827",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Koka compiler",
+    "distribution": {
+      "file": "koka.tar.gz",
+      "url": "https://github.com/koka-lang/koka/releases/download/v3.2.9/koka-v3.2.9-linux-x64.tar.gz",
+      "sha256": "310459831a7c6fa6a0cd8e0e02d6b5b3b36441d5e7ce24168bda016cd2e95eee"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0363_koka/hello.kk": "82c76b96f0a496799e274650c9c69c4ebb7efd64a81fcd4ecf6d31843a6b07c7"
+  }
+}

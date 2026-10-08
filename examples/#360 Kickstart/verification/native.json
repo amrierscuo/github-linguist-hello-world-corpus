@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:10.895919+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Parse Kickstart commands/script as data; never execute installation or script",
+      "cwd": "<corpus>/examples/0360_kickstart",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.ks"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: authentic Pykickstart F42 parser; post-script preserved as data, never executed\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original Pykickstart Kickstart parser",
+    "version": "3.68; Fedora F42 handler"
+  },
+  "semantic_scope": "Configuration and parsed post-script data; installation and post-script execution are not performed.",
+  "artifact_sha256": {
+    "examples/0360_kickstart/hello.ks": "d513bc81e033b3feac39bb4b1f3783dc6f4f36eeb22530c1ddf045e0a889c6a2",
+    "examples/0360_kickstart/verify.py": "e0604c8f375cd2e8e3ad2d34438d1b880c7f9c76b4a83b93e3f44e6b3fc4c243"
+  }
+}

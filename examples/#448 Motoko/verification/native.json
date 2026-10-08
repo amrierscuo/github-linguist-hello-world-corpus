@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:04:05.030365+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Actual Motoko typecheck and actor query interpreter",
+      "cwd": "<corpus>/examples/0448_motoko",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_441_460/node"
+      ],
+      "exit_code": 0,
+      "stdout": "CHECK: []\n{\"stdout\":\"\\\"Hello, World!\\\" : Text\\n\",\"stderr\":\"\",\"result\":{\"error\":null}}\nPASS: actual Motoko compiler check and actor-query interpreter with Reader control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic Motoko compiler and actor interpreter via official-linked Node bindings",
+    "version": "node-motoko 5.0.0"
+  },
+  "semantic_scope": "Local official Motoko interpreter executes actor query and assertion; no canister deployment or network interaction.",
+  "artifact_sha256": {
+    "examples/0448_motoko/hello.mo": "f22fe917c7fec7ebf90a0ee40268975896395ff143e46b50e918219e348ee5c2",
+    "examples/0448_motoko/verify.cjs": "67b22417b5a1c78e297575c3cc59d88fa4d2914d144d9f47fc8b54954b5f0a13"
+  }
+}

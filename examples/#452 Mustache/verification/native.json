@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:27.084642+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Mustache engine version",
+      "cwd": "<corpus>/examples/0452_mustache",
+      "command": [
+        "<python>",
+        "-c",
+        "import pystache;print(pystache.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "0.6.8\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse/render original Mustache template and escaping control",
+      "cwd": "<corpus>/examples/0452_mustache",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.mustache"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing Mustache renderer, context value and escaping control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing Pystache Mustache compiler/renderer",
+    "version": "0.6.8"
+  },
+  "artifact_sha256": {
+    "examples/0452_mustache/hello.mustache": "25361d56fa848703cce466c45b1ef87d0394d1a46a1a6138f7cca9531a682bb6",
+    "examples/0452_mustache/verify.py": "95ded4975b48bb7fbb7dcc899a635fbc04af7d865d9e789969d829089be1c327"
+  }
+}

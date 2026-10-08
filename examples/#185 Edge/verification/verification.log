@@ -1,0 +1,34 @@
+{
+  "ordinal": 185,
+  "name": "Edge",
+  "timestamp_utc": "2026-10-08T12:07:18.658935+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Node.js 22.20.0 + edge.js 6.5.1",
+  "artifact_sha256": {
+    "examples/0185_edge/hello.edge": "7be6b7306daf854ba7b515c46f9e98e328046a77efcd8baad09c11c32020f04b",
+    "examples/0185_edge/verify.cjs": "ea02946ea3c5a9e36186a5545dcef8be6b608de90aa2784a9932a6ed05431b2b"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

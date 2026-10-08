@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:48.761049+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native TOML decode and exact greeting/config data check",
+      "cwd": "<corpus>/examples/0700_toml",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native TOML parser and exact configuration model\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Python standard-library TOML parser",
+    "version": "3.13.9"
+  },
+  "artifact_sha256": {
+    "examples/0700_toml/hello.toml": "b339b30a75ec65fbe715bd0d61c3a7cf3955e222872d2d5e615eff92719cd6e4",
+    "examples/0700_toml/verify.py": "65a888520be0ee810088ca0ea90600867e414386cb972ab9c0d0212eb4cccae0"
+  }
+}

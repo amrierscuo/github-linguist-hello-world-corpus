@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-10-08T16:15:34.107576+00:00",
+  "ordinal": 696,
+  "extension": ".8xp",
+  "platform": "Windows 11 / WSL Ubuntu 24.04",
+  "toolchain": "tivars 1.1.1; Python 3.13.9",
+  "artifact_sha256": {
+    "examples/0696_ti-program/variants/8xp-e496e607/hello.8xp": "ef991ecf6280faab3bcdb3f467b953dca62b63a6ddd1d1493e8adc1500ed9350",
+    "examples/0696_ti-program/variants/8xp-e496e607/generate.py": "a04bdfcff89502692e8aabf059a33d61b8d0417b123eddbf0adf60c547c57f6f",
+    "examples/0696_ti-program/variants/8xp-e496e607/greeting.txt": "3373f213ee99b550057c5437e60689e9bb94cbe7adc9e4c4616d8f2314ffc1f4"
+  },
+  "verification_helper_sha256": "0439ecb31a5f977eb1e1af463ce379e0e2263fa0c530c5c4708492e599906972",
+  "steps": [
+    {
+      "command": "${USERPROFILE}\\anaconda3\\python.exe --version",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\696_e496e607",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "${USERPROFILE}\\anaconda3\\python.exe generate.py",
+      "cwd": "${WORKSPACE}\\work\\verify_extensions_561_836\\696_e496e607",
+      "environment": {
+        "PYTHONPATH": "${WORKSPACE}\\work\\tools_extension_561_836\\python"
+      },
+      "exit_code": 0,
+      "stdout": "tivars 1.1.1\nTI-84 Plus tokenized program roundtrip: Disp \"Hello, World!\"\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "scope": "Serializzazione/tokenizzazione nativa e roundtrip con tivars. Il parser riconosce il programma e preserva i token di Disp; un runtime TI non è stato eseguito.",
+  "blockers": [
+    "Esecuzione del programma su calcolatrice/emulatore TI-84 Plus ancora pendente."
+  ],
+  "additional_path_normalization": "Absolute local workspace/user profile prefixes and local host/user identifiers normalized for the public corpus; other tool outputs, exit codes, source hashes and timestamps unchanged."
+}

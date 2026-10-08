@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 97,
+  "language": "CSON",
+  "timestamp_utc": "2026-10-08T11:33:44.249893+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; cson-parser 4.0.9",
+  "working_directory": "examples/0097_cson",
+  "source_sha256": {
+    "examples/0097_cson/hello.cson": "7923d45ccd524220bc8735b412e68935fc177c4e07256f9e0c3116db7d4809ee",
+    "examples/0097_cson/check.cjs": "6601bc47fd8c3709befc3c87e8cae6915dc8c143e96d054067dc4b8333ec4051",
+    "examples/0097_cson/package.json": "6d6693a60537a6bb6292c82f5bbf9a3e73e0a8460aafdf9ce9c60e4259979569"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nCSON parser: exact object assertion PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Parser/compiler and assertions executed, exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Real CSON parser evaluates the data representation and returns the exact greeting object.",
+  "blockers": []
+}

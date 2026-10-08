@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:02:25.513302+00:00",
+  "platform": "Alpine Linux 3.23.6 x86_64 minirootfs in Ubuntu WSL chroot",
+  "commands": [
+    {
+      "label": "Native abuild package build and installed execution",
+      "cwd": "examples/0027_alpine-abuild",
+      "command": [
+        "C:\\Windows\\system32\\wsl.EXE",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "sh",
+        "<workspace>/work/tools_27_33/verify_27.sh",
+        "<workspace>/work/tools_27_33/alpine"
+      ],
+      "exit_code": 124,
+      "stdout": "3.23.6\nabuild 3.16.0-r0\n/corpus/0027/hello.sh: OK\n/corpus/0027/hello.sh: OK\n",
+      "stderr": ">>> corpus-hello: Building corpus/corpus-hello 1.0.0-r0 (using abuild 3.16.0-r0) started Thu, 08 Oct 2026 11:03:34 +0000\n>>> corpus-hello: Validating /corpus/0027/APKBUILD...\n>>> WARNING: corpus-hello: No maintainer\n>>> corpus-hello: Cleaning up srcdir\n>>> corpus-hello: Cleaning up pkgdir\n>>> corpus-hello: Cleaning up tmpdir\n\nCommand timed out."
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0027_alpine-abuild/APKBUILD": "db57438e4c66297d5eb379bdd3a55bb6c02f8276a435b2fb61b1d154ab490105",
+    "examples/0027_alpine-abuild/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6"
+  },
+  "path_normalization": "Absolute workspace, user-home and tool paths replaced by placeholders. Source bytes and command output otherwise unchanged.",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "copied_artifact_sha256": {
+    "examples/0027_alpine-abuild/APKBUILD": "db57438e4c66297d5eb379bdd3a55bb6c02f8276a435b2fb61b1d154ab490105",
+    "examples/0027_alpine-abuild/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6"
+  },
+  "toolchain": {
+    "rootfs": "Alpine Linux 3.23.6 x86_64",
+    "rootfs_sha256": "6fc0e3639a1c01f156970d7626aab90bc90697117069dbc39ad880b84efa319a",
+    "published_rootfs_sha256": "6fc0e3639a1c01f156970d7626aab90bc90697117069dbc39ad880b84efa319a"
+  },
+  "isolated_chroot_script": "set -eu\ncat /etc/alpine-release\nabuild -V\ncd /corpus/0027\nREPODEST=/packages abuild -F -d\napk --no-network add --allow-untrusted /packages/corpus/x86_64/corpus-hello-1.0.0-r0.apk\ncmp /usr/bin/corpus-hello hello.sh\noutput=$(/usr/bin/corpus-hello)\ntest \"$output\" = 'Hello, World!'\nprintf '%s\\n' \"$output\"\nprintf '%s\\n' 'PASS: abuild package built; installed bytes match source; exact greeting assertion passed.'\n",
+  "isolated_host_setup_script": "#!/bin/sh\nset -eu\nrootfs=\"$1\"\nmounted_here=0\nif ! mountpoint -q \"$rootfs/dev\"; then\n  mount --bind /dev \"$rootfs/dev\"\n  mounted_here=1\nfi\ncleanup() { if [ \"$mounted_here\" = 1 ]; then umount \"$rootfs/dev\"; fi; }\ntrap cleanup EXIT\ntimeout 60 chroot \"$rootfs\" /bin/sh /corpus/verify_27.sh\n"
+}

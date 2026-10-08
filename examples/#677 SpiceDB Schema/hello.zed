@@ -1,0 +1,8 @@
+caveat greeting(message string) {
+    message == "Hello, World!"
+}
+definition user {}
+definition document {
+    relation reader: user with greeting
+    permission view = reader
+}

@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Original corpus greeting",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://example.invalid"
+    }
+  ],
+  "paths": {
+    "/hello": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Original greeting response",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Greeting"
+                },
+                "example": "Hello, World!"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Greeting": {
+        "type": "string",
+        "enum": [
+          "Hello, World!"
+        ]
+      }
+    }
+  }
+}

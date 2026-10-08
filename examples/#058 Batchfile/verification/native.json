@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:39.100973+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0058_batchfile/hello.cmd": "4df5ed232f65093c66591fcc723696b791e1d00a537ea8ecb7105e0fdba27dc0"
+  },
+  "commands": [
+    {
+      "label": "Windows command processor version",
+      "cwd": "<corpus>/examples/0058_batchfile",
+      "command": [
+        "cmd",
+        "/d",
+        "/c",
+        "ver"
+      ],
+      "exit_code": 0,
+      "stdout": "\nMicrosoft Windows [Version 10.0.26300.9457]\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Batchfile run",
+      "cwd": "<corpus>/examples/0058_batchfile",
+      "command": [
+        "cmd",
+        "/d",
+        "/c",
+        "hello.cmd"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Windows cmd.exe",
+    "version": "Microsoft Windows [Version 10.0.26300.9457]"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:00:09.429538+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "CookCLI version",
+      "cwd": "<corpus>/examples/0136_cooklang",
+      "command": [
+        "<workspace>/work/tools_121_140/cook_x64/cook.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "cookcli 0.37.0 - in food we trust\n",
+      "stderr": ""
+    },
+    {
+      "label": "Official Cooklang recipe parser and structured JSON output",
+      "cwd": "<corpus>/examples/0136_cooklang",
+      "command": [
+        "<workspace>/work/tools_121_140/cook_x64/cook.exe",
+        "recipe",
+        "hello.cook",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"metadata\":{\"map\":{\"title\":\"Hello, World!\",\"servings\":1}},\"sections\":[{\"name\":null,\"content\":[{\"type\":\"step\",\"value\":{\"items\":[{\"type\":\"text\",\"value\":\"Warm \"},{\"type\":\"ingredient\",\"index\":0},{\"type\":\"text\",\"value\":\" in a \"},{\"type\":\"cookware\",\"index\":0},{\"type\":\"text\",\"value\":\" for \"},{\"type\":\"timer\",\"index\":0},{\"type\":\"text\",\"value\":\".\"}],\"number\":1}},{\"type\":\"step\",\"value\":{\"items\":[{\"type\":\"text\",\"value\":\"Pour the water into a \"},{\"type\":\"cookware\",\"index\":1},{\"type\":\"text\",\"value\":\" and display the label Hello, World!.\"}],\"number\":2}}]}],\"ingredients\":[{\"name\":\"water\",\"alias\":null,\"quantity\":{\"value\":{\"type\":\"number\",\"value\":{\"type\":\"regular\",\"value\":250.0}},\"unit\":\"ml\",\"scalable\":true},\"note\":null,\"reference\":null,\"relation\":{\"relation\":{\"type\":\"definition\",\"referenced_from\":[],\"defined_in_step\":true},\"reference_target\":null},\"modifiers\":\"\"}],\"cookware\":[{\"name\":\"kettle\",\"alias\":null,\"quantity\":null,\"note\":null,\"relation\":{\"type\":\"definition\",\"referenced_from\":[],\"defined_in_step\":true},\"modifiers\":\"\"},{\"name\":\"cup\",\"alias\":null,\"quantity\":null,\"note\":null,\"relation\":{\"type\":\"definition\",\"referenced_from\":[],\"defined_in_step\":true},\"modifiers\":\"\"}],\"timers\":[{\"name\":null,\"quantity\":{\"value\":{\"type\":\"number\",\"value\":{\"type\":\"regular\",\"value\":1.0}},\"unit\":\"minutes\",\"scalable\":false}}],\"inline_quantities\":[]}",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official CookCLI Cooklang parser",
+    "version": "cookcli 0.37.0 - in food we trust",
+    "executable_sha256": "ef869b36190e8a999d8d056912c38e5515a09d6cf9fc1820328eee77468a2aeb"
+  },
+  "semantic_scope": "Cooklang data semantics: official parser preserves the greeting title and recipe text and extracts the declared water ingredient; no cooking/physical outcome is claimed.",
+  "artifact_sha256": {
+    "examples/0136_cooklang/hello.cook": "a9c38ff70b4bec0b10b9145bfc5ee7ac322528315cf18d748b336f89676e2f5a"
+  }
+}

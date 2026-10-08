@@ -1,0 +1,11 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const {DockerfileParser} = require('dockerfile-ast');
+const document = DockerfileParser.parse(fs.readFileSync(__dirname+'/Dockerfile','utf8'));
+assert.deepEqual(document.getInstructions().map(x=>x.getInstruction()), ['FROM','CMD']);
+assert.equal(document.getFROMs()[0].getImage(), 'alpine:3.22.2');
+const command = document.getCMDs()[0];
+assert.equal(command.getJSONStrings().length, 2);
+assert.ok(command.getOpeningBracket() && command.getClosingBracket());
+assert.deepEqual(JSON.parse(command.getRawArgumentsContent()), ['printf','Hello, World!\n']);
+console.log('Dockerfile community AST parser PASS; container execution remains pending.');

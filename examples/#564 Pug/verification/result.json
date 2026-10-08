@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 564,
+  "language": "Pug",
+  "timestamp_utc": "2026-10-08T13:16:51.001660+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Pug 3.0.4; Node.js v22.20.0",
+  "working_directory": "examples/0564_pug",
+  "source_sha256": {
+    "examples/0564_pug/hello.pug": "4b1477161d63de3ff47c615032fb2a2c002a56040604ffd74b4245b39909e40a",
+    "examples/0564_pug/verify.cjs": "1add4f24ded8b268edf2cb41b86b17d79b9a34a8ec9fb189495769ecae50644d"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Pug compiler parses template and renders greeting plus HTML escape assertion.",
+  "blockers": []
+}

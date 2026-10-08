@@ -1,0 +1,39 @@
+{
+  "ordinal": 754,
+  "name": "Vim script",
+  "timestamp_utc": "2026-10-08T13:51:19.128947+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Vim9 native script interpreter in headless mode",
+  "artifact_sha256": {
+    "examples/0754_vim-script/hello.vim": "7adcf1a74d5b18197210a19039cafbe3f9af7472990ab32fac1c765f81a321a4"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "vim",
+        "-Nu",
+        "NONE",
+        "-n",
+        "-es",
+        "-c",
+        "redir! > ${WORKSPACE_WSL}/work/tools_741_760/build_0754/message.txt",
+        "-S",
+        "${WORKSPACE_WSL}/work/staging_741_760/examples/0754_vim-script/hello.vim",
+        "-c",
+        "redir END",
+        "-c",
+        "qa!"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

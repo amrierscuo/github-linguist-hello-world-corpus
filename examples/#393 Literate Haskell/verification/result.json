@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 393,
+  "language": "Literate Haskell",
+  "timestamp_utc": "2026-10-08T12:51:44.086941+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Genuine Hugs98 September 2006; Ubuntu package 98.200609.21-6build3 Haskell98 mode",
+  "working_directory": "examples/0393_literate-haskell",
+  "source_sha256": {
+    "examples/0393_literate-haskell/hello.lhs": "93bd34207a3ba1164dee9b44b99b518c7e6d7c63995b39535bda63a27f13d0f1"
+  },
+  "steps": [
+    {
+      "command": "HUGSDIR=<tools> hugs +98 -P<bundled-libraries> (stdin: :quit)",
+      "exit_code": 0,
+      "stdout": "__   __ __  __  ____   ___      _________________________________________\n||   || ||  || ||  || ||__      Hugs 98: Based on the Haskell 98 standard\n||___|| ||__|| ||__||  __||     Copyright (c) 1994-2005\n||---||         ___||           World Wide Web: http://haskell.org/hugs\n||   ||                         Bugs: http://hackage.haskell.org/trac/hugs\n||   || Version: September 2006 _________________________________________\n\nHaskell 98 mode: Restart with command line option -98 to enable extensions\n\nType :? for help\nHugs> [Leaving Hugs]\n",
+      "stderr": ""
+    },
+    {
+      "command": "HUGSDIR=<tools>/usr/lib/hugs runhugs +98 -P<bundled-library-paths> hello.lhs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Hugs interpreter recognizes Bird-style Literate Haskell, type checks Main IO () and executes putStrLn. Installed interpreter/library files reused read-only from isolated workspace tools.",
+  "blockers": []
+}

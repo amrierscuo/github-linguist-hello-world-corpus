@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const ejs = require('ejs');
+const template = fs.readFileSync(__dirname+'/hello.ejs','utf8');
+const locals = JSON.parse(fs.readFileSync(__dirname+'/locals.json','utf8'));
+const render = ejs.compile(template, {filename:'hello.ejs'});
+assert.equal(render(locals), '<h1>Hello, World!</h1>\n');
+assert.equal(render({greeting:'<world>'}), '<h1>&lt;world&gt;</h1>\n');
+process.stdout.write(render(locals));
+console.log('EJS compile, render and escaped interpolation PASS.');

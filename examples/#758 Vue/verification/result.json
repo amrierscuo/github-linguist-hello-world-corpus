@@ -1,0 +1,35 @@
+{
+  "ordinal": 758,
+  "name": "Vue",
+  "timestamp_utc": "2026-10-08T13:46:50.929990+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js22.20.0 + Vue3.5.43 compiler-sfc/server-renderer and esbuild",
+  "artifact_sha256": {
+    "examples/0758_vue/Hello.vue": "b33991bdca1c80a11ee97f90deb8c6e48d7dc5957ebfcec7a6947b60a6860e15",
+    "examples/0758_vue/verify.cjs": "a3bcde5e54fa3f268f08634a258c95091b7e44fd5fd185317607f647aec1ffa6"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "\u001b[1m\u001b[33m[@vue/compiler-sfc]\u001b[0m\u001b[33m compileTemplate is called with `ssr: true` but no corresponding `cssVars` option.\u001b[0m\n\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

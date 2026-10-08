@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:42.679440+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native YANG grammar/model validation and default retrieval",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_797_155942664167",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "pyang",
+    "version": "2.7.1",
+    "metadata_sha256": "5469bc79d1b8e54dfce8bb9958465d98077a3c9cd5b09712357ff9b4ed6e9425",
+    "source": "https://pypi.org/project/pyang/"
+  },
+  "semantic_scope": "Original pyang validates YANG1.1 model/default types and retrieves the leaf default; no NETCONF server/device is configured.",
+  "artifact_sha256": {
+    "examples/0797_yang/corpus-greeting.yang": "34ff2badb60b0d9fa0c58c3c58c018fa2ea1effc1dee16b43a65e21b554dafb8",
+    "examples/0797_yang/verify.py": "0ec9be72a54cf4b1a5a1f115029f06275b0934cc6eba35440e93becb15e3b405"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "pyang",
+        "old_version": "2.7.1.dist",
+        "version": "2.7.1",
+        "original_metadata_sha256": "5469bc79d1b8e54dfce8bb9958465d98077a3c9cd5b09712357ff9b4ed6e9425",
+        "original_metadata_file": "work/tools_781_800/python/pyang-2.7.1.dist-info/METADATA"
+      }
+    ]
+  }
+}

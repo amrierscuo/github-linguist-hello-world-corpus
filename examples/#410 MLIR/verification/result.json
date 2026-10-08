@@ -1,0 +1,88 @@
+{
+  "ordinal": 410,
+  "name": "MLIR",
+  "timestamp_utc": "2026-10-08T13:05:09.111498+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Ubuntu LLVM/MLIR 18.1.3 (mlir-opt, mlir-translate, lli)",
+  "artifact_sha256": {
+    "examples/0410_mlir/hello.mlir": "02632910cc01c52138c832b3e01bae6037b563d308834650ec5fd04713aac3ee"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; env=os.environ.copy();env[\"LD_LIBRARY_PATH\"]=sys.argv[1]+\"/usr/lib/x86_64-linux-gnu\";r=subprocess.run(sys.argv[2:],env=env);sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/mlir-opt",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Ubuntu LLVM version 18.1.3\n  Optimized build.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; env=os.environ.copy();env[\"LD_LIBRARY_PATH\"]=sys.argv[1]+\"/usr/lib/x86_64-linux-gnu\";r=subprocess.run(sys.argv[2:],env=env);sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/mlir-opt",
+        "${WORKSPACE_WSL}/work/staging_401_420/examples/0410_mlir/hello.mlir",
+        "-o",
+        "${WORKSPACE_WSL}/work/tools_401_420/build_0410/checked.mlir"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; env=os.environ.copy();env[\"LD_LIBRARY_PATH\"]=sys.argv[1]+\"/usr/lib/x86_64-linux-gnu\";r=subprocess.run(sys.argv[2:],env=env);sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/mlir-translate",
+        "--mlir-to-llvmir",
+        "${WORKSPACE_WSL}/work/tools_401_420/build_0410/checked.mlir",
+        "-o",
+        "${WORKSPACE_WSL}/work/tools_401_420/build_0410/hello.ll"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; env=os.environ.copy();env[\"LD_LIBRARY_PATH\"]=sys.argv[1]+\"/usr/lib/x86_64-linux-gnu\";r=subprocess.run(sys.argv[2:],env=env);sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu",
+        "${WORKSPACE_WSL}/work/tools_361_380/ubuntu/usr/lib/llvm-18/bin/lli",
+        "${WORKSPACE_WSL}/work/tools_401_420/build_0410/hello.ll"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

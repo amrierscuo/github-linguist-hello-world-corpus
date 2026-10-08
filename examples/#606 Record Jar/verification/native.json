@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:12.626545+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Existing decoder package version",
+      "cwd": "<corpus>/examples/0606_record-jar",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata; print(importlib.metadata.version(\"language-data\"))"
+      ],
+      "exit_code": 0,
+      "stdout": "1.4.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse original format with existing decoder and compare decoded greeting",
+      "cwd": "<corpus>/examples/0606_record-jar",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing language-data native Record Jar registry parser\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing language_data authentic format parser",
+    "version": "1.4.0"
+  },
+  "artifact_sha256": {
+    "examples/0606_record-jar/language-subtag-registry.txt": "cae93b6c4a4a0cc6d39fa5a72be34049d5c9581553d8ee107fee27ef0c1290da",
+    "examples/0606_record-jar/verify.py": "ff5dd1bebb1ec4fda2245eb2d6f85ff343f46d6e009d6dd76af19c8de7c93f01"
+  }
+}

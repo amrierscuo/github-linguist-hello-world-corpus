@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:59.818290+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "JVM version",
+      "cwd": "<corpus>/examples/0219_freemarker",
+      "command": [
+        "<java>",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "FreeMarker native template parse/render and parameter control",
+      "cwd": "<corpus>/examples/0219_freemarker",
+      "command": [
+        "<java>",
+        "--class-path",
+        "<workspace>/work/tools_201_220/freemarker-2.3.34.jar",
+        "FreeMarkerCheck.java",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine FreeMarker parse/render; parameter control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Apache FreeMarker template parser and engine",
+    "version": "2.3.34",
+    "jar_sha256": "9a9fb91cd64199232eb1ca9766148a5d30ef8944be5fac051018f96c70c8f6a3"
+  },
+  "artifact_sha256": {
+    "examples/0219_freemarker/FreeMarkerCheck.java": "56b702fdf7ec3d47347f7e96b94d26f7b9e6e0c565f94f6dfe932d881eabec01",
+    "examples/0219_freemarker/hello.ftl": "8cfb88e766ed63d4189c6f7fd93bfdd1dc288bc792fcd27e227537e3302472a9"
+  }
+}

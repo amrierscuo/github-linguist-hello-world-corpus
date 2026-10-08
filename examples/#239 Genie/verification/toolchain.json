@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:35:20.505140+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Vala/Genie compiler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_239_143520502636",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/valac-0.56",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_239_143520502636",
+      "exit_code": 0,
+      "stdout": "Vala 0.56.16\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Genie parser/typechecker and C generation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_239_143520502636",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/vala-0.56",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/valac-0.56",
+        "--vapidir=<workspace>/work/tools_221_240/ubuntu/usr/share/vala-0.56/vapi",
+        "--pkg=glib-2.0",
+        "-C",
+        "hello.gs"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_239_143520502636",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Compile actual generated Genie C program",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_239_143520502636",
+        "--",
+        "gcc",
+        "hello.c",
+        "-I<workspace>/work/tools_221_240/ubuntu/usr/include/glib-2.0",
+        "-I<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+        "-l:libglib-2.0.so.0",
+        "-l:libgobject-2.0.so.0",
+        "-o",
+        "hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_239_143520502636",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute native Genie program",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_239_143520502636",
+        "--",
+        "./hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_239_143520502636",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Vala original Genie frontend and native GLib C backend",
+    "packages": [
+      {
+        "file": "valac_0.56.16-3build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/v/vala/valac_0.56.16-3build1_amd64.deb",
+        "sha256": "9ac6b81f147861f2cdea207046f453e53dc64e67342e1268b3769b4ce86c26da",
+        "package": "valac",
+        "version": "0.56.16-3build1"
+      },
+      {
+        "file": "valac-bin_0.56.16-3build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/v/vala/valac-bin_0.56.16-3build1_amd64.deb",
+        "sha256": "4d6817859635326c53689ffb1d649cefaff98404cee18c2f52b42dc51ed82c32",
+        "package": "valac-bin",
+        "version": "0.56.16-3build1"
+      },
+      {
+        "file": "libvala-0.56-0_0.56.16-3build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/v/vala/libvala-0.56-0_0.56.16-3build1_amd64.deb",
+        "sha256": "3e695d7b4afd5fc7b53d62470b74aa4240598dff12e2fe7ab42d2f1bc5e8c5fd",
+        "package": "libvala-0.56-0",
+        "version": "0.56.16-3build1"
+      },
+      {
+        "file": "libvalacodegen-0.56-0_0.56.16-3build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/v/vala/libvalacodegen-0.56-0_0.56.16-3build1_amd64.deb",
+        "sha256": "cf2fee8bc427192e916a72b8059d600ff98bc9d81c23703e89158b6d165aafcc",
+        "package": "libvalacodegen-0.56-0",
+        "version": "0.56.16-3build1"
+      },
+      {
+        "file": "valac-0.56-vapi_0.56.16-3build1_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/v/vala/valac-0.56-vapi_0.56.16-3build1_all.deb",
+        "sha256": "bb947d06e65f7f8a30209a4019cac4d4917071767daa56e78270125acc37f7bb",
+        "package": "valac-0.56-vapi",
+        "version": "0.56.16-3build1"
+      },
+      {
+        "file": "libglib2.0-dev_2.80.0-6ubuntu3.9_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/libglib2.0-dev_2.80.0-6ubuntu3.9_amd64.deb",
+        "sha256": "2f34111ef1c41179d610049c902e2622d433e648869abf267e17083c13aa6030",
+        "package": "libglib2.0-dev",
+        "version": "2.80.0-6ubuntu3.9"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0239_genie/hello.gs": "a6880cf3dae593573c0d32ea1457e123dd5c964fff87ca89de9ede15b55eebee"
+  }
+}

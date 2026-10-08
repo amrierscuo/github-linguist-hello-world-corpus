@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:08.758638+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "CoffeeScript version",
+      "cwd": "<corpus>/examples/0130_coffeescript",
+      "command": [
+        "<node>",
+        "<workspace>/work/tools_121_140/node/node_modules/coffeescript/bin/coffee",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "CoffeeScript version 2.7.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile CoffeeScript to JavaScript",
+      "cwd": "<corpus>/examples/0130_coffeescript",
+      "command": [
+        "<node>",
+        "<workspace>/work/tools_121_140/node/node_modules/coffeescript/bin/coffee",
+        "--compile",
+        "--output",
+        "<workspace>/work/tools_121_140/130",
+        "hello.coffee"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run emitted JavaScript",
+      "cwd": "<corpus>/examples/0130_coffeescript",
+      "command": [
+        "<node>",
+        "<workspace>/work/tools_121_140/130/hello.js"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official CoffeeScript compiler with Node.js runtime",
+    "version": "CoffeeScript version 2.7.0"
+  },
+  "artifact_sha256": {
+    "examples/0130_coffeescript/hello.coffee": "130168342aa2d080a39da70ad44193e069074dfac6959d8037ed8cac1b4e4505"
+  }
+}

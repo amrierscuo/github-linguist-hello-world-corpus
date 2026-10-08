@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:45:46.064556+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Coq version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_622_154546060507",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/x86_64-linux-gnu",
+        "OCAMLFIND_CONF=<workspace>/work/tools_621_640/verify_622_154546060507/ocamlfind.conf",
+        "OCAMLPATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml",
+        "COQLIB=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/coq",
+        "COQCORELIB=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/coq-core",
+        "OCAMLLIB=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml",
+        "CAML_LD_LIBRARY_PATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/stublibs:<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/zarith",
+        "<workspace>/work/tools_621_640/ubuntu/usr/bin/coqc",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_622_154546060507",
+      "exit_code": 0,
+      "stdout": "The Coq Proof Assistant, version 8.18.0\ncompiled with OCaml 4.14.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native elaboration, proof checking and Compute evaluation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_622_154546060507",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/x86_64-linux-gnu",
+        "OCAMLFIND_CONF=<workspace>/work/tools_621_640/verify_622_154546060507/ocamlfind.conf",
+        "OCAMLPATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml",
+        "COQLIB=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/coq",
+        "COQCORELIB=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/coq-core",
+        "OCAMLLIB=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml",
+        "CAML_LD_LIBRARY_PATH=<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/stublibs:<workspace>/work/tools_621_640/ubuntu/usr/lib/ocaml/zarith",
+        "<workspace>/work/tools_621_640/ubuntu/usr/bin/coqc",
+        "hello.v"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_622_154546060507",
+      "exit_code": 0,
+      "stdout": "     = \"Hello, World!\"\n     : string\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Coq compiler/kernel for the Rocq Prover language",
+    "packages": [
+      {
+        "name": "coq",
+        "version": "8.18.0+dfsg-1build2",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/coq/coq_8.18.0+dfsg-1build2_amd64.deb",
+        "sha256": "22897a17a75d8930276f5eedd5cd29ac940f1ab4d4661b6a49ccc63577e54d3b"
+      },
+      {
+        "name": "libcoq-stdlib",
+        "version": "8.18.0+dfsg-1build2",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/coq/libcoq-stdlib_8.18.0+dfsg-1build2_amd64.deb",
+        "sha256": "af139bb3af8c71b5e991944a61eef5bba28038a715f71146fa046241bb614b23"
+      },
+      {
+        "name": "libcoq-core-ocaml",
+        "version": "8.18.0+dfsg-1build2",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/coq/libcoq-core-ocaml_8.18.0+dfsg-1build2_amd64.deb",
+        "sha256": "027c8fb39db20de4910f8a75e0b9a32c0fbc27c6f532375ed7604757f71c12a9"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0622_rocq-prover/hello.v": "3b56eca36dbfc72e9f9c74b0bae81f945603533e101a5f9e2a606e2c92d715d1"
+  }
+}

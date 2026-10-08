@@ -1,0 +1,3 @@
+%ctor {
+    NSLog(@"Hello, World!");
+}

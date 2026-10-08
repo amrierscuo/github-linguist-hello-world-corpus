@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:12.318294+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0763_wavefront-object",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata as m; print(m.version('trimesh'))"
+      ],
+      "exit_code": 0,
+      "stdout": "5.1.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing format parser and original semantic assertions",
+      "cwd": "<corpus>/examples/0763_wavefront-object",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "GEOMETRY: ['Hello, World!']\nHello, World!\nPASS: existing OBJ loader resolves original labelled triangle and MTL\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "trimesh / Python 3.13.9",
+    "version": "5.1.1"
+  },
+  "artifact_sha256": {
+    "examples/0763_wavefront-object/hello.mtl": "7bf1db1cacf1ed0dacfe6278ebc9771754e1247c0113c20c5454f68a733132ff",
+    "examples/0763_wavefront-object/hello.obj": "088d89de19889ef7b3df5674b51f737d47b1719afdba8cf6dad19840f0b599e9",
+    "examples/0763_wavefront-object/verify.py": "ac64305d94fded449901b890bf84353824a2377b0c4bd340724051dc919082ea"
+  }
+}

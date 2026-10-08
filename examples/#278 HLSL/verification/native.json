@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:24.188827+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Official DXC version",
+      "cwd": "<corpus>/examples/0278_hlsl",
+      "command": [
+        "<workspace>/work/tools_261_280/dxc/bin/x64/dxc.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile HLSL compute shader to DXIL",
+      "cwd": "<corpus>/examples/0278_hlsl",
+      "command": [
+        "<workspace>/work/tools_261_280/dxc/bin/x64/dxc.exe",
+        "-T",
+        "cs_6_0",
+        "-E",
+        "main",
+        "-Fo",
+        "<workspace>/work/tools_261_280/278/hello.dxil",
+        "hello.hlsl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "Shader compiled; compute dispatch/readback on a compatible Direct3D runtime is not performed."
+  ],
+  "toolchain": {
+    "name": "Official Microsoft DirectX Shader Compiler",
+    "version": "dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)",
+    "executable_sha256": "aa7965b3763d9c710baaa5a28cedcc633449962a75d1391d161a85304a41b3e2",
+    "dxcompiler_sha256": "0689e2fee0a1c9df8662a59680469f24e2a3ad7ce6bbbcc9284f7a83172bfc59"
+  },
+  "dxil_sha256": "e5c326bf1dbc047a8bb5b3f83c2a0c12bc539b7dd26b216e0a8c7eca6fe44c67",
+  "artifact_sha256": {
+    "examples/0278_hlsl/hello.hlsl": "3a654283d28892115dbc65eb72e12781a0eb76de362f1d188769a76959c5d3e1"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "ordinal": 178,
+  "language": "EJS",
+  "timestamp_utc": "2026-10-08T11:56:13.767905+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; ejs 7.0.1",
+  "working_directory": "examples/0178_ejs",
+  "source_sha256": {
+    "examples/0178_ejs/check.cjs": "72320804a04d87dd658c2f4b9fd3d366a7bf460bb2ada2cad5e98f135662b515",
+    "examples/0178_ejs/hello.ejs": "5f69d234cbec7d1cc40035e3bf5f2a875c87437a3c24175b02dd8a8c5edb9101",
+    "examples/0178_ejs/locals.json": "ea6a04019de5767c9316a9ae80fd4542ed54fb1a46621d4d70e007299d1000fa",
+    "examples/0178_ejs/package.json": "303392121e72e464de2d78e39b7f8ecdf5e3d45049753d68e8ebb427b9cc33a1"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "<h1>Hello, World!</h1>\nEJS compile, render and escaped interpolation PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Official EJS compiler executes template interpolation; exact HTML result and escaping with a separate input asserted.",
+  "blockers": []
+}

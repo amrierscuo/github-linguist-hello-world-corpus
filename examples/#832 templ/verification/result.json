@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "ordinal": 832,
+  "language": "templ",
+  "timestamp_utc": "2026-10-08T13:49:00.064965+00:00",
+  "platform": "Windows x64",
+  "toolchain": "v0.3.1070; go version go1.27.1 windows/amd64",
+  "working_directory": "examples/0832_templ",
+  "source_sha256": {
+    "examples/0832_templ/go.mod": "2ce7930ab9d49a0db52b7375161bad4cb03c1aaca9485fa4bb110f0c64b3d796",
+    "examples/0832_templ/go.sum": "522705c9e00606d3ae6e4ef5eafde21f079bcac8521ca86d5c14bba89eaedfe9",
+    "examples/0832_templ/hello.templ": "9da606712e88a8c8419577673818eedb6a0363793979818027fbfa7f2ced0696",
+    "examples/0832_templ/main.go": "c6a0048cbb9fabe8706ca968ace509bd664d64688c25c312caffc70b0260ee86"
+  },
+  "steps": [
+    {
+      "command": "templ version",
+      "exit_code": 0,
+      "stdout": "v0.3.1070\n",
+      "stderr": ""
+    },
+    {
+      "command": "go version",
+      "exit_code": 0,
+      "stdout": "go version go1.27.1 windows/amd64\n",
+      "stderr": ""
+    },
+    {
+      "command": "templ generate",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "(✓) Post-generation event received, processing... [ updates=1 needsRestart=true needsBrowserReload=true ]\n(✓) Complete [ updates=1 duration=10.7073ms ]\n"
+    },
+    {
+      "command": "go mod tidy",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "go: downloading github.com/google/go-cmp v0.7.0\n"
+    },
+    {
+      "command": "go mod verify",
+      "exit_code": 0,
+      "stdout": "all modules verified\n",
+      "stderr": ""
+    },
+    {
+      "command": "go run .",
+      "exit_code": 0,
+      "stdout": "<h1>Hello, World!</h1>",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original templ CLI generates real Go component; official runtime renders parameterized HTML and Go verifies genuine dependency sums.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_821_836/832/hello_templ.go",
+      "sha256": "6756090ba38c856e83243b68ec93d3c8901eac480d8755c1570784d1f5a3c9fe"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:34:45.646671+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0060_befunge/hello.befunge": "a45cd2d13431d47fde4e3da40243636e25426e4b1bffc129f41d23ca13e560a9"
+  },
+  "commands": [
+    {
+      "label": "C compiler for reference interpreter",
+      "cwd": "<corpus>/examples/0060_befunge",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile unchanged upstream reference interpreter",
+      "cwd": "<corpus>/examples/0060_befunge",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "gcc",
+        "-O2",
+        "-o",
+        "<workspace>/work/tools_41_60/60/bef",
+        "<workspace>/work/tools_41_60/bef.c"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "<workspace>/work/tools_41_60/bef.c: In function ‘main’:\n<workspace>/work/tools_41_60/bef.c:534:20: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  534 |                    fscanf (fi, \"%ld\", &b);\n      |                    ^~~~~~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_41_60/bef.c:540:22: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  540 |                      fscanf (stdin, \"%ld\", &b);\n      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_41_60/bef.c:696:18: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  696 |                  fscanf (fi, \"%ld\", &b);\n      |                  ^~~~~~~~~~~~~~~~~~~~~~\n<workspace>/work/tools_41_60/bef.c:702:20: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  702 |                    fscanf (stdin, \"%ld\", &b);\n      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    },
+    {
+      "label": "Reference Befunge-93 run",
+      "cwd": "<corpus>/examples/0060_befunge",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0060_befunge",
+        "--",
+        "<workspace>/work/tools_41_60/60/bef",
+        "-q",
+        "hello.befunge"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Chris Pressey reference Befunge-93 interpreter",
+    "version": "2.25",
+    "download": {
+      "url": "https://raw.githubusercontent.com/catseye/Befunge-93/master/src/bef.c",
+      "bytes": 26843,
+      "sha256": "2351c988739bfb15b6bed5b27b1a982f2d0ddbc7350ef639ecdab4e7a3f9380c"
+    }
+  }
+}

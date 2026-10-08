@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:27:25.100235+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Spin version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_559_152725095664",
+        "--",
+        "<workspace>/work/tools_541_560/ubuntu/usr/bin/spin",
+        "-V"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_559_152725095664",
+      "exit_code": 0,
+      "stdout": "Spin Version 6.5.2 -- 6 December 2019\n",
+      "stderr": ""
+    },
+    {
+      "label": "Original Spin Promela simulation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_559_152725095664",
+        "--",
+        "<workspace>/work/tools_541_560/ubuntu/usr/bin/spin",
+        "-T",
+        "hello.pml"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_559_152725095664",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n1 process created\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "spin",
+    "version": "6.5.2+dfsg-1",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/spin/spin_6.5.2+dfsg-1_amd64.deb",
+    "sha256": "17acd6d03a1957607573ebaf97aa08994544fe7e5045123063e8b7c49d5941ec"
+  },
+  "artifact_sha256": {
+    "examples/0559_promela/hello.pml": "bf537e23c52512ce8e33874a05e1f73aa7e3e1f96051c2df7829819bfbf27b3c"
+  }
+}

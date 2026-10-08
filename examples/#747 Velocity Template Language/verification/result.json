@@ -1,0 +1,27 @@
+{
+  "ordinal": 747,
+  "name": "Velocity Template Language",
+  "timestamp_utc": "2026-10-08T13:46:49.618902+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "JDK21 + Apache Velocity2.4.1/CommonsLang3.17/SLF4J2.0.16",
+  "artifact_sha256": {
+    "examples/0747_velocity-template-language/hello.vtl": "c72db3272004f3b4cfa7caad07a6800beb9481c8c44fcb25adf652a8dea8affa",
+    "examples/0747_velocity-template-language/Verify.java": "be9a8c54f774edf2ededd1caca1b4306657b414eea434cacef391b2c3ece90a1"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_741_760\\velocity.jar;${WORKSPACE}\\work\\tools_741_760\\commons-lang3.jar;${WORKSPACE}\\work\\tools_741_760\\slf4j-api.jar;${WORKSPACE}\\work\\tools_741_760\\slf4j-nop.jar",
+        "Verify.java"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

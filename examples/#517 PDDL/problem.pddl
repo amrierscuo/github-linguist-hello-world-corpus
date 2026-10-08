@@ -1,0 +1,5 @@
+(define (problem hello-world)
+  (:domain greeting)
+  (:objects hello-world - recipient)
+  (:init)
+  (:goal (greeted hello-world)))

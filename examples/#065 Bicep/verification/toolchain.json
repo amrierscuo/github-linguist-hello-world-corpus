@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:31:26.489704+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0065_bicep/hello.bicep": "04141418d90b5c49f05ac11ee89e476927e0baf2348b183870292dde9774712b"
+  },
+  "commands": [
+    {
+      "label": "Bicep version",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\bicep.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_65",
+      "exit_code": 0,
+      "stdout": "Bicep CLI version 0.48.1 (cec7951cf6)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Bicep compile to ARM JSON",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\bicep.exe",
+        "build",
+        "hello.bicep",
+        "--outfile",
+        "hello.json"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_65",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Official Microsoft Bicep Windows x64 executable",
+    "executable_sha256": "398af294cf16ac4becdbd008a77d148d0e8e91492309a6b60ec911b7e1cab082",
+    "source": "https://github.com/Azure/bicep/releases"
+  },
+  "compiled_output": {
+    "type": "string",
+    "value": "Hello, World!"
+  }
+}

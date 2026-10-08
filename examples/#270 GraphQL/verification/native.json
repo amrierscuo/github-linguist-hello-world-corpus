@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:14.927355+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node version",
+      "cwd": "<corpus>/examples/0270_graphql",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse schema/query, validate, execute and check controls",
+      "cwd": "<corpus>/examples/0270_graphql",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_261_280/node"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: official GraphQL parse, validation, execution and variable controls\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official GraphQL.js reference implementation",
+    "version": "16.11.0; Node.js 22.20.0"
+  },
+  "artifact_sha256": {
+    "examples/0270_graphql/hello.graphql": "0297a421cd16e21da838542b22c732e0592850c9c0bd142d47b95b0eef0bd8d7",
+    "examples/0270_graphql/schema.graphql": "8a7a80e03972efcfe9e7ae41bf266d208729485088feb028e8c53055db25d425",
+    "examples/0270_graphql/verify.cjs": "01bfb0b60613b280b63e97fddd5fdefa3a3c396c1351a6d8dd2b22fd8de9aa0f"
+  }
+}

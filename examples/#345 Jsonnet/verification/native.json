@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:06.080812+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Jsonnet version",
+      "cwd": "<corpus>/examples/0345_jsonnet",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_341_360/linux/usr/bin/jsonnet",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Jsonnet commandline interpreter v0.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Jsonnet parse and data evaluation",
+      "cwd": "<corpus>/examples/0345_jsonnet",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_341_360/linux/usr/bin/jsonnet",
+        "<corpus>/examples/0345_jsonnet/hello.jsonnet"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n   \"message\": \"Hello, World!\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Jsonnet C++ compiler/evaluator",
+    "version": "Jsonnet commandline interpreter v0.20.0",
+    "executable_sha256": "3db67f1dee11c46e59e6ed13377f4d12970df665b01aa7435fd4511279c68571"
+  },
+  "artifact_sha256": {
+    "examples/0345_jsonnet/hello.jsonnet": "05e9a887feb349eda18e49bdebea78256ccbb8968d656dc7df3e7eadef494c9a"
+  }
+}

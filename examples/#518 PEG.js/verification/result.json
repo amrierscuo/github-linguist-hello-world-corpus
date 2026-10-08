@@ -1,0 +1,34 @@
+{
+  "ordinal": 518,
+  "name": "PEG.js",
+  "timestamp_utc": "2026-10-08T13:13:33.136718+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + Peggy",
+  "artifact_sha256": {
+    "examples/0518_peg-js/hello.pegjs": "3636735c9bbd19ff288579658e3b66fdab1bf82ecc3be189c7557b5217e60397",
+    "examples/0518_peg-js/verify.cjs": "16f49db8c945620d87febd8eef1c2e659a247717891d55f5bf62fcd8d9bf6aae"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

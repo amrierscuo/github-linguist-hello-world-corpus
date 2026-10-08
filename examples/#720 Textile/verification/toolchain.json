@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:51:22.300372+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Original Textile markup rendering and HTML text assertion",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_720_155122285572",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "textile",
+    "version": "4.0.4",
+    "metadata_sha256": "29b6c0ea4fb49154fdd3e209ee576e4f6a4fbc40bdb8473f291b3cbad7287b51",
+    "source": "https://pypi.org/project/textile/"
+  },
+  "artifact_sha256": {
+    "examples/0720_textile/hello.textile": "b902b0d375ed2940259b972de3b9574f5a50faeeebee27d35ed27a980a3f2301",
+    "examples/0720_textile/verify.py": "12b461d5037a4acc9e15a9de667bd3a5f7c759bf1378bceafa0a0c1d684c0d46"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "textile",
+        "old_version": "4.0.4.dist",
+        "version": "4.0.4",
+        "original_metadata_sha256": "29b6c0ea4fb49154fdd3e209ee576e4f6a4fbc40bdb8473f291b3cbad7287b51",
+        "original_metadata_file": "work/tools_701_720/python/textile-4.0.4.dist-info/METADATA"
+      }
+    ]
+  }
+}

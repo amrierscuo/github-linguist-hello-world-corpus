@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 641,
+  "language": "STL",
+  "timestamp_utc": "2026-10-08T13:23:04.147430+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "Assimp 5.3.1 native STL importer",
+  "working_directory": "examples/0641_stl",
+  "source_sha256": {
+    "examples/0641_stl/hello.stl": "ddb622f84302ada43c4625568e0c4d03a48bc2f638567342a308fe724d5541ee"
+  },
+  "steps": [
+    {
+      "command": "assimp version",
+      "exit_code": 0,
+      "stdout": "------------------------------------------------------ \nOpen Asset Import Library (\"Assimp\", https://github.com/assimp/assimp) \n -- Commandline toolchain --\n------------------------------------------------------ \n\nVersion 5.3 -debug -shared -st (GIT commit 0)\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "assimp info hello.stl",
+      "exit_code": 0,
+      "stdout": "Launching asset import ...           OK\nValidating postprocessing flags ...  OK\n\n0 %\n50 %\n50 %\n51.5152 %\n53.0303 %\n54.5455 %\n56.0606 %\n57.5758 %\n59.0909 %\n60.6061 %\n62.1212 %\n63.6364 %\n65.1515 %\n66.6667 %\n68.1818 %\n69.697 %\n71.2121 %\n72.7273 %\n74.2424 %\n75.7576 %\n77.2727 %\n78.7879 %\n80.303 %\n81.8182 %\n83.3333 %\n84.8485 %\n86.3636 %\n87.8788 %\n89.3939 %\n90.9091 %\n92.4242 %\n93.9394 %\n95.4546 %\n96.9697 %\n98.4848 %\n100 %Importing file ...                   OK \n   import took approx. 0.01032 seconds\n\nMemory consumption: 109888 B\nNodes:              2\nMaximum depth       2\nMeshes:             1\nAnimations:         0\nTextures (embed.):  0\nMaterials:          1\nCameras:            0\nLights:             0\nVertices:           2428\nFaces:              1668\nBones:              0\nAnimation Channels: 0\nPrimitive Types:    triangles\nAverage faces/mesh  1668\nAverage verts/mesh  2428\nMinimum point      (0.000000 0.000000 0.000000)\nMaximum point      (75.000000 7.000000 1.000000)\nCenter point       (37.500000 3.500000 0.500000)\n\nMeshes:  (name) [vertices / bones / faces | primitive_types]\n    0 (greeting): [2428 / 0 / 1668 | triangle]\n\nNamed Materials:\n    'DefaultMaterial' (prop) [index / bytes | texture semantic]\n        0 (?mat.name): [0 / 20 | n/a]\n        1 ($clr.diffuse): [0 / 16 | n/a]\n        2 ($clr.specular): [0 / 16 | n/a]\n        3 ($clr.ambient): [0 / 16 | n/a]\n\nNode hierarchy:\n\n└╴greeting (mesh 0)\n\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native Assimp imports original pixel-prism mesh, reports real vertices/faces. Reading visual greeting geometry pending.",
+  "blockers": [
+    "Visual inspection of original extruded greeting mesh pending."
+  ]
+}

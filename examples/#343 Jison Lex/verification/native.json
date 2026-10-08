@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:05.699398+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node version",
+      "cwd": "<corpus>/examples/0343_jison-lex",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine parser/generator acceptance and declared checks",
+      "cwd": "<corpus>/examples/0343_jison-lex",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_341_360/node",
+        "<workspace>/work/tools_341_360/343"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine Jison Lex scanner generation and lexemes\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Jison Lex lexer generator",
+    "version": "jison-lex 0.3.4",
+    "package_metadata_sha256": "4043796d5432f8c381dc0d8d088af205ff51f59b9a66b76f575cee37da3c43d4"
+  },
+  "artifact_sha256": {
+    "examples/0343_jison-lex/hello.jisonlex": "a0b2b7020e5dad48c9de865a8d426d9b87a9bbaa25c052126f15375a857a5c9c",
+    "examples/0343_jison-lex/verify.cjs": "f4fdbc91440f7ee86b7ce9e63afbac43168b7dc7a4452067c415c70f38d095e1"
+  }
+}

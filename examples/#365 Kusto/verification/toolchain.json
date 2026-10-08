@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:45.211270+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Microsoft Kusto parser and diagnostic analysis",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "verify.ps1",
+        "<workspace>\\work\\tools_361_380\\kusto\\lib\\netstandard2.0\\Kusto.Language.dll"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_365_150645203233",
+      "exit_code": 0,
+      "stdout": "Kusto parser accepted query; diagnostics: 0\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Original Microsoft Kusto.Language parser",
+    "distribution": {
+      "url": "https://api.nuget.org/v3-flatcontainer/microsoft.azure.kusto.language/12.4.1/microsoft.azure.kusto.language.12.4.1.nupkg",
+      "sha256": "154c176ac9c1c4ae9cf0bc53b74354c9d35798ff587f81fe6e0005028a0a1961"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0365_kusto/hello.kql": "70a3f13183759f7b0b96a2d2ef87da52e07baa0cfadc89a08880c41a92a66b01",
+    "examples/0365_kusto/verify.ps1": "14ff3eab94b23e6d63810927253c6dfba447cc803b95a635b33d167b08abdeae"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 320,
+  "language": "JAR Manifest",
+  "timestamp_utc": "2026-10-08T12:30:00.202779+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Microsoft OpenJDK java/javac/jar 21.0.12.1",
+  "working_directory": "examples/0320_jar-manifest",
+  "source_sha256": {
+    "examples/0320_jar-manifest/Hello.java": "d2ccef50eb746184fd8877aa42b1848f04c4e039c21925c5d506872d418f801e",
+    "examples/0320_jar-manifest/MANIFEST.MF": "8fad1a1687546868b7a3e124db86cdc7d13b07b441a978f0f5f985a48e482ac3",
+    "examples/0320_jar-manifest/VerifyManifest.java": "73efb082acddf565170b471063d1863277dcc654d4553e31fd8819cc118ef797"
+  },
+  "steps": [
+    {
+      "command": "java -version",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "command": "javac -d <build> Hello.java VerifyManifest.java",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "java -cp <build> VerifyManifest MANIFEST.MF",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": "jar --create --file <build>/hello.jar --manifest MANIFEST.MF -C <build> Hello.class",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "java -jar <build>/hello.jar",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "java.util.jar.Manifest parses canonical CRLF attributes; jar consumes the actual manifest; java -jar resolves Main-Class and original class prints greeting. Jar/class binaries only in work.",
+  "blockers": []
+}

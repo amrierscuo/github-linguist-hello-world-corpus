@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "language": "Apex",
+  "ordinal": 34,
+  "timestamp_utc": "2026-10-08T11:01:56.068379+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; community @apexdevtools/apex-parser 5.2.0",
+  "working_directory": "examples/0034_apex",
+  "source_sha256": {
+    "examples/0034_apex/hello.apex": "0b001cd82c6fc2307a9b5f480e488017e270e610b084ddd19109ecb27debb15d",
+    "examples/0034_apex/check.cjs": "2ac6efbb6779c049733104629f5e13e520cdab874718436260c66b217434a2bf",
+    "examples/0034_apex/package.json": "2549fe3466bd9be8c6920403460976d6a0014d5df7bbc03095d95a66c8f39aa0"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Apex anonymousUnit parsed: 0 lexer/parser syntax errors.\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "anonymousUnit parsed the source with 0 lexer/parser errors; exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "scope": "Community ANTLR parser syntax only. Salesforce compilation, type checks and runtime assertions require an authenticated Salesforce org and have not run."
+}

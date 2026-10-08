@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-10-08T16:15:38.013443+00:00",
+  "ordinal": 711,
+  "extension": ".aux",
+  "platform": "Windows 11 / WSL Ubuntu 24.04",
+  "toolchain": "TeX 3.141592653 (TeX Live 2023/Debian)",
+  "artifact_sha256": {
+    "examples/0711_tex/variants/aux-48f45a54/generate.tex": "301fb6e39baa683e98e937d066744562ec5122812cfc42f619786bd5ae1d9aad",
+    "examples/0711_tex/variants/aux-48f45a54/hello.aux": "819cf9667278b07ed3070315c718727fb4181e5d7ed067370d0ec2be4837361f"
+  },
+  "verification_helper_sha256": "0439ecb31a5f977eb1e1af463ce379e0e2263fa0c530c5c4708492e599906972",
+  "steps": [
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_701_720/ubuntu/usr/bin/tex --version",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/711_48f45a54",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE_WSL}/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TEXMFCNF": "${WORKSPACE_WSL}/work/verify_extensions_561_836/711_48f45a54",
+        "TEXMFOUTPUT": "${WORKSPACE_WSL}/work/verify_extensions_561_836/711_48f45a54",
+        "TEXINPUTS": "."
+      },
+      "exit_code": 0,
+      "stdout": "TeX 3.141592653 (TeX Live 2023/Debian)\nkpathsea version 6.3.5\nCopyright 2023 D.E. Knuth.\nThere is NO warranty.  Redistribution of this software is\ncovered by the terms of both the TeX copyright and\nthe Lesser GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING and the TeX source.\nPrimary author of TeX: D.E. Knuth.\n",
+      "stderr": ""
+    },
+    {
+      "command": "${WORKSPACE_WSL}/work/tools_701_720/ubuntu/usr/bin/tex --ini --interaction=nonstopmode --halt-on-error generate.tex",
+      "cwd": "${WORKSPACE_WSL}/work/verify_extensions_561_836/711_48f45a54",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE_WSL}/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TEXMFCNF": "${WORKSPACE_WSL}/work/verify_extensions_561_836/711_48f45a54",
+        "TEXMFOUTPUT": "${WORKSPACE_WSL}/work/verify_extensions_561_836/711_48f45a54",
+        "TEXINPUTS": "."
+      },
+      "exit_code": 0,
+      "stdout": "This is TeX, Version 3.141592653 (TeX Live 2023/Debian) (INITEX)\n(./generate.tex (./hello.aux)\nHello, World!\n )\nNo pages of output.\nTranscript written on generate.log.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Motore originale TeX crea un vero file ausiliario e lo rilegge; espansione della macro osservata nel log console. Nessun formato LaTeX simulato.",
+  "blockers": []
+}

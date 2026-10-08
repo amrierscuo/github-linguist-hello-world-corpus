@@ -1,0 +1,42 @@
+{
+  "ordinal": 427,
+  "name": "Meson",
+  "timestamp_utc": "2026-10-08T12:45:46.029945+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + Meson 1.12.1 + Ninja 1.13.2",
+  "artifact_sha256": {
+    "examples/0427_meson/meson.build": "bee1070a0956e20902b94f8b9466b6ac23c0ab219891d3850a95839af5b17ab3"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "-m",
+        "mesonbuild.mesonmain",
+        "setup",
+        "${WORKSPACE}\\work\\tools_421_440\\build_0427",
+        "${WORKSPACE}\\work\\staging_421_440\\examples\\0427_meson"
+      ],
+      "exit_code": 0,
+      "stdout": "The Meson build system\nVersion: 1.12.1\nSource dir: ${WORKSPACE}\\work\\staging_421_440\\examples\\0427_meson\nBuild dir: ${WORKSPACE}\\work\\tools_421_440\\build_0427\nBuild type: native build\nActivating VS 16.11.50\nProject name: greeting\nProject version: 1.0.0\nHost machine cpu family: x86_64\nHost machine cpu: x86_64\nProgram python3 found: YES (${USERPROFILE}\\anaconda3\\python.exe)\nBuild targets in project: 1\n\nFound ninja.exe-1.13.2.git.kitware.jobserver-pipe-1 at ${WORKSPACE}\\work\\tools_421_440\\python\\bin\\ninja.exe\n",
+      "stderr": "\nGenerating targets:   0%|          | 0/1 eta ?\n                                              \n\nWriting build.ninja:   0%|          | 0/28 eta ?\n                                                \n"
+    },
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "-m",
+        "mesonbuild.mesonmain",
+        "compile",
+        "-C",
+        "${WORKSPACE}\\work\\tools_421_440\\build_0427",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "ninja: Entering directory `${WORKSPACE}/work/tools_421_440/build_0427'\n[0/1] Running external command hello (wrapped by meson to set env)\nHello, World!\nActivating VS 16.11.50\nINFO: automatically activated MSVC compiler environment\nINFO: autodetecting backend as ninja\nINFO: calculating backend command to run: ${WORKSPACE}\\work\\tools_421_440\\python\\bin\\ninja.exe -C ${WORKSPACE}/work/tools_421_440/build_0427 hello\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

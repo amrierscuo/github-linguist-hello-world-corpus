@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:17:35.357321+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native PicoLisp prinl and bye",
+      "cwd": "<corpus>/examples/0535_picolisp",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_521_540/linux/usr/bin/picolisp",
+        "<corpus>/examples/0535_picolisp/hello.l"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic PicoLisp native interpreter",
+    "version": "23.12-1build2",
+    "executable_sha256": "a6e5e0484ff922938fdea3c40899199df486271bc1d69665ac5c2156564eb32f"
+  },
+  "artifact_sha256": {
+    "examples/0535_picolisp/hello.l": "b5ccb020a309afd7c7dd5cbb927de3474574bee63cd8b2c407408735403ad9da"
+  }
+}

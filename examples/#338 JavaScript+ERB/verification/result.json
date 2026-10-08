@@ -1,0 +1,33 @@
+{
+  "ordinal": 338,
+  "name": "JavaScript+ERB",
+  "timestamp_utc": "2026-10-08T12:32:35.946189+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Ruby 3.2.3 ERB + Node.js 22.20.0",
+  "artifact_sha256": {
+    "examples/0338_javascript-erb/hello.js.erb": "bf6ddbf47010db3d6acd1460d402532e96ec05327b6e024d184f1d058c1a3cb2",
+    "examples/0338_javascript-erb/verify.rb": "54c1c76dfa90c96b26847173b5f92ea3b55a156bcaddeb2ce22c3ea9b9a1d999"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; p=sys.argv[1]; env=os.environ.copy(); env.update({\"LD_LIBRARY_PATH\":p+\"/usr/lib/x86_64-linux-gnu\",\"RUBYLIB\":p+\"/usr/lib/ruby/3.2.0:\"+p+\"/usr/lib/x86_64-linux-gnu/ruby/3.2.0:\"+p+\"/usr/lib/ruby/vendor_ruby\",\"NODE_BINARY\":sys.argv[3]}); os.chdir(sys.argv[2]); r=subprocess.run([p+\"/usr/bin/ruby3.2\",\"verify.rb\"],env=env); sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_221_240/ubuntu",
+        "${WORKSPACE_WSL}/work/staging_321_340/examples/0338_javascript-erb",
+        "/mnt/c/Program Files/nodejs/node.exe"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

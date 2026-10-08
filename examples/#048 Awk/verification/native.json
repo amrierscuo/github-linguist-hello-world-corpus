@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:32.549446+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0048_awk/hello.awk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+  },
+  "commands": [
+    {
+      "label": "GNU Awk version",
+      "cwd": "<corpus>/examples/0048_awk",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "gawk",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)\nCopyright (C) 1989, 1991-2022 Free Software Foundation.\n\nThis program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see http://www.gnu.org/licenses/.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Awk parse and run",
+      "cwd": "<corpus>/examples/0048_awk",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "gawk",
+        "-f",
+        "<corpus>/examples/0048_awk/hello.awk"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "GNU Awk",
+    "version": "GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)"
+  }
+}

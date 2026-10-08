@@ -1,0 +1,12 @@
+$ORIGIN corpus.example.
+$TTL 3600
+@ IN SOA ns.corpus.example. hostmaster.corpus.example. (
+    2026100801 ; serial
+    3600       ; refresh
+    600        ; retry
+    86400      ; expire
+    3600       ; negative cache TTL
+)
+@        IN NS  ns.corpus.example.
+ns       IN A   192.0.2.1
+greeting IN TXT "Hello, World!"

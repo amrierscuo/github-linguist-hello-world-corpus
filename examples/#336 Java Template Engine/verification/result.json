@@ -1,0 +1,28 @@
+{
+  "ordinal": 336,
+  "name": "Java Template Engine",
+  "timestamp_utc": "2026-10-08T12:19:19.577313+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "OpenJDK 21.0.12 + jte/jte-runtime 3.1.16",
+  "artifact_sha256": {
+    "examples/0336_java-template-engine/hello.jte": "70cbe10981bb306d080b790e4f753ea55e4345b46b66e633a934a7877c0574af",
+    "examples/0336_java-template-engine/Verify.java": "c0caa37e36e22e69c8c2d349f042997ae4c1682dc5f3e356f6517a73012ddfb2"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\jte-3.1.16.jar;${WORKSPACE}\\work\\tools_321_340\\jte-runtime-3.1.16.jar;${WORKSPACE}\\work\\tools_321_340\\jte-extension-api-3.1.16.jar",
+        "Verify.java",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0336"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

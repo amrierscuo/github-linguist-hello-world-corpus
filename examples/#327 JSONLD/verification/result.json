@@ -1,0 +1,28 @@
+{
+  "ordinal": 327,
+  "name": "JSONLD",
+  "timestamp_utc": "2026-10-08T12:18:29.740612+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + PyLD 3.3.0",
+  "artifact_sha256": {
+    "examples/0327_jsonld/hello.jsonld": "47402320869fbbe02f7a589e7b62dac5997cebc1729769d8be5b61bd4e9c4d6c",
+    "examples/0327_jsonld/verify.py": "2a8f5116d7749bfced31f2afb11fc0655aec26627c0473f5a36f456a1e97640e"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "dependency_metadata_observed": {
+    "PyLD": "3.3.0"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:36:00.301300+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0055_bird2/bird.conf": "90bbc66ad1db836e3032f7cd8c1af70b81cdfa2d37b92b9893dd677949e8c8b7"
+  },
+  "commands": [
+    {
+      "label": "BIRD version",
+      "cwd": "<corpus>/examples/0055_bird2",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/sbin/bird",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "BIRD version 2.14\n"
+    },
+    {
+      "label": "BIRD native configuration parse and constant eval",
+      "cwd": "<corpus>/examples/0055_bird2",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/sbin/bird",
+        "-p",
+        "-c",
+        "<corpus>/examples/0055_bird2/bird.conf"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "BIRD parser accepted the configuration; daemon/client runtime evaluation of GREETING remains pending."
+  ],
+  "toolchain": {
+    "name": "BIRD 2 Ubuntu binary package extracted locally",
+    "version": "BIRD version 2.14"
+  }
+}

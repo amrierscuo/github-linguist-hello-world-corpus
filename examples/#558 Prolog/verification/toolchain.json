@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:20.458478+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "SWI-Prolog version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_558_152620446840",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "SWI_HOME_DIR=<workspace>/work/tools_281_300/ubuntu/usr/lib/swi-prolog",
+        "<workspace>/work/tools_281_300/ubuntu/usr/lib/swi-prolog/bin/x86_64-linux/swipl",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_558_152620446840",
+      "exit_code": 0,
+      "stdout": "SWI-Prolog version 9.0.4 for x86_64-linux\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Prolog parsing and goal execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_558_152620446840",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "SWI_HOME_DIR=<workspace>/work/tools_281_300/ubuntu/usr/lib/swi-prolog",
+        "<workspace>/work/tools_281_300/ubuntu/usr/lib/swi-prolog/bin/x86_64-linux/swipl",
+        "-q",
+        "hello.pl"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_558_152620446840",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original SWI-Prolog",
+    "version": "9.0.4",
+    "binary_sha256": "be0c4b8a98f6eed857ddd69543f03c02170b7a63e0cc43cf8cbb5463fcefca61"
+  },
+  "artifact_sha256": {
+    "examples/0558_prolog/hello.pl": "087467ce1818250c527ca4d9e1e9e661dd740297135a4c1d59e6536a0f74f3c0"
+  }
+}

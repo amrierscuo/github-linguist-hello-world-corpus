@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "ordinal": 310,
+  "language": "ImageJ Macro",
+  "timestamp_utc": "2026-10-08T12:29:58.567762+00:00",
+  "platform": "Windows x64",
+  "toolchain": "ImageJ 1.54g; Microsoft OpenJDK 21.0.12.1",
+  "working_directory": "examples/0310_imagej-macro",
+  "source_sha256": {
+    "examples/0310_imagej-macro/hello.ijm": "dfed36a1f32f9d18ddbe5ae1bdc2c507879953c18ff35f02f684656e67ddc7b3",
+    "examples/0310_imagej-macro/ImageJVersion.java": "8dc5047ff3edbdb3b6b2925caea125a8e5186d8823ebb40be001123fa5117a2b"
+  },
+  "steps": [
+    {
+      "command": "java -version",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "command": "javac -cp <tool>/ij.jar -d <build> ImageJVersion.java",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "java -cp <ij.jar>;<build> ImageJVersion",
+      "exit_code": 0,
+      "stdout": "1.54g\n",
+      "stderr": ""
+    },
+    {
+      "command": "java -Djava.awt.headless=true -jar ij.jar -batch hello.ijm",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original ImageJ interpreter runs macro in documented batch mode; native print emits greeting without creating GUI/image windows.",
+  "blockers": []
+}

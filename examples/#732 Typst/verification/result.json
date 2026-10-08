@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "ordinal": 732,
+  "language": "Typst",
+  "timestamp_utc": "2026-10-08T13:30:07.268985+00:00",
+  "platform": "Windows x64",
+  "toolchain": "typst 0.15.1 (9dfd3a08); pypdf6.9.2",
+  "working_directory": "examples/0732_typst",
+  "source_sha256": {
+    "examples/0732_typst/hello.typ": "b9f1481830c8af022a52fcb456b7a403d6e7b414c6fcb20f4e0036c60388d851",
+    "examples/0732_typst/verify.py": "7b9603e1f134a134cb3319b1ef237391485b1d5ffac7ec64a4e01751364a87b4"
+  },
+  "steps": [
+    {
+      "command": "typst --version",
+      "exit_code": 0,
+      "stdout": "typst 0.15.1 (9dfd3a08)\n",
+      "stderr": ""
+    },
+    {
+      "command": "typst compile hello.typ <build>/hello.pdf",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <build>/hello.pdf",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Typst typesets actual PDF; genuine PDF text extraction yields exact greeting.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_721_740/732/hello.pdf",
+      "sha256": "3c0df2ca5c910515b10ada5c40d3d7a7d88a35b45968e0ed9171abb4572e52f0"
+    }
+  ]
+}

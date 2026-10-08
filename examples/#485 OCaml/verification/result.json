@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 485,
+  "language": "OCaml",
+  "timestamp_utc": "2026-10-08T13:10:44.031687+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "OCaml 4.14.1",
+  "working_directory": "examples/0485_ocaml",
+  "source_sha256": {
+    "examples/0485_ocaml/hello.ml": "84806f942940f18a40bec4ce21976bd1e5441b59b6c1091e7debf734c98b96e4"
+  },
+  "steps": [
+    {
+      "command": "ocamlc -version",
+      "exit_code": 0,
+      "stdout": "4.14.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "ocamlc -o <build>/hello hello.ml",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "ocamlrun <build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native OCaml compiler and bytecode runtime execute original main.",
+  "blockers": []
+}

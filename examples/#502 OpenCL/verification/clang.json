@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T14:11:24.414910+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "commands": [
+    {
+      "label": "Clang compiler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_581_600/recheck_502",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_581_600/ubuntu/usr/lib/llvm-18/bin/clang",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_581_600\\recheck_502",
+      "exit_code": 0,
+      "stdout": "Ubuntu clang version 18.1.3 (1ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: <workspace>/work/tools_581_600/ubuntu/usr/lib/llvm-18/bin\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native OpenCL C1.2 syntax/type verification",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_581_600/recheck_502",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_581_600/ubuntu/usr/lib/llvm-18/bin/clang",
+        "-x",
+        "cl",
+        "-cl-std=CL1.2",
+        "-fsyntax-only",
+        "hello.cl"
+      ],
+      "cwd": "<workspace>\\work\\tools_581_600\\recheck_502",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "toolchain": {
+    "name": "Original Clang18 OpenCL frontend",
+    "binary_sha256": "8ef402d453d1ba4902e4ee0f0f847f6cfa01400c95aa43c24e97818b9c0e3f45",
+    "source": "https://clang.llvm.org/docs/UsersManual.html#opencl-features"
+  },
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "semantic_scope": "Native OpenCL C1.2 syntax/type checking only; kernel execution and GPU output not tested.",
+  "artifact_sha256": {
+    "examples/0502_opencl/hello.cl": "e0819012bd9433a1443054f2d398e8f78cbb078fb35a76d0dc49dbcf205b0a9e"
+  }
+}

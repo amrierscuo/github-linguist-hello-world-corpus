@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 499,
+  "language": "Open Policy Agent",
+  "timestamp_utc": "2026-10-08T13:10:45.460417+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Version: 1.21.1\nBuild Commit: 2a109e54103370d2ef288782ef3cb4c8a37902b2-dirty\nBuild Timestamp: 2026-09-29T19:10:43Z\nBuild Hostname: \nGo Version: go1.27.1\nPlatform: windows/amd64\nRego Version: v1\nWebAssembly: available",
+  "working_directory": "examples/0499_open-policy-agent",
+  "source_sha256": {
+    "examples/0499_open-policy-agent/hello.rego": "4cc6333cafeb609a4f3728cc55f906a6cfd4f6ab930a931eb0e46fd8bddea617",
+    "examples/0499_open-policy-agent/hello_test.rego": "23fdec39f7cfa5aae5643ec97ebf612e4b2629fe85c8704118dd8175da80f233",
+    "examples/0499_open-policy-agent/input.json": "4e7b93dce44fc2ea11eca78cdbc9647c59ab920ebd575b97c01d5640a5306f99"
+  },
+  "steps": [
+    {
+      "command": "opa version",
+      "exit_code": 0,
+      "stdout": "Version: 1.21.1\nBuild Commit: 2a109e54103370d2ef288782ef3cb4c8a37902b2-dirty\nBuild Timestamp: 2026-09-29T19:10:43Z\nBuild Hostname: \nGo Version: go1.27.1\nPlatform: windows/amd64\nRego Version: v1\nWebAssembly: available\n",
+      "stderr": ""
+    },
+    {
+      "command": "opa check hello.rego hello_test.rego",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "opa test .",
+      "exit_code": 0,
+      "stdout": "PASS: 1/1\n",
+      "stderr": ""
+    },
+    {
+      "command": "opa eval --data hello.rego --input input.json --format json data.hello.greeting",
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": [\n    {\n      \"expressions\": [\n        {\n          \"value\": \"Hello, World!\",\n          \"text\": \"data.hello.greeting\",\n          \"location\": {\n            \"row\": 1,\n            \"col\": 1\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Official OPA checks Rego, passes native test, evaluates sprintf with original input. No deployment.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/tools_481_500/opa.exe",
+      "sha256": "25406f7c6e147d687fd7fd546f835bafa160a6242c605ee94a23ba6cd7bccdcd"
+    }
+  ]
+}

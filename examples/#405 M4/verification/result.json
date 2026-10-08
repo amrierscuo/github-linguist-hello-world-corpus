@@ -1,0 +1,31 @@
+{
+  "ordinal": 405,
+  "name": "M4",
+  "timestamp_utc": "2026-10-08T12:27:53.213041+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "GNU M4 extracted Ubuntu package",
+  "artifact_sha256": {
+    "examples/0405_m4/hello.m4": "9738f2860f228eafac7215713f05dc0b0813cf3a81fb15ab2a8491e52bc5e78f"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; env=os.environ.copy(); env[\"LD_LIBRARY_PATH\"]=sys.argv[1]+\"/usr/lib/x86_64-linux-gnu\"; r=subprocess.run([sys.argv[1]+\"/usr/bin/m4\",sys.argv[2]],env=env); sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_401_420/native",
+        "${WORKSPACE_WSL}/work/staging_401_420/examples/0405_m4/hello.m4"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

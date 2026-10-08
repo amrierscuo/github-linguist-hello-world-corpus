@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:55.031010+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node.js version",
+      "cwd": "<corpus>/examples/0776_wollok",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "genuine parser/runtime and semantic assertions",
+      "cwd": "<corpus>/examples/0776_wollok",
+      "command": [
+        "<node>",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: original Wollok parser/linker/interpreter executes object greeting and console println\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "wollok-ts / Node.js 22.20.0",
+    "version": "4.3.0"
+  },
+  "artifact_sha256": {
+    "examples/0776_wollok/greeting.wlk": "8a1066a93677519d509874000ffc9b827c5590bc9ec4e0a027695b6a646f9aef",
+    "examples/0776_wollok/hello.wpg": "1f6a4ab5b563c004268da6ac01dffba8a30e453f29b94a6f2601cc7a10142be6",
+    "examples/0776_wollok/verify.cjs": "9d6f78904e1235fd49aaee0718586faebcf344c00a312763434737d7172ed646"
+  }
+}

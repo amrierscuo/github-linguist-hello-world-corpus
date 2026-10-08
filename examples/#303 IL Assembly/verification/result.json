@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 303,
+  "language": "IL Assembly",
+  "timestamp_utc": "2026-10-08T12:29:57.289941+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Microsoft .NET Framework IL Assembler 4.8.9221.0 / CLR v4",
+  "working_directory": "examples/0303_il-assembly",
+  "source_sha256": {
+    "examples/0303_il-assembly/hello.il": "55bc6f5a8a4587c1678748c04ba8b32e8fea5768c6427aa5affbf07daf7ba093"
+  },
+  "steps": [
+    {
+      "command": "ilasm /exe /output=<build>/Hello.exe hello.il",
+      "exit_code": 0,
+      "stdout": "\nMicrosoft (R) .NET Framework IL Assembler.  Version 4.8.9221.0\nCopyright (c) Microsoft Corporation.  All rights reserved.\nAssembling 'hello.il'  to EXE --> '<workspace>\\work\\verify_301_320\\303\\Hello.exe'\nSource file is ANSI\n\nAssembled method Hello::Main\nCreating PE file\n\nEmitting classes:\nClass 1:\tHello\n\nEmitting fields and methods:\nGlobal \t\nClass 1\tMethods: 1;\t\n\nEmitting events and properties:\nGlobal \t\nClass 1\t\nWriting PE file\nOperation completed successfully\n",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/Hello.exe",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native Microsoft ILASM parses and assembles CIL instructions; .NET Framework executes entrypoint Console.WriteLine. Binary only in work.",
+  "blockers": []
+}

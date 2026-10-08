@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ordinal": 494,
+  "language": "Objective-J",
+  "timestamp_utc": "2026-10-08T13:11:33.888833+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js 22.20.0; objj-transpiler 1.0.0-10; objj-runtime 0.4.6",
+  "working_directory": "examples/0494_objective-j",
+  "source_sha256": {
+    "examples/0494_objective-j/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "objjc hello.j -o <build>/hello.js",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Objective-J compiler emits JavaScript; runtime loader on Windows fails to resolve local file.",
+  "blockers": [
+    "Objective-J native runtime execution pending: original objj-runtime 0.4.6 Windows local file resolution fails."
+  ],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_481_500/494/hello.js",
+      "sha256": "14704a0fc89e92d80c9a6853f1fe0f0eb67972ff09e0c981db0b8edd9f88b414"
+    }
+  ]
+}

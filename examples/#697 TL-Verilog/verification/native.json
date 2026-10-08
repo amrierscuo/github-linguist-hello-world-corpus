@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:48.396448+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0697_tl-verilog",
+      "command": [
+        "where.exe",
+        "sandpiper-saas"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required sandpiper-saas toolchain and matching execution/format resources are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine sandpiper-saas compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0697_tl-verilog/hello.tlv": "6b003f03150d6e2515c3a7149b74bd360e53aedf704ad99782c0eb3c865f5894"
+  }
+}

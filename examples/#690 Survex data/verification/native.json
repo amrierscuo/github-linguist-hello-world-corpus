@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:42.669567+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Survex cave survey engine version",
+      "cwd": "<corpus>/examples/0690_survex-data",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "SURVEXLIB=<workspace>/work/tools_681_700/linux/usr/share/survex",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_681_700/linux/usr/bin/proot",
+        "-b",
+        "<workspace>/work/tools_681_700/linux/usr/share/survex:/usr/share/survex",
+        "<workspace>/work/tools_681_700/linux/usr/bin/cavern",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/work/tools_681_700/linux/usr/bin/cavern - Survex 1.4.4\n",
+      "stderr": ""
+    },
+    {
+      "label": "Process original Survex survey to native 3d model",
+      "cwd": "<corpus>/examples/0690_survex-data",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "SURVEXLIB=<workspace>/work/tools_681_700/linux/usr/share/survex",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_681_700/linux/usr/bin/proot",
+        "-b",
+        "<workspace>/work/tools_681_700/linux/usr/share/survex:/usr/share/survex",
+        "<workspace>/work/tools_681_700/linux/usr/bin/cavern",
+        "-o",
+        "<workspace>/work/tools_681_700/690/hello.3d",
+        "<corpus>/examples/0690_survex-data/hello.svx"
+      ],
+      "exit_code": 0,
+      "stdout": "Survex 1.4.4\nCopyright © 1990-2021 Olly Betts\n\nRemoving trailing traverses...\n\nConcatenating traverses...\n\nSimplifying network...\n\nCalculating network...\n\nCalculating traverses...\n\nCalculating trailing traverses...\n\nCalculating statistics...\n\nSurvey contains 2 survey stations, joined by 1 leg.\nThere are 0 loops.\nTotal length of survey legs =   10.00m (  10.00m adjusted)\nTotal plan length of survey legs =   10.00m\nTotal vertical length of survey legs =    0.00m\nVertical range = 0.00m (from greeting.chamber at 0.00m to greeting.chamber at 0.00m)\nNorth-South range = 0.00m (from greeting.chamber at 0.00m to greeting.entrance at 0.00m)\nEast-West range = 10.00m (from greeting.chamber at 10.00m to greeting.entrance at 0.00m)\n   2 1-nodes.\nCPU time used  0.01s\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read actual survey 3d model and title",
+      "cwd": "<corpus>/examples/0690_survex-data",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_681_700/linux/usr/bin/proot",
+        "-b",
+        "<workspace>/work/tools_681_700/linux/usr/share/survex:/usr/share/survex",
+        "<workspace>/work/tools_681_700/linux/usr/bin/dump3d",
+        "<workspace>/work/tools_681_700/690/hello.3d"
+      ],
+      "exit_code": 0,
+      "stdout": "TITLE \"Hello, World!\"\nDATE \"@1791467083\"\nDATE_NUMERIC 1791467083\nVERSION 8\nSEPARATOR '.'\n--\nMOVE 0.00 0.00 0.00\nLINE 10.00 0.00 0.00 [greeting] STYLE=NORMAL\nNODE 10.00 0.00 0.00 [greeting.chamber] UNDERGROUND\nNODE 0.00 0.00 0.00 [greeting.entrance] UNDERGROUND FIXED\nSTOP\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Survex Cavern survey processor and dump3d reader",
+    "version": "<workspace>/work/tools_681_700/linux/usr/bin/cavern - Survex 1.4.4",
+    "cavern_sha256": "ebe71c183d5acf30cb7ec69f56e6e0fbe578387b70ec48a71633adf47095bfa7"
+  },
+  "generated_3d_sha256": "26224513c6695fd80e6fd9ea1a450e9207038af523024d24abb3ed4f71964128",
+  "artifact_sha256": {
+    "examples/0690_survex-data/hello.svx": "0997cb7ccae22a04770bf3c9cda328771e753e4d3cf45204c4668c977ce563e1"
+  }
+}

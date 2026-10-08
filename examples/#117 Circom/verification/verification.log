@@ -1,0 +1,71 @@
+{
+  "ordinal": 117,
+  "name": "Circom",
+  "timestamp_utc": "2026-10-08T11:42:12.715839+00:00",
+  "platform": "Windows 11 x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "artifact_sha256": {
+    "examples/0117_circom/hello.circom": "f7b6b09cb4b8253ba85be83d480e882151eaf1011ba11098a0e3f2736d1137f3",
+    "examples/0117_circom/input.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "examples/0117_circom/verify.cjs": "ccbf04897505d5f32fe673f3e8036fbec070813d0383fa65fa40470934d17157"
+  },
+  "toolchain": "Circom 2.2.3 linux/amd64 + Node.js 22.20.0 witness calculator",
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "chmod",
+        "+x",
+        "${WORKSPACE_WSL}/work/tools_101_120/circom-linux-amd64"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_101_120/circom-linux-amd64",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "circom compiler 2.2.3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_101_120/circom-linux-amd64",
+        "${WORKSPACE_WSL}/outputs/github_linguist_hello_world_corpus/examples/0117_circom/hello.circom",
+        "--r1cs",
+        "--wasm",
+        "-o",
+        "${WORKSPACE_WSL}/work/tools_101_120/circom_build"
+      ],
+      "exit_code": 0,
+      "stdout": "\u001b[32mtemplate instances\u001b[0m: 1\nnon-linear constraints: 0\nlinear constraints: 13\npublic inputs: 0\nprivate inputs: 0\npublic outputs: 13\nwires: 14\nlabels: 14\n\u001b[32mWritten successfully:\u001b[0m ${WORKSPACE_WSL}/work/tools_101_120/circom_build/hello.r1cs\n\u001b[32mWritten successfully:\u001b[0m ${WORKSPACE_WSL}/work/tools_101_120/circom_build/hello_js/hello.wasm\n\u001b[32mEverything went okay\u001b[0m\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs",
+        "${WORKSPACE}\\work\\tools_101_120\\circom_build\\hello_js"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only machine-specific absolute path prefixes are replaced; source digests, tool output, exit codes and timestamps are preserved. Raw record retained outside deliverable."
+}

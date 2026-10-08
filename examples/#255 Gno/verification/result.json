@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 255,
+  "language": "Gno",
+  "timestamp_utc": "2026-10-08T12:15:44.133484+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "gno version: v1.5.0",
+  "working_directory": "examples/0255_gno",
+  "source_sha256": {
+    "examples/0255_gno/hello.gno": "5d478b5a649c7e7b3d65da7ee2b675fdff92d7ef9faedd1e7f8cfa842369c221"
+  },
+  "steps": [
+    {
+      "command": "gno version",
+      "exit_code": 0,
+      "stdout": "gno version: v1.5.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "gno run hello.gno",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Official GnoVM interpreter executes .gno main and builtin println; no blockchain deployment or transaction.",
+  "blockers": []
+}

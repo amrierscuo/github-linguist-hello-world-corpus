@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:08.347658+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Clue version",
+      "cwd": "<corpus>/examples/0127_clue",
+      "command": [
+        "<workspace>/work/tools_121_140/clue/clue.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "clue 3.4.7\n",
+      "stderr": ""
+    },
+    {
+      "label": "Clue compile and embedded Lua execution",
+      "cwd": "<corpus>/examples/0127_clue",
+      "command": [
+        "<workspace>/work/tools_121_140/clue/clue.exe",
+        "--dontsave",
+        "--execute",
+        "hello.clue"
+      ],
+      "exit_code": 0,
+      "stdout": "Compiled file \"hello.clue\" in 0.0003359 seconds!\nRunning compiled code...\nCode ran in 0.0000923 seconds!\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Clue native compiler and embedded Lua interpreter",
+    "version": "clue 3.4.7",
+    "executable_sha256": "2931b50ec8f79b2223d5215a195d063de059e51cbf30630fe5661c9413aa45f4"
+  },
+  "artifact_sha256": {
+    "examples/0127_clue/hello.clue": "50ca22d307027eb88e1532d6775b39584edcdaf57f30aae2e8f27cafcbd6b6e7"
+  }
+}

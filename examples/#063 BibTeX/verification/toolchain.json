@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:31:11.125943+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0063_bibtex/driver.aux": "f97d2fd4175be28809675e46bd967e5be02788ca4a70ee3393fe258f640c8c26",
+    "examples/0063_bibtex/hello.bib": "a08b5be48cfb7eb2f2e01816482567ed4ebfb862bd15e5b3a393c46b95d95afc"
+  },
+  "commands": [
+    {
+      "label": "BibTeX version",
+      "command": [
+        "<bibtex>",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_63",
+      "exit_code": 0,
+      "stdout": "MiKTeX-BibTeX 4.2 (MiKTeX 25.12)\n© 1985, 1988, 2010 Oren Patashnik; all rights reserved.\nusing bzip2 version 1.0.8, 13-Jul-2019\ncompiled with curl version 8.4.0; using libcurl/8.4.0 Schannel\ncompiled with expat version 2.5; using expat_2.5.0\ncompiled with liblzma version 50040002; using 50040002\ncompiled with libressl version LibreSSL 3.8.1; using LibreSSL 3.8.1\ncompiled with MiKTeX Application Framework version 4.8; using 4.8\ncompiled with MiKTeX Core version 4.24; using 4.24\ncompiled with MiKTeX Archive Extractor version 4.1; using 4.1\ncompiled with MiKTeX Package Manager version 4.10; using 4.10\ncompiled with uriparser version 0.9.7\ncompiled with zlib version 1.2.13; using 1.2.13\n",
+      "stderr": "bibtex: major issue: So far, you have not checked for MiKTeX updates.\n"
+    },
+    {
+      "label": "Native BibTeX database parse and style execution",
+      "command": [
+        "<bibtex>",
+        "driver"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_63",
+      "exit_code": 0,
+      "stdout": "This is BibTeX, Version 0.99e (MiKTeX 25.12)\nThe top-level auxiliary file: driver.aux\nThe style file: plain.bst\nDatabase file #1: hello.bib\n",
+      "stderr": "bibtex: major issue: So far, you have not checked for MiKTeX updates.\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "MiKTeX native BibTeX",
+    "executable_sha256": "58133dab3e2cee89b465862bd4dae2ca62e2809a7903b40f14d92ac389968b4e"
+  },
+  "generated_bbl": "\\begin{thebibliography}{1}\n\n\\bibitem{corpusGreeting}\nCorpus.\n\\newblock {Hello, World!}, 2026.\n\n\\end{thebibliography}\n"
+}

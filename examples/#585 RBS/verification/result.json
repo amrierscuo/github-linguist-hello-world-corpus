@@ -1,0 +1,32 @@
+{
+  "ordinal": 585,
+  "name": "RBS",
+  "timestamp_utc": "2026-10-08T13:20:46.461814+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Ruby 3.2.3 + RBS parser",
+  "artifact_sha256": {
+    "examples/0585_rbs/hello.rbs": "27406d360e4ef279b36c8f6ce1028bc98b0b3da2825f677fea9bc08b196fe4ba",
+    "examples/0585_rbs/verify.rb": "807fa97db4f37dab25c8aa152a0162b76bedb7a23b5419968b2208a84bcbc1ba"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "verify.rb"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

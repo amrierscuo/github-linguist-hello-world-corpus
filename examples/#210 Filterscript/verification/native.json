@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.947956+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for llvm-rs-cc",
+      "cwd": "<corpus>/examples/0210_filterscript",
+      "command": [
+        "where.exe",
+        "llvm-rs-cc"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Historical Android FilterScript compiler/SDK runtime and compatible device/emulator are unavailable."
+  ],
+  "toolchain": {
+    "name": "Required authentic toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0210_filterscript/hello.fs": "b0fb2754c2cf9c225818ecca548cf8bc1cd6828d2ac1c47ffc4a6c323cfd7ea0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:13.301592+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0608_redcode",
+      "command": [
+        "where.exe",
+        "pmars"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required pmars compiler/runtime and matching host resources are not available/configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine pmars compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0608_redcode/hello.cw": "4b6608c2dcac15cadb2c66ba4abd61a12f7f6b83d84bd5cdff65f1748d63cce1"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:09:14.194764+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "Cylc version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_148_140914190500",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_141_160/python_linux",
+        "CYLC_PYTHONPATH=<workspace>/work/tools_141_160/python_linux",
+        "PYTHONNOUSERSITE=1",
+        "PATH=<workspace>/work/tools_141_160/python_linux/bin:/usr/bin:/bin",
+        "CYLC_CONF_PATH=<workspace>/work/tools_141_160/verify_148_140914190500/config",
+        "python3",
+        "<workspace>/work/tools_141_160/cylc_cli.py",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_148_140914190500",
+      "exit_code": 0,
+      "stdout": "8.6.6\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Cylc workflow configuration, graph and runtime validation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_148_140914190500",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_141_160/python_linux",
+        "CYLC_PYTHONPATH=<workspace>/work/tools_141_160/python_linux",
+        "PYTHONNOUSERSITE=1",
+        "PATH=<workspace>/work/tools_141_160/python_linux/bin:/usr/bin:/bin",
+        "CYLC_CONF_PATH=<workspace>/work/tools_141_160/verify_148_140914190500/config",
+        "python3",
+        "<workspace>/work/tools_141_160/cylc_cli.py",
+        "validate",
+        "<workspace>/work/tools_141_160/verify_148_140914190500"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_148_140914190500",
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "\nCommand timed out."
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Original Cylc Flow PyPI distribution for Linux Python 3.12",
+    "version": "8.6.6",
+    "metadata_sha256": "223113461da9cb5940db4a79db6c38d08e9d2eb8f07b1e3ec232bd6530ef9f57",
+    "source": "https://github.com/cylc/cylc-flow"
+  },
+  "semantic_scope": "Workflow scheduler and task execution not run; static validation only.",
+  "artifact_sha256": {
+    "examples/0148_cylc/flow.cylc": "be9933a44fbf08c3eccc546cfbb44a529e08951314a5fbe9bdc65839a9ae30f7"
+  },
+  "cleanup": {
+    "exit_code": 0,
+    "stdout": "{\"scope\": \"<workspace>/work/tools_141_160/verify_148_*\", \"validation_pids_stopped\": [], \"active_validation_pids\": [], \"scheduler_started\": false}\n",
+    "stderr": ""
+  }
+}

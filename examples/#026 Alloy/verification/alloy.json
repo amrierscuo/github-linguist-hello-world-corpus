@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T10:58:02.483037+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Percorsi della macchina normalizzati: radice del corpus sostituita con <corpus>, radice di lavoro con <workspace>, home con <user-home>, eseguibili con <python>, <node>, <java>; i soli argomenti di percorso dei comandi usano separatori POSIX. Gli output sono conservati salvo queste sostituzioni, che non modificano i byte degli artefatti o i risultati.",
+  "commands": [
+    {
+      "label": "JVM version",
+      "cwd": "examples/0026_alloy",
+      "command": [
+        "<java>",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "Alloy version",
+      "cwd": "examples/0026_alloy",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_21_26/alloy-6.2.0.jar",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "6.2.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Alloy parse and typecheck",
+      "cwd": "examples/0026_alloy",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_21_26/alloy-6.2.0.jar",
+        "commands",
+        "<corpus>/examples/0026_alloy/hello.als"
+      ],
+      "exit_code": 0,
+      "stdout": "0 . Run showGreeting for 3 expect 1\n1 . Check GreetingIsHelloWorld for 3 expect 0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Alloy SAT4J model and assertion check",
+      "cwd": "examples/0026_alloy",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_21_26/alloy-6.2.0.jar",
+        "exec",
+        "-c",
+        "*",
+        "-s",
+        "sat4j",
+        "-t",
+        "json",
+        "-o",
+        "<workspace>/work/tools_21_26/alloy_positive",
+        "<corpus>/examples/0026_alloy/hello.als"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Official Alloy API parser and SAT4J assertions",
+      "cwd": "examples/0026_alloy",
+      "command": [
+        "<java>",
+        "-Dorg.slf4j.simpleLogger.defaultLogLevel=error",
+        "--class-path",
+        "<workspace>/work/tools_21_26/alloy-6.2.0.jar",
+        "AlloyCheck.java",
+        "hello.als"
+      ],
+      "exit_code": 0,
+      "stdout": "showGreeting: SAT; Greeting.text = \"Hello, World!\"\nGreetingIsHelloWorld: UNSAT counterexample, scope 3\nPASS: native Alloy parser, SAT4J instance, bounded assertion, malformed-signature negative control\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0026_alloy/hello.als": "20c83474e5a4f40d263462449aa71abc8b3b84f0a026114cb1dac3aa3a40233e",
+    "examples/0026_alloy/AlloyCheck.java": "d3aff83bc65ee91568fea9774ced1fb00f05b87c73951689d3cfe5069ad7f91d"
+  },
+  "toolchain": {
+    "distribution": "org.alloytools:org.alloytools.alloy.dist:6.2.0 official Maven Central JAR",
+    "version": "6.2.0",
+    "source": "https://repo.maven.apache.org/maven2/org/alloytools/org.alloytools.alloy.dist/6.2.0/",
+    "jar_sha256": "6037cbeee0e8423c1c468447ed10f5fcf2f2743a2ffc39cb1c81f2905c0fdb9d",
+    "solver": "SAT4J"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "Native Alloy 6.2.0 parser/typechecker and SAT4J: SAT for showGreeting, evaluated singleton String atom, UNSAT counterexample for assertion within scope 3; not an unbounded proof."
+}

@@ -1,0 +1,28 @@
+{
+  "ordinal": 326,
+  "name": "JSON5",
+  "timestamp_utc": "2026-10-08T12:18:29.624184+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + json5 0.16.0",
+  "artifact_sha256": {
+    "examples/0326_json5/hello.json5": "9a148c6dfa6d1d4e0a4bed1e5afd362b58aee7ccc291f5ad4ef802321bdc2f2a",
+    "examples/0326_json5/verify.py": "05d168abbeb2365f29512410861247cdea43640a466ea1ee77df7cd7250b6e8d"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "dependency_metadata_observed": {
+    "json5": "0.16.0"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:10:22.403471+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "LDC compiler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_152_141022353151",
+        "--",
+        "<workspace>/work/tools_141_160/ldc/ldc2-1.43.0-linux-x86_64/bin/ldc2",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_152_141022353151",
+      "exit_code": 0,
+      "stdout": "LDC - the LLVM D compiler (1.43.0):\n  based on DMD v2.113.0 and LLVM 22.1.8\n  built with LDC - the LLVM D compiler (1.43.0)\n  Default target: x86_64-unknown-linux-gnu\n  Host CPU: skylake\n  https://dlang.org - https://wiki.dlang.org/LDC\n\n\n  Registered Targets:\n    aarch64     - AArch64 (little endian)\n    aarch64_32  - AArch64 (little endian ILP32)\n    aarch64_be  - AArch64 (big endian)\n    amdgcn      - AMD GCN GPUs\n    arm         - ARM\n    arm64       - ARM64 (little endian)\n    arm64_32    - ARM64 (little endian ILP32)\n    armeb       - ARM (big endian)\n    avr         - Atmel AVR Microcontroller\n    bpf         - BPF (host endian)\n    bpfeb       - BPF (big endian)\n    bpfel       - BPF (little endian)\n    hexagon     - Hexagon\n    lanai       - Lanai\n    loongarch32 - 32-bit LoongArch\n    loongarch64 - 64-bit LoongArch\n    mips        - MIPS (32-bit big endian)\n    mips64      - MIPS (64-bit big endian)\n    mips64el    - MIPS (64-bit little endian)\n    mipsel      - MIPS (32-bit little endian)\n    msp430      - MSP430 [experimental]\n    nvptx       - NVIDIA PTX 32-bit\n    nvptx64     - NVIDIA PTX 64-bit\n    ppc32       - PowerPC 32\n    ppc32le     - PowerPC 32 LE\n    ppc64       - PowerPC 64\n    ppc64le     - PowerPC 64 LE\n    r600        - AMD GPUs HD2XXX-HD6XXX\n    riscv32     - 32-bit RISC-V\n    riscv32be   - 32-bit big endian RISC-V\n    riscv64     - 64-bit RISC-V\n    riscv64be   - 64-bit big endian RISC-V\n    sparc       - Sparc\n    sparcel     - Sparc LE\n    sparcv9     - Sparc V9\n    spirv       - SPIR-V Logical\n    spirv32     - SPIR-V 32-bit\n    spirv64     - SPIR-V 64-bit\n    systemz     - SystemZ\n    thumb       - Thumb\n    thumbeb     - Thumb (big endian)\n    ve          - VE\n    wasm32      - WebAssembly 32-bit\n    wasm64      - WebAssembly 64-bit\n    x86         - 32-bit X86: Pentium-Pro and above\n    x86-64      - 64-bit X86: EM64T and AMD64\n    xcore       - XCore\n    xtensa      - Xtensa 32\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native D BetterC compilation and C ABI linking",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_152_141022353151",
+        "--",
+        "<workspace>/work/tools_141_160/ldc/ldc2-1.43.0-linux-x86_64/bin/ldc2",
+        "-betterC",
+        "hello.d",
+        "-of=hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_152_141022353151",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run D program",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_152_141022353151",
+        "--",
+        "./hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_152_141022353151",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "label": "GNU objdump version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_152_141022353151",
+        "--",
+        "objdump",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_152_141022353151",
+      "exit_code": 0,
+      "stdout": "GNU objdump (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original D source to ELF object",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_152_141022353151",
+        "--",
+        "<workspace>/work/tools_141_160/ldc/ldc2-1.43.0-linux-x86_64/bin/ldc2",
+        "-betterC",
+        "-c",
+        "hello.d",
+        "-of=hello.o"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_152_141022353151",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native disassembly and section dump of real D ELF object",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_152_141022353151",
+        "--",
+        "objdump",
+        "-d",
+        "-r",
+        "-s",
+        "hello.o"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_152_141022353151",
+      "exit_code": 0,
+      "stdout": "\nhello.o:     file format elf64-x86-64\n\nContents of section .text._D5hello8greetingFNbNiZPxa:\n 0000 554889e5 488d0500 0000005d c3        UH..H......].   \nContents of section .text.main:\n 0000 554889e5 4883ec10 e8000000 004889c7  UH..H........H..\n 0010 e8000000 0083f800 7d09c745 fc010000  ........}..E....\n 0020 00eb07c7 45fc0000 00008b45 fc4883c4  ....E......E.H..\n 0030 105dc3                               .].             \nContents of section .rodata.str1.1:\n 0000 48656c6c 6f2c2057 6f726c64 2100      Hello, World!.  \nContents of section .comment:\n 0000 006c6463 20766572 73696f6e 20312e34  .ldc version 1.4\n 0010 332e3000                             3.0.            \nContents of section .eh_frame:\n 0000 14000000 00000000 017a5200 01781001  .........zR..x..\n 0010 1b0c0708 90010000 1c000000 1c000000  ................\n 0020 00000000 0d000000 00410e10 8602430d  .........A....C.\n 0030 06480c07 08000000 1c000000 3c000000  .H..........<...\n 0040 00000000 33000000 00410e10 8602430d  ....3....A....C.\n 0050 066e0c07 08000000                    .n......        \n\nDisassembly of section .text._D5hello8greetingFNbNiZPxa:\n\n0000000000000000 <_D5hello8greetingFNbNiZPxa>:\n   0:\t55                   \tpush   %rbp\n   1:\t48 89 e5             \tmov    %rsp,%rbp\n   4:\t48 8d 05 00 00 00 00 \tlea    0x0(%rip),%rax        # b <_D5hello8greetingFNbNiZPxa+0xb>\n\t\t\t7: R_X86_64_PC32\t.L.str-0x4\n   b:\t5d                   \tpop    %rbp\n   c:\tc3                   \tret\n\nDisassembly of section .text.main:\n\n0000000000000000 <main>:\n   0:\t55                   \tpush   %rbp\n   1:\t48 89 e5             \tmov    %rsp,%rbp\n   4:\t48 83 ec 10          \tsub    $0x10,%rsp\n   8:\te8 00 00 00 00       \tcall   d <main+0xd>\n\t\t\t9: R_X86_64_PLT32\t_D5hello8greetingFNbNiZPxa-0x4\n   d:\t48 89 c7             \tmov    %rax,%rdi\n  10:\te8 00 00 00 00       \tcall   15 <main+0x15>\n\t\t\t11: R_X86_64_PLT32\tputs-0x4\n  15:\t83 f8 00             \tcmp    $0x0,%eax\n  18:\t7d 09                \tjge    23 <main+0x23>\n  1a:\tc7 45 fc 01 00 00 00 \tmovl   $0x1,-0x4(%rbp)\n  21:\teb 07                \tjmp    2a <main+0x2a>\n  23:\tc7 45 fc 00 00 00 00 \tmovl   $0x0,-0x4(%rbp)\n  2a:\t8b 45 fc             \tmov    -0x4(%rbp),%eax\n  2d:\t48 83 c4 10          \tadd    $0x10,%rsp\n  31:\t5d                   \tpop    %rbp\n  32:\tc3                   \tret\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original LDC LLVM D compiler",
+    "distribution": {
+      "source": "https://github.com/ldc-developers/ldc/releases/download/v1.43.0/ldc2-1.43.0-linux-x86_64.tar.xz",
+      "version": "1.43.0",
+      "sha256": "35805db60f47fd1a162b2035da84d96beec37e6d1e7b1edf60498a90acfaedce"
+    }
+  },
+  "generated_object_sha256": "f7d16edff1abf560a3606e12530ae7370ce20701a9624fd2152f90f6280250fd",
+  "semantic_scope": "Text is genuine objdump output from the original D source; associated executable greeting verified. The dump itself is not executable.",
+  "artifact_sha256": {
+    "examples/0152_d-objdump/hello.d": "698eecfed75fa84324475067b0533c85a2927cb71e796ffa24c94825f7e2ae80",
+    "examples/0152_d-objdump/hello.d-objdump": "907ed2d7db5eb66a1814e16f4659215eefb5c8adbc39c75a86b577a73bf7186e"
+  }
+}

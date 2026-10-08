@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:12.408201+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0604_reasonligo",
+      "command": [
+        "where.exe",
+        "ligo"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required ligo compiler/runtime and matching host resources are not available/configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine ligo compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0604_reasonligo/hello.religo": "197cfa15a0fcdedd5618db1639869a3c81d967275309732d440e7784851278f0"
+  }
+}

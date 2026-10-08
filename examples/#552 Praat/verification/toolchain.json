@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:28:26.619318+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Praat version",
+      "command": [
+        "<workspace>\\work\\tools_541_560\\praat\\Praat.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_552_152826616158",
+      "exit_code": 0,
+      "stdout": "Praat 7.0.02 (August 26 2026)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Praat batch script execution",
+      "command": [
+        "<workspace>\\work\\tools_541_560\\praat\\Praat.exe",
+        "--run",
+        "hello.praat"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_552_152826616158",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Praat script runtime",
+    "distribution": {
+      "version": "v7.0.02",
+      "url": "https://github.com/praat/praat.github.io/releases/download/v7.0.02/praat7002_win-x64v1.zip",
+      "sha256": "d8c741104faec65c5e6d77f460140f60b0568143b22506c079a4b7aa0b8d45a0"
+    }
+  },
+  "stdout_encoding": "Original UTF16LE decoded to Unicode and CRLF normalized.",
+  "artifact_sha256": {
+    "examples/0552_praat/hello.praat": "49db089d85cd27ede853184cccb2c26e5defc70e6ff366005aab844e8dbaaa06"
+  }
+}

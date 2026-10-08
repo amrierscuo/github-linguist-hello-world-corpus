@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ordinal": 81,
+  "language": "Bru",
+  "timestamp_utc": "2026-10-08T11:38:40.631298+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; @usebruno/lang 0.40.0; @usebruno/cli 4.2.1; Python stdlib HTTP fixture 3.13.9",
+  "working_directory": "examples/0081_bru",
+  "source_sha256": {
+    "examples/0081_bru/hello.bru": "217379f0f9ce151a7ba961959da7d73372807db4d4ccfb1f60a442a0a057d5ef",
+    "examples/0081_bru/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0081_bru/bruno.json": "e0f95bdcbb1917ddd6c45237e847c783b2e0c6cdffa04c9a3693658799e8a72c",
+    "examples/0081_bru/check.cjs": "509ca49fe00af7bf8a90c5bba9cf8df972f5a1cbe57f2b819e2456e3df381ed8",
+    "examples/0081_bru/package.json": "92012913dbd628dbfc565c02fb1fed0bf2aa5e36622a9db04aa8dd686c3cb0c8"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "{\"meta\":{\"name\":\"Hello World\",\"type\":\"http\",\"seq\":\"1\"},\"http\":{\"method\":\"get\",\"url\":\"http://127.0.0.1:8765/hello.txt\",\"body\":\"none\",\"auth\":\"none\"},\"tests\":\"test(/\"response greeting/\", function () {/n  expect(res.getBody().trim()).to.equal(/\"Hello, World!/\");/n});\"}\nBru parser PASS: GET request, URL and greeting fixture decoded. HTTP test has not run.\n",
+      "stderr": ""
+    },
+    {
+      "command": "bru --version",
+      "exit_code": 0,
+      "stdout": "4.2.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "bru run hello.bru --noproxy --sandbox=safe --reporter-json <work>/report.json",
+      "exit_code": 0,
+      "stdout": "hello (200 OK) - 218 ms\nTests\n   ✓ response greeting\n\n📊 Execution Summary\n┌───────────────┬──────────────┐\n│ Metric        │    Result    │\n├───────────────┼──────────────┤\n│ Status        │    ✓ PASS    │\n├───────────────┼──────────────┤\n│ Requests      │ 1 (1 Passed) │\n├───────────────┼──────────────┤\n│ Tests         │     1/1      │\n├───────────────┼──────────────┤\n│ Assertions    │     0/0      │\n├───────────────┼──────────────┤\n│ Duration (ms) │     865      │\n└───────────────┴──────────────┘\nWrote json results to <workspace>/work/verify_81_100/81/report.json\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Official Bru parser reads method get, URL and meta; fixture greeting assertion passes.",
+    "Actual GET /hello.txt receives HTTP 200 with body Hello, World! plus newline.",
+    "Bruno response greeting test result: pass (1/1), CLI exit 0."
+  ],
+  "scope": "Official Bruno parser and actual Bruno CLI HTTP runner/test sandbox against a temporary loopback server serving hello.txt. No external HTTP service is used.",
+  "blockers": [],
+  "server_events": [
+    "\"GET /hello.txt HTTP/1.1\" 200 -"
+  ],
+  "report_evidence": {
+    "response_status": 200,
+    "response_body": "Hello, World!\n",
+    "tests": [
+      {
+        "description": "response greeting",
+        "status": "pass",
+        "uid": "-PhIsS-6UqQpz6lnpQQO_"
+      }
+    ]
+  }
+}

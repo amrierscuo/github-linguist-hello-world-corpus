@@ -1,0 +1,12 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const {Grammars} = require('ebnf');
+const parser = new Grammars.W3C.Parser(fs.readFileSync(__dirname+'/hello.ebnf','utf8'));
+const ast = parser.getAST('Hello, World!');
+assert.ok(ast && ast.errors.length === 0, JSON.stringify(ast));
+assert.equal(ast.type, 'Greeting');
+assert.equal(ast.text, 'Hello, World!');
+const bad = parser.getAST('Hello, Moon!');
+assert.ok(!bad || bad.errors.length > 0, JSON.stringify(bad));
+console.log(ast.text);
+console.log('W3C EBNF grammar compilation and accepted/rejected input PASS.');

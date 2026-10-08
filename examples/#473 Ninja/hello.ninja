@@ -1,0 +1,6 @@
+rule greet
+  command = python3 greet.py
+  description = Generate original greeting
+
+build greeting.txt: greet greet.py
+default greeting.txt

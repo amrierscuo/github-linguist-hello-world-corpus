@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 244,
+  "language": "Gettext Catalog",
+  "timestamp_utc": "2026-10-08T12:17:31.360561+00:00",
+  "platform": "WSL msgfmt + Windows Python",
+  "toolchain": "msgfmt (GNU gettext-tools) 0.21; Python 3.13.9 gettext.GNUTranslations",
+  "working_directory": "examples/0244_gettext-catalog",
+  "source_sha256": {
+    "examples/0244_gettext-catalog/hello.po": "ac5d23fed78d8cd54dc0eee645aaa20f90a78d2168f03066c5722444379cd1b9",
+    "examples/0244_gettext-catalog/verify.py": "d6f771fac7c80b24d0e1af75215f00a24fcaa7ff7681c998d3ddcf46c0412375"
+  },
+  "steps": [
+    {
+      "command": "msgfmt --version",
+      "exit_code": 0,
+      "stdout": "msgfmt (GNU gettext-tools) 0.21\nCopyright (C) 1995-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\nWritten by Ulrich Drepper.\n",
+      "stderr": ""
+    },
+    {
+      "command": "msgfmt --check --check-header -o <build>/hello.mo hello.po",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <build>/hello.mo",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nActual compiled GNU message catalog lookup PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "GNU msgfmt validates/compiles original PO to binary MO only in work; stdlib GNUTranslations loads it and translates greeting to exact salutation.",
+  "blockers": []
+}

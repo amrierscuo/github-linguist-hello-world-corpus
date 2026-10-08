@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T14:06:33.674837+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "commands": [
+    {
+      "label": "Native Pod6 parsing and Text documentation rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/recheck_542",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_581_600/ubuntu/usr/lib/moar",
+        "RAKUDO_HOME=<workspace>/work/tools_581_600/ubuntu/usr/lib/perl6",
+        "NQP_HOME=<workspace>/work/tools_581_600/ubuntu/usr/share/nqp/lib",
+        "<workspace>/work/tools_581_600/ubuntu/usr/bin/moar",
+        "--libpath=<workspace>/work/tools_581_600/ubuntu/usr/share/nqp/lib",
+        "--libpath=<workspace>/work/tools_581_600/ubuntu/usr/lib/perl6/runtime",
+        "--libpath=<workspace>/work/tools_581_600/ubuntu/usr/lib/perl6/lib",
+        "<workspace>/work/tools_581_600/ubuntu/usr/lib/perl6/runtime/perl6.moarvm",
+        "--doc=Text",
+        "hello.pod6"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\recheck_542",
+      "exit_code": 0,
+      "stdout": "Corpus greeting\n\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain": {
+    "name": "Original Rakudo/MoarVM2022.12 Pod6 parser and Pod::To::Text renderer",
+    "binary_sha256": "4455e7930dcde6387fb96d61097f172ce0714554daac8d65eae21962f5c268bb",
+    "source": "https://docs.raku.org/language/pod"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "artifact_sha256": {
+    "examples/0542_pod-6/hello.pod6": "a0a2603939cf43362da0a40d2fbed3e79ffff948694dca57c6b341444f8ed01b"
+  }
+}

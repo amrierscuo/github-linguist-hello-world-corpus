@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 656,
+  "language": "Shell",
+  "timestamp_utc": "2026-10-08T13:23:04.448187+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "Ubuntu dash 0.5.12 POSIX sh",
+  "working_directory": "examples/0656_shell",
+  "source_sha256": {
+    "examples/0656_shell/hello.sh": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+  },
+  "steps": [
+    {
+      "command": "sh -n hello.sh",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "sh hello.sh",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native shell parses/executes original greeting.",
+  "blockers": []
+}

@@ -1,0 +1,41 @@
+{
+  "ordinal": 663,
+  "name": "Slang",
+  "timestamp_utc": "2026-10-08T13:48:11.014773+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Slang v2026.19 official Windows compiler; SPIR-V compile verified, GPU execution pending",
+  "artifact_sha256": {
+    "examples/0663_slang/hello.slang": "47bd8e6fd84d32bb73123ef76a8c6793cb36e91bde072ae59588f5fe35c756d2"
+  },
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_661_680\\slang\\bin\\slangc.exe",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "2026.19\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_661_680\\slang\\bin\\slangc.exe",
+        "hello.slang",
+        "-entry",
+        "main",
+        "-target",
+        "spirv",
+        "-o",
+        "${WORKSPACE}\\work\\tools_661_680\\build_0663\\hello.spv"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "error": "Compiler Slang genera SPIR-V; host GPU e dispatch non eseguiti.",
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

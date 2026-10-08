@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "language": "Apollo Guidance Computer",
+  "ordinal": 35,
+  "timestamp_utc": "2026-10-08T11:01:56.068379+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Virtual AGC yaYUL, assembler revision 2017-06-19 (Windows distribution 2017-08-31)",
+  "working_directory": "examples/0035_apollo-guidance-computer",
+  "source_sha256": {
+    "examples/0035_apollo-guidance-computer/hello.agc": "6ae1c4331cb9b49f1316dc0a52e1d18c640dabc1e52459f48093ab030d46940e"
+  },
+  "steps": [
+    {
+      "command": "yaYUL hello.agc",
+      "exit_code": 0,
+      "stdout": "Apollo Guidance Computer (AGC) assembler, version 2017-06-19, built Aug 31 2017, target AGC4\n(c)2003-2005,2009-2010,2016,2017 Ronald S. Burkey\nRefer to http://www.ibiblio.org/apollo/index.html for more information.\nPass #1\nPass #2\nPass #3\n000001,000001:                                                                                          \t# Block II AGC example: explicit ASCII codes, one 15-bit word per character.\n000002,000002:                                                                                          \t# ASCII is a convention of this example, not a native AGC text service.\n000003,000003:                                                                                          \t# Starting at octal 4000, load H (octal 00110) into A and hold.\n000004,000004:    4000                                           SETLOC   4000                          \t#\n000005,000005:    4000           34002        START              CA       GREET                         \t#\n000006,000006:    4001           04001        HOLD               TC       HOLD                          \t#\n000007,000007:    4002           00110        GREET              OCT      00110                         \t# 'H'\n000008,000008:    4003           00145                           OCT      00145                         \t# 'e'\n000009,000009:    4004           00154                           OCT      00154                         \t# 'l'\n000010,000010:    4005           00154                           OCT      00154                         \t# 'l'\n000011,000011:    4006           00157                           OCT      00157                         \t# 'o'\n000012,000012:    4007           00054                           OCT      00054                         \t# ','\n000013,000013:    4010           00040                           OCT      00040                         \t# ' '\n000014,000014:    4011           00127                           OCT      00127                         \t# 'W'\n000015,000015:    4012           00157                           OCT      00157                         \t# 'o'\n000016,000016:    4013           00162                           OCT      00162                         \t# 'r'\n000017,000017:    4014           00154                           OCT      00154                         \t# 'l'\n000018,000018:    4015           00144                           OCT      00144                         \t# 'd'\n000019,000019:    4016           00041                           OCT      00041                         \t# '!'\n\n\nUsage Table for Fixed-Memory Banks\n----------------------------------\nBank 00:  0000/2000 words used.\nBank 01:  0000/2000 words used.\nBank 02:  0017/2000 words used.\nBank 03:  0000/2000 words used.\nBank 04:  0000/2000 words used.\nBank 05:  0000/2000 words used.\nBank 06:  0000/2000 words used.\nBank 07:  0000/2000 words used.\nBank 10:  0000/2000 words used.\nBank 11:  0000/2000 words used.\nBank 12:  0000/2000 words used.\nBank 13:  0000/2000 words used.\nBank 14:  0000/2000 words used.\nBank 15:  0000/2000 words used.\nBank 16:  0000/2000 words used.\nBank 17:  0000/2000 words used.\nBank 20:  0000/2000 words used.\nBank 21:  0000/2000 words used.\nBank 22:  0000/2000 words used.\nBank 23:  0000/2000 words used.\nBank 24:  0000/2000 words used.\nBank 25:  0000/2000 words used.\nBank 26:  0000/2000 words used.\nBank 27:  0000/2000 words used.\nBank 30:  0000/2000 words used.\nBank 31:  0000/2000 words used.\nBank 32:  0000/2000 words used.\nBank 33:  0000/2000 words used.\nBank 34:  0000/2000 words used.\nBank 35:  0000/2000 words used.\nBank 36:  0000/2000 words used.\nBank 37:  0000/2000 words used.\nBank 40:  0000/2000 words used.\nBank 41:  0000/2000 words used.\nBank 42:  0000/2000 words used.\nBank 43:  0000/2000 words used.\n\n\nSymbol Table\n------------\n     1,E:   $17             0017  \t\t     2,E:   $3              0003  \t\t     3,E:   $4              0004  \t\t     4,E:   $5              0005  \n     5,E:   $6              0006  \t\t     6,E:   $7              0007  \t\t     7,F:   GREET           4002  \t\t     8,F:   HOLD            4001  \n     9,F:   START           4000  \t\t\n\nUnresolved symbols:  0\nFatal errors:  0\nWarnings:  0\nRemoving the duplicated lines... \n\nSymbol-table file written.\n\nBugger word 65565 at 02,2021.\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Assembly exit 0, Fatal errors: 0, Warnings: 0; core-rope binary produced."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "scope": "Assembly and symbol resolution only. No emulator CPU run, register observation or DSKY output has been performed. ASCII-coded words are the example's declared data convention."
+}

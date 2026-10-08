@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:27:22.905709+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Polar rule loading, query evaluation and binding assertion",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_544_152722898908",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_541_560/linux-python",
+        "PYTHONNOUSERSITE=1",
+        "python3",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_544_152722898908",
+      "exit_code": 0,
+      "stdout": "[warning] Your policy does not contain an allow rule, which usually means\nthat no actions are allowed. Did you mean to add an allow rule to\nthe top of your policy?\n\n  allow(actor, action, resource) if ...\n\nYou can also suppress this warning by adding an allow_field or allow_request\nrule. For more information about allow rules, see:\n\n  https://docs.osohq.com/reference/polar/builtin_rule_types.html#allow\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Oso Polar engine",
+    "version": "0.27.3",
+    "distributions": [
+      {
+        "file": "cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "b62ce867176a75d03a665bad002af8e6d54644fad99a3c70905c543130e39d93",
+        "source": "https://pypi.org/project/cffi/"
+      },
+      {
+        "file": "oso-0.27.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "0f93315bbb1988c58db0c9ae12c24aefb5e3d15ef2f80126a36cbbbfe060ef2b",
+        "source": "https://pypi.org/project/oso/"
+      },
+      {
+        "file": "pycparser-3.1-py3-none-any.whl",
+        "sha256": "f09d358c840bd147b79e55f2bc494f18ea869dc897f5852a8f5766b74f787882",
+        "source": "https://pypi.org/project/pycparser/"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0544_polar/hello.polar": "428a563c269146bc8df356736fbe57578c6a71f83900c2957e902b86e42359f8",
+    "examples/0544_polar/verify.py": "618dff9413f75c638fcef1fc9a58188e7e4e6a4d8b7fbc0b312e41911410245d"
+  }
+}

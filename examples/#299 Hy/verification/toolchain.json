@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:45:38.546729+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Hy version",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-m",
+        "hy",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_299_144538540507",
+      "exit_code": 0,
+      "stdout": "hy 1.3.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Hy compiler and program execution",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-m",
+        "hy",
+        "hello.hy"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_299_144538540507",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "hy",
+    "version": "1.3.1",
+    "metadata_sha256": "60b4df75586ceac98f36248f38f8fd313794aca09d64ff2b9c91fd0b76338d14",
+    "record_sha256": "8bb8407bda0066df21e909dd040301389ede7a1b595a5d45fa5947c8d03389e2",
+    "source": "https://pypi.org/project/hy/"
+  },
+  "artifact_sha256": {
+    "examples/0299_hy/hello.hy": "b0e4831ce5ed78d33b2e3931ee60b031286b2d1373948cd25f0f08b312dd019c"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:11:38.152924+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Greenbone NASL version",
+      "cwd": "<corpus>/examples/0454_nasl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native NASL parse-only check",
+      "cwd": "<corpus>/examples/0454_nasl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-p",
+        "<corpus>/examples/0454_nasl/hello.nasl"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "\n(openvas-nasl:533): libgvm util-CRITICAL **: 15:11:38.339: get_redis_ctx: redis connection error to /run/redis/redis.sock: No such file or directory\n\n(openvas-nasl:533): libgvm util-CRITICAL **: 15:11:38.339: get_redis_ctx: redis connection error to /run/redis/redis.sock: No such file or directory\n"
+    },
+    {
+      "label": "Execute offline NASL display only; no hosts, probes or scans",
+      "cwd": "<corpus>/examples/0454_nasl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_441_460/linux/usr/lib:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "<corpus>/examples/0454_nasl/hello.nasl"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "** WARNING : packet forgery will not work\n** as NASL is not running as root\n\n(openvas-nasl:536): libgvm util-CRITICAL **: 15:11:38.474: get_redis_ctx: redis connection error to /run/redis/redis.sock: No such file or directory\n\n(openvas-nasl:536): libgvm util-CRITICAL **: 15:11:38.474: get_redis_ctx: redis connection error to /run/redis/redis.sock: No such file or directory\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "The genuine Greenbone runtime requires a local Redis KB context that is not configured; execution remains pending."
+  ],
+  "toolchain": {
+    "name": "Authentic Greenbone OpenVAS NASL interpreter",
+    "version": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH",
+    "executable_sha256": "98812e40c646dcf8855e8804f3deca07cc82eaf23697f59d6b1a45f7b89d7a21"
+  },
+  "artifact_sha256": {
+    "examples/0454_nasl/hello.nasl": "d0ef61725baa7afa4a3c95ef685cf6bd84e14f047308acd50099b0b60886bb51"
+  }
+}

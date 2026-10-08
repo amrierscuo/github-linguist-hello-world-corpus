@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:12.316394+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0764_web-ontology-language",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata as m; print(m.version('rdflib'))"
+      ],
+      "exit_code": 0,
+      "stdout": "7.6.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing format parser and original semantic assertions",
+      "cwd": "<corpus>/examples/0764_web-ontology-language",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine RDF/OWL serialization graph, class and language-tagged label\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "rdflib / Python 3.13.9",
+    "version": "7.6.0"
+  },
+  "artifact_sha256": {
+    "examples/0764_web-ontology-language/hello.owl": "28d4c72394a8e67c3073dcc66547997d81439105aa8e72f7ca7261ab9e995410",
+    "examples/0764_web-ontology-language/verify.py": "91e05af8982c8890436fdd9689583d3bfc5586dded3a2a6db9dae9c5084719d1"
+  }
+}

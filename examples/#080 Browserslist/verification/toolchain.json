@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:31:49.449095+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0080_browserslist/.browserslistrc": "7b0d4c218dbbb90d81b6178b9e6759dc6287f8b34ab3f222239ca5d356bab6e6",
+    "examples/0080_browserslist/verify.cjs": "0cec43cfaa55c76cbe4e87613771507ac88156c13477a84643296bdbe32fb904"
+  },
+  "commands": [
+    {
+      "label": "Node.js version",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_80",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Browserslist config resolution and target assertion",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_80",
+      "exit_code": 0,
+      "stdout": "chrome 100\nfirefox 100\nPASS: native Browserslist parser and resolution selected exactly the two expected targets.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "packages": [
+      {
+        "name": "browserslist",
+        "version": "4.29.3",
+        "manifest_sha256": "837c596bf1bbcabec84142e5d746e7dcd1dc39e7d23bbc9655cc85af1add21d1",
+        "repository": "browserslist/browserslist"
+      }
+    ],
+    "package_lock_sha256": "1080e468a43341a1fb5ac222462d7c9bfb84ae281826e8901de32bffb47f0535"
+  }
+}

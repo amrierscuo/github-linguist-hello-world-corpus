@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS greeting</title>
+  <link rel="stylesheet" href="hello.css">
+</head>
+<body>
+  <p class="hello" aria-label="Hello, World!"></p>
+  <script>
+    window.addEventListener('load', () => {
+      const element = document.querySelector('.hello');
+      const style = getComputedStyle(element, '::before');
+      document.body.setAttribute('data-generated-content', style.content);
+      document.body.setAttribute('data-generated-color', style.color);
+    });
+  </script>
+</body>
+</html>

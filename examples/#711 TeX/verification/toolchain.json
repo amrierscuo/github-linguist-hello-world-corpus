@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:53:19.813154+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "pdfTeX version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_711_155319810648",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TEXMFCNF=.",
+        "TEXINPUTS=.",
+        "<workspace>/work/tools_701_720/ubuntu/usr/bin/pdftex",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_711_155319810648",
+      "exit_code": 0,
+      "stdout": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)\nkpathsea version 6.3.5\nCopyright 2023 Han The Thanh (pdfTeX) et al.\nThere is NO warranty.  Redistribution of this software is\ncovered by the terms of both the pdfTeX copyright and\nthe Lesser GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING and the pdfTeX source.\nPrimary author of pdfTeX: Han The Thanh (pdfTeX) et al.\nCompiled with libpng 1.6.43; using libpng 1.6.43\nCompiled with zlib 1.3; using zlib 1.3\nCompiled with xpdf version 4.04\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native TeX primitive execution with no format/fonts/pages",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_711_155319810648",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TEXMFCNF=.",
+        "TEXINPUTS=.",
+        "<workspace>/work/tools_701_720/ubuntu/usr/bin/pdftex",
+        "-ini",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "hello.tex"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_711_155319810648",
+      "exit_code": 0,
+      "stdout": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (INITEX)\n(./hello.tex\nHello, World!\n )\nNo pages of output.\nTranscript written on hello.log.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "texlive-binaries",
+    "version": "2023.20230311.66589-9build3",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/texlive-bin/texlive-binaries_2023.20230311.66589-9build3_amd64.deb",
+    "sha256": "18cc916f9a6ff3f334fc85cd272cb58b63ca3fafee841516b308028259636d86"
+  },
+  "artifact_sha256": {
+    "examples/0711_tex/hello.tex": "2341bcf1c64c49ffe2768b8a37a5ecff390581745580ecbb109f34491b4c0edd"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 256,
+  "language": "Gnuplot",
+  "timestamp_utc": "2026-10-08T12:17:31.366225+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "gnuplot 6.0 patchlevel 0",
+  "working_directory": "examples/0256_gnuplot",
+  "source_sha256": {
+    "examples/0256_gnuplot/hello.gnuplot": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+  },
+  "steps": [
+    {
+      "command": "gnuplot --version",
+      "exit_code": 0,
+      "stdout": "gnuplot 6.0 patchlevel 0\n",
+      "stderr": ""
+    },
+    {
+      "command": "gnuplot hello.gnuplot",
+      "exit_code": 0,
+      "stdout": "\f                                                            \n                                                            \n                         Hello, World!                      \n    1 +-------------------------------------------------+   \n      |         +         +         +         + ******  |   \n  0.8 |-+                                 ******      +-|   \n      |                              ******             |   \n  0.6 |-+                      ******                 +-|   \n  0.4 |-+                 ******                      +-|   \n      |             ******                              |   \n  0.2 |-+      ******                                 +-|   \n      |  ****** +         +         +         +         |   \n    0 +-------------------------------------------------+   \n      0        0.2       0.4       0.6       0.8        1   \n                                                            \n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native Gnuplot parses script and renders a real dumb-terminal plot of y=x with greeting title.",
+  "blockers": []
+}

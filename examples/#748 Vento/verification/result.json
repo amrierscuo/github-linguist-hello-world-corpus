@@ -1,0 +1,35 @@
+{
+  "ordinal": 748,
+  "name": "Vento",
+  "timestamp_utc": "2026-10-08T13:49:56.977593+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js22.20.0 + Vento2.4.1",
+  "artifact_sha256": {
+    "examples/0748_vento/hello.vto": "7be6b7306daf854ba7b515c46f9e98e328046a77efcd8baad09c11c32020f04b",
+    "examples/0748_vento/verify.cjs": "5a81292b0223bfb18e4b1acd71c23a20c78e4e5eea6b0f27aee12ee4a3760de3"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

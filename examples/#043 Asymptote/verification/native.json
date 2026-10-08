@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:30:22.837352+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0043_asymptote/hello.asy": "ca7996047b748610d3709194a632e5e6a76f0870190265a0958db512d58f8a68"
+  },
+  "commands": [
+    {
+      "label": "Asymptote version",
+      "cwd": "<corpus>/examples/0043_asymptote",
+      "command": [
+        "<user-home>\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\asy.EXE",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "miktex-asy version 2.88 [(C) 2004 Andy Hammerlindl, John C. Bowman, Tom Prince]\n\nENABLED OPTIONS:\nWebGL    3D HTML rendering\nOpenGL   3D OpenGL rendering\nCURL     URL support\n\nDISABLED OPTIONS:\nV3D      3D vector graphics output\nSSBO     GLSL shader storage buffer objects\nGSL      GNU Scientific Library (special functions)\nFFTW3    Fast Fourier transforms\nEigen    Eigenvalue library\nXDR      External Data Representation (portable binary file format for V3D)\nLSP      Language Server Protocol\nReadline Interactive history and editing\nEditline interactive editing (if Readline is unavailable)\nSigsegv  Distinguish stack overflows from segmentation faults\nGC       Boehm garbage collector\nthreads  Render OpenGL in separate thread\nasy: major issue: So far, you have not checked for MiKTeX updates.\n"
+    },
+    {
+      "label": "Native Asymptote parse and console run",
+      "cwd": "<corpus>/examples/0043_asymptote",
+      "command": [
+        "<user-home>\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\asy.EXE",
+        "-noV",
+        "hello.asy"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "using suffix=void(file);\n^\n<user-home>\\AppData\\Local\\Programs\\MiKTeX/asymptote/plain_constants.asy: 73.1: no type of name 'using'\nusing suffix=void(file);\n                  ^\n<user-home>\\AppData\\Local\\Programs\\MiKTeX/asymptote/plain_constants.asy: 73.19: no matching variable 'file'\nerror: recursive loading of module 'plain'\nasy: major issue: So far, you have not checked for MiKTeX updates.\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Asymptote interpreter runs, but local MiKTeX standard plain modules produce compiler errors; coherent interpreter/library installation required."
+  ],
+  "toolchain": {
+    "name": "Asymptote interpreter distributed with MiKTeX",
+    "version": "miktex-asy version 2.88 [(C) 2004 Andy Hammerlindl, John C. Bowman, Tom Prince]\n\nENABLED OPTIONS:\nWebGL    3D HTML rendering\nOpenGL   3D OpenGL rendering\nCURL     URL support\n\nDISABLED OPTIONS:\nV3D      3D vector graphics output\nSSBO     GLSL shader storage buffer objects\nGSL      GNU Scientific Library (special functions)\nFFTW3    Fast Fourier transforms\nEigen    Eigenvalue library\nXDR      External Data Representation (portable binary file format for V3D)\nLSP      Language Server Protocol\nReadline Interactive history and editing\nEditline interactive editing (if Readline is unavailable)\nSigsegv  Distinguish stack overflows from segmentation faults\nGC       Boehm garbage collector\nthreads  Render OpenGL in separate thread\nasy: major issue: So far, you have not checked for MiKTeX updates."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:39.487277+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0059_beef/src/Program.bf": "dbcba35c09754120f004790e4c1919b7e6ef36379bd50a3522c05f360829c9a9"
+  },
+  "commands": [
+    {
+      "label": "Windows tool availability only",
+      "cwd": "<corpus>/examples/0059_beef",
+      "command": [
+        "<python>",
+        "-c",
+        "import json,shutil;print(json.dumps({\"BeefBuild.exe\":shutil.which(\"BeefBuild.exe\")}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"BeefBuild.exe\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "BeefBuild.exe toolchain not installed or not available in this isolated verification environment."
+  ],
+  "toolchain": {
+    "name": "BeefBuild.exe",
+    "version": null
+  },
+  "scope": "Tool availability only; no genuine language parse or execution has been performed."
+}

@@ -1,0 +1,25 @@
+{
+  "ordinal": 742,
+  "name": "VBScript",
+  "timestamp_utc": "2026-10-08T13:46:49.373573+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Windows cscript console host + original VBScript engine",
+  "artifact_sha256": {
+    "examples/0742_vbscript/hello.vbs": "6d85ffe6e7a154a70ba38d4d9472884c418e262e1a54393f7d81cf1c6008a29f"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Windows\\System32\\cscript.exe",
+        "//nologo",
+        "hello.vbs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 652,
+  "language": "Scheme",
+  "timestamp_utc": "2026-10-08T13:23:04.371132+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Welcome to Racket v8.18 [cs].; Scheme display/newline subset in racket/base",
+  "working_directory": "examples/0652_scheme",
+  "source_sha256": {
+    "examples/0652_scheme/hello.scm": "2a54560e9df7a03b83c14e96b7a1b3c481af8838439543f85d65cdd1a893b1c9"
+  },
+  "steps": [
+    {
+      "command": "racket --version",
+      "exit_code": 0,
+      "stdout": "Welcome to Racket v8.18 [cs].\n",
+      "stderr": ""
+    },
+    {
+      "command": "racket -I racket/base -f hello.scm",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Genuine Racket Scheme-family interpreter reads and executes portable display/newline forms; no broader R5RS conformance claim.",
+  "blockers": []
+}

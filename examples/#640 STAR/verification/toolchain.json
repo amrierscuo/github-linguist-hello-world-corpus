@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:44.844670+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native STAR/CIF-compatible scalar parsing and greeting extraction",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_640_154444828561",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "gemmi",
+    "version": "0.7.5",
+    "metadata_sha256": "b82dba712f27ff666e9b49a6a5b37d5ce7b52a2886de8e3f944535972bc09020",
+    "source": "https://pypi.org/project/gemmi/"
+  },
+  "semantic_scope": "STAR scalar data block restricted to the CIF-compatible STAR subset; original Gemmi CIF parser and value decoding, not validation of all STAR constructs.",
+  "artifact_sha256": {
+    "examples/0640_star/hello.star": "f1b7219346a952a08508627eb511c82544b79e107e8955b87fd682a2bbf0b8f2",
+    "examples/0640_star/verify.py": "d024f31402a339cbe1fbe33757e670198d2f33f01e0aa02ddbdd41953cdead0f"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "gemmi",
+        "old_version": "0.7.5.dist",
+        "version": "0.7.5",
+        "original_metadata_sha256": "b82dba712f27ff666e9b49a6a5b37d5ce7b52a2886de8e3f944535972bc09020",
+        "original_metadata_file": "work/tools_621_640/python/gemmi-0.7.5.dist-info/METADATA"
+      }
+    ]
+  }
+}

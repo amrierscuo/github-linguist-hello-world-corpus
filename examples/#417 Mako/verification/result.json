@@ -1,0 +1,25 @@
+{
+  "ordinal": 417,
+  "name": "Mako",
+  "timestamp_utc": "2026-10-08T12:26:39.227894+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + Mako 1.4.3",
+  "artifact_sha256": {
+    "examples/0417_mako/hello.mako": "add1ff9a5370e224b33c18df89e709f00ed56d5c1cac0e0a895f9e85555b63d0",
+    "examples/0417_mako/verify.py": "521a4c38f9ffe85dfb20bc131cdfc17b83b316f249f3c25b1d0fff04225af253"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

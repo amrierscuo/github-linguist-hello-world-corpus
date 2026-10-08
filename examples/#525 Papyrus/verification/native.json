@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:20.506278+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0525_papyrus",
+      "command": [
+        "where.exe",
+        "PapyrusCompiler"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required PapyrusCompiler compiler/interpreter and matching host libraries are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0525_papyrus/CorpusGreeting.psc": "51b67909fee4edc05c14d85de8c8944073c62dbadb3474c32e16103056a4ee12"
+  }
+}

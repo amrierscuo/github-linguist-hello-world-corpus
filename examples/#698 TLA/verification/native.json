@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:48.397262+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Parse and semantically analyze original TLA+ specification",
+      "cwd": "<workspace>/work/tools_681_700/698",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_681_700/tla2tools.jar",
+        "tla2sany.SANY",
+        "Hello.tla"
+      ],
+      "exit_code": 0,
+      "stdout": "\n****** SANY2 Version 2.2 created 08 July 2020\n\nParsing file <workspace>\\work\\tools_681_700\\698\\Hello.tla\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-8113827761851937992\\TLC.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/TLC.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-8113827761851937992\\Naturals.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-8113827761851937992\\Sequences.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-8113827761851937992\\FiniteSets.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Hello\nLinting of module Hello\n",
+      "stderr": ""
+    },
+    {
+      "label": "Check finite state model and greeting invariant; genuine PrintT",
+      "cwd": "<workspace>/work/tools_681_700/698",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_681_700/tla2tools.jar",
+        "tlc2.TLC",
+        "-cleanup",
+        "-metadir",
+        "<workspace>/work/tools_681_700/698/states",
+        "-config",
+        "Hello.cfg",
+        "Hello.tla"
+      ],
+      "exit_code": 0,
+      "stdout": "TLC2 Version 2026.10.06.014338 (rev: 94d0c50)\nWarning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the \"-XX:+UseParallelGC\" property.\n(Use the -nowarning option to disable this warning.)\nRunning breadth-first search Model-Checking with fp 105 and seed 994127960405969115 with 1 worker on 16 cores with 8176MB heap and 64MB offheap memory [pid: 27548] (Windows 11 10.0 amd64, Microsoft 21.0.12.1 64bit, MSBDiskFPSet, DiskStateQueue).\nParsing file <workspace>\\work\\tools_681_700\\698\\Hello.tla\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\TLC.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/TLC.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\_TLCTrace.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/_TLCTrace.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\Naturals.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\Sequences.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\FiniteSets.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\TLCExt.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/TLCExt.tla)\nParsing file <user-home>\\AppData\\Local\\Temp\\tlc-9085741010491683778\\Integers.tla (jar:file:/<workspace>/work/tools_681_700/tla2tools.jar!/tla2sany/StandardModules/Integers.tla)\nSemantic processing of module Naturals\nSemantic processing of module Sequences\nSemantic processing of module FiniteSets\nSemantic processing of module TLC\nSemantic processing of module Integers\nSemantic processing of module TLCExt\nSemantic processing of module _TLCTrace\nSemantic processing of module Hello\nLinting of module TLCExt\nLinting of module _TLCTrace\nLinting of module Hello\nStarting... (2026-10-08 15:37:49)\nComputing initial states...\n\"Hello, World!\"\nFinished computing initial states: 1 distinct state generated at 2026-10-08 15:37:49.\nModel checking completed. No error has been found.\n  Estimates of the probability that TLC did not check all reachable states\n  because two distinct states had the same fingerprint:\n  calculated (optimistic):  val = 5.4E-20\n2 states generated, 1 distinct states found, 0 states left on queue.\nThe depth of the complete state graph search is 1.\nThe average outdegree of the complete state graph is 0 (minimum is 0, the maximum 0 and the 95th percentile is 0).\nFinished in 00s at (2026-10-08 15:37:49)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original TLA+ SANY parser and TLC finite-state model checker",
+    "version": "TLA+ tools release 1.8.0",
+    "jar_sha256": "7beec0f04818732a62fa193731711a99aa4f11279499b2360a7d156c519ea78d"
+  },
+  "artifact_sha256": {
+    "examples/0698_tla/Hello.cfg": "e961a9c2feb85348f2f4adf555f6fb5f6eae233a6a667e192b57603d5da87def",
+    "examples/0698_tla/Hello.tla": "bca8e75a443c70178dd624768a81a8a17c7ead2ab0a67aac6edc84d5812da3e0"
+  }
+}

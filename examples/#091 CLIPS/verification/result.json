@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 91,
+  "language": "CLIPS",
+  "timestamp_utc": "2026-10-08T11:33:18.759353+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; clipspy 1.0.6 / bundled native CLIPS engine",
+  "working_directory": "examples/0091_clips",
+  "source_sha256": {
+    "examples/0091_clips/hello.clp": "114ed8199b552e4d9401eae743afb885a79ad979342bdf9412864d745a86de00",
+    "examples/0091_clips/verify.py": "a796e7d447983a4955d43928172c59791c182f3a337f38b1c418870f91f5c82f",
+    "examples/0091_clips/requirements.txt": "1d1804b890ae2c54189958a17c909eadc73cb1949be554e1d1b5c9241a0553c1"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nclipspy 1.0.6: one native CLIPS rule fired; output assertion PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Reader/engine execution and explicit assertions passed, exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Actual CLIPS native engine via clipspy loads constructs, asserts the initial fact and fires exactly one rule; router captures real engine stdout.",
+  "blockers": []
+}

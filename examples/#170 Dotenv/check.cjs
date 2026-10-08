@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const dotenv = require('dotenv');
+const data = dotenv.parse(fs.readFileSync(__dirname+'/.env.example'));
+assert.deepEqual(data, {GREETING:'Hello, World!'});
+const isolated = {};
+dotenv.populate(isolated, data);
+assert.deepEqual(isolated, data);
+console.log(isolated.GREETING);
+console.log('dotenv parsing and populate into an isolated object PASS.');

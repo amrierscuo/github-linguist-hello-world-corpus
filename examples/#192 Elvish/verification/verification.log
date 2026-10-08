@@ -1,0 +1,33 @@
+{
+  "ordinal": 192,
+  "name": "Elvish",
+  "timestamp_utc": "2026-10-08T12:00:14.300682+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Elvish 0.21.0 windows/amd64",
+  "artifact_sha256": {
+    "examples/0192_elvish/hello.elv": "22248c5b817ba9a9edcab475e473ce899ee44d9c81ae1060edc9b58be803bc8d"
+  },
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_181_200\\elvish\\elvish.exe",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "0.21.0+official\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_181_200\\elvish\\elvish.exe",
+        "${WORKSPACE}\\work\\staging_181_200\\examples\\0192_elvish\\hello.elv"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

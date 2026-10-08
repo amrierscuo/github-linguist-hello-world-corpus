@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:35:32.455963+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0056_bqn/hello.bqn": "3d6d4311da2e77a93f7485b8322c70007a0fbcfbe0222e6e21f2ac1b98488bf8"
+  },
+  "commands": [
+    {
+      "label": "CBQN source commit",
+      "cwd": "<corpus>/examples/0056_bqn",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "git",
+        "-C",
+        "<workspace>/work/tools_41_60/cbqn",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "c893d3e7828899a50150df03ad33c9052fa51d3c\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native BQN parse and run",
+      "cwd": "<corpus>/examples/0056_bqn",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_41_60/cbqn/BQN",
+        "<corpus>/examples/0056_bqn/hello.bqn"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official CBQN C implementation locally built",
+    "revision": "c893d3e7828899a50150df03ad33c9052fa51d3c",
+    "executable_sha256": "6d62683138f8750aebc9770e292babd88722121079a0a7f1b0791a3de55e6e84"
+  }
+}

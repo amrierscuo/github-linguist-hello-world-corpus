@@ -1,0 +1,10 @@
+const fs = require('node:fs');
+const assert = require('node:assert/strict');
+const { bruToJsonV2 } = require('@usebruno/lang');
+const parsed = bruToJsonV2(fs.readFileSync('hello.bru', 'utf8'));
+assert.equal(parsed.meta.name, 'Hello World');
+assert.equal(parsed.http.method, 'get');
+assert.equal(parsed.http.url, 'http://127.0.0.1:8765/hello.txt');
+assert.equal(fs.readFileSync('hello.txt', 'utf8').trim(), 'Hello, World!');
+console.log(JSON.stringify(parsed));
+console.log('Bru parser PASS: GET request, URL and greeting fixture decoded. HTTP test has not run.');

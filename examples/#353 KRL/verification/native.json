@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:08.346198+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node version",
+      "cwd": "<corpus>/examples/0353_krl",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine parser/generator acceptance and declared checks",
+      "cwd": "<corpus>/examples/0353_krl",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_341_360/node",
+        "<workspace>/work/tools_341_360/353"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: authoritative Picolab KRL parser accepted original ruleset\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "KRL grammar accepted by authoritative parser; event execution in a Pico Engine runtime is not performed."
+  ],
+  "toolchain": {
+    "name": "Authoritative Picolab KRL parser",
+    "version": "krl-parser 1.5.0",
+    "package_metadata_sha256": "e6d489af54fbb3288dae83a9fd0f786a7952690b533174ae6d0dddbf4cb5dba3"
+  },
+  "artifact_sha256": {
+    "examples/0353_krl/hello.krl": "cc272bd7c09ed654edaa3e75f4004bb3c5462189587882047bf0a4d7caa52b83",
+    "examples/0353_krl/verify.cjs": "5205171bd9bbd2ef9b37ce577e1a3c273661d466939c7c65b8a62e602a03f503"
+  }
+}

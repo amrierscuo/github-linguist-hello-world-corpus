@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "language": "Arc",
+  "ordinal": 37,
+  "timestamp_utc": "2026-10-08T11:01:56.068379+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Anarki stable (Arc 3.2 community patches), commit 8421605f4a75a0f7fc9a0bed83a87affa1137fab; Racket 8.18 [cs]",
+  "working_directory": "examples/0037_arc",
+  "source_sha256": {
+    "examples/0037_arc/hello.arc": "2444cd792d805a644246826e42c06553f0ce76602ad7bc098b7c2deb56228c1f"
+  },
+  "steps": [
+    {
+      "command": "racket --version",
+      "exit_code": 0,
+      "stdout": "Welcome to Racket v8.18 [cs].\n",
+      "stderr": ""
+    },
+    {
+      "command": "racket -f <anarki>/as.scm hello.arc",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Interpreter loaded and evaluated hello.arc without errors.",
+    "stdout exactly Hello, World! followed by a newline; exit 0; stderr empty."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Actual execution in Anarki stable, not a separate claim about other Arc implementations."
+}

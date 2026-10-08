@@ -1,0 +1,48 @@
+{
+  "ordinal": 193,
+  "name": "Elvish Transcript",
+  "timestamp_utc": "2026-10-08T12:10:54.414177+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Go 1.27.1 + src.elv.sh/pkg/transcript v0.21.0 + Elvish 0.21.0",
+  "artifact_sha256": {
+    "examples/0193_elvish-transcript/hello.elvts": "a9c692f0b4a41738fe5e96df8e4c188bf5f5048588b36409ba59f74ca2bd13ec",
+    "examples/0193_elvish-transcript/go.mod": "5d5fc9751978110161a4806b48e4fb3b587b0ad000bec0780b0b299b5c51c9c0",
+    "examples/0193_elvish-transcript/verify.go": "27139eee6c4e11e5ec3cf259eaba00aa8e3a194ede6a7e28268e8c2763a79362",
+    "examples/0193_elvish-transcript/go.sum": "bc4ce2953522dd181eac27b68f842b1a161d348e1463681aadf8fcb4b64813bd"
+  },
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_241_260\\go\\bin\\go.exe",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "go version go1.27.1 windows/amd64\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_241_260\\go\\bin\\go.exe",
+        "mod",
+        "tidy"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "go: downloading src.elv.sh v0.21.0\ngo: downloading golang.org/x/sys v0.17.0\ngo: downloading github.com/google/go-cmp v0.6.0\ngo: downloading golang.org/x/sync v0.6.0\ngo: downloading github.com/mattn/go-isatty v0.0.20\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_241_260\\go\\bin\\go.exe",
+        "run",
+        "verify.go",
+        "${WORKSPACE}\\work\\tools_181_200\\elvish\\elvish.exe"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

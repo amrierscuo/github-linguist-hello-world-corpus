@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "ordinal": 820,
+  "language": "kvlang",
+  "timestamp_utc": "2026-10-08T13:38:35.604952+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython3.13.9; Kivy2.3.1 Parser",
+  "working_directory": "examples/0820_kvlang",
+  "source_sha256": {
+    "examples/0820_kvlang/hello.kv": "78401035be1fa474d5cee107d9bbf5332076caa1bc195321b49269e63dfbc429",
+    "examples/0820_kvlang/verify.py": "9ec2fe8073e74e31cb619a02d070467231aee032d831893c86807562d1932cd7"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "Kivy Parser PASS\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Kivy Parser parses Label rule/properties; Builder/native widget rendering not performed.",
+  "blockers": [
+    "Kivy Builder/native widget rendering pending."
+  ]
+}

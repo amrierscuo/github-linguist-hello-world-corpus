@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:13.082951+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Nim version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_472_151613072518",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_461_480/ubuntu/usr/lib/x86_64-linux-gnu",
+        "NIM_LIB_PREFIX=<workspace>/work/tools_461_480/ubuntu/usr/lib/nim",
+        "<workspace>/work/tools_461_480/ubuntu/usr/bin/nim",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_472_151613072518",
+      "exit_code": 0,
+      "stdout": "Nim Compiler Version 1.6.14 [Linux: amd64]\nCompiled at 2024-04-01\nCopyright (c) 2006-2023 by Andreas Rumpf\n\nactive boot switches: -d:release\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Nim parser, typechecker and C compilation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_472_151613072518",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_461_480/ubuntu/usr/lib/x86_64-linux-gnu",
+        "NIM_LIB_PREFIX=<workspace>/work/tools_461_480/ubuntu/usr/lib/nim",
+        "<workspace>/work/tools_461_480/ubuntu/usr/bin/nim",
+        "c",
+        "--lib:<workspace>/work/tools_461_480/ubuntu/usr/lib/nim/lib",
+        "--nimcache:<workspace>/work/tools_461_480/verify_472_151613072518/cache",
+        "--out:<workspace>/work/tools_461_480/verify_472_151613072518/hello",
+        "hello.nim"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_472_151613072518",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "..........................................................\nCC: ../ubuntu/usr/lib/nim/lib/std/private/digitsutils.nim\nCC: ../ubuntu/usr/lib/nim/lib/system/dollars.nim\nCC: ../ubuntu/usr/lib/nim/lib/system/io.nim\nCC: ../ubuntu/usr/lib/nim/lib/system.nim\nCC: hello.nim\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c: In function ‘sysFatal__system_3152’:\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c:4126:1: warning: ‘noreturn’ function does return\n 4126 | }\n      | ^\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c: In function ‘sysFatal__system_3072’:\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c:4211:1: warning: ‘noreturn’ function does return\n 4211 | }\n      | ^\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c: In function ‘sysFatal__system_2934’:\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c:4418:1: warning: ‘noreturn’ function does return\n 4418 | }\n      | ^\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c: In function ‘sysFatal__system_3403’:\n<workspace>/work/tools_461_480/verify_472_151613072518/cache/@m..@subuntu@susr@slib@snim@slib@ssystem.nim.c:4639:1: warning: ‘noreturn’ function does return\n 4639 | }\n      | ^\nHint:  [Link]\nHint: gc: refc; opt: none (DEBUG BUILD, `-d:release` generates faster code)\n16760 lines; 2.288s; 20.086MiB peakmem; proj: <workspace>/work/tools_461_480/verify_472_151613072518/hello.nim; out: <workspace>/work/tools_461_480/verify_472_151613072518/hello [SuccessX]\n"
+    },
+    {
+      "label": "Execute compiled Nim greeting",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_472_151613072518",
+        "--",
+        "<workspace>/work/tools_461_480/verify_472_151613072518/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_472_151613072518",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "nim",
+    "version": "1.6.14-1ubuntu2",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/nim/nim_1.6.14-1ubuntu2_amd64.deb",
+    "sha256": "7fa74f6501fd286edddda63ff8e08c42959a4c9eb7dd60f3c6e8eb184b27f28b"
+  },
+  "artifact_sha256": {
+    "examples/0472_nim/hello.nim": "46f0e4621c8b9d1c31674c7086f534c6a673f52a940dfbea1c9bc168f14a494f"
+  }
+}

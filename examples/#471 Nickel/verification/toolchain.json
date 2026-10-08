@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:15:18.436805+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Nickel version",
+      "command": [
+        "<workspace>\\work\\tools_461_480\\nickel.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_471_151518424173",
+      "exit_code": 0,
+      "stdout": "nickel-lang-cli nickel 1.18.0 (rev e6515c4)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Nickel evaluation and JSON export",
+      "command": [
+        "<workspace>\\work\\tools_461_480\\nickel.exe",
+        "export",
+        "--format",
+        "json",
+        "hello.ncl"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_471_151518424173",
+      "exit_code": 0,
+      "stdout": "{\n  \"greeting\": \"Hello, World!\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Nickel evaluator",
+    "distribution": {
+      "version": "1.18.0",
+      "url": "https://github.com/nickel-lang/nickel/releases/download/1.18.0/nickel-x86_64-windows.exe",
+      "sha256": "efd2192fe1ed17e9a8c1063d90810e5fd6ebc3d057d4d9619cb2ff074800d274"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0471_nickel/hello.ncl": "222b68aed7b1dd82fec7ae4c0606fd130d6be55bae1e54ddd015907e7c35cce7"
+  }
+}

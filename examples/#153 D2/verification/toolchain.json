@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:03:03.139733+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "D2 version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_153_140303022309",
+        "--",
+        "<workspace>/work/tools_141_160/d2.tar/d2-v0.9.0/bin/d2",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_153_140303022309",
+      "exit_code": 0,
+      "stdout": "v0.9.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native D2 parser, layout and SVG render",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_153_140303022309",
+        "--",
+        "<workspace>/work/tools_141_160/d2.tar/d2-v0.9.0/bin/d2",
+        "hello.d2",
+        "hello.svg"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_153_140303022309",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "success: successfully compiled hello.d2 to hello.svg in 1.087452544s\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "D2 official standalone Linux binary",
+    "distribution": {
+      "file": "d2.tar.gz",
+      "url": "https://github.com/d2lang/d2/releases/download/v0.9.0/d2-v0.9.0-linux-amd64.tar.gz",
+      "sha256": "5669ddc46b99e942cc96078f4a4e36d5e62103348f4c05179ede27802fdd87a9"
+    }
+  },
+  "generated_svg_sha256": "23a3a807b92717604f455d795cfa198992077481a52a14df98db7aab40a1f6c3",
+  "artifact_sha256": {
+    "examples/0153_d2/hello.d2": "c594b1aece94d1599c0322472cfc68614e8c5f6596d040391f89993b16ac5fcb"
+  }
+}

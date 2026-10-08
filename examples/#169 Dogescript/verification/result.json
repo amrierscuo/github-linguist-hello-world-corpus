@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 169,
+  "language": "Dogescript",
+  "timestamp_utc": "2026-10-08T11:56:12.746770+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; dogescript 2.4.3",
+  "working_directory": "examples/0169_dogescript",
+  "source_sha256": {
+    "examples/0169_dogescript/check.cjs": "61c8397a815ac0999920747748e73c42aeccb810945437470d8dcc4ef5dea2cf",
+    "examples/0169_dogescript/hello.djs": "57b7efbf7eccd40136d7e02d6ca7677bc144deacfdfceb250ec5fad863c1a7bd",
+    "examples/0169_dogescript/package.json": "72b0fed7695eaadae89e03fadf8d2367ecb6d43a28fb36861384a884cab3d35a"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nOfficial dogescript compiler and JavaScript execution PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Official Dogescript compiler generated JavaScript; Node vm.Script compiled and executed it, capturing exactly one Hello, World! console line.",
+  "blockers": []
+}

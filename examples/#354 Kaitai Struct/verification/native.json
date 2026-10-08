@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:08.735150+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Compile KSY using genuine Kaitai compiler",
+      "cwd": "<corpus>/examples/0354_kaitai-struct",
+      "command": [
+        "<node>",
+        "compile.cjs",
+        "<workspace>/work/tools_341_360/node",
+        "<workspace>/work/tools_341_360/354"
+      ],
+      "exit_code": 0,
+      "stdout": "Official Kaitai compiler 0.11.0\nPASS: genuine Kaitai compiler produced greeting.py\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read original binary fixture with actually generated parser",
+      "cwd": "<corpus>/examples/0354_kaitai-struct",
+      "command": [
+        "<python>",
+        "verify.py",
+        "<workspace>/work/tools_341_360/354",
+        "greeting.bin"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuinely generated Kaitai parser, original binary fixture and magic control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Kaitai Struct Scala compiler JavaScript build and Python runtime",
+    "version": "compiler 0.11.0; kaitaistruct 0.11",
+    "compiler_sha256": "c9aacee51040be0977299210fc2624e6bbf2a51770b3dca579accbbaa84ba353"
+  },
+  "generated_parser_sha256": "c7ce2686a4d72e5ed709041603848b576cb42c5f6c5a05fb82065509724b1a14",
+  "artifact_sha256": {
+    "examples/0354_kaitai-struct/compile.cjs": "7dc5c17d611cd9b30843e02f1bd5715f4c96c1dc1c6458ce9d986083ae44630c",
+    "examples/0354_kaitai-struct/greeting.bin": "2a3c630c55b6a08c869ffe5386b764ab2b278c4209d2d1e18cfe08047b697529",
+    "examples/0354_kaitai-struct/greeting.ksy": "d6c960d8c8e3d55531805e88921d389fff64a7a3e8dbcac1b030fc6457785d1d",
+    "examples/0354_kaitai-struct/verify.py": "d1ce14707714a4e7a544cccd5fb8990db26008afc3bd0f163ecc05d1139ec35e"
+  }
+}

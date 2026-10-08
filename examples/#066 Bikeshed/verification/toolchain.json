@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:35:09.582873+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0066_bikeshed/hello.bs": "e0808c8ffda8863a90f0b1e8b1de84ac385078d0ea7d07ebc43b7ccff2bd32d6"
+  },
+  "commands": [
+    {
+      "label": "Bikeshed version",
+      "command": [
+        "<python>",
+        "-m",
+        "bikeshed",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_66",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "<workspace>\\work\\tools_61_80\\python\\bikeshed\\__init__.py:31: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.\n  import pkg_resources\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 148, in _get_module_details\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\__init__.py\", line 62, in <module>\n    from . import (\n    ...<2 lines>...\n    )\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\update\\__init__.py\", line 1, in <module>\n    from .main import fixupDataFiles, update, updateReadonlyDataFiles\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\update\\main.py\", line 7, in <module>\n    from . import (\n    ...<10 lines>...\n    )\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\update\\manifest.py\", line 11, in <module>\n    import aiofiles\nModuleNotFoundError: No module named 'aiofiles'\n"
+    },
+    {
+      "label": "Native Bikeshed specification processing",
+      "command": [
+        "<python>",
+        "-m",
+        "bikeshed",
+        "spec",
+        "hello.bs",
+        "hello.html"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_66",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "<workspace>\\work\\tools_61_80\\python\\bikeshed\\__init__.py:31: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.\n  import pkg_resources\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 148, in _get_module_details\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\__init__.py\", line 62, in <module>\n    from . import (\n    ...<2 lines>...\n    )\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\update\\__init__.py\", line 1, in <module>\n    from .main import fixupDataFiles, update, updateReadonlyDataFiles\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\update\\main.py\", line 7, in <module>\n    from . import (\n    ...<10 lines>...\n    )\n  File \"<workspace>\\work\\tools_61_80\\python\\bikeshed\\update\\manifest.py\", line 11, in <module>\n    import aiofiles\nModuleNotFoundError: No module named 'aiofiles'\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Official Bikeshed PyPI distribution",
+    "source": "https://github.com/speced/bikeshed"
+  }
+}

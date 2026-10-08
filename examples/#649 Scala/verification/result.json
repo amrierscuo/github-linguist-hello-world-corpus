@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "ordinal": 649,
+  "language": "Scala",
+  "timestamp_utc": "2026-10-08T13:23:07.902520+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Scala compiler version 2.13.16 -- Copyright 2002-2025, LAMP/EPFL and Lightbend, Inc. dba Akka",
+  "working_directory": "examples/0649_scala",
+  "source_sha256": {
+    "examples/0649_scala/Hello.scala": "c8132fd9621fa135725c4aa999d36fd19898e4b8fb19910750c782f1d3e86db7"
+  },
+  "steps": [
+    {
+      "command": "java --version",
+      "exit_code": 0,
+      "stdout": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n",
+      "stderr": ""
+    },
+    {
+      "command": "scalac -version",
+      "exit_code": 0,
+      "stdout": "Scala compiler version 2.13.16 -- Copyright 2002-2025, LAMP/EPFL and Lightbend, Inc. dba Akka\n",
+      "stderr": ""
+    },
+    {
+      "command": "scalac -usejavacp -d <build>/classes Hello.scala",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "java -cp <build>/classes:<scala-library> Hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Official Scala compiler type-checks original main and JVM executes greeting.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/tools_641_660/scala/scala-compiler.jar",
+      "sha256": "f59982714591e321ba9c087af2c8666e2f5fb92b11a0cef72c2c5e9b342152d3"
+    },
+    {
+      "path": "work/tools_641_660/scala/scala-library.jar",
+      "sha256": "1ebb2b6f9e4eb4022497c19b1e1e825019c08514f962aaac197145f88ed730f1"
+    },
+    {
+      "path": "work/tools_641_660/scala/scala-reflect.jar",
+      "sha256": "fb49ccd9cac7464486ab993cda20a3c1569d8ef26f052e897577ad2a4970fb1d"
+    }
+  ]
+}

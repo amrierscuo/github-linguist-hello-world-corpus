@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:51:20.240004+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Tact compiler to TON bytecode",
+      "command": [
+        "node",
+        "<workspace>\\work\\tools_701_720\\npm\\node_modules\\@tact-lang\\compiler\\bin\\tact.js",
+        "--config",
+        "tact.config.json"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_706_155120225608",
+      "exit_code": 0,
+      "stdout": "💼 Compiling project Greeting ...\n   > Greeting: tact compiler\n   > Greeting: func compiler\n   > Packaging\n   > Greeting\n   > Bindings\n   > Greeting\n   > Reports\n   > Greeting\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "@tact-lang/compiler",
+    "version": "1.6.13",
+    "manifest_sha256": "6947db54672f5a0776346a955de4969581a17b7fcb33d41a70271b7fea614a07",
+    "lock_sha256": "dfd9338afb939d987166bff4022f8f65955aaac6ce80a49820cc922034e18f93",
+    "source": "https://www.npmjs.com/package/@tact-lang/compiler"
+  },
+  "semantic_scope": "Tact/FunC compilation to TON bytecode; contract getter not run in a TON VM.",
+  "artifact_sha256": {
+    "examples/0706_tact/hello.tact": "0f8754e91445a7f9bf93eeebeb4b45a8da87bb84ae101afdf8f95c4db1bace65",
+    "examples/0706_tact/tact.config.json": "20531477adc62c90422839ea4356b8b8e3cbf7633b3aa0f207872d6d2f3128ae"
+  }
+}

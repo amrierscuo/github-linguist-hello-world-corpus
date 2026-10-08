@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:27:22.907448+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Perl version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_541_152722901663",
+        "--",
+        "perl",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_541_152722901663",
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native POD parsing and text rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_541_152722901663",
+        "--",
+        "perl",
+        "render.pl"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_541_152722901663",
+      "exit_code": 0,
+      "stdout": "Corpus greeting\n\n    Hello, World!\n\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Perl POD parser Pod::Simple::Text"
+  },
+  "artifact_sha256": {
+    "examples/0541_pod/hello.pod": "b496c6d7196152da239915021e11abf4de583488e919abac530c14f3545d252d",
+    "examples/0541_pod/render.pl": "64b28fc8ed8ee1ca6b1d5bba08afcf77d5165cb546a087f590c55798be61d288"
+  }
+}

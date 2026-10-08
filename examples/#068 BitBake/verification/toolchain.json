@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:36:52.027537+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0068_bitbake/meta-hello/hello_1.0.bb": "3b8bd320b854dcbbd4f1ed5a0da65016667905ce3b8eabc6967a4258b1d9f57e",
+    "examples/0068_bitbake/meta-hello/classes/base.bbclass": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/0068_bitbake/meta-hello/conf/bitbake.conf": "419883f9accb7ca4a895535385ce1d40fba71f036a82ad7bafd8b8ce7cf391ce",
+    "examples/0068_bitbake/meta-hello/conf/layer.conf": "f8906724299c438db641920b468256f806263361a58874209b35a93b322f4ea4",
+    "examples/0068_bitbake/build/conf/bblayers.conf": "cc297d22bd36f8f4c3d1223f57e499e32b0dcef48330f461840fc0d1ebe0a3e8"
+  },
+  "commands": [
+    {
+      "label": "Python version for BitBake",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "python3",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_68",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "BitBake version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "env",
+        "LC_ALL=C.UTF-8",
+        "BBPATH=<workspace>/work/tools_61_80/verify_68/build",
+        "PATH=<workspace>/work/tools_61_80/bitbake-2.10/bin:/usr/bin:/bin",
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_68",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Please make sure locale 'en_US.UTF-8' is available on your system\n"
+    },
+    {
+      "label": "Native BitBake metadata parse",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "env",
+        "LC_ALL=C.UTF-8",
+        "BBPATH=<workspace>/work/tools_61_80/verify_68/build",
+        "PATH=<workspace>/work/tools_61_80/bitbake-2.10/bin:/usr/bin:/bin",
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "-p"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_68\\build",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Please make sure locale 'en_US.UTF-8' is available on your system\n"
+    },
+    {
+      "label": "Stop the isolated BitBake server",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "env",
+        "LC_ALL=C.UTF-8",
+        "BBPATH=<workspace>/work/tools_61_80/verify_68/build",
+        "PATH=<workspace>/work/tools_61_80/bitbake-2.10/bin:/usr/bin:/bin",
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "--kill-server"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_68\\build",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Please make sure locale 'en_US.UTF-8' is available on your system\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "toolchain": {
+    "source": "https://codeload.github.com/openembedded/bitbake/zip/refs/heads/2.10",
+    "archive_sha256": "dbdfad6a66b2402450c128d77bae51e6309a9b8d68169e49cdd5d17973776997",
+    "branch": "2.10"
+  }
+}

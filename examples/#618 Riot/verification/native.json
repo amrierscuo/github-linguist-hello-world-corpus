@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:29:42.293385+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native Riot component compiler",
+      "cwd": "<corpus>/examples/0618_riot",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_601_620/node",
+        "<workspace>/work/tools_601_620/618"
+      ],
+      "exit_code": 0,
+      "stdout": "<corpus-greeting><p>Hello, World!</p></corpus-greeting>\nPASS: authentic Riot compiler plus official server rendering, parameter control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Riot component compiler and official SSR runtime",
+    "version": "9.4.6 / SSR 9"
+  },
+  "artifact_sha256": {
+    "examples/0618_riot/corpus-greeting.riot": "acd07759eba2ee4309bf849f4c1d8b8de6c0b63c9eca8c0ad2ab9bdee923a376",
+    "examples/0618_riot/verify.cjs": "83a48da40cc172497d5d02b00436592822e3d6b9a20dd62a08f11efa1e8576b4"
+  }
+}

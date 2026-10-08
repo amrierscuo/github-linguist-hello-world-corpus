@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 566,
+  "language": "Pure Data",
+  "timestamp_utc": "2026-10-08T13:16:51.553751+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "Pd-0.54.1 (\"\") compiled for Debian (0.54.1+ds-4build3) on 2024/04/07 at 07:21:28 UTC",
+  "working_directory": "examples/0566_pure-data",
+  "source_sha256": {
+    "examples/0566_pure-data/hello.pd": "85bd0a7777a13877e5bbe9214b8252b7f837124ea7c610cff3ff2498a14eb39f"
+  },
+  "steps": [
+    {
+      "command": "pd -version",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Pd-0.54.1 (\"\") compiled for Debian (0.54.1+ds-4build3) on 2024/04/07 at 07:21:28 UTC\n"
+    },
+    {
+      "command": "pd -nogui -noaudio -batch hello.pd",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "disabling real-time priority due to missing pd-watchdog (<workspace>/work/tools_561_580/apt-root/usr/lib/puredata/bin/pd-watchdog)\ngreeting: Hello, World!\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Pd loads patch, fires loadbang, prints greeting and exits via pd quit. Audio disabled.",
+  "blockers": []
+}

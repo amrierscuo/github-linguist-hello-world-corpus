@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:27.993045+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native NMODL translation to generated C",
+      "cwd": "<corpus>/examples/0458_nmodl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_441_460/458",
+        "--",
+        "<workspace>/work/tools_441_460/linux/usr/bin/nocmodl",
+        "greeting.mod"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Translating greeting.mod into greeting.c\nThread Safe\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "NMODL parser/code generator accepted the mechanism; linking/loading the mechanism and finitialize in NEURON are not performed."
+  ],
+  "toolchain": {
+    "name": "Original NEURON NMODL-to-C compiler",
+    "version": "NEURON Ubuntu package 8.2.2-6build2",
+    "executable_sha256": "968a5e6d21fabfbce94701ecd34bb31cb3804b9de5c60bdc54026578ab32d9c8"
+  },
+  "generated_c_sha256": "b9a3d7b359c83fa5b57537b201daf9bc0d05440a068e22d8d4eb63c592b9c1fb",
+  "artifact_sha256": {
+    "examples/0458_nmodl/check.hoc": "72774b641074849c633387c04412cbab7f589208791e5949f5706c76a7f3e70e",
+    "examples/0458_nmodl/greeting.mod": "18b0e5e6bf8927e73526f0cf7a8f3009e5086970f878d7c1c01e31095f93465c"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:07.583830+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Clojure version",
+      "cwd": "<corpus>/examples/0124_clojure",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_121_140/clojure-1.12.0.jar;<workspace>/work/tools_121_140/spec.alpha-0.5.238.jar;<workspace>/work/tools_121_140/core.specs.alpha-0.4.74.jar",
+        "clojure.main",
+        "-e",
+        "(println (clojure-version))"
+      ],
+      "exit_code": 0,
+      "stdout": "1.12.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Clojure reader/compiler and execution",
+      "cwd": "<corpus>/examples/0124_clojure",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_121_140/clojure-1.12.0.jar;<workspace>/work/tools_121_140/spec.alpha-0.5.238.jar;<workspace>/work/tools_121_140/core.specs.alpha-0.4.74.jar",
+        "clojure.main",
+        "hello.clj"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Clojure JVM runtime",
+    "version": "1.12.0",
+    "jars_sha256": {
+      "clojure-1.12.0.jar": "c45333006441a059ea9fdb1341fc6c1f40b921a10dccd82665311e48a0384763",
+      "spec.alpha-0.5.238.jar": "94cd99b6ea639641f37af4860a643b6ed399ee5a8be5d717cff0b663c8d75077",
+      "core.specs.alpha-0.4.74.jar": "eb73ac08cf49ba840c88ba67beef11336ca554333d9408808d78946e0feb9ddb"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0124_clojure/hello.clj": "e8f943aeb88f31d69943923a6807eb8e37f24fee0b99c4d162d04453a6972699"
+  }
+}

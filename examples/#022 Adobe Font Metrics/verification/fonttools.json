@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T09:49:41.458295+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Percorsi della macchina normalizzati: radice del corpus sostituita con <corpus>, radice di lavoro con <workspace>, home con <user-home>, eseguibili con <python>, <node>, <java>; i soli argomenti di percorso dei comandi usano separatori POSIX. Gli output sono conservati salvo queste sostituzioni, che non modificano i byte degli artefatti o i risultati.",
+  "commands": [
+    {
+      "label": "Python and FontTools versions",
+      "cwd": "examples/0022_adobe-font-metrics",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,fontTools;print(sys.version);print(\"fontTools\",fontTools.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]\nfontTools 4.60.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native AFM parse and metric assertions",
+      "cwd": "examples/0022_adobe-font-metrics",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: 10 glyph metrics; total advance = 7500 units; FontBBox = (0, 0, 600, 700)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Malformed AFM negative control",
+      "cwd": "examples/0022_adobe-font-metrics",
+      "command": [
+        "<python>",
+        "<corpus>/examples/0022_adobe-font-metrics/verify.py",
+        "<workspace>/work/tools_21_26/negative_afm.afm"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<corpus>\\examples\\0022_adobe-font-metrics\\verify.py\", line 5, in <module>\n    font = AFM(sys.argv[1] if len(sys.argv) > 1 else 'hello.afm')\n  File \"<user-home>\\anaconda3\\Lib\\site-packages\\fontTools\\afmLib.py\", line 152, in __init__\n    self.read(path)\n    ~~~~~~~~~^^^^^^\n  File \"<user-home>\\anaconda3\\Lib\\site-packages\\fontTools\\afmLib.py\", line 170, in read\n    self.parsechar(rest)\n    ~~~~~~~~~~~~~~^^^^^^\n  File \"<user-home>\\anaconda3\\Lib\\site-packages\\fontTools\\afmLib.py\", line 181, in parsechar\n    raise error(\"syntax error in AFM file: \" + repr(rest))\nfontTools.afmLib.error: syntax error in AFM file: 'broken ; WX 600 ; N H ; B 0 0 600 700 ;'\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0022_adobe-font-metrics/hello.afm": "67bbb84c6893cb5d58dbf20422d825309ff09a19b637f6c964fb0b9ca2da6fe1",
+    "examples/0022_adobe-font-metrics/verify.py": "01a38f8c2a305df16102035b6a40989f528a08fe6fe4b56d22971499bd452d58"
+  },
+  "toolchain": {
+    "distribution": "fontTools AFM library",
+    "version": "4.60.1",
+    "source": "https://fonttools.readthedocs.io/en/stable/afmLib.html"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true
+}

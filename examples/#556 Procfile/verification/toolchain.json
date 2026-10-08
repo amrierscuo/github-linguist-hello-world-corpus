@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:29:57.839964+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Install original Thor dependency in work",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_556_152957834903",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_541_560/gems",
+        "GEM_PATH=<workspace>/work/tools_541_560/gems",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gem",
+        "install",
+        "--local",
+        "<workspace>/work/tools_541_560/thor-1.4.0.gem",
+        "--install-dir",
+        "<workspace>/work/tools_541_560/gems",
+        "--no-document"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_556_152957834903",
+      "exit_code": 0,
+      "stdout": "Successfully installed thor-1.4.0\n1 gem installed\n",
+      "stderr": ""
+    },
+    {
+      "label": "Install original Foreman gem in work",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_556_152957834903",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_541_560/gems",
+        "GEM_PATH=<workspace>/work/tools_541_560/gems",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gem",
+        "install",
+        "--local",
+        "<workspace>/work/tools_541_560/foreman-0.90.0.gem",
+        "--install-dir",
+        "<workspace>/work/tools_541_560/gems",
+        "--no-document",
+        "--ignore-dependencies"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_556_152957834903",
+      "exit_code": 0,
+      "stdout": "Successfully installed foreman-0.90.0\n1 gem installed\n",
+      "stderr": ""
+    },
+    {
+      "label": "Original Foreman Procfile validation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_556_152957834903",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_541_560/gems",
+        "GEM_PATH=<workspace>/work/tools_541_560/gems",
+        "PATH=<workspace>/work/tools_541_560/portable-bin:/usr/bin:/bin",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_541_560/gems/bin/foreman",
+        "check",
+        "-f",
+        "Procfile"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_556_152957834903",
+      "exit_code": 0,
+      "stdout": "valid procfile detected (greeting)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Original Foreman local process execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_556_152957834903",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_541_560/gems",
+        "GEM_PATH=<workspace>/work/tools_541_560/gems",
+        "PATH=<workspace>/work/tools_541_560/portable-bin:/usr/bin:/bin",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_541_560/gems/bin/foreman",
+        "start",
+        "-f",
+        "Procfile"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_556_152957834903",
+      "exit_code": 0,
+      "stdout": "15:30:38 greeting.1 | started with pid 2667\n15:30:40 greeting.1 | Hello, World!\n15:30:40 greeting.1 | exited with code 0\n15:30:40 system     | sending SIGTERM to all processes\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Foreman Procfile executor",
+    "distribution": {
+      "version": "0.90.0",
+      "url": "https://rubygems.org/downloads/foreman-0.90.0.gem",
+      "sha256": "ff675e2d47b607ac58714a6d4ac3e1ee8f06f41d8db084531c31961e2c3f117c"
+    },
+    "ruby_version": "3.2.3",
+    "thor": {
+      "file": "thor-1.4.0.gem",
+      "sha256": "8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d",
+      "source": "https://rubygems.org/gems/thor"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0556_procfile/greeting.rb": "126eacd8fe50b50f89ad3d40751be11f913c9b70ffb291d9a76d406e7924a569",
+    "examples/0556_procfile/Procfile": "2dea86348837a97d222f247a51005f0c8cf1bf5133b12acec3bfb53127c6a740"
+  }
+}

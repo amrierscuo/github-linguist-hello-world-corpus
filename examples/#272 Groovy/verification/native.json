@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:20.595342+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Apache Groovy version",
+      "cwd": "<corpus>/examples/0272_groovy",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_261_280/gradle-8.14.3/lib/groovy-3.0.24.jar",
+        "groovy.ui.GroovyMain",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Groovy Version: 3.0.24 JVM: 21.0.12.1 Vendor: Microsoft OS: Windows 11\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse, compile and execute Groovy original script",
+      "cwd": "<corpus>/examples/0272_groovy",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_261_280/gradle-8.14.3/lib/groovy-3.0.24.jar",
+        "groovy.ui.GroovyMain",
+        "hello.groovy"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Apache Groovy compiler/runtime jar",
+    "version": "Groovy Version: 3.0.24 JVM: 21.0.12.1 Vendor: Microsoft OS: Windows 11",
+    "jar_sha256": "abdadffeb2ce15e375f16b13f5bbe634c30b54791d62da38bd4ad3d5a4e89da9"
+  },
+  "artifact_sha256": {
+    "examples/0272_groovy/hello.groovy": "2b1102bee3a1ab0f083948f3d9d65181c0130d0f1e8d76d775ade01cffc3eaad"
+  }
+}

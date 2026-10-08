@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:40.609834+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Ruby version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_235_143440592884",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_221_240/gems",
+        "GEM_PATH=<workspace>/work/tools_221_240/gems",
+        "BUNDLE_USER_HOME=<workspace>/work/tools_221_240/bundle_profile",
+        "BUNDLE_APP_CONFIG=<workspace>/work/tools_221_240/verify_235_143440592884/.bundle",
+        "BUNDLE_USER_CONFIG=<workspace>/work/tools_221_240/bundle_profile/config",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_235_143440592884",
+      "exit_code": 0,
+      "stdout": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]\n",
+      "stderr": ""
+    },
+    {
+      "label": "Bundler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_235_143440592884",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_221_240/gems",
+        "GEM_PATH=<workspace>/work/tools_221_240/gems",
+        "BUNDLE_USER_HOME=<workspace>/work/tools_221_240/bundle_profile",
+        "BUNDLE_APP_CONFIG=<workspace>/work/tools_221_240/verify_235_143440592884/.bundle",
+        "BUNDLE_USER_CONFIG=<workspace>/work/tools_221_240/bundle_profile/config",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/bundle",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_235_143440592884",
+      "exit_code": 0,
+      "stdout": "Bundler version 2.4.19\n",
+      "stderr": ""
+    },
+    {
+      "label": "Install original Rake gem in isolated work directory",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_235_143440592884",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_221_240/gems",
+        "GEM_PATH=<workspace>/work/tools_221_240/gems",
+        "BUNDLE_USER_HOME=<workspace>/work/tools_221_240/bundle_profile",
+        "BUNDLE_APP_CONFIG=<workspace>/work/tools_221_240/verify_235_143440592884/.bundle",
+        "BUNDLE_USER_CONFIG=<workspace>/work/tools_221_240/bundle_profile/config",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gem",
+        "install",
+        "--local",
+        "<workspace>/work/tools_221_240/rake-13.3.0.gem",
+        "--install-dir",
+        "<workspace>/work/tools_221_240/gems",
+        "--no-document"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_235_143440592884",
+      "exit_code": 0,
+      "stdout": "Successfully installed rake-13.3.0\n1 gem installed\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine Bundler dependency resolution creates Gemfile.lock",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_235_143440592884",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_221_240/gems",
+        "GEM_PATH=<workspace>/work/tools_221_240/gems",
+        "BUNDLE_USER_HOME=<workspace>/work/tools_221_240/bundle_profile",
+        "BUNDLE_APP_CONFIG=<workspace>/work/tools_221_240/verify_235_143440592884/.bundle",
+        "BUNDLE_USER_CONFIG=<workspace>/work/tools_221_240/bundle_profile/config",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/bundle",
+        "lock",
+        "--local"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_235_143440592884",
+      "exit_code": 0,
+      "stdout": "Writing lockfile to <workspace>/work/tools_221_240/verify_235_143440592884/Gemfile.lock\nResolving dependencies...\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Bundler lockfile and installed dependencies verification",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_235_143440592884",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_221_240/gems",
+        "GEM_PATH=<workspace>/work/tools_221_240/gems",
+        "BUNDLE_USER_HOME=<workspace>/work/tools_221_240/bundle_profile",
+        "BUNDLE_APP_CONFIG=<workspace>/work/tools_221_240/verify_235_143440592884/.bundle",
+        "BUNDLE_USER_CONFIG=<workspace>/work/tools_221_240/bundle_profile/config",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/bundle",
+        "check"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_235_143440592884",
+      "exit_code": 0,
+      "stdout": "The Gemfile's dependencies are satisfied\n",
+      "stderr": ""
+    },
+    {
+      "label": "Bundler resolves lockfile and runs original Rake task",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_235_143440592884",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_221_240/gems",
+        "GEM_PATH=<workspace>/work/tools_221_240/gems",
+        "BUNDLE_USER_HOME=<workspace>/work/tools_221_240/bundle_profile",
+        "BUNDLE_APP_CONFIG=<workspace>/work/tools_221_240/verify_235_143440592884/.bundle",
+        "BUNDLE_USER_CONFIG=<workspace>/work/tools_221_240/bundle_profile/config",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/bundle",
+        "exec",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "<workspace>/work/tools_221_240/gems/gems/rake-13.3.0/exe/rake"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_235_143440592884",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Ruby, RubyGems and Bundler original distributions; authentic resolver lockfile",
+    "packages": [
+      {
+        "file": "ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "sha256": "6f11e297b3508e8db95a5a047126a16ccf1358292049a27e3dc72b88180e779a",
+        "package": "ruby3.2",
+        "version": "3.2.3-1ubuntu0.24.04.8"
+      },
+      {
+        "file": "libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "sha256": "77c2e98ccfba2c4a4e5edb48ca8c0eb041702e1579eabc40cf07064fd4f3033e",
+        "package": "libruby3.2",
+        "version": "3.2.3-1ubuntu0.24.04.8"
+      },
+      {
+        "file": "ruby-rubygems_3.4.20-1_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/r/rubygems/ruby-rubygems_3.4.20-1_all.deb",
+        "sha256": "9cb6041d902b74fd6e9373b24922e788bc2d1ed4360705ca6b53945d67b32087",
+        "package": "ruby-rubygems",
+        "version": "3.4.20-1"
+      },
+      {
+        "file": "ruby-bundler_2.4.20-1_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/r/rubygems/ruby-bundler_2.4.20-1_all.deb",
+        "sha256": "8f195bcda5682b2c7bb6f8ec287ab239c585b1ffc29eab0259a5bfe26c68e0f3",
+        "package": "ruby-bundler",
+        "version": "2.4.20-1"
+      }
+    ],
+    "rake_distribution": {
+      "file": "rake-13.3.0.gem",
+      "url": "https://rubygems.org/downloads/rake-13.3.0.gem",
+      "sha256": "96f5092d786ff412c62fde76f793cc0541bd84d2eb579caa529aa8a059934493"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0235_gemfile-lock/Gemfile": "9f5b91af3098faa594fea60961e896b7275009924773066442705fac35508870",
+    "examples/0235_gemfile-lock/Gemfile.lock": "928735d0b69d25cdfbbc6d1998d45017cd0260a16f1567eaa0f79989fcba4f73",
+    "examples/0235_gemfile-lock/Rakefile": "b9de676f5e7a502247ab63c138458c56111ca316d614a8432b568296506fb37c"
+  }
+}

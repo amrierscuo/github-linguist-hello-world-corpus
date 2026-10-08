@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:02.053278+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Eclipse Golo version",
+      "cwd": "<corpus>/examples/0263_golo",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_261_280/golo/golo-3.4.0/lib/*",
+        "org.eclipse.golo.cli.Main",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "3.4.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Golo compilation check",
+      "cwd": "<corpus>/examples/0263_golo",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_261_280/golo/golo-3.4.0/lib/*",
+        "org.eclipse.golo.cli.Main",
+        "check",
+        "--files",
+        "hello.golo"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Compile and run Golo main",
+      "cwd": "<corpus>/examples/0263_golo",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_261_280/golo/golo-3.4.0/lib/*",
+        "org.eclipse.golo.cli.Main",
+        "golo",
+        "--files",
+        "hello.golo"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Eclipse Golo compiler and JVM runtime",
+    "version": "3.4.0",
+    "compiler_jar_sha256": "19621141e9fdc556b4fe3c6a584b94c71a6ed8d1d36eb1e71e793ed0ec715827"
+  },
+  "artifact_sha256": {
+    "examples/0263_golo/hello.golo": "b969fecea4da7fe1eb93a2991bfc2669ff95341d5e3a10ea73df1bc3812f2f20"
+  }
+}

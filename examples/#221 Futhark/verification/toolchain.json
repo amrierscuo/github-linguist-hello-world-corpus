@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:35:20.506487+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Futhark version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_221_143520503244",
+        "--",
+        "<workspace>/work/tools_221_240/futhark.tar/futhark-0.27.1-linux-x86_64/bin/futhark",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_221_143520503244",
+      "exit_code": 0,
+      "stdout": "Futhark 0.27.1.\ngit: f547a39abb1f3773f7cdb324ec8ea7cb8cf13ea0\nCompiled with GHC 9.10.3.\n\nCopyright (C) DIKU, University of Copenhagen, released under the ISC license.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Futhark syntax and type check",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_221_143520503244",
+        "--",
+        "<workspace>/work/tools_221_240/futhark.tar/futhark-0.27.1-linux-x86_64/bin/futhark",
+        "check",
+        "hello.fut"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_221_143520503244",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native C backend and GCC compilation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_221_143520503244",
+        "--",
+        "<workspace>/work/tools_221_240/futhark.tar/futhark-0.27.1-linux-x86_64/bin/futhark",
+        "c",
+        "hello.fut",
+        "-o",
+        "hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_221_143520503244",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run actual compiled entry point",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_221_143520503244",
+        "--",
+        "./hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_221_143520503244",
+      "exit_code": 0,
+      "stdout": "[72u8, 101u8, 108u8, 108u8, 111u8, 44u8, 32u8, 87u8, 111u8, 114u8, 108u8, 100u8, 33u8]\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Futhark original compiler C backend",
+    "distribution": {
+      "file": "futhark.tar.xz",
+      "url": "https://github.com/diku-dk/futhark/releases/download/v0.27.1/futhark-0.27.1-linux-x86_64.tar.xz",
+      "sha256": "11248f098643487627f69695be29d96dee351a56d3f27f3715da7cf0638a0b8f"
+    }
+  },
+  "semantic_scope": "Futhark entry output is the 13-element u8 array; native CLI numeric output compared to greeting UTF-8 bytes.",
+  "artifact_sha256": {
+    "examples/0221_futhark/hello.fut": "7ed6299ec04520b42b790a82f0de8176162742f0cbfbee09eadaa0a3eeccef6b"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:55.943308+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "NumPy existing fixed-width parser version",
+      "cwd": "<corpus>/examples/0214_formatted",
+      "command": [
+        "<python>",
+        "-c",
+        "import numpy;print(numpy.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "2.3.5\n",
+      "stderr": ""
+    },
+    {
+      "label": "Existing fixed-width reader and record field assertions",
+      "cwd": "<corpus>/examples/0214_formatted",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.for"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing NumPy fixed-width record reader; declared I3/A13/I4 layout\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing NumPy genfromtxt fixed-width record parser",
+    "version": "2.3.5"
+  },
+  "semantic_scope": "One explicitly declared fixed-width layout (3-character integer, 13-character greeting, 4-character integer) within Linguist Formatted data; no universal grammar for every .for or EAM format is asserted.",
+  "artifact_sha256": {
+    "examples/0214_formatted/hello.for": "64a1c4c0b671400c95560cabc8770666f394a8fbbee68d73d1f1ab5a07c710ff",
+    "examples/0214_formatted/verify.py": "6fc411d17ea5b68a610fb0a1e0a077d1514375ae517c2d4755d34c7b373321b3"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:44.955354+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "SubRip parser version",
+      "cwd": "<corpus>/examples/0686_subrip-text",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata;print(importlib.metadata.version(\"pysrt\"))"
+      ],
+      "exit_code": 0,
+      "stdout": "1.1.2\n",
+      "stderr": ""
+    },
+    {
+      "label": "Decode original SubRip timing/text with existing parser",
+      "cwd": "<corpus>/examples/0686_subrip-text",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing SubRip parser validates timing/index and subtitle text\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing PySRT format parser",
+    "version": "1.1.2"
+  },
+  "artifact_sha256": {
+    "examples/0686_subrip-text/hello.srt": "bde1ec0331155100320e24d55c0b14b39782dd4cd9f813cda5ab428a66328782",
+    "examples/0686_subrip-text/verify.py": "615d92690a15e777e0e15ad6ebcf9b448ea9084d05b606f2b2fcf2a709d2148b"
+  }
+}

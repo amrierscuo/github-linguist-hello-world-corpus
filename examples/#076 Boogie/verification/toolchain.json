@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:37:39.971043+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0076_boogie/hello.bpl": "9210ce5788903c36de9b79bdcf8377f2282c0d53ddcd6e75f60e308ced64cb60"
+  },
+  "commands": [
+    {
+      "label": "NET runtime version",
+      "command": [
+        "<dotnet>",
+        "--list-runtimes"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_76",
+      "exit_code": 0,
+      "stdout": "Microsoft.NETCore.App 6.0.36 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]\nMicrosoft.WindowsDesktop.App 6.0.36 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]\n",
+      "stderr": ""
+    },
+    {
+      "label": "Boogie version",
+      "command": [
+        "<dotnet>",
+        "<workspace>\\work\\tools_61_80\\boogie2159\\tools\\net6.0\\any\\BoogieDriver.dll",
+        "/version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_76",
+      "exit_code": 0,
+      "stdout": "Boogie program verifier version 2.15.9.0, Copyright (c) 2003-2014, Microsoft.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Boogie parse and typecheck",
+      "command": [
+        "<dotnet>",
+        "<workspace>\\work\\tools_61_80\\boogie2159\\tools\\net6.0\\any\\BoogieDriver.dll",
+        "/noVerify",
+        "hello.bpl"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_76",
+      "exit_code": 0,
+      "stdout": "\nBoogie program verifier finished with 0 verified, 0 errors\n",
+      "stderr": ""
+    },
+    {
+      "label": "Z3 solver version",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\python\\bin\\z3.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_76",
+      "exit_code": 0,
+      "stdout": "Z3 version 5.1.0 - 64 bit\n",
+      "stderr": ""
+    },
+    {
+      "label": "Boogie SMT verification of exact ASCII postconditions",
+      "command": [
+        "<dotnet>",
+        "<workspace>\\work\\tools_61_80\\boogie2159\\tools\\net6.0\\any\\BoogieDriver.dll",
+        "/proverOpt:PROVER_PATH=<workspace>\\work\\tools_61_80\\python\\bin\\z3.exe",
+        "hello.bpl"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_76",
+      "exit_code": 0,
+      "stdout": "\nBoogie program verifier finished with 1 verified, 0 errors\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Boogie 2.15.9 official NuGet tool package with NET 6 runtime",
+    "package_sha256": "f5f0541ecfcdbec7b1218b612cce6436c7ddcc0f9b5ba8a225e4e74f7d8cb216",
+    "source": "https://api.nuget.org/v3-flatcontainer/boogie/2.15.9/boogie.2.15.9.nupkg"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "ordinal": 331,
+  "name": "Janet",
+  "timestamp_utc": "2026-10-08T12:19:13.612215+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Janet 1.42.1 official Linux x64 release",
+  "artifact_sha256": {
+    "examples/0331_janet/hello.janet": "5288cc57c2d1b41759abff08ab85287c93dd48732274d9ceaa3763c80e798388"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_321_340/janet/janet-v1.42.1-linux/bin/janet",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "1.42.1-e1963cd\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_321_340/janet/janet-v1.42.1-linux/bin/janet",
+        "${WORKSPACE_WSL}/work/staging_321_340/examples/0331_janet/hello.janet"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

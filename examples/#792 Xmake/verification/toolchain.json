@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T14:02:15.869132+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Xmake version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_792_160215865422",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_781_800/ubuntu/usr/lib/x86_64-linux-gnu",
+        "XMAKE_ROOT=y",
+        "XMAKE_GLOBALDIR=<workspace>/work/tools_781_800/verify_792_160215865422/.xmake-global",
+        "XMAKE_CONFIGDIR=<workspace>/work/tools_781_800/verify_792_160215865422/.xmake-config",
+        "<workspace>/work/tools_781_800/xmake",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_792_160215865422",
+      "exit_code": 0,
+      "stdout": "xmake v3.1.1+HEAD.3ba37a0, A cross-platform build utility based on Lua\nCopyright (C) 2015-present Ruki Wang, https://xmake.io\n                         _\n    __  ___ __  __  __ _| | ______\n    \\ \\/ / |  \\/  |/ _  | |/ / __ \\\n     >  <  | \\__/ | /_| |   <  ___/\n    /_/\\_\\_|_|  |_|\\__ \\|_|\\_\\____|\n                         by ruki, xmake.io\n    👉  Manual: https://xmake.io/guide/quick-start\n    🙏  Donate: https://xmake.io/about/sponsor\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Xmake project/toolchain configuration",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_792_160215865422",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_781_800/ubuntu/usr/lib/x86_64-linux-gnu",
+        "XMAKE_ROOT=y",
+        "XMAKE_GLOBALDIR=<workspace>/work/tools_781_800/verify_792_160215865422/.xmake-global",
+        "XMAKE_CONFIGDIR=<workspace>/work/tools_781_800/verify_792_160215865422/.xmake-config",
+        "<workspace>/work/tools_781_800/xmake",
+        "f",
+        "-y",
+        "-p",
+        "linux",
+        "--toolchain=gcc",
+        "-o",
+        "build"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_792_160215865422",
+      "exit_code": 0,
+      "stdout": "checking for platform ... linux (x86_64)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Xmake interpretation and GCC build",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_792_160215865422",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_781_800/ubuntu/usr/lib/x86_64-linux-gnu",
+        "XMAKE_ROOT=y",
+        "XMAKE_GLOBALDIR=<workspace>/work/tools_781_800/verify_792_160215865422/.xmake-global",
+        "XMAKE_CONFIGDIR=<workspace>/work/tools_781_800/verify_792_160215865422/.xmake-config",
+        "<workspace>/work/tools_781_800/xmake",
+        "-y"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_792_160215865422",
+      "exit_code": 0,
+      "stdout": "[ 23%]: <hello> cache compiling.release hello.c\n[ 47%]: <hello> linking.release hello\n[100%]: build ok, spent 1.082s\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute Xmake-built program",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_792_160215865422",
+        "--",
+        "<workspace>/work/tools_781_800/verify_792_160215865422/build/linux/x86_64/release/hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_792_160215865422",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Xmake3.1.1 Linux bundle",
+    "distribution": {
+      "url": "https://github.com/xmake-io/xmake/releases/download/v3.1.1/xmake-bundle-v3.1.1.linux.x86_64",
+      "sha256": "fe1da8861a5ee5845d4f6c84e499f6f9c6bf5b5a69c9b7b130930ee28355a6d5",
+      "github_digest": "sha256:fe1da8861a5ee5845d4f6c84e499f6f9c6bf5b5a69c9b7b130930ee28355a6d5"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0792_xmake/hello.c": "ed022c4313ef7444150bc047da163dd09eb5ae942093b1e6c97e1cf32dfbad7a",
+    "examples/0792_xmake/xmake.lua": "552a2b9082f4018e6166a92699106f47bdde4c88ea165b6843e27cc0f0929a6f"
+  }
+}

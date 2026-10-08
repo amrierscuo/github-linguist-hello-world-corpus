@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:00:09.276339+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Availability probe for firebase",
+      "cwd": "<corpus>/examples/0126_cloud-firestore-security-rules",
+      "command": [
+        "where.exe",
+        "firebase"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Firebase Firestore rules emulator and unit test client are not installed/configured; no cloud deployment is needed."
+  ],
+  "toolchain": {
+    "name": "Required native toolchain unavailable or not configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0126_cloud-firestore-security-rules/firebase.json": "b894c0761efe6afab0602588e0a1ef685829cf03d08f1c189674ebfedab3983f",
+    "examples/0126_cloud-firestore-security-rules/firestore.rules": "8908b428c2885cbc9b4a5b2ed683b84aae3c05294948a00c63e9631567035acb",
+    "examples/0126_cloud-firestore-security-rules/package.json": "1161b09f18359ca696137fc2b10c4b3cadeaa6e3bb2832864a2482dca6eeda12",
+    "examples/0126_cloud-firestore-security-rules/verify.mjs": "6b3f0a2327121cd0d882339110f96288696ae398c13717910b73ea6a7682355b"
+  }
+}

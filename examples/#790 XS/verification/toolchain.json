@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:41.945469+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Perl version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_790_155941916529",
+        "--",
+        "perl",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_790_155941916529",
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Generate original XS build rules with isolated development headers",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_790_155941916529",
+        "--",
+        "perl",
+        "Makefile.PL",
+        "INC=-I<workspace>/work/tools_781_800/ubuntu/usr/lib/x86_64-linux-gnu/perl/5.38.2/CORE"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_790_155941916529",
+      "exit_code": 0,
+      "stdout": "Generating a Unix-style Makefile\nWriting Makefile for Corpus::Greeting\nWriting MYMETA.yml and MYMETA.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native xsubpp XS parsing and GCC shared extension compilation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_790_155941916529",
+        "--",
+        "make"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_790_155941916529",
+      "exit_code": 0,
+      "stdout": "cp verify.pl blib/lib/Corpus/verify.pl\ncp lib/Corpus/Greeting.pm blib/lib/Corpus/Greeting.pm\nRunning Mkbootstrap for Greeting ()\nchmod 644 \"Greeting.bs\"\n\"/usr/bin/perl\" -MExtUtils::Command::MM -e 'cp_nonempty' -- Greeting.bs blib/arch/auto/Corpus/Greeting/Greeting.bs 644\n\"/usr/bin/perl\" \"/usr/share/perl/5.38/ExtUtils/xsubpp\"  -typemap '/usr/share/perl/5.38/ExtUtils/typemap'  Greeting.xs > Greeting.xsc\nmv Greeting.xsc Greeting.c\nx86_64-linux-gnu-gcc -c  -I<workspace>/work/tools_781_800/ubuntu/usr/lib/x86_64-linux-gnu/perl/5.38.2/CORE -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -fwrapv -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g   -DVERSION=\\\"0.01\\\" -DXS_VERSION=\\\"0.01\\\" -fPIC \"-I/usr/lib/x86_64-linux-gnu/perl/5.38/CORE\"   Greeting.c\nrm -f blib/arch/auto/Corpus/Greeting/Greeting.so\nx86_64-linux-gnu-gcc  -shared -L/usr/local/lib -fstack-protector-strong  Greeting.o  -o blib/arch/auto/Corpus/Greeting/Greeting.so  \\\n      \\\n  \nchmod 755 blib/arch/auto/Corpus/Greeting/Greeting.so\n",
+      "stderr": ""
+    },
+    {
+      "label": "Import genuine XS extension and call greeting",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_781_800/verify_790_155941916529",
+        "--",
+        "perl",
+        "verify.pl"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_790_155941916529",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Perl XS parser, ExtUtils::MakeMaker, GCC shared library and Perl runtime",
+    "packages": [
+      {
+        "name": "libperl-dev",
+        "version": "5.38.2-3.2ubuntu0.6",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/perl/libperl-dev_5.38.2-3.2ubuntu0.6_amd64.deb",
+        "sha256": "c44d080cebac4bf2c99263cf9de3d0e6d8f4618249c8feaddfb99a34450784b6"
+      },
+      {
+        "name": "libperl5.38t64",
+        "version": "5.38.2-3.2ubuntu0.6",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/perl/libperl5.38t64_5.38.2-3.2ubuntu0.6_amd64.deb",
+        "sha256": "e9e5ac9a657e0cacf5f0de977c1573c696ee74515d5136c4e9a0ce9467d32ae7"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0790_xs/Greeting.xs": "3a075a5672debe7336492d6f6f1d433255b51c278c27844012418f429b26b827",
+    "examples/0790_xs/Makefile.PL": "4800236dd73b3529abd064418781aecba8f12297390af3482ae73646d615bdbd",
+    "examples/0790_xs/verify.pl": "34b4ac429b52233a45293f984de0cbe7de7412d30d0e589990fbd91b9c526889",
+    "examples/0790_xs/lib/Corpus/Greeting.pm": "f03400ef016f224b1562cc034d1c93573db099340f63c8e9f7d02107ab9a7909"
+  }
+}

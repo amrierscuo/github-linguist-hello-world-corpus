@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ordinal": 245,
+  "language": "Gherkin",
+  "timestamp_utc": "2026-10-08T12:17:26.464731+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; official Cucumber.js 13.3.0",
+  "working_directory": "examples/0245_gherkin",
+  "source_sha256": {
+    "examples/0245_gherkin/hello.feature": "fd419ecb3cbddecdcdd4a3ea5fb32d58a9c2ee8df6c61b3e123b0d75aea1f034",
+    "examples/0245_gherkin/package.json": "7bba773b41588681bc15f29b416e58be04de5bdc0d525ace883d88cf3d173d44",
+    "examples/0245_gherkin/steps.cjs": "e4d23b8cc2cd6ffd0df7fe57e217bc34e7219c976f27694b9cf8409c3d4a1543"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "cucumber-js --version",
+      "exit_code": 0,
+      "stdout": "13.3.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "cucumber-js --require steps.cjs hello.feature --format json:<build>/report.json",
+      "exit_code": 0,
+      "stdout": "...\n\n1 scenario (1 passed)\n3 steps (3 passed)\n0m 0.022s (0m 0.002s executing your code)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Real Cucumber Gherkin parsing plus registered Given/When/Then execution, one scenario and three passed steps.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_241_260/245/report.json",
+      "sha256": "fe0453d419bce7708ceadb745b609428e9ff08680933015e185e1d47fbc89c1d"
+    }
+  ]
+}

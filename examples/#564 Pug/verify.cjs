@@ -1,0 +1,1 @@
+const assert=require("node:assert/strict"),pug=require("pug");const html=pug.renderFile("hello.pug",{name:"World"});assert(html.includes("<h1 id=\"greeting\">Hello, World!</h1>"));const escaped=pug.renderFile("hello.pug",{name:"<World>"});assert(escaped.includes("&lt;World&gt;"));console.log("Hello, World!");

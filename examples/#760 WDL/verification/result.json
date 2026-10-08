@@ -1,0 +1,33 @@
+{
+  "ordinal": 760,
+  "name": "WDL",
+  "timestamp_utc": "2026-10-08T13:52:55.460916+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "miniwdl1.15.0 original parser/typechecker on Python3.12 Linux; task backend pending",
+  "artifact_sha256": {
+    "examples/0760_wdl/hello.wdl": "617eb51b7e6d7ab17cebdf16815217f9dec0badda0e099a27fa62e873160d2d4",
+    "examples/0760_wdl/verify.py": "9fbf256b2627fd4deaf5cec7716e5420d62368953d8225931c426cb96b0ecd6c"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PYTHONPATH=${WORKSPACE_WSL}/work/tools_741_760/linux_python",
+        "python3",
+        "${WORKSPACE_WSL}/work/staging_741_760/examples/0760_wdl/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: original WDL parser and typechecker\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "error": "Parsing e typecheck WDL reali passano su Linux; backend task non eseguito.",
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ordinal": 163,
+  "language": "Debian Package Control File",
+  "timestamp_utc": "2026-10-08T11:56:17.956022+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Debian dpkg-source version 1.22.6.",
+  "working_directory": "examples/0163_debian-package-control-file",
+  "source_sha256": {
+    "examples/0163_debian-package-control-file/hello-world-corpus_1.0.dsc": "314108f06e685829b079adcf6ad75bebbd3a84513e70fdf9280db05d967353f5",
+    "examples/0163_debian-package-control-file/hello-world-corpus_1.0.tar.gz": "0e523f3a134f0078a254742d466f397d61bf99d369d9688d9320a0b1d4270d20",
+    "examples/0163_debian-package-control-file/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31"
+  },
+  "steps": [
+    {
+      "command": "dpkg-source --version",
+      "exit_code": 0,
+      "stdout": "Debian dpkg-source version 1.22.6.\n\nThis is free software; see the GNU General Public License version 2 or\nlater for copying conditions. There is NO warranty.\n",
+      "stderr": ""
+    },
+    {
+      "command": "dpkg-source -x hello-world-corpus_1.0.dsc <build>/source",
+      "exit_code": 0,
+      "stdout": "dpkg-source: info: extracting hello-world-corpus in source\ndpkg-source: info: unpacking hello-world-corpus_1.0.tar.gz\n",
+      "stderr": "dpkg-source: warning: extracting unsigned source package (<corpus>/examples/0163_debian-package-control-file/hello-world-corpus_1.0.dsc)\ndpkg-source: warning: source/debian/rules does not exist\n"
+    },
+    {
+      "command": "cat <build>/source/hello.txt",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "dpkg-source parses the unsigned .dsc, checks the archive checksums and extracts the native 1.0 source tarball; extracted greeting bytes asserted. Not a complete binary Debian package and not signed.",
+  "blockers": []
+}

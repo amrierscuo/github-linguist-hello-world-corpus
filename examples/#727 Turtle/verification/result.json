@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 727,
+  "language": "Turtle",
+  "timestamp_utc": "2026-10-08T13:30:05.471503+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython3.13.9; RDFLib7.6.0",
+  "working_directory": "examples/0727_turtle",
+  "source_sha256": {
+    "examples/0727_turtle/hello.ttl": "923a071f5f2f2670ae3f287c178734708e722be83632c5d85bccc1bb091ee65a",
+    "examples/0727_turtle/verify.py": "a26df2b75097ec808913649b6e2bdd89fbc5106bec8d8ecf847eac8854d142ec"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Genuine RDFLib Turtle parser constructs RDF graph and retrieves correct language-tagged literal.",
+  "blockers": []
+}

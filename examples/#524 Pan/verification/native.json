@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:17:35.354884+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Pan compiler version",
+      "cwd": "<corpus>/examples/0524_pan",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_521_540/panc-10.8.jar",
+        "org.quattor.pan.pan_compiler",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "pan compiler version: 10.8\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original Pan template to real JSON configuration",
+      "cwd": "<corpus>/examples/0524_pan",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_521_540/panc-10.8.jar",
+        "org.quattor.pan.pan_compiler",
+        "--formats",
+        "json",
+        "--output-dir",
+        "<workspace>/work/tools_521_540/524",
+        "<corpus>/examples/0524_pan/greeting.pan"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Quattor Pan compiler",
+    "version": "pan compiler version: 10.8",
+    "jar_sha256": "9a2c0a825abf9bcd0120a539f8266968317b25cba6891bb3e01a4b4fa1a6c369"
+  },
+  "generated_json_sha256": "17defc11383d88b8fd7b6b943bd423fe07a81514d10bf566e062852f7a720ab6",
+  "artifact_sha256": {
+    "examples/0524_pan/greeting.pan": "51ffe53405a5307542a4186ecedddc8e5b8b94dd8df6e6a8aafee582165ce854"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "ordinal": 323,
+  "name": "JFlex",
+  "timestamp_utc": "2026-10-08T12:16:59.127474+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "JFlex 1.9.1 + CUP runtime 11b-20160615-3 + OpenJDK 21.0.12",
+  "artifact_sha256": {
+    "examples/0323_jflex/hello.jflex": "7038d4ba02a30781506a19f385ae8b2ea69fc9aa5183d8e50fc681dee81a0edf",
+    "examples/0323_jflex/input.txt": "aa1db5c660d3d1f3f4f9361b9848694300929be94b74c84452a87420c59e5df9"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\jflex-1.9.1.jar;${WORKSPACE}\\work\\tools_321_340\\java-cup-runtime-11b-20160615-3.jar",
+        "jflex.Main",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "This is JFlex 1.9.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\jflex-1.9.1.jar;${WORKSPACE}\\work\\tools_321_340\\java-cup-runtime-11b-20160615-3.jar",
+        "jflex.Main",
+        "-d",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0323",
+        "hello.jflex"
+      ],
+      "exit_code": 0,
+      "stdout": "Reading \"hello.jflex\"\nConstructing NFA : 18 states in NFA\nConverting NFA to DFA : \n........\n10 states before minimization, 8 states in minimized DFA\nWriting code to \"${WORKSPACE}\\work\\tools_321_340\\build_0323\\GreetingLexer.java\"\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\javac.exe",
+        "-d",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0323",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0323\\GreetingLexer.java"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0323",
+        "GreetingLexer",
+        "input.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

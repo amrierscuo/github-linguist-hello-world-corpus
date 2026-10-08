@@ -1,0 +1,37 @@
+{
+  "ordinal": 582,
+  "name": "R",
+  "timestamp_utc": "2026-10-08T13:24:30.164763+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "GNU R 4.3.3 native Ubuntu runtime",
+  "artifact_sha256": {
+    "examples/0582_r/hello.r": "7f01873643b7006aabb92403971205d77e4bd77da5bb12542738d49c3b07a541"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "R_HOME=${WORKSPACE_WSL}/work/tools_581_600/r_home",
+        "R_PROFILE_USER=/dev/null",
+        "R_ENVIRON_USER=/dev/null",
+        "R_LIBS_USER=${WORKSPACE_WSL}/work/tools_581_600/r_library",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/blas:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/lapack:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/R/lib",
+        "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/R/bin/exec/R",
+        "--vanilla",
+        "--slave",
+        "-f",
+        "${WORKSPACE_WSL}/work/staging_581_600/examples/0582_r/hello.r"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

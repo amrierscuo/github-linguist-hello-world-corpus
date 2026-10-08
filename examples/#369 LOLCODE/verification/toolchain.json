@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:08:25.327276+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "lci version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_369_150825320638",
+        "--",
+        "<workspace>/work/tools_361_380/lci-build/lci",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_369_150825320638",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "<workspace>/work/tools_361_380/lci-build/lci v0.11.2\n"
+    },
+    {
+      "label": "Native LOLCODE parsing and interpretation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_369_150825320638",
+        "--",
+        "<workspace>/work/tools_361_380/lci-build/lci",
+        "hello.lol"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_369_150825320638",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original lci LOLCODE interpreter compiled with GCC",
+    "source": {
+      "url": "https://codeload.github.com/justinmeza/lci/tar.gz/refs/heads/future",
+      "sha256": "75bf83bb7edeb6df7f39490020ce6260ab31fab7da2c9d80254f99841e087ebc"
+    },
+    "compiler_sha256": "44cf52cd6b7844924ae1938ae331286575e1c5b3f5f84fb4e2ea9abd4379fc54"
+  },
+  "artifact_sha256": {
+    "examples/0369_lolcode/hello.lol": "7d7f522f9cada672c7643f35d761603718aa755cbefe2a450d2f211acfec4442"
+  }
+}

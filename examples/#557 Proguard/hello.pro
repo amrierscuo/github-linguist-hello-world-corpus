@@ -1,0 +1,6 @@
+-injars input.jar
+-outjars output.jar
+-dontwarn
+-dontoptimize
+-dontobfuscate
+-keep public class Hello { public static void main(java.lang.String[]); }

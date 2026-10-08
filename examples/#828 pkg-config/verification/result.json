@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 828,
+  "language": "pkg-config",
+  "timestamp_utc": "2026-10-08T13:48:50.733718+00:00",
+  "platform": "WSL Ubuntu24.04.3",
+  "toolchain": "pkg-config 1.8.1",
+  "working_directory": "examples/0828_pkg-config",
+  "source_sha256": {
+    "examples/0828_pkg-config/hello.pc": "02a0214b9a687bdee91c7dcd211ffb43ff3d0f6a42409a2ea63b0f41f269b95d"
+  },
+  "steps": [
+    {
+      "command": "pkg-config --version",
+      "exit_code": 0,
+      "stdout": "1.8.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "pkg-config --validate hello",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "pkg-config --variable=greeting hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native pkg-config validates actual original .pc and resolves greeting variable. No link of illustrative library claimed.",
+  "blockers": []
+}

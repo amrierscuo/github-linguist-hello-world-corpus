@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="corpus-greeting" name="Hello, World!" revision="1" battleScribeVersion="2.03"><publications/><costTypes/><profileTypes/><categoryEntries/><forceEntries/><selectionEntries/><entryLinks/><sharedSelectionEntries/><sharedSelectionEntryGroups/><sharedRules/><sharedProfiles/><sharedInfoGroups/></gameSystem>

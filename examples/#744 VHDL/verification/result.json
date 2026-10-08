@@ -1,0 +1,96 @@
+{
+  "ordinal": 744,
+  "name": "VHDL",
+  "timestamp_utc": "2026-10-08T14:06:43.513286+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "artifact_sha256": {
+    "examples/0744_vhdl/hello.vhdl": "cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "GHDL_PREFIX=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GHDL 4.1.0 (Ubuntu 4.1.0+dfsg-0ubuntu2.1) [Dunoon edition]\n Compiled with GNAT Version: 13.3.0\n static elaboration, mcode JIT code generator\nWritten by Tristan Gingold.\n\nCopyright (C) 2003 - 2024 Tristan Gingold.\nGHDL is free software, covered by the GNU General Public License.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "GHDL_PREFIX=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "-a",
+        "--std=08",
+        "--workdir=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "${WORKSPACE_WSL}/work/staging_741_760/examples/0744_vhdl/hello.vhdl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "GHDL_PREFIX=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "-e",
+        "--std=08",
+        "--workdir=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TMPDIR=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "GHDL_PREFIX=${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "${WORKSPACE_WSL}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "-r",
+        "--std=08",
+        "--workdir=${WORKSPACE_WSL}/work/tools_741_760/build_0744",
+        "hello",
+        "--stop-time=1ns"
+      ],
+      "exit_code": 0,
+      "stdout": "${WORKSPACE_WSL}/work/staging_741_760/examples/0744_vhdl/hello.vhdl:7:9:@0ms:(report note): Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": "GHDL 4.1.0 (Ubuntu 4.1.0+dfsg-0ubuntu2.1) [Dunoon edition]; mcode JIT backend; GNAT13.3.0; WSL Ubuntu24.04",
+  "tool_binary_sha256": {
+    "work/tools_741_760/ubuntu/usr/bin/ghdl-mcode": "bda06e8a2af409839853cf7fb6c39ca07f5b680b2ab0684e0ee7fc7aa4a377ec"
+  },
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

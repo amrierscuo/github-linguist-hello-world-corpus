@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.509566+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0536_piglatin",
+      "command": [
+        "where.exe",
+        "pig"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required pig compiler/interpreter and matching host libraries are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0536_piglatin/hello.pig": "a07d2cef48e0f6eb39e68a6c6fbb93b76657ed488831520383ea746b8b8256e6",
+    "examples/0536_piglatin/names.tsv": "aa1db5c660d3d1f3f4f9361b9848694300929be94b74c84452a87420c59e5df9"
+  }
+}

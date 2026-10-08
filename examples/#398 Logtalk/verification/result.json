@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 398,
+  "language": "Logtalk",
+  "timestamp_utc": "2026-10-08T12:51:45.286956+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Logtalk 3.102.0 original lgt31020stable; SWI-Prolog version 9.0.4 for x86_64-linux",
+  "working_directory": "examples/0398_logtalk",
+  "source_sha256": {
+    "examples/0398_logtalk/hello.lgt": "c773f66269f7f241a6271a1c3574ace6668fb76844ecaa0996ad38cb010578ad"
+  },
+  "steps": [
+    {
+      "command": "swipl --version",
+      "exit_code": 0,
+      "stdout": "SWI-Prolog version 9.0.4 for x86_64-linux\n",
+      "stderr": ""
+    },
+    {
+      "command": "LOGTALKHOME=LOGTALKUSER=<isolated-vendor> swipl -q -f <vendor>/integration/logtalk_swi.pl -g \"logtalk_load(hello,[report(off)]),hello::greet,halt\"",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Real Logtalk compiler parses object/public predicate, genuine SWI-Prolog backend executes hello::greet. LOGTALKHOME/USER both select isolated tool tree, an upstream-supported layout; compiled Prolog files only in work.",
+  "blockers": []
+}

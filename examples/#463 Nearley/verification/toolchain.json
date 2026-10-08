@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:13.096701+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Compile actual Nearley grammar",
+      "command": [
+        "node",
+        "<workspace>\\work\\tools_461_480\\npm\\node_modules\\nearley\\bin\\nearleyc.js",
+        "hello.ne",
+        "-o",
+        "hello.js"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_463_151613073657",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native Nearley generated parser recognition",
+      "command": [
+        "node",
+        "verify.js"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_463_151613073657",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "nearley",
+    "version": "2.20.1",
+    "manifest_sha256": "4e7c035229a9fa1140a1b9da61f6b298faf7c53d307c69f0089fdb5bca131c36",
+    "lock_sha256": "c23c03c3d77f5e7f9b31bfbd57bff835e78b12a329b48af5781c692a4ce90364",
+    "source": "https://www.npmjs.com/package/nearley"
+  },
+  "artifact_sha256": {
+    "examples/0463_nearley/hello.ne": "3a88908ad98babe930774529f396d9e79b5d6e41f37dc2ad6f91f13d6851901a",
+    "examples/0463_nearley/verify.js": "7093458dba252c87d7ac4fe1360c804159d75dc3b076db78243a006561819fc7"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "ordinal": 746,
+  "name": "Valve Data Format",
+  "timestamp_utc": "2026-10-08T13:46:49.511957+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python3.13.9 + ValvePython vdf3.4",
+  "artifact_sha256": {
+    "examples/0746_valve-data-format/hello.vdf": "871ceb30a15a78caeca32243280437e5deecabe549c970c9af6d723c93b67c05",
+    "examples/0746_valve-data-format/verify.py": "496ca434313cca0d1b1f79bb482d829ced63d3912ad1f02694706aeeb1daff54"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

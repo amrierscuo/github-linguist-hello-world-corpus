@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:37.190800+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0052_baml/baml_src/hello.baml": "00d303807404f5e1218ac45e7f3d92108b22999370a03b365ce1645c5251e1c5",
+    "examples/0052_baml/baml_src/generators.baml": "be22bbb278e73958f8d5e60561fb2dfb4a4251fbf1085fc9adb230c3699fe3f5"
+  },
+  "commands": [
+    {
+      "label": "Native BAML parse and code generation",
+      "cwd": "<workspace>/work/tools_41_60/52",
+      "command": [
+        "<node>",
+        "<workspace>/work/tools_41_60/node/node_modules/@boundaryml/baml/cli.js",
+        "generate",
+        "--from",
+        "<workspace>/work/tools_41_60/52/baml_src"
+      ],
+      "exit_code": 0,
+      "stdout": "2026-10-08T13:29:38.158 [BAML INFO] Generating clients with CLI version: 0.226.2\n2026-10-08T13:29:38.249 [BAML INFO] Wrote 14 files to <workspace>\\work\\tools_41_60\\52\\generated\\baml_client\n2026-10-08T13:29:38.250 [BAML INFO] Generated 1 baml_client: ../generated\\baml_client\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "Model invocation has not been performed; semantic greeting output and credentials remain pending."
+  ],
+  "toolchain": {
+    "name": "Official BoundaryML BAML CLI",
+    "version": "0.226.2"
+  }
+}

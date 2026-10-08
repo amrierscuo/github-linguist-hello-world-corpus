@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:09.926059+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Kakoune version",
+      "cwd": "<corpus>/examples/0355_kakounescript",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_341_360/linux/usr/bin/kak",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "Kakoune unknown\n",
+      "stderr": ""
+    },
+    {
+      "label": "Source genuine Kakoune script, save debug buffer, quit",
+      "cwd": "<corpus>/examples/0355_kakounescript",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_341_360/linux/usr/bin/kak",
+        "-n",
+        "-ui",
+        "dummy",
+        "-e",
+        "source '<corpus>/examples/0355_kakounescript/hello.kak'; buffer '*debug*'; write '<workspace>/work/tools_341_360/355/debug.txt'; quit!"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Kakoune command parser and editor runtime",
+    "version": "Kakoune unknown",
+    "executable_sha256": "aebf466fdf239dedd63cac8d9529c307f83853592cc30304e8127b00145b3efe"
+  },
+  "observed_debug_buffer": "*** This is the debug buffer, where debug info will be written ***\nHello, World!\n\n",
+  "artifact_sha256": {
+    "examples/0355_kakounescript/hello.kak": "8823f6529d39818f07d4308a1d18fc9835e463b120b322d43d9fe27d707927fa"
+  }
+}

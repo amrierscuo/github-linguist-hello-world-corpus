@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:45.296372+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native source parsing and output model/render verification",
+      "cwd": "<corpus>/examples/0687_sugarss",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_681_700/node",
+        "<workspace>/work/tools_681_700/687"
+      ],
+      "exit_code": 0,
+      "stdout": ".greeting::before {\n  content: \"Hello, World!\"\n}\n\nPASS: authentic SugarSS parser and PostCSS CSS serialization\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official sugarss compiler/parser",
+    "version": "5.0.2"
+  },
+  "generated_artifact_sha256": "9085f39a5b1481e766143c1c7739fd4724a6f8af49d5ac410a79849b4fe1a698",
+  "semantic_scope": "Authentic generated CSS/AST content declaration; browser visual presentation not exercised.",
+  "artifact_sha256": {
+    "examples/0687_sugarss/hello.sss": "63da9b2c9caf81e1e67af3aa4350b0d1f9369d132a72f2052be5ad0cca694e86",
+    "examples/0687_sugarss/verify.cjs": "b105ac07c845faed7bc1b354973a4d6fb622e8b0d16c077cee90882dd8bfc88e"
+  }
+}

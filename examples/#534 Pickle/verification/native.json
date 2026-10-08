@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.432780+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native Pickle disassembler and restricted data-only native loader",
+      "cwd": "<corpus>/examples/0534_pickle",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "    0: \\x80 PROTO      4\n    2: \\x95 FRAME      47\n   11: }    EMPTY_DICT\n   12: \\x94 MEMOIZE    (as 0)\n   13: (    MARK\n   14: \\x8c     SHORT_BINUNICODE 'message'\n   23: \\x94     MEMOIZE    (as 1)\n   24: \\x8c     SHORT_BINUNICODE 'Hello, World!'\n   39: \\x94     MEMOIZE    (as 2)\n   40: \\x8c     SHORT_BINUNICODE 'language'\n   50: \\x94     MEMOIZE    (as 3)\n   51: \\x8c     SHORT_BINUNICODE 'en'\n   55: \\x94     MEMOIZE    (as 4)\n   56: u        SETITEMS   (MARK at 13)\n   57: .    STOP\nhighest protocol among opcodes = 4\nHello, World!\nPASS: genuine Pickle disassembler and restricted native data loader\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Python standard-library Pickle/Pickletools",
+    "version": "3.13.9"
+  },
+  "artifact_sha256": {
+    "examples/0534_pickle/hello.pkl": "7e3abe3f0df417c15a03ce05916296a7120a48b818c5ebdbe798dca65d54b7c3",
+    "examples/0534_pickle/verify.py": "c14a98f13e3e2beb8a38c14795fc70a4c33f9f158510c02600032662c8ce89b8"
+  }
+}

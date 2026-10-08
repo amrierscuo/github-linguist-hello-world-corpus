@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "language": "AspectJ",
+  "ordinal": 40,
+  "timestamp_utc": "2026-10-08T11:01:56.068379+00:00",
+  "platform": "Windows x64",
+  "toolchain": "AspectJ ajc/aspectjrt 1.9.22; Microsoft OpenJDK 21.0.12.1; Java source/target 17",
+  "working_directory": "examples/0040_aspectj",
+  "source_sha256": {
+    "examples/0040_aspectj/Greeting.aj": "a660759d774eb8be502ae7c9cdd81a57d4496588da1e85fafcd005a4bd29f134",
+    "examples/0040_aspectj/HelloWorld.java": "c289ad093ddb1dae629d363bc2545bc4aad737a02e00baf6a5b8a1216a542c3b"
+  },
+  "steps": [
+    {
+      "command": "java -version",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "command": "java -cp aspectjtools-1.9.22.jar org.aspectj.tools.ajc.Main -version",
+      "exit_code": 0,
+      "stdout": "AspectJ Compiler 1.9.22 - Built: Saturday Mar 23, 2024 at 09:58:15 PDT - Eclipse Compiler b2705b00e91be7 (20Mar2024) - Java22 \n",
+      "stderr": ""
+    },
+    {
+      "command": "java -cp <tools>/aspectjtools-1.9.22.jar org.aspectj.tools.ajc.Main -17 -classpath <tools>/aspectjrt-1.9.22.jar -d <build> HelloWorld.java Greeting.aj",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "java -cp \"<build>;<tools>/aspectjrt-1.9.22.jar\" HelloWorld",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "ajc compiled and wove the actual .aj and .java sources, exit 0.",
+    "Java run emits exactly Hello, World! followed by a newline, exit 0; stderr empty."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Compile-time AspectJ weaving. The Java greet method has no output; the before advice supplies the greeting."
+}

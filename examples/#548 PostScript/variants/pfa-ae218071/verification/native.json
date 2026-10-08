@@ -1,0 +1,60 @@
+{
+  "variant_extension": ".pfa",
+  "timestamp_utc": "2026-10-08T16:05:34.055019+00:00",
+  "scope": "Ghostscript definisce font Type1, legge FullName esatto Hello, World! e interpreta show della glyph .notdef; non pretende glifi testuali del saluto.",
+  "toolchain": {
+    "name": "Ghostscript originale Ubuntu",
+    "version": "10.02.1",
+    "version_command": {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0548_postscript/variants/pfa-ae218071",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<WORKSPACE>/work/tools_541_560/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GS_LIB=<WORKSPACE>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/Resource/Init:<WORKSPACE>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/lib:<WORKSPACE>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/Resource/Font",
+        "<WORKSPACE>/work/tools_541_560/ubuntu/usr/bin/gs",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "10.02.1\n",
+      "stderr": ""
+    },
+    "runtime_sha256": "eed795c04354a20cecc95a21155b560b55094330c279459b68037984b7c23667"
+  },
+  "artifact_sha256": {
+    "examples/0548_postscript/variants/pfa-ae218071/hello.pfa": "c5df05a925489cb214002efc659f79c61ac44fd67f602cac112352a9b9ede971",
+    "examples/0548_postscript/variants/pfa-ae218071/verify.ps": "dacf972adb3044ad100fdcd921461423b8d3c2a7013926bb4ee32036e238724f"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0548_postscript/variants/pfa-ae218071",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<WORKSPACE>/work/tools_541_560/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GS_LIB=<WORKSPACE>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/Resource/Init:<WORKSPACE>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/lib:<WORKSPACE>/work/tools_541_560/ubuntu/usr/share/ghostscript/10.02.1/Resource/Font",
+        "<WORKSPACE>/work/tools_541_560/ubuntu/usr/bin/gs",
+        "-dSAFER",
+        "-dBATCH",
+        "-dNOPAUSE",
+        "-dNODISPLAY",
+        "hello.pfa",
+        "verify.ps"
+      ],
+      "exit_code": 0,
+      "stdout": "GPL Ghostscript 10.02.1 (2023-11-01)\nCopyright (C) 2023 Artifex Software, Inc.  All rights reserved.\nThis software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:\nsee the file COPYING for details.\nWarning: the map file cidfmap was not found.\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "sha256": {
+    "examples/0548_postscript/variants/pfa-ae218071/hello.pfa": "c5df05a925489cb214002efc659f79c61ac44fd67f602cac112352a9b9ede971",
+    "examples/0548_postscript/variants/pfa-ae218071/verify.ps": "dacf972adb3044ad100fdcd921461423b8d3c2a7013926bb4ee32036e238724f"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

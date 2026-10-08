@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:23.121785+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "HAProxy version",
+      "cwd": "<corpus>/examples/0275_haproxy",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_261_280/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_261_280/linux/usr/sbin/haproxy",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "HAProxy version 2.8.16-0ubuntu0.24.04.3 2026/06/19 - https://haproxy.org/\nStatus: long-term supported branch - will stop receiving fixes around Q2 2028.\nKnown bugs: http://www.haproxy.org/bugs/bugs-2.8.16.html\nRunning on: Linux 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64\n",
+      "stderr": ""
+    },
+    {
+      "label": "Check native HAProxy config without starting services",
+      "cwd": "<corpus>/examples/0275_haproxy",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_261_280/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_261_280/linux/usr/sbin/haproxy",
+        "-c",
+        "-f",
+        "<corpus>/examples/0275_haproxy/haproxy.cfg"
+      ],
+      "exit_code": 0,
+      "stdout": "Configuration file is valid\n",
+      "stderr": ""
+    },
+    {
+      "label": "Start private localhost HAProxy, request greeting and terminate",
+      "cwd": "<corpus>/examples/0275_haproxy",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "python3",
+        "<corpus>/examples/0275_haproxy/verify.py",
+        "<workspace>/work/tools_261_280/linux",
+        "<corpus>/examples/0275_haproxy/haproxy.cfg"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine HAProxy localhost HTTP response\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "HAProxy native configuration parser and HTTP engine",
+    "version": "HAProxy version 2.8.16-0ubuntu0.24.04.3 2026/06/19 - https://haproxy.org/",
+    "executable_sha256": "1cdcdf104214da34c79986a6132b6b193476be5fb2cf26b831e4f0e91da68c5a"
+  },
+  "artifact_sha256": {
+    "examples/0275_haproxy/haproxy.cfg": "9522c60d4f91159b08f68e4fce1ed3f1ffab8b8dd0982f68c4add5ee18382b3a",
+    "examples/0275_haproxy/verify.py": "d1934cf81f7201a14a59a24e5f64cc15347e11e2bb97a86ab7577c90ded5ff42"
+  }
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Hello World
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://127.0.0.1:8765/hello.txt
+  body: none
+  auth: none
+}
+
+tests {
+  test("response greeting", function () {
+    expect(res.getBody().trim()).to.equal("Hello, World!");
+  });
+}

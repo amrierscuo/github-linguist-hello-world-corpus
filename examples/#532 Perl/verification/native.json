@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.050542+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Perl version",
+      "cwd": "<corpus>/examples/0532_perl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "perl",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Perl native syntax check",
+      "cwd": "<corpus>/examples/0532_perl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "perl",
+        "-c",
+        "<corpus>/examples/0532_perl/hello.pl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "<corpus>/examples/0532_perl/hello.pl syntax OK\n"
+    },
+    {
+      "label": "Perl native program execution",
+      "cwd": "<corpus>/examples/0532_perl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "perl",
+        "<corpus>/examples/0532_perl/hello.pl"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic Perl interpreter",
+    "version": "This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi"
+  },
+  "artifact_sha256": {
+    "examples/0532_perl/hello.pl": "8282ea45dea2901f533f4afb329f4fb75983a128618abd230e065601b281fb4d"
+  }
+}

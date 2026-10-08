@@ -1,0 +1,33 @@
+{
+  "ordinal": 596,
+  "name": "Racket",
+  "timestamp_utc": "2026-10-08T13:20:56.085592+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Racket 8.18 native Windows portable",
+  "artifact_sha256": {
+    "examples/0596_racket/hello.rkt": "e221a79c4583b288443e52c0add0abe448e5a6d283610a25319c5c856f63c71b"
+  },
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_34_40\\racket\\racket\\racket.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Welcome to Racket v8.18 [cs].\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_34_40\\racket\\racket\\racket.exe",
+        "hello.rkt"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

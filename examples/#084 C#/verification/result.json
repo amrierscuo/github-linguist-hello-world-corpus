@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 84,
+  "language": "C#",
+  "timestamp_utc": "2026-10-08T11:33:09.613198+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Microsoft C# compiler fatal error CS2007: Unrecognized option: '/version'; installed .NET Framework 4.x CLR on Windows",
+  "working_directory": "examples/0084_c",
+  "source_sha256": {
+    "examples/0084_c/Hello.cs": "06ab6764ce162003d09fbbd8a2cd492b056f61df4714372e0c622d8eb5e55e53"
+  },
+  "steps": [
+    {
+      "command": "csc /nologo /version",
+      "exit_code": 1,
+      "stdout": "fatal error CS2007: Unrecognized option: '/version'\n",
+      "stderr": ""
+    },
+    {
+      "command": "csc /nologo /target:exe /out:<build>/Hello.exe Hello.cs",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/Hello.exe",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Compilation exit 0; runtime stdout exactly Hello, World! plus newline."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": ".NET Framework C# console application; no claim about a separate .NET SDK build.",
+  "blockers": []
+}

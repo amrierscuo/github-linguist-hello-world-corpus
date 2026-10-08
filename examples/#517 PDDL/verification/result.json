@@ -1,0 +1,26 @@
+{
+  "ordinal": 517,
+  "name": "PDDL",
+  "timestamp_utc": "2026-10-08T13:25:38.813098+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + pyperplan 2.1",
+  "artifact_sha256": {
+    "examples/0517_pddl/hello.pddl": "f1e04315552b6fecd3c2443076608a73027c22b68bd6e370d03d1fe2a4f56a1b",
+    "examples/0517_pddl/problem.pddl": "dac8cf6b7a206995a48997e010184ef251b888eb149542bbaddc67359f8b1ab3",
+    "examples/0517_pddl/verify.py": "e0fdcaafcee1bfee7b039b1f1f433cff154281a93583b31bbc9581a3f290c401"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

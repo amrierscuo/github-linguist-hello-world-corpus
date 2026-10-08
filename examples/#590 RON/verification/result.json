@@ -1,0 +1,54 @@
+{
+  "ordinal": 590,
+  "name": "RON",
+  "timestamp_utc": "2026-10-08T13:26:19.893317+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Rust/Cargo 1.90.0 native official components + ron 0.12 + serde 1",
+  "artifact_sha256": {
+    "examples/0590_ron/hello.ron": "6cff838e6f4cb5071774530f056735c643a865190b8b7a24e428ee4d509ce5aa",
+    "examples/0590_ron/Cargo.toml": "c8b89a705dee1de7c09ea29430cbb435d3550abe443445105bc6b21b82dfcab2",
+    "examples/0590_ron/src/main.rs": "7a9aa3e4c85248db5f07cd6a686e8bc4612f9773f1818fd9dc54cc53ecaa3890"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=${WORKSPACE_WSL}/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "CARGO_HOME=${WORKSPACE_WSL}/work/tools_581_600/cargo_home",
+        "${WORKSPACE_WSL}/work/rust_portable/runtime/bin/cargo",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "cargo 1.90.0 (840b83a10 2025-07-30)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=${WORKSPACE_WSL}/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "CARGO_HOME=${WORKSPACE_WSL}/work/tools_581_600/cargo_home",
+        "${WORKSPACE_WSL}/work/rust_portable/runtime/bin/cargo",
+        "run",
+        "--quiet",
+        "--manifest-path",
+        "${WORKSPACE_WSL}/work/tools_581_600/build_0590/Cargo.toml",
+        "--target-dir",
+        "${WORKSPACE_WSL}/work/tools_581_600/cargo_target"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

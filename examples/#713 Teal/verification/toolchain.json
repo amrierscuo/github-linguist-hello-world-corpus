@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:53:19.812215+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Teal type checking and Lua generation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_713_155319808847",
+        "--",
+        "env",
+        "LUA_PATH=<workspace>/work/tools_701_720/ubuntu/usr/share/lua/5.1/?.lua",
+        "LUA_CPATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu/lua/5.4/?.so",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<workspace>/work/tools_701_720/teal/tl-main/tl",
+        "gen",
+        "hello.tl"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_713_155319808847",
+      "exit_code": 0,
+      "stdout": "Wrote: hello.lua\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Lua execution of Teal generated program",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_713_155319808847",
+        "--",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "hello.lua"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_713_155319808847",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Teal compiler and Lua5.4.6",
+    "distribution": {
+      "url": "https://codeload.github.com/teal-language/tl/zip/refs/heads/main",
+      "sha256": "05556c2813b34a25540bd85e94181f7f933bf5a8c15b9b2d38b33b669f77c4d1"
+    },
+    "lua_binary_sha256": "389e356ce46f205fc7b1856c701a5765205ef18d849ae8fecd8e3c81548264f1"
+  },
+  "artifact_sha256": {
+    "examples/0713_teal/hello.tl": "4e360776096da7929f0f6d7699e73c437ccc009af5d2edab2b615a305bcd1282"
+  }
+}

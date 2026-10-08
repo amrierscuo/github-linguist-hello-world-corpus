@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 175,
+  "language": "EBNF",
+  "timestamp_utc": "2026-10-08T11:56:13.607325+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; ebnf 1.9.1",
+  "working_directory": "examples/0175_ebnf",
+  "source_sha256": {
+    "examples/0175_ebnf/check.cjs": "ce48510fa215e27c402fbde8ff6848e3a25ba26e011226034957794e9d85c67d",
+    "examples/0175_ebnf/hello.ebnf": "36f089b8d1aed551fa8290ddd1f3f0a78a4a64a2ed6a875fe81584ed1a771738",
+    "examples/0175_ebnf/package.json": "c909d64d2c9c90cb098110a68d7836b9f874b62067c13f70f55d76d10df9432f"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nW3C EBNF grammar compilation and accepted/rejected input PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Community W3C EBNF compiler generated a parser, accepted the exact greeting and rejected Hello, Moon!.",
+  "blockers": []
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:29:41.672104+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Authentic ReScript/BuckleScript compiler version",
+      "cwd": "<corpus>/examples/0601_rescript",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_601_620/node/node_modules/bs-platform/linux/bsc.exe",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "BuckleScript 9.0.2 ( Using OCaml:4.06.1+BS )\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original source through genuine frontend to JavaScript",
+      "cwd": "<corpus>/examples/0601_rescript",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_601_620/601",
+        "--exec",
+        "<workspace>/work/tools_601_620/node/node_modules/bs-platform/linux/bsc.exe",
+        "-I",
+        "<workspace>/work/tools_601_620/node/node_modules/bs-platform/lib/ocaml",
+        "-bs-package-name",
+        "corpus-greeting",
+        "-bs-package-output",
+        "commonjs:.",
+        "-o",
+        "Hello.cmj",
+        "Hello.res"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute genuine compiler-generated JavaScript",
+      "cwd": "<workspace>/work/tools_601_620/601",
+      "command": [
+        "<node>",
+        "<workspace>/work/tools_601_620/601/Hello.js"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original BuckleScript ReScript/Reason compiler with standard library",
+    "version": "BuckleScript 9.0.2 ( Using OCaml:4.06.1+BS )",
+    "compiler_sha256": "263fc2330bcccb91822ba3eade03a7eebbba18c15cfa45e21868f9ad43f42ce3"
+  },
+  "generated_js_sha256": "f10d60268b1902ac14b490b2424cd20e01f1da7e9b5f1de507e4bcbd0e1b4d02",
+  "artifact_sha256": {
+    "examples/0601_rescript/bsconfig.json": "40303bca58298cef91bf92b8cd5906d525e5e5667baeea82531236a5c0ffbfe4",
+    "examples/0601_rescript/Hello.res": "2451d857bf9012bad4b34a7466f26167149983cdde660d0f805a9af05ecea0f3"
+  }
+}

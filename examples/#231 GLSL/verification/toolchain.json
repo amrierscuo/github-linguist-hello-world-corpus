@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:39.791081+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "glslang version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_231_143439781398",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/glslang",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_231_143439781398",
+      "exit_code": 0,
+      "stdout": "Glslang Version: 11:15.1.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.1.0\nGLSL Version: 4.60 glslang Khronos. 15.1.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native GLSL fragment compiler",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_231_143439781398",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/glslang",
+        "-V",
+        "hello.frag",
+        "-o",
+        "hello.spv"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_231_143439781398",
+      "exit_code": 0,
+      "stdout": "hello.frag\n",
+      "stderr": ""
+    },
+    {
+      "label": "Validate actual generated SPIR-V",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_231_143439781398",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/spirv-val",
+        "hello.spv"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_231_143439781398",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Khronos glslang and SPIRV-Tools",
+    "packages": [
+      {
+        "file": "glslang-tools_15.1.0-2~ubuntu0.24.04.2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/glslang/glslang-tools_15.1.0-2~ubuntu0.24.04.2_amd64.deb",
+        "sha256": "8767bba0e4cc781a5de0da3e662f656664cc3b8de2399aef6755bac61137727e",
+        "package": "glslang-tools",
+        "version": "15.1.0-2~ubuntu0.24.04.2"
+      },
+      {
+        "file": "spirv-tools_2025.1~rc1-1~ubuntu0.24.04.2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2025.1~rc1-1~ubuntu0.24.04.2_amd64.deb",
+        "sha256": "529e396c337d15beb8ed0f03fcbeb2a066e5a818e032e197b6ef2d3328dc7ae9",
+        "package": "spirv-tools",
+        "version": "2025.1~rc1-1~ubuntu0.24.04.2"
+      }
+    ]
+  },
+  "generated_spirv_sha256": "9209cc58e0fc10b049eb2cd215123fdde6f87228801cb36460b962df964fa90d",
+  "semantic_scope": "Fragment compiler and SPIR-V validator ran; actual 13-pixel GPU rendering remains pending.",
+  "artifact_sha256": {
+    "examples/0231_glsl/hello.frag": "aaeb503dd87e281f15ed38fc070c05635e327bfd8ef41404e72ec4367ccb07a0"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.588044+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Pip version",
+      "cwd": "<corpus>/examples/0538_pip-requirements",
+      "command": [
+        "<python>",
+        "-m",
+        "pip",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "pip 26.1 from <user-home>\\AppData\\Roaming\\Python\\Python313\\site-packages\\pip (python 3.13)\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read genuine pip requirements and install original local package only",
+      "cwd": "<workspace>/work/tools_521_540/538",
+      "command": [
+        "<python>",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--target",
+        "<workspace>/work/tools_521_540/538/installed",
+        "-r",
+        "requirements.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "Processing .\\greeting_package\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: corpus-greeting\n  Building wheel for corpus-greeting (pyproject.toml): started\n  Building wheel for corpus-greeting (pyproject.toml): finished with status 'done'\n  Created wheel for corpus-greeting: filename=corpus_greeting-0.0.1-py3-none-any.whl size=1257 sha256=0ebd8461179639dfb2821c96d9880d6025f4f9a0b5df7a83240e68041eff4780\n  Stored in directory: <user-home>\\AppData\\Local\\Temp\\pip-ephem-wheel-cache-yt84xnuq\\wheels\\93\\04\\ac\\61a89a6986c3b1bad17f4ab8d5309e33c4411c6807e71f61ae\nSuccessfully built corpus-greeting\nInstalling collected packages: corpus-greeting\nSuccessfully installed corpus-greeting-0.0.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute actual installed original package",
+      "cwd": "<workspace>/work/tools_521_540/538",
+      "command": [
+        "<python>",
+        "-m",
+        "corpus_greeting"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Actual pip requirements reader/local package resolver and Python",
+    "version": "pip 26.1 from <user-home>\\AppData\\Roaming\\Python\\Python313\\site-packages\\pip (python 3.13)"
+  },
+  "artifact_sha256": {
+    "examples/0538_pip-requirements/requirements.txt": "7c5471c6016581bdf6c8a477a8381d656f8ee88b384598235318c7a461d9aa28",
+    "examples/0538_pip-requirements/greeting_package/corpus_greeting.py": "588adbbec2f139a850afc908e638208cf1c4d3fe0971e5a8636ce38dbe70c115",
+    "examples/0538_pip-requirements/greeting_package/pyproject.toml": "fb523e3de479b646a20db5b541a2aace7218a08217947cd72067dafb7c693a04"
+  }
+}

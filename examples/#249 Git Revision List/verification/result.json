@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "ordinal": 249,
+  "language": "Git Revision List",
+  "timestamp_utc": "2026-10-08T12:15:32.429631+00:00",
+  "platform": "Windows x64",
+  "toolchain": "git version 2.51.0.windows.1",
+  "working_directory": "examples/0249_git-revision-list",
+  "source_sha256": {
+    "examples/0249_git-revision-list/.git-blame-ignore-revs": "93a1febbe23411a7ed28850d09db9875c6f2c238435afed66ef9d2b74820f4a8",
+    "examples/0249_git-revision-list/verify.py": "7ace7ce706ba24db0f30cbf085ec6dafdaf652144b53420fbee77dad27b3388e",
+    "examples/0249_git-revision-list/after/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0249_git-revision-list/before/hello.txt": "796ec859ae06a0f1d2a9fe4ac276b5c09df53f0cd28bf788334ecfea647b659b"
+  },
+  "steps": [
+    {
+      "command": "git --version",
+      "exit_code": 0,
+      "stdout": "git version 2.51.0.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "git init --initial-branch=main",
+      "exit_code": 0,
+      "stdout": "Initialized empty Git repository in <workspace>/work/verify_241_260/git-249/.git/\n",
+      "stderr": ""
+    },
+    {
+      "command": "git config core.autocrlf false",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git add hello.txt",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git commit --no-gpg-sign -m Initial greeting",
+      "exit_code": 0,
+      "stdout": "[main (root-commit) 41d43d8] Initial greeting\n 1 file changed, 1 insertion(+)\n create mode 100644 hello.txt\n",
+      "stderr": ""
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0,
+      "stdout": "41d43d85211ed30805af0207993b0e8e738ff4a3\n",
+      "stderr": ""
+    },
+    {
+      "command": "git add hello.txt",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git commit --no-gpg-sign -m Format greeting",
+      "exit_code": 0,
+      "stdout": "[main c9e6b1f] Format greeting\n 1 file changed, 1 insertion(+), 1 deletion(-)\n",
+      "stderr": ""
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0,
+      "stdout": "c9e6b1fcbffba8be8422b884092e5da15847b13d\n",
+      "stderr": ""
+    },
+    {
+      "command": "git blame --porcelain hello.txt",
+      "exit_code": 0,
+      "stdout": "c9e6b1fcbffba8be8422b884092e5da15847b13d 1 1 1\nauthor Corpus Example\nauthor-mail <hello@example.invalid>\nauthor-time 1791417600\nauthor-tz +0000\ncommitter Corpus Example\ncommitter-mail <hello@example.invalid>\ncommitter-time 1791417600\ncommitter-tz +0000\nsummary Format greeting\nprevious 41d43d85211ed30805af0207993b0e8e738ff4a3 hello.txt\nfilename hello.txt\n\tHello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": "git blame --ignore-revs-file .git-blame-ignore-revs --porcelain hello.txt",
+      "exit_code": 0,
+      "stdout": "41d43d85211ed30805af0207993b0e8e738ff4a3 1 1 1\nauthor Corpus Example\nauthor-mail <hello@example.invalid>\nauthor-time 1791417600\nauthor-tz +0000\ncommitter Corpus Example\ncommitter-mail <hello@example.invalid>\ncommitter-time 1791417600\ncommitter-tz +0000\nsummary Initial greeting\nboundary\nfilename hello.txt\n\tHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Two real deterministic local commits; .git-blame-ignore-revs contains the actual second commit object ID. Native blame changes attribution from formatting revision to original greeting revision.",
+  "blockers": []
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:51:20.241888+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Attach isolated npm dependencies in scratch",
+      "command": [
+        "cmd",
+        "/c",
+        "mklink",
+        "/J",
+        "<workspace>\\work\\tools_701_720\\verify_704_155120225210\\node_modules",
+        "<workspace>\\work\\tools_701_720\\npm\\node_modules"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_704_155120225210",
+      "exit_code": 0,
+      "stdout": "Junction created for <workspace>\\work\\tools_701_720\\verify_704_155120225210\\node_modules <<===>> <workspace>\\work\\tools_701_720\\npm\\node_modules\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native TypeScript TSX type checking and JSX compilation",
+      "command": [
+        "node",
+        "<workspace>\\work\\tools_701_720\\npm\\node_modules\\typescript\\bin\\tsc",
+        "--jsx",
+        "react-jsx",
+        "--module",
+        "commonjs",
+        "--target",
+        "es2020",
+        "--skipLibCheck",
+        "--outDir",
+        "build",
+        "hello.tsx"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_704_155120225210",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "React genuine server rendering of compiled TSX",
+      "command": [
+        "node",
+        "render.cjs"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_704_155120225210",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "compiler": {
+      "name": "typescript",
+      "version": "7.0.2",
+      "manifest_sha256": "3722b30210616a13a3213ded11575ba6b2dbab10c32a5ef67afca8513e27017e",
+      "lock_sha256": "dfd9338afb939d987166bff4022f8f65955aaac6ce80a49820cc922034e18f93",
+      "source": "https://www.npmjs.com/package/typescript"
+    },
+    "react": {
+      "name": "react",
+      "version": "19.3.0",
+      "manifest_sha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e",
+      "lock_sha256": "dfd9338afb939d987166bff4022f8f65955aaac6ce80a49820cc922034e18f93",
+      "source": "https://www.npmjs.com/package/react"
+    },
+    "renderer": {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "manifest_sha256": "136d4af63de473392ea79d6a21932b0ed9eb37fe518ce70f4621250f3d79e9bb",
+      "lock_sha256": "dfd9338afb939d987166bff4022f8f65955aaac6ce80a49820cc922034e18f93",
+      "source": "https://www.npmjs.com/package/react-dom"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0704_tsx/hello.tsx": "e5165d169bf9d03cb273882c44d29b14968e9f733443e8157ffff721803370ce",
+    "examples/0704_tsx/render.cjs": "3edd99bd3a092af685800ead57f9f7ff4d70ae21fa982c5f6c7eb69d46346fd1"
+  }
+}

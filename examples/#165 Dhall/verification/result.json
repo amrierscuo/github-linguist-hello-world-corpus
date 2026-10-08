@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 165,
+  "language": "Dhall",
+  "timestamp_utc": "2026-10-08T11:56:10.980886+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Dhall 1.42.2",
+  "working_directory": "examples/0165_dhall",
+  "source_sha256": {
+    "examples/0165_dhall/hello.dhall": "d24805af550e0a35528d91c32b85ec6bee16c807bb31316e3d8bd6d764955f46"
+  },
+  "steps": [
+    {
+      "command": "dhall version",
+      "exit_code": 0,
+      "stdout": "1.42.2\n",
+      "stderr": ""
+    },
+    {
+      "command": "dhall type --file hello.dhall",
+      "exit_code": 0,
+      "stdout": "Text\n",
+      "stderr": ""
+    },
+    {
+      "command": "dhall text --file hello.dhall",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Official Dhall implementation type checks to Text, evaluates interpolation and exports exact text (no newline).",
+  "blockers": []
+}

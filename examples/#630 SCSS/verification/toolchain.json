@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:41.364057+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Dart Sass parsing and interpolation",
+      "command": [
+        "node",
+        "<workspace>\\work\\tools_621_640\\npm\\node_modules\\sass\\sass.js",
+        "hello.scss"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_630_154441355095",
+      "exit_code": 0,
+      "stdout": ".greeting::before {\n  content: \"Hello, World!\";\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "sass",
+    "version": "1.105.1",
+    "manifest_sha256": "fe08908000f78fd72e83a39fd8e75cab536082b36da4bc8e35031b40a209ebc4",
+    "lock_sha256": "4058bf3f7b3435ed7f99aacc285cdcc37a7364fbb015d4756170dc944b83340c",
+    "source": "https://www.npmjs.com/package/sass"
+  },
+  "artifact_sha256": {
+    "examples/0630_scss/hello.scss": "ef882149cf02fbf3aa1ccefbfee197a2817b8ef76be42c016375288321bdcf21"
+  }
+}

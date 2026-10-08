@@ -1,0 +1,5 @@
+MODULE corpus_hello
+DESCRIPTION Hello, World!
+VERSION 1.0
+SOURCE Corpus Example
+PROCEDURE CORPUS_HELLO 0 0

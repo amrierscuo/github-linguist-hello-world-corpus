@@ -1,0 +1,25 @@
+{
+  "ordinal": 504,
+  "name": "OpenQASM",
+  "timestamp_utc": "2026-10-08T13:13:27.257760+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Qiskit 2.5.2 + qiskit-aer 0.17.2 native stabilizer simulator",
+  "artifact_sha256": {
+    "examples/0504_openqasm/hello.qasm": "0a0a0771c643ebe5fe68b69de7bf5ca2ca71832c346b0667e2471e00a9abe733",
+    "examples/0504_openqasm/verify.py": "869aa1b864b3ff8392f76456158f61f0b6bab79beda7398e73d96107259db654"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

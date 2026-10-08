@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.398416+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability probe for factor",
+      "cwd": "<corpus>/examples/0204_factor",
+      "command": [
+        "where.exe",
+        "factor"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Factor language VM/image is unavailable; GNU coreutils factor would not verify Factor language."
+  ],
+  "toolchain": {
+    "name": "Required authentic toolchain not available/configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0204_factor/hello.factor": "7f14e13bb98dcae21a64734005f023b90c6315d59d705db8e0a29b0c86968ff1"
+  }
+}

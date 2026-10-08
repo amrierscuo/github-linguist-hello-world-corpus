@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-10-08T09:31:16.374149+00:00",
+  "platform": "Windows x64",
+  "scope": "OneScript 2.2.0 compatible BSL dialect, syntax check and exact console greeting; not proprietary 1C platform",
+  "passed": true,
+  "checks": [
+    {
+      "command_argv": [
+        "<WORKSPACE_ROOT>/work/tools_01_07/onescript/bin/oscript.exe",
+        "-v"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0001_1c-enterprise",
+      "exit_code": 0,
+      "stdout": "2.2.0\n",
+      "stderr": ""
+    },
+    {
+      "command_argv": [
+        "<WORKSPACE_ROOT>/work/tools_01_07/onescript/bin/oscript.exe",
+        "-check",
+        "hello.os"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0001_1c-enterprise",
+      "exit_code": 0,
+      "stdout": "No errors.\n",
+      "stderr": ""
+    },
+    {
+      "command_argv": [
+        "<WORKSPACE_ROOT>/work/tools_01_07/onescript/bin/oscript.exe",
+        "hello.os"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0001_1c-enterprise",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "hello.os": "f3053f60f7efff41871593a995c39b6eff624af2df2a1858c071b90aff39dc5e"
+  },
+  "normalization_note": "Only machine-specific filesystem paths in command_argv, cwd and diagnostic output were normalized to portable placeholders. No other output text, timestamps, exit codes, verification outcomes or artifact SHA-256 values were changed. This log records the original run; no verification was rerun.",
+  "path_placeholders": {
+    "<CORPUS_ROOT>": "root of github_linguist_hello_world_corpus",
+    "<WORKSPACE_ROOT>": "local workspace containing the corpus and isolated work tools",
+    "<NODE_EXE>": "Node.js executable used for this run; version recorded in checks",
+    "<PYTHON_EXE>": "Python executable used for this run; version recorded in checks"
+  }
+}

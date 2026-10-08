@@ -1,0 +1,8 @@
+\catcode123=1
+\catcode125=2
+\immediate\openout0=hello.aux
+\immediate\write0{\string\def\string\CorpusGreeting{Hello, World!}}
+\immediate\closeout0
+\input hello.aux \relax
+\immediate\write16{\CorpusGreeting}
+\end

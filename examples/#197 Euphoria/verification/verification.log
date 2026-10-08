@@ -1,0 +1,41 @@
+{
+  "ordinal": 197,
+  "name": "Euphoria",
+  "timestamp_utc": "2026-10-08T12:09:03.861323+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "OpenEuphoria 4.1.0 Linux x64",
+  "artifact_sha256": {
+    "examples/0197_euphoria/hello.ex": "500b26232dcd011e6826f7442d5e6097d2b46b9af4d665ad8caa2c03ab23482e"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_181_200/euphoria/euphoria-4.1.0-Linux-x64/bin/eui",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Euphoria Interpreter v4.1.0 development\n   64-bit Linux, Using System Memory\n   Revision Date: 2015-02-02 14:18:53, Id: 5861:57179171dbed\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_181_200/euphoria/euphoria-4.1.0-Linux-x64/bin/eui",
+        "${WORKSPACE_WSL}/work/staging_181_200/examples/0197_euphoria/hello.ex"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "ordinal": 98,
+  "language": "CSS",
+  "timestamp_utc": "2026-10-08T11:33:51.391848+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; css-tree 3.2.1; Google Chrome 154.0.8037.98 (installed file ProductVersion)",
+  "working_directory": "examples/0098_css",
+  "source_sha256": {
+    "examples/0098_css/hello.css": "ea6ebe68695d49f73e6f90b87aa78d03c5f8e78548bcc1eecd447f632741bace",
+    "examples/0098_css/hello.html": "f02636ec79b41775a1a85e22b7cbc250f6ee15ff675b60efc4a7d64eede07183",
+    "examples/0098_css/check.cjs": "316999aed2e4ef5b7c8d04fcb50ec74209d8f83f5e0cd53a6be11bdb4e9a5e89",
+    "examples/0098_css/package.json": "63216decbb5ca8bb9fbc79296d42b670ce9add961538f0d9dd67a4b69ed6d62e"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "CSS Tree: selector, content string and declaration grammar PASS; zero parse errors.\n",
+      "stderr": ""
+    },
+    {
+      "command": "chrome --headless=new --user-data-dir=<work-profile> --allow-file-access-from-files --virtual-time-budget=1000 --dump-dom file:///<example>/hello.html",
+      "exit_code": 0,
+      "stdout": "<!DOCTYPE html>\n<html lang=\"en\"><head>\n  <meta charset=\"UTF-8\">\n  <title>CSS greeting</title>\n  <link rel=\"stylesheet\" href=\"hello.css\">\n</head>\n<body data-generated-content=\"&quot;Hello, World!&quot;\" data-generated-color=\"rgb(18, 52, 86)\">\n  <p class=\"hello\" aria-label=\"Hello, World!\"></p>\n  <script>\n    window.addEventListener('load', () => {\n      const element = document.querySelector('.hello');\n      const style = getComputedStyle(element, '::before');\n      document.body.setAttribute('data-generated-content', style.content);\n      document.body.setAttribute('data-generated-color', style.color);\n    });\n  </script>\n\n\n</body></html>\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Parser/compiler and assertions executed, exit 0.",
+    "Actual headless Chrome computed ::before content is \"Hello, World!\" and color rgb(18, 52, 86)."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Real CSS Tree parser/grammar validation and real headless Chrome CSS resolution of generated pseudo-element content/color. No screenshot assertion is claimed.",
+  "blockers": []
+}

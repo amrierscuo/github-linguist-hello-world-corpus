@@ -1,0 +1,34 @@
+{
+  "ordinal": 671,
+  "name": "Smarty",
+  "timestamp_utc": "2026-10-08T13:38:21.822017+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "PHP 8.3.6 + Smarty 4.5.4 original engine",
+  "artifact_sha256": {
+    "examples/0671_smarty/hello.tpl": "a373bb3b2d4b54bb5dbecf0dcc387e9eccb4ee673a9b484283d06bc6ce7050e7",
+    "examples/0671_smarty/verify.php": "3f0253614f48e8a8992088dc9f28faf9986e9f8e8bf2a47072cfaf5cde306ac6"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "SMARTY_HOME=${WORKSPACE_WSL}/work/tools_661_680/smarty/smarty-4.5.4",
+        "SMARTY_BUILD=${WORKSPACE_WSL}/work/tools_661_680/build_0671",
+        "${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "verify.php"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,25 @@
+{
+  "ordinal": 600,
+  "name": "Raw token data",
+  "timestamp_utc": "2026-10-08T13:20:57.568028+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + Pygments RawTokenLexer",
+  "artifact_sha256": {
+    "examples/0600_raw-token-data/hello.raw": "cfd266d155c31170d7185dd250b318385f098a579ca522b8fd8235166fc6b48c",
+    "examples/0600_raw-token-data/verify.py": "9236052ff260f1170e5102d8d10376ee8ec80e9f0845ed0e30ac2d5981074605"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

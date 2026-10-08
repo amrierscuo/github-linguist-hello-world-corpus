@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 171,
+  "language": "Dune",
+  "timestamp_utc": "2026-10-08T12:01:45.272622+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Dune 3.14.0; OCaml 4.14.1",
+  "working_directory": "examples/0171_dune",
+  "source_sha256": {
+    "examples/0171_dune/dune": "61427efc2e8bd040e5a2af8970e2c74453f60859ed9ab06c6556f075d2e7f94f",
+    "examples/0171_dune/dune-project": "42a2fbf17cf76b5b0378dd6adf0043958e2b63526a67bb00844af40cb1dbddbf"
+  },
+  "steps": [
+    {
+      "command": "dune --version",
+      "exit_code": 0,
+      "stdout": "3.14.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "ocamlc -version",
+      "exit_code": 0,
+      "stdout": "4.14.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "dune build --display quiet @hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Native Dune reads dune-project/rule, initializes a real OCaml context, resolves alias hello and executes its echo action.",
+  "blockers": []
+}

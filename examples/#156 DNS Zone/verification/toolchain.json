@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:06:52.904034+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "BIND named-checkzone version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_156_140652843632",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_141_160/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_141_160/ubuntu/usr/bin/named-checkzone",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_156_140652843632",
+      "exit_code": 0,
+      "stdout": "9.18.39-0ubuntu0.24.04.7-Ubuntu\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native DNS zone parse, integrity checks and canonical dump",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_141_160/verify_156_140652843632",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_141_160/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_141_160/ubuntu/usr/bin/named-checkzone",
+        "-D",
+        "-o",
+        "normalized.zone",
+        "corpus.example",
+        "hello.zone"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_156_140652843632",
+      "exit_code": 0,
+      "stdout": "zone corpus.example/IN: loaded serial 2026100801\nOK\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original ISC BIND named-checkzone",
+    "packages": [
+      {
+        "file": "bind9-utils_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9-utils_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "sha256": "5cf19457d216b23af43316f1655983440d43824971240e0142aff864af92b5dd",
+        "package": "bind9-utils",
+        "version": "1:9.18.39-0ubuntu0.24.04.7"
+      },
+      {
+        "file": "bind9-libs_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9-libs_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "sha256": "5d2e9fe6874be8691dc1945290938af2deaa2a13dc782ea2a3afbf10784ea1b8",
+        "package": "bind9-libs",
+        "version": "1:9.18.39-0ubuntu0.24.04.7"
+      }
+    ],
+    "available_isolated_dependency_packages": [
+      {
+        "file": "csound_6.18.1+dfsg-1ubuntu4_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/csound/csound_6.18.1+dfsg-1ubuntu4_amd64.deb",
+        "sha256": "234a7fb3e2903f87c55815ba99a1f805710ff5ef87dd08b3eb31fe466522ad50",
+        "package": "csound",
+        "version": "1:6.18.1+dfsg-1ubuntu4"
+      },
+      {
+        "file": "libcsound64-6.0_6.18.1+dfsg-1ubuntu4_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/csound/libcsound64-6.0_6.18.1+dfsg-1ubuntu4_amd64.deb",
+        "sha256": "22720656cb785e19765ac7754c5c4f53851431c2617267853f92569dd99cd042",
+        "package": "libcsound64-6.0",
+        "version": "1:6.18.1+dfsg-1ubuntu4"
+      },
+      {
+        "file": "cuetools_1.4.1-0.2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/cuetools/cuetools_1.4.1-0.2_amd64.deb",
+        "sha256": "3bc9ea1807143f784ff9c0fb0c949ca0b7b184b4189920ed8238a76316218d27",
+        "package": "cuetools",
+        "version": "1.4.1-0.2"
+      },
+      {
+        "file": "bind9-utils_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9-utils_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "sha256": "5cf19457d216b23af43316f1655983440d43824971240e0142aff864af92b5dd",
+        "package": "bind9-utils",
+        "version": "1:9.18.39-0ubuntu0.24.04.7"
+      },
+      {
+        "file": "bind9-libs_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bind9/bind9-libs_9.18.39-0ubuntu0.24.04.7_amd64.deb",
+        "sha256": "5d2e9fe6874be8691dc1945290938af2deaa2a13dc782ea2a3afbf10784ea1b8",
+        "package": "bind9-libs",
+        "version": "1:9.18.39-0ubuntu0.24.04.7"
+      },
+      {
+        "file": "libpython3.12-dev_3.12.3-1ubuntu0.17_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/python3.12/libpython3.12-dev_3.12.3-1ubuntu0.17_amd64.deb",
+        "sha256": "c123ddab7763e45199e21b4ac8545e705f20a0315b9ada4c236b52fb088c4e16",
+        "package": "libpython3.12-dev",
+        "version": "3.12.3-1ubuntu0.17"
+      },
+      {
+        "package": "libsndfile1",
+        "version": "1.2.2-1ubuntu5.24.04.1",
+        "file": "libsndfile1_1.2.2-1ubuntu5.24.04.1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/libs/libsndfile/libsndfile1_1.2.2-1ubuntu5.24.04.1_amd64.deb",
+        "sha256": "fe2461b27e747fa88ede157ea39c6379e2101c280a730cda9c825f566a3808e5"
+      },
+      {
+        "package": "libasound2t64",
+        "version": "1.2.11-1ubuntu0.3",
+        "file": "libasound2t64_1.2.11-1ubuntu0.3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/libasound2t64_1.2.11-1ubuntu0.3_amd64.deb",
+        "sha256": "5d17bfb5683eb99f1be951fe48e1be5bf3c52391913b6b74a8aecf9b4f5e779f"
+      },
+      {
+        "package": "libjack-jackd2-0",
+        "version": "1.9.21~dfsg-3ubuntu3",
+        "file": "libjack-jackd2-0_1.9.21~dfsg-3ubuntu3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/j/jackd2/libjack-jackd2-0_1.9.21~dfsg-3ubuntu3_amd64.deb",
+        "sha256": "4fc5f4d0fbf2602df59bbed3ea504742bdcc7f899d7b32f6b2fd446ceb1fdf7d"
+      },
+      {
+        "package": "liblo7",
+        "version": "0.31-1build1",
+        "file": "liblo7_0.31-1build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/libl/liblo/liblo7_0.31-1build1_amd64.deb",
+        "sha256": "8c5b5b91fdbe9fc33193230ae0589ef4edebc6f2f38460d3d76b66014b2fd652"
+      },
+      {
+        "package": "libportaudio2",
+        "version": "19.6.0-1.2build3",
+        "file": "libportaudio2_19.6.0-1.2build3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/portaudio19/libportaudio2_19.6.0-1.2build3_amd64.deb",
+        "sha256": "bb4f406736fbb213e905229452261ca8ccf47b678febfeb4ebf53a56088fc159"
+      },
+      {
+        "package": "libportmidi0",
+        "version": "1:217-6.1build3",
+        "file": "libportmidi0_217-6.1build3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/portmidi/libportmidi0_217-6.1build3_amd64.deb",
+        "sha256": "07002689e93a58aff9be6570247abc5bb4570f60d4d7c5c101917640f0491d17"
+      },
+      {
+        "package": "libpulse0",
+        "version": "1:16.1+dfsg1-2ubuntu10.1",
+        "file": "libpulse0_16.1+dfsg1-2ubuntu10.1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/pulseaudio/libpulse0_16.1+dfsg1-2ubuntu10.1_amd64.deb",
+        "sha256": "b8d52aa6c2f74ae99e749c9f98d6ad2dbf924fd422371ac469725245cdd919fc"
+      },
+      {
+        "package": "libuv1t64",
+        "version": "1.48.0-1.1build1",
+        "file": "libuv1t64_1.48.0-1.1build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/libu/libuv1/libuv1t64_1.48.0-1.1build1_amd64.deb",
+        "sha256": "72a1856b30af1e533494ab90742a2446f4491b15ddebcade6661a6e8d61b4359"
+      },
+      {
+        "package": "liblmdb0",
+        "version": "0.9.31-1build1",
+        "file": "liblmdb0_0.9.31-1build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/lmdb/liblmdb0_0.9.31-1build1_amd64.deb",
+        "sha256": "3439a5b9fd358df1619f7dca2d611195f22a7d7d83a3a968428ac1440f713b4e"
+      },
+      {
+        "package": "libmaxminddb0",
+        "version": "1.9.1-1build1",
+        "file": "libmaxminddb0_1.9.1-1build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/libm/libmaxminddb/libmaxminddb0_1.9.1-1build1_amd64.deb",
+        "sha256": "7e0251548b110e498d9f695c2212b4241af611aec5f1d99c564e6abc7ec2df0b"
+      },
+      {
+        "package": "libnghttp2-14",
+        "version": "1.59.0-1ubuntu0.4",
+        "file": "libnghttp2-14_1.59.0-1ubuntu0.4_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/nghttp2/libnghttp2-14_1.59.0-1ubuntu0.4_amd64.deb",
+        "sha256": "73adcbb9df32cd7c9d46b1c7598bbbbcf249be705d62d966694cfc9976a15dfe"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.9.14+dfsg-1.3ubuntu3.9",
+        "file": "libxml2_2.9.14+dfsg-1.3ubuntu3.9_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.14+dfsg-1.3ubuntu3.9_amd64.deb",
+        "sha256": "6e578bc383096718c9eea8a76a3edfacfea06e525e1aa7a187ee41906436d94e"
+      },
+      {
+        "package": "libflac12t64",
+        "version": "1.4.3+ds-2.1ubuntu2",
+        "file": "libflac12t64_1.4.3+ds-2.1ubuntu2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/f/flac/libflac12t64_1.4.3+ds-2.1ubuntu2_amd64.deb",
+        "sha256": "f2396692573407b2fbc92cd83148342d4aec717d42d5e24ac64c471204a0b7a9"
+      },
+      {
+        "package": "libmpg123-0t64",
+        "version": "1.32.5-1ubuntu1.1",
+        "file": "libmpg123-0t64_1.32.5-1ubuntu1.1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/m/mpg123/libmpg123-0t64_1.32.5-1ubuntu1.1_amd64.deb",
+        "sha256": "bbe32128e3358f141f9f58ef6e76a7bef3e07d09165203665d30fdc27372b418"
+      }
+    ]
+  },
+  "canonical_zone": "corpus.example.\t\t\t\t      3600 IN SOA\tns.corpus.example. hostmaster.corpus.example. 2026100801 3600 600 86400 3600\ncorpus.example.\t\t\t\t      3600 IN NS\tns.corpus.example.\ngreeting.corpus.example.\t\t      3600 IN TXT\t\"Hello, World!\"\nns.corpus.example.\t\t\t      3600 IN A\t\t192.0.2.1\n",
+  "artifact_sha256": {
+    "examples/0156_dns-zone/hello.zone": "a0d51b1acf26561bcc9ba0a09217772f5df7c090db502f1210af1168ce13aa99"
+  }
+}

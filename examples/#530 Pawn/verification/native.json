@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:20.864620+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0530_pawn",
+      "command": [
+        "where.exe",
+        "pawncc"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required pawncc compiler/interpreter and matching host libraries are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0530_pawn/hello.pwn": "df82e2c1ac5e37c8ec51e09adec6406fc2ad6a11b9272e613c4c2cebac351d9c"
+  }
+}

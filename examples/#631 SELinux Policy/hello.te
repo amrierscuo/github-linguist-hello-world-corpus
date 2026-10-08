@@ -1,0 +1,7 @@
+module corpus_greeting 1.0;
+require {
+    type unconfined_t;
+    class file { read open getattr };
+}
+type hello_world_t;
+allow unconfined_t hello_world_t:file { read open getattr };

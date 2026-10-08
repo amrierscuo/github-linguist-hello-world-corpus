@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:56.719632+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Gforth version",
+      "cwd": "<corpus>/examples/0215_forth",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth-ditc",
+        "-i",
+        "<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth.fi",
+        "-p",
+        "<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3:<workspace>/work/tools_201_220/linux/usr/share/gforth/0.7.3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "gforth 0.7.3\n"
+    },
+    {
+      "label": "Gforth parse/compile and execute greet word",
+      "cwd": "<corpus>/examples/0215_forth",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth-ditc",
+        "-i",
+        "<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth.fi",
+        "-p",
+        "<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3:<workspace>/work/tools_201_220/linux/usr/share/gforth/0.7.3",
+        "<corpus>/examples/0215_forth/hello.fth"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Gforth native interpreter and original gforth.fi image",
+    "version": "gforth 0.7.3",
+    "executable_sha256": "bed1607f512d527f6e074511dc608dd5c5a2e21cd48c2f3256928cd48bdb49f1",
+    "image_sha256": "0c3e5918da880ccfd0ac5b6f4b111dc98b524ada9e73253f254f8a78a2d3ea5b"
+  },
+  "artifact_sha256": {
+    "examples/0215_forth/hello.fth": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:56:07.777044+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "UD validator and conllu versions",
+      "cwd": "<corpus>/examples/0128_conll-u",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata; print(importlib.metadata.version(\"udtools\"));print(importlib.metadata.version(\"conllu\"))"
+      ],
+      "exit_code": 0,
+      "stdout": "0.2.8\n6.0.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Original UD level 3 format/tree/universal annotation validator",
+      "cwd": "<corpus>/examples/0128_conll-u",
+      "command": [
+        "<python>",
+        "-c",
+        "from udtools.cli import main; raise SystemExit(main())",
+        "--lang",
+        "en",
+        "--level",
+        "3",
+        "hello.conllu"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "*** PASSED ***\n"
+    },
+    {
+      "label": "Existing conllu reader and detokenization/dependency assertions",
+      "cwd": "<corpus>/examples/0128_conll-u",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.conllu"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing conllu parser; detokenization and declared dependency example\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original Universal Dependencies udtools validator and existing conllu reader",
+    "version": "0.2.8\n6.0.0",
+    "validator_sha256": "7739d62422b4ccdf3e6f1f35bf995e0c43ed764f595d69f75fc270c4008c4dc6"
+  },
+  "artifact_sha256": {
+    "examples/0128_conll-u/hello.conllu": "bc7bc4b8d7b78cc782cf29846c70ed0276ad07759545eb0cb176619c83293eee",
+    "examples/0128_conll-u/verify.py": "031cb8ff1884b82dd5bb60b907cbbe90fa968c8f1b0ad400c36ca3128b309904"
+  }
+}

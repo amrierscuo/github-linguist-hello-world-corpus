@@ -1,0 +1,1 @@
+const sass=require("sass"),assert=require("node:assert/strict"),fs=require("node:fs");const css=sass.compile("hello.sass").css;assert(css.includes("content: \"Hello, World!\""));assert(css.includes("#greeting::before"));if(process.argv[2]) fs.writeFileSync(process.argv[2],css);console.log("Hello, World!");

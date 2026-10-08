@@ -1,0 +1,33 @@
+{
+  "ordinal": 666,
+  "name": "Slim",
+  "timestamp_utc": "2026-10-08T13:38:12.747835+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Ruby3.2.3 + Slim5.2.2 / Temple0.10.7 / Tilt2.9.0",
+  "artifact_sha256": {
+    "examples/0666_slim/hello.slim": "40b7b23da2f8388d7d29eb3470b720620362c4a412900ca9a1f1a3a927bc99c5",
+    "examples/0666_slim/verify.rb": "3780615951a4135998c25321dac4eb92271650102262ea6d85111708559c739c"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=${WORKSPACE_WSL}/work/tools_661_680/ruby/slim/lib:${WORKSPACE_WSL}/work/tools_661_680/ruby/temple/lib:${WORKSPACE_WSL}/work/tools_661_680/ruby/tilt/lib:${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "${WORKSPACE_WSL}/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "verify.rb"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

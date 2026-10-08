@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:46:04.820988+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0072_blueprint/hello.blp": "326dddeafc06343b08fd6ba957304ea40f46066b92fff21ef1877dc9ffad53ea"
+  },
+  "commands": [
+    {
+      "label": "Native Blueprint compiler parse and GTK type validation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "python3",
+        "<workspace>/work/tools_61_80/blueprint-compiler-main/blueprint-compiler.py",
+        "compile",
+        "--output",
+        "<workspace>/work/tools_61_80/verify_72/hello.ui",
+        "<workspace>/work/tools_61_80/verify_72/hello.blp"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_72",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "\u001b[91m\u001b[1merror: Namespace Gtk-4.0 could not be found\u001b[2m\u001b[0m\nat <workspace>/work/tools_61_80/verify_72/hello.blp line 1 column 1:\n\u001b[2m   1 |\u001b[0musing Gtk 4.0;\n     \u001b[2m|^^^^^^^^^^^^^^\u001b[0m\n\u001b[2mhint: search path: /usr/lib/x86_64-linux-gnu/girepository-1.0:/usr/lib/girepository-1.0\u001b[0m\n\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "GNOME Blueprint compiler source snapshot",
+    "archive_sha256": "3303688b78559f17caa3df4f5f2da795e29c2248ae17e136a792422ad62ec7f1"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:32:57.472660+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0079_brightscript/hello.brs": "3e6b2cad760cfb32176e4f8e46e0a53708e682c6e3b59547c65d50ece06b512c"
+  },
+  "commands": [
+    {
+      "label": "Node.js version",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_79",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "BrightScript interpreter version",
+      "command": [
+        "<node>",
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\brs\\bin\\cli.js",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_79",
+      "exit_code": 0,
+      "stdout": "0.45.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native brs interpreter parse and run",
+      "command": [
+        "<node>",
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\brs\\bin\\cli.js",
+        "hello.brs"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_79",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "packages": [
+      {
+        "name": "brs",
+        "version": "0.45.0",
+        "manifest_sha256": "da73d619e1198a5fd27b9708b8ee00522e66284ff240bd8568b5151fe12a0147",
+        "repository": "https://github.com/sjbarag/brs"
+      }
+    ],
+    "package_lock_sha256": "1080e468a43341a1fb5ac222462d7c9bfb84ae281826e8901de32bffb47f0535"
+  }
+}

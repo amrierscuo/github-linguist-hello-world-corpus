@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:06:10.996674+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Clean clm version",
+      "cwd": "<corpus>/examples/0122_clean",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_121_140/clean/bin/clm",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "clm - Clean make - version 3.1\n\n\tclean_lib_directory =\n\t\t.\n\tclean_default_path_list =\n\t\t<workspace>/work/tools_121_140/clean/lib/StdEnv\n\tclean_include_library_directory =\n\t\t<workspace>/work/tools_121_140/clean/lib\n\tassembler_file_name =\n\t\t/usr/bin/as\n\tlinker_file_name =\n\t\t/usr/bin/gcc\n\tcrt0_file_name =\n\t\tcrt1.o\n\tld_args =\n\t\t\n"
+    },
+    {
+      "label": "Native Clean typecheck, compile and link",
+      "cwd": "<corpus>/examples/0122_clean",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_121_140/122",
+        "--",
+        "env",
+        "CLEANLIB=<workspace>/work/tools_121_140/clean/lib/exe",
+        "CLEANPATH=<workspace>/work/tools_121_140/clean/lib/StdEnv",
+        "CLEANILIB=<workspace>/work/tools_121_140/clean/lib",
+        "<workspace>/work/tools_121_140/clean/bin/clm",
+        "-nr",
+        "-nt",
+        "-nw",
+        "Hello",
+        "-o",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Linking Hello\n",
+      "stderr": "/usr/bin/ld: warning: /tmp/cgopt3ODaIi: missing .note.GNU-stack section implies executable stack\n/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker\n"
+    },
+    {
+      "label": "Run native Clean executable",
+      "cwd": "<corpus>/examples/0122_clean",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_121_140/122",
+        "--",
+        "./hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Clean 3.1 stable distribution, local clm",
+    "version": "3.1",
+    "compiler_output": "clm - Clean make - version 3.1\n\n\tclean_lib_directory =\n\t\t.\n\tclean_default_path_list =\n\t\t<workspace>/work/tools_121_140/clean/lib/StdEnv\n\tclean_include_library_directory =\n\t\t<workspace>/work/tools_121_140/clean/lib\n\tassembler_file_name =\n\t\t/usr/bin/as\n\tlinker_file_name =\n\t\t/usr/bin/gcc\n\tcrt0_file_name =\n\t\tcrt1.o\n\tld_args =\n\t\t\n",
+    "archive_sha256": "ffb03e65798246215a8c217cdbaf33fa29ae5b110cc54b144e989bb9537b3fbb"
+  },
+  "artifact_sha256": {
+    "examples/0122_clean/Hello.icl": "1c45e473602dd5b5e03d9691ca627cbbd9db37e2dd96c1f6249833eb0b3e9eb7"
+  }
+}

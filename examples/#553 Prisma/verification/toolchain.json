@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:34:45.526980+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Prisma Schema Language validator",
+      "command": [
+        "node",
+        "<workspace>\\work\\tools_541_560\\npm\\node_modules\\prisma\\build\\index.js",
+        "validate",
+        "--schema",
+        "hello.prisma"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_553_153445524927",
+      "exit_code": 0,
+      "stdout": "The schema at hello.prisma is valid 🚀\n",
+      "stderr": "Prisma schema loaded from hello.prisma.\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "prisma",
+    "version": "7.10.0",
+    "manifest_sha256": "e0d96b7612a7592e62b1e2ba5b40e686e96af588bf9dafe74799b99d0b31abed",
+    "lock_sha256": "1c705a0be95266b80d651cf8f5bc9cc5101b6cf763eb0a8bf0c65bb5e49db4ea",
+    "source": "https://www.npmjs.com/package/prisma"
+  },
+  "semantic_scope": "Schema model/default validated; SQLite client generation and insertion not executed.",
+  "artifact_sha256": {
+    "examples/0553_prisma/hello.prisma": "e16dd87c664ce50d161e4166c863f20816720135b1f0ed81dd21b43839c8c42b"
+  }
+}

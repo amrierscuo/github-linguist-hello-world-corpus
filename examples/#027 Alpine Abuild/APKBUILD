@@ -1,0 +1,20 @@
+pkgname=corpus-hello
+pkgver=1.0.0
+pkgrel=0
+pkgdesc="Minimal greeting package for the corpus"
+url="https://example.org/"
+arch="noarch"
+license="custom"
+depends="/bin/sh"
+source="hello.sh"
+builddir="$srcdir"
+
+check() {
+    test "$(sh "$srcdir/hello.sh")" = "Hello, World!"
+}
+
+package() {
+    install -Dm755 "$srcdir/hello.sh" "$pkgdir/usr/bin/corpus-hello"
+}
+
+sha512sums="e7d2017534f962313e76a41d89ab11751c8ff687878ec11148c6fe54c74360dd980fa50326d5253a3582f9f354261a76e79bc12ae381e76e4970f443fb17730b  hello.sh"

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 392,
+  "language": "Literate CoffeeScript",
+  "timestamp_utc": "2026-10-08T12:48:17.110423+00:00",
+  "platform": "Windows x64",
+  "toolchain": "coffeescript 2.7.0; Node 22.20.0",
+  "working_directory": "examples/0392_literate-coffeescript",
+  "source_sha256": {
+    "examples/0392_literate-coffeescript/hello.litcoffee": "47a98ff081bd84d8e6256f4931fd20d4e684fa704b1042f6e75b25b01a62a084",
+    "examples/0392_literate-coffeescript/package.json": "f4996b9974b12a80f0c6b5a867c49809c02a052f28a0b98bb1b68dc023e5bfeb"
+  },
+  "steps": [
+    {
+      "command": "coffee --version",
+      "exit_code": 0,
+      "stdout": "CoffeeScript version 2.7.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "coffee hello.litcoffee",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original CoffeeScript literate mode recognizes prose/indented source and actual Node runtime executes console.log. Generated code/cache only in work.",
+  "blockers": []
+}

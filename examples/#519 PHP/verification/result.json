@@ -1,0 +1,63 @@
+{
+  "ordinal": 519,
+  "name": "PHP",
+  "timestamp_utc": "2026-10-08T13:13:33.773056+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "PHP 8.3.6 native Ubuntu CLI",
+  "artifact_sha256": {
+    "examples/0519_php/hello.php": "e93e2a16546a0c99a77c7bd39811a3b248dfd9253bf3620cb4b55abe252ccfab"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "-l",
+        "${WORKSPACE_WSL}/work/staging_501_520/examples/0519_php/hello.php"
+      ],
+      "exit_code": 0,
+      "stdout": "No syntax errors detected in ${WORKSPACE_WSL}/work/staging_501_520/examples/0519_php/hello.php\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "${WORKSPACE_WSL}/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "${WORKSPACE_WSL}/work/staging_501_520/examples/0519_php/hello.php"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 259,
+  "language": "Go Module",
+  "timestamp_utc": "2026-10-08T12:16:15.324157+00:00",
+  "platform": "Windows x64",
+  "toolchain": "go version go1.27.1 windows/amd64",
+  "working_directory": "examples/0259_go-module",
+  "source_sha256": {
+    "examples/0259_go-module/go.mod": "55f0b459615b231746914b76c3b8086c76522e3a2a614bc37a9cc2248e0eb439",
+    "examples/0259_go-module/go.sum": "330fc53e15220944886bd750f38edf4babeabdf2378b6148d9ea733754cb1a60",
+    "examples/0259_go-module/main.go": "baa48f8a6a2852c2117d28d1aed2e4fc2acdcf04701db27fbf3f2d2519237403"
+  },
+  "steps": [
+    {
+      "command": "go version",
+      "exit_code": 0,
+      "stdout": "go version go1.27.1 windows/amd64\n",
+      "stderr": ""
+    },
+    {
+      "command": "go mod tidy",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "go: downloading golang.org/x/text v0.31.0\n"
+    },
+    {
+      "command": "go mod verify",
+      "exit_code": 0,
+      "stdout": "all modules verified\n",
+      "stderr": ""
+    },
+    {
+      "command": "go mod download -json golang.org/x/text@v0.31.0",
+      "exit_code": 0,
+      "stdout": "{\n\t\"Path\": \"golang.org/x/text\",\n\t\"Version\": \"v0.31.0\",\n\t\"Info\": \"<workspace>\\\\work\\\\verify_241_260\\\\go-path\\\\pkg\\\\mod\\\\cache\\\\download\\\\golang.org\\\\x\\\\text\\\\@v\\\\v0.31.0.info\",\n\t\"GoMod\": \"<workspace>\\\\work\\\\verify_241_260\\\\go-path\\\\pkg\\\\mod\\\\cache\\\\download\\\\golang.org\\\\x\\\\text\\\\@v\\\\v0.31.0.mod\",\n\t\"Zip\": \"<workspace>\\\\work\\\\verify_241_260\\\\go-path\\\\pkg\\\\mod\\\\cache\\\\download\\\\golang.org\\\\x\\\\text\\\\@v\\\\v0.31.0.zip\",\n\t\"Dir\": \"<workspace>\\\\work\\\\verify_241_260\\\\go-path\\\\pkg\\\\mod\\\\golang.org\\\\x\\\\text@v0.31.0\",\n\t\"Sum\": \"h1:aC8ghyu4JhP8VojJ2lEHBnochRno1sgL6nEi9WGFGMM=\",\n\t\"GoModSum\": \"h1:tKRAlv61yKIjGGHX/4tP1LTbc13YSec1pxVEWXzfoeM=\",\n\t\"Origin\": {\n\t\t\"VCS\": \"git\",\n\t\t\"URL\": \"https://go.googlesource.com/text\",\n\t\t\"Hash\": \"e7ff6b3572e1a83c072ef150c985f86603986e1b\",\n\t\t\"Ref\": \"refs/tags/v0.31.0\"\n\t}\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "go run .",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Actual go.mod graph resolves pinned x/text; mod verify passes and Go executes case conversion to greeting.",
+  "blockers": []
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:17.468655+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Graphviz version",
+      "cwd": "<corpus>/examples/0271_graphviz-dot",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "dot",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "dot - graphviz version 2.43.0 (0)\n"
+    },
+    {
+      "label": "Parse DOT and produce SVG using actual Graphviz",
+      "cwd": "<corpus>/examples/0271_graphviz-dot",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "dot",
+        "-Tsvg",
+        "<corpus>/examples/0271_graphviz-dot/hello.dot",
+        "-o",
+        "<workspace>/work/tools_261_280/271/hello.svg"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Assert generated SVG visible node text",
+      "cwd": "<corpus>/examples/0271_graphviz-dot",
+      "command": [
+        "<python>",
+        "verify_svg.py",
+        "<workspace>/work/tools_261_280/271/hello.svg"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine Graphviz SVG contains the node label\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Genuine Graphviz DOT parser and SVG layout renderer",
+    "version": "dot - graphviz version 2.43.0 (0)"
+  },
+  "generated_svg_sha256": "86557db901b313cca304c764b670616c77f24f0402021c0ccd9a5cc4c9c11024",
+  "artifact_sha256": {
+    "examples/0271_graphviz-dot/hello.dot": "3557c921babe8addeaf0209d5f140605685f5b28208c11d05de44fff9729c644",
+    "examples/0271_graphviz-dot/verify_svg.py": "4e5e50424c1306c5543b243d73620616aba3add430d68be7f3ce189254a01488"
+  }
+}

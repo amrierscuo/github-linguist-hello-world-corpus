@@ -1,0 +1,36 @@
+{
+  "ordinal": 598,
+  "name": "Raku",
+  "timestamp_utc": "2026-10-08T13:51:12.299050+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Rakudo2022.12 + MoarVM2022.12 original runtime",
+  "artifact_sha256": {
+    "examples/0598_raku/hello.raku": "8671a9515118ae7caca824de7481ced85d5e63173181e747b5d9263e7dd280ba"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "RAKUDO_HOME=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/perl6",
+        "NQP_HOME=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/share/nqp/lib",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/blas:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu/lapack:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/R/lib:${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/moar",
+        "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/moar",
+        "--libpath=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/share/nqp/lib",
+        "--libpath=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/perl6/runtime",
+        "--libpath=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/perl6/lib",
+        "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/perl6/runtime/perl6.moarvm",
+        "${WORKSPACE_WSL}/work/staging_581_600/examples/0598_raku/hello.raku"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

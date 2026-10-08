@@ -1,0 +1,54 @@
+{
+  "timestamp_utc": "2026-10-08T09:31:17.101359+00:00",
+  "platform": "Windows x64",
+  "scope": "abaplint parser_error/check_syntax; no SAP runtime execution",
+  "passed": true,
+  "checks": [
+    {
+      "command_argv": [
+        "<NODE_EXE>",
+        "--version"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0004_abap",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command_argv": [
+        "<NODE_EXE>",
+        "<WORKSPACE_ROOT>/work/tools_01_07/node/node_modules/@abaplint/cli/abaplint",
+        "abaplint.json",
+        "-f",
+        "json"
+      ],
+      "cwd": "<CORPUS_ROOT>/examples/0004_abap",
+      "exit_code": 0,
+      "stdout": "[]\n",
+      "stderr": "abaplint 2.120.70\nUsing config: abaplint.json\nABAP release: v793 (SAP_BASIS 7.93, kernel 793, on-premise 758, cloud 793, CE 2308)\nABAP language version: Normal\n\n\n\n\n\n"
+    },
+    {
+      "command_argv": [
+        "<NODE_EXE>",
+        "<WORKSPACE_ROOT>/work/tools_01_07/node/node_modules/@abaplint/cli/abaplint",
+        "abaplint.json",
+        "-f",
+        "json"
+      ],
+      "cwd": "<WORKSPACE_ROOT>/work/tools_01_07/negative_controls/0004_abap",
+      "exit_code": 1,
+      "stdout": "[{\"description\":\"Statement does not exist in the configured ABAP version(or a parser error), \\\"WRITE\\\"\",\"key\":\"parser_error\",\"file\":\"<WORKSPACE_ROOT>/work/tools_01_07/negative_controls/0004_abap/zhello_world.prog.abap\",\"start\":{\"row\":2,\"col\":1},\"end\":{\"row\":2,\"col\":21},\"severity\":\"Error\"}]\n",
+      "stderr": "abaplint 2.120.70\nUsing config: abaplint.json\nABAP release: v793 (SAP_BASIS 7.93, kernel 793, on-premise 758, cloud 793, CE 2308)\nABAP language version: Normal\n\n\n\n\n\n"
+    }
+  ],
+  "artifact_sha256": {
+    "zhello_world.prog.abap": "6756f9863485fa7bfcce375a89fc4371742cf42aca08dcf5128a804cc3f27554"
+  },
+  "normalization_note": "Only machine-specific filesystem paths in command_argv, cwd and diagnostic output were normalized to portable placeholders. No other output text, timestamps, exit codes, verification outcomes or artifact SHA-256 values were changed. This log records the original run; no verification was rerun.",
+  "path_placeholders": {
+    "<CORPUS_ROOT>": "root of github_linguist_hello_world_corpus",
+    "<WORKSPACE_ROOT>": "local workspace containing the corpus and isolated work tools",
+    "<NODE_EXE>": "Node.js executable used for this run; version recorded in checks",
+    "<PYTHON_EXE>": "Python executable used for this run; version recorded in checks"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:09.275434+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Availability probe for box",
+      "cwd": "<corpus>/examples/0131_coldfusion",
+      "command": [
+        "where.exe",
+        "box"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "No Adobe ColdFusion/Lucee engine is configured to serve the template."
+  ],
+  "toolchain": {
+    "name": "Required native toolchain unavailable or not configured",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0131_coldfusion/hello.cfm": "6f98ea9131bf6973615588aee654979c91e7fac3151e0d3fb64dbda924763fa4"
+  }
+}

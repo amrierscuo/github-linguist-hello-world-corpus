@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:40.347213+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "GSC compiler version",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\gsc\\gsc-tool.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_233_143440338981",
+      "exit_code": 0,
+      "stdout": "GSC Tool 1.5.1.359 created by xensik\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native IW5 GSC compiler generates game script bytecode",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\gsc\\gsc-tool.exe",
+        "-m",
+        "comp",
+        "-g",
+        "iw5",
+        "-s",
+        "pc",
+        "hello.gsc"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_233_143440338981",
+      "exit_code": 0,
+      "stdout": "GSC Tool 1.5.1.359 created by xensik\ncompiled iw5/hello.gscbin\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "xensik original community GSC compiler for IW5 PC",
+    "distribution": {
+      "file": "gsc.zip",
+      "url": "https://github.com/xensik/gsc-tool/releases/download/1.5.1/windows-x64-release.zip",
+      "sha256": "c70744996c4801bd564760143cc9d735ef951359bae31d72a52f291cd1fef36b"
+    }
+  },
+  "generated_bytecode": [
+    {
+      "file": "compiled/iw5/hello.gscbin",
+      "sha256": "46b9cab12ed3f4d5328f98b6b04b3191a0746d802c6657136bf0619c7136e97e"
+    }
+  ],
+  "semantic_scope": "Syntax/bytecode generation checked by genuine community compiler; game engine runtime not prepared.",
+  "artifact_sha256": {
+    "examples/0233_gsc/hello.gsc": "5e9ac8a3cb1ea7b641fb0c97db83a8b3e931053546c93a702c7d1eed72aff3e2"
+  }
+}

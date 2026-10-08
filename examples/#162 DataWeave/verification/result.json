@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 162,
+  "language": "DataWeave",
+  "timestamp_utc": "2026-10-08T11:56:15.339726+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; DataWeave native 2.12.2 genuine MuleSoft engine binding",
+  "working_directory": "examples/0162_dataweave",
+  "source_sha256": {
+    "examples/0162_dataweave/hello.dwl": "fa5efe8f1b3f3d7ba8439f72d3d7c979d4dd8c4778dc7b3c14952402f5ca5952",
+    "examples/0162_dataweave/requirements.txt": "38bdc477c5064534e48489c13bbfc76e2400b38ac29044b6e3eeb1e72771e2fb",
+    "examples/0162_dataweave/verify.py": "a585f8e1430965800460d8f7ae2df56285b46dc71f10e36a06e09173f9096910"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"greeting\": \"Hello, World!\"\n}\nDataWeave native 2.12.2 execution PASS.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "MuleSoft native DataWeave compiler/runtime executed the .dwl; JSON object greeting exactly asserted.",
+  "blockers": []
+}

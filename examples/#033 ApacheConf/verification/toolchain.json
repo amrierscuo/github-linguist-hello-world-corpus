@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:04:35.952722+00:00",
+  "platform": "Alpine Linux 3.23.6 x86_64 minirootfs in Ubuntu WSL chroot",
+  "commands": [
+    {
+      "label": "Native Apache syntax check and live HTTP response",
+      "cwd": "examples/0033_apacheconf",
+      "command": [
+        "C:\\Windows\\system32\\wsl.EXE",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "sh",
+        "<workspace>/work/tools_27_33/verify_33.sh",
+        "<workspace>/work/tools_27_33/alpine"
+      ],
+      "exit_code": 32,
+      "stdout": "Server version: Apache/2.4.69 (Unix)\nServer built:   Oct  2 2026 22:49:43\nHello, World!\nPASS: Apache parser accepted configuration; HTTP 200 body exactly matches source.\n",
+      "stderr": "Syntax OK\numount: <workspace>/work/tools_27_33/alpine/dev: target is busy.\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "sh",
+        "<workspace>/work/tools_27_33/cleanup_33.sh",
+        "<workspace>/work/tools_27_33/alpine",
+        "<workspace>/work/tools_27_33/alpine"
+      ],
+      "exit_code": 0,
+      "stdout": "Cleanup target: <workspace>/work/tools_27_33/alpine/dev\nPASS: no Apache process belongs to this corpus rootfs/configuration.\nPASS: temporary /dev bind mount is no longer active.\n",
+      "stderr": "",
+      "label": "Final cleanup of corpus Apache processes and the exact temporary /dev bind mount",
+      "cwd": "<workspace>"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0033_apacheconf/httpd.conf": "f5cbdd9a6916cf5392e9434a96f33f0472c97f5a237e5d0ee6d303a4dd12fbe0",
+    "examples/0033_apacheconf/www/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31"
+  },
+  "path_normalization": "Absolute workspace, user-home and tool paths replaced by placeholders. Source bytes and command output otherwise unchanged.",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "copied_artifact_sha256": {
+    "examples/0033_apacheconf/httpd.conf": "f5cbdd9a6916cf5392e9434a96f33f0472c97f5a237e5d0ee6d303a4dd12fbe0",
+    "examples/0033_apacheconf/www/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31"
+  },
+  "toolchain": {
+    "rootfs": "Alpine Linux 3.23.6 x86_64",
+    "rootfs_sha256": "6fc0e3639a1c01f156970d7626aab90bc90697117069dbc39ad880b84efa319a",
+    "published_rootfs_sha256": "6fc0e3639a1c01f156970d7626aab90bc90697117069dbc39ad880b84efa319a"
+  },
+  "isolated_chroot_script": "set -eu\nexport CORPUS_ROOT=/corpus/0033 CORPUS_RUN=/scratch/apache APACHE_MODULE_DIR=/usr/lib/apache2\nmkdir -p \"$CORPUS_RUN\"\nhttpd -v\nhttpd -t -f \"$CORPUS_ROOT/httpd.conf\"\nhttpd -f \"$CORPUS_ROOT/httpd.conf\" -k start\ntrap 'httpd -f \"$CORPUS_ROOT/httpd.conf\" -k stop' EXIT\ncurl --retry 5 --retry-delay 1 --retry-connrefused --fail --silent --show-error http://127.0.0.1:18033/hello.txt -o \"$CORPUS_RUN/response.txt\"\ncmp \"$CORPUS_ROOT/www/hello.txt\" \"$CORPUS_RUN/response.txt\"\ncat \"$CORPUS_RUN/response.txt\"\nprintf '%s\\n' 'PASS: Apache parser accepted configuration; HTTP 200 body exactly matches source.'\n",
+  "isolated_host_setup_script": "#!/bin/sh\nset -eu\nrootfs=\"$1\"\nmounted_here=0\nif ! mountpoint -q \"$rootfs/dev\"; then\n  mount --bind /dev \"$rootfs/dev\"\n  mounted_here=1\nfi\ncleanup() { if [ \"$mounted_here\" = 1 ]; then umount \"$rootfs/dev\"; fi; }\ntrap cleanup EXIT\ntimeout 60 chroot \"$rootfs\" /bin/sh /corpus/verify_33.sh\n",
+  "functional_validation": {
+    "completed": true,
+    "native_syntax_check": "Syntax OK",
+    "http_check": "curl --fail accepted response and cmp verified every body byte against www/hello.txt",
+    "evidence_marker": "PASS emitted after curl and cmp in the set -eu chroot script",
+    "wrapper_exit_code": 32,
+    "cleanup_warning": "The outer wrapper failed to unmount its /dev bind mount after server stop. This occurred after the native syntax and HTTP assertions passed."
+  },
+  "cleanup_final": {
+    "exit_code": 0,
+    "apache_processes_stopped": true,
+    "temporary_dev_bind_mount_inactive": true
+  },
+  "cleanup_script": "#!/bin/sh\nset -eu\nrootfs=$1\nexpected=$2\ntest \"$(realpath \"$rootfs\")\" = \"$expected\"\ncase \"$rootfs\" in */work/tools_27_33/alpine) ;; *) printf '%s\\n' 'Unexpected rootfs path.' >&2; exit 1;; esac\nmount_target=\"$rootfs/dev\"\nprintf 'Cleanup target: %s\\n' \"$mount_target\"\n\napache_pids() {\n    for proc in /proc/[0-9]*; do\n        [ \"$(readlink \"$proc/root\" 2>/dev/null || true)\" = \"$expected\" ] || continue\n        executable=$(readlink \"$proc/exe\" 2>/dev/null || true)\n        case \"$executable\" in \"$expected/usr/sbin/httpd\")\n            arguments=$(tr '\\000' ' ' < \"$proc/cmdline\" 2>/dev/null || true)\n            case \"$arguments\" in *'/corpus/0033/httpd.conf'*) printf '%s\\n' \"${proc##*/}\";; esac\n            ;;\n        esac\n    done\n}\n\npids=$(apache_pids)\nif [ -n \"$pids\" ]; then\n    printf 'Matching corpus Apache PIDs before cleanup: %s\\n' \"$pids\"\n    for pid in $pids; do\n        [ \"$(readlink \"/proc/$pid/root\" 2>/dev/null || true)\" = \"$expected\" ] || continue\n        [ \"$(readlink \"/proc/$pid/exe\" 2>/dev/null || true)\" = \"$expected/usr/sbin/httpd\" ] || continue\n        kill -TERM \"$pid\"\n    done\nfi\nremaining=$(apache_pids)\ncount=0\nwhile [ -n \"$remaining\" ] && [ \"$count\" -lt 20 ]; do\n    sleep 1\n    count=$((count+1))\n    remaining=$(apache_pids)\ndone\nif [ -n \"$remaining\" ]; then\n    printf 'Corpus Apache PIDs still present: %s\\n' \"$remaining\" >&2\n    exit 1\nfi\nprintf '%s\\n' 'PASS: no Apache process belongs to this corpus rootfs/configuration.'\n\nif mountpoint -q \"$mount_target\"; then\n    findmnt --mountpoint \"$mount_target\" --noheadings --output TARGET,SOURCE,FSTYPE\n    if umount \"$mount_target\"; then\n        printf '%s\\n' 'Unmount completed normally.'\n    else\n        # This exact mount belongs to the temporary rootfs of this corpus.\n        # Detach it without touching /dev itself or terminating other processes.\n        umount -l \"$mount_target\"\n        printf '%s\\n' 'The exact temporary /dev bind mount was lazily detached after normal unmount reported busy.'\n    fi\nfi\nif mountpoint -q \"$mount_target\"; then\n    printf '%s\\n' 'Temporary bind mount is still active.' >&2\n    exit 1\nfi\nprintf '%s\\n' 'PASS: temporary /dev bind mount is no longer active.'\n"
+}

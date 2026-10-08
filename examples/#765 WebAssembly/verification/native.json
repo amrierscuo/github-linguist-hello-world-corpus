@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:55.029957+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node.js version",
+      "cwd": "<corpus>/examples/0765_webassembly",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "genuine parser/runtime and semantic assertions",
+      "cwd": "<corpus>/examples/0765_webassembly",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_761_780/node",
+        "<workspace>/work/tools_761_780/765"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: authentic WABT compiler/validator and native WebAssembly instantiation/exports\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "wabt / Node.js 22.20.0",
+    "version": "1.0.39"
+  },
+  "artifact_sha256": {
+    "examples/0765_webassembly/hello.wat": "d919b75a96c7fdd90301f08ee50fd16d038a2110c455813b8915b6f603c7cf20",
+    "examples/0765_webassembly/verify.cjs": "11ac6c68fbcd5cc7bbd36d7f234f671e5e9a59da75dee143b9142554b8aa522f"
+  }
+}

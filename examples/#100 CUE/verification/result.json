@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 100,
+  "language": "CUE",
+  "timestamp_utc": "2026-10-08T11:33:52.311212+00:00",
+  "platform": "Windows x64",
+  "toolchain": "cue version v0.17.1",
+  "working_directory": "examples/0100_cue",
+  "source_sha256": {
+    "examples/0100_cue/hello.cue": "a99938d09aa7fb7774efba374518343c84219ba9dd9073fbb5d1e8bf14e032c8"
+  },
+  "steps": [
+    {
+      "command": "cue version",
+      "exit_code": 0,
+      "stdout": "cue version v0.17.1\n\nCUE language version v0.17.1\n\nGo version go1.26.5\n      -buildmode exe\n       -compiler gc\n       -trimpath true\n     CGO_ENABLED 0\n          GOARCH amd64\n            GOOS windows\n         GOAMD64 v1\n",
+      "stderr": ""
+    },
+    {
+      "command": "cue vet hello.cue",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "cue export hello.cue -e greeting --out text",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "cue vet succeeds; interpolation and unification export exactly Hello, World! plus newline."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Actual CUE evaluator and exporter.",
+  "blockers": []
+}

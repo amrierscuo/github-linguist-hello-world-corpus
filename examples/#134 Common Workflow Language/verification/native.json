@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:06:11.006429+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "CWL reference runner version",
+      "cwd": "<corpus>/examples/0134_common-workflow-language",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_121_140/cwl_linux_python",
+        "python3",
+        "-m",
+        "cwltool",
+        "--version"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/python3: No module named cwltool\n"
+    },
+    {
+      "label": "Reference schema-salad CWL 1.2 validation",
+      "cwd": "<corpus>/examples/0134_common-workflow-language",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_121_140/cwl_linux_python",
+        "python3",
+        "-m",
+        "cwltool",
+        "--validate",
+        "<corpus>/examples/0134_common-workflow-language/hello.cwl"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/python3: No module named cwltool\n"
+    },
+    {
+      "label": "Reference runner execution without container",
+      "cwd": "<corpus>/examples/0134_common-workflow-language",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_121_140/cwl_linux_python",
+        "python3",
+        "-m",
+        "cwltool",
+        "--no-container",
+        "--outdir",
+        "<workspace>/work/tools_121_140/134",
+        "<corpus>/examples/0134_common-workflow-language/hello.cwl",
+        "<corpus>/examples/0134_common-workflow-language/job.yml"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/python3: No module named cwltool\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Native Windows cwltool imports POSIX pwd and cannot start; isolated Linux installation timed out and Linux cwltool module is unavailable."
+  ],
+  "toolchain": {
+    "name": "Common Workflow Language reference cwltool",
+    "version": "3.3.20260925135507",
+    "version_output": "/usr/bin/python3: No module named cwltool\n"
+  },
+  "artifact_sha256": {
+    "examples/0134_common-workflow-language/hello.cwl": "7d2bf6162295943abccb082c54f2f3f862df7a3190f9545f3e767642663abae4",
+    "examples/0134_common-workflow-language/job.yml": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  }
+}

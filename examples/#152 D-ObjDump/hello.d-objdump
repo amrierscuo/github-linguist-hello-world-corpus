@@ -1,0 +1,53 @@
+
+hello.o:     file format elf64-x86-64
+
+Contents of section .text._D5hello8greetingFNbNiZPxa:
+ 0000 554889e5 488d0500 0000005d c3        UH..H......].   
+Contents of section .text.main:
+ 0000 554889e5 4883ec10 e8000000 004889c7  UH..H........H..
+ 0010 e8000000 0083f800 7d09c745 fc010000  ........}..E....
+ 0020 00eb07c7 45fc0000 00008b45 fc4883c4  ....E......E.H..
+ 0030 105dc3                               .].             
+Contents of section .rodata.str1.1:
+ 0000 48656c6c 6f2c2057 6f726c64 2100      Hello, World!.  
+Contents of section .comment:
+ 0000 006c6463 20766572 73696f6e 20312e34  .ldc version 1.4
+ 0010 332e3000                             3.0.            
+Contents of section .eh_frame:
+ 0000 14000000 00000000 017a5200 01781001  .........zR..x..
+ 0010 1b0c0708 90010000 1c000000 1c000000  ................
+ 0020 00000000 0d000000 00410e10 8602430d  .........A....C.
+ 0030 06480c07 08000000 1c000000 3c000000  .H..........<...
+ 0040 00000000 33000000 00410e10 8602430d  ....3....A....C.
+ 0050 066e0c07 08000000                    .n......        
+
+Disassembly of section .text._D5hello8greetingFNbNiZPxa:
+
+0000000000000000 <_D5hello8greetingFNbNiZPxa>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # b <_D5hello8greetingFNbNiZPxa+0xb>
+			7: R_X86_64_PC32	.L.str-0x4
+   b:	5d                   	pop    %rbp
+   c:	c3                   	ret
+
+Disassembly of section .text.main:
+
+0000000000000000 <main>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 10          	sub    $0x10,%rsp
+   8:	e8 00 00 00 00       	call   d <main+0xd>
+			9: R_X86_64_PLT32	_D5hello8greetingFNbNiZPxa-0x4
+   d:	48 89 c7             	mov    %rax,%rdi
+  10:	e8 00 00 00 00       	call   15 <main+0x15>
+			11: R_X86_64_PLT32	puts-0x4
+  15:	83 f8 00             	cmp    $0x0,%eax
+  18:	7d 09                	jge    23 <main+0x23>
+  1a:	c7 45 fc 01 00 00 00 	movl   $0x1,-0x4(%rbp)
+  21:	eb 07                	jmp    2a <main+0x2a>
+  23:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	48 83 c4 10          	add    $0x10,%rsp
+  31:	5d                   	pop    %rbp
+  32:	c3                   	ret

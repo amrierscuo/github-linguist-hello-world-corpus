@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ordinal": 823,
+  "language": "mdsvex",
+  "timestamp_utc": "2026-10-08T13:48:59.212109+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node22.20.0; {'mdsvex': '0.12.8', 'svelte': '5.57.2'}",
+  "working_directory": "examples/0823_mdsvex",
+  "source_sha256": {
+    "examples/0823_mdsvex/hello.svx": "93c11fb275be21d184993cf92e908b147ee5505b175955f7be7b586514fb0d53",
+    "examples/0823_mdsvex/package.json": "bc1d30f0083544f3ab2a3732b2282f63d1c31d35d66a9d86bc22d105f22e301e",
+    "examples/0823_mdsvex/verify.cjs": "e4bded11d86726a1e40be7a0c1c3fd561deaac3afe8ef25e6616e2456a17fd04"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs <work-generated-module-with-node_modules-ancestor>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original mdsvex preprocesses Markdown/Svelte, original Svelte compiler emits server module; official render() evaluates name and produces expected h1.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/tools_821_836/node/generated/hello.mjs",
+      "sha256": "2e73fb3df061114845ab4116de254c9ec42f8bb71ac80f3f1b3ebecb6051441a"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 643,
+  "language": "SVG",
+  "timestamp_utc": "2026-10-08T13:23:05.345487+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Google Chrome 154.0.8037.98 native SVG renderer",
+  "working_directory": "examples/0643_svg",
+  "source_sha256": {
+    "examples/0643_svg/hello.svg": "fa1e95b66bc534f82cfb55a52f5ae98d9dcc9ab78566f7c70886d1ff033befcc"
+  },
+  "steps": [
+    {
+      "command": "Chrome 154.0.8037.98 --headless --screenshot=<build>/hello.png hello.svg",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "4464 bytes written to file <workspace>\\work\\verify_641_660\\643\\hello.png\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed.",
+    "Visual review of actual Chromium screenshot confirms readable Hello, World!."
+  ],
+  "scope": "Chromium loads original SVG and rasterizes screenshot. Visual greeting confirmation pending. Screenshot viewed: blue Hello, World! text clearly visible on light background.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_641_660/643/hello.png",
+      "sha256": "a74c3276d423858486adb2ff1fe025e2cd3e837e096c64cbfd5fef1248ef54e7"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:44.570995+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "OpenSSH version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_639_154444561756",
+        "--",
+        "ssh",
+        "-V"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_639_154444561756",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "OpenSSH_9.6p1 Ubuntu-3ubuntu13.19, OpenSSL 3.0.13 30 Jan 2024\n"
+    },
+    {
+      "label": "Native SSH configuration evaluation without connection",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_639_154444561756",
+        "--",
+        "ssh",
+        "-G",
+        "-F",
+        "ssh-config",
+        "hello-world"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_639_154444561756",
+      "exit_code": 0,
+      "stdout": "host hello-world\nuser corpus\nhostname hello-world.example.invalid\nport 2222\naddressfamily any\nbatchmode yes\ncanonicalizefallbacklocal yes\ncanonicalizehostname false\ncheckhostip no\ncompression no\ncontrolmaster false\nenablesshkeysign no\nclearallforwardings no\nexitonforwardfailure no\nfingerprinthash SHA256\nforwardx11 no\nforwardx11trusted yes\ngatewayports no\ngssapiauthentication no\ngssapikeyexchange no\ngssapidelegatecredentials no\ngssapitrustdns no\ngssapirenewalforcesrekey no\ngssapikexalgorithms gss-group14-sha256-,gss-group16-sha512-,gss-nistp256-sha256-,gss-curve25519-sha256-,gss-group14-sha1-,gss-gex-sha1-\nhashknownhosts no\nhostbasedauthentication no\nidentitiesonly no\nkbdinteractiveauthentication yes\nnohostauthenticationforlocalhost no\npasswordauthentication yes\npermitlocalcommand no\nproxyusefdpass no\npubkeyauthentication true\nrequesttty auto\nsessiontype default\nstdinnull no\nforkafterauthentication no\nstreamlocalbindunlink no\nstricthostkeychecking ask\ntcpkeepalive yes\ntunnel false\nverifyhostkeydns false\nvisualhostkey no\nupdatehostkeys true\nenableescapecommandline no\ncanonicalizemaxdots 1\nconnectionattempts 1\nforwardx11timeout 1200\nnumberofpasswordprompts 3\nserveralivecountmax 3\nserveraliveinterval 300\nrequiredrsasize 1024\nobscurekeystroketiming yes\nciphers chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com\nhostkeyalgorithms ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nhostbasedacceptedalgorithms ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nkexalgorithms sntrup761x25519-sha512@openssh.com,curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256\ncasignaturealgorithms ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nloglevel INFO\nmacs umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1\nsecuritykeyprovider internal\npubkeyacceptedalgorithms ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nxauthlocation /usr/bin/xauth\nidentityfile ~/.ssh/id_rsa\nidentityfile ~/.ssh/id_ecdsa\nidentityfile ~/.ssh/id_ecdsa_sk\nidentityfile ~/.ssh/id_ed25519\nidentityfile ~/.ssh/id_ed25519_sk\nidentityfile ~/.ssh/id_xmss\nidentityfile ~/.ssh/id_dsa\ncanonicaldomains none\nglobalknownhostsfile /etc/ssh/ssh_known_hosts /etc/ssh/ssh_known_hosts2\nuserknownhostsfile /root/.ssh/known_hosts /root/.ssh/known_hosts2\nsetenv GREETING=Hello, World!\nlogverbose none\nchanneltimeout none\npermitremoteopen any\naddkeystoagent false\nforwardagent no\nconnecttimeout none\ntunneldevice any:any\ncanonicalizePermittedcnames none\ncontrolpersist no\nescapechar ~\nipqos lowdelay throughput\nrekeylimit 0 0\nstreamlocalbindmask 0177\nsyslogfacility USER\n",
+      "stderr": "Pseudo-terminal will not be allocated because stdin is not a terminal.\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original OpenSSH config parser and effective configuration evaluator",
+    "source": "https://man.openbsd.org/ssh"
+  },
+  "connection_performed": false,
+  "artifact_sha256": {
+    "examples/0639_ssh-config/ssh-config": "795987c8adbfb4a3a09a4ef9b9b80833ffe472a85b7992bbbc04e4e35b7c2d8e"
+  }
+}

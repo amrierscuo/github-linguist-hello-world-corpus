@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:29:41.673350+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0613_renderscript",
+      "command": [
+        "where.exe",
+        "llvm-rs-cc"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required llvm-rs-cc compiler/runtime and matching host resources are not available/configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine llvm-rs-cc compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0613_renderscript/hello.rs": "37d4b2bc5141a6beeeb3d4a32c86e5233c6a89dad24a32467ad0e340542dd3f6"
+  }
+}

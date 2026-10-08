@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const moduleRoot = process.argv[2];
+const browserslist = moduleRoot ? require(path.join(path.resolve(moduleRoot), 'browserslist')) : require('browserslist');
+const config = browserslist.loadConfig({ path: __dirname });
+assert.ok(config, 'Configuration must be found');
+const result = browserslist(config);
+assert.deepEqual(result, ['chrome 100', 'firefox 100']);
+console.log(result.join('\n'));
+console.log('PASS: native Browserslist parser and resolution selected exactly the two expected targets.');

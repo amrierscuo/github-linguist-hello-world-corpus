@@ -1,0 +1,55 @@
+{
+  "variant_extension": ".opencl",
+  "timestamp_utc": "2026-10-08T16:05:30.409296+00:00",
+  "scope": "Clang originale -x cl -cl-std=CL1.2 -fsyntax-only sul file .opencl. Nessuna GPU/device o esecuzione del kernel.",
+  "toolchain": {
+    "name": "Clang",
+    "version": "18.1.3",
+    "version_command": {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0502_opencl/variants/opencl-1927a002",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<WORKSPACE>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<WORKSPACE>/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<WORKSPACE>/work/tools_581_600/ubuntu/usr/lib/llvm-18/bin/clang",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Ubuntu clang version 18.1.3 (1ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: <WORKSPACE>/work/tools_581_600/ubuntu/usr/lib/llvm-18/bin\n",
+      "stderr": ""
+    },
+    "compiler_sha256": "8ef402d453d1ba4902e4ee0f0f847f6cfa01400c95aa43c24e97818b9c0e3f45"
+  },
+  "artifact_sha256": {
+    "examples/0502_opencl/variants/opencl-1927a002/hello.opencl": "e0819012bd9433a1443054f2d398e8f78cbb078fb35a76d0dc49dbcf205b0a9e"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0502_opencl/variants/opencl-1927a002",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<WORKSPACE>/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:<WORKSPACE>/work/tools_361_380/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<WORKSPACE>/work/tools_581_600/ubuntu/usr/lib/llvm-18/bin/clang",
+        "-x",
+        "cl",
+        "-cl-std=CL1.2",
+        "-fsyntax-only",
+        "hello.opencl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "sha256": {
+    "examples/0502_opencl/variants/opencl-1927a002/hello.opencl": "e0819012bd9433a1443054f2d398e8f78cbb078fb35a76d0dc49dbcf205b0a9e"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

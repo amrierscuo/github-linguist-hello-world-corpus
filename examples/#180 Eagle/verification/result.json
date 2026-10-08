@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ordinal": 180,
+  "language": "Eagle",
+  "timestamp_utc": "2026-10-08T12:01:47.817528+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; lxml 6.0.2; original EAGLE 7.7.0 vendor DTD mirrored in drtrigon/eagle",
+  "working_directory": "examples/0180_eagle",
+  "source_sha256": {
+    "examples/0180_eagle/hello.sch": "254292f02f3d9ed10e45ae37b82b23ee0c795fda7bf0cc7c6ef77c4f7c0ac333",
+    "examples/0180_eagle/requirements.txt": "34e5fb529466227c9312b4f99abcf96c0ebed5c6cce05535e6b8e17bf830ca41",
+    "examples/0180_eagle/verify.py": "327228c449f8c0fbe5039ce18ee6410fdd5185b92eeacc32d412ccb7477c001f"
+  },
+  "steps": [
+    {
+      "command": "python: lxml.__version__",
+      "exit_code": 0,
+      "stdout": "lxml 6.0.2\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <original-EAGLE-7.7.0-DTD>",
+      "exit_code": 0,
+      "stdout": "EAGLE vendor DTD 7.7.0 validation PASS; original text object on Info layer 97.\nCAD rendering still pending.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Original vendor DTD validates complete EAGLE schematic XML; declared text object value/layer checked. CAD import/render not run. DTD is the vendor format description mirrored by a third-party repository, not independently invented.",
+  "blockers": [
+    "Autodesk EAGLE/Fusion Electronics CAD opening and visual text check not performed."
+  ],
+  "external_reference_sha256": {
+    "url": "https://raw.githubusercontent.com/drtrigon/eagle/master/doc/eagle.dtd",
+    "sha256": "e5544a6aca7a9cdd81d53439f2709fb663b4587499ec36deb56c4976b686a6f0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "ordinal": 404,
+  "name": "M3U",
+  "timestamp_utc": "2026-10-08T12:26:30.341295+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + m3u8 6.0.0",
+  "artifact_sha256": {
+    "examples/0404_m3u/hello.m3u8": "dfcf5cbb67ed6a5acdc32e72686535b11b3d47423cc36b046cff707bd2122462",
+    "examples/0404_m3u/verify.py": "8e5504de4915c91e160e3f5cd67efd677a1aa8d9e238815e1e529b894f0f9a58"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

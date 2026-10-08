@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:27:22.908240+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native PostCSS parsing and custom property transformation",
+      "command": [
+        "node",
+        "verify.js"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_547_152722900265",
+      "exit_code": 0,
+      "stdout": ":root { --greeting: \"Hello, World!\"; }\n.greeting::before { content: \"Hello, World!\"; }\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "parser": {
+      "name": "postcss",
+      "version": "8.5.29",
+      "manifest_sha256": "d6f3d1e4970b5f3b4424348769974fecc13afccefccb95f09f8883f70b7f3d2e",
+      "lock_sha256": "4530f9528f56e38e1dee148a0585b4ff575a8148fc2321085bd7f3d5a2aef0c1",
+      "source": "https://www.npmjs.com/package/postcss"
+    },
+    "plugin": {
+      "name": "postcss-custom-properties",
+      "version": "15.0.4",
+      "manifest_sha256": "8970b1f7e127c1e5d8757a7e83d63611cbe610fcb766d3c96c4894819473a218",
+      "lock_sha256": "4530f9528f56e38e1dee148a0585b4ff575a8148fc2321085bd7f3d5a2aef0c1",
+      "source": "https://www.npmjs.com/package/postcss-custom-properties"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0547_postcss/hello.pcss": "7da058442245be1726962a0b9b571bf6e9e0f97b017d63380e9787759d71779c",
+    "examples/0547_postcss/verify.js": "ff2e4abf8e7a8ba5229e6a51467bb1074bf58302742a6a228f10f876d2a45bf2"
+  }
+}

@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION corpus_greeting RETURN VARCHAR2 IS
+BEGIN RETURN 'Hello, World!'; END;
+/

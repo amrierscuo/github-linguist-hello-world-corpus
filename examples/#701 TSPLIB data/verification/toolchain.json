@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:51:20.237737+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Original TSPLIB parser, node/edge evaluation and COMMENT extraction",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_701_155120223843",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "tsplib95",
+    "version": "0.7.1",
+    "metadata_sha256": "beaa1ff1ba0510cc2d40aed326080a95b30f837f9d238bcb62443cd28abf7def",
+    "source": "https://pypi.org/project/tsplib95/"
+  },
+  "artifact_sha256": {
+    "examples/0701_tsplib-data/hello.tsp": "1aa92dd2c65fef187ff67e7e27ac1a20344ac2fab71ec2121c02bc959efb2358",
+    "examples/0701_tsplib-data/verify.py": "1663637e2eb79e2dd979afb5938ceeb93666199baa603f439dc27f758eaa4f80"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "tsplib95",
+        "old_version": "0.7.1.dist",
+        "version": "0.7.1",
+        "original_metadata_sha256": "beaa1ff1ba0510cc2d40aed326080a95b30f837f9d238bcb62443cd28abf7def",
+        "original_metadata_file": "work/tools_701_720/python/tsplib95-0.7.1.dist-info/METADATA"
+      }
+    ]
+  }
+}

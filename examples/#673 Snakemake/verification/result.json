@@ -1,0 +1,34 @@
+{
+  "ordinal": 673,
+  "name": "Snakemake",
+  "timestamp_utc": "2026-10-08T13:38:23.957283+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python3.13.9 + Snakemake9.27.0",
+  "artifact_sha256": {
+    "examples/0673_snakemake/Snakefile": "52e0201309221a81a86e15d5ae2e8fc63f913387d21c7367656a0ea207a988f3"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "-c",
+        "from snakemake.cli import main; main()",
+        "--snakefile",
+        "${WORKSPACE}\\work\\tools_661_680\\build_0673\\Snakefile",
+        "--directory",
+        "${WORKSPACE}\\work\\tools_661_680\\build_0673",
+        "--cores",
+        "1",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Assuming unrestricted shared filesystem usage.\n\nSNAKEMAKE\n=========\n  Date: 2026-10-08 15:38:28\n  Workflow ID: 245cc3f0-b57e-49a5-9b85-3315a32dbe8b\n  Platform: Windows-11-10.0.26300-SP0\n  Host: ${LOCAL_HOST}\n  User: ${LOCAL_USER}\n  Snakemake version: 9.27.0\n  Python version: 3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]\n  Command: -c --snakefile ${WORKSPACE}\\work\\tools_661_680\\build_0673\\Snakefile --directory ${WORKSPACE}\\work\\tools_661_680\\build_0673 --cores 1 hello\n  Snakefile: ${WORKSPACE}\\work\\tools_661_680\\build_0673\\Snakefile\n  Base directory: ${WORKSPACE}\\work\\tools_661_680\\build_0673\n  Run directory: ${WORKSPACE}\\work\\tools_661_680\\build_0673\n  Working directory: ${WORKSPACE}\\work\\tools_661_680\\build_0673\n  Config file(s): []\n  Config MD5: 99914b932bd37a50b983c5e7c90ae93b\n\nBuilding DAG of jobs...\nProvided cores: 1 (use --cores to define parallelism)\nRules claiming more threads will be scaled down.\nJob stats:\njob      count\n-----  -------\nhello        1\ntotal        1\n\nSelect jobs to execute...\nExecute 1 jobs...\n\n[Thu Oct  8 15:38:29 2026]\nlocalrule hello:\n    jobid: 0\n    reason: Rules with neither input nor output files are always executed.\n    resources: tmpdir=${USERPROFILE}\\AppData\\Local\\Temp\n[Thu Oct  8 15:38:29 2026]\nFinished jobid: 0 (Rule: hello)\n1 of 1 steps (100%) done\nComplete log(s): ${WORKSPACE}\\work\\tools_661_680\\build_0673\\.snakemake\\log\\2026-10-08T153828.525830.snakemake.log\nElapsed time: 0:00:00.708233\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged.",
+  "additional_path_normalization": "Absolute local workspace/user profile prefixes and local host/user identifiers normalized for the public corpus; other tool outputs, exit codes, source hashes and timestamps unchanged."
+}

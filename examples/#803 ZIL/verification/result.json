@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ordinal": 803,
+  "language": "ZIL",
+  "timestamp_utc": "2026-10-08T13:38:32.256505+00:00",
+  "platform": "Windows compiler/assembler + WSL Frotz",
+  "toolchain": "ZILF 1.9; ZAPF 1.9; Frotz2.54",
+  "working_directory": "examples/0803_zil",
+  "source_sha256": {
+    "examples/0803_zil/hello.zap": "4d7303fe0a7481d9ccda6b9f6d0f948a7676b59fe2875f3decd195f5b773d292",
+    "examples/0803_zil/hello.zil": "73f05f00a02490d45f853ea6e66964ed6346f9ec5e9620ab0cd9cadb1fbb6dc6",
+    "examples/0803_zil/hello_data.zap": "9d6b92ba50927a207e4ab62b30fd78cbdb5d0f5bc1108add4f7189796d6eaddf",
+    "examples/0803_zil/hello_freq.zap": "21ced292c05c19b478099a59b32773b0d7b53e02ddd06f55f9902177f10f60f0",
+    "examples/0803_zil/hello_str.zap": "4150d5a7ca28424909486785cc16a9e367e64c1fc312973278aec2dfb7c2f0e0"
+  },
+  "steps": [
+    {
+      "command": "zilf --version",
+      "exit_code": 0,
+      "stdout": "1.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "zapf --version",
+      "exit_code": 0,
+      "stdout": "1.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "zilf build hello.zil <build>/hello.zap -S",
+      "exit_code": 0,
+      "stdout": "ZILF 1.9 built 6/13/2026 6:35:35 PM\n",
+      "stderr": ""
+    },
+    {
+      "command": "zapf hello.zap",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "ZAPF 1.9\nReading hello.zap\nReading hello_freq.zap\nReading hello_data.zap\nReading hello_str.zap\nMeasuring.\nAssembling\nWrote 892 bytes to hello.z3\n"
+    },
+    {
+      "command": "dfrotz -m <build>/hello.z3",
+      "exit_code": 0,
+      "stdout": "Using normal formatting.\nLoading hello.z3.\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original ZILF compiles original PRINTI/CRLF/QUIT; native ZAPF assembles delivered text and Frotz runs actual Z-machine story. Binary remains in work.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_801_820/803-assembler/hello.z3",
+      "sha256": "079827af96e8b3f0f6056267523507b2893faf7e80957b2f235cf490847a1517"
+    }
+  ]
+}

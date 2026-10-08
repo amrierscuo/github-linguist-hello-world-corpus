@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:28.143998+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "NSIS compiler version",
+      "cwd": "<corpus>/examples/0460_nsis",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "NSISDIR=<workspace>/work/tools_441_460/linux/usr/share/nsis",
+        "<workspace>/work/tools_441_460/linux/usr/bin/makensis",
+        "-VERSION"
+      ],
+      "exit_code": 0,
+      "stdout": "v3.09-4",
+      "stderr": ""
+    },
+    {
+      "label": "Compile installer only in scratch; never execute/install",
+      "cwd": "<corpus>/examples/0460_nsis",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_441_460/460",
+        "--",
+        "env",
+        "NSISDIR=<workspace>/work/tools_441_460/linux/usr/share/nsis",
+        "<workspace>/work/tools_441_460/linux/usr/bin/makensis",
+        "-NOCD",
+        "-V4",
+        "<corpus>/examples/0460_nsis/hello.nsi"
+      ],
+      "exit_code": 0,
+      "stdout": "MakeNSIS v3.09-4 - Copyright 1999-2023 Contributors\nSee the file COPYING for license details.\nCredits can be found in the Users Manual.\n\nProcessing script file: \"<corpus>/examples/0460_nsis/hello.nsi\" (UTF8)\nProcessing default plugins: \"<workspace>/work/tools_441_460/linux/usr/share/nsis/Plugins/x86-unicode/*.dll\"\n + AdvSplash::show\n + Banner::destroy\n + Banner::getWindow\n + Banner::show\n + BgImage::AddImage\n + BgImage::AddText\n + BgImage::Clear\n + BgImage::Destroy\n + BgImage::Redraw\n + BgImage::SetBg\n + BgImage::SetReturn\n + BgImage::Sound\n + Dialer::AttemptConnect\n + Dialer::AutodialHangup\n + Dialer::AutodialOnline\n + Dialer::AutodialUnattended\n + Dialer::GetConnectedState\n + InstallOptions::dialog\n + InstallOptions::initDialog\n + InstallOptions::make_unicode\n + InstallOptions::show\n + LangDLL::LangDialog\n + Math::Script\n + NSISdl::download\n + NSISdl::download_quiet\n + Splash::show\n + StartMenu::Init\n + StartMenu::Select\n + StartMenu::Show\n + System::Alloc\n + System::Call\n + System::Copy\n + System::Free\n + System::Get\n + System::Int64Op\n + System::Store\n + System::StrAlloc\n + TypeLib::GetLibVersion\n + TypeLib::Register\n + TypeLib::UnRegister\n + UserInfo::GetAccountType\n + UserInfo::GetName\n + UserInfo::GetOriginalAccountType\n + VPatch::GetFileCRC32\n + VPatch::GetFileMD5\n + VPatch::vpatchfile\n + nsDialogs::Create\n + nsDialogs::CreateControl\n + nsDialogs::CreateItem\n + nsDialogs::CreateTimer\n + nsDialogs::GetUserData\n + nsDialogs::KillTimer\n + nsDialogs::OnBack\n + nsDialogs::OnChange\n + nsDialogs::OnClick\n + nsDialogs::OnNotify\n + nsDialogs::SelectFileDialog\n + nsDialogs::SelectFolderDialog\n + nsDialogs::SetRTL\n + nsDialogs::SetUserData\n + nsDialogs::Show\n + nsExec::Exec\n + nsExec::ExecToLog\n + nsExec::ExecToStack\n\nName: \"Corpus Greeting\"\nOutFile: \"HelloInstaller.exe\"\nSection: \"Greeting\"\nMessageBox: 0: \"Hello, World!\"\nQuit\nSectionEnd\n\nProcessed 1 file, writing output (x86-unicode):\nProcessing pages... Done!\nRemoving unused resources... Done!\nGenerating language tables... Done!\n\nOutput: \"HelloInstaller.exe\"\nInstall: 1 page (64 bytes), 1 section (4120 bytes), 3 instructions (84 bytes), 24 strings (604 bytes), 1 language table (194 bytes).\n\nUsing zlib compression.\n\nEXE header size:               98816 / 100352 bytes\nInstall code:                    497 / 3410 bytes\nInstall data:                      0 / 0 bytes\nCRC (0xD0A398C1):                  4 / 4 bytes\n\nTotal size:                    99317 / 103766 bytes (95.7%)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "Installer script compiled; installer execution is intentionally not performed in this verification scope."
+  ],
+  "toolchain": {
+    "name": "Official NSIS script compiler and native Windows installer generator",
+    "version": "v3.09-4",
+    "executable_sha256": "ca9f28d9726d38d33b403187871af920b59c265eade7fa463684cf1e8b322d3e"
+  },
+  "installer_sha256": "16ff5b12ee0d6173b45807e941a5c5aedb1a5f0998f28d39f0dc1698c2ba371d",
+  "artifact_sha256": {
+    "examples/0460_nsis/hello.nsi": "53a05cc922d9656f5295e11711ff6daaf9b052f41fa51c956d05a83047fd7888"
+  }
+}

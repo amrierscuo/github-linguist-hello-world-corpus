@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:55:07.605577+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "JVM version",
+      "cwd": "<corpus>/examples/0125_closure-templates",
+      "command": [
+        "<java>",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "Official Soy compile and render with parameter control",
+      "cwd": "<corpus>/examples/0125_closure-templates",
+      "command": [
+        "<java>",
+        "--class-path",
+        "<workspace>/work/tools_121_140/soy-2024-02-26-SoyToJsSrcCompiler.jar",
+        "SoyCheck.java",
+        "hello.soy"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: official Soy compile/render and parameter control\n",
+      "stderr": "SoyCheck.java:7: warning: [deprecation] builder() in SoyFileSet has been deprecated\n        var tofu = SoyFileSet.builder().add(new File(args[0])).build().compileToTofu();\n                             ^\nSoyCheck.java:7: warning: [deprecation] compileToTofu() in SoyFileSet has been deprecated\n        var tofu = SoyFileSet.builder().add(new File(args[0])).build().compileToTofu();\n                                                                      ^\n2 warnings\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Google Closure Templates SoyFileSet compiler and SoyTofu renderer",
+    "version": "2024-02-26",
+    "jar_sha256": "8fb055ed2fc74c73b44615ef838cf9c1019a276fe858945e7e3e6bb3b67e42cf"
+  },
+  "artifact_sha256": {
+    "examples/0125_closure-templates/hello.soy": "f4a43e79291260f3fdb47268fb4a8bd9cfd9f931b150a28b5b3aec4842e679ac",
+    "examples/0125_closure-templates/SoyCheck.java": "acc75e7d49ef4b4b9bd5adfc765dce402fa295443be625182cf688449afdf57b"
+  }
+}

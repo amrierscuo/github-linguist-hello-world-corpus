@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:12.267164+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU Bash/Readline version",
+      "cwd": "<corpus>/examples/0602_readline-config",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "bash",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Readline parse and decoded macro binding",
+      "cwd": "<corpus>/examples/0602_readline-config",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "bash",
+        "--noprofile",
+        "--norc",
+        "-c",
+        "bind -f \"$1\"; bind -S",
+        "bash",
+        "<corpus>/examples/0602_readline-config/.inputrc"
+      ],
+      "exit_code": 0,
+      "stdout": "\\e[99~ outputs Hello, World!\n",
+      "stderr": "bash: line 1: bind: warning: line editing not enabled\nbash: line 1: bind: warning: line editing not enabled\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic GNU Bash Readline inputrc reader/bind macro listing",
+    "version": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "semantic_scope": "Native config read and macro value lookup; physical interactive keypress not exercised.",
+  "artifact_sha256": {
+    "examples/0602_readline-config/.inputrc": "1a94034eb9959307151a6f988b901efd332b150d95acbd56839f7436442ef35c"
+  }
+}

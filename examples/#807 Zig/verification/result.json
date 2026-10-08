@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "ordinal": 807,
+  "language": "Zig",
+  "timestamp_utc": "2026-10-08T13:38:42.134007+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Zig 0.15.2",
+  "working_directory": "examples/0807_zig",
+  "source_sha256": {
+    "examples/0807_zig/hello.zig": "c3991d5bc39404c60eb5ac0fd8942458a0a97a6e33cecf019e9b0e8bcc8642d7"
+  },
+  "steps": [
+    {
+      "command": "zig version",
+      "exit_code": 0,
+      "stdout": "0.15.2\n",
+      "stderr": ""
+    },
+    {
+      "command": "zig build-exe hello.zig -femit-bin=<build>/hello.exe",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello.exe",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Hello, World!\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed.",
+    "Official zig archive SHA-256 matches ziglang.org index: 3a0ed1e8799a2f8ce2a6e6290a9ff22e6906f8227865911fb7ddedc3cc14cb0c"
+  ],
+  "scope": "Official Zig compiler builds native Windows binary; actual std.debug.print stderr equals greeting.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/tools_801_820/zig.zip",
+      "sha256": "3a0ed1e8799a2f8ce2a6e6290a9ff22e6906f8227865911fb7ddedc3cc14cb0c"
+    }
+  ]
+}

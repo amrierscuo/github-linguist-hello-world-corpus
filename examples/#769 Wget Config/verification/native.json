@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:14.550663+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU Wget version",
+      "cwd": "<corpus>/examples/0769_wget-config",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "wget",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Wget 1.21.4 built on linux-gnu.\n\n-cares +digest -gpgme +https +ipv6 +iri +large-file -metalink +nls \n+ntlm +opie +psl +ssl/openssl \n\nWgetrc: \n    /etc/wgetrc (system)\nLocale: \n    /usr/share/locale \nCompile: \n    gcc -DHAVE_CONFIG_H -DSYSTEM_WGETRC=\"/etc/wgetrc\" \n    -DLOCALEDIR=\"/usr/share/locale\" -I. -I../../src -I../lib \n    -I../../lib -Wdate-time -D_FORTIFY_SOURCE=3 -DHAVE_LIBSSL -DNDEBUG \n    -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer \n    -ffile-prefix-map=/build/wget-JgCXcc/wget-1.21.4=. -flto=auto \n    -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection \n    -Wformat -Werror=format-security -fcf-protection \n    -fdebug-prefix-map=/build/wget-JgCXcc/wget-1.21.4=/usr/src/wget-1.21.4-1ubuntu4.5 \n    -DNO_SSLv2 -D_FILE_OFFSET_BITS=64 -g -Wall \nLink: \n    gcc -DHAVE_LIBSSL -DNDEBUG -g -O2 -fno-omit-frame-pointer \n    -mno-omit-leaf-frame-pointer \n    -ffile-prefix-map=/build/wget-JgCXcc/wget-1.21.4=. -flto=auto \n    -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection \n    -Wformat -Werror=format-security -fcf-protection \n    -fdebug-prefix-map=/build/wget-JgCXcc/wget-1.21.4=/usr/src/wget-1.21.4-1ubuntu4.5 \n    -DNO_SSLv2 -D_FILE_OFFSET_BITS=64 -g -Wall -Wl,-Bsymbolic-functions \n    -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -lpcre2-8 \n    -luuid -lidn2 -lssl -lcrypto -lz -lpsl ../lib/libgnu.a \n\nCopyright (C) 2015 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later\n<http://www.gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nOriginally written by Hrvoje Niksic <hniksic@xemacs.org>.\nPlease send bug reports and questions to <bug-wget@gnu.org>.\n",
+      "stderr": ""
+    },
+    {
+      "label": "genuine wgetrc parsing and localhost HTTP request",
+      "cwd": "<corpus>/examples/0769_wget-config",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0769_wget-config",
+        "--exec",
+        "python3",
+        "<corpus>/examples/0769_wget-config/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"command\": [\"wget\", \"--quiet\", \"--output-document=-\", \"http://127.0.0.1:33777/hello.txt\"], \"exit_code\": 0, \"stdout\": \"Hello, World!\\n\", \"stderr\": \"\", \"observed_user_agent\": [\"Hello, World!\"]}\nPASS: native GNU Wget reads config and sends exact User-Agent to loopback server\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "GNU Wget",
+    "version": "GNU Wget 1.21.4 built on linux-gnu."
+  },
+  "artifact_sha256": {
+    "examples/0769_wget-config/.wgetrc": "da98aa561a086f73836996a15b437936cbef7878ed2308946abe28bd94cfd8c9",
+    "examples/0769_wget-config/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0769_wget-config/verify.py": "7c20622498cf77546cf80feead81f5bcb073d79e641a271c8a1f610f87c47545"
+  }
+}

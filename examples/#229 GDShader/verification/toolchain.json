@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:39.318700+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Godot version",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_229_143439298549",
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Godot Dummy shader compiler parses GDShader and reflects uniform",
+      "command": [
+        "<workspace>\\work\\tools_221_240\\godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "<workspace>\\work\\tools_221_240\\verify_229_143439298549",
+        "--script",
+        "check_shader.gd"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_229_143439298549",
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nPASS: native shader compiler exposed exposure uniform\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Godot Engine official headless runtime",
+    "distribution": {
+      "file": "godot.zip",
+      "url": "https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip",
+      "sha256": "731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953"
+    }
+  },
+  "semantic_scope": "Actual ShaderCompiler in headless Dummy backend parses shader and exposes uniform; GPU fragment rendering not executed.",
+  "compiler_source": "https://github.com/godotengine/godot/blob/4.7/servers/rendering/dummy/storage/material_storage.cpp",
+  "artifact_sha256": {
+    "examples/0229_gdshader/check_shader.gd": "1318e79a8f9fbc31754e6625bb633f1ef4a7e7ac33096224254527f6bd35418c",
+    "examples/0229_gdshader/hello.gdshader": "a2dc4ed1ca6e044aa9cf6c218c77d9e795ebe5c265173156f541152e9ee0e816",
+    "examples/0229_gdshader/project.godot": "ca007654c7998b90c54ef3b170ebe6685f3dd1d3e490001bba3714c9012b336f"
+  }
+}

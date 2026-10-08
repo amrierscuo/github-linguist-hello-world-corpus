@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:41.635462+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Original libxml2 XML parser and greeting value extraction",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_785_155941621039",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "lxml",
+    "version": "6.1.3",
+    "metadata_sha256": "4038f4e4decac1c15eb5fd883abf1370f2df9b176b53bd172dd709d4542e2a48",
+    "source": "https://pypi.org/project/lxml/"
+  },
+  "artifact_sha256": {
+    "examples/0785_xml/hello.xml": "7d781811bb11ce90c2f8888d213afdd6b77bd78cb8f2a7e6a589ba5413dc3992",
+    "examples/0785_xml/verify.py": "72546ecb03d7414038bdecbf9e898b250547e7ec6d25241832472a2ae0d30eac"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "lxml",
+        "old_version": "6.1.3.dist",
+        "version": "6.1.3",
+        "original_metadata_sha256": "4038f4e4decac1c15eb5fd883abf1370f2df9b176b53bd172dd709d4542e2a48",
+        "original_metadata_file": "work/tools_781_800/python/lxml-6.1.3.dist-info/METADATA"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:45:36.587142+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Node version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_290_144536568162",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Handlebars compiler and renderer",
+      "command": [
+        "node",
+        "render.js"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_290_144536568162",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Handlebars JavaScript renderer",
+    "version": "4.7.10",
+    "manifest_sha256": "cf06251288836dd2ba6d8d1a83dbe4c8c944556c34e17a3263c86325115d2a3c",
+    "package_lock_sha256": "e2193ce5dedc2899c539a347c1d72d860e5d525537f52c8d3a1c3341889ef78c",
+    "source": "https://handlebarsjs.com/"
+  },
+  "artifact_sha256": {
+    "examples/0290_handlebars/hello.hbs": "c8a5cdec3b03ec742a9a6f1062f1ca729d8d0883a2fcf37c5758b5fb743d4c2c",
+    "examples/0290_handlebars/render.js": "b78a7d764f11b15930d514c45b9fb3584590638aa9fb78d60628909134b4cf31"
+  }
+}

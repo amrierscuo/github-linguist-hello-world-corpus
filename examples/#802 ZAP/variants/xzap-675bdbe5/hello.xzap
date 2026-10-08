@@ -1,0 +1,46 @@
+	.NEW 5
+
+	.BYTE 5
+	.BYTE FLAGS
+	.WORD RELEASEID
+	.WORD ENDLOD
+	.WORD START
+	.WORD VOCAB
+	.WORD OBJECT
+	.WORD GLOBAL
+	.WORD IMPURE
+	.WORD FLAGS2
+	.BYTE 0,0,0,0,0,0
+	.WORD WORDS
+	.WORD 0,0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD TCHARS
+	.WORD 0
+	.WORD 0
+	.WORD CHRSET
+	.WORD EXTAB
+	.WORD 0
+	.WORD 0
+	.WORD 0
+	.WORD 0
+
+	.INSERT "hello_freq.xzap"
+	.INSERT "hello_data.xzap"
+
+	.CREATOR "ZILF190~"
+
+	.FUNCT GO
+START::
+	PRINTI "Hello, World!"
+	CRLF
+	QUIT
+
+	.INSERT "hello_str.xzap"
+	.END

@@ -1,0 +1,10 @@
+const fs = require("node:fs");
+const vm = require("node:vm");
+const assert = require("node:assert/strict");
+const compiler = require("ember-script");
+const parsed = compiler.parse(fs.readFileSync("hello.em", "utf8"));
+const output = compiler.js(compiler.compile(parsed));
+const lines = [];
+vm.runInNewContext(output, {console: {log: value => lines.push(value)}});
+assert.deepEqual(lines, ["Hello, World!"]);
+console.log(lines[0]);

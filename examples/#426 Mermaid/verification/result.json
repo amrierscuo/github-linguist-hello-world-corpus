@@ -1,0 +1,34 @@
+{
+  "ordinal": 426,
+  "name": "Mermaid",
+  "timestamp_utc": "2026-10-08T12:45:26.320529+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + Mermaid 11.12.0 + jsdom 26.1.0",
+  "artifact_sha256": {
+    "examples/0426_mermaid/hello.mmd": "81d7210bdc34658684885842d1f77c662eddbd92474995475e1df6c91fd7aa5c",
+    "examples/0426_mermaid/verify.cjs": "12095f5bd9116fec98f4704d4d308b61f8c902ab2d2f61ad27b0535134d10834"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

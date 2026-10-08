@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:45:30.621912+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "PHP version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_284_144530612820",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_284_144530612820",
+      "exit_code": 0,
+      "stdout": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native PHP template syntax check",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_284_144530612820",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "-l",
+        "hello.phtml"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_284_144530612820",
+      "exit_code": 0,
+      "stdout": "No syntax errors detected in hello.phtml\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native PHP template rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_284_144530612820",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "hello.phtml"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_284_144530612820",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original PHP CLI template runtime",
+    "packages": [
+      {
+        "file": "php8.3-cli_8.3.6-0ubuntu0.24.04.11_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/php8.3/php8.3-cli_8.3.6-0ubuntu0.24.04.11_amd64.deb",
+        "sha256": "0c1730e4b6e2ba0126a620c373ab6e66eb72ae7276671684863e649d03f8edcd",
+        "package": "php8.3-cli",
+        "version": "8.3.6-0ubuntu0.24.04.11"
+      },
+      {
+        "file": "php8.3-common_8.3.6-0ubuntu0.24.04.11_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/p/php8.3/php8.3-common_8.3.6-0ubuntu0.24.04.11_amd64.deb",
+        "sha256": "eeee3f24113506f2b39ff58b271c906494e3f952e5e33e333e53e422d3b65162",
+        "package": "php8.3-common",
+        "version": "8.3.6-0ubuntu0.24.04.11"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0284_html-php/hello.phtml": "16ad86bb05030d64957f6357c9034fd20933842ee81541694a339a4a8d07cdd1"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "ordinal": 588,
+  "name": "REXX",
+  "timestamp_utc": "2026-10-08T13:20:55.858366+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Regina REXX 3.9.5 native Ubuntu",
+  "artifact_sha256": {
+    "examples/0588_rexx/hello.rexx": "ab6afe53228f4176743b1e5143a5dcff51930de23b02397bd4ed5e3755018b50"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu",
+        "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/regina",
+        "${WORKSPACE_WSL}/work/staging_581_600/examples/0588_rexx/hello.rexx"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_version_recheck": {
+    "timestamp_utc": "2026-10-08T14:15:28.990205+00:00",
+    "command": [
+      "wsl",
+      "-d",
+      "Ubuntu",
+      "--exec",
+      "env",
+      "LD_LIBRARY_PATH=${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu",
+      "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/regina",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/regina: REXX-Regina_3.9.5(MT) 5.00 25 Jun 2022 (64 bit)\n",
+    "stderr": "",
+    "reason": "Corrected descriptive version by querying the same original Regina executable; source hashes and original greeting execution unchanged."
+  }
+}

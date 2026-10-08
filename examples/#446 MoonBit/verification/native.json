@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:04:28.450058+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Official MoonBit version",
+      "cwd": "<corpus>/examples/0446_moonbit",
+      "command": [
+        "<workspace>/work/tools_441_460/moonbit/bin/moon.exe",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "moon 0.1.20260920 (914d7da 2026-09-20)\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile official MoonBit core standard library for JS",
+      "cwd": "<workspace>/work/tools_441_460/moonbit/lib/core",
+      "command": [
+        "<workspace>/work/tools_441_460/moonbit/bin/moon.exe",
+        "bundle",
+        "--target",
+        "js",
+        "--all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Finished. moon: ran 328 tasks, now up to date\n"
+    },
+    {
+      "label": "Native MoonBit build and JavaScript target execution",
+      "cwd": "<workspace>/work/tools_441_460/446",
+      "command": [
+        "<workspace>/work/tools_441_460/moonbit/bin/moon.exe",
+        "run",
+        "--target",
+        "js",
+        "cmd/main"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Warning: `moon.mod.json` at '<workspace>\\work\\tools_441_460\\446' is deprecated. Run `moon fmt` to migrate to `moon.mod`.\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official MoonBit compiler/build tool and core standard library",
+    "version": "moon 0.1.20260920 (914d7da 2026-09-20)\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
+    "moon_sha256": "b08924405369790f8180accd1e0fbafaa328eac0146c5fe2c25f3a44d5b0bcff",
+    "moonc_sha256": "6b3a1dcc9ff45face804e0aab361277baeb463f841aa99be7944c61bd13f2bbb",
+    "official_archive_sha256": "faae225a8287d0ce69e44b5b3f754af988e97f4446056d8f32ceb3ddb998fce7"
+  },
+  "artifact_sha256": {
+    "examples/0446_moonbit/moon.mod.json": "676cc4e8d8d8c46801e776fadbc0ca8a8728157c6a41ee136f298beadcd89647",
+    "examples/0446_moonbit/cmd/main/main.mbt": "49719e35c88ee740038a1c0c6b79488eb8fd3acca32e4b195cde09ba6e2bc516",
+    "examples/0446_moonbit/cmd/main/moon.pkg.json": "35e4ee8e3483aecccc759da9c51e5c1fbb98c6d2ead37289245b8f9b5df10021"
+  }
+}

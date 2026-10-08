@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:48:54.036981+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Haskell 98 parser and program interpreter",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_293_144854034789",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "HUGSDIR=<workspace>/work/tools_281_300/ubuntu/usr/lib/hugs",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/runhugs",
+        "+98",
+        "-P<workspace>/work/tools_281_300/ubuntu/usr/lib/hugs/packages/hugsbase:<workspace>/work/tools_281_300/ubuntu/usr/lib/hugs/packages/base:<workspace>/work/tools_281_300/ubuntu/usr/lib/hugs/packages/haskell98:<workspace>/work/tools_281_300/ubuntu/usr/lib/hugs/oldlib",
+        "Hello.hs"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_293_144854034789",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Hugs 98 Haskell interpreter",
+    "packages": [
+      {
+        "file": "hugs_98.200609.21-6build3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/hugs98/hugs_98.200609.21-6build3_amd64.deb",
+        "sha256": "648758084e732b14f5840a508d8fed025fa47311d2d9b7edabc3d32ad406158d",
+        "package": "hugs",
+        "version": "98.200609.21-6build3"
+      },
+      {
+        "file": "libhugs-base-bundled_98.200609.21-6build3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/hugs98/libhugs-base-bundled_98.200609.21-6build3_amd64.deb",
+        "sha256": "78770cbe7fbfe4702364fb961c6c1a781d545f9c047f4565513b48c099bbce05",
+        "package": "libhugs-base-bundled",
+        "version": "98.200609.21-6build3"
+      },
+      {
+        "file": "libhugs-haskell98-bundled_98.200609.21-6build3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/hugs98/libhugs-haskell98-bundled_98.200609.21-6build3_amd64.deb",
+        "sha256": "a5544be01e9259a8df8848c8ec9b4a96fb44b3145b3660db0c78c7d79446b55d",
+        "package": "libhugs-haskell98-bundled",
+        "version": "98.200609.21-6build3"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0293_haskell/Hello.hs": "f0f9f9ce5a85917008baf50983780a8649283ed700ccf6b76040d1746aead26d"
+  }
+}

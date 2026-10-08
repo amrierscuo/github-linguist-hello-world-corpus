@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:40.307199+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Go compiler version",
+      "cwd": "<corpus>/examples/0682_starlark",
+      "command": [
+        "<workspace>/work/tools_241_260/go/bin/go.exe",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "go version go1.27.1 windows/amd64\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original Go host and execute Starlark function/print",
+      "cwd": "<workspace>/work/tools_681_700/682",
+      "command": [
+        "<workspace>/work/tools_241_260/go/bin/go.exe",
+        "run",
+        "-mod=mod",
+        "verify.go",
+        "<corpus>/examples/0682_starlark/hello.star"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: authentic Google Starlark evaluator and parameter control\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic Google Starlark Go evaluator",
+    "version": "go.starlark.net v0.0.0-20261005163335-bcb1a1a55bf9; go version go1.27.1 windows/amd64"
+  },
+  "artifact_sha256": {
+    "examples/0682_starlark/go.mod": "3567f19df058c05a16aa53b6ff4f19ef5ef40e2025f8bf95bc37a15a5f7fe328",
+    "examples/0682_starlark/go.sum": "1240196ae068c0b8ad5269d9661d37c13a384d7ad37ee93be4bcddced6f68d16",
+    "examples/0682_starlark/hello.star": "3a2f613a91eb493a6536fc423ed112f1b2bc540b7671915f1800a62131dab3bc",
+    "examples/0682_starlark/verify.go": "fa215347b3efb9ebc3b317dcbe8f08b7d6a9f439bcc6e7c124c238663d87dd73"
+  }
+}

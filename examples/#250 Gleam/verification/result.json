@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ordinal": 250,
+  "language": "Gleam",
+  "timestamp_utc": "2026-10-08T12:15:38.798185+00:00",
+  "platform": "Windows x64",
+  "toolchain": "gleam 1.19.1; Node.js 22.20.0; Hex dependencies in real manifest.toml",
+  "working_directory": "examples/0250_gleam",
+  "source_sha256": {
+    "examples/0250_gleam/gleam.toml": "21a08bf09ded62a3adaa99ccdbf3f348ea32422412cb99a5cd9e150cf45e8453",
+    "examples/0250_gleam/manifest.toml": "fab03f86d9edb723ede5569543faf5e72f28e6407b769301efdb315aca36a22b",
+    "examples/0250_gleam/src/hello_world_corpus.gleam": "c5d54c75288a6883c99f1f9b933f7308a827b298e64683f297f13d540124925b"
+  },
+  "steps": [
+    {
+      "command": "gleam --version",
+      "exit_code": 0,
+      "stdout": "gleam 1.19.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "gleam check",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "  Resolving versions\nDownloading packages\n Downloaded 1 package in 0.45s\n      Added gleam_stdlib v1.0.5\n  Compiling gleam_stdlib\n   Checking hello_world_corpus\n   Compiled in 0.37s\n"
+    },
+    {
+      "command": "gleam run --target javascript --runtime node",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "  Compiling hello_world_corpus\n   Compiled in 0.07s\n    Running hello_world_corpus.main\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Official Gleam compiler type checks and emits JavaScript; Node executes main with real gleam/io println. Build output and package cache are isolated in work.",
+  "blockers": []
+}

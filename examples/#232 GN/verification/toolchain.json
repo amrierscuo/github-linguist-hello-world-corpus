@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:40.199950+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "GN version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_232_143440157747",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gn",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_232_143440157747",
+      "exit_code": 0,
+      "stdout": "1000 (03d10f1)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Ninja version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_232_143440157747",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ninja",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_232_143440157747",
+      "exit_code": 0,
+      "stdout": "1.11.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native GN evaluation and Ninja file generation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_232_143440157747",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gn",
+        "gen",
+        "out"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_232_143440157747",
+      "exit_code": 0,
+      "stdout": "Done. Made 1 targets from 2 files in 53ms\n",
+      "stderr": ""
+    },
+    {
+      "label": "Run real generated build action",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_232_143440157747",
+        "--",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ninja",
+        "-C",
+        "out",
+        "greeting"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_232_143440157747",
+      "exit_code": 0,
+      "stdout": "ninja: Entering directory `out'\n[1/2] ACTION //:greeting(//:default)\nHello, World!\n[2/2] STAMP obj/greeting.stamp\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original GN and Ninja",
+    "packages": [
+      {
+        "file": "generate-ninja_0.0~git20240221.03d10f1-1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/generate-ninja/generate-ninja_0.0~git20240221.03d10f1-1_amd64.deb",
+        "sha256": "db09282f56716b9d4e4525da0218afda97c8e0ec3cdcfa24bc9914c2096eac2c",
+        "package": "generate-ninja",
+        "version": "0.0~git20240221.03d10f1-1"
+      },
+      {
+        "file": "ninja-build_1.11.1-2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/ninja-build/ninja-build_1.11.1-2_amd64.deb",
+        "sha256": "6a17f76a0f75586f1292f6c61a9b07fd0dec963baf6a102b17673f601c6b323a",
+        "package": "ninja-build",
+        "version": "1.11.1-2"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0232_gn/.gn": "2e1be24cedc34a309ca28ee22ae64d015298b9107fec104e4046afe43a75c0f0",
+    "examples/0232_gn/BUILD.gn": "f73ce2ac8feaddeb330ea4501a025dafc9c265e3b1f8cd02748a710d37ca6163",
+    "examples/0232_gn/BUILDCONFIG.gn": "cf51446c6ec5a478952982a22c851749edc25a60b0b9d990f56e14c358fb2963",
+    "examples/0232_gn/hello.py": "52f7ccc8356f382ba40be1cdcae59eabacaae5f261f2ae026f1cef3dfd3dfb92"
+  }
+}

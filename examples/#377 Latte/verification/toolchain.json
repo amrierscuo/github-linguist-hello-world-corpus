@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:51.950956+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "PHP version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_377_150651924086",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "LATTE_SOURCE=<workspace>/work/tools_361_380/latte/latte-3.0.26/src/Latte",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_377_150651924086",
+      "exit_code": 0,
+      "stdout": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Latte parsing, PHP compilation and rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_361_380/verify_377_150651924086",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "LATTE_SOURCE=<workspace>/work/tools_361_380/latte/latte-3.0.26/src/Latte",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/php8.3",
+        "-n",
+        "-d",
+        "extension=<workspace>/work/tools_281_300/ubuntu/usr/lib/php/20230831/tokenizer.so",
+        "render.php"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_377_150651924086",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Latte PHP renderer",
+    "distribution": {
+      "file": "latte.zip",
+      "url": "https://codeload.github.com/nette/latte/zip/refs/tags/v3.0.26",
+      "sha256": "04c153bd0881b11c86aee27d9966b2acf5760532ed3a0a0332099058fd2a5fd5"
+    },
+    "php_version": "8.3.6"
+  },
+  "artifact_sha256": {
+    "examples/0377_latte/hello.latte": "47a07853a39884c62b8195b7675a98539c584a603f8a900a6f1898ab9040d621",
+    "examples/0377_latte/render.php": "aef0f2fb86ee3842c137e0911a25d2dec95b18727bde9487bee0592b0c23dbf6"
+  }
+}

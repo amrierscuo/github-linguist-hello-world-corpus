@@ -1,0 +1,5 @@
+CREATE OR REPLACE TYPE corpus_greeting AS OBJECT (
+  audience VARCHAR2(20),
+  MEMBER FUNCTION greeting RETURN VARCHAR2
+);
+/

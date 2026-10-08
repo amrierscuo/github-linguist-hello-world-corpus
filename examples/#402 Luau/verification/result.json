@@ -1,0 +1,34 @@
+{
+  "ordinal": 402,
+  "name": "Luau",
+  "timestamp_utc": "2026-10-08T12:26:30.236395+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Luau official release 0.741 Windows x64",
+  "artifact_sha256": {
+    "examples/0402_luau/hello.luau": "59439a4385c49d9110c281b097bb1d86a3f64fc7f41cfe8b24ca15a1b6f6deb1"
+  },
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_401_420\\luau\\luau-analyze.exe",
+        "hello.luau"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_401_420\\luau\\luau.exe",
+        "hello.luau"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "release_tag": "0.741",
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

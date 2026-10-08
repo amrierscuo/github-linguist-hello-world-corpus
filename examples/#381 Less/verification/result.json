@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "ordinal": 381,
+  "language": "Less",
+  "timestamp_utc": "2026-10-08T12:49:26.160251+00:00",
+  "platform": "Windows x64",
+  "toolchain": "less 4.9.1; Node 22.20.0; Chrome 154.0.8037.98",
+  "working_directory": "examples/0381_less",
+  "source_sha256": {
+    "examples/0381_less/hello.html": "88129984da331c43549954def54536ca1c4d202e4e46b7b9dd91c676d9ecd2bf",
+    "examples/0381_less/hello.less": "c05f5ca2865256e200a9374d15565ea2f04ec5d395eac85ad20bb908877eb556",
+    "examples/0381_less/package.json": "8304a9679b1c38c9bacb9e3ce46d87f597b5d4368c23a5d8e0fe582521c30331"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "lessc --version",
+      "exit_code": 0,
+      "stdout": "lessc 4.9.1 (Less Compiler) [JavaScript]\n",
+      "stderr": ""
+    },
+    {
+      "command": "lessc hello.less <build>/hello.css",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "Read native Chrome product version",
+      "exit_code": 0,
+      "stdout": "154.0.8037.98\n",
+      "stderr": ""
+    },
+    {
+      "command": "chrome --headless=new --user-data-dir=<work-profile> --allow-file-access-from-files --virtual-time-budget=1000 --dump-dom <build>/hello.html",
+      "exit_code": 0,
+      "stdout": "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Less greeting</title>\n<link rel=\"stylesheet\" href=\"hello.css\"></head><body><p class=\"greeting\"></p>\n<pre id=\"result\">{\"pass\":true,\"content\":\"\\\"Hello, World!\\\"\",\"color\":\"rgb(18, 69, 120)\"}</pre><script>\nconst node = document.querySelector('.greeting');\nconst style = getComputedStyle(node, '::before');\nconst content = style.content;\nconst color = getComputedStyle(node).color;\nconst pass = content === '\"Hello, World!\"' && color === 'rgb(18, 69, 120)';\ndocument.querySelector('#result').textContent = JSON.stringify({pass, content, color});\nif (!pass) throw new Error('Less rendered greeting mismatch');\n</script>\n</body></html>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Less compiler evaluates variables/interpolation/nested selector into real CSS; native Chromium computes ::before content Hello, World! and RGB(18,69,120). Build/browser profile confined in work.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_381_400/381/hello.css",
+      "sha256": "d0182177774eee88a7514a4deb985675099f1b54ef8828a86ad4379241c96908"
+    }
+  ]
+}

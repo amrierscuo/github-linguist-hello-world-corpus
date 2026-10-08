@@ -1,0 +1,18 @@
+const fs = require('node:fs');
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const { FluentParser } = require(path.resolve(process.argv[2], 'node_modules/@fluent/syntax'));
+const { FluentBundle, FluentResource } = require(path.resolve(process.argv[2], 'node_modules/@fluent/bundle'));
+const source = fs.readFileSync(process.argv[3], 'utf8');
+const ast = new FluentParser().parse(source);
+assert.equal(ast.body.filter(node => node.type === 'Junk').length, 0);
+assert.equal(ast.body[0].id.name, 'hello');
+const bundle = new FluentBundle('en-US', {useIsolating: false});
+assert.deepEqual(bundle.addResource(new FluentResource(source)), []);
+const message = bundle.getMessage('hello');
+const errors = [];
+assert.equal(bundle.formatPattern(message.value, {name: 'World'}, errors), 'Hello, World!');
+assert.equal(bundle.formatPattern(message.value, {name: 'Reader'}, errors), 'Hello, Reader!');
+assert.deepEqual(errors, []);
+console.log('Hello, World!');
+console.log('PASS: official Fluent AST and localization bundle; variable control');

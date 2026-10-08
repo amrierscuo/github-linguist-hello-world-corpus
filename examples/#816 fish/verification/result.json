@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "ordinal": 816,
+  "language": "fish",
+  "timestamp_utc": "2026-10-08T13:38:35.831384+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "fish, version 3.7.0",
+  "working_directory": "examples/0816_fish",
+  "source_sha256": {
+    "examples/0816_fish/hello.fish": "641fbfba03c65ed0e5a373e123418404242d83a81992443a208f8d3e8eb668e5"
+  },
+  "steps": [
+    {
+      "command": "fish --version",
+      "exit_code": 0,
+      "stdout": "fish, version 3.7.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "fish --no-config --no-execute hello.fish",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "fish --no-config hello.fish",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original fish parser/runtime expands variable and printf prints exact greeting; user configuration skipped.",
+  "blockers": []
+}

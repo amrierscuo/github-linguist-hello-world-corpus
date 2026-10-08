@@ -1,0 +1,41 @@
+{
+  "ordinal": 401,
+  "name": "Lua",
+  "timestamp_utc": "2026-10-08T12:27:49.448023+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Lua 5.4.8 native Linux build from original sources",
+  "artifact_sha256": {
+    "examples/0401_lua/hello.lua": "07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_401_420/lua-5.4.8/src/lua",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "Lua 5.4.8  Copyright (C) 1994-2025 Lua.org, PUC-Rio\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_401_420/lua-5.4.8/src/lua",
+        "${WORKSPACE_WSL}/work/staging_401_420/examples/0401_lua/hello.lua"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

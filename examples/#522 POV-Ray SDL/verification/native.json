@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:21:01.552860+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "POV-Ray native version",
+      "cwd": "<corpus>/examples/0522_pov-ray-sdl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu/pulseaudio",
+        "<workspace>/work/tools_521_540/linux/usr/bin/povray",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "povray: cannot open the system configuration file /etc/povray/3.7/povray.conf: No such file or directory\npovray: cannot open the user configuration file /home/a/.povray/3.7/povray.conf: No such file or directory\npovray: I/O restrictions are disabled\nPOV-Ray 3.7.0.10.unofficial\n\nThis is an unofficial version compiled by:\n William Grant <wgrant@ubuntu.com> for Debian <www.debian.org>\n The POV-Ray Team is not responsible for supporting this version.\n\nCopyright 1991-2013 Persistence of Vision Raytracer Pty. Ltd.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nBuilt-in features:\n  I/O restrictions:          enabled\n  X Window display:          enabled (using SDL)\n  Supported image formats:   gif tga iff ppm pgm hdr png jpeg tiff openexr\n  Unsupported image formats: -\n\nCompilation settings:\n  Build architecture:  x86_64-pc-linux-gnu\n  Built/Optimized for: x86_64-pc-linux-gnu\n  Compiler vendor:     gnu\n  Compiler version:    g++\n  Compiler flags:      -pipe -Wno-multichar -Wno-write-strings -fno-enforce-eh-specs -Wno-non-template-friend -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/povray-6LMpmF/povray-3.7.0.10=/usr/src/povray-1:3.7.0.10-3build4 -O3\n"
+    },
+    {
+      "label": "Native SDL parse, debug string and 16x16 scene rendering",
+      "cwd": "<corpus>/examples/0522_pov-ray-sdl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_521_540/522",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu/pulseaudio",
+        "<workspace>/work/tools_521_540/linux/usr/bin/povray",
+        "+I<corpus>/examples/0522_pov-ray-sdl/hello.pov",
+        "+O<workspace>/work/tools_521_540/522/hello.png",
+        "+W16",
+        "+H16",
+        "-D",
+        "+FN"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "povray: cannot open the system configuration file /etc/povray/3.7/povray.conf: No such file or directory\npovray: cannot open the user configuration file /home/a/.povray/3.7/povray.conf: No such file or directory\npovray: I/O restrictions are disabled\npovray: cannot open an INI file, adding default library path\nPersistence of Vision(tm) Ray Tracer Version 3.7.0.10.unofficial (g++ @\n x86_64-pc-linux-gnu)\nThis is an unofficial version compiled by:\n William Grant <wgrant@ubuntu.com> for Debian <www.debian.org>\n The POV-Ray Team is not responsible for supporting this version.\n\nPOV-Ray is based on DKBTrace 2.12 by David K. Buck & Aaron A. Collins\nCopyright 1991-2013 Persistence of Vision Raytracer Pty. Ltd.\n\nPrimary POV-Ray 3.7 Architects/Developers: (Alphabetically)\n  Chris Cason         Thorsten Froehlich  Christoph Lipka   \n\nWith Assistance From: (Alphabetically)\n  Ton van den Broek   Nicolas Calimet     Jerome Grimbert     James Holsenback  \n  Christoph Hormann   Nathan Kopp         Juha Nieminen     \n\nPast Contributors: (Alphabetically)\n  Steve Anger         Eric Barish         Dieter Bayer        David K. Buck     \n  Nicolas Calimet     Chris Cason         Aaron A. Collins    Chris Dailey      \n  Steve Demlow        Andreas Dilger      Alexander Enzmann   Dan Farmer        \n  Thorsten Froehlich  Mark Gordon         James Holsenback    Christoph Hormann \n  Mike Hough          Chris Huff          Kari Kivisalo       Nathan Kopp       \n  Lutz Kretzschmar    Christoph Lipka     Jochen Lippert      Pascal Massimino  \n  Jim McElhiney       Douglas Muir        Juha Nieminen       Ron Parker        \n  Bill Pulver         Eduard Schwan       Wlodzimierz Skiba   Robert Skinner    \n  Yvo Smellenbergh    Zsolt Szalavari     Scott Taylor        Massimo Valentini \n  Timothy Wegner      Drew Wells          Chris Young       \n\nOther contributors are listed in the documentation.\n\nSupport libraries used by POV-Ray:\n  ZLib 1.3, Copyright 1995-2012 Jean-loup Gailly and Mark Adler\n  LibPNG 1.6.43, Copyright 1998-2012 Glenn Randers-Pehrson\n  LibJPEG , Copyright 1991-2013 Thomas G. Lane, Guido Vollbeding\n  LibTIFF 4.5.1, Copyright 1988-1997 Sam Leffler, 1991-1997 SGI\n  Boost 1.83, http://www.boost.org/\n  OpenEXR 3.1.5 and Imath 3.1.9, Copyright (c) Contributors to the OpenEXR\n Project.\n\nParser Options\n  Input file: ${USERPROFILE_WSL}/Documents/Codex/2026-10-08/ho-iniziato-lo-zip-u\nsando-esattamente/work/staging_521_540/examples/0522_pov-ray-sdl/hello.pov\n  Remove bounds........On \n  Split unions.........Off\n  Library paths:\n    /usr/share/povray-3.7/include\n  Clock value:    0.000  (Animation off)\nImage Output Options\n  Image resolution.....16 by 16 (rows 1 to 16, columns 1 to 16).\n  Output file..........${USERPROFILE_WSL}/Documents/Codex/2026-10-08/ho-iniziato\n-lo-zip-usando-esattamente/work/tools_521_540/522/hello.png, 24 bpp PNG\n  Dithering............Off\n  Graphic display......Off\n  Mosaic preview.......Off\n  Continued trace......Off\nInformation Output Options\n  All Streams to console..........On \n  Debug Stream to console.........On \n  Fatal Stream to console.........On \n  Render Stream to console........On \n  Statistics Stream to console....On \n  Warning Stream to console.......On \n==== [Parsing...] ==========================================================\nHello, World!\n----------------------------------------------------------------------------\nParser Statistics\n----------------------------------------------------------------------------\nFinite Objects:            1\nInfinite Objects:          0\nLight Sources:             1\nTotal:                     2\n----------------------------------------------------------------------------\nParser Time\n  Parse Time:       0 hours  0 minutes  0 seconds (0.008 seconds)\n              using 1 thread(s) with 0.000 CPU-seconds total\n  Bounding Time:    0 hours  0 minutes  0 seconds (0.000 seconds)\n              using 1 thread(s) with 0.000 CPU-seconds total\n----------------------------------------------------------------------------\nRender Options\n  Quality:  9\n  Bounding boxes.......On   Bounding threshold: 3\n  Antialiasing.........Off\n==== [Rendering...] ========================================================\nRendered 256 of 256 pixels (100%)\n----------------------------------------------------------------------------\nRender Statistics\nImage Resolution 16 x 16\n----------------------------------------------------------------------------\nPixels:              256   Samples:               0   Smpls/Pxl: 0.00\nRays:                256   Saved:                 0   Max Level: 1/5\n----------------------------------------------------------------------------\nRay->Shape Intersection          Tests       Succeeded  Percentage\n----------------------------------------------------------------------------\nSphere                             250             105     42.00\nBounding Box                       564             500     88.65\n----------------------------------------------------------------------------\nShadow Ray Tests:                58   Succeeded:                     0\n----------------------------------------------------------------------------\n----------------------------------------------------------------------------\nRender Time:\n  Photon Time:      No photons\n  Radiosity Time:   No radiosity\n  Trace Time:       0 hours  0 minutes  0 seconds (0.001 seconds)\n              using 16 thread(s) with 0.000 CPU-seconds total\nPOV-Ray finished\n\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original POV-Ray SDL parser and renderer",
+    "version": "POV-Ray 3.7.0.10 Ubuntu 3build4",
+    "executable_sha256": "dbe37ac5cb9585819512ebeb238f7e53c47430b659143876e6bbf5b56a8cec10"
+  },
+  "generated_image_sha256": "69533e8be7cb413fe6a06efde2893b342fdb09cc7ff151dcc91ecbd407b13e3e",
+  "artifact_sha256": {
+    "examples/0522_pov-ray-sdl/hello.pov": "9d3e855564334262c3425eabd49b3d9e90224cf384e5038eed5b29286cdf196f"
+  },
+  "additional_path_normalization": "Absolute local workspace/user profile prefixes normalized for the public corpus; tool outputs, exit codes, source hashes and timestamps otherwise unchanged."
+}

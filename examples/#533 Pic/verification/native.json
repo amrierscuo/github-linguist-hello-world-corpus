@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.068669+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU Pic version",
+      "cwd": "<corpus>/examples/0533_pic",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "pic",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU pic (groff) version 1.23.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse original Pic through genuine GNU preprocessor",
+      "cwd": "<corpus>/examples/0533_pic",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "pic",
+        "<corpus>/examples/0533_pic/hello.pic"
+      ],
+      "exit_code": 0,
+      "stdout": ".do if !dPS .ds PS\n.do if !dPE .ds PE\n.do if !dPF .ds PF\n.do if !dPY .ds PY\n.lf 1 <corpus>/examples/0533_pic/hello.pic\n.lf 1\n.PS 0.500i 2.000i\n.\\\" 0 -0.25 2 0.25\n.\\\" 0.000i 0.500i 2.000i 0.000i\n.nr 00 \\n(.u\n.nf\n.nr 0x 1\n\\h'2.000i'\n.sp -1\n\\D't -1.000p'\\h'1.000p'\n.sp -1\n\\h'2.000i'\\v'0.500i'\\D'p 0.000i -0.500i -2.000i 0.000i 0.000i 0.500i'\n.sp -1\n.lf 2\n\\h'1.000i-(\\w'Hello, World!'u/2u)'\\v'0.250i-(0v/2u)+0v+0.22m'Hello, World!\n.sp -1\n.sp 0.500i+1\n.if \\n(00 .fi\n.br\n.nr 0x 0\n.lf 3\n.PE\n.lf 4\n",
+      "stderr": ""
+    },
+    {
+      "label": "Render original labelled Pic box with groff",
+      "cwd": "<corpus>/examples/0533_pic",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "groff",
+        "-p",
+        "-Tascii",
+        "<corpus>/examples/0533_pic/hello.pic"
+      ],
+      "exit_code": 0,
+      "stdout": "+-------------------+\n|                   |\n|  Hello, World!    |\n+-------------------+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "stderr": "grotty:<standard input>:(<corpus>/examples/0533_pic/hello.pic):16: warning: ignoring unsupported drawing command 't'\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Genuine GNU Pic and groff ASCII renderer",
+    "version": "GNU pic (groff) version 1.23.0"
+  },
+  "render_sha256": "d81df302f977100c0505c1e9acc02d17943e3a0bb939a5a46fb62707cd512e8b",
+  "artifact_sha256": {
+    "examples/0533_pic/hello.pic": "20edefadbde9cf729ca911a97e89a8150649d472a90f209206b437348b92f48b"
+  }
+}

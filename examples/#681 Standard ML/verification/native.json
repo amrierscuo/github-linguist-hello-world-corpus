@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:40.305622+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Poly/ML native version",
+      "cwd": "<corpus>/examples/0681_standard-ml",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_681_700/linux/usr/bin/poly",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Poly/ML 5.7.1 Release\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile/execute original Standard ML script",
+      "cwd": "<corpus>/examples/0681_standard-ml",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_681_700/linux/usr/bin/poly",
+        "--script",
+        "<corpus>/examples/0681_standard-ml/hello.sml"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original Poly/ML Standard ML compiler/interpreter",
+    "version": "Poly/ML 5.7.1 Release",
+    "compiler_sha256": "41177acdf7f6e8dc190eb77736efb0e2da6e2741ad009ef7f53f61e1d7fd4e7b"
+  },
+  "artifact_sha256": {
+    "examples/0681_standard-ml/hello.sml": "12711653d5036eb221be881660a11a494039ef9b7557fd4c93ffe80864a31a51"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "ordinal": 252,
+  "language": "Glimmer TS",
+  "timestamp_utc": "2026-10-08T12:17:25.882443+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Node.js v22.20.0; content-tag 4.2.1, @glimmer/syntax 0.95.0, @babel/core 8.0.7, @babel/preset-typescript 8.0.7",
+  "working_directory": "examples/0252_glimmer-ts",
+  "source_sha256": {
+    "examples/0252_glimmer-ts/check.cjs": "7a6bd901fbb6e2c588c3cfc63096014355df34212a30c05dec76cf25257c8fc4",
+    "examples/0252_glimmer-ts/hello.gts": "778a4ff7af8a92fcc298d8605dc0a0a1e8b412203fdf496ebb5c7c87a28be185",
+    "examples/0252_glimmer-ts/package.json": "0dca3abc5a632421f8d4dbae3cb2229fcebce6f9b1cb5be4e9e912ebbdf1980c"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node check.cjs",
+      "exit_code": 0,
+      "stdout": "content-tag native WASM/SWC, Glimmer template parser and Babel host syntax PASS.\nEmber component rendering remains pending.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Genuine content-tag native SWC/WASM preprocessor, Glimmer template AST, Babel JS/TS host parser. Ember component rendering and TS/Glint type checking not run.",
+  "blockers": [
+    "Ember application/runtime DOM rendering not yet performed.",
+    "Glint/TypeScript full type check pending."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 809,
+  "language": "Zmodel",
+  "timestamp_utc": "2026-10-08T13:40:45.878337+00:00",
+  "platform": "Windows x64",
+  "toolchain": "ZenStack2.22.3; Node22.20.0",
+  "working_directory": "examples/0809_zmodel",
+  "source_sha256": {
+    "examples/0809_zmodel/hello.zmodel": "6951f37d1f4c3e1e8a58aecaa1a3a70ca518c6feb20293706f6ca07af8234280"
+  },
+  "steps": [
+    {
+      "command": "zenstack --version",
+      "exit_code": 1,
+      "stdout": "2.22.3\n",
+      "stderr": ""
+    },
+    {
+      "command": "zenstack check --schema hello.zmodel",
+      "exit_code": 0,
+      "stdout": "The schema is valid.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original ZenStack check runs genuine language parser and semantic diagnostics; ORM/SQLite default runtime pending.",
+  "blockers": [
+    "ORM generation/SQLite default runtime pending."
+  ]
+}

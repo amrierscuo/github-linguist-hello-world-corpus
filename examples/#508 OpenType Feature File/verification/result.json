@@ -1,0 +1,25 @@
+{
+  "ordinal": 508,
+  "name": "OpenType Feature File",
+  "timestamp_utc": "2026-10-08T13:25:38.318427+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + fontTools 4.66.1 feaLib",
+  "artifact_sha256": {
+    "examples/0508_opentype-feature-file/hello.fea": "fbe209b6c3ca42e75760797beee4ad54473b5366abc1c5d9f0c029708bf40dd4",
+    "examples/0508_opentype-feature-file/verify.py": "01e6e14a23e41215f92e62630748ebd05a141baf5c8b1be197eb0ed32d361445"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

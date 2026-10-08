@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:33:47.578316+00:00",
+  "platform": "Ubuntu 24.04 WSL2/Linux x86_64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0053_basic/hello.bas": "f8961d7bc8e610571803723f4bdde68886a85c731cb8b669eb8b0997f6f396ba"
+  },
+  "commands": [
+    {
+      "label": "Yabasic version",
+      "cwd": "<corpus>/examples/0053_basic",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/bin/yabasic",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "yabasic 2.90.3, built on x86_64-pc-linux-gnu\n"
+    },
+    {
+      "label": "Native BASIC parse and run",
+      "cwd": "<corpus>/examples/0053_basic",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/bin/yabasic",
+        "<corpus>/examples/0053_basic/hello.bas"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Yabasic Ubuntu binary package extracted locally",
+    "version": "yabasic 2.90.3, built on x86_64-pc-linux-gnu"
+  }
+}

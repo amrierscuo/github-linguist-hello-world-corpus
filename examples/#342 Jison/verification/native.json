@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:05.699561+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Node version",
+      "cwd": "<corpus>/examples/0342_jison",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine parser/generator acceptance and declared checks",
+      "cwd": "<corpus>/examples/0342_jison",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_341_360/node",
+        "<workspace>/work/tools_341_360/342"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: actual Jison parser generator and positive/negative parses\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Jison grammar compiler/parser generator",
+    "version": "jison 0.4.18",
+    "package_metadata_sha256": "c9e780d9bd661d490ba7bf729a0053a9bcd5d7f6352e3857b395475dfafc14b2"
+  },
+  "artifact_sha256": {
+    "examples/0342_jison/hello.jison": "fff7c7d221ee6e9c2dc2110ed2c7f51a703f2e04b89424d064c96279b443e633",
+    "examples/0342_jison/verify.cjs": "aa2563ff1376a0b665685c9811e9ee94f675c55692a3bc174e2ad4c86dda801d"
+  }
+}

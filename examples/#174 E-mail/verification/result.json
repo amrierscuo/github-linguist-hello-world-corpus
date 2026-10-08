@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 174,
+  "language": "E-mail",
+  "timestamp_utc": "2026-10-08T11:56:14.159762+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; stdlib email BytesParser RFC 5322/MIME",
+  "working_directory": "examples/0174_e-mail",
+  "source_sha256": {
+    "examples/0174_e-mail/hello.eml": "99909eb85d02fb1e877253cb189812c440b60a3d44c08be124c5ddd33f48adb4",
+    "examples/0174_e-mail/verify.py": "af76489733873959d1192bf422cad6c52aa4e4b421a4a6519c173068b7a48c34"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPython RFC 5322/MIME message parse, headers and content roundtrip PASS; no message sent.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Python email parser decodes MIME body and headers; SMTP serialization/parse retains content. No SMTP connection or sending.",
+  "blockers": []
+}

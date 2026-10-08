@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:36.519173+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0050_b-formal-method/HelloWorld.mch": "f9aa11cace15f38f16823c2b5d97ce131a6f6ccfaf2f7905090fb075aa24f443"
+  },
+  "commands": [
+    {
+      "label": "Windows tool availability only",
+      "cwd": "<corpus>/examples/0050_b-formal-method",
+      "command": [
+        "<python>",
+        "-c",
+        "import json,shutil;print(json.dumps({\"probcli\":shutil.which(\"probcli\")}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"probcli\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "probcli toolchain not installed or not available in this isolated verification environment."
+  ],
+  "toolchain": {
+    "name": "probcli",
+    "version": null
+  },
+  "scope": "Tool availability only; no genuine language parse or execution has been performed."
+}

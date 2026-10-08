@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:45:30.630172+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native format parsing and value assertion using loopback only",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_286_144530614857",
+      "exit_code": 0,
+      "stdout": "PASS: h11 parsed HTTP 200 body = Hello, World!\nCLEANUP: listener closed; fixture thread stopped\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "h11",
+    "version": "0.16.0",
+    "metadata_sha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64",
+    "record_sha256": "bc57fd5ca20507218b26ef9bf46bf03aab2c81e2e53e055741ae9b9f58145751",
+    "source": "https://pypi.org/project/h11/"
+  },
+  "cleanup_verified": true,
+  "artifact_sha256": {
+    "examples/0286_http/hello.http": "59f6a8e88e73b1a3090ece9d6421308a3a0842ac0381181d7d267bc5c9117347",
+    "examples/0286_http/verify.py": "001ff7936fbe4cedf7195be1665044ac40cad7b06166ccd75917f5e7746f47a3"
+  }
+}

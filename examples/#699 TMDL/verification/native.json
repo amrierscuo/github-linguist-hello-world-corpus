@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:48.560521+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0699_tmdl",
+      "command": [
+        "where.exe",
+        "Microsoft.AnalysisServices.Tabular TmdlSerializer"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required Microsoft.AnalysisServices.Tabular TmdlSerializer toolchain and matching execution/format resources are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine Microsoft.AnalysisServices.Tabular TmdlSerializer compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0699_tmdl/model.tmdl": "b1f6a9eaad09f040b4c96dffe5a3022d46f259d9d795ae61907fc40c0976cd52",
+    "examples/0699_tmdl/tables/Greeting.tmdl": "b750d508632e88fb39103edf89025f6b090d5b16ce9b79f703d8bec1e1d042d1"
+  }
+}

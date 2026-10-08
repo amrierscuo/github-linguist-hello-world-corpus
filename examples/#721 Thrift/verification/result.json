@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 721,
+  "language": "Thrift",
+  "timestamp_utc": "2026-10-08T13:30:04.884795+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "Thrift version 0.19.0",
+  "working_directory": "examples/0721_thrift",
+  "source_sha256": {
+    "examples/0721_thrift/hello.thrift": "1b104072794352c3556ea85e8c3f4bacc526d5f405e922fb5de6529f8d28593d"
+  },
+  "steps": [
+    {
+      "command": "thrift -version",
+      "exit_code": 0,
+      "stdout": "Thrift version 0.19.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "thrift --gen py -out <build> hello.thrift",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Thrift compiler parses IDL and emits Python constant HELLO; CPython AST of generated module confirms exact literal. Wire serialization not claimed.",
+  "blockers": []
+}

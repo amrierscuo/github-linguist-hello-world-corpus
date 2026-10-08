@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "ordinal": 248,
+  "language": "Git Config",
+  "timestamp_utc": "2026-10-08T12:15:30.771284+00:00",
+  "platform": "Windows x64",
+  "toolchain": "git version 2.51.0.windows.1",
+  "working_directory": "examples/0248_git-config",
+  "source_sha256": {
+    "examples/0248_git-config/.gitconfig": "3ff98df63d58b876737401a57688f327dd86ee4f7bc3123b67b9e3f01db041d6",
+    "examples/0248_git-config/verify.py": "7ace7ce706ba24db0f30cbf085ec6dafdaf652144b53420fbee77dad27b3388e"
+  },
+  "steps": [
+    {
+      "command": "git --version",
+      "exit_code": 0,
+      "stdout": "git version 2.51.0.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "git init --initial-branch=main",
+      "exit_code": 0,
+      "stdout": "Initialized empty Git repository in <workspace>/work/verify_241_260/git-248/.git/\n",
+      "stderr": ""
+    },
+    {
+      "command": "git config core.autocrlf false",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git config --file <corpus>\\examples\\0248_git-config\\.gitconfig --get corpus.greeting",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Git config parser reads explicit .gitconfig and retrieves corpus.greeting. No global/user configuration altered.",
+  "blockers": []
+}

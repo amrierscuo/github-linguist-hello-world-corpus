@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:02.052171+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Go version",
+      "cwd": "<corpus>/examples/0261_go-workspace",
+      "command": [
+        "<workspace>/work/tools_241_260/go/bin/go.exe",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "go version go1.27.1 windows/amd64\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse native workspace file",
+      "cwd": "<workspace>/work/tools_261_280/261",
+      "command": [
+        "<workspace>/work/tools_241_260/go/bin/go.exe",
+        "work",
+        "edit",
+        "-json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n\t\"Go\": \"1.23.0\",\n\t\"Use\": [\n\t\t{\n\t\t\t\"DiskPath\": \"./app\"\n\t\t},\n\t\t{\n\t\t\t\"DiskPath\": \"./greeting\"\n\t\t}\n\t]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile two local modules and execute workspace app",
+      "cwd": "<workspace>/work/tools_261_280/261",
+      "command": [
+        "<workspace>/work/tools_241_260/go/bin/go.exe",
+        "run",
+        "./app"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Go toolchain workspace loader and compiler",
+    "version": "go version go1.27.1 windows/amd64",
+    "executable_sha256": "d3ccdb604eafa6031133aefe1a3db24f0bb7362b857bc2125ac4e4c178b4b490"
+  },
+  "artifact_sha256": {
+    "examples/0261_go-workspace/go.work": "7498c203dc9a4b5b4071e4117d1484ed20b8d4e3ccae8370ff89c61aa081cb78",
+    "examples/0261_go-workspace/app/go.mod": "127841532986546d8c3f4de81836c047b25b20f6c631eb1b2e5d8fa32d3d5de0",
+    "examples/0261_go-workspace/app/main.go": "b1d6fff036afa2c59e898677878a2203d2fadd61b7e9e1ce9a068d51ce9b8d63",
+    "examples/0261_go-workspace/greeting/go.mod": "4a97f4a5a00919d1d0452649c81727b57f375fe0dd745c546743146305c52167",
+    "examples/0261_go-workspace/greeting/greeting.go": "5304d6e2d54fd5f70100f5b0fa784e3a99230e476e0d8cde57e3358c7e06bc16"
+  }
+}

@@ -1,0 +1,8 @@
+package Hello(mkHello) where
+
+mkHello :: Module Empty
+mkHello = module
+  rules
+    "sayGreeting": when True ==> action
+      $display "Hello, World!"
+      $finish 0

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ordinal": 572,
+  "language": "Python traceback",
+  "timestamp_utc": "2026-10-08T13:16:51.286983+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython Python 3.13.9",
+  "working_directory": "examples/0572_python-traceback",
+  "source_sha256": {
+    "examples/0572_python-traceback/hello.py": "0e9a9d09ab68c19bbdfa1a25886041e584512a468009a1ca455516e3d99c0bbf",
+    "examples/0572_python-traceback/hello.pytb": "86b2a99bfa2513dd7488cf133ab434f217768847b64f74ced750bb811a856b8a"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python hello.py (expected error)",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<workspace>\\work\\verify_561_580\\572\\hello.py\", line 4, in <module>\n    greet()\n    ~~~~~^^\n  File \"<workspace>\\work\\verify_561_580\\572\\hello.py\", line 2, in greet\n    raise RuntimeError(\"Hello, World!\")\nRuntimeError: Hello, World!\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Actual CPython raises RuntimeError and generates delivered traceback; expected exit 1 is asserted. Only source path is normalized.",
+  "blockers": []
+}

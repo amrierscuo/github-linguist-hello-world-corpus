@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:37:46.252082+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Availability of required genuine native toolchain",
+      "cwd": "<corpus>/examples/0692_sway",
+      "command": [
+        "where.exe",
+        "forc"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "INFO: Could not find files for the given pattern(s).\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "Required forc toolchain and matching execution/format resources are not configured."
+  ],
+  "toolchain": {
+    "name": "Required genuine forc compiler/runtime",
+    "version": null
+  },
+  "artifact_sha256": {
+    "examples/0692_sway/Forc.toml": "b91023d8ecb6d4e6dd63ad6edc73abef432d10c0fcd707a985e8247c9a96cbc3",
+    "examples/0692_sway/src/main.sw": "cfcbabeca91cfa4f3c31ad3c7a5565690e57cca200afcd81271d1019198f91b2"
+  }
+}

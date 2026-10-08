@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:14.432477+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0768_webvtt",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata as m; print(m.version('webvtt-py'))"
+      ],
+      "exit_code": 0,
+      "stdout": "0.5.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing format parser and original semantic assertions",
+      "cwd": "<corpus>/examples/0768_webvtt",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing WebVTT decoder verifies cue timing and text\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "webvtt-py / Python 3.13.9",
+    "version": "0.5.1"
+  },
+  "artifact_sha256": {
+    "examples/0768_webvtt/hello.vtt": "a05fe5173847d5987f3d63222776d72d476f4a95955c8068a0ce2236a9c4eaff",
+    "examples/0768_webvtt/verify.py": "57a4b7320c5d97407907fb924d4cb667d4ec65381d87eff817eeaff6c226c410"
+  }
+}

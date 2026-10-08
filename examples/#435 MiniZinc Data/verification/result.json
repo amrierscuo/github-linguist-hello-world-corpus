@@ -1,0 +1,45 @@
+{
+  "ordinal": 435,
+  "name": "MiniZinc Data",
+  "timestamp_utc": "2026-10-08T12:46:06.357592+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "MiniZinc 2.10.1 official Linux bundle + Gecode",
+  "artifact_sha256": {
+    "examples/0435_minizinc-data/hello.dzn": "76cc9fba51a21839b9dc4b7f983da14a011fdf747e22265c8b994a42c0c3e02a",
+    "examples/0435_minizinc-data/model.mzn": "7a34c1be02a38860cb645d01c8dc88a08ab00768ae1da689e8c756fbead762c5"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_421_440/minizinc/MiniZincIDE-2.10.1-x86_64-linux-gnu/bin/minizinc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "MiniZinc to FlatZinc converter, version 2.10.1, build 33348285743\nCopyright (C) 2014-2026 Monash University, NICTA, Data61\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_421_440/minizinc/MiniZincIDE-2.10.1-x86_64-linux-gnu/bin/minizinc",
+        "--solver",
+        "gecode",
+        "${WORKSPACE_WSL}/work/staging_421_440/examples/0435_minizinc-data/model.mzn",
+        "${WORKSPACE_WSL}/work/staging_421_440/examples/0435_minizinc-data/hello.dzn"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n----------\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

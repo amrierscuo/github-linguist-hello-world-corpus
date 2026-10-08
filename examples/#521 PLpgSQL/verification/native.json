@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:20.167348+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "PostgreSQL version",
+      "cwd": "<corpus>/examples/0521_plpgsql",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "psql",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute original pg_temp function, parameter assertion and rollback",
+      "cwd": "<corpus>/examples/0521_plpgsql",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "psql",
+        "-X",
+        "-q",
+        "-A",
+        "-t",
+        "-d",
+        "postgres",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-f",
+        "<corpus>/examples/0521_plpgsql/hello.pgsql"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic PostgreSQL PL/pgSQL engine",
+    "version": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)"
+  },
+  "artifact_sha256": {
+    "examples/0521_plpgsql/hello.pgsql": "9e12a294843a6e9e7e44b92a6d9f4cc29d173f9338b49929cb17374770e92851"
+  }
+}

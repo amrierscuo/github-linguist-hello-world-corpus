@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:47:00.177888+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Haxe version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_287_144700173653",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "HAXE_STD_PATH=<workspace>/work/tools_281_300/ubuntu/usr/share/haxe/std",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/haxe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_287_144700173653",
+      "exit_code": 0,
+      "stdout": "4.3.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native HXML configuration evaluation and Haxe interpretation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_287_144700173653",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "HAXE_STD_PATH=<workspace>/work/tools_281_300/ubuntu/usr/share/haxe/std",
+        "<workspace>/work/tools_281_300/ubuntu/usr/bin/haxe",
+        "hello.hxml"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_287_144700173653",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Haxe compiler and eval interpreter",
+    "package": {
+      "file": "haxe_4.3.3-1build2_amd64.deb",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/haxe/haxe_4.3.3-1build2_amd64.deb",
+      "sha256": "1caa4c7b19b59d7ad0159d077f6b75c0cea8b9b46932bb0eb062ac3bd9444c2a",
+      "package": "haxe",
+      "version": "1:4.3.3-1build2"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0287_hxml/Hello.hx": "ac6f2598d7fe0046f70c472a637acc94133a9fbc3a7f2bef74e5e0d2e6340a8e",
+    "examples/0287_hxml/hello.hxml": "5f00046f05274eeab02802253c1a93ae687c69f671b5ecc262653addd76241d8"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:41.270641+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Offline original G-code parser inspection",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-c",
+        "from pathlib import Path; from gcodeparser import parse_gcode_lines; print(list(parse_gcode_lines(Path(\"hello.gcode\").read_text())))"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_222_143441259449",
+      "exit_code": 0,
+      "stdout": "[GcodeLine(command=('M', 117), params={'H': True, 'E': True, 'L': True, 'O': True}, comment='', line_index=0, type=<Commands.OTHER: 2>)]\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "gcodeparser",
+    "version": "0.3.0",
+    "metadata_sha256": "1f4abc30f208e446f36597da39af6c5de7db7969d37154bdeedcef9de555d2b6",
+    "record_sha256": "589cee0fca17f2980a95ba6640e33e4b36b659dac1cc116a21edf15ac80b36c3",
+    "source": "https://pypi.org/project/gcodeparser/"
+  },
+  "semantic_scope": "Lexical parser does not validate Marlin free-form M117 message semantics. No machine connection or command execution. Both full verification flags remain false.",
+  "artifact_sha256": {
+    "examples/0222_g-code/hello.gcode": "51134fe4f9d24d0f56057a638e292166390ce19ab94a593809aed8e420d2be87"
+  }
+}

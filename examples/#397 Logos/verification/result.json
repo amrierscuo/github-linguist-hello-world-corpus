@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "ordinal": 397,
+  "language": "Logos",
+  "timestamp_utc": "2026-10-08T12:48:20.545080+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Theos Logos master snapshot; This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi",
+  "working_directory": "examples/0397_logos",
+  "source_sha256": {
+    "examples/0397_logos/hello.xm": "48b3d4725f9cfd8fdf93e38d794ffb1e29a5ec60b7f92af80d42c769dc6f96ea"
+  },
+  "steps": [
+    {
+      "command": "perl --version",
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "perl logos.pl -c generator=internal -c warnings=error hello.xm",
+      "exit_code": 0,
+      "stdout": "#line 1 \"hello.xm\"\n#import <Foundation/Foundation.h>\n\nstatic __attribute__((constructor)) void _logosLocalCtor_2ad1cba6(int __unused argc, char __unused **argv, char __unused **envp) {\n    NSLog(@\"Hello, World!\");\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Real original Logos Perl preprocessor expands %ctor into Objective-C constructor code. This is preprocessor syntax only; Foundation type checking and constructor execution need Apple runtime.",
+  "blockers": [
+    "Apple Foundation Objective-C compile/runtime unavailable; NSLog execution pending."
+  ],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_381_400/397/hello.mm",
+      "sha256": "001ea06906b44cf55ee8ab1a8721076787c5271c0ac66400bba28943ed24082b"
+    }
+  ],
+  "tool_artifact_sha256": {
+    "work/tools_381_400/logos/logos-master/.gitignore": "74d163425ca4868166930d30a381fec56b146954d6599835968f840320530eb9",
+    "work/tools_381_400/logos/logos-master/LICENSE.md": "dfb91680d0e3e53db2bceb319a1dd6e44d2093e7bcbe8d59bc868600bc66b97f",
+    "work/tools_381_400/logos/logos-master/package.json": "a415669ac5add109183a5a43e9b9d01cc8e74be9538dee7de08ab71c94d2e55f",
+    "work/tools_381_400/logos/logos-master/README.md": "b370884a81ba151bb2b07a7709110af016e1d8d7f606d64817cd9ed60f15bb50",
+    "work/tools_381_400/logos/logos-master/bin/logify.pl": "6cc44899c70c3e8a3578c73c8d35517d0d5fce415da3070b92163fe60a3b16ab",
+    "work/tools_381_400/logos/logos-master/bin/logos.pl": "6d049133390cde933e1ee51f09ece5a6fd2d1c6366f81639e7a1df4ad30d587d",
+    "work/tools_381_400/logos/logos-master/extras/vim/README": "c71698027c4e745a87c6e78f7b4733feb7255c09aa7594a910764fdb8205e82e",
+    "work/tools_381_400/logos/logos-master/extras/vim/ftplugin/logos.vim": "cb88688c05239ec4c428adb93e9143ac9a35ecf4b908446baf241f0709189d57",
+    "work/tools_381_400/logos/logos-master/extras/vim/indent/logos.vim": "2f0ab3e0c3b396edf7e3328de2e6ee485f0e1fd9feffac77a6c3ecb52a4bcab1",
+    "work/tools_381_400/logos/logos-master/extras/vim/syntax/logos.vim": "14ff3b8001414e09f651b1d5f6bf8539dac2a72587ed2ea393ebb6d813de9537",
+    "work/tools_381_400/logos/logos-master/bin/lib/aliased.pm": "4d079e0f91f00efa0d9e2b7a544f5f2b4174f153cf40360a86868022fba93707",
+    "work/tools_381_400/logos/logos-master/bin/lib/parent.pm": "3fe849925703d237b7d8c42eff7235d707a4e37aebf3997f12d443ed4486728a",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Class.pm": "74b0527914b9bf95fdcaf0df214068a3dfa218e888df342315f57fa88789574f",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Function.pm": "fe38adae336af5830cf723217c489b3934daab0239fa7bce9dc8f9a81451cafb",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator.pm": "58ed6ab95c2925c1daed6d25b710fb3be32f05224c781bb6dfcfdb68bde1d438",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Group.pm": "7efa780fabfe56111f1d498831d04d173cb5bed7885bd7e6f7149400b2f0e474",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Ivar.pm": "8fb34aca6ce70da2f6c3ab836b175a30bdcac1b941f25812dbb45dfdcaa0342e",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Method.pm": "cbdb527c83e4d456f7945c669366091f86ae2f263494cbaf96ca726ae157bcc2",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Patch.pm": "a2d70b4105fcc28e9a6b05464b4552a61d026d3e66bcc7107d14ef81752eb635",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Property.pm": "67d7cae67b5c62a144dcb8635fbaf0b1d52d6a2bd1ff225be73c560efe9e2f07",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/StaticClassGroup.pm": "7837acc07e941e2287c8d45af5427793022066af41efa17bfe23eb0a3b9d3409",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Subclass.pm": "557fa209bbf3aa0942842e1ff9cb9e96d11753f94897dce1fdd3b3d9dcc26103",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Util.pm": "92141bd346dbebd14ea5442fda107f28a57134c873f94614ac2ca9db6bdd0002",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Thunk.pm": "2a882f895c46b15ebfbf90e022eecf4a81d68ecd915758e1c2bcccd31a7b98e5",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Patch/Source/Generator.pm": "ce4230f276685b33dcd2e38ef7d0c4c98ba3ec1350e9dd802bcb9b8bf6ddc23b",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Class.pm": "3b555901c849dc613a7bd85c5f42e235e8c7e6f6d4b29c4cf7103496a058a30e",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Common.pm": "90c31482921e4de332df88f24ecb91f8a128eb9fd4cac3b4e3be9d9a2ed080cc",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Function.pm": "b3ed1f2741f0d90efe018493c9b17c373ed046c864841d6f384ca6f182d92d23",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Generator.pm": "bfe68590ed7e45c42b8b32ada93925fc5a9a7cb973a173b8bfcf97ff8b86373e",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Group.pm": "6e4dcee964b02dc87c97e03b03cbb4941b8129c8b85a4faaf1ce868b1541d52f",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Method.pm": "5230a54179da6b7c41b8fb1a09cc0af638e4978b040507a4aba92ca58fc5b98f",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Property.pm": "61705940623351999816133024cc877a3254967a8557b0ed276b7cfd602b3640",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/StaticClassGroup.pm": "3564ccd88a7c2a5dff15a579dc10ff77dbec93db5626c6c9c8c31abe2704b5af",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/Base/Subclass.pm": "5d0e73029d86fd5556a2d0af7120f00269d75ea9c78a7b369eaafd838458a623",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/internal/Class.pm": "a0ee32a8b8357b75f4f5dfbd8eaafdc13807f66c2830a1728304823c3f9b5335",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/internal/Function.pm": "9eeb422cd01f27415680ece9c99e0c587aa29841bd4447a7c5b5af67e0aa541c",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/internal/Generator.pm": "7e571f227ad292ff0373ac193c4df4e89027bec8448389394bfbc434d2cda69c",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/internal/Method.pm": "417de64867c980c25972d5856f3a657a55549e5bfa04ab25104840c3a7be2c7e",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/internal/Subclass.pm": "fa8f2f90955720672b152485af91d0982de7ec7f124c004cdbc41aabf9c995a0",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/libhooker/Class.pm": "1779e02fd3095da31e15e2c0a60ae8e2782f52d420a7fc4f7937526bd5840958",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/libhooker/Function.pm": "24f34f3625f1a5b044747947f40841a2319a0fff0db13ed5d6079639b5500fc8",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/libhooker/Generator.pm": "93edb1c66ee1b2b5b6c95057a410f51edc5e581849049d2abe849ceed73ec66d",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/libhooker/Group.pm": "916afea89dd106607212a26f52bc2b46b1fd3b4fe9c15862d4336a2709811a91",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/libhooker/Method.pm": "0b8b3d9c24749c0e5d96a73d83c27f05229a725e318217b7cec0467464035f93",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/libhooker/Subclass.pm": "3582044949c024493c5526716d2203ee45ab27653bc81bda32b4f016b95b93a2",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/MobileSubstrate/Class.pm": "303e55f20a1556b4d6b1e63fb0e0ac787ad419aedacf4bedb2eb1405342cf41f",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/MobileSubstrate/Function.pm": "d4c8fcf17f9e4b35d589b041a02a0e16746bbbedcb3763480772cda57f7bf166",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/MobileSubstrate/Generator.pm": "204f5f2b50f85d17a23866a4229e702e464f9edccb904eebef7e4966d749b426",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/MobileSubstrate/Method.pm": "06e4d3dcaec598d1edfca8f2951e75093e245c475a3b4ba0b9af929de5e87954",
+    "work/tools_381_400/logos/logos-master/bin/lib/Logos/Generator/MobileSubstrate/Subclass.pm": "aabbb074f6e6538ebd9a0d20f3f26e615694c2c7a7a89ac3d8bb1b26832948bf"
+  }
+}

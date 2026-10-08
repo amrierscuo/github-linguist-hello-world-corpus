@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:56:10.029448+00:00",
+  "platform": "Windows x64; Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "The staging root is denoted <corpus>; the workspace root <workspace>; user home <user-home>; interpreter paths use named placeholders. Source bytes are unchanged. Generated objdump data uses a short local binary filename and contains no absolute source path.",
+  "commands": [
+    {
+      "label": "Creole parser/renderer versions",
+      "cwd": "<corpus>/examples/0139_creole",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata;print(importlib.metadata.version(\"creoleparser\")); print(importlib.metadata.version(\"Genshi\"))"
+      ],
+      "exit_code": 0,
+      "stdout": "0.7.5\n0.7.11\n",
+      "stderr": ""
+    },
+    {
+      "label": "Creole parser and HTML rendering assertions",
+      "cwd": "<corpus>/examples/0139_creole",
+      "command": [
+        "<python>",
+        "verify.py",
+        "hello.creole"
+      ],
+      "exit_code": 0,
+      "stdout": "<h1>Greeting</h1>\n<p><strong>Hello, World!</strong></p>\n<p><em>A small Creole document.</em></p>\nPASS: existing Creole 1.0 renderer; heading, strong and emphasis\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing creoleparser Creole 1.0 renderer with Genshi",
+    "version": "0.7.5\n0.7.11"
+  },
+  "artifact_sha256": {
+    "examples/0139_creole/hello.creole": "9ea0f9979b7a4ec1415abf3fd7c74086e7d142eae569306eba35115b3b7f822e",
+    "examples/0139_creole/verify.py": "386b299123969e76ee56f85cf0b068923462b612ac6ccf800b678d054d650a5a"
+  }
+}

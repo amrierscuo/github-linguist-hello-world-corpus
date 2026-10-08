@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 813,
+  "language": "dircolors",
+  "timestamp_utc": "2026-10-08T13:39:24.271672+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "dircolors (GNU coreutils) 9.4",
+  "working_directory": "examples/0813_dircolors",
+  "source_sha256": {
+    "examples/0813_dircolors/Hello, World!.hello": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0813_dircolors/hello.dircolors": "25dd60109390fb218a80d1bc27fade9768e18a7dd8284608b6ddc610c5da0d6e"
+  },
+  "steps": [
+    {
+      "command": "dircolors --version",
+      "exit_code": 0,
+      "stdout": "dircolors (GNU coreutils) 9.4\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by H. Peter Anvin.\n",
+      "stderr": ""
+    },
+    {
+      "command": "dircolors -b hello.dircolors",
+      "exit_code": 0,
+      "stdout": "LS_COLORS='ex=00:*.hello=01;34:';\nexport LS_COLORS\n",
+      "stderr": ""
+    },
+    {
+      "command": "eval native dircolors output; ls --color=always \"Hello, World!.hello\"",
+      "exit_code": 0,
+      "stdout": "\u001b[0m\u001b[01;34mHello, World!.hello\u001b[0m\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native GNU dircolors parses extension rule and native ls consumes generated LS_COLORS to emit expected ANSI greeting filename.",
+  "blockers": []
+}

@@ -1,0 +1,81 @@
+{
+  "timestamp_utc": "2026-10-08T16:38:13.296537+00:00",
+  "ordinal": 563,
+  "extension": ".asc",
+  "platform": "Windows / WSL Ubuntu 24.04",
+  "toolchain": "gpg (GnuPG) 2.4.4",
+  "artifact_sha256": {
+    "examples/#563 Public Key/variants/asc-431e050a/hello.asc": "ab397e04f4458d3dadc08e144572ad64e357a928ac0c601085864bd8d746a6b1",
+    "examples/#563 Public Key/variants/asc-431e050a/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/#563 Public Key/variants/asc-431e050a/generate.py": "507ab63a3ef8fc787ae6ad7048490ca316b05837882e9b26e37035b33896787a"
+  },
+  "steps": [
+    {
+      "command": "${USERPROFILE}/anaconda3/python.exe generate.py ${WORKSPACE}\\work\\verify_replacement_asc_hello",
+      "cwd": "${WORKSPACE}\\work\\staging_replacement_asc_hello\\examples\\#563 Public Key\\variants\\asc-431e050a",
+      "exit_code": 0,
+      "stdout": "Hello, World! <corpus@example.invalid>\n",
+      "stderr": ""
+    },
+    {
+      "command": "gpg --version",
+      "cwd": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "gpg (GnuPG) 2.4.4\nlibgcrypt 1.10.3\nCopyright (C) 2024 g10 Code GmbH\nLicense GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nHome: /home/a/.gnupg\nSupported algorithms:\nPubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA\nCipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,\n        CAMELLIA128, CAMELLIA192, CAMELLIA256\nHash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224\nCompression: Uncompressed, ZIP, ZLIB, BZIP2\n",
+      "stderr": ""
+    },
+    {
+      "command": "chmod 700 ${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring ${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring",
+      "cwd": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello",
+      "environment": {},
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "gpg --batch --pinentry-mode loopback --passphrase '' --quick-generate-key 'Hello, World! <corpus@example.invalid>' ed25519 sign 0",
+      "cwd": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello",
+      "environment": {
+        "GNUPGHOME": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "gpg: WARNING: unsafe permissions on homedir '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring'\ngpg: keybox '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring/pubring.kbx' created\ngpg: ${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring/trustdb.gpg: trustdb created\ngpg: directory '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring/openpgp-revocs.d' created\ngpg: revocation certificate stored as '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring/openpgp-revocs.d/66EE5E91B44E808A69CC9164844F9A49B7730BDF.rev'\n"
+    },
+    {
+      "command": "gpg --batch --armor --export corpus@example.invalid",
+      "cwd": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello",
+      "environment": {
+        "GNUPGHOME": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring"
+      },
+      "exit_code": 0,
+      "stdout": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmDMEasfG8xYJKwYBBAHaRw8BAQdAULRjcPJ9a9Fyf5+TfGzxf6hQHYTvoEisKyBM\nYumieNC0JkhlbGxvLCBXb3JsZCEgPGNvcnB1c0BleGFtcGxlLmludmFsaWQ+iJME\nExYKADsWIQRm7l6RtE6AimnMkWSET5pJt3ML3wUCasfG8wIbAwULCQgHAgIiAgYV\nCgkICwIEFgIDAQIeBwIXgAAKCRCET5pJt3ML36NzAP9RVAYIjxq9d339DR+7Bo+h\nKXZw2PwTkHrI2OLLG76zXwD/TMWx6wAie7ZNVTjT07Uv9fFkpGL0JYGPbx8mZmm5\nxwo=\n=OOm4\n-----END PGP PUBLIC KEY BLOCK-----\n",
+      "stderr": "gpg: WARNING: unsafe permissions on homedir '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/producer-keyring'\n"
+    },
+    {
+      "command": "gpg --batch --import hello.asc",
+      "cwd": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello",
+      "environment": {
+        "GNUPGHOME": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "gpg: WARNING: unsafe permissions on homedir '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring'\ngpg: keybox '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring/pubring.kbx' created\ngpg: ${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring/trustdb.gpg: trustdb created\ngpg: key 844F9A49B7730BDF: public key \"Hello, World! <corpus@example.invalid>\" imported\ngpg: Total number processed: 1\ngpg:               imported: 1\n"
+    },
+    {
+      "command": "gpg --batch --with-colons --fingerprint --list-keys corpus@example.invalid",
+      "cwd": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello",
+      "environment": {
+        "GNUPGHOME": "${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring"
+      },
+      "exit_code": 0,
+      "stdout": "tru::1:1791477492:0:3:1:5\npub:-:255:22:844F9A49B7730BDF:1791477491:::-:::scSC:::::ed25519:::0:\nfpr:::::::::66EE5E91B44E808A69CC9164844F9A49B7730BDF:\nuid:-::::1791477491::5B76C998339DB7BCDFF560DDCB87C017646DF410::Hello, World! <corpus@example.invalid>::::::::::0:\n",
+      "stderr": "gpg: WARNING: unsafe permissions on homedir '${WORKSPACE_WSL}/work/verify_replacement_asc_hello/consumer-keyring'\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "GnuPG originale genera la chiave pubblica dal saluto in greeting.txt, la importa in un keyring pubblico indipendente e l’UID letto con --with-colons corrisponde esattamente a Hello, World! <corpus@example.invalid>. Nessuna chiave privata entra nel corpus.",
+  "additional_path_normalization": "Absolute local workspace/user profile prefixes and local host/user identifiers normalized for the public corpus; other tool outputs, exit codes, source hashes and timestamps unchanged."
+}

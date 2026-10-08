@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:20.708862+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Free Pascal version",
+      "cwd": "<corpus>/examples/0529_pascal",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu/fpc/3.2.2/ppcx64",
+        "-iV"
+      ],
+      "exit_code": 0,
+      "stdout": "3.2.2\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original Pascal program",
+      "cwd": "<corpus>/examples/0529_pascal",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu/fpc/3.2.2/ppcx64",
+        "-n",
+        "-Fu<workspace>/work/tools_521_540/linux/usr/lib/x86_64-linux-gnu/fpc/3.2.2/units/x86_64-linux/rtl",
+        "-FE<workspace>/work/tools_521_540/529",
+        "-FU<workspace>/work/tools_521_540/529",
+        "<corpus>/examples/0529_pascal/hello.pas"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute compiled Pascal greeting",
+      "cwd": "<corpus>/examples/0529_pascal",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_521_540/529/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Genuine Free Pascal compiler",
+    "version": "3.2.2",
+    "executable_sha256": "93ddfaa92900749c81537d4ee39a9416d6d8c85cf545d411f0c170c15e33cdc1"
+  },
+  "artifact_sha256": {
+    "examples/0529_pascal/hello.pas": "61390bec262f49020edd581463d7747ae45794775aeab6fad686b6241c28f082"
+  }
+}

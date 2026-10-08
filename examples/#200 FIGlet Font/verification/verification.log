@@ -1,0 +1,25 @@
+{
+  "ordinal": 200,
+  "name": "FIGlet Font",
+  "timestamp_utc": "2026-10-08T12:01:23.455813+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Python 3.13.9 + pyfiglet 1.0.4",
+  "artifact_sha256": {
+    "examples/0200_figlet-font/greeting.flf": "65d787d4f43c1e4ead40a0e791b8504fee17074f56c5609ffd51ac2553a94456",
+    "examples/0200_figlet-font/verify.py": "049f5fd36aa44f37bf47be00bcb0d6892dae2031a67433f02152770f6ba1f72d"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

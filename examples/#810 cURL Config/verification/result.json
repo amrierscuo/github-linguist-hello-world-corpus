@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 810,
+  "language": "cURL Config",
+  "timestamp_utc": "2026-10-08T13:38:35.028326+00:00",
+  "platform": "Windows x64",
+  "toolchain": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP; CPython3.13.9",
+  "working_directory": "examples/0810_curl-config",
+  "source_sha256": {
+    "examples/0810_curl-config/.curlrc": "c1707cd0c15cea747affae713a6bcea11b725fdafa86ebef8f798bdf8a2d14a2",
+    "examples/0810_curl-config/verify.py": "ead75d874bc0640f5e6985e942af0d63be57e89f7ee3da5974f124152e4da007"
+  },
+  "steps": [
+    {
+      "command": "curl --version",
+      "exit_code": 0,
+      "stdout": "curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP\nRelease-Date: 2026-06-24\nProtocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns ldap ldaps mqtt mqtts pop3 pop3s smtp smtps telnet tftp ws wss\nFeatures: alt-svc AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile libz SPNEGO SSL SSPI threadsafe Unicode UnixSockets\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py curl",
+      "exit_code": 0,
+      "stdout": "{\"command\": \"curl --disable --config .curlrc <loopback-url>\", \"exit_code\": 0, \"stdout\": \"Hello, World!\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "curl --disable --config .curlrc <loopback-url>",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native cURL consumes .curlrc; local loopback server returns observed X-Corpus-Greeting header. No external request.",
+  "blockers": []
+}

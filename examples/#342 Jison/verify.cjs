@@ -1,0 +1,10 @@
+const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
+const {Parser} = require(path.resolve(process.argv[2], 'node_modules/jison'));
+const parser = new Parser(fs.readFileSync('hello.jison', 'utf8'));
+assert.equal(parser.parse('Hello, World!'), 'Hello, World!');
+assert.equal(parser.parse('Hello , World !'), 'Hello, World!');
+assert.throws(() => parser.parse('Hello, Reader!'));
+fs.mkdirSync(process.argv[3], {recursive:true});
+fs.writeFileSync(path.join(process.argv[3], 'parser.js'), parser.generate());
+console.log('Hello, World!');
+console.log('PASS: actual Jison parser generator and positive/negative parses');

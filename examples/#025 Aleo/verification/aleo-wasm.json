@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T10:58:02.551881+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Percorsi della macchina normalizzati: radice del corpus sostituita con <corpus>, radice di lavoro con <workspace>, home con <user-home>, eseguibili con <python>, <node>, <java>; i soli argomenti di percorso dei comandi usano separatori POSIX. Gli output sono conservati salvo queste sostituzioni, che non modificano i byte degli artefatti o i risultati.",
+  "commands": [
+    {
+      "label": "Node.js version",
+      "cwd": "examples/0025_aleo",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Official SnarkVM WASM parse-only assertions",
+      "cwd": "examples/0025_aleo",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>/work/tools_21_26/node/node_modules",
+        "hello.aleo",
+        "--syntax-only"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: official SnarkVM WASM parser accepted program and function signature\nPASS: unknown-instruction negative control rejected\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0025_aleo/hello.aleo": "602ef3ccd2c3dafb542941d3d08621d54c44a3f786eeb4e14ea3e229abc56963",
+    "examples/0025_aleo/verify.cjs": "e5023efcf0aa6685682cfff71f3ceb5a5b0e9649e87874e00ebf086374a69a40"
+  },
+  "toolchain": {
+    "distribution": "Official @provablehq/wasm mainnet SnarkVM JavaScript/WASM package",
+    "version": "0.12.0",
+    "sdk_installed_version": "0.12.0",
+    "source": "https://github.com/ProvableHQ/sdk",
+    "package_manifest_sha256": "a8886749b28ab9e4143536c49914cb6f5ca3efc295485c2272bc60b13eeb7583"
+  },
+  "semantic_verified": false,
+  "syntax_verified": true,
+  "semantic_scope": "Only official Program.fromString parse/signature and malformed-instruction rejection are counted when completed; offline VM execution remains pending."
+}

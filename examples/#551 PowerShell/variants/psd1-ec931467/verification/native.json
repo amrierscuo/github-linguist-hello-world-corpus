@@ -1,0 +1,46 @@
+{
+  "variant_extension": ".psd1",
+  "timestamp_utc": "2026-10-08T16:05:37.900504+00:00",
+  "scope": "PowerShell originale: import del modulo; per .psd1 Test-ModuleManifest; funzione esportata eseguita e stdout esatto. Processo dedicato terminato.",
+  "toolchain": {
+    "name": "PowerShell",
+    "version": "7.6.5",
+    "version_command": {
+      "command": [
+        "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+        "-NoProfile",
+        "-Command",
+        "$PSVersionTable.PSVersion.ToString()"
+      ],
+      "exit_code": 0,
+      "stdout": "7.6.5\n",
+      "stderr": ""
+    },
+    "runtime_sha256": "362a356ce7f0940ec74f73a8fc2c990a2cc24a38a11c90bbd8eca947110ad139"
+  },
+  "artifact_sha256": {
+    "examples/0551_powershell/variants/psd1-ec931467/hello.psd1": "c50399a95f7107c81eeeb8071bb1b890cf137543a25d09ccd07be62485824392",
+    "examples/0551_powershell/variants/psd1-ec931467/hello.psm1": "d22db22d41450b8c24a67bf19c2a5ff3b163c928d1344b899852a99f4ac0ca78"
+  },
+  "commands": [
+    {
+      "command": [
+        "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "Test-ModuleManifest ./hello.psd1 | Out-Null; Import-Module ./hello.psd1; Get-CorpusGreeting"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "sha256": {
+    "examples/0551_powershell/variants/psd1-ec931467/hello.psd1": "c50399a95f7107c81eeeb8071bb1b890cf137543a25d09ccd07be62485824392",
+    "examples/0551_powershell/variants/psd1-ec931467/hello.psm1": "d22db22d41450b8c24a67bf19c2a5ff3b163c928d1344b899852a99f4ac0ca78"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

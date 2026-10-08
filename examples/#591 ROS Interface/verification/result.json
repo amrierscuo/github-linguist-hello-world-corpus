@@ -1,0 +1,25 @@
+{
+  "ordinal": 591,
+  "name": "ROS Interface",
+  "timestamp_utc": "2026-10-08T13:20:55.961269+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + original ROS2 rosidl_adapter source",
+  "artifact_sha256": {
+    "examples/0591_ros-interface/Greeting.msg": "d3be2a1bb8a92f606ff5f2d706ccf7fe244b3615a314dab933f58d065732ef2c",
+    "examples/0591_ros-interface/verify.py": "c2013bcb0abd58bbebf1c31b76f804b17578b95bfdaaa2245ea88e2b13e0c05f"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

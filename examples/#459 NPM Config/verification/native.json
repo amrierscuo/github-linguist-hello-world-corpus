@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:03:28.122297+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "NPM version",
+      "cwd": "<workspace>/work/tools_441_460/459",
+      "command": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "11.14.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read original project config in isolated temporary project",
+      "cwd": "<workspace>/work/tools_441_460/459",
+      "command": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "--userconfig",
+        "<workspace>/work/tools_441_460/459/empty-user.npmrc",
+        "--globalconfig",
+        "<workspace>/work/tools_441_460/459/empty-global.npmrc",
+        "config",
+        "get",
+        "init-author-name"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read boolean control from project config",
+      "cwd": "<workspace>/work/tools_441_460/459",
+      "command": [
+        "C:/Program Files/nodejs/npm.cmd",
+        "--userconfig",
+        "<workspace>/work/tools_441_460/459/empty-user.npmrc",
+        "--globalconfig",
+        "<workspace>/work/tools_441_460/459/empty-global.npmrc",
+        "config",
+        "get",
+        "audit"
+      ],
+      "exit_code": 0,
+      "stdout": "false\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Actual NPM project npmrc parser/config reader",
+    "version": "11.14.1"
+  },
+  "artifact_sha256": {
+    "examples/0459_npm-config/.npmrc": "38a7fa471520f8334b0518ea89520e7ab569e21b5a2ae543d96b0befc99791e2"
+  }
+}

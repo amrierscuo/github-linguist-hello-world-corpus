@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:45.208809+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Java version",
+      "command": [
+        "java",
+        "-version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_364_150645201361",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "Kotlin compiler version",
+      "command": [
+        "java",
+        "-jar",
+        "<workspace>\\work\\tools_361_380\\kotlin\\kotlinc\\lib\\kotlin-compiler.jar",
+        "-version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_364_150645201361",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "info: kotlinc-jvm 2.4.21 (JRE 21.0.12.1+1-LTS)\n"
+    },
+    {
+      "label": "Native Kotlin compilation",
+      "command": [
+        "java",
+        "-jar",
+        "<workspace>\\work\\tools_361_380\\kotlin\\kotlinc\\lib\\kotlin-compiler.jar",
+        "Hello.kt",
+        "-include-runtime",
+        "-d",
+        "hello.jar"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_364_150645201361",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run compiled Kotlin program",
+      "command": [
+        "java",
+        "-jar",
+        "hello.jar"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_364_150645201361",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Kotlin JVM compiler",
+    "distribution": {
+      "file": "kotlin.zip",
+      "url": "https://github.com/JetBrains/kotlin/releases/download/v2.4.21/kotlin-compiler-2.4.21.zip",
+      "sha256": "7cc140e76daf416a0424a5557f99afd7ca89ebd463ea1101261e3e01c33e75cd"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0364_kotlin/Hello.kt": "a105a5ca77a1c6c1becf08844c469a6c269b4c2ff1a611bf898c1a05c8380074"
+  }
+}

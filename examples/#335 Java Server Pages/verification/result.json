@@ -1,0 +1,35 @@
+{
+  "ordinal": 335,
+  "name": "Java Server Pages",
+  "timestamp_utc": "2026-10-08T12:35:28.998367+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "OpenJDK 21.0.12 + Apache Tomcat/Jasper 10.1.42 + ECJ 3.33.0",
+  "artifact_sha256": {
+    "examples/0335_java-server-pages/hello.jsp": "6d66570c62503bc84a414b011540b7e25076a056cdf67403224f402ce3baa083",
+    "examples/0335_java-server-pages/Verify.java": "c1d172353f6a4367040d9281e4593764f0ad960e6b0e7c6920b0d818e151c902"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\tomcat-embed-core-10.1.42.jar;${WORKSPACE}\\work\\tools_321_340\\tomcat-embed-el-10.1.42.jar;${WORKSPACE}\\work\\tools_321_340\\tomcat-embed-jasper-10.1.42.jar;${WORKSPACE}\\work\\tools_321_340\\ecj-3.33.0.jar;${WORKSPACE}\\work\\tools_321_340\\jakarta.annotation-api-2.1.1.jar",
+        "Verify.java",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0335"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Oct 08, 2026 2:35:30 PM org.apache.coyote.AbstractProtocol init\nINFO: Initializing ProtocolHandler [\"http-nio-127.0.0.1-auto-1\"]\nOct 08, 2026 2:35:30 PM org.apache.catalina.core.StandardService startInternal\nINFO: Starting service [Tomcat]\nOct 08, 2026 2:35:30 PM org.apache.catalina.core.StandardEngine startInternal\nINFO: Starting Servlet engine: [Apache Tomcat/10.1.42]\nOct 08, 2026 2:35:30 PM org.apache.jasper.servlet.TldScanner scanJars\nINFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.\nOct 08, 2026 2:35:30 PM org.apache.coyote.AbstractProtocol start\nINFO: Starting ProtocolHandler [\"http-nio-127.0.0.1-auto-1-58004\"]\nOct 08, 2026 2:35:31 PM org.apache.coyote.AbstractProtocol pause\nINFO: Pausing ProtocolHandler [\"http-nio-127.0.0.1-auto-1-58004\"]\nOct 08, 2026 2:35:31 PM org.apache.catalina.core.StandardService stopInternal\nINFO: Stopping service [Tomcat]\nOct 08, 2026 2:35:31 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalsForLeaks\nWARNING: You need to add \"--add-opens=java.base/java.lang=ALL-UNNAMED\" to the JVM command line arguments to enable ThreadLocal memory leak detection. Alternatively, you can suppress this warning by disabling ThreadLocal memory leak detection.\nOct 08, 2026 2:35:31 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesRmiTargets\nWARNING: You need to add \"--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED\" to the JVM command line arguments to enable RMI Target memory leak detection. Alternatively, you can suppress this warning by disabling RMI Target memory leak detection.\nOct 08, 2026 2:35:31 PM org.apache.coyote.AbstractProtocol stop\nINFO: Stopping ProtocolHandler [\"http-nio-127.0.0.1-auto-1-58004\"]\nOct 08, 2026 2:35:31 PM org.apache.coyote.AbstractProtocol destroy\nINFO: Destroying ProtocolHandler [\"http-nio-127.0.0.1-auto-1-58004\"]\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "http_assertions": {
+    "status": 200,
+    "content_type": "text/plain",
+    "body": "Hello, World!\n",
+    "binding": "127.0.0.1:ephemeral",
+    "server_cleanup": "stop and destroy in finally"
+  },
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,33 @@
+{
+  "ordinal": 196,
+  "name": "Erlang",
+  "timestamp_utc": "2026-10-08T12:54:23.909756+00:00",
+  "platform": "Windows x64; WSL Ubuntu 24.04 for Linux-native commands",
+  "toolchain": "Erlang OTP 25 / ERTS 13.2.2.5 original compile:file + BEAM runtime",
+  "artifact_sha256": {
+    "examples/0196_erlang/hello.erl": "e056694266ee04348abcbd244cfa63d3218a7baf31c4fb5c2879a407fda61d9e"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys\np,cwd,build,kind=sys.argv[1:]\nenv=os.environ.copy();env.update({\"PATH\":p+\"/portable-bin:/usr/bin:/bin\",\"ERL_CRASH_DUMP\":build+\"/erl_crash.dump\"})\nos.chdir(cwd)\nif kind==\"elixir\":\n    result=subprocess.run([p+\"/ubuntu/usr/lib/elixir/bin/elixir\",\"hello.exs\"],env=env)\nelse:\n    compile='case compile:file(\"hello.erl\", [{outdir,\"'+build+'\"}]) of {ok,hello} -> halt(0); _ -> halt(1) end.'\n    subprocess.run([p+\"/portable-bin/erl\",\"-noshell\",\"-eval\",compile],env=env,check=True)\n    result=subprocess.run([p+\"/portable-bin/erl\",\"-noshell\",\"-pa\",build,\"-s\",\"hello\",\"main\",\"-s\",\"init\",\"stop\"],env=env)\nsys.exit(result.returncode)\n",
+        "${WORKSPACE_WSL}/work/tools_281_300",
+        "${WORKSPACE_WSL}/work/staging_181_200/examples/0196_erlang",
+        "${WORKSPACE_WSL}/work/tools_181_200/erlang_build",
+        "erlang"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes are normalized; tool outputs, exit codes, timestamps and source SHA-256 are preserved. Raw records are outside the corpus."
+}

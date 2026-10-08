@@ -1,0 +1,20 @@
+# Set these environment variables before invoking Apache HTTP Server.
+# CORPUS_ROOT: absolute path to this example directory
+# CORPUS_RUN: absolute path to an existing writable scratch directory
+# APACHE_MODULE_DIR: directory containing the modules of this Apache build
+ServerRoot "${CORPUS_ROOT}"
+ServerName localhost
+Listen 127.0.0.1:18033
+PidFile "${CORPUS_RUN}/httpd.pid"
+ErrorLog "${CORPUS_RUN}/error.log"
+
+LoadModule mpm_event_module "${APACHE_MODULE_DIR}/mod_mpm_event.so"
+LoadModule unixd_module "${APACHE_MODULE_DIR}/mod_unixd.so"
+LoadModule authz_core_module "${APACHE_MODULE_DIR}/mod_authz_core.so"
+
+User apache
+Group apache
+DocumentRoot "${CORPUS_ROOT}/www"
+<Directory "${CORPUS_ROOT}/www">
+    Require all granted
+</Directory>

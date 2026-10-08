@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "ordinal": 246,
+  "language": "Git Attributes",
+  "timestamp_utc": "2026-10-08T12:15:29.811553+00:00",
+  "platform": "Windows x64",
+  "toolchain": "git version 2.51.0.windows.1",
+  "working_directory": "examples/0246_git-attributes",
+  "source_sha256": {
+    "examples/0246_git-attributes/.gitattributes": "ffc4c38ee1e101eb6fd7815963430829effda7321836b7d764974ff2e8d0c51e",
+    "examples/0246_git-attributes/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0246_git-attributes/verify.py": "7ace7ce706ba24db0f30cbf085ec6dafdaf652144b53420fbee77dad27b3388e"
+  },
+  "steps": [
+    {
+      "command": "git --version",
+      "exit_code": 0,
+      "stdout": "git version 2.51.0.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "git init --initial-branch=main",
+      "exit_code": 0,
+      "stdout": "Initialized empty Git repository in <workspace>/work/verify_241_260/git-246/.git/\n",
+      "stderr": ""
+    },
+    {
+      "command": "git config core.autocrlf false",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git check-attr text eol corpus-greeting -- hello.txt",
+      "exit_code": 0,
+      "stdout": "hello.txt: text: set\nhello.txt: eol: lf\nhello.txt: corpus-greeting: hello-world\n",
+      "stderr": ""
+    },
+    {
+      "command": "git add .gitattributes hello.txt",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git show :hello.txt",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Git check-attr reads real .gitattributes; Git index stores LF greeting text. Custom attribute is illustrative metadata.",
+  "blockers": []
+}

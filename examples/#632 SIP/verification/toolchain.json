@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:43.336476+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native SIP binding description parsing and C wrapper generation",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-m",
+        "sipbuild.tools.build",
+        "--no-compile",
+        "--build-dir",
+        "build"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_632_154443319364",
+      "exit_code": 0,
+      "stdout": "These bindings will be built: corpus_greeting.\nGenerating the corpus_greeting bindings...\nThe project has been built.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "sip",
+    "version": "6.17.0",
+    "metadata_sha256": "33111c09fe95b0d534eef83a4e8826788ceb7111f245737503ee5444407ce6b0",
+    "source": "https://pypi.org/project/sip/"
+  },
+  "semantic_scope": "SIP parser and wrapper generator only; C extension compilation/import not executed.",
+  "artifact_sha256": {
+    "examples/0632_sip/hello.sip": "4ea5074cfce41c53bd35f777bb35a4085b9bcd3f37d8f13b10dd8ce43354150f",
+    "examples/0632_sip/pyproject.toml": "33ca1e571a246f80779f6920d944a4acc333a6809bb3bbd594170060969c2387"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "sip",
+        "old_version": "6.17.0.dist",
+        "version": "6.17.0",
+        "original_metadata_sha256": "33111c09fe95b0d534eef83a4e8826788ceb7111f245737503ee5444407ce6b0",
+        "original_metadata_file": "work/tools_621_640/python/sip-6.17.0.dist-info/METADATA"
+      }
+    ]
+  }
+}

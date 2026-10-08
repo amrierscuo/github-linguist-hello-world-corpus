@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "ordinal": 496,
+  "language": "Omgrofl",
+  "timestamp_utc": "2026-10-08T13:10:45.310605+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Java openjdk 21.0.12.1 2026-08-18 LTS; OlegSmelov interpreter commit 6c621627b913771f3896c75ea8a27f06e34f2e65",
+  "working_directory": "examples/0496_omgrofl",
+  "source_sha256": {
+    "examples/0496_omgrofl/hello.omgrofl": "15bd4f264e5568c3646942513f0d82946603e2deff07fd93914bb55c1d97cbcb"
+  },
+  "steps": [
+    {
+      "command": "java --version",
+      "exit_code": 0,
+      "stdout": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n",
+      "stderr": ""
+    },
+    {
+      "command": "javac -d <build>/classes <original-interpreter-java-sources>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "java -cp <build>/classes omgrofl.Main hello.omgrofl",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Programma originale: un registro lol viene assegnato ai codici ASCII, rofl emette i byte. Interprete community autentico, non parser costruito per questo corpus.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/tools_481_500/omgrofl.tar.gz",
+      "sha256": "b38575463a5f70c499f9717270c46d4bc78e9fcc41350d66c85e63d4a6e20761"
+    }
+  ]
+}

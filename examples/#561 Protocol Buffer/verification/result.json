@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ordinal": 561,
+  "language": "Protocol Buffer",
+  "timestamp_utc": "2026-10-08T13:16:51.728386+00:00",
+  "platform": "WSL protoc + Windows CPython",
+  "toolchain": "libprotoc 3.21.12; CPython 3.13.9; google.protobuf 5.29.3",
+  "working_directory": "examples/0561_protocol-buffer",
+  "source_sha256": {
+    "examples/0561_protocol-buffer/hello.proto": "c2cb8653a220ee5ffe88c85c5823e6a5c830042e819499db7aaff54c82f5cdc4",
+    "examples/0561_protocol-buffer/hello.textproto": "fcb18d3659a99949ce744cd6b611a5e5c4073676f622bcfa827585e0f019fc27",
+    "examples/0561_protocol-buffer/verify.py": "f3ea223e5485f561b103b31c16465210b5075d420c8dfa685e0cc5f293d97f29"
+  },
+  "steps": [
+    {
+      "command": "protoc --version",
+      "exit_code": 0,
+      "stdout": "libprotoc 3.21.12\n",
+      "stderr": ""
+    },
+    {
+      "command": "protoc --python_out=<build> hello.proto",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <build>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original protoc compiles schema; actual protobuf TextFormat parser and binary serialization roundtrip recover greeting.",
+  "blockers": []
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:37:09.072307+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0042_astro/package.json": "e8da769625fe5ed24935f6799910bf527d5d999db3e864a95d4778396db7049f",
+    "examples/0042_astro/verify.mjs": "9ef6cf6b3adf18e32f02d73e5fe8ae678ef6e92bde1d59fc0b47b49a3e6e4c12",
+    "examples/0042_astro/src/pages/index.astro": "d8779ead6140cf8501e8827700ec90e016f7beeafa7a317bd25bcdc8c6ce0d78"
+  },
+  "commands": [
+    {
+      "label": "Node version",
+      "cwd": "<corpus>/examples/0042_astro",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Official Astro compiler and container runtime assertions",
+      "cwd": "<corpus>/examples/0042_astro",
+      "command": [
+        "<node>",
+        "<corpus>/examples/0042_astro/verify.mjs",
+        "<workspace>/work/tools_41_60/node",
+        "<corpus>/examples/0042_astro/src/pages/index.astro"
+      ],
+      "exit_code": 1,
+      "stdout": "PASS: official Astro compiler transformed the actual component\n",
+      "stderr": "file:///<workspace>/work/tools_41_60/node/verified-hello-component.mjs:19\n  createMetadata as $$createMetadata\n  ^^^^^^^^^^^^^^\nSyntaxError: The requested module 'astro/compiler-runtime' does not provide an export named 'createMetadata'\n    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)\n    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async file:///<corpus>/examples/0042_astro/verify.mjs:22:32\n\nNode.js v22.20.0\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "blockers": [
+    "Official compiler transform succeeds, but the compiled module requires createMetadata which the installed Astro runtime does not export; rendered HTML remains pending."
+  ],
+  "toolchain": {
+    "name": "Official Astro CLI static builder",
+    "version": "5.14.1",
+    "node_version": "v22.20.0",
+    "compiler_version": "2.13.1"
+  }
+}

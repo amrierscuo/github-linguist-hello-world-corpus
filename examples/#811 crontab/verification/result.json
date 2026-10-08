@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 811,
+  "language": "crontab",
+  "timestamp_utc": "2026-10-08T13:38:34.781824+00:00",
+  "platform": "Windows x64",
+  "toolchain": "CPython3.13.9; python-crontab3.4.0",
+  "working_directory": "examples/0811_crontab",
+  "source_sha256": {
+    "examples/0811_crontab/crontab": "200177fab2eb18d58f884e2f8cfaa10d2a00a9f7cd327d6b4ac110e7f54d797b",
+    "examples/0811_crontab/verify.py": "b4aa2e58d99185bcbb2be6c544d854d2cd910f239f6987ba86cb2d02ce9bd647"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "{\"command\": \"sh -c <parsed-crontab-command>\", \"exit_code\": 0, \"stdout\": \"Hello, World!\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "sh -c <parsed-crontab-command>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Existing python-crontab parser validates schedule and native shell executes exact parsed command once. Nothing scheduled or installed.",
+  "blockers": []
+}

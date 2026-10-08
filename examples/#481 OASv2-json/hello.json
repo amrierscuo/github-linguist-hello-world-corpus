@@ -1,0 +1,40 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Original corpus greeting",
+    "version": "1.0.0"
+  },
+  "host": "example.invalid",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "text/plain"
+  ],
+  "paths": {
+    "/hello": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Original greeting response",
+            "schema": {
+              "$ref": "#/definitions/Greeting"
+            },
+            "examples": {
+              "text/plain": "Hello, World!"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Greeting": {
+      "type": "string",
+      "enum": [
+        "Hello, World!"
+      ]
+    }
+  }
+}

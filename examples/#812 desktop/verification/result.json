@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "ordinal": 812,
+  "language": "desktop",
+  "timestamp_utc": "2026-10-08T13:38:35.207016+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "desktop-file-utils0.27 native validator",
+  "working_directory": "examples/0812_desktop",
+  "source_sha256": {
+    "examples/0812_desktop/hello.desktop": "05699ee0e3a730b963f3be1cceedb9d81f3d52ce2fbd2e744d0dff282baaa0c8"
+  },
+  "steps": [
+    {
+      "command": "desktop-file-validate hello.desktop",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Native freedesktop validator accepts actual desktop entry. Desktop reader/display of name and launcher execution pending.",
+  "blockers": [
+    "Desktop shell UI/launcher consumer pending."
+  ]
+}

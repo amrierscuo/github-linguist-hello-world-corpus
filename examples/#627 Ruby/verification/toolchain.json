@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:40.990511+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Ruby version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_627_154440981430",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_627_154440981430",
+      "exit_code": 0,
+      "stdout": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Ruby parsing and execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_627_154440981430",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "hello.rb"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_627_154440981430",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Ruby",
+    "version": "3.2.3",
+    "binary_sha256": "ead53704d7da35c85a28db19070d34e7ecef9461ecf8ae5e9d51ae79125bb731",
+    "source": "https://www.ruby-lang.org/"
+  },
+  "artifact_sha256": {
+    "examples/0627_ruby/hello.rb": "6756d80f96db6a473859b4ad9527f4e3dc4fb3648ad2a0550bdd1996bd7749cc"
+  }
+}

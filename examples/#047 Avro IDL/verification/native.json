@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:31.808944+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0047_avro-idl/AvroCheck.java": "76eb34e015a91be958a43a0b5381c25b20b3fec36aa78c132a340bde799ad334",
+    "examples/0047_avro-idl/hello.avdl": "5718d41cbcc6c5e1355760a3b0c2481ee3e81913d060ba2c1985de5a4db85aed"
+  },
+  "commands": [
+    {
+      "label": "JVM version",
+      "cwd": "<corpus>/examples/0047_avro-idl",
+      "command": [
+        "<java>",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "Compile IDL to Avro protocol",
+      "cwd": "<corpus>/examples/0047_avro-idl",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_41_60/avro-tools-1.12.0.jar",
+        "idl",
+        "<corpus>/examples/0047_avro-idl/hello.avdl",
+        "<workspace>/work/tools_41_60/47/hello.avpr"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Avro default and binary round-trip assertions",
+      "cwd": "<corpus>/examples/0047_avro-idl",
+      "command": [
+        "<java>",
+        "--class-path",
+        "<workspace>/work/tools_41_60/avro-tools-1.12.0.jar",
+        "AvroCheck.java",
+        "<workspace>/work/tools_41_60/47/hello.avpr"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: compiled IDL default; genuine Avro binary encode/decode\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Apache Avro tools and core Java APIs",
+    "version": "1.12.0",
+    "download": {
+      "url": "https://repo.maven.apache.org/maven2/org/apache/avro/avro-tools/1.12.0/avro-tools-1.12.0.jar",
+      "bytes": 57522797,
+      "sha256": "f8e4d0d945852dc2f91c3bf88f7dcb8cabc00e0fc295bb92e893e54945e08085"
+    }
+  }
+}

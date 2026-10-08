@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:31:17.480077+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0078_brighterscript/bsconfig.json": "7208ca35710fd8fe489a6890573599e7355391200d63cf8ccea2f63b69d112b1",
+    "examples/0078_brighterscript/source/main.bs": "d612e73e45a83c5ae1b2bc7b04032e62d0a7b046fdf030107eb6ebf8afba3efb"
+  },
+  "commands": [
+    {
+      "label": "Node.js version",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_78",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "BrighterScript version",
+      "command": [
+        "<node>",
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\brighterscript\\dist\\cli.js",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_78",
+      "exit_code": 0,
+      "stdout": "0.73.5\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native BrighterScript parse, validation and transpilation",
+      "command": [
+        "<node>",
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\brighterscript\\dist\\cli.js",
+        "--project",
+        "bsconfig.json"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_78",
+      "exit_code": 0,
+      "stdout": "[\u001b[90m01:32:22:980 PM\u001b[39m] Using config file: \"bsconfig.json\"\n[\u001b[90m01:32:22:990 PM\u001b[39m] Loading 0 plugins for cwd \"<workspace>\\work\\tools_61_80\\verify_78\" []\n[\u001b[90m01:32:23:008 PM\u001b[39m] Parsing files\n[\u001b[90m01:32:23:741 PM\u001b[39m] Parsing files finished. (\u001b[34m731.815ms\u001b[39m)\n[\u001b[90m01:32:23:765 PM\u001b[39m] Validating project\n[\u001b[90m01:32:23:863 PM\u001b[39m] Validating project finished. (\u001b[34m89.482ms\u001b[39m)\n[\u001b[90m01:32:23:945 PM\u001b[39m] Copying to staging directory\n[\u001b[90m01:32:24:010 PM\u001b[39m] Copying to staging directory finished. (\u001b[34m64.517ms\u001b[39m)\n[\u001b[90m01:32:24:013 PM\u001b[39m] Transpiling\n[\u001b[90m01:32:24:397 PM\u001b[39m] Transpiling finished. (\u001b[34m360.389ms\u001b[39m)\n",
+      "stderr": ""
+    },
+    {
+      "label": "BrightScript interpreter executes transpiled code",
+      "command": [
+        "<node>",
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\brs\\bin\\cli.js",
+        "<workspace>\\work\\tools_61_80\\verify_78\\stage\\source\\main.brs"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_78",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "packages": [
+      {
+        "name": "brighterscript",
+        "version": "0.73.5",
+        "manifest_sha256": "ee7f26d6b675ef5fc74efc58f84d25556820ad7629fd1940ecb3cc59a5123c94",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/rokucommunity/brighterscript"
+        }
+      },
+      {
+        "name": "brs",
+        "version": "0.45.0",
+        "manifest_sha256": "da73d619e1198a5fd27b9708b8ee00522e66284ff240bd8568b5151fe12a0147",
+        "repository": "https://github.com/sjbarag/brs"
+      }
+    ],
+    "package_lock_sha256": "1080e468a43341a1fb5ac222462d7c9bfb84ae281826e8901de32bffb47f0535"
+  },
+  "transpiled_brightscript": "function Corpus_greeting() as string\n    return \"Hello, \" + \"World!\"\nend function\n\nsub main()\n    print Corpus_greeting()\nend sub"
+}

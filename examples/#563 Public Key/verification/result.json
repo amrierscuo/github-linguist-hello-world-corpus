@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 563,
+  "language": "Public Key",
+  "timestamp_utc": "2026-10-08T13:16:51.649710+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "OpenSSH_9.6p1 Ubuntu-3ubuntu13.19, OpenSSL 3.0.13 30 Jan 2024",
+  "working_directory": "examples/0563_public-key",
+  "source_sha256": {
+    "examples/0563_public-key/hello.pub": "cee28dd53d8e93e6bc37952667641b83bc6126730df5c4857349abe003a21cdd",
+    "examples/0563_public-key/message.txt": "92b772380a3f8e27a93e57e6deeca6c01da07f5aadce78bb2fbb20de10a66925"
+  },
+  "steps": [
+    {
+      "command": "ssh -V",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "OpenSSH_9.6p1 Ubuntu-3ubuntu13.19, OpenSSL 3.0.13 30 Jan 2024\n"
+    },
+    {
+      "command": "ssh-keygen -t ed25519 -N <empty> -C \"Hello, World!\" -f <work-private>",
+      "exit_code": 0,
+      "stdout": "Generating public/private ed25519 key pair.\nYour identification has been saved in private\nYour public key has been saved in private.pub\nThe key fingerprint is:\nSHA256:uTIVePD+U7TryXHIW5p55ncCJ/IPeaD+HEe68zTAKTg Hello, World!\nThe key's randomart image is:\n+--[ED25519 256]--+\n|      .          |\n|       +         |\n|      . +   .    |\n|       o + o o   |\n|        E . B .  |\n|       . +.=oO.  |\n|      o . +oX+B  |\n|       o . =o^+.o|\n|          ..%B+o.|\n+----[SHA256]-----+\n",
+      "stderr": ""
+    },
+    {
+      "command": "ssh-keygen -lf hello.pub",
+      "exit_code": 0,
+      "stdout": "256 SHA256:uTIVePD+U7TryXHIW5p55ncCJ/IPeaD+HEe68zTAKTg Hello, World! (ED25519)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "OpenSSH generates a new demonstrative public key and validates format/fingerprint/comment. Only public key is delivered; private remains in work.",
+  "blockers": []
+}

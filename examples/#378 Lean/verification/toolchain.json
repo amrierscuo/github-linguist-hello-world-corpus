@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:06:52.278915+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace, corpus, user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Lean version",
+      "command": [
+        "<workspace>\\work\\tools_361_380\\lean3\\lean-3.51.1-windows\\bin\\lean.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_378_150652269766",
+      "exit_code": 0,
+      "stdout": "Lean (version 3.51.1, commit cce7990ea86a, Release)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Lean elaborator and kernel checking",
+      "command": [
+        "<workspace>\\work\\tools_361_380\\lean3\\lean-3.51.1-windows\\bin\\lean.exe",
+        "hello.lean"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_378_150652269766",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Original Lean IO execution",
+      "command": [
+        "<workspace>\\work\\tools_361_380\\lean3\\lean-3.51.1-windows\\bin\\lean.exe",
+        "--run",
+        "hello.lean"
+      ],
+      "cwd": "<workspace>\\work\\tools_361_380\\verify_378_150652269766",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Lean3 compiler/kernel/runtime",
+    "distribution": {
+      "file": "lean3.zip",
+      "url": "https://github.com/leanprover-community/lean/releases/download/v3.51.1/lean-3.51.1-windows.zip",
+      "sha256": "88c7fff586ba3804ccbabcd348e51f87858dd60216c0b07009b9fbb239ceca3b"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0378_lean/hello.lean": "742d655a0571619b188f8722042cc04739b3b960e58d18a6500ef342418fd66b"
+  }
+}

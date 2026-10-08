@@ -1,0 +1,61 @@
+{
+  "variant_extension": ".t",
+  "timestamp_utc": "2026-10-08T16:05:32.729317+00:00",
+  "scope": "Perl originale: compile check; esecuzione del driver o TAP con prove. Il .al ha solo sintassi verificata perché AutoLoader non esercitato.",
+  "toolchain": {
+    "name": "Perl WSL Ubuntu",
+    "version": "This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi",
+    "version_command": {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/t-3c247edb",
+        "--exec",
+        "perl",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    }
+  },
+  "artifact_sha256": {
+    "examples/0532_perl/variants/t-3c247edb/hello.t": "0c2d700513ea3f0d8014dbd466a432b932812ea5a1b8b6fe9ec8b821a74fb2bc"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/t-3c247edb",
+        "--exec",
+        "perl",
+        "-I.",
+        "-c",
+        "hello.t"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "hello.t syntax OK\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/t-3c247edb",
+        "--exec",
+        "prove",
+        "hello.t"
+      ],
+      "exit_code": 0,
+      "stdout": "hello.t .. ok\nAll tests successful.\nFiles=1, Tests=1,  0 wallclock secs ( 0.01 usr  0.00 sys +  0.04 cusr  0.00 csys =  0.05 CPU)\nResult: PASS\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "sha256": {
+    "examples/0532_perl/variants/t-3c247edb/hello.t": "0c2d700513ea3f0d8014dbd466a432b932812ea5a1b8b6fe9ec8b821a74fb2bc"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

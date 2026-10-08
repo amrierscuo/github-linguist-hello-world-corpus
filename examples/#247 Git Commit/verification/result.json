@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ordinal": 247,
+  "language": "Git Commit",
+  "timestamp_utc": "2026-10-08T12:15:30.149179+00:00",
+  "platform": "Windows x64",
+  "toolchain": "git version 2.51.0.windows.1",
+  "working_directory": "examples/0247_git-commit",
+  "source_sha256": {
+    "examples/0247_git-commit/.gitmessage": "72b0b20a2b44e1630ef0de9ba3cd7b04d26767929e0732a4ba69104fd4106fac",
+    "examples/0247_git-commit/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0247_git-commit/verify.py": "7ace7ce706ba24db0f30cbf085ec6dafdaf652144b53420fbee77dad27b3388e"
+  },
+  "steps": [
+    {
+      "command": "git --version",
+      "exit_code": 0,
+      "stdout": "git version 2.51.0.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "command": "git init --initial-branch=main",
+      "exit_code": 0,
+      "stdout": "Initialized empty Git repository in <workspace>/work/verify_241_260/git-247/.git/\n",
+      "stderr": ""
+    },
+    {
+      "command": "git config core.autocrlf false",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git add hello.txt",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git commit --no-gpg-sign --cleanup=verbatim -F <corpus>\\examples\\0247_git-commit\\.gitmessage",
+      "exit_code": 0,
+      "stdout": "[main (root-commit) 0bb0847] Hello, World!\n 1 file changed, 1 insertion(+)\n create mode 100644 hello.txt\n",
+      "stderr": ""
+    },
+    {
+      "command": "git log -1 --format=%s",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": "git cat-file commit HEAD",
+      "exit_code": 0,
+      "stdout": "tree bc225ea23f53f06c0c5bd3ba2be85c2120d68417\nauthor Corpus Example <hello@example.invalid> 1791417600 +0000\ncommitter Corpus Example <hello@example.invalid> 1791417600 +0000\n\nHello, World!\n\nAdd the original greeting fixture.\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Git consumes original .gitmessage with commit -F, creates a real local commit and log/cat-file return the exact subject/body.",
+  "blockers": []
+}

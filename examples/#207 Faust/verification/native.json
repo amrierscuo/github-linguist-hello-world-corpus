@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.591264+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Faust native compiler version",
+      "cwd": "<corpus>/examples/0207_faust",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_201_220/linux/usr/bin/faust",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "FAUST Version 2.70.3\nEmbedded backends: \n   DSP to C\n   DSP to C++\n   DSP to Cmajor\n   DSP to Codebox\n   DSP to CSharp\n   DSP to DLang\n   DSP to FIR\n   DSP to Interpreter\n   DSP to Java\n   DSP to JAX\n   DSP to Julia\n   DSP to JSFX\n   DSP to LLVM IR\n   DSP to old C++\n   DSP to Rust\n   DSP to WebAssembly (wast/wasm)\nBuild with LLVM version 17.0.6\nCopyright (C) 2002-2024, GRAME - Centre National de Creation Musicale. All rights reserved. \n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile Faust DSP to genuine C++",
+      "cwd": "<corpus>/examples/0207_faust",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_201_220/linux/usr/bin/faust",
+        "-lang",
+        "cpp",
+        "-cn",
+        "GreetingDSP",
+        "-o",
+        "<workspace>/work/tools_201_220/207/GreetingDSP.h",
+        "<corpus>/examples/0207_faust/hello.dsp"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Compile native DSP execution harness",
+      "cwd": "<corpus>/examples/0207_faust",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-I",
+        "<workspace>/work/tools_201_220/207",
+        "<corpus>/examples/0207_faust/verify.cpp",
+        "-o",
+        "<workspace>/work/tools_201_220/207/check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute generated DSP and assert 13 sample values",
+      "cwd": "<corpus>/examples/0207_faust",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_201_220/207/check"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine Faust generated DSP; 13 constant channels, one sample each\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Faust compiler extracted from Ubuntu package",
+    "version": "FAUST Version 2.70.3\nEmbedded backends: \n   DSP to C\n   DSP to C++\n   DSP to Cmajor\n   DSP to Codebox\n   DSP to CSharp\n   DSP to DLang\n   DSP to FIR\n   DSP to Interpreter\n   DSP to Java\n   DSP to JAX\n   DSP to Julia\n   DSP to JSFX\n   DSP to LLVM IR\n   DSP to old C++\n   DSP to Rust\n   DSP to WebAssembly (wast/wasm)\nBuild with LLVM version 17.0.6\nCopyright (C) 2002-2024, GRAME - Centre National de Creation Musicale. All rights reserved.",
+    "executable_sha256": "e71fdeaa4e0e3b8aaf58a80f5d93e852f6d517d08b7329e760ba43058367f41e"
+  },
+  "artifact_sha256": {
+    "examples/0207_faust/hello.dsp": "ac57838a94c1592d57ad7095afe29e1741252126dd29126ca4af0474996fce65",
+    "examples/0207_faust/verify.cpp": "c249960902603f0b50d34bbb5976381a43fa84ed36fe5f0c3677cb4570e068ee"
+  }
+}

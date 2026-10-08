@@ -1,0 +1,10 @@
+max v2;
+#N vpatcher 20 20 640 360;
+#P newex 30 30 60 196617 loadbang;
+#P message 30 65 530 196617 72 101 108 108 111 44 32 87 111 114 108 100 33;
+#P newex 30 105 40 196617 itoa;
+#P newex 30 145 100 196617 print corpus;
+#P connect 3 0 2 0;
+#P connect 2 0 1 0;
+#P connect 1 0 0 0;
+#P pop;

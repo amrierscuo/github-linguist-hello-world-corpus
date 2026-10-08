@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:24.598089+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Java version",
+      "cwd": "<corpus>/examples/0279_hocon",
+      "command": [
+        "<java>",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "label": "Parse HOCON, resolve substitution and assert concatenated value",
+      "cwd": "<corpus>/examples/0279_hocon",
+      "command": [
+        "<java>",
+        "--class-path",
+        "<workspace>/work/tools_261_280/config-1.4.3.jar",
+        "HoconCheck.java",
+        "hello.hocon"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: official HOCON parser, concatenation and substitution resolution\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Lightbend/Typesafe Config HOCON implementation",
+    "version": "1.4.3",
+    "jar_sha256": "8ada4c185ce72416712d63e0b5afdc5f009c0cdf405e5f26efecdf156aa5dfb6"
+  },
+  "artifact_sha256": {
+    "examples/0279_hocon/hello.hocon": "8fd32e09f0b4e1ca8cefcc93244ef86285026c00d38d3c92291cdf5d8b70895b",
+    "examples/0279_hocon/HoconCheck.java": "abdf878cd61341aab376902676ec0a0f4386407f1d4079ffe720c69fbf7fe127"
+  }
+}

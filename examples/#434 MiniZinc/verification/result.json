@@ -1,0 +1,43 @@
+{
+  "ordinal": 434,
+  "name": "MiniZinc",
+  "timestamp_utc": "2026-10-08T12:46:00.286276+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "MiniZinc 2.10.1 official Linux bundle + Gecode",
+  "artifact_sha256": {
+    "examples/0434_minizinc/hello.mzn": "25251efb2bd6dc189ac5436df5cdf9b86678775ae89b74816f45553f3b44dd7a"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_421_440/minizinc/MiniZincIDE-2.10.1-x86_64-linux-gnu/bin/minizinc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "MiniZinc to FlatZinc converter, version 2.10.1, build 33348285743\nCopyright (C) 2014-2026 Monash University, NICTA, Data61\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_421_440/minizinc/MiniZincIDE-2.10.1-x86_64-linux-gnu/bin/minizinc",
+        "--solver",
+        "gecode",
+        "${WORKSPACE_WSL}/work/staging_421_440/examples/0434_minizinc/hello.mzn"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n----------\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

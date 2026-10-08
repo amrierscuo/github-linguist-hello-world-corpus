@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 92,
+  "language": "CMake",
+  "timestamp_utc": "2026-10-08T11:33:20.658387+00:00",
+  "platform": "Windows x64",
+  "toolchain": "cmake version 4.4.4",
+  "working_directory": "examples/0092_cmake",
+  "source_sha256": {
+    "examples/0092_cmake/hello.cmake": "d87c088fed8f3510a90861a6a2272e817f6ba95568e7a32ee5f94119ee9fbf75"
+  },
+  "steps": [
+    {
+      "command": "cmake --version",
+      "exit_code": 0,
+      "stdout": "cmake version 4.4.4\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+      "stderr": ""
+    },
+    {
+      "command": "cmake -P hello.cmake",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Hello, World!\n"
+    }
+  ],
+  "assertions": [
+    "CMake script execution exit 0; message exactly Hello, World! on stderr."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Real CMake script mode. message without a mode writes to stderr, which is the recorded output channel.",
+  "blockers": []
+}

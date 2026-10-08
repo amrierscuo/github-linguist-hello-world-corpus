@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Less greeting</title>
+<link rel="stylesheet" href="hello.css"><p class="greeting"></p>
+<pre id="result"></pre><script>
+const node = document.querySelector('.greeting');
+const style = getComputedStyle(node, '::before');
+const content = style.content;
+const color = getComputedStyle(node).color;
+const pass = content === '"Hello, World!"' && color === 'rgb(18, 69, 120)';
+document.querySelector('#result').textContent = JSON.stringify({pass, content, color});
+if (!pass) throw new Error('Less rendered greeting mismatch');
+</script></html>

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:36.748546+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0051_b4x/Main.bas": "0231388f1284e09b8997fe30f57e8411de2d951d7bc613d36a7bf6138e606696"
+  },
+  "commands": [
+    {
+      "label": "Windows tool availability only",
+      "cwd": "<corpus>/examples/0051_b4x",
+      "command": [
+        "<python>",
+        "-c",
+        "import json,shutil;print(json.dumps({\"B4J.exe\":shutil.which(\"B4J.exe\")}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"B4J.exe\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "B4J.exe toolchain not installed or not available in this isolated verification environment."
+  ],
+  "toolchain": {
+    "name": "B4J.exe",
+    "version": null
+  },
+  "scope": "Tool availability only; no genuine language parse or execution has been performed."
+}

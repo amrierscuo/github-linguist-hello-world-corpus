@@ -1,0 +1,10 @@
+#N canvas 0 0 450 300 12;
+#X obj 30 30 loadbang;
+#X msg 30 65 Hello\, World!;
+#X obj 30 100 print greeting;
+#X obj 230 65 delay 10;
+#X msg 230 100 \; pd quit;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;

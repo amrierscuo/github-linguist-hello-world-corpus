@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:29:41.935298+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Official Cargo version",
+      "cwd": "<corpus>/examples/0615_rhai",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "CARGO_HOME=<workspace>/work/tools_601_620/cargo_home",
+        "CARGO_TARGET_DIR=<workspace>/work/tools_601_620/615/target",
+        "<workspace>/work/rust_portable/runtime/bin/cargo",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "cargo 1.90.0 (840b83a10 2025-07-30)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile genuine Rhai engine host and execute original Rhai AST",
+      "cwd": "<corpus>/examples/0615_rhai",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_601_620/615",
+        "--exec",
+        "env",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "CARGO_HOME=<workspace>/work/tools_601_620/cargo_home",
+        "CARGO_TARGET_DIR=<workspace>/work/tools_601_620/615/target",
+        "<workspace>/work/rust_portable/runtime/bin/cargo",
+        "run",
+        "--quiet",
+        "--manifest-path",
+        "<workspace>/work/tools_601_620/615/Cargo.toml",
+        "--",
+        "<corpus>/examples/0615_rhai/hello.rhai"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: genuine Rhai compile and AST execution, print callback checked\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Authentic Rhai Engine in original Rust/Cargo toolchain",
+    "version": "Rhai 1.26.1; cargo 1.90.0 (840b83a10 2025-07-30)",
+    "cargo_sha256": "51de284e8bb0d03dcee595a0fb1cb3a952fe9e7e4b953a8b1467b7f71725b561",
+    "official_toolchain_provenance": "work/rust_portable/provenance.json"
+  },
+  "artifact_sha256": {
+    "examples/0615_rhai/Cargo.lock": "9dfe7f0613edc03023369062389dfc0662d6e59760e51b910d4cdc8b0346a64c",
+    "examples/0615_rhai/Cargo.toml": "53001e167eecb68f5588cea6470b1d34706c5663f0d11146a7745d7bb3c2d226",
+    "examples/0615_rhai/hello.rhai": "72d1b6fe9901f82598bf8524eefaec124547421b3c50f424649be7438c102294",
+    "examples/0615_rhai/src/main.rs": "eb8c04b8e5c2a006c5bf402e3b12ec7f296e5f5ec9e2f98ab5aaf604303a55e4"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "ordinal": 312,
+  "language": "Inform 7",
+  "timestamp_utc": "2026-10-08T12:34:30.772531+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "inform7 version 10.1.2 'Krypton' (29 August 2022); Inform 6 Inform 6.41 for Linux (22nd July 2022); Frotz 2.54",
+  "working_directory": "examples/0312_inform-7",
+  "source_sha256": {
+    "examples/0312_inform-7/hello.ni": "0bfb05ebf5122725e1acbdb891bebb19cdf5fb57912e9af8c15f4befb0739c1a"
+  },
+  "steps": [
+    {
+      "command": "inform7 -version",
+      "exit_code": 0,
+      "stdout": "inform7 version 10.1.2 'Krypton' (29 August 2022)\n",
+      "stderr": ""
+    },
+    {
+      "command": "inform7 -internal <vendor-resources> -external <work>/external -transient <work>/transient -no-index -no-problems -no-census-update -format=Inform6/16 -source hello.ni -o <build>/hello.inf",
+      "exit_code": 0,
+      "stdout": "Inform 7 v10.1.2 has started.\nI've now read your source text, which is 21 words long.\nI've also read Basic Inform by Graham Nelson, which is 7691 words long.\nI've also read English Language by Graham Nelson, which is 2328 words long.\nI've also read Standard Rules by Graham Nelson, which is 32164 words long.\n\n  The 21-word source text has successfully been translated. There were 1 room\n    and 1 thing.\nInform 7 has finished.\n",
+      "stderr": ""
+    },
+    {
+      "command": "inform6 -wSDv8 <build>/hello.inf <build>/hello.z8",
+      "exit_code": 0,
+      "stdout": "Inform 6.41 for Linux (22nd July 2022)\nIn:  1 source code files             92066 syntactic lines\n 78950 textual lines               2324591 characters (ISO 8859-1 Latin1)\nAllocated:\n  8353 symbols                     2599850 bytes of memory\nOut:   Version 8 \"Extended\" story file 1.261008 (360K long):\n    20 classes                          38 objects\n   217 global vars (maximum 233)     27537 variable/array space\n    95 verbs                           311 dictionary entries\n   178 grammar lines (version 2)       251 grammar tokens (unlimited)\n   100 actions                          37 attributes (maximum 48)\n    39 common props (maximum 61)        18 individual props (unlimited)\n345656 bytes of Z-code               77824 unused bytes stripped out (22.5%)\n131002 characters used in text      108826 bytes compressed (rate 0.830)\n     0 abbreviations (maximum 64)     3040 routines (unlimited)\n 75834 instructions of Z-code        44475 sequence points\n 38120 bytes readable memory used (maximum 65536)\n368488 bytes used in Z-machine      155800 bytes free in Z-machine\nCompiled with 3034 suppressed warnings\nCompleted in 0.000 seconds\n",
+      "stderr": ""
+    },
+    {
+      "command": "dfrotz -v",
+      "exit_code": 0,
+      "stdout": "FROTZ V2.54     Dumb interface.\nCommit date:    2022-04-13 23:47:41 -0700\nGit commit:     5a86de2f0799bde12699a0189ea12be8c96194a5\nNotes:          Official release.\n  Frotz was originally written by Stefan Jokisch.\n  It complies with standard 1.0 of Graham Nelson's specification.\n  It was ported to Unix by Galen Hazelwood.\n  It is distributed under the GNU General Public License version 2 or\n    (at your option) any later version.\n  This software is offered as-is with no warranty or liability.\n  The core and dumb port are maintained by David Griffith.\n  Frotz's homepage is https://661.org/proj/if/frotz.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "dfrotz -m <build>/hello.z8 with stdin \"quit\\n\"",
+      "exit_code": 0,
+      "stdout": "Using normal formatting.\nLoading hello.z8.\nHello, World!\n\n    \n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n> ",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Genuine Inform 7 natural-language compiler emits Inform6/16 through Inter, official Inform6 backend emits Z-machine v8 story, native Frotz executes story and prints greeting. Input quit exits end-of-story menu; no C backend substitution.",
+  "blockers": []
+}

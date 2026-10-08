@@ -1,0 +1,25 @@
+{
+  "ordinal": 507,
+  "name": "OpenStep Property List",
+  "timestamp_utc": "2026-10-08T13:13:32.198302+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Python 3.13.9 + openstep-parser 2.0.3",
+  "artifact_sha256": {
+    "examples/0507_openstep-property-list/hello.plist": "8678428ef9ea78cc046fe33a353098e90fdbd7349030c1836559ebcfd5a4bda5",
+    "examples/0507_openstep-property-list/verify.py": "c150344f337a09f09a0f3eff73d78e07026c8102d2a059eea7f0b5937fe07c10"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,8 @@
+vcl 4.1;
+backend default { .host = "127.0.0.1"; .port = "8080"; }
+sub vcl_recv { return (synth(200)); }
+sub vcl_synth {
+    set resp.http.Content-Type = "text/plain; charset=utf-8";
+    synthetic("Hello, World!\n");
+    return (deliver);
+}

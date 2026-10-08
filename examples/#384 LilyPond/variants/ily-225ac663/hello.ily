@@ -1,0 +1,1 @@
+corpusGreeting = \markup { "Hello, World!" }

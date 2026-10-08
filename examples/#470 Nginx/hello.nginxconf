@@ -1,0 +1,19 @@
+daemon off;
+pid nginx.pid;
+error_log error.log;
+events { worker_connections 16; }
+http {
+    access_log off;
+    client_body_temp_path client_temp;
+    proxy_temp_path proxy_temp;
+    fastcgi_temp_path fastcgi_temp;
+    uwsgi_temp_path uwsgi_temp;
+    scgi_temp_path scgi_temp;
+    server {
+        listen 127.0.0.1:18080;
+        location = /greeting {
+            default_type text/plain;
+            return 200 "Hello, World!";
+        }
+    }
+}

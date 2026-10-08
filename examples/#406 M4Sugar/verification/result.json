@@ -1,0 +1,32 @@
+{
+  "ordinal": 406,
+  "name": "M4Sugar",
+  "timestamp_utc": "2026-10-08T12:27:53.325201+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "GNU Autoconf autom4te + M4Sugar (local extracted packages)",
+  "artifact_sha256": {
+    "examples/0406_m4sugar/hello.m4": "34b332d71f4ac453c5ea9cef77aba5a171b88efd3cb1051619786bf79d1d0afb"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "python3",
+        "-c",
+        "import os,subprocess,sys; p=sys.argv[1]; env=os.environ.copy(); env.update({\"LD_LIBRARY_PATH\":p+\"/usr/lib/x86_64-linux-gnu\",\"PERL5LIB\":p+\"/usr/share/autoconf\",\"AUTOM4TE_CFG\":p+\"/usr/share/autoconf/autom4te.cfg\",\"AC_MACRODIR\":p+\"/usr/share/autoconf\",\"M4\":p+\"/usr/bin/m4\"}); r=subprocess.run([p+\"/usr/bin/autom4te\",\"-B\",p+\"/usr/share/autoconf\",\"--language=M4sugar\",\"--no-cache\",sys.argv[2]],env=env,cwd=sys.argv[3]); sys.exit(r.returncode)",
+        "${WORKSPACE_WSL}/work/tools_401_420/native",
+        "${WORKSPACE_WSL}/work/staging_401_420/examples/0406_m4sugar/hello.m4",
+        "${WORKSPACE_WSL}/work/tools_401_420/build_0406"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "${WORKSPACE_WSL}/work/staging_401_420/examples/0406_m4sugar/hello.m4:2: warning: prefer named diversions\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

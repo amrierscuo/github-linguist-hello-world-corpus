@@ -1,0 +1,39 @@
+{
+  "ordinal": 419,
+  "name": "Marko",
+  "timestamp_utc": "2026-10-08T12:30:57.612887+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + Marko 5.39.45 + @marko/compiler 5.42.10 + he 1.2.0",
+  "artifact_sha256": {
+    "examples/0419_marko/hello.marko": "91b9494002480a2823f49e7e48dd66adda8b0ce16e7486467db908edfac7dcf3",
+    "examples/0419_marko/verify.cjs": "2b49b71d80831c4a6cabc8539d0c9732037f3792a9441015b31c2c9148af61de"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "dependency_metadata_observed": {
+    "marko": "5.39.45",
+    "@marko/compiler": "5.42.10",
+    "he": "1.2.0"
+  }
+}

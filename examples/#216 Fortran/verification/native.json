@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:22:40.781292+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU Fortran version",
+      "cwd": "<corpus>/examples/0216_fortran",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_201_220/linux/usr/bin/x86_64-linux-gnu-gfortran-13",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Fortran compile/link in declared source form",
+      "cwd": "<corpus>/examples/0216_fortran",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/gcc/x86_64-linux-gnu/13:<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_201_220/linux/usr/bin/x86_64-linux-gnu-gfortran-13",
+        "-B<workspace>/work/tools_201_220/linux/usr/lib/gcc/x86_64-linux-gnu/13/",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/13/",
+        "-L<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "-std=legacy",
+        "-ffixed-form",
+        "<corpus>/examples/0216_fortran/hello.f",
+        "-o",
+        "<workspace>/work/tools_201_220/216/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run native Fortran greeting",
+      "cwd": "<corpus>/examples/0216_fortran",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_201_220/216/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "GNU Fortran compiler extracted locally from Ubuntu",
+    "version": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "source_form": "fixed",
+    "executable_sha256": "142861efc95f49e33705852027dae8c2e5382fd1155fcec6116ef973f25d8f84"
+  },
+  "artifact_sha256": {
+    "examples/0216_fortran/hello.f": "0a5288942c10d9b173c7f7dcd3e6dafd955860d6e3c768c8d673e694eee098ce"
+  }
+}

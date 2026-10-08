@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+EXEC SQL BEGIN DECLARE SECTION;
+char greeting[14] = "Hello, World!";
+EXEC SQL END DECLARE SECTION;
+
+int main(void)
+{
+    puts(greeting);
+    return 0;
+}

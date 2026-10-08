@@ -1,0 +1,17 @@
+easyblock = 'Bundle'
+
+name = 'HelloWorld'
+version = '1.0'
+homepage = 'https://example.invalid/hello-world'
+description = 'Install a minimal greeting script'
+toolchain = SYSTEM
+
+postinstallcmds = [
+    "mkdir -p %(installdir)s/bin",
+    "printf '#!/bin/sh\nprintf \"Hello, World!\\n\"\n' > %(installdir)s/bin/hello-world",
+    "chmod +x %(installdir)s/bin/hello-world",
+]
+
+sanity_check_paths = {'files': ['bin/hello-world'], 'dirs': []}
+sanity_check_commands = ['hello-world']
+moduleclass = 'tools'

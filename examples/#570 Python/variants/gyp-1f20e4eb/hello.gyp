@@ -1,0 +1,1 @@
+{'targets': [{'target_name': 'hello', 'type': 'none', 'actions': [{'action_name': 'greet', 'inputs': [], 'outputs': ['<(PRODUCT_DIR)/greeting.txt'], 'action': ['python3', 'greet.py', '<(PRODUCT_DIR)/greeting.txt']}]}]}

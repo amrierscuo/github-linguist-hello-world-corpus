@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:04:13.373885+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed; source files and command results preserved.",
+  "commands": [
+    {
+      "label": "Dafny version",
+      "command": [
+        "C:\\Program Files\\dotnet\\dotnet.EXE",
+        "<workspace>\\work\\tools_141_160\\dafny\\tools\\net6.0\\any\\DafnyDriver.dll",
+        "/version"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_158_140413351739",
+      "exit_code": 0,
+      "stdout": "dafny 3.13.1.50302\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Dafny parse, typecheck and greeting assertion proof",
+      "command": [
+        "C:\\Program Files\\dotnet\\dotnet.EXE",
+        "<workspace>\\work\\tools_141_160\\dafny\\tools\\net6.0\\any\\DafnyDriver.dll",
+        "/compile:0",
+        "/proverOpt:PROVER_PATH=<workspace>\\work\\tools_61_80\\python\\bin\\z3.exe",
+        "hello.dfy"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_158_140413351739",
+      "exit_code": 0,
+      "stdout": "\nDafny program verifier finished with 1 verified, 0 errors\n",
+      "stderr": ""
+    },
+    {
+      "label": "Dafny verified JavaScript compilation and execution",
+      "command": [
+        "C:\\Program Files\\dotnet\\dotnet.EXE",
+        "<workspace>\\work\\tools_141_160\\dafny\\tools\\net6.0\\any\\DafnyDriver.dll",
+        "/compileTarget:js",
+        "/compile:3",
+        "/proverOpt:PROVER_PATH=<workspace>\\work\\tools_61_80\\python\\bin\\z3.exe",
+        "hello.dfy"
+      ],
+      "cwd": "<workspace>\\work\\tools_141_160\\verify_158_140413351739",
+      "exit_code": 0,
+      "stdout": "\nDafny program verifier finished with 1 verified, 0 errors\nRunning...\n\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Dafny 3.13.1 NuGet tool with .NET 6; Z3 5.1.0",
+    "distribution": {
+      "file": "dafny.nupkg",
+      "url": "https://api.nuget.org/v3-flatcontainer/dafny/3.13.1.50302/dafny.3.13.1.50302.nupkg",
+      "sha256": "651f009ebb990c76f85630558515151d29c952f9d9e7b719dbdd5001f24b1a8a"
+    },
+    "javascript_dependency": {
+      "name": "bignumber.js",
+      "version": "11.1.5",
+      "manifest_sha256": "9000fbb6d53c181cd8ed261c2ade2e3108d7910215ca79d30b95a29d17b4cba1",
+      "package_lock_sha256": "2cd90c9f833ba6bb6d32bbd632d3cd2f82b0e8e01ed24111431dac6f5c37aeaf"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0158_dafny/hello.dfy": "183b5d4216698a3bcc6ec101254489234eea6eeffa87ce1335c0857f4f4bc354"
+  }
+}

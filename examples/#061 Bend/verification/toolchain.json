@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:34:59.322335+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0061_bend/hello.bend": "f20b204cfc1f8c9da2b0c44dd47fb47bf9093bd26c793d679fd7209623fb8e15"
+  },
+  "commands": [
+    {
+      "label": "Bun version",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\@oven\\bun-windows-x64\\bin\\bun.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_61",
+      "exit_code": 0,
+      "stdout": "1.4.2\n",
+      "stderr": ""
+    },
+    {
+      "label": "Bend version",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\@oven\\bun-windows-x64\\bin\\bun.exe",
+        "<workspace>\\work\\tools_61_80\\bend-main\\bend2\\main.ts",
+        "version"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_61",
+      "exit_code": 0,
+      "stdout": "bend 2.0.36\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Bend 2 parser and typechecker",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\@oven\\bun-windows-x64\\bin\\bun.exe",
+        "<workspace>\\work\\tools_61_80\\bend-main\\bend2\\main.ts",
+        "hello.bend",
+        "--check-only"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_61",
+      "exit_code": 0,
+      "stdout": "ALL PROOFS CHECK\nUse --verdict for mathematical validity.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Bend 2 JavaScript backend",
+      "command": [
+        "<workspace>\\work\\tools_61_80\\npm\\node_modules\\@oven\\bun-windows-x64\\bin\\bun.exe",
+        "<workspace>\\work\\tools_61_80\\bend-main\\bend2\\main.ts",
+        "hello.bend",
+        "-o",
+        "hello.js"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_61",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute Bend compiler JavaScript output",
+      "command": [
+        "<node>",
+        "hello.js"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_61",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Bend 2 original TypeScript compiler running in isolated Bun",
+    "archive_sha256": "e4ed3cbcb7fde52cc10ad953f5a80698f2c61120d0e6ff595d38fd8c6fa19934",
+    "bun_package": {
+      "name": "@oven/bun-windows-x64",
+      "version": "1.4.2",
+      "manifest_sha256": "0fd7a497e15290f775fad7c2cd112d5a8371f43b3ef190de7714a5bb5c82ebaa",
+      "repository": "https://github.com/oven-sh/bun"
+    }
+  }
+}

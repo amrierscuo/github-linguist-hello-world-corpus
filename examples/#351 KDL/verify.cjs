@@ -1,0 +1,11 @@
+const fs=require('node:fs'), path=require('node:path'), assert=require('node:assert/strict');
+const {parse}=require(path.resolve(process.argv[2], 'node_modules/kdljs'));
+const parsed=parse(fs.readFileSync('hello.kdl','utf8'));
+assert.deepEqual(parsed.errors,[]);
+const document=parsed.output;
+assert.equal(document.length,1);
+assert.equal(document[0].name,'greeting');
+assert.deepEqual(document[0].values,['Hello, World!']);
+assert.equal(document[0].properties.language,'en');
+console.log(document[0].values[0]);
+console.log('PASS: existing KDL parser and node data');

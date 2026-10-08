@@ -1,0 +1,27 @@
+{
+  "ordinal": 672,
+  "name": "Smithy",
+  "timestamp_utc": "2026-10-08T13:38:22.855212+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "JDK21 + Smithy model/utils 1.50.0",
+  "artifact_sha256": {
+    "examples/0672_smithy/hello.smithy": "f53a264aac90d3ae2c2484b36dbb791c4d20c8dd64f03336fcb4f32069ee9550",
+    "examples/0672_smithy/Verify.java": "c89ac2acfbaa79cd59073a8f99a33f5696749c6e2fddfab497471d1d619416d8"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_661_680\\smithy-model.jar;${WORKSPACE}\\work\\tools_661_680\\smithy-utils.jar",
+        "Verify.java"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

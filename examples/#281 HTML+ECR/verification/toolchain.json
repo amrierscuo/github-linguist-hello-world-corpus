@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:45:30.627067+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Crystal version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_281_144530614009",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH=<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "CRYSTAL_PATH=<workspace>/work/tools_121_140/linux/usr/lib/crystal/lib",
+        "CRYSTAL_CACHE_DIR=<workspace>/work/tools_281_300/crystal_cache",
+        "PATH=<workspace>/work/tools_121_140/linux/usr/bin:/usr/bin:/bin",
+        "<workspace>/work/tools_121_140/linux/usr/bin/crystal",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_281_144530614009",
+      "exit_code": 0,
+      "stdout": "Crystal 1.11.2 (2024-04-01)\n\nLLVM: 17.0.6\nDefault target: x86_64-pc-linux-gnu\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Crystal ECR compiler and template embedding",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_281_144530614009",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH=<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "CRYSTAL_PATH=<workspace>/work/tools_121_140/linux/usr/lib/crystal/lib",
+        "CRYSTAL_CACHE_DIR=<workspace>/work/tools_281_300/crystal_cache",
+        "PATH=<workspace>/work/tools_121_140/linux/usr/bin:/usr/bin:/bin",
+        "<workspace>/work/tools_121_140/linux/usr/bin/crystal",
+        "build",
+        "render.cr",
+        "--no-color",
+        "-o",
+        "render"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_281_144530614009",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run actual compiled ECR template renderer",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_281_144530614009",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH=<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "CRYSTAL_PATH=<workspace>/work/tools_121_140/linux/usr/lib/crystal/lib",
+        "CRYSTAL_CACHE_DIR=<workspace>/work/tools_281_300/crystal_cache",
+        "PATH=<workspace>/work/tools_121_140/linux/usr/bin:/usr/bin:/bin",
+        "./render"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_281_144530614009",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Crystal ECR template renderer",
+    "version": "Crystal 1.11.2",
+    "compiler_sha256": "91e535a97e12a5781020649b8d227d189b799d72bdb72fdef228e792cbbcd664",
+    "source": "https://crystal-lang.org/api/1.11.2/ECR.html",
+    "additional_packages": [
+      {
+        "file": "libpcre3_8.39-15build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/pcre3/libpcre3_8.39-15build1_amd64.deb",
+        "sha256": "62b2ea8d178a59495df00b777660377e0fb8d716be3fc552439796f77f515d43",
+        "package": "libpcre3",
+        "version": "2:8.39-15build1"
+      },
+      {
+        "file": "libpcre3-dev_8.39-15build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/pcre3/libpcre3-dev_8.39-15build1_amd64.deb",
+        "sha256": "e9fdfe9f645fbab96baf3dc2666c851ae542bd5d056e6f3edc1b27b45420d543",
+        "package": "libpcre3-dev",
+        "version": "2:8.39-15build1"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0281_html-ecr/hello.ecr": "be111e0cf6656631175533dad2c49ae5667c01ea09c2589089e5f7247bb6c962",
+    "examples/0281_html-ecr/render.cr": "d4333030304702dba14d2a21dc6386c2e40f3427e7dae7a36a6725075cf0fb0d"
+  }
+}

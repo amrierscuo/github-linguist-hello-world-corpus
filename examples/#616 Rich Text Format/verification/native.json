@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:16.601591+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Existing decoder package version",
+      "cwd": "<corpus>/examples/0616_rich-text-format",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata; print(importlib.metadata.version(\"striprtf\"))"
+      ],
+      "exit_code": 0,
+      "stdout": "0.0.33\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse original format with existing decoder and compare decoded greeting",
+      "cwd": "<corpus>/examples/0616_rich-text-format",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: existing striprtf parser decodes the RTF body\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Existing striprtf authentic format parser",
+    "version": "0.0.33"
+  },
+  "artifact_sha256": {
+    "examples/0616_rich-text-format/hello.rtf": "ad68e3a19c22c0f937b6efeda4059e7432f39e814c056f57ecfb6aeaf0e30260",
+    "examples/0616_rich-text-format/verify.py": "6eabd460a355527170f8971214b9ed6320c3382a84c0ea12a33e2816a677b75d"
+  }
+}

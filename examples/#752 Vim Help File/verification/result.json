@@ -1,0 +1,34 @@
+{
+  "ordinal": 752,
+  "name": "Vim Help File",
+  "timestamp_utc": "2026-10-08T13:54:45.837585+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Vim9 native help tag resolver",
+  "artifact_sha256": {
+    "examples/0752_vim-help-file/hello.txt": "1490fbfa7d972055bb76ae8024ce07ac38529412a9dfd81d4975b734f8458f77"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "vim",
+        "-Nu",
+        "NONE",
+        "-n",
+        "-es",
+        "-V1${WORKSPACE_WSL}/work/tools_741_760/build_0752/vim.log",
+        "-S",
+        "${WORKSPACE_WSL}/work/tools_741_760/build_0752/verify.vim"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "\"hello.txt\" \n\n\"hello.txt\" [readonly] 7L, 95B"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

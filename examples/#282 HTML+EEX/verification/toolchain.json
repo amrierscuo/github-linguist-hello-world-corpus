@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:51:01.658836+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Elixir and Erlang versions",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_282_145101645753",
+        "--",
+        "env",
+        "PATH=<workspace>/work/tools_281_300/portable-bin:/usr/bin:/bin",
+        "ERL_CRASH_DUMP=<workspace>/work/tools_281_300/verify_282_145101645753/erl_crash.dump",
+        "<workspace>/work/tools_281_300/ubuntu/usr/lib/elixir/bin/elixir",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_282_145101645753",
+      "exit_code": 0,
+      "stdout": "Erlang/OTP 25 [erts-13.2.2.5] [source] [64-bit] [smp:16:16] [ds:16:16:10] [async-threads:1] [jit:ns]\n\nElixir 1.14.0 (compiled with Erlang/OTP 24)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native EEx parsing, expression evaluation and rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_282_145101645753",
+        "--",
+        "env",
+        "PATH=<workspace>/work/tools_281_300/portable-bin:/usr/bin:/bin",
+        "ERL_CRASH_DUMP=<workspace>/work/tools_281_300/verify_282_145101645753/erl_crash.dump",
+        "<workspace>/work/tools_281_300/ubuntu/usr/lib/elixir/bin/elixir",
+        "render.exs"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_282_145101645753",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Elixir EEx renderer on Erlang/OTP",
+    "version": "Elixir 1.14.0 / OTP 25 / erts13.2.2.5",
+    "packages": [
+      {
+        "file": "elixir_1.14.0.dfsg-2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/e/elixir-lang/elixir_1.14.0.dfsg-2_amd64.deb",
+        "sha256": "08b272147f21c47e650f9092d03738a65c0de05f6352e9d053a2a106e4f1b968",
+        "package": "elixir",
+        "version": "1.14.0.dfsg-2"
+      },
+      {
+        "file": "erlang-base_25.3.2.8+dfsg-1ubuntu4.7_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/e/erlang/erlang-base_25.3.2.8+dfsg-1ubuntu4.7_amd64.deb",
+        "sha256": "3f5e3ab505286a1a7f7bd78f4be2647cad7c7a7a72af0d994eb0ca7d911f06d0",
+        "package": "erlang-base",
+        "version": "1:25.3.2.8+dfsg-1ubuntu4.7"
+      }
+    ],
+    "launcher_scope": "Wrapper only exports relocated ROOTDIR/BINDIR/EMU/PROGNAME and execs original erlexec; original Elixir shell entry point and EEx engine execute unchanged.",
+    "launcher_sha256": "b52c6d57b0d7cf3c61b359d042fa6660b75f4a1145799d68b9b004ed34853ed6"
+  },
+  "artifact_sha256": {
+    "examples/0282_html-eex/hello.html.eex": "be111e0cf6656631175533dad2c49ae5667c01ea09c2589089e5f7247bb6c962",
+    "examples/0282_html-eex/render.exs": "305e6769c3890783083e64465b61e4f909c9cbb046961e8806f1df3d3997e1c7"
+  }
+}

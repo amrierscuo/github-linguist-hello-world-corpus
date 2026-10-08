@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:13.081411+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "newLISP version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_468_151613072845",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_461_480/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_461_480/ubuntu/usr/bin/newlisp",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_468_151613072845",
+      "exit_code": 0,
+      "stdout": "newLISP v.10.7.5 64-bit on Linux IPv4/6 UTF-8 libffi.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native newLISP interpretation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_461_480/verify_468_151613072845",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_461_480/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_461_480/ubuntu/usr/bin/newlisp",
+        "hello.nl"
+      ],
+      "cwd": "<workspace>\\work\\tools_461_480\\verify_468_151613072845",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "newlisp",
+    "version": "10.7.5-2build3",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/newlisp/newlisp_10.7.5-2build3_amd64.deb",
+    "sha256": "1eb41281f40a23b85a8f596b429d1b399c3e7dcfabfd847513db2f2957133809"
+  },
+  "artifact_sha256": {
+    "examples/0468_newlisp/hello.nl": "5fd420fcf931cfee86b0d3736f9b709ec15b8c07e22e4ca9220c5d7d04e34d10"
+  }
+}

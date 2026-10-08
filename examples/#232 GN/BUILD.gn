@@ -1,0 +1,12 @@
+toolchain("default") {
+  tool("stamp") {
+    command = "touch {{output}}"
+    description = "STAMP {{output}}"
+  }
+}
+
+action("greeting") {
+  script = "hello.py"
+  outputs = [ "$target_gen_dir/greeting.txt" ]
+  args = [ rebase_path(outputs[0], root_build_dir) ]
+}

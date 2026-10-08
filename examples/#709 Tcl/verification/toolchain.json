@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:51:20.820949+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Tcl parsing and execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_709_155120812246",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TCL_LIBRARY=<workspace>/work/tools_701_720/ubuntu/usr/share/tcltk/tcl8.6",
+        "<workspace>/work/tools_701_720/ubuntu/usr/bin/tclsh8.6",
+        "hello.tcl"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_709_155120812246",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "tcl8.6",
+    "version": "8.6.14+dfsg-1build1",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/main/t/tcl8.6/tcl8.6_8.6.14+dfsg-1build1_amd64.deb",
+    "sha256": "c262c559f67f37a150376c164642f63519469ed288559257f7502aae5448748c"
+  },
+  "artifact_sha256": {
+    "examples/0709_tcl/hello.tcl": "cdf190be044f9b158cd8a64c310196982be7638653fc2fbc0de0979302ec4d77"
+  }
+}

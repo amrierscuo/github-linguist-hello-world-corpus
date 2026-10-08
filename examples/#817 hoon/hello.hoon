@@ -1,0 +1,5 @@
+|=  *
+:-  %say
+|=  *
+:-  %noun
+'Hello, World!'

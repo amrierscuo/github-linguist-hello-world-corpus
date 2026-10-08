@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:59:41.635015+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Pillow XPM decoder and nearest-neighbor preview",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_781_155941618639",
+      "exit_code": 0,
+      "stdout": "Original XPM decoder: 82x9 pixels, preview.png produced\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Pillow",
+    "version": "12.3.0",
+    "metadata_sha256": "2c4378001803cfac65809a50722d46e0da4ce8061e717f103e5d52734bab30f5",
+    "source": "https://pypi.org/project/Pillow/"
+  },
+  "semantic_scope": "Original Pillow decoder parsed the raster; the assistant then visually inspected the actual enlarged nearest-neighbor preview via view_image. Black pixel glyphs visibly read Hello, World! on white background. This is a visual raster review, not OCR or program execution.",
+  "preview_file": "<workspace>\\work\\tools_781_800\\verify_781_155941618639\\preview.png",
+  "artifact_sha256": {
+    "examples/0781_x-pixmap/hello.xpm": "c008f5002162f22e104714fdf0d2a9c1e21249076b326aa4bca324c14fcc7585",
+    "examples/0781_x-pixmap/verify.py": "88eeac9a6bd488cb2d5af2bea8d8c1560226cad53bd9a922cd997970c6557f90"
+  },
+  "visual_review": {
+    "timestamp_utc": "2026-10-08T14:03:23.960285+00:00",
+    "tool": "view_image of original Pillow-decoded raster",
+    "preview_sha256": "cc04bf92608eb1e041bbf94368835f67f318e39eb5f43386899414ec2e697b6a",
+    "observed_text": "Hello, World!",
+    "image_in_corpus": false
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "Pillow",
+        "old_version": "12.3.0.dist",
+        "version": "12.3.0",
+        "original_metadata_sha256": "2c4378001803cfac65809a50722d46e0da4ce8061e717f103e5d52734bab30f5",
+        "original_metadata_file": "work/tools_781_800/python/pillow-12.3.0.dist-info/METADATA"
+      }
+    ]
+  }
+}

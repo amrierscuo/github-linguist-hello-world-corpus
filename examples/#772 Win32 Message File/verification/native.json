@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:15.139531+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "GNU windmc version",
+      "cwd": "<corpus>/examples/0772_win32-message-file",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "<workspace>/work/tools_761_780/linux/usr/bin/x86_64-w64-mingw32-windmc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU windmc (GNU Binutils) 2.41.90.20240122\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": ""
+    },
+    {
+      "label": "compile native message definitions",
+      "cwd": "<corpus>/examples/0772_win32-message-file",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_761_780/772",
+        "--exec",
+        "<workspace>/work/tools_761_780/linux/usr/bin/x86_64-w64-mingw32-windmc",
+        "-h",
+        "<workspace>/work/tools_761_780/772",
+        "-r",
+        "<workspace>/work/tools_761_780/772",
+        "<corpus>/examples/0772_win32-message-file/hello.mc"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "compile message resource",
+      "cwd": "<corpus>/examples/0772_win32-message-file",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_761_780/772",
+        "--exec",
+        "<workspace>/work/tools_761_780/linux/usr/bin/x86_64-w64-mingw32-windres",
+        "--preprocessor=cpp",
+        "--input",
+        "hello.rc",
+        "--output",
+        "messages.o",
+        "--output-format",
+        "coff"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "link resource-only DLL",
+      "cwd": "<corpus>/examples/0772_win32-message-file",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<workspace>/work/tools_761_780/772",
+        "--exec",
+        "<workspace>/work/tools_761_780/linux/usr/bin/x86_64-w64-mingw32-ld",
+        "--dll",
+        "--entry=0",
+        "--output",
+        "messages.dll",
+        "messages.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Windows loads resource and FormatMessageW returns greeting",
+      "cwd": "<corpus>/examples/0772_win32-message-file",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "<corpus>/examples/0772_win32-message-file/verify.ps1",
+        "-LibraryPath",
+        "<workspace>/work/tools_761_780/772/messages.dll"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: Windows FormatMessageW loads the original compiled English message resource\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "GNU MinGW binutils / Windows FormatMessageW",
+    "version": "GNU windmc (GNU Binutils) 2.41.90.20240122"
+  },
+  "compiled_artifact_sha256": {
+    "<work>/772/messages.dll": "3df7e1dc4b9e759f7f70938ca973d91c64694bf048a1d7a8e0869945d380ad95"
+  },
+  "artifact_sha256": {
+    "examples/0772_win32-message-file/hello.mc": "989b2c08558aca9548eb473045509dad4f397f24efee13fe43178ec05116afab",
+    "examples/0772_win32-message-file/verify.ps1": "6da8f951c5816c89c07beeadab7aaddfec6ec3e8b9920d31d286a446ec667b79"
+  }
+}

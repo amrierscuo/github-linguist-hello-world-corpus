@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:31:53.160954+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "OpenSpin version/help",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_560_153153152025",
+        "--",
+        "<workspace>/work/tools_541_560/openspin/OpenSpin-master/build/openspin",
+        "-h"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_560_153153152025",
+      "exit_code": 1,
+      "stdout": "Propeller Spin/PASM Compiler 'OpenSpin' (c)2012-2018 Parallax Inc. DBA Parallax Semiconductor.\nVersion 1.00.81 Compiled on Oct  8 2026 15:31:49\n",
+      "stderr": "usage: openspin\n         [ -h ]                 display this help\n         [ -L or -I <path> ]    add a directory to the include path\n         [ -o <path> ]          output filename\n         [ -b ]                 output binary file format\n         [ -e ]                 output eeprom file format\n         [ -c ]                 output only DAT sections\n         [ -d ]                 dump out doc mode\n         [ -t ]                 output just the object file tree\n         [ -f ]                 output a list of filenames for use in archiving\n         [ -q ]                 quiet mode (suppress banner and non-error text)\n         [ -v ]                 verbose output\n         [ -p ]                 disable the preprocessor\n         [ -a ]                 use alternative preprocessor rules\n         [ -D <define> ]        add a define\n         [ -M <size> ]          size of eeprom (up to 16777216 bytes)\n         [ -s ]                 dump PUB & CON symbol information for top object\n         [ -u ]                 enable unused method elimination\n         <name.spin>            spin file to compile\n\n"
+    },
+    {
+      "label": "Native Spin/PASM compiler and binary generation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_541_560/verify_560_153153152025",
+        "--",
+        "<workspace>/work/tools_541_560/openspin/OpenSpin-master/build/openspin",
+        "-b",
+        "-o",
+        "hello.binary",
+        "hello.spin"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_560_153153152025",
+      "exit_code": 0,
+      "stdout": "Propeller Spin/PASM Compiler 'OpenSpin' (c)2012-2018 Parallax Inc. DBA Parallax Semiconductor.\nVersion 1.00.81 Compiled on Oct  8 2026 15:31:49\nCompiling...\nhello.spin\nDone.\nProgram size is 44 bytes\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "Original OpenSpin compiler",
+    "source": {
+      "url": "https://codeload.github.com/parallaxinc/OpenSpin/zip/refs/heads/master",
+      "sha256": "33a82229e935f1cac8fdaf7c5e1208b6d7726524f55d7714ea61fda65393602f"
+    },
+    "binary_sha256": "3247decff15954a45f2e25a5fe5e92b0dc921853b53b1ac0bc744f12f3662b3f"
+  },
+  "semantic_scope": "Spin source compiled to Propeller binary; target execution not performed.",
+  "artifact_sha256": {
+    "examples/0560_propeller-spin/hello.spin": "512b56bd023e6d19eb2fee4aa5b31f19563f071e3fd87275fac9cb09c439b124"
+  }
+}

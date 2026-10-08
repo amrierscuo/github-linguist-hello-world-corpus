@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:47:00.496752+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "HyPhy version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_300_144700494107",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_281_300/ubuntu/usr/lib/hyphy/bin/hyphy",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_300_144700494107",
+      "exit_code": 0,
+      "stdout": "HYPHY 2.5.59(MP) for Linux on x86_64 x86 SSE4 SIMD zlib (v1.3)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native HBL parsing and execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_300_144700494107",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_281_300/ubuntu/usr/lib/x86_64-linux-gnu",
+        "HYPHYBASEPATH=<workspace>/work/tools_281_300/ubuntu/usr/share/hyphy",
+        "<workspace>/work/tools_281_300/ubuntu/usr/lib/hyphy/bin/hyphy",
+        "hello.bf"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_300_144700494107",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original HyPhy HBL interpreter",
+    "packages": [
+      {
+        "file": "hyphy-pt_2.5.59+dfsg-1build3_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/hyphy/hyphy-pt_2.5.59+dfsg-1build3_amd64.deb",
+        "sha256": "c6c6c85d4bc96a29e3a31383d241e3e965363ea8ad99280a6dd04b014b44610c",
+        "package": "hyphy-pt",
+        "version": "2.5.59+dfsg-1build3"
+      },
+      {
+        "file": "hyphy-common_2.5.59+dfsg-1build3_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/hyphy/hyphy-common_2.5.59+dfsg-1build3_all.deb",
+        "sha256": "570b42f58e7ed51fbbc9693b34a581623322f1daddd7946d1695c16fc52656ec",
+        "package": "hyphy-common",
+        "version": "2.5.59+dfsg-1build3"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0300_hyphy/hello.bf": "867e1bec7efb7d513cb16e605082ebb82565303fc1bd672ec70e17a4046858db"
+  }
+}

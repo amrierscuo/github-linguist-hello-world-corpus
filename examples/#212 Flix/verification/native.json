@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:27:12.078033+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Flix compiler version",
+      "cwd": "<corpus>/examples/0212_flix",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_201_220/flix.jar",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "The Flix Programming Language 0.77.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Initialize genuine Flix work project",
+      "cwd": "<workspace>/work/tools_201_220/212",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_201_220/flix.jar",
+        "init"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Official Flix type/effect check",
+      "cwd": "<workspace>/work/tools_201_220/212",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_201_220/flix.jar",
+        "check",
+        "--no-install",
+        "--threads",
+        "2"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Found 'flix.toml'. Checking dependencies...\nResolving Flix dependencies...\nDownloading Flix dependencies...\nResolving Maven dependencies...\n  Running Maven dependency resolver.\nDownloading external jar dependencies...\nDependency resolution completed.\n"
+    },
+    {
+      "label": "Compile and run Flix main",
+      "cwd": "<workspace>/work/tools_201_220/212",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_201_220/flix.jar",
+        "run",
+        "--no-install",
+        "--threads",
+        "2"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Found 'flix.toml'. Checking dependencies...\nResolving Flix dependencies...\nDownloading Flix dependencies...\nResolving Maven dependencies...\n  Running Maven dependency resolver.\nDownloading external jar dependencies...\nDependency resolution completed.\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Flix compiler and JVM code generator",
+    "version": "The Flix Programming Language 0.77.0",
+    "jar_sha256": "20007d79f97b696ba388113e2a4235227691d33a00bfa669f2316b37a7b14201"
+  },
+  "artifact_sha256": {
+    "examples/0212_flix/Main.flix": "06eddfdbb82c24388c3acc3c0c9c3903759a813a1edf39fde9a5ac8c612db3e7"
+  }
+}

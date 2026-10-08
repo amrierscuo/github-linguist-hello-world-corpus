@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:36.002016+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0049_b/hello.b": "514b4a846bf450c46ed0f84c6e9e2be40255d10e06e626ced2cb32f9380dabbe"
+  },
+  "commands": [
+    {
+      "label": "Windows tool availability only",
+      "cwd": "<corpus>/examples/0049_b",
+      "command": [
+        "<python>",
+        "-c",
+        "import json,shutil;print(json.dumps({\"b\":shutil.which(\"b\")}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"b\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blockers": [
+    "b toolchain not installed or not available in this isolated verification environment."
+  ],
+  "toolchain": {
+    "name": "b",
+    "version": null
+  },
+  "scope": "Tool availability only; no genuine language parse or execution has been performed."
+}

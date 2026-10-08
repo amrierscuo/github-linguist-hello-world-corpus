@@ -1,0 +1,5 @@
+(set-logic QF_SLIA)
+(declare-const greeting String)
+(assert (= greeting (str.++ "Hello, " "World!")))
+(check-sat)
+(get-value (greeting))

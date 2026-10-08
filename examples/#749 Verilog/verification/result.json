@@ -1,0 +1,46 @@
+{
+  "ordinal": 749,
+  "name": "Verilog",
+  "timestamp_utc": "2026-10-08T13:52:55.113613+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Icarus Verilog12.0 native Linux compiler/vvp",
+  "artifact_sha256": {
+    "examples/0749_verilog/hello.v": "0a19b33f64e3ffac9fa725ea4711476057b29052d842021676c203597a54a8a6"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_681_700/linux/usr/bin/iverilog",
+        "-B${WORKSPACE_WSL}/work/tools_681_700/linux/usr/lib/x86_64-linux-gnu/ivl",
+        "-g2012",
+        "-o",
+        "${WORKSPACE_WSL}/work/tools_741_760/build_0749/hello.vvp",
+        "${WORKSPACE_WSL}/work/staging_741_760/examples/0749_verilog/hello.v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_681_700/linux/usr/bin/vvp",
+        "${WORKSPACE_WSL}/work/tools_741_760/build_0749/hello.vvp"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n${WORKSPACE_WSL}/work/staging_741_760/examples/0749_verilog/hello.v:4: $finish called at 0 (1s)\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

@@ -1,0 +1,20 @@
+const fs=require("node:fs");
+const assert=require("node:assert/strict");
+const Module=require("node:module");
+const {parse,compileScript,compileTemplate}=require("@vue/compiler-sfc");
+const esbuild=require("esbuild");
+const {createSSRApp}=require("vue");
+const {renderToString}=require("@vue/server-renderer");
+(async()=>{
+ const {descriptor,errors}=parse(fs.readFileSync("Hello.vue","utf8"),{filename:"Hello.vue"});
+ assert.equal(errors.length,0);
+ const script=compileScript(descriptor,{id:"hello",genDefaultAs:"__sfc__"});
+ const template=compileTemplate({source:descriptor.template.content,filename:"Hello.vue",id:"hello",ssr:true,compilerOptions:{bindingMetadata:script.bindings}});
+ assert.equal(template.errors.length,0);
+ const code=script.content+"\n"+template.code+"\n__sfc__.ssrRender=ssrRender;export default __sfc__;";
+ const compiled=esbuild.transformSync(code,{format:"cjs",platform:"node"}).code;
+ const loaded=new Module(__filename,module);loaded.filename=__filename;loaded.paths=module.paths;loaded._compile(compiled,__filename);
+ const html=await renderToString(createSSRApp(loaded.exports.default));
+ assert.equal(html,"<p>Hello, World!</p>");
+ console.log("Hello, World!");
+})().catch(e=>{console.error(e);process.exitCode=1;});

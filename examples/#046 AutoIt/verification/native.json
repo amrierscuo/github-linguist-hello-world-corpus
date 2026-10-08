@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:29:31.598747+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "artifact_sha256": {
+    "examples/0046_autoit/hello.au3": "05b77163e4ecb13a0bff90c3cf8932eafcc96e889561fa2f3673cb1f8eeb60c7"
+  },
+  "commands": [
+    {
+      "label": "AutoIt version",
+      "cwd": "<corpus>/examples/0046_autoit",
+      "command": [
+        "<workspace>/work/tools_41_60/autoit/install/AutoIt3_x64.exe",
+        "/ErrorStdOut",
+        "<workspace>/work/tools_41_60/46/version.au3"
+      ],
+      "exit_code": 0,
+      "stdout": "3.3.18.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Au3Check source validation",
+      "cwd": "<corpus>/examples/0046_autoit",
+      "command": [
+        "<workspace>/work/tools_41_60/autoit/install/Au3Check.exe",
+        "hello.au3"
+      ],
+      "exit_code": 0,
+      "stdout": "AutoIt3 Syntax Checker v3.3.18.0  Copyright (c) 2007-2025 Tylo & AutoIt Team\n\nhello.au3 - 0 error(s), 0 warning(s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "AutoIt native run",
+      "cwd": "<corpus>/examples/0046_autoit",
+      "command": [
+        "<workspace>/work/tools_41_60/autoit/install/AutoIt3_x64.exe",
+        "/ErrorStdOut",
+        "hello.au3"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official AutoIt x64 and Au3Check portable",
+    "version": "3.3.18.0",
+    "download": {
+      "url": "https://www.autoitscript.com/autoit3/files/archive/autoit/autoit-v3.3.18.0.zip",
+      "bytes": 17324391,
+      "sha256": "ceb666a993a9f62621c3a0d4ee602774b2e7f543de1f08ec0380632ee3f89beb"
+    }
+  }
+}

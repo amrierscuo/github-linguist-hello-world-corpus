@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:18.489585+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "PowerShell version",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-Command",
+        "$PSVersionTable.PSVersion.ToString()"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_551_152618471201",
+      "exit_code": 0,
+      "stdout": "7.6.5\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native PowerShell parsing and execution",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "hello.ps1"
+      ],
+      "cwd": "<workspace>\\work\\tools_541_560\\verify_551_152618471201",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original PowerShell parser/runtime"
+  },
+  "artifact_sha256": {
+    "examples/0551_powershell/hello.ps1": "0d69233236cbf6e6eb6853b7b936fa00e25d7a2dcb470e207e055ca5787cc81e"
+  }
+}

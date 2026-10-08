@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "ordinal": 386,
+  "language": "Linear Programming",
+  "timestamp_utc": "2026-10-08T12:48:20.311924+00:00",
+  "platform": "WSL GLPK + Windows Python",
+  "toolchain": "GLPSOL--GLPK LP/MIP Solver 5.0; Python stdlib result reader",
+  "working_directory": "examples/0386_linear-programming",
+  "source_sha256": {
+    "examples/0386_linear-programming/hello.lp": "713ae8c47d2a5590fec695a6734b6ef58360302e68384137cef6088cd23787d2",
+    "examples/0386_linear-programming/verify.py": "fd1567349e9883dbb315822bd3a7dcc3bb4a07edfe737b985e3d33f7abff5995"
+  },
+  "steps": [
+    {
+      "command": "glpsol --version",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nCopyright (C) 2000-2020 Free Software Foundation, Inc.\n\nThis program has ABSOLUTELY NO WARRANTY.\n\nThis program is free software; you may re-distribute it under the terms\nof the GNU General Public License version 3 or later.\n",
+      "stderr": ""
+    },
+    {
+      "command": "glpsol --lp hello.lp --write <build>/solution.txt --output <build>/report.txt",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nParameter(s) specified in the command line:\n --lp hello.lp --write solution.txt --output report.txt\nReading problem data from 'hello.lp'...\n1 row, 13 columns, 13 non-zeros\n20 lines were read\nGLPK Simplex Optimizer 5.0\n1 row, 13 columns, 13 non-zeros\nPreprocessing...\n~     0: obj =   1.129000000e+03  infeas =  0.000e+00\nOPTIMAL SOLUTION FOUND BY LP PREPROCESSOR\nTime used:   0.0 secs\nMemory used: 0.0 Mb (39693 bytes)\nWriting basic solution to 'report.txt'...\nWriting basic solution to 'solution.txt'...\n23 lines were written\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py <build>/solution.txt",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "GLPK parses actual CPLEX LP format and solves a continuous bounded minimization. Optimal primal values are exact ASCII lower bounds; helper decodes native solution to greeting and asserts optimal status.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_381_400/386/solution.txt",
+      "sha256": "76df190a0a3ebcc799e2b12a0b253349cfcf493d9f4dc4ac0c7bfffe20dd8515"
+    },
+    {
+      "path": "work/verify_381_400/386/report.txt",
+      "sha256": "f2466d965f5dec0fd97970c3b4713df8cd519009c3ac147cfbaea3cb56944676"
+    }
+  ]
+}

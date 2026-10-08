@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:55:12.319694+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "version",
+      "cwd": "<corpus>/examples/0762_wavefront-material",
+      "command": [
+        "<python>",
+        "-c",
+        "import importlib.metadata as m; print(m.version('trimesh'))"
+      ],
+      "exit_code": 0,
+      "stdout": "5.1.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "existing format parser and original semantic assertions",
+      "cwd": "<corpus>/examples/0762_wavefront-material",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{'Hello, World!': {'name': 'Hello, World!', 'ambient': [0.1, 0.1, 0.1], 'ka': [0.1, 0.1, 0.1], 'diffuse': [0.8, 0.4, 0.1], 'kd': [0.8, 0.4, 0.1], 'specular': [0.0, 0.0, 0.0], 'ks': [0.0, 0.0, 0.0], 'd': ['1.0'], 'illum': ['1']}}\nHello, World!\nPASS: existing Wavefront MTL decoder validates name and diffuse color\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "trimesh / Python 3.13.9",
+    "version": "5.1.1"
+  },
+  "artifact_sha256": {
+    "examples/0762_wavefront-material/hello.mtl": "7bf1db1cacf1ed0dacfe6278ebc9771754e1247c0113c20c5454f68a733132ff",
+    "examples/0762_wavefront-material/verify.py": "66d0e1bcbec6dc0ee994c0e39eb95a5249830d3ca70ce21b05517fc253c5b220"
+  }
+}

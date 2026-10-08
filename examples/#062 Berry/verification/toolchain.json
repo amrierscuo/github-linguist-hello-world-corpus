@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T11:34:56.830919+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Absolute corpus/workspace and tool paths replaced with placeholders; source bytes and command results unchanged.",
+  "artifact_sha256": {
+    "examples/0062_berry/hello.be": "7d59c6fa87ca3e4c004dddc839e3f04bba995335982bad714e6e291b8362c03d"
+  },
+  "commands": [
+    {
+      "label": "Build original Berry interpreter without interactive readline",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "make",
+        "-C",
+        "<workspace>/work/tools_61_80/berry-master",
+        "-j2",
+        "CFLAGS=-Wall -Wextra -std=c99 -O2",
+        "LIBS=-lm -ldl"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_62",
+      "exit_code": 0,
+      "stdout": "make: Entering directory '<workspace>/work/tools_61_80/berry-master'\n[Prebuild] generate resources\nmake: Leaving directory '<workspace>/work/tools_61_80/berry-master'\n",
+      "stderr": ""
+    },
+    {
+      "label": "Berry version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/berry-master/berry",
+        "-v"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_62",
+      "exit_code": 0,
+      "stdout": "Berry 1.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Berry compile and VM run",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_61_80/berry-master/berry",
+        "<workspace>/work/tools_61_80/verify_62/hello.be"
+      ],
+      "cwd": "<workspace>\\work\\tools_61_80\\verify_62",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "berry-lang/berry original C99 interpreter snapshot",
+    "archive_sha256": "fdee5a6e9a3997e586b77db71e8829445d6142be0b84063e353ab8f1e7e57f4e",
+    "build_configuration": "Command-line CFLAGS/LIBS omit USE_READLINE_LIB and -lreadline; file execution uses the unmodified interpreter."
+  }
+}

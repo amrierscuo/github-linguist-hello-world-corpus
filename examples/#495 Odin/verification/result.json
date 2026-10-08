@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "ordinal": 495,
+  "language": "Odin",
+  "timestamp_utc": "2026-10-08T13:12:09.149453+00:00",
+  "platform": "WSL Ubuntu 24.04.3",
+  "toolchain": "<workspace>/work/tools_481_500/odin/odin-linux-amd64-nightly+2026-10-06/odin version dev-2026-10-nightly:84bc3fc; GCC linker",
+  "working_directory": "examples/0495_odin",
+  "source_sha256": {
+    "examples/0495_odin/hello.odin": "e69a322251eda40fabba5f99736319a8bb3a214d8109796f12dc73bbb17dfe86"
+  },
+  "steps": [
+    {
+      "command": "odin version",
+      "exit_code": 0,
+      "stdout": "<workspace>/work/tools_481_500/odin/odin-linux-amd64-nightly+2026-10-06/odin version dev-2026-10-nightly:84bc3fc\n",
+      "stderr": ""
+    },
+    {
+      "command": "odin build hello.odin -file -build-mode:obj -out:<build>/hello.o",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "gcc <all-Odin-generated-objects> -lm -lpthread -o <build>/hello",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "<build>/hello",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Official Odin compiler produces real ELF objects; GCC links all original generated units and actual binary prints greeting.",
+  "blockers": [],
+  "derived_artifacts": [
+    {
+      "path": "work/verify_481_500/495/hello-bufio.o",
+      "sha256": "d49d3717e4fab59b3aa1cc815d30674b8d1cb7c142139f2cf872fc638c06f77f"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-builtin.o",
+      "sha256": "6480b814963dac6d2c58e77434868e3ffe57e652f56882c3ebb512e4bc23b164"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-bytes.o",
+      "sha256": "e870cb03ca67b7ec20f9542a7608b10fbd8e6a96bdad1a62f805d36ec0373484"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-fmt-doc.o",
+      "sha256": "64c6a6437460c98b73797de0774b12dfa54946a941979f4a2171dff1a22c76af"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-fmt-fmt_os.o",
+      "sha256": "e255a199b7683e5d114e586f78bed696874c26875e1e12197b1ac8590d725122"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-io-conv.o",
+      "sha256": "cbbf088f6f63a5539db2219722c5c94706fe2084b184dd06992e6a708b8d7db2"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-linux.o",
+      "sha256": "a3b1e539f72c994449349528f7b4a85a44c524bdeb78c7db89e4e3e0ca9b915a"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-main.o",
+      "sha256": "ae492ea99063bf406c604f12698b0e8a353d689d7f15f96253cd31c41d79e328"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-math.o",
+      "sha256": "b9b63b1758b2a46d7d946cef6dcc08d65b4731506e4dca5c54e243b3790dab75"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-mem.o",
+      "sha256": "7bc6d1bb163f1a45eb28c3330552f6205f4f2ceb28f1c2791d8b00804322c0d1"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-os-allocators.o",
+      "sha256": "1f82d6ce89e55fdedd562d3453136d0537cb49bcdfe5c456ac33d811d6f7b72b"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-os-file_stream.o",
+      "sha256": "8b9849d4a34ae207753644120fdb5f778975d4b27a43d04f3e03de4e9f4fa3bc"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-reflect-doc.o",
+      "sha256": "d934cf9fd3233782aa0ec26b39aeadfc5a3d0400eb38e03e2f821cc8fa449141"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-reflect-types.o",
+      "sha256": "26ba958a2136b645ccc5263381a354e533ca4b6c41751116e65ee420e65673d9"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-core.o",
+      "sha256": "52a7999bf168c9c1c0a5468188ab41a402d93bf6c46f621da7a2162bde208f8e"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-core_builtin.o",
+      "sha256": "d34744011b6c842dbc1fbd64e3e8c52ee642834cc1373261454a8d3b4e1a1af6"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-default_allocators_nil.o",
+      "sha256": "bc69a7abaeb6efc8342fcfbb6182ece2c3c54d85b67ebd121bab3d3f6d8d05cc"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-default_temp_allocator_arena.o",
+      "sha256": "d5c98966f18330a2fe4092df665aa8ed5a0d35de8b81f609afc2a8c5670f7004"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-default_temporary_allocator.o",
+      "sha256": "0658c914dc346d02e0f207761b944cc3d4c2bb1708a0fcb080f2bcadbc92d838"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-dynamic_map_internal.o",
+      "sha256": "28464cd24b01e11b4cb7588450df715347007e7ee674866fda5ea77424cf7323"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-entry_unix.o",
+      "sha256": "10202ff3fe02a0d79180e4420d3c74a5b86babae72f1601b8dac21809ab07ee2"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-error_checks.o",
+      "sha256": "410bd361efa4539379f92d82d06af2c7ddc819bda8bab3b17fc3f6b064a63b3b"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-heap_allocator.o",
+      "sha256": "9408865fee28c3d26339637c0b4264880b710781494e0e258762f1d6c7a2b653"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-heap_allocator_unix.o",
+      "sha256": "15b993acb1f5b237f2c15a1fcbcdac46cdc12dc061da3a659977d76f179d0d7b"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-internal.o",
+      "sha256": "6d20751af4183ea89f6b1603129ba5364a0f45d26bfde42dc53ce5df6bc840e0"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-internal_i128.o",
+      "sha256": "69b6c1f017b0bfd30b466d8347b061a52d1d89e198bae230ec9a60d8d1972a21"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-os_specific.o",
+      "sha256": "40dcdf59ee6a9959b4116ffb63f2076be3b835691b251184fd12a97a6fc9c304"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-os_specific_linux.o",
+      "sha256": "e81222276a3669d146e59c48020a6017a8e7909377db7a7c5ff5856ce74d1d9b"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-print.o",
+      "sha256": "0163751dd2806f180f7e795843e37e54ba7569d95b48e21c52509439d4696c0c"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-procs.o",
+      "sha256": "1753652f8609b4f362b5a934f3ffe8457418fd8112e7db970a0abc9306d39e25"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-random_generator_chacha8.o",
+      "sha256": "3346ccc14ab6fd1c8fa51a7e4e48cb62f31e3cd385b41d989cb96700f7e69483"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-random_generator_chacha8_simd128.o",
+      "sha256": "88f4e4bcd2bf29e81be4f2289fb6eeff8fe37777791233ee63ce1c5712d2a755"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-thread_management.o",
+      "sha256": "04a190bfb9cdaa6629ad9d525bae6fe46ae4981ca376418c103933e532fcb852"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-runtime-udivmod128.o",
+      "sha256": "aa29f406820eae9d0e60985416365ece35520aa741c5fb406ee1b1faafaa17dc"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-strconv-deprecated.o",
+      "sha256": "82dd97600b7ff4a16cf0007319d162ee6199377ed873ec5c9f44eaae9488b219"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-strconv-hex_float.o",
+      "sha256": "ab5fb33e6929e206ff182b1b699ac19ca093cb4f3ba65094ae75dc649ec745d6"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-strconv_decimal-decimal.o",
+      "sha256": "e3d80740eb9214fc5432e24d2cb85f2c662dc8ab7ac0eda603c92388b57c4834"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-strings.o",
+      "sha256": "b594902c2f5e2d5bf7cdfeee89079f68447b92d4db63e1b02f0793c093c9a5d8"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-time.o",
+      "sha256": "36db9c9d4593c8bd43ae21ae373b535cf816a3173555d08075f862c64a96307c"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-utf16.o",
+      "sha256": "4f3fe07f6e30a4875bdbdebcded388ce923487313f5d87de23c1c3320e5aa623"
+    },
+    {
+      "path": "work/verify_481_500/495/hello-utf8.o",
+      "sha256": "7ad94c742c41863c3c61c51359c2725025caa8beb2d143514e1c8042717e18c9"
+    }
+  ]
+}

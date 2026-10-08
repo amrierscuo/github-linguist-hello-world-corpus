@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T10:56:34.006651+00:00",
+  "platform": "Windows x64",
+  "commands": [
+    {
+      "label": "Python and clingo versions",
+      "cwd": "examples/0030_answer-set-programming",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,clingo;print(sys.version);print(\"clingo\", clingo.__version__)"
+      ],
+      "exit_code": 0,
+      "stdout": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]\nclingo 5.8.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native clingo parse, grounding and answer-set assertion",
+      "cwd": "examples/0030_answer-set-programming",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nVerified: exactly one answer set with the expected greeting atom.\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0030_answer-set-programming/hello.lp": "fad53e465a5ee1e5db85efc420ed644aff335ee39da91e4ab62b2137ee297888",
+    "examples/0030_answer-set-programming/verify.py": "7d7f4a7bf90d84f6f202124240c558cd79d00e84d1d420f63781132662f28d15"
+  },
+  "path_normalization": "Absolute workspace, user-home and tool paths replaced by placeholders. Source bytes and command output otherwise unchanged.",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Potassco clingo Python wheel",
+    "version": "5.8.0",
+    "wheel_sha256": "6297a12c20bfe12405dd04c4505fcf72c855696018faed32b50cd0c6a4fd7499"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:52:41.815828+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Texinfo version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_716_155241813095",
+        "--",
+        "env",
+        "PERL5LIB=<workspace>/work/tools_701_720/ubuntu/usr/share/texinfo:<workspace>/work/tools_701_720/ubuntu/usr/share/perl5",
+        "TEXINFO_XS=omit",
+        "<workspace>/work/tools_701_720/ubuntu/usr/bin/texi2any",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_716_155241813095",
+      "exit_code": 0,
+      "stdout": "texi2any (GNU texinfo) 7.1\n\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Texinfo plaintext rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_701_720/verify_716_155241813095",
+        "--",
+        "env",
+        "PERL5LIB=<workspace>/work/tools_701_720/ubuntu/usr/share/texinfo:<workspace>/work/tools_701_720/ubuntu/usr/share/perl5",
+        "TEXINFO_XS=omit",
+        "<workspace>/work/tools_701_720/ubuntu/usr/bin/texi2any",
+        "--plaintext",
+        "--output=-",
+        "hello.texi"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_716_155241813095",
+      "exit_code": 0,
+      "stdout": "Corpus greeting\n***************\n\nHello, World!\n\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "texinfo",
+    "version": "7.1-3build2",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/texinfo/texinfo_7.1-3build2_all.deb",
+    "sha256": "d45be908b080a764422bf8dc337381b7ba697e4dae0fd59a862f97588a9ef71a"
+  },
+  "artifact_sha256": {
+    "examples/0716_texinfo/hello.texi": "fa43a999f031be93a5be3deee5f0026ba7107b2fe061231a84d596818fec87e4"
+  }
+}

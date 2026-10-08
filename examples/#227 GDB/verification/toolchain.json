@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:34:38.970506+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "GDB version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_227_143438961011",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gdb",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_227_143438961011",
+      "exit_code": 0,
+      "stdout": "GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1\nCopyright (C) 2024 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native GDB command script without attaching any process",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_227_143438961011",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/gdb",
+        "-q",
+        "-nx",
+        "-batch",
+        "-x",
+        "hello.gdb"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_227_143438961011",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "GNU GDB original command interpreter",
+    "package": {
+      "file": "gdb_15.1-1ubuntu1~24.04.1_amd64.deb",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gdb/gdb_15.1-1ubuntu1~24.04.1_amd64.deb",
+      "sha256": "7069c23ce3bc350646498e6607749c568f5c403b0db2204310a94baff3d85745",
+      "package": "gdb",
+      "version": "15.1-1ubuntu1~24.04.1"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0227_gdb/hello.gdb": "10b4dce58c3ebf87f022ba3ed90f28bc68eebc24b5d3ccb253000c43f74dbf61"
+  }
+}

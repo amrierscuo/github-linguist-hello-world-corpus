@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "ordinal": 396,
+  "language": "Lobster",
+  "timestamp_utc": "2026-10-08T12:49:26.320562+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Official aardappel Lobster release v2026.8 Windows x64",
+  "working_directory": "examples/0396_lobster",
+  "source_sha256": {
+    "examples/0396_lobster/hello.lobster": "07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782"
+  },
+  "steps": [
+    {
+      "command": "lobster --help",
+      "exit_code": 0,
+      "stdout": "Usage:\nlobster [ OPTIONS ] [ FILE ] [ -- ARGS ]\nCompile & run FILE, or omit FILE to load default.lpak\n--help                  This help.\n--cpp                   Compile to C++ code, don't run (see implementation.md!).\n--pak                   Generate lpak file, don't run.\n--rpak                  Generate lpak file, include runnable code, don't run.\n--import RELDIR         Additional dir (relative to FILE) to load imports from\n--main MAIN             if present, run this main program file after compiling FILE.\n--parsedump             Also dump parse tree.\n--verbose               Output additional informational text.\n--debug                 Output compiler internal logging.\n--silent                Only output errors.\n--full-error            Output full compile time stack traces, also for warnings.\n--runtime-no-asserts    Compile with asserts off.\n--runtime-asserts       Compile with asserts on (default).\n--runtime-stack-traces  Asserts on + code locations + stack traces.\n--runtime-debug         Also minimize inlining.\n--runtime-debug-dump    Also create debug dumps.\n--runtime-debugger      Also break into debugger on error.\n--runtime-debugger-dump Also create dump + break into debugger on error.\n--invert-stacktraces    Shows stacktraces most recent call last.\n--noconsole             Close console window (Windows).\n--gen-builtins-html     Write builtin commands help file.\n--gen-builtins-names    Write builtin commands - just names.\n--non-interactive-test [N] Quit after N frames (default 1).\n--background            Open the window behind all others, without taking focus.\n--tcc-out               Output tcc .o file instead of running.\n--mir [N]               JIT with MIR instead of libtcc, optionally at\n                        optimization level N (0..3, default 2).\n--c-out                 Output the C the JIT backend would compile, don't run.\n--no-crash-dialog       Exit silently on a crash rather than popping up a dialog.\n--wait                  Wait for input before exiting.\n--query QUERY_ARGS      Queries about definitions in the program being compiled.\n--errors N              Output up to N errors (default 10).\n\n",
+      "stderr": ""
+    },
+    {
+      "command": "lobster --no-crash-dialog hello.lobster",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Original Lobster compiler/type checker and VM execute builtin print. Source is Wouter van Oortmerssen Lobster language, distinct from similarly named workflow/data products.",
+  "blockers": [],
+  "tool_artifact_sha256": {
+    "work/tools_381_400/lobster/bin/lobster.exe": "64a6c1406e7867d650b90334b4369bcc42a2a380efc8758e6a5fd2c1d713ff4f"
+  }
+}

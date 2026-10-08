@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:46:06.371421+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Just version",
+      "cwd": "<corpus>/examples/0349_just",
+      "command": [
+        "<workspace>/work/tools_341_360/just/just.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "just 1.58.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Just recipe listing",
+      "cwd": "<corpus>/examples/0349_just",
+      "command": [
+        "<workspace>/work/tools_341_360/just/just.exe",
+        "--list"
+      ],
+      "exit_code": 0,
+      "stdout": "Available recipes:\n    hello\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute original recipe with declared Windows shell",
+      "cwd": "<corpus>/examples/0349_just",
+      "command": [
+        "<workspace>/work/tools_341_360/just/just.exe",
+        "hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Just recipe parser and runner",
+    "version": "just 1.58.0",
+    "executable_sha256": "a4587e6e6a0f048eb4323d572f97796059e96cb65264fe10330294d38c1fe2dd"
+  },
+  "artifact_sha256": {
+    "examples/0349_just/justfile": "23a4dece0400d8027f0cf079b6e0f3473054c6ff51f667a53695e59bb0d2e941"
+  }
+}

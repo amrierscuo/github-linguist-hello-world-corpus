@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 161,
+  "language": "Daslang",
+  "timestamp_utc": "2026-10-08T11:56:15.636441+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Official Daslang 0.6.4 Windows portable bundle",
+  "working_directory": "examples/0161_daslang",
+  "source_sha256": {
+    "examples/0161_daslang/hello.das": "985bb296028583180dc941006fc84d21448b6422421df4f0c20806e9929e4514"
+  },
+  "steps": [
+    {
+      "command": "daslang --version",
+      "exit_code": 0,
+      "stdout": "0.6.4\n",
+      "stderr": ""
+    },
+    {
+      "command": "daslang hello.das",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "Native interpreter compiled and executed exported main; print produced exact greeting/newline.",
+  "blockers": []
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T14:09:44.404119+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "native Coccinelle version",
+      "cwd": "<corpus>/examples/0668_smpl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0668_smpl",
+        "--exec",
+        "env",
+        "COCCINELLE_HOME=<workspace>/work/tools_recheck_668/linux/usr/lib/coccinelle",
+        "<workspace>/work/tools_recheck_668/linux/usr/bin/spatch",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "spatch version 1.1.1 compiled with OCaml version 4.14.1\nFlags passed to the configure script: --prefix=/usr --sysconfdir=/etc --libdir=/usr/lib --enable-ocaml --enable-python --with-python=python3 --enable-opt\nOCaml scripting support: yes\nPython scripting support: yes\nSyntax of regular expressions: Str\n",
+      "stderr": ""
+    },
+    {
+      "label": "GCC version",
+      "cwd": "<corpus>/examples/0668_smpl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0668_smpl",
+        "--exec",
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "parse SmPL and apply original semantic patch",
+      "cwd": "<corpus>/examples/0668_smpl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0668_smpl",
+        "--exec",
+        "env",
+        "COCCINELLE_HOME=<workspace>/work/tools_recheck_668/linux/usr/lib/coccinelle",
+        "<workspace>/work/tools_recheck_668/linux/usr/bin/spatch",
+        "--sp-file",
+        "hello.cocci",
+        "input.c",
+        "-o",
+        "<workspace>/work/tools_recheck_668/668/build/hello.c"
+      ],
+      "exit_code": 0,
+      "stdout": "--- input.c\n+++ /tmp/cocci-output-443-d3175a-input.c\n@@ -1,2 +1,2 @@\n #include <stdio.h>\n-int main(void) { puts(\"Goodbye\"); return 0; }\n+int main(void) { puts(\"Hello, World!\"); return 0; }\n",
+      "stderr": "init_defs_builtins: <workspace>/work/tools_recheck_668/linux/usr/lib/coccinelle/standard.h\nHANDLING: input.c\ndiff = \n"
+    },
+    {
+      "label": "compile genuine transformed C source",
+      "cwd": "<corpus>/examples/0668_smpl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0668_smpl",
+        "--exec",
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "<workspace>/work/tools_recheck_668/668/build/hello.c",
+        "-o",
+        "<workspace>/work/tools_recheck_668/668/build/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "execute transformed fixture",
+      "cwd": "<corpus>/examples/0668_smpl",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/0668_smpl",
+        "--exec",
+        "<workspace>/work/tools_recheck_668/668/build/hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Original Coccinelle spatch Ubuntu 1.1.1.deb-5build1 and GNU GCC",
+    "version": "spatch version 1.1.1 compiled with OCaml version 4.14.1\nFlags passed to the configure script: --prefix=/usr --sysconfdir=/etc --libdir=/usr/lib --enable-ocaml --enable-python --with-python=python3 --enable-opt\nOCaml scripting support: yes\nPython scripting support: yes\nSyntax of regular expressions: Str\ngcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "generated_source_checks": {
+    "contains_replacement": true,
+    "obsolete_call_absent": true
+  },
+  "generated_artifact_sha256": {
+    "<work>/668/build/hello.c": "ed022c4313ef7444150bc047da163dd09eb5ae942093b1e6c97e1cf32dfbad7a",
+    "<work>/668/build/hello": "bbcd50bae4ed0d5eb6fcfa99136c2cbcf7fa18be1a7cdb9653e630c169960d9b"
+  },
+  "tool_archive_sha256": {
+    "coccinelle_1.1.1.deb-5build1_amd64.deb": "7ff53db03c73fdeb5b6063b999463d74c580763beca7a2dcf3cb470c7a8c6aa0"
+  },
+  "verification_scope": "The original .cocci semantic patch replaces Goodbye with Hello, World! in the original C fixture, which is then compiled and executed; no project or kernel sources are modified.",
+  "artifact_sha256": {
+    "examples/0668_smpl/hello.cocci": "e9e20f37c5270fb30fc8ac3759446fd8759bb8a85400ba1622a891f66f7418b1",
+    "examples/0668_smpl/input.c": "c3fecb4da74c672790ef43ea4af88ed76a5f653448a0e248fb2dd1b4aa704d4f"
+  }
+}

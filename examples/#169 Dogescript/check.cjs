@@ -1,0 +1,11 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const dogescript = require('dogescript');
+const generated = dogescript(fs.readFileSync(__dirname+'/hello.djs','utf8'), false, false);
+const captured = [];
+const compiled = new vm.Script(generated, {filename:'hello.generated.js'});
+compiled.runInNewContext({console:{log: value=>captured.push(String(value))}}, {timeout:1000});
+assert.deepEqual(captured, ['Hello, World!']);
+console.log(captured[0]);
+console.log('Official dogescript compiler and JavaScript execution PASS.');

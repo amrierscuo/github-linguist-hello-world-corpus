@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "ordinal": 94,
+  "language": "CODEOWNERS",
+  "timestamp_utc": "2026-10-08T11:33:36.889535+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Python 3.13.9; codeowners 0.9.0 community parser",
+  "working_directory": "examples/0094_codeowners",
+  "source_sha256": {
+    "examples/0094_codeowners/CODEOWNERS": "dd85d1650512bbd69ff9006fd49ca5d253de21fd824bce69d7a2b5f8ed5ddc3e",
+    "examples/0094_codeowners/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/0094_codeowners/verify.py": "4e9d97bda350b1f9cb2716c85b861d6c2e19086e08ba1b18818c8fe14ebc25c2",
+    "examples/0094_codeowners/requirements.txt": "2b0bbc39bc11dec8b43b8d9592ea39095f23b54cad86062d2ba4eeb9bb9428f9"
+  },
+  "steps": [
+    {
+      "command": "python --version",
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": ""
+    },
+    {
+      "command": "python verify.py",
+      "exit_code": 0,
+      "stdout": "codeowners 0.9.0: local path match PASS: [('EMAIL', 'hello@example.invalid')]\nGitHub account eligibility and review assignment remain unverified; email is illustrative.\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Reader/engine execution and explicit assertions passed, exit 0."
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "scope": "Community CODEOWNERS parser and local path matching only. Illustrative example.invalid address cannot attest GitHub owner eligibility or review assignment.",
+  "blockers": [
+    "GitHub eligibility and review assignment not verifiable with an illustrative address."
+  ]
+}

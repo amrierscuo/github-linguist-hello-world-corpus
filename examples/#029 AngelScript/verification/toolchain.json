@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T10:57:07.657548+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "commands": [
+    {
+      "label": "AngelScript runner version",
+      "cwd": "examples/0029_angelscript",
+      "command": [
+        "C:\\Windows\\system32\\wsl.EXE",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_27_33/asrun"
+      ],
+      "exit_code": 255,
+      "stdout": "AngelScript command line runner. Version 2.38.0\n\nUsage: \nasrun [-d] <script file> [<args>]\n -d             inform if the script should be runned with debug\n <script file>  is the script file that should be runned\n <args>         zero or more args for the script\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native AngelScript bytecode compilation and execution",
+      "cwd": "examples/0029_angelscript",
+      "command": [
+        "C:\\Windows\\system32\\wsl.EXE",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_27_33/asrun",
+        "<corpus>/examples/0029_angelscript/hello.as"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/0029_angelscript/hello.as": "53db9aa6b8f63d6e5d9bb3de330651926d3b09c5b8b93694b813f8a57609b8e3"
+  },
+  "path_normalization": "Absolute workspace, user-home and tool paths replaced by placeholders. Source bytes and command output otherwise unchanged.",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "AngelScript official SDK command-line runner, compiled with GNU C++",
+    "version": "2.38.0",
+    "sdk_archive_sha256": "574d4473c71c772fcdfc9bac626f6f258cb31cef790f9512356dffbb40687d57",
+    "runner_sha256": "e8a92ab4aefe06255a3f1f62c8baf0a1ff290991c348cad81172dbc5aa172829"
+  }
+}

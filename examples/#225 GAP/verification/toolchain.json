@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:35:20.509589+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native GAP parser and program execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_221_240/verify_225_143520506986",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/gap/gap",
+        "-l",
+        "<workspace>/work/tools_221_240/ubuntu/usr/share/gap",
+        "-q",
+        "-A",
+        "-T",
+        "hello.g"
+      ],
+      "cwd": "<workspace>\\work\\tools_221_240\\verify_225_143520506986",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original GAP",
+    "packages": [
+      {
+        "file": "gap-core_4.12.1-2build2_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/gap/gap-core_4.12.1-2build2_amd64.deb",
+        "sha256": "f56581f1e4ea01e4a66e6db6f1fcb997d654d7bd6a7daa66c0e5efff934c1f78",
+        "package": "gap-core",
+        "version": "4.12.1-2build2"
+      },
+      {
+        "file": "gap-libs_4.12.1-2build2_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/gap/gap-libs_4.12.1-2build2_all.deb",
+        "sha256": "a8cfbb0a62eed29cdef6d983ab1cbfbfcf4de45850ddb9c58e585064e8583c8c",
+        "package": "gap-libs",
+        "version": "4.12.1-2build2"
+      },
+      {
+        "file": "gap-gapdoc_1.6.6-1_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/gap-gapdoc/gap-gapdoc_1.6.6-1_all.deb",
+        "sha256": "cb14c58ad6caf05a7fb1bada753156d3ad3df20eee4f8fd2e334be6444f05964",
+        "package": "gap-gapdoc",
+        "version": "1.6.6-1"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0225_gap/hello.g": "49245e791c322159fa4885d2e9c8c83a023d08d48a80f20b3f046b79b9668df3"
+  }
+}

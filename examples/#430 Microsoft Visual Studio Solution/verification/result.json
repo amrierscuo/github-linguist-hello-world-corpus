@@ -1,0 +1,38 @@
+{
+  "ordinal": 430,
+  "name": "Microsoft Visual Studio Solution",
+  "timestamp_utc": "2026-10-08T12:45:58.910700+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "MSBuild .NET Framework 4.8 native compiler",
+  "artifact_sha256": {
+    "examples/0430_microsoft-visual-studio-solution/Hello.sln": "560b69809e7a48942399eb2bfa98a15e2ba310b3b7cd78412871e19985b1fa5e",
+    "examples/0430_microsoft-visual-studio-solution/Hello.csproj": "1b6b88dc8348adefa5896024951f5b31e3639c885753f0e5e546556c1ee362b3",
+    "examples/0430_microsoft-visual-studio-solution/Program.cs": "07b8fad256e4f32d1ae1a6fb995197b9dedea2f1a4f9188223a794420cfb9a44"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\MSBuild.exe",
+        "Hello.sln",
+        "/t:Build",
+        "/p:Configuration=Debug",
+        "/p:OutputPath=${WORKSPACE}\\work\\tools_421_440\\build_0430\\",
+        "/p:IntermediateOutputPath=${WORKSPACE}\\work\\tools_421_440\\build_0430\\obj\\"
+      ],
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Build Engine version 4.8.9221.0\n[Microsoft .NET Framework, version 4.0.30319.42000]\nCopyright (C) Microsoft Corporation. All rights reserved.\n\nBuilding the projects in this solution one at a time. To enable parallel build, please add the \"/m\" switch.\nBuild started 10/8/2026 2:45:59 PM.\nProject \"${WORKSPACE}\\work\\staging_421_440\\examples\\0430_microsoft-visual-studio-solution\\Hello.sln\" on node 1 (Build target(s)).\nValidateSolutionConfiguration:\n  Building solution configuration \"Debug|Any CPU\".\nProject \"${WORKSPACE}\\work\\staging_421_440\\examples\\0430_microsoft-visual-studio-solution\\Hello.sln\" (1) is building \"${WORKSPACE}\\work\\staging_421_440\\examples\\0430_microsoft-visual-studio-solution\\Hello.csproj\" (2) on node 1 (default targets).\nPrepareForBuild:\n  Creating directory \"${WORKSPACE}\\work\\tools_421_440\\build_0430\\obj\\\".\nCoreCompile:\n  C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /highentropyva- /reference:\"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\mscorlib.dll\" /reference:\"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Core.dll\" /debug+ /out:${WORKSPACE}\\work\\tools_421_440\\build_0430\\obj\\Hello.exe /target:exe /utf8output Program.cs \"${USERPROFILE}\\AppData\\Local\\Temp\\.NETFramework,Version=v4.0.AssemblyAttributes.cs\"\nCopyFilesToOutputDirectory:\n  Copying file from \"${WORKSPACE}\\work\\tools_421_440\\build_0430\\obj\\Hello.exe\" to \"${WORKSPACE}\\work\\tools_421_440\\build_0430\\Hello.exe\".\n  Hello -> ${WORKSPACE}\\work\\tools_421_440\\build_0430\\Hello.exe\n  Copying file from \"${WORKSPACE}\\work\\tools_421_440\\build_0430\\obj\\Hello.pdb\" to \"${WORKSPACE}\\work\\tools_421_440\\build_0430\\Hello.pdb\".\nDone Building Project \"${WORKSPACE}\\work\\staging_421_440\\examples\\0430_microsoft-visual-studio-solution\\Hello.csproj\" (default targets).\nDone Building Project \"${WORKSPACE}\\work\\staging_421_440\\examples\\0430_microsoft-visual-studio-solution\\Hello.sln\" (Build target(s)).\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.03\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_421_440\\build_0430\\Hello.exe"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

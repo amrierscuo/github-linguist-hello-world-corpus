@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:41.318837+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Rust compiler version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_628_154441301082",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "<workspace>/work/rust_portable/runtime/bin/rustc",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_628_154441301082",
+      "exit_code": 0,
+      "stdout": "rustc 1.90.0 (1159e78c4 2025-09-14)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Rust compilation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_628_154441301082",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/rust_portable/runtime/lib",
+        "PATH=<workspace>/work/rust_portable/runtime/bin:/usr/bin:/bin",
+        "<workspace>/work/rust_portable/runtime/bin/rustc",
+        "hello.rs",
+        "-o",
+        "hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_628_154441301082",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Execute compiled native Rust program",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_628_154441301082",
+        "--",
+        "./hello"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_628_154441301082",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Rust compiler",
+    "version": "1.90.0",
+    "provenance": [
+      {
+        "component": "rustc",
+        "url": "https://static.rust-lang.org/dist/rustc-1.90.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "48c2a42de9e92fcae8c24568f5fe40d5734696a6f80e83cc6d46eef1a78f13c9"
+      },
+      {
+        "component": "rust-std",
+        "url": "https://static.rust-lang.org/dist/rust-std-1.90.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "663f4ab7945b392d5e5294dec1b050a66820a20e86f084ec37eeb0f2f7ff5569"
+      },
+      {
+        "component": "cargo",
+        "url": "https://static.rust-lang.org/dist/cargo-1.90.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "9853db03d68578a30972e2755c89c66aec035fec641cf8f3a7117c81eec2578d"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0628_rust/hello.rs": "e9c1736527d49b36e02e86864bab139f31eb278ebc54892f1613cae796c1e072"
+  }
+}

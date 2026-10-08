@@ -1,0 +1,73 @@
+{
+  "variant_extension": ".d",
+  "timestamp_utc": "2026-10-08T16:05:29.196310+00:00",
+  "scope": "Make originale include il frammento dipendenze .d; GCC compila il fixture; binario eseguito nel work, stdout esatto Hello, World! e LF.",
+  "toolchain": {
+    "name": "GNU make e GCC WSL Ubuntu",
+    "version": [
+      {
+        "command": [
+          "wsl",
+          "--exec",
+          "make",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "wsl",
+          "--exec",
+          "gcc",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0416_makefile/variants/d-d5992320/hello.d": "6d8c2cb1c59f2480bbaaa17229e7f4d43e458e8b7a44f4bfdc17cd316bc11be6",
+    "examples/0416_makefile/variants/d-d5992320/Makefile": "c48a2b7ba6f1ee0a439b1d28d4aa194b79635e80ccab6cc9d6411f906d10804e",
+    "examples/0416_makefile/variants/d-d5992320/hello.c": "ed022c4313ef7444150bc047da163dd09eb5ae942093b1e6c97e1cf32dfbad7a"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/extension_checks_281_560/make_d",
+        "--exec",
+        "make",
+        "-f",
+        "Makefile"
+      ],
+      "exit_code": 0,
+      "stdout": "cc    -c -o hello.o hello.c\ncc hello.o -o hello\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/extension_checks_281_560/make_d",
+        "--exec",
+        "./hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "sha256": {
+    "examples/0416_makefile/variants/d-d5992320/hello.d": "6d8c2cb1c59f2480bbaaa17229e7f4d43e458e8b7a44f4bfdc17cd316bc11be6",
+    "examples/0416_makefile/variants/d-d5992320/Makefile": "c48a2b7ba6f1ee0a439b1d28d4aa194b79635e80ccab6cc9d6411f906d10804e",
+    "examples/0416_makefile/variants/d-d5992320/hello.c": "ed022c4313ef7444150bc047da163dd09eb5ae942093b1e6c97e1cf32dfbad7a"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

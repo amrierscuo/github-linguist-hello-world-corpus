@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:16:21.701326+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Pkl official compiler version",
+      "cwd": "<corpus>/examples/0539_pkl",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_521_540/pkl-0.32.1.jar",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Pkl 0.32.1 (Windows 10.0, Java 21.0.12.1)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Evaluate original typed Pkl config",
+      "cwd": "<corpus>/examples/0539_pkl",
+      "command": [
+        "<java>",
+        "-jar",
+        "<workspace>/work/tools_521_540/pkl-0.32.1.jar",
+        "eval",
+        "--format",
+        "json",
+        "<corpus>/examples/0539_pkl/hello.pkl"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"name\": \"World\",\n  \"message\": \"Hello, World!\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Pkl Java evaluator",
+    "version": "Pkl 0.32.1 (Windows 10.0, Java 21.0.12.1)",
+    "jar_sha256": "3302a417e92f652edd709142f07c21d09e3b33ed7b86ae01cf0106c0bf7f5536"
+  },
+  "artifact_sha256": {
+    "examples/0539_pkl/hello.pkl": "14b847ed8a70afe29162f02e0c64eb2fff06b9e94bd6e5b57ba90428de9344f2"
+  }
+}

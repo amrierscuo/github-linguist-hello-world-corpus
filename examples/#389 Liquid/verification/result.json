@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "ordinal": 389,
+  "language": "Liquid",
+  "timestamp_utc": "2026-10-08T12:49:20.783420+00:00",
+  "platform": "Windows x64",
+  "toolchain": "liquidjs 10.30.0; Node 22.20.0",
+  "working_directory": "examples/0389_liquid",
+  "source_sha256": {
+    "examples/0389_liquid/hello.liquid": "b58bc8ce93c3b6735329ce25e00313948ecebe2afa248f96d55b219cbfca83c0",
+    "examples/0389_liquid/package.json": "f7b827b31776b2f504491e1ce3447b4eabc88c4bf0e2b8c910b77cbe020f4063",
+    "examples/0389_liquid/verify.cjs": "9e8e3adbcbd981ad173bd229fb055936a4995a4173afcfb9ad72c86e2f13cb9e"
+  },
+  "steps": [
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "node verify.cjs",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "Actual tools and output assertions passed."
+  ],
+  "scope": "Genuine LiquidJS interpreter parses assign/default/interpolation/escape; greeting exact, absent name falls back to World, angle brackets escape correctly. LiquidJS is a community implementation of Liquid, not Shopify-host execution.",
+  "blockers": []
+}

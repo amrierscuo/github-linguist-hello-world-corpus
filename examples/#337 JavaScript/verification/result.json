@@ -1,0 +1,34 @@
+{
+  "ordinal": 337,
+  "name": "JavaScript",
+  "timestamp_utc": "2026-10-08T12:17:06.109950+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0",
+  "artifact_sha256": {
+    "examples/0337_javascript/hello.js": "dcc62e4a18325773332e645365de256e46ae08fd1609ff72edd1d7367ed4b632"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--check",
+        "hello.js"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "hello.js"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

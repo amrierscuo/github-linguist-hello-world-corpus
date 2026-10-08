@@ -1,0 +1,9 @@
+@recipient: "World";
+@ink: #124578;
+
+.greeting {
+  color: @ink;
+  &::before {
+    content: "Hello, @{recipient}!";
+  }
+}

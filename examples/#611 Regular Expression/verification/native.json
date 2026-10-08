@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:14.251322+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native engine with acceptance/rejection controls",
+      "cwd": "<corpus>/examples/0611_regular-expression",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: authentic Python re compile/fullmatch and rejection controls\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Python standard-library re regular expression engine",
+    "version": "3.13.9"
+  },
+  "artifact_sha256": {
+    "examples/0611_regular-expression/hello.regexp": "15e9dad17c50d3e1e679a00052461afa6915e9e7dd3e6205a47a8430ea39b8d0",
+    "examples/0611_regular-expression/verify.py": "a6da9f52bd00ad5d03719eeaaccb474e5fdd2850a5e5893c4a067ce1d63ec0a2"
+  }
+}

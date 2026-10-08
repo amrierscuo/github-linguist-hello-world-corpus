@@ -1,0 +1,26 @@
+{
+  "ordinal": 511,
+  "name": "OverPy",
+  "timestamp_utc": "2026-10-08T13:14:07.205399+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + original OverPy 9.7.17 compiler",
+  "artifact_sha256": {
+    "examples/0511_overpy/hello.opy": "048c7037a7c9f0295cd154955314d956987f1a681bb938d303cab4ba0d6d41a6",
+    "examples/0511_overpy/verify.cjs": "2e453263a6c49f1b4252f42e5a2a4939169e50712c4dc0fa465420d326d1ef63"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "_OpyError: Unhandled type 'FloatLiteral'\n    | line 2, col 5, at <main>\n    at OverPyCompiler.error.OverPyDecompiler.error (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:46717:9)\n    at OverPyCompiler.isTypeSuitable.OverPyDecompiler.isTypeSuitable (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:63484:16)\n    at new _Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49568:23)\n    at OverPyCompiler.Ast.OverPyDecompiler.Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49614:10)\n    at ${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:55\n    at Array.map (<anonymous>)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:39)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48351:25)\n    at Object.compile (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:70876:27)\n    at async ${WORKSPACE}\\work\\staging_501_520\\examples\\0511_overpy\\verify.cjs:5:20 {\n  fileStack: [\n    {\n      name: '<main>',\n      path: '/',\n      startLine: 2,\n      startCol: 5,\n      endCol: 22,\n      endLine: 2,\n      remainingChars: 99999999999,\n      staticMember: true,\n      fileStackMemberType: 'normal'\n    }\n  ],\n  severity: 'error'\n}\n"
+    }
+  ],
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "error": "exit 1: les\\overpy\\overpy.js:63484:16)\n    at new _Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49568:23)\n    at OverPyCompiler.Ast.OverPyDecompiler.Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49614:10)\n    at ${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:55\n    at Array.map (<anonymous>)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:39)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48351:25)\n    at Object.compile (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:70876:27)\n    at async ${WORKSPACE}\\work\\staging_501_520\\examples\\0511_overpy\\verify.cjs:5:20 {\n  fileStack: [\n    {\n      name: '<main>',\n      path: '/',\n      startLine: 2,\n      startCol: 5,\n      endCol: 22,\n      endLine: 2,\n      remainingChars: 99999999999,\n      staticMember: true,\n      fileStackMemberType: 'normal'\n    }\n  ],\n  severity: 'error'\n}\n",
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:26:17.087113+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Robot Framework version",
+      "cwd": "<corpus>/examples/0619_robotframework",
+      "command": [
+        "<python>",
+        "-m",
+        "robot",
+        "--version"
+      ],
+      "exit_code": 251,
+      "stdout": "Robot Framework 7.5 (Python 3.13.9 on win32)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute original Robot Framework greeting assertion",
+      "cwd": "<corpus>/examples/0619_robotframework",
+      "command": [
+        "<python>",
+        "-m",
+        "robot",
+        "--outputdir",
+        "<workspace>/work/tools_601_620/619",
+        "--log",
+        "NONE",
+        "--report",
+        "NONE",
+        "hello.robot"
+      ],
+      "exit_code": 0,
+      "stdout": "==============================================================================\nHello                                                                         \n==============================================================================\nOriginal greeting                                                     Hello, World!\n| PASS |\n------------------------------------------------------------------------------\nHello                                                                 | PASS |\n1 test, 1 passed, 0 failed\n==============================================================================\nOutput:  <workspace>\\work\\tools_601_620\\619\\output.xml\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Robot Framework test parser and execution engine",
+    "version": "Robot Framework 7.5 (Python 3.13.9 on win32)"
+  },
+  "test_output_xml_sha256": "b290f24400be712256e631a995f39f8c4cd2b7186a54dbf0ed17687c7baa3b90",
+  "artifact_sha256": {
+    "examples/0619_robotframework/hello.robot": "0814dd30d5b9a76ad959eb2a7d7bee843c24433aaa267f3f6423321dcaf0ee81"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:36:02.051393+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Godot version",
+      "cwd": "<corpus>/examples/0262_godot-resource",
+      "command": [
+        "<workspace>/work/tools_261_280/godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": ""
+    },
+    {
+      "label": "Load original TSCN and assert instantiated Label text",
+      "cwd": "<workspace>/work/tools_261_280/262",
+      "command": [
+        "<workspace>/work/tools_261_280/godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "<workspace>/work/tools_261_280/262",
+        "--script",
+        "<workspace>/work/tools_261_280/262/verify.gd"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nHello, World!\nPASS: genuine PackedScene loader and Label.text\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Godot PackedScene loader and engine",
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "executable_sha256": "c8f0a6bc45a19b33541501e57f6f7cd972ab18453743266339d495cbbe846643"
+  },
+  "semantic_scope": "PackedScene load and instantiated Label.text; no visual screenshot rendering is claimed.",
+  "artifact_sha256": {
+    "examples/0262_godot-resource/hello.tscn": "e7503d998a8ce381ab89162fbdfdb4dc8e6a390b2a8b3134aab0aae1aa08ac5f",
+    "examples/0262_godot-resource/project.godot": "086e081b0e904a4a6eae9cd643fa45d1bdeb33cca084a01571ef82e1417f1a65",
+    "examples/0262_godot-resource/verify.gd": "231b67a36e1a40ee7cf202aaf5143e6bddd05122c7190f911fb8bc3ecabf541a"
+  }
+}

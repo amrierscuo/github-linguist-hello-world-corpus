@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:44:42.879167+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Checkmodule supported policy versions",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_631_154442870388",
+        "--",
+        "<workspace>/work/tools_621_640/ubuntu/usr/bin/checkmodule",
+        "-V"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_631_154442870388",
+      "exit_code": 0,
+      "stdout": "Module versions 4-21\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native SELinux module policy compilation",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_621_640/verify_631_154442870388",
+        "--",
+        "<workspace>/work/tools_621_640/ubuntu/usr/bin/checkmodule",
+        "-M",
+        "-m",
+        "-o",
+        "corpus_greeting.mod",
+        "hello.te"
+      ],
+      "cwd": "<workspace>\\work\\tools_621_640\\verify_631_154442870388",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "toolchain": {
+    "name": "checkpolicy",
+    "version": "3.5-1",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/checkpolicy/checkpolicy_3.5-1_amd64.deb",
+    "sha256": "6e1f4bea961da401cdfeacf58a03579e8d64a7d53ea549578a338397dd07ff67"
+  },
+  "semantic_scope": "Module grammar and compiler checked; no host policy loading or access control test performed.",
+  "artifact_sha256": {
+    "examples/0631_selinux-policy/hello.te": "206a839ca0f9891a0767db628011f1e7ebe5ab2243a688f5f440170acceebd12"
+  }
+}

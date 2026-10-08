@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T14:03:24.153487+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Native Xonsh parser and shell runtime without startup files",
+      "command": [
+        "<user-home>\\anaconda3\\python.exe",
+        "-m",
+        "xonsh",
+        "--no-rc",
+        "--shell-type",
+        "dumb",
+        "hello.xsh"
+      ],
+      "cwd": "<workspace>\\work\\tools_781_800\\verify_794_160324151533",
+      "exit_code": 0,
+      "stdout": "Skipping setup. Because no `readline` implementation available.\n            Please install a backend (`readline`, `prompt-toolkit`, etc) to use\n            `xonsh` interactively.\n            See https://github.com/xonsh/xonsh/issues/1170\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "xonsh",
+    "version": "0.24.2",
+    "metadata_sha256": "48893dd64362f5ccc6863c0891fd50151f82beb15a3f9c83da816fef38487243",
+    "source": "https://pypi.org/project/xonsh/"
+  },
+  "semantic_scope": "Original Xonsh executes greeting; stdout also records its missing interactive readline notice. No interactive shell used; stderr is empty in the final recorded run.",
+  "artifact_sha256": {
+    "examples/0794_xonsh/hello.xsh": "0f9b2f87207c31fed0d98347e31feaef74651bde0761a4ebca317cff97de61db"
+  },
+  "metadata_correction": {
+    "reason": "Distribution version read from the original METADATA Version header; previous filename split accidentally appended .dist. Executed commands, exit/stdout/stderr, timestamps, source hashes and flags unchanged.",
+    "changes": [
+      {
+        "name": "xonsh",
+        "old_version": "0.24.2.dist",
+        "version": "0.24.2",
+        "original_metadata_sha256": "48893dd64362f5ccc6863c0891fd50151f82beb15a3f9c83da816fef38487243",
+        "original_metadata_file": "work/tools_781_800/python/xonsh-0.24.2.dist-info/METADATA"
+      }
+    ]
+  }
+}

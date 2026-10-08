@@ -1,0 +1,47 @@
+{
+  "ordinal": 333,
+  "name": "Java",
+  "timestamp_utc": "2026-10-08T12:17:03.145514+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "OpenJDK 21.0.12",
+  "artifact_sha256": {
+    "examples/0333_java/Hello.java": "e8533e4508f5734f52cbfcf23d34a842fcce5d27f9d82b23ca2f4ff6b3bf1e32"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\javac.exe",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "javac 21.0.12.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\javac.exe",
+        "-d",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0333",
+        "Hello.java"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-Xverify:all",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_321_340\\build_0333",
+        "Hello"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

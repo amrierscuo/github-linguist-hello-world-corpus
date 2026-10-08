@@ -1,0 +1,34 @@
+{
+  "ordinal": 409,
+  "name": "MDX",
+  "timestamp_utc": "2026-10-08T12:26:30.515224+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Node.js 22.20.0 + @mdx-js/mdx 3.1.1 + React/ReactDOM 19.2.0",
+  "artifact_sha256": {
+    "examples/0409_mdx/hello.mdx": "d457e87a0e32bf77477d13f469cae22038ab50091936d8383f13332074d98513",
+    "examples/0409_mdx/verify.cjs": "a5001684a52bf727ef87753c5d7a6276c75605f39e58e8343c2198430aa52402"
+  },
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:21:54.593693+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Lua version",
+      "cwd": "<corpus>/examples/0208_fennel",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio\n",
+      "stderr": ""
+    },
+    {
+      "label": "Official Fennel parse and Lua compilation",
+      "cwd": "<corpus>/examples/0208_fennel",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<workspace>/work/tools_201_220/fennel-1.6.0",
+        "--compile",
+        "<corpus>/examples/0208_fennel/hello.fnl"
+      ],
+      "exit_code": 0,
+      "stdout": "local target = \"World\"\nreturn print((\"Hello, \" .. target .. \"!\"))\n",
+      "stderr": ""
+    },
+    {
+      "label": "Fennel script execution through genuine Lua",
+      "cwd": "<corpus>/examples/0208_fennel",
+      "command": [
+        "<wsl>",
+        "-d",
+        "Ubuntu",
+        "--",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<workspace>/work/tools_201_220/fennel-1.6.0",
+        "<corpus>/examples/0208_fennel/hello.fnl"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Fennel compiler/interpreter CLI with Lua 5.4",
+    "version": "Fennel 1.6.0; Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio",
+    "compiler_sha256": "040a0e191c9107803650376a8d99984390e251b72590a107250b90e2137eed58",
+    "lua_executable_sha256": "389e356ce46f205fc7b1856c701a5765205ef18d849ae8fecd8e3c81548264f1"
+  },
+  "artifact_sha256": {
+    "examples/0208_fennel/hello.fnl": "336f8d8ce9af3eeaa4165c9c3d423bf0bad4c08c9fbb76f3d346653658cc255a"
+  }
+}

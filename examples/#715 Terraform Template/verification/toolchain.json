@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:51:21.703371+00:00",
+  "platform": "Windows x64",
+  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Terraform version",
+      "command": [
+        "<workspace>\\work\\tools_701_720\\terraform\\terraform.exe",
+        "version"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_715_155121691250",
+      "exit_code": 0,
+      "stdout": "Terraform v1.16.5\non windows_amd64\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Terraform templatefile evaluation without providers or network",
+      "command": [
+        "terraform",
+        "console",
+        "<",
+        "evaluate.txt"
+      ],
+      "cwd": "<workspace>\\work\\tools_701_720\\verify_715_155121691250",
+      "exit_code": 0,
+      "stdout": "<<EOT\nHello, World!\n\nEOT\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Terraform templatefile evaluator",
+    "distribution": {
+      "url": "https://releases.hashicorp.com/terraform/1.16.5/terraform_1.16.5_windows_amd64.zip",
+      "sha256": "01700102b7291f95c0ab61394b55bfd5f57a12ac65632c2c1958691c8cf438ef"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0715_terraform-template/evaluate.txt": "9ae6f9a024fffe3814f04b279a6c32c7f45c4f1dc4246cf44d8830872ed8fdf3",
+    "examples/0715_terraform-template/hello.tftpl": "c743943ae1b30eee062c5d8689f174309c07337c6ca934f4f59b61d8c511cf32"
+  }
+}

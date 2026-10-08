@@ -1,0 +1,66 @@
+{
+  "variant_extension": ".ph",
+  "timestamp_utc": "2026-10-08T16:05:31.612829+00:00",
+  "scope": "Perl originale: compile check; esecuzione del driver o TAP con prove. Il .al ha solo sintassi verificata perché AutoLoader non esercitato.",
+  "toolchain": {
+    "name": "Perl WSL Ubuntu",
+    "version": "This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi",
+    "version_command": {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/ph-d462b572",
+        "--exec",
+        "perl",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "\nThis is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi\n(with 67 registered patches, see perl -V for more detail)\n\nCopyright 1987-2023, Larry Wall\n\nPerl may be copied only under the terms of either the Artistic License or the\nGNU General Public License, which may be found in the Perl 5 source kit.\n\nComplete documentation for Perl, including FAQ lists, should be found on\nthis system using \"man perl\" or \"perldoc perl\".  If you have access to the\nInternet, point your browser at https://www.perl.org/, the Perl Home Page.\n\n",
+      "stderr": ""
+    }
+  },
+  "artifact_sha256": {
+    "examples/0532_perl/variants/ph-d462b572/hello.ph": "28846bd1ef77bab45294429d8381cb9c792ea69c9df6aefa6dbb52b8df66fbad",
+    "examples/0532_perl/variants/ph-d462b572/_h2ph_pre.ph": "97a18ae8e28c3a8e24dc4a46fbb47a8106f7ca3e9e7a2015212caa44bf64db43",
+    "examples/0532_perl/variants/ph-d462b572/driver.pl": "bf52d94afda3bdda238b8a3eea136accc7628b4936a6b026d345782532b94c98"
+  },
+  "commands": [
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/ph-d462b572",
+        "--exec",
+        "perl",
+        "-I.",
+        "-c",
+        "driver.pl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "driver.pl syntax OK\n"
+    },
+    {
+      "command": [
+        "wsl",
+        "--cd",
+        "<WORKSPACE>/work/staging_extension_281_560/examples/0532_perl/variants/ph-d462b572",
+        "--exec",
+        "perl",
+        "-I.",
+        "driver.pl"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "sha256": {
+    "examples/0532_perl/variants/ph-d462b572/hello.ph": "28846bd1ef77bab45294429d8381cb9c792ea69c9df6aefa6dbb52b8df66fbad",
+    "examples/0532_perl/variants/ph-d462b572/_h2ph_pre.ph": "97a18ae8e28c3a8e24dc4a46fbb47a8106f7ca3e9e7a2015212caa44bf64db43",
+    "examples/0532_perl/variants/ph-d462b572/driver.pl": "bf52d94afda3bdda238b8a3eea136accc7628b4936a6b026d345782532b94c98"
+  },
+  "path_normalization": "Workspace and user-profile paths normalized; source bytes unmodified."
+}

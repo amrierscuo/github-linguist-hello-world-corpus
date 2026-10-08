@@ -1,0 +1,26 @@
+{
+  "ordinal": 759,
+  "name": "Vyper",
+  "timestamp_utc": "2026-10-08T13:50:03.889033+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Vyper0.4.3 + eth-tester0.14.0b1/PyEVM0.12.1b1 in-memory EVM",
+  "artifact_sha256": {
+    "examples/0759_vyper/hello.vy": "dc75e350550eb1d5b7bc66d6d95f679242b026d1ecf596e579114d4dfe60a376",
+    "examples/0759_vyper/verify.py": "0c5b6372bd18656249cdabc333b1de93198dc2902a3180f3bb0eeeda0f0ad756"
+  },
+  "steps": [
+    {
+      "command": [
+        "${USERPROFILE}\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus.",
+  "toolchain_metadata_note": "Versions reconciled with the installed original package metadata; execution steps and hashes unchanged."
+}

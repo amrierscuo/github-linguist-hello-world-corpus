@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "ordinal": 177,
+  "language": "ECLiPSe",
+  "timestamp_utc": "2026-10-08T12:01:23.327370+00:00",
+  "platform": "WSL Ubuntu 24.04.3 x86_64",
+  "toolchain": "Official ECLiPSe CLP 7.2",
+  "working_directory": "examples/0177_eclipse",
+  "source_sha256": {
+    "examples/0177_eclipse/hello.ecl": "83108ad6971bd73da64cfe30c89021099fbb56cb77a9bd7f403f7373b31061e7"
+  },
+  "steps": [
+    {
+      "command": "eclipse -e \"get_flag(version, V), writeln(V)\"",
+      "exit_code": 0,
+      "stdout": "7.2\n",
+      "stderr": ""
+    },
+    {
+      "command": "eclipse -b hello.ecl -e main",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": [
+    "The stated assertions passed against actual tool output."
+  ],
+  "scope": "ECLiPSe CLP native interpreter loads the Prolog source and executes main; printf produces exact greeting/newline.",
+  "blockers": []
+}

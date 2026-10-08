@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:49:31.264983+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Official Julia version",
+      "cwd": "<corpus>/examples/0346_julia",
+      "command": [
+        "<workspace>/work/julia_portable/julia-1.13.1/bin/julia.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "julia version 1.13.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "Parse and run native Julia script",
+      "cwd": "<corpus>/examples/0346_julia",
+      "command": [
+        "<workspace>/work/julia_portable/julia-1.13.1/bin/julia.exe",
+        "--startup-file=no",
+        "--history-file=no",
+        "hello.jl"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official Julia native runtime",
+    "version": "julia version 1.13.1",
+    "executable_sha256": "d8804b0d175337edbe69db6dba8a71b389335b06ce82382ce6dd614c429675b6",
+    "official_archive_sha256": "648e39c58158c5c8dde08bb0df0b5bce51d517be1396a37a539bb61bc241c8b4"
+  },
+  "artifact_sha256": {
+    "examples/0346_julia/hello.jl": "e03c499384e67f92f0bc77968dc55bdd1dbaa4b2d59012bbf2745ef6b965cd00"
+  }
+}

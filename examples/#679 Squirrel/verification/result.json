@@ -1,0 +1,28 @@
+{
+  "ordinal": 679,
+  "name": "Squirrel",
+  "timestamp_utc": "2026-10-08T13:38:31.269867+00:00",
+  "platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
+  "toolchain": "Squirrel 3.2 original sources + native GNU C++ build",
+  "artifact_sha256": {
+    "examples/0679_squirrel/hello.nut": "2fbd6a22aa36982451196a94e20e3431b4c7710d232465f5805cb37c8e396bbc"
+  },
+  "steps": [
+    {
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "${WORKSPACE_WSL}/work/tools_661_680/squirrel/squirrel-3.2/bin/sq",
+        "${WORKSPACE_WSL}/work/staging_661_680/examples/0679_squirrel/hello.nut"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "normalization_note": "Only absolute path prefixes normalized; source hashes, tool outputs, exit codes and timestamps preserved. Raw records outside corpus."
+}

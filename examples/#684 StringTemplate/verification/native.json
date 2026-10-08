@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T13:43:24.634578+00:00",
+  "platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
+  "path_normalization": "Staging root is replaced by <corpus>, workspace root by <workspace>, user home by <user-home>; interpreter paths use named placeholders. Paths within commands are normalized to POSIX separators. File bytes are unmodified.",
+  "commands": [
+    {
+      "label": "Native StringTemplate parse and render of World/Reader",
+      "cwd": "<corpus>/examples/0684_stringtemplate",
+      "command": [
+        "<java>",
+        "-cp",
+        "<workspace>/work/tools_681_700/ST4-4.3.4.jar;<workspace>/work/tools_681_700/antlr-runtime-3.5.3.jar",
+        "Verify.java"
+      ],
+      "exit_code": 0,
+      "stdout": "StringTemplate 4.3.4\nHello, World!\n\nPASS: actual ST compiler and parameter rendering\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "name": "Official StringTemplate Java compiler/renderer",
+    "version": "ST4 4.3.4 / ANTLR runtime 3.5.3",
+    "jar_sha256": {
+      "ST4-4.3.4.jar": "f927ac384c46d749f8b5ec68972a53aed21e00313509299616edb73bfa15ff33",
+      "antlr-runtime-3.5.3.jar": "68bf9f5a33dfcb34033495c587e6236bef4e37aa6612919f5b1e843b90669fb9"
+    }
+  },
+  "artifact_sha256": {
+    "examples/0684_stringtemplate/hello.st": "3177e24f85a42f3edef1484d5045ef293a21a58401a2e8846b360f6846ea2344",
+    "examples/0684_stringtemplate/Verify.java": "904e8986c96dc2f44efe2f826ba2acab12a96e65e6fc16049327fdec8256e476"
+  }
+}

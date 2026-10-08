@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T12:45:30.624431+00:00",
+  "platform": "Ubuntu WSL x86_64",
+  "path_normalization": "Workspace/corpus/user paths replaced with placeholders; ANSI colors removed.",
+  "commands": [
+    {
+      "label": "Ruby version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_283_144530611372",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_281_300/gems",
+        "GEM_PATH=<workspace>/work/tools_281_300/gems",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_283_144530611372",
+      "exit_code": 0,
+      "stdout": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native template parsing and rendering",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/tools_281_300/verify_283_144530611372",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB=<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:<workspace>/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "GEM_HOME=<workspace>/work/tools_281_300/gems",
+        "GEM_PATH=<workspace>/work/tools_281_300/gems",
+        "<workspace>/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "render.rb"
+      ],
+      "cwd": "<workspace>\\work\\tools_281_300\\verify_283_144530611372",
+      "exit_code": 0,
+      "stdout": "<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": {
+    "name": "Original Ruby ERB stdlib",
+    "ruby_version": "3.2.3",
+    "ruby_packages": [
+      {
+        "file": "ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "sha256": "6f11e297b3508e8db95a5a047126a16ccf1358292049a27e3dc72b88180e779a",
+        "package": "ruby3.2",
+        "version": "3.2.3-1ubuntu0.24.04.8"
+      },
+      {
+        "file": "libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "sha256": "77c2e98ccfba2c4a4e5edb48ca8c0eb041702e1579eabc40cf07064fd4f3033e",
+        "package": "libruby3.2",
+        "version": "3.2.3-1ubuntu0.24.04.8"
+      },
+      {
+        "file": "ruby-bundler_2.4.20-1_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/universe/r/rubygems/ruby-bundler_2.4.20-1_all.deb",
+        "sha256": "8f195bcda5682b2c7bb6f8ec287ab239c585b1ffc29eab0259a5bfe26c68e0f3",
+        "package": "ruby-bundler",
+        "version": "2.4.20-1"
+      },
+      {
+        "file": "ruby-rubygems_3.4.20-1_all.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/r/rubygems/ruby-rubygems_3.4.20-1_all.deb",
+        "sha256": "9cb6041d902b74fd6e9373b24922e788bc2d1ed4360705ca6b53945d67b32087",
+        "package": "ruby-rubygems",
+        "version": "3.4.20-1"
+      },
+      {
+        "file": "libyaml-0-2_0.2.5-1build1_amd64.deb",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/liby/libyaml/libyaml-0-2_0.2.5-1build1_amd64.deb",
+        "sha256": "f5271b120d936dcc7ddf17b9e718df41d55386a6075555d0c634925eaef0b2ac",
+        "package": "libyaml-0-2",
+        "version": "0.2.5-1build1"
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "examples/0283_html-erb/hello.erb": "be111e0cf6656631175533dad2c49ae5667c01ea09c2589089e5f7247bb6c962",
+    "examples/0283_html-erb/render.rb": "2960678410ed0d788f39d870a542dd282d52aae992d86338cea968d8a8c85767"
+  }
+}
