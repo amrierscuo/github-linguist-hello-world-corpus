@@ -1,31 +1,27 @@
-# 0449 — Motorola 68K Assembly: `.inc`
+# #449 Motorola 68K Assembly .inc
 
-Ruolo: Include GNU as per m68k: routine e stringa, distinto dall’entry point _start.
+Include GNU as con driver .s. La variante originale del corpus conserva i byte identificati dai checksum.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+## Toolchain e verifica
 
-Toolchain richiesta: Genuine GNU Binutils Motorola 68000 cross assembler/linker — GNU assembler (GNU Binutils for Ubuntu) 2.42. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
-
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+GNU Binutils m68k 2.42 e QEMU user 8.2.2. Eseguire dalla directory della variante; <output> indica una directory di lavoro esterna.
 
 ```text
-m68k-linux-gnu-as -o hello.o driver.s; m68k-linux-gnu-ld -o hello hello.o; qemu-m68k ./hello
+m68k-linux-gnu-as -m68000 -o <output>/hello.o driver.s; m68k-linux-gnu-ld -o <output>/hello <output>/hello.o; qemu-m68k <output>/hello
 ```
 
-Risultato atteso: Hello, World!
+Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+La toolchain originale ha controllato questa specifica variante. Il task BitBake o l’eseguibile m68k produce Hello, World! e termina con exit 0. Gli esiti non derivano solo dall’uguaglianza con il campione principale.
 
-Impedimenti:
+Prova: [finish_variants.json](../../verification/finish_variants.json), con comandi, UTC, versioni, exit code, output e hash. Il log registra ogni variante separatamente.
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+## Sorgenti verificati
 
-SHA-256 dei file della variante:
+- [hello.inc](hello.inc) SHA-256 `07db4e9cdf3ea13526449c3b91b3454d73faf65cf860ad15213894d176bc44ed`.
+- [driver.s](driver.s) SHA-256 `1a19af04d9d583b4706f1eebb64ebf1e2124968c76c9c14997fbe710695c3b2b`.
 
-- `driver.s`: `1a19af04d9d583b4706f1eebb64ebf1e2124968c76c9c14997fbe710695c3b2b`
-- `hello.inc`: `07db4e9cdf3ea13526449c3b91b3454d73faf65cf860ad15213894d176bc44ed`
-
-Fonti primarie:
+## Fonti primarie
 
 - https://sourceware.org/binutils/docs/as/M68K_002dDependent.html
 - https://www.kernel.org/doc/html/latest/arch/m68k/index.html

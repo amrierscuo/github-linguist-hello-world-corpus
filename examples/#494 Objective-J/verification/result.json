@@ -2,40 +2,53 @@
   "schema_version": 1,
   "ordinal": 494,
   "language": "Objective-J",
-  "timestamp_utc": "2026-10-08T13:11:33.888833+00:00",
+  "timestamp_utc": "2026-10-08T23:33:22.074789+00:00",
   "platform": "Windows x64",
-  "toolchain": "Node.js 22.20.0; objj-transpiler 1.0.0-10; objj-runtime 0.4.6",
-  "working_directory": "examples/0494_objective-j",
-  "source_sha256": {
-    "examples/0494_objective-j/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e"
+  "toolchain": "objj-transpiler 1.0.0-10; objj-runtime 0.4.6; Node.js 22.20.0",
+  "path_normalization": "Absolute corpus, workspace, home and temporary build paths replaced with placeholders; source bytes preserved.",
+  "artifact_sha256": {
+    "examples/#494 Objective-J/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e",
+    "examples/#494 Objective-J/make-sj.cjs": "c881055b0eb0adcb16a3561414d20ee0dfa232108d7ed96e9b3e9a33071e2fce",
+    "examples/#494 Objective-J/verify.cjs": "2cf0832d6ef1e398afe8c56c38504a01c2670a43e9d24e4f8a90fd06c4eedfa6",
+    "examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj": "e18a570456c787e54e0f04c9868e9715dcfa9041deba296f561c22f071d79faf"
   },
-  "steps": [
+  "commands": [
     {
-      "command": "node --version",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "<corpus>/examples/#494 Objective-J",
       "exit_code": 0,
       "stdout": "v22.20.0\n",
       "stderr": ""
     },
     {
-      "command": "objjc hello.j -o <build>/hello.js",
+      "command": [
+        "node",
+        "-e",
+        "console.log(JSON.stringify({\"objj-transpiler\":require(\"<workspace>/work/tools_481_500/node/node_modules/objj-transpiler/package.json\").version,\"objj-runtime\":require(\"<workspace>/work/tools_481_500/node/node_modules/objj-runtime/package.json\").version}))"
+      ],
+      "cwd": "<corpus>/examples/#494 Objective-J",
       "exit_code": 0,
-      "stdout": "",
+      "stdout": "{\"objj-transpiler\":\"1.0.0-10\",\"objj-runtime\":\"0.4.6\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "<corpus>/examples/#494 Objective-J/verify.cjs",
+        "<workspace>/work/tools_481_500/node",
+        "<corpus>/examples/#494 Objective-J/hello.j"
+      ],
+      "cwd": "<corpus>/examples/#494 Objective-J",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: original Objective-J class method dispatched through the native runtime\n",
       "stderr": ""
     }
   ],
   "syntax_verified": true,
-  "semantic_verified": false,
-  "assertions": [
-    "Actual tools and output assertions passed."
-  ],
-  "scope": "Original Objective-J compiler emits JavaScript; runtime loader on Windows fails to resolve local file.",
-  "blockers": [
-    "Objective-J native runtime execution pending: original objj-runtime 0.4.6 Windows local file resolution fails."
-  ],
-  "derived_artifacts": [
-    {
-      "path": "work/verify_481_500/494/hello.js",
-      "sha256": "14704a0fc89e92d80c9a6853f1fe0f0eb67972ff09e0c981db0b8edd9f88b414"
-    }
-  ]
+  "semantic_verified": true,
+  "semantic_scope": "Il compilatore originale produce JavaScript, valutato con le funzioni di classe e dispatch del runtime Objective-J originale. Il checker invoca main e controlla il messaggio emesso. Questa procedura evita soltanto il file loader Windows del runtime, mantenendo compilatore e dispatcher nativi.",
+  "blockers": []
 }

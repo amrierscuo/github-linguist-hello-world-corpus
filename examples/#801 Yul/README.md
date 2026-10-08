@@ -1,39 +1,37 @@
 # #801 Yul
 
-Compilare Yul che restituisce 13 byte del saluto dal buffer EVM.
+Voce e ordine canonici di `reference/languages.yml`.
 
-## Toolchain
+Compila il sorgente originale e restituisce `Hello, World!` eseguendo il bytecode in una macchina virtuale locale.
 
-Solc 0.8.37+commit.f401782d.Emscripten.clang; Node22.20.0
+## Toolchain e riproduzione
 
-## Procedura
+Solc 0.8.37 + EthereumJS EVM 10.1.3; Node.js 22.20.0. Eseguire dalla cartella dell'esempio:
 
-npm install solc; node verify.cjs build/compiled.json; eseguire il bytecode in una EVM offline e decodificare i byte restituiti.
+```sh
+npm install --no-audit --no-fund --save-exact solc@0.8.37 @ethereumjs/evm@10.1.3
+node verify.cjs
+```
 
-## Risultato atteso
+Il checker esegue i bytecode prodotti da solc con EthereumJS EVM, hardfork Prague. Verifica assenza di eccezioni e tutti i 13 byte restituiti da RETURN.
 
-Hello, World!
+La verifica usa solo una VM locale e non richiede account, fondi o connessione a una blockchain.
 
-## Stato
+## Stato e prova
 
-Sintassi verificata; semantica in attesa.
+Sintassi e semantica verificate il `2026-10-08T23:31:22.707883+00:00`. Risultato reale: `Hello, World!`.
 
-Nessun deployment; mstore usa il literal left-aligned documentato e return seleziona i 13 byte.
-
-Verifica reale 2026-10-08T13:38:33.424893+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
-
-Requisiti residui:
-- Offline EVM execution pending.
+[Log della verifica](verification/runtime.json) con versioni, comandi, stdout, exit code e SHA-256 dei sorgenti e del checker. La prova riguarda questo campione e le versioni indicate.
 
 ## Fonti primarie
 
 - [https://docs.soliditylang.org/en/latest/yul.html](https://docs.soliditylang.org/en/latest/yul.html)
+- [https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/evm](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/evm)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.yul` | [hello.yul](hello.yul) sintassi verificata |
+| `.yul` | [hello.yul](hello.yul) sintassi e semantica verificate |

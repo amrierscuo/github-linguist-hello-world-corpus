@@ -1,40 +1,42 @@
 # #055 BIRD2
 
-Voce canonica: `BIRD2`, tipo `data`, `language_id: 584191811`.
+Voce canonica: `BIRD2`, tipo `data`, language_id `584191811`.
 
 Caricare una configurazione BIRD2 con costante GREETING = Hello, World! e una route blackhole nella tabella interna; leggere il saluto con il client BIRD.
 
 ## Toolchain e riproduzione
 
-BIRD 2 Ubuntu binary package extracted locally — BIRD version 2.14. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+BIRD 2.14, pacchetto Ubuntu estratto localmente.
 
-Richiede BIRD 2.14. La prova disponibile esegue soltanto bird -p sul file indicato; non avvia un daemon e non modifica route del sistema. Per l’animazione usare un daemon dedicato con socket e PID isolati.
+BIRD 2.14. Usare un socket Unix e un PID esclusivi su filesystem Linux. Avviare il daemon in una sessione separata e terminare sempre con birdc down.
 
-Comando/procedura dalla directory dell’esempio:
+Comandi dalla directory dell’esempio; `<output>` indica una directory temporanea esterna al corpus.
 
-```text
-bird -p -c bird.conf; BIRD daemon isolato: birdc -s <socket> eval GREETING
+Terminale 1, dalla cartella dell'esempio:
+
+```sh
+bird -p -c bird.conf
+bird -f -c bird.conf -s /tmp/corpus-bird.sock -P /tmp/corpus-bird.pid
 ```
 
-Risultato atteso: Parser exit 0; valutazione runtime attesa della costante GREETING uguale a Hello, World! (pending).
+Terminale 2, mentre il daemon del primo terminale è attivo:
+
+```sh
+birdc -s /tmp/corpus-bird.sock eval GREETING
+birdc -s /tmp/corpus-bird.sock down
+```
+
+Risultato atteso: Parser exit 0; il client BIRD restituisce la riga Hello, World!; daemon isolato terminato con exit 0.
 
 ## Stato ed evidenza
 
-Artefatto **creato**; sintassi **verificata**; semantica **in attesa**.
+Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
 
-La configurazione usa il protocollo static, senza protocollo kernel e senza esportazioni verso il sistema. Il parser ufficiale l’ha accettata. La valutazione della stringa in una sessione BIRD non è stata ottenuta: semantica pending.
+Il parser BIRD 2.14 accetta la configurazione. Un daemon con socket e PID isolati valuta GREETING tramite birdc, restituendo Hello, World!. La configurazione usa solo static e non contiene protocolli kernel/device, quindi non esporta route al sistema. Shutdown del processo verificato.
 
-Requisiti residui:
-
-- BIRD parser accepted the configuration; daemon/client runtime evaluation of GREETING remains pending.
-
-Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+Prova reale: [finish.json](verification/finish.json), con UTC, comandi, versioni, exit code, stdout/stderr e SHA-256 dei sorgenti. Le sostituzioni dei percorsi sono documentate nel log. I prodotti di compilazione e le dipendenze rimangono nelle directory di lavoro.
 
 ## Fonti primarie
 
-- [https://bird.nic.cz/doc/bird-2.14.html](https://bird.nic.cz/doc/bird-2.14.html)
-- [https://bird.network.cz/doc/bird-3.html](https://bird.network.cz/doc/bird-3.html)
+- https://bird.nic.cz/doc/bird-2.14.html
+- https://bird.network.cz/doc/bird-3.html

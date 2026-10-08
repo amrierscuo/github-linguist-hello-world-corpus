@@ -1,32 +1,36 @@
 # #018 ATS
 
-`hello.dats` è un programma **ATS2/Postiats** con `main0`, che chiama `println!`
-per scrivere `Hello World` seguito da un a capo. Il preludio è caricato da
-`share/atspre_staload.hats`.
+Scrivere Hello World seguito da un a capo tramite main0 e println! in ATS2/Postiats.
 
-Toolchain richiesta: ATS2/Postiats (`patscc`) e un compilatore C supportato,
-con `PATSHOME` configurato. Dalla cartella dell'esempio, su un ambiente
-Unix o equivalente già configurato:
+## Riproduzione
 
-```sh
-patscc -o hello hello.dats
+Toolchain: ATS/Postiats 0.4.2; GCC 13.3.0. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
+
+```text
+patscc -DATS_MEMALLOC_LIBC -o hello hello.dats
 ./hello
+Per .hats/.sats compilare ed eseguire consumer.dats dalla relativa directory variants.
 ```
 
-Risultato atteso: una riga `Hello World`, terminazione senza errori.
-Sintassi e semantica verificate: **no**. Blocco attuale: `patscc` non è disponibile
-nell'ambiente Windows usato per il corpus. Il sorgente è stato confrontato con
-la documentazione, ma non è stato compilato né eseguito.
+Risultato atteso: stdout: Hello World seguito da un a capo; exit 0.
 
-Riferimenti primari: [primo programma e compilazione](https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html)
-e [ATS-Postiats](https://github.com/githwxi/ATS-Postiats).
+## Verifica
+
+Sintassi e semantica verificate il 2026-10-08T23:32:26.148574+00:00. Le varianti hanno prove separate nel log quando consumate.
+
+[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
+
+## Fonti primarie
+
+- [https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html](https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html)
+- [https://github.com/githwxi/ATS-Postiats](https://github.com/githwxi/ATS-Postiats)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.dats` | [hello.dats](hello.dats), [consumer.dats](variants/ext-hats-2e68617473/consumer.dats), [consumer.dats](variants/ext-sats-2e73617473/consumer.dats) creato, verifiche pendenti |
-| `.hats` | [hello.hats](variants/ext-hats-2e68617473/hello.hats) creato, verifiche pendenti |
-| `.sats` | [hello.sats](variants/ext-sats-2e73617473/hello.sats) creato, verifiche pendenti |
+| `.dats` | [hello.dats](hello.dats), [consumer.dats](variants/ext-hats-2e68617473/consumer.dats), [consumer.dats](variants/ext-sats-2e73617473/consumer.dats) sintassi e semantica verificate |
+| `.hats` | [hello.hats](variants/ext-hats-2e68617473/hello.hats) sintassi e semantica verificate |
+| `.sats` | [hello.sats](variants/ext-sats-2e73617473/hello.sats) sintassi e semantica verificate |

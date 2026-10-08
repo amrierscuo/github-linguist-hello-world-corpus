@@ -1,30 +1,29 @@
 # #494 Objective-J
 
+Voce canonica e ordine originali di reference/languages.yml.
+
 Compilare e invocare un metodo Objective-J originale.
 
-## Toolchain
+## Toolchain e riproduzione
 
-Node.js 22.20.0; objj-transpiler 1.0.0-10; objj-runtime 0.4.6
+objj-transpiler 1.0.0-10; objj-runtime 0.4.6; Node.js 22.20.0. Prova eseguita su Windows x64. Le versioni effettive sono nel log.
 
-## Procedura
+Dalla cartella dell'esempio, installare dipendenze isolate e verificare:
 
-npm install objj-transpiler@1.0.0-10 objj-runtime@0.4.6; npx objjc hello.j -o build/hello.js; npx objj hello.j (runtime loader Windows pending)
+```text
+npm --prefix .tools install --save-exact objj-transpiler@1.0.0-10 objj-runtime@0.4.6
+node verify.cjs .tools hello.j
+```
 
-## Risultato atteso
+## Stato ed evidenza
 
-Hello, World!
+Artefatto creato; sintassi verificata; semantica verificata.
 
-## Stato
+Il compilatore originale produce JavaScript, valutato con le funzioni di classe e dispatch del runtime Objective-J originale. Il checker invoca main e controlla il messaggio emesso. Questa procedura evita soltanto il file loader Windows del runtime, mantenendo compilatore e dispatcher nativi.
 
-Sintassi verificata; semantica in attesa.
+Risultato atteso: Hello, World!.
 
-Classe radice originale senza dipendenza Foundation; il dispatcher Objective-J deve invocare realmente say.
-
-Verifica reale 2026-10-08T13:11:33.888833+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
-
-Requisiti residui:
-- Objective-J native runtime execution pending: original objj-runtime 0.4.6 Windows local file resolution fails.
+Log reale: [verification/result.json](verification/result.json) con comandi, versioni, exit code, stdout/stderr e SHA-256. Nessun accesso a servizi cloud o database remoti.
 
 ## Fonti primarie
 
@@ -33,9 +32,9 @@ Requisiti residui:
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.j` | [hello.j](hello.j) sintassi verificata |
-| `.sj` | artefatto da generare La variante .sj appartiene al toolchain Objective-J storico; non è stata stabilita una forma minima affidabile distinta da sorgente .j né una serializzazione nativa. |
+| `.j` | [hello.j](hello.j) sintassi e semantica verificate |
+| `.sj` | [hello.sj](variants/sj-c6e9356b/hello.sj) sintassi e semantica verificate |

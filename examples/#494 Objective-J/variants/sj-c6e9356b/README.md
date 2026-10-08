@@ -1,27 +1,27 @@
-# 0494 — Objective-J: `.sj`
+# #494 Objective-J .sj
 
-Ruolo: Variante con ruolo/formato distinto dal sorgente principale.
+Archivio Static-J autentico generato dal sorgente principale hello.j. Non è una rinomina del sorgente Objective-J: contiene il codice compilato con intestazione @STATIC e record testuale serializzati dal runtime originale.
 
-Provenienza: Solo documentazione del blocco; nessun artefatto con estensione richiesta è stato fabbricato.
+## Toolchain e riproduzione
 
-Toolchain richiesta: Node.js 22.20.0; objj-transpiler 1.0.0-10; objj-runtime 0.4.6. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Node.js 22.20.0, objj-transpiler 1.0.0-10 e objj-runtime 0.4.6.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Dalla cartella principale dell'esempio:
 
 ```text
-Disponibilità del tool originale necessaria; consultare gli impedimenti.
+npm --prefix .tools install --save-exact objj-transpiler@1.0.0-10 objj-runtime@0.4.6
+node make-sj.cjs .tools hello.j variants/sj-c6e9356b/hello.sj
+node verify.cjs .tools variants/sj-c6e9356b/hello.sj
 ```
 
-Risultato atteso: Da verificare con il formato nativo dopo la risoluzione del blocco.
+Il compilatore originale produce JavaScript e Executable.toMarkedString genera l'archivio. FileExecutable del runtime originale analizza i byte .sj; il codice decodificato viene eseguito con le funzioni originali di classe e dispatch. Il checker invoca main e verifica il messaggio Hello, World!. Node fornisce soltanto il caricamento locale dei byte per evitare il file loader Windows non funzionante.
 
-Stato individuale: artefatto creato `false`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Artefatto creato; sintassi verificata; semantica verificata.
 
-Impedimenti:
+Log reale: [verification/native.json](verification/native.json), con comandi, versioni del toolchain usato, exit code, stdout/stderr e SHA-256.
 
-- La variante .sj appartiene al toolchain Objective-J storico; non è stata stabilita una forma minima affidabile distinta da sorgente .j né una serializzazione nativa.
+## Fonti primarie
 
-Fonti primarie:
-
+- https://github.com/mrcarlberg/objj-runtime
 - https://github.com/cappuccino/cappuccino
 - https://www.cappuccino.dev/learn/objective-j.html
-- https://github.com/mrcarlberg/objj-runtime

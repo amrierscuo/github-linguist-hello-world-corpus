@@ -21,9 +21,9 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #015 | [ASL](../examples/%23015%20ASL/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #016 | [ASN.1](../examples/%23016%20ASN.1/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #017 | [ASP.NET](../examples/%23017%20ASP.NET/README.md) | Sì | Sì | Sì | 6/6 | Prove registrate |
-| #018 | [ATS](../examples/%23018%20ATS/README.md) | Sì | In attesa | In attesa | 3/3 | patscc non disponibile nell'ambiente Windows; compilazione ed esecuzione da effettuare. |
+| #018 | [ATS](../examples/%23018%20ATS/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
 | #019 | [ActionScript](../examples/%23019%20ActionScript/README.md) | Sì | In attesa | In attesa | 1/1 | mxmlc e playerglobal.swc non disponibili.; Runtime SWF compatibile con ActionScript 3 da scegliere; comando di esecuzione e verifica visiva ancora da fissare. |
-| #020 | [Ada](../examples/%23020%20Ada/README.md) | Sì | In attesa | In attesa | 3/3 | gnatmake e toolchain Ada non disponibili nell'ambiente Windows; compilazione ed esecuzione da effettuare. |
+| #020 | [Ada](../examples/%23020%20Ada/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
 | #021 | [Adblock Filter List](../examples/%23021%20Adblock%20Filter%20List/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #022 | [Adobe Font Metrics](../examples/%23022%20Adobe%20Font%20Metrics/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #023 | [Agda](../examples/%23023%20Agda/README.md) | Sì | In attesa | In attesa | 1/1 | Agda and GHC executables are not available in PATH; native typecheck, FFI compilation and runtime remain pending. |
@@ -45,7 +45,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #039 | [AsciiDoc](../examples/%23039%20AsciiDoc/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
 | #040 | [AspectJ](../examples/%23040%20AspectJ/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #041 | [Assembly](../examples/%23041%20Assembly/README.md) | Sì | Sì | Sì | 7/7 | Prove registrate |
-| #042 | [Astro](../examples/%23042%20Astro/README.md) | Sì | Sì | In attesa | 1/1 | Official compiler transform succeeds, but the compiled module requires createMetadata which the installed Astro runtime does not export; rendered HTML remains pending. |
+| #042 | [Astro](../examples/%23042%20Astro/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #043 | [Asymptote](../examples/%23043%20Asymptote/README.md) | Sì | In attesa | In attesa | 1/1 | Asymptote interpreter runs, but local MiKTeX standard plain modules produce compiler errors; coherent interpreter/library installation required. |
 | #044 | [Augeas](../examples/%23044%20Augeas/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #045 | [AutoHotkey](../examples/%23045%20AutoHotkey/README.md) | Sì | Sì | Sì | 4/4 | Prove registrate |
@@ -58,7 +58,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #052 | [BAML](../examples/%23052%20BAML/README.md) | Sì | Sì | In attesa | 1/1 | Model invocation has not been performed; semantic greeting output and credentials remain pending. |
 | #053 | [BASIC](../examples/%23053%20BASIC/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #054 | [BBCode](../examples/%23054%20BBCode/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #055 | [BIRD2](../examples/%23055%20BIRD2/README.md) | Sì | Sì | In attesa | Nomi speciali / altra modalità | BIRD parser accepted the configuration; daemon/client runtime evaluation of GREETING remains pending. |
+| #055 | [BIRD2](../examples/%23055%20BIRD2/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
 | #056 | [BQN](../examples/%23056%20BQN/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #057 | [Ballerina](../examples/%23057%20Ballerina/README.md) | Sì | In attesa | In attesa | 1/1 | bal toolchain not installed or not available in this isolated verification environment. |
 | #058 | [Batchfile](../examples/%23058%20Batchfile/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
@@ -69,13 +69,13 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #063 | [BibTeX](../examples/%23063%20BibTeX/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #064 | [BibTeX Style](../examples/%23064%20BibTeX%20Style/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #065 | [Bicep](../examples/%23065%20Bicep/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
-| #066 | [Bikeshed](../examples/%23066%20Bikeshed/README.md) | Sì | In attesa | In attesa | 1/1 | Dipendenze Bikeshed incomplete: import aiofiles non disponibile. L’installazione completa non è terminata nel tempo previsto; nessuna verifica del documento è conteggiata. |
+| #066 | [Bikeshed](../examples/%23066%20Bikeshed/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #067 | [Bison](../examples/%23067%20Bison/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #068 | [BitBake](../examples/%23068%20BitBake/README.md) | Sì | In attesa | In attesa | 4/4 | Il BitBake reale richiede en_US.UTF-8, non presente nel WSL; si arresta all’avvio prima del parser. LC_ALL=C.UTF-8 non soddisfa questo requisito; nessun server è stato avviato. |
+| #068 | [BitBake](../examples/%23068%20BitBake/README.md) | Sì | Sì | Sì | 4/4 | Prove registrate |
 | #069 | [Blade](../examples/%23069%20Blade/README.md) | Sì | In attesa | In attesa | 2/2 | PHP e un’applicazione Laravel completa non sono preparati in questo ambiente; il motore Blade non è stato eseguito. |
 | #070 | [BlitzBasic](../examples/%23070%20BlitzBasic/README.md) | Sì | In attesa | In attesa | 2/2 | Compilatore/IDE Blitz3D non disponibile; build e output visuale restano da verificare nel software originale. |
 | #071 | [BlitzMax](../examples/%23071%20BlitzMax/README.md) | Sì | In attesa | In attesa | 1/1 | BlitzMax NG/bmk non disponibile; compilazione ed esecuzione restano da verificare. |
-| #072 | [Blueprint](../examples/%23072%20Blueprint/README.md) | Sì | In attesa | In attesa | 1/1 | Namespace GTK 4 delle librerie GObject introspection non disponibile nel WSL. Il compilatore originale non arriva alla validazione del file. |
+| #072 | [Blueprint](../examples/%23072%20Blueprint/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #073 | [Bluespec](../examples/%23073%20Bluespec/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #074 | [Bluespec BH](../examples/%23074%20Bluespec%20BH/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #075 | [Boo](../examples/%23075%20Boo/README.md) | Sì | In attesa | In attesa | 1/1 | Boo/booi e il suo runtime compatibile non disponibili; nessun compilatore Boo è stato eseguito. |
@@ -90,7 +90,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #084 | [C#](../examples/%23084%20C%23/README.md) | Sì | Sì | Sì | 5/5 | Prove registrate |
 | #085 | [C++](../examples/%23085%20C%2B%2B/README.md) | Sì | Sì | Sì | 20/20 | Prove registrate |
 | #086 | [C-ObjDump](../examples/%23086%20C-ObjDump/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #087 | [C2hs Haskell](../examples/%23087%20C2hs%20Haskell/README.md) | Sì | Sì | In attesa | 1/1 | GHC absent: compile and execute generated Haskell to complete the greeting runtime proof. |
+| #087 | [C2hs Haskell](../examples/%23087%20C2hs%20Haskell/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #088 | [C3](../examples/%23088%20C3/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #089 | [CAP CDS](../examples/%23089%20CAP%20CDS/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #090 | [CIL](../examples/%23090%20CIL/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
@@ -119,7 +119,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #113 | [Chapel](../examples/%23113%20Chapel/README.md) | Sì | In attesa | In attesa | 1/1 | Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare. |
 | #114 | [Charity](../examples/%23114%20Charity/README.md) | Sì | In attesa | In attesa | 1/1 | Grammatica della bozza def/putStrLn non confermata; nessun interprete Charity eseguito. |
 | #115 | [Checksums](../examples/%23115%20Checksums/README.md) | Sì | Sì | Sì | 12/12 | Prove registrate |
-| #116 | [ChucK](../examples/%23116%20ChucK/README.md) | Sì | In attesa | In attesa | 1/1 | Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare. |
+| #116 | [ChucK](../examples/%23116%20ChucK/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #117 | [Circom](../examples/%23117%20Circom/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #118 | [Cirru](../examples/%23118%20Cirru/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #119 | [Clarion](../examples/%23119%20Clarion/README.md) | Sì | In attesa | In attesa | 1/1 | Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare. |
@@ -137,13 +137,13 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #131 | [ColdFusion](../examples/%23131%20ColdFusion/README.md) | Sì | In attesa | In attesa | 2/2 | No Adobe ColdFusion/Lucee engine is configured to serve the template. |
 | #132 | [ColdFusion CFC](../examples/%23132%20ColdFusion%20CFC/README.md) | Sì | In attesa | In attesa | 1/1 | No Adobe ColdFusion/Lucee engine is configured to load and invoke the component. |
 | #133 | [Common Lisp](../examples/%23133%20Common%20Lisp/README.md) | Sì | Sì | Sì | 8/8 | Prove registrate |
-| #134 | [Common Workflow Language](../examples/%23134%20Common%20Workflow%20Language/README.md) | Sì | In attesa | In attesa | 1/1 | Native Windows cwltool imports POSIX pwd and cannot start; isolated Linux installation timed out and Linux cwltool module is unavailable. |
+| #134 | [Common Workflow Language](../examples/%23134%20Common%20Workflow%20Language/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #135 | [Component Pascal](../examples/%23135%20Component%20Pascal/README.md) | Sì | In attesa | In attesa | 2/2 | BlackBox Component Builder with StdLog library is unavailable; module compilation/invocation is pending. |
 | #136 | [Cooklang](../examples/%23136%20Cooklang/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #137 | [Cool](../examples/%23137%20Cool/README.md) | Sì | In attesa | In attesa | 1/1 | Stanford Cool coolc and compatible SPIM runtime are unavailable. |
 | #138 | [Cpp-ObjDump](../examples/%23138%20Cpp-ObjDump/README.md) | Sì | Sì | Sì | 5/5 | Prove registrate |
 | #139 | [Creole](../examples/%23139%20Creole/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #140 | [Crystal](../examples/%23140%20Crystal/README.md) | Sì | In attesa | In attesa | 1/1 | Native verification did not complete successfully; see genuine command output. |
+| #140 | [Crystal](../examples/%23140%20Crystal/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #141 | [Csound](../examples/%23141%20Csound/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #142 | [Csound Document](../examples/%23142%20Csound%20Document/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #143 | [Csound Score](../examples/%23143%20Csound%20Score/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
@@ -197,7 +197,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #191 | [Elm](../examples/%23191%20Elm/README.md) | Sì | In attesa | In attesa | 1/1 | Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti. |
 | #192 | [Elvish](../examples/%23192%20Elvish/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #193 | [Elvish Transcript](../examples/%23193%20Elvish%20Transcript/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
-| #194 | [Emacs Lisp](../examples/%23194%20Emacs%20Lisp/README.md) | Sì | In attesa | In attesa | 3/3 | Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti. |
+| #194 | [Emacs Lisp](../examples/%23194%20Emacs%20Lisp/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
 | #195 | [EmberScript](../examples/%23195%20EmberScript/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #196 | [Erlang](../examples/%23196%20Erlang/README.md) | Sì | Sì | Sì | 8/8 | Prove registrate |
 | #197 | [Euphoria](../examples/%23197%20Euphoria/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
@@ -452,7 +452,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #446 | [MoonBit](../examples/%23446%20MoonBit/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #447 | [MoonScript](../examples/%23447%20MoonScript/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #448 | [Motoko](../examples/%23448%20Motoko/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #449 | [Motorola 68K Assembly](../examples/%23449%20Motorola%2068K%20Assembly/README.md) | Sì | Sì | In attesa | 5/5 | Native 68000 bytecodes assembled/linked; execution on a Linux m68k runtime/emulator is not performed. |
+| #449 | [Motorola 68K Assembly](../examples/%23449%20Motorola%2068K%20Assembly/README.md) | Sì | Sì | Sì | 5/5 | Prove registrate |
 | #450 | [Move](../examples/%23450%20Move/README.md) | Sì | In attesa | In attesa | 1/1 | Original Move compiler/test runner and matching stdlib are not configured. |
 | #451 | [Muse](../examples/%23451%20Muse/README.md) | Sì | In attesa | In attesa | 1/1 | Emacs Muse publishing engine is not configured. |
 | #452 | [Mustache](../examples/%23452%20Mustache/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
@@ -497,7 +497,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #491 | [ObjectScript](../examples/%23491%20ObjectScript/README.md) | Sì | In attesa | In attesa | 1/1 | InterSystems IRIS compiler/namespace non disponibile. |
 | #492 | [Objective-C](../examples/%23492%20Objective-C/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #493 | [Objective-C++](../examples/%23493%20Objective-C%2B%2B/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | Sì | Sì | In attesa | 1/2 | Objective-J native runtime execution pending: original objj-runtime 0.4.6 Windows local file resolution fails. |
+| #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #495 | [Odin](../examples/%23495%20Odin/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #496 | [Omgrofl](../examples/%23496%20Omgrofl/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #497 | [Opa](../examples/%23497%20Opa/README.md) | Sì | In attesa | In attesa | 1/1 | Compilatore Opa web storico e runtime Node richiesto non predisposti. |
@@ -556,7 +556,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #550 | [PowerBuilder](../examples/%23550%20PowerBuilder/README.md) | Sì | In attesa | In attesa | 4/4 | Ambiente PowerBuilder non preparato; import/compilazione/esecuzione pendenti. |
 | #551 | [PowerShell](../examples/%23551%20PowerShell/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
 | #552 | [Praat](../examples/%23552%20Praat/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #553 | [Prisma](../examples/%23553%20Prisma/README.md) | Sì | Sì | In attesa | 1/1 | Client/runtime di inserzione nel database non preparato; semantica del default pendente. |
+| #553 | [Prisma](../examples/%23553%20Prisma/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #554 | [Pro*C](../examples/%23554%20Pro%E2%88%97C/README.md) | Sì | In attesa | In attesa | 1/1 | Precompiler Oracle Pro*C non disponibile; GCC sul solo C non verifica le direttive EXEC SQL. |
 | #555 | [Processing](../examples/%23555%20Processing/README.md) | Sì | In attesa | In attesa | 1/1 | Processing/Java-mode preprocessor e host non preparati. |
 | #556 | [Procfile](../examples/%23556%20Procfile/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
@@ -641,7 +641,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #635 | [SQF](../examples/%23635%20SQF/README.md) | Sì | In attesa | In attesa | 2/2 | Runtime SQF/Arma non disponibile; verifiche pendenti. |
 | #636 | [SQL](../examples/%23636%20SQL/README.md) | Sì | Sì | Sì | 8/8 | Prove registrate |
 | #637 | [SQLPL](../examples/%23637%20SQLPL/README.md) | Sì | In attesa | In attesa | 2/2 | Db2 di prova non disponibile; creazione/chiamata e parser pendenti. |
-| #638 | [SRecode Template](../examples/%23638%20SRecode%20Template/README.md) | Sì | In attesa | In attesa | 1/1 | Emacs/SRecode non disponibile; parser e inserimento pendenti. |
+| #638 | [SRecode Template](../examples/%23638%20SRecode%20Template/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #639 | [SSH Config](../examples/%23639%20SSH%20Config/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
 | #640 | [STAR](../examples/%23640%20STAR/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #641 | [STL](../examples/%23641%20STL/README.md) | Sì | Sì | In attesa | 1/1 | Visual inspection of original extruded greeting mesh pending. |
@@ -709,7 +709,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #703 | [TSV](../examples/%23703%20TSV/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #704 | [TSX](../examples/%23704%20TSX/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #705 | [TXL](../examples/%23705%20TXL/README.md) | Sì | In attesa | In attesa | 1/1 | Interprete TXL non disponibile; parser e trasformazione pendenti. |
-| #706 | [Tact](../examples/%23706%20Tact/README.md) | Sì | Sì | In attesa | 1/1 | Getter non eseguito in VM TON; semantica runtime pendente. |
+| #706 | [Tact](../examples/%23706%20Tact/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #707 | [Talon](../examples/%23707%20Talon/README.md) | Sì | In attesa | In attesa | 1/1 | Talon non disponibile; riconoscimento e inserimento pendenti. |
 | #708 | [Tape](../examples/%23708%20Tape/README.md) | Sì | Sì | In attesa | 1/1 | Registrazione/controllo del video non eseguiti; richiede ttyd, ffmpeg e browser compatibile. |
 | #709 | [Tcl](../examples/%23709%20Tcl/README.md) | Sì | Sì | Sì | 6/6 | Prove registrate |
@@ -726,12 +726,12 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #720 | [Textile](../examples/%23720%20Textile/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #721 | [Thrift](../examples/%23721%20Thrift/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #722 | [Toit](../examples/%23722%20Toit/README.md) | Sì | In attesa | In attesa | 1/1 | Runtime Toit non predisposto; sintassi/versione CLI da verificare. |
-| #723 | [Tolk](../examples/%23723%20Tolk/README.md) | Sì | Sì | In attesa | 1/1 | Offline TVM evaluation of greeting pending. |
+| #723 | [Tolk](../examples/%23723%20Tolk/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #724 | [Tor Config](../examples/%23724%20Tor%20Config/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
 | #725 | [Tree-sitter Query](../examples/%23725%20Tree-sitter%20Query/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #726 | [Turing](../examples/%23726%20Turing/README.md) | Sì | In attesa | In attesa | 2/2 | Turing compiler/runtime non predisposto. |
 | #727 | [Turtle](../examples/%23727%20Turtle/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
-| #728 | [Twig](../examples/%23728%20Twig/README.md) | Sì | In attesa | In attesa | 1/1 | PHP/Twig runtime non predisposto. |
+| #728 | [Twig](../examples/%23728%20Twig/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #729 | [Type Language](../examples/%23729%20Type%20Language/README.md) | Sì | In attesa | In attesa | 1/1 | Compiler TL/runtime per schema originale non predisposti. |
 | #730 | [TypeScript](../examples/%23730%20TypeScript/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
 | #731 | [TypeSpec](../examples/%23731%20TypeSpec/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
@@ -802,9 +802,9 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #796 | [YAML](../examples/%23796%20YAML/README.md) | Sì | Sì | Sì | 10/10 | Prove registrate |
 | #797 | [YANG](../examples/%23797%20YANG/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #798 | [YARA](../examples/%23798%20YARA/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
-| #799 | [YASnippet](../examples/%23799%20YASnippet/README.md) | Sì | In attesa | In attesa | 1/1 | Emacs/YASnippet non disponibili; espansione nativa pendente. |
+| #799 | [YASnippet](../examples/%23799%20YASnippet/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #800 | [Yacc](../examples/%23800%20Yacc/README.md) | Sì | Sì | Sì | 3/3 | Prove registrate |
-| #801 | [Yul](../examples/%23801%20Yul/README.md) | Sì | Sì | In attesa | 1/1 | Offline EVM execution pending. |
+| #801 | [Yul](../examples/%23801%20Yul/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #802 | [ZAP](../examples/%23802%20ZAP/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #803 | [ZIL](../examples/%23803%20ZIL/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #804 | [Zeek](../examples/%23804%20Zeek/README.md) | Sì | In attesa | In attesa | 2/2 | Zeek parser/runtime non disponibile. |
@@ -812,7 +812,7 @@ Stato del campione principale; le varianti hanno stati separati in [EXTENSIONS.m
 | #806 | [Zephir](../examples/%23806%20Zephir/README.md) | Sì | In attesa | In attesa | 1/1 | Zephir/PHP extension compiler/runtime non predisposti. |
 | #807 | [Zig](../examples/%23807%20Zig/README.md) | Sì | Sì | Sì | 2/2 | Prove registrate |
 | #808 | [Zimpl](../examples/%23808%20Zimpl/README.md) | Sì | In attesa | In attesa | 3/3 | Zimpl compiler non disponibile nei pacchetti isolati; parsing/generazione LP e soluzione pending. |
-| #809 | [Zmodel](../examples/%23809%20Zmodel/README.md) | Sì | Sì | In attesa | 1/1 | ORM generation/SQLite default runtime pending. |
+| #809 | [Zmodel](../examples/%23809%20Zmodel/README.md) | Sì | Sì | Sì | 1/1 | Prove registrate |
 | #810 | [cURL Config](../examples/%23810%20cURL%20Config/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
 | #811 | [crontab](../examples/%23811%20crontab/README.md) | Sì | Sì | Sì | Nomi speciali / altra modalità | Prove registrate |
 | #812 | [desktop](../examples/%23812%20desktop/README.md) | Sì | Sì | In attesa | 2/2 | Desktop shell UI/launcher consumer pending. |

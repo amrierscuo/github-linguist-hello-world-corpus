@@ -2,30 +2,30 @@
 
 Stampare il saluto tramite l’operatore di output diagnostico ChucK.
 
-Tipo canonico: `programming`; `language_id`: `57`.
+## Riproduzione
 
-Toolchain prevista: ChucK 1.5.x (opzione silent per non aprire dispositivi audio). La versione effettivamente provata, quando disponibile, è nel log.
+Toolchain: ChucK 1.5.2.1, silent mode. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
-
-```sh
+```text
 chuck --silent hello.ck
 ```
 
 Risultato atteso: output diagnostico contenente la stringa `Hello, World!`, eventuali virgolette e annotazione del tipo string secondo la versione.
 
-L’operatore <<< >>> scrive il testo di debug e il tipo; non genera audio. --silent evita di richiedere un dispositivo sonoro.
+## Verifica
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Sintassi e semantica verificate il 2026-10-08T23:32:27.751792+00:00. Le varianti hanno prove separate nel log quando consumate.
 
-Fonti primarie o riferimenti originali del progetto:
+[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
 
-- [ChucK — panoramica del linguaggio](https://chuck.cs.princeton.edu/doc/language/overview.html)
+## Fonti primarie
+
+- [https://chuck.cs.princeton.edu/doc/language/overview.html](https://chuck.cs.princeton.edu/doc/language/overview.html)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.ck` | [hello.ck](hello.ck) creato, verifiche pendenti |
+| `.ck` | [hello.ck](hello.ck) sintassi e semantica verificate |

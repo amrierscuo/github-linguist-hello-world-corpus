@@ -1,46 +1,30 @@
 # #066 Bikeshed
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Specifica minima indipendente che genera la sezione Greeting con il paragrafo Hello, World!.
 
-## Obiettivo
+## Riproduzione
 
-Generare una specifica HTML con una sezione Greeting contenente Hello, World!.
+Bikeshed 7.1.3 e Python 3.13.9. Installare Bikeshed in un ambiente Python isolato, come da [manuale ufficiale](https://speced.github.io/bikeshed/).
 
-Il file include metadata Bikeshed e markup della specifica. Il tentativo installato è incompleto e si arresta durante gli import Python, prima del parsing del documento.
-
-## Toolchain e riproduzione
-
-Bikeshed ufficiale; tentativo isolato 3.14.6 con Python 3.13.9; toolchain completa da preparare
-
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
-
-```text
-bikeshed spec hello.bs hello.html
+```sh
+bikeshed --die-on=everything spec hello.bs hello.html
 ```
 
-```text
-Aprire hello.html e verificare la sezione #greeting e il paragrafo Hello, World!.
-```
+Il documento usa il valore generale `Status: DREAM` senza `Group`. Il generatore deve terminare senza errori o warning. Nell'HTML generato, `#greeting` identifica il titolo Greeting e il paragrafo successivo contiene esattamente Hello, World!.
 
-## Risultato atteso e stato
+## Prova
 
-Compilazione senza errori; HTML contiene il paragrafo della sezione Greeting.
-
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
-
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
-
-Impedimenti: Dipendenze Bikeshed incomplete: import aiofiles non disponibile. L’installazione completa non è terminata nel tempo previsto; nessuna verifica del documento è conteggiata.
+Sintassi e semantica verificate il 2026-10-08T23:35:51.294764+00:00: [log nativo](verification/finish_native.json), comandi, versioni, SHA-256 e valori estratti dall'output HTML reale. L'output generato e le dipendenze restano fuori dal corpus.
 
 ## Fonti primarie
 
-- https://github.com/speced/bikeshed
-- https://speced.github.io/bikeshed/
+- [Bikeshed manual](https://speced.github.io/bikeshed/)
+- [Bikeshed repository](https://github.com/speced/bikeshed)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.bs` | [hello.bs](hello.bs) creato, verifiche pendenti |
+| `.bs` | [hello.bs](hello.bs) sintassi e semantica verificate |

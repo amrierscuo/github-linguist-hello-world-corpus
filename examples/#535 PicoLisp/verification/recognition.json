@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:37:50.292250+00:00",
+  "platform": "Windows x64 / Ubuntu24.04 WSL2",
+  "path_normalization": "Only corpus/workspace paths replaced by placeholders. Source bytes unchanged. Verification runs against staging with these recorded checksums before copying exact bytes to the corpus.",
+  "toolchain": {
+    "name": "Authentic PicoLisp native interpreter",
+    "version": "23.12-1build2",
+    "executable_sha256": "a6e5e0484ff922938fdea3c40899199df486271bc1d69665ac5c2156564eb32f"
+  },
+  "commands": [
+    {
+      "label": "Native PicoLisp parse and execution of genuine de function",
+      "timestamp_utc": "2026-10-08T23:37:50.299282+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<workspace>/work/tools_521_540/linux/usr/bin/picolisp",
+        "<workspace>/work/finish_recognition/535/hello.l"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\535",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#535 PicoLisp/hello.l": "a7b02c3dac01126f42a3647b300514ca22e734bfdbdff59f3dea6f3ca23377f5"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "recognition_change": {
+    "before_sha256": "b5ccb020a309afd7c7dd5cbb927de3474574bee63cd8b2c407408735403ad9da",
+    "after_sha256": "a7b02c3dac01126f42a3647b300514ca22e734bfdbdff59f3dea6f3ca23377f5",
+    "policy": "Genuine syntax/comment only; no linguist-language override. Native execution of the modified sample recorded."
+  }
+}

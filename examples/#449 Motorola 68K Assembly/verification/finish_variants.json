@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:29:33.692483+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "path_normalization": "Only absolute workspace/corpus paths replaced by placeholders; source bytes unchanged. All runtime products remain in isolated work directories.",
+  "artifact_sha256": {
+    "examples/#449 Motorola 68K Assembly/hello.s": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150",
+    "examples/#449 Motorola 68K Assembly/variants/asm-a9c5b6ca/hello.asm": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150",
+    "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/driver.s": "fe4b583f432de82420684d0df94692bee5ee5f6fbfc447c34d8a16ac79ee9b20",
+    "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/hello.i": "07db4e9cdf3ea13526449c3b91b3454d73faf65cf860ad15213894d176bc44ed",
+    "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/driver.s": "1a19af04d9d583b4706f1eebb64ebf1e2124968c76c9c14997fbe710695c3b2b",
+    "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/hello.inc": "07db4e9cdf3ea13526449c3b91b3454d73faf65cf860ad15213894d176bc44ed",
+    "examples/#449 Motorola 68K Assembly/variants/x68-9c10e087/hello.x68": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150"
+  },
+  "commands": [
+    {
+      "label": "GNU m68k assembler version",
+      "timestamp_utc": "2026-10-08T23:26:35.697619+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "GNU assembler (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `m68k-linux-gnu'.\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "QEMU user emulator version",
+      "timestamp_utc": "2026-10-08T23:26:35.803323+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "qemu-m68k version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)\nCopyright (c) 2003-2023 Fabrice Bellard and the QEMU Project developers\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Assemble Motorola 68000 source",
+      "timestamp_utc": "2026-10-08T23:26:35.859560+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k/hello.o",
+        "<corpus>/examples/#449 Motorola 68K Assembly/hello.s"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Link m68k Linux ELF",
+      "timestamp_utc": "2026-10-08T23:26:35.930319+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k/hello",
+        "<workspace>/work/finish_native_cli/m68k/hello.o"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute actual m68k ELF through QEMU user syscall emulation",
+      "timestamp_utc": "2026-10-08T23:26:36.010860+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "<workspace>/work/finish_native_cli/m68k/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Assemble actual extension variant asm-a9c5b6ca",
+      "timestamp_utc": "2026-10-08T23:29:33.828667+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/asm-a9c5b6ca/hello.o",
+        "hello.asm"
+      ],
+      "cwd": "<corpus>/examples/#449 Motorola 68K Assembly/variants/asm-a9c5b6ca",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Link actual extension variant asm-a9c5b6ca",
+      "timestamp_utc": "2026-10-08T23:29:33.883982+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/asm-a9c5b6ca/hello",
+        "<workspace>/work/finish_native_cli/m68k_variants/asm-a9c5b6ca/hello.o"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "QEMU execution of actual extension variant asm-a9c5b6ca",
+      "timestamp_utc": "2026-10-08T23:29:33.936960+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "<workspace>/work/finish_native_cli/m68k_variants/asm-a9c5b6ca/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Assemble actual extension variant i-1708f4ae",
+      "timestamp_utc": "2026-10-08T23:29:33.982857+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/i-1708f4ae/hello.o",
+        "driver.s"
+      ],
+      "cwd": "<corpus>/examples/#449 Motorola 68K Assembly/variants/i-1708f4ae",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Link actual extension variant i-1708f4ae",
+      "timestamp_utc": "2026-10-08T23:29:34.039096+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/i-1708f4ae/hello",
+        "<workspace>/work/finish_native_cli/m68k_variants/i-1708f4ae/hello.o"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "QEMU execution of actual extension variant i-1708f4ae",
+      "timestamp_utc": "2026-10-08T23:29:34.091686+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "<workspace>/work/finish_native_cli/m68k_variants/i-1708f4ae/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Assemble actual extension variant inc-dd126fb7",
+      "timestamp_utc": "2026-10-08T23:29:34.137326+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/inc-dd126fb7/hello.o",
+        "driver.s"
+      ],
+      "cwd": "<corpus>/examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Link actual extension variant inc-dd126fb7",
+      "timestamp_utc": "2026-10-08T23:29:34.193621+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/inc-dd126fb7/hello",
+        "<workspace>/work/finish_native_cli/m68k_variants/inc-dd126fb7/hello.o"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "QEMU execution of actual extension variant inc-dd126fb7",
+      "timestamp_utc": "2026-10-08T23:29:34.245931+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "<workspace>/work/finish_native_cli/m68k_variants/inc-dd126fb7/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Assemble actual extension variant x68-9c10e087",
+      "timestamp_utc": "2026-10-08T23:29:34.296336+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/x68-9c10e087/hello.o",
+        "hello.x68"
+      ],
+      "cwd": "<corpus>/examples/#449 Motorola 68K Assembly/variants/x68-9c10e087",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Link actual extension variant x68-9c10e087",
+      "timestamp_utc": "2026-10-08T23:29:34.350648+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k_variants/x68-9c10e087/hello",
+        "<workspace>/work/finish_native_cli/m68k_variants/x68-9c10e087/hello.o"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    },
+    {
+      "label": "QEMU execution of actual extension variant x68-9c10e087",
+      "timestamp_utc": "2026-10-08T23:29:34.405323+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "<workspace>/work/finish_native_cli/m68k_variants/x68-9c10e087/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu",
+        "LANG": "C.UTF-8"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "variants": [
+    {
+      "variant": "asm-a9c5b6ca",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "command_indices": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "variant": "i-1708f4ae",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "command_indices": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "variant": "inc-dd126fb7",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "command_indices": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "variant": "x68-9c10e087",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "command_indices": [
+        14,
+        15,
+        16
+      ]
+    }
+  ]
+}

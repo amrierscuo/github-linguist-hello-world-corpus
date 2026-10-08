@@ -2,34 +2,63 @@
   "schema_version": 1,
   "ordinal": 809,
   "language": "Zmodel",
-  "timestamp_utc": "2026-10-08T13:40:45.878337+00:00",
+  "timestamp_utc": "2026-10-08T23:33:22.075030+00:00",
   "platform": "Windows x64",
-  "toolchain": "ZenStack2.22.3; Node22.20.0",
-  "working_directory": "examples/0809_zmodel",
-  "source_sha256": {
-    "examples/0809_zmodel/hello.zmodel": "6951f37d1f4c3e1e8a58aecaa1a3a70ca518c6feb20293706f6ca07af8234280"
+  "toolchain": "ZenStack 2.22.3; Prisma 6.19.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0",
+  "path_normalization": "Absolute corpus, workspace, home and temporary build paths replaced with placeholders; source bytes preserved.",
+  "artifact_sha256": {
+    "examples/#809 Zmodel/generate.cjs": "b2dfe049cf3b0139d6865ccde4f274c948f8c325f26b14c9ffec09fbe604ce0e",
+    "examples/#809 Zmodel/hello.zmodel": "6951f37d1f4c3e1e8a58aecaa1a3a70ca518c6feb20293706f6ca07af8234280",
+    "examples/#809 Zmodel/verify.py": "33d215506e0bee45e82eeb1379feace2f87435de0d0de6acbb407ebc94118409"
   },
-  "steps": [
+  "commands": [
     {
-      "command": "zenstack --version",
-      "exit_code": 1,
-      "stdout": "2.22.3\n",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "<corpus>/examples/#809 Zmodel",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
       "stderr": ""
     },
     {
-      "command": "zenstack check --schema hello.zmodel",
+      "command": [
+        "node",
+        "<workspace>/work/tools_finish_web/prisma6/node_modules/prisma/build/index.js",
+        "--version"
+      ],
+      "cwd": "<corpus>/examples/#809 Zmodel",
       "exit_code": 0,
-      "stdout": "The schema is valid.\n",
+      "stdout": "prisma                  : 6.19.0\n@prisma/client          : Not found\nComputed binaryTarget   : windows\nOperating System        : win32\nArchitecture            : x64\nNode.js                 : v22.20.0\nTypeScript              : unknown\nQuery Engine (Node-API) : libquery-engine 2ba551f319ab1df4bc874a89965d8b3641056773 (at ../../../../work/tools_finish_web/prisma6/node_modules/@prisma/engines/query_engine-windows.dll.node)\nPSL                     : @prisma/prisma-schema-wasm 6.19.0-26.2ba551f319ab1df4bc874a89965d8b3641056773\nSchema Engine           : schema-engine-cli 2ba551f319ab1df4bc874a89965d8b3641056773 (at ../../../../work/tools_finish_web/prisma6/node_modules/@prisma/engines/schema-engine-windows.exe)\nDefault Engines Hash    : 2ba551f319ab1df4bc874a89965d8b3641056773\nStudio                  : 0.511.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "-e",
+        "console.log(JSON.stringify({\"zenstack\":require(\"<workspace>/work/tools_801_820/node/node_modules/zenstack/package.json\").version,\"@zenstackhq/runtime\":require(\"<workspace>/work/tools_801_820/node/node_modules/@zenstackhq/runtime/package.json\").version}))"
+      ],
+      "cwd": "<corpus>/examples/#809 Zmodel",
+      "exit_code": 0,
+      "stdout": "{\"zenstack\":\"2.22.3\",\"@zenstackhq/runtime\":\"2.22.3\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<user-home>/anaconda3/python.exe",
+        "<corpus>/examples/#809 Zmodel/verify.py",
+        "<workspace>/work/tools_801_820/node",
+        "<workspace>/work/tools_finish_web/prisma6"
+      ],
+      "cwd": "<corpus>/examples/#809 Zmodel",
+      "exit_code": 0,
+      "stdout": "PASS: original ZenStack parser and Prisma generator consumed hello.zmodel\nPrisma schema loaded from generated.prisma\nThe schema at generated.prisma is valid 🚀\n-- CreateTable\nCREATE TABLE \"Greeting\" (\n    \"id\" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\n    \"message\" TEXT NOT NULL DEFAULT 'Hello, World!'\n);\n\nHello, World!\nPASS: generated Zmodel SQL default applied by SQLite 3.51.0\n",
       "stderr": ""
     }
   ],
   "syntax_verified": true,
-  "semantic_verified": false,
-  "assertions": [
-    "Actual tools and output assertions passed."
-  ],
-  "scope": "Original ZenStack check runs genuine language parser and semantic diagnostics; ORM/SQLite default runtime pending.",
-  "blockers": [
-    "ORM generation/SQLite default runtime pending."
-  ]
+  "semantic_verified": true,
+  "semantic_scope": "Il parser ufficiale ZenStack carica lo schema originale e il suo PrismaSchemaGenerator produce lo schema Prisma. Prisma 6 valida e genera SQL; SQLite inserisce una riga senza message e verifica il saluto predefinito. La policy allow non è esercitata tramite un client ORM. Dipendenze e risultati sono isolati dalla cartella del campione.",
+  "blockers": []
 }

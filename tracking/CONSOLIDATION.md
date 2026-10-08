@@ -1,0 +1,47 @@
+# Consolidamento del corpus 2026-10-09
+
+Controlli consolidati il 2026-10-08T23:41:16.708708+00:00.
+
+L’inventario delle 836 voci è completo come raccolta di artefatti e bozze. La verifica di tutti i linguaggi non è conclusa: i casi pendenti restano espliciti.
+
+Questo passaggio aggiunge 22 verifiche semantiche e 12 sintattiche ai campioni principali: 530/836 sintassi, 490/836 semantiche. Cinque campioni già verificati sono stati migliorati e rieseguiti per distinguere suffissi ambigui. Nessuna etichetta linguist-language è forzata.
+
+Copertura delle estensioni: 1738/1749 coppie con file, 11 ancora senza artefatto. Objective-J .sj è generato e verificato dal serializer/parser originale.
+
+| ID | Linguaggio | Ambito della prova corrente |
+| ---: | --- | --- |
+| #018 | [ATS](../examples/%23018%20ATS/README.md) | Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta. |
+| #020 | [Ada](../examples/%23020%20Ada/README.md) | Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta. |
+| #042 | [Astro](../examples/%23042%20Astro/README.md) | Il builder ufficiale Astro compila e renderizza il sorgente originale. Il frontmatter calcola il saluto e il file HTML prodotto contiene il titolo h1 atteso. Il vecchio container incompatibile è sostituito con la normale build statica. |
+| #053 | [BASIC](../examples/%23053%20BASIC/README.md) | Programma Yabasic con numeri di linea 10 e 20; il runtime originale li accetta e stampa esattamente il saluto. La numerazione esplicita rende riconoscibile il campione BASIC secondo la regola upstream .bas. La prova riguarda il dialetto Yabasic, non tutti i BASIC storici. |
+| #055 | [BIRD2](../examples/%23055%20BIRD2/README.md) | Il parser BIRD 2.14 accetta la configurazione. Un daemon con socket e PID isolati valuta GREETING tramite birdc, restituendo Hello, World!. La configurazione usa solo static e non contiene protocolli kernel/device, quindi non esporta route al sistema. Shutdown del processo verificato. |
+| #066 | [Bikeshed](../examples/%23066%20Bikeshed/README.md) | Metadata corretti secondo il manuale: DREAM senza Group per documento indipendente. Generazione nativa senza errori o warning, heading e paragrafo verificati nell'HTML reale. |
+| #068 | [BitBake](../examples/%23068%20BitBake/README.md) | Il parser e il task Python reali hanno completato la prova. Corretto il config minimo: PN viene derivata dal filename tramite bb.parse.vars_from_file. Ambiente temporaneo su filesystem Linux, locale en_US.UTF-8 generata senza cambiare le locale di sistema; LOCPATH passato anche al server con BB_ENV_PASSTHROUGH_ADDITIONS. Il warning LAYERSERIES_COMPAT del layer standalone rimane registrato e non impedisce il task. Server isolato arrestato. |
+| #072 | [Blueprint](../examples/%23072%20Blueprint/README.md) | Il compiler GNOME risolve i tipi GTK4 e produce GtkBuilder XML. La verifica semantica istanzia realmente il risultato con Gtk.Builder, controlla che greeting sia Gtk.Label e legge la sua proprietà label: Hello, World!. Nessuna finestra viene presentata. Runtime GTK4, typelib e dipendenze estratti in work; display WSLg disponibile. |
+| #087 | [C2hs Haskell](../examples/%23087%20C2hs%20Haskell/README.md) | Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta. |
+| #116 | [ChucK](../examples/%23116%20ChucK/README.md) | Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta. |
+| #134 | [Common Workflow Language](../examples/%23134%20Common%20Workflow%20Language/README.md) | Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta. |
+| #140 | [Crystal](../examples/%23140%20Crystal/README.md) | Il sorgente con interpolazione viene compilato dalla toolchain Crystal reale ed eseguito come binary Linux x86_64. Risolta la dipendenza di link libpcre3-dev con estrazione locale di pacchetti Ubuntu, senza installazione globale. Stdout e checksum del binary sono registrati. |
+| #194 | [Emacs Lisp](../examples/%23194%20Emacs%20Lisp/README.md) | Each of the .el, .emacs and .emacs.desktop files parsed and executed explicitly by GNU Emacs. The desktop fixture was loaded by desktop.el-compatible Emacs Lisp evaluation, restoring corpus-greeting; graphical session restoration is outside this proof. |
+| #432 | [MiniScript](../examples/%23432%20MiniScript/README.md) | La funzione greet riceve il destinatario e stampa il saluto; viene realmente compilata ed eseguita dal parser/runtime MiniScript originale. end function distingue questo sorgente dagli altri linguaggi che usano .ms. Il driver C# resta invariato. |
+| #449 | [Motorola 68K Assembly](../examples/%23449%20Motorola%2068K%20Assembly/README.md) | Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte. |
+| #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | Il compilatore originale produce JavaScript, valutato con le funzioni di classe e dispatch del runtime Objective-J originale. Il checker invoca main e controlla il messaggio emesso. Questa procedura evita soltanto il file loader Windows del runtime, mantenendo compilatore e dispatcher nativi. |
+| #535 | [PicoLisp](../examples/%23535%20PicoLisp/README.md) | La funzione PicoLisp de greet riceve Audience e usa prinl; la chiamata greet World produce esattamente il saluto, poi bye termina il processo. La definizione de rende esplicito il dialetto e distingue .l da Lex/Common Lisp. |
+| #553 | [Prisma](../examples/%23553%20Prisma/README.md) | Prisma valida lo schema originale e genera la migrazione SQL con migrate diff. SQLite esegue il SQL e inserisce una riga omettendo text: il valore letto deve essere Hello, World!. Config e database sono locali temporanei. Non viene dichiarata una prova del Prisma Client. |
+| #638 | [SRecode Template](../examples/%23638%20SRecode%20Template/README.md) | Original GNU Emacs SRecode/Wisent compiler parses hello.srt and actual srecode-insert expands file:greeting, resolving AUDIENCE to World. |
+| #684 | [StringTemplate](../examples/%23684%20StringTemplate/README.md) | Un commento valido StringTemplate descrive il parametro name. ST4 riconosce il commento, lo elimina dal rendering e verifica nativamente sia World sia Reader con il driver Java invariato. Il commento identifica il template rispetto agli altri linguaggi .st. |
+| #706 | [Tact](../examples/%23706%20Tact/README.md) | Offline TON Sandbox TVM greeting getter, exit code 0; state initialized locally, no network or deployment. |
+| #713 | [Teal](../examples/%23713%20Teal/README.md) | Un commento Teal descrive il tipo string esplicito del destinatario. Il compilatore originale ricontrolla i tipi, genera Lua, e Lua5.4 esegue il risultato con saluto esatto. Commento e dichiarazione typed local distinguono il file .tl da Type Language. |
+| #723 | [Tolk](../examples/%23723%20Tolk/README.md) | Offline TON Sandbox TVM greeting getter, exit code 0; state initialized locally, no network or deployment. |
+| #728 | [Twig](../examples/%23728%20Twig/README.md) | Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta. |
+| #799 | [YASnippet](../examples/%23799%20YASnippet/README.md) | Original YASnippet 0.14.0 parses source metadata, registers text-mode snippet, expands actual greeting trigger, asserts full output and live placeholder 1 contains World. |
+| #801 | [Yul](../examples/%23801%20Yul/README.md) | Offline EthereumJS EVM bytecode execution with exact 13 returned bytes. |
+| #809 | [Zmodel](../examples/%23809%20Zmodel/README.md) | Il parser ufficiale ZenStack carica lo schema originale e il suo PrismaSchemaGenerator produce lo schema Prisma. Prisma 6 valida e genera SQL; SQLite inserisce una riga senza message e verifica il saluto predefinito. La policy allow non è esercitata tramite un client ORM. Dipendenze e risultati sono isolati dalla cartella del campione. |
+
+## Verifiche pendenti
+
+Restano 346 voci senza prova semantica completa. [CATALOG.md](CATALOG.md) e i tracker riportano toolchain, procedure e impedimenti per ogni ID. [EXTENSIONS_PENDING.md](EXTENSIONS_PENDING.md) elenca i formati ancora da produrre realmente.
+
+Le verifiche dei container, dei modelli grafici e delle toolchain proprietarie richiedono il software adatto. Non sono sostituite da rinomine arbitrarie, file vuoti o verifiche di sola esistenza. Gli audit di integrità non rieseguono i compilatori.
+
+Il riferimento YAML mantiene i byte originali e SHA-256 `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`. La data upstream dello snapshot resta sconosciuta; la data sopra riguarda il corpus.

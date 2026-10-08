@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:34:15.412306+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "toolchain": "cwltool 3.3.20260925135507; Python 3.12.3",
+  "path_normalization": "Only workspace, corpus, example, scratch and home paths replaced by placeholders. Source bytes unchanged.",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "cwltool",
+        "--version"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "/opt/corpus-finish/cwl/cwltool/__main__.py 3.3.20260925135507\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "cwltool",
+        "--validate",
+        "hello.cwl"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "\u001b[1;30mINFO\u001b[0m /opt/corpus-finish/cwl/cwltool/__main__.py 3.3.20260925135507\n\u001b[1;30mINFO\u001b[0m Resolved 'hello.cwl' to 'file://<example>/hello.cwl'\nhello.cwl is valid CWL.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "cwltool",
+        "--no-container",
+        "--outdir",
+        "results",
+        "hello.cwl",
+        "job.yml"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "{\n    \"output\": {\n        \"location\": \"file://<example>/results/hello.txt\",\n        \"basename\": \"hello.txt\",\n        \"class\": \"File\",\n        \"checksum\": \"sha1$60fde9c2310b0d4cad4dab8d126b04387efba289\",\n        \"size\": 14,\n        \"path\": \"<example>/results/hello.txt\"\n    }\n}",
+      "stderr": "\u001b[1;30mINFO\u001b[0m /opt/corpus-finish/cwl/cwltool/__main__.py 3.3.20260925135507\n\u001b[1;30mINFO\u001b[0m Resolved 'hello.cwl' to 'file://<example>/hello.cwl'\n\u001b[1;30mINFO\u001b[0m [job hello.cwl] /tmp/7x0gmhmc$ echo \\\n    'Hello, World!' > /tmp/7x0gmhmc/hello.txt\n\u001b[1;30mINFO\u001b[0m [job hello.cwl] completed success\n\u001b[1;30mINFO\u001b[0m Final process status is success\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "from pathlib import Path; p=Path(\"results/hello.txt\"); assert p.read_bytes()==b\"Hello, World!\\n\"; print(p.read_text(),end=\"\")"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#134 Common Workflow Language/hello.cwl": "7d2bf6162295943abccb082c54f2f3f862df7a3190f9545f3e767642663abae4",
+    "examples/#134 Common Workflow Language/job.yml": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": []
+}

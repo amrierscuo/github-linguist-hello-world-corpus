@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ordinal": 494,
+  "language": "Objective-J",
+  "extension": ".sj",
+  "timestamp_utc": "2026-10-08T23:33:59.089625+00:00",
+  "platform": "Windows x64",
+  "toolchain": "objj-transpiler 1.0.0-10; objj-runtime 0.4.6; Node.js 22.20.0",
+  "path_normalization": "Corpus, workspace and home paths replaced with portable placeholders.",
+  "artifact_sha256": {
+    "examples/#494 Objective-J/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e",
+    "examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj": "e18a570456c787e54e0f04c9868e9715dcfa9041deba296f561c22f071d79faf",
+    "examples/#494 Objective-J/make-sj.cjs": "c881055b0eb0adcb16a3561414d20ee0dfa232108d7ed96e9b3e9a33071e2fce",
+    "examples/#494 Objective-J/verify.cjs": "2cf0832d6ef1e398afe8c56c38504a01c2670a43e9d24e4f8a90fd06c4eedfa6"
+  },
+  "commands": [
+    {
+      "command": [
+        "node",
+        "<corpus>/examples/#494 Objective-J/make-sj.cjs",
+        "<workspace>/work/tools_481_500/node",
+        "<corpus>/examples/#494 Objective-J/hello.j",
+        "<corpus>/examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj"
+      ],
+      "cwd": "<corpus>/examples/#494 Objective-J",
+      "exit_code": 0,
+      "stdout": "PASS: official compiler output serialized by Objective-J Executable.toMarkedString\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "<corpus>/examples/#494 Objective-J/verify.cjs",
+        "<workspace>/work/tools_481_500/node",
+        "<corpus>/examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj"
+      ],
+      "cwd": "<corpus>/examples/#494 Objective-J",
+      "exit_code": 0,
+      "stdout": "PASS: original Objective-J runtime decoded the Static-J archive\nHello, World!\nPASS: original Objective-J class method dispatched through the native runtime\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Original compiler emits JavaScript; original Executable.toMarkedString serializes Static-J. Original FileExecutable decodes actual .sj bytes; native class dispatcher invokes Greeting.say and produces the exact greeting. Only local file I/O is supplied by Node to bypass the broken Windows runtime loader.",
+  "blockers": []
+}

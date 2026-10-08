@@ -1,42 +1,39 @@
 # #553 Prisma
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
-
-## Obiettivo
+Voce canonica e ordine originali di reference/languages.yml.
 
 Validare Prisma Schema Language con modello Greeting e default Hello, World!.
 
-La schema definisce un datasource SQLite e un modello Greeting il cui campo text ha default esplicito. Il validator originale controlla sintassi e schema; non viene attribuita una inserzione SQL non eseguita.
-
 ## Toolchain e riproduzione
 
-Prisma7.10.0 ufficiale, Node22.20.0
+Prisma 7.10.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0. Prova eseguita su Windows x64. Le versioni effettive sono nel log.
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Dalla cartella dell'esempio, installare dipendenze isolate e verificare:
 
 ```text
-prisma validate --schema hello.prisma
+npm --prefix .tools install --save-exact prisma@7.10.0
+python verify.py .tools
 ```
 
-## Risultato atteso e stato
+## Stato ed evidenza
 
-Schema valida, modello Greeting con default Hello, World!.
+Artefatto creato; sintassi verificata; semantica verificata.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: no.
+Prisma valida lo schema originale e genera la migrazione SQL con migrate diff. SQLite esegue il SQL e inserisce una riga omettendo text: il valore letto deve essere Hello, World!. Config e database sono locali temporanei. Non viene dichiarata una prova del Prisma Client.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+Risultato atteso: Hello, World!.
 
-Impedimenti: Client/runtime di inserzione nel database non preparato; semantica del default pendente.
+Log reale: [verification/toolchain.json](verification/toolchain.json) con comandi, versioni, exit code, stdout/stderr e SHA-256. Nessun accesso a servizi cloud o database remoti.
 
 ## Fonti primarie
 
-- https://docs.prisma.io/docs/cli/v7/validate
-- https://www.prisma.io/docs/orm/prisma-schema/data-model/models
+- [https://docs.prisma.io/docs/cli/v7/migrate/diff](https://docs.prisma.io/docs/cli/v7/migrate/diff)
+- [https://www.prisma.io/docs/orm/prisma-schema/data-model/models](https://www.prisma.io/docs/orm/prisma-schema/data-model/models)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.prisma` | [hello.prisma](hello.prisma) sintassi verificata |
+| `.prisma` | [hello.prisma](hello.prisma) sintassi e semantica verificate |

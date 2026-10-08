@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:26:35.575363+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "path_normalization": "Only absolute workspace/corpus paths replaced by placeholders; source bytes unchanged. All runtime products remain in isolated work directories.",
+  "artifact_sha256": {
+    "examples/#140 Crystal/hello.cr": "7c1d2d1bae612abd83cc76158aa01fa81fdf91eb92a4e5e6be8aed12657fee57"
+  },
+  "commands": [
+    {
+      "label": "Crystal compiler version",
+      "timestamp_utc": "2026-10-08T23:26:35.604438+00:00",
+      "command": [
+        "<workspace>/work/tools_121_140/linux/usr/bin/crystal",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Crystal 1.11.2 (2024-04-01)\n\nLLVM: 17.0.6\nDefault target: x86_64-pc-linux-gnu\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu",
+        "CRYSTAL_PATH": "<workspace>/work/tools_121_140/linux/usr/lib/crystal/lib"
+      }
+    },
+    {
+      "label": "Native Crystal parse typecheck compile",
+      "timestamp_utc": "2026-10-08T23:26:35.963383+00:00",
+      "command": [
+        "<workspace>/work/tools_121_140/linux/usr/bin/crystal",
+        "build",
+        "<corpus>/examples/#140 Crystal/hello.cr",
+        "-o",
+        "<workspace>/work/finish_native_cli/crystal/hello",
+        "--link-flags",
+        "-L<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu -L<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu",
+        "CRYSTAL_PATH": "<workspace>/work/tools_121_140/linux/usr/lib/crystal/lib"
+      }
+    },
+    {
+      "label": "Execute compiled native Crystal binary",
+      "timestamp_utc": "2026-10-08T23:26:43.357654+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/crystal/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu",
+        "LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_121_140/linux/usr/lib/x86_64-linux-gnu",
+        "CRYSTAL_PATH": "<workspace>/work/tools_121_140/linux/usr/lib/crystal/lib"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "generated_artifact_sha256": {
+    "hello": "dbdb3a752f3305a45ee18b19c487fa836b26082482316fa31c5899dca5a2f1fb"
+  },
+  "toolchain": {
+    "description": "Crystal 1.11.2 (2024-04-01), LLVM 17.0.6, target x86_64-pc-linux-gnu"
+  }
+}

@@ -1,36 +1,31 @@
 # #072 Blueprint
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
-
-## Obiettivo
+Voce canonica: `Blueprint`, tipo `markup`, language_id `765545512`.
 
 Compilare un Blueprint GTK 4 che descrive una GtkLabel con testo Hello, World!.
 
-La verifica prevista usa il compilatore GNOME e i tipi GTK importati. Questo esempio dichiara un widget; non avvia un’applicazione grafica o una finestra.
-
 ## Toolchain e riproduzione
 
-GNOME Blueprint compiler upstream; Python 3 e PyGObject 3.48.2; GTK 4 introspection richiesta
+GNOME Blueprint compiler source snapshot; GTK 4.14.5; PyGObject 3.48.2; Python 3.12.3.
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Blueprint compiler, Python/PyGObject e GTK4 con typelib transitivi; sessione grafica o display virtuale per Gtk.init. Nella prova GI_TYPELIB_PATH e LD_LIBRARY_PATH puntano a un prefisso Ubuntu estratto localmente.
 
-```text
-blueprint-compiler compile --output hello.ui hello.blp
-```
+Comandi dalla directory dell’esempio; `<output>` indica una directory temporanea esterna al corpus.
 
 ```text
-Controllare hello.ui: classe GtkLabel e proprietà label con valore Hello, World!.
+blueprint-compiler compile --output <output>/hello.ui hello.blp
+Python/PyGObject: Gtk.init(); b = Gtk.Builder.new_from_file("<output>/hello.ui"); widget = b.get_object("greeting"); assert isinstance(widget, Gtk.Label); assert widget.get_label() == "Hello, World!"
 ```
 
-## Risultato atteso e stato
+Risultato atteso: Compiler exit 0; GTK4 GtkBuilder crea una GtkLabel con get_label() esattamente Hello, World!.
 
-Compilazione riuscita; GtkBuilder XML conserva la label e il suo testo.
+## Stato ed evidenza
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+Il compiler GNOME risolve i tipi GTK4 e produce GtkBuilder XML. La verifica semantica istanzia realmente il risultato con Gtk.Builder, controlla che greeting sia Gtk.Label e legge la sua proprietà label: Hello, World!. Nessuna finestra viene presentata. Runtime GTK4, typelib e dipendenze estratti in work; display WSLg disponibile.
 
-Impedimenti: Namespace GTK 4 delle librerie GObject introspection non disponibile nel WSL. Il compilatore originale non arriva alla validazione del file.
+Prova reale: [finish.json](verification/finish.json), con UTC, comandi, versioni, exit code, stdout/stderr e SHA-256 dei sorgenti. Le sostituzioni dei percorsi sono documentate nel log. I prodotti di compilazione e le dipendenze rimangono nelle directory di lavoro.
 
 ## Fonti primarie
 
@@ -39,8 +34,8 @@ Impedimenti: Namespace GTK 4 delle librerie GObject introspection non disponibil
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.blp` | [hello.blp](hello.blp) creato, verifiche pendenti |
+| `.blp` | [hello.blp](hello.blp) sintassi e semantica verificate |

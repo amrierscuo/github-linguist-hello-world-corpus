@@ -825,23 +825,27 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#018 ATS/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#018 ATS/hello.dats": "f3814e912ad8cbefd07fa22607dd59c1cb2df4f19cae1228cb520adc0ec327a0",
+        "examples/#018 ATS/variants/ext-hats-2e68617473/consumer.dats": "ea7f48244ebe2ad170da4105bb63230ed80131d9469f1bc9dac24149cfc7a270",
+        "examples/#018 ATS/variants/ext-hats-2e68617473/hello.hats": "4a0d8bb2a6ce7858e56b5f56c907ab9532be33365b66e28c5d9df9756a96943b",
+        "examples/#018 ATS/variants/ext-sats-2e73617473/consumer.dats": "06890dc615ac069f3b3ae5f8c0db550cdd0985a747a85ea7235346d4bcd7239e",
+        "examples/#018 ATS/variants/ext-sats-2e73617473/hello.sats": "69f0d352de838f86f19e7becbea1e9269fb1e9f501ff8325451936c4358af86d"
+      },
       "based_on": null,
       "documentation": "examples/#018 ATS/README.md",
       "supporting_files": [],
-      "validation_command": "./hello",
+      "validation_command": "patscc -DATS_MEMALLOC_LIBC -o hello hello.dats\n./hello\nPer .hats/.sats compilare ed eseguire consumer.dats dalla relativa directory variants.",
       "expected_result": "stdout: Hello World seguito da un a capo; exit 0.",
       "sources": [
         "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html",
         "https://github.com/githwxi/ATS-Postiats"
       ],
-      "blockers": [
-        "patscc non disponibile nell'ambiente Windows; compilazione ed esecuzione da effettuare."
-      ],
-      "notes": "Sorgente creato e confrontato con documentazione primaria; nessuna verifica di compilazione o esecuzione effettuata."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 18,
@@ -852,26 +856,30 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#018 ATS/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#018 ATS/hello.dats": "f3814e912ad8cbefd07fa22607dd59c1cb2df4f19cae1228cb520adc0ec327a0",
+        "examples/#018 ATS/variants/ext-hats-2e68617473/consumer.dats": "ea7f48244ebe2ad170da4105bb63230ed80131d9469f1bc9dac24149cfc7a270",
+        "examples/#018 ATS/variants/ext-hats-2e68617473/hello.hats": "4a0d8bb2a6ce7858e56b5f56c907ab9532be33365b66e28c5d9df9756a96943b",
+        "examples/#018 ATS/variants/ext-sats-2e73617473/consumer.dats": "06890dc615ac069f3b3ae5f8c0db550cdd0985a747a85ea7235346d4bcd7239e",
+        "examples/#018 ATS/variants/ext-sats-2e73617473/hello.sats": "69f0d352de838f86f19e7becbea1e9269fb1e9f501ff8325451936c4358af86d"
+      },
       "based_on": "examples/#018 ATS/hello.dats",
       "documentation": "examples/#018 ATS/variants/ext-hats-2e68617473/README.md",
       "supporting_files": [
         "examples/#018 ATS/variants/ext-hats-2e68617473/consumer.dats"
       ],
-      "validation_command": "patscc -DATS_MEMALLOC_LIBC consumer.dats -o <output>/hello; <output>/hello",
+      "validation_command": "patscc -DATS_MEMALLOC_LIBC -o hello hello.dats\n./hello\nPer .hats/.sats compilare ed eseguire consumer.dats dalla relativa directory variants.",
       "expected_result": "Hello, World!",
       "sources": [
         "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html",
         "https://github.com/githwxi/ATS-Postiats",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header ATS con macro, incluso dalla unità di implementazione. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 18,
@@ -882,16 +890,22 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#018 ATS/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#018 ATS/hello.dats": "f3814e912ad8cbefd07fa22607dd59c1cb2df4f19cae1228cb520adc0ec327a0",
+        "examples/#018 ATS/variants/ext-hats-2e68617473/consumer.dats": "ea7f48244ebe2ad170da4105bb63230ed80131d9469f1bc9dac24149cfc7a270",
+        "examples/#018 ATS/variants/ext-hats-2e68617473/hello.hats": "4a0d8bb2a6ce7858e56b5f56c907ab9532be33365b66e28c5d9df9756a96943b",
+        "examples/#018 ATS/variants/ext-sats-2e73617473/consumer.dats": "06890dc615ac069f3b3ae5f8c0db550cdd0985a747a85ea7235346d4bcd7239e",
+        "examples/#018 ATS/variants/ext-sats-2e73617473/hello.sats": "69f0d352de838f86f19e7becbea1e9269fb1e9f501ff8325451936c4358af86d"
+      },
       "based_on": "examples/#018 ATS/hello.dats",
       "documentation": "examples/#018 ATS/variants/ext-sats-2e73617473/README.md",
       "supporting_files": [
         "examples/#018 ATS/variants/ext-sats-2e73617473/consumer.dats"
       ],
-      "validation_command": "patscc -DATS_MEMALLOC_LIBC consumer.dats -o <output>/hello; <output>/hello",
+      "validation_command": "patscc -DATS_MEMALLOC_LIBC -o hello hello.dats\n./hello\nPer .hats/.sats compilare ed eseguire consumer.dats dalla relativa directory variants.",
       "expected_result": "Hello, World!",
       "sources": [
         "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html",
@@ -899,10 +913,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c235.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Firma statica ATS; il companion implementa la funzione dichiarata. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 19,
@@ -942,23 +954,26 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#020 Ada/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#020 Ada/hello.adb": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+        "examples/#020 Ada/variants/ext-ada-2e616461/hello.ada": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+        "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb": "2dd6efd103ba7fc332830f36e5074b43c55c2a96d2fbfe7856405b83f74dbe0d",
+        "examples/#020 Ada/variants/ext-ads-2e616473/greeting.ads": "b1cd7f4a70af477280d671701373c60d51e738225232dfe00feae6d2f6274676"
+      },
       "based_on": null,
       "documentation": "examples/#020 Ada/README.md",
       "supporting_files": [],
-      "validation_command": ".\\hello.exe",
+      "validation_command": "gnatmake hello.adb\n./hello\nPer .ada: gcc -c -x ada hello.ada -o hello.o; gnatbind hello.ali; gnatlink hello.ali -o hello; ./hello\nPer .ads: gnatmake consumer.adb; ./consumer dalla relativa directory variants.",
       "expected_result": "stdout: Hello World seguito da un a capo; exit 0.",
       "sources": [
         "https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html",
         "https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html"
       ],
-      "blockers": [
-        "gnatmake e toolchain Ada non disponibili nell'ambiente Windows; compilazione ed esecuzione da effettuare."
-      ],
-      "notes": "Sorgente creato e confrontato con documentazione primaria; nessuna verifica di compilazione o esecuzione effettuata."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 20,
@@ -969,24 +984,27 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#020 Ada/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#020 Ada/hello.adb": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+        "examples/#020 Ada/variants/ext-ada-2e616461/hello.ada": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+        "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb": "2dd6efd103ba7fc332830f36e5074b43c55c2a96d2fbfe7856405b83f74dbe0d",
+        "examples/#020 Ada/variants/ext-ads-2e616473/greeting.ads": "b1cd7f4a70af477280d671701373c60d51e738225232dfe00feae6d2f6274676"
+      },
       "based_on": "examples/#020 Ada/hello.adb",
       "documentation": "examples/#020 Ada/variants/ext-ada-2e616461/README.md",
       "supporting_files": [],
-      "validation_command": "gcc -c -x ada hello.ada -o <output>/hello.o; gnatbind/gnatlink sull’unità Hello nella directory output.",
+      "validation_command": "gnatmake hello.adb\n./hello\nPer .ada: gcc -c -x ada hello.ada -o hello.o; gnatbind hello.ali; gnatlink hello.ali -o hello; ./hello\nPer .ads: gnatmake consumer.adb; ./consumer dalla relativa directory variants.",
       "expected_result": "stdout: Hello World seguito da un a capo; exit 0.",
       "sources": [
         "https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html",
         "https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 20,
@@ -997,16 +1015,21 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#020 Ada/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#020 Ada/hello.adb": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+        "examples/#020 Ada/variants/ext-ada-2e616461/hello.ada": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+        "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb": "2dd6efd103ba7fc332830f36e5074b43c55c2a96d2fbfe7856405b83f74dbe0d",
+        "examples/#020 Ada/variants/ext-ads-2e616473/greeting.ads": "b1cd7f4a70af477280d671701373c60d51e738225232dfe00feae6d2f6274676"
+      },
       "based_on": "examples/#020 Ada/hello.adb",
       "documentation": "examples/#020 Ada/variants/ext-ads-2e616473/README.md",
       "supporting_files": [
         "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb"
       ],
-      "validation_command": "gnatmake consumer.adb -D <output>; <output>/consumer",
+      "validation_command": "gnatmake hello.adb\n./hello\nPer .ada: gcc -c -x ada hello.ada -o hello.o; gnatbind hello.ali; gnatlink hello.ali -o hello; ./hello\nPer .ads: gnatmake consumer.adb; ./consumer dalla relativa directory variants.",
       "expected_result": "Hello, World!",
       "sources": [
         "https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html",
@@ -1014,10 +1037,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://docs.adacore.com/live/wave/arm05/html/arm05/RM-7-1.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Specificazione di package Ada con costante pubblica, consumata dal programma companion. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 21,
@@ -2081,7 +2102,7 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
+      "semantic_verified": true,
       "verification_log": "examples/#042 Astro/verification/native.json",
       "verified_artifact_sha256": {
         "examples/#042 Astro/src/pages/index.astro": "d8779ead6140cf8501e8827700ec90e016f7beeafa7a317bd25bcdc8c6ce0d78"
@@ -2089,17 +2110,15 @@
       "based_on": null,
       "documentation": "examples/#042 Astro/README.md",
       "supporting_files": [],
-      "validation_command": "node verify.mjs .tools src/pages/index.astro --syntax-only; node verify.mjs .tools src/pages/index.astro",
-      "expected_result": "Transform del compilatore ufficiale senza errori; runtime atteso: HTML contenente <h1>Hello, World!</h1> (rendering pending).",
+      "validation_command": "node verify.mjs .tools src/pages/index.astro",
+      "expected_result": "HTML contenente <h1>Hello, World!</h1>.",
       "sources": [
         "https://docs.astro.build/en/basics/astro-components/",
         "https://docs.astro.build/en/reference/container-reference/",
         "https://github.com/withastro/compiler"
       ],
-      "blockers": [
-        "Official compiler transform succeeds, but the compiled module requires createMetadata which the installed Astro runtime does not export; rendered HTML remains pending."
-      ],
-      "notes": "Il transform ufficiale riesce. L’import del modulo compilato fallisce perché createMetadata non è esportata dal runtime installato. Nessuna semantica positiva è dichiarata. La normalizzazione del filename passato al compilatore usa slash POSIX per evitare escape Windows nel modulo generato; i byte .astro restano identici."
+      "blockers": [],
+      "notes": "Il builder ufficiale Astro compila e renderizza il sorgente originale. Il frontmatter calcola il saluto e il file HTML prodotto contiene il titolo h1 atteso. Il vecchio container incompatibile è sostituito con la normale build statica."
     },
     {
       "language_ordinal": 43,
@@ -2579,9 +2598,9 @@
       "artifact_created": true,
       "syntax_verified": true,
       "semantic_verified": true,
-      "verification_log": "examples/#053 BASIC/verification/native.json",
+      "verification_log": "examples/#053 BASIC/verification/recognition.json",
       "verified_artifact_sha256": {
-        "examples/#053 BASIC/hello.bas": "f8961d7bc8e610571803723f4bdde68886a85c731cb8b669eb8b0997f6f396ba"
+        "examples/#053 BASIC/hello.bas": "5b99eab0f725a87eb3f63b10c631a99871709b1a8a4e1ed494d0e8effd5736eb"
       },
       "based_on": null,
       "documentation": "examples/#053 BASIC/README.md",
@@ -2592,7 +2611,7 @@
         "https://www.yabasic.de/yabasic.htm"
       ],
       "blockers": [],
-      "notes": "La verifica autentica conta soltanto questo dialetto della voce BASIC. Non attesta la compatibilità con tutti i BASIC storici."
+      "notes": "Programma Yabasic con numeri di linea 10 e 20; il runtime originale li accetta e stampa esattamente il saluto. La numerazione esplicita rende riconoscibile il campione BASIC secondo la regola upstream .bas. La prova riguarda il dialetto Yabasic, non tutti i BASIC storici."
     },
     {
       "language_ordinal": 54,
@@ -3012,23 +3031,23 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#066 Bikeshed/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#066 Bikeshed/hello.bs": "805285f85a8102381d48aeea65b85cfec8d8a1962082ebc10ff1ccf489fa3714"
+      },
       "based_on": null,
       "documentation": "examples/#066 Bikeshed/README.md",
       "supporting_files": [],
-      "validation_command": "Aprire hello.html e verificare la sezione #greeting e il paragrafo Hello, World!.",
+      "validation_command": "bikeshed --die-on=everything spec hello.bs hello.html; controllare #greeting e il paragrafo successivo nell'HTML generato.",
       "expected_result": "Compilazione senza errori; HTML contiene il paragrafo della sezione Greeting.",
       "sources": [
         "https://github.com/speced/bikeshed",
         "https://speced.github.io/bikeshed/"
       ],
-      "blockers": [
-        "Dipendenze Bikeshed incomplete: import aiofiles non disponibile. L’installazione completa non è terminata nel tempo previsto; nessuna verifica del documento è conteggiata."
-      ],
-      "notes": "Il file include metadata Bikeshed e markup della specifica. Il tentativo installato è incompleto e si arresta durante gli import Python, prima del parsing del documento."
+      "blockers": [],
+      "notes": "Metadata corretti secondo il manuale: DREAM senza Group per documento indipendente. Generazione nativa senza errori o warning, heading e paragrafo verificati nell'HTML reale."
     },
     {
       "language_ordinal": 67,
@@ -3068,10 +3087,14 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#068 BitBake/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#068 BitBake/meta-hello/hello_1.0.bb": "3b8bd320b854dcbbd4f1ed5a0da65016667905ce3b8eabc6967a4258b1d9f57e",
+        "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/hello_1.0.bb": "1496dc662a3a77b71646c974adc8847180cad1bc4b6a147cc54bd5880e7134ea",
+        "examples/#068 BitBake/variants/ext-inc-2e696e63/hello_1.0.bb": "2ab4132b085ecb869ec91fdbf42ece05941581dacf1911d1f09261f99ade74d3"
+      },
       "based_on": null,
       "documentation": "examples/#068 BitBake/README.md",
       "supporting_files": [],
@@ -3081,10 +3104,8 @@
         "https://docs.yoctoproject.org/bitbake/2.10/bitbake-user-manual/bitbake-user-manual-hello.html",
         "https://github.com/openembedded/bitbake/tree/2.10"
       ],
-      "blockers": [
-        "Il BitBake reale richiede en_US.UTF-8, non presente nel WSL; si arresta all’avvio prima del parser. LC_ALL=C.UTF-8 non soddisfa questo requisito; nessun server è stato avviato."
-      ],
-      "notes": "La ricetta .bb, la configurazione del layer, la classe base e bblayers.conf costituiscono un progetto minimo indipendente da una distribuzione Yocto. Il task non produce pacchetti o immagini. I comandi richiedono bitbake nel PATH e locale en_US.UTF-8."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il parser e il task Python reali hanno completato la prova. Corretto il config minimo: PN viene derivata dal filename tramite bb.parse.vars_from_file. Ambiente temporaneo su filesystem Linux, locale en_US.UTF-8 generata senza cambiare le locale di sistema; LOCPATH passato anche al server con BB_ENV_PASSTHROUGH_ADDITIONS. Il warning LAYERSERIES_COMPAT del layer standalone rimane registrato e non impedisce il task. Server isolato arrestato."
     },
     {
       "language_ordinal": 68,
@@ -3095,16 +3116,19 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#068 BitBake/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/hello_1.0.bbappend": "2721f0319e22960ec2cd67c142dbec74eabf7d4018191f92bc3d8e6356f41025",
+        "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/hello_1.0.bb": "1496dc662a3a77b71646c974adc8847180cad1bc4b6a147cc54bd5880e7134ea"
+      },
       "based_on": "examples/#068 BitBake/meta-hello/classes/base.bbclass",
       "documentation": "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/README.md",
       "supporting_files": [
         "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/hello_1.0.bb"
       ],
-      "validation_command": "In un layer BitBake temporaneo configurato: collocare hello_1.0.bb e hello_1.0.bbappend; bitbake hello -c build",
+      "validation_command": "Nel layer temporaneo configurato: bitbake -p; bitbake hello -c build",
       "expected_result": "Hello, World!",
       "sources": [
         "https://docs.yoctoproject.org/bitbake/2.10/bitbake-user-manual/bitbake-user-manual-hello.html",
@@ -3112,10 +3136,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://docs.yoctoproject.org/bitbake/dev/bitbake-user-manual/bitbake-user-manual-metadata.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Append BitBake applicato al recipe hello_1.0.bb; estende la task Python. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il parser e il task Python reali hanno completato la prova. Corretto il config minimo: PN viene derivata dal filename tramite bb.parse.vars_from_file. Ambiente temporaneo su filesystem Linux, locale en_US.UTF-8 generata senza cambiare le locale di sistema; LOCPATH passato anche al server con BB_ENV_PASSTHROUGH_ADDITIONS. Il warning LAYERSERIES_COMPAT del layer standalone rimane registrato e non impedisce il task. Server isolato arrestato."
     },
     {
       "language_ordinal": 68,
@@ -3126,10 +3148,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#068 BitBake/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#068 BitBake/meta-hello/classes/base.bbclass": "c5f9b3b4dd3d286033444f6dad26c6cc0ddd270bbbb4932928364ce4a6b944e3"
+      },
       "based_on": null,
       "documentation": "examples/#068 BitBake/README.md",
       "supporting_files": [],
@@ -3139,10 +3163,8 @@
         "https://docs.yoctoproject.org/bitbake/2.10/bitbake-user-manual/bitbake-user-manual-hello.html",
         "https://github.com/openembedded/bitbake/tree/2.10"
       ],
-      "blockers": [
-        "Il BitBake reale richiede en_US.UTF-8, non presente nel WSL; si arresta all’avvio prima del parser. LC_ALL=C.UTF-8 non soddisfa questo requisito; nessun server è stato avviato."
-      ],
-      "notes": "La ricetta .bb, la configurazione del layer, la classe base e bblayers.conf costituiscono un progetto minimo indipendente da una distribuzione Yocto. Il task non produce pacchetti o immagini. I comandi richiedono bitbake nel PATH e locale en_US.UTF-8."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il parser e il task Python reali hanno completato la prova. Corretto il config minimo: PN viene derivata dal filename tramite bb.parse.vars_from_file. Ambiente temporaneo su filesystem Linux, locale en_US.UTF-8 generata senza cambiare le locale di sistema; LOCPATH passato anche al server con BB_ENV_PASSTHROUGH_ADDITIONS. Il warning LAYERSERIES_COMPAT del layer standalone rimane registrato e non impedisce il task. Server isolato arrestato."
     },
     {
       "language_ordinal": 68,
@@ -3153,16 +3175,19 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#068 BitBake/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#068 BitBake/variants/ext-inc-2e696e63/hello.inc": "31709e6870ef89ffb69a3790ccd5c43ba96214f70b9234d0bbc2e2445b07463a",
+        "examples/#068 BitBake/variants/ext-inc-2e696e63/hello_1.0.bb": "2ab4132b085ecb869ec91fdbf42ece05941581dacf1911d1f09261f99ade74d3"
+      },
       "based_on": "examples/#068 BitBake/meta-hello/classes/base.bbclass",
       "documentation": "examples/#068 BitBake/variants/ext-inc-2e696e63/README.md",
       "supporting_files": [
         "examples/#068 BitBake/variants/ext-inc-2e696e63/hello_1.0.bb"
       ],
-      "validation_command": "In un layer BitBake temporaneo configurato: bitbake hello -c build",
+      "validation_command": "Nel layer temporaneo configurato: bitbake -p; bitbake hello -c build",
       "expected_result": "Hello, World!",
       "sources": [
         "https://docs.yoctoproject.org/bitbake/2.10/bitbake-user-manual/bitbake-user-manual-hello.html",
@@ -3170,10 +3195,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://docs.yoctoproject.org/bitbake/dev/bitbake-user-manual/bitbake-user-manual-metadata.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Frammento BitBake incluso con require; variabile usata da una task Python. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il parser e il task Python reali hanno completato la prova. Corretto il config minimo: PN viene derivata dal filename tramite bb.parse.vars_from_file. Ambiente temporaneo su filesystem Linux, locale en_US.UTF-8 generata senza cambiare le locale di sistema; LOCPATH passato anche al server con BB_ENV_PASSTHROUGH_ADDITIONS. Il warning LAYERSERIES_COMPAT del layer standalone rimane registrato e non impedisce il task. Server isolato arrestato."
     },
     {
       "language_ordinal": 69,
@@ -3322,10 +3345,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#072 Blueprint/verification/finish.json",
+      "verified_artifact_sha256": {
+        "examples/#072 Blueprint/hello.blp": "326dddeafc06343b08fd6ba957304ea40f46066b92fff21ef1877dc9ffad53ea"
+      },
       "based_on": null,
       "documentation": "examples/#072 Blueprint/README.md",
       "supporting_files": [],
@@ -3335,10 +3360,8 @@
         "https://gnome.pages.gitlab.gnome.org/blueprint-compiler/",
         "https://gitlab.gnome.org/GNOME/blueprint-compiler"
       ],
-      "blockers": [
-        "Namespace GTK 4 delle librerie GObject introspection non disponibile nel WSL. Il compilatore originale non arriva alla validazione del file."
-      ],
-      "notes": "La verifica prevista usa il compilatore GNOME e i tipi GTK importati. Questo esempio dichiara un widget; non avvia un’applicazione grafica o una finestra."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il compiler GNOME risolve i tipi GTK4 e produce GtkBuilder XML. La verifica semantica istanzia realmente il risultato con Gtk.Builder, controlla che greeting sia Gtk.Label e legge la sua proprietà label: Hello, World!. Nessuna finestra viene presentata. Runtime GTK4, typelib e dipendenze estratti in work; display WSLg disponibile."
     },
     {
       "language_ordinal": 73,
@@ -4549,24 +4572,23 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#087 C2hs Haskell/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#087 C2hs Haskell/verification/finish_native.json",
       "verified_artifact_sha256": {
-        "examples/#087 C2hs Haskell/Hello.chs": "4d6ac1a50653b98780c0b886d5c685e61033b817473fad29aca0e3005dbb8037"
+        "examples/#087 C2hs Haskell/Hello.chs": "4d6ac1a50653b98780c0b886d5c685e61033b817473fad29aca0e3005dbb8037",
+        "examples/#087 C2hs Haskell/hello.h": "408107d02171b40f3fb63ab4f9bbb0597ab78715513620eca04822511f969ec9"
       },
       "based_on": null,
       "documentation": "examples/#087 C2hs Haskell/README.md",
       "supporting_files": [],
-      "validation_command": "./build/hello",
+      "validation_command": "mkdir -p build\nc2hs --cppopts=-I. Hello.chs -o build/Hello.hs\nghc build/Hello.hs -o build/hello\n./build/hello",
       "expected_result": "C2HS genera Haskell con costante 1; GHC compila; runtime stampa Hello, World!, exit 0.",
       "sources": [
         "https://github.com/haskell/c2hs",
         "https://github.com/haskell/c2hs/wiki/User-Guide"
       ],
-      "blockers": [
-        "GHC absent: compile and execute generated Haskell to complete the greeting runtime proof."
-      ],
-      "notes": "Il preprocessore C2HS reale accetta il binding e risolve l'hook const. Il codice Haskell ospite è preservato dal preprocessore: parsing/compilazione Haskell ed esecuzione con GHC restano da verificare."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 88,
@@ -5844,10 +5866,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#116 ChucK/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#116 ChucK/hello.ck": "523ff602c30aae837113a8d4c100c54cda9ce5959ebc9fe375c5828f9f79b1f3"
+      },
       "based_on": null,
       "documentation": "examples/#116 ChucK/README.md",
       "supporting_files": [],
@@ -5859,10 +5883,8 @@
           "url": "https://chuck.cs.princeton.edu/doc/language/overview.html"
         }
       ],
-      "blockers": [
-        "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-      ],
-      "notes": "L’operatore <<< >>> scrive il testo di debug e il tipo; non genera audio. --silent evita di richiedere un dispositivo sonoro."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 117,
@@ -7098,24 +7120,25 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#134 Common Workflow Language/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#134 Common Workflow Language/hello.cwl": "7d2bf6162295943abccb082c54f2f3f862df7a3190f9545f3e767642663abae4",
+        "examples/#134 Common Workflow Language/job.yml": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
       "based_on": null,
       "documentation": "examples/#134 Common Workflow Language/README.md",
       "supporting_files": [],
-      "validation_command": "cwltool --validate hello.cwl; cwltool --no-container --outdir results hello.cwl job.yml",
+      "validation_command": "cwltool --validate hello.cwl\ncwltool --no-container --outdir results hello.cwl job.yml\nVerificare results/hello.txt esattamente Hello, World! seguito da newline.",
       "expected_result": "Validazione riuscita; job exit 0; output File hello.txt con contenuto esattamente Hello, World! seguito da newline.",
       "sources": [
         "https://www.commonwl.org/v1.2/CommandLineTool.html",
         "https://github.com/common-workflow-language/cwltool",
         "https://www.commonwl.org/user_guide/topics/outputs.html"
       ],
-      "blockers": [
-        "Native Windows cwltool imports POSIX pwd and cannot start; isolated Linux installation timed out and Linux cwltool module is unavailable."
-      ],
-      "notes": "cwltool nativo Windows non parte perché importa il modulo POSIX pwd. Il tentativo di installazione Linux isolata ha superato il limite; i probe del riferimento Linux non trovano il modulo cwltool. Nessun parsing CWL è attestato. Un parsing YAML generico non sostituisce il validator del linguaggio."
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 135,
@@ -7410,10 +7433,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#140 Crystal/verification/finish.json",
+      "verified_artifact_sha256": {
+        "examples/#140 Crystal/hello.cr": "7c1d2d1bae612abd83cc76158aa01fa81fdf91eb92a4e5e6be8aed12657fee57"
+      },
       "based_on": null,
       "documentation": "examples/#140 Crystal/README.md",
       "supporting_files": [],
@@ -7424,10 +7449,8 @@
         "https://crystal-lang.org/reference/1.11/syntax_and_semantics/literals/string.html",
         "https://crystal-lang.org/reference/1.11/man/crystal/index.html"
       ],
-      "blockers": [
-        "Native verification did not complete successfully; see genuine command output."
-      ],
-      "notes": "Il sorgente usa interpolazione #{target} e puts. Il log cattura la vera toolchain Crystal; eventuali problemi di dipendenze native non vengono confusi con un esito positivo sul sorgente."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il sorgente con interpolazione viene compilato dalla toolchain Crystal reale ed eseguito come binary Linux x86_64. Risolta la dipendenza di link libpcre3-dev con estrazione locale di pacchetti Ubuntu, senza installazione globale. Stdout e checksum del binary sono registrati."
     },
     {
       "language_ordinal": 141,
@@ -9465,25 +9488,25 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#194 Emacs Lisp/verification/runtime.json",
+      "verified_artifact_sha256": {
+        "examples/#194 Emacs Lisp/hello.el": "0df873fff0da8c976e0cf4344110bb2181aaf9ee0e683690f9b3d8a6608d685d"
+      },
       "based_on": null,
       "documentation": "examples/#194 Emacs Lisp/README.md",
       "supporting_files": [],
-      "validation_command": "emacs --batch -Q --script hello.el",
-      "expected_result": "stdout `Hello, World!\\n`, uscita 0.",
+      "validation_command": "emacs -Q --batch --script hello.el",
+      "expected_result": "Hello, World!; uscita 0.",
       "sources": [
         {
           "title": "GNU Emacs Lisp — funzioni di output, manuale originale",
           "url": "https://github.com/emacs-mirror/emacs/blob/master/doc/lispref/streams.texi"
         }
       ],
-      "blockers": [
-        "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-      ],
-      "notes": "-Q disabilita i file di inizializzazione personali. princ stampa il contenuto della stringa senza virgolette, diversamente da prin1."
+      "blockers": [],
+      "notes": "Each of the .el, .emacs and .emacs.desktop files parsed and executed explicitly by GNU Emacs. The desktop fixture was loaded by desktop.el-compatible Emacs Lisp evaluation, restoring corpus-greeting; graphical session restoration is outside this proof."
     },
     {
       "language_ordinal": 194,
@@ -9494,23 +9517,23 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#194 Emacs Lisp/verification/runtime.json",
+      "verified_artifact_sha256": {
+        "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/hello.emacs": "0df873fff0da8c976e0cf4344110bb2181aaf9ee0e683690f9b3d8a6608d685d"
+      },
       "based_on": "examples/#194 Emacs Lisp/hello.el",
       "documentation": "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/README.md",
       "supporting_files": [],
-      "validation_command": "emacs -Q --batch -l hello.emacs",
-      "expected_result": "stdout `Hello, World!\\n`, uscita 0.",
+      "validation_command": "emacs -Q --batch --load variants/ext-emacs-2e656d616373/hello.emacs",
+      "expected_result": "Hello, World!; uscita 0.",
       "sources": [
         "https://github.com/emacs-mirror/emacs/blob/master/doc/lispref/streams.texi",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Emacs Lisp di startup caricabile esplicitamente. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Each of the .el, .emacs and .emacs.desktop files parsed and executed explicitly by GNU Emacs. The desktop fixture was loaded by desktop.el-compatible Emacs Lisp evaluation, restoring corpus-greeting; graphical session restoration is outside this proof."
     },
     {
       "language_ordinal": 194,
@@ -9521,24 +9544,24 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#194 Emacs Lisp/verification/runtime.json",
+      "verified_artifact_sha256": {
+        "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop": "274579131fb47044f5b8c437a66490e2b51474bdfcee788c1695153347e90b67"
+      },
       "based_on": "examples/#194 Emacs Lisp/hello.el",
       "documentation": "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/README.md",
       "supporting_files": [],
-      "validation_command": "emacs -Q --batch -l hello.emacs.desktop --eval \"(princ corpus-greeting)\"",
-      "expected_result": "Hello, World!",
+      "validation_command": "emacs -Q --batch --eval '(require '\"'\"'desktop)' --load variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop --eval '(progn (unless (equal corpus-greeting \"Hello, World!\") (error \"Wrong restored greeting\")) (princ corpus-greeting))'",
+      "expected_result": "Hello, World!; uscita 0.",
       "sources": [
         "https://github.com/emacs-mirror/emacs/blob/master/doc/lispref/streams.texi",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Desktop Emacs Lisp: ripristina una variabile globale; non script init duplicato. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Each of the .el, .emacs and .emacs.desktop files parsed and executed explicitly by GNU Emacs. The desktop fixture was loaded by desktop.el-compatible Emacs Lisp evaluation, restoring corpus-greeting; graphical session restoration is outside this proof."
     },
     {
       "language_ordinal": 195,
@@ -24180,9 +24203,9 @@
       "artifact_created": true,
       "syntax_verified": true,
       "semantic_verified": true,
-      "verification_log": "examples/#432 MiniScript/verification/result.json",
+      "verification_log": "examples/#432 MiniScript/verification/recognition.json",
       "verified_artifact_sha256": {
-        "examples/#432 MiniScript/hello.ms": "0893f0ba1b9850a777261774f9db226b4d8e866a5b171aecd3a82db25d59fc65"
+        "examples/#432 MiniScript/hello.ms": "12e9b9ba39f0a0f06b0c84d8d445ea1c6955dbec4af115818539248790ff1dd5"
       },
       "based_on": null,
       "documentation": "examples/#432 MiniScript/README.md",
@@ -24200,7 +24223,7 @@
         }
       ],
       "blockers": [],
-      "notes": "Non è MAXScript: stessa estensione, linguaggio e runtime distinti."
+      "notes": "La funzione greet riceve il destinatario e stampa il saluto; viene realmente compilata ed eseguita dal parser/runtime MiniScript originale. end function distingue questo sorgente dagli altri linguaggi che usano .ms. Il driver C# resta invariato."
     },
     {
       "language_ordinal": 433,
@@ -24906,23 +24929,23 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#449 Motorola 68K Assembly/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#449 Motorola 68K Assembly/variants/asm-a9c5b6ca/hello.asm": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150"
+      },
       "based_on": "examples/#449 Motorola 68K Assembly/hello.s",
       "documentation": "examples/#449 Motorola 68K Assembly/variants/asm-a9c5b6ca/README.md",
       "supporting_files": [],
-      "validation_command": "m68k-linux-gnu-as -o hello.o hello.asm; m68k-linux-gnu-ld -o hello hello.o; qemu-m68k ./hello",
+      "validation_command": "m68k-linux-gnu-as -m68000 -o <output>/hello.o hello.asm; m68k-linux-gnu-ld -o <output>/hello <output>/hello.o; qemu-m68k <output>/hello",
       "expected_result": "Hello, World!",
       "sources": [
         "https://sourceware.org/binutils/docs/as/M68K_002dDependent.html",
         "https://www.kernel.org/doc/html/latest/arch/m68k/index.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Sorgente Motorola 68000 in dialetto GNU as Linux; il suffisso non implica sintassi di altri assembler. Copia byte-identica del sorgente originale del corpus: examples/#449 Motorola 68K Assembly/hello.s. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte."
     },
     {
       "language_ordinal": 449,
@@ -24933,25 +24956,26 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#449 Motorola 68K Assembly/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/hello.i": "07db4e9cdf3ea13526449c3b91b3454d73faf65cf860ad15213894d176bc44ed",
+        "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/driver.s": "fe4b583f432de82420684d0df94692bee5ee5f6fbfc447c34d8a16ac79ee9b20"
+      },
       "based_on": null,
       "documentation": "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/README.md",
       "supporting_files": [
         "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/driver.s"
       ],
-      "validation_command": "m68k-linux-gnu-as -o hello.o driver.s; m68k-linux-gnu-ld -o hello hello.o; qemu-m68k ./hello",
+      "validation_command": "m68k-linux-gnu-as -m68000 -o <output>/hello.o driver.s; m68k-linux-gnu-ld -o <output>/hello <output>/hello.o; qemu-m68k <output>/hello",
       "expected_result": "Hello, World!",
       "sources": [
         "https://sourceware.org/binutils/docs/as/M68K_002dDependent.html",
         "https://www.kernel.org/doc/html/latest/arch/m68k/index.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Include GNU as per m68k: routine e stringa, distinto dall’entry point _start. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte."
     },
     {
       "language_ordinal": 449,
@@ -24962,25 +24986,26 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#449 Motorola 68K Assembly/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/hello.inc": "07db4e9cdf3ea13526449c3b91b3454d73faf65cf860ad15213894d176bc44ed",
+        "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/driver.s": "1a19af04d9d583b4706f1eebb64ebf1e2124968c76c9c14997fbe710695c3b2b"
+      },
       "based_on": null,
       "documentation": "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/README.md",
       "supporting_files": [
         "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/driver.s"
       ],
-      "validation_command": "m68k-linux-gnu-as -o hello.o driver.s; m68k-linux-gnu-ld -o hello hello.o; qemu-m68k ./hello",
+      "validation_command": "m68k-linux-gnu-as -m68000 -o <output>/hello.o driver.s; m68k-linux-gnu-ld -o <output>/hello <output>/hello.o; qemu-m68k <output>/hello",
       "expected_result": "Hello, World!",
       "sources": [
         "https://sourceware.org/binutils/docs/as/M68K_002dDependent.html",
         "https://www.kernel.org/doc/html/latest/arch/m68k/index.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Include GNU as per m68k: routine e stringa, distinto dall’entry point _start. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte."
     },
     {
       "language_ordinal": 449,
@@ -24993,10 +25018,14 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#449 Motorola 68K Assembly/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#449 Motorola 68K Assembly/hello.s": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150",
+        "examples/#449 Motorola 68K Assembly/variants/i-1708f4ae/driver.s": "fe4b583f432de82420684d0df94692bee5ee5f6fbfc447c34d8a16ac79ee9b20",
+        "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/driver.s": "1a19af04d9d583b4706f1eebb64ebf1e2124968c76c9c14997fbe710695c3b2b"
+      },
       "based_on": null,
       "documentation": "examples/#449 Motorola 68K Assembly/README.md",
       "supporting_files": [],
@@ -25006,10 +25035,8 @@
         "https://sourceware.org/binutils/docs/as/M68K_002dDependent.html",
         "https://www.kernel.org/doc/html/latest/arch/m68k/index.html"
       ],
-      "blockers": [
-        "Native 68000 bytecodes assembled/linked; execution on a Linux m68k runtime/emulator is not performed."
-      ],
-      "notes": "Assembler, linker e disassembler reali producono ELF e bytecode; il saluto non è stato eseguito. Hash ELF registrato, semantica pending."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte."
     },
     {
       "language_ordinal": 449,
@@ -25020,23 +25047,23 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#449 Motorola 68K Assembly/verification/finish_variants.json",
+      "verified_artifact_sha256": {
+        "examples/#449 Motorola 68K Assembly/variants/x68-9c10e087/hello.x68": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150"
+      },
       "based_on": "examples/#449 Motorola 68K Assembly/hello.s",
       "documentation": "examples/#449 Motorola 68K Assembly/variants/x68-9c10e087/README.md",
       "supporting_files": [],
-      "validation_command": "m68k-linux-gnu-as -o hello.o hello.x68; m68k-linux-gnu-ld -o hello hello.o; qemu-m68k ./hello",
+      "validation_command": "m68k-linux-gnu-as -m68000 -o <output>/hello.o hello.x68; m68k-linux-gnu-ld -o <output>/hello <output>/hello.o; qemu-m68k <output>/hello",
       "expected_result": "Hello, World!",
       "sources": [
         "https://sourceware.org/binutils/docs/as/M68K_002dDependent.html",
         "https://www.kernel.org/doc/html/latest/arch/m68k/index.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Sorgente Motorola 68000 in dialetto GNU as Linux; il suffisso non implica sintassi di altri assembler. Copia byte-identica del sorgente originale del corpus: examples/#449 Motorola 68K Assembly/hello.s. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Verifica nativa separata registrata nel log. Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte."
     },
     {
       "language_ordinal": 450,
@@ -26887,7 +26914,7 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
+      "semantic_verified": true,
       "verification_log": "examples/#494 Objective-J/verification/result.json",
       "verified_artifact_sha256": {
         "examples/#494 Objective-J/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e"
@@ -26895,42 +26922,45 @@
       "based_on": null,
       "documentation": "examples/#494 Objective-J/README.md",
       "supporting_files": [],
-      "validation_command": "npm install objj-transpiler@1.0.0-10 objj-runtime@0.4.6; npx objjc hello.j -o build/hello.js; npx objj hello.j (runtime loader Windows pending)",
+      "validation_command": "node verify.cjs .tools hello.j",
       "expected_result": "Hello, World!",
       "sources": [
         "https://www.cappuccino.dev/learn/objective-j.html",
         "https://github.com/mrcarlberg/objj-runtime"
       ],
-      "blockers": [
-        "Objective-J native runtime execution pending: original objj-runtime 0.4.6 Windows local file resolution fails."
-      ],
-      "notes": "Classe radice originale senza dipendenza Foundation; il dispatcher Objective-J deve invocare realmente say."
+      "blockers": [],
+      "notes": "Il compilatore originale produce JavaScript, valutato con le funzioni di classe e dispatch del runtime Objective-J originale. Il checker invoca main e controlla il messaggio emesso. Questa procedura evita soltanto il file loader Windows del runtime, mantenendo compilatore e dispatcher nativi."
     },
     {
       "language_ordinal": 494,
       "language_name": "Objective-J",
       "extension": ".sj",
-      "files": [],
-      "creation_status": "blocked",
-      "artifact_created": false,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
-      "based_on": null,
+      "files": [
+        "examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj"
+      ],
+      "creation_status": "created",
+      "artifact_created": true,
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#494 Objective-J/variants/sj-c6e9356b/verification/native.json",
+      "verified_artifact_sha256": {
+        "examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj": "e18a570456c787e54e0f04c9868e9715dcfa9041deba296f561c22f071d79faf"
+      },
+      "based_on": "examples/#494 Objective-J/hello.j",
       "documentation": "examples/#494 Objective-J/variants/sj-c6e9356b/README.md",
-      "supporting_files": [],
-      "validation_command": "Non eseguito. Requisito per la generazione: La variante .sj appartiene al toolchain Objective-J storico; non è stata stabilita una forma minima affidabile distinta da sorgente .j né una serializzazione nativa.",
-      "expected_result": "Da verificare con il formato nativo dopo la risoluzione del blocco.",
+      "supporting_files": [
+        "examples/#494 Objective-J/verify.cjs",
+        "examples/#494 Objective-J/make-sj.cjs"
+      ],
+      "validation_command": "node make-sj.cjs .tools hello.j variants/sj-c6e9356b/hello.sj; node verify.cjs .tools variants/sj-c6e9356b/hello.sj",
+      "expected_result": "Hello, World!",
       "sources": [
         "https://github.com/cappuccino/cappuccino",
         "https://www.cappuccino.dev/learn/objective-j.html",
         "https://github.com/mrcarlberg/objj-runtime"
       ],
-      "blockers": [
-        "La variante .sj appartiene al toolchain Objective-J storico; non è stata stabilita una forma minima affidabile distinta da sorgente .j né una serializzazione nativa."
-      ],
-      "notes": "Variante con ruolo/formato distinto dal sorgente principale. Solo documentazione del blocco; nessun artefatto con estensione richiesta è stato fabbricato. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Original compiler emits JavaScript; original Executable.toMarkedString serializes Static-J. Original FileExecutable decodes actual .sj bytes; native class dispatcher invokes Greeting.say and produces the exact greeting. Only local file I/O is supplied by Node to bypass the broken Windows runtime loader."
     },
     {
       "language_ordinal": 495,
@@ -29372,9 +29402,9 @@
       "artifact_created": true,
       "syntax_verified": true,
       "semantic_verified": true,
-      "verification_log": "examples/#535 PicoLisp/verification/native.json",
+      "verification_log": "examples/#535 PicoLisp/verification/recognition.json",
       "verified_artifact_sha256": {
-        "examples/#535 PicoLisp/hello.l": "b5ccb020a309afd7c7dd5cbb927de3474574bee63cd8b2c407408735403ad9da"
+        "examples/#535 PicoLisp/hello.l": "a7b02c3dac01126f42a3647b300514ca22e734bfdbdff59f3dea6f3ca23377f5"
       },
       "based_on": null,
       "documentation": "examples/#535 PicoLisp/README.md",
@@ -29385,7 +29415,7 @@
         "https://software-lab.de/doc/refP.html#prinl"
       ],
       "blockers": [],
-      "notes": "Interpreter vero, exit 0 e saluto esatto; sono usate soltanto primitive native."
+      "notes": "La funzione PicoLisp de greet riceve Audience e usa prinl; la chiamata greet World produce esattamente il saluto, poi bye termina il processo. La definizione de rende esplicito il dialetto e distingue .l da Lex/Common Lisp."
     },
     {
       "language_ordinal": 536,
@@ -30186,7 +30216,7 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
+      "semantic_verified": true,
       "verification_log": "examples/#553 Prisma/verification/toolchain.json",
       "verified_artifact_sha256": {
         "examples/#553 Prisma/hello.prisma": "e16dd87c664ce50d161e4166c863f20816720135b1f0ed81dd21b43839c8c42b"
@@ -30194,16 +30224,14 @@
       "based_on": null,
       "documentation": "examples/#553 Prisma/README.md",
       "supporting_files": [],
-      "validation_command": "prisma validate --schema hello.prisma",
-      "expected_result": "Schema valida, modello Greeting con default Hello, World!.",
+      "validation_command": "python verify.py .tools",
+      "expected_result": "Hello, World!",
       "sources": [
         "https://docs.prisma.io/docs/cli/v7/validate",
         "https://www.prisma.io/docs/orm/prisma-schema/data-model/models"
       ],
-      "blockers": [
-        "Client/runtime di inserzione nel database non preparato; semantica del default pendente."
-      ],
-      "notes": "La schema definisce un datasource SQLite e un modello Greeting il cui campo text ha default esplicito. Il validator originale controlla sintassi e schema; non viene attribuita una inserzione SQL non eseguita."
+      "blockers": [],
+      "notes": "Prisma valida lo schema originale e genera la migrazione SQL con migrate diff. SQLite esegue il SQL e inserisce una riga omettendo text: il valore letto deve essere Hello, World!. Config e database sono locali temporanei. Non viene dichiarata una prova del Prisma Client."
     },
     {
       "language_ordinal": 554,
@@ -36319,22 +36347,24 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#638 SRecode Template/verification/runtime.json",
+      "verified_artifact_sha256": {
+        "examples/#638 SRecode Template/hello.srt": "8246a3726cf88d6007feac5f80fea5066877173ecf87528d71db5be938691773"
+      },
       "based_on": null,
       "documentation": "examples/#638 SRecode Template/README.md",
-      "supporting_files": [],
-      "validation_command": "Emacs: caricare hello.srt nel database SRecode; in text-mode inserire file:greeting",
-      "expected_result": "Testo inserito contiene Hello, World!.",
+      "supporting_files": [
+        "examples/#638 SRecode Template/verify.el"
+      ],
+      "validation_command": "emacs -Q --batch --script verify.el",
+      "expected_result": "Hello, World!; processo nativo exit 0.",
       "sources": [
         "https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt"
       ],
-      "blockers": [
-        "Emacs/SRecode non disponibile; parser e inserimento pendenti."
-      ],
-      "notes": "Il file definisce AUDIENCE, contesto file e template greeting con delimitatori SRecode."
+      "blockers": [],
+      "notes": "Original GNU Emacs SRecode/Wisent compiler parses hello.srt and actual srecode-insert expands file:greeting, resolving AUDIENCE to World."
     },
     {
       "language_ordinal": 640,
@@ -38560,9 +38590,9 @@
       "artifact_created": true,
       "syntax_verified": true,
       "semantic_verified": true,
-      "verification_log": "examples/#684 StringTemplate/verification/native.json",
+      "verification_log": "examples/#684 StringTemplate/verification/recognition.json",
       "verified_artifact_sha256": {
-        "examples/#684 StringTemplate/hello.st": "3177e24f85a42f3edef1484d5045ef293a21a58401a2e8846b360f6846ea2344"
+        "examples/#684 StringTemplate/hello.st": "db983e5b47ac8fe2f31d5c6e396580fa41049689987afa65064ef3b11a9a551e"
       },
       "based_on": null,
       "documentation": "examples/#684 StringTemplate/README.md",
@@ -38573,7 +38603,7 @@
         "https://www.stringtemplate.org/"
       ],
       "blockers": [],
-      "notes": "Il vero ST compiler/renderer produce World e Reader; il confronto ignora soltanto lo spazio ai bordi del rendering."
+      "notes": "Un commento valido StringTemplate descrive il parametro name. ST4 riconosce il commento, lo elimina dal rendering e verifica nativamente sia World sia Reader con il driver Java invariato. Il commento identifica il template rispetto agli altri linguaggi .st."
     },
     {
       "language_ordinal": 685,
@@ -39299,23 +39329,23 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#706 Tact/verification/toolchain.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#706 Tact/verification/runtime.json",
       "verified_artifact_sha256": {
         "examples/#706 Tact/hello.tact": "0f8754e91445a7f9bf93eeebeb4b45a8da87bb84ae101afdf8f95c4db1bace65"
       },
       "based_on": null,
       "documentation": "examples/#706 Tact/README.md",
-      "supporting_files": [],
-      "validation_command": "tact --config tact.config.json",
-      "expected_result": "Compilazione exit0; greeting() atteso Hello, World! dopo esecuzione in VM.",
+      "supporting_files": [
+        "examples/#706 Tact/verify.cjs"
+      ],
+      "validation_command": "npm install --no-audit --no-fund --save-exact @tact-lang/compiler@1.6.13 @ton/sandbox@0.45.0 @ton/core@0.63.1 @ton/crypto@3.3.0 tsx@4.23.15; node verify.cjs",
+      "expected_result": "Hello, World!; compilazione e VM exit 0.",
       "sources": [
         "https://docs.tact-lang.org/book/contracts/"
       ],
-      "blockers": [
-        "Getter non eseguito in VM TON; semantica runtime pendente."
-      ],
-      "notes": "La toolchain Tact/FunC originale compila davvero il contratto e produce bytecode TON nelle cartelle temporanee. Nessun contratto viene distribuito."
+      "blockers": [],
+      "notes": "Offline TON Sandbox TVM greeting getter, exit code 0; state initialized locally, no network or deployment."
     },
     {
       "language_ordinal": 707,
@@ -40017,9 +40047,9 @@
       "artifact_created": true,
       "syntax_verified": true,
       "semantic_verified": true,
-      "verification_log": "examples/#713 Teal/verification/toolchain.json",
+      "verification_log": "examples/#713 Teal/verification/recognition.json",
       "verified_artifact_sha256": {
-        "examples/#713 Teal/hello.tl": "4e360776096da7929f0f6d7699e73c437ccc009af5d2edab2b615a305bcd1282"
+        "examples/#713 Teal/hello.tl": "a69b79dbaeddee0caecdcea9bd01dffab6e720f80171bff41af3fe8da6e1263e"
       },
       "based_on": null,
       "documentation": "examples/#713 Teal/README.md",
@@ -40030,7 +40060,7 @@
         "https://github.com/teal-language/tl"
       ],
       "blockers": [],
-      "notes": "Il compilatore Teal controlla l’annotazione string e genera il programma Lua poi realmente eseguito. La versione di sviluppo originale è identificata dal digest dell’archivio nel log."
+      "notes": "Un commento Teal descrive il tipo string esplicito del destinatario. Il compilatore originale ricontrolla i tipi, genera Lua, e Lua5.4 esegue il risultato con saluto esatto. Commento e dichiarazione typed local distinguono il file .tl da Type Language."
     },
     {
       "language_ordinal": 714,
@@ -40406,24 +40436,24 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#723 Tolk/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#723 Tolk/verification/runtime.json",
       "verified_artifact_sha256": {
         "examples/#723 Tolk/hello.tolk": "136ad0c4db69d8d1836e78a17fcfb7deaf80f717fca1f06118aac0fd4ab0e8d9"
       },
       "based_on": null,
       "documentation": "examples/#723 Tolk/README.md",
-      "supporting_files": [],
-      "validation_command": "npm install @ton/tolk-js; node verify.cjs build/compiled.json; invocare il get method greeting nella TVM locale.",
-      "expected_result": "Hello, World!",
+      "supporting_files": [
+        "examples/#723 Tolk/verify.cjs"
+      ],
+      "validation_command": "npm install --no-audit --no-fund --save-exact @ton/tolk-js@1.4.2 @ton/sandbox@0.45.0 @ton/core@0.63.1 @ton/crypto@3.3.0; node verify.cjs",
+      "expected_result": "Hello, World!; compilazione e VM exit 0.",
       "sources": [
         "https://docs.ton.org/tolk/overview",
         "https://github.com/ton-blockchain/tolk-js"
       ],
-      "blockers": [
-        "Offline TVM evaluation of greeting pending."
-      ],
-      "notes": "Nessuna pubblicazione on-chain; compiler originale e stdlib embedded. La compilazione non attesta il valore del metodo in TVM."
+      "blockers": [],
+      "notes": "Offline TON Sandbox TVM greeting getter, exit code 0; state initialized locally, no network or deployment."
     },
     {
       "language_ordinal": 725,
@@ -40540,22 +40570,22 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#728 Twig/verification/finish_native.json",
+      "verified_artifact_sha256": {
+        "examples/#728 Twig/hello.twig": "9b2a98a906684dc29d12dfb082ae925cea0723cb16ced3265ed4a913d4fde92b"
+      },
       "based_on": null,
       "documentation": "examples/#728 Twig/README.md",
       "supporting_files": [],
-      "validation_command": "Con Twig ufficiale caricare hello.twig e renderizzare name=World; provare anche name=<World>.",
+      "validation_command": "PHP con autoload Twig: creare FilesystemLoader(\".\"), Environment(autoescape=\"html\") e renderizzare hello.twig con name=World, senza name e con name=<World>. Il log include il comando PHP esatto.",
       "expected_result": "Hello, World!",
       "sources": [
         "https://twig.symfony.com/doc/3.x/"
       ],
-      "blockers": [
-        "PHP/Twig runtime non predisposto."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "Tutti i file primari di questo suffisso sono stati consumati realmente dalla toolchain nativa nella prova indicata."
     },
     {
       "language_ordinal": 729,
@@ -47409,22 +47439,24 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#799 YASnippet/verification/runtime.json",
+      "verified_artifact_sha256": {
+        "examples/#799 YASnippet/hello.yasnippet": "1319f92c980e222ead7a6b518215a7e89d4d3ebc6a45d068976f16ba368be5e4"
+      },
       "based_on": null,
       "documentation": "examples/#799 YASnippet/README.md",
-      "supporting_files": [],
-      "validation_command": "Emacs: aprire hello.yasnippet in snippet-mode e usare M-x yas-tryout-snippet",
-      "expected_result": "Testo espanso Hello, World! con placeholder World selezionato.",
+      "supporting_files": [
+        "examples/#799 YASnippet/verify.el"
+      ],
+      "validation_command": "emacs -Q --batch --load <YASnippet-0.14.0>/yasnippet.el --load verify.el",
+      "expected_result": "Hello, World!; processo nativo exit 0.",
       "sources": [
         "https://joaotavora.github.io/yasnippet/snippet-development.html"
       ],
-      "blockers": [
-        "Emacs/YASnippet non disponibili; espansione nativa pendente."
-      ],
-      "notes": "Lo snippet usa metadata, placeholder1 World e uscita0; richiede il vero parser/expander YASnippet."
+      "blockers": [],
+      "notes": "Original YASnippet 0.14.0 parses source metadata, registers text-mode snippet, expands actual greeting trigger, asserts full output and live placeholder 1 contains World."
     },
     {
       "language_ordinal": 800,
@@ -47520,23 +47552,23 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#801 Yul/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#801 Yul/verification/runtime.json",
       "verified_artifact_sha256": {
         "examples/#801 Yul/hello.yul": "eaf3c7c86dc1f963e9abe8ac97e2c74787f1f55ef1711d7ce069d1f0cdb2f4f4"
       },
       "based_on": null,
       "documentation": "examples/#801 Yul/README.md",
-      "supporting_files": [],
-      "validation_command": "npm install solc; node verify.cjs build/compiled.json; eseguire il bytecode in una EVM offline e decodificare i byte restituiti.",
-      "expected_result": "Hello, World!",
+      "supporting_files": [
+        "examples/#801 Yul/verify.cjs"
+      ],
+      "validation_command": "npm install --no-audit --no-fund --save-exact solc@0.8.37 @ethereumjs/evm@10.1.3; node verify.cjs",
+      "expected_result": "Hello, World!; compilazione e VM exit 0.",
       "sources": [
         "https://docs.soliditylang.org/en/latest/yul.html"
       ],
-      "blockers": [
-        "Offline EVM execution pending."
-      ],
-      "notes": "Nessun deployment; mstore usa il literal left-aligned documentato e return seleziona i 13 byte."
+      "blockers": [],
+      "notes": "Offline EthereumJS EVM bytecode execution with exact 13 returned bytes."
     },
     {
       "language_ordinal": 802,
@@ -47909,7 +47941,7 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
+      "semantic_verified": true,
       "verification_log": "examples/#809 Zmodel/verification/result.json",
       "verified_artifact_sha256": {
         "examples/#809 Zmodel/hello.zmodel": "6951f37d1f4c3e1e8a58aecaa1a3a70ca518c6feb20293706f6ca07af8234280"
@@ -47917,15 +47949,13 @@
       "based_on": null,
       "documentation": "examples/#809 Zmodel/README.md",
       "supporting_files": [],
-      "validation_command": "zenstack check --schema hello.zmodel; generare/applicare il modello SQLite nel progetto di prova e verificare il default di message",
+      "validation_command": "python verify.py .tools .tools-prisma",
       "expected_result": "Hello, World!",
       "sources": [
         "https://github.com/zenstackhq/zenstack/tree/v2.22.3"
       ],
-      "blockers": [
-        "ORM generation/SQLite default runtime pending."
-      ],
-      "notes": "Lo schema usa il dialetto ZenStack2; la policy allow è illustrativa per dati locali di esempio."
+      "blockers": [],
+      "notes": "Il parser ufficiale ZenStack carica lo schema originale e il suo PrismaSchemaGenerator produce lo schema Prisma. Prisma 6 valida e genera SQL; SQLite inserisce una riga senza message e verifica il saluto predefinito. La policy allow non è esercitata tramite un client ORM. Dipendenze e risultati sono isolati dalla cartella del campione."
     },
     {
       "language_ordinal": 812,

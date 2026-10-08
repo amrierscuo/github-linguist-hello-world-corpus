@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:34:12.651012+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "toolchain": "C2HS 0.28.8; GHC 9.4.7",
+  "path_normalization": "Only workspace, corpus, example, scratch and home paths replaced by placeholders. Source bytes unchanged.",
+  "commands": [
+    {
+      "command": [
+        "<workspace>/work/tools_81_100/apt-root/usr/bin/c2hs",
+        "--version"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "C->Haskell Compiler, version 0.28.8 Switcheroo, 25 November 2017\n  build platform is \"x86_64-linux\" <1, True, True, 1>\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ghc",
+        "--version"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "The Glorious Glasgow Haskell Compilation System, version 9.4.7\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<workspace>/work/tools_81_100/apt-root/usr/bin/c2hs",
+        "--cppopts=-I.",
+        "Hello.chs",
+        "-o",
+        "build/Hello.hs"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ghc",
+        "build/Hello.hs",
+        "-o",
+        "build/hello"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "[1 of 2] Compiling Main             ( build/Hello.hs, build/Hello.o )\n[2 of 2] Linking build/hello\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<example>/build/hello"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#087 C2hs Haskell/Hello.chs": "4d6ac1a50653b98780c0b886d5c685e61033b817473fad29aca0e3005dbb8037",
+    "examples/#087 C2hs Haskell/hello.h": "408107d02171b40f3fb63ab4f9bbb0597ab78715513620eca04822511f969ec9"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": []
+}

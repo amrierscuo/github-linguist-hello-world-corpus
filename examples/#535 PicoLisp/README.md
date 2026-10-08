@@ -6,42 +6,34 @@ Stampare il saluto con prinl e uscire dal processo PicoLisp.
 
 ## Toolchain e riproduzione
 
-Authentic PicoLisp native interpreter — 23.12-1build2. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Authentic PicoLisp native interpreter 23.12-1build2.
 
-PicoLisp 23.12-1build2 autentico Ubuntu estratto sotto work.
-
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando dalla directory del campione con PicoLisp 23.12-1build2. Non servono librerie esterne: de, prinl e bye sono primitive native.
 
 ```text
 picolisp hello.l
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Risultato atteso: Exit 0, stdout esattamente Hello, World! seguito da newline.
 
 ## Stato ed evidenza
 
 Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
 
-Interpreter vero, exit 0 e saluto esatto; sono usate soltanto primitive native.
+La funzione PicoLisp de greet riceve Audience e usa prinl; la chiamata greet World produce esattamente il saluto, poi bye termina il processo. La definizione de rende esplicito il dialetto e distingue .l da Lex/Common Lisp.
 
-Requisiti residui:
-
-Nessun requisito residuo per l’ambito dichiarato.
-
-Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+Prova corrente: [recognition.json](verification/recognition.json), con UTC, comandi nativi, exit code, stdout/stderr, toolchain e SHA-256 dei sorgenti modificati e dei driver. Le prove precedenti restano come storico. L’identificazione prevista da Linguist è distinta dall’esito effettivo delle statistiche GitHub; questo lotto non applica override di linguaggio.
 
 ## Fonti primarie
 
-- [https://software-lab.de/doc/refP.html#prinl](https://software-lab.de/doc/refP.html#prinl)
+- https://software-lab.de/doc/refP.html#prinl
+- https://software-lab.de/doc/refD.html#de
+- https://github.com/github-linguist/linguist/blob/v9.7.0/lib/linguist/heuristics.yml
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.l` | [hello.l](hello.l) verificato |
+| `.l` | [hello.l](hello.l) sintassi e semantica verificate |

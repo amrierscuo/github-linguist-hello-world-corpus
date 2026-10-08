@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "ordinal": 799,
+  "language": "YASnippet",
+  "timestamp_utc": "2026-10-08T23:33:35.865605+00:00",
+  "platform": "WSL Ubuntu Linux x86_64",
+  "working_directory": "examples/#799 YASnippet",
+  "toolchain": "GNU Emacs 29.3 + original YASnippet 0.14.0",
+  "source_sha256": {
+    "examples/#799 YASnippet/hello.yasnippet": "1319f92c980e222ead7a6b518215a7e89d4d3ebc6a45d068976f16ba368be5e4",
+    "examples/#799 YASnippet/verify.el": "c91cc6f1bae3f9548477450c0d85af6cd5a6ed6814e421b6ed8c67d6f41bd149"
+  },
+  "steps": [
+    {
+      "command": [
+        "emacs",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Emacs 29.3\nCopyright (C) 2024 Free Software Foundation, Inc.\nGNU Emacs comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute copies of GNU Emacs\nunder the terms of the GNU General Public License.\nFor more information about these matters, see the file named COPYING.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "emacs",
+        "-Q",
+        "--batch",
+        "--load",
+        "<YASnippet-0.14.0>/yasnippet.el",
+        "--load",
+        "verify.el"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nYASnippet parser, trigger and placeholder PASS\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Original YASnippet 0.14.0 parses source metadata, registers text-mode snippet, expands actual greeting trigger, asserts full output and live placeholder 1 contains World.",
+  "blockers": [],
+  "dependency": {
+    "name": "YASnippet",
+    "version": "0.14.0",
+    "source": "https://raw.githubusercontent.com/joaotavora/yasnippet/0.14.0/yasnippet.el",
+    "sha256": "67e43dacb4d782b30a939e91384cc403a21d5fe125a299c750fa26b365546bf4"
+  }
+}

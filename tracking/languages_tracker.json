@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": "GitHub Linguist languages.yml supplied by user",
-  "generated_utc": "2026-10-08T08:58:59+00:00",
+  "generated_utc": "2026-10-08T23:40:02.005946+00:00",
   "language_count": 836,
   "entries": [
     {
@@ -993,7 +993,7 @@
       "example": {
         "semantic_goal": "Scrivere Hello World seguito da un a capo tramite main0 e println! in ATS2/Postiats.",
         "validation_mode": "compile_and_run",
-        "toolchain": "ATS2/Postiats patscc; compilatore C; PATSHOME configurato (richiesti, non disponibili)",
+        "toolchain": "ATS/Postiats 0.4.2; GCC 13.3.0",
         "files": [
           "examples/#018 ATS/hello.dats",
           "examples/#018 ATS/README.md",
@@ -1002,10 +1002,11 @@
           "examples/#018 ATS/variants/ext-hats-2e68617473/README.md",
           "examples/#018 ATS/variants/ext-sats-2e73617473/consumer.dats",
           "examples/#018 ATS/variants/ext-sats-2e73617473/hello.sats",
-          "examples/#018 ATS/variants/ext-sats-2e73617473/README.md"
+          "examples/#018 ATS/variants/ext-sats-2e73617473/README.md",
+          "examples/#018 ATS/verification/finish_native.json"
         ],
         "build_command": "patscc -o hello hello.dats",
-        "run_or_check_command": "./hello",
+        "run_or_check_command": "patscc -DATS_MEMALLOC_LIBC -o hello hello.dats\n./hello\nPer .hats/.sats compilare ed eseguire consumer.dats dalla relativa directory variants.",
         "expected_result": "stdout: Hello World seguito da un a capo; exit 0.",
         "sources": [
           "https://ats-lang.github.io/FROZEN000/DOCUMENT/INT2PROGINATS/HTML/HTMLTOC/c44.html",
@@ -1016,16 +1017,21 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "patscc non disponibile nell'ambiente Windows; compilazione ed esecuzione da effettuare."
-        ],
-        "notes": "Sorgente creato e confrontato con documentazione primaria; nessuna verifica di compilazione o esecuzione effettuata."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:32:26.148574+00:00",
+        "verification_log": "examples/#018 ATS/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta.",
+        "verified_artifact_sha256": {
+          "examples/#018 ATS/hello.dats": "f3814e912ad8cbefd07fa22607dd59c1cb2df4f19cae1228cb520adc0ec327a0",
+          "examples/#018 ATS/variants/ext-hats-2e68617473/consumer.dats": "ea7f48244ebe2ad170da4105bb63230ed80131d9469f1bc9dac24149cfc7a270",
+          "examples/#018 ATS/variants/ext-hats-2e68617473/hello.hats": "4a0d8bb2a6ce7858e56b5f56c907ab9532be33365b66e28c5d9df9756a96943b",
+          "examples/#018 ATS/variants/ext-sats-2e73617473/consumer.dats": "06890dc615ac069f3b3ae5f8c0db550cdd0985a747a85ea7235346d4bcd7239e",
+          "examples/#018 ATS/variants/ext-sats-2e73617473/hello.sats": "69f0d352de838f86f19e7becbea1e9269fb1e9f501ff8325451936c4358af86d"
+        }
       }
     },
     {
@@ -1107,7 +1113,7 @@
       "example": {
         "semantic_goal": "Scrivere Hello World seguito da un a capo usando Ada.Text_IO.Put_Line.",
         "validation_mode": "compile_and_run",
-        "toolchain": "GNAT gnatmake, binder, linker e runtime Ada (richiesti, non disponibili)",
+        "toolchain": "GNAT 13.3.0; GCC Ada 13.3.0",
         "files": [
           "examples/#020 Ada/hello.adb",
           "examples/#020 Ada/README.md",
@@ -1115,10 +1121,11 @@
           "examples/#020 Ada/variants/ext-ada-2e616461/README.md",
           "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb",
           "examples/#020 Ada/variants/ext-ads-2e616473/greeting.ads",
-          "examples/#020 Ada/variants/ext-ads-2e616473/README.md"
+          "examples/#020 Ada/variants/ext-ads-2e616473/README.md",
+          "examples/#020 Ada/verification/finish_native.json"
         ],
         "build_command": "gnatmake hello.adb",
-        "run_or_check_command": ".\\hello.exe",
+        "run_or_check_command": "gnatmake hello.adb\n./hello\nPer .ada: gcc -c -x ada hello.ada -o hello.o; gnatbind hello.ali; gnatlink hello.ali -o hello; ./hello\nPer .ads: gnatmake consumer.adb; ./consumer dalla relativa directory variants.",
         "expected_result": "stdout: Hello World seguito da un a capo; exit 0.",
         "sources": [
           "https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html",
@@ -1129,16 +1136,20 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "gnatmake e toolchain Ada non disponibili nell'ambiente Windows; compilazione ed esecuzione da effettuare."
-        ],
-        "notes": "Sorgente creato e confrontato con documentazione primaria; nessuna verifica di compilazione o esecuzione effettuata."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:32:27.334394+00:00",
+        "verification_log": "examples/#020 Ada/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta.",
+        "verified_artifact_sha256": {
+          "examples/#020 Ada/hello.adb": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+          "examples/#020 Ada/variants/ext-ada-2e616461/hello.ada": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+          "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb": "2dd6efd103ba7fc332830f36e5074b43c55c2a96d2fbfe7856405b83f74dbe0d",
+          "examples/#020 Ada/variants/ext-ads-2e616473/greeting.ads": "b1cd7f4a70af477280d671701373c60d51e738225232dfe00feae6d2f6274676"
+        }
       }
     },
     {
@@ -2357,22 +2368,21 @@
       },
       "example": {
         "semantic_goal": "Calcolare il saluto nel frontmatter Astro e renderizzare un documento HTML con h1 Hello, World!.",
-        "validation_mode": "official_astro_compile_render",
-        "toolchain": "Official Astro CLI static builder — 5.14.1; compiler 2.13.1",
+        "validation_mode": "official_astro_static_build_render",
+        "toolchain": "Astro 5.14.1; Node.js 22.20.0",
         "files": [
-          "examples/#042 Astro/package.json",
           "examples/#042 Astro/README.md",
+          "examples/#042 Astro/package.json",
           "examples/#042 Astro/src/pages/index.astro",
           "examples/#042 Astro/verification/native.json",
           "examples/#042 Astro/verify.mjs"
         ],
         "build_command": "npm run build",
-        "run_or_check_command": "node verify.mjs .tools src/pages/index.astro --syntax-only; node verify.mjs .tools src/pages/index.astro",
-        "expected_result": "Transform del compilatore ufficiale senza errori; runtime atteso: HTML contenente <h1>Hello, World!</h1> (rendering pending).",
+        "run_or_check_command": "node verify.mjs .tools src/pages/index.astro",
+        "expected_result": "HTML contenente <h1>Hello, World!</h1>.",
         "sources": [
-          "https://docs.astro.build/en/basics/astro-components/",
-          "https://docs.astro.build/en/reference/container-reference/",
-          "https://github.com/withastro/compiler"
+          "https://docs.astro.build/en/reference/cli-reference/",
+          "https://docs.astro.build/en/basics/astro-components/"
         ]
       },
       "tracking": {
@@ -2380,19 +2390,17 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:37:09.072307+00:00",
+        "verification_timestamp_utc": "2026-10-08T23:33:22.073690+00:00",
         "verification_log": "examples/#042 Astro/verification/native.json",
-        "blockers": [
-          "Official compiler transform succeeds, but the compiled module requires createMetadata which the installed Astro runtime does not export; rendered HTML remains pending."
-        ],
-        "notes": "Il transform ufficiale riesce. L’import del modulo compilato fallisce perché createMetadata non è esportata dal runtime installato. Nessuna semantica positiva è dichiarata. La normalizzazione del filename passato al compilatore usa slash POSIX per evitare escape Windows nel modulo generato; i byte .astro restano identici.",
+        "blockers": [],
+        "notes": "Il builder ufficiale Astro compila e renderizza il sorgente originale. Il frontmatter calcola il saluto e il file HTML prodotto contiene il titolo h1 atteso. Il vecchio container incompatibile è sostituito con la normale build statica.",
         "verified_artifact_sha256": {
-          "examples/#042 Astro/package.json": "e8da769625fe5ed24935f6799910bf527d5d999db3e864a95d4778396db7049f",
+          "examples/#042 Astro/verify.mjs": "c9fdc8dc379ca27010c145848c1d71e325cd23080912e92f516bcd46dfbcf080",
           "examples/#042 Astro/src/pages/index.astro": "d8779ead6140cf8501e8827700ec90e016f7beeafa7a317bd25bcdc8c6ce0d78",
-          "examples/#042 Astro/verify.mjs": "9ef6cf6b3adf18e32f02d73e5fe8ae678ef6e92bde1d59fc0b47b49a3e6e4c12"
+          "examples/#042 Astro/package.json": "e8da769625fe5ed24935f6799910bf527d5d999db3e864a95d4778396db7049f"
         }
       }
     },
@@ -2964,15 +2972,16 @@
       "example": {
         "semantic_goal": "Stampare Hello, World! in un programma BASIC scegliendo il dialetto Yabasic.",
         "validation_mode": "native_interpret",
-        "toolchain": "Yabasic Ubuntu binary package extracted locally — yabasic 2.90.3, built on x86_64-pc-linux-gnu",
+        "toolchain": "Yabasic Ubuntu binary package extracted locally yabasic 2.90.3, built on x86_64-pc-linux-gnu",
         "files": [
           "examples/#053 BASIC/hello.bas",
           "examples/#053 BASIC/README.md",
-          "examples/#053 BASIC/verification/native.json"
+          "examples/#053 BASIC/verification/native.json",
+          "examples/#053 BASIC/verification/recognition.json"
         ],
         "build_command": null,
         "run_or_check_command": "yabasic hello.bas",
-        "expected_result": "Exit 0; stdout Hello, World! seguito da newline.",
+        "expected_result": "Exit 0, stdout esattamente Hello, World! seguito da newline.",
         "sources": [
           "https://www.yabasic.de/yabasic.htm"
         ]
@@ -2985,12 +2994,12 @@
         "semantic_verified": true,
         "verification_status": "verified",
         "verification_platform": "Ubuntu 24.04 WSL2/Linux x86_64",
-        "verification_timestamp_utc": "2026-10-08T11:33:47.578316+00:00",
-        "verification_log": "examples/#053 BASIC/verification/native.json",
+        "verification_timestamp_utc": "2026-10-08T23:37:50.291514+00:00",
+        "verification_log": "examples/#053 BASIC/verification/recognition.json",
         "blockers": [],
-        "notes": "La verifica autentica conta soltanto questo dialetto della voce BASIC. Non attesta la compatibilità con tutti i BASIC storici.",
+        "notes": "Programma Yabasic con numeri di linea 10 e 20; il runtime originale li accetta e stampa esattamente il saluto. La numerazione esplicita rende riconoscibile il campione BASIC secondo la regola upstream .bas. La prova riguarda il dialetto Yabasic, non tutti i BASIC storici.",
         "verified_artifact_sha256": {
-          "examples/#053 BASIC/hello.bas": "f8961d7bc8e610571803723f4bdde68886a85c731cb8b669eb8b0997f6f396ba"
+          "examples/#053 BASIC/hello.bas": "5b99eab0f725a87eb3f63b10c631a99871709b1a8a4e1ed494d0e8effd5736eb"
         }
       }
     },
@@ -3070,15 +3079,16 @@
       "example": {
         "semantic_goal": "Caricare una configurazione BIRD2 con costante GREETING = Hello, World! e una route blackhole nella tabella interna; leggere il saluto con il client BIRD.",
         "validation_mode": "native_config_parse_runtime_eval",
-        "toolchain": "BIRD 2 Ubuntu binary package extracted locally — BIRD version 2.14",
+        "toolchain": "BIRD 2.14, pacchetto Ubuntu estratto localmente",
         "files": [
           "examples/#055 BIRD2/bird.conf",
           "examples/#055 BIRD2/README.md",
-          "examples/#055 BIRD2/verification/native.json"
+          "examples/#055 BIRD2/verification/native.json",
+          "examples/#055 BIRD2/verification/finish.json"
         ],
-        "build_command": null,
-        "run_or_check_command": "bird -p -c bird.conf; BIRD daemon isolato: birdc -s <socket> eval GREETING",
-        "expected_result": "Parser exit 0; valutazione runtime attesa della costante GREETING uguale a Hello, World! (pending).",
+        "build_command": "bird -p -c bird.conf",
+        "run_or_check_command": "Terminale 1: bird -p -c bird.conf; bird -f -c bird.conf -s /tmp/corpus-bird.sock -P /tmp/corpus-bird.pid\nTerminale 2, con daemon attivo: birdc -s /tmp/corpus-bird.sock eval GREETING\nPoi: birdc -s /tmp/corpus-bird.sock down",
+        "expected_result": "Parser exit 0; il client BIRD restituisce la riga Hello, World!; daemon isolato terminato con exit 0.",
         "sources": [
           "https://bird.nic.cz/doc/bird-2.14.html",
           "https://bird.network.cz/doc/bird-3.html"
@@ -3089,15 +3099,13 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Ubuntu 24.04 WSL2/Linux x86_64",
-        "verification_timestamp_utc": "2026-10-08T11:36:00.301300+00:00",
-        "verification_log": "examples/#055 BIRD2/verification/native.json",
-        "blockers": [
-          "BIRD parser accepted the configuration; daemon/client runtime evaluation of GREETING remains pending."
-        ],
-        "notes": "La configurazione usa il protocollo static, senza protocollo kernel e senza esportazioni verso il sistema. Il parser ufficiale l’ha accettata. La valutazione della stringa in una sessione BIRD non è stata ottenuta: semantica pending.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:26:35.575018+00:00",
+        "verification_log": "examples/#055 BIRD2/verification/finish.json",
+        "blockers": [],
+        "notes": "Il parser BIRD 2.14 accetta la configurazione. Un daemon con socket e PID isolati valuta GREETING tramite birdc, restituendo Hello, World!. La configurazione usa solo static e non contiene protocolli kernel/device, quindi non esporta route al sistema. Shutdown del processo verificato.",
         "verified_artifact_sha256": {
           "examples/#055 BIRD2/bird.conf": "90bbc66ad1db836e3032f7cd8c1af70b81cdfa2d37b92b9893dd677949e8c8b7"
         }
@@ -3654,14 +3662,15 @@
       },
       "example": {
         "semantic_goal": "Generare una specifica HTML con una sezione Greeting contenente Hello, World!.",
-        "validation_mode": "native_specification_generation",
-        "toolchain": "Bikeshed ufficiale; tentativo isolato 3.14.6 con Python 3.13.9; toolchain completa da preparare",
+        "validation_mode": "native_specification_generation_and_output_DOM_check",
+        "toolchain": "Bikeshed 7.1.3; Python 3.13.9",
         "files": [
           "examples/#066 Bikeshed/README.md",
-          "examples/#066 Bikeshed/hello.bs"
+          "examples/#066 Bikeshed/hello.bs",
+          "examples/#066 Bikeshed/verification/finish_native.json"
         ],
         "build_command": "bikeshed spec hello.bs hello.html",
-        "run_or_check_command": "Aprire hello.html e verificare la sezione #greeting e il paragrafo Hello, World!.",
+        "run_or_check_command": "bikeshed --die-on=everything spec hello.bs hello.html; controllare #greeting e il paragrafo successivo nell'HTML generato.",
         "expected_result": "Compilazione senza errori; HTML contiene il paragrafo della sezione Greeting.",
         "sources": [
           "https://github.com/speced/bikeshed",
@@ -3672,16 +3681,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:35:09.582873+00:00",
-        "verification_log": "examples/#066 Bikeshed/verification/toolchain.json",
-        "blockers": [
-          "Dipendenze Bikeshed incomplete: import aiofiles non disponibile. L’installazione completa non è terminata nel tempo previsto; nessuna verifica del documento è conteggiata."
-        ],
-        "notes": "Il file include metadata Bikeshed e markup della specifica. Il tentativo installato è incompleto e si arresta durante gli import Python, prima del parsing del documento."
+        "verification_timestamp_utc": "2026-10-08T23:35:51.294764+00:00",
+        "verification_log": "examples/#066 Bikeshed/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Metadata corretti secondo il manuale: DREAM senza Group per documento indipendente. Generazione nativa senza errori o warning, heading e paragrafo verificati nell'HTML reale.",
+        "verified_artifact_sha256": {
+          "examples/#066 Bikeshed/hello.bs": "805285f85a8102381d48aeea65b85cfec8d8a1962082ebc10ff1ccf489fa3714"
+        }
       }
     },
     {
@@ -3757,7 +3767,7 @@
       "example": {
         "semantic_goal": "Eseguire una ricetta BitBake originale con un task Python do_build che emette Hello, World!.",
         "validation_mode": "native_recipe_parse_and_task_execution",
-        "toolchain": "BitBake upstream branch 2.10; Python 3.12.3 su Ubuntu WSL",
+        "toolchain": "BitBake upstream branch 2.10, versione dichiarata dal runtime 2.9.1; Python 3.12.3",
         "files": [
           "examples/#068 BitBake/README.md",
           "examples/#068 BitBake/build/conf/bblayers.conf",
@@ -3770,11 +3780,13 @@
           "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/README.md",
           "examples/#068 BitBake/variants/ext-inc-2e696e63/hello.inc",
           "examples/#068 BitBake/variants/ext-inc-2e696e63/hello_1.0.bb",
-          "examples/#068 BitBake/variants/ext-inc-2e696e63/README.md"
+          "examples/#068 BitBake/variants/ext-inc-2e696e63/README.md",
+          "examples/#068 BitBake/verification/finish.json",
+          "examples/#068 BitBake/verification/finish_variants.json"
         ],
         "build_command": "Da build/: BBPATH=\"$PWD\" bitbake -p",
         "run_or_check_command": "Da build/: BBPATH=\"$PWD\" bitbake hello",
-        "expected_result": "Metadata accettati e task do_build riuscito con messaggio Hello, World!.",
+        "expected_result": "1 ricetta analizzata, 0 errori; task do_build riuscito e riga Hello, World! nel log.",
         "sources": [
           "https://docs.yoctoproject.org/bitbake/2.10/bitbake-user-manual/bitbake-user-manual-hello.html",
           "https://github.com/openembedded/bitbake/tree/2.10"
@@ -3784,16 +3796,21 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Ubuntu WSL x86_64",
-        "verification_timestamp_utc": "2026-10-08T11:36:52.027537+00:00",
-        "verification_log": "examples/#068 BitBake/verification/toolchain.json",
-        "blockers": [
-          "Il BitBake reale richiede en_US.UTF-8, non presente nel WSL; si arresta all’avvio prima del parser. LC_ALL=C.UTF-8 non soddisfa questo requisito; nessun server è stato avviato."
-        ],
-        "notes": "La ricetta .bb, la configurazione del layer, la classe base e bblayers.conf costituiscono un progetto minimo indipendente da una distribuzione Yocto. Il task non produce pacchetti o immagini. I comandi richiedono bitbake nel PATH e locale en_US.UTF-8."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:30:18.723154+00:00",
+        "verification_log": "examples/#068 BitBake/verification/finish.json",
+        "blockers": [],
+        "notes": "Il parser e il task Python reali hanno completato la prova. Corretto il config minimo: PN viene derivata dal filename tramite bb.parse.vars_from_file. Ambiente temporaneo su filesystem Linux, locale en_US.UTF-8 generata senza cambiare le locale di sistema; LOCPATH passato anche al server con BB_ENV_PASSTHROUGH_ADDITIONS. Il warning LAYERSERIES_COMPAT del layer standalone rimane registrato e non impedisce il task. Server isolato arrestato.",
+        "verified_artifact_sha256": {
+          "examples/#068 BitBake/meta-hello/hello_1.0.bb": "3b8bd320b854dcbbd4f1ed5a0da65016667905ce3b8eabc6967a4258b1d9f57e",
+          "examples/#068 BitBake/meta-hello/classes/base.bbclass": "c5f9b3b4dd3d286033444f6dad26c6cc0ddd270bbbb4932928364ce4a6b944e3",
+          "examples/#068 BitBake/meta-hello/conf/bitbake.conf": "cc34738867b70a378c508828f12623a9efe80231b3167df7f992c0963014bdb5",
+          "examples/#068 BitBake/meta-hello/conf/layer.conf": "f8906724299c438db641920b468256f806263361a58874209b35a93b322f4ea4",
+          "examples/#068 BitBake/build/conf/bblayers.conf": "cc297d22bd36f8f4c3d1223f57e499e32b0dcef48330f461840fc0d1ebe0a3e8"
+        }
       }
     },
     {
@@ -3978,15 +3995,16 @@
       },
       "example": {
         "semantic_goal": "Compilare un Blueprint GTK 4 che descrive una GtkLabel con testo Hello, World!.",
-        "validation_mode": "native_gui_markup_compile",
-        "toolchain": "GNOME Blueprint compiler upstream; Python 3 e PyGObject 3.48.2; GTK 4 introspection richiesta",
+        "validation_mode": "native_gui_markup_compile_and_gtk_builder_instantiation",
+        "toolchain": "GNOME Blueprint compiler source snapshot; GTK 4.14.5; PyGObject 3.48.2; Python 3.12.3",
         "files": [
           "examples/#072 Blueprint/README.md",
-          "examples/#072 Blueprint/hello.blp"
+          "examples/#072 Blueprint/hello.blp",
+          "examples/#072 Blueprint/verification/finish.json"
         ],
-        "build_command": "blueprint-compiler compile --output hello.ui hello.blp",
-        "run_or_check_command": "Controllare hello.ui: classe GtkLabel e proprietà label con valore Hello, World!.",
-        "expected_result": "Compilazione riuscita; GtkBuilder XML conserva la label e il suo testo.",
+        "build_command": "blueprint-compiler compile --output <output>/hello.ui hello.blp",
+        "run_or_check_command": "Python/PyGObject: Gtk.init(); b = Gtk.Builder.new_from_file(\"<output>/hello.ui\"); widget = b.get_object(\"greeting\"); assert isinstance(widget, Gtk.Label); assert widget.get_label() == \"Hello, World!\"",
+        "expected_result": "Compiler exit 0; GTK4 GtkBuilder crea una GtkLabel con get_label() esattamente Hello, World!.",
         "sources": [
           "https://gnome.pages.gitlab.gnome.org/blueprint-compiler/",
           "https://gitlab.gnome.org/GNOME/blueprint-compiler"
@@ -3996,16 +4014,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Ubuntu WSL x86_64",
-        "verification_timestamp_utc": "2026-10-08T11:46:04.820988+00:00",
-        "verification_log": "examples/#072 Blueprint/verification/toolchain.json",
-        "blockers": [
-          "Namespace GTK 4 delle librerie GObject introspection non disponibile nel WSL. Il compilatore originale non arriva alla validazione del file."
-        ],
-        "notes": "La verifica prevista usa il compilatore GNOME e i tipi GTK importati. Questo esempio dichiara un widget; non avvia un’applicazione grafica o una finestra."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:28:15.725310+00:00",
+        "verification_log": "examples/#072 Blueprint/verification/finish.json",
+        "blockers": [],
+        "notes": "Il compiler GNOME risolve i tipi GTK4 e produce GtkBuilder XML. La verifica semantica istanzia realmente il risultato con Gtk.Builder, controlla che greeting sia Gtk.Label e legge la sua proprietà label: Hello, World!. Nessuna finestra viene presentata. Runtime GTK4, typelib e dipendenze estratti in work; display WSLg disponibile.",
+        "verified_artifact_sha256": {
+          "examples/#072 Blueprint/hello.blp": "326dddeafc06343b08fd6ba957304ea40f46066b92fff21ef1877dc9ffad53ea"
+        }
       }
     },
     {
@@ -4867,15 +4886,16 @@
       "example": {
         "semantic_goal": "Risolvere con C2HS la costante C HELLO_SENTINEL=1 e stampare Hello, World! dal programma Haskell generato quando il valore è corretto.",
         "validation_mode": "c2hs_preprocess_then_ghc_compile_and_run",
-        "toolchain": "C2HS 0.28.8; GCC C preprocessor; GHC runtime not installed",
+        "toolchain": "C2HS 0.28.8; GHC 9.4.7",
         "files": [
           "examples/#087 C2hs Haskell/Hello.chs",
           "examples/#087 C2hs Haskell/README.md",
           "examples/#087 C2hs Haskell/hello.h",
-          "examples/#087 C2hs Haskell/verification/result.json"
+          "examples/#087 C2hs Haskell/verification/result.json",
+          "examples/#087 C2hs Haskell/verification/finish_native.json"
         ],
         "build_command": "c2hs Hello.chs -o build/Hello.hs; ghc build/Hello.hs -o build/hello",
-        "run_or_check_command": "./build/hello",
+        "run_or_check_command": "mkdir -p build\nc2hs --cppopts=-I. Hello.chs -o build/Hello.hs\nghc build/Hello.hs -o build/hello\n./build/hello",
         "expected_result": "C2HS genera Haskell con costante 1; GHC compila; runtime stampa Hello, World!, exit 0.",
         "sources": [
           "https://github.com/haskell/c2hs",
@@ -4887,15 +4907,13 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "WSL Ubuntu 24.04.3 x86_64",
-        "verification_timestamp_utc": "2026-10-08T11:33:13.575372+00:00",
-        "verification_log": "examples/#087 C2hs Haskell/verification/result.json",
-        "blockers": [
-          "GHC absent: compile and execute generated Haskell to complete the greeting runtime proof."
-        ],
-        "notes": "Il preprocessore C2HS reale accetta il binding e risolve l'hook const. Il codice Haskell ospite è preservato dal preprocessore: parsing/compilazione Haskell ed esecuzione con GHC restano da verificare.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:34:12.651012+00:00",
+        "verification_log": "examples/#087 C2hs Haskell/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta.",
         "verified_artifact_sha256": {
           "examples/#087 C2hs Haskell/Hello.chs": "4d6ac1a50653b98780c0b886d5c685e61033b817473fad29aca0e3005dbb8037",
           "examples/#087 C2hs Haskell/hello.h": "408107d02171b40f3fb63ab4f9bbb0597ab78715513620eca04822511f969ec9"
@@ -6515,9 +6533,10 @@
       "example": {
         "semantic_goal": "Stampare il saluto tramite l’operatore di output diagnostico ChucK.",
         "validation_mode": "compile_and_run",
-        "toolchain": "ChucK 1.5.x (opzione silent per non aprire dispositivi audio)",
+        "toolchain": "ChucK 1.5.2.1, silent mode",
         "files": [
-          "examples/#116 ChucK/hello.ck"
+          "examples/#116 ChucK/hello.ck",
+          "examples/#116 ChucK/verification/finish_native.json"
         ],
         "build_command": null,
         "run_or_check_command": "chuck --silent hello.ck",
@@ -6533,16 +6552,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-        ],
-        "notes": "L’operatore <<< >>> scrive il testo di debug e il tipo; non genera audio. --silent evita di richiedere un dispositivo sonoro."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:32:27.751792+00:00",
+        "verification_log": "examples/#116 ChucK/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta.",
+        "verified_artifact_sha256": {
+          "examples/#116 ChucK/hello.ck": "523ff602c30aae837113a8d4c100c54cda9ce5959ebc9fe375c5828f9f79b1f3"
+        }
       }
     },
     {
@@ -7594,15 +7614,16 @@
       "example": {
         "semantic_goal": "Descrivere in CWL 1.2 un comando echo con input string di default Hello, World! e catturare stdout in un output File hello.txt.",
         "validation_mode": "reference_cwl_schema_validate_run",
-        "toolchain": "Common Workflow Language reference cwltool — 3.3.20260925135507",
+        "toolchain": "cwltool 3.3.20260925135507; Python 3.12.3",
         "files": [
           "examples/#134 Common Workflow Language/hello.cwl",
           "examples/#134 Common Workflow Language/job.yml",
           "examples/#134 Common Workflow Language/README.md",
-          "examples/#134 Common Workflow Language/verification/native.json"
+          "examples/#134 Common Workflow Language/verification/native.json",
+          "examples/#134 Common Workflow Language/verification/finish_native.json"
         ],
         "build_command": null,
-        "run_or_check_command": "cwltool --validate hello.cwl; cwltool --no-container --outdir results hello.cwl job.yml",
+        "run_or_check_command": "cwltool --validate hello.cwl\ncwltool --no-container --outdir results hello.cwl job.yml\nVerificare results/hello.txt esattamente Hello, World! seguito da newline.",
         "expected_result": "Validazione riuscita; job exit 0; output File hello.txt con contenuto esattamente Hello, World! seguito da newline.",
         "sources": [
           "https://www.commonwl.org/v1.2/CommandLineTool.html",
@@ -7614,16 +7635,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Ubuntu 24.04 WSL2/Linux x86_64",
-        "verification_timestamp_utc": "2026-10-08T12:06:11.006429+00:00",
-        "verification_log": "examples/#134 Common Workflow Language/verification/native.json",
-        "blockers": [
-          "Native Windows cwltool imports POSIX pwd and cannot start; isolated Linux installation timed out and Linux cwltool module is unavailable."
-        ],
-        "notes": "cwltool nativo Windows non parte perché importa il modulo POSIX pwd. Il tentativo di installazione Linux isolata ha superato il limite; i probe del riferimento Linux non trovano il modulo cwltool. Nessun parsing CWL è attestato. Un parsing YAML generico non sostituisce il validator del linguaggio."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:34:15.412306+00:00",
+        "verification_log": "examples/#134 Common Workflow Language/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta.",
+        "verified_artifact_sha256": {
+          "examples/#134 Common Workflow Language/hello.cwl": "7d2bf6162295943abccb082c54f2f3f862df7a3190f9545f3e767642663abae4",
+          "examples/#134 Common Workflow Language/job.yml": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        }
       }
     },
     {
@@ -7926,15 +7949,16 @@
       "example": {
         "semantic_goal": "Interpolare il destinatario in una stringa Crystal, compilarla in un eseguibile nativo e stamparla.",
         "validation_mode": "native_crystal_compile_run",
-        "toolchain": "Native Crystal Ubuntu compiler extracted locally — Crystal 1.11.2 (2024-04-01); ; LLVM: 17.0.6; Default target: x86_64-pc-linux-gnu",
+        "toolchain": "Crystal 1.11.2 (2024-04-01), LLVM 17.0.6, target x86_64-pc-linux-gnu",
         "files": [
           "examples/#140 Crystal/hello.cr",
           "examples/#140 Crystal/README.md",
-          "examples/#140 Crystal/verification/native.json"
+          "examples/#140 Crystal/verification/native.json",
+          "examples/#140 Crystal/verification/finish.json"
         ],
-        "build_command": "crystal build hello.cr -o build/hello",
-        "run_or_check_command": "crystal build hello.cr -o build/hello; ./build/hello",
-        "expected_result": "Compilazione exit 0; stdout esattamente Hello, World! seguito da newline.",
+        "build_command": "crystal build hello.cr -o <output>/hello",
+        "run_or_check_command": "<output>/hello",
+        "expected_result": "Compilazione exit 0; eseguibile exit 0, stdout esattamente Hello, World! seguito da newline.",
         "sources": [
           "https://crystal-lang.org/reference/1.11/",
           "https://crystal-lang.org/reference/1.11/syntax_and_semantics/literals/string.html",
@@ -7945,16 +7969,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Ubuntu 24.04 WSL2/Linux x86_64",
-        "verification_timestamp_utc": "2026-10-08T12:07:06.812789+00:00",
-        "verification_log": "examples/#140 Crystal/verification/native.json",
-        "blockers": [
-          "Native verification did not complete successfully; see genuine command output."
-        ],
-        "notes": "Il sorgente usa interpolazione #{target} e puts. Il log cattura la vera toolchain Crystal; eventuali problemi di dipendenze native non vengono confusi con un esito positivo sul sorgente."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:26:35.575363+00:00",
+        "verification_log": "examples/#140 Crystal/verification/finish.json",
+        "blockers": [],
+        "notes": "Il sorgente con interpolazione viene compilato dalla toolchain Crystal reale ed eseguito come binary Linux x86_64. Risolta la dipendenza di link libpcre3-dev con estrazione locale di pacchetti Ubuntu, senza installazione globale. Stdout e checksum del binary sono registrati.",
+        "verified_artifact_sha256": {
+          "examples/#140 Crystal/hello.cr": "7c1d2d1bae612abd83cc76158aa01fa81fdf91eb92a4e5e6be8aed12657fee57"
+        }
       }
     },
     {
@@ -10914,18 +10939,20 @@
       },
       "example": {
         "semantic_goal": "Caricare uno script Emacs Lisp in batch e stampare Hello, World! seguito da newline.",
-        "validation_mode": "compile_and_run",
-        "toolchain": "GNU Emacs con interprete Emacs Lisp",
+        "validation_mode": "native_interpreter_or_template_expansion",
+        "toolchain": "GNU Emacs 29.3",
         "files": [
+          "examples/#194 Emacs Lisp/README.md",
           "examples/#194 Emacs Lisp/hello.el",
-          "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/hello.emacs",
           "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/README.md",
+          "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/hello.emacs",
+          "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/README.md",
           "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop",
-          "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/README.md"
+          "examples/#194 Emacs Lisp/verification/runtime.json"
         ],
         "build_command": null,
-        "run_or_check_command": "emacs --batch -Q --script hello.el",
-        "expected_result": "stdout `Hello, World!\\n`, uscita 0.",
+        "run_or_check_command": "emacs -Q --batch --script hello.el; emacs -Q --batch --load variants/ext-emacs-2e656d616373/hello.emacs; emacs -Q --batch --eval '(require '\"'\"'desktop)' --load variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop --eval '(progn (unless (equal corpus-greeting \"Hello, World!\") (error \"Wrong restored greeting\")) (princ corpus-greeting))'",
+        "expected_result": "Hello, World!; processo nativo exit 0.",
         "sources": [
           {
             "title": "GNU Emacs Lisp — funzioni di output, manuale originale",
@@ -10937,16 +10964,19 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-        ],
-        "notes": "-Q disabilita i file di inizializzazione personali. princ stampa il contenuto della stringa senza virgolette, diversamente da prin1."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "WSL Ubuntu Linux x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:33:35.178799+00:00",
+        "verification_log": "examples/#194 Emacs Lisp/verification/runtime.json",
+        "blockers": [],
+        "notes": "Each of the .el, .emacs and .emacs.desktop files parsed and executed explicitly by GNU Emacs. The desktop fixture was loaded by desktop.el-compatible Emacs Lisp evaluation, restoring corpus-greeting; graphical session restoration is outside this proof.",
+        "verified_artifact_sha256": {
+          "examples/#194 Emacs Lisp/hello.el": "0df873fff0da8c976e0cf4344110bb2181aaf9ee0e683690f9b3d8a6608d685d",
+          "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/hello.emacs": "0df873fff0da8c976e0cf4344110bb2181aaf9ee0e683690f9b3d8a6608d685d",
+          "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop": "274579131fb47044f5b8c437a66490e2b51474bdfcee788c1695153347e90b67"
+        }
       }
     },
     {
@@ -24750,11 +24780,13 @@
         "toolchain": "Original JoeStrout MiniScript C# sources at b4510312059df4288af3ce849b235535a4e1bfa7 + Microsoft Roslyn Toolset 4.8.0 / .NET Framework",
         "files": [
           "examples/#432 MiniScript/hello.ms",
-          "examples/#432 MiniScript/Verify.cs"
+          "examples/#432 MiniScript/Verify.cs",
+          "examples/#432 MiniScript/verification/recognition.json",
+          "examples/#432 MiniScript/README.md"
         ],
         "build_command": "csc /nologo /out:build/verify.exe Verify.cs <percorsi MiniScript-cs/Miniscript*.cs>",
-        "run_or_check_command": "build/verify.exe",
-        "expected_result": "stdout Hello, World! e newline.",
+        "run_or_check_command": "Compilare Verify.cs con i sorgenti ufficiali MiniScript-cs; eseguire verify.exe dalla directory contenente hello.ms.",
+        "expected_result": "Exit 0, stdout esattamente Hello, World! seguito da newline.",
         "sources": [
           {
             "title": "MiniScript — print",
@@ -24763,7 +24795,8 @@
           {
             "title": "MiniScript — sorgenti ufficiali",
             "url": "https://github.com/JoeStrout/miniscript"
-          }
+          },
+          "https://miniscript.org/wiki/Function"
         ]
       },
       "tracking": {
@@ -24774,12 +24807,12 @@
         "semantic_verified": true,
         "verification_status": "verified",
         "verification_platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
-        "verification_timestamp_utc": "2026-10-08T12:49:50.339583+00:00",
-        "verification_log": "examples/#432 MiniScript/verification/result.json",
+        "verification_timestamp_utc": "2026-10-08T23:37:50.291894+00:00",
+        "verification_log": "examples/#432 MiniScript/verification/recognition.json",
         "blockers": [],
-        "notes": "Non è MAXScript: stessa estensione, linguaggio e runtime distinti.",
+        "notes": "La funzione greet riceve il destinatario e stampa il saluto; viene realmente compilata ed eseguita dal parser/runtime MiniScript originale. end function distingue questo sorgente dagli altri linguaggi che usano .ms. Il driver C# resta invariato.",
         "verified_artifact_sha256": {
-          "examples/#432 MiniScript/hello.ms": "0893f0ba1b9850a777261774f9db226b4d8e866a5b171aecd3a82db25d59fc65",
+          "examples/#432 MiniScript/hello.ms": "12e9b9ba39f0a0f06b0c84d8d445ea1c6955dbec4af115818539248790ff1dd5",
           "examples/#432 MiniScript/Verify.cs": "c2a72d809be83b20e0d305f0041694ffdffb1d07ccde57dc1eb17ed074ae85f4"
         }
       }
@@ -25689,8 +25722,8 @@
       },
       "example": {
         "semantic_goal": "Assemblare un programma Motorola 68000 che usa le syscall Linux write ed exit.",
-        "validation_mode": "genuine_m68k_assemble_link_execution_pending",
-        "toolchain": "Genuine GNU Binutils Motorola 68000 cross assembler/linker — GNU assembler (GNU Binutils for Ubuntu) 2.42",
+        "validation_mode": "native_m68k_assemble_link_and_qemu_user_execution",
+        "toolchain": "GNU Binutils m68k 2.42; QEMU user 8.2.2 (pacchetti Ubuntu estratti)",
         "files": [
           "examples/#449 Motorola 68K Assembly/hello.s",
           "examples/#449 Motorola 68K Assembly/README.md",
@@ -25704,14 +25737,17 @@
           "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/driver.s",
           "examples/#449 Motorola 68K Assembly/variants/inc-dd126fb7/README.md",
           "examples/#449 Motorola 68K Assembly/variants/x68-9c10e087/hello.x68",
-          "examples/#449 Motorola 68K Assembly/variants/x68-9c10e087/README.md"
+          "examples/#449 Motorola 68K Assembly/variants/x68-9c10e087/README.md",
+          "examples/#449 Motorola 68K Assembly/verification/finish.json",
+          "examples/#449 Motorola 68K Assembly/verification/finish_variants.json"
         ],
-        "build_command": null,
-        "run_or_check_command": "m68k-linux-gnu-as -m68000 -o build/hello.o hello.s; m68k-linux-gnu-ld -o build/hello build/hello.o; qemu-m68k build/hello",
-        "expected_result": "Hello, World!",
+        "build_command": "m68k-linux-gnu-as -m68000 -o <output>/hello.o hello.s; m68k-linux-gnu-ld -o <output>/hello <output>/hello.o",
+        "run_or_check_command": "qemu-m68k <output>/hello",
+        "expected_result": "ELF m68k eseguito con exit 0; stdout esattamente Hello, World! seguito da newline.",
         "sources": [
           "https://sourceware.org/binutils/docs/as/M68K_002dDependent.html",
-          "https://www.kernel.org/doc/html/latest/arch/m68k/index.html"
+          "https://www.kernel.org/doc/html/latest/arch/m68k/index.html",
+          "https://www.qemu.org/docs/master/user/main.html"
         ]
       },
       "tracking": {
@@ -25719,15 +25755,13 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:03:26.267248+00:00",
-        "verification_log": "examples/#449 Motorola 68K Assembly/verification/native.json",
-        "blockers": [
-          "Native 68000 bytecodes assembled/linked; execution on a Linux m68k runtime/emulator is not performed."
-        ],
-        "notes": "Assembler, linker e disassembler reali producono ELF e bytecode; il saluto non è stato eseguito. Hash ELF registrato, semantica pending.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:26:35.575602+00:00",
+        "verification_log": "examples/#449 Motorola 68K Assembly/verification/finish.json",
+        "blockers": [],
+        "notes": "Il vero assembler/linker GNU produce un ELF Motorola 68000; QEMU user esegue le istruzioni e traduce le syscall Linux write/exit. Tutte le varianti .asm, .i, .inc e .x68 sono state assemblate, linkate ed eseguite separatamente; nessun esito viene ereditato solo per uguaglianza dei byte.",
         "verified_artifact_sha256": {
           "examples/#449 Motorola 68K Assembly/hello.s": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150"
         }
@@ -28131,16 +28165,20 @@
       },
       "example": {
         "semantic_goal": "Compilare e invocare un metodo Objective-J originale.",
-        "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Node.js 22.20.0; objj-transpiler 1.0.0-10; objj-runtime 0.4.6",
+        "validation_mode": "official_objj_compile_native_dispatch",
+        "toolchain": "objj-transpiler 1.0.0-10; objj-runtime 0.4.6; Node.js 22.20.0",
         "files": [
           "examples/#494 Objective-J/README.md",
           "examples/#494 Objective-J/hello.j",
+          "examples/#494 Objective-J/make-sj.cjs",
+          "examples/#494 Objective-J/variants/sj-c6e9356b/README.md",
+          "examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj",
+          "examples/#494 Objective-J/variants/sj-c6e9356b/verification/native.json",
           "examples/#494 Objective-J/verification/result.json",
-          "examples/#494 Objective-J/variants/sj-c6e9356b/README.md"
+          "examples/#494 Objective-J/verify.cjs"
         ],
         "build_command": null,
-        "run_or_check_command": "npm install objj-transpiler@1.0.0-10 objj-runtime@0.4.6; npx objjc hello.j -o build/hello.js; npx objj hello.j (runtime loader Windows pending)",
+        "run_or_check_command": "node verify.cjs .tools hello.j",
         "expected_result": "Hello, World!",
         "sources": [
           "https://www.cappuccino.dev/learn/objective-j.html",
@@ -28152,17 +28190,18 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T13:11:33.888833+00:00",
+        "verification_timestamp_utc": "2026-10-08T23:33:22.074789+00:00",
         "verification_log": "examples/#494 Objective-J/verification/result.json",
-        "blockers": [
-          "Objective-J native runtime execution pending: original objj-runtime 0.4.6 Windows local file resolution fails."
-        ],
-        "notes": "Classe radice originale senza dipendenza Foundation; il dispatcher Objective-J deve invocare realmente say.",
+        "blockers": [],
+        "notes": "Il compilatore originale produce JavaScript, valutato con le funzioni di classe e dispatch del runtime Objective-J originale. Il checker invoca main e controlla il messaggio emesso. Questa procedura evita soltanto il file loader Windows del runtime, mantenendo compilatore e dispatcher nativi.",
         "verified_artifact_sha256": {
-          "examples/#494 Objective-J/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e"
+          "examples/#494 Objective-J/hello.j": "e1fa812f88722ea6fe5881c2ee1cc9214e1ae3c67b14a013d76a73c1fc40449e",
+          "examples/#494 Objective-J/make-sj.cjs": "c881055b0eb0adcb16a3561414d20ee0dfa232108d7ed96e9b3e9a33071e2fce",
+          "examples/#494 Objective-J/verify.cjs": "2cf0832d6ef1e398afe8c56c38504a01c2670a43e9d24e4f8a90fd06c4eedfa6",
+          "examples/#494 Objective-J/variants/sj-c6e9356b/hello.sj": "e18a570456c787e54e0f04c9868e9715dcfa9041deba296f561c22f071d79faf"
         }
       }
     },
@@ -30539,20 +30578,22 @@
       "example": {
         "semantic_goal": "Stampare il saluto con prinl e uscire dal processo PicoLisp.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Authentic PicoLisp native interpreter — 23.12-1build2",
+        "toolchain": "Authentic PicoLisp native interpreter 23.12-1build2",
         "files": [
           "examples/#535 PicoLisp/hello.l",
           "examples/#535 PicoLisp/README.md",
-          "examples/#535 PicoLisp/verification/native.json"
+          "examples/#535 PicoLisp/verification/native.json",
+          "examples/#535 PicoLisp/verification/recognition.json"
         ],
         "build_command": null,
         "run_or_check_command": "picolisp hello.l",
-        "expected_result": "Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.",
+        "expected_result": "Exit 0, stdout esattamente Hello, World! seguito da newline.",
         "primary_artifacts": [
           "examples/#535 PicoLisp/hello.l"
         ],
         "sources": [
-          "https://software-lab.de/doc/refP.html#prinl"
+          "https://software-lab.de/doc/refP.html#prinl",
+          "https://software-lab.de/doc/refD.html#de"
         ]
       },
       "tracking": {
@@ -30563,12 +30604,12 @@
         "semantic_verified": true,
         "verification_status": "verified",
         "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:17:35.357321+00:00",
-        "verification_log": "examples/#535 PicoLisp/verification/native.json",
+        "verification_timestamp_utc": "2026-10-08T23:37:50.292250+00:00",
+        "verification_log": "examples/#535 PicoLisp/verification/recognition.json",
         "blockers": [],
-        "notes": "Interpreter vero, exit 0 e saluto esatto; sono usate soltanto primitive native.",
+        "notes": "La funzione PicoLisp de greet riceve Audience e usa prinl; la chiamata greet World produce esattamente il saluto, poi bye termina il processo. La definizione de rende esplicito il dialetto e distingue .l da Lex/Common Lisp.",
         "verified_artifact_sha256": {
-          "examples/#535 PicoLisp/hello.l": "b5ccb020a309afd7c7dd5cbb927de3474574bee63cd8b2c407408735403ad9da"
+          "examples/#535 PicoLisp/hello.l": "a7b02c3dac01126f42a3647b300514ca22e734bfdbdff59f3dea6f3ca23377f5"
         }
       }
     },
@@ -31530,17 +31571,19 @@
       },
       "example": {
         "semantic_goal": "Validare Prisma Schema Language con modello Greeting e default Hello, World!.",
-        "validation_mode": "native_prisma_schema_validate_default_runtime_pending",
-        "toolchain": "Prisma7.10.0 ufficiale, Node22.20.0",
+        "validation_mode": "official_prisma_migrate_sqlite_default",
+        "toolchain": "Prisma 7.10.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0",
         "files": [
           "examples/#553 Prisma/README.md",
-          "examples/#553 Prisma/hello.prisma"
+          "examples/#553 Prisma/hello.prisma",
+          "examples/#553 Prisma/verification/toolchain.json",
+          "examples/#553 Prisma/verify.py"
         ],
         "build_command": null,
-        "run_or_check_command": "prisma validate --schema hello.prisma",
-        "expected_result": "Schema valida, modello Greeting con default Hello, World!.",
+        "run_or_check_command": "python verify.py .tools",
+        "expected_result": "Hello, World!",
         "sources": [
-          "https://docs.prisma.io/docs/cli/v7/validate",
+          "https://docs.prisma.io/docs/cli/v7/migrate/diff",
           "https://www.prisma.io/docs/orm/prisma-schema/data-model/models"
         ]
       },
@@ -31549,17 +31592,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T13:34:45.526980+00:00",
+        "verification_timestamp_utc": "2026-10-08T23:33:22.074921+00:00",
         "verification_log": "examples/#553 Prisma/verification/toolchain.json",
-        "blockers": [
-          "Client/runtime di inserzione nel database non preparato; semantica del default pendente."
-        ],
-        "notes": "La schema definisce un datasource SQLite e un modello Greeting il cui campo text ha default esplicito. Il validator originale controlla sintassi e schema; non viene attribuita una inserzione SQL non eseguita.",
+        "blockers": [],
+        "notes": "Prisma valida lo schema originale e genera la migrazione SQL con migrate diff. SQLite esegue il SQL e inserisce una riga omettendo text: il valore letto deve essere Hello, World!. Config e database sono locali temporanei. Non viene dichiarata una prova del Prisma Client.",
         "verified_artifact_sha256": {
-          "examples/#553 Prisma/hello.prisma": "e16dd87c664ce50d161e4166c863f20816720135b1f0ed81dd21b43839c8c42b"
+          "examples/#553 Prisma/hello.prisma": "e16dd87c664ce50d161e4166c863f20816720135b1f0ed81dd21b43839c8c42b",
+          "examples/#553 Prisma/verify.py": "3f8e424630c0fe6925ea82d4e0d1303edadc92c735d9e3f71e0c16254aa2a9e2"
         }
       }
     },
@@ -36602,15 +36644,17 @@
       },
       "example": {
         "semantic_goal": "Caricare un template SRecode e inserire Hello, World!.",
-        "validation_mode": "native_srecode_insert",
-        "toolchain": "GNU Emacs con SRecode, versione da registrare",
+        "validation_mode": "native_interpreter_or_template_expansion",
+        "toolchain": "GNU Emacs 29.3 + bundled SRecode",
         "files": [
           "examples/#638 SRecode Template/README.md",
-          "examples/#638 SRecode Template/hello.srt"
+          "examples/#638 SRecode Template/hello.srt",
+          "examples/#638 SRecode Template/verification/runtime.json",
+          "examples/#638 SRecode Template/verify.el"
         ],
         "build_command": null,
-        "run_or_check_command": "Emacs: caricare hello.srt nel database SRecode; in text-mode inserire file:greeting",
-        "expected_result": "Testo inserito contiene Hello, World!.",
+        "run_or_check_command": "emacs -Q --batch --script verify.el",
+        "expected_result": "Hello, World!; processo nativo exit 0.",
         "sources": [
           "https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt"
         ]
@@ -36619,16 +36663,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Emacs/SRecode non disponibile; parser e inserimento pendenti."
-        ],
-        "notes": "Il file definisce AUDIENCE, contesto file e template greeting con delimitatori SRecode."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "WSL Ubuntu Linux x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:33:35.675753+00:00",
+        "verification_log": "examples/#638 SRecode Template/verification/runtime.json",
+        "blockers": [],
+        "notes": "Original GNU Emacs SRecode/Wisent compiler parses hello.srt and actual srecode-insert expands file:greeting, resolving AUDIENCE to World.",
+        "verified_artifact_sha256": {
+          "examples/#638 SRecode Template/hello.srt": "8246a3726cf88d6007feac5f80fea5066877173ecf87528d71db5be938691773",
+          "examples/#638 SRecode Template/verify.el": "2fcbb66fd9b1d1554829dc52785ddd9cfb06695711b8f16d3ede79c3f1f26822"
+        }
       }
     },
     {
@@ -39205,22 +39251,24 @@
       "example": {
         "semantic_goal": "Compilare/renderizzare un template StringTemplate con parametro name.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Official StringTemplate Java compiler/renderer — ST4 4.3.4 / ANTLR runtime 3.5.3",
+        "toolchain": "Official StringTemplate Java compiler/renderer ST4 4.3.4 / ANTLR runtime 3.5.3",
         "files": [
           "examples/#684 StringTemplate/hello.st",
           "examples/#684 StringTemplate/README.md",
           "examples/#684 StringTemplate/verification/native.json",
-          "examples/#684 StringTemplate/Verify.java"
+          "examples/#684 StringTemplate/Verify.java",
+          "examples/#684 StringTemplate/verification/recognition.json"
         ],
         "build_command": null,
-        "run_or_check_command": "java -cp /path/to/ST4-4.3.4.jar;/path/to/antlr-runtime-3.5.3.jar Verify.java",
-        "expected_result": "Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.",
+        "run_or_check_command": "java -cp \"/path/ST4-4.3.4.jar;/path/antlr-runtime-3.5.3.jar\" Verify.java",
+        "expected_result": "Driver ST4 exit 0; rendering World e Reader conforme. Il confronto ignora soltanto lo spazio ai bordi.",
         "primary_artifacts": [
           "examples/#684 StringTemplate/hello.st",
           "examples/#684 StringTemplate/Verify.java"
         ],
         "sources": [
-          "https://www.stringtemplate.org/"
+          "https://www.stringtemplate.org/",
+          "https://github.com/antlr/stringtemplate4/blob/master/doc/templates.md"
         ]
       },
       "tracking": {
@@ -39231,12 +39279,12 @@
         "semantic_verified": true,
         "verification_status": "verified",
         "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:43:24.634578+00:00",
-        "verification_log": "examples/#684 StringTemplate/verification/native.json",
+        "verification_timestamp_utc": "2026-10-08T23:37:50.292406+00:00",
+        "verification_log": "examples/#684 StringTemplate/verification/recognition.json",
         "blockers": [],
-        "notes": "Il vero ST compiler/renderer produce World e Reader; il confronto ignora soltanto lo spazio ai bordi del rendering.",
+        "notes": "Un commento valido StringTemplate descrive il parametro name. ST4 riconosce il commento, lo elimina dal rendering e verifica nativamente sia World sia Reader con il driver Java invariato. Il commento identifica il template rispetto agli altri linguaggi .st.",
         "verified_artifact_sha256": {
-          "examples/#684 StringTemplate/hello.st": "3177e24f85a42f3edef1484d5045ef293a21a58401a2e8846b360f6846ea2344",
+          "examples/#684 StringTemplate/hello.st": "db983e5b47ac8fe2f31d5c6e396580fa41049689987afa65064ef3b11a9a551e",
           "examples/#684 StringTemplate/Verify.java": "904e8986c96dc2f44efe2f826ba2acab12a96e65e6fc16049327fdec8256e476"
         }
       }
@@ -40414,19 +40462,22 @@
         "ace_mode": "text"
       },
       "example": {
-        "semantic_goal": "Compilare un contratto Tact il cui getter restituisce Hello, World!.",
-        "validation_mode": "native_tact_compile",
-        "toolchain": "Tact compiler1.6.13 originale, Node22.20.0",
+        "semantic_goal": "Compilare il sorgente ed eseguire realmente il bytecode nella VM locale, ottenendo Hello, World!.",
+        "validation_mode": "native_compile_and_offline_vm",
+        "toolchain": "Tact 1.6.13 + TON Sandbox 0.45.0 + tsx 4.23.15; Node.js 22.20.0",
         "files": [
           "examples/#706 Tact/README.md",
           "examples/#706 Tact/hello.tact",
-          "examples/#706 Tact/tact.config.json"
+          "examples/#706 Tact/tact.config.json",
+          "examples/#706 Tact/verification/runtime.json",
+          "examples/#706 Tact/verify.cjs"
         ],
         "build_command": null,
-        "run_or_check_command": "tact --config tact.config.json",
-        "expected_result": "Compilazione exit0; greeting() atteso Hello, World! dopo esecuzione in VM.",
+        "run_or_check_command": "npm install --no-audit --no-fund --save-exact @tact-lang/compiler@1.6.13 @ton/sandbox@0.45.0 @ton/core@0.63.1 @ton/crypto@3.3.0 tsx@4.23.15; node verify.cjs",
+        "expected_result": "Hello, World!; compilazione e VM exit 0.",
         "sources": [
-          "https://docs.tact-lang.org/book/contracts/"
+          "https://docs.tact-lang.org/book/contracts/",
+          "https://github.com/ton-blockchain/sandbox"
         ]
       },
       "tracking": {
@@ -40434,17 +40485,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T13:51:20.240004+00:00",
-        "verification_log": "examples/#706 Tact/verification/toolchain.json",
-        "blockers": [
-          "Getter non eseguito in VM TON; semantica runtime pendente."
-        ],
-        "notes": "La toolchain Tact/FunC originale compila davvero il contratto e produce bytecode TON nelle cartelle temporanee. Nessun contratto viene distribuito.",
+        "verification_timestamp_utc": "2026-10-08T23:31:25.959856+00:00",
+        "verification_log": "examples/#706 Tact/verification/runtime.json",
+        "blockers": [],
+        "notes": "Offline TON Sandbox TVM greeting getter, exit code 0; state initialized locally, no network or deployment.",
         "verified_artifact_sha256": {
           "examples/#706 Tact/hello.tact": "0f8754e91445a7f9bf93eeebeb4b45a8da87bb84ae101afdf8f95c4db1bace65",
+          "examples/#706 Tact/verify.cjs": "7ab2f2f72fb51e35c168a1276c18799d53b85b184f129b132838a85155a1e1cb",
           "examples/#706 Tact/tact.config.json": "20531477adc62c90422839ea4356b8b8e3cbf7633b3aa0f207872d6d2f3128ae"
         }
       }
@@ -40849,11 +40899,12 @@
         "toolchain": "Teal originale dal repository teal-language/tl e Lua5.4.6",
         "files": [
           "examples/#713 Teal/README.md",
-          "examples/#713 Teal/hello.tl"
+          "examples/#713 Teal/hello.tl",
+          "examples/#713 Teal/verification/recognition.json"
         ],
         "build_command": null,
-        "run_or_check_command": "tl gen hello.tl; lua hello.lua",
-        "expected_result": "Hello, World! su stdout.",
+        "run_or_check_command": "tl check hello.tl; tl gen hello.tl; lua hello.lua",
+        "expected_result": "Typecheck e generazione exit 0; runtime exit 0, stdout esattamente Hello, World! seguito da newline.",
         "sources": [
           "https://github.com/teal-language/tl"
         ]
@@ -40866,12 +40917,12 @@
         "semantic_verified": true,
         "verification_status": "verified",
         "verification_platform": "Ubuntu WSL x86_64",
-        "verification_timestamp_utc": "2026-10-08T13:53:19.812215+00:00",
-        "verification_log": "examples/#713 Teal/verification/toolchain.json",
+        "verification_timestamp_utc": "2026-10-08T23:37:50.292667+00:00",
+        "verification_log": "examples/#713 Teal/verification/recognition.json",
         "blockers": [],
-        "notes": "Il compilatore Teal controlla l’annotazione string e genera il programma Lua poi realmente eseguito. La versione di sviluppo originale è identificata dal digest dell’archivio nel log.",
+        "notes": "Un commento Teal descrive il tipo string esplicito del destinatario. Il compilatore originale ricontrolla i tipi, genera Lua, e Lua5.4 esegue il risultato con saluto esatto. Commento e dichiarazione typed local distinguono il file .tl da Type Language.",
         "verified_artifact_sha256": {
-          "examples/#713 Teal/hello.tl": "4e360776096da7929f0f6d7699e73c437ccc009af5d2edab2b615a305bcd1282"
+          "examples/#713 Teal/hello.tl": "a69b79dbaeddee0caecdcea9bd01dffab6e720f80171bff41af3fe8da6e1263e"
         }
       }
     },
@@ -41394,21 +41445,23 @@
         "ace_mode": "text"
       },
       "example": {
-        "semantic_goal": "Compilare un get method Tolk che restituisce il saluto.",
-        "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "@ton/tolk-js 1.4.2; actual Tolk version in stdout; Node.js22.20.0",
+        "semantic_goal": "Compilare il sorgente ed eseguire realmente il bytecode nella VM locale, ottenendo Hello, World!.",
+        "validation_mode": "native_compile_and_offline_vm",
+        "toolchain": "Tolk 1.4.2 + TON Sandbox 0.45.0; Node.js 22.20.0",
         "files": [
           "examples/#723 Tolk/README.md",
           "examples/#723 Tolk/hello.tolk",
           "examples/#723 Tolk/verification/result.json",
+          "examples/#723 Tolk/verification/runtime.json",
           "examples/#723 Tolk/verify.cjs"
         ],
         "build_command": null,
-        "run_or_check_command": "npm install @ton/tolk-js; node verify.cjs build/compiled.json; invocare il get method greeting nella TVM locale.",
-        "expected_result": "Hello, World!",
+        "run_or_check_command": "npm install --no-audit --no-fund --save-exact @ton/tolk-js@1.4.2 @ton/sandbox@0.45.0 @ton/core@0.63.1 @ton/crypto@3.3.0; node verify.cjs",
+        "expected_result": "Hello, World!; compilazione e VM exit 0.",
         "sources": [
           "https://docs.ton.org/tolk/overview",
-          "https://github.com/ton-blockchain/tolk-js"
+          "https://github.com/ton-blockchain/tolk-js",
+          "https://github.com/ton-blockchain/sandbox"
         ]
       },
       "tracking": {
@@ -41416,18 +41469,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T13:30:50.636083+00:00",
-        "verification_log": "examples/#723 Tolk/verification/result.json",
-        "blockers": [
-          "Offline TVM evaluation of greeting pending."
-        ],
-        "notes": "Nessuna pubblicazione on-chain; compiler originale e stdlib embedded. La compilazione non attesta il valore del metodo in TVM.",
+        "verification_timestamp_utc": "2026-10-08T23:31:23.792787+00:00",
+        "verification_log": "examples/#723 Tolk/verification/runtime.json",
+        "blockers": [],
+        "notes": "Offline TON Sandbox TVM greeting getter, exit code 0; state initialized locally, no network or deployment.",
         "verified_artifact_sha256": {
           "examples/#723 Tolk/hello.tolk": "136ad0c4db69d8d1836e78a17fcfb7deaf80f717fca1f06118aac0fd4ab0e8d9",
-          "examples/#723 Tolk/verify.cjs": "c9db9a2948f4462511a5cb33eeb4fb023c4f1bc2b89709639fc3b0cea0392650"
+          "examples/#723 Tolk/verify.cjs": "e372c22277d3faa1c493b2819a8e6b00a2ea645741a8ed3232d9131f92e3a45f"
         }
       }
     },
@@ -41664,13 +41715,14 @@
       "example": {
         "semantic_goal": "Renderizzare un template Twig con default ed escaping.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Twig PHP engine",
+        "toolchain": "PHP 8.3.6; Twig 3.8.0",
         "files": [
           "examples/#728 Twig/README.md",
-          "examples/#728 Twig/hello.twig"
+          "examples/#728 Twig/hello.twig",
+          "examples/#728 Twig/verification/finish_native.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Con Twig ufficiale caricare hello.twig e renderizzare name=World; provare anche name=<World>.",
+        "run_or_check_command": "PHP con autoload Twig: creare FilesystemLoader(\".\"), Environment(autoescape=\"html\") e renderizzare hello.twig con name=World, senza name e con name=<World>. Il log include il comando PHP esatto.",
         "expected_result": "Hello, World!",
         "sources": [
           "https://twig.symfony.com/doc/3.x/"
@@ -41680,16 +41732,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "PHP/Twig runtime non predisposto."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu 24.04 WSL2 x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:32:27.905963+00:00",
+        "verification_log": "examples/#728 Twig/verification/finish_native.json",
+        "blockers": [],
+        "notes": "Compilazione/interpretazione nativa e risultato del saluto verificati realmente. Prova eseguita in directory temporanea isolata; nessuna equivalenza di suffisso viene assunta.",
+        "verified_artifact_sha256": {
+          "examples/#728 Twig/hello.twig": "9b2a98a906684dc29d12dfb082ae925cea0723cb16ced3265ed4a913d4fde92b"
+        }
       }
     },
     {
@@ -46145,15 +46198,17 @@
       },
       "example": {
         "semantic_goal": "Espandere uno snippet YASnippet con il default World.",
-        "validation_mode": "native_yasnippet_expand",
-        "toolchain": "GNU Emacs con YASnippet originale, versione da registrare",
+        "validation_mode": "native_interpreter_or_template_expansion",
+        "toolchain": "GNU Emacs 29.3 + original YASnippet 0.14.0",
         "files": [
           "examples/#799 YASnippet/README.md",
-          "examples/#799 YASnippet/hello.yasnippet"
+          "examples/#799 YASnippet/hello.yasnippet",
+          "examples/#799 YASnippet/verification/runtime.json",
+          "examples/#799 YASnippet/verify.el"
         ],
         "build_command": null,
-        "run_or_check_command": "Emacs: aprire hello.yasnippet in snippet-mode e usare M-x yas-tryout-snippet",
-        "expected_result": "Testo espanso Hello, World! con placeholder World selezionato.",
+        "run_or_check_command": "emacs -Q --batch --load <YASnippet-0.14.0>/yasnippet.el --load verify.el",
+        "expected_result": "Hello, World!; processo nativo exit 0.",
         "sources": [
           "https://joaotavora.github.io/yasnippet/snippet-development.html"
         ]
@@ -46162,16 +46217,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Emacs/YASnippet non disponibili; espansione nativa pendente."
-        ],
-        "notes": "Lo snippet usa metadata, placeholder1 World e uscita0; richiede il vero parser/expander YASnippet."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "WSL Ubuntu Linux x86_64",
+        "verification_timestamp_utc": "2026-10-08T23:33:35.865605+00:00",
+        "verification_log": "examples/#799 YASnippet/verification/runtime.json",
+        "blockers": [],
+        "notes": "Original YASnippet 0.14.0 parses source metadata, registers text-mode snippet, expands actual greeting trigger, asserts full output and live placeholder 1 contains World.",
+        "verified_artifact_sha256": {
+          "examples/#799 YASnippet/hello.yasnippet": "1319f92c980e222ead7a6b518215a7e89d4d3ebc6a45d068976f16ba368be5e4",
+          "examples/#799 YASnippet/verify.el": "c91cc6f1bae3f9548477450c0d85af6cd5a6ed6814e421b6ed8c67d6f41bd149"
+        }
       }
     },
     {
@@ -46255,20 +46312,22 @@
         "ace_mode": "text"
       },
       "example": {
-        "semantic_goal": "Compilare Yul che restituisce 13 byte del saluto dal buffer EVM.",
-        "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Solc 0.8.37+commit.f401782d.Emscripten.clang; Node22.20.0",
+        "semantic_goal": "Compilare il sorgente ed eseguire realmente il bytecode nella VM locale, ottenendo Hello, World!.",
+        "validation_mode": "native_compile_and_offline_vm",
+        "toolchain": "Solc 0.8.37 + EthereumJS EVM 10.1.3; Node.js 22.20.0",
         "files": [
           "examples/#801 Yul/README.md",
           "examples/#801 Yul/hello.yul",
           "examples/#801 Yul/verification/result.json",
+          "examples/#801 Yul/verification/runtime.json",
           "examples/#801 Yul/verify.cjs"
         ],
         "build_command": null,
-        "run_or_check_command": "npm install solc; node verify.cjs build/compiled.json; eseguire il bytecode in una EVM offline e decodificare i byte restituiti.",
-        "expected_result": "Hello, World!",
+        "run_or_check_command": "npm install --no-audit --no-fund --save-exact solc@0.8.37 @ethereumjs/evm@10.1.3; node verify.cjs",
+        "expected_result": "Hello, World!; compilazione e VM exit 0.",
         "sources": [
-          "https://docs.soliditylang.org/en/latest/yul.html"
+          "https://docs.soliditylang.org/en/latest/yul.html",
+          "https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/evm"
         ]
       },
       "tracking": {
@@ -46276,18 +46335,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T13:38:33.424893+00:00",
-        "verification_log": "examples/#801 Yul/verification/result.json",
-        "blockers": [
-          "Offline EVM execution pending."
-        ],
-        "notes": "Nessun deployment; mstore usa il literal left-aligned documentato e return seleziona i 13 byte.",
+        "verification_timestamp_utc": "2026-10-08T23:31:22.707883+00:00",
+        "verification_log": "examples/#801 Yul/verification/runtime.json",
+        "blockers": [],
+        "notes": "Offline EthereumJS EVM bytecode execution with exact 13 returned bytes.",
         "verified_artifact_sha256": {
           "examples/#801 Yul/hello.yul": "eaf3c7c86dc1f963e9abe8ac97e2c74787f1f55ef1711d7ce069d1f0cdb2f4f4",
-          "examples/#801 Yul/verify.cjs": "b07601221ca9271a63c94ff2c1839f2c415c6cf5f75101594adc41b00c202c24"
+          "examples/#801 Yul/verify.cjs": "df11d17507ea7226599f93438f4b271504b75455ceb9b3c3b8e04c690faecf7f"
         }
       }
     },
@@ -46698,18 +46755,21 @@
       },
       "example": {
         "semantic_goal": "Analizzare uno schema Zmodel con default del saluto.",
-        "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "ZenStack2.22.3; Node22.20.0",
+        "validation_mode": "official_zmodel_generate_prisma_sqlite_default",
+        "toolchain": "ZenStack 2.22.3; Prisma 6.19.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0",
         "files": [
           "examples/#809 Zmodel/README.md",
+          "examples/#809 Zmodel/generate.cjs",
           "examples/#809 Zmodel/hello.zmodel",
-          "examples/#809 Zmodel/verification/result.json"
+          "examples/#809 Zmodel/verification/result.json",
+          "examples/#809 Zmodel/verify.py"
         ],
         "build_command": null,
-        "run_or_check_command": "zenstack check --schema hello.zmodel; generare/applicare il modello SQLite nel progetto di prova e verificare il default di message",
+        "run_or_check_command": "python verify.py .tools .tools-prisma",
         "expected_result": "Hello, World!",
         "sources": [
-          "https://github.com/zenstackhq/zenstack/tree/v2.22.3"
+          "https://github.com/zenstackhq/zenstack/tree/v2.22.3",
+          "https://zenstack.dev/docs/reference/cli"
         ]
       },
       "tracking": {
@@ -46717,17 +46777,17 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
+        "semantic_verified": true,
+        "verification_status": "verified",
         "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T13:40:45.878337+00:00",
+        "verification_timestamp_utc": "2026-10-08T23:33:22.075030+00:00",
         "verification_log": "examples/#809 Zmodel/verification/result.json",
-        "blockers": [
-          "ORM generation/SQLite default runtime pending."
-        ],
-        "notes": "Lo schema usa il dialetto ZenStack2; la policy allow è illustrativa per dati locali di esempio.",
+        "blockers": [],
+        "notes": "Il parser ufficiale ZenStack carica lo schema originale e il suo PrismaSchemaGenerator produce lo schema Prisma. Prisma 6 valida e genera SQL; SQLite inserisce una riga senza message e verifica il saluto predefinito. La policy allow non è esercitata tramite un client ORM. Dipendenze e risultati sono isolati dalla cartella del campione.",
         "verified_artifact_sha256": {
-          "examples/#809 Zmodel/hello.zmodel": "6951f37d1f4c3e1e8a58aecaa1a3a70ca518c6feb20293706f6ca07af8234280"
+          "examples/#809 Zmodel/generate.cjs": "b2dfe049cf3b0139d6865ccde4f274c948f8c325f26b14c9ffec09fbe604ce0e",
+          "examples/#809 Zmodel/hello.zmodel": "6951f37d1f4c3e1e8a58aecaa1a3a70ca518c6feb20293706f6ca07af8234280",
+          "examples/#809 Zmodel/verify.py": "33d215506e0bee45e82eeb1379feace2f87435de0d0de6acbb407ebc94118409"
         }
       }
     },

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:37:50.292406+00:00",
+  "platform": "Windows x64 / Ubuntu24.04 WSL2",
+  "path_normalization": "Only corpus/workspace paths replaced by placeholders. Source bytes unchanged. Verification runs against staging with these recorded checksums before copying exact bytes to the corpus.",
+  "toolchain": {
+    "name": "Official StringTemplate Java compiler/renderer",
+    "version": "ST4 4.3.4 / ANTLR runtime 3.5.3",
+    "jar_sha256": {
+      "ST4-4.3.4.jar": "f927ac384c46d749f8b5ec68972a53aed21e00313509299616edb73bfa15ff33",
+      "antlr-runtime-3.5.3.jar": "68bf9f5a33dfcb34033495c587e6236bef4e37aa6612919f5b1e843b90669fb9"
+    }
+  },
+  "commands": [
+    {
+      "label": "Java runtime version",
+      "timestamp_utc": "2026-10-08T23:37:50.300702+00:00",
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\684",
+      "exit_code": 0,
+      "stdout": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native ST4 parse and rendering of commented parameterized template",
+      "timestamp_utc": "2026-10-08T23:37:50.460370+00:00",
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "<workspace>\\work\\tools_681_700\\ST4-4.3.4.jar;<workspace>\\work\\tools_681_700\\antlr-runtime-3.5.3.jar",
+        "Verify.java"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\684",
+      "exit_code": 0,
+      "stdout": "StringTemplate 4.3.4\nHello, World!\n\nPASS: actual ST compiler and parameter rendering\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#684 StringTemplate/hello.st": "db983e5b47ac8fe2f31d5c6e396580fa41049689987afa65064ef3b11a9a551e",
+    "examples/#684 StringTemplate/Verify.java": "904e8986c96dc2f44efe2f826ba2acab12a96e65e6fc16049327fdec8256e476"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "recognition_change": {
+    "before_sha256": "3177e24f85a42f3edef1484d5045ef293a21a58401a2e8846b360f6846ea2344",
+    "after_sha256": "db983e5b47ac8fe2f31d5c6e396580fa41049689987afa65064ef3b11a9a551e",
+    "policy": "Genuine syntax/comment only; no linguist-language override. Native execution of the modified sample recorded."
+  }
+}

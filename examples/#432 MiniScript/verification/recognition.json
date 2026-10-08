@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:37:50.291894+00:00",
+  "platform": "Windows x64 / Ubuntu24.04 WSL2",
+  "path_normalization": "Only corpus/workspace paths replaced by placeholders. Source bytes unchanged. Verification runs against staging with these recorded checksums before copying exact bytes to the corpus.",
+  "toolchain": "Original JoeStrout MiniScript C# sources at b4510312059df4288af3ce849b235535a4e1bfa7 + Microsoft Roslyn Toolset 4.8.0 / .NET Framework",
+  "commands": [
+    {
+      "label": "Compile original MiniScript interpreter and unchanged semantic driver",
+      "timestamp_utc": "2026-10-08T23:37:50.302237+00:00",
+      "command": [
+        "<workspace>\\work\\tools_421_440\\roslyn\\tasks\\net472\\csc.exe",
+        "/nologo",
+        "/out:<workspace>\\work\\finish_recognition\\432\\verify.exe",
+        "<workspace>\\work\\finish_recognition\\432\\Verify.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\Miniscript.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptErrors.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptInterpreter.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptIntrinsics.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptKeywords.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptLexer.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptParser.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptTAC.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptTypes.cs",
+        "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptUnitTest.cs"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\432",
+      "exit_code": 0,
+      "stdout": "<workspace>\\work\\tools_421_440\\miniscript_cs\\MiniscriptIntrinsics.cs(678,6): warning CS0162: Unreachable code detected\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native MiniScript compile and runtime of genuine greeting function",
+      "timestamp_utc": "2026-10-08T23:37:54.030988+00:00",
+      "command": [
+        "<workspace>\\work\\finish_recognition\\432\\verify.exe"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\432",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#432 MiniScript/hello.ms": "12e9b9ba39f0a0f06b0c84d8d445ea1c6955dbec4af115818539248790ff1dd5",
+    "examples/#432 MiniScript/Verify.cs": "c2a72d809be83b20e0d305f0041694ffdffb1d07ccde57dc1eb17ed074ae85f4"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "implementation_provenance": {
+    "repository": "https://github.com/JoeStrout/miniscript",
+    "commit": "b4510312059df4288af3ce849b235535a4e1bfa7",
+    "sources": {
+      "Miniscript.cs": "1cadab96f37be4a85ca2dd2a5658cf0a948261896a44a7ab796b1ff958140674",
+      "MiniscriptErrors.cs": "39578545fdb43ac277a82e9f04fcd0f42d966933dd6ffda70f7c04aa5b003f7a",
+      "MiniscriptInterpreter.cs": "b7957acb0302cb0c5bc690fe35362da2a821780975becdd3c340ccea96a1b450",
+      "MiniscriptIntrinsics.cs": "b3c421ad9e352518d576aac6a74cea11475622708b5785f07a8f0b424dd45620",
+      "MiniscriptKeywords.cs": "d52d4fefad2d25fa613f016ac540887f8e7c32006b258684298f991fcab819d4",
+      "MiniscriptLexer.cs": "4fd630fa8297521bd205d84384062e2d18dc1f6eb38b1014da6e3afc7975a321",
+      "MiniscriptParser.cs": "6eed00be2b4097b38fdcab69a4216b5d577267e821606beb98f5c0427fbaa1d7",
+      "MiniscriptTAC.cs": "65e2d8f299875e8ade66604e9298624f5711026af98d4ef6f9fbb50d5ddd3298",
+      "MiniscriptTypes.cs": "0f3bc344b7601faa5bcf23f5231cdf5c83e70edca8615df4846aa8d7d109d69f",
+      "MiniscriptUnitTest.cs": "59c35e9a6d07e0ac0eb4873d2018070946c6ce2833153857afbe5b0cb4d24659"
+    }
+  },
+  "generated_artifact_sha256": {
+    "verify.exe": "46bf5683e4c74579996039f6d1f0b372edc30c9ff0ab5a606e5f2d5aab1a913b"
+  },
+  "recognition_change": {
+    "before_sha256": "0893f0ba1b9850a777261774f9db226b4d8e866a5b171aecd3a82db25d59fc65",
+    "after_sha256": "12e9b9ba39f0a0f06b0c84d8d445ea1c6955dbec4af115818539248790ff1dd5",
+    "policy": "Genuine syntax/comment only; no linguist-language override. Native execution of the modified sample recorded."
+  }
+}

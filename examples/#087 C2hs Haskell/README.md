@@ -2,41 +2,24 @@
 
 Risolvere con C2HS la costante C HELLO_SENTINEL=1 e stampare Hello, World! dal programma Haskell generato quando il valore è corretto.
 
-## Toolchain
+## Riproduzione
 
-C2HS 0.28.8; GCC C preprocessor; GHC runtime not installed
+Toolchain: C2HS 0.28.8; GHC 9.4.7. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
 
-## Comandi e procedura
-
-hello.h definisce una costante C originale; l'hook `{#const ... #}` la
-risolve nel testo Haskell generato. Eseguire nella cartella dell'esempio:
-
-```sh
+```text
 mkdir -p build
-c2hs --version
-c2hs Hello.chs -o build/Hello.hs
+c2hs --cppopts=-I. Hello.chs -o build/Hello.hs
 ghc build/Hello.hs -o build/hello
 ./build/hello
 ```
 
-La prova registrata si ferma dopo C2HS, perché GHC non è presente. Il saluto
-nel file generato non è stato eseguito; per questo la semantica resta in attesa.
+Risultato atteso: C2HS genera Haskell con costante 1; GHC compila; runtime stampa Hello, World!, exit 0.
 
-## Risultato atteso
+## Verifica
 
-C2HS genera Haskell con costante 1; GHC compila; runtime stampa Hello, World!, exit 0.
+Sintassi e semantica verificate il 2026-10-08T23:34:12.651012+00:00. Le varianti hanno prove separate nel log quando consumate.
 
-## Stato
-
-Sintassi verificata; semantica in attesa.
-
-Il preprocessore C2HS reale accetta il binding e risolve l'hook const. Il codice Haskell ospite è preservato dal preprocessore: parsing/compilazione Haskell ed esecuzione con GHC restano da verificare.
-
-Verifica effettiva del 2026-10-08T11:33:13.575372+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
-
-Requisiti residui:
-- GHC absent: compile and execute generated Haskell to complete the greeting runtime proof.
+[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
 
 ## Fonti primarie
 
@@ -45,8 +28,8 @@ Requisiti residui:
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.chs` | [Hello.chs](Hello.chs) sintassi verificata |
+| `.chs` | [Hello.chs](Hello.chs) sintassi e semantica verificate |

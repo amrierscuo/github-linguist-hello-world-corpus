@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:32:27.751792+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "toolchain": "ChucK 1.5.2.1, silent mode",
+  "path_normalization": "Only workspace, corpus, example, scratch and home paths replaced by placeholders. Source bytes unchanged.",
+  "commands": [
+    {
+      "command": [
+        "chuck",
+        "--version"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "\n\u001b[0mchuck version: 1.5.2.1 (chai)\n   Linux | 64-bit\n   audio drivers: ALSA | PulseAudio | JACK\n   http://chuck.cs.princeton.edu/\n   http://chuck.stanford.edu/\n\n"
+    },
+    {
+      "command": [
+        "chuck",
+        "--silent",
+        "hello.ck"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "\"Hello, World!\" :(string)\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#116 ChucK/hello.ck": "523ff602c30aae837113a8d4c100c54cda9ce5959ebc9fe375c5828f9f79b1f3"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": []
+}

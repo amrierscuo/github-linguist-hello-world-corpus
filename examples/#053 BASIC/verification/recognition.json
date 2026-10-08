@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:37:50.291514+00:00",
+  "platform": "Windows x64 / Ubuntu24.04 WSL2",
+  "path_normalization": "Only corpus/workspace paths replaced by placeholders. Source bytes unchanged. Verification runs against staging with these recorded checksums before copying exact bytes to the corpus.",
+  "toolchain": {
+    "name": "Yabasic Ubuntu binary package extracted locally",
+    "version": "yabasic 2.90.3, built on x86_64-pc-linux-gnu"
+  },
+  "commands": [
+    {
+      "label": "Yabasic parser/execution of numbered BASIC candidate",
+      "timestamp_utc": "2026-10-08T23:37:50.299372+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "env",
+        "LD_LIBRARY_PATH=<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu",
+        "<workspace>/work/tools_41_60/linux/usr/bin/yabasic",
+        "<workspace>/work/finish_recognition/53/hello.bas"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\53",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#053 BASIC/hello.bas": "5b99eab0f725a87eb3f63b10c631a99871709b1a8a4e1ed494d0e8effd5736eb"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "recognition_change": {
+    "before_sha256": "f8961d7bc8e610571803723f4bdde68886a85c731cb8b669eb8b0997f6f396ba",
+    "after_sha256": "5b99eab0f725a87eb3f63b10c631a99871709b1a8a4e1ed494d0e8effd5736eb",
+    "policy": "Genuine syntax/comment only; no linguist-language override. Native execution of the modified sample recorded."
+  }
+}

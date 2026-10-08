@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:26:35.575602+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "path_normalization": "Only absolute workspace/corpus paths replaced by placeholders; source bytes unchanged. All runtime products remain in isolated work directories.",
+  "artifact_sha256": {
+    "examples/#449 Motorola 68K Assembly/hello.s": "a2b40cbf257839c9302d478550cf7d3de7141e85350979c4ed03846991aae150"
+  },
+  "commands": [
+    {
+      "label": "GNU m68k assembler version",
+      "timestamp_utc": "2026-10-08T23:26:35.697619+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "GNU assembler (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `m68k-linux-gnu'.\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "QEMU user emulator version",
+      "timestamp_utc": "2026-10-08T23:26:35.803323+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "qemu-m68k version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)\nCopyright (c) 2003-2023 Fabrice Bellard and the QEMU Project developers\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Assemble Motorola 68000 source",
+      "timestamp_utc": "2026-10-08T23:26:35.859560+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-as",
+        "-m68000",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k/hello.o",
+        "<corpus>/examples/#449 Motorola 68K Assembly/hello.s"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Link m68k Linux ELF",
+      "timestamp_utc": "2026-10-08T23:26:35.930319+00:00",
+      "command": [
+        "<workspace>/work/tools_441_460/linux/usr/bin/m68k-linux-gnu-ld",
+        "-o",
+        "<workspace>/work/finish_native_cli/m68k/hello",
+        "<workspace>/work/finish_native_cli/m68k/hello.o"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute actual m68k ELF through QEMU user syscall emulation",
+      "timestamp_utc": "2026-10-08T23:26:36.010860+00:00",
+      "command": [
+        "<workspace>/work/finish_native_cli/linux/usr/bin/qemu-m68k",
+        "<workspace>/work/finish_native_cli/m68k/hello"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/finish_native_cli/linux/usr/lib/x86_64-linux-gnu:<workspace>/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "generated_artifact_sha256": {
+    "hello": "782de6fa0cc3254388486dfe1e077e7b36be18122d76fdb2ca7de5cdcf385cac"
+  },
+  "toolchain": {
+    "description": "GNU Binutils m68k 2.42; QEMU user 8.2.2 (pacchetti Ubuntu estratti)"
+  }
+}

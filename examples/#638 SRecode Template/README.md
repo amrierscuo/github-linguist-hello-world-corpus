@@ -1,41 +1,35 @@
 # #638 SRecode Template
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
-
-## Obiettivo
+Voce e ordine canonici di `reference/languages.yml`.
 
 Caricare un template SRecode e inserire Hello, World!.
 
-Il file definisce AUDIENCE, contesto file e template greeting con delimitatori SRecode.
-
 ## Toolchain e riproduzione
 
-GNU Emacs con SRecode, versione da registrare
+GNU Emacs 29.3 + bundled SRecode. Eseguire dalla cartella dell'esempio:
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
-
-```text
-Emacs: caricare hello.srt nel database SRecode; in text-mode inserire file:greeting
+```sh
+emacs -Q --batch --script verify.el
 ```
 
-## Risultato atteso e stato
+Il checker abilita Semantic, compila hello.srt con srecode-compile-file e inserisce file:greeting con srecode-insert. Controlla il testo prodotto dalla risoluzione del dizionario AUDIENCE.
 
-Testo inserito contiene Hello, World!.
+`-Q` disabilita la configurazione personale di Emacs. La prova si esegue in batch.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+## Stato e prova
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Sintassi e semantica verificate il `2026-10-08T23:33:35.675753+00:00`. Risultato reale: `Hello, World!`.
 
-Impedimenti: Emacs/SRecode non disponibile; parser e inserimento pendenti.
+[Log della verifica](verification/runtime.json) con comandi, versioni, output, exit code e SHA-256 dei file effettivamente controllati.
 
 ## Fonti primarie
 
-- https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt
+- [https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt](https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.srt` | [hello.srt](hello.srt) creato, verifiche pendenti |
+| `.srt` | [hello.srt](hello.srt) sintassi e semantica verificate |

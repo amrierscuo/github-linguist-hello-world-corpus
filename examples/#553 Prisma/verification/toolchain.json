@@ -1,35 +1,51 @@
 {
   "schema_version": 1,
-  "timestamp_utc": "2026-10-08T13:34:45.526980+00:00",
+  "ordinal": 553,
+  "language": "Prisma",
+  "timestamp_utc": "2026-10-08T23:33:22.074921+00:00",
   "platform": "Windows x64",
-  "path_normalization": "Workspace/corpus/user paths normalized; ANSI colors removed.",
+  "toolchain": "Prisma 7.10.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0",
+  "path_normalization": "Absolute corpus, workspace, home and temporary build paths replaced with placeholders; source bytes preserved.",
+  "artifact_sha256": {
+    "examples/#553 Prisma/hello.prisma": "e16dd87c664ce50d161e4166c863f20816720135b1f0ed81dd21b43839c8c42b",
+    "examples/#553 Prisma/verify.py": "3f8e424630c0fe6925ea82d4e0d1303edadc92c735d9e3f71e0c16254aa2a9e2"
+  },
   "commands": [
     {
-      "label": "Native Prisma Schema Language validator",
       "command": [
         "node",
-        "<workspace>\\work\\tools_541_560\\npm\\node_modules\\prisma\\build\\index.js",
-        "validate",
-        "--schema",
-        "hello.prisma"
+        "--version"
       ],
-      "cwd": "<workspace>\\work\\tools_541_560\\verify_553_153445524927",
+      "cwd": "<corpus>/examples/#553 Prisma",
       "exit_code": 0,
-      "stdout": "The schema at hello.prisma is valid 🚀\n",
-      "stderr": "Prisma schema loaded from hello.prisma.\n"
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "<workspace>/work/tools_541_560/npm/node_modules/prisma/build/index.js",
+        "--version"
+      ],
+      "cwd": "<corpus>/examples/#553 Prisma",
+      "exit_code": 0,
+      "stdout": "prisma               : 7.10.0\n@prisma/client       : Not found\nOperating System     : win32\nArchitecture         : x64\nNode.js              : v22.20.0\nTypeScript           : unknown\nQuery Compiler       : enabled\nPSL                  : @prisma/prisma-schema-wasm 7.10.0-4.0edf323efd1d98336f3f0a68684b56f689b900d3\nSchema Engine        : schema-engine-cli 0edf323efd1d98336f3f0a68684b56f689b900d3 (at ../../../../work/tools_541_560/npm/node_modules/@prisma/engines/schema-engine-windows.exe)\nDefault Engines Hash : 0edf323efd1d98336f3f0a68684b56f689b900d3\nStudio               : 0.33.0\nPrisma CLI Path      : <workspace>/work/tools_541_560/npm/node_modules/prisma\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<user-home>/anaconda3/python.exe",
+        "<corpus>/examples/#553 Prisma/verify.py",
+        "<workspace>/work/tools_541_560/npm"
+      ],
+      "cwd": "<corpus>/examples/#553 Prisma",
+      "exit_code": 0,
+      "stdout": "The schema at hello.prisma is valid 🚀\nLoaded Prisma config from prisma.config.ts.\n\nPrisma schema loaded from hello.prisma.\n-- CreateTable\nCREATE TABLE \"Greeting\" (\n    \"id\" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\n    \"text\" TEXT NOT NULL DEFAULT 'Hello, World!'\n);\n\nLoaded Prisma config from prisma.config.ts.\n\nHello, World!\nPASS: Prisma SQL default applied by SQLite 3.51.0\n",
+      "stderr": ""
     }
   ],
   "syntax_verified": true,
-  "semantic_verified": false,
-  "toolchain": {
-    "name": "prisma",
-    "version": "7.10.0",
-    "manifest_sha256": "e0d96b7612a7592e62b1e2ba5b40e686e96af588bf9dafe74799b99d0b31abed",
-    "lock_sha256": "1c705a0be95266b80d651cf8f5bc9cc5101b6cf763eb0a8bf0c65bb5e49db4ea",
-    "source": "https://www.npmjs.com/package/prisma"
-  },
-  "semantic_scope": "Schema model/default validated; SQLite client generation and insertion not executed.",
-  "artifact_sha256": {
-    "examples/0553_prisma/hello.prisma": "e16dd87c664ce50d161e4166c863f20816720135b1f0ed81dd21b43839c8c42b"
-  }
+  "semantic_verified": true,
+  "semantic_scope": "Prisma valida lo schema originale e genera la migrazione SQL con migrate diff. SQLite esegue il SQL e inserisce una riga omettendo text: il valore letto deve essere Hello, World!. Config e database sono locali temporanei. Non viene dichiarata una prova del Prisma Client.",
+  "blockers": []
 }

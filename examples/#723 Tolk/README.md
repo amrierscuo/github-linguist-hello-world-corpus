@@ -1,40 +1,38 @@
 # #723 Tolk
 
-Compilare un get method Tolk che restituisce il saluto.
+Voce e ordine canonici di `reference/languages.yml`.
 
-## Toolchain
+Compila il sorgente originale e restituisce `Hello, World!` eseguendo il bytecode in una macchina virtuale locale.
 
-@ton/tolk-js 1.4.2; actual Tolk version in stdout; Node.js22.20.0
+## Toolchain e riproduzione
 
-## Procedura
+Tolk 1.4.2 + TON Sandbox 0.45.0; Node.js 22.20.0. Eseguire dalla cartella dell'esempio:
 
-npm install @ton/tolk-js; node verify.cjs build/compiled.json; invocare il get method greeting nella TVM locale.
+```sh
+npm install --no-audit --no-fund --save-exact @ton/tolk-js@1.4.2 @ton/sandbox@0.45.0 @ton/core@0.63.1 @ton/crypto@3.3.0
+node verify.cjs
+```
 
-## Risultato atteso
+Il checker compila con Tolk e carica codice e cella dati vuota nel TON Sandbox. Esegue il getter greeting nella TVM e controlla exit code 0 e stringa restituita.
 
-Hello, World!
+La verifica usa solo una VM locale e non richiede account, fondi o connessione a una blockchain.
 
-## Stato
+## Stato e prova
 
-Sintassi verificata; semantica in attesa.
+Sintassi e semantica verificate il `2026-10-08T23:31:23.792787+00:00`. Risultato reale: `Hello, World!`.
 
-Nessuna pubblicazione on-chain; compiler originale e stdlib embedded. La compilazione non attesta il valore del metodo in TVM.
-
-Verifica reale 2026-10-08T13:30:50.636083+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
-
-Requisiti residui:
-- Offline TVM evaluation of greeting pending.
+[Log della verifica](verification/runtime.json) con versioni, comandi, stdout, exit code e SHA-256 dei sorgenti e del checker. La prova riguarda questo campione e le versioni indicate.
 
 ## Fonti primarie
 
 - [https://docs.ton.org/tolk/overview](https://docs.ton.org/tolk/overview)
 - [https://github.com/ton-blockchain/tolk-js](https://github.com/ton-blockchain/tolk-js)
+- [https://github.com/ton-blockchain/sandbox](https://github.com/ton-blockchain/sandbox)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.tolk` | [hello.tolk](hello.tolk) sintassi verificata |
+| `.tolk` | [hello.tolk](hello.tolk) sintassi e semantica verificate |

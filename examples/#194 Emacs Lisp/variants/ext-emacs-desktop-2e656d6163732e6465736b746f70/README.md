@@ -1,35 +1,15 @@
-# 0194 Emacs Lisp — variante `.emacs.desktop`
+# #194 Emacs Lisp variante `.emacs.desktop`
 
-Ruolo: Desktop Emacs Lisp: ripristina una variabile globale; non script init duplicato.
+File originale con ruolo specifico del suffisso. Eseguito esplicitamente con GNU Emacs 29.3, senza ereditare la verifica di un altro file.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#194 Emacs Lisp/hello.el; contenuto adattato/originale per questo suffisso.
+Dalla cartella principale dell'esempio:
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
-
-## Comando o procedura di verifica
-
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
-
-```text
-emacs -Q --batch -l hello.emacs.desktop --eval "(princ corpus-greeting)"
+```sh
+emacs -Q --batch --eval '(require '"'"'desktop)' --load variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop --eval '(progn (unless (equal corpus-greeting "Hello, World!") (error "Wrong restored greeting")) (princ corpus-greeting))'
 ```
 
-Risultato atteso: Hello, World!
+Risultato reale `Hello, World!`, exit 0. Sintassi e semantica verificate il `2026-10-08T23:33:35.178799+00:00`.
 
-## Stato
+[Log della verifica](../../verification/runtime.json) con comando e SHA-256 di questo file.
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
-
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
-
-## Fonti primarie
-
-- [https://github.com/emacs-mirror/emacs/blob/master/doc/lispref/streams.texi](https://github.com/emacs-mirror/emacs/blob/master/doc/lispref/streams.texi)
-- [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)
-- [https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html)
+La fixture desktop ripristina corpus-greeting tramite caricamento Lisp. Il ripristino grafico di una sessione non fa parte della prova.

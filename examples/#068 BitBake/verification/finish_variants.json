@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:31:24.573684+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "path_normalization": "Only absolute workspace/corpus paths replaced by placeholders; source bytes unchanged. All runtime products remain in isolated work directories.",
+  "artifact_sha256": {
+    "examples/#068 BitBake/meta-hello/hello_1.0.bb": "3b8bd320b854dcbbd4f1ed5a0da65016667905ce3b8eabc6967a4258b1d9f57e",
+    "examples/#068 BitBake/build/conf/bblayers.conf": "cc297d22bd36f8f4c3d1223f57e499e32b0dcef48330f461840fc0d1ebe0a3e8",
+    "examples/#068 BitBake/meta-hello/classes/base.bbclass": "c5f9b3b4dd3d286033444f6dad26c6cc0ddd270bbbb4932928364ce4a6b944e3",
+    "examples/#068 BitBake/meta-hello/conf/bitbake.conf": "cc34738867b70a378c508828f12623a9efe80231b3167df7f992c0963014bdb5",
+    "examples/#068 BitBake/meta-hello/conf/layer.conf": "f8906724299c438db641920b468256f806263361a58874209b35a93b322f4ea4",
+    "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/hello_1.0.bb": "1496dc662a3a77b71646c974adc8847180cad1bc4b6a147cc54bd5880e7134ea",
+    "examples/#068 BitBake/variants/ext-bbappend-2e6262617070656e64/hello_1.0.bbappend": "2721f0319e22960ec2cd67c142dbec74eabf7d4018191f92bc3d8e6356f41025",
+    "examples/#068 BitBake/variants/ext-inc-2e696e63/hello.inc": "31709e6870ef89ffb69a3790ccd5c43ba96214f70b9234d0bbc2e2445b07463a",
+    "examples/#068 BitBake/variants/ext-inc-2e696e63/hello_1.0.bb": "2ab4132b085ecb869ec91fdbf42ece05941581dacf1911d1f09261f99ade74d3"
+  },
+  "commands": [
+    {
+      "label": "Create private en_US.UTF-8 locale (no system locale change)",
+      "timestamp_utc": "2026-10-08T23:30:18.942549+00:00",
+      "command": [
+        "localedef",
+        "--no-archive",
+        "-i",
+        "en_US",
+        "-f",
+        "UTF-8",
+        "<workspace>/work/finish_native_cli/locale/en_US.UTF-8"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "BitBake real version with private locale",
+      "timestamp_utc": "2026-10-08T23:30:20.897007+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "--version"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake/example/build",
+      "exit_code": 0,
+      "stdout": "BitBake Build Tool Core version 2.9.1\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake/example/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Native BitBake metadata parsing",
+      "timestamp_utc": "2026-10-08T23:30:22.864844+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "-p"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake/example/build",
+      "exit_code": 0,
+      "stdout": "WARNING: Layer corpushello should set LAYERSERIES_COMPAT_corpushello in its conf/layer.conf file to list the core layer names it is compatible with.\nLoading cache...done.\nLoaded 0 entries from dependency cache.\nParsing recipes...done.\nParsing of 1 .bb files complete (0 cached, 1 parsed). 1 targets, 0 skipped, 0 masked, 0 errors.\n\nSummary: There was 1 WARNING message.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake/example/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Execute original BitBake Python do_build task",
+      "timestamp_utc": "2026-10-08T23:30:26.878625+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "hello"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake/example/build",
+      "exit_code": 0,
+      "stdout": "WARNING: Layer corpushello should set LAYERSERIES_COMPAT_corpushello in its conf/layer.conf file to list the core layer names it is compatible with.\nLoading cache...done.\nLoaded 1 entries from dependency cache.\nNOTE: Resolving any missing task queue dependencies\nInitialising tasks...done.\nNOTE: No setscene tasks\nNOTE: Executing Tasks\nNOTE: Running task 1 of 1 (/tmp/corpus_finish_bitbake/example/build/../meta-hello/hello_1.0.bb:do_build)\nNOTE: recipe None: task do_build: Started\nHello, World!\nNOTE: recipe None: task do_build: Succeeded\nNOTE: Tasks Summary: Attempted 1 tasks of which 0 didn't need to be rerun and all succeeded.\n\nSummary: There was 1 WARNING message.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake/example/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Stop only the isolated BitBake server",
+      "timestamp_utc": "2026-10-08T23:30:34.144942+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "--kill-server"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake/example/build",
+      "exit_code": 0,
+      "stdout": "NOTE: bitbake server is not running.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake/example/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Parse actual BitBake variant ext-bbappend-2e6262617070656e64",
+      "timestamp_utc": "2026-10-08T23:31:24.876397+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "-p"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build",
+      "exit_code": 0,
+      "stdout": "WARNING: Layer corpushello should set LAYERSERIES_COMPAT_corpushello in its conf/layer.conf file to list the core layer names it is compatible with.\nLoading cache...done.\nLoaded 0 entries from dependency cache.\nParsing recipes...done.\nParsing of 1 .bb files complete (0 cached, 1 parsed). 1 targets, 0 skipped, 0 masked, 0 errors.\n\nSummary: There was 1 WARNING message.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Execute actual BitBake variant ext-bbappend-2e6262617070656e64",
+      "timestamp_utc": "2026-10-08T23:31:29.372729+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "hello",
+        "-c",
+        "build"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build",
+      "exit_code": 0,
+      "stdout": "WARNING: Layer corpushello should set LAYERSERIES_COMPAT_corpushello in its conf/layer.conf file to list the core layer names it is compatible with.\nLoading cache...done.\nLoaded 1 entries from dependency cache.\nNOTE: Resolving any missing task queue dependencies\nInitialising tasks...done.\nNOTE: No setscene tasks\nNOTE: Executing Tasks\nNOTE: Running task 1 of 1 (/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build/../meta-hello/hello_1.0.bb:do_build)\nNOTE: recipe None: task do_build: Started\nHello, World!\nNOTE: recipe None: task do_build: Succeeded\nNOTE: Tasks Summary: Attempted 1 tasks of which 0 didn't need to be rerun and all succeeded.\n\nSummary: There was 1 WARNING message.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Shutdown only variant server ext-bbappend-2e6262617070656e64",
+      "timestamp_utc": "2026-10-08T23:31:35.186935+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "--kill-server"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build",
+      "exit_code": 0,
+      "stdout": "NOTE: bitbake server is not running.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake_variants/ext-bbappend-2e6262617070656e64/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Parse actual BitBake variant ext-inc-2e696e63",
+      "timestamp_utc": "2026-10-08T23:31:37.429050+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "-p"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build",
+      "exit_code": 0,
+      "stdout": "WARNING: Layer corpushello should set LAYERSERIES_COMPAT_corpushello in its conf/layer.conf file to list the core layer names it is compatible with.\nLoading cache...done.\nLoaded 0 entries from dependency cache.\nParsing recipes...done.\nParsing of 1 .bb files complete (0 cached, 1 parsed). 1 targets, 0 skipped, 0 masked, 0 errors.\n\nSummary: There was 1 WARNING message.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Execute actual BitBake variant ext-inc-2e696e63",
+      "timestamp_utc": "2026-10-08T23:31:42.061089+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "hello",
+        "-c",
+        "build"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build",
+      "exit_code": 0,
+      "stdout": "WARNING: Layer corpushello should set LAYERSERIES_COMPAT_corpushello in its conf/layer.conf file to list the core layer names it is compatible with.\nLoading cache...done.\nLoaded 1 entries from dependency cache.\nNOTE: Resolving any missing task queue dependencies\nInitialising tasks...done.\nNOTE: No setscene tasks\nNOTE: Executing Tasks\nNOTE: Running task 1 of 1 (/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build/../meta-hello/hello_1.0.bb:do_build)\nNOTE: recipe None: task do_build: Started\nHello, World!\nNOTE: recipe None: task do_build: Succeeded\nNOTE: Tasks Summary: Attempted 1 tasks of which 0 didn't need to be rerun and all succeeded.\n\nSummary: There was 1 WARNING message.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    },
+    {
+      "label": "Shutdown only variant server ext-inc-2e696e63",
+      "timestamp_utc": "2026-10-08T23:31:48.846254+00:00",
+      "command": [
+        "python3",
+        "<workspace>/work/tools_61_80/bitbake-2.10/bin/bitbake",
+        "--kill-server"
+      ],
+      "cwd": "/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build",
+      "exit_code": 0,
+      "stdout": "NOTE: bitbake server is not running.\n",
+      "stderr": "",
+      "environment": {
+        "LOCPATH": "<workspace>/work/finish_native_cli/locale",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "BBPATH": "/tmp/corpus_finish_bitbake_variants/ext-inc-2e696e63/build",
+        "BB_ENV_PASSTHROUGH_ADDITIONS": "LOCPATH LANG LC_ALL"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "variants": [
+    {
+      "variant": "ext-bbappend-2e6262617070656e64",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "command_indices": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "variant": "ext-inc-2e696e63",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "command_indices": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "harness_note": "Only temporary layer discovery BBFILES extends .bb with .bbappend; canonical recipe/variant bytes are unchanged and source checksums recorded."
+}

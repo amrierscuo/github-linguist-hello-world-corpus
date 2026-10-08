@@ -3,11 +3,11 @@
 | Copertura | Stato |
 | --- | ---: |
 | Voci canoniche con artefatti o bozze | 836 / 836 |
-| Voci con sintassi verificata per il campione principale | 518 / 836 |
-| Voci con semantica verificata per il campione principale | 468 / 836 |
-| Coppie linguaggio ed estensione con file | 1737 / 1749 |
-| Estensioni distinte con artefatti principali | 1479 / 1489 |
-| Coppie ancora senza artefatto | 12 |
+| Voci con sintassi verificata per il campione principale | 530 / 836 |
+| Voci con semantica verificata per il campione principale | 490 / 836 |
+| Coppie linguaggio ed estensione con file | 1738 / 1749 |
+| Estensioni distinte con artefatti principali | 1480 / 1489 |
+| Coppie ancora senza artefatto | 11 |
 
 Le 836 voci includono programmi, dati, markup e prosa. Le 1.749 coppie linguaggio ed estensione tengono distinti i suffissi condivisi.
 Le estensioni non sono 836 linguaggi aggiuntivi e un linguaggio verificato non implica che tutte le sue varianti siano state verificate.

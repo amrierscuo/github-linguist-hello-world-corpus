@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:32:27.334394+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "toolchain": "GNAT 13.3.0; GCC Ada 13.3.0",
+  "path_normalization": "Only workspace, corpus, example, scratch and home paths replaced by placeholders. Source bytes unchanged.",
+  "commands": [
+    {
+      "command": [
+        "gnatmake",
+        "--version"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "GNATMAKE 13.3.0\nCopyright (C) 1995-2023, Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gnatmake",
+        "hello.adb"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "x86_64-linux-gnu-gcc-13 -c hello.adb\nx86_64-linux-gnu-gnatbind-13 -x hello.ali\nx86_64-linux-gnu-gnatlink-13 hello.ali\n"
+    },
+    {
+      "command": [
+        "<example>/hello"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "Hello World\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-c",
+        "-x",
+        "ada",
+        "hello.ada",
+        "-o",
+        "hello.o"
+      ],
+      "cwd": "<example>/variants/ext-ada-2e616461",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "hello.ada:3:11: warning: file name does not match unit name, should be \"hello.adb\" [enabled by default]\n"
+    },
+    {
+      "command": [
+        "gnatbind",
+        "hello.ali"
+      ],
+      "cwd": "<example>/variants/ext-ada-2e616461",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gnatlink",
+        "hello.ali",
+        "-o",
+        "hello"
+      ],
+      "cwd": "<example>/variants/ext-ada-2e616461",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<example>/variants/ext-ada-2e616461/hello"
+      ],
+      "cwd": "<example>/variants/ext-ada-2e616461",
+      "exit_code": 0,
+      "stdout": "Hello World\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gnatmake",
+        "consumer.adb"
+      ],
+      "cwd": "<example>/variants/ext-ads-2e616473",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "x86_64-linux-gnu-gcc-13 -c consumer.adb\nx86_64-linux-gnu-gcc-13 -c greeting.ads\nx86_64-linux-gnu-gnatbind-13 -x consumer.ali\nx86_64-linux-gnu-gnatlink-13 consumer.ali\n"
+    },
+    {
+      "command": [
+        "<example>/variants/ext-ads-2e616473/consumer"
+      ],
+      "cwd": "<example>/variants/ext-ads-2e616473",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#020 Ada/hello.adb": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+    "examples/#020 Ada/variants/ext-ada-2e616461/hello.ada": "db7763fa610a2f0b6410a156984d3dd7e00bc29ee02534c3db68c6480c1a8ba0",
+    "examples/#020 Ada/variants/ext-ads-2e616473/consumer.adb": "2dd6efd103ba7fc332830f36e5074b43c55c2a96d2fbfe7856405b83f74dbe0d",
+    "examples/#020 Ada/variants/ext-ads-2e616473/greeting.ads": "b1cd7f4a70af477280d671701373c60d51e738225232dfe00feae6d2f6274676"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": []
+}

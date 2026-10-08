@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "ordinal": 638,
+  "language": "SRecode Template",
+  "timestamp_utc": "2026-10-08T23:33:35.675753+00:00",
+  "platform": "WSL Ubuntu Linux x86_64",
+  "working_directory": "examples/#638 SRecode Template",
+  "toolchain": "GNU Emacs 29.3 + bundled SRecode",
+  "source_sha256": {
+    "examples/#638 SRecode Template/hello.srt": "8246a3726cf88d6007feac5f80fea5066877173ecf87528d71db5be938691773",
+    "examples/#638 SRecode Template/verify.el": "2fcbb66fd9b1d1554829dc52785ddd9cfb06695711b8f16d3ede79c3f1f26822"
+  },
+  "steps": [
+    {
+      "command": [
+        "emacs",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Emacs 29.3\nCopyright (C) 2024 Free Software Foundation, Inc.\nGNU Emacs comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute copies of GNU Emacs\nunder the terms of the GNU General Public License.\nFor more information about these matters, see the file named COPYING.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "emacs",
+        "-Q",
+        "--batch",
+        "--script",
+        "verify.el"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nSRecode parse and expansion PASS\n",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Original GNU Emacs SRecode/Wisent compiler parses hello.srt and actual srecode-insert expands file:greeting, resolving AUDIENCE to World.",
+  "blockers": []
+}

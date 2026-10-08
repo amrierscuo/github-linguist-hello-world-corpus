@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:32:27.905963+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "toolchain": "PHP 8.3.6; Twig 3.8.0",
+  "path_normalization": "Only workspace, corpus, example, scratch and home paths replaced by placeholders. Source bytes unchanged.",
+  "commands": [
+    {
+      "command": [
+        "php",
+        "--version"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "php",
+        "-r",
+        "require \"/usr/share/php/Twig/autoload.php\"; echo \"Twig \".Twig\\Environment::VERSION.\"\\n\"; $t=new Twig\\Environment(new Twig\\Loader\\FilesystemLoader(\".\"), [\"autoescape\"=>\"html\"]); foreach ([[],[\"name\"=>\"World\"],[\"name\"=>\"<World>\"]] as $v) { echo $t->render(\"hello.twig\",$v); }"
+      ],
+      "cwd": "<example>",
+      "exit_code": 0,
+      "stdout": "Twig 3.8.0\n<h1>Hello, World!</h1>\n<h1>Hello, World!</h1>\n<h1>Hello, &lt;World&gt;!</h1>\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#728 Twig/hello.twig": "9b2a98a906684dc29d12dfb082ae925cea0723cb16ced3265ed4a913d4fde92b"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": []
+}

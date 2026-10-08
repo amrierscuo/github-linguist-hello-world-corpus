@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "ordinal": 194,
+  "language": "Emacs Lisp",
+  "timestamp_utc": "2026-10-08T23:33:35.178799+00:00",
+  "platform": "WSL Ubuntu Linux x86_64",
+  "working_directory": "examples/#194 Emacs Lisp",
+  "toolchain": "GNU Emacs 29.3",
+  "source_sha256": {
+    "examples/#194 Emacs Lisp/hello.el": "0df873fff0da8c976e0cf4344110bb2181aaf9ee0e683690f9b3d8a6608d685d",
+    "examples/#194 Emacs Lisp/variants/ext-emacs-2e656d616373/hello.emacs": "0df873fff0da8c976e0cf4344110bb2181aaf9ee0e683690f9b3d8a6608d685d",
+    "examples/#194 Emacs Lisp/variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop": "274579131fb47044f5b8c437a66490e2b51474bdfcee788c1695153347e90b67"
+  },
+  "steps": [
+    {
+      "command": [
+        "emacs",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Emacs 29.3\nCopyright (C) 2024 Free Software Foundation, Inc.\nGNU Emacs comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute copies of GNU Emacs\nunder the terms of the GNU General Public License.\nFor more information about these matters, see the file named COPYING.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "emacs",
+        "-Q",
+        "--batch",
+        "--script",
+        "hello.el"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "emacs",
+        "-Q",
+        "--batch",
+        "--load",
+        "variants/ext-emacs-2e656d616373/hello.emacs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "emacs",
+        "-Q",
+        "--batch",
+        "--eval",
+        "(require 'desktop)",
+        "--load",
+        "variants/ext-emacs-desktop-2e656d6163732e6465736b746f70/hello.emacs.desktop",
+        "--eval",
+        "(progn (unless (equal corpus-greeting \"Hello, World!\") (error \"Wrong restored greeting\")) (princ corpus-greeting))"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "scope": "Each of the .el, .emacs and .emacs.desktop files parsed and executed explicitly by GNU Emacs. The desktop fixture was loaded by desktop.el-compatible Emacs Lisp evaluation, restoring corpus-greeting; graphical session restoration is outside this proof.",
+  "blockers": []
+}

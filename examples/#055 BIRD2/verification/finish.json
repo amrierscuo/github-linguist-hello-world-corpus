@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:26:35.575018+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64",
+  "path_normalization": "Only absolute workspace/corpus paths replaced by placeholders; source bytes unchanged. All runtime products remain in isolated work directories.",
+  "artifact_sha256": {
+    "examples/#055 BIRD2/bird.conf": "90bbc66ad1db836e3032f7cd8c1af70b81cdfa2d37b92b9893dd677949e8c8b7"
+  },
+  "commands": [
+    {
+      "label": "BIRD version",
+      "timestamp_utc": "2026-10-08T23:26:35.603418+00:00",
+      "command": [
+        "<workspace>/work/tools_41_60/linux/usr/sbin/bird",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "BIRD version 2.14\n",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "BIRD isolated configuration parse",
+      "timestamp_utc": "2026-10-08T23:26:35.653731+00:00",
+      "command": [
+        "<workspace>/work/tools_41_60/linux/usr/sbin/bird",
+        "-p",
+        "-c",
+        "<corpus>/examples/#055 BIRD2/bird.conf"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Runtime evaluation of GREETING by genuine BIRD client",
+      "timestamp_utc": "2026-10-08T23:26:35.798455+00:00",
+      "command": [
+        "<workspace>/work/tools_41_60/linux/usr/sbin/birdc",
+        "-s",
+        "/tmp/corpus_finish_bird.sock",
+        "eval",
+        "GREETING"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "BIRD 2.14 ready.\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Shutdown isolated BIRD daemon",
+      "timestamp_utc": "2026-10-08T23:26:35.815376+00:00",
+      "command": [
+        "<workspace>/work/tools_41_60/linux/usr/sbin/birdc",
+        "-s",
+        "/tmp/corpus_finish_bird.sock",
+        "down"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli",
+      "exit_code": 0,
+      "stdout": "BIRD 2.14 ready.\nShutdown requested\n",
+      "stderr": "",
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Isolated daemon lifecycle (no kernel/device protocol)",
+      "command": [
+        "<workspace>/work/tools_41_60/linux/usr/sbin/bird",
+        "-f",
+        "-c",
+        "<corpus>/examples/#055 BIRD2/bird.conf",
+        "-s",
+        "/tmp/corpus_finish_bird.sock",
+        "-P",
+        "/tmp/corpus_finish_bird.pid"
+      ],
+      "cwd": "<workspace>/work/finish_native_cli/bird",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "2026-10-09 01:26:35.718 <INFO> Started\n2026-10-09 01:26:35.821 <INFO> Shutting down\n2026-10-09 01:26:35.821 <FATAL> Shutdown completed\n",
+      "process_terminated": true,
+      "environment": {
+        "LD_LIBRARY_PATH": "<workspace>/work/tools_41_60/linux/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "toolchain": {
+    "description": "BIRD 2.14, pacchetto Ubuntu estratto localmente"
+  }
+}

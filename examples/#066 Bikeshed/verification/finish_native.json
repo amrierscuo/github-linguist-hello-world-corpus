@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:35:51.294764+00:00",
+  "platform": "Windows x64",
+  "toolchain": "Bikeshed 7.1.3; Python 3.13.9",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "bikeshed",
+        "--version"
+      ],
+      "cwd": "<example-copy>",
+      "exit_code": 0,
+      "stdout": "7.1.3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "bikeshed",
+        "--die-on=everything",
+        "spec",
+        "hello.bs",
+        "hello.html"
+      ],
+      "cwd": "<example-copy>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#066 Bikeshed/hello.bs": "805285f85a8102381d48aeea65b85cfec8d8a1962082ebc10ff1ccf489fa3714"
+  },
+  "generated_html_sha256": "11f5b9eb640df83bd7315ed0fe5496f401c0b2c6227437c99083f511c4f6d974",
+  "assertions": {
+    "native_generator_exit_0": true,
+    "fatal_errors_and_warnings_rejected": true,
+    "generated_greeting_heading": "1. Greeting",
+    "generated_paragraph": "Hello, World!"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": []
+}

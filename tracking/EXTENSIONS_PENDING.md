@@ -1,11 +1,10 @@
 # Estensioni ancora da generare
 
-**12 coppie linguaggio ed estensione senza artefatto**. Ogni caso ha una ricetta o un impedimento documentato nella cartella della variante.
+**11 coppie linguaggio ed estensione senza artefatto**. Ogni caso ha una ricetta o un impedimento documentato nella cartella della variante.
 
 | Ordine | Linguaggio | Estensione | Requisito residuo |
 | ---: | --- | --- | --- |
 | #304 | [INI](../examples/%23304%20INI/README.md) | [.frm](../examples/%23304%20INI/variants/frm-f409e81b/README.md) | L’estensione include descriptor MySQL di vista legacy e file tabella binari. Senza esportazione genuina da una versione compatibile del server non si inventano metadati interni come timestamp, checksum o SQL-mode. |
-| #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | [.sj](../examples/%23494%20Objective-J/variants/sj-c6e9356b/README.md) | La variante .sj appartiene al toolchain Objective-J storico; non è stata stabilita una forma minima affidabile distinta da sorgente .j né una serializzazione nativa. |
 | #513 | [Ox](../examples/%23513%20Ox/README.md) | [.oxo](../examples/%23513%20Ox/variants/oxo-fd2a94bd/README.md) | Oggetto Ox compilato: richiede compilazione originale della versione target; nessun file binario o sorgente .ox rinominato viene prodotto. |
 | #520 | [PLSQL](../examples/%23520%20PLSQL/README.md) | [.plb](../examples/%23520%20PLSQL/variants/plb-60ff9d11/README.md) | Output del PL/SQL wrap utility, non sorgente testuale ordinario. Il wrapper Oracle originale non è disponibile: non si fabbrica una sequenza wrapped. |
 | #570 | [Python](../examples/%23570%20Python/README.md) | [.lmi](../examples/%23570%20Python/variants/lmi-9ebfe6be/README.md) | L’associazione canonica Python è nota, ma il produttore specifico di questo suffisso non è documentato da una fonte primaria identificata; non viene assunto un alias arbitrario. |

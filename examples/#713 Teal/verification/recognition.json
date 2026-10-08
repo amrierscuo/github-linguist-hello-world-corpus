@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-08T23:37:50.292667+00:00",
+  "platform": "Windows x64 / Ubuntu24.04 WSL2",
+  "path_normalization": "Only corpus/workspace paths replaced by placeholders. Source bytes unchanged. Verification runs against staging with these recorded checksums before copying exact bytes to the corpus.",
+  "toolchain": {
+    "name": "Original Teal compiler and Lua5.4.6",
+    "distribution": {
+      "url": "https://codeload.github.com/teal-language/tl/zip/refs/heads/main",
+      "sha256": "05556c2813b34a25540bd85e94181f7f933bf5a8c15b9b2d38b33b669f77c4d1"
+    },
+    "lua_binary_sha256": "389e356ce46f205fc7b1856c701a5765205ef18d849ae8fecd8e3c81548264f1"
+  },
+  "commands": [
+    {
+      "label": "Teal compiler version",
+      "timestamp_utc": "2026-10-08T23:37:50.300891+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/finish_recognition/713",
+        "--",
+        "env",
+        "LUA_PATH=<workspace>/work/tools_701_720/ubuntu/usr/share/lua/5.1/?.lua",
+        "LUA_CPATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu/lua/5.4/?.so",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<workspace>/work/tools_701_720/teal/tl-main/tl",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\713",
+      "exit_code": 0,
+      "stdout": "0.25.0-alpha+dev\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine Teal type checking",
+      "timestamp_utc": "2026-10-08T23:37:56.548340+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/finish_recognition/713",
+        "--",
+        "env",
+        "LUA_PATH=<workspace>/work/tools_701_720/ubuntu/usr/share/lua/5.1/?.lua",
+        "LUA_CPATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu/lua/5.4/?.so",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<workspace>/work/tools_701_720/teal/tl-main/tl",
+        "check",
+        "hello.tl"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\713",
+      "exit_code": 0,
+      "stdout": "========================================\nType checked hello.tl\n0 errors detected -- you can use:\n\n   tl run hello.tl\n\n       to run hello.tl as a program\n\n   tl gen hello.tl\n\n       to generate hello.lua\n",
+      "stderr": ""
+    },
+    {
+      "label": "Genuine Teal generation of Lua",
+      "timestamp_utc": "2026-10-08T23:37:56.778886+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/finish_recognition/713",
+        "--",
+        "env",
+        "LUA_PATH=<workspace>/work/tools_701_720/ubuntu/usr/share/lua/5.1/?.lua",
+        "LUA_CPATH=<workspace>/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu/lua/5.4/?.so",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "<workspace>/work/tools_701_720/teal/tl-main/tl",
+        "gen",
+        "hello.tl"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\713",
+      "exit_code": 0,
+      "stdout": "Wrote: hello.lua\n",
+      "stderr": ""
+    },
+    {
+      "label": "Native Lua execution of newly generated Teal program",
+      "timestamp_utc": "2026-10-08T23:37:57.010464+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--cd",
+        "<workspace>/work/finish_recognition/713",
+        "--",
+        "<workspace>/work/tools_201_220/linux/usr/bin/lua5.4",
+        "hello.lua"
+      ],
+      "cwd": "<workspace>\\work\\finish_recognition\\713",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#713 Teal/hello.tl": "a69b79dbaeddee0caecdcea9bd01dffab6e720f80171bff41af3fe8da6e1263e"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "generated_artifact_sha256": {
+    "hello.lua": "9c262db5d58d346aed591c86701ce14947e9f052f7c18d920ddc68f5099d963b"
+  },
+  "recognition_change": {
+    "before_sha256": "4e360776096da7929f0f6d7699e73c437ccc009af5d2edab2b615a305bcd1282",
+    "after_sha256": "a69b79dbaeddee0caecdcea9bd01dffab6e720f80171bff41af3fe8da6e1263e",
+    "policy": "Genuine syntax/comment only; no linguist-language override. Native execution of the modified sample recorded."
+  }
+}

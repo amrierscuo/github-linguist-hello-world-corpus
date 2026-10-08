@@ -1,48 +1,53 @@
 {
   "schema_version": 1,
-  "timestamp_utc": "2026-10-08T11:37:09.072307+00:00",
+  "ordinal": 42,
+  "language": "Astro",
+  "timestamp_utc": "2026-10-08T23:33:22.073690+00:00",
   "platform": "Windows x64",
-  "path_normalization": "Corpus root replaced by <corpus>, workspace root by <workspace>, user home by <user-home>, interpreter paths by named placeholders. Command path separators normalized to POSIX. Source bytes and result contents are unchanged except these path substitutions.",
+  "toolchain": "Astro 5.14.1; Node.js 22.20.0",
+  "path_normalization": "Absolute corpus, workspace, home and temporary build paths replaced with placeholders; source bytes preserved.",
   "artifact_sha256": {
-    "examples/0042_astro/package.json": "e8da769625fe5ed24935f6799910bf527d5d999db3e864a95d4778396db7049f",
-    "examples/0042_astro/verify.mjs": "9ef6cf6b3adf18e32f02d73e5fe8ae678ef6e92bde1d59fc0b47b49a3e6e4c12",
-    "examples/0042_astro/src/pages/index.astro": "d8779ead6140cf8501e8827700ec90e016f7beeafa7a317bd25bcdc8c6ce0d78"
+    "examples/#042 Astro/verify.mjs": "c9fdc8dc379ca27010c145848c1d71e325cd23080912e92f516bcd46dfbcf080",
+    "examples/#042 Astro/src/pages/index.astro": "d8779ead6140cf8501e8827700ec90e016f7beeafa7a317bd25bcdc8c6ce0d78",
+    "examples/#042 Astro/package.json": "e8da769625fe5ed24935f6799910bf527d5d999db3e864a95d4778396db7049f"
   },
   "commands": [
     {
-      "label": "Node version",
-      "cwd": "<corpus>/examples/0042_astro",
       "command": [
-        "<node>",
+        "node",
         "--version"
       ],
+      "cwd": "<corpus>/examples/#042 Astro",
       "exit_code": 0,
       "stdout": "v22.20.0\n",
       "stderr": ""
     },
     {
-      "label": "Official Astro compiler and container runtime assertions",
-      "cwd": "<corpus>/examples/0042_astro",
       "command": [
-        "<node>",
-        "<corpus>/examples/0042_astro/verify.mjs",
-        "<workspace>/work/tools_41_60/node",
-        "<corpus>/examples/0042_astro/src/pages/index.astro"
+        "node",
+        "<workspace>/work/tools_41_60/node/node_modules/astro/astro.js",
+        "--version"
       ],
-      "exit_code": 1,
-      "stdout": "PASS: official Astro compiler transformed the actual component\n",
-      "stderr": "file:///<workspace>/work/tools_41_60/node/verified-hello-component.mjs:19\n  createMetadata as $$createMetadata\n  ^^^^^^^^^^^^^^\nSyntaxError: The requested module 'astro/compiler-runtime' does not provide an export named 'createMetadata'\n    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)\n    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async file:///<corpus>/examples/0042_astro/verify.mjs:22:32\n\nNode.js v22.20.0\n"
+      "cwd": "<corpus>/examples/#042 Astro",
+      "exit_code": 0,
+      "stdout": "\n   astro  v5.14.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "<corpus>/examples/#042 Astro/verify.mjs",
+        "<workspace>/work/tools_41_60/node",
+        "<corpus>/examples/#042 Astro/src/pages/index.astro"
+      ],
+      "cwd": "<corpus>/examples/#042 Astro",
+      "exit_code": 0,
+      "stdout": "01:33:24 [vite] Re-optimizing dependencies because vite config has changed\n01:33:24 [content] Syncing content\n01:33:24 [content] Synced content\n01:33:24 [types] Generated 245ms\n01:33:24 [build] output: \"static\"\n01:33:24 [build] mode: \"static\"\n01:33:24 [build] directory: <workspace>/work/tools_41_60/node/<astro-build>/dist/\n01:33:24 [build] Collecting build info...\n01:33:24 [build] ✓ Completed in 259ms.\n01:33:24 [build] Building static entrypoints...\n01:33:25 [vite] ✓ built in 726ms\n01:33:25 [build] ✓ Completed in 786ms.\n\n generating static routes \n01:33:25 ▶ src/pages/index.astro\n01:33:25   └─ /index.html (+12ms) \n01:33:25 ✓ Completed in 29ms.\n\n01:33:25 [build] 1 page(s) built in 1.09s\n01:33:25 [build] Complete!\n<!DOCTYPE html><html lang=\"en\"> <head><meta charset=\"utf-8\"><title>Corpus greeting</title></head> <body><h1>Hello, World!</h1></body></html>\nPASS: official Astro static renderer evaluated the frontmatter and greeting\n",
+      "stderr": ""
     }
   ],
   "syntax_verified": true,
-  "semantic_verified": false,
-  "blockers": [
-    "Official compiler transform succeeds, but the compiled module requires createMetadata which the installed Astro runtime does not export; rendered HTML remains pending."
-  ],
-  "toolchain": {
-    "name": "Official Astro CLI static builder",
-    "version": "5.14.1",
-    "node_version": "v22.20.0",
-    "compiler_version": "2.13.1"
-  }
+  "semantic_verified": true,
+  "semantic_scope": "Il builder ufficiale Astro compila e renderizza il sorgente originale. Il frontmatter calcola il saluto e il file HTML prodotto contiene il titolo h1 atteso. Il vecchio container incompatibile è sostituito con la normale build statica.",
+  "blockers": []
 }

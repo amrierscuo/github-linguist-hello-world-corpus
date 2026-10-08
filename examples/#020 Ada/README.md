@@ -1,33 +1,37 @@
 # #020 Ada
 
-`hello.adb` contiene la procedura `Hello`, che chiama `Ada.Text_IO.Put_Line`
-per scrivere `Hello World` seguito da un a capo.
+Scrivere Hello World seguito da un a capo usando Ada.Text_IO.Put_Line.
 
-Toolchain richiesta: GNAT, incluso `gnatmake`, binder, linker e runtime Ada.
-Dalla cartella dell'esempio, con GNAT nel PATH:
+## Riproduzione
 
-```powershell
+Toolchain: GNAT 13.3.0; GCC Ada 13.3.0. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
+
+```text
 gnatmake hello.adb
-.\hello.exe
+./hello
+Per .ada: gcc -c -x ada hello.ada -o hello.o; gnatbind hello.ali; gnatlink hello.ali -o hello; ./hello
+Per .ads: gnatmake consumer.adb; ./consumer dalla relativa directory variants.
 ```
 
-Su Unix il secondo comando è `./hello`. Risultato atteso: una riga
-`Hello World` e terminazione senza errori.
+Risultato atteso: stdout: Hello World seguito da un a capo; exit 0.
 
-Sintassi e semantica verificate: **no**. Blocco attuale: `gnatmake` e la
-toolchain Ada non sono disponibili nell'ambiente Windows usato. Il file
-è stato confrontato con il modello documentato, senza dichiarare una
-compilazione o un'esecuzione mai effettuata.
+## Verifica
 
-Riferimenti primari: [primo programma GNAT, GCC](https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html)
-e [introduzione ad Ada, AdaCore](https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html).
+Sintassi e semantica verificate il 2026-10-08T23:32:27.334394+00:00. Le varianti hanno prove separate nel log quando consumate.
+
+[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
+
+## Fonti primarie
+
+- [https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html](https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html)
+- [https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html](https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Le verifiche dei suffissi sono registrate separatamente.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.adb` | [hello.adb](hello.adb), [consumer.adb](variants/ext-ads-2e616473/consumer.adb) creato, verifiche pendenti |
-| `.ada` | [hello.ada](variants/ext-ada-2e616461/hello.ada) creato, verifiche pendenti |
-| `.ads` | [greeting.ads](variants/ext-ads-2e616473/greeting.ads) creato, verifiche pendenti |
+| `.adb` | [hello.adb](hello.adb), [consumer.adb](variants/ext-ads-2e616473/consumer.adb) sintassi e semantica verificate |
+| `.ada` | [hello.ada](variants/ext-ada-2e616461/hello.ada) sintassi e semantica verificate |
+| `.ads` | [greeting.ads](variants/ext-ads-2e616473/greeting.ads) sintassi e semantica verificate |
