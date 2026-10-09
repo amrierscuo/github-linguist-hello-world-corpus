@@ -1,0 +1,22 @@
+{
+  "started_at_utc": "2026-10-09T06:09:16.310519+00:00",
+  "completed_at_utc": "2026-10-09T06:09:17.808191+00:00",
+  "platform": "WSL Ubuntu 24.04.3 CPython 3.12.3, Xvfb, Mesa software GL",
+  "command": "wsl -d Ubuntu -u root -- env KIVY_NO_ARGS=1 KIVY_NO_CONFIG=1 KIVY_HOME=<isolated-kivy-venv>/kivy-home KIVY_LOG_MODE=PYTHON LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a <isolated-kivy-venv>/bin/python <workspace>/outputs/github_linguist_hello_world_corpus/examples/#820 kvlang/verify_render.py",
+  "exit_code": 0,
+  "stdout": "Input: MTDev is not supported by your version of linux\nTraceback (most recent call last):\n  File \"<isolated-kivy-venv>/lib/python3.12/site-packages/kivy/input/providers/__init__.py\", line 41, in <module>\n    import kivy.input.providers.mtdev\n  File \"<isolated-kivy-venv>/lib/python3.12/site-packages/kivy/input/providers/mtdev.py\", line 94, in <module>\n    from kivy.lib.mtdev import Device, \\\n  File \"<isolated-kivy-venv>/lib/python3.12/site-packages/kivy/lib/mtdev.py\", line 30, in <module>\n    libmtdev = cdll.LoadLibrary('libmtdev.so.1')\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/ctypes/__init__.py\", line 460, in LoadLibrary\n    return self._dlltype(name)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/ctypes/__init__.py\", line 379, in __init__\n    self._handle = _dlopen(self._name, mode)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: libmtdev.so.1: cannot open shared object file: No such file or directory\n{\"kivy\": \"2.3.1\", \"widget\": \"Label\", \"text\": \"Hello, World!\", \"texture_size\": [202, 43], \"source_sha256\": \"78401035be1fa474d5cee107d9bbf5332076caa1bc195321b49269e63dfbc429\", \"image\": \"rendered.png\", \"image_sha256\": \"c05303e0946f2fbf486e82f22b0333925e7e3132dbe8d612192aaf670b815087\"}\n",
+  "stderr": "",
+  "scope": "Native consumer and generated pixels; visual review is recorded separately.",
+  "path_normalization": "Local workspace and isolated venv prefixes replaced; stdout/stderr otherwise preserved.",
+  "input_sha256": {
+    "examples/#820 kvlang/hello.kv": "78401035be1fa474d5cee107d9bbf5332076caa1bc195321b49269e63dfbc429",
+    "examples/#820 kvlang/verify_render.py": "2e253d10a31c2a939dc0ad1473de4e872d07a3d51dcec1c58b9af1fc5dd474d9"
+  },
+  "visual_review": {
+    "reviewed_at_utc": "2026-10-09T06:10:32.870847+00:00",
+    "image": "rendered.png",
+    "image_sha256": "c05303e0946f2fbf486e82f22b0333925e7e3132dbe8d612192aaf670b815087",
+    "result": "Hello, World! leggibile nel rendering effettivamente prodotto dal consumatore.",
+    "no_greeting_text_overlay": true
+  }
+}

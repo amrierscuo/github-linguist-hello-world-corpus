@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-09T06:04:44.470794+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64; native V C backend and GCC",
+  "commands": [
+    {
+      "timestamp_utc": "2026-10-09T06:04:40.506558+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<work>/tools_resume_compilers/v_linux/v/v",
+        "version"
+      ],
+      "cwd": "<workspace>",
+      "exit_code": 0,
+      "stdout": "V 0.5.2 7647ce1\n",
+      "stderr": ""
+    },
+    {
+      "timestamp_utc": "2026-10-09T06:04:40.640847+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "gcc",
+        "--version"
+      ],
+      "cwd": "<workspace>",
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "timestamp_utc": "2026-10-09T06:04:40.755353+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<work>/tools_resume_compilers/v_linux/v/v",
+        "-cc",
+        "gcc",
+        "-o",
+        "<work>/tools_resume_compilers/hello_v",
+        "<corpus>/examples/#740 V/hello.v"
+      ],
+      "cwd": "<workspace>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "timestamp_utc": "2026-10-09T06:04:44.470794+00:00",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "-u",
+        "root",
+        "--",
+        "<work>/tools_resume_compilers/hello_v"
+      ],
+      "cwd": "<workspace>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain": {
+    "name": "V official release 0.5.2, GCC 13.3.0",
+    "version": "V 0.5.2 7647ce1",
+    "release_url": "https://github.com/vlang/v/releases/tag/0.5.2",
+    "archive_url": "https://github.com/vlang/v/releases/download/0.5.2/v_linux.zip",
+    "archive_sha256": "86caf9e70c3342d48ef19eb4f6c47b709f18c90ae86255520d5c29df6b482e23",
+    "executable_sha256": "c76888d1058a18ad28e4202e4b76b49bc40f75dd4d5369d48f231c7534d4cb03"
+  },
+  "build_outputs": {
+    "hello_native_sha256": "0bcee753a9cbfac96104dde1d31803f22aeba66cbb8f0138a3c548679057d0a4"
+  },
+  "semantic_result": {
+    "stdout": "Hello, World!\n",
+    "exit_code": 0,
+    "comparison": "exact stdout equality"
+  },
+  "artifact_sha256": {
+    "examples/#740 V/hello.v": "bf7836fac50da182bbcf8d31ebed98e83b1946ee0a256f328f10afd970517425"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "path_normalization": "Only local path strings are replaced: <corpus> is this corpus, <work> holds isolated downloaded tools and build products, <workspace> is the working directory. Verified source bytes are unchanged."
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ordinal": 353,
+  "name": "KRL",
+  "timestamp_utc": "2026-10-09T06:15:55.473354+00:00",
+  "platform": "Windows x64",
+  "toolchain": {
+    "pico-engine-core": "1.6.4",
+    "pico-framework": "0.8.1",
+    "krl-compiler": "1.5.0",
+    "krl-parser": "1.5.0",
+    "krl-stdlib": "1.5.0",
+    "memory-level": "1.0.0",
+    "charwise": "3.0.1"
+  },
+  "scope": "Original ruleset parsed, compiled, installed in a real Picolab Pico Engine core with its genuine event scheduler and standard library; corpus:hello produces exactly one greeting directive, unrelated event produces none. No HTTP server, persistent data or external service.",
+  "commands": [
+    {
+      "label": "Node version",
+      "command": [
+        "<node>",
+        "--version"
+      ],
+      "cwd": "<corpus>\\examples\\#353 KRL",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "Original KRL parser",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "<workspace>\\work\\tools_resume_workflows\\krl",
+        "<workspace>\\work\\tools_resume_workflows\\krl_ast"
+      ],
+      "cwd": "<corpus>\\examples\\#353 KRL",
+      "exit_code": 0,
+      "stdout": "PASS: authoritative Picolab KRL parser accepted original ruleset\n",
+      "stderr": ""
+    },
+    {
+      "label": "Actual final checker execution",
+      "command": [
+        "<node>",
+        "<corpus>\\examples\\#353 KRL\\verify_runtime.cjs",
+        "<workspace>\\work\\tools_resume_workflows\\krl"
+      ],
+      "cwd": "<corpus>\\examples\\#353 KRL",
+      "exit_code": 0,
+      "stdout": "{\n  \"engine\": \"pico-engine-core\",\n  \"engine_version\": \"1.6.4\",\n  \"compiler_version\": \"1.5.0\",\n  \"ruleset\": \"io.corpus.greeting\",\n  \"installed_rulesets\": [\n    \"io.corpus.greeting\"\n  ],\n  \"negative_event\": {\n    \"domain\": \"corpus\",\n    \"name\": \"unrelated\",\n    \"directives\": []\n  },\n  \"event\": {\n    \"domain\": \"corpus\",\n    \"name\": \"hello\"\n  },\n  \"directives\": [\n    {\n      \"type\": \"directive\",\n      \"name\": \"greeting\",\n      \"options\": {\n        \"message\": \"Hello, World!\"\n      },\n      \"meta\": {\n        \"rid\": \"io.corpus.greeting\",\n        \"rule_name\": \"greet\",\n        \"txnId\": \"cmv0knl7z0003iwgb884z37oa\"\n      }\n    }\n  ],\n  \"assertion\": \"PASS: installed original KRL ruleset emits greeting with message Hello, World!\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#353 KRL/hello.krl": "cc272bd7c09ed654edaa3e75f4004bb3c5462189587882047bf0a4d7caa52b83",
+    "examples/#353 KRL/verify.cjs": "5205171bd9bbd2ef9b37ce577e1a3c273661d466939c7c65b8a62e602a03f503",
+    "examples/#353 KRL/verify_runtime.cjs": "720438c0b7c988ceffd8734bbaf4ec41fde7e9b58cbe4b20a9ec4851d252c894"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "path_normalization": "Only workspace, corpus and interpreter prefixes replaced by named placeholders. Actual source bytes, tool outputs, exit codes and timestamps retained.",
+  "dependency_lock_sha256": "86607ed4d3a2320e362cb8956f036b2679be811f7a7abe00378828adce99d688"
+}

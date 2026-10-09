@@ -33,3 +33,11 @@ Requisiti residui:
 - [https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html)
 - [https://github.com/godotengine/godot/blob/4.7/servers/rendering/dummy/storage/material_storage.cpp](https://github.com/godotengine/godot/blob/4.7/servers/rendering/dummy/storage/material_storage.cpp)
 - [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)
+
+## Esecuzione reale 2026-10-09
+
+Godot 4.7.2 ufficiale renderizza realmente il CanvasItem con OpenGL 4.5 Mesa 25.2.8 llvmpipe, backend software. Readback del SubViewport 130x10: i 13 campioni RGB coincidono esattamente con i byte ASCII di Hello, World!. Anche il consumatore della variante .gdshaderinc supera la stessa prova. Il warning V-Sync è conservato nel log e non altera i pixel; audio Dummy esplicito.
+
+```sh
+LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a godot --path variants/ext-gdshaderinc-2e6764736861646572696e63 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --script res://verify_render.gd -- res://consumer.gdshader
+```

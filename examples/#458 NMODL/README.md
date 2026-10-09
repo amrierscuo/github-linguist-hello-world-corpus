@@ -1,47 +1,45 @@
 # #458 NMODL
 
-Voce canonica `NMODL`, tipo `programming`, language_id `136456478`.
+Voce canonica `NMODL`, tipo `programming`, `language_id: 136456478`.
 
-Tradurre un meccanismo NMODL che stampa il saluto durante INITIAL.
+## Obiettivo
+
+Compilare e caricare un meccanismo NMODL che stampa il saluto durante `INITIAL`, eseguito da `finitialize` in NEURON.
 
 ## Toolchain e riproduzione
 
-Original NEURON NMODL-to-C compiler — NEURON Ubuntu package 8.2.2-6build2. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Prova autentica con NEURON 9.0.1, CPython 3.12.3 e GCC 13.3.0 su Ubuntu 24.04 WSL2 x86_64. Il runtime deriva dal wheel Linux ufficiale NEURON; compilatore e header di sviluppo devono essere disponibili.
 
-Compiler nocmodl autentico da NEURON 8.2.2-6build2; esecuzione richiede librerie e linking del runtime NEURON.
+Copiare `greeting.mod` e `check.hoc` in una directory temporanea. Dopo aver installato NEURON nel Python scelto e reso disponibili `nrnivmodl` e `nrniv` nel PATH:
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
-
-```text
-nrnivmodl greeting.mod; nrniv -nogui check.hoc
+```sh
+nrnivmodl greeting.mod
+nrniv -nogui check.hoc
 ```
 
-Risultato atteso: Hello, World!
+`nrnivmodl` traduce il sorgente in C++, compila il meccanismo e crea `x86_64/libnrnmech.so`. `nrniv` carica la libreria dalla directory corrente. `check.hoc` crea una sezione `soma`, esegue `insert greeting` e chiama `finitialize(-65)`.
 
-## Stato ed evidenza
+## Risultato atteso e stato
 
-Artefatto **creato**; sintassi **verificata**; semantica **in attesa**.
+L'esecuzione di `INITIAL` stampa una riga `Hello, World!`. La console HOC mostra anche il valore di ritorno `1` di `finitialize`; il banner e l'elenco dei meccanismi caricati sono su stderr.
 
-nocmodl traduce il sorgente in C senza errore. Caricamento, insert e finitialize non sono eseguiti; semantica pending.
+Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
 
-Requisiti residui:
+La traduzione, la compilazione e il linking terminano con exit code 0. Il processo NEURON carica `greeting.mod`, lo inserisce nella sezione e produce il saluto una sola volta durante l'inizializzazione. La prova precedente con `nocmodl` 8.2.2 resta in [verification/native.json](verification/native.json). La nuova prova completa è [verification/runtime.json](verification/runtime.json), con versioni, comandi, output, ambiente rilevante e SHA-256 dei sorgenti e della libreria compilata. Le sorgenti originali non sono cambiate.
 
-- NMODL parser/code generator accepted the mechanism; linking/loading the mechanism and finitialize in NEURON are not performed.
-
-Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+Il log di compilazione conserva un avviso `make` sullo scarto di clock del filesystem montato, pari a 0,013 secondi. Linking, caricamento ed esecuzione del meccanismo sono riusciti. I prodotti compilati e le dipendenze restano fuori dal corpus.
 
 ## Fonti primarie
 
-- [https://www.neuronsimulator.org/en/latest/nmodl/NMODL_language.html](https://www.neuronsimulator.org/en/latest/nmodl/NMODL_language.html)
+- [Linguaggio NMODL e INITIAL](https://www.neuronsimulator.org/en/latest/nmodl/language/nmodl.html#initial)
+- [Installazione ufficiale e compilazione dei file MOD](https://www.neuronsimulator.org/en/latest/install/install_instructions.html)
+- [Distribuzione NEURON 9.0.1](https://pypi.org/project/neuron/9.0.1/)
+- [Documentazione originaria dell'esempio](https://www.neuronsimulator.org/en/latest/nmodl/NMODL_language.html)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.mod` | [greeting.mod](greeting.mod) sintassi verificata |
+| `.mod` | [greeting.mod](greeting.mod) sintassi e semantica verificate |

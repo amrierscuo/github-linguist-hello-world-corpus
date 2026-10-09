@@ -1,37 +1,17 @@
-# 0502 — OpenCL: `.opencl`
+# #502 OpenCL variante .opencl
 
-Ruolo: Alias di estensione per lo stesso formato testuale del sorgente principale.
+Il file `hello.opencl` è una copia byte-identica del sorgente originale `hello.cl`; il test nativo è stato eseguito separatamente sul suo percorso.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#502 OpenCL/hello.cl.
+Stato individuale: artefatto creato, sintassi verificata, semantica verificata.
 
-Toolchain richiesta: Clang18.1.3 originale per OpenCL C1.2; runtime/device non predisposto. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Dalla directory principale dell'esempio:
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
-
-```text
-Usare la toolchain del README principale sul file hello.opencl; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
+```sh
+python3 verify_runtime.py variants/opencl-1927a002/hello.opencl
 ```
 
-Risultato atteso: kernel valido; dispatch di 13 elementi produce Hello, World!.
+Toolchain, prerequisiti e cache esterne sono descritti nel [README principale](../../README.md). PoCL 5.0+debian compila OpenCL C 1.2 sul dispositivo CPU, esegue 13 work-item e il readback produce `Hello, World!`. Otto byte sentinella restano invariati. Questo risultato riguarda l'esecuzione CPU software.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+[Prova runtime](verification/runtime.json) con comando reale, versioni, exit code 0, output e hash. La prova precedente di sola sintassi è conservata in [native.json](verification/native.json).
 
-Impedimenti:
-
-- Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati.
-
-SHA-256 dei file della variante:
-
-- `hello.opencl`: `e0819012bd9433a1443054f2d398e8f78cbb078fb35a76d0dc49dbcf205b0a9e`
-
-Fonti primarie:
-
-- https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html
-
-Prova aggiuntiva realmente eseguita:
-
-Clang originale -x cl -cl-std=CL1.2 -fsyntax-only sul file .opencl. Nessuna GPU/device o esecuzione del kernel.
-
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
-
-Tool/versione osservata: 18.1.3
+Fonti primarie: [Khronos OpenCL C](https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html), [PoCL](https://portablecl.org/docs/html/drivers.html), [PyOpenCL](https://documen.tician.de/pyopencl/).

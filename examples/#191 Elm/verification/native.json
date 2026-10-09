@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-09T06:07:31.723968+00:00",
+  "platform": "Windows x64; Elm0.19.1; Node22.20.0; jsdom26.1.0; actual in-app browser inspection",
+  "commands": [
+    {
+      "timestamp_utc": "2026-10-09T06:04:44.582564+00:00",
+      "command": [
+        "<work>\\tools_resume_compilers\\npm\\node_modules\\.bin\\elm.cmd",
+        "--version"
+      ],
+      "cwd": "<work>\\tools_resume_compilers\\elm-project",
+      "exit_code": 0,
+      "stdout": "0.19.1\n",
+      "stderr": ""
+    },
+    {
+      "timestamp_utc": "2026-10-09T06:04:44.789107+00:00",
+      "command": [
+        "<work>\\tools_resume_compilers\\npm\\node_modules\\.bin\\elm.cmd",
+        "make",
+        "src/Main.elm",
+        "--output=index.html"
+      ],
+      "cwd": "<work>\\tools_resume_compilers\\elm-project",
+      "exit_code": 0,
+      "stdout": "Starting downloads...\n\n  + elm/html 1.0.0\n  + elm/virtual-dom 1.0.3\n  + elm/core 1.0.5\n  + elm/json 1.1.3\n\nVerifying dependencies (1/4)\nVerifying dependencies (2/4)\nVerifying dependencies (3/4)\nVerifying dependencies (4/4)\n                            \nDependencies ready!\nCompiling ...\nCompiling (1)\nSuccess! Compiled 1 module.\n\n    Main ---> index.html\n\n",
+      "stderr": ""
+    },
+    {
+      "timestamp_utc": "2026-10-09T06:07:31.723968+00:00",
+      "command": [
+        "node",
+        "<corpus>/examples/#191 Elm/verification/check_dom.cjs",
+        "<work>/tools_resume_compilers/elm-project/index.html"
+      ],
+      "cwd": "<workspace>",
+      "environment": {
+        "NODE_PATH": "<work>/tools_resume_compilers/npm/node_modules"
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"text\": \"Hello, World!\",\n  \"text_nodes\": [\n    \"Hello, World!\"\n  ],\n  \"errors\": [],\n  \"elm_main_available\": true,\n  \"generated_html_sha256\": \"999e5528dffba32b7786739bb505bbe6aa27f5519f04e9e569cfd670edfee79f\",\n  \"node\": \"v22.20.0\",\n  \"jsdom\": \"26.1.0\",\n  \"execution_disabled_control\": \"empty mount, Elm undefined\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain": {
+    "compiler_version": "0.19.1",
+    "npm_compiler_package": "elm@0.19.1-6",
+    "node_version": "v22.20.0",
+    "jsdom_version": "26.1.0",
+    "dependencies": {
+      "elm/core": "1.0.5",
+      "elm/html": "1.0.0",
+      "elm/json": "1.1.3",
+      "elm/virtual-dom": "1.0.3"
+    }
+  },
+  "source_copy_check": "elm.json and src/Main.elm in isolated build project are byte-identical to the canonical example; hashes below bind exact inputs.",
+  "semantic_result": {
+    "text": "Hello, World!",
+    "text_nodes": [
+      "Hello, World!"
+    ],
+    "errors": [],
+    "elm_main_available": true,
+    "generated_html_sha256": "999e5528dffba32b7786739bb505bbe6aa27f5519f04e9e569cfd670edfee79f",
+    "node": "v22.20.0",
+    "jsdom": "26.1.0",
+    "execution_disabled_control": "empty mount, Elm undefined"
+  },
+  "build_outputs": {
+    "generated_html_sha256": "999e5528dffba32b7786739bb505bbe6aa27f5519f04e9e569cfd670edfee79f"
+  },
+  "browser_observation": {
+    "observer": "root agent using actual in-app browser UI tools",
+    "page": "http://127.0.0.1:8637/",
+    "accessibility_text": "Hello, World!",
+    "visible_text": "Hello, World!",
+    "console": "Only Elm DEV-mode warning, no errors, as reported by root agent.",
+    "screenshot": "examples/#191 Elm/verification/browser.png",
+    "screenshot_sha256": "0a15dea447bfd0b27ecf74fb43693124842a3d54c4cc3dbaff02a35469b9b94c",
+    "evidence_origin": "Parent agent explicitly reported actual browser inspection and saved screenshot in this turn."
+  },
+  "verification_scope": "Elm compiler execution, generated JavaScript initialization in real jsdom DOM, execution-disabled control, and actual browser visual/accessibility observation. jsdom alone is not claimed to measure pixels.",
+  "artifact_sha256": {
+    "examples/#191 Elm/elm.json": "9e70f3a315200eaecabeaa0b908fd8c8a6d76454553a08c4e57b1514daf68b1f",
+    "examples/#191 Elm/src/Main.elm": "38f1f3dd00f4d946549b521b4ec5579ba0e4c09cdfa0dcd715475a144a451fc7",
+    "examples/#191 Elm/verification/check_dom.cjs": "74c9c956f995854b3e20954cfe9beb8ceaddd5b514ca75c93ab15935244a02d3"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "path_normalization": "Only local path strings are replaced: <corpus> is this corpus, <work> holds isolated downloaded tools and build products, <workspace> is the working directory. Verified source bytes are unchanged."
+}

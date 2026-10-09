@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "ordinal": 502,
+  "name": "OpenCL",
+  "timestamp_utc": "2026-10-09T06:15:12.219673+00:00",
+  "platform": "Ubuntu24.04 WSL2 x86_64",
+  "toolchain": {
+    "PoCL": "5.0+debian",
+    "LLVM": "16.0.6",
+    "PyOpenCL": "2023.1.3",
+    "NumPy": "1.26.4",
+    "Python": "3.12.3"
+  },
+  "scope": "Both original extension files are independently built by the actual PoCL CPU OpenCL compiler as OpenCL C1.2, dispatched with 13 global work-items, and read back from a real OpenCL buffer. Eight trailing sentinel bytes remain unchanged. This is software CPU execution, not a physical GPU claim.",
+  "commands": [
+    {
+      "label": "Python version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "Ubuntu original runtime packages",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "dpkg-query",
+        "-W",
+        "pocl-opencl-icd",
+        "libpocl2",
+        "python3-pyopencl",
+        "python3-numpy",
+        "ocl-icd-libopencl1"
+      ],
+      "exit_code": 0,
+      "stdout": "libpocl2\t\nocl-icd-libopencl1:amd64\t2.3.2-1build1\npocl-opencl-icd:amd64\t5.0-2.1build3\npython3-numpy\t1:1.26.4+ds-6ubuntu1\npython3-pyopencl\t2023.1.3-1build2\n",
+      "stderr": ""
+    },
+    {
+      "label": "OpenCL platform and device discovery",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "clinfo",
+        "-l"
+      ],
+      "exit_code": 0,
+      "stdout": "Platform #0: Portable Computing Language\n `-- Device #0: cpu-haswell-Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz\n",
+      "stderr": ""
+    },
+    {
+      "label": "Actual native runtime library hashes",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "/usr/bin/python3",
+        "-c",
+        "from pathlib import Path;import hashlib,json;files=[Path(\"/usr/lib/x86_64-linux-gnu/libpocl.so.2\").resolve(),Path(\"/usr/lib/x86_64-linux-gnu/libOpenCL.so.1\").resolve()];print(json.dumps({str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}))"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"/usr/lib/x86_64-linux-gnu/libpocl.so.2.12.0\": \"15836b3851d7f3ddaf75259411a33350de542998b6bbed870c63a30415070303\", \"/usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0\": \"4f604bad7420b753bad559186002c58064d5c97813b107ea11c249fb1820b33a\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "Actual OpenCL build, dispatch and buffer readback for variants/opencl-1927a002/hello.opencl",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "POCL_CACHE_DIR=<cache>/pocl",
+        "PYOPENCL_CACHE_DIR=<cache>/pyopencl",
+        "/usr/bin/python3",
+        "<corpus>/examples/#502 OpenCL/verify_runtime.py",
+        "<corpus>/examples/#502 OpenCL/variants/opencl-1927a002/hello.opencl"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"source\": \"hello.opencl\",\n  \"source_sha256\": \"e0819012bd9433a1443054f2d398e8f78cbb078fb35a76d0dc49dbcf205b0a9e\",\n  \"pyopencl_version\": \"2023.1.3\",\n  \"numpy_version\": \"1.26.4\",\n  \"platform\": {\n    \"name\": \"Portable Computing Language\",\n    \"vendor\": \"The pocl project\",\n    \"version\": \"OpenCL 3.0 PoCL 5.0+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 16.0.6, SLEEF, DISTRO, POCL_DEBUG\"\n  },\n  \"device\": {\n    \"name\": \"cpu-haswell-Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz\",\n    \"type\": \"CPU\",\n    \"version\": \"OpenCL 3.0 PoCL HSTR: cpu-x86_64-pc-linux-gnu-haswell\",\n    \"driver_version\": \"5.0+debian\",\n    \"opencl_c_version\": \"OpenCL C 1.2 PoCL\"\n  },\n  \"build_options\": [\n    \"-cl-std=CL1.2\"\n  ],\n  \"build_log\": \"\",\n  \"global_work_items\": 13,\n  \"readback_bytes\": [\n    72,\n    101,\n    108,\n    108,\n    111,\n    44,\n    32,\n    87,\n    111,\n    114,\n    108,\n    100,\n    33\n  ],\n  \"readback_ascii\": \"Hello, World!\",\n  \"guard_bytes_unchanged\": true,\n  \"assertion\": \"PASS: real OpenCL kernel dispatch writes Hello, World! and preserves guard bytes\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "native_library_sha256": {
+    "/usr/lib/x86_64-linux-gnu/libpocl.so.2.12.0": "15836b3851d7f3ddaf75259411a33350de542998b6bbed870c63a30415070303",
+    "/usr/lib/x86_64-linux-gnu/libOpenCL.so.1.0.0": "4f604bad7420b753bad559186002c58064d5c97813b107ea11c249fb1820b33a"
+  },
+  "artifact_sha256": {
+    "examples/#502 OpenCL/variants/opencl-1927a002/hello.opencl": "e0819012bd9433a1443054f2d398e8f78cbb078fb35a76d0dc49dbcf205b0a9e",
+    "examples/#502 OpenCL/verify_runtime.py": "ad22473260acb774d3ed619bb5cd8baf8364a52a6284bfb231ca714922bf669b"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "sources": [
+    {
+      "title": "Khronos OpenCL C",
+      "url": "https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html"
+    },
+    {
+      "title": "PoCL original runtime and CPU device drivers",
+      "url": "https://portablecl.org/docs/html/drivers.html"
+    },
+    {
+      "title": "PyOpenCL original host binding documentation",
+      "url": "https://documen.tician.de/pyopencl/"
+    }
+  ],
+  "path_normalization": "Only workspace/corpus path prefixes and ephemeral cache location replaced by named placeholders; source bytes, actual runtime outputs, exit codes, timestamps and device strings preserved.",
+  "extension": ".opencl"
+}

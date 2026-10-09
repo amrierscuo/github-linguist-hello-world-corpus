@@ -1,36 +1,37 @@
 # #740 V
 
-Compilare ed eseguire V.
+Il sorgente originale compila con V e stampa `Hello, World!`.
 
-## Toolchain
+Tipo canonico `programming`, language_id `603371597`.
 
-V compiler
+## Toolchain e riproduzione
 
-## Procedura
+Prova eseguita con il compilatore ufficiale V 0.5.2 (commit `7647ce1`) e GCC 13.3.0 in Ubuntu 24.04 WSL2, architettura x86_64.
 
-v run hello.v
+Dalla cartella dell'esempio, con una cartella di output già creata:
 
-## Risultato atteso
+```sh
+v -cc gcc -o build/hello hello.v
+./build/hello
+```
 
-Hello, World!
+Il comando di compilazione termina con exit code 0. Il binario nativo restituisce esattamente `Hello, World!` seguito da newline e termina con exit code 0.
 
-## Stato
+## Stato ed evidenza
 
-Sintassi e semantica in attesa.
+Sintassi e semantica verificate. La sola presenza del file `.v` non determina questo stato: il compilatore V ha accettato i byte registrati e il binario è stato eseguito.
 
-
-
-Requisiti residui:
-- V compiler/backend C non predisposti.
+[Log nativo](verification/native.json) con comandi effettivi, timestamp UTC, versioni, stdout/stderr e SHA256 di sorgente, toolchain e prodotto compilato. I percorsi personali sono sostituiti da `<corpus>`, `<work>` e `<workspace>`; i byte del sorgente rimangono invariati.
 
 ## Fonti primarie
 
-- [https://docs.vlang.io/](https://docs.vlang.io/)
+- [Documentazione V](https://docs.vlang.io/)
+- [Release ufficiale V 0.5.2](https://github.com/vlang/v/releases/tag/0.5.2)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.v` | [hello.v](hello.v) creato, verifiche pendenti |
+| `.v` | [hello.v](hello.v) sintassi e semantica verificate |

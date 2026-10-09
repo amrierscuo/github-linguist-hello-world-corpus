@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-09T06:17:26.226123+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64, CPython 3.12.3, Mesa lavapipe CPU Vulkan",
+  "path_normalization": "Absolute corpus/workspace roots are replaced by <corpus>/<workspace>; the isolated Linux venv and runtime directory use <wgsl-venv>/<wgsl-runtime-dir>. Shader bytes and command outputs are otherwise unchanged.",
+  "commands": [
+    {
+      "label": "Compile WGSL pipeline, dispatch compute and read back storage buffer through Vulkan lavapipe",
+      "timestamp_utc": "2026-10-09T06:17:24.599623+00:00",
+      "command": [
+        "<wgsl-venv>/bin/python",
+        "verify_compute.py"
+      ],
+      "cwd": "<corpus>/examples/#761 WGSL",
+      "environment_overrides": {
+        "VK_ICD_FILENAMES": "/usr/share/vulkan/icd.d/lvp_icd.json",
+        "WGPU_BACKEND_TYPE": "Vulkan",
+        "XDG_RUNTIME_DIR": "<wgsl-runtime-dir>"
+      },
+      "exit_code": 0,
+      "stdout": "{\"adapter\": {\"adapter_type\": \"CPU\", \"architecture\": \"\", \"backend_type\": \"Vulkan\", \"description\": \"Mesa 25.2.8-0ubuntu0.24.04.2 (LLVM 20.1.2)\", \"device\": \"llvmpipe (LLVM 20.1.2, 256 bits)\", \"device_id\": 0, \"stackgroup_max_size\": 128, \"stackgroup_min_size\": 4, \"vendor\": \"llvmpipe\", \"vendor_id\": 65541}, \"dispatch_workgroups\": [1, 1, 1], \"greeting\": \"Hello, World!\", \"readback_u32\": [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33], \"shader_sha256\": \"40f15af2ed9ca9314e2f6a2dc91480845b1a8975425ca2c79d8557ccf3bae381\", \"wgpu_native_version\": [29, 0, 1, 1], \"wgpu_version\": \"0.32.0\", \"workgroup_size\": [13, 1, 1]}\nHello, World!\n",
+      "stderr": "Forcing backend: Vulkan (6)\n"
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "Actual wgpu-native compute execution on the Mesa lavapipe CPU software Vulkan device. One workgroup of 13 shader invocations writes storage-buffer u32 values; submitted commands complete and queue.read_buffer returns the 13 ASCII codes for Hello, World!. This verifies native software-device execution, not physical GPU hardware.",
+  "runtime_report": {
+    "adapter": {
+      "adapter_type": "CPU",
+      "architecture": "",
+      "backend_type": "Vulkan",
+      "description": "Mesa 25.2.8-0ubuntu0.24.04.2 (LLVM 20.1.2)",
+      "device": "llvmpipe (LLVM 20.1.2, 256 bits)",
+      "device_id": 0,
+      "stackgroup_max_size": 128,
+      "stackgroup_min_size": 4,
+      "vendor": "llvmpipe",
+      "vendor_id": 65541
+    },
+    "dispatch_workgroups": [
+      1,
+      1,
+      1
+    ],
+    "greeting": "Hello, World!",
+    "readback_u32": [
+      72,
+      101,
+      108,
+      108,
+      111,
+      44,
+      32,
+      87,
+      111,
+      114,
+      108,
+      100,
+      33
+    ],
+    "shader_sha256": "40f15af2ed9ca9314e2f6a2dc91480845b1a8975425ca2c79d8557ccf3bae381",
+    "wgpu_native_version": [
+      29,
+      0,
+      1,
+      1
+    ],
+    "wgpu_version": "0.32.0",
+    "workgroup_size": [
+      13,
+      1,
+      1
+    ]
+  },
+  "artifact_sha256": {
+    "examples/#761 WGSL/hello.wgsl": "40f15af2ed9ca9314e2f6a2dc91480845b1a8975425ca2c79d8557ccf3bae381",
+    "examples/#761 WGSL/verify_compute.py": "ef928ad005ecf93d538013c1fb0d2b12f5ba69e419ffac63389412e259b90d44"
+  },
+  "toolchain": {
+    "name": "wgpu-py",
+    "version": "0.32.0",
+    "native_version": "29.0.1.1",
+    "source": "https://pypi.org/project/wgpu/0.32.0/",
+    "pypi_metadata_sha256": "99f3686a19a30f744b4815cc0ae5388276f3f9cf7f0e12799a5f60cc64356d03",
+    "installed_runtime_sha256": {
+      "/usr/share/vulkan/icd.d/lvp_icd.json": "70d49f7fd41a7593a4e283543ed4855c139c700e5c1b31792f56e9576ede2398",
+      "/usr/lib/x86_64-linux-gnu/libvulkan_lvp.so": "9d69cae2004b16572acca424741109be37c4ffc759c2461af69d75f7d1c6c139",
+      "<wgsl-venv>/lib/python3.12/site-packages/wgpu/resources/libwgpu_native-release.so": "be0d8270dd9d78e1039eeb413ee21be8a89776a752e56d6b0f57eefbbc2d749c",
+      "<wgsl-venv>/lib/python3.12/site-packages/wgpu-0.32.0.dist-info/METADATA": "f1a9907c1883d82e42061bc38339f3ed7b396c0c87ead8efbc2275c2f1871d95"
+    }
+  },
+  "blockers": []
+}

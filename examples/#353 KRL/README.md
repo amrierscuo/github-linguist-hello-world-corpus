@@ -2,48 +2,40 @@
 
 Voce canonica `KRL`, tipo `programming`, language_id `186`.
 
-Definire una regola Kinetic Rule Language che reagisce a corpus:hello e invia una direttiva greeting con il saluto.
+Il ruleset reagisce all'evento `corpus:hello` e invia una direttiva `greeting` con `message=Hello, World!`.
 
 ## Toolchain e riproduzione
 
-Authoritative Picolab KRL parser — krl-parser 1.5.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Picolab Pico Engine core 1.6.4, pico-framework 0.8.1, krl-compiler e krl-parser 1.5.0, Node.js 22.20.0. La baseline Linguist identifica qui Kinetic Rule Language.
 
-krl-parser originale Picolab 1.5.0 su Node.js 22.20.0. La baseline Linguist identifica qui Kinetic Rule Language; la grammatica del package Picolab è autoritativa.
+Dalla directory dell'esempio, con dipendenze in una cartella dedicata esterna ai sorgenti del corpus:
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
-
-```text
-npm install --prefix .tools krl-parser@1.5.0; node verify.cjs .tools build; per la semantica installare il ruleset in un Pico Engine locale e inviare l’evento corpus:hello
+```sh
+npm install --prefix /path/to/krl-tools pico-engine-core@1.6.4 memory-level@1.0.0 charwise@3.0.1
+node verify.cjs /path/to/krl-tools /path/to/krl-build
+node verify_runtime.cjs /path/to/krl-tools
 ```
 
-Risultato atteso: Parsing riuscito; runtime futuro restituisce direttiva greeting con message=Hello, World!.
+Sostituire `/path/to` con cartelle di lavoro proprie, esterne al clone. Il checker carica i byte di `hello.krl` attraverso il loader ufficiale, li compila con il compilatore originale e installa il ruleset in un pico reale del motore. Il database e il loader sono in memoria. Non si avvia un server HTTP e non viene scaricato codice remoto per il ruleset.
 
 ## Stato ed evidenza
 
-Artefatto **creato**; sintassi **verificata**; semantica **in attesa**.
+Artefatto creato, sintassi verificata, semantica verificata su Windows x64.
 
-Il parser originale accetta il ruleset e salva l’AST in build. Sintassi verificata; semantica pendente perché l’evento non viene eseguito nel Pico Engine. La direttiva contiene un valore effettivo, non solo metadata o commenti.
+Il test invia prima `corpus:unrelated`, che non genera direttive, e poi `corpus:hello`. Il risultato effettivo contiene una sola direttiva `greeting` con `options.message` uguale a `Hello, World!`. Il ruleset viene disinstallato e il database chiuso al termine.
 
-Requisiti residui:
-
-- KRL grammar accepted by authoritative parser; event execution in a Pico Engine runtime is not performed.
-
-Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+Log reale: [runtime.json](verification/runtime.json), con timestamp UTC, versioni, comandi, exit code, output, hash dei sorgenti e del checker. La precedente prova di solo parsing resta in [native.json](verification/native.json). Le dipendenze e l'AST generato rimangono esterni al corpus.
 
 ## Fonti primarie
 
-- [https://picolabs.atlassian.net/wiki/spaces/docs/pages/223117313/Grammar](https://picolabs.atlassian.net/wiki/spaces/docs/pages/223117313/Grammar)
-- [https://picolabs.atlassian.net/wiki/spaces/docs/pages/1189832](https://picolabs.atlassian.net/wiki/spaces/docs/pages/1189832)
-- [https://github.com/Picolab/pico-engine/tree/master/packages/krl-parser](https://github.com/Picolab/pico-engine/tree/master/packages/krl-parser)
+- [Picolab Pico Engine e componenti ufficiali](https://github.com/Picolab/pico-engine)
+- [Picolab pico-framework](https://github.com/Picolab/pico-framework)
+- [Grammatica KRL](https://picolabs.atlassian.net/wiki/spaces/docs/pages/223117313/Grammar)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.krl` | [hello.krl](hello.krl) sintassi verificata |
+| `.krl` | [hello.krl](hello.krl) sintassi e semantica verificate |

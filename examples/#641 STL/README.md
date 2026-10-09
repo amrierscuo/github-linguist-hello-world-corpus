@@ -2,38 +2,32 @@
 
 Caricare una mesh STL originale che costruisce il saluto con pixel estrusi.
 
-## Toolchain
+## Verifica reale
 
-Assimp 5.3.1 native STL importer
+Trimesh 4.9.0; Matplotlib 3.10.6; CPython 3.13.9
 
-## Procedura
+```text
+pip install trimesh==4.9.0 matplotlib==3.10.6; python verify_render.py; aprire verification/top-view.png.
+```
 
-assimp info hello.stl; aprire in viewer 3D e verificare il saluto dall’alto.
+Risultato atteso: STL accettato; triangoli dei pixel estrusi mostrano Hello, World! dall’alto.
 
-## Risultato atteso
+**Sintassi e semantica verificate.** Mesh originale caricata da Trimesh: 1668 triangoli, 278 triangoli sulla superficie superiore. La vista dall’alto è renderizzata dai soli triangoli STL, senza sovrapporre testo. Ispezione visiva: Hello, World! leggibile.
 
-STL accettato; triangoli dei pixel estrusi mostrano Hello, World! dall’alto.
+[Log della prova](verification/render.json). La precedente prova sintattica resta in [result.json](verification/result.json).
 
-## Stato
-
-Sintassi verificata; semantica in attesa.
-
-Ogni pixel del font bitmap originale del corpus è un prisma chiuso; nessun modello/font esterno è copiato.
-
-Verifica reale 2026-10-08T13:23:04.147430+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
-
-Requisiti residui:
-- Visual inspection of original extruded greeting mesh pending.
+![Rendering del campione](verification/top-view.png)
 
 ## Fonti primarie
 
 - [https://github.com/assimp/assimp/blob/master/code/AssetLib/STL/STLLoader.cpp](https://github.com/assimp/assimp/blob/master/code/AssetLib/STL/STLLoader.cpp)
+- [https://trimesh.org/formats.html](https://trimesh.org/formats.html)
+- [https://trimesh.org/trimesh.html](https://trimesh.org/trimesh.html)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.stl` | [hello.stl](hello.stl) sintassi verificata |
+| `.stl` | [hello.stl](hello.stl) sintassi e semantica verificate |

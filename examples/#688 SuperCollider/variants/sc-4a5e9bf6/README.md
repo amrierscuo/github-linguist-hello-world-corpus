@@ -1,23 +1,9 @@
-# 0688 — SuperCollider — `.sc`
+# SuperCollider .sc
 
-Classe SuperCollider da compilare nella class library di prova.
+`hello.sc` contiene la classe `CorpusGreeting` con il metodo di classe `message`.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+La classe è stata compilata nella SCClassLibrary isolata da sclang 3.13.0 e il metodo è stato eseguito tramite [run_class.scd](../../verification/run_class.scd). La post output contiene una riga esattamente `Hello, World!`; il processo termina con exit code 0.
 
-Artefatto principale: `hello.sc`.
+La variante `.sc` non si esegue come un semplice script. La configurazione della class library e i comandi riproducibili sono descritti nel [README principale](../../README.md). Il [log](../../verification/resume_native.json) registra la compilazione di 330 file inclusa questa classe, l'invocazione effettiva, le versioni e lo SHA256 verificato.
 
-Controllo previsto, dalla cartella della variante:
-
-```text
-sclang with isolated class-library config; CorpusGreeting.message.postln
-```
-
-Risultato atteso: post window Hello, World!.
-
-Stato: creato; sintassi e semantica non verificate.
-
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
-
-Fonti primarie:
-
-- [https://doc.sccode.org/Guides/WritingClasses.html](https://doc.sccode.org/Guides/WritingClasses.html)
+Fonte primaria: [Writing Classes](https://doc.sccode.org/Guides/WritingClasses.html).

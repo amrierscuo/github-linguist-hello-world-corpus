@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "ordinal": 760,
+  "name": "WDL",
+  "timestamp_utc": "2026-10-09T06:15:55.981168+00:00",
+  "platform": "Ubuntu24.04 WSL2 x86_64",
+  "toolchain": {
+    "miniwdl": "1.15.0",
+    "Python": "3.12.3",
+    "udocker": "1.3.17",
+    "udocker_englib": "1.2.11",
+    "image_tag": "ubuntu:20.04",
+    "image_config_digest": "sha256:b7bab04fd9aa0c771e5720bf0cc7cbf993fd6946645983d9096126e5af45d713",
+    "image_layers": [
+      "sha256:13b7e930469f6d3575a320709035c6acf6f5485a76abcf03d1b92a64c09c2476"
+    ]
+  },
+  "scope": "Original miniwdl runner schedules and executes task hello with its official udocker backend, captures task stdout, calls read_string(stdout()), and computes workflow greeting.message. Official Ubuntu20.04 image, isolated tool/image/run directories. No Docker daemon or cloud service.",
+  "commands": [
+    {
+      "label": "udocker_version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_resume_workflows/wdl_python",
+        "UDOCKER_DIR=<workspace>/work/tools_resume_workflows/udocker",
+        "UDOCKER_TMP=<workspace>/work/tools_resume_workflows/tmp",
+        "python3",
+        "<workspace>/work/tools_resume_workflows/wdl_python/bin/udocker",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "Info: creating repo: <workspace>/work/tools_resume_workflows/udocker\nversion: 1.3.17\ntarball: https://download.a.incd.pt/udocker/udocker-englib-1.2.11.tar.gz https://raw.githubusercontent.com/jorge-lip/udocker-builds/master/tarballs/udocker-englib-1.2.11.tar.gz\ntarball_release: 1.2.11\n",
+      "stderr": ""
+    },
+    {
+      "label": "udocker_englib_install",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_resume_workflows/wdl_python",
+        "UDOCKER_DIR=<workspace>/work/tools_resume_workflows/udocker",
+        "UDOCKER_TMP=<workspace>/work/tools_resume_workflows/tmp",
+        "python3",
+        "<workspace>/work/tools_resume_workflows/wdl_python/bin/udocker",
+        "install"
+      ],
+      "exit_code": 0,
+      "stdout": "Info: udocker command line interface 1.3.17\nInfo: searching for udockertools >= 1.2.11\nInfo: installing udockertools 1.2.11\nInfo: installation of udockertools successful\n",
+      "stderr": ""
+    },
+    {
+      "label": "udocker_pull",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_resume_workflows/wdl_python",
+        "UDOCKER_DIR=<workspace>/work/tools_resume_workflows/udocker",
+        "UDOCKER_TMP=<workspace>/work/tools_resume_workflows/tmp",
+        "python3",
+        "<workspace>/work/tools_resume_workflows/wdl_python/bin/udocker",
+        "pull",
+        "ubuntu:20.04"
+      ],
+      "exit_code": 0,
+      "stdout": "Info: downloading layer sha256:b7bab04fd9aa0c771e5720bf0cc7cbf993fd6946645983d9096126e5af45d713\nInfo: downloading layer sha256:13b7e930469f6d3575a320709035c6acf6f5485a76abcf03d1b92a64c09c2476\n",
+      "stderr": ""
+    },
+    {
+      "label": "udocker_smoke",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_resume_workflows/wdl_python",
+        "UDOCKER_DIR=<workspace>/work/tools_resume_workflows/udocker",
+        "UDOCKER_TMP=<workspace>/work/tools_resume_workflows/tmp",
+        "python3",
+        "<workspace>/work/tools_resume_workflows/wdl_python/bin/udocker",
+        "run",
+        "--nobanner",
+        "--rm",
+        "ubuntu:20.04",
+        "/bin/bash",
+        "-c",
+        "printf \"Hello, World!\\n\""
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "label": "Python version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_741_760/linux_python:<workspace>/work/tools_resume_workflows/wdl_python",
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "miniwdl version",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_741_760/linux_python:<workspace>/work/tools_resume_workflows/wdl_python",
+        "python3",
+        "<workspace>/work/tools_741_760/linux_python/bin/miniwdl",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "miniwdl v1.15.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "WDL original parser/typechecker",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_741_760/linux_python:<workspace>/work/tools_resume_workflows/wdl_python",
+        "python3",
+        "<workspace>/work/tools_741_760/linux_python/bin/miniwdl",
+        "check",
+        "<corpus>/examples/#760 WDL/hello.wdl"
+      ],
+      "exit_code": 0,
+      "stdout": "hello.wdl\n    workflow greeting\n        call hello\n    task hello\n        (Ln 6, Col 14) NameCollision, declaration of 'greeting' collides with workflow name\n",
+      "stderr": "* Suggestion: install shellcheck (www.shellcheck.net) to check task commands. (--suppress CommandShellCheck suppresses this message)\n"
+    },
+    {
+      "label": "Original miniwdl task and workflow execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_741_760/linux_python:<workspace>/work/tools_resume_workflows/wdl_python",
+        "UDOCKER_DIR=<workspace>/work/tools_resume_workflows/udocker",
+        "UDOCKER_TMP=<workspace>/work/tools_resume_workflows/tmp",
+        "MINIWDL__SCHEDULER__CONTAINER_BACKEND=udocker",
+        "MINIWDL__UDOCKER__EXE=[\"python3\", \"<workspace>/work/tools_resume_workflows/wdl_python/bin/udocker\"]",
+        "MINIWDL__CALL_CACHE__GET=false",
+        "MINIWDL__CALL_CACHE__PUT=false",
+        "python3",
+        "<workspace>/work/tools_741_760/linux_python/bin/miniwdl",
+        "run",
+        "<corpus>/examples/#760 WDL/hello.wdl",
+        "--dir",
+        "<workspace>/work/tools_resume_workflows/wdl_runs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"dir\": \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting\",\n  \"outputs\": {\n    \"greeting.message\": \"Hello, World!\"\n  }\n}\n",
+      "stderr": "2026-10-09 08:09:20.273 wdl.w:greeting NOTICE workflow start :: name: \"greeting\", source: \"<corpus>/examples/#760 WDL/hello.wdl\", line: 8, column: 1, dir: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting\"\n2026-10-09 08:09:20.307 wdl.w:greeting NOTICE miniwdl :: version: \"v1.15.0\", uname: \"Linux <host> 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64\"\n2026-10-09 08:09:20.342 wdl.w:greeting NOTICE ready :: job: \"call-hello\", callee: \"hello\"\n2026-10-09 08:09:20.345 wdl.w:greeting.t:call-hello NOTICE task setup :: name: \"hello\", source: \"<corpus>/examples/#760 WDL/hello.wdl\", line: 2, column: 1, dir: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting/call-hello\", thread: 124732571993792\n2026-10-09 08:09:22.701 wdl.w:greeting.t:call-hello NOTICE udocker runtime initialized (BETA) :: udocker_version: [\"version: 1.3.17\", \"tarball: https://download.a.incd.pt/udocker/udocker-englib-1.2.11.tar.gz https://raw.githubusercontent.com/jorge-lip/udocker-builds/master/tarballs/udocker-englib-1.2.11.tar.gz\", \"tarball_release: 1.2.11\"]\n2026-10-09 08:09:27.237 wdl.w:greeting.t:call-hello NOTICE udocker pull :: image: \"ubuntu:20.04\", seconds_waited: 0, seconds_pulling: 4\n2026-10-09 08:09:27.287 wdl.w:greeting.t:call-hello NOTICE udocker run :: pid: 2060, log: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting/call-hello/udocker.log.txt\"\n2026-10-09 08:10:20.040 wdl.w:greeting.t:call-hello NOTICE done\n2026-10-09 08:10:20.041 wdl.w:greeting NOTICE finish :: job: \"call-hello\"\n2026-10-09 08:10:20.048 wdl.w:greeting NOTICE done\n"
+    },
+    {
+      "label": "Actual final checker execution",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_741_760/linux_python",
+        "python3",
+        "<corpus>/examples/#760 WDL/verify_output.py",
+        "<workspace>/work/tools_resume_workflows/wdl_result.json"
+      ],
+      "cwd": "<workspace>",
+      "exit_code": 0,
+      "stdout": "{\n  \"outputs\": {\n    \"greeting.message\": \"Hello, World!\"\n  },\n  \"task_stdout\": \"Hello, World!\\n\",\n  \"task_stderr\": \"\",\n  \"assertion\": \"PASS: original miniwdl executes hello task and evaluates workflow output\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "Existing WDL parser/typechecker checker",
+      "command": [
+        "wsl",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "<corpus>/examples/#760 WDL",
+        "--",
+        "env",
+        "PYTHONPATH=<workspace>/work/tools_741_760/linux_python",
+        "python3",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: original WDL parser and typechecker\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": {
+    "greeting.message": "Hello, World!"
+  },
+  "task_stdout": "Hello, World!\n",
+  "task_stderr": "",
+  "artifact_sha256": {
+    "examples/#760 WDL/hello.wdl": "617eb51b7e6d7ab17cebdf16815217f9dec0badda0e099a27fa62e873160d2d4",
+    "examples/#760 WDL/verify.py": "9fbf256b2627fd4deaf5cec7716e5420d62368953d8225931c426cb96b0ecd6c",
+    "examples/#760 WDL/verify_output.py": "feb809f0aeb4ec6e7e4b17645927bff6aa41ebe23c26c15545543bfd669a45dc"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "blockers": [],
+  "warnings": [
+    "miniwdl check accepts the sample with a NameCollision advisory for task output greeting and workflow greeting; shellcheck unavailable. These do not prevent original workflow execution."
+  ],
+  "path_normalization": "Only workspace/corpus/interpreter path prefixes and local hostname replaced by named placeholders. Actual source bytes, tool outputs, exit codes and timestamps retained.",
+  "runner_logs": {
+    "workflow.log": "2026-10-09 08:09:20.273 wdl.w:greeting NOTICE workflow start :: name: \"greeting\", source: \"<corpus>/examples/#760 WDL/hello.wdl\", line: 8, column: 1, dir: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting\"\n2026-10-09 08:09:20.307 wdl.w:greeting NOTICE miniwdl :: version: \"v1.15.0\", uname: \"Linux <host> 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64\"\n2026-10-09 08:09:20.342 wdl.w:greeting NOTICE ready :: job: \"call-hello\", callee: \"hello\"\n2026-10-09 08:09:20.345 wdl.w:greeting.t:call-hello NOTICE task setup :: name: \"hello\", source: \"<corpus>/examples/#760 WDL/hello.wdl\", line: 2, column: 1, dir: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting/call-hello\", thread: 124732571993792\n2026-10-09 08:09:22.701 wdl.w:greeting.t:call-hello NOTICE udocker runtime initialized (BETA) :: udocker_version: [\"version: 1.3.17\", \"tarball: https://download.a.incd.pt/udocker/udocker-englib-1.2.11.tar.gz https://raw.githubusercontent.com/jorge-lip/udocker-builds/master/tarballs/udocker-englib-1.2.11.tar.gz\", \"tarball_release: 1.2.11\"]\n2026-10-09 08:09:27.237 wdl.w:greeting.t:call-hello NOTICE udocker pull :: image: \"ubuntu:20.04\", seconds_waited: 0, seconds_pulling: 4\n2026-10-09 08:09:27.287 wdl.w:greeting.t:call-hello NOTICE udocker run :: pid: 2060, log: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting/call-hello/udocker.log.txt\"\n2026-10-09 08:10:20.040 wdl.w:greeting.t:call-hello NOTICE done\n2026-10-09 08:10:20.041 wdl.w:greeting NOTICE finish :: job: \"call-hello\"\n2026-10-09 08:10:20.048 wdl.w:greeting NOTICE done\n",
+    "call-hello/task.log": "2026-10-09 08:09:20.345 wdl.w:greeting.t:call-hello NOTICE task setup :: name: \"hello\", source: \"<corpus>/examples/#760 WDL/hello.wdl\", line: 2, column: 1, dir: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting/call-hello\", thread: 124732571993792\n2026-10-09 08:09:22.701 wdl.w:greeting.t:call-hello NOTICE udocker runtime initialized (BETA) :: udocker_version: [\"version: 1.3.17\", \"tarball: https://download.a.incd.pt/udocker/udocker-englib-1.2.11.tar.gz https://raw.githubusercontent.com/jorge-lip/udocker-builds/master/tarballs/udocker-englib-1.2.11.tar.gz\", \"tarball_release: 1.2.11\"]\n2026-10-09 08:09:27.237 wdl.w:greeting.t:call-hello NOTICE udocker pull :: image: \"ubuntu:20.04\", seconds_waited: 0, seconds_pulling: 4\n2026-10-09 08:09:27.287 wdl.w:greeting.t:call-hello NOTICE udocker run :: pid: 2060, log: \"<workspace>/work/tools_resume_workflows/wdl_runs/20261009_080920_greeting/call-hello/udocker.log.txt\"\n2026-10-09 08:10:20.040 wdl.w:greeting.t:call-hello NOTICE done\n",
+    "call-hello/udocker.log.txt": ""
+  }
+}

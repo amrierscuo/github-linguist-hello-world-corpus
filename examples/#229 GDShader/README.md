@@ -1,47 +1,35 @@
 # #229 GDShader
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
-
-## Obiettivo
-
 Compilare un shader canvas_item e rappresentare i 13 byte di Hello, World! in bande grayscale.
 
-L’array costante del saluto viene letto dal fragment shader, non è un commento. check_shader.gd assegna il codice a Shader e richiede la reflection; il backend Dummy originale chiama davvero ShaderCompiler::compile. Il log verifica il parser/compilatore, non il rendering GPU.
+## Verifica reale
 
-## Toolchain e riproduzione
+Godot 4.7.2 ufficiale; Mesa 25.2.8 llvmpipe OpenGL 4.5 software; Xvfb
 
-Godot Engine 4.7.2.stable.official.ed1daf0bf Windows x64, compiler Dummy headless
-
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
-
-```text
-godot --headless --path . --script check_shader.gd
+```sh
+LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a godot --path . --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --script res://verify_render.gd -- res://hello.gdshader
 ```
 
-```text
-Con renderer grafico, assegnare hello.gdshader a un CanvasItem con UV.x da 0 a 1 ed exposure=1.
-```
+**Sintassi e semantica verificate.** Godot 4.7.2 ufficiale renderizza realmente il CanvasItem con OpenGL 4.5 Mesa 25.2.8 llvmpipe, backend software. Readback del SubViewport 130x10: i 13 campioni RGB coincidono esattamente con i byte ASCII di Hello, World!. Anche il consumatore della variante .gdshaderinc supera la stessa prova. Il warning V-Sync è conservato nel log e non altera i pixel; audio Dummy esplicito.
 
-## Risultato atteso e stato
+[Log con comandi, output e hash](verification/render.json). La precedente prova compiler Dummy resta in [toolchain.json](verification/toolchain.json).
 
-Compiler accetta lo shader e riflette exposure; il rendering atteso ha 13 bande con canali RGB uguali ai rispettivi byte divisi per 255.
+I pixel rappresentano i byte del saluto in scala di grigi; questa è la semantica del campione, senza testo disegnato dal driver.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: no.
-
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
-
-Impedimenti: Rendering e lettura dei pixel su un backend GPU non eseguiti; verifica semantica dell’output visivo pendente.
+![Pixel renderizzati dallo shader](verification/rendered-main.png)
 
 ## Fonti primarie
 
-- https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html
-- https://github.com/godotengine/godot/blob/4.7/servers/rendering/dummy/storage/material_storage.cpp
+- [https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html)
+- [https://github.com/godotengine/godot/blob/4.7/servers/rendering/dummy/storage/material_storage.cpp](https://github.com/godotengine/godot/blob/4.7/servers/rendering/dummy/storage/material_storage.cpp)
+- [https://docs.godotengine.org/en/stable/classes/class_subviewport.html](https://docs.godotengine.org/en/stable/classes/class_subviewport.html)
+- [https://docs.godotengine.org/en/stable/classes/class_viewporttexture.html](https://docs.godotengine.org/en/stable/classes/class_viewporttexture.html)
 
 ## Copertura delle estensioni
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
 
-| Estensione | File / stato |
+| Estensione | File e stato |
 | --- | --- |
-| `.gdshader` | [hello.gdshader](hello.gdshader), [consumer.gdshader](variants/ext-gdshaderinc-2e6764736861646572696e63/consumer.gdshader) creato, verifiche pendenti |
-| `.gdshaderinc` | [hello.gdshaderinc](variants/ext-gdshaderinc-2e6764736861646572696e63/hello.gdshaderinc) creato, verifiche pendenti |
+| `.gdshader` | [hello.gdshader](hello.gdshader), [consumer.gdshader](variants/ext-gdshaderinc-2e6764736861646572696e63/consumer.gdshader) sintassi e semantica verificate |
+| `.gdshaderinc` | [hello.gdshaderinc](variants/ext-gdshaderinc-2e6764736861646572696e63/hello.gdshaderinc) sintassi e semantica verificate |

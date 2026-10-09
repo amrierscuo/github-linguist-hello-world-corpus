@@ -1,38 +1,18 @@
-# 0231 GLSL — variante `.vrx`
+# GLSL .vrx
 
-Ruolo: Shader GLSL dello stadio vert con payload numerico dei code point, non fragment rinominato.
+Stadio originale `vert`. File: `hello.vrx`.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#231 GLSL/hello.frag; contenuto adattato/originale per questo suffisso.
+Stato: sintassi verificata, semantica pendente.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Da questa cartella, con gli strumenti installati e un output temporaneo fuori dal corpus:
 
-## Comando o procedura di verifica
-
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
-
-```text
-glslangValidator -V --target-env vulkan1.2 -S vert hello.vrx -o <output>/hello.spv; spirv-val --target-env vulkan1.2 <output>/hello.spv; pipeline GPU dello stadio vert per leggere 13 valori.
+```sh
+glslangValidator -V --target-env vulkan1.2 -S vert hello.vrx -o <output>/hello.spv
+spirv-val --target-env vulkan1.2 <output>/hello.spv
 ```
 
-Risultato atteso: Compilazione e validazione SPIR-V dello stadio; pipeline eseguita restituisce i 13 code point del saluto.
+Esecuzione della pipeline Vulkan dello stadio vert ancora pendente; compilazione e validazione SPIR-V riuscite per questo file.
 
-## Stato
+[Log reale](../../verification/opengl_native.json) con versioni, timestamp UTC, comandi, exit/stdout/stderr, SHA256 del sorgente e risultati per file. I byte degli shader sono invariati. [Procedura principale](../../README.md).
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
-
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
-
-## Fonti primarie
-
-- [https://github.com/KhronosGroup/glslang](https://github.com/KhronosGroup/glslang)
-- [https://github.com/KhronosGroup/SPIRV-Tools](https://github.com/KhronosGroup/SPIRV-Tools)
-- [https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf)
-- [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)
-- [https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.pdf](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.pdf)
-- [https://github.com/KhronosGroup/GLSL/blob/main/extensions/ext/GLSL_EXT_ray_tracing.txt](https://github.com/KhronosGroup/GLSL/blob/main/extensions/ext/GLSL_EXT_ray_tracing.txt)
+Fonti: [GLSL](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf), [glslang](https://github.com/KhronosGroup/glslang), [SPIRV-Tools](https://github.com/KhronosGroup/SPIRV-Tools).

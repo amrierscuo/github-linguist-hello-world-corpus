@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-10-09T06:16:26.362123+00:00",
+  "platform": "Ubuntu 24.04 WSL2 x86_64, CPython 3.12.3, GCC 13.3.0",
+  "path_normalization": "Only absolute corpus/workspace prefixes are replaced by <corpus>/<workspace>; command outputs and source bytes are otherwise unchanged. Build products are isolated outside the corpus.",
+  "commands": [
+    {
+      "label": "Python version",
+      "timestamp_utc": "2026-10-09T06:08:45.657374+00:00",
+      "command": [
+        "<workspace>/work/tools_resume_bindings/venv/bin/python",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/tools_resume_bindings/sip_stage",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": "",
+      "environment_overrides": {
+        "PATH_prepend": "<workspace>/work/tools_resume_bindings/venv/bin",
+        "DISPLAY": ""
+      }
+    },
+    {
+      "label": "GCC version",
+      "timestamp_utc": "2026-10-09T06:08:45.661734+00:00",
+      "command": [
+        "gcc",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/tools_resume_bindings/sip_stage",
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "environment_overrides": {
+        "PATH_prepend": "<workspace>/work/tools_resume_bindings/venv/bin",
+        "DISPLAY": ""
+      }
+    },
+    {
+      "label": "Installed toolchain distribution versions",
+      "timestamp_utc": "2026-10-09T06:08:45.665563+00:00",
+      "command": [
+        "<workspace>/work/tools_resume_bindings/venv/bin/python",
+        "-c",
+        "import importlib.metadata,json; print(json.dumps({p:importlib.metadata.version(p) for p in ['sip', 'setuptools']}))"
+      ],
+      "cwd": "<workspace>/work/tools_resume_bindings/sip_stage",
+      "exit_code": 0,
+      "stdout": "{\"sip\": \"6.17.0\", \"setuptools\": \"84.0.0\"}\n",
+      "stderr": "",
+      "environment_overrides": {
+        "PATH_prepend": "<workspace>/work/tools_resume_bindings/venv/bin",
+        "DISPLAY": ""
+      }
+    },
+    {
+      "label": "SIP version",
+      "timestamp_utc": "2026-10-09T06:08:45.797700+00:00",
+      "command": [
+        "<workspace>/work/tools_resume_bindings/venv/bin/python",
+        "-m",
+        "sipbuild.tools.build",
+        "--version"
+      ],
+      "cwd": "<workspace>/work/tools_resume_bindings/sip_stage",
+      "exit_code": 0,
+      "stdout": "6.17.0\n",
+      "stderr": "",
+      "environment_overrides": {
+        "PATH_prepend": "<workspace>/work/tools_resume_bindings/venv/bin",
+        "DISPLAY": ""
+      }
+    },
+    {
+      "label": "Generate, compile and link the native SIP extension",
+      "timestamp_utc": "2026-10-09T06:08:47.671450+00:00",
+      "command": [
+        "<workspace>/work/tools_resume_bindings/venv/bin/python",
+        "-m",
+        "sipbuild.tools.build",
+        "--build-dir",
+        "build",
+        "--verbose"
+      ],
+      "cwd": "<workspace>/work/tools_resume_bindings/sip_stage",
+      "exit_code": 0,
+      "stdout": "These bindings will be built: corpus_greeting.\nGenerating the corpus_greeting bindings...\nCompiling the 'corpus_greeting' module...\nNo `name` configuration, performing automatic discovery\nrunning build_ext\nbuilding 'corpus_greeting' extension\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_array.c -o build/temp.linux-x86_64-cpython-312/sip_array.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_core.c -o build/temp.linux-x86_64-cpython-312/sip_core.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_descriptors.c -o build/temp.linux-x86_64-cpython-312/sip_descriptors.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_enum.c -o build/temp.linux-x86_64-cpython-312/sip_enum.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_int_convertors.c -o build/temp.linux-x86_64-cpython-312/sip_int_convertors.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_object_map.c -o build/temp.linux-x86_64-cpython-312/sip_object_map.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_threads.c -o build/temp.linux-x86_64-cpython-312/sip_threads.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sip_voidptr.c -o build/temp.linux-x86_64-cpython-312/sip_voidptr.o\nx86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public -I. -I<workspace>/work/tools_resume_bindings/venv/include -I/usr/include/python3.12 -c sipcorpus_greetingcmodule.c -o build/temp.linux-x86_64-cpython-312/sipcorpus_greetingcmodule.o\nx86_64-linux-gnu-gcc -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fwrapv -O2 build/temp.linux-x86_64-cpython-312/sip_array.o build/temp.linux-x86_64-cpython-312/sip_core.o build/temp.linux-x86_64-cpython-312/sip_descriptors.o build/temp.linux-x86_64-cpython-312/sip_enum.o build/temp.linux-x86_64-cpython-312/sip_int_convertors.o build/temp.linux-x86_64-cpython-312/sip_object_map.o build/temp.linux-x86_64-cpython-312/sip_threads.o build/temp.linux-x86_64-cpython-312/sip_voidptr.o build/temp.linux-x86_64-cpython-312/sipcorpus_greetingcmodule.o -L/usr/lib/x86_64-linux-gnu -o build/lib.linux-x86_64-cpython-312/corpus_greeting.cpython-312-x86_64-linux-gnu.so\nThe project has been built.\n",
+      "stderr": "",
+      "environment_overrides": {
+        "PATH_prepend": "<workspace>/work/tools_resume_bindings/venv/bin",
+        "DISPLAY": ""
+      }
+    },
+    {
+      "label": "Import compiled extension and call corpus_greeting()",
+      "timestamp_utc": "2026-10-09T06:16:26.417249+00:00",
+      "command": [
+        "<workspace>/work/tools_resume_bindings/venv/bin/python",
+        "verify_runtime.py"
+      ],
+      "cwd": "<workspace>/work/tools_resume_bindings/sip_stage",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment_overrides": {
+        "PATH_prepend": "<workspace>/work/tools_resume_bindings/venv/bin",
+        "DISPLAY": "",
+        "PYTHONPATH": "<workspace>/work/tools_resume_bindings/sip_stage/build/corpus_greeting/build/lib.linux-x86_64-cpython-312"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "SIP parses hello.sip, emits wrapper C, compiles and links a CPython extension; Python imports the actual extension and calls its native C function, asserting the returned Hello, World! string.",
+  "artifact_sha256": {
+    "examples/#632 SIP/hello.sip": "4ea5074cfce41c53bd35f777bb35a4085b9bcd3f37d8f13b10dd8ce43354150f",
+    "examples/#632 SIP/pyproject.toml": "33ca1e571a246f80779f6920d944a4acc333a6809bb3bbd594170060969c2387",
+    "examples/#632 SIP/verify_runtime.py": "c1b474dd6cdd446e815f2c721ec77c96265188da94aa0fb59a353d47a335b3f3"
+  },
+  "compiled_artifact_sha256": {
+    "build/corpus_greeting/build/lib.linux-x86_64-cpython-312/corpus_greeting.cpython-312-x86_64-linux-gnu.so": "d4311e6879c2bf00a5426185013874d433062e69f0adc413b3e227f60b162b6a"
+  },
+  "blockers": [],
+  "toolchain": {
+    "name": "sip",
+    "version": "6.17.0",
+    "source": "https://pypi.org/project/sip/6.17.0/",
+    "pypi_metadata_sha256": "222e9056f986eeceb95e3162bf287e93de9e866d9422b8d7f53a002553d5fb46",
+    "installed_metadata_sha256": {
+      "venv/lib/python3.12/site-packages/sip-6.17.0.dist-info/METADATA": "33111c09fe95b0d534eef83a4e8826788ceb7111f245737503ee5444407ce6b0"
+    }
+  },
+  "environment_capture": "Only the relevant overrides supplied by the check runner are shown; PATH_prepend records the venv bin directory prepended to the inherited PATH. SIP runtime PYTHONPATH points to the directory containing the compiled extension."
+}
