@@ -1,0 +1,56 @@
+{
+  "generated_utc": "2026-10-09T08:56:48.814312+00:00",
+  "name": "B4X",
+  "ordinal": 51,
+  "path": "examples/#051 B4X/Main.bas",
+  "source_sha256_unchanged": "0231388f1284e09b8997fe30f57e8411de2d951d7bc613d36a7bf6138e606696",
+  "recommendation": "Exact-file official Linguist language override for the existing genuine B4J non-UI module; no source changes or verification counter changes.",
+  "attribute_file": ".gitattributes",
+  "attribute_line": "\"/examples/#051 B4X/Main.bas\" linguist-language=B4X",
+  "diagnosis": {
+    "extension": ".bas",
+    "heuristic_version": "v9.7.0",
+    "heuristic_pattern": "\\A\\W{0,3}(?:.*(?:\\r?\\n|\\r)){0,9}B4(?:J|A|R|i)=true",
+    "heuristic_matches_existing_source": false,
+    "reason": "B4X rule expects an IDE-exported B4J=true (or B4A/B4R/B4i) metadata key in the first ten lines; current Main.bas is the genuine module text meant to be inserted in the B4J IDE, not an exported module with metadata."
+  },
+  "official_language_metadata_v9_7_0": {
+    "type": "programming",
+    "color": "#00e4ff",
+    "extensions": [
+      ".bas"
+    ],
+    "tm_scope": "source.vba",
+    "aliases": [
+      "basic for android"
+    ],
+    "ace_mode": "text",
+    "codemirror_mode": "vb",
+    "codemirror_mime_type": "text/x-vb",
+    "language_id": 96642275
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/github-linguist/linguist/v9.7.0/lib/linguist/heuristics.yml",
+      "supports": "B4X shared .bas suffix disambiguation"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/github-linguist/linguist/v9.7.0/lib/linguist/languages.yml",
+      "supports": "B4X supported, programming, language_id 96642275, color #00e4ff"
+    },
+    {
+      "url": "https://github.com/github-linguist/linguist/blob/v9.7.0/docs/overrides.md#using-gitattributes",
+      "supports": "Official linguist-language override via .gitattributes"
+    },
+    {
+      "url": "https://www.b4x.com/guides/B4XGettingStarted.html",
+      "supports": "Existing corpus provenance for B4J module; primary guide linked by corpus README, browse tool could not retrieve in this turn."
+    }
+  ],
+  "limitations": [
+    "Git check-attr proves exact path selection, not the eventual GitHub background cache refresh. GitHub API must be queried after the parent applies, commits and pushes.",
+    "This override fixes classification only; syntax_verified and semantic_verified remain false until real B4J validation.",
+    "Do not insert an un-commented B4J=true metadata line directly into the module source just to satisfy a detector. Use a real IDE export if choosing the metadata alternative."
+  ],
+  "scope": "Classification only; source, native verification flags and extension records unchanged."
+}
