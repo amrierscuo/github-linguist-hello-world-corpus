@@ -1,13 +1,17 @@
-# GitHub Languages dopo il consolidamento
+# GitHub Languages dopo la ripresa
 
-Misura API del 2026-10-08T23:44:23.740038+00:00, dopo il commit sorgente `96683b28b8186a849b46e34715f9381ff153aea4`. Repository privata, GitHub Pages disabilitato, loghi esclusi.
+Misura API osservata il 2026-10-09T06:27:39.760836+00:00, dopo il push del commit `6c6095bbef3413e497414e63ce4dcb777b8c7c9e`. Repository privata, GitHub Pages disabilitato, loghi esclusi.
 
 | Misura | Risultato |
 | --- | ---: |
 | Linguaggi rilevati | 574 |
-| Byte riconosciuti | 273905 |
+| Byte riconosciuti | 273374 |
 | Byte Lean | 13966 |
-| Quota Lean | 5.09885% |
+| Quota Lean | 5.10875% |
+
+Il batch21 aggiunge verifiche native senza forzare il linguaggio dei file. Gli script di controllo e le immagini delle prove sono esclusi dai byte delle statistiche. Il completamento del corpus è distinto dal numero di nomi rilevati da GitHub.
+
+L’API Languages non identifica il commit elaborato dalla propria cache; la risposta sopra è stata osservata dopo il push indicato.
 
 I cinque nomi aggiunti sono BASIC, MiniScript, PicoLisp, StringTemplate e Teal. I campioni sono stati resi distinguibili con costrutti o commenti validi del linguaggio e poi rieseguiti nei runtime originali. Non sono state aggiunte etichette `linguist-language`. Il file Objective-J `.sj` è inoltre prodotto dal serializer originale. Script di controllo, log e metadata sono esclusi dalle statistiche.
 
