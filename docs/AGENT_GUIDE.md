@@ -1,6 +1,6 @@
 # Agent guide
 
-This corpus helps agents locate small language examples, understand their native toolchains and distinguish recorded checks from pending work. It also measures actual GitHub Linguist recognition. It is a private experiment; no GitHub Pages publication is enabled.
+This corpus helps agents locate small language examples, understand their native toolchains and distinguish recorded checks from pending work. It also measures actual GitHub Linguist recognition. The public [Linguist Dex](https://amrierscuo.github.io/github-linguist-hello-world-corpus/) presents 578 distinct language names and their colors. GitHub Pages deploys only `site/`.
 
 ## Reference and identifiers
 
@@ -99,14 +99,14 @@ gh api repos/amrierscuo/github-linguist-hello-world-corpus/languages
 gh api repos/amrierscuo/github-linguist-hello-world-corpus --jq '{private, default_branch, has_pages}'
 ```
 
-Authenticated access is needed for this private repo. Do not extract or publish a token. Languages reports bytes, not LOC. The compact sidebar shows a few names and `Other`; the API returns all detected names. GitHub code-search indexing is separate from these byte statistics and can lag after a push. Local lookup works while web search is still indexing.
+Public read access is available. Do not extract or publish a token. Languages reports bytes, not LOC. The compact sidebar shows a few names and `Other`; the API returns all detected names. GitHub code-search indexing is separate from these byte statistics and can lag after a push. Local lookup works while web search is still indexing.
 
 `.gitattributes` allows the actual source corpus under `examples/` to participate despite Linguist's default documentation rule for that folder. It excludes documentation, helper tools, tracker/index metadata and verification logs. Data/prose retain their default behavior. Do not count helper code toward the collection or use false `linguist-language` labels. Keep `experiments/lean-share/` outside the canonical 836 entries and their verification counters.
 
 Further detail: [tracking/GITHUB_STATS.md](../tracking/GITHUB_STATS.md).
 
-## Reuse, attribution and private assets
+## Reuse, attribution and public assets
 
-No overall license has been chosen for the new corpus material. The MIT license in [LICENSES/GitHub-Linguist-MIT.txt](../LICENSES/GitHub-Linguist-MIT.txt) applies to the imported Linguist reference; it does not automatically license the whole collection. Third-party adaptations retain their own licensing and provenance within the example folders. Review the relevant example's sources and license before reuse.
+The root [MIT license](../LICENSE) applies to original project material. See [license scope and third-party exclusions](LICENSING.md). The imported Linguist reference retains [its MIT license](../LICENSES/GitHub-Linguist-MIT.txt). Third-party adaptations retain their own licensing and provenance within the example folders. Review the relevant example's sources and license before reuse.
 
-Research logos, Windows folder icons and the image-based HTML catalog are excluded from this GitHub export. Found originals remain in the separate local corpus. Even a permitted logo must not be introduced here without a separate request to change this export's scope. Official provenance alone does not grant redistribution permission. Keep this repo private and GitHub Pages disabled until the human user explicitly requests publication.
+The user authorized publication on 2026-10-09. The public dashboard includes only 16 original logos with documented permissions, sources, attribution and display conditions in [site/attributions.html](../site/attributions.html). Unapproved research logos and Windows folder icons remain in the separate local corpus. Keep logo bytes unchanged and preserve their individual terms. Official provenance alone does not grant redistribution permission. The dashboard's #001 through #578 IDs do not rename or replace the 836 canonical folder ordinals.

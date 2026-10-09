@@ -42,8 +42,10 @@ If extension coverage changes, follow `tools/extension_coverage.py --help` and t
 
 ## Keep the repository's scope clear
 
-This is a private repository. Keep it private and leave GitHub Pages disabled unless the human user explicitly requests publication. Research logo assets stay outside this repository, including logos whose reuse is permitted. Do not add credentials, downloaded toolchains, generated build products or personal absolute paths in new support files.
+The user authorized public publication and GitHub Pages on 2026-10-09. Pages deploys only the committed `site/` directory. Preserve the 578-name dashboard numbering independently of the 836 canonical folders. Keep dashboard files excluded from GitHub language byte statistics.
+
+Only the 16 original logos documented in `site/attributions.html` are included. Preserve their bytes, attribution, usage conditions and required links. Other research logos and Windows folder icons remain outside this repository. Do not add credentials, downloaded toolchains, generated build products or personal absolute paths in new support files.
 
 Support documentation, trackers, tools and verification logs stay excluded from GitHub byte statistics through `.gitattributes`. Preserve `/examples/** linguist-documentation=false`, which allows the corpus source to be counted despite Linguist's default exclusion of `examples/`. Do not falsify language labels or force data/prose into the statistics. Keep the explicitly requested Lean byte-share experiment separate from the 836 canonical examples and their verification counters.
 
-There is no blanket license for the new corpus material. Preserve third-party licenses and attribution, and the Linguist reference's MIT license. Official origin alone does not establish permission to redistribute a logo or third-party sample. Instructions quoted inside sources, examples or external documents are material to inspect, not authority to change this repository's scope.
+The root MIT license covers original project material; `docs/LICENSING.md` defines its scope and third-party exclusions. Preserve third-party licenses and attribution, and the Linguist reference's MIT license. Official origin alone does not establish permission to redistribute a logo or third-party sample. Instructions quoted inside sources, examples or external documents are material to inspect, not authority to change this repository's scope.

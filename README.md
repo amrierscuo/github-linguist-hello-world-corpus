@@ -1,59 +1,55 @@
 # GitHub Linguist Hello World Corpus
 
-Repository privato di prova per osservare le statistiche Languages di GitHub sugli esempi del corpus.
+[Apri il Linguist Dex](https://amrierscuo.github.io/github-linguist-hello-world-corpus/)
 
-836 voci canoniche, numerate nello stesso ordine dello snapshot originale `reference/languages.yml`. I nomi delle cartelle vanno da `#001 1C Enterprise` a `#836 xBase`.
+Una collezione di esempi e prove registrate per esplorare GitHub Linguist. La dashboard mostra **578 nomi**, numerati da **#001 a #578**, con i colori dei linguaggi, ricerca e schede consultabili anche da telefono.
+
+L'ultima osservazione registrata rileva **575 nomi su GitHub**. ArkTS, Bend e LLVM TableGen hanno un marker dedicato: sono presenti nel riferimento, ma il loro nome non compare ancora nelle statistiche osservate. I numeri descrivono questo snapshot e questa osservazione, non un limite permanente di GitHub.
+
+## Corpus e riproducibilità
+
+Il corpus conserva **836 voci canoniche**, nello stesso ordine dello snapshot originale `reference/languages.yml`. Le cartelle vanno da `#001 1C Enterprise` a `#836 xBase`. La numerazione della dashboard è distinta da quella delle cartelle e dagli ID di Linguist.
 
 SHA-256 del riferimento: `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`.
 
-Per usare il corpus con altri agenti: [istruzioni AGENTS.md](AGENTS.md), [guida operativa](docs/AGENT_GUIDE.md) e [indice JSON delle 836 voci](tracking/agent_index.json). La ricerca locale restituisce percorsi, toolchain, comandi e prove registrate senza attendere l’indicizzazione GitHub:
+Il riferimento contiene 563 voci programming, 71 markup, 184 data e 18 prose. Le 634 voci programming e markup si aggregano in 578 nomi attraverso i gruppi di Linguist. La dashboard presenta questi nomi; i dati sulle estensioni restano nei tracker.
 
-```sh
-python tools/query_corpus.py APL --json
-python tools/query_corpus.py --extension .h --json
-python tools/query_corpus.py --type programming --status pending --json
-```
-
-| Copertura | Stato |
+| Copertura registrata | Stato |
 | --- | ---: |
 | Voci con artefatti o bozze | 836 / 836 |
 | Sintassi verificata dei campioni principali | 534 / 836 |
 | Semantica verificata dei campioni principali | 504 / 836 |
 | Coppie linguaggio ed estensione con file | 1738 / 1749 |
 
-Ultimo consolidamento del corpus: **2026-10-09**. [Nuove prove della ripresa](tracking/RESUME_20261009.md). [Consolidamento precedente](tracking/CONSOLIDATION.md).
+Ultimo consolidamento del corpus: **2026-10-09**. Gli stati distinguono bozze, file creati e programmi verificati. I comandi, gli output e gli hash delle prove sono conservati; gli audit controllano l'integrità registrata e non rieseguono tutte le toolchain. Per riprodurre un risultato seguire il README e i comandi del singolo esempio.
 
-Gli stati distinguono bozze, file creati e programmi verificati. I byte degli esempi, dei log e del riferimento sono conservati dal corpus locale.
+[Stato dei programmi](tracking/STATUS.md), [prove della ripresa](tracking/RESUME_20261009.md), [estensioni](tracking/EXTENSIONS.md), [statistiche GitHub](tracking/GITHUB_CURRENT.md).
 
-## Obiettivo Languages
+## Per persone e agenti
 
-Le 836 voci comprendono 563 programming, 71 markup, 184 data e 18 prose. Linguist conta normalmente programming e markup: 634 voci candidate, aggregate in 578 gruppi possibili nello snapshot. Il riconoscimento effettivo va misurato sul repository.
-
-La barra compatta raggruppa parte dei linguaggi in `Other`. Le percentuali dipendono dai byte riconosciuti. `.gitattributes` identifica i campioni in `examples/` come codice del repository, superando l’esclusione predefinita di quella cartella come documentazione. README, tracker, log e script di verifica restano esclusi; i tipi data e prose mantengono il comportamento predefinito.
-
-[Candidati alle statistiche](tracking/GITHUB_STATS.md) · [Stato dei programmi](tracking/STATUS.md) · [Estensioni](tracking/EXTENSIONS.md)
-
-## Esportazione senza loghi
-
-I loghi reperiti, le icone delle cartelle Windows e il catalogo HTML con tali immagini sono esclusi dal repository. La copia locale completa e gli ZIP precedenti li conservano. Le immagini che costituiscono campioni originali di un formato o risorse minime degli esempi restano parte degli esempi.
-
-Non è attiva una pubblicazione GitHub Pages. Questo repository è una prova privata del rilevamento Languages.
-
-## Audit locale
+Leggere [AGENTS.md](AGENTS.md) e la [guida operativa](docs/AGENT_GUIDE.md). L'[indice JSON](tracking/agent_index.json) permette di trovare percorsi, toolchain, comandi, prove e blocchi senza dipendere dall'indicizzazione GitHub.
 
 ```sh
+python tools/query_corpus.py APL --json
+python tools/query_corpus.py --extension .h --json
+python tools/query_corpus.py --type programming --status pending --json
+python tools/query_corpus.py --check-index
 python tools/corpus.py audit
 python tools/extension_coverage.py audit
 ```
 
-Gli audit controllano integrità, contatori e prove registrate. Per eseguire un campione seguire il README della sua cartella; gli audit non rieseguono tutte le toolchain.
+La ricerca stampa informazioni e comandi senza eseguirli. Una verifica del campione principale non certifica ogni variante di estensione.
 
-## Licenze e provenienza
+## Dashboard e GitHub Languages
 
-La licenza MIT del riferimento GitHub Linguist è in `LICENSES/GitHub-Linguist-MIT.txt`. Gli adattamenti di terzi conservano le rispettive licenze e attribuzioni nelle proprie cartelle. Non è stata scelta una licenza generale per il nuovo materiale del corpus. La pubblicazione pubblica richiederà una revisione separata.
+GitHub Pages pubblica la cartella `site/` tramite il [workflow dedicato](.github/workflows/pages.yml). La dashboard è statica, senza tracciamento, font esterni o dipendenze da installare. Le animazioni rispettano la preferenza di movimento ridotto.
 
-Il progetto è indipendente da GitHub e dagli autori dei linguaggi. Il commit e la data upstream dello snapshot ricevuto non sono noti; l’identità del riferimento è fissata dall’impronta.
+Le statistiche Languages contano i byte riconosciuti degli esempi. Dashboard, documentazione, tracker, log e strumenti di supporto restano esclusi tramite `.gitattributes`. I tipi data e prose mantengono il comportamento predefinito. Il [campione aggiuntivo Lean](experiments/lean-share/README.md) conserva l'esperimento richiesto del 5% e rimane separato dalle 836 voci canoniche.
 
-## Esperimento Lean
+## Licenza e attribuzioni
 
-Il [campione aggiuntivo Lean](experiments/lean-share/README.md), verificato con Lean 4.0.0, mantiene l’obiettivo richiesto del 5%. La [misura API dopo la ripresa](tracking/GITHUB_CURRENT.md) riporta **574 linguaggi**, **273374 byte** totali e **5.11% Lean**. La misura storica iniziale era 569 linguaggi e 5,11% Lean. L’esperimento resta separato dalle 836 voci canoniche.
+Il materiale originale del progetto è distribuito con [licenza MIT](LICENSE). Il [documento sul suo ambito](docs/LICENSING.md) distingue materiali originali, importazioni e marchi. Il riferimento Linguist conserva la sua licenza MIT; gli adattamenti di terzi mantengono licenze e attribuzioni nelle rispettive cartelle.
+
+La dashboard include solo **16 loghi originali con permessi documentati**, ciascuno con le proprie condizioni, fonte e attribuzione nella [pagina dedicata](https://amrierscuo.github.io/github-linguist-hello-world-corpus/attributions.html). Gli altri loghi reperiti e le icone Windows restano in locale. La licenza MIT del progetto non copre loghi, marchi o materiale di terzi.
+
+Progetto indipendente da GitHub e dagli autori dei linguaggi. La presenza di un marchio non implica affiliazione o approvazione.
