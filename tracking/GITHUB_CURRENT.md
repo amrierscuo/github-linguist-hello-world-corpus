@@ -1,32 +1,17 @@
-# GitHub Languages dopo la ripresa
+# GitHub Languages attuali
 
-Misura API osservata il 2026-10-09T06:27:39.760836+00:00, dopo il push del commit `6c6095bbef3413e497414e63ce4dcb777b8c7c9e`. Repository privata, GitHub Pages disabilitato, loghi esclusi.
+Osservazione REST e GraphQL del 2026-10-09T09:00:19.237648+00:00, dopo il push del commit `a664768c794aa6d6a5ded3a412e748c58939fd31`. Repository privata, GitHub Pages disabilitato e loghi esclusi dall'export.
 
-| Misura | Risultato |
-| --- | ---: |
-| Linguaggi rilevati | 574 |
-| Byte riconosciuti | 273374 |
-| Byte Lean | 13966 |
-| Quota Lean | 5.10875% |
+GitHub riporta **575 nomi su 578 attesi** e **273374 byte**. Lean conserva 13966 byte, il 5.10875%.
 
-Il batch21 aggiunge verifiche native senza forzare il linguaggio dei file. Gli script di controllo e le immagini delle prove sono esclusi dai byte delle statistiche. Il completamento del corpus è distinto dal numero di nomi rilevati da GitHub.
+B4X ora compare grazie all'override esatto per il vero modulo B4J `examples/#051 B4X/Main.bas`. Il suffisso ambiguo non era distinto senza l'header di export IDE. Sorgente, prove e verifiche native restano invariati. [Diagnosi B4X](B4X_RECOGNITION.json).
 
-L’API Languages non identifica il commit elaborato dalla propria cache; la risposta sopra è stata osservata dopo il push indicato.
+Restano ArkTS, Bend e LLVM TableGen. Sono nel main ufficiale, il cui YAML corrisponde byte per byte al riferimento ricevuto, ma mancano nella release pubblicata v9.7.0. Gli override non possono registrare nomi nuovi nel servizio. La versione di Linguist distribuita da GitHub non e' accertata; il raggiungimento di 578 dipende dall'adozione di questi nomi e va verificato nuovamente sul servizio. Nessuna falsa etichetta o formato di dati e' stato aggiunto per cambiare il conteggio.
 
-I cinque nomi aggiunti sono BASIC, MiniScript, PicoLisp, StringTemplate e Teal. I campioni sono stati resi distinguibili con costrutti o commenti validi del linguaggio e poi rieseguiti nei runtime originali. Non sono state aggiunte etichette `linguist-language`. Il file Objective-J `.sj` è inoltre prodotto dal serializer originale. Script di controllo, log e metadata sono esclusi dalle statistiche.
+[Risposta REST](github_languages_current.json), [colori e ID effettivi GraphQL](github_catalog_live.json), [mappatura dei 578 nomi](GITHUB_RECOGNITION_TARGETS.json).
 
-[Risposta API completa](github_languages_current.json). La misura precedente era 569 nomi; la barra compatta di GitHub può mostrare una parte dei nomi sotto Other. Le percentuali sono basate sui byte e possono cambiare con ulteriori sorgenti o nuove versioni di Linguist.
+La dashboard locale mostra solo i nomi aggregati programming/markup, con nuova numerazione #001..#578. Dati, prosa, varianti, estensioni e verifiche restano negli archivi tecnici. I numeri delle 836 cartelle canoniche non cambiano. Le statistiche aggregate non provano il riconoscimento di ogni singolo file.
 
-## I quattro gruppi ancora non rilevati
+I colori GraphQL e gli ID globali GitHub sono dati osservati del servizio. I `language_id` numerici del YAML e i numeri del catalogo hanno ruoli diversi. Per `color: null` la UI usa un colore neutro. La barra compatta puo' raccogliere alcuni nomi sotto Other. REST/GraphQL non espongono il commit della cache.
 
-- B4X: il modulo B4J esiste, ma manca l’export originale con metadata che distingue il suffisso ambiguo `.bas`. Il runtime B4J non è stato verificato; il sorgente resta invariato.
-- ArkTS, Bend e LLVM TableGen: presenti nello snapshot canonico ricevuto, assenti nella release Linguist v9.7.0. Questa differenza è compatibile con un ritardo della versione utilizzata da GitHub. La versione effettivamente distribuita da GitHub non è stata accertata: si tratta di un’inferenza, non di una garanzia di aggiornamento futuro.
-
-Il riferimento comprende 578 gruppi teorici programming/markup. I tipi data e prose mantengono il comportamento predefinito. Non si raggiungono 836 nomi nella barra trasformando formati di dati in programmi o duplicando etichette.
-
-## Fonti primarie
-
-- [Linguist v9.7.0](https://github.com/github-linguist/linguist/releases/tag/v9.7.0)
-- [Linguaggi della release](https://github.com/github-linguist/linguist/blob/v9.7.0/lib/linguist/languages.yml)
-- [Euristiche della release](https://github.com/github-linguist/linguist/blob/v9.7.0/lib/linguist/heuristics.yml)
-- [Attributi Linguist](https://github.com/github-linguist/linguist/blob/main/docs/overrides.md)
+Fonti: [override ufficiali](https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#detectable), [release v9.7.0](https://github.com/github-linguist/linguist/releases/tag/v9.7.0), [oggetto Language GraphQL](https://docs.github.com/en/graphql/reference/objects#language).
