@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": "GitHub Linguist languages.yml supplied by user",
-  "generated_utc": "2026-10-09T06:21:07.354555+00:00",
+  "generated_utc": "2026-10-09T10:22:08.574020+00:00",
   "language_count": 836,
   "entries": [
     {
@@ -2128,35 +2128,39 @@
       },
       "example": {
         "semantic_goal": "Mostrare Hello, World! in una pagina ArkUI dichiarativa scritta in ArkTS, con testo centrato verticalmente.",
-        "validation_mode": "arkts_project_compile_and_arkui_preview",
-        "toolchain": "DevEco Studio con HarmonyOS SDK ArkTS/ArkUI e progetto Empty Ability, modello Stage, API compatibile >=9. Versioni da registrare sulla toolchain disponibile.",
+        "validation_mode": "native_arkui_page_compile_and_offscreen_render",
+        "toolchain": "OpenHarmony SDK 5.0.0.71 API 12; ArkUI compiler 4.9.5-r4; Node 22.20.0; native Windows Previewer",
         "files": [
           "examples/#038 ArkTS/Index.ets",
-          "examples/#038 ArkTS/README.md"
+          "examples/#038 ArkTS/README.md",
+          "examples/#038 ArkTS/verify_native_arkui.py",
+          "examples/#038 ArkTS/verify_native_preview.py"
         ],
-        "build_command": "Dal progetto DevEco: hvigorw assembleHap --mode module -p module=entry@default -p product=default",
-        "run_or_check_command": "Nel progetto DevEco sostituire entry/src/main/ets/pages/Index.ets, compilare e aprire Previewer sulla pagina Index.",
-        "expected_result": "Compilazione ArkTS/ArkUI senza errori; Previewer o dispositivo mostra il componente Text con Hello, World!.",
+        "build_command": "python verify_native_arkui.py --sdk-root \"$env:ARKTS_SDK\" --source Index.ets --node \"$env:NODE_EXE\" --project \"$env:ARKTS_WORK\" --compile",
+        "run_or_check_command": "Follow the native Previewer command in README.md; inspect the genuine rendered JPEG for Hello, World!.",
+        "expected_result": "Compiler exit 0 with no ArkTS errors; genuine Previewer frame shows Hello, World! centered.",
         "sources": [
-          "https://developer.huawei.com/consumer/en/doc/harmonyos-guides-V5/ide-previewer-arkui-V5",
-          "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-hvigor-commandline"
+          "https://github.com/openharmony/docs/blob/master/en/release-notes/OpenHarmony-v5.0.0-release.md",
+          "https://repo.huaweicloud.com/openharmony/os/5.0.0-Release/ohos-sdk-windows_linux-public.tar.gz",
+          "https://github.com/openharmony/developtools_ace_ets2bundle/tree/OpenHarmony-5.0.0-Release",
+          "https://github.com/openharmony/ide_previewer/tree/OpenHarmony-5.0.0-Release"
         ]
       },
       "tracking": {
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "DevEco Studio, HarmonyOS SDK ArkTS/ArkUI e progetto Stage compatibile non disponibili; compilazione e rendering non eseguiti."
-        ],
-        "notes": "Pagina ArkTS da inserire nel progetto standard DevEco. Non è un progetto completo; un compilatore TypeScript non sostituisce quello ArkTS/ArkUI.",
-        "verified_artifact_sha256": {}
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows x64",
+        "verification_timestamp_utc": "2026-10-09T10:17:21.978009+00:00",
+        "verification_log": "examples/#038 ArkTS/verification/native_20261009.json",
+        "blockers": [],
+        "notes": "Pagina originale compilata in ABC dal vero SDK ArkUI; Previewer nativo produce il saluto centrato in JPEG 720x1280. Prova visiva diretta, non stub o normale tsc. HAP/firma/dispositivo non verificati; GitHub detection resta separata.",
+        "verified_artifact_sha256": {
+          "examples/#038 ArkTS/Index.ets": "fbe4c308c31593046b15ee9ef8d20b25c614ff47af7392a463ac1e400daff204"
+        }
       }
     },
     {

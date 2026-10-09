@@ -17,8 +17,8 @@ python tools/query_corpus.py --type programming --status pending --json
 | Copertura | Stato |
 | --- | ---: |
 | Voci con artefatti o bozze | 836 / 836 |
-| Sintassi verificata dei campioni principali | 533 / 836 |
-| Semantica verificata dei campioni principali | 503 / 836 |
+| Sintassi verificata dei campioni principali | 534 / 836 |
+| Semantica verificata dei campioni principali | 504 / 836 |
 | Coppie linguaggio ed estensione con file | 1738 / 1749 |
 
 Ultimo consolidamento del corpus: **2026-10-09**. [Nuove prove della ripresa](tracking/RESUME_20261009.md). [Consolidamento precedente](tracking/CONSOLIDATION.md).

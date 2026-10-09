@@ -1759,23 +1759,28 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#038 ArkTS/verification/native_20261009.json",
+      "verified_artifact_sha256": {
+        "examples/#038 ArkTS/Index.ets": "fbe4c308c31593046b15ee9ef8d20b25c614ff47af7392a463ac1e400daff204"
+      },
       "based_on": null,
       "documentation": "examples/#038 ArkTS/README.md",
-      "supporting_files": [],
-      "validation_command": "Nel progetto DevEco sostituire entry/src/main/ets/pages/Index.ets, compilare e aprire Previewer sulla pagina Index.",
-      "expected_result": "Compilazione ArkTS/ArkUI senza errori; Previewer o dispositivo mostra il componente Text con Hello, World!.",
+      "supporting_files": [
+        "examples/#038 ArkTS/verify_native_arkui.py",
+        "examples/#038 ArkTS/verify_native_preview.py"
+      ],
+      "validation_command": "python verify_native_arkui.py --sdk-root \"$env:ARKTS_SDK\" --source Index.ets --node \"$env:NODE_EXE\" --project \"$env:ARKTS_WORK\" --compile; then use the native Previewer command in README.md.",
+      "expected_result": "Compiler exit 0 with no ArkTS errors; genuine Previewer frame shows Hello, World! centered.",
       "sources": [
-        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides-V5/ide-previewer-arkui-V5",
-        "https://developer.huawei.com/consumer/en/doc/harmonyos-guides/ide-hvigor-commandline"
+        "https://github.com/openharmony/docs/blob/master/en/release-notes/OpenHarmony-v5.0.0-release.md",
+        "https://repo.huaweicloud.com/openharmony/os/5.0.0-Release/ohos-sdk-windows_linux-public.tar.gz",
+        "https://github.com/openharmony/developtools_ace_ets2bundle/tree/OpenHarmony-5.0.0-Release",
+        "https://github.com/openharmony/ide_previewer/tree/OpenHarmony-5.0.0-Release"
       ],
-      "blockers": [
-        "DevEco Studio, HarmonyOS SDK ArkTS/ArkUI e progetto Stage compatibile non disponibili; compilazione e rendering non eseguiti."
-      ],
-      "notes": "Pagina ArkTS da inserire nel progetto standard DevEco. Non è un progetto completo; un compilatore TypeScript non sostituisce quello ArkTS/ArkUI."
+      "blockers": [],
+      "notes": "Pagina originale compilata in ABC dal vero SDK ArkUI; Previewer nativo produce il saluto centrato in JPEG 720x1280. Prova visiva diretta, non stub o normale tsc. HAP/firma/dispositivo non verificati; GitHub detection resta separata."
     },
     {
       "language_ordinal": 39,

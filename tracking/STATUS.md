@@ -3,8 +3,8 @@
 | Copertura | Stato |
 | --- | ---: |
 | Voci canoniche con artefatti o bozze | 836 / 836 |
-| Voci con sintassi verificata per il campione principale | 533 / 836 |
-| Voci con semantica verificata per il campione principale | 503 / 836 |
+| Voci con sintassi verificata per il campione principale | 534 / 836 |
+| Voci con semantica verificata per il campione principale | 504 / 836 |
 | Coppie linguaggio ed estensione con file | 1738 / 1749 |
 | Estensioni distinte con artefatti principali | 1480 / 1489 |
 | Coppie ancora senza artefatto | 11 |
