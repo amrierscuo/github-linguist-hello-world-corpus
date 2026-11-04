@@ -1,23 +1,23 @@
-# 0613 — RenderScript — `.rsh`
+# 0613: RenderScript: `.rsh`
 
-Header RenderScript C-like con dato costante, incluso da un kernel companion.
+Header RenderScript C-like with constant data, included by a companion kernel.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rsh`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Android RenderScript compiler: compile main.rs and invoke hello on local test device
 ```
 
-Risultato atteso: rsDebug contiene Hello, World!.
+Expected result: rsDebug contains Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://developer.android.com/guide/topics/renderscript/reference/rs_debug](https://developer.android.com/guide/topics/renderscript/reference/rs_debug)

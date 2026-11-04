@@ -1,32 +1,32 @@
-# 0550 — PowerBuilder: `.pbt`
+# 0550: PowerBuilder: `.pbt`
 
-Ruolo: Target PowerBuilder: AppName e LibList, descriptor testuale che riferisce una libreria da creare nel work.
+Role: Target PowerBuilder: AppName and LibList, text descriptor that reports a library to be created in the work.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Appeon PowerBuilder originale; versione da registrare. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Appeon PowerBuilder originale; versione da registrare. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 PowerBuilder: creare corpus_hello.pbl nel work, importare corpus_hello.sra e aprire hello.pbt
 ```
 
-Risultato atteso: Target della applicazione di test che mostra Hello, World!
+Expected result: Target of test application showing Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- La libreria .pbl richiede creazione originale PowerBuilder; non viene distribuito un binario fittizio.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- The .pbl bookcase requires original creation PowerBuilder; a fictitious track is not distributed.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `corpus_hello.sra`: `d23ab37da300ef38690905e9198640b61f22f0402ed11965d556f548ab7a6c18`
 - `hello.pbt`: `a4b149e6f77eba43aae01d751cebd8fc08235db285dc2e7134429ef390de9507`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.appeon.com/pb2019r3/pbug/ch02s01.html
 - https://www.appeon.com/system/files/product-manual/powerscript_reference_v2021.pdf

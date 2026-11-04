@@ -1,30 +1,30 @@
-# 0519 — PHP: `.ctp`
+# 0519: PHP: `.ctp`
 
-Ruolo: Template CakePHP storico .ctp con output HTML del saluto.
+Role: Template CakePHP historical .ctp with HTML output of greeting.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: PHP 8.3.6 native Ubuntu CLI. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: PHP 8.3.6 native Ubuntu CLI. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 CakePHP 3: renderizzare hello.ctp con helper globale h disponibile
 ```
 
-Risultato atteso: <p>Hello, World!</p>
+Expected result: <p> Hello, World! </p>
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.ctp`: `7a44a503c8c2624438747d21638c303f9d76de794e05e97acacd79f0ac3d2d5c`
 
-Fonti primarie:
+Primary sources:
 
 - https://book.cakephp.org/3/en/views.html
 - https://www.php.net/manual/en/function.echo.php

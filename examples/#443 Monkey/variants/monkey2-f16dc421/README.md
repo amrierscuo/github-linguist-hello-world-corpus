@@ -1,30 +1,30 @@
-# 0443 — Monkey: `.monkey2`
+# 0443: Monkey: `.monkey2`
 
-Ruolo: Programma Monkey2 con import std e namespace, distinto dalla sintassi Monkey X.
+Role: Monkey2 program with import std and namespace, distinct from the syntax Monkey X.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Required genuine toolchain not available/configured — non disponibile / non verificata. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Required genuine toolchain not available/configured, non disponibile / non verificata. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Monkey2 mx2cc: compilare hello.monkey2 e avviare programma locale
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.monkey2`: `a4d68b1bdf3594af5db37931800ab99c7afaf406775fcce0046cd861fc05b344`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/blitz-research/monkey2
 - https://github.com/blitz-research/monkey

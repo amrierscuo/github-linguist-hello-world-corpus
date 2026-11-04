@@ -1,40 +1,40 @@
 # #374 Langium
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Generare un parser da una grammatica Langium e riconoscere Hello, World!.
+Generate a parser from a Langium grammar and recognize Hello, World!.
 
-La grammatica definisce entry Model, ID e whitespace nascosto. createServicesForGrammar analizza il sorgente e costruisce il parser originale; la fixture Hello, World! è realmente analizzata.
+The grammar defines entry Model, ID and hidden whitespace. createServicesForGrammar analyzes the source and builds the original parser; the Hello, World! fixture is actually analyzed.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Langium4.4.0/Chevrotain, Node22.20; versione effettiva nel log
+Langium4.4.0 /Chevrotain, Node22.20; actual version in the log
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 node verify.mjs
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Nessun lexer/parser error; AST Model con audience=World.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://langium.org/docs/reference/grammar-language/
 - https://github.com/eclipse-langium/langium
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.langium` | [hello.langium](hello.langium) verificato |
+| `.langium` | [hello.langium](hello.langium) verified |

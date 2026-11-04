@@ -2,39 +2,39 @@
 
 Voce canonica `NPM Config`, tipo `data`, language_id `685022663`.
 
-Leggere il valore Hello, World! dalla configurazione NPM locale del progetto.
+Read the Hello, World! value from the local NPM configuration of the project.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Actual NPM project npmrc parser/config reader — 11.14.1. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Actual NPM project npmrc parser/config reader, 11.14.1. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-NPM reale 11.14.1. Copiare .npmrc in un progetto temporaneo con package.json private e usare due file config vuoti per isolare il progetto.
+NPM real 11.14.1. Copy .npmrc in a temporary project with private package.json and use two empty config files to isolate the project.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 npm --userconfig /path/to/empty-user.npmrc --globalconfig /path/to/empty-global.npmrc config get init-author-name
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il parser/config reader NPM legge init-author-name e audit=false. Nessun pacchetto installato, nessuna modifica alle configurazioni utente/globali.
+The parser/config reader NPM read init-author-name and audit=false. No package installed, no modification to utente/globali. configurations
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.npmjs.com/cli/v11/configuring-npm/npmrc](https://docs.npmjs.com/cli/v11/configuring-npm/npmrc)
 - [https://docs.npmjs.com/cli/v11/using-npm/config#init-author-name](https://docs.npmjs.com/cli/v11/using-npm/config#init-author-name)

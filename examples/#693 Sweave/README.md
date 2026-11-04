@@ -2,46 +2,46 @@
 
 Voce canonica `Sweave`, tipo `prose`, language_id `558779190`.
 
-Eseguire il chunk R di un documento Sweave e produrre il saluto nel LaTeX generato.
+Run the chunk R of a Sweave document and produce greeting in the generated LaTeX.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Original R Sweave document engine — R version 4.3.3 (2024-02-29) -- "Angel Food Cake". Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Original R Sweave document engine, R version 4.3.3 ( 2024-02-29 ) -- "Angel Food Cake". Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-GNU R4.3.3 e Sweave originali. Il log registra R_HOME e librerie della distribuzione relocata.
+GNU R4.3.3 and original Sweave. The log records R_HOME and relocated distribution libraries.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 R --vanilla --slave -e 'utils::Sweave("hello.rnw",output="build/hello.tex")'
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.
+Expected result: Hello, World! in the conformed result, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-R esegue cat nel chunk results=tex; il documento generato contiene il saluto esatto. Ambito: Sweave e LaTeX generato, senza compilazione/impaginazione TeX.
+R performs cat in the chunk results=tex; the generated document contains the exact greeting. Scope: Sweave and LaTeX generated, without compilazione/impaginazione TeX.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Sweave.html](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/Sweave.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rnw` | [hello.rnw](hello.rnw) verificato |
+| `.rnw` | [hello.rnw](hello.rnw) verified |

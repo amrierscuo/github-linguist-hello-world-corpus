@@ -1,40 +1,40 @@
 # #015 ASL
 
-Questa voce indica **ACPI Source Language**. `hello.asl` definisce una tabella SSDT
-con il metodo `HWLD`, che scrive `Hello World` nell'oggetto Debug e restituisce la
-stessa stringa. Il test usa l'interprete ACPICA in spazio utente.
+This entry indicates **ACPI Source Language**. `hello.asl` defines a SSDT table
+with the `HWLD` method, which writes `Hello World` in the Debug object and returns the
+The test uses the ACPICA interpreter in user space.
 
-Toolchain verificata: ACPICA `iasl` e `acpiexec`, versione **20250807**, Windows x64.
-I binari sono disponibili nella [release ufficiale ACPICA](https://github.com/open-acpica/acpica/releases/tag/20250807)
-(archivio `iasl-win-20250807.zip`) e non sono inclusi nel corpus.
+Toolchain verified: ACPICA `iasl` e `acpiexec`, versione **20250807**, Windows x64.
+The tracks are available in [release ufficiale ACPICA](https://github.com/open-acpica/acpica/releases/tag/20250807)
+( `iasl-win-20250807.zip` archive) and are not included in the corpus.
 
-Dalla cartella dell'esempio, con gli eseguibili ACPICA nel PATH:
+From the example folder, with ACPICA executables in PATH:
 
 ```powershell
 iasl hello.asl
 acpiexec -b "execute HWLD" hello.aml
 ```
 
-Per verificare anche automaticamente il risultato, producendo gli artefatti in
-una cartella nuova esterna all'esempio:
+To automatically verify the result, producing artifacts in
+a new folder external to the example:
 
 ```powershell
 powershell -NoProfile -File .\verify.ps1 -AcpicaDirectory C:\tools\acpica -BuildDirectory C:\temp\asl-check
 ```
 
-Risultato atteso: compilazione senza errori; il log dell'interprete contiene
+Expected result: compilation without errors; the user log contains
 `ACPI Debug: "Hello World"` e `[String] Length 0B = "Hello World"`.
-Sintassi e semantica verificate: **sì**, vedere `verification.log`.
-Il controllo riguarda questo metodo nel simulatore ACPICA; non è una prova
-di integrazione nel firmware di una macchina.
+syntax and behavior verified: **sì**, vedere `verification.log`.
+The control concerns this method in the ACPICA simulator; it is not a test
+integration into the firmware of a machine.
 
 Riferimento primario: [ACPI Source Language Reference, UEFI Forum](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/19_ASL_Reference/ACPI_Source_Language_Reference.html).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asl` | [hello.asl](hello.asl) verificato |
-| `.dsl` | [hello.dsl](variants/ext-dsl-2e64736c/hello.dsl) creato, verifiche pendenti |
+| `.asl` | [hello.asl](hello.asl) verified |
+| `.dsl` | [hello.dsl](variants/ext-dsl-2e64736c/hello.dsl) created; verification pending |

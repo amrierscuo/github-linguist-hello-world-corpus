@@ -1,31 +1,31 @@
 # #751 Vespa Schema Definition
 
-Validare uno schema Vespa e conservare un campo message leggibile tramite summary.
+Validate a Vespa scheme and save a message field readable by summary.
 
-Tipo canonico `data`, language_id `587879709`.
+Canonical type `data`, language_id `587879709`.
 
-Toolchain prevista: Vespa application validator e server di prova.
+Suggested toolchain: Vespa application validator and test server.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Validare hello.sd in un application package e caricare document.json in un’istanza isolata.
 ```
 
-Risultato atteso: schema accettato; document summary restituisce message Hello, World!.
+Expected result: accepted scheme; document summary returns message Hello, World!.
 
-Il contratto e il documento sono originali. La validazione completa richiede il modello Vespa.
+The contract and the document are original. The complete validation requires the Vespa model.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Vespa schema reference](https://docs.vespa.ai/en/reference/schema-reference.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sd` | [hello.sd](hello.sd) creato, verifiche pendenti |
+| `.sd` | [hello.sd](hello.sd) created; verification pending |

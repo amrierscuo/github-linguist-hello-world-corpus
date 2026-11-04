@@ -2,47 +2,47 @@
 
 Voce canonica: `B4X`, tipo `programming`, `language_id: 96642275`.
 
-Stampare Hello, World! nel log di una applicazione console non-UI B4J, variante della famiglia B4X.
+Print Hello, World! in the log of a B4J console application without a UI, a variant in the B4X family.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-B4J.exe — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+B4J.exe, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede B4J e JDK compatibile. Main.bas è il modulo sorgente da inserire in un nuovo progetto non-UI: gli attributi e i metadati del progetto sono creati dall’IDE.
+Requires B4J and a compatible JDK. Add Main.bas as the source module of a new non-UI project. The IDE creates the project attributes and metadata.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 B4J IDE: File > New > Non-UI Project; sostituire il modulo Main con Main.bas; Run in Release; controllare il log.
 ```
 
-Risultato atteso: Build riuscita e una riga Hello, World! nel log della applicazione.
+Expected result: Successful Build and a Hello, World! row in the application log.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Usa AppStart(Args() As String) per B4J console e Log per il saluto. B4J non è presente e il modulo non è stato compilato. Non è dichiarato un progetto B4A/B4i completo.
+Uses AppStart(Args() As String) for the B4J console entry point and Log for the greeting. B4J is unavailable, so the module has not been compiled. No complete B4A/B4i project is claimed.
 
-Requisiti residui:
+Remaining requirements:
 
 - B4J.exe toolchain not installed or not available in this isolated verification environment.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.b4x.com/guides/B4XGettingStarted.html](https://www.b4x.com/guides/B4XGettingStarted.html)
 - [https://www.b4x.com/android/forum/threads/console-application-output-shown-after-command-prompt.167324/](https://www.b4x.com/android/forum/threads/console-application-output-shown-after-command-prompt.167324/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bas` | [Main.bas](Main.bas) creato, verifiche pendenti |
+| `.bas` | [Main.bas](Main.bas) created; verification pending |

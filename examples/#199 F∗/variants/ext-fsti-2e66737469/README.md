@@ -1,34 +1,34 @@
-# 0199 F* — variante `.fsti`
+# 0199 F*: variant `.fsti`
 
-Ruolo: Firma F* della funzione main, con implementazione FST omonima.
+Role: Sign F* of the main function, with FST implementation of the same name.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#199 F∗/Hello.fst; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Departure model: examples/#199 F variable/ Hello.fst; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 F* originale: typecheck Hello.fsti e Hello.fst; estrarre e invocare Hello.main().
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html](https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html)
 - [https://github.com/FStarLang/FStar/blob/master/ulib/FStar.IO.fsti](https://github.com/FStarLang/FStar/blob/master/ulib/FStar.IO.fsti)

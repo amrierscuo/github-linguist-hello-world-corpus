@@ -1,23 +1,23 @@
-# 0653 — Scilab — `.sci`
+# 0653: Scilab: `.sci`
 
-File Scilab di funzione, caricato dal chiamante.
+Function Scilab files, loaded by the caller.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sci`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 scilab-cli -nb -f main.sce
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html](https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html)

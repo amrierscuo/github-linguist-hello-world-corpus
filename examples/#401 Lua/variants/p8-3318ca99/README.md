@@ -1,30 +1,30 @@
-# 0401 — Lua: `.p8`
+# 0401: Lua: `.p8`
 
-Ruolo: Cartuccia PICO-8 testuale con header/version e sezione __lua__; il saluto è disegnato in _draw.
+Role: Cartridge PICO - 8 text with header/version and section __lua_; greeting is drawn in _draw.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Lua 5.4.8 native Linux build from original sources. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Lua 5.4.8 native Linux build from original sources. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 PICO-8: load hello.p8; run
 ```
 
-Risultato atteso: Hello, World! a schermo
+Expected result: Hello, World! screen
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.p8`: `69b1187af68e835a7a5f603b681ff580c07aa1ba9f81af74401b930dd71f3952`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.lexaloffle.com/dl/docs/pico-8_manual.html
 - https://www.lua.org/manual/5.4/

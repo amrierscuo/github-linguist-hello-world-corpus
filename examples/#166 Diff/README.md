@@ -1,38 +1,38 @@
 # #166 Diff
 
-Applicare una patch unified diff che trasforma Hello in Hello, World!.
+Apply a unified patch diff that turns Hello into Hello, World!.
 
 ## Toolchain
 
 GNU GNU patch 2.7.6; diff (GNU diffutils) 3.10
 
-## Comandi e procedura
+## Commands and procedure
 
 diff -u --label a/hello.txt before/hello.txt --label b/hello.txt after/hello.txt; copiare before/hello.txt in build/hello.txt; da build: patch --batch -p1 -i ../hello.diff
 
-## Risultato atteso
+## Expected result
 
 diff exit 1 perché esistono differenze; patch exit 0; file risultante uguale a after/hello.txt.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La patch inclusa è confrontata byte per byte con GNU diff. patch la applica in una directory temporanea; il saluto nel file risultante è verificato. Exit 1 da diff è il codice corretto per file differenti.
+The patch included is compared bytes per bytes with GNU diff. patch applies it in a temporary directory; greeting in the resulting file is verified. Exit 1 da diff is the correct code for different files.
 
-Verifica effettiva del 2026-10-08T11:56:12.780978+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:12.780978+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html](https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html)
 - [https://www.gnu.org/software/diffutils/manual/html_node/Invoking-patch.html](https://www.gnu.org/software/diffutils/manual/html_node/Invoking-patch.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.diff` | [hello.diff](hello.diff) verificato |
-| `.patch` | [hello.patch](variants/ext-patch-2e7061746368/hello.patch) creato, verifiche pendenti |
+| `.diff` | [hello.diff](hello.diff) verified |
+| `.patch` | [hello.patch](variants/ext-patch-2e7061746368/hello.patch) created; verification pending |

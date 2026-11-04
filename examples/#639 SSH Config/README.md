@@ -1,31 +1,31 @@
 # #639 SSH Config
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare SSH Config e valutare l’opzione GREETING=Hello, World!.
+Analyze SSH Config and evaluate the GREETING = Hello, World! option.
 
--G stampa la configurazione effettiva senza aprire connessioni. Il file rimane una fixture locale; il nome host illustrativo usa example.invalid.
+-G prints the actual configuration without opening connections. The file remains a local fixture; the illustrative host name uses example.invalid.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 OpenSSH9.6p1 originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 ssh -G -F ssh-config hello-world
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 hostname hello-world.example.invalid e setenv GREETING=Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://man.openbsd.org/ssh_config

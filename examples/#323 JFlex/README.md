@@ -1,12 +1,12 @@
 # #323 JFlex
 
-Generare un lexer Java con JFlex e riconoscere World per stampare Hello, World!.
+Generate a Java lexer with JFlex and recognize World to print Hello, World!.
 
-Tipo canonico `programming`, language_id `173`.
+Canonical type `programming`, language_id `173`.
 
-Toolchain prevista: JFlex 1.9.1, java-cup-runtime e JDK 21.
+Toolchain provided: JFlex 1.9.1, java-cup-runtime and JDK 21.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java -cp "$JFLEX_CLASSPATH" jflex.Main -d build hello.jflex
@@ -14,23 +14,23 @@ javac -d build build/GreetingLexer.java
 java -cp build GreetingLexer input.txt
 ```
 
-Risultato atteso: uscita 0; stdout Hello, World! seguito da newline.
+Expected result: 0 output; stdout Hello, World! followed by newline.
 
-La parola World è l’input del lexer generato: l’output deriva dall’azione della regola, non da un parser di prova scritto ad hoc.
+The word World is the input of the generated lexer: the output comes from the action of the rule, not from an ad hoc test parser.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: JFlex 1.9.1 + CUP runtime 11b-20160615-3 + OpenJDK 21.0.12. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: JFlex 1.9.1 + CUP runtime 11b-20160615-3 + OpenJDK 21.0.12. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [JFlex — manuale originale](https://jflex.de/manual.html)
 
-Classpath richiesto: `jflex-1.9.1.jar`, `java-cup-runtime-11b-20160615-3.jar`. I JAR originali sono disponibili da [Maven Central](https://repo.maven.apache.org/maven2/). Impostare la variabile di classpath del comando; separatore `;` su Windows, `:` su Unix.
+Classpath required: `jflex-1.9.1.jar`, `java-cup-runtime-11b-20160615-3.jar`. The original JAR are available from [Maven Central](https://repo.maven.apache.org/maven2/). Set the command classpath variable; `;` separator on Windows, `:` on Unix.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.flex` | [hello.flex](variants/flex-1e75c1a3/hello.flex) creato, verifiche pendenti |
-| `.jflex` | [hello.jflex](hello.jflex) verificato |
+| `.flex` | [hello.flex](variants/flex-1e75c1a3/hello.flex) created; verification pending |
+| `.jflex` | [hello.jflex](hello.jflex) verified |

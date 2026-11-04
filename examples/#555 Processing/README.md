@@ -1,42 +1,42 @@
 # #555 Processing
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire uno sketch Processing originale e stampare Hello, World!.
+Perform an original sketch Processing and print Hello, World!.
 
-La directory Hello contiene Hello.pde. setup dichiara una variabile String, chiama println e conclude lo sketch con exit; il preprocessing Processing è distinto da javac su un file C/Java generico.
+The Hello directory contains Hello.pde. setup declares a String variable, calls println and concludes the sketch with exit; preprocessing Processing is distinguished by javac on a generic C/Java file.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Processing Java mode originale; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 processing-java --sketch=Hello --run
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
 Impedimenti: Processing/Java-mode preprocessor e host non preparati.
 
-## Fonti primarie
+## Primary sources
 
 - https://processing.org/reference/println_.html
 - https://processing.org/reference/exit_.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pde` | [Hello.pde](Hello/Hello.pde) creato, verifiche pendenti |
+| `.pde` | [Hello.pde](Hello/Hello.pde) created; verification pending |

@@ -1,31 +1,31 @@
 # #678 Spline Font Database
 
-Aprire un Spline Font Database e recuperare il FullName del font.
+Open a Spline Font Database and recover the FullName of the font.
 
-Tipo canonico `data`, language_id `767169629`.
+Canonical type `data`, language_id `767169629`.
 
-Toolchain prevista: FontForge.
+Suggested toolchain: FontForge.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 fontforge -lang=ff -c 'Open($1); Print($fullname);' hello.sfd
 ```
 
-Risultato atteso: FontForge accetta il font e legge FullName Hello, World!.
+Expected result: FontForge accepts font and FullName Hello, World! law.
 
-Il font contiene metadati e nessun glifo: l’obiettivo è il nome del font, non il rendering del saluto.
+The font contains metadata and no glyph: the goal is the font name, not the rendering of greeting.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [FontForge SFD](https://fontforge.org/docs/techref/sfdformat.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sfd` | [hello.sfd](hello.sfd) creato, verifiche pendenti |
+| `.sfd` | [hello.sfd](hello.sfd) created; verification pending |

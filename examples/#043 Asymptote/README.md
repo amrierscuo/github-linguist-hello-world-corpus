@@ -2,47 +2,47 @@
 
 Voce canonica: `Asymptote`, tipo `programming`, `language_id: 591605007`.
 
-Concatenare Hello, e World! e scrivere il saluto su stdout Asymptote.
+Concatenate Hello, and World! and write greetings on stdout Asymptote.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Asymptote interpreter distributed with MiKTeX — miktex-asy version 2.88 [(C) 2004 Andy Hammerlindl, John C. Bowman, Tom Prince]. Ambiente della prova: **Windows x64**.
+Asymptote interpreter distributed with MiKTeX, miktex-asy version 2.88 [(C) 2004 Andy Hammerlindl, John C. Bowman, Tom Prince]. Test environment: **Windows x64**.
 
-Richiede Asymptote e una distribuzione coerente dei suoi moduli standard. Non usa grafica, TeX o un viewer: il programma invoca solo write su una stringa.
+It requires Asymptote and a consistent distribution of its standard modules. It does not use graphics, TeX or a viewer: the program only invokes write on a string.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 asy -noV hello.asy
 ```
 
-Risultato atteso: Exit 0; stdout Hello, World! seguito da newline.
+Exit 0; stdout Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-L’interprete MiKTeX locale è stato eseguito davvero, ma non carica il modulo plain: il log mostra errori sui moduli standard prima dell’esecuzione del sorgente. Occorre una toolchain coerente; sintassi e semantica restano false.
+The local MiKTeX interpreter has actually been executed, but it does not charge the plain module: the log shows errors on the standard modules before the source is executed. A consistent toolchain is needed; syntax and behavior remain false.
 
-Requisiti residui:
+Remaining requirements:
 
 - Asymptote interpreter runs, but local MiKTeX standard plain modules produce compiler errors; coherent interpreter/library installation required.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://asymptote.sourceforge.io/doc/Files.html](https://asymptote.sourceforge.io/doc/Files.html)
 - [https://asymptote.sourceforge.io/doc/Options.html](https://asymptote.sourceforge.io/doc/Options.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asy` | [hello.asy](hello.asy) creato, verifiche pendenti |
+| `.asy` | [hello.asy](hello.asy) created; verification pending |

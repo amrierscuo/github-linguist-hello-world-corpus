@@ -1,24 +1,24 @@
-# 0785 — XML — `.gml`
+# 0785: XML: `.gml`
 
-Fixture GML feature collection senza dati geospaziali privati.
+Fixture GML feature collection without private geospatial data.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.gml`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 GML XML/schema validation in isolated parser
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://www.ogc.org/standard/gml/](https://www.ogc.org/standard/gml/)

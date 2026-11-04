@@ -1,40 +1,40 @@
 # #791 XSLT
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Applicare XSLT1.0 a XML e produrre Hello, World!.
 
-Il processore XSLT compila il foglio e valuta concat sul contenuto /audience della fixture originale.
+The XSLT processor compiles the sheet and evaluates concat on the content /audience of the original fixture.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 lxml6.1.3 con libxslt originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Hello, World! come risultato testuale della trasformazione.
+Hello, World! as a textual result of transformation.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.w3.org/TR/1999/REC-xslt-19991116
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.xslt` | [hello.xslt](variants/xslt-6c8e89da/hello.xslt) creato, verifiche pendenti |
-| `.xsl` | [hello.xsl](hello.xsl) verificato |
+| `.xslt` | [hello.xslt](variants/xslt-6c8e89da/hello.xslt) created; verification pending |
+| `.xsl` | [hello.xsl](hello.xsl) verified |

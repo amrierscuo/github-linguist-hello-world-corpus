@@ -1,23 +1,23 @@
-# 0624 — Roff Manpage — `.3p`
+# 0624: Roff Manpage: `.3p`
 
-Pagina man originale della sezione 3p; .in è un template statico senza sostituzioni.
+Original man page of the 3p section; .in is a static template without replacements.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.3p`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 groff -Tascii -man hello.3p
 ```
 
-Risultato atteso: testo formattato contenente Hello, World!.
+Expected result: formatted text containing Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.gnu.org/software/groff/manual/groff.html](https://www.gnu.org/software/groff/manual/groff.html)

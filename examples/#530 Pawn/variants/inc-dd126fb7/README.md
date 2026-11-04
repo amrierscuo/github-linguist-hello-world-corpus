@@ -1,31 +1,31 @@
-# 0530 — Pawn: `.inc`
+# 0530: Pawn: `.inc`
 
-Ruolo: Header Pawn con stock function per non imporre main nel file incluso.
+Role: Header Pawn with stock function not to impose main in the included file.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Required genuine compiler/runtime — non disponibile / non verificata. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Required genuine compiler/runtime, non disponibile / non verificata. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 pawncc driver.pwn; runtime AMX con binding console originale
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `driver.pwn`: `f20e4f1d693a36f6c37493b85b0c67c7a4e4f7add5ede167262d0518cc7efb4b`
 - `hello.inc`: `c24e2ab2a428839585147ac9efb96dbfdf5dc76d6dfa755cc1d6c040653cd54f`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/compuphase/pawn
 - https://compuphase.com/pawn/pawn.htm

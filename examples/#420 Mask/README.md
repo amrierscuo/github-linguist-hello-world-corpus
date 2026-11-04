@@ -1,33 +1,33 @@
 # #420 Mask
 
-Analizzare Mask e renderizzare una interpolazione del modello target.
+Analyze Mask and make an interpolation of the target model.
 
-Tipo canonico `markup`, language_id `223`.
+Canonical type `markup`, language_id `223`.
 
-Toolchain prevista: Node.js 22 e MaskJS originale.
+Suggested toolchain: Node.js 22 and original MaskJS.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: HTML <p>Hello, World!</p>; stdout saluto e LF.
+Expected result: HTML <p> Hello, World! </p>; stdout greeting and LF.
 
-La stringa è interpolata dal motore MaskJS; non viene sostituita da un helper che imita il formato.
+The string is interpolated by the MaskJS engine; it is not replaced by a helper that imitates the format.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + MaskJS 0.73.3. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + MaskJS 0.73.3. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [MaskJS — motore originale](https://github.com/atmajs/MaskJS)
 
-Dipendenza fissata: `npm install --ignore-scripts --no-audit --no-fund maskjs@0.73.3`. La build Node espone render, usato dal checker.
+Fixed dependence: `npm install --ignore-scripts --no-audit --no-fund maskjs@0.73.3`. The build Node exposes render, used by the checker.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mask` | [hello.mask](hello.mask) verificato |
+| `.mask` | [hello.mask](hello.mask) verified |

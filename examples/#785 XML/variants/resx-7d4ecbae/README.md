@@ -1,24 +1,24 @@
-# 0785 — XML — `.resx`
+# 0785: XML: `.resx`
 
 Risorsa .NET RESX textuale, distinta da output binario .resources.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.resx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 resgen hello.resx work/hello.resources or ResXResourceReader
 ```
 
-Risultato atteso: risorsa Greeting == Hello, World!.
+Expected result: resource Greeting == Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://learn.microsoft.com/en-us/dotnet/framework/resources/working-with-resx-files-programmatically](https://learn.microsoft.com/en-us/dotnet/framework/resources/working-with-resx-files-programmatically)

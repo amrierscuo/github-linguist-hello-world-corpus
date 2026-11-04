@@ -1,31 +1,31 @@
-# 0423 — Max: `.mxt`
+# 0423: Max: `.mxt`
 
-Ruolo: Patcher Max legacy testuale max v2/#N/#P, con lista dei 13 codici ASCII del saluto -> itoa -> print. Non è il formato binario maxb; la message numerica non usa separatori virgola.
+Role: Patcher Max legacy textual max v2/#N/#P, with list of 13 codes ASCII greeting codes -> itoa -> print. It is not the maxb binary format; the numerical message does not use comma separators.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Cycling ’74 Max 8+. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Cycling ’74 Max 8+. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Max originale compatibile: aprire hello.mxt come patcher testuale (o importare dal clipboard) e leggere la console; verificare il reader legacy e il collegamento loadbang/message/itoa/print.
 ```
 
-Risultato atteso: Console con simbolo Hello, World! (prefisso print corpus consentito).
+Expected result: Console with Hello, World! symbol (prefix print corpus allowed).
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- Reader Max legacy non eseguito; saluto espresso come codici ASCII e convertito da itoa, evitando ambiguità della serializzazione del comma.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- Reader Max legacy not executed; express greeting as ASCII codes and converted from itoa, avoiding ambiguity of the serialization of the subparagraph.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.mxt`: `9f2eb2ebe46c91b32617235c1be7329ec11fce04663c86b9ee979bfad7c9f26f`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.cycling74.com/userguide/filetypes/
 - https://docs.cycling74.com/reference/itoa/

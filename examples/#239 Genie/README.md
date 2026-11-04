@@ -1,18 +1,18 @@
 # #239 Genie
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare Genie attraverso il frontend Vala ed eseguire il programma nativo Hello, World!.
+Fill Genie through the frontend Vala and run the native program Hello, World!.
 
-init è il punto di ingresso Genie; [indent=4] dichiara l’indentazione e print aggiunge newline. La prova effettiva usa valac -C con vapi isolati, poi GCC con gli header GLib isolati e le librerie WSL. Il C generato e il binario restano in work.
+init is the entry point Genie; [indent= 4 ] declares the indentation and print adds newline. The actual test uses valac -C with isolated vapes, then GCC with isolated headers GLib and WSL libraries.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Vala/Genie 0.56.16, GNU C 13.3.0 e GLib 2.80.0
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 valac hello.gs -o hello
@@ -22,23 +22,23 @@ valac hello.gs -o hello
 ./hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://wiki.gnome.org/Projects/Genie
 - https://gnome.pages.gitlab.gnome.org/vala/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gs` | [hello.gs](hello.gs) verificato |
+| `.gs` | [hello.gs](hello.gs) verified |

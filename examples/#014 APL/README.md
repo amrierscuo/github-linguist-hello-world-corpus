@@ -1,15 +1,15 @@
 # #014 APL
 
-`hello.apl`, codificato UTF-8, assegna alla quad di output `⎕` la stringa
-`Hello, World!`. Il risultato è una riga sul terminale.
+`hello.apl`, encoded UTF - 8, assigns the string to the `⎕` output quad
+`Hello, World!`. The result is a line on the terminal.
 
-## Toolchain e comandi
+## Toolchain and commands
 
-La verifica usa l'interprete APL autentico **dzaima/APL**, implementato in Java,
-al commit `5eb0a4205e27afa6122096a25008474eec562dc0`. È un dialetto APL;
-il risultato non implica compatibilità completa con altri interpreti.
-Servono Git, JDK e Python per il verificatore. Esempio di preparazione locale
-PowerShell, dalla cartella dell'esempio:
+The verification uses the authentic APL interpreter **dzaima/APL**, implemented in Java,
+to commit `5eb0a4205e27afa6122096a25008474eec562dc0`. It is a dialect APL;
+the result does not imply complete compatibility with other interpreters.
+They serve Git, JDK and Python for the Verifier.
+PowerShell, from the example folder:
 
 ```powershell
 git clone https://github.com/dzaima/APL .tools/dzaima-apl
@@ -23,29 +23,29 @@ java -jar .tools/APL.jar -f hello.apl
 python verify.py --jar .tools/APL.jar
 ```
 
-La build può emettere un avviso Java sulla deprecazione di `finalize()`;
-la build effettuata con OpenJDK 21 è riuscita.
+The build can issue a Java notice on the deprecation of `finalize()`;
+the build carried out with OpenJDK 21 has succeeded.
 
-## Verifica eseguita
+## Verification performed
 
-Sintassi e semantica verificate su Windows tramite l'interprete compilato dal
-commit indicato. Il controllo ha osservato codice 0, stderr vuoto e stdout
-esattamente `b'Hello, World!\r\n'` su Windows. Il checker accetta un solo
+syntax and behavior verified on Windows through the compiled interpreter
+The control has observed code 0, stderr vacuum and stdout
+exactly `b'Hello, World!\r\n'` on Windows. The checker accepts only one
 terminatore LF oppure CRLF. `verify.py` avvia Java e
-confronta stdout; non interpreta APL. Vedere `verification.log`.
-Il codice e il JAR dell'interprete sono esclusi dal corpus.
+compare stdout; do not interpret APL. See `verification.log`.
+The interpreter's code and JAR are excluded from the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [dzaima/APL: repository dell'autore](https://github.com/dzaima/APL)
 - [dzaima/APL: build al commit verificato](https://github.com/dzaima/APL/blob/5eb0a4205e27afa6122096a25008474eec562dc0/build)
 - [dzaima/APL: invocazione -f e lettura UTF-8](https://github.com/dzaima/APL/blob/5eb0a4205e27afa6122096a25008474eec562dc0/src/APL/Main.java)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.apl` | [hello.apl](hello.apl) verificato |
-| `.dyalog` | [hello.dyalog](variants/ext-dyalog-2e6479616c6f67/hello.dyalog) creato, verifiche pendenti |
+| `.apl` | [hello.apl](hello.apl) verified |
+| `.dyalog` | [hello.dyalog](variants/ext-dyalog-2e6479616c6f67/hello.dyalog) created; verification pending |

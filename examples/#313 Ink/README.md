@@ -1,37 +1,37 @@
 # #313 Ink
 
-Compilare una storia Ink che emette Hello, World! e raggiunge END.
+Fill out an Ink story that emits Hello, World! and reaches END.
 
 ## Toolchain
 
 Official inklecate v1.2.1 Windows release; generated inkVersion 21
 
-## Comandi e procedura
+## Commands and procedure
 
 inklecate -o build/hello.json hello.ink; inklecate -p hello.ink
 
-## Risultato atteso
+## Expected result
 
-JSON della storia valido per Ink runtime; Play emette il saluto e finisce, exit 0.
+JSON of the story valid for Ink runtime; Play issues greeting and ends, exit 0.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Entrambe le fasi usano il tool originale inklecate; il compiler e il runtime di Play sono reali. JSON compilato soltanto in work.
+Both phases use the original inklecate tool; the compiler and runtime of Play are real. JSON compiled only in work.
 
-Verifica effettiva del 2026-10-08T12:29:57.976554+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:29:57.976554+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/inkle/ink](https://github.com/inkle/ink)
 - [https://github.com/inkle/ink/releases/tag/v1.2.1](https://github.com/inkle/ink/releases/tag/v1.2.1)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ink` | [hello.ink](hello.ink) verificato |
+| `.ink` | [hello.ink](hello.ink) verified |

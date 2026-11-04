@@ -1,23 +1,23 @@
-# 0709 — Tcl — `.adp`
+# 0709: Tcl: `.adp`
 
-Template NaviServer ADP con comando Tcl del renderer.
+NaviServer ADP with Tcl command of the renderr.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.adp`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 NaviServer: ns_adp_parse -file hello.adp
 ```
 
-Risultato atteso: HTML/testo Hello, World!.
+Expected result: HTML/testo Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://naviserver.sourceforge.io/n/naviserver/files/ns_adp_parse.html](https://naviserver.sourceforge.io/n/naviserver/files/ns_adp_parse.html)

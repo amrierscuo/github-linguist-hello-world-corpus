@@ -1,23 +1,23 @@
-# 0796 — YAML — `.rviz`
+# 0796: YAML: `.rviz`
 
-Configurazione RViz2 originale senza subscription/robot; nome della vista root conserva il saluto.
+Original RViz2 configuration without subscription/robot; root view name keeps greeting.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rviz`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rviz2 -d hello.rviz in an isolated local profile
 ```
 
-Risultato atteso: config caricata; root Name Hello, World!.
+Expected result: config uploaded; root name Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.ros.org/en/rolling/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html](https://docs.ros.org/en/rolling/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)

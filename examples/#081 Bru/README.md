@@ -1,54 +1,54 @@
 # #081 Bru
 
-Inviare una richiesta GET locale a hello.txt con Bruno e verificare nel test della richiesta che la risposta contenga Hello, World!.
+Send a local GET request to hello.txt with Bruno and check in the request test that the answer contains Hello, World!.
 
 ## Toolchain
 
 Node.js v22.20.0; @usebruno/lang 0.40.0; @usebruno/cli 4.2.1; Python stdlib HTTP fixture 3.13.9
 
-## Comandi e procedura
+## Commands and procedure
 
-I comandi vanno eseguiti dalla cartella dell'esempio. `npm install` installa
-localmente parser e CLI alle versioni fissate in package.json. `node check.cjs`
-attesta il formato del file Bru. Avviare la fixture in un terminale:
+The commands must be run from the example folder. `npm install` installs
+locally parser and CLI to the versions fixed in package.json. `node check.cjs`
+attests the Bru file format. Start the fixture in a terminal:
 
 ```sh
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Poi, da un altro terminale nella medesima cartella:
+Then, from another terminal in the same folder:
 
 ```sh
 npx bru run hello.bru --noproxy --sandbox=safe
 ```
 
-Terminare il server quando la prova finisce. La verifica registrata ha avviato
-e chiuso automaticamente una fixture equivalente, ed eseguito una richiesta
-e il test Bruno reale. Non sono necessari credenziali o endpoint esterni.
+End the server when the test ends. The registered verification started
+and automatically closed an equivalent fixture, and a request is executed
+and the Bruno Real test. No external credentials or endpoints are required.
 
-## Risultato atteso
+## Expected result
 
-Una richiesta GET, HTTP 200; corpo Hello, World! seguito da newline; test response greeting passa; exit 0.
+One GET request returned HTTP 200. The body was Hello, World! followed by a newline. The response greeting test passed with exit code 0.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il server è una fixture temporanea su loopback che serve hello.txt. Il parser e il runner sono quelli ufficiali Bruno. Il comando node check.cjs controlla il formato; il comando bru esegue anche HTTP e test.
+The server is a temporary fixture on loopback that serves hello.txt. The parser and the runner are the official Bruno ones. The node check.cjs command controls the format; the bru command also performs HTTP and test.
 
-Verifica effettiva del 2026-10-08T11:38:40.631298+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:38:40.631298+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.usebruno.com/bru-lang/overview](https://docs.usebruno.com/bru-lang/overview)
 - [https://docs.usebruno.com/bru-cli/run/options](https://docs.usebruno.com/bru-cli/run/options)
 - [https://github.com/usebruno/bruno](https://github.com/usebruno/bruno)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bru` | [hello.bru](hello.bru) verificato |
+| `.bru` | [hello.bru](hello.bru) verified |

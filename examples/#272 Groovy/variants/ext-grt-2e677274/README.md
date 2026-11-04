@@ -1,34 +1,37 @@
-# 0272 Groovy — variante `.grt`
+# 0272 Groovy: variant `.grt`
 
-Ruolo: Template Groovy GStringTemplateEngine, distinto da uno script console .groovy.
+## Recorded verification
 
-Tipo variante: **adapted**. Modello di partenza: examples/#272 Groovy/hello.groovy; contenuto adattato/originale per questo suffisso.
+**Syntax and behavior verified** on November 4, 2026. Execute unchanged Groovy source and unchanged GString/Simple template drivers. Aggregate .groovy preserves the prior unchanged main proof. [Evidence](../../verification/native_20261104_272_variants_result.json).
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Role: Template Groovy GStringTemplateEngine, distinguished by a script console .groovy.
 
-## Comando o procedura di verifica
+Type: **adapted**. Starting model: examples/#272 Groovy/hello.groovy; adattato/originale content for this suffix.
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
+
+## Verification command or procedure
+
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 groovy render.groovy
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato
+## Earlier status
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
-
-## Fonti primarie
+## Primary sources
 
 - [https://groovy-lang.org/syntax.html#_string_interpolation](https://groovy-lang.org/syntax.html#_string_interpolation)
 - [https://groovy-lang.org/](https://groovy-lang.org/)

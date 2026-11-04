@@ -2,47 +2,47 @@
 
 Voce canonica `FIRRTL`, tipo `programming`, language_id `906694254`.
 
-Descrivere un circuito FIRRTL con tredici uscite ASCII che formano il saluto e un printf attivo quando reset è basso.
+Describe a FIRRTL circuit with thirteen ASCII outputs that form greeting and an active printf when reset is low.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required authentic toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required authentic toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede CIRCT firtool e un simulatore RTL. Fornire clock e reset al modulo; i campioni greeting[0..12] devono ricostruire il saluto. La simulazione va fatta in una directory di lavoro.
+Requires CIRCT firtool and a RTL simulator. Provide clock and reset to the module; greeting samples[ 0..12 ] must rebuild the greeting.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 firtool hello.fir -o build/hello.sv; simulare il modulo Hello con clock e reset in un testbench RTL
 ```
 
-Risultato atteso: Compilatore accetta il circuito; uscite ASCII e printf producono Hello, World! durante la simulazione.
+Expected result: Filler accepts the circuit; ASCII outputs and printf produce Hello, World! during simulation.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Il testo è un circuito originale, con vettore UInt<8>[13] e printf del linguaggio FIRRTL. Nessun compilatore/simulatore è disponibile; i soli byte presenti nel sorgente non sono una prova di esecuzione.
+The text is an original circuit, with vector UInt< 8 >[ 13 ] and printf of the FIRRTL language. No compilatore/simulatore is available; the only bytes present in the source are not a proof of execution.
 
-Requisiti residui:
+Remaining requirements:
 
 - CIRCT firtool and RTL simulation are unavailable.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/chipsalliance/firrtl-spec](https://github.com/chipsalliance/firrtl-spec)
 - [https://circt.llvm.org/docs/Dialects/FIRRTL/](https://circt.llvm.org/docs/Dialects/FIRRTL/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fir` | [hello.fir](hello.fir) creato, verifiche pendenti |
+| `.fir` | [hello.fir](hello.fir) created; verification pending |

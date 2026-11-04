@@ -1,38 +1,38 @@
 # #421 Mathematical Programming System
 
-Leggere un modello MPS e risolvere 13 variabili fissate ai codici ASCII del saluto.
+Read a MPS model and solve variable 13 fixed to ASCII greeting codes.
 
-Tipo canonico `programming`, language_id `429002699`.
+Canonical type `programming`, language_id `429002699`.
 
-Toolchain prevista: Python 3.13, highspy/HiGHS solver originale.
+Suggested toolchain: Python 3.13, highspy/HiGHS solver original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: modello accettato, soluzione ottima e vettore ASCII Hello, World!.
+Expected result: accepted model, excellent solution and vector ASCII Hello, World!.
 
-Il file è un problema matematico semplice con bounds FX; il saluto viene decodificato dalla soluzione del solver, non letto da un commento.
+The file is a simple mathematical problem with bounds FX; the greeting is decoded by the solver solution, not read by a comment.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + HiGHS/highspy 1.15.1. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + HiGHS/highspy 1.15.1. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [HiGHS — modello e solver](https://highs.dev/)
 - [MPS — formato IBM CPLEX](https://www.ibm.com/docs/en/icos/22.1.2?topic=standard-records-in-mps-format)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install highspy==1.15.1
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mps` | [hello.mps](hello.mps) verificato |
+| `.mps` | [hello.mps](hello.mps) verified |

@@ -1,46 +1,33 @@
 # #285 HTML+Razor
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+The ASP.NET Core MVC view engine rendered the original view, and Blazor HtmlRenderer rendered the original component. Each produced <p>Hello, World!</p> in memory.
 
-## Obiettivo
+Canonical type: `markup`. Linguist language ID: `479039817`.
 
-Renderizzare una view Razor .cshtml con variabile C# audience=World.
+## Recorded verification
 
-Il sorgente usa un blocco Razor @{...} e l’espressione esplicita @(audience). È una view, non un documento HTML già renderizzato. Per eseguirlo serve un host Razor autentico.
+**Syntax and behavior verified** on November 4, 2026 with .NET SDK 8.0.318 and ASP.NET Core 8.0.21.
 
-## Toolchain e riproduzione
+[Recorded commands, outputs and hashes](verification/native_20261104_html_razor_result.json).
 
-ASP.NET Core Razor con .NET SDK e applicazione host; versioni effettive da registrare
+## Reproduce the check
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Copy `verification/razor/` to a scratch directory, then copy `hello.cshtml` to `Views/Home/Hello.cshtml` and `variants/razor-c914e96c/Hello.razor` to `Hello.razor` there. With the .NET 8 SDK and ASP.NET Core installed, run:
 
-```text
-In un’app ASP.NET Core MVC, salvare il file come Views/Home/Hello.cshtml ed eseguire dotnet build.
+```sh
+dotnet build --disable-build-servers -c Release -p:RestoreConfigFile=NuGet.Config
+dotnet bin/Release/net8.0/RazorHarness.dll
 ```
 
-```text
-Renderizzare la view Hello mediante il motore Razor dell’applicazione.
-```
+The fixture renders in memory with ephemeral keys and does not start a web server.
 
-## Risultato atteso e stato
-
-HTML contiene <p>Hello, World!</p>.
-
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
-
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
-
-Impedimenti: È disponibile solo un runtime .NET, senza SDK né host Razor preparato; compiler e renderer non eseguiti.
-
-## Fonti primarie
+## Primary sources
 
 - https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-10.0
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
-
-| Estensione | File / stato |
-| --- | --- |
-| `.cshtml` | [hello.cshtml](hello.cshtml) creato, verifiche pendenti |
-| `.razor` | [Hello.razor](variants/razor-c914e96c/Hello.razor) creato, verifiche pendenti |
+| Extension | Files | Status |
+| --- | --- | --- |
+| `.cshtml` | [hello.cshtml](hello.cshtml) | Syntax and behavior verified |
+| `.razor` | [Hello.razor](variants/razor-c914e96c/Hello.razor) | Syntax and behavior verified |

@@ -2,47 +2,47 @@
 
 Voce canonica `Monkey C`, tipo `programming`, language_id `231751931`.
 
-Avviare una applicazione Garmin Connect IQ e scrivere il saluto sulla console del simulatore.
+Launch a Garmin Connect IQ application and write greetings on the simulator console.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Richiede SDK Garmin Connect IQ, device fenix7 e una chiave sviluppatore locale. Il manifest e le risorse PNG/XML sono originali.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 monkeyc -f monkey.jungle -d fenix7 -y developer_key.der -o build/greeting.prg; connectiq; monkeydo build/greeting.prg fenix7
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Il saluto è una chiamata System.println nel percorso getInitialView; SDK/simulatore non configurati. Nessuna verifica dedotta dal solo XML.
+Greeting is a System.println call in the getInitialView path; SDK/simulatore unconfigured. No verification deducted from the only XML.
 
-Requisiti residui:
+Remaining requirements:
 
 - Garmin Connect IQ SDK, target-device simulator and local developer signing key are not configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://developer.garmin.com/connect-iq/connect-iq-basics/your-first-app/](https://developer.garmin.com/connect-iq/connect-iq-basics/your-first-app/)
 - [https://developer.garmin.com/connect-iq/api-docs/Toybox/System.html](https://developer.garmin.com/connect-iq/api-docs/Toybox/System.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mc` | [GreetingApp.mc](source/GreetingApp.mc) creato, verifiche pendenti |
+| `.mc` | [GreetingApp.mc](source/GreetingApp.mc) created; verification pending |

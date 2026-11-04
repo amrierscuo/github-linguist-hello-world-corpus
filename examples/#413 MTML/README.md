@@ -1,31 +1,31 @@
 # #413 MTML
 
-Assegnare una variabile MTML e renderizzare Hello, World!.
+Assign a MTML variable and make Hello, World!.
 
-Tipo canonico `markup`, language_id `218`.
+Canonical type `markup`, language_id `218`.
 
-Toolchain prevista: Movable Type template engine.
+Toolchain provided: Movable Type template engine.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Renderizzare hello.mtml con il motore template Movable Type locale.
 ```
 
-Risultato atteso: output Hello, World! e newline.
+Expected result: Hello, World! output and newline.
 
-L’assegnazione Var con value non produce output. La lettura senza value produce il nome; non basta interpretare il documento come HTML.
+The Var assignment with value does not produce output. Reading without value produces the name; it is not enough to interpret the document as HTML.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Movable Type — Var](https://www.movabletype.org/documentation/appendices/tags/var.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mtml` | [hello.mtml](hello.mtml) creato, verifiche pendenti |
+| `.mtml` | [hello.mtml](hello.mtml) created; verification pending |

@@ -2,48 +2,48 @@
 
 Voce canonica `PlantUML`, tipo `data`, language_id `833504686`.
 
-Renderizzare un diagramma di sequenza PlantUML con il saluto sul messaggio.
+Render a PlantUML sequence diagram with greeting on the message.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Official PlantUML MIT Light sequence-diagram parser/renderer — PlantUML version 1.2026.8 / 149874a [2026-09-05 15:59:17 UTC]. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-PlantUML 1.2026.8 MIT Light ufficiale e Java 21; sequenza non richiede Graphviz per il rendering.
+PlantUML 1.2026.8 MIT Official Light and Java 21; sequence does not require Graphviz for rendering.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 java -jar /path/to/plantuml-1.2026.8.jar -tsvg hello.puml
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il renderer vero produce SVG e la verifica legge il nodo text della freccia, con Hello, World! esatto. SVG compilato resta in work.
+The real maker produces SVG and the verification reads the node text of the arrow, with Hello, World! exact. SVG compiled remains in work.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://plantuml.com/sequence-diagram](https://plantuml.com/sequence-diagram)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.puml` | [hello.puml](hello.puml), [driver.puml](variants/iuml-91e3fc09/driver.puml) creato, verifiche pendenti |
-| `.iuml` | [hello.iuml](variants/iuml-91e3fc09/hello.iuml) creato, verifiche pendenti |
-| `.plantuml` | [hello.plantuml](variants/plantuml-b52e863a/hello.plantuml) creato, verifiche pendenti |
+| `.puml` | [hello.puml](hello.puml), [driver.puml](variants/iuml-91e3fc09/driver.puml) created; verification pending |
+| `.iuml` | [hello.iuml](variants/iuml-91e3fc09/hello.iuml) created; verification pending |
+| `.plantuml` | [hello.plantuml](variants/plantuml-b52e863a/hello.plantuml) created; verification pending |

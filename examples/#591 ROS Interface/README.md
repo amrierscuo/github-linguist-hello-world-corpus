@@ -1,34 +1,34 @@
 # #591 ROS Interface
 
-Analizzare una ROS message interface con costante GREETING e campo string message.
+Analyze a ROS message interface with constant GREETING and string message field.
 
-Tipo canonico `data`, language_id `809230569`.
+Canonical type `data`, language_id `809230569`.
 
-Toolchain prevista: ROS2 rosidl_adapter parser originale.
+Suggested toolchain: ROS2 rosidl_adapter parser original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: costante e campo accettati; valore costante Hello, World!.
+Expected result: constant and accepted field; constant value Hello, World!.
 
-La semantica dichiarata è la definizione dell’interfaccia, non una trasmissione DDS.
+The declared behavior is the definition of the interface, not a DDS transmission.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + original ROS2 rosidl_adapter source. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + original ROS2 rosidl_adapter source. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [ROS interface syntax](https://design.ros2.org/articles/interface_definition.html)
 - [rosidl adapter](https://github.com/ros2/rosidl/blob/rolling/rosidl_adapter/rosidl_adapter/parser.py)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.msg` | [Greeting.msg](Greeting.msg) verificato |
-| `.action` | [hello.action](variants/action-b07b298b/hello.action) creato, verifiche pendenti |
-| `.srv` | [hello.srv](variants/srv-506ca812/hello.srv) creato, verifiche pendenti |
+| `.msg` | [Greeting.msg](Greeting.msg) verified |
+| `.action` | [hello.action](variants/action-b07b298b/hello.action) created; verification pending |
+| `.srv` | [hello.srv](variants/srv-506ca812/hello.srv) created; verification pending |

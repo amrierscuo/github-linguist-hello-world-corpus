@@ -1,38 +1,38 @@
-# 0324 — JSON: `.har`
+# 0324: JSON: `.har`
 
-Ruolo: Fixture HTTP Archive 1.2 con corpo risposta del saluto; data e URL illustrativi, nessuna richiesta effettuata.
+Role: Fixture HTTP Archive 1.2 with body greeting response; date and URL illustrative, no request made.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Python 3.13.9 json standard library. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Python 3.13.9 json standard library. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Validatore HAR 1.2 e lettura log.entries[0].response.content.text
 ```
 
-Risultato atteso: Hello, World! nel corpo rappresentato
+Expected result: Hello, World! in the represented body
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati.
+- The language parser accepted the file; the application-specific schema, loader and semantics remain unverified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.har`: `dd45b3f0696a090659966c56890432a14f75d5bb6d600e647ddaf12668f98f78`
 
-Fonti primarie:
+Primary sources:
 
 - https://w3c.github.io/web-performance/specs/HAR/Overview.html
 - https://www.rfc-editor.org/rfc/rfc8259
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato.
+Parsing JSON/JSON Lines real of the canonical grammar alone; no progetto/configurazione application scheme has been validated.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 3.13.9

@@ -1,30 +1,30 @@
-# 0359 — KiCad Schematic: `.kicad_sym`
+# 0359: KiCad Schematic: `.kicad_sym`
 
-Ruolo: Libreria simboli KiCad con proprietà Value del saluto, distinta da schematico.
+Role: Bookcase KiCad symbols with Value property of greeting, distinct from schematic.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Required genuine toolchain not available/configured — non disponibile / non verificata. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Required genuine toolchain not available/configured, non disponibile / non verificata. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 KiCad Symbol Editor: aprire/importare hello.kicad_sym
 ```
 
-Risultato atteso: Simbolo Greeting con Value Hello, World!
+Expected result: Greeting Symbol with Value Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.kicad_sym`: `282187cb51a3956825f982795eadf5d64e709c8945ec917088986323ed03e992`
 
-Fonti primarie:
+Primary sources:
 
 - https://dev-docs.kicad.org/en/file-formats/sexpr-symbol-lib/
 - https://dev-docs.kicad.org/en/file-formats/sexpr-schematic/

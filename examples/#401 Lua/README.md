@@ -2,37 +2,37 @@
 
 Stampare Hello, World! in Lua.
 
-Tipo canonico `programming`, language_id `213`.
+Canonical type `programming`, language_id `213`.
 
-Toolchain prevista: Lua 5.4 originale.
+Suggested toolchain: Lua 5.4 original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 lua hello.lua
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Un programma Lua standard senza librerie esterne.
+A standard Lua program without external libraries.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Lua 5.4.8 native Linux build from original sources. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Lua 5.4.8 native Linux build from original sources. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Lua — manuale](https://www.lua.org/manual/5.4/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lua` | [hello.lua](hello.lua), [corpus_hello.lua](variants/rockspec-6557708e/corpus_hello.lua) creato, verifiche pendenti |
-| `.fcgi` | [hello.fcgi](variants/fcgi-209194e4/hello.fcgi) creato, verifiche pendenti |
-| `.nse` | [hello.nse](variants/nse-0b7f3a91/hello.nse) creato, verifiche pendenti |
-| `.p8` | [hello.p8](variants/p8-3318ca99/hello.p8) creato, verifiche pendenti |
-| `.pd_lua` | [hello.pd_lua](variants/pd-lua-63a1006b/hello.pd_lua) creato, verifiche pendenti |
-| `.rbxs` | [hello.rbxs](variants/rbxs-06e5c9d4/hello.rbxs) creato, verifiche pendenti |
-| `.rockspec` | [corpus-hello-1.0-1.rockspec](variants/rockspec-6557708e/corpus-hello-1.0-1.rockspec) creato, verifiche pendenti |
-| `.wlua` | [hello.wlua](variants/wlua-4f6ffb61/hello.wlua) creato, verifiche pendenti |
+| `.lua` | [hello.lua](hello.lua), [corpus_hello.lua](variants/rockspec-6557708e/corpus_hello.lua) created; verification pending |
+| `.fcgi` | [hello.fcgi](variants/fcgi-209194e4/hello.fcgi) created; verification pending |
+| `.nse` | [hello.nse](variants/nse-0b7f3a91/hello.nse) created; verification pending |
+| `.p8` | [hello.p8](variants/p8-3318ca99/hello.p8) created; verification pending |
+| `.pd_lua` | [hello.pd_lua](variants/pd-lua-63a1006b/hello.pd_lua) created; verification pending |
+| `.rbxs` | [hello.rbxs](variants/rbxs-06e5c9d4/hello.rbxs) created; verification pending |
+| `.rockspec` | [corpus-hello-1.0-1.rockspec](variants/rockspec-6557708e/corpus-hello-1.0-1.rockspec) created; verification pending |
+| `.wlua` | [hello.wlua](variants/wlua-4f6ffb61/hello.wlua) created; verification pending |

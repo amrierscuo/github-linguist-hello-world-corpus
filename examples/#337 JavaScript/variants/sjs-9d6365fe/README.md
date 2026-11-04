@@ -1,30 +1,30 @@
-# 0337 — JavaScript: `.sjs`
+# 0337: JavaScript: `.sjs`
 
-Ruolo: Modulo server JavaScript CommonJS per host compatibile; esporta il valore anziché imporre console.
+Role: CommonJS JavaScript server module for compatible host; export value instead of imposing consoles.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Node.js 22.20.0. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Node.js 22.20.0. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Host .sjs compatibile: importare hello.sjs e chiamare hello()
 ```
 
-Risultato atteso: Hello, World! nel log/valore/risposta o geometria secondo il ruolo; PAC restituisce DIRECT senza rete.
+Expected result: Hello, World! in log/valore/risposta or geometry according to the role; PAC returns DIRECT without network.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.sjs`: `9358232ad0fd0753a9c25200d334bfa2017c8e402eef88537e5389fdf917ed08`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.marklogic.com/
 - https://nodejs.org/api/console.html#consolelogdata-args

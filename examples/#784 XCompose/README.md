@@ -1,31 +1,31 @@
 # #784 XCompose
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare XCompose e produrre Hello, World! dalla sequenza Multi_key,h,w.
+Analyze XCompose and produce Hello, World! from the Multi_key,h,w sequence.
 
-Il parser XCompose nativo legge una fixture via buffer e la macchina a stati riceve tre keysyms. Nessun server X, tastiera fisica o file di configurazione del sistema viene modificato.
+The native XCompose parser reads a buffer fixture and the state machine receives three keysyms. No X server, physical keyboard or system configuration file is changed.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Libxkbcommon originale1.6.0, Python ctypes
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python3 verify.py /path/to/libxkbcommon.so.0
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Stato COMPOSED e stringa UTF8 Hello, World!.
+State COMPOSED and string UTF8 Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://xkbcommon.org/doc/current/group__compose.html

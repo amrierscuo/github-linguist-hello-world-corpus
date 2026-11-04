@@ -1,37 +1,37 @@
 # #725 Tree-sitter Query
 
-Compilare una query Tree-sitter e catturare la stringa del saluto dal vero AST Python.
+Fill a Tree-sitter query and capture the greeting string from the real AST Python.
 
 ## Toolchain
 
 CPython3.13.9; tree-sitter0.26.0/tree-sitter-python0.25.0
 
-## Procedura
+## Procedure
 
 pip install tree-sitter tree-sitter-python; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Parser e motore QueryCursor sono quelli originali; si controllano cattura del chiamante e della stringa.
+Parser and QueryCursor engine are the original ones; they control catching the caller and string.
 
-Verifica reale 2026-10-08T13:30:04.904502+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:30:04.904502+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://tree-sitter.github.io/tree-sitter/using-parsers/queries/1-syntax.html](https://tree-sitter.github.io/tree-sitter/using-parsers/queries/1-syntax.html)
 - [https://tree-sitter.github.io/py-tree-sitter/](https://tree-sitter.github.io/py-tree-sitter/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.scm` | [hello.scm](hello.scm) verificato |
+| `.scm` | [hello.scm](hello.scm) verified |

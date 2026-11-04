@@ -1,35 +1,35 @@
 # #032 Antlers
 
-`hello.antlers.html` usa la variabile Antlers `audience`. Il risultato previsto è `<p>Hello, World!</p>` seguito da newline.
+`hello.antlers.html` uses the variable Antlers `audience`. The expected result is `<p>Hello, World!</p>` followed by newline.
 
-Prerequisiti previsti: un'applicazione Statamic 6.x funzionante con Composer, PHP 8.3 o successivo ed estensioni richieste dalla documentazione. Le versioni effettive non sono ancora registrate perché questo ambiente non è stato preparato né eseguito.
+Expected prerequisites: a working Statamic 6.x application with Composer, PHP 8.3 or later, and the extensions listed in the documentation. Actual versions have not been recorded because this environment has not been set up or run.
 
-Per verificare, copiare `hello.antlers.html` e `verify.php` nella **root di una copia temporanea del sito Statamic**, accanto a `vendor/` e `bootstrap/`. Il bootstrap in `verify.php` si riferisce deliberatamente a questa struttura applicativa.
+To check, copy `hello.antlers.html` and `verify.php` in **root di una copia temporanea del sito Statamic**, next to `vendor/` and `bootstrap/`. The bootstrap in `verify.php` refers deliberately to this application structure.
 
 ```sh
 php verify.php
 ```
 
-L'helper carica il sito, invoca `Statamic\Facades\Antlers::parse` con `audience=World` e confronta l'intero output con il risultato previsto. Sintassi e semantica restano in attesa: il confronto con la documentazione e la presenza del helper non contano come una prova del motore.
+The helper uploads the site, invokes `Statamic\Facades\Antlers::parse` with `audience=World` and compares the entire output with the expected result. syntax and behavior remain waiting: the comparison with the documentation and the presence of the helper do not count as a test of the engine.
 
 Toolchain: **Target Statamic 6.x in applicazione Laravel configurata; PHP >=8.3 e Composer; nessuna versione eseguita**.
 
-Stato: **Sintassi e semantica in attesa.**
+Status: **Sintassi e semantica in attesa.**
 
-Requisito residuo: Applicazione Statamic e ambiente PHP/Composer con dipendenze non preparati; parser Antlers non eseguito.
+Residual requirement: Statamic application and PHP/Composer environment with unprepared dependencies; parser Antlers not performed.
 
-Fonti primarie:
+Primary sources:
 
 - [Documentazione / sorgente ufficiale 1](https://statamic.dev/frontend/antlers)
 - [Documentazione / sorgente ufficiale 2](https://statamic.dev/getting-started/requirements)
 - [Documentazione / sorgente ufficiale 3](https://github.com/statamic/cms/discussions/8696)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.antlers.html` | [hello.antlers.html](hello.antlers.html) creato, verifiche pendenti |
-| `.antlers.php` | [hello.antlers.php](variants/ext-antlers-php-2e616e746c6572732e706870/hello.antlers.php) creato, verifiche pendenti |
-| `.antlers.xml` | [hello.antlers.xml](variants/ext-antlers-xml-2e616e746c6572732e786d6c/hello.antlers.xml) creato, verifiche pendenti |
+| `.antlers.html` | [hello.antlers.html](hello.antlers.html) created; verification pending |
+| `.antlers.php` | [hello.antlers.php](variants/ext-antlers-php-2e616e746c6572732e706870/hello.antlers.php) created; verification pending |
+| `.antlers.xml` | [hello.antlers.xml](variants/ext-antlers-xml-2e616e746c6572732e786d6c/hello.antlers.xml) created; verification pending |

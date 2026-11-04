@@ -1,38 +1,38 @@
 # #257 Go
 
-Compilare un programma Go che stampa Hello, World!.
+Fill out a Go program that prints Hello, World!.
 
 ## Toolchain
 
 go version go1.27.1 windows/amd64
 
-## Comandi e procedura
+## Commands and procedure
 
 go version; go build -o build/hello.exe hello.go; build/hello.exe
 
-## Risultato atteso
+## Expected result
 
-Build e runtime exit 0; stdout saluto più newline.
+Build and runtime exit 0; stdout greeting more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Go ufficiale è scaricato come archivio portable e il SHA-256 è verificato contro go.dev. Compilazione ed esecuzione native effettive; eseguibile e cache confinati in work.
+Official go is downloaded as portable archive and SHA-256 is verified vs go.dev.
 
-Verifica effettiva del 2026-10-08T12:16:15.084445+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:16:15.084445+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://go.dev/doc/tutorial/getting-started](https://go.dev/doc/tutorial/getting-started)
 - [https://pkg.go.dev/fmt#Println](https://pkg.go.dev/fmt#Println)
 - [https://go.dev/dl/](https://go.dev/dl/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.go` | [hello.go](hello.go) verificato |
+| `.go` | [hello.go](hello.go) verified |

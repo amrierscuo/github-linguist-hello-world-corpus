@@ -1,6 +1,6 @@
 # #167 DirectX 3D File
 
-Importare un modello DirectX .x testuale con nodo HelloWorld e un triangolo originale.
+Import a DirectX .x text model with HelloWorld node and an original triangle.
 
 ## Toolchain
 
@@ -11,33 +11,33 @@ Open Asset Import Library ("Assimp", https://github.com/assimp/assimp)
 
 Version 5.3 -debug -shared -st (GIT commit 0)
 
-## Comandi e procedura
+## Commands and procedure
 
 assimp version; assimp info hello.x
 
-## Risultato atteso
+## Expected result
 
-Import exit 0; nodo HelloWorld, una mesh, 3 vertici e una faccia.
+Import exit 0; node HelloWorld, a mesh, 3 vertices and a face.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il saluto è rappresentato dal nome del nodo; questo formato contiene geometria e non stampa testo. FrameTransformMatrix è identità. L’importatore DirectX nativo di Assimp carica davvero il file; la prova riguarda modello e conteggi, senza dichiarare una resa grafica.
+The greeting is represented by the name of the node; this format contains geometry and non-print text. FrameTransformMatrix is identity. Assimp’s native DirectX importer really loads the file; the test covers pattern and counts, without declaring a graphical rendering.
 
-Verifica effettiva del 2026-10-08T11:56:11.594568+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:11.594568+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://learn.microsoft.com/en-us/windows/win32/direct3d9/x-files--legacy-](https://learn.microsoft.com/en-us/windows/win32/direct3d9/x-files--legacy-)
 - [https://github.com/assimp/assimp](https://github.com/assimp/assimp)
 - [https://learn.microsoft.com/en-us/windows/win32/direct3d9/mesh](https://learn.microsoft.com/en-us/windows/win32/direct3d9/mesh)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.x` | [hello.x](hello.x) verificato |
+| `.x` | [hello.x](hello.x) verified |

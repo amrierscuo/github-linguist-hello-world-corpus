@@ -1,0 +1,64 @@
+{
+  "ordinal": 341,
+  "name": "Jinja",
+  "source_hashes": {
+    "examples/#341 Jinja/variants/j2-d70c3c7d/hello.j2": "193487ca91af7ec5fdfd1d0850dfae6f0bbe25258cc0378905c24e65099f8cfb",
+    "examples/#341 Jinja/variants/jinja2-dda60d41/hello.jinja2": "193487ca91af7ec5fdfd1d0850dfae6f0bbe25258cc0378905c24e65099f8cfb",
+    "examples/#341 Jinja/variants/j2-d70c3c7d/verify.py": "e65c4372f6fcde0a04087628c1c84fc91a740aa4a7beadce3906f994e8727d5d",
+    "examples/#341 Jinja/variants/jinja2-dda60d41/verify.py": "e65c4372f6fcde0a04087628c1c84fc91a740aa4a7beadce3906f994e8727d5d"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\341_variants",
+  "steps": [
+    {
+      "command": [
+        "${USER_PROFILE}\\anaconda3\\python.exe",
+        "-c",
+        "import importlib.metadata as m; print('Jinja2', m.version('Jinja2'))"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\341_variants",
+      "exit_code": 0,
+      "stdout": "Jinja2 3.1.6\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${USER_PROFILE}\\anaconda3\\python.exe",
+        "verify_hello.j2.py",
+        "hello.j2"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\341_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native Jinja compile/render and parameter controls\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${USER_PROFILE}\\anaconda3\\python.exe",
+        "verify_hello.jinja2.py",
+        "hello.jinja2"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\341_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native Jinja compile/render and parameter controls\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Run each original variant's included verifier with official Jinja; exact greeting, Reader and missing-variable controls.",
+  "toolchain": "Jinja2",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".j2": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".jinja2": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "verified_utc": "2026-11-04T19:35:36.643091+00:00",
+  "recorded_test_source": "341_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

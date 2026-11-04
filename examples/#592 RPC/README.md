@@ -1,12 +1,12 @@
 # #592 RPC
 
-Generare XDR da una definizione RPC e serializzare/deserializzare il saluto in memoria.
+Generate XDR from a RPC definition and serializzare/deserializzare greeting in memory.
 
-Tipo canonico `programming`, language_id `1031374237`.
+Canonical type `programming`, language_id `1031374237`.
 
-Toolchain prevista: rpcgen, GCC e libtirpc.
+Suggested toolchain: rpcgen, GCC and libtirpc.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mkdir -p build
@@ -16,21 +16,21 @@ gcc -Ibuild -I/usr/include/tirpc verify.c build/hello_xdr.c -ltirpc -o build/ver
 ./build/verify
 ```
 
-Risultato atteso: XDR codificato e decodificato uguale al saluto.
+Expected result: XDR encoded and decoded equal to greeting.
 
-Non avvia rpcbind o servizi di rete: verifica il codice XDR generato.
+It does not start rpcbind or network services: verify the generated XDR code.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: rpcgen1.4.2 + GCC13.3 + libtirpc native XDR. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: rpcgen1.4.2 + GCC13.3 + libtirpc native XDR. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [rpcgen](https://man7.org/linux/man-pages/man1/rpcgen.1.html)
 - [libtirpc](https://sourceforge.net/projects/libtirpc/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.x` | [hello.x](hello.x) verificato |
+| `.x` | [hello.x](hello.x) verified |

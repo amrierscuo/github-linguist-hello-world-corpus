@@ -1,37 +1,37 @@
 # #569 Pyret
 
-Valutare il programma Pyret originale.
+Evaluate the original Pyret program.
 
 ## Toolchain
 
 Pyret compiler/runtime
 
-## Procedura
+## Procedure
 
-Aprire hello.arr in code.pyret.org e premere Run; oppure usare CLI ufficiale della versione registrata.
+Open hello.arr in code.pyret.org and press Run; or use official CLI of the registered version.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Compiler/runtime Pyret non predisposto; valutazione pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://pyret.org/docs/latest/](https://pyret.org/docs/latest/)
 - [https://code.pyret.org/](https://code.pyret.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.arr` | [hello.arr](hello.arr) creato, verifiche pendenti |
+| `.arr` | [hello.arr](hello.arr) created; verification pending |

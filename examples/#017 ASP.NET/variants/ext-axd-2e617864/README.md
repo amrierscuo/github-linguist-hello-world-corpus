@@ -1,34 +1,34 @@
-# 0017 ASP.NET — variante `.axd`
+# 0017 ASP.NET: variant `.axd`
 
-Ruolo: Fixture risorsa testuale AXD servita da un IHttpHandler ASP.NET registrato esplicitamente in Web.config. Il file AXD contiene il payload effettivo dell’endpoint; questo contesto non definisce un sorgente ASP.NET standard. Il companion C# viene compilato da App_Code.
+Role: Fixture text resource AXD served by an IHttpHandler ASP.NET explicitly recorded in Web.config. The AXD file contains the actual payload of the endpoint; this context does not define a standard ASP.NET source.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#017 ASP.NET/hello.aspx; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#017 ASP.NET / hello.aspx; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 Copiare tutti i file della variante in un sito temporaneo ASP.NET Framework 4.x; IISExpress.exe /path:<copia-assoluta> /port:18717 /clr:v4.0; da altro terminale Invoke-WebRequest http://127.0.0.1:18717/hello.axd -UseBasicParsing; confrontare Content con Hello, World! più LF.
 ```
 
-Risultato atteso: GET /hello.axd risponde 200 text/plain UTF-8 con il contenuto della fixture Hello, World! seguito da LF.
+Expected result: GET / hello.axd answers 200 text/plain UTF - 8 with the content of Hello, World! fixtures followed by LF.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://learn.microsoft.com/en-us/aspnet/web-forms/what-is-web-forms](https://learn.microsoft.com/en-us/aspnet/web-forms/what-is-web-forms)
 - [https://learn.microsoft.com/en-us/aspnet/web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation](https://learn.microsoft.com/en-us/aspnet/web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation)

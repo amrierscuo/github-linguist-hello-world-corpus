@@ -2,49 +2,49 @@
 
 Voce canonica `KiCad Schematic`, tipo `data`, language_id `622447435`.
 
-Descrivere uno schema KiCad senza circuiti con un oggetto text visibile contenente il saluto.
+Describe a KiCad schema without circuits with a visible text object containing greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Formato nativo .kicad_sch versione 20230121 compatibile con KiCad 7. Il documento contiene UUID originali, foglio A4, lib_symbols vuoto e un oggetto text.
+native format .kicad_sch 20230121 compatible with KiCad 7. The document contains original UUID, A4 sheet, empty lib_symbols and a text object.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 kicad-cli sch export svg --output build/ hello.kicad_sch; aprire in Schematic Editor e controllare il testo
 ```
 
-Risultato atteso: Schema caricato; SVG mostra Hello, World!.
+Expected result: Charged diagram; SVG shows Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-L’obiettivo è il testo dello schema, non ERC di un circuito. Senza loader/exporter KiCad non vengono attribuiti flag positivi a un parsing S-expression generico.
+The objective is the text of the scheme, not ERC of a circuit. Without loader/exporter KiCad, positive flags are not attributed to a generic S-expression parsing.
 
-Requisiti residui:
+Remaining requirements:
 
 - Native KiCad schematic loader/exporter is not available.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://dev-docs.kicad.org/en/file-formats/sexpr-schematic/](https://dev-docs.kicad.org/en/file-formats/sexpr-schematic/)
 - [https://docs.kicad.org/7.0/en/eeschema/eeschema.html](https://docs.kicad.org/7.0/en/eeschema/eeschema.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.kicad_sch` | [hello.kicad_sch](hello.kicad_sch) creato, verifiche pendenti |
-| `.kicad_sym` | [hello.kicad_sym](variants/kicad-sym-fe143994/hello.kicad_sym) creato, verifiche pendenti |
-| `.sch` | [hello.sch](variants/sch-5766dac2/hello.sch) creato, verifiche pendenti |
+| `.kicad_sch` | [hello.kicad_sch](hello.kicad_sch) created; verification pending |
+| `.kicad_sym` | [hello.kicad_sym](variants/kicad-sym-fe143994/hello.kicad_sym) created; verification pending |
+| `.sch` | [hello.sch](variants/sch-5766dac2/hello.sch) created; verification pending |

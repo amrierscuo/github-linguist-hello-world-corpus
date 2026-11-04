@@ -1,32 +1,32 @@
 # #104 Cadence
 
-Valutare uno script Cadence 1.0 e ottenere la stringa Hello, World!.
+Evaluate a Cadence 1.0 script and get the Hello, World! string.
 
-Tipo canonico: `programming`; `language_id`: `270184138`.
+Canonical type: `programming`; `language_id`: `270184138`.
 
-Toolchain prevista: Interprete standalone Cadence del progetto onflow/cadence, Go; Cadence 1.x. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Play standalone Cadence of the project onflow/cadence, Go; Cadence 1.x. The version actually tried, when available, is in the log.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 cadence hello.cdc
 ```
 
-Risultato atteso: il valore restituito da main è la stringa `Hello, World!`.
+Expected result: the value returned from main is the `Hello, World!` string.
 
-È uno script puro, senza contratti, conti, chiavi o transazioni sulla rete. La sintassi access(all) appartiene a Cadence 1.x.
+It is a pure script, without contracts, accounts, keys or transactions on the network. syntax access(all) belongs to Cadence 1.x.
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Initial state: artifact created, syntax and behavioral verification pending. Specific toolchain not yet performed on this example; syntax and behavior remain to be checked.
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Cadence — funzioni](https://cadence-lang.org/docs/language/functions)
 - [Cadence — interprete standalone originale](https://github.com/onflow/cadence/tree/master/cmd/main)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cdc` | [hello.cdc](hello.cdc) creato, verifiche pendenti |
+| `.cdc` | [hello.cdc](hello.cdc) created; verification pending |

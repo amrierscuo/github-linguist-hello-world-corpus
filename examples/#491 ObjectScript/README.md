@@ -1,36 +1,36 @@
 # #491 ObjectScript
 
-Compilare una classe InterSystems e invocarne Greet.
+Fill in an InterSystems class and invoke Greet.
 
 ## Toolchain
 
 InterSystems IRIS ObjectScript
 
-## Procedura
+## Procedure
 
-Nel namespace di prova: do $SYSTEM.OBJ.Load("Hello.cls","ck") poi do ##class(Corpus.Hello).Greet()
+In the test namespace: do $ SYSTEM.OBJ.Load ( "Hello.cls", "ck" ) then do ##class( Corpus.Hello ) .Greet ()
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- InterSystems IRIS compiler/namespace non disponibile.
+Remaining requirements:
+- InterSystems IRIS compiler/namespace unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GCOS](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GCOS)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cls` | [Hello.cls](Hello.cls) creato, verifiche pendenti |
+| `.cls` | [Hello.cls](Hello.cls) created; verification pending |

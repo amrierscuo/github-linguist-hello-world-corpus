@@ -1,40 +1,40 @@
 # #287 HXML
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Usare HXML per configurare il compiler Haxe ed eseguire il programma Hello, World!.
+Use HXML to configure the Haxe compiler and run the Hello, World! program.
 
-Il file HXML è l’artefatto principale: imposta classpath, classe main e backend --interp. Hello.hx è la fixture compilata. Il compiler Haxe reale legge la configurazione ed esegue il programma tramite il suo eval interpreter.
+The HXML file is the main artifact: classpath tax, main class and backend --interp. Hello.hx is the compiled fixture. The Haxe compiler reads the configuration and executes the program through its eval interpreter.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Haxe4.3.3, pacchetto Ubuntu4.3.3-1build2
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 haxe hello.hxml
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://haxe.org/manual/compiler-usage-hxml.html
 - https://haxe.org/manual/compiler-usage.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hxml` | [hello.hxml](hello.hxml) verificato |
+| `.hxml` | [hello.hxml](hello.hxml) verified |

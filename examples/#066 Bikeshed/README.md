@@ -1,30 +1,30 @@
 # #066 Bikeshed
 
-Specifica minima indipendente che genera la sezione Greeting con il paragrafo Hello, World!.
+Minimum independent specification that generates the Greeting section with the Hello, World! paragraph.
 
-## Riproduzione
+## Reproduction
 
-Bikeshed 7.1.3 e Python 3.13.9. Installare Bikeshed in un ambiente Python isolato, come da [manuale ufficiale](https://speced.github.io/bikeshed/).
+Bikeshed 7.1.3 and Python 3.13.9. Install Bikeshed in an isolated Python environment, as from [manuale ufficiale](https://speced.github.io/bikeshed/).
 
 ```sh
 bikeshed --die-on=everything spec hello.bs hello.html
 ```
 
-Il documento usa il valore generale `Status: DREAM` senza `Group`. Il generatore deve terminare senza errori o warning. Nell'HTML generato, `#greeting` identifica il titolo Greeting e il paragrafo successivo contiene esattamente Hello, World!.
+The document uses the general `Status: DREAM` value without `Group`. The generator must end without errors or warning. In the generated HTML, `#greeting` identifies the title Greeting and the next paragraph contains exactly Hello, World!.
 
-## Prova
+## Try
 
-Sintassi e semantica verificate il 2026-10-08T23:35:51.294764+00:00: [log nativo](verification/finish_native.json), comandi, versioni, SHA-256 e valori estratti dall'output HTML reale. L'output generato e le dipendenze restano fuori dal corpus.
+syntax and behavior verified 2026-10-08T23:35:51.294764+00:00: [log nativo](verification/finish_native.json), commands, versions, SHA-256 and values extracted from the real HTML output. The generated output and dependencies remain out of the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [Bikeshed manual](https://speced.github.io/bikeshed/)
 - [Bikeshed repository](https://github.com/speced/bikeshed)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.bs` | [hello.bs](hello.bs) sintassi e semantica verificate |
+| `.bs` | [hello.bs](hello.bs) syntax and behavior verified |

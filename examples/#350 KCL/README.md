@@ -2,48 +2,48 @@
 
 Voce canonica `KCL`, tipo `programming`, language_id `1052003890`.
 
-Definire uno schema KCL con attributi tipizzati e valutare una configurazione che interpola name.
+Define a KCL scheme with typified attributes and evaluate a configuration that interpolates name.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official KCL configuration language compiler/evaluator — kcl version 0.13.0-windows-amd64. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official KCL configuration language compiler/evaluator, kcl version 0.13.0-windows-amd64. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-CLI KCL ufficiale 0.13.0 portable Windows x64 dal repository kcl-lang/cli. Questo è KCL di kcl-lang, linguaggio di configurazione CNCF.
+CLI KCL official 0.13.0 portable Windows x64 from kcl-lang/cli. repository This is KCL of kcl-lang, CNCF configuration language.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 kcl run hello.k
 ```
 
-Risultato atteso: Configurazione valutata con i due attributi esatti; exit 0.
+Expected result: Configuration evaluated with the two exact attributes; exit 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il compiler autentico controlla schema e tipi e produce YAML con greeting.name=World e greeting.message=Hello, World!. Un reader YAML esistente serve solo a confrontare il prodotto della vera esecuzione KCL.
+The authentic compiler controls diagram and types and produces YAML with greeting.name =World and greeting.message = Hello, World!. An existing YAML reader only serves to compare the product of true KCL execution.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.kcl-lang.io/docs/reference/lang/spec/schema](https://www.kcl-lang.io/docs/reference/lang/spec/schema)
 - [https://github.com/kcl-lang/cli](https://github.com/kcl-lang/cli)
 - [https://www.kcl-lang.io/](https://www.kcl-lang.io/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.k` | [hello.k](hello.k) verificato |
+| `.k` | [hello.k](hello.k) verified |

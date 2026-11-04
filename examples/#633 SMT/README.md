@@ -1,41 +1,41 @@
 # #633 SMT
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Risolvere un vincolo di stringa e leggere Hello, World! dal modello SMT.
+Solve a string bond and read Hello, World! from the SMT model.
 
-SMT-LIB2 usa la teoria delle stringhe e str.++; Z3 produce sat e il valore della variabile greeting.
+SMT - LIB2 uses string theory and str.++; Z3 produces sats and the value of the greeting variable.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Z3 solver5.1.0 originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 z3 hello.smt2
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 sat e ((greeting "Hello, World!")).
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://smt-lib.org/theories-UnicodeStrings.shtml
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.smt2` | [hello.smt2](hello.smt2) verificato |
-| `.smt` | [hello.smt](variants/smt-98f0359e/hello.smt) creato, verifiche pendenti |
-| `.z3` | [hello.z3](variants/z3-f29d6e3b/hello.z3) creato, verifiche pendenti |
+| `.smt2` | [hello.smt2](hello.smt2) verified |
+| `.smt` | [hello.smt](variants/smt-98f0359e/hello.smt) created; verification pending |
+| `.z3` | [hello.z3](variants/z3-f29d6e3b/hello.z3) created; verification pending |

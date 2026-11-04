@@ -1,12 +1,12 @@
-# 0735 — Unix Assembly — `.ms`
+# 0735: Unix Assembly: `.ms`
 
-Variante testuale dello stesso formato, con suffisso canonico .ms.
+Textual variation of the same format, with canon suffix .ms.
 
-Provenienza: copia del file originale `examples/#735 Unix Assembly/hello.s`.
+Origin: copy of the original `examples/#735 Unix Assembly/hello.s` file.
 
 Artefatto principale: `hello.ms`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 as --64 hello.ms -o work/hello.o
@@ -14,13 +14,13 @@ ld work/hello.o -o work/hello
 work/hello
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://sourceware.org/binutils/docs/as/](https://sourceware.org/binutils/docs/as/)
 - [https://man7.org/linux/man-pages/man2/write.2.html](https://man7.org/linux/man-pages/man2/write.2.html)

@@ -1,31 +1,31 @@
-# 0425 — Mercury: `.moo`
+# 0425: Mercury: `.moo`
 
-Ruolo: Grammatica Moose originale, non programma Mercury ordinario: riconosce il token hello e restituisce un attributo stringa col saluto.
+Role: Original Grammar Moose, not ordinary Mercury program: recognizes the hello token and returns a string attribute with greeting.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Mercury mmc e grade runtime installata. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Mercury mmc e grade runtime installata. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Moose originale: moose hello.moo > hello.m; poi compilare il modulo generato con mmc. Per una prova semantica, implementare parser_state con stream [hello,eof] e invocare il parse generato.
 ```
 
-Risultato atteso: Il generatore produce Mercury con parse_result greeting("Hello, World!") per i token hello,eof; esecuzione pendente.
+Expected result: The generator produces Mercury with parse_result greeting("Hello, World!") for hello,eof tokens; pendant execution.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- Moose e Mercury compatibili non predisposti. La grammatica è documentata; manca l’esecuzione del generatore e del driver parser_state, quindi entrambi i flag restano false.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- The grammar is documented; the execution of the generator and the parser_state driver is lacking, so both flags remain false.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.moo`: `a8ff8e11682f83328cb82f3241093992df3f7571ab1abef29373ab8194732d5d`
 
-Fonti primarie:
+Primary sources:
 
 - https://raw.githubusercontent.com/Mercury-Language/mercury/master/extras/moose/README
 - https://raw.githubusercontent.com/Mercury-Language/mercury/master/extras/moose/samples/expr.moo

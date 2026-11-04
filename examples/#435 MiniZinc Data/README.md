@@ -1,31 +1,31 @@
 # #435 MiniZinc Data
 
-Caricare dati MiniZinc separati e usarli nel modello per costruire il saluto.
+Load separate MiniZinc data and use them in the model to build greetings.
 
-Tipo canonico `data`, language_id `938193433`.
+Canonical type `data`, language_id `938193433`.
 
-Toolchain prevista: MiniZinc CLI e solver Gecode.
+Suggested toolchain: MiniZinc CLI and solver Gecode.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 minizinc --solver gecode model.mzn hello.dzn
 ```
 
-Risultato atteso: dati accettati; soluzione con output Hello, World!.
+Expected result: accepted data; solution with Hello, World! output.
 
-hello.dzn è l’artefatto dati primario; model.mzn è il consumatore che verifica il valore caricato.
+hello.dzn is the primary data artifact; model.mzn is the consumer who checks the value charged.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: MiniZinc 2.10.1 official Linux bundle + Gecode. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: MiniZinc 2.10.1 official Linux bundle + Gecode. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [MiniZinc — data files](https://docs.minizinc.dev/en/stable/modelling.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dzn` | [hello.dzn](hello.dzn) verificato |
+| `.dzn` | [hello.dzn](hello.dzn) verified |

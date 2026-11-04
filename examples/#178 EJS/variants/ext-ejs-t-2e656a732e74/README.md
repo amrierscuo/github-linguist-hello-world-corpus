@@ -1,34 +1,37 @@
-# 0178 EJS — variante `.ejs.t`
+# 0178 EJS: variant `.ejs.t`
+
+## Recorded verification
+
+**Syntax and behavior verified** on November 4, 2026. Compile and render each original template with ejs.renderFile; assert greeting and escaped input. .ect requires a distinct engine and is not tested. [Evidence](../../verification/native_20261104_178_variants_result.json).
 
 Ruolo: Template EJS/JST nello stesso sottoinsieme di interpolazione <%= greeting %>.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#178 EJS/hello.ejs
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 EJS originale: ejs.renderFile("hello.ejs.t", {greeting:"Hello, World!"}); controllare h1.
 ```
 
-Risultato atteso: HTML esattamente <h1>Hello, World!</h1> più newline; <world> viene escaped correttamente.
+Expected result: HTML exactly <h1> Hello, World! </h1> more newline; <world> is escaped correctly.
 
-## Stato
+## Earlier status
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
-
-## Fonti primarie
+## Primary sources
 
 - [https://ejs.co/#docs](https://ejs.co/#docs)
 - [https://github.com/mde/ejs](https://github.com/mde/ejs)

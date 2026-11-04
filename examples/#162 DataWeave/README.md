@@ -1,38 +1,38 @@
 # #162 DataWeave
 
-Comporre Hello, World! in DataWeave 2 ed esportare un oggetto JSON con greeting.
+Compose Hello, World! in DataWeave 2 and export a JSON object with greeting.
 
 ## Toolchain
 
 Python 3.13.9; DataWeave native 2.12.2 genuine MuleSoft engine binding
 
-## Comandi e procedura
+## Commands and procedure
 
 python -m pip install -r requirements.txt; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Motore senza errori; risultato JSON esattamente {"greeting":"Hello, World!"}.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-verify.py usa il binding Python ufficiale del motore nativo MuleSoft. Il saluto deriva dalla concatenazione DataWeave di target, non da Python. Non serve un server Mule per questa prova.
+verify.py uses the official binding Python of the MuleSoft native engine. Greeting comes from the targeting DataWeave concatenation, not from Python.
 
-Verifica effettiva del 2026-10-08T11:56:15.339726+00:00 su Windows x64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:15.339726+00:00 on Windows x64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://docs.mulesoft.com/dataweave/latest/dataweave-language-introduction](https://docs.mulesoft.com/dataweave/latest/dataweave-language-introduction)
 - [https://github.com/mulesoft/data-weave-cli](https://github.com/mulesoft/data-weave-cli)
 - [https://pypi.org/project/dataweave-native/2.12.2/](https://pypi.org/project/dataweave-native/2.12.2/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dwl` | [hello.dwl](hello.dwl) verificato |
+| `.dwl` | [hello.dwl](hello.dwl) verified |

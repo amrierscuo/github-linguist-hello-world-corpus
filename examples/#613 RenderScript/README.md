@@ -2,47 +2,47 @@
 
 Voce canonica `RenderScript`, tipo `programming`, language_id `323`.
 
-Scrivere il saluto tramite rsDebug in un kernel/script Android RenderScript.
+Write greetings via rsDebug in a kernel/script Android RenderScript.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine llvm-rs-cc compiler/runtime — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine llvm-rs-cc compiler/runtime, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede toolchain storica Android RenderScript e rs_debug.rsh, Java package org.corpus.greeting.
+Requires historical toolchain Android RenderScript and rs_debug.rsh, Java package org.corpus.greeting.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 llvm-rs-cc -I /path/to/renderscript/include -o build hello.rs; caricare il relativo ScriptC_hello ed eseguire invoke_hello in un progetto Android compatibile.
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
 Sorgente originale con pragma version/java package e funzione hello. Toolchain storica e Android runtime non configurati.
 
-Requisiti residui:
+Remaining requirements:
 
 - Required llvm-rs-cc compiler/runtime and matching host resources are not available/configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://developer.android.com/guide/topics/renderscript/reference/rs_debug](https://developer.android.com/guide/topics/renderscript/reference/rs_debug)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rs` | [hello.rs](hello.rs), [main.rs](variants/rsh-e00ceaaf/main.rs) creato, verifiche pendenti |
-| `.rsh` | [hello.rsh](variants/rsh-e00ceaaf/hello.rsh) creato, verifiche pendenti |
+| `.rs` | [hello.rs](hello.rs), [main.rs](variants/rsh-e00ceaaf/main.rs) created; verification pending |
+| `.rsh` | [hello.rsh](variants/rsh-e00ceaaf/hello.rsh) created; verification pending |

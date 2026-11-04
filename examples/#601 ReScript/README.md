@@ -2,47 +2,47 @@
 
 Voce canonica `ReScript`, tipo `programming`, language_id `501875647`.
 
-Compilare ReScript con binding locale e Js.log, poi eseguire il JavaScript genuino.
+Fill ReScript with local binding and Js.log, then run the genuine JavaScript.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Original BuckleScript ReScript/Reason compiler with standard library — BuckleScript 9.0.2 ( Using OCaml:4.06.1+BS ). Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Original BuckleScript ReScript/Reason compiler with standard library, BuckleScript 9.0.2 (Using OCaml: 4.06.1+BS ). Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 BuckleScript/ReScript 9.0.2 autentico con libreria OCaml della stessa distribuzione. Progetto bsconfig.json originale.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 bsc -I /path/to/bs-platform/lib/ocaml -bs-package-name corpus-greeting -bs-package-output commonjs:. -o Hello.cmj Hello.res; node Hello.js
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 Il frontend .res autentico compila in JS, eseguito da Node. La prova usa il binario Linux con cwd di progetto per la risoluzione bsconfig.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://rescript-lang.org/docs/manual/v9.0.0/overview](https://rescript-lang.org/docs/manual/v9.0.0/overview)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.res` | [Hello.res](Hello.res), [Hello.res](variants/resi-1bac9c18/Hello.res) creato, verifiche pendenti |
-| `.resi` | [Hello.resi](variants/resi-1bac9c18/Hello.resi) creato, verifiche pendenti |
+| `.res` | [Hello.res](Hello.res), [Hello.res](variants/resi-1bac9c18/Hello.res) created; verification pending |
+| `.resi` | [Hello.resi](variants/resi-1bac9c18/Hello.resi) created; verification pending |

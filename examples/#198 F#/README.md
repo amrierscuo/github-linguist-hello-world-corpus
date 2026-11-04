@@ -1,33 +1,33 @@
 # #198 F#
 
-Interpretare uno script F# e stampare Hello, World! seguito da newline.
+Play a F# script and print Hello, World! followed by newline.
 
-Tipo canonico `programming`, language_id `105`.
+Canonical type `programming`, language_id `105`.
 
-Toolchain prevista: F# Interactive (fsi), .NET SDK moderno oppure FSharp.Compiler.Tools compatibile.
+Suggested toolchain: F# Interactive (fsi), .NET SDK modern or FSharp.Compiler.Tools compatible.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 dotnet fsi --exec hello.fsx
 ```
 
-Risultato atteso: stdout `Hello, World!` seguito da newline, uscita 0.
+Expected result: stdout `Hello, World!` followed by newline, 0. output
 
-Con FSI standalone per .NET Framework usare fsi.exe --exec hello.fsx. Il log indica quale delle due distribuzioni è stata effettivamente provata.
+With FSI standalone for .NET Framework use fsi.exe --exec hello.fsx. The log indicates which of the two distributions has actually been tested.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: FSharp.Compiler.Tools 10.2.3 — FSI standalone on .NET Framework. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: FSharp.Compiler.Tools 10.2.3 — FSI standalone on .NET Framework. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [F# — riga di comando e FSI](https://learn.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-command-line)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fs` | [hello.fs](variants/ext-fs-2e6673/hello.fs) creato, verifiche pendenti |
-| `.fsi` | [Greeting.fsi](variants/ext-fsi-2e667369/Greeting.fsi) creato, verifiche pendenti |
-| `.fsx` | [hello.fsx](hello.fsx) verificato |
+| `.fs` | [hello.fs](variants/ext-fs-2e6673/hello.fs) created; verification pending |
+| `.fsi` | [Greeting.fsi](variants/ext-fsi-2e667369/Greeting.fsi) created; verification pending |
+| `.fsx` | [hello.fsx](hello.fsx) verified |

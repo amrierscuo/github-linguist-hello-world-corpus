@@ -1,6 +1,6 @@
 # #039 AsciiDoc
 
-Convertire il documento AsciiDoc con titolo Greeting e un paragrafo Hello, World! in HTML mantenendo il testo del paragrafo.
+Convert the AsciiDoc document under the title Greeting and a Hello, World! paragraph into HTML while keeping the text of the paragraph.
 
 ## File
 
@@ -8,47 +8,52 @@ Convertire il documento AsciiDoc con titolo Greeting e un paragrafo Hello, World
 - `check.cjs`
 - `package.json`
 
-## Toolchain e verifica
+## Toolchain and verification
 
 Node.js v22.20.0; @asciidoctor/core 4.1.1 (Asciidoctor.js).
 
-Dalla cartella dell'esempio:
+From the example directory:
 
 ```sh
 npm install
 node check.cjs
 ```
 
-`package.json` fissa `@asciidoctor/core` a 4.1.1. Il checker usa `await`
-per parsing e conversione, come richiesto dall'API v4. Interroga l'albero
-del documento e il risultato HTML; `MemoryLogger` cattura le diagnostiche.
-L'HTML è controllato in memoria e non viene salvato come artefatto aggiuntivo.
+`package.json` fixes `@asciidoctor/core` to 4.1.1. The checker uses `await`
+for parsing and conversion, as required by API v4.
+of the document and the HTML result; `MemoryLogger` captures diagnostics.
+The HTML is controlled in memory and is not saved as an additional artifact.
 
-## Risultato atteso
+## Expected result
 
-Titolo Greeting, esattamente un paragrafo Hello, World!, HTML contiene <p>Hello, World!</p>, zero diagnostiche ed exit 0.
+Title Greeting, exactly a paragraph Hello, World!, HTML contains <p> Hello, World! </p>, zero diagnostics and exit 0.
 
-## Stato della prova
+## State of the test
 
-Sintassi verificata. Semantica verificata.
+syntax verified. behavior verified.
 
 Parsing e conversione HTML realmente eseguiti con API asincrona v4. HTML derivato controllato in memoria; nessun file .build consegnato.
 
-Prova effettiva Windows x64 del 2026-10-08T11:01:56.068379+00:00: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente, versioni osservate, comandi, codici di uscita, stdout e stderr.
+Actual Windows x64 test of 2026-10-08T11:01:56.068379+00:00: [log](verification/result.json).
+The log includes hash SHA-256 of the source, observed versions, commands, exit codes, stdout and stderr.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.asciidoctor.org/asciidoc/latest/](https://docs.asciidoctor.org/asciidoc/latest/)
 - [https://docs.asciidoctor.org/asciidoctor.js/latest/setup/migration-guide/](https://docs.asciidoctor.org/asciidoctor.js/latest/setup/migration-guide/)
 - [https://docs.asciidoctor.org/asciidoctor.js/3.0/processor/logging-api/](https://docs.asciidoctor.org/asciidoctor.js/3.0/processor/logging-api/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asciidoc` | [hello.asciidoc](variants/ext-asciidoc-2e6173636969646f63/hello.asciidoc) creato, verifiche pendenti |
-| `.adoc` | [hello.adoc](hello.adoc) verificato |
-| `.asc` | [hello.asc](variants/ext-asc-2e617363/hello.asc) creato, verifiche pendenti |
+| `.asciidoc` | [hello.asciidoc](variants/ext-asciidoc-2e6173636969646f63/hello.asciidoc) syntax and behavior verified |
+| `.adoc` | [hello.adoc](hello.adoc) verified |
+| `.asc` | [hello.asc](variants/ext-asc-2e617363/hello.asc) syntax and behavior verified |
+
+## Additional extension verification
+
+- `.asciidoc`: verified on November 4, 2026. [Evidence](verification/native_20261104_039_variants_result.json).
+- `.asc`: verified on November 4, 2026. [Evidence](verification/native_20261104_039_variants_result.json).

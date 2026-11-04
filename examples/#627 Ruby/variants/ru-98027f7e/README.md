@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.ru`
+# 0627: Ruby: `.ru`
 
 Configurazione Rack con applicazione inline.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.ru`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rackup hello.ru --host 127.0.0.1
 ```
 
-Risultato atteso: artefatto/risultato originale di saluto nel consumatore indicato.
+Expected result: artefatto/risultato original greeting in the indicated consumer.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://rack.github.io/rack/3.2/SPEC_rdoc.html](https://rack.github.io/rack/3.2/SPEC_rdoc.html)

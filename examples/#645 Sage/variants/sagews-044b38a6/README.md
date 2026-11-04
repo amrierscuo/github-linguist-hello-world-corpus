@@ -1,24 +1,24 @@
-# 0645 — Sage — `.sagews`
+# 0645: Sage: `.sagews`
 
 Worksheet Sage/CoCalc originale: separatori cella FE20, UUID assegnato localmente e input Sage. Nessun record output simulato.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sagews`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 CoCalc/Sage worksheet host: open hello.sagews and execute the input cell
 ```
 
-Risultato atteso: cella input riconosciuta e saluto stampato; import host pendente.
+Expected result: recognized input cell and printed greeting; import hanging host.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://raw.githubusercontent.com/sagemathinc/cocalc/master/src/packages/util/sagews.ts](https://raw.githubusercontent.com/sagemathinc/cocalc/master/src/packages/util/sagews.ts)
 - [https://doc.cocalc.com/sagews.html](https://doc.cocalc.com/sagews.html)

@@ -1,23 +1,23 @@
-# 0575 — QMake — `.pri`
+# 0575: QMake: `.pri`
 
-Include qmake con variabile e message, consumato da un progetto companion.
+Includes qmake with variable and message, consumed by a companion project.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.pri`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 qmake main.pro -o work/Makefile
 ```
 
-Risultato atteso: qmake segnala Hello, World!.
+Expected result: qmake signals Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://doc.qt.io/qt-6/qmake-project-files.html](https://doc.qt.io/qt-6/qmake-project-files.html)

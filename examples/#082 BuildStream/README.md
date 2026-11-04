@@ -1,14 +1,14 @@
 # #082 BuildStream
 
-Importare hello.txt in un artefatto BuildStream e leggere Hello, World! dall'artefatto esportato.
+Import hello.txt into a BuildStream artifact and read Hello, World! from the exported artifact.
 
 ## Toolchain
 
-BuildStream 2.x, progetto con min-version 2.0; toolchain non eseguita e versione concreta da registrare.
+BuildStream 2.x, project with min-version 2.0; toolchain not performed and concrete version to record.
 
-## Comandi e procedura
+## Commands and procedure
 
-Dalla cartella dell'esempio, che contiene project.conf:
+From the example folder, which contains project.conf:
 
 ```sh
 bst --version
@@ -18,32 +18,32 @@ bst artifact checkout --directory build-artifact hello.bst
 cat build-artifact/hello.txt
 ```
 
-BuildStream gestisce propria cache di sorgenti e artefatti. L'elemento importa
-il file hello.txt dal progetto; il checkout rende verificabile il risultato.
-Registrare toolchain e log della build prima di accreditare la verifica.
+BuildStream manages its source and artifact cache.
+hello.txt file from the project; checkout makes the result verifiable.
+Register toolchain and build log before accrediting verification.
 
-## Risultato atteso
+## Expected result
 
-Build dell'elemento import e checkout senza errori; hello.txt nell'artefatto contiene esattamente Hello, World! più newline.
+Build of import and checkout element without errors; hello.txt in the artifact contains exactly Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-project.conf fornisce il contesto del progetto; elements/hello.bst usa la sorgente local e il plugin import. Un parser YAML non prova un build BuildStream.
+project.conf provides the context of the project; elements/hello.bst uses the local source and import plugin. A YAML parser does not test a BuildStream build.
 
-Requisiti residui:
-- BuildStream e backend cache/sandbox non disponibili: parsing del progetto e build/check-out non eseguiti.
+Remaining requirements:
+- BuildStream and backend cache/sandbox not available: project parsing and build/check-out not executed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.buildstream.build/master/tutorial/first-project.html](https://docs.buildstream.build/master/tutorial/first-project.html)
 - [https://docs.buildstream.build/2.3/format_project.html](https://docs.buildstream.build/2.3/format_project.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bst` | [hello.bst](elements/hello.bst) creato, verifiche pendenti |
+| `.bst` | [hello.bst](elements/hello.bst) created; verification pending |

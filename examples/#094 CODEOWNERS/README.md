@@ -1,42 +1,42 @@
 # #094 CODEOWNERS
 
-Associare in un esempio CODEOWNERS il percorso /hello.txt al proprietario illustrativo hello@example.invalid, e verificare il match con un parser locale.
+Join in an example CODEOWNERS the route / hello.txt to the owner hello@ example.invalid, and check the match with a local parser.
 
 ## Toolchain
 
 Python 3.13.9; codeowners 0.9.0 community parser
 
-## Comandi e procedura
+## Commands and procedure
 
-Da questa cartella:
+From this folder:
 
 ```sh
 python -m pip install -r requirements.txt
 python verify.py
 ```
 
-Il parser locale legge la sintassi e applica la regola di percorso. L'indirizzo
-rimane illustrativo e non corrisponde a un account GitHub. Questo file sta
-nel campione individuale, non in .github/CODEOWNERS: non assegna revisori
-al repository del corpus.
+The local parser reads syntax and applies the path rule.
+remains illustrative and does not match a GitHub account. This file is
+in the individual sample, not in .github / CODEOWNERS: does not allocate auditors
+to the corpus repository.
 
-## Risultato atteso
+## Expected result
 
-Parser locale: hello.txt -> EMAIL hello@example.invalid, other.txt -> nessun proprietario. La risoluzione GitHub richiederebbe un account idoneo reale.
+Local Parser: hello.txt -> EMAIL hello@ example.invalid, other.txt -> no owner. GitHub resolution would require a real eligible account.
 
-## Stato
+## Status
 
-Sintassi verificata; semantica in attesa.
+syntax verified; behavioral verification pending.
 
-Email illustrativa sul dominio riservato example.invalid; non indica un utente reale e non produce richieste di revisione. Non usare questo file come CODEOWNERS effettivo del repository pubblico. La prova locale del match non attesta idoneità del proprietario su GitHub.
+Email illustrated on the reserved domain example.invalid; it does not indicate a real user and does not produce revision requests. Do not use this file as an actual CODEOWNERS of the public repository.
 
-Verifica effettiva del 2026-10-08T11:33:36.889535+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:36.889535+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-Requisiti residui:
+Remaining requirements:
 - GitHub eligibility and review assignment not verifiable with an illustrative address.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
 - [https://github.com/sbdchd/codeowners](https://github.com/sbdchd/codeowners)

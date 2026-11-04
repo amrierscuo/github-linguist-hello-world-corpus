@@ -1,0 +1,53 @@
+{
+  "ordinal": 39,
+  "name": "AsciiDoc",
+  "source_hashes": {
+    "examples/#039 AsciiDoc/variants/ext-asciidoc-2e6173636969646f63/hello.asciidoc": "333dd8318a7736f11f1e30e83cefcac66c4602618a26a8f5f63a764d185041c0",
+    "examples/#039 AsciiDoc/variants/ext-asc-2e617363/hello.asc": "333dd8318a7736f11f1e30e83cefcac66c4602618a26a8f5f63a764d185041c0"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\039_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\039_variants",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\native_audit_20261104\\render_variants.cjs",
+        "adoc",
+        "${WORKSPACE}\\work\\tools_34_40\\node",
+        "hello.asciidoc",
+        "hello.asc"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\039_variants",
+      "exit_code": 0,
+      "stdout": "Asciidoctor.js 4.1.1\nhello.asciidoc: <p>Hello, World!</p>\nhello.asc: <p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Load each source with Asciidoctor.js and assert document title, the exact paragraph, rendered HTML and no diagnostics.",
+  "toolchain": "Asciidoctor.js",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".asciidoc": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".asc": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "verified_utc": "2026-11-04T19:35:36.236505+00:00",
+  "recorded_test_source": "039_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

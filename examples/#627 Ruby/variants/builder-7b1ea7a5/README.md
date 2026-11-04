@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.builder`
+# 0627: Ruby: `.builder`
 
-Template Builder XML; richiede il contesto xml fornito dal renderer.
+Template Builder XML; requires the xml context provided by the renderr.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.builder`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Builder renderer with local xml context
 ```
 
-Risultato atteso: artefatto/risultato originale di saluto nel consumatore indicato.
+Expected result: artefatto/risultato original greeting in the indicated consumer.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/jimweirich/builder](https://github.com/jimweirich/builder)

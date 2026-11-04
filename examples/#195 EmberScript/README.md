@@ -1,38 +1,38 @@
 # #195 EmberScript
 
-Compilare un sorgente EmberScript con il compilatore originale ed eseguire il JavaScript per stampare Hello, World!.
+Fill out an EmberScript source with the original compiler and run the JavaScript to print Hello, World!.
 
-Tipo canonico `programming`, language_id `103`.
+Canonical type `programming`, language_id `103`.
 
-Toolchain prevista: Node.js 22 ed ember-script 0.0.14.
+Suggested toolchain: Node.js 22 and ember-script 0.0.14.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: stdout `Hello, World!\n`, uscita 0.
+Expected result: stdout `Hello, World!\n`, 0. output
 
-Il saluto usa una chiamata alla console che non dipende da classi Ember. Resta un sorgente EmberScript; viene compilato dal suo compilatore, non da CoffeeScript puro.
+Greetings use a call to the console that does not depend on Ember classes. It remains an EmberScript source; it is compiled by its compiler, not by pure CoffeeScript.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + ember-script 0.0.14. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + ember-script 0.0.14. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [EmberScript — progetto originale](https://github.com/ghempton/ember-script)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund ember-script@0.0.14
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.em` | [hello.em](hello.em) verificato |
-| `.emberscript` | [hello.emberscript](variants/ext-emberscript-2e656d626572736372697074/hello.emberscript) creato, verifiche pendenti |
+| `.em` | [hello.em](hello.em) verified |
+| `.emberscript` | [hello.emberscript](variants/ext-emberscript-2e656d626572736372697074/hello.emberscript) created; verification pending |

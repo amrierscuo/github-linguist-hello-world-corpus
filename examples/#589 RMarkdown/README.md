@@ -1,33 +1,33 @@
 # #589 RMarkdown
 
-Eseguire un chunk R Markdown e renderizzare il saluto in HTML.
+Run a chunk R Markdown and make greetings in HTML.
 
-Tipo canonico `prose`, language_id `313`.
+Canonical type `prose`, language_id `313`.
 
-Toolchain prevista: R, rmarkdown, knitr e Pandoc.
+Arranged toolchain: R, rmarkdown, knitr and Pandoc.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Rscript -e "rmarkdown::render('hello.rmd')"
 ```
 
-Risultato atteso: documento HTML con saluto prodotto dal chunk R.
+Expected result: HTML document with greeting produced by chunk R.
 
-Un parser Markdown da solo non prova l’esecuzione del chunk.
+A Markdown parser alone does not prove the performance of the chunk.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
 - [knitr](https://yihui.org/knitr/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.qmd` | [hello.qmd](variants/qmd-6ffe4344/hello.qmd) creato, verifiche pendenti |
-| `.rmd` | [hello.rmd](hello.rmd) creato, verifiche pendenti |
+| `.qmd` | [hello.qmd](variants/qmd-6ffe4344/hello.qmd) created; verification pending |
+| `.rmd` | [hello.rmd](hello.rmd) created; verification pending |

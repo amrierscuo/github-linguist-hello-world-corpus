@@ -2,50 +2,50 @@
 
 Voce canonica: `Closure Templates`, tipo `markup`, `language_id: 357046146`.
 
-Compilare il template Soy parametrico e renderizzare Hello, World! in modalità text; verificare anche Hello, Reader! cambiando il parametro.
+Fill out the parametric Soy template and make Hello, World! in text mode; also check Hello, Reader! by changing the parameter.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Google Closure Templates SoyFileSet compiler and SoyTofu renderer — 2024-02-26. Ambiente della prova: **Windows x64**.
+Official Google Closure Templates SoyFileSet compiler and SoyTofu maker, 2024-02-26. Test environment: **Windows x64**.
 
 Scaricare il JAR ufficiale Maven com.google.template:soy:2024-02-26 con classifier SoyToJsSrcCompiler in .tools. Contiene anche SoyFileSet/SoyTofu e le dipendenze Java. Richiede un JDK; qui è stato usato OpenJDK 21.0.12.1.
 
-Comando/procedura dalla directory dell’esempio, salvo la directory build esplicitamente indicata:
+Comando/procedura from the example directory, except the build directory explicitly indicated:
 
 ```text
 java --class-path .tools/soy-2024-02-26-SoyToJsSrcCompiler.jar SoyCheck.java hello.soy
 ```
 
-Risultato atteso: Exit 0; Hello, World! e PASS: official Soy compile/render and parameter control.
+Exit 0; Hello, World! and PASS: official Soy compile/render and parameter control.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-SoyCheck.java delega parsing, typecheck e rendering alle API ufficiali Soy. Due avvisi di deprecazione delle API legacy SoyFileSet.builder/compileToTofu non impediscono la verifica positiva. Il testo renderizzato viene confrontato esattamente per due valori del parametro.
+SoyCheck.java delegation parsing, typecheck and rendering to official Soy API. Two depreciation alerts for API legacy SoyFileSet.builder /compileTofu do not prevent positive verification.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-versioni/toolchain e SHA-256 degli artefatti. La proprietà `path_normalization` documenta
-le sostituzioni dei percorsi locali. `<corpus>` identifica i file relativi inclusi nel
-corpus finale, che sono stati verificati prima nella directory di staging. I byte dei
-sorgenti restano quelli identificati dai checksum. I soli probe di disponibilità degli
-strumenti non attestano parsing o esecuzione. Dipendenze e prodotti compilati restano
-nella directory di lavoro e non sono inclusi nel corpus.
+toolchain versions and SHA-256 values for the artifacts. The `path_normalization` property documents
+local route replacements. `<corpus>` identifies the relative files included in
+final corpus, which were first verified in the staging directory.
+sources remain those identified by checksums. The only offspring of availability
+instruments do not attest parsing or execution.
+in the work directory and are not included in the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/google/closure-templates](https://github.com/google/closure-templates)
 - [https://github.com/google/closure-templates/blob/master/documentation/reference/templates.md](https://github.com/google/closure-templates/blob/master/documentation/reference/templates.md)
 - [https://repo.maven.apache.org/maven2/com/google/template/soy/2024-02-26/](https://repo.maven.apache.org/maven2/com/google/template/soy/2024-02-26/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.soy` | [hello.soy](hello.soy) verificato |
+| `.soy` | [hello.soy](hello.soy) verified |

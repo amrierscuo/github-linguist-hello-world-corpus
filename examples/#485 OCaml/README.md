@@ -1,42 +1,42 @@
 # #485 OCaml
 
-Compilare ed eseguire OCaml.
+Fill and run OCaml.
 
 ## Toolchain
 
 OCaml 4.14.1
 
-## Procedura
+## Procedure
 
 ocamlc -o build/hello hello.ml; ocamlrun build/hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 
 
-Verifica reale 2026-10-08T13:10:44.031687+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:10:44.031687+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://ocaml.org/manual/5.4/programs.html](https://ocaml.org/manual/5.4/programs.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ml` | [hello.ml](hello.ml), [greeting.ml](variants/mli-2a1ba63b/greeting.ml), [main.ml](variants/mli-2a1ba63b/main.ml), [driver.ml](variants/mly-4acf893e/driver.ml) creato, verifiche pendenti |
-| `.eliom` | [hello.eliom](variants/eliom-eb7291f2/hello.eliom) creato, verifiche pendenti |
-| `.eliomi` | [greeting.eliomi](variants/eliomi-438ad78e/greeting.eliomi) creato, verifiche pendenti |
-| `.ml4` | [hello.ml4](variants/ml4-65957964/hello.ml4) creato, verifiche pendenti |
-| `.mli` | [greeting.mli](variants/mli-2a1ba63b/greeting.mli) creato, verifiche pendenti |
-| `.mll` | [hello.mll](variants/mll-85b0301a/hello.mll) creato, verifiche pendenti |
-| `.mly` | [hello.mly](variants/mly-4acf893e/hello.mly) creato, verifiche pendenti |
+| `.ml` | [hello.ml](hello.ml), [greeting.ml](variants/mli-2a1ba63b/greeting.ml), [main.ml](variants/mli-2a1ba63b/main.ml), [driver.ml](variants/mly-4acf893e/driver.ml) created; verification pending |
+| `.eliom` | [hello.eliom](variants/eliom-eb7291f2/hello.eliom) created; verification pending |
+| `.eliomi` | [greeting.eliomi](variants/eliomi-438ad78e/greeting.eliomi) created; verification pending |
+| `.ml4` | [hello.ml4](variants/ml4-65957964/hello.ml4) created; verification pending |
+| `.mli` | [greeting.mli](variants/mli-2a1ba63b/greeting.mli) created; verification pending |
+| `.mll` | [hello.mll](variants/mll-85b0301a/hello.mll) created; verification pending |
+| `.mly` | [hello.mly](variants/mly-4acf893e/hello.mly) created; verification pending |

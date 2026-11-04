@@ -1,23 +1,23 @@
-# 0582 — R — `.rsx`
+# 0582: R: `.rsx`
 
-Script R del provider Processing/QGIS con dichiarazione di output.
+Script R of the Processing/QGIS provider with output statement.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rsx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 QGIS Processing R provider: load hello.rsx and run
 ```
 
-Risultato atteso: output string Greeting == Hello, World!.
+Expected result: Greeting string output == Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.qgis.org/latest/en/docs/user_manual/processing/3rdParty.html](https://docs.qgis.org/latest/en/docs/user_manual/processing/3rdParty.html)

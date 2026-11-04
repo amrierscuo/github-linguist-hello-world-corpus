@@ -1,31 +1,31 @@
 # #515 Oz
 
-Mostrare il saluto nel Browser di Mozart Oz.
+Show greeting in Mozart Oz's browser.
 
-Tipo canonico `programming`, language_id `270`.
+Canonical type `programming`, language_id `270`.
 
-Toolchain prevista: Mozart Oz runtime e Browser.
+Provided Toolchain: Mozart Oz runtime and Browser.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ozengine hello.oz
 ```
 
-Risultato atteso: Browser mostra la stringa Hello, World!.
+Expected result: Browser shows the Hello, World! string.
 
-Browse è una visualizzazione nel runtime, non una stampa stdout garantita.
+Browse is a view in the runtime, not a guaranteed stdout print.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Mozart runtime non disponibile.
+Initial state: created; syntax and behavioral verification pending. Mozart runtime unavailable.
 
-Fonti:
+Sources:
 
 - [Mozart Oz tutorial](https://mozart.github.io/mozart-v1/doc-1.4.0/tutorial/index.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.oz` | [hello.oz](hello.oz) creato, verifiche pendenti |
+| `.oz` | [hello.oz](hello.oz) created; verification pending |

@@ -1,23 +1,23 @@
-# 0598 — Raku — `.pl6`
+# 0598: Raku: `.pl6`
 
-Variante testuale dello stesso formato, con suffisso canonico .pl6.
+Textual variation of the same format, with canon suffix .pl6.
 
-Provenienza: copia del file originale `examples/#598 Raku/hello.raku`.
+Origin: copy of the original `examples/#598 Raku/hello.raku` file.
 
 Artefatto principale: `hello.pl6`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 raku hello.pl6
 ```
 
-Risultato atteso: stdout Hello, World! e newline..
+Expected result: stdout Hello, World! and newline..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.raku.org/routine/say](https://docs.raku.org/routine/say)

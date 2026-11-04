@@ -2,48 +2,48 @@
 
 Voce canonica `Golo`, tipo `programming`, language_id `133`.
 
-Compilare ed eseguire un modulo Golo con main, binding locale e concatenazione.
+Fill in and execute a Golo module with main, local binding and concatenation.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Eclipse Golo compiler and JVM runtime — 3.4.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Eclipse Golo compiler and JVM runtime, 3.4.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Eclipse Golo 3.4.0 portable e JDK 21. La prova richiama org.eclipse.golo.cli.Main con il classpath dei JAR della distribuzione originale.
+Eclipse Golo 3.4.0 portable and JDK 21. The test recalls org.eclipse.golo.cli.Main with the classpath of JAR of the original distribution.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 golo check --files hello.golo; golo golo --files hello.golo
 ```
 
-Risultato atteso: Entrambi i comandi exit 0; esecuzione stampa il saluto esatto.
+Expected result: Both exit 0 commands; print out the exact greeting.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Check e compilazione al volo sono eseguiti dal compiler originale Eclipse. Il file termina con newline, significativo per la sintassi Golo.
+Check and fill in the flight are executed by the original Eclipse compiler. The file ends with newline, significant for the syntax Golo.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://golo-lang.org/](https://golo-lang.org/)
 - [https://golo-lang.github.io/documentation/next/](https://golo-lang.github.io/documentation/next/)
 - [https://github.com/eclipse-archived/golo-lang](https://github.com/eclipse-archived/golo-lang)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.golo` | [hello.golo](hello.golo) verificato |
+| `.golo` | [hello.golo](hello.golo) verified |

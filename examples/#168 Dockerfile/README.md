@@ -1,41 +1,41 @@
 # #168 Dockerfile
 
-Costruire ed eseguire un container che stampa Hello, World! con printf.
+Build and execute a container that prints Hello, World! with printf.
 
 ## Toolchain
 
 Node.js v22.20.0; dockerfile-ast 0.7.1
 
-## Comandi e procedura
+## Commands and procedure
 
 npm install; node check.cjs; docker build -t linguist-hello-dockerfile .; docker run --rm linguist-hello-dockerfile
 
-## Risultato atteso
+## Expected result
 
-Parser: FROM alpine:3.22.2 e CMD exec-form corretti; runtime previsto stdout Hello, World! più newline, exit 0.
+Parser: FROM alpine: 3.22.2 and CMD exec-form correct; runtime predicted stdout Hello, World! more newline, exit 0.
 
-## Stato
+## Status
 
-Sintassi verificata; semantica in attesa.
+syntax verified; behavioral verification pending.
 
-Parsing locale del Dockerfile con libreria comunitaria e parsing JSON nativo del CMD. Il daemon Docker non è attivo: nessun container è stato costruito o eseguito. La versione della base è esplicita; un futuro build richiederà accesso all’immagine Alpine. Nessuna pubblicazione prevista.
+Local parsing of the Dockerfile with community library and parsing JSON native CMD. The Daemon Docker is not active: no container has been built or executed. The base version is explicit; a future build will require access to the Alpine image. No publication planned.
 
-Verifica effettiva del 2026-10-08T12:00:44.301455+00:00 su Windows x64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T12:00:44.301455+00:00 on Windows x64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-Requisiti residui:
+Remaining requirements:
 - Docker Engine not running: named pipe dockerDesktopLinuxEngine absent; build/run pending.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://docs.docker.com/reference/dockerfile/](https://docs.docker.com/reference/dockerfile/)
 - [https://github.com/rcjsuen/dockerfile-ast](https://github.com/rcjsuen/dockerfile-ast)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dockerfile` | [hello.dockerfile](variants/ext-dockerfile-2e646f636b657266696c65/hello.dockerfile) creato, verifiche pendenti |
-| `.containerfile` | [hello.containerfile](variants/ext-containerfile-2e636f6e7461696e657266696c65/hello.containerfile) creato, verifiche pendenti |
+| `.dockerfile` | [hello.dockerfile](variants/ext-dockerfile-2e646f636b657266696c65/hello.dockerfile) created; verification pending |
+| `.containerfile` | [hello.containerfile](variants/ext-containerfile-2e636f6e7461696e657266696c65/hello.containerfile) created; verification pending |

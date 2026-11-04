@@ -1,41 +1,41 @@
 # #224 GAMS
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire GAMS e scrivere Hello, World! nel file greeting.txt.
+Run GAMS and write Hello, World! in greeting.txt file.
 
-Il sorgente usa un file GAMS, put e putclose. Il risultato è un file di testo, non l’output di un solver: non viene definito un modello di ottimizzazione.
+The source uses a GAMS file, put and putclose. The result is a text file, not the output of a solver: an optimization model is not defined.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 GAMS, installazione e licenza adatte; versione effettiva da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 gams hello.gms
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-greeting.txt contiene Hello, World! seguito da newline.
+greeting.txt contains Hello, World! followed by newline.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
 Impedimenti: Runtime proprietario GAMS non preparato; parsing ed esecuzione put restano pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.gams.com/53/docs/UG_Put.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gms` | [hello.gms](hello.gms) creato, verifiche pendenti |
+| `.gms` | [hello.gms](hello.gms) created; verification pending |

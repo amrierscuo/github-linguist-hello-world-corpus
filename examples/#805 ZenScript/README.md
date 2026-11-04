@@ -1,36 +1,36 @@
 # #805 ZenScript
 
-Caricare lo script ZenScript del saluto in CraftTweaker.
+Load the ZenScript greeting script to CraftTweaker.
 
 ## Toolchain
 
 CraftTweaker ZenScript compatibile
 
-## Procedura
+## Procedure
 
-Inserire hello.zs nella cartella scripts del profilo Minecraft/CraftTweaker di prova; ricaricare e leggere il log.
+Insert hello.zs into the scripts folder of the test Minecraft/CraftTweaker profile; reload and read the log.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il campione sceglie ZenScript CraftTweaker1.12 con println; nessuna ricetta o contenuto esterno viene modificato.
+The sample chooses ZenScript CraftTweaker1.12 with println; no recipe or external content is modified.
 
-Requisiti residui:
-- CraftTweaker/Minecraft runtime non disponibile; versione ZenScript da registrare.
+Remaining requirements:
+- CraftTweaker/Minecraft runtime unavailable; versione ZenScript da registrare.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.blamejared.com/1.12/en/Getting_Started/](https://docs.blamejared.com/1.12/en/Getting_Started/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zs` | [hello.zs](hello.zs) creato, verifiche pendenti |
+| `.zs` | [hello.zs](hello.zs) created; verification pending |

@@ -1,38 +1,38 @@
 # #187 EditorConfig
 
-Risolvere con EditorConfig le proprietà del file greeting.txt e controllarne testo e terminatore LF.
+Resolve with EditorConfig the properties of the greeting.txt file and check the text and LF terminator.
 
-Tipo canonico `data`, language_id `96139566`.
+Canonical type `data`, language_id `96139566`.
 
-Toolchain prevista: Python 3 e editorconfig-core-py.
+Suggested toolchain: Python 3 and editorconfig-core-py.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: proprietà previste UTF-8, LF, newline finale e indentazione di 2 spazi; testo Hello, World! conservato.
+Expected result: expected properties UTF - 8, LF, final newline and indentation of 2 spaces; preserved Hello, World! text.
 
-Il core risolve la configurazione; non applica modifiche come farebbe un editor. L’obiettivo registrato è la risoluzione delle proprietà e il confronto dei byte del file, non l’integrazione con un IDE.
+The core solves the configuration; it does not apply changes as a editor would. The registered goal is the resolution of the properties and the comparison of the bytes of the file, not the integration with a IDE.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + editorconfig-core-py 0.17.1. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + editorconfig-core-py 0.17.1. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [EditorConfig — specifica e proprietà](https://editorconfig.org/)
 - [EditorConfig core Python originale](https://github.com/editorconfig/editorconfig-core-py)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install editorconfig==0.17.1
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.editorconfig` | [.editorconfig](.editorconfig) verificato |
+| `.editorconfig` | [.editorconfig](.editorconfig) verified |

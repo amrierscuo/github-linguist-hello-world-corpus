@@ -1,31 +1,31 @@
 # #514 Oxygene
 
-Compilare un entry point Oxygene per .NET che scrive in console.
+Fill out an Oxygene entry point for .NET that writes in console.
 
-Tipo canonico `programming`, language_id `269`.
+Canonical type `programming`, language_id `269`.
 
-Toolchain prevista: RemObjects Elements Oxygene compiler per .NET.
+Suggested toolchain: RemObjects Elements Oxygene compiler for .NET.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ebuild Hello.elements
 ```
 
-Risultato atteso: programma .NET stampa Hello, World!.
+Expected result: .NET printing program Hello, World!.
 
-Per completare la build occorre anche un progetto Elements coerente con il compiler disponibile.
+To complete the build you also need an Elements project that is consistent with the compiler available.
 
 Stato iniziale: creato; sintassi e semantica in attesa. RemObjects Elements compiler e progetto di build non predisposti.
 
-Fonti:
+Sources:
 
 - [Oxygene language](https://docs.elementscompiler.com/Oxygene/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.oxygene` | [Hello.oxygene](Hello.oxygene) creato, verifiche pendenti |
+| `.oxygene` | [Hello.oxygene](Hello.oxygene) created; verification pending |

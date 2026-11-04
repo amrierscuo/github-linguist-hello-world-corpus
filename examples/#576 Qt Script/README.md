@@ -1,36 +1,36 @@
 # #576 Qt Script
 
-Valutare ECMAScript nel vero QScriptEngine.
+Evaluate ECMAScript in the real QScriptEngine.
 
 ## Toolchain
 
 Qt 5 QtScript; C++
 
-## Procedura
+## Procedure
 
-Compilare main.cpp collegando Qt5Core e Qt5Script; eseguire nella cartella di hello.qs.
+Fill in main.cpp by connecting Qt5Core and Qt5Script; run in the hello.qs folder.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Lo script restituisce una stringa come valore finale; il consumer C++ usa evaluate e controlla le eccezioni native.
+The script returns a string as a final value; the consumer C++ uses evaluate and controls native exceptions.
 
-Requisiti residui:
+Remaining requirements:
 - Qt5Script/Qt Core compiler e librerie non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://doc.qt.io/archives/qt-5.15/qtscript-index.html](https://doc.qt.io/archives/qt-5.15/qtscript-index.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.qs` | [hello.qs](hello.qs) creato, verifiche pendenti |
+| `.qs` | [hello.qs](hello.qs) created; verification pending |

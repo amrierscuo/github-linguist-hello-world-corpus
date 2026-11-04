@@ -2,46 +2,46 @@
 
 Voce canonica `Stylus`, tipo `markup`, language_id `359`.
 
-Compilare Stylus in una regola CSS content che contiene il saluto.
+Fill Stylus in a CSS content rule that contains greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official stylus compiler/parser — 0.64.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official stylus compiler/parser, 0.64.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Compiler Stylus 0.64.0 autentico.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 npm install --prefix .tools stylus@0.64.0; node verify.cjs .tools build
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.
+Expected result: Hello, World! in the conformed result, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il CSS generato contiene selector e content corretti. Ambito semantico: generazione CSS, non visualizzazione browser.
+The generated CSS contains correct selector and content. Semantic ambition: CSS generation, not browser display.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://stylus-lang.com/docs/](https://stylus-lang.com/docs/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.styl` | [hello.styl](hello.styl) verificato |
+| `.styl` | [hello.styl](hello.styl) verified |

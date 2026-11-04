@@ -2,17 +2,17 @@
 
 Stadio originale `vert`. File: `hello.vs`.
 
-Stato: sintassi verificata, semantica pendente.
+Status: syntax verified, behavior pendant.
 
-Da questa cartella, con gli strumenti installati e un output temporaneo fuori dal corpus:
+From this folder, with the installed tools and a temporary output out of the corpus:
 
 ```sh
 glslangValidator -V --target-env vulkan1.2 -S vert hello.vs -o <output>/hello.spv
 spirv-val --target-env vulkan1.2 <output>/hello.spv
 ```
 
-Esecuzione della pipeline Vulkan dello stadio vert ancora pendente; compilazione e validazione SPIR-V riuscite per questo file.
+Running the vert stage in the Vulkan pipeline is still pending. SPIR-V compilation and validation succeeded for this file.
 
-[Log reale](../../verification/opengl_native.json) con versioni, timestamp UTC, comandi, exit/stdout/stderr, SHA256 del sorgente e risultati per file. I byte degli shader sono invariati. [Procedura principale](../../README.md).
+[Log reale](../../verification/opengl_native.json) records versions, UTC timestamp, commands, exit codes, stdout/stderr, source SHA256 and per-file results. The shader bytes are unchanged. [Procedura principale](../../README.md).
 
-Fonti: [GLSL](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf), [glslang](https://github.com/KhronosGroup/glslang), [SPIRV-Tools](https://github.com/KhronosGroup/SPIRV-Tools).
+Sources: [GLSL](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf), [glslang](https://github.com/KhronosGroup/glslang), [SPIRV-Tools](https://github.com/KhronosGroup/SPIRV-Tools).

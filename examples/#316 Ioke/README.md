@@ -1,36 +1,36 @@
 # #316 Ioke
 
-Invocare println sul testo del saluto nel runtime Ioke.
+Invoke println on the greeting text in the Ioke runtime.
 
 ## Toolchain
 
 Ioke JVM/CLR; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 ioke hello.ik
 
-## Risultato atteso
+## Expected result
 
-Hello, World! più newline.
+Hello, World! more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Ioke è il linguaggio a messaggi del progetto originale, distinto da Io. Il file .ik è un esempio concreto; compatibilità con Java/CLR e runtime vanno ancora provati.
+Ioke is the language to messages of the original project, distinct from Io. The .ik file is a concrete example; compatibility with Java/CLR and runtime are still tested.
 
-Requisiti residui:
-- Runtime Ioke storico non disponibile; nessuna verifica con Io generico.
+Remaining requirements:
+- Runtime Ioke historical unavailable; no verification with Io generico.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/olabini/ioke](https://github.com/olabini/ioke)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ik` | [hello.ik](hello.ik) creato, verifiche pendenti |
+| `.ik` | [hello.ik](hello.ik) created; verification pending |

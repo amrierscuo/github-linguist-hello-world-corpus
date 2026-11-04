@@ -1,34 +1,34 @@
-# 0243 Gerber Image — variante `.gbo`
+# 0243 Gerber Image: variant `.gbo`
 
-Ruolo: Alias convenzionale Gerber RS-274X: stessa immagine vettoriale, non Excellon/NC. Il suffisso non è usato per dichiarare funzioni o completezza di una scheda PCB; il campione Linguist .ncl contiene la stessa grammatica RS-274X.
+Role: Alias conventional Gerber RS - 274X: same vector image, not Excellon/NC. The suffix is not used to declare functions or completeness of a PCB card; the Linguist .ncl sample contains the same grammar RS - 274X.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#243 Gerber Image/hello.gbr
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 PyGerber originale: caricare hello.gbo come Gerber RS-274X, renderizzare e verificare visivamente Hello, World!.
 ```
 
-Risultato atteso: Parser senza errori; PNG legge Hello, World! con virgola e punto esclamativo.
+Expected result: Parser without errors; PNG law Hello, World! with comma and exclamation point.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.ucamco.com/en/gerber/downloads](https://www.ucamco.com/en/gerber/downloads)
 - [https://github.com/Argmaster/pygerber](https://github.com/Argmaster/pygerber)

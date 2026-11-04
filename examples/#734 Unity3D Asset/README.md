@@ -1,42 +1,42 @@
 # #734 Unity3D Asset
 
-Caricare una scena Unity originale con GameObject del saluto.
+Upload an original Unity scene with GameObject greeting.
 
 ## Toolchain
 
 Unity scene YAML reader/editor
 
-## Procedura
+## Procedure
 
-Importare hello.unity in un progetto Unity e controllare il GameObject Hello, World! con Transform.
+Import hello.unity into a Unity project and control the GameObject Hello, World! with Transform.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il goal è il nome dell’oggetto nella gerarchia, non un testo UI renderizzato; non sono inseriti GUID o script esterni.
+The goal is the name of the object in the hierarchy, not a UI rendered text; no GUID or external scripts are inserted.
 
-Requisiti residui:
-- Unity editor/scene loader non disponibile; compatibilità campi serializzati pending.
+Remaining requirements:
+- Unity editor/scene loader unavailable; compatibility of serialized pending fields.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.unity3d.com/Manual/FormatDescription.html](https://docs.unity3d.com/Manual/FormatDescription.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.anim` | [hello.anim](variants/anim-785361ae/hello.anim) creato, verifiche pendenti |
-| `.asset` | [hello.asset](variants/asset-1e16658f/hello.asset) creato, verifiche pendenti |
-| `.mask` | [hello.mask](variants/mask-6a9aba18/hello.mask) creato, verifiche pendenti |
-| `.mat` | [hello.mat](variants/mat-6b850197/hello.mat) creato, verifiche pendenti |
-| `.meta` | [greeting.asset.meta](variants/meta-e10ebe20/greeting.asset.meta) creato, verifiche pendenti |
-| `.prefab` | [hello.prefab](variants/prefab-3814199a/hello.prefab) creato, verifiche pendenti |
-| `.unity` | [hello.unity](hello.unity) creato, verifiche pendenti |
+| `.anim` | [hello.anim](variants/anim-785361ae/hello.anim) created; verification pending |
+| `.asset` | [hello.asset](variants/asset-1e16658f/hello.asset) created; verification pending |
+| `.mask` | [hello.mask](variants/mask-6a9aba18/hello.mask) created; verification pending |
+| `.mat` | [hello.mat](variants/mat-6b850197/hello.mat) created; verification pending |
+| `.meta` | [greeting.asset.meta](variants/meta-e10ebe20/greeting.asset.meta) created; verification pending |
+| `.prefab` | [hello.prefab](variants/prefab-3814199a/hello.prefab) created; verification pending |
+| `.unity` | [hello.unity](hello.unity) created; verification pending |

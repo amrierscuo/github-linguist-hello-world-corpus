@@ -1,30 +1,30 @@
-# 0418 — Markdown: `.livemd`
+# 0418: Markdown: `.livemd`
 
-Ruolo: Notebook Livebook Markdown con sezione e cella Elixir eseguibile, non output registrato inventato.
+Role: Notebook Livebook Markdown with section and cell Elixir executable, not output recorded invented.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Python 3.13.9 + markdown-it-py 4.2.0. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Python 3.13.9 + markdown-it-py 4.2.0. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Livebook: importare hello.livemd e valutare la cella
 ```
 
-Risultato atteso: Hello, World! nella cella
+Expected result: Hello, World! in cell
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.livemd`: `7762dbb562980095688ba0cb1a3e2d32a94456bf9d09678c8ae8568649b3d676`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/livebook-dev/livebook
 - https://spec.commonmark.org/0.31.2/

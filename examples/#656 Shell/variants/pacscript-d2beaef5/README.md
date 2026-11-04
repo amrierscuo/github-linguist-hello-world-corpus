@@ -1,23 +1,23 @@
-# 0656 — Shell — `.pacscript`
+# 0656: Shell: `.pacscript`
 
-Ricetta Pacstall originale senza download, dipendenze o checksum inventati; package scrive il proprio script in pkgdir isolato, non installa nel sistema.
+Original Pacstall recipe without download, dependencies or checksum invented; package writes its script in isolated pkgdir, does not install in the system.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.pacscript`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 bash -n hello.pacscript; Pacstall packaging-only sandbox with pkgdir under /absolute/work (no installation)
 ```
 
-Risultato atteso: pacchetto di prova contiene script originale che stampa Hello, World!.
+Expected result: test package contains original script printing Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/pacstall/pacstall/wiki/Pacscript-101](https://github.com/pacstall/pacstall/wiki/Pacscript-101)

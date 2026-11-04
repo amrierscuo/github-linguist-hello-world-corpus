@@ -1,42 +1,42 @@
 # #637 SQLPL
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Creare una procedura SQL PL che restituisce Hello, World! in un parametro OUT.
+Create a SQL PL procedure that returns Hello, World! to a OUT parameter.
 
-Il terminatore @ distingue la fine del corpo dai suoi punti e virgola. Il saluto viene assegnato al parametro OUT; serve una chiamata successiva per leggerlo.
+The @ terminator distinguishes the end of the body from its points and commas. The greeting is assigned to the OUT parameter; it serves a subsequent call to read it.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 IBM Db2 SQL PL, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 db2 -td@ -vf hello.db2
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il parametro OUT greeting vale Hello, World! dopo CALL corpus_greeting(?).
+The OUT greeting parameter applies Hello, World! after CALL corpus_greeting(?).
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Db2 di prova non disponibile; creazione/chiamata e parser pendenti.
+Commitments: unavailable test Db2; creazione/chiamata and hanging parser.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=procedures-sql-procedure-body
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sql` | [hello.sql](variants/sql-614f3a43/hello.sql) creato, verifiche pendenti |
-| `.db2` | [hello.db2](hello.db2) creato, verifiche pendenti |
+| `.sql` | [hello.sql](variants/sql-614f3a43/hello.sql) created; verification pending |
+| `.db2` | [hello.db2](hello.db2) created; verification pending |

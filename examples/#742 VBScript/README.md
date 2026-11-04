@@ -1,31 +1,31 @@
 # #742 VBScript
 
-Eseguire VBScript con il console script host di Windows.
+Run VBScript with the Windows host script console.
 
-Tipo canonico `programming`, language_id `408016005`.
+Canonical type `programming`, language_id `408016005`.
 
-Toolchain prevista: Windows cscript.exe e VBScript engine.
+Suggested toolchain: Windows cscript.exe and VBScript engine.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 cscript //nologo hello.vbs
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-cscript è usato in modalità console, senza dialoghi.
+cscript is used in console mode, without dialogues.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Windows cscript console host + original VBScript engine. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Windows cscript console host + original VBScript engine. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Windows Script Host](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/legacy/9bbdkx3k(v=vs.85))
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vbs` | [hello.vbs](hello.vbs) verificato |
+| `.vbs` | [hello.vbs](hello.vbs) verified |

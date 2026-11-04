@@ -1,37 +1,37 @@
 # #184 Ecmarkup
 
-Compilare un documento Ecmarkup con una clausola numerata che contiene Hello, World!.
+Fill out an Ecmarkup document with a numbered clause containing Hello, World!.
 
-Tipo canonico `markup`, language_id `844766630`.
+Canonical type `markup`, language_id `844766630`.
 
-Toolchain prevista: Node.js 22 e ecmarkup 23.x.
+Suggested toolchain: Node.js 22 and ecmarkup 23.x.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ecmarkup hello.html build/hello.html
 ```
 
-Risultato atteso: documento HTML finale contenente la clausola sec-greeting e il paragrafo Hello, World!.
+Expected result: final HTML document containing the sec-greeting clause and the Hello, World! paragraph.
 
-È una specifica minima in markup, senza algoritmi o affermazioni su ECMAScript. Il controllo richiede Ecmarkup, non solo un generico parser HTML.
+It is a minimum markup specification, without algorithms or statements on ECMAScript. Control requires Ecmarkup, not only a generic parser HTML.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + ecmarkup 23.0.2. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + ecmarkup 23.0.2. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Ecmarkup — progetto TC39](https://github.com/tc39/ecmarkup)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund ecmarkup@23.0.2
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.html` | [hello.html](hello.html) verificato |
+| `.html` | [hello.html](hello.html) verified |

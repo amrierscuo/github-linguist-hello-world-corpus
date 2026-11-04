@@ -1,30 +1,30 @@
-# 0530 — Pawn: `.sma`
+# 0530: Pawn: `.sma`
 
-Ruolo: Plugin AMX Mod X Pawn: include amxmodx e callback plugin_init, non console main.
+Role: Plugin AMX Mod X Pawn: includes amxmodx and callback plugin_init, not main console.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Required genuine compiler/runtime — non disponibile / non verificata. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Required genuine compiler/runtime, non disponibile / non verificata. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 AMX Mod X compiler: amxxpc hello.sma; caricare solo in server di test locale
 ```
 
-Risultato atteso: Hello, World! nel server log
+Expected result: Hello, World! in the log server
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.sma`: `838dc2e7cd55213665d125ecbc0f9af8d2d0892d576a57651c53db6f8d405016`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.amxmodx.org/doc/
 - https://compuphase.com/pawn/pawn.htm

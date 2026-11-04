@@ -1,23 +1,23 @@
-# 0623 — Roff — `.nr`
+# 0623: Roff: `.nr`
 
-Sorgente nroff/troff testuale; nessuna conversione in RUNOFF DEC è dichiarata.
+Source nroff/troff textual; no conversion to RUNOFF DEC is declared.
 
-Provenienza: copia del file originale `examples/#623 Roff/hello.roff`.
+Origin: copy of the original `examples/#623 Roff/hello.roff` file.
 
 Artefatto principale: `hello.nr`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 groff -Tascii hello.nr
 ```
 
-Risultato atteso: Output testuale contiene Hello, World!..
+Expected result: Text output contains Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.gnu.org/software/groff/manual/groff.html](https://www.gnu.org/software/groff/manual/groff.html)

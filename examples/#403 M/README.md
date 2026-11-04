@@ -1,32 +1,32 @@
 # #403 M
 
-Eseguire una routine M/MUMPS che scrive il saluto.
+Perform a M/MUMPS routine that writes greeting.
 
-Tipo canonico `programming`, language_id `214`.
+Canonical type `programming`, language_id `214`.
 
-Toolchain prevista: YottaDB o GT.M con routine M abilitata.
+Suggested toolchain: YottaDB or GT.M with M enabled routine.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 yottadb -run HELLO
 ```
 
-Risultato atteso: stdout Hello, World! e LF.
+Expected result: stdout Hello, World! and LF.
 
-In M lo spazio iniziale distingue i comandi dalle etichette. Per il runtime installare la routine come HELLO.m in una directory di routine dedicata; il .mumps resta l’artefatto canonico.
+In M the initial space distinguishes the commands from the labels. For the runtime to install the routine as HELLO.m in a dedicated routine directory; the .mumps remains the canon artifact.
 
 Stato iniziale: creato; sintassi e semantica in attesa. Runtime YottaDB/GT.M non ancora disponibile.
 
-Fonti:
+Sources:
 
 - [YottaDB — programmare in M](https://docs.yottadb.com/ProgrammersGuide/langfeat.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mumps` | [hello.mumps](hello.mumps) creato, verifiche pendenti |
-| `.m` | [hello.m](variants/m-f7140aa0/hello.m) creato, verifiche pendenti |
+| `.mumps` | [hello.mumps](hello.mumps) created; verification pending |
+| `.m` | [hello.m](variants/m-f7140aa0/hello.m) created; verification pending |

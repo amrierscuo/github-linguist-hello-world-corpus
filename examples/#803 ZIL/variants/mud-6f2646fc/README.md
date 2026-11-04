@@ -1,12 +1,12 @@
-# 0803 — ZIL — `.mud`
+# 0803: ZIL: `.mud`
 
-Variante testuale dello stesso formato, con suffisso canonico .mud.
+Textual variation of the same format, with canon suffix .mud.
 
-Provenienza: copia del file originale `examples/#803 ZIL/hello.zil`.
+Origin: copy of the original `examples/#803 ZIL/hello.zil` file.
 
 Artefatto principale: `hello.mud`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 zilf hello.mud
@@ -14,13 +14,13 @@ zapf generated.zap work/hello.z3
 frotz work/hello.z3
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/taradinoc/zilf](https://github.com/taradinoc/zilf)
 - [https://github.com/taradinoc/zilf/releases/tag/1.9](https://github.com/taradinoc/zilf/releases/tag/1.9)

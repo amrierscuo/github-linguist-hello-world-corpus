@@ -1,21 +1,21 @@
-# 0570 — Python — `.lmi`
+# 0570: Python: `.lmi`
 
-Suffisso canonico .lmi del linguaggio Python.
+Canon suffix .lmi of the Python language.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Nessun comando eseguito; occorre il generatore/importatore descritto nelle fonti.
 ```
 
-Risultato atteso: un artefatto genuino esportato/generato dal relativo tool originale.
+Expected result: a genuine artifact esportato/generato from its original tool.
 
-Stato: bloccato; nessun artefatto simulato; sintassi e semantica non verificate.
+Status: blocked; no simulated artifact; syntax and behavior not verified.
 
-L’associazione canonica Python è nota, ma il produttore specifico di questo suffisso non è documentato da una fonte primaria identificata; non viene assunto un alias arbitrario.
+The Python canonical association is known, but the specific producer of this suffix is not documented by an identified primary source; an arbitrary alias is not assumed.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.python.org/3/tutorial/inputoutput.html](https://docs.python.org/3/tutorial/inputoutput.html)

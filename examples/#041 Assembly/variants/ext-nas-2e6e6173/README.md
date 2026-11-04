@@ -1,34 +1,34 @@
-# 0041 Assembly — variante `.nas`
+# 0041 Assembly: variant `.nas`
 
-Ruolo: Assembly NASM x86-64 Linux ELF64, distinto dalla sintassi GNU del modello.
+Role: Assembly NASM x86- 64 Linux ELF64, distinguished by the syntax GNU of the model.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#041 Assembly/hello.s; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#041 Assembly/hello.s; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 nasm -f elf64 hello.nas -o <output>/hello.o; ld <output>/hello.o -o <output>/hello; <output>/hello
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://sourceware.org/binutils/docs/as/i386_002dSyntax.html](https://sourceware.org/binutils/docs/as/i386_002dSyntax.html)
 - [https://sourceware.org/binutils/docs/as/i386_002dOptions.html](https://sourceware.org/binutils/docs/as/i386_002dOptions.html)

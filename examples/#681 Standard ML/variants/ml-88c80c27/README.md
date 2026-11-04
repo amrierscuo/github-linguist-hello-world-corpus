@@ -1,23 +1,23 @@
-# 0681 — Standard ML — `.ml`
+# 0681: Standard ML: `.ml`
 
-Sorgente Standard ML dello stesso formato; nessuna identificazione come OCaml.
+Standard Source ML of the same format; no identification as OCaml.
 
-Provenienza: copia del file originale `examples/#681 Standard ML/hello.sml`.
+Origin: copy of the original `examples/#681 Standard ML/hello.sml` file.
 
 Artefatto principale: `hello.ml`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 poly --script hello.ml
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto..
+Expected result: Hello, World! in the compliant result, according to the framework described..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.polyml.org/documentation/](https://www.polyml.org/documentation/)

@@ -1,23 +1,23 @@
-# 0681 — Standard ML — `.sig`
+# 0681: Standard ML: `.sig`
 
-Signature Standard ML; non implementazione.
+Signature Standard ML; not implementation.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sig`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 poly --script main.sml
 ```
 
-Risultato atteso: signature e struttura accettate, stdout Hello, World!.
+Expected result: signature and accepted structure, stdout Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.polyml.org/documentation/](https://www.polyml.org/documentation/)

@@ -1,23 +1,23 @@
-# 0598 — Raku — `.nqp`
+# 0598: Raku: `.nqp`
 
-Programma NQP, linguaggio bootstrap distinto dal Raku completo.
+NQP program, bootstrap language distinct from the full Raku.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.nqp`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 nqp hello.nqp
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/Raku/nqp](https://github.com/Raku/nqp)

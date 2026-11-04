@@ -1,32 +1,32 @@
 # #438 Modelica
 
-Simulare un modello Modelica che stampa il saluto nell’algoritmo iniziale.
+Simulate a Model model that prints greeting in the initial algorithm.
 
-Tipo canonico `programming`, language_id `233`.
+Canonical type `programming`, language_id `233`.
 
-Toolchain prevista: OpenModelica omc e Modelica Standard Library.
+Suggested toolchain: OpenModelica omc and Standard Library Model.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 omc run.mos
 ```
 
-Risultato atteso: modello caricato e simulato; stdout/log contiene Hello, World!.
+Expected result: loaded and simulated model; stdout/log contains Hello, World!.
 
-Streams.print è eseguito durante l’inizializzazione. Il modello non modifica dispositivi esterni.
+Streams.print is performed during initialization. The model does not change external devices.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Modelica — linguaggio e specifica](https://specification.modelica.org/maint/3.6/)
 - [OpenModelica — scripting](https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mo` | [Hello.mo](Hello.mo) creato, verifiche pendenti |
+| `.mo` | [Hello.mo](Hello.mo) created; verification pending |

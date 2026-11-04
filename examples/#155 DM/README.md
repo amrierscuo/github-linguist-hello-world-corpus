@@ -1,18 +1,18 @@
 # #155 DM
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Compilare un mondo BYOND DM che scrive Hello, World! nel server log e si arresta.
+Fill out a world BYOND DM that writes Hello, World! on the log server and stops.
 
-hello.dm ridefinisce /world/New(), richiama ..() e usa l’output del mondo. hello.dme include il sorgente per DreamMaker. Il goal è un avvio server locale breve, senza mappe, client o risorse grafiche.
+hello.dm redefines /world/New(), recalls..() and uses the output of the world. hello.dme includes the source for DreamMaker. The goal is a short local server startup, without maps, clients or graphic resources.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 BYOND DreamMaker e DreamDaemon; versioni effettive da registrare
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 DreamMaker hello.dme
@@ -22,25 +22,25 @@ DreamMaker hello.dme
 DreamDaemon hello.dmb -trusted -close
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-world.log mostra Hello, World! durante /world/New(); shutdown() conclude il mondo.
+world.log shows Hello, World! during /world/New(); shutdown() concludes the world.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; parser/compilatore/runtime nativo non è stato eseguito per questa voce.
+The source is documented; native parser/compilatore/runtime has not been performed for this item.
 
 Impedimenti: Toolchain BYOND non preparata; compilazione DM e runtime DreamDaemon restano da eseguire.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.byond.com/docs/guide/chap08.html
 - https://www.byond.com/docs/ref/contents.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dm` | [hello.dm](hello.dm) creato, verifiche pendenti |
+| `.dm` | [hello.dm](hello.dm) created; verification pending |

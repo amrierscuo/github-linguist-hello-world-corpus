@@ -2,47 +2,47 @@
 
 Voce canonica: `Augeas`, tipo `programming`, `language_id: 25`.
 
-Mappare Hello, World! seguito da newline nel nodo Augeas greeting, poi verificare il round trip get/put.
+Map Hello, World! followed by newline in the Augeas greeting node, then check the round trip get/put.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-augparse / libaugeas Ubuntu package extracted locally — augparse 1.14.1 <http://augeas.net/>. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+augparse / libaugeas Ubuntu package extracted locally, augparse 1.14.1 < http://augeas.net/ >. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Richiede Augeas augparse e moduli standard della medesima versione. La prova usa i pacchetti Ubuntu 1.14.1 estratti in work e LD_LIBRARY_PATH locale, senza installazione di sistema.
+Requires Augeas augparse and standard modules of the same version. The test uses Ubuntu 1.14.1 packages extracted in local work and LD_LIBRARY_PATH, without system installation.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 augparse -I . hello.aug
 ```
 
-Risultato atteso: Exit 0; test get produce { greeting = Hello, World! }; test put ricostruisce Hello, World! seguito da newline.
+Exit 0; test get produces { Hello, World! }; put test reconstructs Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il sorgente contiene una lens originale e due test nativi. augparse verifica tipi e test; la regex del saluto non sostituisce il parser del linguaggio, è parte della lens stessa.
+The source contains an original lens and two native tests. augparse tests types and tests; the regex of greeting does not replace the parser of the language, is part of the lens itself.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://augeas.net/docs/lenses.html](https://augeas.net/docs/lenses.html)
 - [https://augeas.net/docs/language.html](https://augeas.net/docs/language.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.aug` | [hello.aug](hello.aug) verificato |
+| `.aug` | [hello.aug](hello.aug) verified |

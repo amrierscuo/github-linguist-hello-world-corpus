@@ -1,24 +1,24 @@
-# 0574 — QML — `.qbs`
+# 0574: QML: `.qbs`
 
-Progetto Qbs con una regola JavaScript che produce il saluto; distinto da QtQuick.
+Project Qbs with a JavaScript rule that produces greeting; distinct from QtQuick.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.qbs`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 qbs build -f hello.qbs --build-directory work/qbs
 ```
 
-Risultato atteso: greeting.txt contiene Hello, World! e LF.
+Expected result: greeting.txt contains Hello, World! and LF.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://doc.qt.io/qbs/qml-qbsmodules-qbs.html](https://doc.qt.io/qbs/qml-qbsmodules-qbs.html)
 - [https://doc.qt.io/qbs/jsextension-textfile.html](https://doc.qt.io/qbs/jsextension-textfile.html)

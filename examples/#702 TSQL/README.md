@@ -1,41 +1,41 @@
 # #702 TSQL
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Eseguire TSQL e restituire Hello, World! da SELECT.
 
-La variabile Unicode nvarchar viene concatenata con l’operatore + del dialetto TSQL.
+The Unicode nvarchar variable is chained with the operator + of the TSQL dialect.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Microsoft SQL Server TSQL, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 sqlcmd -i hello.sql
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Una riga, greeting = Hello, World!.
+A line, greeting = Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: SQL Server/sqlcmd non disponibili; parser ed esecuzione pendenti.
+Commitments: SQL Server/sqlcmd not available; parser and hanging execution.
 
-## Fonti primarie
+## Primary sources
 
 - https://learn.microsoft.com/en-us/sql/t-sql/language-elements/string-operators-transact-sql?view=sql-server-2017
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sql` | [hello.sql](hello.sql) creato, verifiche pendenti |
+| `.sql` | [hello.sql](hello.sql) created; verification pending |

@@ -2,52 +2,52 @@
 
 Voce canonica `Pascal`, tipo `programming`, language_id `281`.
 
-Compilare ed eseguire un programma Pascal con WriteLn.
+Fill in and run a Pascal program with WriteLn.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Genuine Free Pascal compiler — 3.2.2. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Genuine Free Pascal compiler, 3.2.2. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Free Pascal 3.2.2 ufficiale; compiler e units RTL estratti sotto work. Il log contiene i percorsi reali del compiler relocato.
+Free Pascal 3.2.2 official; compiler and units RTL extracted under work.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 fpc -FEbuild -FUbuild hello.pas; build/hello
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Compiler genuino genera un programma nativo che stampa esattamente il saluto.
+Genuine Compiler generates a native program that prints exactly the greeting.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.freepascal.org/docs.html](https://www.freepascal.org/docs.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pas` | [hello.pas](hello.pas), [driver.pas](variants/inc-dd126fb7/driver.pas) creato, verifiche pendenti |
-| `.dfm` | [hello.dfm](variants/dfm-e05beb09/hello.dfm) creato, verifiche pendenti |
-| `.dpr` | [hello.dpr](variants/dpr-30850e89/hello.dpr) creato, verifiche pendenti |
-| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) creato, verifiche pendenti |
-| `.lpr` | [hello.lpr](variants/lpr-3e546050/hello.lpr) creato, verifiche pendenti |
-| `.pascal` | [hello.pascal](variants/pascal-539d0d7d/hello.pascal) creato, verifiche pendenti |
-| `.pp` | [hello.pp](variants/pp-60aacc63/hello.pp) creato, verifiche pendenti |
+| `.pas` | [hello.pas](hello.pas), [driver.pas](variants/inc-dd126fb7/driver.pas) created; verification pending |
+| `.dfm` | [hello.dfm](variants/dfm-e05beb09/hello.dfm) created; verification pending |
+| `.dpr` | [hello.dpr](variants/dpr-30850e89/hello.dpr) created; verification pending |
+| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |
+| `.lpr` | [hello.lpr](variants/lpr-3e546050/hello.lpr) created; verification pending |
+| `.pascal` | [hello.pascal](variants/pascal-539d0d7d/hello.pascal) created; verification pending |
+| `.pp` | [hello.pp](variants/pp-60aacc63/hello.pp) created; verification pending |

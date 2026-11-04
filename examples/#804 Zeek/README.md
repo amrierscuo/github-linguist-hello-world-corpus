@@ -1,37 +1,37 @@
 # #804 Zeek
 
-Eseguire zeek_init senza cattura di rete.
+Run zeek_init without network capture.
 
 ## Toolchain
 
 Zeek runtime
 
-## Procedura
+## Procedure
 
 zeek hello.zeek
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Solo avvio dello script locale, nessuna cattura interfaccia o rete.
+Only start of the local script, no capture interface or network.
 
-Requisiti residui:
-- Zeek parser/runtime non disponibile.
+Remaining requirements:
+- Zeek parser/runtime unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.zeek.org/en/current/scripting/basics.html](https://docs.zeek.org/en/current/scripting/basics.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zeek` | [hello.zeek](hello.zeek) creato, verifiche pendenti |
-| `.bro` | [hello.bro](variants/bro-c936c4b3/hello.bro) creato, verifiche pendenti |
+| `.zeek` | [hello.zeek](hello.zeek) created; verification pending |
+| `.bro` | [hello.bro](variants/bro-c936c4b3/hello.bro) created; verification pending |

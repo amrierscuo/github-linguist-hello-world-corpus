@@ -1,60 +1,60 @@
 # #035 Apollo Guidance Computer
 
-Rappresentare Hello, World! con 13 parole AGC contenenti codici ASCII numerici; il programma Block II carica il primo codice (H, ottale 00110) nel registro A e rimane nel ciclo HOLD.
+Represent Hello, World! with 13 words AGC containing ASCII numerical codes; the Block II program loads the first code (H, 00110 octal) in the A register and remains in the HOLD cycle.
 
 ## File
 
 - `hello.agc`
 
-## Toolchain e verifica
+## Toolchain and verification
 
-Virtual AGC yaYUL revisione 2017-06-19, distribuzione Windows 2017-08-31; emulatore yaAGC per la verifica CPU residua.
+Virtual AGC yaYUL revision 2017-06-19, Windows 2017-08-31 distribution; yaAGC emulator for residual CPU verification.
 
-`OCT` inserisce costanti ottali di 15 bit nella memoria assemblata. Ogni
-carattere del saluto occupa una parola: non è una codifica usata storicamente
-dal DSKY, ma una convenzione esplicita del campione. `CA GREET` carica H nel
-registro A; `TC HOLD` mantiene il controllo in un ciclo.
+`OCT` inserts 15 bit optic constants in the assembled memory.
+character of greeting occupies a word: it is not a code used historically
+by DSKY, but an explicit convention of the sample. `CA GREET` charge H in the
+A register; `TC HOLD` maintains control in a cycle.
 
 ```text
 yaYUL hello.agc
 ```
 
-Il comando produce `hello.agc.bin` e `hello.agc.symtab` nella cartella di lavoro;
-usare una copia temporanea della sorgente per tenere separati questi derivati.
-L'assemblatore del test dichiara la revisione 2017-06-19 nella propria intestazione.
+The command produces `hello.agc.bin` and `hello.agc.symtab` in the workbook;
+use a temporary copy of the source to keep these derivatives separate.
+The test assembler declares the 2017-06-19 revision in its header.
 
-Prova CPU ancora richiesta: caricare il core-rope in un'istanza yaAGC Block II,
-usare il debugger per impostare il program counter Z a 04000, eseguire `CA`,
-osservare A=00110 e il ciclo sul successivo `HOLD`; leggere le tredici parole
-da `GREET` come valori ASCII numerici per ricostruire Hello, World!.
-Questo protocollo non è stato eseguito e non esiste una prova di stampa.
+Test CPU yet required: load the core-rope in a yaAGC block II instance,
+use the debugger to set the program counter Z to 04000, run `CA`,
+observe A= 00110 and the cycle on the next `HOLD`; read the thirteen words
+by `GREET` as numerical ASCII values to rebuild Hello, World!.
+This protocol has not been executed and there is no proof of print.
 
-## Risultato atteso
+## Expected result
 
 Assembly exit 0, zero errori fatali e warning. Obiettivo CPU: A=00110 e HOLD ripetuto; codici dati 00110 00145 00154 00154 00157 00054 00040 00127 00157 00162 00154 00144 00041.
 
-## Stato della prova
+## State of the test
 
-Sintassi verificata. Semantica in attesa.
+syntax verified. behavioral verification pending.
 
-Il saluto è una convenzione ASCII esplicita del campione. Assemblaggio completo realmente eseguito, semantica CPU non verificata.
+The greeting uses an explicit ASCII convention in this sample. The complete assembly step ran; CPU semantics were not verified.
 
-Prova effettiva Windows x64 del 2026-10-08T11:01:56.068379+00:00: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente, versioni osservate, comandi, codici di uscita, stdout e stderr.
+Actual Windows x64 test of 2026-10-08T11:01:56.068379+00:00: [log](verification/result.json).
+The log includes hash SHA-256 of the source, observed versions, commands, exit codes, stdout and stderr.
 
-Requisiti residui:
-- Manca la prova CPU in yaAGC: registro A e ciclo HOLD non osservati. L'AGC non possiede una console di testo; non viene dichiarata alcuna stampa.
+Remaining requirements:
+- There is no CPU test in yaAGC: A register and HOLD cycle not observed. AGC does not have a text console; no print is declared.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.ibiblio.org/apollo/assembly_language_manual.html](https://www.ibiblio.org/apollo/assembly_language_manual.html)
 - [https://www.ibiblio.org/apollo/yaYUL.html](https://www.ibiblio.org/apollo/yaYUL.html)
 - [https://github.com/virtualagc/virtualagc](https://github.com/virtualagc/virtualagc)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.agc` | [hello.agc](hello.agc) sintassi verificata |
+| `.agc` | [hello.agc](hello.agc) syntax verified |

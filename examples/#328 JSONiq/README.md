@@ -1,32 +1,32 @@
 # #328 JSONiq
 
-Valutare un’espressione JSONiq che restituisce una stringa di saluto.
+Evaluate an expression JSONiq that returns a greeting string.
 
-Tipo canonico `programming`, language_id `177`.
+Canonical type `programming`, language_id `177`.
 
-Toolchain prevista: RumbleDB, oppure Zorba con supporto JSONiq.
+Toolchain provided: RumbleDB, or Zorba with JSONiq support.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 rumble --query-path hello.jq
 ```
 
-Risultato atteso: sequenza JSONiq con un solo item stringa Hello, World!.
+Expected result: JSONiq sequence with only one item string Hello, World!.
 
-Un literal è una query valida: la verifica richiede il motore JSONiq; caricare il file con json.loads non prova questo linguaggio.
+A literal is a valid query: verification requires the JSONiq engine; loading the file with json.loads does not prove this language.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [JSONiq — specifica](https://www.jsoniq.org/docs/JSONiq/html-single/index.html)
 - [RumbleDB — motore originale](https://github.com/RumbleDB/rumble)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jq` | [hello.jq](hello.jq) creato, verifiche pendenti |
+| `.jq` | [hello.jq](hello.jq) created; verification pending |

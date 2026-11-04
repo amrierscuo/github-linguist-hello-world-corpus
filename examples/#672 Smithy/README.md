@@ -1,31 +1,31 @@
 # #672 Smithy
 
-Assemblare un modello Smithy e leggere il valore enum HELLO dal modello semantico.
+Assemble a Smithy model and read the enum HELLO value from the semantic model.
 
-Tipo canonico `programming`, language_id `1027892786`.
+Canonical type `programming`, language_id `1027892786`.
 
-Toolchain prevista: JDK e Smithy model/utils.
+Suggested toolchain: JDK and Smithy model/utils.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java -cp "$SMITHY_CLASSPATH" Verify.java
 ```
 
-Risultato atteso: modello valido e enum Hello, World!.
+Expected result: valid model and enum Hello, World!.
 
-L’obiettivo è il modello IDL, non un endpoint AWS o un client generato.
+The goal is the IDL model, not a AWS endpoint or a generated client.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: JDK21 + Smithy model/utils 1.50.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: JDK21 + Smithy model/utils 1.50.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Smithy IDL](https://smithy.io/2.0/spec/idl.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.smithy` | [hello.smithy](hello.smithy) verificato |
+| `.smithy` | [hello.smithy](hello.smithy) verified |

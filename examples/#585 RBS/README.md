@@ -1,31 +1,31 @@
 # #585 RBS
 
-Analizzare un alias RBS di tipo string literal uguale al saluto.
+Analyze an alias RBS type string literal equal to greeting.
 
-Tipo canonico `data`, language_id `899227493`.
+Canonical type `data`, language_id `899227493`.
 
-Toolchain prevista: Ruby e RBS parser.
+Suggested toolchain: Ruby and RBS parser.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ruby verify.rb
 ```
 
-Risultato atteso: type alias greeting con literal Hello, World!.
+Expected result: type alias greeting with literal Hello, World!.
 
-Un type alias non esegue Ruby. La verifica riguarda la dichiarazione e il valore nel suo AST.
+A type alias does not perform Ruby. The verification concerns the statement and the value in its AST.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Ruby 3.2.3 + RBS parser. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Ruby 3.2.3 + RBS parser. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [RBS syntax](https://github.com/ruby/rbs/blob/master/docs/syntax.md)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rbs` | [hello.rbs](hello.rbs) verificato |
+| `.rbs` | [hello.rbs](hello.rbs) verified |

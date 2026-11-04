@@ -1,34 +1,34 @@
 # #677 SpiceDB Schema
 
-Validare uno schema SpiceDB e una caveat che concede lettura quando message è il saluto.
+Validate a SpiceDB scheme and a caveat that allows reading message is greeting.
 
-Tipo canonico `data`, language_id `864005057`.
+Canonical type `data`, language_id `864005057`.
 
-Toolchain prevista: SpiceDB e zed in ambiente isolato.
+Suggested toolchain: SpiceDB and zed in isolated environment.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 zed validate hello.zed; valutare la caveat greeting in un backend SpiceDB isolato con message="Hello, World!".
 ```
 
-Risultato atteso: schema accettato; caveat greeting true soltanto per Hello, World!.
+Expected result: accepted scheme; caveat greeting true only for Hello, World!.
 
-L’esempio non modifica un database di autorizzazioni. Il comando esatto dipende dalla versione zed predisposta.
+The example does not change a permission database. The exact command depends on the zed version.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [SpiceDB schema](https://authzed.com/docs/spicedb/concepts/schema)
 - [SpiceDB caveats](https://authzed.com/docs/spicedb/concepts/caveats)
 
-zed validate accetta anche file raw .zed; il controllo della caveat in un backend rimane un requisito distinto. [CLI originale](https://github.com/authzed/zed/blob/main/internal/cmd/validate.go).
+zed validated also accepts raw .zed files; the control of the caveat in a backend remains a distinct requirement. [CLI originale](https://github.com/authzed/zed/blob/main/internal/cmd/validate.go).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zed` | [hello.zed](hello.zed) creato, verifiche pendenti |
+| `.zed` | [hello.zed](hello.zed) created; verification pending |

@@ -2,48 +2,48 @@
 
 Voce canonica `Formatted`, tipo `data`, language_id `113`.
 
-Rappresentare il saluto come campo di un record a larghezza fissa e leggerlo con un parser esistente secondo il layout dichiarato.
+Represent greeting as a field of a fixed-width record and read it with an existing parser according to the stated layout.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Existing NumPy genfromtxt fixed-width record parser — 2.3.5. Ambiente della prova: **Windows x64**.
+Existing NumPy genfromtxt fixed-width record parser, 2.3.5. Test environment: **Windows x64**.
 
-NumPy 2.3.5 su Python 3.13.9. Layout originale: id intero di 3 colonne, greeting di 13 colonne, lunghezza intera di 4 colonne; ogni record termina con LF.
+NumPy 2.3.5 on Python 3.13.9. Original layout: full id of 3 columns, greeting of 13 columns, full length of 4 columns; each record ends with LF.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python -m pip install numpy==2.3.5; python verify.py hello.for
 ```
 
-Risultato atteso: Un record: id=1, greeting=Hello, World!, length=13; PASS.
+Expected result: A record: id= 1, greeting Hello, World!, length= 13; PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Formatted è una categoria ampia di dati nella baseline Linguist: i campioni includono report e tabelle con formati differenti. I flag positivi riguardano esclusivamente questo layout esplicito letto da numpy.genfromtxt; non si attribuisce una grammatica universale alla categoria, né validità EAM/Finnis–Sinclair a questo file.
+Formatted is a wide range of data in the Linguist baseline: the samples include reports and tables with different formats. The positive flags concern only this explicit layout read by numpy.genfromtxt; no universal grammar is attributed to the category, no EAM/Finnis–Sinclair validity to this file.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/github-linguist/linguist/tree/main/samples/Formatted](https://github.com/github-linguist/linguist/tree/main/samples/Formatted)
 - [https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html](https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.for` | [hello.for](hello.for) verificato |
-| `.eam.fs` | [hello.eam.fs](variants/ext-eam-fs-2e65616d2e6673/hello.eam.fs) creato, verifiche pendenti |
+| `.for` | [hello.for](hello.for) verified |
+| `.eam.fs` | [hello.eam.fs](variants/ext-eam-fs-2e65616d2e6673/hello.eam.fs) created; verification pending |

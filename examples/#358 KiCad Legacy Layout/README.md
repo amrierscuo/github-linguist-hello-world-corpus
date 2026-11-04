@@ -2,47 +2,47 @@
 
 Voce canonica `KiCad Legacy Layout`, tipo `data`, language_id `140848857`.
 
-Descrivere nel formato legacy KiCad .brd un testo di serigrafia Hello, World!.
+Describe in the legacy format KiCad .brd a text of Hello, World! silkscreen.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Formato PCBNEW-BOARD Version 1, coordinate in 1/10000 inch. Il testo è un oggetto $TEXTPCB sul layer legacy 21; il file termina con $EndBOARD.
+Format PCBNEW - BOARD Version 1, coordinates in 1/10000 inch. The text is a $ TEXTPCB object on the 21 legacy layer; the file ends with $EndBOARD.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 PCB Editor KiCad: aprire/importare hello.brd in una copia di lavoro, salvare come .kicad_pcb ed esportare SVG della serigrafia frontale
 ```
 
-Risultato atteso: Importazione nativa riuscita; serigrafia frontale mostra Hello, World!.
+Expected result: Successful native import; frontal serigraphy shows Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Questo è il formato legacy, distinto dall’artefatto S-expression moderno. Il saluto è il campo Te del vero oggetto testuale. Importatore/renderer KiCad assenti; i flag restano false.
+This is the legacy format, distinct from the modern S-expression artifact. The greeting is the Te field of the true textual object. Importatore/renderer KiCad absents; the flags remain false.
 
-Requisiti residui:
+Remaining requirements:
 
 - Native KiCad legacy PCB importer/renderer is not available.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://dev-docs.kicad.org/en/file-formats/legacy-pcb/](https://dev-docs.kicad.org/en/file-formats/legacy-pcb/)
 - [https://docs.kicad.org/9.0/en/kicad/kicad.html](https://docs.kicad.org/9.0/en/kicad/kicad.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.brd` | [hello.brd](hello.brd) creato, verifiche pendenti |
+| `.brd` | [hello.brd](hello.brd) created; verification pending |

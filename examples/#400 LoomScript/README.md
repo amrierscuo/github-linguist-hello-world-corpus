@@ -1,37 +1,37 @@
 # #400 LoomScript
 
-Avviare un’applicazione LoomScript originale e tracciare il saluto da run.
+Launch an original LoomScript application and draw the greeting from run.
 
 ## Toolchain
 
 LoomSDK storico; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-Inserire HelloWorld.ls come classe principale del progetto Loom; loom build; loom run
+Insert HelloWorld.ls as the main class of the Loom project; loom build; loom run
 
-## Risultato atteso
+## Expected result
 
 run invoca base initialization e trace emette Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-È il linguaggio LoomScript del Loom Native SDK per applicazioni/giochi. La classe estende loom.Application e mantiene super.run come indicato dal codice vendor. Non è un SDK blockchain omonimo.
+It is the LoomScript language of the Loom Native SDK for applicazioni/giochi. The class extends loom.Application and keeps super.run as indicated by the vendor code. It is not a SDK blockchain of the same name.
 
-Requisiti residui:
+Remaining requirements:
 - Loom compiler/runtime storico non predisposto; build/avvio applicazione pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/LoomSDK/LoomSDK](https://github.com/LoomSDK/LoomSDK)
 - [https://github.com/LoomSDK/LoomSDK/blob/master/sdk/src/loom/Application.ls](https://github.com/LoomSDK/LoomSDK/blob/master/sdk/src/loom/Application.ls)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ls` | [HelloWorld.ls](HelloWorld.ls) creato, verifiche pendenti |
+| `.ls` | [HelloWorld.ls](HelloWorld.ls) created; verification pending |

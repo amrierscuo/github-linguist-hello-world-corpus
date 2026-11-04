@@ -1,36 +1,36 @@
 # #806 Zephir
 
-Compilare una classe Zephir e chiamare greet dall’estensione PHP.
+Fill in a Zephir class and call us greet from the PHP extension.
 
 ## Toolchain
 
 Zephir compiler; PHP development toolchain
 
-## Procedura
+## Procedure
 
-Nel progetto Zephir corpus compilare Hello.zep; caricare l’estensione e invocare Corpus\Hello::greet().
+In the project Zephir corpus fill out Hello.zep; load the extension and invoke Corpus\Hello::greet().
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Zephir/PHP extension compiler/runtime non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.zephir-lang.com/0.18/tutorial/](https://docs.zephir-lang.com/0.18/tutorial/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zep` | [Hello.zep](Hello.zep) creato, verifiche pendenti |
+| `.zep` | [Hello.zep](Hello.zep) created; verification pending |

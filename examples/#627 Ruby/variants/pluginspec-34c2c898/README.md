@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.pluginspec`
+# 0627: Ruby: `.pluginspec`
 
 Descrittore Jenkins Ruby plugin, soli metadata originali; URL riservato illustrativo e nessun repository/pubblicazione dichiarati.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.pluginspec`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Jenkins Ruby plugin tooling: load hello.pluginspec; inspect metadata
 ```
 
-Risultato atteso: saluto/test/metadata secondo il ruolo; host DSL non ancora verificato.
+Expected result: saluto/test/metadata according to the role; DSL host not yet verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/jenkinsci/jenkins.rb](https://github.com/jenkinsci/jenkins.rb)

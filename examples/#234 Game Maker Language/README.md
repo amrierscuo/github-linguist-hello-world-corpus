@@ -1,41 +1,41 @@
 # #234 Game Maker Language
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire codice GML in un evento Create e mostrare Hello, World! nel log di GameMaker.
+Run GML code in a Create event and show Hello, World! in GameMaker log.
 
 L’artefatto è codice Game Maker Language per il contesto di un evento, con variabile locale e show_debug_message. Il file non viene dichiarato come un progetto GameMaker completo.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 GameMaker IDE/runtime, versione effettiva da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Inserire hello.gml nell’evento Create di un oggetto in una room, poi eseguire il progetto.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il debug log mostra Hello, World! una volta.
+The debug log shows Hello, World! once.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
 Impedimenti: IDE/runtime GameMaker non preparati; parser e creazione della room/evento non verificati.
 
-## Fonti primarie
+## Primary sources
 
 - https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gml` | [hello.gml](hello.gml) creato, verifiche pendenti |
+| `.gml` | [hello.gml](hello.gml) created; verification pending |

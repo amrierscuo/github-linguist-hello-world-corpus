@@ -1,37 +1,37 @@
 # #391 Literate Agda
 
-Compilare un programma Agda letterato che usa IO.Main per stampare il saluto.
+Fill out a literary Agda program that uses IO.Main to print your greeting.
 
 ## Toolchain
 
 Agda e agda-stdlib compatibili; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-agda -i <agda-stdlib/src> --compile Hello.lagda; eseguire il main compilato dalla toolchain Agda/GHC
+agda -i <agda-stdlib/src> --compile Hello.lagda; run the main compiled by toolchain Agda/GHC
 
-## Risultato atteso
+## Expected result
 
-Blocchi code selezionati; tipo Main accettato; runtime stampa Hello, World!.
+Selected code blocks; type Main accepted; runtime press Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 File LaTeX letterato originale con blocco code; la libreria standard fornisce run/putStrLn e Main. Non basta un compilatore LaTeX per verificare Agda.
 
-Requisiti residui:
-- Agda/stdlib/backend GHC non disponibili; type check e IO pending.
+Remaining requirements:
+- Agda/stdlib/backend GHC not available; type check and IO pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://agda.readthedocs.io/en/latest/tools/literate-programming.html](https://agda.readthedocs.io/en/latest/tools/literate-programming.html)
 - [https://agda.github.io/agda-stdlib/v2.0/IO.html](https://agda.github.io/agda-stdlib/v2.0/IO.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lagda` | [Hello.lagda](Hello.lagda) creato, verifiche pendenti |
+| `.lagda` | [Hello.lagda](Hello.lagda) created; verification pending |

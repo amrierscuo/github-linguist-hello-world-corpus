@@ -1,18 +1,18 @@
 # #078 BrighterScript
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Validare e transpilare un namespace BrighterScript, poi eseguire il BrightScript generato.
+Validate and transpire a BrighterScript namespace, then run the generated BrightScript.
 
-Corpus.greeting restituisce la stringa; main la stampa. bsconfig.json configura lo staging locale e disabilita la creazione di un pacchetto. La semantica è stata verificata con brs fuori da un dispositivo Roku.
+Corpus.greeting returns the string; main printing. bsconfig.json configures the local staging and disables the creation of a package. behavior was verified with brs out of a Roku device.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 BrighterScript 0.73.5; brs 0.45.0; Node.js 22.20.0
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 bsc --project bsconfig.json
@@ -22,24 +22,24 @@ bsc --project bsconfig.json
 brs stage/source/main.brs
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Validazione senza errori; stdout esatto Hello, World! seguito da newline; exit 0.
+Validation without errors; exact stdout Hello, World! followed by newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+The `verification/toolchain.json` log records actual commands, versioni/provenienza of the toolchain, output codes, stdout/stderr and SHA-256 of the proven sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/rokucommunity/brighterscript
 - https://github.com/rokucommunity/brighterscript/blob/master/docs/bsconfig.md
 - https://github.com/sjbarag/brs
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bs` | [main.bs](source/main.bs) verificato |
+| `.bs` | [main.bs](source/main.bs) verified |

@@ -1,44 +1,44 @@
 # #508 OpenType Feature File
 
-Compilare una dichiarazione OpenType Feature File nella tabella name di un font.
+Fill out an OpenType Feature File statement in the name table of a font.
 
-Tipo canonico `data`, language_id `374317347`.
+Canonical type `data`, language_id `374317347`.
 
-Toolchain prevista: Python e fontTools feaLib.
+Suggested toolchain: Python and fontTools feaLib.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: name ID 4 costruito dal compiler e uguale al saluto.
+Expected result: name ID 4 built by the compiler and equal to greeting.
 
-Il saluto è il full font name; il fixture non pretende un font con glifi disegnati.
+Greeting is the full font name; the fixture does not demand a font with glifi drawn.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + fontTools 4.66.1 feaLib. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + fontTools 4.66.1 feaLib. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [fontTools feaLib](https://fonttools.readthedocs.io/en/latest/feaLib/index.html)
 - [Adobe feature file specification](https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install fonttools
 ```
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install fonttools==4.66.1
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fea` | [hello.fea](hello.fea) verificato |
+| `.fea` | [hello.fea](hello.fea) verified |

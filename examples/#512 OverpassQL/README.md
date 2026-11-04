@@ -1,31 +1,31 @@
 # #512 OverpassQL
 
-Produrre un elemento derivato Overpass con tag message uguale al saluto.
+Produce a derived Overpass element with tag equal to greeting.
 
-Tipo canonico `programming`, language_id `689079655`.
+Canonical type `programming`, language_id `689079655`.
 
-Toolchain prevista: Overpass API query engine.
+Suggested toolchain: Overpass API query engine.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Eseguire il file con un motore Overpass locale o Overpass Turbo.
 ```
 
-Risultato atteso: JSON con derived element greeting e tag message Hello, World!.
+Expected result: JSON with derived element greeting and tag message Hello, World!.
 
-make crea un elemento locale e non richiede una query geografica; il motore resta necessario.
+make creates a local element and does not require a geographical query; the engine remains necessary.
 
 Stato iniziale: creato; sintassi e semantica in attesa. Motore Overpass locale non disponibile.
 
-Fonti:
+Sources:
 
 - [Overpass QL make](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#The_statement_make)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.overpassql` | [hello.overpassql](hello.overpassql) creato, verifiche pendenti |
+| `.overpassql` | [hello.overpassql](hello.overpassql) created; verification pending |

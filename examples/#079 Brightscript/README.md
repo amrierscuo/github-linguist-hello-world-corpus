@@ -1,40 +1,40 @@
 # #079 Brightscript
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Eseguire sub main e stampare Hello, World! nel linguaggio BrightScript.
+Perform sub main and print Hello, World! in BrightScript language.
 
-La voce canonica Linguist è Brightscript. Il codice usa il linguaggio Roku BrightScript; la prova effettiva avviene tramite brs in Node, senza hardware o API di un dispositivo Roku.
+The Linguist canonical entry is Brightscript. The code uses the Roku BrightScript language; the actual test takes place through brs in Node, without hardware or API of a Roku device.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-brs 0.45.0, interprete BrightScript originale della community; Node.js 22.20.0
+brs 0.45.0, interpreter BrightScript of the original community; Node.js 22.20.0
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 brs hello.brs
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esatto Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+The `verification/toolchain.json` log records actual commands, versioni/provenienza of the toolchain, output codes, stdout/stderr and SHA-256 of the proven sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/sjbarag/brs
 - https://developer.roku.com/docs/references/brightscript/language/expressions-variables-types.md
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.brs` | [hello.brs](hello.brs) verificato |
+| `.brs` | [hello.brs](hello.brs) verified |

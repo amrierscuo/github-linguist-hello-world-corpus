@@ -1,36 +1,36 @@
 # #738 Untyped Plutus Core
 
-Analizzare e valutare una costante stringa Untyped Plutus Core.
+Analyze and evaluate a constant string Untyped Plutus Core.
 
 ## Toolchain
 
 UPLC parser/CEK evaluator
 
-## Procedura
+## Procedure
 
-Usare il parser/evaluatore UPLC ufficiale della versione compatibile per valutare hello.uplc.
+Use the official parser/evaluatore UPLC of the compatible version to evaluate hello.uplc.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il programma è una costante, senza transazioni o deployment.
+The program is a constant, no transactions or deployment.
 
-Requisiti residui:
+Remaining requirements:
 - Toolchain UPLC/CEK non predisposta; valutazione pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://plutus.cardano.intersectmbo.org/docs/](https://plutus.cardano.intersectmbo.org/docs/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.uplc` | [hello.uplc](hello.uplc) creato, verifiche pendenti |
+| `.uplc` | [hello.uplc](hello.uplc) created; verification pending |

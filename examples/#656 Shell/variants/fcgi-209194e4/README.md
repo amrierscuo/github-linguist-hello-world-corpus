@@ -1,24 +1,24 @@
-# 0656 — Shell — `.fcgi`
+# 0656: Shell: `.fcgi`
 
-Entrypoint shell FastCGI che avvia l’adapter originale fcgiwrap; il companion CGI produce header/body. Non un echo rinominato.
+Entrypoint shell FastCGI that initiates the original fcgiwrap adaptor; companion CGI produces header/body. Not a renamed echo.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.fcgi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 spawn-fcgi -n -s /absolute/work/corpus-fcgi.sock -- sh hello.fcgi; isolated local FastCGI request SCRIPT_FILENAME=<absolute greeting.cgi>
 ```
 
-Risultato atteso: FastCGI frontend riceve HTTP body Hello, World!.
+Expected result: FastCGI frontend receives HTTP body Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/gnosek/fcgiwrap](https://github.com/gnosek/fcgiwrap)
 - [https://www.rfc-editor.org/rfc/rfc3875](https://www.rfc-editor.org/rfc/rfc3875)

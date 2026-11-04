@@ -1,33 +1,33 @@
 # #588 REXX
 
-Eseguire REXX e stampare il saluto.
+Run REXX and print your greeting.
 
-Tipo canonico `programming`, language_id `311`.
+Canonical type `programming`, language_id `311`.
 
-Toolchain prevista: Regina REXX.
+Suggested toolchain: Regina REXX.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 regina hello.rexx
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-say è un’istruzione REXX standard.
+Say is a standard REXX instruction.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Regina REXX 3.9.5 native Ubuntu. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Regina REXX 3.9.5 native Ubuntu. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Regina](https://regina-rexx.sourceforge.io/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rexx` | [hello.rexx](hello.rexx) verificato |
-| `.pprx` | [hello.pprx](variants/pprx-57f86225/hello.pprx) creato, verifiche pendenti |
-| `.rex` | [hello.rex](variants/rex-31adbc05/hello.rex) creato, verifiche pendenti |
+| `.rexx` | [hello.rexx](hello.rexx) verified |
+| `.pprx` | [hello.pprx](variants/pprx-57f86225/hello.pprx) created; verification pending |
+| `.rex` | [hello.rex](variants/rex-31adbc05/hello.rex) created; verification pending |

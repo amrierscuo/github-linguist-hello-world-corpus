@@ -1,53 +1,33 @@
 # #278 HLSL
 
-Voce canonica `HLSL`, tipo `programming`, language_id `145`.
+FXC compiled the compute shader and all three include consumers. Direct3D 11 WARP dispatched each shader and read back the expected greeting. The separate Direct3D 10 Effects check rendered the original effect and decoded the same greeting from its pixels.
 
-Compilare un compute shader HLSL che scrive tredici codici ASCII in un RWStructuredBuffer.
+Canonical type: `programming`. Linguist language ID: `145`.
 
-## Toolchain e riproduzione
+## Recorded verification
 
-Official Microsoft DirectX Shader Compiler — dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47). Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+**Syntax and behavior verified** on November 4, 2026 with Microsoft FXC 10.1, Windows SDK 10.0.26100.0, Direct3D WARP and Zig C++ 0.15.2.
 
-Microsoft DirectX Shader Compiler ufficiale, release portable dxc_2026_09_29 con dxcompiler.dll 1.9.2609.5. Il prodotto DXIL resta in build.
+[Recorded commands, outputs and hashes](verification/native_20261104_hlsl_result.json).
+[Earlier verification record](verification/native.json).
+[Direct3D Effects verification](verification/native_20261104_hlsl_fx_result.json).
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+## Reproduce the check
 
-```text
-dxc -T cs_6_0 -E main -Fo build/hello.dxil hello.hlsl
-```
+Use the FXC and Zig commands in the receipts in a scratch directory. `verification/dispatch.cpp` is the Direct3D 11 readback harness; the effect uses `verification/render_fx.cpp` and `verification/fullscreen_vs.hlsl`. Use the recorded source filenames and include paths. These checks use Windows software rendering; they do not require a physical GPU.
 
-Risultato atteso: Compilazione exit 0; runtime futuro ricostruisce Hello, World! da tredici uint.
+## Primary sources
 
-## Stato ed evidenza
+- https://github.com/microsoft/DirectXShaderCompiler
+- https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl
+- https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/sm5-object-rwstructuredbuffer
 
-Artefatto **creato**; sintassi **verificata**; semantica **in attesa**.
+## Extension coverage
 
-Il compiler autentico accetta il sorgente e genera bytecode. La semantica resta pendente: occorre dispatch di un gruppo di 16 thread e readback dei primi tredici uint su Direct3D compatibile. Non viene dedotta dai soli valori nel sorgente.
-
-Requisiti residui:
-
-- Shader compiled; compute dispatch/readback on a compatible Direct3D runtime is not performed.
-
-Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
-
-## Fonti primarie
-
-- [https://github.com/microsoft/DirectXShaderCompiler](https://github.com/microsoft/DirectXShaderCompiler)
-- [https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl)
-- [https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/sm5-object-rwstructuredbuffer](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/sm5-object-rwstructuredbuffer)
-
-## Copertura delle estensioni
-
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
-
-| Estensione | File / stato |
-| --- | --- |
-| `.hlsl` | [hello.hlsl](hello.hlsl), [consumer.hlsl](variants/ext-cginc-2e6367696e63/consumer.hlsl), [consumer.hlsl](variants/ext-fxh-2e667868/consumer.hlsl), [consumer.hlsl](variants/ext-hlsli-2e686c736c69/consumer.hlsl) creato, verifiche pendenti |
-| `.cginc` | [hello.cginc](variants/ext-cginc-2e6367696e63/hello.cginc) creato, verifiche pendenti |
-| `.fx` | [hello.fx](variants/ext-fx-2e6678/hello.fx) creato, verifiche pendenti |
-| `.fxh` | [hello.fxh](variants/ext-fxh-2e667868/hello.fxh) creato, verifiche pendenti |
-| `.hlsli` | [hello.hlsli](variants/ext-hlsli-2e686c736c69/hello.hlsli) creato, verifiche pendenti |
+| Extension | Files | Status |
+| --- | --- | --- |
+| `.hlsl` | [hello.hlsl](hello.hlsl), [consumer.hlsl](variants/ext-cginc-2e6367696e63/consumer.hlsl), [consumer.hlsl](variants/ext-fxh-2e667868/consumer.hlsl), [consumer.hlsl](variants/ext-hlsli-2e686c736c69/consumer.hlsl) | Syntax and behavior verified |
+| `.cginc` | [hello.cginc](variants/ext-cginc-2e6367696e63/hello.cginc) | Syntax and behavior verified |
+| `.fx` | [hello.fx](variants/ext-fx-2e6678/hello.fx) | Syntax and behavior verified |
+| `.fxh` | [hello.fxh](variants/ext-fxh-2e667868/hello.fxh) | Syntax and behavior verified |
+| `.hlsli` | [hello.hlsli](variants/ext-hlsli-2e686c736c69/hello.hlsli) | Syntax and behavior verified |

@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.rabl`
+# 0627: Ruby: `.rabl`
 
 Template RABL JSON.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rabl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Rabl.render(nil, "hello", view_path: ".", format: :json)
 ```
 
-Risultato atteso: artefatto/risultato originale di saluto nel consumatore indicato.
+Expected result: artefatto/risultato original greeting in the indicated consumer.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/nesquena/rabl](https://github.com/nesquena/rabl)

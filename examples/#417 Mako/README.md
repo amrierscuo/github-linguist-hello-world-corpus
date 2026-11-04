@@ -1,38 +1,38 @@
 # #417 Mako
 
-Compilare un template Mako e sostituire target con World.
+Fill out a Mako template and replace targets with World.
 
-Tipo canonico `programming`, language_id `221`.
+Canonical type `programming`, language_id `221`.
 
-Toolchain prevista: Python 3.13 e Mako.
+Suggested toolchain: Python 3.13 and Mako.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: stdout Hello, World! e LF, exit 0.
+Expected result: stdout Hello, World! and LF, exit 0.
 
-Il motore genera ed esegue Python dal template; nessun renderer simulato.
+The engine generates and executes Python from the template; no simulated renderr.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + Mako 1.4.3. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + Mako 1.4.3. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Mako — manuale](https://docs.makotemplates.org/en/latest/syntax.html)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install mako==1.4.3
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mako` | [hello.mako](hello.mako) verificato |
-| `.mao` | [hello.mao](variants/mao-7fa3a20f/hello.mao) creato, verifiche pendenti |
+| `.mako` | [hello.mako](hello.mako) verified |
+| `.mao` | [hello.mao](variants/mao-7fa3a20f/hello.mao) created; verification pending |

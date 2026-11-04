@@ -2,30 +2,30 @@
 
 Stampare Hello, World! in Macaulay2.
 
-Tipo canonico `programming`, language_id `34167825`.
+Canonical type `programming`, language_id `34167825`.
 
-Toolchain prevista: Macaulay2 M2 CLI.
+Suggested toolchain: Macaulay2 M2 CLI.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 M2 --script hello.m2
 ```
 
-Risultato atteso: stdout Hello, World! e LF.
+Expected result: stdout Hello, World! and LF.
 
-La forma print non richiede costruire anelli o installare pacchetti aggiuntivi.
+The print form does not require you to build rings or install additional packages.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Macaulay2 — print](https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/Macaulay2Doc/html/_print.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.m2` | [hello.m2](hello.m2) creato, verifiche pendenti |
+| `.m2` | [hello.m2](hello.m2) created; verification pending |

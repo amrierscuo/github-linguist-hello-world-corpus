@@ -1,8 +1,8 @@
 # #641 STL
 
-Caricare una mesh STL originale che costruisce il saluto con pixel estrusi.
+Upload an original mesh STL that builds greeting with extruded pixels.
 
-## Verifica reale
+## Real Verification
 
 Trimesh 4.9.0; Matplotlib 3.10.6; CPython 3.13.9
 
@@ -10,24 +10,24 @@ Trimesh 4.9.0; Matplotlib 3.10.6; CPython 3.13.9
 pip install trimesh==4.9.0 matplotlib==3.10.6; python verify_render.py; aprire verification/top-view.png.
 ```
 
-Risultato atteso: STL accettato; triangoli dei pixel estrusi mostrano Hello, World! dall’alto.
+Expected result: STL accepted; triangles of extruded pixels show Hello, World! from above.
 
-**Sintassi e semantica verificate.** Mesh originale caricata da Trimesh: 1668 triangoli, 278 triangoli sulla superficie superiore. La vista dall’alto è renderizzata dai soli triangoli STL, senza sovrapporre testo. Ispezione visiva: Hello, World! leggibile.
+**Sintassi e semantica verificate.** Original Mesh loaded by Trimesh: 1668 triangles, 278 triangles on the upper surface. The view from above is rendered by the only STL triangles, without overlapping text. Visual inspection: Hello, World! readable.
 
-[Log della prova](verification/render.json). La precedente prova sintattica resta in [result.json](verification/result.json).
+[Log della prova](verification/render.json). The previous syntactic test remains in [result.json](verification/result.json).
 
 ![Rendering del campione](verification/top-view.png)
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/assimp/assimp/blob/master/code/AssetLib/STL/STLLoader.cpp](https://github.com/assimp/assimp/blob/master/code/AssetLib/STL/STLLoader.cpp)
 - [https://trimesh.org/formats.html](https://trimesh.org/formats.html)
 - [https://trimesh.org/trimesh.html](https://trimesh.org/trimesh.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.stl` | [hello.stl](hello.stl) sintassi e semantica verificate |
+| `.stl` | [hello.stl](hello.stl) syntax and behavior verified |

@@ -1,38 +1,38 @@
 # #823 mdsvex
 
-Preprocessare mdsvex e renderizzare il componente con Svelte SSR.
+Preprocess mdsvex and render the component with Svelte SSR.
 
 ## Toolchain
 
 Node22.20.0; {'mdsvex': '0.12.8', 'svelte': '5.57.2'}
 
-## Procedura
+## Procedure
 
 npm install; node verify.cjs <work-output-module-with-node_modules-ancestor>
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il preprocessore mdsvex e compiler Svelte sono originali; il renderer server ufficiale valuta la variabile name e produce h1. JavaScript generato soltanto in work.
+The mdsvex preprocessor and Svelte compiler are original; the official renderr server evaluates the variable name and produces h1. JavaScript generated only in work.
 
-Verifica reale 2026-10-08T13:48:59.212109+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:48:59.212109+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/pngwn/MDsveX](https://github.com/pngwn/MDsveX)
 - [https://svelte.dev/docs/svelte/svelte-compiler](https://svelte.dev/docs/svelte/svelte-compiler)
 - [https://svelte.dev/docs/svelte/svelte-server](https://svelte.dev/docs/svelte/svelte-server)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.svx` | [hello.svx](hello.svx) verificato |
+| `.svx` | [hello.svx](hello.svx) verified |

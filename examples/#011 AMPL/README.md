@@ -1,49 +1,49 @@
 # #011 AMPL
 
-`hello.ampl` usa il comando AMPL `printf` per emettere `Hello, World!` seguito
-da un ritorno a capo. Non richiede un modello, un solver o un problema di ottimizzazione.
+`hello.ampl` uses AMPL `printf` command to output `Hello, World!` following
+does not require a model, a solver or an optimization problem.
 
-## Toolchain e comando
+## Toolchain and command
 
-Serve l'interprete ufficiale AMPL. Dalla cartella dell'esempio, con `ampl` nel PATH:
+The official AMPL interpreter is used. From the example folder, with `ampl` in PATH:
 
 ```powershell
 ampl hello.ampl
 ```
 
-Risultato atteso su stdout: una sola riga `Hello, World!`, codice di uscita 0.
+Expected result on stdout: one row `Hello, World!`, 0. output code
 
-## Verifica eseguita
+## Verification performed
 
-Sintassi e semantica verificate su Windows con AMPL Version 20260809, proveniente
-dal pacchetto ufficiale `ampl_module_base-20260809-py3-none-win_amd64.whl`.
-La distribuzione contiene una licenza demo sufficiente a eseguire questo comando;
-non è stata attivata una licenza personale. Sono stati verificati il codice
-di uscita, l'assenza di stderr e i byte di stdout: `b'Hello, World!\r\n'` su
-Windows. Il checker ammette un solo terminatore LF oppure CRLF; non ammette
-testo aggiuntivo. Vedere `verification.log`.
+syntax and behavior verified su Windows con AMPL Version 20260809, proveniente
+from the official package `ampl_module_base-20260809-py3-none-win_amd64.whl`.
+The distribution contains a demo license sufficient to execute this command;
+a personal license has not been activated. The code has been verified
+output, absence of stderr and bytes of stdout: `b'Hello, World!\r\n'` on
+Windows. The checker admits only one LF or CRLF; it does not admit
+Additional text. See `verification.log`.
 
-Per riprodurre il controllo con l'interprete installato o estratto localmente:
+To reproduce control with the interpreter installed or extracted locally:
 
 ```powershell
 python verify.py --ampl /percorso/di/ampl.exe
 ```
 
-`verify.py` avvia l'interprete reale e confronta il risultato; non interpreta AMPL.
-Il binario e la licenza non fanno parte del corpus. Il log registra origine e SHA-256
-della distribuzione usata; le disponibilità future delle licenze seguono AMPL.
+`verify.py` starts the real interpreter and compares the result; does not interpret AMPL.
+The track and the license are not part of the corpus. The log records origin and SHA-256
+of the distribution used; future availability of licenses follow AMPL.
 
-## Fonti primarie
+## Primary sources
 
 - [AMPL: capitolo ufficiale sui comandi di output, sezione printf](https://ampl.com/wp-content/uploads/Chapter-12-Display-Commands-AMPL-Book.pdf)
 - [AMPL: integrazione Python e distribuzione moduli](https://dev.ampl.com/ampl/python/index.html)
 - [Indice ufficiale del modulo AMPL base](https://pypi.ampl.com/ampl-module-base/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ampl` | [hello.ampl](hello.ampl) verificato |
-| `.mod` | [hello.mod](variants/ext-mod-2e6d6f64/hello.mod) creato, verifiche pendenti |
+| `.ampl` | [hello.ampl](hello.ampl) verified |
+| `.mod` | [hello.mod](variants/ext-mod-2e6d6f64/hello.mod) created; verification pending |

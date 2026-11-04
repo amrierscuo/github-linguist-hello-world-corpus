@@ -1,34 +1,37 @@
-# 0260 Go Template — variante `.gohtml`
+# 0260 Go Template: variant `.gohtml`
 
-Ruolo: Template Go con define/template e interpolazione; suffisso convenzionale della vista, nessun motore template di altri linguaggi.
+## Recorded verification
+
+**Syntax and behavior verified** on November 4, 2026. Parse and execute original templates with Go html/template; assert the greeting and HTML escaping. [Evidence](../../verification/native_20261104_260_variants_result.json).
+
+Role: Template Go with define/template and interpolation; conventional suffix of the view, no template engine of other languages.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#260 Go Template/hello.gotmpl
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 Go html/template: ParseFiles("hello.gohtml"); Execute con Recipient="World"; confrontare Hello, World!.
 ```
 
-Risultato atteso: World produce Hello, World! più newline; <world> produce Hello, &lt;world&gt;! più newline.
+Expected result: World produces Hello, World! more newline; <world> produces Hello, &lt;world&gt;! more newline.
 
-## Stato
+## Earlier status
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
-
-## Fonti primarie
+## Primary sources
 
 - [https://pkg.go.dev/html/template](https://pkg.go.dev/html/template)
 - [https://pkg.go.dev/text/template#hdr-Actions](https://pkg.go.dev/text/template#hdr-Actions)

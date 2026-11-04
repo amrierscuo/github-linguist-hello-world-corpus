@@ -1,41 +1,41 @@
 # #782 X10
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare X10 e stampare Hello, World!.
+Fill in X10 and print Hello, World!.
 
-Programma X10 con main(Rail[String]) e x10.io.Console; la toolchain Java ordinaria non sostituisce X10.
+X10 program with main(Rail[String]) and x10.io.Console; the ordinary Java toolchain does not replace X10.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Compilatore/runtime X10, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 x10c Hello.x10; x10 Hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! su stdout.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Compilatore X10 non disponibile; parser ed esecuzione pendenti.
+Commitments: Filler X10 unavailable; parser and hanging execution.
 
-## Fonti primarie
+## Primary sources
 
 - https://x10-lang.org/articles/11.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.x10` | [Hello.x10](Hello.x10) creato, verifiche pendenti |
+| `.x10` | [Hello.x10](Hello.x10) created; verification pending |

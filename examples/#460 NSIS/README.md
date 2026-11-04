@@ -2,48 +2,48 @@
 
 Voce canonica `NSIS`, tipo `programming`, language_id `242`.
 
-Compilare un installer NSIS originale il cui Section mostra il saluto e termina.
+Fill out an original NSIS installer whose Section shows greeting and ends.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official NSIS script compiler and native Windows installer generator — v3.09-4. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official NSIS script compiler and native Windows installer generator, v3.09-4. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-NSIS 3.09-4 autentico con Stubs della distribuzione; eseguire il compiler con cwd build per lasciare l’EXE fuori dal corpus.
+NSIS 3.09-4 authentic with distribution stubs; compiler with cwd build to leave EXE out of the corpus.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 makensis -NOCD hello.nsi
 ```
 
-Risultato atteso: Compilazione exit 0, installer prodotto; futura UI mostrerebbe Hello, World!.
+Expected result: Exit 0, installer product; future UI would show Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **in attesa**.
+Artifact **created**; syntax **verified**; behavioral verification **pending**.
 
-Compiler autentico produce un installer Windows, SHA nel log. Per l’ambito concordato non viene eseguito né installato; semantica pending.
+Authentic Compiler produces a Windows installer, SHA in the log. For the agreed scope it is not executed or installed; behavior pending.
 
-Requisiti residui:
+Remaining requirements:
 
 - Installer script compiled; installer execution is intentionally not performed in this verification scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://nsis.sourceforge.io/Docs/Chapter4.html](https://nsis.sourceforge.io/Docs/Chapter4.html)
 - [https://nsis.sourceforge.io/Docs/](https://nsis.sourceforge.io/Docs/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nsi` | [hello.nsi](hello.nsi), [driver.nsi](variants/nsh-90f0ff9b/driver.nsi) creato, verifiche pendenti |
-| `.nsh` | [hello.nsh](variants/nsh-90f0ff9b/hello.nsh) creato, verifiche pendenti |
+| `.nsi` | [hello.nsi](hello.nsi), [driver.nsi](variants/nsh-90f0ff9b/driver.nsi) created; verification pending |
+| `.nsh` | [hello.nsh](variants/nsh-90f0ff9b/hello.nsh) created; verification pending |

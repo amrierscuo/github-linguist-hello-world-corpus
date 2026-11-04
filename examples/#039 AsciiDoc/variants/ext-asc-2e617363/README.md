@@ -1,34 +1,37 @@
-# 0039 AsciiDoc — variante `.asc`
+# 0039 AsciiDoc: variant `.asc`
 
-Ruolo: Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale.
+## Recorded verification
+
+**Syntax and behavior verified** on November 4, 2026. Load each source with Asciidoctor.js and assert document title, the exact paragraph, rendered HTML and no diagnostics. [Evidence](../../verification/native_20261104_039_variants_result.json).
+
+Role: Textual Alias of the same format and of the same programma/dataset of the original model.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#039 AsciiDoc/hello.adoc
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 asciidoctor hello.asc -o <output>/hello.html
 ```
 
-Risultato atteso: Titolo Greeting, esattamente un paragrafo Hello, World!, HTML contiene <p>Hello, World!</p>, zero diagnostiche ed exit 0.
+Expected result: Title Greeting, exactly a paragraph Hello, World!, HTML contains <p> Hello, World! </p>, zero diagnostics and exit 0.
 
-## Stato
+## Earlier status
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
-
-## Fonti primarie
+## Primary sources
 
 - [https://docs.asciidoctor.org/asciidoc/latest/](https://docs.asciidoctor.org/asciidoc/latest/)
 - [https://docs.asciidoctor.org/asciidoctor.js/latest/setup/migration-guide/](https://docs.asciidoctor.org/asciidoctor.js/latest/setup/migration-guide/)

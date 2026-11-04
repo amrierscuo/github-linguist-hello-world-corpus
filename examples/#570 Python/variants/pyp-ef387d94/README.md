@@ -1,23 +1,23 @@
-# 0570 — Python — `.pyp`
+# 0570: Python: `.pyp`
 
-Classe CommandData per plugin Python Cinema 4D; nessun Plugin ID inventato.
+Command ClassData for Python Cinema 4D plugins; no ID plugin invented.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.pyp`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Cinema 4D: instantiate CorpusGreeting in an isolated script and call Execute(doc)
 ```
 
-Risultato atteso: console Hello, World!.
+Expected result: Hello, World! console.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Host Cinema 4D assente; la registrazione del plugin richiede un ID Maxon reale e resta esplicitamente esclusa.
+Host Cinema 4D absent; the registration of the plugin requires a real ID Maxon and remains explicitly excluded.
 
-Fonti primarie:
+Primary sources:
 
 - [https://developers.maxon.net/docs/py/2025_3_0/modules/c4d.plugins/CommandData/index.html](https://developers.maxon.net/docs/py/2025_3_0/modules/c4d.plugins/CommandData/index.html)

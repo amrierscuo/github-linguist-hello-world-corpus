@@ -1,38 +1,38 @@
 # #255 Gno
 
-Eseguire un main Gno che stampa Hello, World! con println.
+Run a main Gno printing Hello, World! with println.
 
 ## Toolchain
 
 gno version: v1.5.0
 
-## Comandi e procedura
+## Commands and procedure
 
 gno version; gno run hello.gno
 
-## Risultato atteso
+## Expected result
 
-GnoVM interpreta il file; Hello, World! più newline, exit 0.
+GnoVM interprets the file; Hello, World! plus newline, exit 0.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La verifica usa il CLI originale che esegue GnoVM, non il compilatore Go su una sorgente rinominata. Il programma locale non pubblica package sulla blockchain e non esegue transazioni.
+The verification uses the original CLI running GnoVM, not the Go compiler on a renamed source.
 
-Verifica effettiva del 2026-10-08T12:15:44.133484+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:15:44.133484+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/gnolang/gno](https://github.com/gnolang/gno)
 - [https://github.com/gnolang/gno/releases/tag/v1.5.0](https://github.com/gnolang/gno/releases/tag/v1.5.0)
 - [https://docs.gno.land/](https://docs.gno.land/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gno` | [hello.gno](hello.gno) verificato |
+| `.gno` | [hello.gno](hello.gno) verified |

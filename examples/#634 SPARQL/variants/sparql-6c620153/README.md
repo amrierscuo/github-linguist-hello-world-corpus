@@ -1,23 +1,23 @@
-# 0634 — SPARQL — `.sparql`
+# 0634: SPARQL: `.sparql`
 
-Variante testuale dello stesso formato, con suffisso canonico .sparql.
+Textual variation of the same format, with canon suffix .sparql.
 
-Provenienza: copia del file originale `examples/#634 SPARQL/hello.rq`.
+Origin: copy of the original `examples/#634 SPARQL/hello.rq` file.
 
 Artefatto principale: `hello.sparql`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rdflib SPARQL engine: execute hello.sparql and assert the greeting binding
 ```
 
-Risultato atteso: Un’unica riga con greeting = Hello, World!..
+Expected result: One line with greeting = Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/sparql11-query/#func-concat](https://www.w3.org/TR/sparql11-query/#func-concat)

@@ -1,37 +1,37 @@
 # #814 eC
 
-Compilare eC Ecere ed eseguire Main.
+Fill eC Ecere and run Main.
 
 ## Toolchain
 
 Ecere SDK eC compiler
 
-## Procedura
+## Procedure
 
-Compilare hello.ec in un progetto console Ecere; registrare ecc/ecp/linker e avviare il risultato.
+Fill hello.ec in an Ecere console project; record ecc/ecp/linker and start the result.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Ecere compiler/SDK non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.ecere.org/](https://www.ecere.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ec` | [hello.ec](hello.ec) creato, verifiche pendenti |
-| `.eh` | [hello.eh](variants/eh-5ad89293/hello.eh) creato, verifiche pendenti |
+| `.ec` | [hello.ec](hello.ec) created; verification pending |
+| `.eh` | [hello.eh](variants/eh-5ad89293/hello.eh) created; verification pending |

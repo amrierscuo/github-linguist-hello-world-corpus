@@ -2,47 +2,47 @@
 
 Voce canonica `Gradle Kotlin DSL`, tipo `data`, language_id `432600901`.
 
-Registrare ed eseguire un task Gradle nel Kotlin DSL usando una val interpolata.
+Record and run a Gradle task in the Kotlin DSL using an interpolated valley.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Gradle distribution Kotlin DSL — 8.14.3; JDK 21. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Gradle distribution Kotlin DSL, 8.14.3; JDK 21. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Gradle ufficiale 8.14.3, Kotlin incorporato 2.0.21 e JDK 21. Non servono plugin Kotlin scaricati. Eseguire in una copia di lavoro con cache Gradle isolata.
+Official grade 8.14.3, Kotlin embedded 2.0.21 and JDK 21. Do not need Kotlin plugins downloaded. Run in a copy of work with Gradle cache isolated.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 gradle --no-daemon --offline --console=plain --max-workers=1 -q hello
 ```
 
-Risultato atteso: Task hello exit 0; saluto esatto.
+Expected result: Task hello exit 0; exact greeting.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-build.gradle.kts e settings.gradle.kts sono realmente compilati dal Kotlin DSL Gradle; non sono eseguiti come una normale applicazione Kotlin.
+build.gradle.kts and settings.gradle.kts are actually compiled by Kotlin DSL Gradle; they are not executed as a normal Kotlin application.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.gradle.org/8.14.3/userguide/kotlin_dsl.html](https://docs.gradle.org/8.14.3/userguide/kotlin_dsl.html)
 - [https://docs.gradle.org/8.14.3/userguide/tutorial_using_tasks.html](https://docs.gradle.org/8.14.3/userguide/tutorial_using_tasks.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gradle.kts` | [build.gradle.kts](build.gradle.kts), [settings.gradle.kts](settings.gradle.kts) verificato |
+| `.gradle.kts` | [build.gradle.kts](build.gradle.kts), [settings.gradle.kts](settings.gradle.kts) verified |

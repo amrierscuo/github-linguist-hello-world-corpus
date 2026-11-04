@@ -1,23 +1,23 @@
-# 0652 — Scheme — `.ss`
+# 0652: Scheme: `.ss`
 
-Variante testuale dello stesso formato, con suffisso canonico .ss.
+Textual variation of the same format, with canon suffix .ss.
 
-Provenienza: copia del file originale `examples/#652 Scheme/hello.scm`.
+Origin: copy of the original `examples/#652 Scheme/hello.scm` file.
 
 Artefatto principale: `hello.ss`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 scheme --script hello.ss
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.racket-lang.org/r5rs/](https://docs.racket-lang.org/r5rs/)

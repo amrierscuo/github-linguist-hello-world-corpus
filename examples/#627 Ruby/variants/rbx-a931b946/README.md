@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.rbx`
+# 0627: Ruby: `.rbx`
 
-Sorgente Ruby eseguibile sotto Rubinius/Ruby; stessa grammatica del file originale.
+Ruby source executable under Rubinius/Ruby; same grammar of the original file.
 
-Provenienza: copia del file originale `examples/#627 Ruby/hello.rb`.
+Origin: copy of the original `examples/#627 Ruby/hello.rb` file.
 
 Artefatto principale: `hello.rbx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 ruby hello.rbx
 ```
 
-Risultato atteso: Hello, World! su stdout..
+Expected result: Hello, World! on stdout..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.ruby-lang.org/en/3.2/syntax/assignment_rdoc.html](https://docs.ruby-lang.org/en/3.2/syntax/assignment_rdoc.html)

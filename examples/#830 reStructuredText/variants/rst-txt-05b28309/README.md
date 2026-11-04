@@ -1,23 +1,23 @@
-# 0830 — reStructuredText — `.rst.txt`
+# 0830: reStructuredText: `.rst.txt`
 
-Variante testuale dello stesso formato, con suffisso canonico .rst.txt.
+Textual variation of the same format, with canon suffix .rst.txt.
 
-Provenienza: copia del file originale `examples/#830 reStructuredText/hello.rst`.
+Origin: copy of the original `examples/#830 reStructuredText/hello.rst` file.
 
 Artefatto principale: `hello.rst.txt`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 docutils: render hello.rst.txt and assert the greeting paragraph
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html](https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html)

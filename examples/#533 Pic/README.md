@@ -2,47 +2,47 @@
 
 Voce canonica `Pic`, tipo `markup`, language_id `425`.
 
-Disegnare un box etichettato dal preprocessore Pic e renderizzarlo in testo.
+Draw a box labeled by the preprocessor Pic and make it in text.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Genuine GNU Pic and groff ASCII renderer — GNU pic (groff) version 1.23.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Genuine GNU Pic and groff ASCII renderr, GNU pic (groff) version 1.23.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 GNU Pic/groff 1.23.0 autentici.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 pic hello.pic; groff -p -Tascii hello.pic
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Pic genera le primitive troff; groff rende un box con testo Hello, World!. Un warning di grotty sullo spessore della linea non impedisce il rendering.
+Pic generates primitive troffs; groff makes a box with Hello, World! text. A warning of grotty on the thickness of the line does not prevent rendering.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.gnu.org/software/groff/manual/groff.html#Pictures](https://www.gnu.org/software/groff/manual/groff.html#Pictures)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pic` | [hello.pic](hello.pic) verificato |
-| `.chem` | [hello.chem](variants/chem-e7e80156/hello.chem) creato, verifiche pendenti |
+| `.pic` | [hello.pic](hello.pic) verified |
+| `.chem` | [hello.chem](variants/chem-e7e80156/hello.chem) created; verification pending |

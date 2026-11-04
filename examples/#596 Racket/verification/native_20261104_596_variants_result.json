@@ -1,0 +1,81 @@
+{
+  "ordinal": 596,
+  "name": "Racket",
+  "source_hashes": {
+    "examples/#596 Racket/variants/rktd-18ea1173/hello.rktd": "87b0da37545f4dbf04f3939a6001fa610a34fb81c3985fc5b2dbf5c4885f324b",
+    "examples/#596 Racket/variants/rktl-c9a39abc/hello.rktl": "4873648d5e695e0272898975f39470c1afa58cc959acd77f465052180d589da4",
+    "examples/#596 Racket/variants/scrbl-ba477af2/hello.scrbl": "362e20f9d6b195078d02a61c1fda1d0e1891ee36753b65b91471e09c1bf4c65c"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\596_variants",
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_34_40\\racket\\racket\\Racket.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\596_variants",
+      "exit_code": 0,
+      "stdout": "Welcome to Racket v8.18 [cs].\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_34_40\\racket\\racket\\Racket.exe",
+        "-e",
+        "(displayln (hash-ref (call-with-input-file \"hello.rktd\" read) (quote greeting)))"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\596_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_34_40\\racket\\racket\\Racket.exe",
+        "-I",
+        "racket/base",
+        "-f",
+        "hello.rktl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\596_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_34_40\\racket\\racket\\raco.exe",
+        "scribble",
+        "--html",
+        "--dest",
+        "html",
+        "hello.scrbl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\596_variants",
+      "exit_code": 1,
+      "stdout": "\nA command can be specified by an unambiguous prefix.\nSee `raco help' for a complete list of commands.\nSee `raco help <command>' for help on a command.\n",
+      "stderr": "raco.exe: Unrecognized command: scribble\n\nUsage: raco <command> <option> ... <arg> ...\n\nFrequently used commands:\n  setup   install and build libraries and documentation\n  pkg     manage packages\n"
+    }
+  ],
+  "description": "Load the literal hash through the Racket reader, run the loadable file via the original evaluator, and render Scribble to HTML; assert the greeting in each output.",
+  "verified_utc": "2026-11-04T19:38:05.868194+00:00",
+  "toolchain": "Racket 8.18 native Windows portable",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".rktd": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".rktl": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "pending_extensions": {
+    ".scrbl": "Scribble package and raco scribble command absent."
+  },
+  "recorded_test_source": "596_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

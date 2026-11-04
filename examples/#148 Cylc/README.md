@@ -1,18 +1,18 @@
 # #148 Cylc
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Definire un workflow Cylc a un ciclo con un task che stampa Hello, World!.
+Define a Cylc workflow to a cycle with a task that prints Hello, World!.
 
-flow.cylc usa cycling mode integer e graph R1, con task runtime esplicito. La prova effettuata riguarda il validatore originale di configurazione e grafo. Per verificare la semantica di scheduling occorre eseguire install/play e controllare il job log; non si conteggia una semplice esecuzione manuale dello script shell.
+flow.cylc uses cycling mode integer and graph R1, with explicit task runtime. The test is for the original configuration and graph validator. In order to verify the behavior of scheduling, you need to run install/play and check the job log; you do not count a simple manual execution of the shell script.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Cylc Flow 8.6.6; Python 3.12.3 su Ubuntu WSL
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 cylc validate .
@@ -23,25 +23,25 @@ cylc install . --workflow-name corpus-greeting
 cylc play corpus-greeting
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Workflow valido; il job greeting/1 produce Hello, World! e il workflow conclude l’unico ciclo.
+Workflow valid; the greeting/1 job produces Hello, World! and the workflow concludes the only cycle.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-Impedimenti: Cylc 8.6.6 avvia correttamente il CLI, ma validate non termina entro 90 secondi nel WSL. Il tentativo è registrato e il relativo processo è stato arrestato; scheduler e task non sono stati avviati.
+Commitments: Cylc 8.6.6 properly starts CLI, but validated does not end within 90 seconds in WSL. The attempt is recorded and the related process has been arrested; scheduler and task have not been initiated.
 
-## Fonti primarie
+## Primary sources
 
 - https://cylc.github.io/cylc-doc/latest/html/tutorial/runtime/introduction.html
 - https://github.com/cylc/cylc-flow
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cylc` | [flow.cylc](flow.cylc) creato, verifiche pendenti |
+| `.cylc` | [flow.cylc](flow.cylc) created; verification pending |

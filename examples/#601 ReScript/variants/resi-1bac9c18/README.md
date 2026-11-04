@@ -1,23 +1,23 @@
-# 0601 — ReScript — `.resi`
+# 0601: ReScript: `.resi`
 
-Interfaccia ReScript che descrive il binding name dell’implementazione originale.
+ReScript interface that describes the binding name of the original implementation.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `Hello.resi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rescript build in an isolated copy of this variant project
 ```
 
-Risultato atteso: interfaccia/implementazione accettate e main produce Hello, World!.
+Expected result: interfaccia/implementazione accepted and main produces Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://rescript-lang.org/docs/manual/v9.0.0/overview](https://rescript-lang.org/docs/manual/v9.0.0/overview)

@@ -1,41 +1,41 @@
 # #227 GDB
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire uno script di comandi GDB che stampa Hello, World!.
+Run a script of GDB commands that print Hello, World!.
 
-Il comando printf appartiene al linguaggio dei comandi GDB. -nx evita file di inizializzazione utente e -batch esegue soltanto lo script; non viene collegato o analizzato alcun processo esterno.
+The printf command belongs to the GDB command language. -nx avoids user initialization file and -batch only runs the script; no external process is connected or analyzed.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 GNU GDB 15.1, Ubuntu 15.1-1ubuntu1~24.04.1
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 gdb -q -nx -batch -x hello.gdb
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.gnu.org/software/gdb/documentation/
 - https://sourceware.org/gdb/current/onlinedocs/gdb.html/Output.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gdb` | [hello.gdb](hello.gdb) verificato |
-| `.gdbinit` | [hello.gdbinit](variants/ext-gdbinit-2e676462696e6974/hello.gdbinit) creato, verifiche pendenti |
+| `.gdb` | [hello.gdb](hello.gdb) verified |
+| `.gdbinit` | [hello.gdbinit](variants/ext-gdbinit-2e676462696e6974/hello.gdbinit) created; verification pending |

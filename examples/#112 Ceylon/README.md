@@ -1,32 +1,32 @@
 # #112 Ceylon
 
-Compilare ed eseguire una funzione pubblica Ceylon che stampa Hello, World!.
+Fill out and perform a public function Ceylon printing Hello, World!.
 
-Tipo canonico: `programming`; `language_id`: `54`.
+Canonical type: `programming`; `language_id`: `54`.
 
-Toolchain prevista: Ceylon 1.3.x e JDK compatibile con la distribuzione Ceylon. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Ceylon 1.3.x and JDK compatible with the Ceylon distribution.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 ceylon compile source/hello.ceylon
 ceylon run --run hello default
 ```
 
-Risultato atteso: stdout `Hello, World!` seguito da newline.
+Expected result: stdout `Hello, World!` followed by newline.
 
-La funzione è nel modulo default e la cartella source segue la convenzione della distribuzione. Un JDK moderno da solo non fornisce il compilatore Ceylon.
+The function is in the default module and the source folder follows the distribution convention. A modern JDK alone does not provide the Ceylon compiler.
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Initial state: artifact created, syntax and behavioral verification pending. Specific toolchain not yet performed on this example; syntax and behavior remain to be checked.
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Eclipse Ceylon — tour e riga di comando](https://site.ceylon-lang.dev/documentation/1.2/tour/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ceylon` | [hello.ceylon](source/hello.ceylon) creato, verifiche pendenti |
+| `.ceylon` | [hello.ceylon](source/hello.ceylon) created; verification pending |

@@ -1,37 +1,37 @@
 # #660 Sieve
 
-Filtrare offline un messaggio Sieve in base al saluto nel Subject.
+Fix a Sieve message offline based on the greeting in the Subject.
 
 ## Toolchain
 
 Sieve compiler/test engine
 
-## Procedura
+## Procedure
 
 sievec hello.sieve; sieve-test hello.sieve hello.eml; verificare fileinto INBOX.CorpusGreeting.
 
-## Risultato atteso
+## Expected result
 
-Per il fixture Subject=Hello, World! il risultato è fileinto INBOX.CorpusGreeting.
+For fixtures Subject= Hello, World! the result is fileinto INBOX.CorpusGreeting.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Messaggio originale con indirizzi example.invalid; verifica prevista offline, senza spedizioni.
+Original message with example.invalid addresses; scheduled verification offline, without shipments.
 
-Requisiti residui:
-- Sieve compiler/offline test engine non disponibile.
+Remaining requirements:
+- Sieve compiler/offline test engine unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.rfc-editor.org/rfc/rfc5228](https://www.rfc-editor.org/rfc/rfc5228)
 - [https://doc.dovecot.org/2.3/configuration_manual/sieve/](https://doc.dovecot.org/2.3/configuration_manual/sieve/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sieve` | [hello.sieve](hello.sieve) creato, verifiche pendenti |
+| `.sieve` | [hello.sieve](hello.sieve) created; verification pending |

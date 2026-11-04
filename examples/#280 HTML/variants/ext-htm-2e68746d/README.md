@@ -1,34 +1,34 @@
-# 0280 HTML — variante `.htm`
+# 0280 HTML: variant `.htm`
 
-Ruolo: Pagina nel sottoinsieme HTML comune; .html.hl resta formato HTML/Hoplon, non sorgente ClojureScript .cljs.hl.
+Role: Page in subset HTML common; .html.hl remains HTML/Hoplon format, not source ClojureScript .cljs.hl.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#280 HTML/hello.html
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 Reader HTML del modello: caricare hello.htm e controllare il DOM h1; per .html.hl usare inoltre il frontend HTML/Hoplon dedicato.
 ```
 
-Risultato atteso: Zero errori parser; heading Hello, World!; PASS.
+Expected result: Zero errors parser; heading Hello, World!; PASS.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://html.spec.whatwg.org/multipage/](https://html.spec.whatwg.org/multipage/)
 - [https://html5lib.readthedocs.io/en/latest/](https://html5lib.readthedocs.io/en/latest/)

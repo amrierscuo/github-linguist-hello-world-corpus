@@ -1,41 +1,41 @@
 # #551 PowerShell
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Eseguire PowerShell e stampare Hello, World!.
 
 Il programma concatena audience e usa Write-Output. Il profilo personale non viene caricato.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 PowerShell7.6.5 originale Windows
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 pwsh -NoProfile -File hello.ps1
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ps1` | [hello.ps1](hello.ps1) verificato |
-| `.psd1` | [hello.psd1](variants/psd1-ec931467/hello.psd1) verificato |
-| `.psm1` | [hello.psm1](variants/psm1-51d244a0/hello.psm1) verificato |
+| `.ps1` | [hello.ps1](hello.ps1) verified |
+| `.psd1` | [hello.psd1](variants/psd1-ec931467/hello.psd1) verified |
+| `.psm1` | [hello.psm1](variants/psm1-51d244a0/hello.psm1) verified |

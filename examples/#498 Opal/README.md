@@ -1,37 +1,37 @@
 # #498 Opal
 
-Mostrare il saluto con alert nel dialetto .opal della baseline.
+Show greeting with alert in the .opal dialect of the baseline.
 
 ## Toolchain
 
 Runtime Opal compatibile con StoneCypher/DeepakChopra_Opal
 
-## Procedura
+## Procedure
 
-Caricare hello.opal nel runtime compatibile con il campione upstream; registrare compiler e procedura effettivi.
+Charge hello.opal in the runtime compatible with the upstream sample; record compiler and actual procedure.
 
-## Risultato atteso
+## Expected result
 
 Finestra alert con Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-La scelta di alert e commenti -- segue il campione Linguist/upstream; non viene sostituita con il linguaggio Ruby Opal o con il distinto OPAL algebrico.
+The choice of alerts and comments -- follows the Linguist/upstream sample; it is not replaced with the Ruby Opal language or with the distinct OPAL algebric.
 
-Requisiti residui:
-- Il runtime/compilatore storico del dialetto .opal non è stato identificato e predisposto.
+Remaining requirements:
+- The runtime/compilatore historical dialect .opal has not been identified and prepared.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/StoneCypher/DeepakChopra_Opal](https://github.com/StoneCypher/DeepakChopra_Opal)
 - [https://github.com/github-linguist/linguist/blob/main/samples/Opal/DeepakChopra.opal](https://github.com/github-linguist/linguist/blob/main/samples/Opal/DeepakChopra.opal)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.opal` | [hello.opal](hello.opal) creato, verifiche pendenti |
+| `.opal` | [hello.opal](hello.opal) created; verification pending |

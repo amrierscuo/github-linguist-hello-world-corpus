@@ -1,9 +1,9 @@
 # SuperCollider .sc
 
-`hello.sc` contiene la classe `CorpusGreeting` con il metodo di classe `message`.
+`hello.sc` contains the `CorpusGreeting` class with the `message` class method.
 
-La classe è stata compilata nella SCClassLibrary isolata da sclang 3.13.0 e il metodo è stato eseguito tramite [run_class.scd](../../verification/run_class.scd). La post output contiene una riga esattamente `Hello, World!`; il processo termina con exit code 0.
+The class was compiled in the SCClassLibrary isolated from sclang 3.13.0 and the method was executed by [run_class.scd](../../verification/run_class.scd). The post output contains a row exactly `Hello, World!`; the process ends with exit code 0.
 
-La variante `.sc` non si esegue come un semplice script. La configurazione della class library e i comandi riproducibili sono descritti nel [README principale](../../README.md). Il [log](../../verification/resume_native.json) registra la compilazione di 330 file inclusa questa classe, l'invocazione effettiva, le versioni e lo SHA256 verificato.
+The `.sc` variant does not run as a simple script. The configuration of the class library and the reproducible commands are described in the [README principale](../../README.md). The [log](../../verification/resume_native.json) records the compilation of 330 file included this class, the actual invocation, versions and SHA256 verified.
 
 Fonte primaria: [Writing Classes](https://doc.sccode.org/Guides/WritingClasses.html).

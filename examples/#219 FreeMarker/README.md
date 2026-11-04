@@ -2,48 +2,48 @@
 
 Voce canonica `FreeMarker`, tipo `programming`, language_id `115`.
 
-Caricare un template Apache FreeMarker, interpolare name e verificare il rendering per World e Reader.
+Upload an Apache FreeMarker template, interpolate name and verify rendering for World and Reader.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Apache FreeMarker template parser and engine — 2.3.34. Ambiente della prova: **Windows x64**.
+Official Apache FreeMarker template parser and engine, 2.3.34. Test environment: **Windows x64**.
 
-Apache FreeMarker 2.3.34 ufficiale da Maven Central e JDK 21. Collocare il JAR in .tools fuori dal deliverable; il Java helper usa le API ufficiali Configuration e Template.
+Apache FreeMarker 2.3.34 official from Maven Central and JDK 21. Place the JAR in .tools out of deliverable; the Java helper uses the official API Configuration and Templates.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 java --class-path .tools/freemarker-2.3.34.jar FreeMarkerCheck.java .
 ```
 
-Risultato atteso: Hello, World! e PASS del controllo parametrico.
+Expected result: Hello, World! and PASS of parametric control.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Questa .ftl è un template FreeMarker. Il confronto controlla il contenuto esatto e newline per due valori, dopo il vero parsing del motore.
+This .ftl is a FreeMarker template. The comparison controls the exact and newline content for two values, after the true parsing of the engine.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://freemarker.apache.org/docs/dgui_quickstart_basics.html](https://freemarker.apache.org/docs/dgui_quickstart_basics.html)
 - [https://freemarker.apache.org/docs/pgui_quickstart_all.html](https://freemarker.apache.org/docs/pgui_quickstart_all.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ftl` | [hello.ftl](hello.ftl) verificato |
-| `.ftlh` | [hello.ftlh](variants/ext-ftlh-2e66746c68/hello.ftlh) creato, verifiche pendenti |
+| `.ftl` | [hello.ftl](hello.ftl) verified |
+| `.ftlh` | [hello.ftlh](variants/ext-ftlh-2e66746c68/hello.ftlh) created; verification pending |

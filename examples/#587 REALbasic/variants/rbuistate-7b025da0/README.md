@@ -1,22 +1,22 @@
-# 0587 — REALbasic — `.rbuistate`
+# 0587: REALbasic: `.rbuistate`
 
-Suffisso canonico .rbuistate del linguaggio REALbasic.
+Canon suffix .rbuistate of the REALbasic language.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Nessun comando eseguito; occorre il generatore/importatore descritto nelle fonti.
 ```
 
-Risultato atteso: un artefatto genuino esportato/generato dal relativo tool originale.
+Expected result: a genuine artifact esportato/generato from its original tool.
 
-Stato: bloccato; nessun artefatto simulato; sintassi e semantica non verificate.
+Status: blocked; no simulated artifact; syntax and behavior not verified.
 
-Formato componente/progetto REALbasic specifico: occorre un export reale dell’IDE storico e, per risorse/stato UI, eventuali dati binari associati; un modulo .rbbas non è un sostituto.
+Format componente/progetto REALbasic specific: you need a real export of historical IDE and, for risorse/stato UI, any associated binary data; a .rbbas module is not a substitute.
 
-Fonti primarie:
+Primary sources:
 
 - [https://documentation.xojo.com/topics/projects/version_control.html](https://documentation.xojo.com/topics/projects/version_control.html)
 - [https://documentation.xojo.com/topics/code_management/modules.html](https://documentation.xojo.com/topics/code_management/modules.html)

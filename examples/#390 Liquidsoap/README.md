@@ -1,37 +1,37 @@
 # #390 Liquidsoap
 
-Valutare uno script Liquidsoap che stampa il saluto senza configurare streaming.
+Evaluate a Liquidsoap script that prints greeting without configuring streaming.
 
 ## Toolchain
 
 Liquidsoap; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-liquidsoap --check hello.liq; liquidsoap --check-and-evaluate hello.liq (verificare disponibilità opzione nella versione scelta)
+liquidsoap --check hello.liq; liquidsoap --check-and-evaluate hello.liq (check availability option in the selected version)
 
-## Risultato atteso
+## Expected result
 
-Tipo del print accettato; valutazione scrive Hello, World!.
+Type of accepted print; evaluation writes Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il campione è puro testo e non apre sorgenti, device o stream. Il comando di valutazione deve essere adattato/registrato secondo il CLI effettivo; non si conta un parser generico OCaml.
+The sample is pure text and does not open sources, devices or streams. The evaluation command must be adattato/registrato according to the actual CLI; there is no generic parser OCaml.
 
-Requisiti residui:
+Remaining requirements:
 - Runtime Liquidsoap non predisposto; parsing/type check e valutazione pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.liquidsoap.info/doc-2.2.5/language.html](https://www.liquidsoap.info/doc-2.2.5/language.html)
 - [https://www.liquidsoap.info/doc-2.2.5/script_loading.html](https://www.liquidsoap.info/doc-2.2.5/script_loading.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.liq` | [hello.liq](hello.liq) creato, verifiche pendenti |
+| `.liq` | [hello.liq](hello.liq) created; verification pending |

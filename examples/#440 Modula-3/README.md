@@ -1,35 +1,35 @@
 # #440 Modula-3
 
-Compilare Modula-3 con IO e un programma Main.
+Fill Modula- 3 with IO and a Main program.
 
-Tipo canonico `programming`, language_id `564743864`.
+Canonical type `programming`, language_id `564743864`.
 
-Toolchain prevista: Critical Mass Modula-3 cm3 e libm3.
+Suggested toolchain: Critical Mass Modula- 3 cm3 and libm3.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 cm3
 Eseguire l’eseguibile hello della directory target generata da cm3.
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-EXPORTS Main rende il modulo il punto d’ingresso del programma.
+EXPORTS Main makes the module the entry point of the program.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [CM3 — repository originale](https://github.com/modula3/cm3)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.i3` | [Greeting.i3](variants/i3-5aa7c7e3/Greeting.i3) creato, verifiche pendenti |
-| `.ig` | [Greeting.ig](variants/ig-bbf774c6/Greeting.ig) creato, verifiche pendenti |
-| `.m3` | [Hello.m3](Hello.m3), [Greeting.m3](variants/i3-5aa7c7e3/Greeting.m3), [Main.m3](variants/i3-5aa7c7e3/Main.m3), [TextGreeting.m3](variants/ig-bbf774c6/TextGreeting.m3), [Main.m3](variants/ig-bbf774c6/Main.m3), [TextGreeting.m3](variants/mg-63058c94/TextGreeting.m3), [Main.m3](variants/mg-63058c94/Main.m3) creato, verifiche pendenti |
-| `.mg` | [Greeting.mg](variants/mg-63058c94/Greeting.mg) creato, verifiche pendenti |
+| `.i3` | [Greeting.i3](variants/i3-5aa7c7e3/Greeting.i3) created; verification pending |
+| `.ig` | [Greeting.ig](variants/ig-bbf774c6/Greeting.ig) created; verification pending |
+| `.m3` | [Hello.m3](Hello.m3), [Greeting.m3](variants/i3-5aa7c7e3/Greeting.m3), [Main.m3](variants/i3-5aa7c7e3/Main.m3), [TextGreeting.m3](variants/ig-bbf774c6/TextGreeting.m3), [Main.m3](variants/ig-bbf774c6/Main.m3), [TextGreeting.m3](variants/mg-63058c94/TextGreeting.m3), [Main.m3](variants/mg-63058c94/Main.m3) created; verification pending |
+| `.mg` | [Greeting.mg](variants/mg-63058c94/Greeting.mg) created; verification pending |

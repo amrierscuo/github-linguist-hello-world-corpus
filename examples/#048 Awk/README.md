@@ -2,50 +2,50 @@
 
 Voce canonica: `Awk`, tipo `programming`, `language_id: 28`.
 
-Eseguire il blocco BEGIN Awk senza input e stampare il saluto concatenato.
+Perform the BEGIN Awk block without input and print the concatenate greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-GNU Awk — GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0). Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+GNU Awk: GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0). Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Richiede GNU Awk 5.2.1; prova eseguita in Ubuntu 24.04 WSL2.
+Requires GNU Awk 5.2.1; test performed in Ubuntu 24.04 WSL2.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 gawk -f hello.awk
 ```
 
-Risultato atteso: Exit 0; stdout Hello, World! seguito da newline.
+Exit 0; stdout Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il concatenamento Awk si esprime affiancando stringhe; BEGIN esegue il programma prima della lettura dei record.
+The Awk concatenation is expressed by flanking strings; BEGIN performs the program before reading the records.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.gnu.org/software/gawk/manual/gawk.html](https://www.gnu.org/software/gawk/manual/gawk.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.awk` | [hello.awk](hello.awk) verificato |
-| `.auk` | [hello.auk](variants/ext-auk-2e61756b/hello.auk) creato, verifiche pendenti |
-| `.gawk` | [hello.gawk](variants/ext-gawk-2e6761776b/hello.gawk) creato, verifiche pendenti |
-| `.mawk` | [hello.mawk](variants/ext-mawk-2e6d61776b/hello.mawk) creato, verifiche pendenti |
-| `.nawk` | [hello.nawk](variants/ext-nawk-2e6e61776b/hello.nawk) creato, verifiche pendenti |
+| `.awk` | [hello.awk](hello.awk) verified |
+| `.auk` | [hello.auk](variants/ext-auk-2e61756b/hello.auk) created; verification pending |
+| `.gawk` | [hello.gawk](variants/ext-gawk-2e6761776b/hello.gawk) created; verification pending |
+| `.mawk` | [hello.mawk](variants/ext-mawk-2e6d61776b/hello.mawk) created; verification pending |
+| `.nawk` | [hello.nawk](variants/ext-nawk-2e6e61776b/hello.nawk) created; verification pending |

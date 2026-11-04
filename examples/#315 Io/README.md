@@ -1,37 +1,37 @@
 # #315 Io
 
-Inviare println a una stringa nel runtime Io.
+Send println to a string in the runtime I.
 
 ## Toolchain
 
 IoLanguage Io; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 io hello.io
 
-## Risultato atteso
+## Expected result
 
-Hello, World! più newline; exit 0.
+Hello, World! more newline; exit 0.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il programma usa il dispatch a messaggi di Io e il metodo println della stringa. Nessuna traduzione ad altri linguaggi è usata per contare la verifica.
+The program uses the dispatch to messages of Io and the println method of the string. No translation to other languages is used to count verification.
 
-Requisiti residui:
+Remaining requirements:
 - Interprete Io nativo non preparato; parsing/evaluation pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://iolanguage.org/docs/Tutorial/index.html](https://iolanguage.org/docs/Tutorial/index.html)
 - [https://github.com/IoLanguage/io](https://github.com/IoLanguage/io)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.io` | [hello.io](hello.io) creato, verifiche pendenti |
+| `.io` | [hello.io](hello.io) created; verification pending |

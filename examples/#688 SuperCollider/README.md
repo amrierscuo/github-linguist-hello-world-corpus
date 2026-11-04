@@ -1,20 +1,20 @@
 # #688 SuperCollider
 
-Lo script concatena due stringhe e stampa `Hello, World!` nella post window di SuperCollider. La variante `.sc` definisce una vera classe `CorpusGreeting` il cui metodo `message` restituisce lo stesso testo.
+The script concatenates two strings and `Hello, World!` prints in the post window of SuperCollider. The `.sc` variant defines a true `CorpusGreeting` class whose `message` method returns the same text.
 
-Tipo canonico `programming`, language_id `361`.
+Canonical type `programming`, language_id `361`.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Prove eseguite con sclang 3.13.0 e SCClassLibrary del pacchetto ufficiale Ubuntu noble `1:3.13.0+repack-1ubuntu3`, in Ubuntu 24.04 WSL2. Toolchain e dipendenze sono estratte in una directory di lavoro isolata; la verifica usa un utente normale.
+Tests performed with sclang 3.13.0 and SCClassLibrary of the official Ubuntu noble `1:3.13.0+repack-1ubuntu3` package, in Ubuntu 24.04 WSL2. Toolchain and dependencies are extracted in an isolated work directory; verification uses a normal user.
 
-Con SuperCollider installato e dalla cartella dell'esempio:
+With SuperCollider installed and from the example folder:
 
 ```sh
 QT_QPA_PLATFORM=offscreen sclang -D hello.scd
 ```
 
-Per la classe `.sc`, aggiungere la cartella `variants/sc-4a5e9bf6` a una class library isolata e includere la SCClassLibrary della toolchain. Il file `class-library.yaml` deve contenere i percorsi reali di queste due directory:
+For the `.sc` class, add `variants/sc-4a5e9bf6` to an isolated class library and include the toolchain's SCClassLibrary. Set the actual paths to both directories in `class-library.yaml`:
 
 ```yaml
 includePaths:
@@ -25,23 +25,23 @@ excludeDefaultPaths: true
 postInlineWarnings: false
 ```
 
-Eseguire il driver dalla cartella dell'esempio:
+Run the driver from the example folder:
 
 ```sh
 QT_QPA_PLATFORM=offscreen sclang -D -l class-library.yaml verification/run_class.scd
 ```
 
-La compilazione della libreria include `hello.sc`; il driver invoca `CorpusGreeting.message.postln`. Entrambe le prove stampano una riga `Hello, World!` e terminano con exit code 0. Non serve avviare un server audio.
+The compilation of the library includes `hello.sc`; the driver invokes `CorpusGreeting.message.postln`. Both tests print a `Hello, World!` line and end with exit code 0. No need to start an audio server.
 
-## Stato ed evidenza
+## Status and evidence
 
-Sintassi e semantica verificate separatamente per `.scd` e `.sc`.
+syntax and behavior verified separately for `.scd` and `.sc`.
 
-[Log nativo aggiornato](verification/resume_native.json) con comandi reali, timestamp UTC, stdout/stderr, configurazioni, versioni e SHA256 dei sorgenti e delle dipendenze ufficiali. Nella toolchain estratta, un `qt.conf` locale configura i percorsi di processo, risorse e traduzioni di Qt. I tentativi iniziali e i successivi successi sono conservati.
+[Log nativo aggiornato](verification/resume_native.json) with real commands, timestamp UTC, stdout/stderr, configurations, versions and SHA256 of official sources and dependencies. In the extracted toolchain, a local `qt.conf` configures the process paths, resources and translations of Qt.
 
 I warning WSL sullo scheduling realtime e sui permessi della directory runtime XDG non impediscono l'uscita 0 dei programmi. La prova riguarda stringhe e metodi della classe; non certifica sintesi audio o accesso a dispositivi. I [precedenti probe](verification/native.json) sono mantenuti come evidenza storica.
 
-## Fonti primarie
+## Primary sources
 
 - [String in SuperCollider](https://doc.sccode.org/Classes/String.html)
 - [Scrivere classi](https://doc.sccode.org/Guides/WritingClasses.html)
@@ -49,11 +49,11 @@ I warning WSL sullo scheduling realtime e sui permessi della directory runtime X
 - [Pacchetto ufficiale Ubuntu](https://packages.ubuntu.com/noble/supercollider-language)
 - [Deployment QtWebEngine5.15](https://doc.qt.io/archives/qt-5.15/qtwebengine-deploying.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.sc` | [hello.sc](variants/sc-4a5e9bf6/hello.sc) sintassi e semantica verificate |
-| `.scd` | [hello.scd](hello.scd) sintassi e semantica verificate |
+| `.sc` | [hello.sc](variants/sc-4a5e9bf6/hello.sc) syntax and behavior verified |
+| `.scd` | [hello.scd](hello.scd) syntax and behavior verified |

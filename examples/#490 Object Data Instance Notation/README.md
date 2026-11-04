@@ -1,36 +1,36 @@
 # #490 Object Data Instance Notation
 
-Decodificare l’attributo greeting ODIN di openEHR.
+Decode the greeting ODIN attribute of openEHR.
 
 ## Toolchain
 
 Parser ODIN openEHR conforme
 
-## Procedura
+## Procedure
 
-Caricare hello.odin con un parser ODIN openEHR e leggere greeting; registrare API/versione/risultato.
+Upload hello.odin with a parser ODIN openEHR and read greeting; record API/versione/risultato.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-ODIN è Object Data Instance Notation di openEHR; il valore primitivo stringa è racchiuso in < >. Non contiene dati di pazienti.
+ODIN is Object Data Instance Notation of openEHR; the primitive string value is enclosed in < >. It does not contain patient data.
 
-Requisiti residui:
-- Parser ODIN openEHR non predisposto.
+Remaining requirements:
+- Parser ODIN openEHR not predisposed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://specifications.openehr.org/releases/BASE/latest/odin.html](https://specifications.openehr.org/releases/BASE/latest/odin.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.odin` | [hello.odin](hello.odin) creato, verifiche pendenti |
+| `.odin` | [hello.odin](hello.odin) created; verification pending |

@@ -1,10 +1,10 @@
 # #134 Common Workflow Language
 
-Descrivere in CWL 1.2 un comando echo con input string di default Hello, World! e catturare stdout in un output File hello.txt.
+Describe in CWL 1.2 an echo command with default string input Hello, World! and capture stdout in an output File hello.txt.
 
-## Riproduzione
+## Reproduction
 
-Toolchain: cwltool 3.3.20260925135507; Python 3.12.3. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
+Toolchain: cwltool 3.3.20260925135507; Python 3.12.3. Test environment: Ubuntu 24.04 WSL2 x86_64.
 
 ```text
 cwltool --validate hello.cwl
@@ -12,24 +12,24 @@ cwltool --no-container --outdir results hello.cwl job.yml
 Verificare results/hello.txt esattamente Hello, World! seguito da newline.
 ```
 
-Risultato atteso: Validazione riuscita; job exit 0; output File hello.txt con contenuto esattamente Hello, World! seguito da newline.
+Expected result: Successful validation; job exit 0; output File hello.txt with exact Hello, World! content followed by newline.
 
-## Verifica
+## Verification
 
-Sintassi e semantica verificate il 2026-10-08T23:34:15.412306+00:00. Le varianti hanno prove separate nel log quando consumate.
+syntax and behavior verified 2026-10-08T23:34:15.412306+00:00. The variants have separate evidence in the log when consumed.
 
-[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
+[Prova nativa](verification/finish_native.json) contains versions, real commands, exit code, output and SHA-256. The local routes are replaced by placeholders.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.commonwl.org/v1.2/CommandLineTool.html](https://www.commonwl.org/v1.2/CommandLineTool.html)
 - [https://github.com/common-workflow-language/cwltool](https://github.com/common-workflow-language/cwltool)
 - [https://www.commonwl.org/user_guide/topics/outputs.html](https://www.commonwl.org/user_guide/topics/outputs.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.cwl` | [hello.cwl](hello.cwl) sintassi e semantica verificate |
+| `.cwl` | [hello.cwl](hello.cwl) syntax and behavior verified |

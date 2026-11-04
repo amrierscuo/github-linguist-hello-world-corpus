@@ -1,38 +1,38 @@
 # #109 Cap'n Proto
 
-Analizzare uno schema Cap’n Proto, creare Greeting con il valore predefinito e conservarlo in un ciclo serializzazione/lettura.
+Analyze a Cap’n Proto scheme, create Greeting with the default value and store it in a serializzazione/lettura. cycle
 
-Tipo canonico: `programming`; `language_id`: `52`.
+Canonical type: `programming`; `language_id`: `52`.
 
-Toolchain prevista: Python 3 e pycapnp (binding del parser/runtime C++ Cap’n Proto). La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Python 3 and pycapnp (binding parser/runtime C++ Cap’n Proto).
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: default e round-trip entrambi uguali a `Hello, World!`; stampa del saluto e uscita 0.
+Expected result: default and round-trip both equal to `Hello, World!`; greeting print and 0. output
 
-L’identificativo dello schema è stato generato casualmente con il bit alto impostato. Il controllo usa il parser nativo tramite pycapnp, non un parser costruito per il corpus.
+The schematic identifier was randomly generated with the high bit set. Control uses the native parser via pycapnp, not a parser built for the corpus.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain provata: Python 3.13.9 + pycapnp 2.2.4 (native Cap’n Proto parser/runtime). Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain proven: Python 3.13.9 + pycapnp 2.2.4 (native Cap’n Proto parser/runtime ). See [log](verification/verification.log).
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Cap’n Proto — linguaggio degli schemi](https://capnproto.org/language.html)
 - [pycapnp — lettura e scrittura](https://capnproto.github.io/pycapnp/quickstart.html)
 
-Dipendenze riproducibili in una cartella di lavoro dedicata:
+Reproducible dependencies in a dedicated workbook:
 
 ```sh
 python -m pip install pycapnp==2.2.4
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.capnp` | [hello.capnp](hello.capnp) verificato |
+| `.capnp` | [hello.capnp](hello.capnp) verified |

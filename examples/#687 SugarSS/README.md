@@ -4,44 +4,44 @@ Voce canonica `SugarSS`, tipo `markup`, language_id `826404698`.
 
 Leggere SugarSS e serializzare la dichiarazione content in CSS.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official sugarss compiler/parser — 5.0.2. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official sugarss compiler/parser, 5.0.2. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Parser SugarSS e PostCSS originali, versioni loggate.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 npm install --prefix .tools sugarss postcss; node verify.cjs .tools build
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.
+Expected result: Hello, World! in the conformed result, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il parser autentico produce una dichiarazione AST content con valore esatto; PostCSS serializza CSS valido. Ambito: modello/stile compilato.
+The authentic parser produces a AST content declaration with exact value; PostCSS serializes CSS valid. Scope: modello/stile compiled.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/postcss/sugarss](https://github.com/postcss/sugarss)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sss` | [hello.sss](hello.sss) verificato |
+| `.sss` | [hello.sss](hello.sss) verified |

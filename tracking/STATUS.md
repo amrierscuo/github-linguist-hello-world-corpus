@@ -1,38 +1,38 @@
-# Stato corrente del corpus
+# Current corpus status
 
-| Copertura | Stato |
+| Coverage | Status |
 | --- | ---: |
-| Voci canoniche con artefatti o bozze | 836 / 836 |
-| Voci con sintassi verificata per il campione principale | 534 / 836 |
-| Voci con semantica verificata per il campione principale | 504 / 836 |
-| Coppie linguaggio ed estensione con file | 1738 / 1749 |
-| Estensioni distinte con artefatti principali | 1480 / 1489 |
-| Coppie ancora senza artefatto | 11 |
+| Canonical entries with artifacts or drafts | 836 / 836 |
+| Entries with syntax verified for the main sample | 539 / 836 |
+| Entries with semantics verified for the main sample | 512 / 836 |
+| Language and extension pairs with files | 1738 / 1749 |
+| Distinct extensions with primary artifacts | 1480 / 1489 |
+| Pairs still missing an artifact | 11 |
 
-Le 836 voci includono programmi, dati, markup e prosa. Le 1.749 coppie linguaggio ed estensione tengono distinti i suffissi condivisi.
-Le estensioni non sono 836 linguaggi aggiuntivi e un linguaggio verificato non implica che tutte le sue varianti siano state verificate.
+The 836 entries cover programming languages, data, markup and prose. The 1,749 language and extension pairs count shared suffixes separately.
+Extensions are not 836 additional languages, and verifying a language sample does not verify all its variants.
 
-## I cinque casi completati come artefatti preliminari
+## Five cases with preliminary artifacts
 
-- MiniD e Charity: snippet dell’utente conservati come bozze; grammatica e runtime non convalidati. Charity non è dichiarato programma funzionante.
-- LabVIEW: modelli XML `.lvproj`, `.lvclass`, `.lvlib`; il VI grafico manca e deve essere creato nell’IDE.
-- JetBrains MPS: campione ufficiale JetBrains adattato, con modello, linguaggio e soluzione; generazione ed esecuzione MPS pendenti. Licenza Apache-2.0 conservata.
-- Altium Designer: quattro file ASCII originali accettati da altiumts0.0.89 con round-trip e asserzioni sul contenuto; import/riapertura in Altium e produzione Gerber pendenti.
+- MiniD and Charity: the snippets supplied by the user are preserved as drafts. Their grammar and runtime have not been validated. Charity is not marked as a working program.
+- LabVIEW: XML templates for `.lvproj`, `.lvclass` and `.lvlib`. The graphical VI is missing and must be created in the IDE.
+- JetBrains MPS: an adapted official JetBrains sample with a model, language and solution. MPS generation and execution are pending. The Apache-2.0 license is preserved.
+- Altium Designer: altiumts0.0.89 accepted four original ASCII files in a round trip with content assertions. Importing and reopening them in Altium and generating Gerber output remain pending.
 
-## Consultazione
+## Browse the records
 
-- [Tutte le estensioni e gli artefatti](EXTENSIONS.md).
-- [Estensioni ancora senza artefatto](EXTENSIONS_PENDING.md).
-- [Catalogo delle voci](CATALOG.md), [tracker dei linguaggi](languages_tracker.json), [tracker delle estensioni](extensions_tracker.json).
-- [Contatori dei linguaggi](progress.json), [contatori delle estensioni](extensions_progress.json), [verifiche aggiuntive](RECHECKS.md).
+- [All extensions and artifacts](EXTENSIONS.md).
+- [Extensions still missing an artifact](EXTENSIONS_PENDING.md).
+- [Entry catalog](CATALOG.md), [language tracker](languages_tracker.json), [extension tracker](extensions_tracker.json).
+- [Language counts](progress.json), [extension counts](extensions_progress.json), [additional checks](RECHECKS.md).
 
-I nuovi alias sono copie byte per byte dei sorgenti appropriati; le altre varianti hanno contenuti per il proprio ruolo (header, modulo, configurazione, descriptor o dati).
-I formati non generati nativamente mantengono un impedimento e non vengono sostituiti con file vuoti o binari fittizi.
-Le verifiche false restano false finché un parser, compilatore o consumatore reale non ha superato una prova registrata.
+New aliases are byte-identical copies of the corresponding sources. Other variants have content appropriate to their role: header, module, configuration, descriptor or data.
+Formats that require native generation retain a documented blocker instead of an empty file or fabricated binary.
+Verification flags stay false until a real parser, compiler or consumer passes a recorded check.
 
-I comandi si trovano nei README. Toolchain, build e cache sono fuori dal corpus. I log conservano output/exit/timestamp e hashes effettivi; i prefissi locali sono normalizzati quando indicato.
-La cattura in modalità testo può normalizzare CRLF in LF. Una modifica ai sorgenti verificati richiede una nuova prova.
+The READMEs list the commands. Toolchains, build outputs and caches stay outside the corpus. Logs preserve actual outputs, exit codes, timestamps and hashes; local path prefixes are normalized where noted.
+Text-mode capture may normalize CRLF to LF. Changes to verified sources require a new check.
 
-Il riferimento YAML originale mantiene SHA-256 `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`.
+The original YAML reference retains SHA-256 `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`.
 
-Gli ZIP e i rapporti BATCH precedenti sono checkpoint storici; questa pagina e i tracker rappresentano lo stato corrente.
+Earlier ZIP files and BATCH reports are historical checkpoints. This page and the trackers describe the current corpus.

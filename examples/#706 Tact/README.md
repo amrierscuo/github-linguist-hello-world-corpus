@@ -2,36 +2,36 @@
 
 Voce e ordine canonici di `reference/languages.yml`.
 
-Compila il sorgente originale e restituisce `Hello, World!` eseguendo il bytecode in una macchina virtuale locale.
+Fill out the original source and return `Hello, World!` by using the bytecode in a local virtual machine.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Tact 1.6.13 + TON Sandbox 0.45.0 + tsx 4.23.15; Node.js 22.20.0. Eseguire dalla cartella dell'esempio:
+Tact 1.6.13 + TON Sandbox 0.45.0 + tsx 4.23.15; Node.js 22.20.0. Run from the example folder:
 
 ```sh
 npm install --no-audit --no-fund --save-exact @tact-lang/compiler@1.6.13 @ton/sandbox@0.45.0 @ton/core@0.63.1 @ton/crypto@3.3.0 tsx@4.23.15
 node verify.cjs
 ```
 
-Il checker compila Tact in una cartella temporanea locale. Usa lo StateInit del wrapper TypeScript prodotto dal compilatore, esegue il getter greeting nella TVM e controlla sia lo stack sia il risultato del wrapper ufficiale. La cartella temporanea viene rimossa al termine.
+The checker compiles Tact in a local temporary folder. Use the StateInit of the TypeScript wrapper produced by the compiler, performs the getter greeting in the TVM and controls both the stack and the official wrapper result.
 
-La verifica usa solo una VM locale e non richiede account, fondi o connessione a una blockchain.
+Verification only uses a local VM and does not require accounts, funds or connection to a blockchain.
 
-## Stato e prova
+## State and Test
 
-Sintassi e semantica verificate il `2026-10-08T23:31:25.959856+00:00`. Risultato reale: `Hello, World!`.
+syntax and behavior verified `2026-10-08T23:31:25.959856+00:00`. Real result: `Hello, World!`.
 
-[Log della verifica](verification/runtime.json) con versioni, comandi, stdout, exit code e SHA-256 dei sorgenti e del checker. La prova riguarda questo campione e le versioni indicate.
+[Log della verifica](verification/runtime.json) with versions, commands, stdout, exit code and SHA-256 of sources and checker.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.tact-lang.org/book/contracts/](https://docs.tact-lang.org/book/contracts/)
 - [https://github.com/ton-blockchain/sandbox](https://github.com/ton-blockchain/sandbox)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.tact` | [hello.tact](hello.tact) sintassi e semantica verificate |
+| `.tact` | [hello.tact](hello.tact) syntax and behavior verified |

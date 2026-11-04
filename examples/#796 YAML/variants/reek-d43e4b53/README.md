@@ -1,23 +1,23 @@
-# 0796 — YAML — `.reek`
+# 0796: YAML: `.reek`
 
-Configurazione Reek YAML; il saluto è nel companion Ruby analizzato.
+Configuration Reek YAML; greeting is in companion Ruby analyzed.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.reek`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 reek --config hello.reek greeting.rb
 ```
 
-Risultato atteso: analisi configurata sul sorgente Ruby originale.
+Expected result: analysis configured on the original Ruby source.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/troessner/reek/blob/master/docs/Configuration.md](https://github.com/troessner/reek/blob/master/docs/Configuration.md)

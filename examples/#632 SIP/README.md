@@ -2,15 +2,15 @@
 
 Voce e ordine canonici di `reference/languages.yml`. Sorgente e fixture originali.
 
-## Obiettivo
+## Goal
 
-Generare e compilare binding Python per una funzione C che restituisce `Hello, World!`, poi importare l'estensione e chiamare la funzione.
+Generate and compile Python binding for a C function that returns `Hello, World!`, then import the extension and call the function.
 
-`hello.sip` contiene la descrizione SIP e il corpo C. Il codice generato, i file oggetto e l'estensione compilata restano nella directory temporanea della prova.
+`hello.sip` contains the SIP description and the C body. The generated code, the object files and the compiled extension remain in the temporary directory of the test.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Prova autentica con SIP 6.17.0, CPython 3.12.3, setuptools 84.0.0 e GCC 13.3.0 su Ubuntu 24.04 WSL2 x86_64.
+Authentic test with SIP 6.17.0, CPython 3.12.3, setuptools 84.0.0 and GCC 13.3.0 on Ubuntu 24.04 WSL2 x86_64.
 
 Copiare `hello.sip`, `pyproject.toml` e `verify_runtime.py` in una directory temporanea. Servono un compilatore C e gli header di sviluppo di Python. Dalla copia dell'esempio, con SIP installato nel Python scelto:
 
@@ -19,30 +19,30 @@ python -m sipbuild.tools.build --build-dir build --verbose
 PYTHONPATH=build/corpus_greeting/build/lib.linux-x86_64-cpython-312 python verify_runtime.py
 ```
 
-Il percorso di `PYTHONPATH` qui riportato è quello prodotto nella prova CPython 3.12 su Linux x86_64. Per un altro interprete o sistema usare la directory che contiene il modulo `corpus_greeting` compilato, senza copiare il binario nel corpus.
+The `PYTHONPATH` path here is the one produced in the CPython 3.12 test on Linux x86_64. For another interpreter or system use the directory containing the `corpus_greeting` module compiled, without copying the track into the corpus.
 
-## Risultato atteso e stato
+## Expected result and status
 
-`verify_runtime.py` importa l'estensione compilata, chiama `corpus_greeting.corpus_greeting()`, verifica il valore restituito e stampa:
+`verify_runtime.py` imports the compiled extension, calls `corpus_greeting.corpus_greeting()`, verify the returned and printed value:
 
 ```text
 Hello, World!
 ```
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-La generazione dei wrapper, la compilazione, il linking e l'import con chiamata C terminano con exit code 0. La precedente prova di sola generazione è conservata in [verification/toolchain.json](verification/toolchain.json). La nuova prova completa è [verification/runtime.json](verification/runtime.json), con versioni, comandi, ambiente rilevante, output e SHA-256 dei sorgenti e del binario effettivamente importato. I percorsi personali sono sostituiti con placeholder.
+The generation of wrappers, compilation, linking and import with call C end with exit code 0. The previous one-generation test is kept in [verification/toolchain.json](verification/toolchain.json). The new full test is [verification/runtime.json](verification/runtime.json), with versions, commands, relevant environment, output and SHA-256 of the sources and the effectively imported track.
 
-## Fonti primarie
+## Primary sources
 
 - [Direttiva Module](https://python-sip.readthedocs.io/en/latest/directives.html#directive-Module)
 - [Strumenti di compilazione SIP](https://python-sip.readthedocs.io/en/stable/command_line_tools.html)
 - [Distribuzione SIP 6.17.0](https://pypi.org/project/sip/6.17.0/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.sip` | [hello.sip](hello.sip) sintassi e semantica verificate |
+| `.sip` | [hello.sip](hello.sip) syntax and behavior verified |

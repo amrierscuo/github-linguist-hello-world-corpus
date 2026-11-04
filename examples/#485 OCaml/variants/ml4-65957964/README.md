@@ -1,31 +1,31 @@
-# 0485 — OCaml: `.ml4`
+# 0485: OCaml: `.ml4`
 
-Ruolo: Sorgente OCaml standard come input testuale del preprocessore Camlp4; non introduce estensioni di grammatica non documentate.
+Role: Standard OCaml Source as the text input of the Camlp4 preprocessor; it does not introduce undocumented grammar extensions.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: OCaml 4.14.1. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: OCaml 4.14.1. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 In una directory di lavoro: camlp4o hello.ml4 > hello.ml; ocaml hello.ml
 ```
 
-Risultato atteso: Hello, World! e LF dopo preprocessamento Camlp4 e interpretazione OCaml.
+Expected result: Hello, World! and LF after Camlp4 preprocession and OCaml interpretation.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- Camlp4 originale compatibile non predisposto. Nessuna prova viene ereditata dal main OCaml.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- Camlp4 original compatible unprepared. No evidence is inherited from the main OCaml.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.ml4`: `c299624d78a2d8dbde0f49b30bc937b30531ddf5d6e7684eb554a5b4fe51b7d1`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/ocaml/camlp4
 - https://caml.inria.fr/pub/old_caml_site/camlp4/tutorial/tutorial003.html

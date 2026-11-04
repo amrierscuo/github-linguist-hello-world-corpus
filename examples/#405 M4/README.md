@@ -1,32 +1,32 @@
 # #405 M4
 
-Espandere una macro GNU M4 per comporre Hello, World!.
+Expand a macro GNU M4 to compose Hello, World!.
 
-Tipo canonico `programming`, language_id `215`.
+Canonical type `programming`, language_id `215`.
 
-Toolchain prevista: GNU M4.
+Suggested toolchain: GNU M4.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 m4 hello.m4
 ```
 
-Risultato atteso: stdout Hello, World! e LF.
+Expected result: stdout Hello, World! and LF.
 
-La macro target viene espansa dal processore M4 reale.
+The macro target is expanded by the real M4 processor.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: GNU M4 extracted Ubuntu package. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: GNU M4 extracted Ubuntu package. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [GNU M4 — manuale](https://www.gnu.org/software/m4/manual/m4.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.m4` | [hello.m4](hello.m4) verificato |
-| `.mc` | [hello.mc](variants/mc-77075759/hello.mc) creato, verifiche pendenti |
+| `.m4` | [hello.m4](hello.m4) verified |
+| `.mc` | [hello.mc](variants/mc-77075759/hello.mc) created; verification pending |

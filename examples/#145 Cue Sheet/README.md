@@ -1,41 +1,41 @@
 # #145 Cue Sheet
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Analizzare un Cue Sheet e recuperare il titolo Hello, World! della traccia audio 01.
+Analyze a Cue Sheet and recover the Hello, World! title of audio track 01.
 
-hello.cue usa FILE, TRACK, TITLE e INDEX nel formato CDRWIN/CUE sheet. Non è un programma nel linguaggio CUE. La fixture originale genera un secondo di silenzio PCM soltanto nella copia temporanea; cueprint verifica parser e metadata, senza masterizzazione o riproduzione audio.
+hello.cue uses FILE, TRACK, TITLE and INDEX in CDRWIN/CUE sheet format. It is not a program in CUE language. The original fixture generates a second silence PCM only in the temporary copy; cueprint verification parser and metadata, without mastering
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-cuetools pacchetto 1.4.1-0.2; cueprint dichiara 1.4.0; Python 3.13.9 per fixture
+cuetools package 1.4.1-0.2; cueprint declares 1.4.0; Python 3.13.9 for fixtures
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 python make_fixture.py
 cueprint -i cue -n 1 -t %t hello.cue
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Titolo estratto esattamente Hello, World!, senza newline aggiunta dal template %t; exit 0.
+Title extracted exactly Hello, World!, without newline added by the %t template; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.gnu.org/software/ccd2cue/manual/html_node/CUE-sheet-format.html
 - https://manpages.debian.org/bullseye/cuetools/cueprint.1.en.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cue` | [hello.cue](hello.cue) verificato |
+| `.cue` | [hello.cue](hello.cue) verified |

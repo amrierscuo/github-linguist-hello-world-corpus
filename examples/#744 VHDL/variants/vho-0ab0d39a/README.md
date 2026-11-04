@@ -1,23 +1,23 @@
-# 0744 — VHDL — `.vho`
+# 0744: VHDL: `.vho`
 
 Netlist VHDL strutturale scritta a mano con wire/constant cell originali; non dichiarata come export Quartus.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vho`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 ghdl: analyze hello.vho and testbench.vhdl in work, elaborate/test greeting_tb
 ```
 
-Risultato atteso: report note Hello, World! dopo assertion sul signal.
+Expected result: reports notes Hello, World! after assertion on the signal.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://ghdl.github.io/ghdl/using/InvokingGHDL.html](https://ghdl.github.io/ghdl/using/InvokingGHDL.html)

@@ -1,41 +1,41 @@
 # #283 HTML+ERB
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Renderizzare HTML+ERB con un binding Ruby che fornisce audience=World.
+Render HTML + ERB with a Ruby binding that provides audience=World.
 
-ERB.new legge il template, result(binding) valuta l’interpolazione Ruby. Il driver originale confronta il documento prodotto dal motore ERB; non costruisce l’HTML mediante sostituzioni manuali.
+ERB.new reads the template, result(binding) evaluates the Ruby interpolation. The original driver compares the document produced by the ERB engine; does not build the HTML by manual replacements.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Ruby3.2.3, ERB della libreria standard
+Ruby3.2.3, ERB of standard library
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 ruby render.rb
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout <p>Hello, World!</p> seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.ruby-lang.org/en/3.2/ERB.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.erb` | [hello.erb](hello.erb), [fixture.html.erb](variants/erb-deface-ad7ccb60/fixture.html.erb) creato, verifiche pendenti |
-| `.erb.deface` | [hello.html.erb.deface](variants/erb-deface-ad7ccb60/hello.html.erb.deface) creato, verifiche pendenti |
-| `.rhtml` | [hello.rhtml](variants/rhtml-6f031adf/hello.rhtml) creato, verifiche pendenti |
+| `.erb` | [hello.erb](hello.erb), [fixture.html.erb](variants/erb-deface-ad7ccb60/fixture.html.erb) created; verification pending |
+| `.erb.deface` | [hello.html.erb.deface](variants/erb-deface-ad7ccb60/hello.html.erb.deface) created; verification pending |
+| `.rhtml` | [hello.rhtml](variants/rhtml-6f031adf/hello.rhtml) created; verification pending |

@@ -1,38 +1,38 @@
 # #653 Scilab
 
-Eseguire un file Scilab.
+Run a Scilab file.
 
 ## Toolchain
 
 Scilab CLI
 
-## Procedura
+## Procedure
 
 scilab-cli -nb -f hello.sce
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- Scilab runtime non disponibile.
+Remaining requirements:
+- Scilab runtime unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html](https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sci` | [hello.sci](variants/sci-27617630/hello.sci) creato, verifiche pendenti |
-| `.sce` | [hello.sce](hello.sce), [main.sce](variants/sci-27617630/main.sce) creato, verifiche pendenti |
-| `.tst` | [hello.tst](variants/tst-04f6df08/hello.tst) creato, verifiche pendenti |
+| `.sci` | [hello.sci](variants/sci-27617630/hello.sci) created; verification pending |
+| `.sce` | [hello.sce](hello.sce), [main.sce](variants/sci-27617630/main.sce) created; verification pending |
+| `.tst` | [hello.tst](variants/tst-04f6df08/hello.tst) created; verification pending |

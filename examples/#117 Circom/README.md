@@ -1,12 +1,12 @@
 # #117 Circom
 
-Compilare un circuito Circom i cui 13 segnali pubblici di output sono i byte ASCII di Hello, World!, e calcolare il witness.
+Fill out a Circom circuit whose 13 public output signals are ASCII bytes of Hello, World!, and calculate the witness.
 
-Tipo canonico: `programming`; `language_id`: `1042332086`.
+Canonical type: `programming`; `language_id`: `1042332086`.
 
-Toolchain prevista: Circom 2.x e Node.js per il generatore di witness WASM. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Circom 2.x and Node.js for witness generator WASM. The actual version, when available, is in the log.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 mkdir -p build
@@ -14,23 +14,23 @@ circom hello.circom --r1cs --wasm -o build
 node build/hello_js/generate_witness.js build/hello_js/hello.wasm input.json build/hello.wtns
 ```
 
-Risultato atteso: witness con constant one iniziale e output `[72,101,108,108,111,44,32,87,111,114,108,100,33]`; il vettore decodifica Hello, World!.
+Expected result: witness with constant initial one and `[72,101,108,108,111,44,32,87,111,114,108,100,33]` output; decode vector Hello, World!.
 
-Il saluto è rappresentato come dati del circuito, non come stampa console. <== assegna i valori e genera i vincoli. Calcolo del witness e prova zero knowledge sono passaggi diversi; questo esempio non richiede un trusted setup.
+Greeting is represented as data of the circuit, not as a console print. <== assigns the values and generates the constraints. Calculation of the witness and proof zero knowledge are different steps; this example does not require a trusted setup.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain provata: Circom 2.2.3 linux/amd64 + Node.js 22.20.0 witness calculator. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Tried toolchain: Circom 2.2.3 linux/amd64 + Node.js 22.20.0 witness calculator. See [log](verification/verification.log).
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Circom — segnali e vincoli](https://docs.circom.io/circom-language/signals/)
 - [Circom — implementazione originale](https://github.com/iden3/circom)
 
-Verifica automatica inclusa: `node verify.cjs build/hello_js`.
+Automatic verification included: `node verify.cjs build/hello_js`.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.circom` | [hello.circom](hello.circom) verificato |
+| `.circom` | [hello.circom](hello.circom) verified |

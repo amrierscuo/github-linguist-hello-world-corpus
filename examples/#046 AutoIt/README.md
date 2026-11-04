@@ -2,47 +2,47 @@
 
 Voce canonica: `AutoIt`, tipo `programming`, `language_id: 27`.
 
-Scrivere il saluto concatenato su stdout AutoIt e terminare con codice 0.
+Write the greeting concatenate on stdout AutoIt and end with code 0.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official AutoIt x64 and Au3Check portable — 3.3.18.0. Ambiente della prova: **Windows x64**.
+Official AutoIt x64 and Au3Check portable, 3.3.18.0. Test environment: **Windows x64**.
 
-Estrarre AutoIt 3.3.18.0 Portable dal sito ufficiale; usare Au3Check.exe e AutoIt3_x64.exe della directory install.
+Extract AutoIt 3.3.18.0 Portable from the official site; use Au3Check.exe and AutoIt3_x64.exe of the install directory.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 Au3Check.exe hello.au3; AutoIt3_x64.exe /ErrorStdOut hello.au3
 ```
 
-Risultato atteso: Au3Check: 0 errori e 0 warning; runtime exit 0; stdout Hello, World! seguito da CRLF.
+Expected result: Au3Check: 0 errors and 0 warning; runtime exit 0; stdout Hello, World! followed by CRLF.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-ConsoleWrite produce lo stream stdout; un interprete GUI non garantisce la sua visualizzazione nel prompt senza acquisizione. La prova cattura realmente quello stream e normalizza CRLF tramite text mode.
+ConsoleWrite produces the stream stdout; a GUI interpreter does not guarantee its display in the prompt without acquisition. The test really captures that stream and normalizes CRLF through text mode.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.autoitscript.com/autoit3/docs/functions/ConsoleWrite.htm](https://www.autoitscript.com/autoit3/docs/functions/ConsoleWrite.htm)
 - [https://www.autoitscript.com/site/autoit/downloads/](https://www.autoitscript.com/site/autoit/downloads/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.au3` | [hello.au3](hello.au3) verificato |
+| `.au3` | [hello.au3](hello.au3) verified |

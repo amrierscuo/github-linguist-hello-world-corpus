@@ -2,55 +2,55 @@
 
 Voce canonica: `CoffeeScript`, tipo `programming`, `language_id: 63`.
 
-Interpolare il destinatario in una stringa CoffeeScript, compilare in JavaScript e stampare il saluto con Node.
+Interpolate the recipient in a CoffeeScript string, fill in JavaScript and print the greeting with Node.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official CoffeeScript compiler with Node.js runtime — CoffeeScript version 2.7.0. Ambiente della prova: **Windows x64**.
+Official CoffeeScript compiler with Node.js runtime, CoffeeScript version 2.7.0. Test environment: **Windows x64**.
 
-CoffeeScript 2.7.0 e Node.js 22.20.0. Eseguire i comandi in una copia di lavoro: il corpus non include node_modules o il JavaScript generato.
+CoffeeScript 2.7.0 and Node.js 22.20.0. Run commands in a work copy: the corpus does not include node_modules or the JavaScript generated.
 
-Comando/procedura dalla directory dell’esempio, salvo la directory build esplicitamente indicata:
+Comando/procedura from the example directory, except the build directory explicitly indicated:
 
 ```text
 npm install --prefix .tools coffeescript@2.7.0; node .tools/node_modules/coffeescript/bin/coffee --compile --output build hello.coffee; node build/hello.js
 ```
 
-Risultato atteso: Compilazione exit 0; runtime exit 0; Hello, World! seguito da newline.
+Expected result: Exit 0; runtime exit 0; Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il compilatore CoffeeScript ufficiale ha prodotto il JavaScript dal sorgente .coffee originale. Node ha eseguito quel prodotto separato; non viene riscritto manualmente un equivalente JavaScript come prova.
+The official CoffeeScript compiler produced the JavaScript from the original .coffee source. Node performed that separate product; no JavaScript equivalent is manually rewritten as proof.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-versioni/toolchain e SHA-256 degli artefatti. La proprietà `path_normalization` documenta
-le sostituzioni dei percorsi locali. `<corpus>` identifica i file relativi inclusi nel
-corpus finale, che sono stati verificati prima nella directory di staging. I byte dei
-sorgenti restano quelli identificati dai checksum. I soli probe di disponibilità degli
-strumenti non attestano parsing o esecuzione. Dipendenze e prodotti compilati restano
-nella directory di lavoro e non sono inclusi nel corpus.
+toolchain versions and SHA-256 values for the artifacts. The `path_normalization` property documents
+local route replacements. `<corpus>` identifies the relative files included in
+final corpus, which were first verified in the staging directory.
+sources remain those identified by checksums. The only offspring of availability
+instruments do not attest parsing or execution.
+in the work directory and are not included in the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [https://coffeescript.org/#installation](https://coffeescript.org/#installation)
 - [https://coffeescript.org/#strings](https://coffeescript.org/#strings)
 - [https://github.com/jashkenas/coffeescript](https://github.com/jashkenas/coffeescript)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.coffee` | [hello.coffee](hello.coffee) verificato |
-| `._coffee` | [hello._coffee](variants/ext-coffee-2e5f636f66666565/hello._coffee) creato, verifiche pendenti |
-| `.cake` | [hello.cake](variants/ext-cake-2e63616b65/hello.cake) creato, verifiche pendenti |
-| `.cjsx` | [hello.cjsx](variants/ext-cjsx-2e636a7378/hello.cjsx) creato, verifiche pendenti |
-| `.coffee.erb` | [hello.coffee.erb](variants/ext-coffee-erb-2e636f666665652e657262/hello.coffee.erb) creato, verifiche pendenti |
-| `.iced` | [hello.iced](variants/ext-iced-2e69636564/hello.iced) creato, verifiche pendenti |
+| `.coffee` | [hello.coffee](hello.coffee) verified |
+| `._coffee` | [hello._coffee](variants/ext-coffee-2e5f636f66666565/hello._coffee) created; verification pending |
+| `.cake` | [hello.cake](variants/ext-cake-2e63616b65/hello.cake) created; verification pending |
+| `.cjsx` | [hello.cjsx](variants/ext-cjsx-2e636a7378/hello.cjsx) created; verification pending |
+| `.coffee.erb` | [hello.coffee.erb](variants/ext-coffee-erb-2e636f666665652e657262/hello.coffee.erb) created; verification pending |
+| `.iced` | [hello.iced](variants/ext-iced-2e69636564/hello.iced) created; verification pending |

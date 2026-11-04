@@ -1,38 +1,38 @@
 # #307 Idris
 
-Tipizzare ed eseguire un main Idris che usa putStrLn.
+Type and run a main Idris that uses putStrLn.
 
 ## Toolchain
 
-Idris; scegliere/registrare una versione compatibile con .idr
+Idris; scegliere/registrare a version compatible with .idr
 
-## Comandi e procedura
+## Commands and procedure
 
 idris --check hello.idr; idris hello.idr -o build/hello; build/hello
 
-## Risultato atteso
+## Expected result
 
-Tipo main : IO (); programma stampa Hello, World! più newline.
+Main type: IO (); Hello, World! press program more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il modulo Main e il tipo IO rendono concreto il goal. Questo campione semplice è documentato secondo Idris 1; un’eventuale migrazione Idris 2 dovrà registrare tool/backend effettivi.
+The Main module and the IO type make the goal concrete.This simple sample is documented according to Idris 1; a possible migration Idris 2 will have to record actual tool/backend.
 
-Requisiti residui:
-- Compilatore/backend Idris non disponibili in questa tranche; type check e runtime pending.
+Remaining requirements:
+- Compilatore/backend Idris not available in this tranche; type check and runtime pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.idris-lang.org/en/latest/tutorial/introduction.html](https://docs.idris-lang.org/en/latest/tutorial/introduction.html)
 - [https://docs.idris-lang.org/en/latest/tutorial/starting.html](https://docs.idris-lang.org/en/latest/tutorial/starting.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.idr` | [hello.idr](hello.idr) creato, verifiche pendenti |
-| `.lidr` | [hello.lidr](variants/lidr-f41f21bf/hello.lidr) creato, verifiche pendenti |
+| `.idr` | [hello.idr](hello.idr) created; verification pending |
+| `.lidr` | [hello.lidr](variants/lidr-f41f21bf/hello.lidr) created; verification pending |

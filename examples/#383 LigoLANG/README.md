@@ -1,38 +1,38 @@
 # #383 LigoLANG
 
-Valutare una costante stringa del saluto nella sintassi PascaLIGO della baseline .ligo.
+Evaluate a constant greeting string in syntax Baseline PascaLIGO .ligo.
 
 ## Toolchain
 
-LIGO compatibile con PascaLIGO, ad esempio serie 0.73; versione effettiva da registrare
+LIGO compatible with PascaLIGO, for example 0.73 series; actual version to be recorded
 
-## Comandi e procedura
+## Commands and procedure
 
-Con un compilatore che supporta PascaLIGO: ligo run evaluate-expr hello.ligo greeting --syntax pascaligo --deprecated
+With a compiler that supports PascaLIGO: ligo run evaluate-expr hello.ligo greeting --syntax pascaligo --deprecated
 
-## Risultato atteso
+## Expected result
 
-Il valore di greeting è la stringa Hello, World!.
+The value of greeting is the Hello, World! string.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-L’estensione canonica .ligo identifica PascaLIGO storico. Il file non viene rinominato come JsLIGO: i compilatori recenti richiedono un percorso di migrazione. La versione compatibile e l’opzione deprecata vanno provate prima di dichiarare valutazione positiva.
+The .ligo canonical extension identifies historical PascaLIGO. The file is not renamed as JsLIGO: recent compilers require a migration path.
 
-Requisiti residui:
-- Compilatore con supporto PascaLIGO non disponibile; sintassi/evaluation pending.
+Remaining requirements:
+- Compilatore con supporto PascaLIGO unavailable; sintassi/evaluation pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://gitlab.com/ligolang/ligo](https://gitlab.com/ligolang/ligo)
 - [https://ligolang.org/docs/next/intro/changelog/](https://ligolang.org/docs/next/intro/changelog/)
 - [https://gitlab.com/ligolang/ligo/-/merge_requests/2395](https://gitlab.com/ligolang/ligo/-/merge_requests/2395)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ligo` | [hello.ligo](hello.ligo) creato, verifiche pendenti |
+| `.ligo` | [hello.ligo](hello.ligo) created; verification pending |

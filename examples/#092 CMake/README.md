@@ -1,46 +1,46 @@
 # #092 CMake
 
-Eseguire in CMake script mode un controllo sul valore greeting e scrivere Hello, World! con message.
+Perform in CMake script mode a check on the value greeting and write Hello, World! with message.
 
 ## Toolchain
 
 cmake version 4.4.4
 
-## Comandi e procedura
+## Commands and procedure
 
-Non serve un progetto o un compilatore C/C++; usare la modalità script:
+You do not need a project or C/C++ compiler; use the script mode:
 
 ```sh
 cmake --version
 cmake -P hello.cmake
 ```
 
-Il saluto compare su stderr. Un errore sul valore della variabile sarebbe
-segnalato da FATAL_ERROR e produrrebbe un esito di comando diverso da zero.
+Greeting appears on stderr. An error on the value of the variable would be
+reported by FATAL_ERROR and would produce a different command result from zero.
 
-## Risultato atteso
+## Expected result
 
-Exit 0; stderr contiene esattamente Hello, World! più newline; stdout vuoto.
+Exit 0; stderr contains exactly Hello, World! plus newline; empty stdout.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-message senza modo STATUS invia il messaggio a stderr: il canale corretto è esplicitamente verificato. Il controllo if/FATAL_ERROR è eseguito dal vero CMake.
+message without STATUS mode sends the message to stderr: the correct channel is explicitly verified. if/FATAL_ERROR control is performed by the real CMake.
 
-Verifica effettiva del 2026-10-08T11:33:20.658387+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:20.658387+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://cmake.org/cmake/help/latest/manual/cmake.1.html](https://cmake.org/cmake/help/latest/manual/cmake.1.html)
 - [https://cmake.org/cmake/help/latest/command/message.html](https://cmake.org/cmake/help/latest/command/message.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cmake` | [hello.cmake](hello.cmake), [configure.cmake](variants/ext-cmake-in-2e636d616b652e696e/configure.cmake) creato, verifiche pendenti |
-| `.cmake.in` | [hello.cmake.in](variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in) creato, verifiche pendenti |
+| `.cmake` | [hello.cmake](hello.cmake), [configure.cmake](variants/ext-cmake-in-2e636d616b652e696e/configure.cmake) created; verification pending |
+| `.cmake.in` | [hello.cmake.in](variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in) created; verification pending |

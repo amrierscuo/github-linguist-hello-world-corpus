@@ -1,23 +1,23 @@
-# 0596 — Racket — `.scrbl`
+# 0596: Racket: `.scrbl`
 
-Documento Scribble; non un file Racket da rinominare.
+Scribble document; not a Racket file to be renamed.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.scrbl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 scribble --html --dest work hello.scrbl
 ```
 
-Risultato atteso: HTML con paragrafo Hello, World!.
+Expected result: HTML with Hello, World! paragraph.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.racket-lang.org/scribble/getting-started.html](https://docs.racket-lang.org/scribble/getting-started.html)

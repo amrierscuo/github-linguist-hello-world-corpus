@@ -1,24 +1,24 @@
 # #422 Maven POM
 
-Interpretare un POM Maven, compilare un programma Java e creare un JAR con il saluto.
+Interpret a POM Maven, fill out a Java program and create a JAR with greeting.
 
-Tipo canonico `data`, language_id `226`.
+Canonical type `data`, language_id `226`.
 
-Toolchain prevista: Apache Maven 3.9.x e JDK 21.
+Suggested toolchain: Apache Maven 3.9.x and JDK 21.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mvn package
 java -cp target/hello-world-1.0.0.jar corpus.Hello
 ```
 
-Risultato atteso: Maven package riuscito; programma nel JAR stampa Hello, World! e LF.
+Expected result: Maven package successful; program in JAR printing Hello, World! and LF.
 
-Gli artifact e i plugin provengono da Maven Central. Il parametro corpus.build.directory permette isolare i file generati fuori dal corpus.
+The artifacts and plug-ins come from Maven Central. The corpus.build.directory parameter allows you to isolate the files generated outside the corpus.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Apache Maven 3.9.9 + OpenJDK 21.0.12. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Apache Maven 3.9.9 + OpenJDK 21.0.12. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Apache Maven — POM reference](https://maven.apache.org/pom.html)

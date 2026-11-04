@@ -1,33 +1,33 @@
 # #513 Ox
 
-Eseguire main Ox e stampare il saluto.
+Run main Ox and print your greeting.
 
-Tipo canonico `programming`, language_id `268`.
+Canonical type `programming`, language_id `268`.
 
-Toolchain prevista: Ox Console/OxMetrics e oxstd.
+Suggested toolchain: Ox Console/OxMetrics and oxstd.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 oxl hello.ox
 ```
 
-Risultato atteso: stdout Hello, World! seguito da newline.
+Expected result: stdout Hello, World! followed by newline.
 
-Ox è il linguaggio econometrico di Jurgen Doornik; non viene sostituito con un compiler C.
+Ox is the econometric language of Jurgen Doornik; it is not replaced with a C compiler.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Runtime Ox non disponibile.
+Initial state: created; syntax and behavioral verification pending. Runtime Ox unavailable.
 
-Fonti:
+Sources:
 
 - [Ox documentation](https://www.doornik.com/ox/ox.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ox` | [hello.ox](hello.ox), [hello.ox](variants/oxh-134bfc42/hello.ox) creato, verifiche pendenti |
-| `.oxh` | [hello.oxh](variants/oxh-134bfc42/hello.oxh) creato, verifiche pendenti |
-| `.oxo` | artefatto da generare Oggetto Ox compilato: richiede compilazione originale della versione target; nessun file binario o sorgente .ox rinominato viene prodotto. |
+| `.ox` | [hello.ox](hello.ox), [hello.ox](variants/oxh-134bfc42/hello.ox) created; verification pending |
+| `.oxh` | [hello.oxh](variants/oxh-134bfc42/hello.oxh) created; verification pending |
+| `.oxo` | artifact to generate Ox object compiled: requires original compilation of the target version; no binary or .ox source is produced. |

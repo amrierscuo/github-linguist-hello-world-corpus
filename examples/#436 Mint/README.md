@@ -1,32 +1,32 @@
 # #436 Mint
 
-Compilare un componente Main Mint e mostrare il saluto in un paragrafo.
+Fill out a Main Mint component and show greeting in a paragraph.
 
-Tipo canonico `programming`, language_id `968740319`.
+Canonical type `programming`, language_id `968740319`.
 
-Toolchain prevista: Mint compiler compatibile con la sintassi tipizzata Html.
+Suggested toolchain: Mint compiler compatible with the syntax typed Html.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mint build
 ```
 
-Risultato atteso: compilazione riuscita; applicazione mostra Hello, World!.
+Expected result: successful compilation; application shows Hello, World!.
 
-La sintassi Html è documentata nella guida; la compatibilità con la versione di compiler disponibile deve essere verificata.
+The syntax Html is documented in the guide; the compatibility with the available compiler version must be verified.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Mint — Main component](https://api.mint-lang.com/guide/getting-started/the-main-component)
 - [Mint — implementazione](https://github.com/mint-lang/mint)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mint` | [Main.mint](source/Main.mint) creato, verifiche pendenti |
+| `.mint` | [Main.mint](source/Main.mint) created; verification pending |

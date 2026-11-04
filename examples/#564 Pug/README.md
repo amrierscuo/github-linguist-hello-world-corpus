@@ -1,37 +1,37 @@
 # #564 Pug
 
-Renderizzare una pagina Pug con interpolazione ed escaping.
+Render a Pug page with interpolation and escaping.
 
 ## Toolchain
 
 Pug 3.0.4; Node.js v22.20.0
 
-## Procedura
+## Procedure
 
 npm install pug; node verify.cjs
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il compilatore Pug originale produce HTML e il checker controlla il nodo del saluto e l’escaping del nome.
+The original Pug compiler produces HTML and the checker controls the greeting node and the excavating of the name.
 
-Verifica reale 2026-10-08T13:16:51.001660+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:16:51.001660+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://pugjs.org/api/getting-started.html](https://pugjs.org/api/getting-started.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jade` | [hello.jade](variants/jade-6d41832d/hello.jade) creato, verifiche pendenti |
-| `.pug` | [hello.pug](hello.pug) verificato |
+| `.jade` | [hello.jade](variants/jade-6d41832d/hello.jade) created; verification pending |
+| `.pug` | [hello.pug](hello.pug) verified |

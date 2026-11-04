@@ -1,40 +1,34 @@
 # #812 desktop
 
-Validare una desktop entry originale del saluto.
+The native validator accepted the desktop entry. GLib loaded its greeting name, printf command, and terminal setting. No application was launched.
 
-## Toolchain
+Canonical type: `data`. Linguist language ID: `412`.
 
-desktop-file-utils0.27 native validator
+## Recorded verification
 
-## Procedura
+**Syntax and behavior verified** on November 4, 2026 with desktop-file-utils and GLib GDesktopAppInfo 2.80.0.
 
-desktop-file-validate hello.desktop; controllare Name nel reader del desktop di prova.
+[Recorded commands, outputs and hashes](verification/native_20261104_receipt.json).
+[Earlier verification record](verification/result.json).
 
-## Risultato atteso
+## Reproduce the check
 
-Validatore senza errori; Name=Hello, World! e Exec riconosciuti.
+On Linux, from the example directory, run:
 
-## Stato
+```sh
+desktop-file-validate hello.desktop
+python3 verification/verify_desktop.py hello.desktop
+```
 
-Sintassi verificata; semantica in attesa.
+The checker loads the launcher fields with GLib. It does not open a desktop or start the configured command.
 
-La prova valida il formato offline; applicazione e terminale non vengono lanciati.
+## Primary sources
 
-Verifica reale 2026-10-08T13:38:35.207016+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+- https://specifications.freedesktop.org/desktop-entry/latest/
 
-Requisiti residui:
-- Desktop shell UI/launcher consumer pending.
+## Extension coverage
 
-## Fonti primarie
-
-- [https://specifications.freedesktop.org/desktop-entry/latest/](https://specifications.freedesktop.org/desktop-entry/latest/)
-
-## Copertura delle estensioni
-
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
-
-| Estensione | File / stato |
-| --- | --- |
-| `.desktop` | [hello.desktop](hello.desktop) sintassi verificata |
-| `.desktop.in` | [hello.desktop.in](variants/desktop-in-8bdb31d7/hello.desktop.in) creato, verifiche pendenti |
+| Extension | Files | Status |
+| --- | --- | --- |
+| `.desktop` | [hello.desktop](hello.desktop) | Syntax and behavior verified |
+| `.desktop.in` | [hello.desktop.in](variants/desktop-in-8bdb31d7/hello.desktop.in) | Verification pending |

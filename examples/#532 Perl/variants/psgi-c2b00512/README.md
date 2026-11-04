@@ -1,30 +1,30 @@
-# 0532 — Perl: `.psgi`
+# 0532: Perl: `.psgi`
 
-Ruolo: Applicazione PSGI: coderef che restituisce status, headers e array body.
+Role: Application PSGI: coderef that returns status, headers and body array.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Authentic Perl interpreter — This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Authentic Perl interpreter, This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Plack::Test locale: do hello.psgi; richiedere GET / nel test in-process (nessuna porta esterna)
 ```
 
-Risultato atteso: HTTP 200 e corpo Hello, World!
+Expected result: HTTP 200 and Hello, World! body
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.psgi`: `a2703aaa4f0a0efb7e25005a155c5bbae3161d265c6ea8167a79ceec499530b6`
 
-Fonti primarie:
+Primary sources:
 
 - https://psgi.github.io/
 - https://metacpan.org/pod/Plack::Test

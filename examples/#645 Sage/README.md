@@ -1,37 +1,37 @@
 # #645 Sage
 
-Valutare un file nel runtime SageMath.
+Evaluate a file in the SageMath runtime.
 
 ## Toolchain
 
 SageMath
 
-## Procedura
+## Procedure
 
 sage hello.sage
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- SageMath runtime non disponibile; prova Python generica non sufficiente.
+Remaining requirements:
+- SageMath runtime unavailable; generic Python test not enough.
 
-## Fonti primarie
+## Primary sources
 
 - [https://doc.sagemath.org/html/en/tutorial/](https://doc.sagemath.org/html/en/tutorial/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sage` | [hello.sage](hello.sage) creato, verifiche pendenti |
-| `.sagews` | [hello.sagews](variants/sagews-044b38a6/hello.sagews) creato, verifiche pendenti |
+| `.sage` | [hello.sage](hello.sage) created; verification pending |
+| `.sagews` | [hello.sagews](variants/sagews-044b38a6/hello.sagews) created; verification pending |

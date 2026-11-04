@@ -1,32 +1,32 @@
 # #584 RAScript
 
-Compilare RAScript in una rich presence che visualizza il saluto.
+Fill RAScript in a presence that displays greeting.
 
-Tipo canonico `programming`, language_id `601118790`.
+Canonical type `programming`, language_id `601118790`.
 
-Toolchain prevista: RATools RAScript interpreter/compiler.
+Suggested toolchain: RATools RAScript interpreter/compiler.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Aprire hello.rascript in RATools e compilare il Rich Presence output.
 ```
 
-Risultato atteso: output Rich Presence con Display: e Hello, World!.
+Expected result: Rich Presence output with Display: and Hello, World!.
 
-Rich presence è una stringa di stato di un gioco: non viene pubblicata o inviata a RetroAchievements.
+Rich presence is a state string of a game: it is not published or sent to RetroAchievements.
 
 Stato iniziale: creato; sintassi e semantica in attesa. RATools compiler non configurato.
 
-Fonti:
+Sources:
 
 - [RATools](https://github.com/Jamiras/RATools)
 - [RAScript](https://docs.retroachievements.org/developer-docs/ratools.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rascript` | [hello.rascript](hello.rascript) creato, verifiche pendenti |
+| `.rascript` | [hello.rascript](hello.rascript) created; verification pending |

@@ -1,40 +1,40 @@
 # #299 Hy
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare ed eseguire Hy per stampare Hello, World!.
+Fill in and run Hy to print Hello, World!.
 
-La forma setv lega greeting al risultato della concatenazione prefissa; print usa il builtin Python dal linguaggio Hy. La verifica passa attraverso il CLI/compiler Hy autentico e la VM Python risultante.
+The form setv alloy greeting to the result of the prefixed concatenation; print uses the builtin Python from the Hy language. Verification passes through the authentic CLI/compiler Hy and the resulting VM Python.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Hy1.3.1, funcparserlib1.0.1, CPython3.13.9
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 hy hello.hy
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://hylang.org/hy/doc/v1.1.0/tutorial
 - https://github.com/hylang/hy
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hy` | [hello.hy](hello.hy) verificato |
+| `.hy` | [hello.hy](hello.hy) verified |

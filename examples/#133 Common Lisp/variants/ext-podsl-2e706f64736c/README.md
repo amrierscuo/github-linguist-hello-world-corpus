@@ -1,34 +1,34 @@
-# 0133 Common Lisp — variante `.podsl`
+# 0133 Common Lisp: variant `.podsl`
 
-Ruolo: Fixture Common Lisp ordinaria caricabile con load. Il riferimento canonico include .podsl in Common Lisp; qui si copre soltanto quel linguaggio, senza dichiarare un DSL PODSL o un frontend storico verificato.
+The canonical reference includes .podsl in Common Lisp; here it covers only that language, without declaring a DSL PODSL or a historical verified frontend.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#133 Common Lisp/hello.lisp
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 SBCL: (load "hello.podsl"); per il frontend PODSL storico occorre una verifica separata.
 ```
 
-Risultato atteso: Exit 0; stdout Hello, World! seguito da newline.
+Exit 0; stdout Hello, World! followed by newline.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.sbcl.org/manual/#Shebang-Scripts](https://www.sbcl.org/manual/#Shebang-Scripts)
 - [https://www.lispworks.com/documentation/HyperSpec/Body/f_concat.htm](https://www.lispworks.com/documentation/HyperSpec/Body/f_concat.htm)

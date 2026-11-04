@@ -1,23 +1,23 @@
-# 0711 — TeX — `.ins`
+# 0711: TeX: `.ins`
 
-Installer DocStrip per estrarre un package, non un programma print.
+Installer DocStrip to extract a package, not a print program.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.ins`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 tex hello.ins (in isolated work copy)
 ```
 
-Risultato atteso: hello.sty estratto dal blocco package.
+Expected result: hello.sty extracted from package block.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://ctan.org/pkg/docstrip](https://ctan.org/pkg/docstrip)

@@ -1,38 +1,38 @@
 # #019 ActionScript
 
-`HelloWorld.as` è una classe documento **ActionScript 3** derivata da `Sprite`.
-Il costruttore crea un `TextField`, assegna `Hello World` e lo aggiunge alla
-lista di visualizzazione. Il saluto compare sullo stage, non nella console.
+`HelloWorld.as` is a **ActionScript 3** document class derived from `Sprite`.
+The manufacturer creates a `TextField`, assigns `Hello World` and adds it to the
+View list. Greetings appear on stage, not in the console.
 
-Toolchain richiesta: compilatore `mxmlc` (Apache Flex SDK con la libreria
-`playerglobal.swc` appropriata) e un runtime SWF compatibile. Dalla cartella
-dell'esempio, con il compilatore configurato nel PATH, questo comando compila
-e controlla la sintassi ActionScript:
+Required toolchain: compilatore `mxmlc` (Apache Flex SDK con la libreria
+`playerglobal.swc` appropriate) and a SWF compatible runtime.
+of the example, with the compiler configured in the PATH, this command compiles
+e controlla la syntax ActionScript:
 
 ```sh
 mxmlc -strict=true -output=HelloWorld.swf HelloWorld.as
 ```
 
-Risultato atteso del controllo sintattico: codice di uscita zero e creazione
-di `HelloWorld.swf` senza errori. Questo comando è registrato sia come build
-sia come comando di verifica della voce; non verifica da solo il rendering.
+Expected result of syntactic control: zero output code and creation
+of `HelloWorld.swf` without errors. This command is recorded as both build
+both as a voice verification command; it does not verify the rendering alone.
 
-Per controllare la semantica occorre aprire il file generato in un runtime SWF
-compatibile con ActionScript 3 e osservare il testo `Hello World` sullo stage.
-Il comando preciso di esecuzione dipende dal runtime scelto; questa parte
+To control the behavior you need to open the file generated in a SWF runtime
+compatible with ActionScript 3 and observe the `Hello World` text on the stage.
+The precise command of execution depends on the chosen runtime; this part
 resta da fissare e verificare.
 
-Sintassi e semantica verificate: **no**. Blocchi attuali: compilatore Flex,
-`playerglobal.swc` e runtime SWF non disponibili nell'ambiente usato. Un controllo
-testuale del sorgente non sostituisce compilazione ed esecuzione.
+syntax and behavior verified: **no**. Blocchi attuali: compilatore Flex,
+`playerglobal.swc` and SWF runtime not available in the environment used.
+text of the source does not replace compilation and execution.
 
 Riferimenti primari: [compilatori Flex, Apache](https://flex.apache.org/doc/flex/using/flx_mxml_mx.html)
 e [TextField, Adobe](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/text/TextField.html).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.as` | [HelloWorld.as](HelloWorld.as) creato, verifiche pendenti |
+| `.as` | [HelloWorld.as](HelloWorld.as) created; verification pending |

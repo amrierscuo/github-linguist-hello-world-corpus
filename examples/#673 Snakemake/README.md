@@ -1,38 +1,38 @@
 # #673 Snakemake
 
-Eseguire una regola Snakemake che stampa il saluto.
+Perform a Snakemake rule that prints greeting.
 
-Tipo canonico `programming`, language_id `151241392`.
+Canonical type `programming`, language_id `151241392`.
 
-Toolchain prevista: Python3.13.9 + Snakemake9.27.0.
+Suggested toolchain: Python3.13.9 + Snakemake9.27.0.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 snakemake --cores 1 hello
 ```
 
-Risultato atteso: workflow eseguito con successo e riga Hello, World!.
+Expected result: successful workflow and Hello, World! line.
 
-La regola non crea file di output; il motore esegue il run block Python.
+The rule does not create output files; the engine runs the Python run block.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + Snakemake original engine. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + Snakemake original engine. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Snakemake rules](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install snakemake
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.smk` | [Snakefile.smk](variants/smk-dec36d46/Snakefile.smk) creato, verifiche pendenti |
-| `.snakefile` | [Snakefile.snakefile](variants/snakefile-94f1120f/Snakefile.snakefile) creato, verifiche pendenti |
+| `.smk` | [Snakefile.smk](variants/smk-dec36d46/Snakefile.smk) created; verification pending |
+| `.snakefile` | [Snakefile.snakefile](variants/snakefile-94f1120f/Snakefile.snakefile) created; verification pending |

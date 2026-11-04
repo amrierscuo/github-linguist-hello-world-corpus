@@ -1,23 +1,23 @@
-# 0716 — Texinfo — `.texinfo`
+# 0716: Texinfo: `.texinfo`
 
-Variante testuale dello stesso formato, con suffisso canonico .texinfo.
+Textual variation of the same format, with canon suffix .texinfo.
 
-Provenienza: copia del file originale `examples/#716 Texinfo/hello.texi`.
+Origin: copy of the original `examples/#716 Texinfo/hello.texi` file.
 
 Artefatto principale: `hello.texinfo`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 makeinfo --plaintext --output=work/hello.txt hello.texinfo
 ```
 
-Risultato atteso: Documento renderizzato contiene Hello, World!..
+Expected result: Document rendering contains Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Short-Sample.html](https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Short-Sample.html)

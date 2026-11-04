@@ -1,24 +1,24 @@
-# 0785 — XML — `.osm`
+# 0785: XML: `.osm`
 
-OSM XML sintetico di prova; non descrive un luogo reale e non va caricato su OpenStreetMap.
+OSM XML synthetic test; it does not describe a real place and should not be loaded on OpenStreetMap.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.osm`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 OSM parser local only
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://wiki.openstreetmap.org/wiki/OSM_XML](https://wiki.openstreetmap.org/wiki/OSM_XML)

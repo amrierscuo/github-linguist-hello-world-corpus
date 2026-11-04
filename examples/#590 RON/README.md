@@ -1,31 +1,31 @@
 # #590 RON
 
-Deserializzare Rusty Object Notation in una struct Rust e leggere greeting.
+Deserialize Rusty Object Notation in a struct Rust and read greeting.
 
-Tipo canonico `data`, language_id `587855233`.
+Canonical type `data`, language_id `587855233`.
 
-Toolchain prevista: Rust Cargo, ron e serde.
+Suggested toolchain: Rust Cargo, ron and serde.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 cargo run --quiet
 ```
 
-Risultato atteso: struct con stringa Hello, World! e stdout saluto.
+Expected result: struct with Hello, World! string and stdout greeting.
 
-È il formato Rusty Object Notation di ron-rs, distinto da Replicated Object Notation.
+It is the Rusty Object Notation format of ron-rs, distinguished by Replicated Object Notation.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Rust/Cargo 1.90.0 native official components + ron 0.12 + serde 1. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Rust/Cargo 1.90.0 native official components + ron 0.12 + serde 1. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [RON Rusty Object Notation](https://github.com/ron-rs/ron)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ron` | [hello.ron](hello.ron) verificato |
+| `.ron` | [hello.ron](hello.ron) verified |

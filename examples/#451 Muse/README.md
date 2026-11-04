@@ -2,46 +2,46 @@
 
 Voce canonica `Muse`, tipo `prose`, language_id `474864066`.
 
-Pubblicare un documento Emacs Muse originale in HTML con il saluto nel corpo.
+Publish an original Emacs Muse document in HTML with greeting in the body.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede Emacs Muse e le librerie muse-html/muse-publish. La procedura documentata pubblica nella directory corrente.
+Requires Emacs Muse and muse-html/muse-publish. libraries The documented procedure publishes in the current directory.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 Aprire hello.muse in Emacs con Muse attivo; M-x muse-project-publish-this-file; selezionare lo stile html.
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Motore Emacs Muse assente; titolo e paragrafo sono sorgente Muse originale.
+Motor Emacs Muse absent; title and paragraph are original Muse source.
 
-Requisiti residui:
+Remaining requirements:
 
 - Emacs Muse publishing engine is not configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.gnu.org/software/emacs-muse/manual/muse.html](https://www.gnu.org/software/emacs-muse/manual/muse.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.muse` | [hello.muse](hello.muse) creato, verifiche pendenti |
+| `.muse` | [hello.muse](hello.muse) created; verification pending |

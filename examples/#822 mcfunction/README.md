@@ -1,37 +1,37 @@
 # #822 mcfunction
 
-Scrivere il saluto nello storage di un datapack Minecraft Java.
+Write greetings in storage of a Minecraft Java datapack.
 
 ## Toolchain
 
 Minecraft Java command parser/runtime
 
-## Procedura
+## Procedure
 
-Inserire hello.mcfunction in un datapack compatibile; eseguire /function corpus:hello e /data get storage corpus:hello greeting.
+Insert hello.mcfunction into a compatible datapack; perform /function corpus:hello and /data get storage corpus:hello greeting.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il goal è una stringa locale nello storage del mondo di prova, senza messaggi chat o connessioni esterne.
+The goal is a local string in the storage of the test world, without chat messages or external connections.
 
-Requisiti residui:
-- Minecraft Java runtime/datapack di prova non disponibile.
+Remaining requirements:
+- Minecraft Java runtime/datapack trial unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://minecraft.wiki/w/Commands/data](https://minecraft.wiki/w/Commands/data)
 - [https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mcfunction` | [hello.mcfunction](hello.mcfunction) creato, verifiche pendenti |
+| `.mcfunction` | [hello.mcfunction](hello.mcfunction) created; verification pending |

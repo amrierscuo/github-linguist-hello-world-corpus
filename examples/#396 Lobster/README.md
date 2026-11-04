@@ -1,37 +1,37 @@
 # #396 Lobster
 
-Compilare ed eseguire Lobster per stampare il saluto.
+Fill out and execute Lobster to print your greeting.
 
 ## Toolchain
 
 Official aardappel Lobster release v2026.8 Windows x64
 
-## Comandi e procedura
+## Commands and procedure
 
 lobster --help; lobster --no-crash-dialog hello.lobster
 
-## Risultato atteso
+## Expected result
 
-Compiler/VM originali accettano print; stdout Hello, World! più newline; exit 0.
+Compiler/VM original accept print; stdout Hello, World! plus newline; exit 0.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 Lobster è il linguaggio di Wouter van Oortmerssen (aardappel); il log registra anche l’hash del vero engine. Non si tratta di altri prodotti omonimi.
 
-Verifica effettiva del 2026-10-08T12:49:26.320562+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:49:26.320562+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://aardappel.github.io/lobster/getting_started.html](https://aardappel.github.io/lobster/getting_started.html)
 - [https://github.com/aardappel/lobster/releases/tag/v2026.8](https://github.com/aardappel/lobster/releases/tag/v2026.8)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lobster` | [hello.lobster](hello.lobster) verificato |
+| `.lobster` | [hello.lobster](hello.lobster) verified |

@@ -1,30 +1,30 @@
-# 0548 — PostScript: `.epsi`
+# 0548: PostScript: `.epsi`
 
-Ruolo: EPS con sezione preview ASCII 1-bit conforme EPSI; preview minima illustrativa bianca, saluto nel contenuto vettoriale.
+Role: EPS with section preview ASCII 1-bit conform EPSI; minimum white illustrative preview, greeting in vector content.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Ghostscript10.02.1 ufficiale Ubuntu. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Ghostscript10.02.1 ufficiale Ubuntu. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Ghostscript: renderizzare hello.epsi; tool EPSI originale per leggere BeginPreview
 ```
 
-Risultato atteso: Testo Hello, World! nel rendering vettoriale; preview bianca di 8x1 pixel
+Expected result: Text Hello, World! in vector rendering; white preview of 8x1 pixel
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.epsi`: `ebd943bd51b0df143b46be7735743e0364899ca4513c16f89567df05f8adbe80`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.adobe.com/content/dam/acom/en/devnet/actionscript/articles/5002.EPSF_Spec.pdf
 - https://ghostscript.readthedocs.io/en/latest/Use.html

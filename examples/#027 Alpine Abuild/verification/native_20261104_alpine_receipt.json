@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:35:10.624386+00:00",
+  "platform": "Alpine Linux x86_64 chroot in Ubuntu WSL2",
+  "commands": [
+    {
+      "label": "Copy cached Alpine rootfs without crossing mounts",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "cp",
+        "-ax",
+        "${WORKSPACE}/work/tools_27_33/alpine",
+        "${WORKSPACE}/work/wsl_audit_20261104/alpine-root"
+      ],
+      "timestamp_utc": "2026-11-04T19:35:10.624407+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Alpine, abuild and apk versions",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "chroot",
+        "${WORKSPACE}/work/wsl_audit_20261104/alpine-root",
+        "/bin/sh",
+        "-eu",
+        "-c",
+        "cat /etc/alpine-release; abuild -V; apk --version"
+      ],
+      "timestamp_utc": "2026-11-04T19:35:22.815712+00:00",
+      "exit_code": 0,
+      "stdout": "3.23.6\nabuild 3.16.0-r0\napk-tools 3.0.8-r0, compiled for x86_64.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Remove old greeting from the disposable Alpine copy only",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "chroot",
+        "${WORKSPACE}/work/wsl_audit_20261104/alpine-root",
+        "/bin/sh",
+        "-eu",
+        "-c",
+        "if apk info -e corpus-hello >/dev/null; then apk --no-network del corpus-hello; fi; test ! -e /usr/bin/corpus-hello"
+      ],
+      "timestamp_utc": "2026-11-04T19:35:23.011431+00:00",
+      "exit_code": 0,
+      "stdout": "(1/1) Purging corpus-hello (1.0.0-r0)\nExecuting busybox-1.37.0-r30.trigger\nOK: 21.6 MiB in 44 packages\n",
+      "stderr": ""
+    },
+    {
+      "label": "Validate original APKBUILD",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "chroot",
+        "${WORKSPACE}/work/wsl_audit_20261104/alpine-root",
+        "/bin/sh",
+        "-eu",
+        "-c",
+        "cd /corpus-verify/0027; abuild -F -d validate"
+      ],
+      "timestamp_utc": "2026-11-04T19:35:23.759448+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ">>> corpus-hello: Validating /corpus-verify/0027/APKBUILD...\n>>> WARNING: corpus-hello: No maintainer\n"
+    },
+    {
+      "label": "Build new APK, running its check function",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "chroot",
+        "${WORKSPACE}/work/wsl_audit_20261104/alpine-root",
+        "/bin/sh",
+        "-eu",
+        "-c",
+        "cd /corpus-verify/0027; REPODEST=/packages-verify abuild -F -d"
+      ],
+      "timestamp_utc": "2026-11-04T19:35:24.036701+00:00",
+      "exit_code": 0,
+      "stdout": "/corpus-verify/0027/hello.sh: OK\n/corpus-verify/0027/hello.sh: OK\n\t/corpus-verify/0027/pkg/corpus-hello\n\t/corpus-verify/0027/pkg/corpus-hello/usr\n\t/corpus-verify/0027/pkg/corpus-hello/usr/bin\n",
+      "stderr": ">>> corpus-hello: Building corpus-verify/corpus-hello 1.0.0-r0 (using abuild 3.16.0-r0) started Wed, 04 Nov 2026 19:35:24 +0000\n>>> corpus-hello: Validating /corpus-verify/0027/APKBUILD...\n>>> WARNING: corpus-hello: No maintainer\n>>> corpus-hello: Cleaning up srcdir\n>>> corpus-hello: Cleaning up pkgdir\n>>> corpus-hello: Cleaning up tmpdir\n>>> corpus-hello: Running postcheck for corpus-hello\n>>> WARNING: corpus-hello: World writeable directories found:\n>>> corpus-hello: Preparing package corpus-hello...\n>>> corpus-hello: Tracing dependencies...\n\t/bin/sh\n>>> corpus-hello: Package size: 40.0 B\n>>> corpus-hello: Compressing data...\n>>> corpus-hello: Create checksum...\n>>> corpus-hello: Create corpus-hello-1.0.0-r0.apk\n>>> corpus-hello: Build complete at Wed, 04 Nov 2026 19:35:25 +0000 elapsed time 0h 0m 1s\n>>> corpus-hello: Cleaning up srcdir\n>>> corpus-hello: Cleaning up pkgdir\n>>> corpus-hello: Cleaning up tmpdir\n>>> corpus-hello: Updating the corpus-verify/x86_64 repository index...\n>>> corpus-hello: Signing the index...\n"
+    },
+    {
+      "label": "Install new package offline and run exact installed bytes",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "chroot",
+        "${WORKSPACE}/work/wsl_audit_20261104/alpine-root",
+        "/bin/sh",
+        "-eu",
+        "-c",
+        "apk --no-network add --allow-untrusted /packages-verify/corpus-verify/x86_64/corpus-hello-1.0.0-r0.apk; cmp /corpus-verify/0027/hello.sh /usr/bin/corpus-hello; test \"$(/usr/bin/corpus-hello)\" = \"Hello, World!\"; /usr/bin/corpus-hello"
+      ],
+      "timestamp_utc": "2026-11-04T19:35:25.959980+00:00",
+      "exit_code": 0,
+      "stdout": "(1/1) Installing corpus-hello (1.0.0-r0)\nExecuting busybox-1.37.0-r30.trigger\nOK: 21.6 MiB in 45 packages\nHello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#027 Alpine Abuild/APKBUILD": "db57438e4c66297d5eb379bdd3a55bb6c02f8276a435b2fb61b1d154ab490105",
+    "examples/#027 Alpine Abuild/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "generated_package_sha256": "6abcf5126d0813ea041b219b40afabbfbbdd0489314fd053db0faddf23447833",
+  "installed_artifact_sha256": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6",
+  "recorded_test_source": "alpine_receipt.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

@@ -1,32 +1,32 @@
 # #408 MAXScript
 
-Scrivere il saluto nel MAXScript Listener.
+Write greetings in the MAXScript Listener.
 
-Tipo canonico `programming`, language_id `217`.
+Canonical type `programming`, language_id `217`.
 
-Toolchain prevista: Autodesk 3ds Max MAXScript runtime.
+Suggested toolchain: Autodesk 3ds Max MAXScript runtime.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Eseguire fileIn "hello.ms" nel MAXScript Listener di una scena di prova.
 ```
 
-Risultato atteso: Listener mostra Hello, World! e newline.
+Expected result: Listener shows Hello, World! and newline.
 
-Nessuna operazione sulla scena; la verifica richiede il runtime proprietario MAXScript.
+No operation on the scene; verification requires the MAXScript owner runtime.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Runtime Autodesk 3ds Max non disponibile.
+Initial state: created; syntax and behavioral verification pending. Runtime Autodesk 3ds Max unavailable.
 
-Fonti:
+Sources:
 
 - [Autodesk — MAXScript format](https://help.autodesk.com/view/MAXDEV/2026/ENU/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ms` | [hello.ms](hello.ms) creato, verifiche pendenti |
-| `.mcr` | [hello.mcr](variants/mcr-27698a41/hello.mcr) creato, verifiche pendenti |
+| `.ms` | [hello.ms](hello.ms) created; verification pending |
+| `.mcr` | [hello.mcr](variants/mcr-27698a41/hello.mcr) created; verification pending |

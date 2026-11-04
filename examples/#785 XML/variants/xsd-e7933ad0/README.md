@@ -1,24 +1,24 @@
-# 0785 — XML — `.xsd`
+# 0785: XML: `.xsd`
 
-XML Schema originale che vincola il valore di greeting.
+XML Original scheme that binds the greeting value.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.xsd`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 lxml.etree.XMLSchema: validate greeting.xml
 ```
 
-Risultato atteso: schema accettato e documento greeting valido.
+Expected result: accepted scheme and valid greeting document.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://www.w3.org/TR/xmlschema-1/](https://www.w3.org/TR/xmlschema-1/)

@@ -1,38 +1,38 @@
 # #388 Linux Kernel Module
 
-Associare metadata .mod e Kbuild al modulo originale che contiene il saluto.
+Associate metadata .mod and Kbuild to the original form that contains the greeting.
 
 ## Toolchain
 
 Linux kernel headers/toolchain Kbuild compatibili; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-Copiare Kbuild/hello.c in build; make -C <kernel-headers> M=<percorso-assoluto-build> modules; confrontare hello.mod normalizzando il prefisso della cartella oggetti
+Copy Kbuild/hello.c in build; make -C <kernel-headers> M=< path-absolute-build> modules; compare hello.mod by normalizing the prefix of the object folder
 
-## Risultato atteso
+## Expected result
 
-Kbuild genera hello.mod riferito a hello.o; build offline accettata; modulo contiene il messaggio e MODULE_DESCRIPTION del saluto.
+Kbuild generates hello.mod reported to hello.o; offline build accepted; module contains message and MODULE_DESCRIPTION of greeting.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Linux Kernel Module nella baseline è un formato dati .mod. hello.mod è il campione testuale della lista oggetti, con percorso relativo illustrativo; Kbuild e hello.c ne forniscono il contesto reale. Non è un binario .ko e non può essere caricato direttamente. La futura verifica prevista è compilazione/metadata offline; init/runtime kernel non è attestato.
+Linux Kernel Module in the baseline is a .mod. hello.mod data format is the textual sample of the object list, with its illustrative path; Kbuild and hello.c provide the real context. It is not a .ko binary and cannot be loaded directly. The future predicted verification is compilazione/metadata offline; init/runtime kernel is not certified
 
-Requisiti residui:
-- Header/build tree kernel Kbuild non preparati; compilazione offline e rigenerazione .mod pending.
+Remaining requirements:
+- Header/build tree kbuild kernel not prepared; offline compilation and .mod pending regeneration.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.kernel.org/kbuild/modules.html](https://docs.kernel.org/kbuild/modules.html)
 - [https://docs.kernel.org/kbuild/makefiles.html](https://docs.kernel.org/kbuild/makefiles.html)
 - [https://github.com/torvalds/linux/blob/master/scripts/Makefile.build](https://github.com/torvalds/linux/blob/master/scripts/Makefile.build)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mod` | [hello.mod](hello.mod) creato, verifiche pendenti |
+| `.mod` | [hello.mod](hello.mod) created; verification pending |

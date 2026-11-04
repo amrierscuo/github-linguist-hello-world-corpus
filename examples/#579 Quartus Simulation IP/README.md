@@ -1,37 +1,37 @@
 # #579 Quartus Simulation IP
 
-Referenziare un testbench di simulazione in un file SIP Quartus.
+Referee a simulation testbench in a SIP Quartus file.
 
 ## Toolchain
 
 Quartus Prime project Tcl; simulator Verilog
 
-## Procedura
+## Procedure
 
-Importare hello.sip nel progetto Quartus e simulare hello_tb.v con il simulatore compatibile.
+Import hello.sip into the Quartus project and simulate hello_tb.v with the compatible simulator.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-MISC_FILE/file join/quartus(sip_path) seguono il formato del campione canonico; il testbench originale è il consumer del riferimento.
+MISC_FILE/file join/quartus(sip_path) follow the canonical sample format; the original testbench is the consumer of the reference.
 
-Requisiti residui:
+Remaining requirements:
 - Quartus project reader e simulatore non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.intel.com/content/www/us/en/docs/programmable/683609/23-1/simulation-files.html](https://www.intel.com/content/www/us/en/docs/programmable/683609/23-1/simulation-files.html)
 - [https://github.com/github-linguist/linguist/tree/main/samples/Quartus%20Simulation%20IP](https://github.com/github-linguist/linguist/tree/main/samples/Quartus%20Simulation%20IP)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sip` | [hello.sip](hello.sip) creato, verifiche pendenti |
+| `.sip` | [hello.sip](hello.sip) created; verification pending |

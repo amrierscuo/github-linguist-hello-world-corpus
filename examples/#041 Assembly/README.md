@@ -2,53 +2,53 @@
 
 Voce canonica: `Assembly`, tipo `programming`, `language_id: 24`.
 
-Stampare esattamente Hello, World! con syscall Linux x86_64 write, poi terminare con stato 0.
+Print exactly Hello, World! with syscall Linux x86_64 write, then finish with 0. status
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-GNU GAS and ld, Linux x86_64 syscall ABI — GNU assembler (GNU Binutils for Ubuntu) 2.42. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+GNU GAS and ld, Linux x86_64 syscall ABI, GNU assembler ( GNU Binutils for Ubuntu) 2.42. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Eseguire in Linux x86_64 con GNU Binutils. In Windows usare Ubuntu WSL2; questo sorgente usa GAS in sintassi Intel e ABI Linux, non il formato PE Windows.
+Run in Linux x86_64 with GNU Binutils. In Windows use Ubuntu WSL2; this source uses GAS in syntax Intel and ABI Linux, not the PE Windows format.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 as --64 -o hello.o hello.s; ld -o hello hello.o; ./hello
 ```
 
-Risultato atteso: Exit 0; stdout esattamente Hello, World! seguito da newline.
+Exit 0; stdout exactly Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-La prova assembla i byte originali, collega un ELF in una directory isolata ed esegue quell’ELF. Non serve libc.
+The check assembles the original bytes, links an ELF binary in an isolated directory and runs that binary. It does not require libc.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://sourceware.org/binutils/docs/as/i386_002dSyntax.html](https://sourceware.org/binutils/docs/as/i386_002dSyntax.html)
 - [https://sourceware.org/binutils/docs/as/i386_002dOptions.html](https://sourceware.org/binutils/docs/as/i386_002dOptions.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asm` | [hello.asm](variants/ext-asm-2e61736d/hello.asm) creato, verifiche pendenti |
-| `.a51` | [hello.a51](variants/ext-a51-2e613531/hello.a51) creato, verifiche pendenti |
-| `.i` | [hello.i](variants/ext-i-2e69/hello.i) creato, verifiche pendenti |
-| `.inc` | [hello.inc](variants/ext-inc-2e696e63/hello.inc) creato, verifiche pendenti |
-| `.nas` | [hello.nas](variants/ext-nas-2e6e6173/hello.nas) creato, verifiche pendenti |
-| `.nasm` | [hello.nasm](variants/ext-nasm-2e6e61736d/hello.nasm) creato, verifiche pendenti |
-| `.s` | [hello.s](hello.s), [consumer.s](variants/ext-inc-2e696e63/consumer.s) creato, verifiche pendenti |
+| `.asm` | [hello.asm](variants/ext-asm-2e61736d/hello.asm) created; verification pending |
+| `.a51` | [hello.a51](variants/ext-a51-2e613531/hello.a51) created; verification pending |
+| `.i` | [hello.i](variants/ext-i-2e69/hello.i) created; verification pending |
+| `.inc` | [hello.inc](variants/ext-inc-2e696e63/hello.inc) created; verification pending |
+| `.nas` | [hello.nas](variants/ext-nas-2e6e6173/hello.nas) created; verification pending |
+| `.nasm` | [hello.nasm](variants/ext-nasm-2e6e61736d/hello.nasm) created; verification pending |
+| `.s` | [hello.s](hello.s), [consumer.s](variants/ext-inc-2e696e63/consumer.s) created; verification pending |

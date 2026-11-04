@@ -1,36 +1,36 @@
 # #654 Self
 
-Valutare un messaggio printLine nel mondo standard Self.
+Evaluate a printLine message in the standard Self world.
 
 ## Toolchain
 
 Self VM e standard world
 
-## Procedura
+## Procedure
 
-Nel mondo standard Self valutare hello.self tramite fileIn; registrare VM/world e output.
+In the standard world Self evaluate hello.self via fileIn; record VM/world and output.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - VM Self e standard world non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://handbook.selflanguage.org/](https://handbook.selflanguage.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.self` | [hello.self](hello.self) creato, verifiche pendenti |
+| `.self` | [hello.self](hello.self) created; verification pending |

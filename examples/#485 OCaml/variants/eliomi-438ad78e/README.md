@@ -1,31 +1,31 @@
-# 0485 — OCaml: `.eliomi`
+# 0485: OCaml: `.eliomi`
 
 Ruolo: Interfaccia Eliom lato server; implementazione corrispondente inclusa.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: OCaml 4.14.1. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: OCaml 4.14.1. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Eliom originale: compilare greeting.eliomi e greeting.eliom lato server
 ```
 
-Risultato atteso: Interfaccia server con greeting stringa
+Expected result: Server interface with greeting string
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `greeting.eliom`: `c8aec92538be01f759c17a68e8eafe4cffec465ccb682b8c2da08204b53dc3ef`
 - `greeting.eliomi`: `9a65e001a8ddb6bff30297a3bb312f4aac0c4dd4913170e2fbc5edb1429fb058`
 
-Fonti primarie:
+Primary sources:
 
 - https://ocsigen.org/eliom/latest/manual/clientserver-language
 - https://ocaml.org/manual/5.4/programs.html

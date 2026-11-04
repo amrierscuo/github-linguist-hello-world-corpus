@@ -1,18 +1,18 @@
 # #158 Dafny
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Dimostrare stringa e lunghezza del saluto in Dafny, compilare in JavaScript ed eseguirlo.
+Demonstrate string and length of greeting in Dafny, fill in JavaScript and execute it.
 
 Le assert dimostrano valore e lunghezza 13. La prova SMT precede la compilazione/esecuzione del backend JavaScript. Il log distingue esito del verificatore e output runtime; il backend usa bignumber.js isolato tramite NODE_PATH. Il runner effettivo carica DafnyDriver.dll con dotnet.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Dafny 3.13.1.50302; .NET 6.0.36; Z3 5.1.0; Node.js 22.20.0; bignumber.js
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 dafny /compile:0 /proverOpt:PROVER_PATH=<z3> hello.dfy
@@ -22,23 +22,23 @@ dafny /compile:0 /proverOpt:PROVER_PATH=<z3> hello.dfy
 dafny /compileTarget:js /compile:3 /proverOpt:PROVER_PATH=<z3> hello.dfy
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-1 verified, 0 errors; il programma compilato emette Hello, World! e newline.
+1 verified, 0 errors; the compiled program emits Hello, World! and newline.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://dafny.org/dafny/DafnyRef/DafnyRef
 - https://github.com/dafny-lang/dafny
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dfy` | [hello.dfy](hello.dfy) verificato |
+| `.dfy` | [hello.dfy](hello.dfy) verified |

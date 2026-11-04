@@ -6,33 +6,33 @@ Eseguire println in E e stampare Hello, World!.
 
 E-on-Java ERights, launcher rune e JVM compatibile; versioni da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 rune hello.e
 
-## Risultato atteso
+## Expected result
 
-Interprete E exit 0, stdout Hello, World! più newline.
+Interpreter E exit 0, stdout Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-La voce è il linguaggio E di ERights. println è una funzione del suo ambiente standard; non si presume che un compilatore con estensione .e di altro linguaggio sia compatibile.
+The voice is the E language of ERights. println is a function of its standard environment; it is not assumed that a .e compiler of other language is compatible.
 
-Requisiti residui:
-- Runtime E-on-Java/rune compatibile non predisposto; interprete E non eseguito.
+Remaining requirements:
+- Runtime E-on-Java/rune compatible not predisposed; interpreter E not executed.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://www.erights.org/](https://www.erights.org/)
 - [https://erights.org/elang/kernel/auditors/index.html](https://erights.org/elang/kernel/auditors/index.html)
 - [https://erights.org/download/0-8-14/index.html](https://erights.org/download/0-8-14/index.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.e` | [hello.e](hello.e) creato, verifiche pendenti |
+| `.e` | [hello.e](hello.e) created; verification pending |

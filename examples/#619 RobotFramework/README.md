@@ -2,47 +2,47 @@
 
 Voce canonica `RobotFramework`, tipo `programming`, language_id `324`.
 
-Eseguire un test Robot Framework originale che costruisce e confronta il saluto.
+Run an original Robot Framework test that builds and compares greetings.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Official Robot Framework test parser and execution engine — Robot Framework 7.5 (Python 3.13.9 on win32). Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Robot Framework ufficiale 7.5 e Python 3.13.9.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python -m robot --outputdir build --log NONE --report NONE hello.robot
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Parser e runner reali, test Should Be Equal passato e Log To Console osservato; output XML con SHA nel log.
+Parser and real runner, test Should Be Equal past and Log To Console observed; XML output with SHA in the log.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.robot` | [hello.robot](hello.robot), [main.robot](variants/resource-78a02e24/main.robot) creato, verifiche pendenti |
-| `.resource` | [hello.resource](variants/resource-78a02e24/hello.resource) creato, verifiche pendenti |
+| `.robot` | [hello.robot](hello.robot), [main.robot](variants/resource-78a02e24/main.robot) created; verification pending |
+| `.resource` | [hello.resource](variants/resource-78a02e24/hello.resource) created; verification pending |

@@ -1,46 +1,46 @@
 # #099 CSV
 
-Leggere con CSV il campo quotato Hello, World! senza dividerlo sulla virgola interna, poi riscrivere gli stessi dati con CRLF.
+Read CSV the field quoted Hello, World! without dividing it on the inner comma, then rewrite the same data with CRLF.
 
 ## Toolchain
 
 Python 3.13.9; stdlib csv
 
-## Comandi e procedura
+## Commands and procedure
 
-Da questa cartella, senza dipendenze esterne:
+From this folder, without external dependencies:
 
 ```sh
 python --version
 python verify.py
 ```
 
-Il saluto è tra doppi apici perché contiene una virgola. verify.py legge con
+The greeting is between double apex because it contains a comma. verify.py law with
 newline='' e csv.reader(strict=True), controlla tutte le celle e riscrive con
-csv.writer e CRLF; confronta infine i byte con l'originale.
+csv.writer and CRLF; it compares bytes with the original.
 
-## Risultato atteso
+## Expected result
 
-Due righe e una colonna: intestazione greeting, valore Hello, World!; roundtrip byte per byte uguale al file originale UTF-8/CRLF.
+Two rows and one column: greeting header, Hello, World! value; roundtrip byte per byte equal to the original UTF-8/CRLF. file
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Parser csv standard in modalità strict, delimiter virgola e quotechar doppio apice. Il controllo comprende la virgola nel campo e i terminatori CRLF.
+Parser csv standard in strict mode, comma delimiter and quotachar double apex. Control includes comma in the field and CRLF terminators.
 
-Verifica effettiva del 2026-10-08T11:33:46.142758+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:46.142758+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.python.org/3.13/library/csv.html](https://docs.python.org/3.13/library/csv.html)
 - [https://www.rfc-editor.org/rfc/rfc4180](https://www.rfc-editor.org/rfc/rfc4180)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.csv` | [hello.csv](hello.csv) verificato |
+| `.csv` | [hello.csv](hello.csv) verified |

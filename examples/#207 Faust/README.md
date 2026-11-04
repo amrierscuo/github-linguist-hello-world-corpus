@@ -2,48 +2,48 @@
 
 Voce canonica `Faust`, tipo `programming`, language_id `622529198`.
 
-Generare un DSP Faust con tredici canali costanti ASCII e ricostruire il saluto da un frame audio realmente calcolato.
+Generate a DSP Faust with thirteen constant channels ASCII and rebuild greeting from a truly calculated audio frame.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Faust compiler extracted from Ubuntu package — Faust 2.70.3; GCC 13.3.0. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+Official Faust compiler extracted from Ubuntu package, Faust 2.70.3; GCC 13.3.0. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Faust 2.70.3 e GNU G++ 13.3.0 su Ubuntu. Per la distribuzione estratta localmente usare LD_LIBRARY_PATH delle librerie Faust. Il file generato e il binario restano nella directory build.
+Faust 2.70.3 and GNU G++ 13.3.0 on Ubuntu. For locally extracted distribution, use LD_LIBRARY_PATH of Faust libraries. The generated file and the track remain in the build directory.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 faust -lang cpp -cn GreetingDSP -o build/GreetingDSP.h hello.dsp; g++ -std=c++17 -O2 -I build verify.cpp -o build/check; ./build/check
 ```
 
-Risultato atteso: Hello, World! e PASS delle asserzioni sui campioni.
+Expected result: Hello, World! and PASS of the assertions on the samples.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-verify.cpp fornisce le interfacce dell’architettura DSP e invoca init/compute del codice autenticamente generato. Controlla zero ingressi, tredici uscite e tredici campioni ASCII; non riscrive la logica DSP in C++.
+verify.cpp provides the interfaces of the DSP architecture and invokes init/compute of the authentically generated code. It controls zero inputs, thirteen outputs and thirteen ASCII samples; it does not rewrite the DSP logic in C++.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://faustdoc.grame.fr/manual/syntax/](https://faustdoc.grame.fr/manual/syntax/)
 - [https://faustdoc.grame.fr/manual/compiler/](https://faustdoc.grame.fr/manual/compiler/)
 - [https://faustdoc.grame.fr/manual/architectures/](https://faustdoc.grame.fr/manual/architectures/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dsp` | [hello.dsp](hello.dsp) verificato |
+| `.dsp` | [hello.dsp](hello.dsp) verified |

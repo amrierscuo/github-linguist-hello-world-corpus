@@ -1,18 +1,18 @@
 # #366 LFE
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare LFE in BEAM ed eseguire il saluto Hello, World!.
+Fill in LFE in BEAM and perform the Hello, World! greeting.
 
-defmodule esporta main/0; io:format usa il formato ~s con una lista contenente World. Il compiler LFE originale è costruito dal sorgente Erlang autentico; BEAM esegue il modulo prodotto.
+defmodule exports main/0; i:format uses ~s format with a list containing World. The original LFE compiler is built by the authentic Erlang source; BEAM performs the product form.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 LFE2.2.2, ErlangOTP25/ERTS13.2.2.5
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 lfec hello.lfe
@@ -22,23 +22,23 @@ lfec hello.lfe
 erl -noshell -pa . -eval "hello:main(), halt(0)."
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://lfe.io/learn/
 - https://github.com/lfe/lfe/tree/v2.2.2
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lfe` | [hello.lfe](hello.lfe) verificato |
+| `.lfe` | [hello.lfe](hello.lfe) verified |

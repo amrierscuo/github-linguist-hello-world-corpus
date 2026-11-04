@@ -1,37 +1,37 @@
 # #393 Literate Haskell
 
-Interpretare un programma Haskell letterato in stile Bird che stampa il saluto.
+Play a Haskell-style Bird program that prints greetings.
 
 ## Toolchain
 
 Genuine Hugs98 September 2006; Ubuntu package 98.200609.21-6build3 Haskell98 mode
 
-## Comandi e procedura
+## Commands and procedure
 
 HUGSDIR=<libreria-hugs> runhugs +98 -P<percorsi-librerie-bundled> hello.lhs
 
-## Risultato atteso
+## Expected result
 
-Righe > riconosciute; main : IO (); output Hello, World! più newline.
+Recognized alloys; main: IO (); Hello, World! output more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-L’interprete Hugs98 originale analizza direttamente .lhs e controlla i tipi; non è stato convertito a .hs da un parser personale. Le librerie Haskell98 e base sono quelle del tool. È una verifica sullo standard Haskell98, senza claim GHC moderno.
+The original Hugs98 interpreter directly analyzes .lhs and controls the types; it has not been converted to .hs by a personal parser. Haskell98 libraries and base are those of the tool. It is a verification on the Haskell98 standard, without modern GHC claim.
 
-Verifica effettiva del 2026-10-08T12:51:44.086941+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:51:44.086941+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.haskell.org/onlinereport/literate.html](https://www.haskell.org/onlinereport/literate.html)
 - [https://www.haskell.org/hugs/](https://www.haskell.org/hugs/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lhs` | [hello.lhs](hello.lhs) verificato |
+| `.lhs` | [hello.lhs](hello.lhs) verified |

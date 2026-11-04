@@ -1,42 +1,42 @@
 # #069 Blade
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Renderizzare un template Blade con audience = World e ottenere il paragrafo Hello, World!.
+Render a Blade template with audience = World and get the Hello, World! paragraph.
 
-La fixture carica l’autoloader e bootstrap/app.php, avvia il kernel console e usa il motore Blade::render della framework. L’interpolazione usa l’escaping HTML nativo. Il controllo del risultato non sostituisce il parser Blade.
+The fixture loads the autoloader and bootstrap/app.php, starts the console kernel, and calls the framework's Blade::render engine. Interpolation uses native HTML escaping. Checking the output does not substitute for the Blade parser.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Laravel 12.x con PHP compatibile e applicazione configurata; versione effettiva da registrare
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 Copiare hello.blade.php e verify.php nella root di un’app Laravel configurata, poi: php verify.php
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esatto <p>Hello, World!</p> seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; nessun parser o runtime nativo è stato eseguito per questa voce.
+The source is documented; no native parser or runtime has been performed for this item.
 
-Impedimenti: PHP e un’applicazione Laravel completa non sono preparati in questo ambiente; il motore Blade non è stato eseguito.
+Commitments: PHP and a complete Laravel application are not prepared in this environment; the Blade engine has not been executed.
 
-## Fonti primarie
+## Primary sources
 
 - https://laravel.com/docs/12.x/blade
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.blade` | [hello.blade](variants/ext-blade-2e626c616465/hello.blade) creato, verifiche pendenti |
-| `.blade.php` | [hello.blade.php](hello.blade.php) creato, verifiche pendenti |
+| `.blade` | [hello.blade](variants/ext-blade-2e626c616465/hello.blade) created; verification pending |
+| `.blade.php` | [hello.blade.php](hello.blade.php) created; verification pending |

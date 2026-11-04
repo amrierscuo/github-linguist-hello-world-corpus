@@ -1,18 +1,18 @@
 # #151 D
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Compilare D in modalità BetterC e stampare il saluto tramite l’ABI C.
+Fill D in BetterC mode and print the greeting via ABI C.
 
-Il sorgente D dichiara greeting con const(char)*, @nogc e nothrow. main e puts usano extern(C). La modalità BetterC esclude dipendenze dalla GC e dal runtime D completo; la funzione greeting conserva il mangling D. Questa è una verifica del sottoinsieme BetterC dichiarato esplicitamente.
+Source D declares greeting with const(char)*, @nogc and nothrow. main and puts use extern(C). BetterC mode excludes dependencies from GC and the full D runtime; the greeting function retains the D mangling. This is a verification of the explicitly stated BetterC subset.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 LDC 1.43.0, Linux x86_64 ufficiale; linker GNU su Ubuntu WSL
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 ldc2 -betterC hello.d -of=hello
@@ -22,24 +22,24 @@ ldc2 -betterC hello.d -of=hello
 ./hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esatto Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://dlang.org/spec/betterc.html
 - https://github.com/ldc-developers/ldc/releases/tag/v1.43.0
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.d` | [hello.d](hello.d), [consumer.d](variants/ext-di-2e6469/consumer.d), [greeting.d](variants/ext-di-2e6469/greeting.d) creato, verifiche pendenti |
-| `.di` | [greeting.di](variants/ext-di-2e6469/greeting.di) creato, verifiche pendenti |
+| `.d` | [hello.d](hello.d), [consumer.d](variants/ext-di-2e6469/consumer.d), [greeting.d](variants/ext-di-2e6469/greeting.d) created; verification pending |
+| `.di` | [greeting.di](variants/ext-di-2e6469/greeting.di) created; verification pending |

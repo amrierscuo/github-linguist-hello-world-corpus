@@ -1,37 +1,37 @@
 # #828 pkg-config
 
-Leggere metadata pkg-config e la variabile del saluto.
+Read metadata pkg-config and greeting variable.
 
 ## Toolchain
 
 pkg-config 1.8.1
 
-## Procedura
+## Procedure
 
-PKG_CONFIG_PATH=<cartella-assoluta> pkg-config --validate hello; pkg-config --variable=greeting hello
+PKG_CONFIG_PATH =<cartella-assoluta> pkg-config --validate hello; pkg-config --variable=greeting hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La libreria è illustrativa: Libs/Cflags vuoti. pkg-config controlla il file e risolve davvero la variabile greeting; non si cerca una libreria inventata.
+The library is illustrative: Libs/Cflags blanks. pkg-config controls the file and really solves the greeting variable; you don't look for an invented library.
 
-Verifica reale 2026-10-08T13:48:50.733718+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:48:50.733718+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://people.freedesktop.org/~dbn/pkg-config-guide.html](https://people.freedesktop.org/~dbn/pkg-config-guide.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pc` | [hello.pc](hello.pc) verificato |
-| `.pc.in` | [hello.pc.in](variants/pc-in-477d8206/hello.pc.in) creato, verifiche pendenti |
+| `.pc` | [hello.pc](hello.pc) verified |
+| `.pc.in` | [hello.pc.in](variants/pc-in-477d8206/hello.pc.in) created; verification pending |

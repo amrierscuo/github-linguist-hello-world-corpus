@@ -1,42 +1,42 @@
 # #075 Boo
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Eseguire una concatenazione e print in Boo.
+Run a concatenation and print in Boo.
 
-Il sorgente usa la sintassi originale Boo e l’inferenza del tipo stringa. Non è convertito in Python; la verifica richiede booi autentico.
+The source uses the original Boo syntax and the inference of the string type. It is not converted into Python; the verification requires authentic booi.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Boo con booi e runtime .NET/Mono compatibile; versione effettiva da registrare
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 booi hello.boo
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; nessun parser o runtime nativo è stato eseguito per questa voce.
+The source is documented; no native parser or runtime has been performed for this item.
 
-Impedimenti: Boo/booi e il suo runtime compatibile non disponibili; nessun compilatore Boo è stato eseguito.
+Commitments: Boo/booi and its compatible runtime not available; no Boo compiler has been executed.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/boo-lang/boo
 - https://boo-language.github.io/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.boo` | [hello.boo](hello.boo) creato, verifiche pendenti |
+| `.boo` | [hello.boo](hello.boo) created; verification pending |

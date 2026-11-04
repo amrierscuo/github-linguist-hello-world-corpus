@@ -1,34 +1,34 @@
 # #754 Vim script
 
-Eseguire Vim script e registrare il messaggio di saluto.
+Run Vim script and record the greeting message.
 
-Tipo canonico `programming`, language_id `388`.
+Canonical type `programming`, language_id `388`.
 
-Toolchain prevista: Vim.
+Suggested toolchain: Vim.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 vim -Nu NONE -n -es -S hello.vim; leggere il messaggio con redir in un harness headless.
 ```
 
-Risultato atteso: messaggio effettivo Hello, World!.
+Expected result: actual message Hello, World!.
 
-In modalità silenziosa il messaggio viene catturato con redir, senza aprire una UI.
+In silent mode the message is captured with redir, without opening a UI.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Vim9 native script interpreter in headless mode. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Vim9 native script interpreter in headless mode. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Vim expression commands](https://vimhelp.org/eval.txt.html#%3Aechomsg)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vim` | [hello.vim](hello.vim), [make.vim](variants/vba-e8141d49/make.vim), [greeting.vim](variants/vba-e8141d49/greeting.vim), [make.vim](variants/vmb-7d7e8091/make.vim), [greeting.vim](variants/vmb-7d7e8091/greeting.vim) creato, verifiche pendenti |
-| `.vba` | [hello.vba](variants/vba-e8141d49/hello.vba) creato, verifiche pendenti |
-| `.vimrc` | [hello.vimrc](variants/vimrc-7b703895/hello.vimrc) creato, verifiche pendenti |
-| `.vmb` | [hello.vmb](variants/vmb-7d7e8091/hello.vmb) creato, verifiche pendenti |
+| `.vim` | [hello.vim](hello.vim), [make.vim](variants/vba-e8141d49/make.vim), [greeting.vim](variants/vba-e8141d49/greeting.vim), [make.vim](variants/vmb-7d7e8091/make.vim), [greeting.vim](variants/vmb-7d7e8091/greeting.vim) created; verification pending |
+| `.vba` | [hello.vba](variants/vba-e8141d49/hello.vba) created; verification pending |
+| `.vimrc` | [hello.vimrc](variants/vimrc-7b703895/hello.vimrc) created; verification pending |
+| `.vmb` | [hello.vmb](variants/vmb-7d7e8091/hello.vmb) created; verification pending |

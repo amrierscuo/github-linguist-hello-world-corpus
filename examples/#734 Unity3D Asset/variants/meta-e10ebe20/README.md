@@ -1,23 +1,23 @@
-# 0734 — Unity3D Asset — `.meta`
+# 0734: Unity3D Asset: `.meta`
 
-Metadata importer Unity per TextAsset originale; il GUID è assegnato dal corpus e non riferisce asset esterni.
+Metadata will matter Unity for TextAsset original; the GUID is assigned by the corpus and does not report external assets.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `greeting.asset.meta`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Unity Editor isolated project: import greeting.asset together with greeting.asset.meta
 ```
 
-Risultato atteso: GUID locale e userData Hello, World!.
+Expected result: local GUID and userData Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.unity3d.com/Manual/AssetMetadata.html](https://docs.unity3d.com/Manual/AssetMetadata.html)

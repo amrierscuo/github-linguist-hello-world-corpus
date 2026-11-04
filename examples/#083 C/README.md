@@ -1,14 +1,14 @@
 # #083 C
 
-Stampare esattamente Hello, World! seguito da newline da un programma C11.
+Print exactly Hello, World! followed by newline from a C11 program.
 
 ## Toolchain
 
 gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
 
-## Comandi e procedura
+## Commands and procedure
 
-Eseguire in Linux/WSL, creando una cartella temporanea di build:
+Run in Linux/WSL, creating a temporary build folder:
 
 ```sh
 mkdir -p build
@@ -17,35 +17,35 @@ gcc -std=c11 -Wall -Wextra -Werror -o build/hello hello.c
 ./build/hello
 ```
 
-Il corpus consegnato contiene la sorgente e il log; l'eseguibile del test resta
-in una cartella di lavoro esterna agli artefatti da pubblicare.
+The delivered corpus contains the source and the log; the test executable remains
+in a workbook outside the artifacts to be published.
 
-## Risultato atteso
+## Expected result
 
-Compilazione exit 0; programma exit 0 e stdout Hello, World! più newline.
+Exit 0; exit program 0 and stdout Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Compilazione ed esecuzione reali con GCC; puts aggiunge il carattere newline.
+Real compilation and execution with GCC; puts adds the newline character.
 
-Verifica effettiva del 2026-10-08T11:33:31.686254+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:31.686254+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://gcc.gnu.org/onlinedocs/gcc/Standards.html](https://gcc.gnu.org/onlinedocs/gcc/Standards.html)
 - [https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html](https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.c` | [hello.c](hello.c), [consumer.c](variants/ext-h-2e68/consumer.c), [consumer.c](variants/ext-h-in-2e682e696e/consumer.c) creato, verifiche pendenti |
-| `.cats` | [hello.cats](variants/ext-cats-2e63617473/hello.cats) creato, verifiche pendenti |
-| `.h` | [hello.h](variants/ext-h-2e68/hello.h) creato, verifiche pendenti |
-| `.h.in` | [hello.h.in](variants/ext-h-in-2e682e696e/hello.h.in) creato, verifiche pendenti |
-| `.idc` | [hello.idc](variants/ext-idc-2e696463/hello.idc) creato, verifiche pendenti |
+| `.c` | [hello.c](hello.c), [consumer.c](variants/ext-h-2e68/consumer.c), [consumer.c](variants/ext-h-in-2e682e696e/consumer.c) created; verification pending |
+| `.cats` | [hello.cats](variants/ext-cats-2e63617473/hello.cats) created; verification pending |
+| `.h` | [hello.h](variants/ext-h-2e68/hello.h) created; verification pending |
+| `.h.in` | [hello.h.in](variants/ext-h-in-2e682e696e/hello.h.in) created; verification pending |
+| `.idc` | [hello.idc](variants/ext-idc-2e696463/hello.idc) created; verification pending |

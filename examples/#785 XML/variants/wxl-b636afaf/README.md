@@ -1,24 +1,24 @@
-# 0785 — XML — `.wxl`
+# 0785: XML: `.wxl`
 
 Localization WiX3 XML con stringa originale.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.wxl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 WiX3 light -loc hello.wxl in local test build
 ```
 
-Risultato atteso: localized Greeting == Hello, World!.
+Expected result: localized Greeting == Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://docs.firegiant.com/wix3/xsd/wixloc/](https://docs.firegiant.com/wix3/xsd/wixloc/)

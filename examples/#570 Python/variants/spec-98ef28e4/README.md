@@ -1,23 +1,23 @@
-# 0570 — Python — `.spec`
+# 0570: Python: `.spec`
 
-Spec file PyInstaller per un eseguibile console originale.
+Spec file PyInstaller for an executable original console.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.spec`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 pyinstaller --workpath work/build --distpath work/dist hello.spec
 ```
 
-Risultato atteso: eseguibile originale stampa Hello, World!.
+Expected result: original Hello, World! print executable.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://pyinstaller.org/en/stable/spec-files.html](https://pyinstaller.org/en/stable/spec-files.html)

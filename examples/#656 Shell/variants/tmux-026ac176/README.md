@@ -1,23 +1,23 @@
-# 0656 — Shell — `.tmux`
+# 0656: Shell: `.tmux`
 
-Entrypoint shell per tmux plugin/script, non configurazione tmux rinominata.
+Entrypoint shell for tmux plugin/script, not renamed tmux configuration.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.tmux`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 sh hello.tmux
 ```
 
-Risultato atteso: tmux display-message stampa Hello, World!.
+Expected result: tmux display-message print Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/tmux/tmux/wiki](https://github.com/tmux/tmux/wiki)

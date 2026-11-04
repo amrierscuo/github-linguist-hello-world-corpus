@@ -1,23 +1,23 @@
-# 0798 — YARA — `.yara`
+# 0798: YARA: `.yara`
 
-Variante testuale dello stesso formato, con suffisso canonico .yara.
+Textual variation of the same format, with canon suffix .yara.
 
-Provenienza: copia del file originale `examples/#798 YARA/hello.yar`.
+Origin: copy of the original `examples/#798 YARA/hello.yar` file.
 
 Artefatto principale: `hello.yara`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 yara hello.yara greeting.txt
 ```
 
-Risultato atteso: Una corrispondenza CorpusGreeting per Hello, World!, nessuna per Hello, Moon!..
+Expected result: A CorpusGreeting correspondence for Hello, World!, none for Hello, Moon!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://yara.readthedocs.io/en/stable/writingrules.html](https://yara.readthedocs.io/en/stable/writingrules.html)

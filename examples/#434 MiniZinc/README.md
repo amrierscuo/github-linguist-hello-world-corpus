@@ -1,31 +1,31 @@
 # #434 MiniZinc
 
-Risolvere un modello MiniZinc senza vincoli e produrre il saluto nell’output.
+Solve a MiniZinc model without constraints and produce greeting in output.
 
-Tipo canonico `programming`, language_id `238874535`.
+Canonical type `programming`, language_id `238874535`.
 
-Toolchain prevista: MiniZinc CLI e solver Gecode.
+Suggested toolchain: MiniZinc CLI and solver Gecode.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 minizinc --solver gecode hello.mzn
 ```
 
-Risultato atteso: soluzione soddisfacibile con riga Hello, World! nell’output.
+Expected result: satisfactory solution with Hello, World! line in output.
 
-Il solve item e output item sono interpretati dal compilatore MiniZinc reale.
+The solve item and item output are interpreted by the real MiniZinc compiler.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: MiniZinc 2.10.1 official Linux bundle + Gecode. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: MiniZinc 2.10.1 official Linux bundle + Gecode. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [MiniZinc — manuale](https://docs.minizinc.dev/en/stable/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mzn` | [hello.mzn](hello.mzn) verificato |
+| `.mzn` | [hello.mzn](hello.mzn) verified |

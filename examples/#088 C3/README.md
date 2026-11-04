@@ -6,9 +6,9 @@ Stampare esattamente Hello, World! seguito da newline con std::io in C3.
 
 C3 0.8.4 / LLVM 22.1.8 (Windows)
 
-## Comandi e procedura
+## Commands and procedure
 
-Con la distribuzione ufficiale C3 0.8.4, dalla cartella dell'esempio:
+With official C3 0.8.4 distribution, from the example folder:
 
 ```text
 c3c --version
@@ -16,32 +16,32 @@ c3c compile hello.c3 -o hello
 hello.exe
 ```
 
-Su Linux/macOS l'ultimo comando è `./hello`. Per tenere separati i derivati,
-il test ha compilato una copia della sorgente in una cartella work e ha
-registrato l'hash della sorgente originale consegnata.
+On Linux/macOS the last command is `./hello`. To keep separate derivatives,
+the test compiled a copy of the source in a work folder and has
+recorded the hash of the original source delivered.
 
-## Risultato atteso
+## Expected result
 
-Compilatore e linker exit 0; eseguibile exit 0 e stdout Hello, World! più newline.
+Filler and linker exit 0; executable exit 0 and stdout Hello, World! more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Compilazione, linking ed esecuzione realmente svolti con il compilatore ufficiale C3 portable Windows. Eseguibile mantenuto in work.
+Compilation, linking and execution really performed with the official compiler C3 portable Windows.
 
-Verifica effettiva del 2026-10-08T11:34:07.737503+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:34:07.737503+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://c3-lang.org/getting-started/hello-world/](https://c3-lang.org/getting-started/hello-world/)
 - [https://github.com/c3lang/c3c/releases/tag/v0.8.4](https://github.com/c3lang/c3c/releases/tag/v0.8.4)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.c3` | [hello.c3](hello.c3) verificato |
+| `.c3` | [hello.c3](hello.c3) verified |

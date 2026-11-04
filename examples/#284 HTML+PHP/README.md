@@ -1,18 +1,18 @@
 # #284 HTML+PHP
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire un template HTML+PHP ed ottenere il paragrafo Hello, World!.
+Run a HTML template + PHP and get the Hello, World! paragraph.
 
 Il template definisce audience in PHP e usa la forma <?= per interpolare htmlspecialchars. La verifica native lint precede l’esecuzione CLI; il markup esterno ai tag PHP viene preservato dal runtime.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 PHP CLI8.3.6, Zend Engine4.3.6, pacchetto Ubuntu8.3.6-0ubuntu0.24.04.11
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 php -n -l hello.phtml
@@ -22,23 +22,23 @@ php -n -l hello.phtml
 php -n hello.phtml
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout <p>Hello, World!</p> seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.php.net/manual/en/language.basic-syntax.phpmode.php
 - https://www.php.net/manual/en/function.htmlspecialchars.php
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.phtml` | [hello.phtml](hello.phtml) verificato |
+| `.phtml` | [hello.phtml](hello.phtml) verified |

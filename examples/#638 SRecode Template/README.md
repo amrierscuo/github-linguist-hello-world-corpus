@@ -2,34 +2,34 @@
 
 Voce e ordine canonici di `reference/languages.yml`.
 
-Caricare un template SRecode e inserire Hello, World!.
+Upload a SRecode template and enter Hello, World!.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-GNU Emacs 29.3 + bundled SRecode. Eseguire dalla cartella dell'esempio:
+GNU Emacs 29.3 + bundled SRecode. Run from the example folder:
 
 ```sh
 emacs -Q --batch --script verify.el
 ```
 
-Il checker abilita Semantic, compila hello.srt con srecode-compile-file e inserisce file:greeting con srecode-insert. Controlla il testo prodotto dalla risoluzione del dizionario AUDIENCE.
+The Checker empowers Semantic, compile hello.srt with srecode-compile-file and inserts files:greeting with srecode-insert. Check the text produced by AUDIENCE dictionary resolution.
 
-`-Q` disabilita la configurazione personale di Emacs. La prova si esegue in batch.
+`-Q` disables the personal configuration of Emacs.
 
-## Stato e prova
+## State and Test
 
-Sintassi e semantica verificate il `2026-10-08T23:33:35.675753+00:00`. Risultato reale: `Hello, World!`.
+syntax and behavior verified `2026-10-08T23:33:35.675753+00:00`. Real result: `Hello, World!`.
 
 [Log della verifica](verification/runtime.json) con comandi, versioni, output, exit code e SHA-256 dei file effettivamente controllati.
 
-## Fonti primarie
+## Primary sources
 
 - [https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt](https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/srecode/default.srt)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.srt` | [hello.srt](hello.srt) sintassi e semantica verificate |
+| `.srt` | [hello.srt](hello.srt) syntax and behavior verified |

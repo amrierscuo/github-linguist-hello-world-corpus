@@ -1,23 +1,23 @@
 # #181 Earthly
 
-Eseguire un target Earthly che produce un file contenente Hello, World! seguito da LF.
+Run a Earthly target that produces a Hello, World! file followed by LF.
 
-Tipo canonico `programming`, language_id `963512632`.
+Canonical type `programming`, language_id `963512632`.
 
-Toolchain prevista: Earthly 0.8+ con backend BuildKit e ambiente per immagini Linux.
+Provided Toolchain: Earthly 0.8+ with BuildKit backend and Linux image environment.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 earthly +greeting
 ```
 
-Risultato atteso: artefatto locale greeting.txt, esattamente 14 byte `Hello, World!\n`.
+Expected result: local artifact greeting.txt, exactly 14 byte `Hello, World!\n`.
 
 Il target salva soltanto un artefatto locale. L’immagine Alpine è fissata alla serie 3.20; riproduzione stretta richiede anche il digest dell’immagine. Il backend container non è stato predisposto.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. native toolchain not yet performed: syntax and behavior verifications remain pending.
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Earthfile reference](https://docs.earthly.dev/docs/earthfile)

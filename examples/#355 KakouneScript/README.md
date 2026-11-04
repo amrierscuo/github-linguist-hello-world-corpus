@@ -2,47 +2,47 @@
 
 Voce canonica `KakouneScript`, tipo `programming`, language_id `603336474`.
 
-Eseguire uno script Kakoune che scrive il saluto nel buffer debug e salvare quel risultato per confronto.
+Run a Kakoune script that writes greeting in the buffer debug and save that result by comparison.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Kakoune command parser and editor runtime — Kakoune unknown. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Kakoune command parser and editor runtime, Kakoune unknown. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Kakoune dal pacchetto Ubuntu 2022.10.31-2. Il comando -version riporta "Kakoune unknown" nella build del pacchetto; la provenienza è documentata dall’archivio .deb. Il terminale dummy evita una UI interattiva.
+Kakoune from the Ubuntu 2022.10.31-2 package. The -version command reports "Kakoune unknown" in the package build; the source is documented by the .deb. archive The dummy terminal avoids an interactive UI.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 kak -n -ui dummy -e "source hello.kak; buffer '*debug*'; write build/debug.txt; quit!"
 ```
 
-Risultato atteso: Debug buffer contiene Hello, World!; exit 0.
+Expected result: Debug buffer contains Hello, World!; exit 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il parser/runtime reale carica il file .kak ed esegue echo -debug. Il buffer salvato contiene il saluto e il processo termina 0; il contenuto osservato è conservato nel log.
+The parser/runtime real loads the .kak file and performs echo -debug. The saved buffer contains the greeting and the process ends 0; the observed content is kept in the log.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/mawww/kakoune/blob/master/doc/pages/commands.asciidoc](https://github.com/mawww/kakoune/blob/master/doc/pages/commands.asciidoc)
 - [https://github.com/mawww/kakoune](https://github.com/mawww/kakoune)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.kak` | [hello.kak](hello.kak) verificato |
+| `.kak` | [hello.kak](hello.kak) verified |

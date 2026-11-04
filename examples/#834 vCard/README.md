@@ -1,37 +1,37 @@
 # #834 vCard
 
-Leggere un vCard originale con CRLF e conservare FN nel roundtrip.
+Read an original vCard with CRLF and store FN in roundtrip.
 
 ## Toolchain
 
 CPython3.13.9; vobject0.9.9
 
-## Procedura
+## Procedure
 
 pip install vobject; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-CRLF reali e virgola escapata; nome e indirizzo example.invalid sono illustrativi. Parser vobject autentico, nessuna rubrica importata.
+CRLF real and emptied comma; name and address example.invalid are illustrative. Authentic parser vobject, no imported column.
 
-Verifica reale 2026-10-08T13:48:50.935305+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:48:50.935305+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.rfc-editor.org/rfc/rfc2426](https://www.rfc-editor.org/rfc/rfc2426)
 - [https://vobject.readthedocs.io/latest/](https://vobject.readthedocs.io/latest/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vcf` | [hello.vcf](hello.vcf) verificato |
+| `.vcf` | [hello.vcf](hello.vcf) verified |

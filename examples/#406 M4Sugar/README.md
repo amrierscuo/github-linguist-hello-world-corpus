@@ -1,31 +1,31 @@
 # #406 M4Sugar
 
-Usare M4Sugar con quote quadre, inizializzazione e diversioni per espandere greeting.
+Use M4Sugar with quad odds, initialization and diversions to expand greeting.
 
-Tipo canonico `programming`, language_id `216`.
+Canonical type `programming`, language_id `216`.
 
-Toolchain prevista: GNU Autoconf autom4te con linguaggio M4sugar.
+Suggested toolchain: GNU Autoconf autom4te with M4sugar language.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 autom4te --language=M4sugar --no-cache hello.m4
 ```
 
-Risultato atteso: saluto Hello, World! nell’output; sono ammessi soli spazi/fine riga esterni.
+Expected result: Hello, World! greeting in output; only spazi/fine external line is allowed.
 
-M4 semplice non carica automaticamente M4Sugar: il comando usa autom4te e il linguaggio appropriato.
+M4 simple does not automatically charge M4Sugar: the command uses autom4te and the appropriate language.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: GNU Autoconf autom4te + M4Sugar (local extracted packages). [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: GNU Autoconf autom4te + M4Sugar (local extracted packages). [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [GNU Autoconf — M4Sugar](https://www.gnu.org/software/autoconf/manual/autoconf-2.72/html_node/M4sugar.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.m4` | [hello.m4](hello.m4) verificato |
+| `.m4` | [hello.m4](hello.m4) verified |

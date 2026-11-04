@@ -1,59 +1,59 @@
 # #025 Aleo
 
 Voce canonica: `Aleo`, tipo `programming`, `language_id: 566431048`.
-`hello.aleo` è scritto in Aleo Instructions. La funzione `greeting`, senza
-argomenti, costruisce un array pubblico di tredici `u8` che codifica
-`Hello, World!` in ASCII. È una funzione locale del programma
-`corpus_hello_world.aleo`; non è un deployment.
+`hello.aleo` is written in Aleo Instructions. The `greeting` function, without
+arguments, builds a public array of thirteen `u8` that encodes
+`Hello, World!` in ASCII. It is a local function of the program
+`corpus_hello_world.aleo`; it is not a deployment.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Parser verificato su Windows x64 con Node.js **22.20.0** e pacchetto ufficiale
-**@provablehq/wasm 0.12.0, mainnet**; SDK 0.12.0 disponibile nell'ambiente.
-Il verificatore importa direttamente i binding WASM SnarkVM. Dalla directory
-di questo esempio:
+Parser verified su Windows x64 con Node.js **22.20.0** e pacchetto ufficiale
+**@provablehq/wasm 0.12.0, mainnet**; SDK 0.12.0 available in the environment.
+The Verifier directly imports WASM SnarkVM bindings. From the directory
+of this example:
 
 ```powershell
 npm --prefix .tools install --no-audit --no-fund --save-exact @provablehq/wasm@0.12.0
 node verify.cjs .tools/node_modules hello.aleo --syntax-only
 ```
 
-Risultato della prova sintattica: `Program.fromString` accetta il programma,
-espone soltanto `greeting` senza input e rifiuta un'istruzione inesistente.
-Entrambe le asserzioni producono `PASS` e il processo termina con codice 0.
-Per la prova semantica ancora da completare:
+Syntactic test result: `Program.fromString` accepts the program,
+exposes only `greeting` without input and refuses non-existent education.
+Both assertions produce `PASS` and the process ends with 0. code
+For the behavior test still to be completed:
 
 ```powershell
 node verify.cjs .tools/node_modules hello.aleo
 ```
 
-Quest'ultimo comando usa una chiave effimera non stampata ed esegue la funzione
-offline con `prove_execution=false`; può richiedere l'inizializzazione dei parametri
-SnarkVM. L'output atteso è
+This last command uses an ephemeral key that is not printed and runs the function
+offline with `prove_execution=false`; may require initialization of parameters
+SnarkVM. The expected output is
 `[72u8, 101u8, 108u8, 108u8, 111u8, 44u8, 32u8, 87u8, 111u8, 114u8, 108u8, 100u8, 33u8]`.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto creato; sintassi **verificata**; semantica **in attesa**.
-Requisito residuo: ottenere un'esecuzione VM offline completa con i parametri
-necessari e conservarne il risultato. Il precedente tentativo via SDK non ha
-fornito un log completo di esecuzione e non viene conteggiato. La prova corrente
-è limitata a parsing e firma della funzione; i temporanei XHR di quel tentativo
-sono stati spostati fuori dal corpus.
+Artefatto created; syntax **verified**; behavior **in attesa**.
+Residual Requirement: Get VM offline execution complete with parameters
+the previous attempt via SDK did not have
+provided a complete log of execution and is not counted. Current test
+is limited to parsing and signing of the function; the temporary XHR of that attempt
+they were moved out of the corpus.
 
-Log: [aleo-wasm.json](verification/aleo-wasm.json), con output del parser,
-versione, SHA-256 del sorgente e del verificatore. `path_normalization` descrive
-i percorsi normalizzati; nessun risultato di esecuzione VM è attestato.
+Log: [aleo-wasm.json](verification/aleo-wasm.json), with output of the parser,
+version, SHA-256 of the source and the verification. `path_normalization` describes
+normalized routes; no VM execution result is attested.
 
-## Fonti ufficiali
+## Official sources
 
 - [Tipi e costruzione di array Aleo](https://docs.aleo.org/build/aleo-instructions/reference/types/index.html).
 - [SDK e binding SnarkVM WASM ufficiali](https://github.com/ProvableHQ/sdk).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.aleo` | [hello.aleo](hello.aleo) sintassi verificata |
+| `.aleo` | [hello.aleo](hello.aleo) syntax verified |

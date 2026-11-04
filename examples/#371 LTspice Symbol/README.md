@@ -1,42 +1,42 @@
 # #371 LTspice Symbol
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Aprire un simbolo LTspice originale e visualizzare il valore Hello, World!.
+Open an original LTspice symbol and display the Hello, World! value.
 
-L’artefatto è un simbolo grafico testuale .asy con finestra3 per Value. Il saluto è una label: questa fixture non definisce un modello elettrico e non viene simulata.
+The artifact is a graphic symbol .asy with window3 for Value. Greeting is a label: this fixture does not define an electric model and is not simulated.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Editor simboli LTspice originale; versione da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Aprire hello.asy nell’editor simboli LTspice.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Rettangolo, due pin e attributo Value visibile: Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
 Impedimenti: LTspice non preparato; parsing e visualizzazione nativi pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://ez.analog.com/other-products/a/documents/DO22731/symbol-file-ad8611-asy-for-ltspice
 - https://www.analog.com/en/resources/technical-articles/ltspice-how-to-import-third-party-models.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asy` | [hello.asy](hello.asy) creato, verifiche pendenti |
+| `.asy` | [hello.asy](hello.asy) created; verification pending |

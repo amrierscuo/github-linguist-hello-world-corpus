@@ -1,31 +1,31 @@
-# 0345 — Jsonnet: `.libsonnet`
+# 0345: Jsonnet: `.libsonnet`
 
-Ruolo: Libreria Jsonnet che esporta una stringa; il fixture importa la libreria.
+Role: Jsonnet Library that exports a string; fixtures import the library.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Official Jsonnet C++ compiler/evaluator — Jsonnet commandline interpreter v0.20.0. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Official Jsonnet C++ compiler/evaluator, Jsonnet commandline interpreter v0.20.0. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 jsonnet driver.jsonnet
 ```
 
-Risultato atteso: "Hello, World!"
+Expected result: "Hello, World!"
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `driver.jsonnet`: `16baeb51f9d910982b6a0617826211ebc5fbe1a9f6bf1d5c3ab59eae351cb009`
 - `hello.libsonnet`: `fcebf6eae7df3c1c619fe5211b1bc1e31da633193024f31687f21d786d03cb8b`
 
-Fonti primarie:
+Primary sources:
 
 - https://jsonnet.org/learning/tutorial.html
 - https://jsonnet.org/ref/spec.html

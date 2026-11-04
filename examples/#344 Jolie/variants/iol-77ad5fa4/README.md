@@ -1,30 +1,30 @@
-# 0344 — Jolie: `.iol`
+# 0344: Jolie: `.iol`
 
-Ruolo: Interfaccia Jolie include: dichiarazione di tipo e one-way GreetingPort; implementazione nel fixture.
+Role: Jolie Interface includes: GreetingPort type and one-way statement; implementation in fixtures.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Required genuine toolchain not available/configured — non disponibile / non verificata. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Required genuine toolchain not available/configured, non disponibile / non verificata. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Jolie: include hello.iol in progetto di test e compilare l’interfaccia; inviare greet con Hello, World! solo se host disponibile
 ```
 
-Risultato atteso: Interfaccia accettata e dato Greeting stringa
+Expected result: Accepted interface and given Greeting string
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.iol`: `1ed4d8c1416ca7dc3ee7d5f6768f912bfa55331199ff1973a4e74f6ac46f9816`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.jolie-lang.org/v1.13.x/language-tools-and-standard-library/basics/interfaces.html
 - https://www.jolie-lang.org/

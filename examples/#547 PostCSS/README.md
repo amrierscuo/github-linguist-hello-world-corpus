@@ -1,41 +1,41 @@
 # #547 PostCSS
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare PostCSS e risolvere una custom property nel valore content=Hello, World!.
+Analyze PostCSS and solve a custom property in the content= Hello, World! value.
 
-Il sorgente .pcss definisce --greeting e la usa in content. Il parser e plugin originali trasformano il CSS; il driver legge il valore content dell’AST risultante. La prova verifica la trasformazione, senza attribuire un rendering browser.
+The .pcss source defines --greeting and uses it in content. The original parser and plugin transform the CSS; the driver reads the content value of the resulting AST. The test checks the transformation, without attributing a rendering browser.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-PostCSS8 e postcss-custom-properties originali; versioni effettive nel log
+PostCSS8 and postcss-custom-properties original; actual versions in the log
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 node verify.js
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-CSS trasformato contiene content: "Hello, World!".
+CSS transformer contains content: "Hello, World!".
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://postcss.org/
 - https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-properties
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pcss` | [hello.pcss](hello.pcss) verificato |
-| `.postcss` | [hello.postcss](variants/postcss-ca8f3f2b/hello.postcss) creato, verifiche pendenti |
+| `.pcss` | [hello.pcss](hello.pcss) verified |
+| `.postcss` | [hello.postcss](variants/postcss-ca8f3f2b/hello.postcss) created; verification pending |

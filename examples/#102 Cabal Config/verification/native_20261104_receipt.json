@@ -1,0 +1,76 @@
+{
+  "example_ordinal": 102,
+  "language": "Cabal Config",
+  "timestamp_utc": "2026-11-04T19:37:06.074085+00:00",
+  "platform": {
+    "argv": [
+      "uname",
+      "-srmo"
+    ],
+    "exit_code": 0,
+    "stdout": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64 GNU/Linux\n",
+    "stderr": ""
+  },
+  "commands": [
+    {
+      "argv": [
+        "ghc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "The Glorious Glasgow Haskell Compilation System, version 9.4.7\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ghc-pkg",
+        "list",
+        "Cabal"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/lib/ghc/lib/package.conf.d\n    Cabal-3.8.1.0\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "runghc",
+        "Setup.hs",
+        "configure",
+        "--user",
+        "--builddir=dist"
+      ],
+      "exit_code": 0,
+      "stdout": "Configuring hello-world-0.1.0.0...\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "runghc",
+        "Setup.hs",
+        "build",
+        "--builddir=dist"
+      ],
+      "exit_code": 0,
+      "stdout": "Preprocessing executable 'hello-world' for hello-world-0.1.0.0..\nBuilding executable 'hello-world' for hello-world-0.1.0.0..\n[1 of 1] Compiling Main             ( src/Main.hs, dist/build/hello-world/hello-world-tmp/Main.o )\n[2 of 2] Linking dist/build/hello-world/hello-world\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "./dist/build/hello-world/hello-world"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#102 Cabal Config/hello-world.cabal": "b3a1a56b44ebd225205c8a0603448ce53b7851e5b9a91c63660ec907dcc876a4",
+    "examples/#102 Cabal Config/src/Main.hs": "f95a4044f60c74b4c5011dadae9a679d17c1a09c36866e500edd7b87734002aa"
+  },
+  "checker_sha256": "e156b61fe6d96b03419f06fcdfac3d43170aec31d71ec19df402e58d4bc9f2b3",
+  "scope": "Official Cabal Distribution.Simple.defaultMain Setup driver: parse and configure the original .cabal package, compile its original Main.hs and run the resulting native program; cabal-install and cabal.project not checked.",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "recorded_test_source": "receipt.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

@@ -1,24 +1,24 @@
-# 0771 — Wikitext — `.wiki`
+# 0771: Wikitext: `.wiki`
 
-Variante testuale dello stesso formato, con suffisso canonico .wiki.
+Textual variation of the same format, with canon suffix .wiki.
 
-Provenienza: copia del file originale `examples/#771 Wikitext/hello.mediawiki`.
+Origin: copy of the original `examples/#771 Wikitext/hello.mediawiki` file.
 
 Artefatto principale: `hello.wiki`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 MediaWiki parser: render hello.wiki
 ```
 
-Risultato atteso: Titolo Greeting, testo Hello, World! e PASS..
+Expected result: Title Greeting, text Hello, World! and PASS..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.mediawiki.org/wiki/Help:Formatting](https://www.mediawiki.org/wiki/Help:Formatting)
 - [https://mwparserfromhell.readthedocs.io/en/latest/](https://mwparserfromhell.readthedocs.io/en/latest/)

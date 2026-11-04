@@ -1,17 +1,17 @@
 # Kotlin .ktm
 
-Sorgente Kotlin testuale, alias byte identico del campione principale.
-Il detector ufficiale Vim 9.0.0000 associa *.kt, *.ktm e *.kts al filetype kotlin.
-Questa associazione non prova che kotlinc moderno accetti direttamente .ktm.
+Source textual Kotlin, alias byte identical to the main sample.
+The official Vim 9.0.0000 detector associates * .kt, * .ktm and * .kts to the kotlin filetype.
+This association does not prove that modern kotlinc accepts directly .ktm.
 
-## Procedura
+## Procedure
 
-Copiare hello.ktm in una directory di build esterna come Hello.kt; compilare con kotlinc Hello.kt -include-runtime -d hello.jar; eseguire java -jar hello.jar. Il caricamento diretto del suffisso .ktm nel compilatore moderno resta da verificare.
+Copy hello.ktm in an external build directory such as Hello.kt; fill in with kotlinc Hello.kt -include-runtime -d hello.jar; run java -jar hello.jar. Direct loading of the .ktm suffix in the modern compiler remains to be checked.
 
-Risultato atteso: Hello, World! e newline.
-Sintassi e semantica della variante restano da verificare.
+Expected result: Hello, World! and newline.
+syntax and behavior of the variant remain to be checked.
 
-## Fonti
+## Sources
 
 https://raw.githubusercontent.com/vim/vim/v9.0.0000/runtime/filetype.vim
 https://kotlinlang.org/docs/command-line.html

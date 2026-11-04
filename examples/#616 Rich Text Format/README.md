@@ -2,46 +2,46 @@
 
 Voce canonica `Rich Text Format`, tipo `markup`, language_id `51601661`.
 
-Decodificare un documento Rich Text Format originale nel saluto in plain text.
+Decode an original Rich Text Format document in plain text greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Existing striprtf authentic format parser — 0.0.33. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Existing striprtf authentic format parser, 0.0.33. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Parser esistente striprtf 0.0.33.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python verify.py
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 Il parser reale interpreta rtf1, font table, f0 e par: confronto del corpo decodificato. Il goal eÌ€ estrazione testuale, non impaginazione grafica.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://learn.microsoft.com/en-us/previous-versions/office/developer/office2007/aa338117(v=office.12)](https://learn.microsoft.com/en-us/previous-versions/office/developer/office2007/aa338117(v=office.12))
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rtf` | [hello.rtf](hello.rtf) verificato |
+| `.rtf` | [hello.rtf](hello.rtf) verified |

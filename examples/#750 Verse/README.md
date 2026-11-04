@@ -1,31 +1,31 @@
 # #750 Verse
 
-Eseguire il callback OnBegin di un device Verse e scrivere il saluto nel log UEFN.
+Execute the callback OnBegin of a Verse device and write the greeting in the log UEFN.
 
-Tipo canonico `programming`, language_id `180832205`.
+Canonical type `programming`, language_id `180832205`.
 
-Toolchain prevista: Unreal Editor for Fortnite e Verse compiler.
+Suggested toolchain: Unreal Editor for Fortnite and Verse compiler.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Importare il device in un progetto UEFN di prova, Build Verse Code, avviare una sessione.
 ```
 
-Risultato atteso: device compilato e log contiene Hello, World!.
+Expected result: compiled device and log contains Hello, World!.
 
-Richiede la toolchain del gioco; il codice non viene caricato in una sessione pubblica.
+Requires the toolchain of the game; the code is not loaded into a public session.
 
-Stato iniziale: creato; sintassi e semantica in attesa. UEFN/Verse runtime di prova non disponibile.
+Initial state: created; syntax and behavioral verification pending. UEFN/Verse test runtime unavailable.
 
-Fonti:
+Sources:
 
 - [Epic Verse first program](https://dev.epicgames.com/documentation/en-us/fortnite/create-your-own-device-in-verse)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.verse` | [hello.verse](hello.verse) creato, verifiche pendenti |
+| `.verse` | [hello.verse](hello.verse) created; verification pending |

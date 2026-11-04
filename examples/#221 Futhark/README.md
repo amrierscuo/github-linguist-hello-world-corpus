@@ -1,18 +1,18 @@
 # #221 Futhark
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare Futhark ed ottenere i 13 byte UTF-8 di Hello, World! dall’entry point main.
+Fill Futhark and get the 13 byte UTF - 8 by Hello, World! from the main entry point.
 
-Futhark è un linguaggio puro: le stringhe sono array u8. main concatena due stringhe e il programma CLI generato restituisce l’array numerico. La verifica confronta tutti i byte dell’output con il saluto; il runtime non offre una stampa testuale nel sorgente.
+Futhark is a pure language: the strings are array u8. main concatena two strings and the CLI generated program returns the numerical array. The verification compares all the bytes of output with greeting; the runtime does not offer a textual print in the source.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Futhark 0.27.1, GHC 9.10.3 build ufficiale; GNU C 13.3.0 in WSL
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 futhark check hello.fut
@@ -23,24 +23,24 @@ futhark c hello.fut -o hello
 ./hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 [72u8, 101u8, 108u8, 108u8, 111u8, 44u8, 32u8, 87u8, 111u8, 114u8, 108u8, 100u8, 33u8]
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://futhark.readthedocs.io/en/latest/language-reference.html
 - https://futhark.readthedocs.io/en/latest/usage.html
 - https://github.com/diku-dk/futhark/releases/tag/v0.27.1
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fut` | [hello.fut](hello.fut) verificato |
+| `.fut` | [hello.fut](hello.fut) verified |

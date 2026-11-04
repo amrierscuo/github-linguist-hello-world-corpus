@@ -1,39 +1,39 @@
 # #630 SCSS
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare SCSS e ottenere un valore CSS content uguale a Hello, World!.
+Fill in SCSS and get a CSS content value equal to Hello, World!.
 
-Il compilatore Sass valuta l’interpolazione nella stringa; la prova riguarda il CSS generato e non un browser.
+The Sass compiler evaluates interpolation in the string; the test involves the CSS generated and not a browser.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Dart Sass1.105.1 originale, Node22.20.0
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 sass hello.scss
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-CSS contiene content: "Hello, World!".
+CSS contains content: "Hello, World!".
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://sass-lang.com/documentation/interpolation/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.scss` | [hello.scss](hello.scss) verificato |
+| `.scss` | [hello.scss](hello.scss) verified |

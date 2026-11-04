@@ -1,23 +1,23 @@
-# 0591 — ROS Interface — `.action`
+# 0591: ROS Interface: `.action`
 
 Interfaccia ROS action con goal, result e feedback.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.action`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rosidl_adapter.parser.parse_action_file("corpus_interfaces", Path("hello.action"))
 ```
 
-Risultato atteso: goal.audience/result.message/feedback.status validi; nessun robot avviato.
+Expected result: goal.audience / result.message / feedback.status valid; no robot started.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://design.ros2.org/articles/interface_definition.html](https://design.ros2.org/articles/interface_definition.html)

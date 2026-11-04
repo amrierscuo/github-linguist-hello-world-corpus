@@ -1,8 +1,8 @@
 # #820 kvlang
 
-Analizzare kvlang e mostrare una Label con il saluto.
+Analyze kvlang and show a Label with greeting.
 
-## Verifica reale
+## Real Verification
 
 Kivy 2.3.1; CPython 3.12.3; Xvfb; Mesa software GL
 
@@ -10,24 +10,24 @@ Kivy 2.3.1; CPython 3.12.3; Xvfb; Mesa software GL
 pip install Kivy==2.3.1; xvfb-run -a python verify_render.py; aprire verification/rendered.png. Con un display attivo usare python verify_render.py.
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-**Sintassi e semantica verificate.** Builder.load_file crea la Label autentica e l’event loop Kivy ne renderizza la texture 202x43 nella finestra SDL2. Screenshot nativo e ispezione visiva confermano Hello, World!. Il provider opzionale multitouch MTDev non è disponibile; il rendering e la cattura superano la prova con exit 0.
+**Sintassi e semantica verificate.** Builder.load_file creates the authentic Label and the Kivy loop event renders the 202x43 texture in the SDL2 window. Native screenshot and visual inspection confirm Hello, World!. The optional multitouch MTDev provider is not available; rendering and capture exceed the test with exit 0.
 
-[Log della prova](verification/render.json). La precedente prova sintattica resta in [result.json](verification/result.json).
+[Log della prova](verification/render.json). The previous syntactic test remains in [result.json](verification/result.json).
 
 ![Rendering del campione](verification/rendered.png)
 
-## Fonti primarie
+## Primary sources
 
 - [https://kivy.org/doc/stable/api-kivy.lang.html](https://kivy.org/doc/stable/api-kivy.lang.html)
 - [https://kivy.org/doc/stable/guide/lang.html](https://kivy.org/doc/stable/guide/lang.html)
 - [https://kivy.org/doc/stable/api-kivy.core.window.html](https://kivy.org/doc/stable/api-kivy.core.window.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.kv` | [hello.kv](hello.kv) sintassi e semantica verificate |
+| `.kv` | [hello.kv](hello.kv) syntax and behavior verified |

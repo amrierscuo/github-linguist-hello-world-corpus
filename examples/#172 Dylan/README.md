@@ -1,41 +1,41 @@
 # #172 Dylan
 
-Compilare una libreria eseguibile Dylan e scrivere Hello, World! con format-out.
+Fill out an executable Dylan library and write Hello, World! with format-out.
 
 ## Toolchain
 
 Open Dylan con librerie common-dylan/io; versione concreta da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 dylan-compiler -build hello.lid; _build/bin/hello
 
-## Risultato atteso
+## Expected result
 
-Compilazione e linking exit 0; eseguibile stampa il saluto più newline.
+Filling and linking exit 0; executable print the greeting more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-library.dylan dichiara library e module, hello.lid elenca prima la dichiarazione e poi il programma. Il programma usa il formato console del modulo format-out. Non è stata sostituita la toolchain Dylan con un parser generico.
+library.dylan declares library and module, hello.lid first lists the statement and then the program. The program uses the format-out module console format. Dylan toolchain has not been replaced with a generic parser.
 
-Requisiti residui:
+Remaining requirements:
 - Toolchain Open Dylan e librerie non predisposte; compilazione/linking/esecuzione pending.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://opendylan.org/getting-started-cli/hello-world.html](https://opendylan.org/getting-started-cli/hello-world.html)
 - [https://opendylan.org/library-reference/io/format-out.html](https://opendylan.org/library-reference/io/format-out.html)
 - [https://opendylan.org/download/index.html](https://opendylan.org/download/index.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dylan` | [hello.dylan](hello.dylan), [library.dylan](library.dylan) creato, verifiche pendenti |
-| `.dyl` | [hello.dyl](variants/ext-dyl-2e64796c/hello.dyl) creato, verifiche pendenti |
-| `.intr` | [hello.intr](variants/ext-intr-2e696e7472/hello.intr) creato, verifiche pendenti |
-| `.lid` | [hello.lid](hello.lid) creato, verifiche pendenti |
+| `.dylan` | [hello.dylan](hello.dylan), [library.dylan](library.dylan) created; verification pending |
+| `.dyl` | [hello.dyl](variants/ext-dyl-2e64796c/hello.dyl) created; verification pending |
+| `.intr` | [hello.intr](variants/ext-intr-2e696e7472/hello.intr) created; verification pending |
+| `.lid` | [hello.lid](hello.lid) created; verification pending |

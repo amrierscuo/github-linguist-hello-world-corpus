@@ -1,23 +1,23 @@
-# 0756 — Visual Basic 6.0 — `.frm`
+# 0756: Visual Basic 6.0: `.frm`
 
 Form VB6 testuale con Caption originale e nessun OleObjectBlob.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.frm`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 VB6 IDE: open greeting.vbp and run
 ```
 
-Risultato atteso: titolo finestra Hello, World!.
+Expected result: title window Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy)

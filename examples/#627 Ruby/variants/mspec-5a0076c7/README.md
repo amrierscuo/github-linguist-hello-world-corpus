@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.mspec`
+# 0627: Ruby: `.mspec`
 
-Configurazione MSpec con percorso del test originale; distinta dal file spec.
+Configuration MSpec with path of the original test; distinct from the spec file.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.mspec`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 mspec run -B hello.mspec
 ```
 
-Risultato atteso: saluto/test/metadata secondo il ruolo; host DSL non ancora verificato.
+Expected result: saluto/test/metadata according to the role; DSL host not yet verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/ruby/mspec](https://github.com/ruby/mspec)

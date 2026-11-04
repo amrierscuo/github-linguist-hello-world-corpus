@@ -4,37 +4,37 @@ Voce canonica `MiniScript`, tipo `programming`, language_id `704299647`.
 
 Stampare Hello, World! in MiniScript.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Original JoeStrout MiniScript C# sources at b4510312059df4288af3ce849b235535a4e1bfa7 + Microsoft Roslyn Toolset 4.8.0 / .NET Framework.
 
-Occorrono i sorgenti MiniScript C# ufficiali al commit indicato, Roslyn 4.8.0 e .NET Framework. Compilare il driver invariato in una directory temporanea e avviarlo con hello.ms come file locale nella directory corrente.
+The official MiniScript C# sources are required to the specified commit, Roslyn 4.8.0 and .NET Framework. Fill the unchanged driver in a temporary directory and start it with hello.ms as a local file in the current directory.
 
 ```text
 Compilare Verify.cs con i sorgenti ufficiali MiniScript-cs; eseguire verify.exe dalla directory contenente hello.ms.
 ```
 
-Risultato atteso: Exit 0, stdout esattamente Hello, World! seguito da newline.
+Exit 0, stdout exactly Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 La funzione greet riceve il destinatario e stampa il saluto; viene realmente compilata ed eseguita dal parser/runtime MiniScript originale. end function distingue questo sorgente dagli altri linguaggi che usano .ms. Il driver C# resta invariato.
 
-Prova corrente: [recognition.json](verification/recognition.json), con UTC, comandi nativi, exit code, stdout/stderr, toolchain e SHA-256 dei sorgenti modificati e dei driver. Le prove precedenti restano come storico. L’identificazione prevista da Linguist è distinta dall’esito effettivo delle statistiche GitHub; questo lotto non applica override di linguaggio.
+Current evidence: [recognition.json](verification/recognition.json), with a UTC timestamp, native commands, exit codes, stdout/stderr, toolchain details and SHA-256 values for modified sources and drivers. Earlier evidence is retained as history. Expected Linguist classification is distinct from the statistics actually observed on GitHub. This batch applies no language override.
 
-## Fonti primarie
+## Primary sources
 
 - https://miniscript.org/wiki/Print
 - https://github.com/JoeStrout/miniscript
 - https://miniscript.org/wiki/Function
 - https://github.com/github-linguist/linguist/blob/v9.7.0/lib/linguist/heuristics.yml
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.ms` | [hello.ms](hello.ms) sintassi e semantica verificate |
+| `.ms` | [hello.ms](hello.ms) syntax and behavior verified |

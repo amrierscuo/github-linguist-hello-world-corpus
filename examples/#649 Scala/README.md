@@ -1,40 +1,40 @@
 # #649 Scala
 
-Compilare Scala ed eseguire main sulla JVM.
+Fill Scale and run main on the JVM.
 
 ## Toolchain
 
 Scala compiler version 2.13.16 -- Copyright 2002-2025, LAMP/EPFL and Lightbend, Inc. dba Akka
 
-## Procedura
+## Procedure
 
 scalac Hello.scala -d build; java -cp build:<scala-library.jar> Hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 
 
-Verifica reale 2026-10-08T13:23:07.902520+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:23:07.902520+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.scala-lang.org/scala3/book/taste-hello-world.html](https://docs.scala-lang.org/scala3/book/taste-hello-world.html)
 - [https://github.com/scala/scala/releases/tag/v2.13.16](https://github.com/scala/scala/releases/tag/v2.13.16)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.scala` | [Hello.scala](Hello.scala) verificato |
-| `.kojo` | [hello.kojo](variants/kojo-eb37572d/hello.kojo) creato, verifiche pendenti |
-| `.sbt` | [hello.sbt](variants/sbt-8cfa3e95/hello.sbt) creato, verifiche pendenti |
-| `.sc` | [hello.sc](variants/sc-4a5e9bf6/hello.sc) creato, verifiche pendenti |
+| `.scala` | [Hello.scala](Hello.scala) verified |
+| `.kojo` | [hello.kojo](variants/kojo-eb37572d/hello.kojo) created; verification pending |
+| `.sbt` | [hello.sbt](variants/sbt-8cfa3e95/hello.sbt) created; verification pending |
+| `.sc` | [hello.sc](variants/sc-4a5e9bf6/hello.sc) created; verification pending |

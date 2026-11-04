@@ -1,36 +1,36 @@
 # #423 Max
 
-Aprire un patch Max e inviare il saluto al print object cliccando il message box.
+Open a Max patch and send greeting to print object by clicking the message box.
 
-Tipo canonico `programming`, language_id `227`.
+Canonical type `programming`, language_id `227`.
 
-Toolchain prevista: Cycling ’74 Max 8+.
+Suggested toolchain: Cycling ’ 74 Max 8+.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Aprire hello.maxpat; cliccare il message box e leggere la Max Console.
 ```
 
-Risultato atteso: patch accettato; console contiene greeting: Hello, World!.
+Expected result: patch accepted; console greeting: Hello, World!.
 
-Non produce audio: è un patch di messaggi con una connessione. Un generico parser JSON non valida il namespace o l’esecuzione Max.
+It does not produce audio: it is a message patch with a connection. A generic parser JSON does not validate the namespace or Max execution.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Runtime Max non disponibile.
+Initial state: created; syntax and behavioral verification pending. Runtime Max unavailable.
 
-Fonti:
+Sources:
 
 - [Cycling ’74 — message](https://docs.cycling74.com/reference/message/)
 - [Cycling ’74 — print](https://docs.cycling74.com/reference/print/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.maxpat` | [hello.maxpat](hello.maxpat), [hello.maxpat](variants/maxproj-b699244e/hello.maxpat) creato, verifiche pendenti |
-| `.maxhelp` | [hello.maxhelp](variants/maxhelp-2204353b/hello.maxhelp) creato, verifiche pendenti |
-| `.maxproj` | [hello.maxproj](variants/maxproj-b699244e/hello.maxproj) creato, verifiche pendenti |
-| `.mxt` | [hello.mxt](variants/mxt-8fccfadd/hello.mxt) creato, verifiche pendenti |
-| `.pat` | [hello.pat](variants/pat-b636baf1/hello.pat) creato, verifiche pendenti |
+| `.maxpat` | [hello.maxpat](hello.maxpat), [hello.maxpat](variants/maxproj-b699244e/hello.maxpat) created; verification pending |
+| `.maxhelp` | [hello.maxhelp](variants/maxhelp-2204353b/hello.maxhelp) created; verification pending |
+| `.maxproj` | [hello.maxproj](variants/maxproj-b699244e/hello.maxproj) created; verification pending |
+| `.mxt` | [hello.mxt](variants/mxt-8fccfadd/hello.mxt) created; verification pending |
+| `.pat` | [hello.pat](variants/pat-b636baf1/hello.pat) created; verification pending |

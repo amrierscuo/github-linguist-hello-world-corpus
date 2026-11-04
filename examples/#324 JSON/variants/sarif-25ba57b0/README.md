@@ -1,38 +1,38 @@
-# 0324 — JSON: `.sarif`
+# 0324: JSON: `.sarif`
 
-Ruolo: Fixture SARIF di una nota illustrativa; non pretende che un analizzatore sia stato eseguito.
+Role: Fixture SARIF of an explanatory note; it does not claim that an analyzer has been executed.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Python 3.13.9 json standard library. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Python 3.13.9 json standard library. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 python -m json.tool hello.sarif; poi usare il validatore/lettore originale dello schema (il parsing JSON non dimostra lo schema prodotto).
 ```
 
-Risultato atteso: Documento JSON riconosciuto nello schema specifico; saluto nel campo indicato.
+Expected result: JSON document recognized in the specific scheme; greeting in the indicated field.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati.
+- The language parser accepted the file; the application-specific schema, loader and semantics remain unverified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.sarif`: `06c031cb2d4c31ddea2cb1412579497999f47d2c0ad56b2e42d185f0624a45ef`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html
 - https://www.rfc-editor.org/rfc/rfc8259
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato.
+Parsing JSON/JSON Lines real of the canonical grammar alone; no progetto/configurazione application scheme has been validated.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 3.13.9

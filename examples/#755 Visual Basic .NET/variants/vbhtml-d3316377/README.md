@@ -1,23 +1,23 @@
-# 0755 — Visual Basic .NET — `.vbhtml`
+# 0755: Visual Basic .NET: `.vbhtml`
 
-View Razor VB.NET per ASP.NET Web Pages/MVC storico; distinto dal programma CLR.
+View Razor VB.NET for ASP.NET Web Pages/MVC historical; distinct from the CLR program.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vbhtml`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 ASP.NET Razor VB host: render hello.vbhtml in isolated local application
 ```
 
-Risultato atteso: HTML <p>Hello, World!</p>.
+Expected result: HTML <p> Hello, World! </p>
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://learn.microsoft.com/en-us/aspnet/web-pages/overview/getting-started/introducing-razor-syntax-vb](https://learn.microsoft.com/en-us/aspnet/web-pages/overview/getting-started/introducing-razor-syntax-vb)

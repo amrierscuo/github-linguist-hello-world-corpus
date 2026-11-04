@@ -1,23 +1,27 @@
-# 0789 — XQuery — `.xquery`
+# 0789: XQuery: `.xquery`
 
-Variante testuale dello stesso formato, con suffisso canonico .xquery.
+## Recorded verification
 
-Provenienza: copia del file originale `examples/#789 XQuery/hello.xq`.
+**Syntax and behavior verified** on November 4, 2026. Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof. [Evidence](../../verification/native_20261104_789_variants_result.json).
+
+Textual variation of the same format, with canon suffix .xquery.
+
+Origin: copy of the original `examples/#789 XQuery/hello.xq` file.
 
 Artefatto principale: `hello.xquery`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 basex hello.xquery
 ```
 
-Risultato atteso: Hello, World! serializzato come testo..
+Expected result: Hello, World! serialized as text..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xquery-31/](https://www.w3.org/TR/xquery-31/)

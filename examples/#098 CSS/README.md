@@ -1,49 +1,49 @@
 # #098 CSS
 
-Generare Hello, World! nel pseudo-elemento CSS ::before di .hello e applicare il colore #123456 nella pagina di supporto.
+Generate Hello, World! in the pseudo-element CSS: .hello before and apply the color # 123456 in the support page.
 
 ## Toolchain
 
 Node.js v22.20.0; css-tree 3.2.1; Google Chrome 154.0.8037.98 (installed file ProductVersion)
 
-## Comandi e procedura
+## Commands and procedure
 
-Da questa cartella:
+From this folder:
 
 ```sh
 npm install
 node check.cjs
 ```
 
-Aprire hello.html nel browser. Lo script della pagina legge gli stili
-calcolati di ::before e li rende ispezionabili negli attributi data-* del body.
-Nel test Chrome è stato avviato in modalità headless con profilo temporaneo;
-il DOM finale prova il valore content e il colore calcolato. La stringa
-generata deve provenire dalla regola CSS, non dal testo del paragrafo HTML.
+Open hello.html in the browser. The page script reads the styles
+calculated by:before and makes them inspectable in the data-* attributes of the body.
+In the Chrome test it was started in headless mode with temporary profile;
+the final DOM test the content value and the calculated color.
+generated must come from the CSS rule, not from the text of the HTML paragraph.
 
-## Risultato atteso
+## Expected result
 
-Parser senza errori e dichiarazioni valide; browser risolve content="Hello, World!" e color=rgb(18, 52, 86).
+Parser without errors and valid declarations; browser solves content= "Hello, World!" and color=rgb( 18, 52, 86 ).
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-hello.html carica il CSS e registra i valori effettivi del browser in data-generated-content e data-generated-color. La verifica usa Chrome reale con profilo temporaneo, oltre al parser CSS Tree; non dichiara un confronto di screenshot.
+hello.html uploads CSS and records the actual browser values in data-generated-content and data-generated-color. The verification uses real Chrome with temporary profile, as well as the parser CSS Tree; it does not declare a screenshot comparison.
 
-Verifica effettiva del 2026-10-08T11:33:51.391848+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:51.391848+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/csstree/csstree](https://github.com/csstree/csstree)
 - [https://www.w3.org/TR/css-content-3/](https://www.w3.org/TR/css-content-3/)
 - [https://developer.chrome.com/docs/chromium/headless](https://developer.chrome.com/docs/chromium/headless)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.css` | [hello.css](hello.css) verificato |
+| `.css` | [hello.css](hello.css) verified |

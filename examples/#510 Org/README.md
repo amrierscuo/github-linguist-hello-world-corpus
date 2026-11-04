@@ -1,44 +1,44 @@
 # #510 Org
 
-Analizzare un documento Org e recuperare il titolo del primo nodo.
+Analyze an Org document and recover the title of the first node.
 
-Tipo canonico `prose`, language_id `267`.
+Canonical type `prose`, language_id `267`.
 
-Toolchain prevista: Python e orgparse.
+Suggested toolchain: Python and orgparse.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: un heading con testo Hello, World!.
+Expected result: a heading with Hello, World! text.
 
-La verifica certifica il parsing della struttura Org, senza dichiarare un export Emacs.
+The verification certifies the parsing of the Org structure, without declaring an Emacs export.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + orgparse 0.5.20260926. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + orgparse 0.5.20260926. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Org syntax](https://orgmode.org/worg/dev/org-syntax.html)
 - [orgparse](https://github.com/karlicoss/orgparse)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install orgparse
 ```
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install orgparse==0.5.20260926
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.org` | [hello.org](hello.org) verificato |
+| `.org` | [hello.org](hello.org) verified |

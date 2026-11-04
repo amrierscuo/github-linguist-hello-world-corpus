@@ -2,38 +2,38 @@
 
 Voce e ordine canonici di reference/languages.yml. Documento originale.
 
-## Obiettivo
+## Goal
 
-Analizzare e renderizzare un documento Pod6/Rakudoc con Hello, World!.
+Analyze and render a Pod6/Rakudoc document with Hello, World!.
 
-Documento Pod6 originale realmente analizzato e renderizzato da Rakudo. Il driver usa il runtime MoarVM relocato; la verifica riguarda documentazione Pod6, non POD5 Perl.
+Original Pod6 document really analyzed and rendered by Rakudo. The driver uses the relocated MoarVM runtime; the verification concerns documentation Pod6, not POD5 Perl.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Rakudo/MoarVM2022.12 originale, parser Pod6 e renderer Pod::To::Text. Versioni/provenienza e SHA-256 nel log; dipendenze isolate in work.
+Rakudo/MoarVM2022.12 original, parser Pod6 and maker Pod::To::Text. Versioni/provenienza and SHA-256 in the log; isolated dependencies in work.
 
 ```text
 raku --doc=Text hello.pod6
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Testo renderizzato contiene Hello, World!.
+Text rendered contains Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-verification/toolchain.json registra sorgente SHA-256, comando effettivo, exit/stdout/stderr e runtime originale. La chiamata diretta a MoarVM nel log serve a relocare Rakudo senza installazione globale.
+verification/toolchain.json records SHA source - 256, actual command, exit/stdout/stderr and original runtime. The direct call to MoarVM in the log serves to relocate Rakudo without global installation.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.raku.org/language/pod
 - https://rakudo.org/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pod` | [hello.pod](variants/pod-539ee4a9/hello.pod) creato, verifiche pendenti |
-| `.pod6` | [hello.pod6](hello.pod6) verificato |
+| `.pod` | [hello.pod](variants/pod-539ee4a9/hello.pod) created; verification pending |
+| `.pod6` | [hello.pod6](hello.pod6) verified |

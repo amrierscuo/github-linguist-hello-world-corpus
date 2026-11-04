@@ -1,38 +1,38 @@
 # #419 Marko
 
-Compilare Marko e renderizzare HTML con input.target uguale a World.
+Fill Marko and make HTML with input.target equal to World.
 
-Tipo canonico `markup`, language_id `932782397`.
+Canonical type `markup`, language_id `932782397`.
 
-Toolchain prevista: Node.js 22 e Marko 5.39.45.
+Suggested toolchain: Node.js 22 and Marko 5.39.45.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: HTML <p>Hello, World!</p> con solo eventuale whitespace esterno; stdout saluto e LF.
+Expected result: HTML <p> Hello, World! </p> with only possible external whitespace; stdout greeting and LF.
 
-Il JavaScript generato viene caricato in memoria usando il runtime Marko reale; nessun file compilato incluso nel corpus.
+The generated JavaScript is loaded into memory using the Marko real runtime; no compiled files included in the corpus.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + Marko 5.39.45 + @marko/compiler 5.42.10 + he 1.2.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + Marko 5.39.45 + @marko/compiler 5.42.10 + he 1.2.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Marko — documentazione](https://markojs.com/docs/)
 - [Marko — compilatore](https://github.com/marko-js/marko)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund marko@5.39.45 @marko/compiler@5.42.10 he@1.2.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.marko` | [hello.marko](hello.marko) verificato |
+| `.marko` | [hello.marko](hello.marko) verified |

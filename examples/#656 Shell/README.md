@@ -1,51 +1,51 @@
 # #656 Shell
 
-Eseguire uno script POSIX Shell.
+Run a POSIX Shell script.
 
 ## Toolchain
 
 Ubuntu dash 0.5.12 POSIX sh
 
-## Procedura
+## Procedure
 
 sh -n hello.sh; sh hello.sh
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 
 
-Verifica reale 2026-10-08T13:23:04.448187+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:23:04.448187+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sh` | [hello.sh](hello.sh) verificato |
-| `.bash` | [hello.bash](variants/bash-8a9862b8/hello.bash) creato, verifiche pendenti |
-| `.bats` | [hello.bats](variants/bats-7875b11c/hello.bats) creato, verifiche pendenti |
-| `.cgi` | [hello.cgi](variants/cgi-89feb572/hello.cgi) creato, verifiche pendenti |
-| `.command` | [hello.command](variants/command-05dd8b8d/hello.command) creato, verifiche pendenti |
-| `.fcgi` | [hello.fcgi](variants/fcgi-209194e4/hello.fcgi) creato, verifiche pendenti |
-| `.ksh` | [hello.ksh](variants/ksh-56d287e3/hello.ksh) creato, verifiche pendenti |
-| `.pacscript` | [hello.pacscript](variants/pacscript-d2beaef5/hello.pacscript) creato, verifiche pendenti |
-| `.sbatch` | [hello.sbatch](variants/sbatch-e5f39033/hello.sbatch) creato, verifiche pendenti |
-| `.sh.in` | [hello.sh.in](variants/sh-in-8a555af8/hello.sh.in) creato, verifiche pendenti |
-| `.slurm` | [hello.slurm](variants/slurm-94175ad5/hello.slurm) creato, verifiche pendenti |
-| `.tmux` | [hello.tmux](variants/tmux-026ac176/hello.tmux) creato, verifiche pendenti |
-| `.tool` | [hello.tool](variants/tool-f27eb9a7/hello.tool) creato, verifiche pendenti |
-| `.trigger` | [hello.trigger](variants/trigger-9c81aa55/hello.trigger) creato, verifiche pendenti |
-| `.zsh` | [hello.zsh](variants/zsh-55a30bf3/hello.zsh) creato, verifiche pendenti |
-| `.zsh-theme` | [hello.zsh-theme](variants/zsh-theme-a4cc3efd/hello.zsh-theme) creato, verifiche pendenti |
+| `.sh` | [hello.sh](hello.sh) verified |
+| `.bash` | [hello.bash](variants/bash-8a9862b8/hello.bash) created; verification pending |
+| `.bats` | [hello.bats](variants/bats-7875b11c/hello.bats) created; verification pending |
+| `.cgi` | [hello.cgi](variants/cgi-89feb572/hello.cgi) created; verification pending |
+| `.command` | [hello.command](variants/command-05dd8b8d/hello.command) created; verification pending |
+| `.fcgi` | [hello.fcgi](variants/fcgi-209194e4/hello.fcgi) created; verification pending |
+| `.ksh` | [hello.ksh](variants/ksh-56d287e3/hello.ksh) created; verification pending |
+| `.pacscript` | [hello.pacscript](variants/pacscript-d2beaef5/hello.pacscript) created; verification pending |
+| `.sbatch` | [hello.sbatch](variants/sbatch-e5f39033/hello.sbatch) created; verification pending |
+| `.sh.in` | [hello.sh.in](variants/sh-in-8a555af8/hello.sh.in) created; verification pending |
+| `.slurm` | [hello.slurm](variants/slurm-94175ad5/hello.slurm) created; verification pending |
+| `.tmux` | [hello.tmux](variants/tmux-026ac176/hello.tmux) created; verification pending |
+| `.tool` | [hello.tool](variants/tool-f27eb9a7/hello.tool) created; verification pending |
+| `.trigger` | [hello.trigger](variants/trigger-9c81aa55/hello.trigger) created; verification pending |
+| `.zsh` | [hello.zsh](variants/zsh-55a30bf3/hello.zsh) created; verification pending |
+| `.zsh-theme` | [hello.zsh-theme](variants/zsh-theme-a4cc3efd/hello.zsh-theme) created; verification pending |

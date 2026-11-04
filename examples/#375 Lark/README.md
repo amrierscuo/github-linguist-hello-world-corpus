@@ -1,40 +1,40 @@
 # #375 Lark
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Costruire un parser LALR Lark e riconoscere Hello, World!.
+Build a parser LALR Lark and recognize Hello, World!.
 
-Il motore Lark originale interpreta hello.lark e costruisce il parser LALR. I token dell’albero vengono confrontati dalla fixture Python; il driver non implementa un parser sostitutivo.
+The original Lark engine interprets hello.lark and builds the LALR parser. The tree tokens are compared with the Python fixture; the driver does not implement a replacement parser.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Lark1.3.1, CPython3.13.9
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Albero start con token Hello e World; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://lark-parser.readthedocs.io/en/latest/grammar.html
 - https://github.com/lark-parser/lark
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lark` | [hello.lark](hello.lark) verificato |
+| `.lark` | [hello.lark](hello.lark) verified |

@@ -1,23 +1,23 @@
-# 0710 — Tcsh — `.csh`
+# 0710: Tcsh: `.csh`
 
-Variante testuale dello stesso formato, con suffisso canonico .csh.
+Textual variation of the same format, with canon suffix .csh.
 
-Provenienza: copia del file originale `examples/#710 Tcsh/hello.tcsh`.
+Origin: copy of the original `examples/#710 Tcsh/hello.tcsh` file.
 
 Artefatto principale: `hello.csh`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 tcsh hello.csh
 ```
 
-Risultato atteso: Hello, World! su stdout..
+Expected result: Hello, World! on stdout..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.tcsh.org/](https://www.tcsh.org/)

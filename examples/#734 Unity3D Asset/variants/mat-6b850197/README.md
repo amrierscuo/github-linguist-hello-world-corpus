@@ -1,4 +1,4 @@
-# Unity3D Asset — variante .mat
+# Unity3D Asset: variant .mat
 
 Questo esempio è un asset Unity YAML nativo di tipo `Material` (classID `21`), adattato da un file reale del repository primario `Unity-Technologies/ml-agents`, pubblicato da Unity Technologies. Il saluto è il valore della proprietà `m_Name`, consultabile nell’Inspector: non è una promessa di stampa a console o di testo disegnato dall’asset.
 
@@ -6,13 +6,13 @@ L’unica modifica ai byte dell’asset è `UIDefault` → `"Hello, World!"` nel
 
 Toolchain prevista: Unity Editor; versione dichiarata dal progetto upstream `6000.0.77f1`. L’Editor non è stato eseguito qui. Sintassi verificata: **false**. Semantica verificata: **false**. I controlli di provenienza in `verification/provenance.json` sono confronti di byte e hash, non verifiche del parser Unity.
 
-Procedura di verifica prevista: In progetto Unity separato compatibile, importare hello.mat; controllare nell’Inspector il tipo Material e name == "Hello, World!".
+Provisional verification procedure: In compatible separate Unity project, import hello.mat; check in the Inspector the Material type and name == "Hello, World!".
 
-Risultato atteso: un oggetto `Material` chiamato `Hello, World!`. Dipendenze da risolvere nell’ambiente Unity: Lo shader è il riferimento built-in Unity fileID 10782, GUID 0000000000000000f000000000000000; risoluzione da verificare nella libreria dell’Editor originale.
+Expected result: a `Material` object called `Hello, World!`. Dependencies to solve in the environment Unity: Shadingr is the built-in Unity fileID 10782, GUID 0000000000000000f000000000000000; resolution to check in the library of the original Editor.
 
-Licenza: `Apache-2.0`. `LICENSE_UPSTREAM.md` conserva senza modifiche il copyright e il testo di licenza pubblicato dal repository. Il testo completo Apache-2.0 è incluso in LICENSE-APACHE-2.0.txt. Questa modifica al nome è dichiarata qui e nella provenienza.
+License: `Apache-2.0`. `LICENSE_UPSTREAM.md` without modification retains the copyright and license text published by the repository. The full text Apache-2.0 is included in LICENSE-APACHE-2.0.txt.
 
-Fonti primarie:
+Primary sources:
 
 - [Asset originale, commit immutabile](https://github.com/Unity-Technologies/ml-agents/blob/2f97e1cbb408fe40169b720aa82a46f3f8a0a8e9/Project/Assets/ML-Agents/Examples/SharedAssets/Materials/UIDefault.mat)
 - [Licenza originale](https://github.com/Unity-Technologies/ml-agents/blob/2f97e1cbb408fe40169b720aa82a46f3f8a0a8e9/LICENSE.md)

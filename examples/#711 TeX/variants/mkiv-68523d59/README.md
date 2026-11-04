@@ -1,24 +1,24 @@
-# 0711 — TeX — `.mkiv`
+# 0711: TeX: `.mkiv`
 
-Documento ConTeXt per la generazione MKIV, senza macro che dipendono da altre generazioni.
+ConTeXt document for MKIV generation, without macros that depend on other generations.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.mkiv`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 context --result=work/hello hello.mkiv
 ```
 
-Risultato atteso: documento con Hello, World!.
+Expected result: document with Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.latex-project.org/help/documentation/](https://www.latex-project.org/help/documentation/)
 - [https://ctan.org/pkg/biblatex](https://ctan.org/pkg/biblatex)

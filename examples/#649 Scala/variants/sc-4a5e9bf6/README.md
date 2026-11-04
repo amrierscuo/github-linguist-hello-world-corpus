@@ -1,23 +1,23 @@
-# 0649 — Scala — `.sc`
+# 0649: Scala: `.sc`
 
-Scala script per scala-cli/Ammonite.
+Script scale for scala-cli/Ammonite.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 scala-cli run hello.sc
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://scala-cli.virtuslab.org/docs/guides/scripting/scripts/](https://scala-cli.virtuslab.org/docs/guides/scripting/scripts/)

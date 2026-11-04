@@ -1,38 +1,38 @@
 # #111 CartoCSS
 
-Compilare uno stile CartoCSS in un TextSymbolizer Mapnik contenente l’etichetta Hello, World!.
+Fill out a CartoCSS style in a TextSymbolizer Mapnik containing the Hello, World! label.
 
-Tipo canonico: `programming`; `language_id`: `53`.
+Canonical type: `programming`; `language_id`: `53`.
 
-Toolchain prevista: Node.js 22 e carto 1.2.0. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Node.js 22 and 1.2.0 cart. The version actually tried, when available, is in the log.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: XML Mapnik accettato dal compilatore CartoCSS con TextSymbolizer, saluto e font previsti.
+Expected result: XML Mapnik accepted by the CartoCSS compiler with TextSymbolizer, greeting and expected fonts.
 
-Il controllo riguarda la traduzione dello stile in XML e la presenza del testo; il rendering di una mappa e la disponibilità effettiva del font in Mapnik sono verifiche ulteriori.
+The control concerns the translation of the style in XML and the presence of the text; rendering of a map and the actual availability of the font in Mapnik are additional verifications.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain provata: Node.js 22.20.0 + carto 1.2.0. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Tried toolchain: Node.js 22.20.0 + 1.2.0 cart. See [log](verification/verification.log).
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [CartoCSS — implementazione originale](https://github.com/mapbox/carto)
 - [CARTO — proprietà del testo](https://cartodb.github.io/developers/styling/cartocss/)
 
-Dipendenze riproducibili in una cartella di lavoro dedicata:
+Reproducible dependencies in a dedicated workbook:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund carto@1.2.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mss` | [hello.mss](hello.mss) verificato |
+| `.mss` | [hello.mss](hello.mss) verified |

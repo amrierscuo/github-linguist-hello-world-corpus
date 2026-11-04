@@ -1,30 +1,22 @@
 # #027 Alpine Abuild
 
-`APKBUILD` è la ricetta del pacchetto `corpus-hello` 1.0.0-r0. La funzione `check()` confronta il greeting; `package()` installa `hello.sh` come `/usr/bin/corpus-hello`. Il checksum SHA-512 lega la ricetta al sorgente. Il campo URL è un dominio dimostrativo; il pacchetto non dipende da quel sito.
+A fresh native APK build, its check step, an offline installation into a disposable Alpine root, and execution of the byte-identical installed script all passed.
 
-Prerequisiti: Alpine Linux, abuild configurato con una chiave di firma locale, apk-tools, BusyBox e OpenSSL. Preparare una copia temporanea di `APKBUILD` e `hello.sh` in `/corpus/0027`, lasciando documenti e log fuori dalla directory di build. Nel chroot di prova è stato usato `-F` perché l'utente era root nel rootfs isolato e `-d` per saltare l'installazione delle dipendenze generiche `build-base`: questo pacchetto contiene soltanto uno script e i comandi richiesti erano già presenti. Su un normale account Alpine configurato usare `abuild -r`.
+Canonical type: `programming`. Linguist language ID: `14`.
 
-```sh
-cd /corpus/0027
-REPODEST=/packages abuild -F -d
-apk --no-network add --allow-untrusted /packages/corpus/x86_64/corpus-hello-1.0.0-r0.apk
-cmp /usr/bin/corpus-hello hello.sh
-test "$(corpus-hello)" = 'Hello, World!'
-corpus-hello
-```
+## Recorded verification
 
-`--allow-untrusted` riguarda esclusivamente il pacchetto di prova firmato con la chiave temporanea locale. La procedura prevede build, installazione nel rootfs e confronto dei byte installati. Il tentativo registrato ha raggiunto il timeout durante la build; pertanto le verifiche rimangono pendenti. Le distribuzioni, la chiave e gli APK generati rimangono nella cartella di lavoro e non fanno parte del corpus.
+**Syntax and behavior verified** on November 4, 2026 with Alpine Linux 3.23.6, abuild 3.16.0-r0 and apk-tools 3.0.8-r0.
 
-Toolchain: **Alpine Linux 3.23.6 x86_64; abuild 3.16.0-r0; apk-tools; BusyBox /bin/sh**.
+[Recorded commands, outputs and hashes](verification/native_20261104_alpine_receipt.json).
+[Earlier verification record](verification/toolchain.json).
 
-Stato: **Sintassi e semantica in attesa.**
+## Reproduce the check
 
-Requisito residuo: Abuild nel chroot isolato termina per timeout durante la build; checksum e validazione preliminare compaiono nel log, ma build/installazione non hanno esito completo registrato.
+In a disposable Alpine environment with abuild, apk-tools, BusyBox, OpenSSL and a configured local signing key, copy only APKBUILD and hello.sh into a build directory. Run `abuild -r`. The recorded isolated root used `abuild -F -d validate` before its fresh build. Install the resulting test package offline in that same disposable root, compare `/usr/bin/corpus-hello` with `hello.sh`, and run the installed script. The evidence lists the exact commands and output. The package recipe does not need its example URL.
 
-Evidenza: [log dei comandi e SHA-256 dei sorgenti](verification/toolchain.json). Il log conserva exit code, stdout e stderr; i percorsi della macchina sono normalizzati.
+## Primary sources
 
-Fonti primarie:
-
-- [Documentazione / sorgente ufficiale 1](https://wiki.alpinelinux.org/wiki/APKBUILD_Reference)
-- [Documentazione / sorgente ufficiale 2](https://github.com/alpinelinux/abuild/blob/master/APKBUILD.5.scd)
-- [Documentazione / sorgente ufficiale 3](https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/x86_64/)
+- https://wiki.alpinelinux.org/wiki/APKBUILD_Reference
+- https://github.com/alpinelinux/abuild/blob/master/APKBUILD.5.scd
+- https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/x86_64/

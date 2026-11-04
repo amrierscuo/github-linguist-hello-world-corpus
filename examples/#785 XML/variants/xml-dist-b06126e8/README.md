@@ -1,23 +1,23 @@
-# 0785 — XML — `.xml.dist`
+# 0785: XML: `.xml.dist`
 
-Template/distribution XML statico dello stesso formato; nessun placeholder applicativo.
+Template/distribution XML static of the same format; no placeholder application.
 
-Provenienza: copia del file originale `examples/#785 XML/hello.xml`.
+Origin: copy of the original `examples/#785 XML/hello.xml` file.
 
 Artefatto principale: `hello.xml.dist`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 XML parser: read hello.xml.dist, assert greeting text
 ```
 
-Risultato atteso: Elemento greeting, audience World, contenuto Hello, World!..
+Expected result: Greeting element, World audience, Hello, World! content..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)

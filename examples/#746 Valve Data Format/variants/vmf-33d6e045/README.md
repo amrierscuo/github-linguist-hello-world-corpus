@@ -1,23 +1,23 @@
-# 0746 — Valve Data Format — `.vmf`
+# 0746: Valve Data Format: `.vmf`
 
-Valve Map Format con worldspawn originale e metadato message; non file KeyValues generico rinominato.
+Valve Map Format with original worldspawn and metadata message; not generic renamed KeyValues file.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vmf`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Hammer: open hello.vmf in an isolated project; inspect worldspawn message
 ```
 
-Risultato atteso: message == Hello, World!; nessuna geometria/gioco avviato.
+Expected result: message == Hello, World!; no geometria/gioco started.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://developer.valvesoftware.com/wiki/Valve_Map_Format](https://developer.valvesoftware.com/wiki/Valve_Map_Format)

@@ -1,41 +1,41 @@
 # #399 LookML
 
-Descrivere una derived table LookML che restituisce il saluto come dimensione stringa.
+Describe a derived LookML table that returns greeting as a string size.
 
 ## Toolchain
 
 Community lkml 1.3.7 genuine LookML parser; SQLite 3.51.0; Python 3.13.9
 
-## Comandi e procedura
+## Commands and procedure
 
-python -m pip install -r requirements.txt; python verify.py; caricare view nel progetto Looker di prova ed eseguire query della dimensione greeting
+python -m pip install -r requirements.txt; python verify.py; load view in the Looker test project and queries of the greeting dimension
 
-## Risultato atteso
+## Expected result
 
-Parser accetta view/derived_table/dimension; SQL restituisce il saluto; Looker deve validare e interrogare la dimensione.
+Parser accepts view/derived_table/dimension; SQL returns greeting; Looker must validate and question the size.
 
-## Stato
+## Status
 
-Sintassi verificata; semantica in attesa.
+syntax verified; behavioral verification pending.
 
 lkml è un parser community esistente, non un validatore implementato qui. SQLite esegue il SQL estratto dal vero AST e trova il saluto. La sostituzione ${TABLE}, connessione e semantica Looker restano pending.
 
-Verifica effettiva del 2026-10-08T12:49:21.017261+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:49:21.017261+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-Requisiti residui:
+Remaining requirements:
 - Google Looker project/database connection and native validator/runtime pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.cloud.google.com/looker/docs/reference/param-view-derived-table](https://docs.cloud.google.com/looker/docs/reference/param-view-derived-table)
 - [https://github.com/joshtemple/lkml](https://github.com/joshtemple/lkml)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lkml` | [hello.view.lkml](hello.view.lkml) sintassi verificata |
-| `.lookml` | [hello.lookml](variants/lookml-1f224142/hello.lookml) creato, verifiche pendenti |
+| `.lkml` | [hello.view.lkml](hello.view.lkml) syntax verified |
+| `.lookml` | [hello.lookml](variants/lookml-1f224142/hello.lookml) created; verification pending |

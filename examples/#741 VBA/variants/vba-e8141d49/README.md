@@ -1,23 +1,23 @@
-# 0741 — VBA — `.vba`
+# 0741: VBA: `.vba`
 
-Variante testuale dello stesso formato, con suffisso canonico .vba.
+Textual variation of the same format, with canon suffix .vba.
 
-Provenienza: copia del file originale `examples/#741 VBA/hello.bas`.
+Origin: copy of the original `examples/#741 VBA/hello.bas` file.
 
 Artefatto principale: `hello.vba`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Office VBA: import hello.vba; invoke HelloWorld and inspect Immediate Window
 ```
 
-Risultato atteso: Hello, World! nella finestra immediata..
+Expected result: Hello, World! in the immediate window..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/print-method](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/print-method)

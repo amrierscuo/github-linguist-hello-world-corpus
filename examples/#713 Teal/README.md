@@ -4,35 +4,35 @@ Voce canonica `Teal`, tipo `programming`, language_id `719038619`.
 
 Controllare i tipi Teal, generare Lua ed eseguire Hello, World!.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Teal originale dal repository teal-language/tl e Lua5.4.6.
+Original tea from the teal-language/tl repository and Lua5.4.6.
 
-Occorrono il compilatore originale Teal, Lua 5.4.6 e i moduli LuaFileSystem/compat53 della prova. Eseguire check/gen e Lua in una copia temporanea per tenere hello.lua fuori dal corpus.
+The original compiler Teal, Lua 5.4.6 and LuaFileSystem/compat53 modules of the test. Run check/gen and Lua in a temporary copy to hold hello.lua out of the corpus.
 
 ```text
 tl check hello.tl; tl gen hello.tl; lua hello.lua
 ```
 
-Risultato atteso: Typecheck e generazione exit 0; runtime exit 0, stdout esattamente Hello, World! seguito da newline.
+Expected result: Typecheck and output generation 0; runtime exit 0, stdout exactly Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Un commento Teal descrive il tipo string esplicito del destinatario. Il compilatore originale ricontrolla i tipi, genera Lua, e Lua5.4 esegue il risultato con saluto esatto. Commento e dichiarazione typed local distinguono il file .tl da Type Language.
+The original compiler rechecks the types, generates Lua, and Lua5.4 performs the result with exact greeting. Comment and statement typed local distinguish the .tl file from Type Language.
 
-Prova corrente: [recognition.json](verification/recognition.json), con UTC, comandi nativi, exit code, stdout/stderr, toolchain e SHA-256 dei sorgenti modificati e dei driver. Le prove precedenti restano come storico. L’identificazione prevista da Linguist è distinta dall’esito effettivo delle statistiche GitHub; questo lotto non applica override di linguaggio.
+Current evidence: [recognition.json](verification/recognition.json), with a UTC timestamp, native commands, exit codes, stdout/stderr, toolchain details and SHA-256 values for modified sources and drivers. Earlier evidence is retained as history. Expected Linguist classification is distinct from the statistics actually observed on GitHub. This batch applies no language override.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/teal-language/tl
 - https://github.com/github-linguist/linguist/blob/v9.7.0/lib/linguist/heuristics.yml
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.tl` | [hello.tl](hello.tl) sintassi e semantica verificate |
+| `.tl` | [hello.tl](hello.tl) syntax and behavior verified |

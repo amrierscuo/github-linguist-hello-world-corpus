@@ -2,47 +2,47 @@
 
 Voce canonica `WebAssembly Interface Type`, tipo `data`, language_id `134534086`.
 
-Interfaccia WebAssembly WIT originale: il package corpus:greeting definisce greeter.greet(string) -> string e il world greeting ne esporta l’interfaccia.
+Original WebAssembly WIT interface: the package corpus:greeting defines greeter.greet (string) -> string and the world greeting export the interface.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-wit-parser 0.240.0 / official Rust — rustc 1.90.0 (1159e78c4 2025-09-14). Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+wit-parser 0.240.0 / official Rust, rustc 1.90.0 ( 1159e78c4 2025-09-14 ). Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Rust 1.90.0 e crate ufficiale wit-parser 0.240.0, fissato nel manifest. Usare CARGO_HOME e CARGO_TARGET_DIR esterni all’esempio; Cargo.lock conserva la risoluzione.
+Rust 1.90.0 and crate official wit-parser 0.240.0, fixed in the poster. Use CARGO_HOME and CARGO_TARGET_DIR external to the example; Cargo.lock retains the resolution.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 cargo run --locked --manifest-path Cargo.toml -- hello.wit
 ```
 
-Risultato atteso: PASS per parsing e risoluzione WIT; un futuro componente dovrà implementare il metodo greet per produrre il saluto.
+Expected result: PASS for parsing and WIT resolution; a future component will have to implement the greet method to produce greetings.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **in attesa**.
+Artifact **created**; syntax **verified**; behavioral verification **pending**.
 
-Il parser ufficiale risolve package, interfacce e world. Le asserzioni controllano namespace e nome del world. WIT descrive un contratto: non contiene un corpo eseguibile e non viene inventata una implementazione che stampi il saluto. Semantica del componente in attesa.
+The official parser solves package, interfaces and world. The assertions control namespace and world name. WIT describes a contract: it does not contain an executable body and does not invent an implementation that stamps greeting. behavior of the waiting component.
 
-Requisiti residui:
+Remaining requirements:
 
-- Implementazione del componente e runtime Component Model assenti: verificata soltanto l’interfaccia.
+- Component deployment and runtime Component Model absent: verified only the interface.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md)
 - [https://github.com/bytecodealliance/wasm-tools](https://github.com/bytecodealliance/wasm-tools)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.wit` | [hello.wit](hello.wit) sintassi verificata |
+| `.wit` | [hello.wit](hello.wit) syntax verified |

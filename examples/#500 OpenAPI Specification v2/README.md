@@ -1,29 +1,29 @@
 # #500 OpenAPI Specification v2
 
-Validare il contratto OpenAPI e la risposta di un consumer HTTP locale.
+Validate the OpenAPI contract and the response of a local HTTP consumer.
 
 ## Toolchain
 
 Node.js v22.20.0; {'@apidevtools/swagger-parser': '13.1.0', 'ajv': '8.20.0'}
 
-## Procedura
+## Procedure
 
 npm install; node verify.cjs hello.yaml
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il parser originale valida e dereferenzia il documento; Ajv valida lo schema e respinge un saluto diverso. HTTP loopback consuma l’esempio del contratto. example.invalid è soltanto metadata; nessun servizio esterno viene contattato.
+The original parser valid and derefens the document; Ajv validates the scheme and rejects a different greeting. HTTP loopback consumes the example of the contract. example.invalid is only metadata; no external service is contacted.
 
-Verifica reale 2026-10-08T13:10:39.703765+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:10:39.703765+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://spec.openapis.org/oas/v2.0.html](https://spec.openapis.org/oas/v2.0.html)
 - [https://apidevtools.com/swagger-parser/](https://apidevtools.com/swagger-parser/)

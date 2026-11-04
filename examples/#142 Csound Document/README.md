@@ -1,40 +1,40 @@
 # #142 Csound Document
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Eseguire un documento Csound completo che include opzioni, orchestra e score.
+Run a full Csound document that includes options, orchestra and score.
 
-hello.csd è il formato unificato con CsOptions, CsInstruments e CsScore. Il runtime compila il documento e attiva lo strumento. Le opzioni -n -d -m0 non richiedono audio o dispositivi; il messaggio Csound è registrato su stderr. Il plugin directory warning riguarda plugin opzionali.
+hello.csd is the unified format with CsOptions, CsInstruments and CsScore. The runtime compiles the document and activates the tool. The -n -d -m0 options do not require audio or devices; the Csound message is registered on stderr. The warning directory plugin covers optional plugins.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Csound 6.18, pacchetto Ubuntu 6.18.1+dfsg-1ubuntu4 x86_64
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 csound hello.csd
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Messaggio Hello, World! seguito da newline; 0 errors in performance e exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://csound.com/docs/manual/CommandUnifile.html
 - https://csound.com/docs/manual/prints.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.csd` | [hello.csd](hello.csd) verificato |
+| `.csd` | [hello.csd](hello.csd) verified |

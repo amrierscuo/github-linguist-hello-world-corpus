@@ -1,36 +1,36 @@
 # #827 ooc
 
-Compilare ooc e chiamare println sulla stringa.
+Fill ooc and call println on the string.
 
 ## Toolchain
 
 rock ooc compiler; SDK
 
-## Procedura
+## Procedure
 
-rock hello.ooc; avviare il programma compilato.
+rock hello.ooc; start the compiled program.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- rock compiler/SDK non predisposti.
+Remaining requirements:
+- rock compiler/SDK not predisposed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://ooc-lang.org/docs/](https://ooc-lang.org/docs/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ooc` | [hello.ooc](hello.ooc) creato, verifiche pendenti |
+| `.ooc` | [hello.ooc](hello.ooc) created; verification pending |

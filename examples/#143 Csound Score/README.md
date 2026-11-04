@@ -1,40 +1,40 @@
 # #143 Csound Score
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Leggere una stringa p4 da uno score Csound e stamparla mediante l’orchestra di supporto.
+Read a p4 string from a Csound score and print it through the support orchestra.
 
-hello.sco è uno score autentico: i-statement con strumento, tempo, durata e parametro stringa. reader.orc è una fixture che legge p4 tramite strget. Il saluto appartiene allo score, non è sostituito da una stampa costante nella fixture. Il plugin directory warning opzionale è registrato.
+hello.sco is an authentic score: i-statement with tool, time, duration and string parameter. reader.orc is a fixture that reads p4 through strget. Greeting belongs to the score, is not replaced by a constant print in the fixture. The optional warning directory is registered.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Csound 6.18, pacchetto Ubuntu 6.18.1+dfsg-1ubuntu4 x86_64
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 csound -n -d -m0 reader.orc hello.sco
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il parametro p4 del primo evento è Hello, World! e il runtime stampa quel valore; exit 0.
+The p4 parameter of the first event is Hello, World! and the runtime prints that value; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://csound.com/docs/manual/ScoreIStatement.html
 - https://csound.com/docs/manual/strget.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sco` | [hello.sco](hello.sco) verificato |
+| `.sco` | [hello.sco](hello.sco) verified |

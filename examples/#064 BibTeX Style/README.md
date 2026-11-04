@@ -1,40 +1,40 @@
 # #064 BibTeX Style
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Eseguire uno stile BibTeX originale che scrive il titolo Hello, World! nel file .bbl.
+Run an original BibTeX style that writes the title Hello, World! in the .bbl. file
 
-hello.bst è un programma nel linguaggio a stack di BibTeX: ENTRY, READ, ITERATE, write$ e newline$. input.bib e driver.aux sono fixture. L’avviso nativo sul tipo misc non definito è registrato: ITERATE applica direttamente write.greeting e non usa dispatch per tipo di voce.
+hello.bst is a program in BibTeX's stack language: ENTRY, READ, ITERATE, write$ and newline$. input.bib and driver.aux are fixtures. The native warning about the undefined misc type is recorded. ITERATE calls write.greeting directly and does not dispatch by entry type.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 BibTeX 0.99e; MiKTeX-BibTeX 4.2 (MiKTeX 25.12)
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 bibtex driver
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 driver.bbl esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+The `verification/toolchain.json` log records actual commands, versioni/provenienza of the toolchain, output codes, stdout/stderr and SHA-256 of the proven sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://ctan.org/pkg/bibtex
 - https://mirrors.ctan.org/biblio/bibtex/base/btxhak.pdf
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bst` | [hello.bst](hello.bst) verificato |
+| `.bst` | [hello.bst](hello.bst) verified |

@@ -1,46 +1,46 @@
 # #636 SQL
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire SQL e restituire il saluto Hello, World!.
+Execute SQL and return greeting Hello, World!.
 
 Dialetto SQLite dichiarato; SELECT viene realmente analizzato ed eseguito su database in memoria.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-SQLite3 originale tramite sqlite3 della libreria standard Python; versione nel log
+Original SQLite3 via standard Python library sqlite3; log version
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Una riga, colonna greeting, valore Hello, World!.
+A row, column greeting, Hello, World! value.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.sqlite.org/lang_select.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sql` | [hello.sql](hello.sql) verificato |
-| `.ddl` | [hello.ddl](variants/ddl-8bc7bf69/hello.ddl) creato, verifiche pendenti |
-| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) creato, verifiche pendenti |
-| `.mysql` | [hello.mysql](variants/mysql-94d2dcda/hello.mysql) creato, verifiche pendenti |
-| `.prc` | [hello.prc](variants/prc-8feafefc/hello.prc) creato, verifiche pendenti |
-| `.tab` | [hello.tab](variants/tab-97c85d6e/hello.tab) creato, verifiche pendenti |
-| `.udf` | [hello.udf](variants/udf-94d3d68a/hello.udf) creato, verifiche pendenti |
-| `.viw` | [hello.viw](variants/viw-71592285/hello.viw) creato, verifiche pendenti |
+| `.sql` | [hello.sql](hello.sql) verified |
+| `.ddl` | [hello.ddl](variants/ddl-8bc7bf69/hello.ddl) created; verification pending |
+| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |
+| `.mysql` | [hello.mysql](variants/mysql-94d2dcda/hello.mysql) created; verification pending |
+| `.prc` | [hello.prc](variants/prc-8feafefc/hello.prc) created; verification pending |
+| `.tab` | [hello.tab](variants/tab-97c85d6e/hello.tab) created; verification pending |
+| `.udf` | [hello.udf](variants/udf-94d3d68a/hello.udf) created; verification pending |
+| `.viw` | [hello.viw](variants/viw-71592285/hello.viw) created; verification pending |

@@ -1,36 +1,36 @@
 # #486 OMNeT++ MSG
 
-Generare il messaggio e avviare una rete OMNeT++ che registra il saluto.
+Generate the message and start an OMNeT++ network that records greeting.
 
 ## Toolchain
 
 OMNeT++ 6.2 compatibile
 
-## Procedura
+## Procedure
 
 opp_makemake -f --deep -o hello; make; ./hello -u Cmdenv -f omnetpp.ini
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il pacchetto include MSG/NED, modulo C++ e configurazione originali; il goal usa il campo generato del messaggio.
+The package includes MSG/NED, C++ module and original configuration; the goal uses the generated field of the message.
 
-Requisiti residui:
-- opp_msgtool, compilatore NED e librerie/runtime OMNeT++ non predisposti.
+Remaining requirements:
+- opp_msgtool, the NED compiler and the OMNeT++ libraries and runtime are not set up.
 
-## Fonti primarie
+## Primary sources
 
 - [https://doc.omnetpp.org/omnetpp/manual/](https://doc.omnetpp.org/omnetpp/manual/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.msg` | [Greeting.msg](Greeting.msg) creato, verifiche pendenti |
+| `.msg` | [Greeting.msg](Greeting.msg) created; verification pending |

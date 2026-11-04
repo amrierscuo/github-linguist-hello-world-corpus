@@ -1,0 +1,91 @@
+{
+  "ordinal": 730,
+  "name": "TypeScript",
+  "source_hashes": {
+    "examples/#730 TypeScript/variants/cts-4d16cc26/hello.cts": "334f20a7db13c9653a3cf877de1119933f809fbd127ecdcbc808b60b9ddc1360",
+    "examples/#730 TypeScript/variants/mts-51a93bd5/hello.mts": "334f20a7db13c9653a3cf877de1119933f809fbd127ecdcbc808b60b9ddc1360"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\730_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\730_variants",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_721_740\\node\\node_modules\\typescript\\bin\\tsc",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\730_variants",
+      "exit_code": 0,
+      "stdout": "Version 7.0.2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\tools_721_740\\node\\node_modules\\typescript\\bin\\tsc",
+        "--strict",
+        "--target",
+        "ES2022",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--outDir",
+        "dist",
+        "hello.cts",
+        "hello.mts"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\730_variants",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "dist/hello.cjs"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\730_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "dist/hello.mjs"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\730_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Compile both originals using strict NodeNext TypeScript settings and execute emitted .cjs and .mjs using Node.",
+  "toolchain": "TypeScript and Node",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".cts": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".mts": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "verified_utc": "2026-11-04T19:35:36.844205+00:00",
+  "recorded_test_source": "730_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

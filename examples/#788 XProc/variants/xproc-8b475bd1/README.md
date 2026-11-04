@@ -1,23 +1,23 @@
-# 0788 — XProc — `.xproc`
+# 0788: XProc: `.xproc`
 
-Variante testuale dello stesso formato, con suffisso canonico .xproc.
+Textual variation of the same format, with canon suffix .xproc.
 
-Provenienza: copia del file originale `examples/#788 XProc/hello.xpl`.
+Origin: copy of the original `examples/#788 XProc/hello.xpl` file.
 
 Artefatto principale: `hello.xproc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 xmlcalabash hello.xproc
 ```
 
-Risultato atteso: Documento <greeting>Hello, World!</greeting>..
+Expected result: Document <greeting> Hello, World! </greeting>.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://spec.xproc.org/3.0/xproc/xproc_letter.pdf](https://spec.xproc.org/3.0/xproc/xproc_letter.pdf)

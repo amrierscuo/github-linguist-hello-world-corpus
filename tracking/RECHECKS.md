@@ -1,20 +1,20 @@
-# Verifiche aggiuntive di voci precedenti
+# Additional checks for earlier entries
 
-8 ottobre 2026: Elixir **0190** ed Erlang **0196**, inizialmente creati con verifiche pendenti, hanno superato compilazione/interpretazione ed esecuzione native. Toolchain: Elixir 1.14.0, Erlang OTP 25 / ERTS 13.2.2.5 da pacchetti originali isolati fuori dal corpus. Entrambi producono esattamente `Hello, World!` seguito da LF; i log nelle cartelle individuali registrano comandi, exit code e SHA-256 degli artefatti.
+8 October 2026: Elixir **0190** and Erlang **0196**, originally created with checks pending, passed native compilation or interpretation and execution. Toolchain: Elixir 1.14.0, Erlang OTP 25 / ERTS 13.2.2.5 from original packages isolated outside the corpus. Both output exactly `Hello, World!` followed by LF. The individual logs record the commands, exit codes and SHA-256 values of the artifacts.
 
-La compilazione Erlang usa l’API standard `compile:file`, poi la VM BEAM esegue `hello:main/0` e termina. Lo script Elixir è interpretato dal runtime Elixir originale.
+Erlang compilation uses the standard `compile:file` API. The BEAM VM then runs `hello:main/0` and exits. The original Elixir runtime interprets the Elixir script.
 
-Il bundle Darcs **0159** è stato rigenerato con contesto locale e autore illustrativo, applicato a un repository temporaneo nuovo e verificato nuovamente, prima di confezionare il checkpoint 04.
+The Darcs bundle **0159** was regenerated with local context and an illustrative author, applied to a new temporary repository, and checked again before packaging checkpoint 04.
 
-Gli ZIP dei checkpoint già salvati sono snapshot immutabili. Il tracker corrente e gli ZIP successivi includono le nuove prove; i rapporti dei lotti precedenti descrivono gli esiti al momento del checkpoint originale.
+Saved checkpoint ZIPs are immutable snapshots. The current tracker and later ZIPs include the new evidence. Earlier batch reports describe results as of their original checkpoint.
 
-Ulteriori controlli dell'8 ottobre 2026:
+Further checks on 8 October 2026:
 
-- **0502 OpenCL**: Clang 18.1.3 ha accettato il kernel in modalità OpenCL C 1.2, con `-fsyntax-only`, exit code 0. La prova è statica; l'esecuzione con un runtime OpenCL rimane in attesa.
-- **0542 Pod 6**: Rakudo/MoarVM 2022.12 ha analizzato e renderizzato il documento con `--doc=Text`, producendo il saluto nel testo renderizzato, exit code 0.
-- **0661 Simple File Verification**: RHash 1.4.3 ha letto il file SFV e verificato la fixture `greeting.txt`, CRC32 `B4E89E84`, con `Everything OK`, exit code 0. La prova riguarda il formato SFV e l'integrità del contenuto.
-- **0668 SmPL**: Coccinelle 1.1.1 ha applicato la patch semantica al C originale; GCC 13.3.0 ha compilato il risultato, poi il programma ha stampato `Hello, World!` con exit code 0.
+- **0502 OpenCL**: Clang 18.1.3 accepted the kernel in OpenCL C 1.2 mode with `-fsyntax-only`, exit code 0. This was a static check; execution with an OpenCL runtime remained pending at this checkpoint.
+- **0542 Pod 6**: Rakudo/MoarVM 2022.12 parsed and rendered the document with `--doc=Text`, producing the greeting in the rendered text, exit code 0.
+- **0661 Simple File Verification**: RHash 1.4.3 read the SFV file and verified the `greeting.txt` fixture, CRC32 `B4E89E84`, with `Everything OK`, exit code 0. The check covers the SFV format and content integrity.
+- **0668 SmPL**: Coccinelle 1.1.1 applied the semantic patch to the original C source. GCC 13.3.0 compiled the result, and the program printed `Hello, World!` with exit code 0.
 
-Le cartelle individuali riportano README, comandi, fonti, versioni, output e impronte. I sorgenti SFV/SmPL sono rimasti byte per byte identici agli esempi creati nei checkpoint precedenti.
+The individual folders contain READMEs, commands, sources, versions, output and hashes. The SFV and SmPL source files remained byte-identical to the samples created at earlier checkpoints.
 
-In 13 log è stato corretto un suffisso `.dist` aggiunto per errore alla versione di una libreria Python. Ogni versione è stata riletta dal campo `Version` del METADATA originale, verificando lo SHA-256 già registrato; il campo `metadata_correction` documenta la correzione. Esiti, comandi, output, timestamp e impronte dei sorgenti restano quelli della prova effettiva.
+An erroneous `.dist` suffix on a Python library version was corrected in 13 logs. Each version was checked against the `Version` field in the original METADATA, with its recorded SHA-256 verified. The `metadata_correction` field documents the correction. Results, commands, outputs, timestamps and source hashes still describe the actual checks.

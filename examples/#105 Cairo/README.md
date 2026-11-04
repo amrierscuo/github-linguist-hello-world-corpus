@@ -1,32 +1,32 @@
 # #105 Cairo
 
-Compilare ed eseguire un programma Cairo moderno che stampa Hello, World!.
+Fill out and execute a modern Cairo program that prints Hello, World!.
 
-Tipo canonico: `programming`; `language_id`: `620599567`.
+Canonical type: `programming`; `language_id`: `620599567`.
 
-Toolchain prevista: Scarb 2.11.4 con cairo_execute 2.11.4 (progetto fissato alla versione della guida). La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Scarb 2.11.4 with cairo_execute 2.11.4 (project fixed to the version of the guide).
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 scarb build
 scarb execute
 ```
 
-Risultato atteso: tra i messaggi di Scarb, una riga `Hello, World!` e uscita 0.
+Expected result: between Scarb messages, a `Hello, World!` line and 0. output
 
-Cairo moderno e Cairo Zero sono voci separate del riferimento. Questo progetto usa l’attributo executable e Scarb; non è un contratto Starknet.
+Cairo modern and Cairo Zero are separate voices of the reference.This project uses the executable and Scarb attribute; it is not a Starknet contract.
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Initial state: artifact created, syntax and behavioral verification pending. Specific toolchain not yet performed on this example; syntax and behavior remain to be checked.
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Cairo Book — Hello, World](https://www.starknet.io/cairo-book/ch01-02-hello-world.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cairo` | [lib.cairo](src/lib.cairo) creato, verifiche pendenti |
+| `.cairo` | [lib.cairo](src/lib.cairo) created; verification pending |

@@ -1,42 +1,42 @@
 # #467 NetLogo
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire la procedura greet di un modello NetLogo e stampare Hello, World!.
+Perform the greet procedure of a NetLogo model and print Hello, World!.
 
 La procedura usa word e print; le sezioni .nlogo includono codice, info, versione e un esperimento BehaviorSpace originale. L’obiettivo è l’output della procedura, non il testo informativo del modello.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-NetLogo6.4.0 o versione compatibile; non preparato
+NetLogo6.4.0 or compatible version; not prepared
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Aprire hello.nlogo in NetLogo e invocare greet.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Console del modello contiene Hello, World!.
+Model console contains Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
 Impedimenti: Loader/compiler/runtime NetLogo non preparati; modello non aperto.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.netlogo.org/dict/print.html
 - https://raw.githubusercontent.com/NetLogo/models/6.4.0/Sample%20Models/Biology/Wolf%20Sheep%20Predation.nlogo
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nlogo` | [hello.nlogo](hello.nlogo) creato, verifiche pendenti |
+| `.nlogo` | [hello.nlogo](hello.nlogo) created; verification pending |

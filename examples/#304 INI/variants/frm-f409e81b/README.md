@@ -1,26 +1,26 @@
-# 0304 — INI: `.frm`
+# 0304: INI: `.frm`
 
-Ruolo: Variante con ruolo/formato distinto dal sorgente principale.
+Role: Variant with ruolo/formato distinct from the main source.
 
-Provenienza: Solo documentazione del blocco; nessun artefatto con estensione richiesta è stato fabbricato.
+Provenience: Only block documentation; no artifact with required extension was manufactured.
 
-Toolchain richiesta: Python 3.13.9 stdlib configparser. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Python 3.13.9 stdlib configparser. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Disponibilità del tool originale necessaria; consultare gli impedimenti.
 ```
 
-Risultato atteso: Da verificare con il formato nativo dopo la risoluzione del blocco.
+Expected result: To check with the native format after the block resolution.
 
-Stato individuale: artefatto creato `false`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `false`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- L’estensione include descriptor MySQL di vista legacy e file tabella binari. Senza esportazione genuina da una versione compatibile del server non si inventano metadati interni come timestamp, checksum o SQL-mode.
+- The extension includes MySQL view descriptor and legacy binary table file. Without genuine export from a compatible server version, no internal metadata such as timestamp, checksum or SQL -mode are invented.
 
-Fonti primarie:
+Primary sources:
 
 - https://dev.mysql.com/doc/refman/5.7/en/innodb-multi-versioning.html
 - https://github.com/github-linguist/linguist/blob/main/samples/INI/metrics.frm

@@ -1,28 +1,28 @@
 # #318 Isabelle ROOT
 
-Definire una sessione Isabelle ROOT che compila la teoria originale del saluto.
+Define a Isabelle ROOT session that compiles the original greeting theory.
 
 ## Toolchain
 
 Isabelle/HOL; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 isabelle build -D . Hello
 
-## Risultato atteso
+## Expected result
 
-Sessione Hello basata su HOL risolta; teoria Hello importata e lemma/value del saluto accettati.
+Hello session based on HOL resolved; imported Hello theory and lemma/value of greeting accepted.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-ROOT è il file canonico della sessione. Hello.thy è incluso come consumer per rendere verificabile il risultato della build; non si dichiara verifica del formato tramite un parser fatto qui.
+ROOT is the canonical file of the session. Hello.thy is included as a consumer to make the build result verifiable; it does not declare the format verification by a parser made here.
 
-Requisiti residui:
-- Isabelle session build non disponibile; ROOT e consumer restano pending.
+Remaining requirements:
+- Isabelle session build unavailable; ROOT e consumer restano pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://isabelle.in.tum.de/doc/system.pdf](https://isabelle.in.tum.de/doc/system.pdf)

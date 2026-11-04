@@ -1,45 +1,45 @@
 # #222 G-code
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Definire il messaggio LCD Hello, World! mediante M117 nel dialetto Marlin, senza movimenti.
+Define the LCD Hello, World! message by M117 in the Marlin dialect, without movements.
 
-L’artefatto usa una sola istruzione M117 con testo libero. Il parser originale gcodeparser riconosce M117 ma tratta le lettere del messaggio come parametri: questa prova lessicale non convalida il dialetto completo. Nessun comando è stato inviato a macchine o porte seriali.
+The original gcodeparser parser recognizes M117 but treats the message letters as parameters: this lexical test does not validate the complete dialect. No command has been sent to serial machines or ports.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Marlin M117; parser Python gcodeparser 0.3.0 provato offline
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Solo offline: analizzare hello.gcode con un parser che supporti il testo libero Marlin M117.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il comando M117 ha il messaggio Hello, World!; non contiene istruzioni di movimento.
+The M117 command has the Hello, World! message; it does not contain movement instructions.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-Impedimenti: Il parser disponibile non supporta correttamente l’argomento testo libero M117; sintassi del dialetto e messaggio LCD restano non verificati.
+Commitments: The available parser does not properly support the free text topic M117; syntax of the dialect and LCD message remain unchecked.
 
-## Fonti primarie
+## Primary sources
 
 - https://marlinfw.org/docs/gcode/M117.html
 - https://github.com/AndyEveritt/GcodeParser
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.g` | [hello.g](variants/ext-g-2e67/hello.g) creato, verifiche pendenti |
-| `.cnc` | [hello.cnc](variants/ext-cnc-2e636e63/hello.cnc) creato, verifiche pendenti |
-| `.gco` | [hello.gco](variants/ext-gco-2e67636f/hello.gco) creato, verifiche pendenti |
-| `.gcode` | [hello.gcode](hello.gcode) creato, verifiche pendenti |
+| `.g` | [hello.g](variants/ext-g-2e67/hello.g) created; verification pending |
+| `.cnc` | [hello.cnc](variants/ext-cnc-2e636e63/hello.cnc) created; verification pending |
+| `.gco` | [hello.gco](variants/ext-gco-2e67636f/hello.gco) created; verification pending |
+| `.gcode` | [hello.gcode](hello.gcode) created; verification pending |

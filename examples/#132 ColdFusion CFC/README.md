@@ -2,50 +2,50 @@
 
 Voce canonica: `ColdFusion CFC`, tipo `programming`, `language_id: 65`.
 
-Definire il componente CFML Greeting e chiamare hello() dal template di controllo, verificando anche un destinatario diverso.
+Define the CFML Greeting component and call hello() from the control template, also checking a different recipient.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required native toolchain unavailable or not configured — versione non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required native toolchain unavailable or not configured, unavailable version / not verified. Test environment: **Windows x64**.
 
-Richiede un motore CFML con sintassi script component/function. Il file CFC definisce un metodo pubblico con argomento string e default; check.cfm usa new Greeting e lancia una eccezione per risultati inattesi.
+Requires a CFML engine with syntax script component/function. The CFC file defines a public method with string and default argument; check.cfm uses new Greeting and launches an exception for unexpected results.
 
-Comando/procedura dalla directory dell’esempio, salvo la directory build esplicitamente indicata:
+Comando/procedura from the example directory, except the build directory explicitly indicated:
 
 ```text
 Server Lucee/Adobe ColdFusion locale: servire check.cfm con Greeting.cfc nella stessa directory; curl http://localhost:<porta>/check.cfm
 ```
 
-Risultato atteso: Componente caricato; hello() restituisce Hello, World!; hello("Reader") restituisce Hello, Reader!; risposta HTTP con il saluto.
+Expected result: Component loaded; hello() returns Hello, World!; hello( "Reader" ) returns Hello, Reader!; HTTP answer with greeting.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
 La voce canonica CFC è separata dal template ColdFusion. Il saluto è il risultato effettivo di un metodo, e il controllo usa un secondo argomento. Nessuna invocazione del componente è attestata finché il motore manca.
 
-Requisiti residui:
+Remaining requirements:
 
 - No Adobe ColdFusion/Lucee engine is configured to load and invoke the component.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-versioni/toolchain e SHA-256 degli artefatti. La proprietà `path_normalization` documenta
-le sostituzioni dei percorsi locali. `<corpus>` identifica i file relativi inclusi nel
-corpus finale, che sono stati verificati prima nella directory di staging. I byte dei
-sorgenti restano quelli identificati dai checksum. I soli probe di disponibilità degli
-strumenti non attestano parsing o esecuzione. Dipendenze e prodotti compilati restano
-nella directory di lavoro e non sono inclusi nel corpus.
+toolchain versions and SHA-256 values for the artifacts. The `path_normalization` property documents
+local route replacements. `<corpus>` identifies the relative files included in
+final corpus, which were first verified in the staging directory.
+sources remain those identified by checksums. The only offspring of availability
+instruments do not attest parsing or execution.
+in the work directory and are not included in the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.lucee.org/reference/tags/component.html](https://docs.lucee.org/reference/tags/component.html)
 - [https://docs.lucee.org/reference/tags/function.html](https://docs.lucee.org/reference/tags/function.html)
 - [https://docs.lucee.org/guides/cookbooks/component.html](https://docs.lucee.org/guides/cookbooks/component.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cfc` | [Greeting.cfc](Greeting.cfc) creato, verifiche pendenti |
+| `.cfc` | [Greeting.cfc](Greeting.cfc) created; verification pending |

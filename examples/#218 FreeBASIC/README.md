@@ -4,46 +4,46 @@ Voce canonica `FreeBASIC`, tipo `programming`, language_id `472896659`.
 
 Concatenare stringhe FreeBASIC e stamparle con Print.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required authentic toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required authentic toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede il compilatore FreeBASIC fbc e il suo runtime compatibile. Il compilatore non è presente in questo ambiente.
+Requires FreeBASIC fbc compiler and its compatible runtime. The compiler is not present in this environment.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 fbc hello.bas -x build/hello; ./build/hello
 ```
 
-Risultato atteso: Exit 0; Hello, World! seguito da newline.
+Exit 0; Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Dim As String, concatenazione + e End 0 sono sorgente FreeBASIC originale; una esecuzione con un diverso BASIC non è attestata.
+Dim As String, concatenation + and End 0 are original FreeBASIC source; an execution with a different BASIC is not attested.
 
-Requisiti residui:
+Remaining requirements:
 
 - FreeBASIC native fbc compiler is unavailable.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.freebasic.net/wiki/KeyPgPrint](https://www.freebasic.net/wiki/KeyPgPrint)
 - [https://www.freebasic.net/wiki/KeyPgString](https://www.freebasic.net/wiki/KeyPgString)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bi` | [hello.bi](variants/ext-bi-2e6269/hello.bi) creato, verifiche pendenti |
-| `.bas` | [hello.bas](hello.bas), [consumer.bas](variants/ext-bi-2e6269/consumer.bas) creato, verifiche pendenti |
+| `.bi` | [hello.bi](variants/ext-bi-2e6269/hello.bi) created; verification pending |
+| `.bas` | [hello.bas](hello.bas), [consumer.bas](variants/ext-bi-2e6269/consumer.bas) created; verification pending |

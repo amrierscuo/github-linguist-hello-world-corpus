@@ -1,39 +1,39 @@
 # #010 ALGOL
 
-`hello.alg` è un programma ALGOL 60 per il dialetto e l'ambiente di I/O
-**jff-algol**, che usa `outstring` e `newline` sul canale 1. Il risultato
-atteso è una riga `Hello, World!`. La voce canonica usa `source.algol60`;
-per questo l'esempio adotta ALGOL 60 e dichiara esplicitamente l'ambiente di I/O.
+`hello.alg` is a ALGOL 60 program for the dialect and environment of I/O
+**jff-algol**, which uses `outstring` and `newline` on the 1. channel
+expected is a `Hello, World!` line. The canonical entry uses `source.algol60`;
+for this the example adopts ALGOL 60 and explicitly declares the environment of I/O.
 
-## Toolchain e comandi
+## Toolchain and commands
 
-Servono jff-algol di Jan van Katwijk, il suo preludio e runtime, e un compilatore
-C nel suo ambiente Linux o Cygwin. Dalla cartella dell'esempio:
+They serve jff-algol by Jan van Katwijk, his prelude and runtime, and a compiler
+C in its Linux or Cygwin environment. From the example folder:
 
 ```sh
 jff-algol hello.alg
 ./hello
 ```
 
-Il driver traduce `hello.alg` in C, compila e collega l'eseguibile `hello`.
-Per eseguire soltanto la traduzione front-end: `jff-algol -o hello.alg`.
-Seguire il manuale per configurare jff-algol e i percorsi del runtime.
+The driver translates `hello.alg` into C, compiles and connects the `hello` executable.
+To perform only front-end translation: `jff-algol -o hello.alg`.
+Follow the manual to configure jff-algol and runtime paths.
 
-## Stato
+## Status
 
-Creato; sintassi e semantica **non verificate**. Non sono presenti jff-algol né
-la sua toolchain C/Cygwin nel PATH dell'ambiente. Il programma è costruito secondo
-la sintassi e le procedure documentate dall'autore; questa revisione delle fonti
-non sostituisce la compilazione. Vedere `verification.log`.
+created; syntax and behavior **non verificate**. There are no jff-algol or
+its toolchain C/Cygwin in the PATH of the environment.
+the syntax and the procedures documented by the author; this review of the sources
+do not replace compilation. See `verification.log`.
 
-## Fonte primaria
+## Primary source
 
 - [Manuale dell'autore di jff-algol, conservato nell'archivio ALGOL](https://gtoal.com/languages/algol60/jff-algol-60-compiler/doc/jff-manual.pdf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.alg` | [hello.alg](hello.alg) creato, verifiche pendenti |
+| `.alg` | [hello.alg](hello.alg) created; verification pending |

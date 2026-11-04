@@ -2,48 +2,48 @@
 
 Voce canonica `FlatBuffers`, tipo `data`, language_id `577640576`.
 
-Definire lo schema FlatBuffers Greeting e codificare/decodificare un messaggio JSON con identificatore binario HELO.
+Define the FlatBuffers Greeting scheme and codificare/decodificare a JSON message with HELO binary identifier.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official FlatBuffers flatc binary schema compiler and codec — flatc version 25.12.19. Ambiente della prova: **Windows x64**.
+Official FlatBuffers flatc binary schema compiler and codec, flatc version 25.12.19. Test environment: **Windows x64**.
 
-flatc ufficiale 25.12.19 portable Windows x64. Usare una cartella build separata; schema, JSON originale e log sono i soli artefatti inclusi.
+official flatc 25.12.19 portable Windows x64. Use a separate build folder; schema, JSON original and log are the only artifacts included.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 flatc --binary --strict-json -o build hello.fbs greeting.json; flatc --json --strict-json -o build hello.fbs -- build/greeting.bin
 ```
 
-Risultato atteso: JSON decodificato {"message":"Hello, World!"}; identificatore HELO; exit 0.
+Expected result: JSON decoded { "message": "Hello, World!" }; HELO identifier; exit 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 La prova verifica il JSON decodificato esatto, il campo message e l’identificatore HELO ai byte 4..7 del vero FlatBuffer. L’hash del binario temporaneo è nel log.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://flatbuffers.dev/schema/](https://flatbuffers.dev/schema/)
 - [https://flatbuffers.dev/flatc/](https://flatbuffers.dev/flatc/)
 - [https://github.com/google/flatbuffers/releases](https://github.com/google/flatbuffers/releases)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fbs` | [hello.fbs](hello.fbs) verificato |
+| `.fbs` | [hello.fbs](hello.fbs) verified |

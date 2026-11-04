@@ -1,24 +1,24 @@
-# 0676 — SourcePawn — `.inc`
+# 0676: SourcePawn: `.inc`
 
 Include SourcePawn con include guard e funzione stock.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.inc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 spcomp main.sp -i . -o work/hello.smx; isolated SourceMod load
 ```
 
-Risultato atteso: server console Hello, World!.
+Expected result: Hello, World! console server.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://wiki.alliedmods.net/Introduction_to_SourcePawn_1.7](https://wiki.alliedmods.net/Introduction_to_SourcePawn_1.7)
 - [https://www.sourcemod.net/](https://www.sourcemod.net/)

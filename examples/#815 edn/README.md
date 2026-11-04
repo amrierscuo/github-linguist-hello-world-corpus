@@ -1,37 +1,37 @@
 # #815 edn
 
-Leggere una mappa EDN con keyword e stringa del saluto.
+Read a EDN map with keyword and greeting string.
 
 ## Toolchain
 
 CPython3.13.9; edn-format0.8.0
 
-## Procedura
+## Procedure
 
 pip install edn-format; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Parser community autentico EDN; il checker legge keyword reali e non usa un parser scritto per il corpus.
+Parser community authentic EDN; the checker reads real keywords and does not use a parser written for the corpus.
 
-Verifica reale 2026-10-08T13:38:34.791457+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:38:34.791457+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/edn-format/edn](https://github.com/edn-format/edn)
 - [https://github.com/swaroopch/edn_format](https://github.com/swaroopch/edn_format)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.edn` | [hello.edn](hello.edn) verificato |
+| `.edn` | [hello.edn](hello.edn) verified |

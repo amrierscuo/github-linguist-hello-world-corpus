@@ -1,41 +1,41 @@
 # #475 Nix
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Valutare un’espressione Nix e ottenere Hello, World!.
+Evaluate an expression Nix and get Hello, World!.
 
-L’espressione pura let/in usa interpolazione ${audience}. Non contiene derivazioni, fetch o modifiche del sistema; la prova richiede comunque l’evaluator Nix.
+The pure expression let/in uses ${audience} interpolation. It does not contain derivatives, fetch or system modifications; however, the test requires the evaluator Nix.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Nix evaluator originale; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 nix-instantiate --eval --strict hello.nix
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Valore stringa "Hello, World!".
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
 Impedimenti: Nix originale non preparato; evaluator pendente.
 
-## Fonti primarie
+## Primary sources
 
 - https://nix.dev/manual/nix/stable/language/string-interpolation.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nix` | [hello.nix](hello.nix) creato, verifiche pendenti |
+| `.nix` | [hello.nix](hello.nix) created; verification pending |

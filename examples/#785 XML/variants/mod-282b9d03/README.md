@@ -1,23 +1,23 @@
-# 0785 — XML — `.mod`
+# 0785: XML: `.mod`
 
-Modulo DTD XML originale; non un documento XML autonomo.
+Module DTD XML original; not an autonomous XML document.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.mod`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 lxml.etree: parse greeting.xml with DTD validation
 ```
 
-Risultato atteso: DTD accettato e documento contiene Hello, World!.
+Expected result: DTD accepted and document contains Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xhtml-modularization/](https://www.w3.org/TR/xhtml-modularization/)

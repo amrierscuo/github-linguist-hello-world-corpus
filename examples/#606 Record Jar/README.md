@@ -2,38 +2,38 @@
 
 Voce canonica `Record Jar`, tipo `data`, language_id `865765202`.
 
-Leggere un Record Jar originale nel formato del registry dei language subtags.
+Read an original Record Jar in the registry format of language subtags.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Existing language_data authentic format parser — 1.4.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Existing language_data authentic format parser, 1.4.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 language-data 1.4.0 e suo registry_parser.parse_file esistente.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python verify.py
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Una fixture originale private-use qaa contiene Description Hello, World!. Non si presenta come copia autorevole IANA. Il parser reale decodifica header, separatore e record, confrontati dal helper.
+An original private-use qaaa fixture contains Description Hello, World!. It does not appear as an authoritative copy IANA. The real parser decodifies header, separator and record, compared to the helper.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.rfc-editor.org/rfc/rfc5646#section-3.1.1](https://www.rfc-editor.org/rfc/rfc5646#section-3.1.1)

@@ -1,39 +1,39 @@
-# 0324 — JSON: `.webmanifest`
+# 0324: JSON: `.webmanifest`
 
-Ruolo: Web App Manifest W3C; nome del saluto e pagina locale.
+Role: Web App Manifest W3C; name of greeting and local page.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Python 3.13.9 json standard library. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Python 3.13.9 json standard library. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 python -m json.tool hello.webmanifest; poi usare il validatore/lettore originale dello schema (il parsing JSON non dimostra lo schema prodotto).
 ```
 
-Risultato atteso: Documento JSON riconosciuto nello schema specifico; saluto nel campo indicato.
+Expected result: JSON document recognized in the specific scheme; greeting in the indicated field.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati.
+- The language parser accepted the file; the application-specific schema, loader and semantics remain unverified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.webmanifest`: `7f766e2bbc5f8f7d3fd390ed7aae9f975a14cc2e35ee6f0073e3cdc0d2194c7a`
 - `index.html`: `67867b77f5bc7be02ee8c4788be7d073ef63a75ad317ee1d9b46193a52ee06f3`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.w3.org/TR/appmanifest/
 - https://www.rfc-editor.org/rfc/rfc8259
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato.
+Parsing JSON/JSON Lines real of the canonical grammar alone; no progetto/configurazione application scheme has been validated.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 3.13.9

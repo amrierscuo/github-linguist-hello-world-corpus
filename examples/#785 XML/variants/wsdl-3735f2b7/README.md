@@ -1,24 +1,24 @@
-# 0785 — XML — `.wsdl`
+# 0785: XML: `.wsdl`
 
-Descrizione WSDL1.1 originale senza binding/endpoint remoto.
+Description WSDL1.1 original without binding/endpoint remote.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.wsdl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 WSDL parser local metadata validation
 ```
 
-Risultato atteso: operation/documentation di saluto presenti; nessuna chiamata SOAP.
+Expected result: operation/documentation greeting present; no call SOAP.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://www.w3.org/TR/wsdl](https://www.w3.org/TR/wsdl)

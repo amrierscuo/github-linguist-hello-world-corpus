@@ -1,31 +1,31 @@
 # #664 Slash
 
-Valutare un template Slash e renderizzare il saluto.
+Evaluate a Slash template and make greetings.
 
-Tipo canonico `programming`, language_id `349`.
+Canonical type `programming`, language_id `349`.
 
-Toolchain prevista: Slash CLI SAPI originale.
+Suggested toolchain: Slash CLI SAPI original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 slash-cli hello.sl
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Il template usa l’output expression di Slash; Ruby ERB non verifica il suo motore.
+The template uses the output expression of Slash; Ruby ERB does not verify its engine.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Slash](https://github.com/slash-lang/slash)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sl` | [hello.sl](hello.sl) creato, verifiche pendenti |
+| `.sl` | [hello.sl](hello.sl) created; verification pending |

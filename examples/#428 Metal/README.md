@@ -1,31 +1,31 @@
 # #428 Metal
 
-Compilare un kernel Metal che scrive i 13 byte del saluto in un buffer.
+Fill in a Metal kernel that writes the 13 bytes of greeting in a buffer.
 
-Tipo canonico `programming`, language_id `230`.
+Canonical type `programming`, language_id `230`.
 
-Toolchain prevista: macOS Xcode Metal compiler e Metal runtime.
+Suggested toolchain: macOS Xcode Metal compiler and Metal runtime.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 xcrun -sdk macosx metal -c hello.metal -o build/hello.air
 ```
 
-Risultato atteso: kernel compilato; dispatch di 13 thread produce bytes ASCII Hello, World!.
+Expected result: compiled kernel; dispatch of 13 thread produces bytes ASCII Hello, World!.
 
-La semantica richiede anche un host Metal con buffer e dispatch; la compilazione da sola non viene contata come esecuzione.
+The behavior also requires a Metal host with buffer and dispatch; the compilation alone is not counted as execution.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Xcode e runtime Metal non disponibili su Windows.
+Initial state: created; syntax and behavioral verification pending. Xcode and runtime Metal not available on Windows.
 
-Fonti:
+Sources:
 
 - [Apple — Metal Shading Language specification](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.metal` | [hello.metal](hello.metal) creato, verifiche pendenti |
+| `.metal` | [hello.metal](hello.metal) created; verification pending |

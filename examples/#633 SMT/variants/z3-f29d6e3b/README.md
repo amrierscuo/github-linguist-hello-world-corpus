@@ -1,23 +1,23 @@
-# 0633 — SMT — `.z3`
+# 0633: SMT: `.z3`
 
-Variante testuale dello stesso formato, con suffisso canonico .z3.
+Textual variation of the same format, with canon suffix .z3.
 
-Provenienza: copia del file originale `examples/#633 SMT/hello.smt2`.
+Origin: copy of the original `examples/#633 SMT/hello.smt2` file.
 
 Artefatto principale: `hello.z3`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 z3 -smt2 hello.z3
 ```
 
-Risultato atteso: sat e ((greeting "Hello, World!"))..
+Expected result: sat e (greeting "Hello, World!" )..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://smt-lib.org/theories-UnicodeStrings.shtml](https://smt-lib.org/theories-UnicodeStrings.shtml)

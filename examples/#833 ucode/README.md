@@ -1,37 +1,37 @@
 # #833 ucode
 
-Interpretare ucode con concatenazione del saluto.
+Interpret ucode with concatenation of greeting.
 
 ## Toolchain
 
 ucode upstream 0102932915ffb494e5ed61459161a2cba0512226; GCC13.3.0; json-c0.17
 
-## Procedura
+## Procedure
 
 ucode hello.uc
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 
 
-Verifica reale 2026-10-08T13:49:04.191479+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:49:04.191479+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/ucode-lang/ucode](https://github.com/ucode-lang/ucode)
 - [https://ucode-lang.org/](https://ucode-lang.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.uc` | [hello.uc](hello.uc) verificato |
+| `.uc` | [hello.uc](hello.uc) verified |

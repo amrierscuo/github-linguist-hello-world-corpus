@@ -1,37 +1,37 @@
 # #807 Zig
 
-Compilare Zig e scrivere il saluto sullo stream debug.
+Fill Zig and write the greeting on the stream debug.
 
 ## Toolchain
 
 Zig 0.15.2
 
-## Procedura
+## Procedure
 
 zig build-exe hello.zig -femit-bin=build/hello.exe; build/hello.exe
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-std.debug.print scrive su stderr: il checker confronta quello stream, non inventa stdout.
+std.debug.print writes on stderr: the checker compares that stream, does not invent stdout.
 
-Verifica reale 2026-10-08T13:38:42.134007+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:38:42.134007+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://ziglang.org/documentation/0.15.2/](https://ziglang.org/documentation/0.15.2/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zig` | [hello.zig](hello.zig), [hello.zig](variants/zig-zon-af1980a8/hello.zig), [build.zig](variants/zig-zon-af1980a8/build.zig) creato, verifiche pendenti |
-| `.zig.zon` | [build.zig.zon](variants/zig-zon-af1980a8/build.zig.zon) verificato |
+| `.zig` | [hello.zig](hello.zig), [hello.zig](variants/zig-zon-af1980a8/hello.zig), [build.zig](variants/zig-zon-af1980a8/build.zig) created; verification pending |
+| `.zig.zon` | [build.zig.zon](variants/zig-zon-af1980a8/build.zig.zon) verified |

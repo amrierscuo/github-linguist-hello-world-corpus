@@ -1,18 +1,18 @@
 # #545 Pony
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare Pony e stampare Hello, World!.
+Fill out Pony and print Hello, World!.
 
-L’actor Main riceve Env, crea audience e scrive con env.out.print. La concatenazione usa String.
+The actor Main receives Env, creates audiences and writes with env.out.print.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 ponyc originale; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 ponyc .
@@ -22,25 +22,25 @@ ponyc .
 ./main
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Compiler/runtime Pony non preparati.
+Commitments: Compiler/runtime Pony not prepared.
 
-## Fonti primarie
+## Primary sources
 
 - https://tutorial.ponylang.io/getting-started/hello-world.html
 - https://tutorial.ponylang.io/expressions/variables.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pony` | [main.pony](main.pony) creato, verifiche pendenti |
+| `.pony` | [main.pony](main.pony) created; verification pending |

@@ -1,23 +1,23 @@
-# 0603 — Reason — `.rei`
+# 0603: Reason: `.rei`
 
 Interfaccia Reason corrispondente al modulo Hello.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `Hello.rei`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 bsb -make-world in an isolated copy
 ```
 
-Risultato atteso: interfaccia/implementazione accettate e main produce Hello, World!.
+Expected result: interfaccia/implementazione accepted and main produces Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://reasonml.github.io/docs/en/quickstart-javascript](https://reasonml.github.io/docs/en/quickstart-javascript)

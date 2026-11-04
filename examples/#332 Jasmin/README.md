@@ -2,34 +2,34 @@
 
 Assemblare bytecode JVM con Jasmin e chiamare PrintStream.println.
 
-Tipo canonico `programming`, language_id `180`.
+Canonical type `programming`, language_id `180`.
 
-Toolchain prevista: Jasmin 3.0.3 e JDK 21.
+Suggested toolchain: Jasmin 3.0.3 and JDK 21.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java -cp "$JASMIN_CLASSPATH" jasmin.Main -d build Hello.j
 java -cp build Hello
 ```
 
-Risultato atteso: bytecode JVM valido; stdout Hello, World! e LF.
+Expected result: bytecode JVM valid; stdout Hello, World! and LF.
 
-Il sorgente contiene istruzioni JVM esplicite. La classe assemblata rimane fuori dal corpus.
+The source contains explicit JVM instructions. The assembled class remains out of the corpus.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Jasmin 3.0.3 + CUP 0.9.2 + OpenJDK 21.0.12. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Jasmin 3.0.3 + CUP 0.9.2 + OpenJDK 21.0.12. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Jasmin — manuale originale](https://jasmin.sourceforge.net/guide.html)
 - [Jasmin — progetto Sable](https://github.com/Sable/jasmin)
 
-Classpath richiesto: `jasmin-3.0.3.jar`, `java_cup-0.9.2.jar`. I JAR originali sono disponibili da [Maven Central](https://repo.maven.apache.org/maven2/). Impostare la variabile di classpath del comando; separatore `;` su Windows, `:` su Unix.
+Classpath required: `jasmin-3.0.3.jar`, `java_cup-0.9.2.jar`. The original JAR are available from [Maven Central](https://repo.maven.apache.org/maven2/). Set the command classpath variable; `;` separator on Windows, `:` on Unix.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.j` | [Hello.j](Hello.j) verificato |
+| `.j` | [Hello.j](Hello.j) verified |

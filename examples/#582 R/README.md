@@ -1,34 +1,38 @@
 # #582 R
 
-Eseguire R e stampare il saluto.
+Run R and print your greeting.
 
-Tipo canonico `programming`, language_id `307`.
+Canonical type `programming`, language_id `307`.
 
-Toolchain prevista: GNU R Rscript.
+Suggested toolchain: GNU Rscript.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Rscript --vanilla hello.r
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-cat scrive senza prefisso [1] e senza virgolette.
+cat writes without prefix [ 1 ] and without quotes.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: GNU R 4.3.3 native Ubuntu runtime. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: GNU R 4.3.3 native Ubuntu runtime. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [R introduction](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.r` | [hello.r](hello.r) verificato |
-| `.rd` | [hello.rd](variants/rd-0443eb91/hello.rd) creato, verifiche pendenti |
-| `.rhistory` | [hello.rhistory](variants/rhistory-375f1003/hello.rhistory) creato, verifiche pendenti |
-| `.rsx` | [hello.rsx](variants/rsx-7f28a360/hello.rsx) creato, verifiche pendenti |
+| `.r` | [hello.r](hello.r) verified |
+| `.rd` | [hello.rd](variants/rd-0443eb91/hello.rd) syntax and behavior verified |
+| `.rhistory` | [hello.rhistory](variants/rhistory-375f1003/hello.rhistory) created; verification pending |
+| `.rsx` | [hello.rsx](variants/rsx-7f28a360/hello.rsx) created; verification pending |
+
+## Additional extension verification
+
+- `.rd`: verified on November 4, 2026. [Evidence](verification/native_20261104_582_variants_result.json).

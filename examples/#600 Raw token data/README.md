@@ -1,38 +1,38 @@
 # #600 Raw token data
 
-Decodificare un dump raw di token Pygments e recuperare il valore del token string.
+Decode a raw token dump Pygments and recover the token string value.
 
-Tipo canonico `data`, language_id `318`.
+Canonical type `data`, language_id `318`.
 
-Toolchain prevista: Python e Pygments RawTokenLexer.
+Suggested toolchain: Python and Pygments RawTokenLexer.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: un token Literal.String con valore Hello, World!.
+Expected result: a Literal.String token with Hello, World! value.
 
-La voce canonica Raw token data è ampia e non definisce uno schema nel seed. L’esempio sceglie esplicitamente il formato raw token documentato da Pygments; la verifica vale per questa variante.
+The Raw token entry is wide and does not define a pattern in the seed. The example explicitly chooses the raw token format documented by Pygments; the verification is valid for this variant.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + Pygments RawTokenLexer. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + Pygments RawTokenLexer. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Pygments raw token format](https://pygments.org/docs/formatters/#RawTokenFormatter)
 - [RawTokenLexer](https://github.com/pygments/pygments/blob/master/pygments/lexers/special.py)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install pygments
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.raw` | [hello.raw](hello.raw) verificato |
+| `.raw` | [hello.raw](hello.raw) verified |

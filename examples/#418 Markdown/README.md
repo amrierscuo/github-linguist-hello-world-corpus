@@ -1,48 +1,48 @@
 # #418 Markdown
 
-Analizzare Markdown CommonMark e renderizzare il saluto come titolo HTML.
+Analyze Markdown CommonMark and make greetings as HTML title.
 
-Tipo canonico `prose`, language_id `222`.
+Canonical type `prose`, language_id `222`.
 
-Toolchain prevista: Python 3.13 e markdown-it-py.
+Suggested toolchain: Python 3.13 and markdown-it-py.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: HTML <h1>Hello, World!</h1> e LF; stdout saluto e LF.
+Expected result: HTML <h1> Hello, World! </h1> and LF; stdout greeting and LF.
 
-Il README è documentazione; hello.md è l’artefatto Markdown primario separato.
+The README is documentation; hello.md is the separate primary Markdown artifact.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + markdown-it-py 4.2.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + markdown-it-py 4.2.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [CommonMark — specifica](https://spec.commonmark.org/0.31.2/)
 - [markdown-it-py — motore](https://github.com/executablebooks/markdown-it-py)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install markdown-it-py==4.2.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.md` | [hello.md](hello.md) verificato |
-| `.livemd` | [hello.livemd](variants/livemd-1b19eac1/hello.livemd) creato, verifiche pendenti |
-| `.markdown` | [hello.markdown](variants/markdown-7e4cc6af/hello.markdown) creato, verifiche pendenti |
-| `.mdown` | [hello.mdown](variants/mdown-c553b9ee/hello.mdown) creato, verifiche pendenti |
-| `.mdwn` | [hello.mdwn](variants/mdwn-d13c3a39/hello.mdwn) creato, verifiche pendenti |
-| `.mkd` | [hello.mkd](variants/mkd-ce2bdbce/hello.mkd) creato, verifiche pendenti |
-| `.mkdn` | [hello.mkdn](variants/mkdn-ba8fcdf1/hello.mkdn) creato, verifiche pendenti |
-| `.mkdown` | [hello.mkdown](variants/mkdown-f8609122/hello.mkdown) creato, verifiche pendenti |
-| `.ronn` | [hello.ronn](variants/ronn-8655d3d6/hello.ronn) creato, verifiche pendenti |
-| `.scd` | [hello.scd](variants/scd-4dd9ca08/hello.scd) creato, verifiche pendenti |
-| `.workbook` | [hello.workbook](variants/workbook-18c428ee/hello.workbook) creato, verifiche pendenti |
+| `.md` | [hello.md](hello.md) verified |
+| `.livemd` | [hello.livemd](variants/livemd-1b19eac1/hello.livemd) created; verification pending |
+| `.markdown` | [hello.markdown](variants/markdown-7e4cc6af/hello.markdown) created; verification pending |
+| `.mdown` | [hello.mdown](variants/mdown-c553b9ee/hello.mdown) created; verification pending |
+| `.mdwn` | [hello.mdwn](variants/mdwn-d13c3a39/hello.mdwn) created; verification pending |
+| `.mkd` | [hello.mkd](variants/mkd-ce2bdbce/hello.mkd) created; verification pending |
+| `.mkdn` | [hello.mkdn](variants/mkdn-ba8fcdf1/hello.mkdn) created; verification pending |
+| `.mkdown` | [hello.mkdown](variants/mkdown-f8609122/hello.mkdown) created; verification pending |
+| `.ronn` | [hello.ronn](variants/ronn-8655d3d6/hello.ronn) created; verification pending |
+| `.scd` | [hello.scd](variants/scd-4dd9ca08/hello.scd) created; verification pending |
+| `.workbook` | [hello.workbook](variants/workbook-18c428ee/hello.workbook) created; verification pending |

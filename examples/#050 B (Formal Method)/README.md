@@ -2,47 +2,47 @@
 
 Voce canonica: `B (Formal Method)`, tipo `programming`, `language_id: 993355937`.
 
-Definire una macchina Classical B con costante greeting uguale a Hello, World! e operazione hello che restituisce quella costante.
+Define a Classical B machine with constant greeting equal to Hello, World! and hello operation that returns the constant one.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-probcli — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+probcli, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede ProB/probcli o ProB2 UI con parser Classical B. La versione effettiva deve essere registrata quando la toolchain sarà disponibile.
+Requires ProB/probcli or ProB2 UI with parser Classical B. The actual version must be recorded when the toolchain will be available.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 ProB2 UI: aprire HelloWorld.mch, eseguire setup dei constants e l’operazione hello, controllare result = "Hello, World!".
 ```
 
-Risultato atteso: Macchina caricata e tipizzata; operazione hello abilitata e output result esattamente Hello, World!.
+Expected result: Charged and typed machine; hello enabled operation and result output exactly Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Questa voce canonica è il metodo formale B. La macchina non stampa: il saluto è il valore simbolico e il risultato dell’operazione. Nessun parser/animatore B è stato eseguito in questa prova.
+This canonical entry is the formal method B. The non-printing machine: the greeting is the symbolic value and the result of the operation. No parser/animatore B was executed in this test.
 
-Requisiti residui:
+Remaining requirements:
 
 - probcli toolchain not installed or not available in this isolated verification environment.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://prob.hhu.de/w/index.php?title=Summary_of_B_Syntax](https://prob.hhu.de/w/index.php?title=Summary_of_B_Syntax)
 - [https://prob.hhu.de/w/index.php?title=ProB_Cli](https://prob.hhu.de/w/index.php?title=ProB_Cli)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mch` | [HelloWorld.mch](HelloWorld.mch) creato, verifiche pendenti |
+| `.mch` | [HelloWorld.mch](HelloWorld.mch) created; verification pending |

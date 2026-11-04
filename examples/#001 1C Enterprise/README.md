@@ -1,44 +1,41 @@
 # #001 1C Enterprise
 
-`hello.os` scrive una riga `Hello, World!` sulla console. La variante scelta è
-OneScript, implementazione indipendente del linguaggio BSL di 1C. L'estensione
-`.os` è presente nella voce canonica; il nome e i metadati Linguist restano invariati.
+`hello.os` prints `Hello, World!` to the console. The example uses OneScript, an independent implementation of 1C's BSL language. The `.os` extension is listed in the canonical entry; its name and Linguist metadata are unchanged.
 
-## Toolchain e comandi
+## Toolchain and commands
 
-OneScript **2.2.0**, archivio portabile Windows x64 ufficiale. Estrarre il runtime
-in una cartella separata e rendere disponibile `oscript.exe`. Dalla cartella
-dell'esempio:
+OneScript **2.2.0**, official Windows x64 portable archive. Extract runtime
+in a separate folder and make `oscript.exe` available. From the example directory:
 
 ```powershell
 oscript -check hello.os
 oscript hello.os
 ```
 
-Non occorre una compilazione separata. Il primo comando deve terminare con codice
-0 e `No errors.`; il secondo con codice 0 e una sola riga `Hello, World!`.
+You do not need a separate compilation. The first command must end with code
+0 and `No errors.`; the second with 0 code and a single `Hello, World!` line.
 
-## Stato e limiti
+## Status and limitations
 
-Sintassi **verificata** e semantica **verificata** con OneScript 2.2.0 su Windows
-x64. La registrazione effettiva, i comandi, i codici di uscita e l'hash del sorgente
-sono in `verification/onescript.json`. Il runtime usato è isolato nella cartella
-di lavoro esterna al corpus e non è incluso negli esempi.
+Syntax **verified** and behavior **verified** with OneScript 2.2.0 on Windows
+x64. Effective recording, commands, output codes and source hash
+are in `verification/onescript.json`. The runtime used is isolated in the folder
+work outside the corpus and is not included in the examples.
 
-Questa evidenza copre il dialetto compatibile OneScript. Non è una verifica
-eseguita sulla piattaforma commerciale 1C:Enterprise o sulle sue API applicative.
+This evidence covers the OneScript compatible dialect. It is not a verification
+performed on the 1C:Enterprise commercial platform or on its application API.
 
-## Fonti primarie
+## Primary sources
 
 - [Progetto OneScript: linguaggio e `Сообщить`](https://www.oscript.io/).
 - [Tutorial ufficiale: esecuzione con `oscript file.os`](https://www.oscript.io/learn/tutorial-info).
 - [Release ufficiale e archivio portabile 2.2.0](https://github.com/EvilBeaver/OneScript/releases/tag/v2.2.0).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bsl` | [hello.bsl](variants/ext-bsl-2e62736c/hello.bsl) creato, verifiche pendenti |
-| `.os` | [hello.os](hello.os) verificato |
+| `.bsl` | [hello.bsl](variants/ext-bsl-2e62736c/hello.bsl) created; verification pending |
+| `.os` | [hello.os](hello.os) verified |

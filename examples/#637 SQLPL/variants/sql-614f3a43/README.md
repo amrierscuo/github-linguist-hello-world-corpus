@@ -1,23 +1,23 @@
-# 0637 — SQLPL — `.sql`
+# 0637: SQLPL: `.sql`
 
-Variante testuale dello stesso formato, con suffisso canonico .sql.
+Textual variation of the same format, with canon suffix .sql.
 
-Provenienza: copia del file originale `examples/#637 SQLPL/hello.db2`.
+Origin: copy of the original `examples/#637 SQLPL/hello.db2` file.
 
 Artefatto principale: `hello.sql`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 db2 -td@ -vf hello.sql
 ```
 
-Risultato atteso: Il parametro OUT greeting vale Hello, World! dopo CALL corpus_greeting(?)..
+Expected result: The OUT greeting parameter is worth Hello, World! after CALL corpus_greeting(?).
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=procedures-sql-procedure-body](https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=procedures-sql-procedure-body)

@@ -1,42 +1,42 @@
 # #362 KoLmafia ASH
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Interpretare KoLmafia ASH e stampare Hello, World!.
 
-Il punto di ingresso main concatena una variabile string con print. La prova richiede il parser/interprete ASH della distribuzione KoLmafia.
+The main input point chains a string variable with print. The test requires the parser/interprete ASH of the KoLmafia distribution.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 KoLmafia/ASH originale; versione da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Nel CLI KoLmafia: call hello.ash
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Console contiene Hello, World!.
+Console contains Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
-Impedimenti: KoLmafia non preparato; nessuna connessione al gioco effettuata.
+Commitments: KoLmafia not prepared; no connection to the game performed.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/kolmafia/kolmafia
 - https://raw.githubusercontent.com/kolmafia/kolmafia/main/src/net/sourceforge/kolmafia/textui/Parser.java
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ash` | [hello.ash](hello.ash) creato, verifiche pendenti |
+| `.ash` | [hello.ash](hello.ash) created; verification pending |

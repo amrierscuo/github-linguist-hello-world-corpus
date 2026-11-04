@@ -1,30 +1,30 @@
-# 0518 — PEG.js: `.peggy`
+# 0518: PEG.js: `.peggy`
 
-Ruolo: Alias di estensione per lo stesso formato testuale del sorgente principale.
+Role: Alias extension for the same text format as the main source.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#518 PEG.js/hello.pegjs.
+Origin: Byte-identical copy of the original corpus source: examples/#518 PEG.js / hello.pegjs.
 
-Toolchain richiesta: Node.js 22.20.0 + Peggy. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Node.js 22.20.0 + Peggy. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Usare la toolchain del README principale sul file hello.peggy; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
 ```
 
-Risultato atteso: saluto riconosciuto, input errato rifiutato.
+Expected result: recognized greeting, wrong input refused.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.peggy`: `3636735c9bbd19ff288579658e3b66fdab1bf82ecc3be189c7557b5217e60397`
 - `verify.cjs`: `be801a915083bf6331a0cae3578224abb89d2c063801eb69f18c64ba0900f890`
 
-Fonti primarie:
+Primary sources:
 
 - https://peggyjs.org/documentation.html

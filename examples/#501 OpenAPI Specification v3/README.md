@@ -1,35 +1,35 @@
 # #501 OpenAPI Specification v3
 
-Validare una specifica OpenAPI v3 con risposta text/plain ed esempio di saluto.
+Validate a specific OpenAPI v3 with text/plain response and greeting example.
 
-Tipo canonico `data`, language_id `557959099`.
+Canonical type `data`, language_id `557959099`.
 
-Toolchain prevista: Python, PyYAML e openapi-spec-validator.
+Suggested toolchain: Python, PyYAML and openapi-spec-validator.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: schema OpenAPI valido ed esempio Hello, World! letto dal documento.
+Expected result: valid OpenAPI scheme and example Hello, World! read from the document.
 
-La verifica riguarda il contratto API e il suo esempio; non avvia un servizio HTTP.
+The verification concerns the API contract and its example; it does not start a HTTP service.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + openapi-spec-validator 0.9.0 + PyYAML. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + openapi-spec-validator 0.9.0 + PyYAML. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [OpenAPI 3.0.3](https://spec.openapis.org/oas/v3.0.3.html)
 - [Validator](https://github.com/python-openapi/openapi-spec-validator)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install openapi-spec-validator PyYAML
 ```
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install openapi-spec-validator==0.9.0 PyYAML

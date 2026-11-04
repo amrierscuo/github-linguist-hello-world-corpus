@@ -1,30 +1,34 @@
-# 0333 — Java: `.jsh`
+# 0333: Java: `.jsh`
+
+## Recorded verification
+
+**Syntax and behavior verified** on November 4, 2026. Copy .jav byte-identically as Hello.java, compile and execute; run the original .jsh as JShell input with local execution engine. [Evidence](../../verification/native_20261104_333_variants_result.json).
 
 Ruolo: Script JShell con istruzione top-level, distinto da classe Java compilabile.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: OpenJDK 21.0.12. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: OpenJDK 21.0.12. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 jshell hello.jsh
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Earlier status (before this check): Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.jsh`: `40c7451ecae69a32ad31a09b931c43d2ee15570efac83d6d59f9ed5f8771f238`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.oracle.com/en/java/javase/21/jshell/introduction-jshell.html
 - https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html

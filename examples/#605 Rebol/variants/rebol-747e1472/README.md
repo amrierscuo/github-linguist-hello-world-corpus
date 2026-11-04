@@ -1,23 +1,23 @@
-# 0605 — Rebol — `.rebol`
+# 0605: Rebol: `.rebol`
 
-Variante testuale dello stesso formato, con suffisso canonico .rebol.
+Textual variation of the same format, with canon suffix .rebol.
 
-Provenienza: copia del file originale `examples/#605 Rebol/hello.reb`.
+Origin: copy of the original `examples/#605 Rebol/hello.reb` file.
 
 Artefatto principale: `hello.rebol`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rebol3 hello.rebol
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto..
+Expected result: Hello, World! in output or compliant data, according to the scope described..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/Oldes/Rebol3](https://github.com/Oldes/Rebol3)

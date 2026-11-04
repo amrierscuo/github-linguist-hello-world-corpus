@@ -1,39 +1,39 @@
-# 0324 — JSON: `.webapp`
+# 0324: JSON: `.webapp`
 
-Ruolo: Manifest Open Web App Mozilla storico; saluto nel nome.
+Role: Manifest Open Web App Mozilla historical; greeting in the name.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Python 3.13.9 json standard library. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Python 3.13.9 json standard library. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 python -m json.tool hello.webapp; poi usare il validatore/lettore originale dello schema (il parsing JSON non dimostra lo schema prodotto).
 ```
 
-Risultato atteso: Documento JSON riconosciuto nello schema specifico; saluto nel campo indicato.
+Expected result: JSON document recognized in the specific scheme; greeting in the indicated field.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati.
+- The language parser accepted the file; the application-specific schema, loader and semantics remain unverified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.webapp`: `568067ef9ab02bdeae81f0ebf54c60b50baf4d1930abf7491c2513bd3d44f58b`
 - `index.html`: `67867b77f5bc7be02ee8c4788be7d073ef63a75ad317ee1d9b46193a52ee06f3`
 
-Fonti primarie:
+Primary sources:
 
 - https://firefox-source-docs.mozilla.org/devtools-user/app_manager/index.html
 - https://www.rfc-editor.org/rfc/rfc8259
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato.
+Parsing JSON/JSON Lines real of the canonical grammar alone; no progetto/configurazione application scheme has been validated.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 3.13.9

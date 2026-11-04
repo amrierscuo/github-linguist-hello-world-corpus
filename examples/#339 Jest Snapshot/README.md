@@ -1,38 +1,38 @@
 # #339 Jest Snapshot
 
-Leggere uno snapshot Jest originale e confrontarlo con il valore Hello, World!.
+Read an original Jest snapshot and compare it to the Hello, World! value.
 
-Tipo canonico `data`, language_id `774635084`.
+Canonical type `data`, language_id `774635084`.
 
-Toolchain prevista: Node.js 22 e jest-snapshot 30.2.0.
+Suggested toolchain: Node.js 22 and jest-snapshot 30.2.0.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: snapshot greeting 1 caricato e confronto riuscito; stdout saluto e LF.
+Expected result: snapshot greeting 1 loaded and successful comparison; stdout greeting and LF.
 
-updateSnapshot è none: il checker deve confrontare il file esistente e non creare o aggiornare aspettative.
+updateSnapshot is none: the checker has to compare the existing file and does not create or update expectations.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + jest-snapshot 30.2.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + jest-snapshot 30.2.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Jest — snapshot testing](https://jestjs.io/docs/snapshot-testing)
 - [Jest — implementazione SnapshotState](https://github.com/jestjs/jest/tree/main/packages/jest-snapshot)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund jest-snapshot@30.2.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.snap` | [greeting.test.js.snap](greeting.test.js.snap) verificato |
+| `.snap` | [greeting.test.js.snap](greeting.test.js.snap) verified |

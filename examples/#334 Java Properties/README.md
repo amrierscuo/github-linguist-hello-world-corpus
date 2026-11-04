@@ -1,31 +1,31 @@
 # #334 Java Properties
 
-Caricare un file Java Properties e leggere greeting con java.util.Properties.
+Upload a Java Properties file and read greeting with java.util.Properties.
 
-Tipo canonico `data`, language_id `519377561`.
+Canonical type `data`, language_id `519377561`.
 
-Toolchain prevista: JDK 21 java.util.Properties.
+Suggested toolchain: JDK 21 java.util.Properties.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java Verify.java
 ```
 
-Risultato atteso: stdout Hello, World! e LF; property corretta.
+Expected result: stdout Hello, World! and LF; correct property.
 
-Il file usa ASCII; nessuna ambiguità con la codifica storica di Properties.
+The file uses ASCII; no ambiguity with the historical coding of Properties.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: OpenJDK 21.0.12 Properties. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: OpenJDK 21.0.12 Properties. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Java SE — Properties.load](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html#load(java.io.Reader))
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.properties` | [hello.properties](hello.properties) verificato |
+| `.properties` | [hello.properties](hello.properties) verified |

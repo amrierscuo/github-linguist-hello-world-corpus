@@ -1,32 +1,32 @@
 # #030 Answer Set Programming
 
-`hello.lp` contiene un fatto di greeting e una direttiva `#show` che mostra soltanto `greeting/1`. Per questo linguaggio dichiarativo il risultato è l'atomo in un answer set, non una stampa imperativa.
+`hello.lp` contains a greeting fact and a `#show` directive that only shows `greeting/1`. For this declaring language the result is the atom in a reply set, not an imperative print.
 
-Prerequisiti: Python e il pacchetto ufficiale `clingo==5.8.0`. La prova locale ha usato CPython 3.13.9 e wheel Windows x64, installate nella sola cartella di lavoro.
+Prerequisites: Python and the official `clingo==5.8.0` package. The local test used CPython 3.13.9 and wheel Windows x64, installed in the workbook only.
 
 ```sh
 python -m pip install clingo==5.8.0
 python verify.py
 ```
 
-`verify.py` usa `clingo.Control`, il parser/grounder nativo e il solver. Chiede tutti i modelli, verifica soddisfacibilità ed enumerazione esaustiva e confronta l'intera lista degli atomi mostrati con un solo `greeting("Hello, World!")`. La prima riga stampata dall'helper è `Hello, World!`; la seconda conferma il controllo. La semantica verificata è il risultato del solver, non la sola stampa del helper.
+`verify.py` uses `clingo.Control`, the native parser and grounder, and the solver. It requests all models, verifies satisfiability and exhaustive enumeration, and checks that the full list of shown atoms contains only `greeting("Hello, World!")`. The helper prints `Hello, World!` on its first line and confirms the check on its second line. The semantic check verifies the solver result, beyond the helper's printed output.
 
 Toolchain: **Potassco clingo 5.8.0 Python wheel; CPython 3.13.9 Windows x64**.
 
-Stato: **Sintassi e semantica verificate.**
+Status: **Sintassi e semantica verificate.**
 
-Evidenza: [log dei comandi e SHA-256 dei sorgenti](verification/toolchain.json). Il log conserva exit code, stdout e stderr; i percorsi della macchina sono normalizzati.
+Evidence: [log dei comandi e SHA-256 dei sorgenti](verification/toolchain.json). The log keeps exit code, stdout and stderr; the machine paths are normalized.
 
-Fonti primarie:
+Primary sources:
 
 - [Documentazione / sorgente ufficiale 1](https://potassco.org/clingo/)
 - [Documentazione / sorgente ufficiale 2](https://github.com/potassco/clingo/releases/tag/v5.8.0)
 - [Documentazione / sorgente ufficiale 3](https://github.com/potassco/clingo/blob/v5.8.0/libpyclingo/clingo/control.py)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lp` | [hello.lp](hello.lp) verificato |
+| `.lp` | [hello.lp](hello.lp) verified |

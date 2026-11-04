@@ -1,30 +1,30 @@
-# 0293 — Haskell: `.hsc`
+# 0293: Haskell: `.hsc`
 
 Ruolo: Sorgente hsc2hs: preprocessamento include C, poi normale programma Haskell.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Hugs98 September2006, pacchetto98.200609.21-6build3 e librerie bundled Ubuntu. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Hugs98 September2006, pacchetto98.200609.21-6build3 e librerie bundled Ubuntu. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 hsc2hs hello.hsc -o Main.hs; ghc Main.hs -o hello; ./hello
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.hsc`: `06ea4d8ec1cf1da2f3deade5a82f24cdffd8d7d095cc8180e805159e0d865e8c`
 
-Fonti primarie:
+Primary sources:
 
 - https://downloads.haskell.org/ghc/latest/docs/users_guide/utils.html#hsc2hs
 - https://www.haskell.org/hugs/

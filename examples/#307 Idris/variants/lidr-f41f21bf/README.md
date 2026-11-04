@@ -1,30 +1,30 @@
-# 0307 — Idris: `.lidr`
+# 0307: Idris: `.lidr`
 
 Ruolo: Sorgente Idris literate in stile Bird: codice preceduto da >.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Idris; scegliere/registrare una versione compatibile con .idr. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Idris; scegliere/registrare una versione compatibile con .idr. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 idris hello.lidr -o hello; ./hello
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.lidr`: `de05f69112435185e1513371061d8ec0fd732209d7264f1e341d243960372b70`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.idris-lang.org/en/latest/tutorial/miscellany.html#literate-programming
 - https://docs.idris-lang.org/en/latest/tutorial/introduction.html

@@ -1,12 +1,12 @@
-# 0744 — VHDL — `.vht`
+# 0744: VHDL: `.vht`
 
-Variante testuale dello stesso formato, con suffisso canonico .vht.
+Textual variation of the same format, with canon suffix .vht.
 
-Provenienza: copia del file originale `examples/#744 VHDL/hello.vhdl`.
+Origin: copy of the original `examples/#744 VHDL/hello.vhdl` file.
 
 Artefatto principale: `hello.vht`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 ghdl -a --std=08 --workdir=work hello.vht
@@ -14,12 +14,12 @@ ghdl -e --std=08 --workdir=work hello
 ghdl -r --std=08 --workdir=work hello --stop-time=1ns
 ```
 
-Risultato atteso: analisi/elaborazione riuscita; report note Hello, World!..
+Expected result: analisi/elaborazione successful; reports notes Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://ghdl.github.io/ghdl/using/InvokingGHDL.html](https://ghdl.github.io/ghdl/using/InvokingGHDL.html)

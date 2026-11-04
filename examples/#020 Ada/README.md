@@ -1,10 +1,10 @@
 # #020 Ada
 
-Scrivere Hello World seguito da un a capo usando Ada.Text_IO.Put_Line.
+Write Hello World followed by a boss using Ada.Text_IO.Put_Line.
 
-## Riproduzione
+## Reproduction
 
-Toolchain: GNAT 13.3.0; GCC Ada 13.3.0. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
+Toolchain: GNAT 13.3.0; GCC Ada 13.3.0. Test environment: Ubuntu 24.04 WSL2 x86_64.
 
 ```text
 gnatmake hello.adb
@@ -13,25 +13,25 @@ Per .ada: gcc -c -x ada hello.ada -o hello.o; gnatbind hello.ali; gnatlink hello
 Per .ads: gnatmake consumer.adb; ./consumer dalla relativa directory variants.
 ```
 
-Risultato atteso: stdout: Hello World seguito da un a capo; exit 0.
+Expected result: stdout: Hello World followed by a boss; exit 0.
 
-## Verifica
+## Verification
 
-Sintassi e semantica verificate il 2026-10-08T23:32:27.334394+00:00. Le varianti hanno prove separate nel log quando consumate.
+syntax and behavior verified 2026-10-08T23:32:27.334394+00:00. The variants have separate evidence in the log when consumed.
 
-[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
+[Prova nativa](verification/finish_native.json) contains versions, real commands, exit code, output and SHA-256. The local routes are replaced by placeholders.
 
-## Fonti primarie
+## Primary sources
 
 - [https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html](https://gcc.gnu.org/onlinedocs/gnat_ugn/Running-a-Simple-Ada-Program.html)
 - [https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html](https://learn.adacore.com/courses/intro-to-ada/chapters/imperative_language.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.adb` | [hello.adb](hello.adb), [consumer.adb](variants/ext-ads-2e616473/consumer.adb) sintassi e semantica verificate |
-| `.ada` | [hello.ada](variants/ext-ada-2e616461/hello.ada) sintassi e semantica verificate |
-| `.ads` | [greeting.ads](variants/ext-ads-2e616473/greeting.ads) sintassi e semantica verificate |
+| `.adb` | [hello.adb](hello.adb), [consumer.adb](variants/ext-ads-2e616473/consumer.adb) syntax and behavior verified |
+| `.ada` | [hello.ada](variants/ext-ada-2e616461/hello.ada) syntax and behavior verified |
+| `.ads` | [greeting.ads](variants/ext-ads-2e616473/greeting.ads) syntax and behavior verified |

@@ -2,34 +2,34 @@
 
 Voce e ordine canonici di `reference/languages.yml`.
 
-Espandere uno snippet YASnippet con il default World.
+Expand a YASnippet with the default World.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-GNU Emacs 29.3 + original YASnippet 0.14.0. Eseguire dalla cartella dell'esempio:
+GNU Emacs 29.3 + original YASnippet 0.14.0. Run from the example folder:
 
 ```sh
 emacs -Q --batch --load <YASnippet-0.14.0>/yasnippet.el --load verify.el
 ```
 
-Installare YASnippet originale 0.14.0 e sostituire il percorso fra parentesi angolari. Il checker usa il parser originale per i metadata, registra lo snippet in text-mode, espande il trigger greeting e verifica testo completo e placeholder 1 World ancora attivo.
+Install YASnippet original 0.14.0 and replace the path between angular brackets.The checker uses the original parser for metadata, records the snippet in text-mode, expands the trigger greeting and verification full text and placeholder 1 World still active.
 
-`-Q` disabilita la configurazione personale di Emacs. La prova si esegue in batch.
+`-Q` disables the personal configuration of Emacs.
 
-## Stato e prova
+## State and Test
 
-Sintassi e semantica verificate il `2026-10-08T23:33:35.865605+00:00`. Risultato reale: `Hello, World!`.
+syntax and behavior verified `2026-10-08T23:33:35.865605+00:00`. Real result: `Hello, World!`.
 
 [Log della verifica](verification/runtime.json) con comandi, versioni, output, exit code e SHA-256 dei file effettivamente controllati.
 
-## Fonti primarie
+## Primary sources
 
 - [https://joaotavora.github.io/yasnippet/snippet-development.html](https://joaotavora.github.io/yasnippet/snippet-development.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.yasnippet` | [hello.yasnippet](hello.yasnippet) sintassi e semantica verificate |
+| `.yasnippet` | [hello.yasnippet](hello.yasnippet) syntax and behavior verified |

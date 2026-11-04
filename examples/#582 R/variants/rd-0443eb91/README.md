@@ -1,23 +1,27 @@
-# 0582 — R — `.rd`
+# 0582: R: `.rd`
 
-Documento Rd di aiuto R, non script R.
+## Recorded verification
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+**Syntax and behavior verified** on November 4, 2026. Run the original Rd markup through the native R help formatter and assert that the produced help text contains the greeting. [Evidence](../../verification/native_20261104_582_variants_result.json).
+
+Rd help document, not R script.
+
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rd`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 R CMD Rd2txt hello.rd > work/greeting.txt
 ```
 
-Risultato atteso: documento di aiuto con titolo Hello, World!.
+Expected result: help document with title Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Rd-format](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Rd-format)

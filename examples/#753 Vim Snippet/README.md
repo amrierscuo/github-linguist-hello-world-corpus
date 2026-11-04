@@ -1,33 +1,33 @@
 # #753 Vim Snippet
 
-Espandere uno snippet UltiSnips per ottenere il saluto.
+Expand a snippet UltiSnips to get greeting.
 
-Tipo canonico `markup`, language_id `81265970`.
+Canonical type `markup`, language_id `81265970`.
 
-Toolchain prevista: Vim con UltiSnips originale.
+Suggested toolchain: Vim with original UltiSnips.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Caricare hello.snippets come filetype fixture; digitare hello e attivare l’espansione.
 ```
 
-Risultato atteso: buffer contiene Hello, World!.
+Expected result: buffer contains Hello, World!.
 
-La verifica richiede il loader e l’espansore, non un parser inventato per queste tre righe.
+Verification requires loader and expander, not a parser invented for these three lines.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [UltiSnips](https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.snip` | [hello.snip](variants/snip-4fb5d1ae/hello.snip) creato, verifiche pendenti |
-| `.snippet` | [hello.snippet](variants/snippet-29acba5e/hello.snippet) creato, verifiche pendenti |
-| `.snippets` | [hello.snippets](hello.snippets) creato, verifiche pendenti |
+| `.snip` | [hello.snip](variants/snip-4fb5d1ae/hello.snip) created; verification pending |
+| `.snippet` | [hello.snippet](variants/snippet-29acba5e/hello.snippet) created; verification pending |
+| `.snippets` | [hello.snippets](hello.snippets) created; verification pending |

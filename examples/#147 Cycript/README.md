@@ -1,42 +1,42 @@
 # #147 Cycript
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Usare l’interoperabilità C di Cycript per passare il saluto a puts.
+Use Cycript's C interoperability to pass the greeting to puts.
 
-Il sorgente combina concatenazione ECMAScript e il cast Cycript (typedef const char *). La chiamata puts richiede le dichiarazioni libc disponibili nel runtime Cycript. Il file va verificato nel motore originale: Node.js non interpreta questa sintassi FFI.
+The source combines ECMAScript concatenation and the Cycript cast (typedef const char *). The puts call requires libc statements available in the Cycript runtime. The file goes verified in the original engine: Node.js does not interpret this syntax FFI.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Cycript con JavaScriptCore e binding libc, su piattaforma supportata; versione effettiva da registrare
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 cycript hello.cy
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 puts emette Hello, World! e newline.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; parser/compilatore/runtime nativo non è stato eseguito per questa voce.
+The source is documented; native parser/compilatore/runtime has not been performed for this item.
 
-Impedimenti: Cycript/JavaScriptCore con binding C non disponibili nell’ambiente corrente; parsing e FFI restano pendenti.
+Commitments: Cycript/JavaScriptCore with binding C not available in the current environment; parsing and FFI remain pendants.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.cycript.org/manual/
 - https://www.cycript.org/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cy` | [hello.cy](hello.cy) creato, verifiche pendenti |
+| `.cy` | [hello.cy](hello.cy) created; verification pending |

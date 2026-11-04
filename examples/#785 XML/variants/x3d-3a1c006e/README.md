@@ -1,24 +1,24 @@
-# 0785 — XML — `.x3d`
+# 0785: XML: `.x3d`
 
 X3D scene originale con Text; nessuna mesh/font redistribuita.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.x3d`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 X3D native viewer local scene
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html](https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html)

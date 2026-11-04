@@ -1,40 +1,40 @@
 # #369 LOLCODE
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Interpretare LOLCODE1.2 e stampare Hello, World!.
 
-Il programma dichiara due variabili, usa SMOOSH per la concatenazione e VISIBLE per l’output. Il log identifica distribuzione sorgente, hash dell’interprete e versione effettiva.
+The program declares two variables, uses SMOOSH for concatenation and VISIBLE for output.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 lci0.11.2 originale justinmeza, branch future; GCC e librerie readline/ncurses
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 lci hello.lol
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://lolcode.org/
 - https://github.com/justinmeza/lci
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lol` | [hello.lol](hello.lol) verificato |
+| `.lol` | [hello.lol](hello.lol) verified |

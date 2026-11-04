@@ -1,23 +1,23 @@
-# 0636 — SQL — `.mysql`
+# 0636: SQL: `.mysql`
 
-Query MySQL; la funzione CONCAT richiede il dialetto appropriato.
+Query MySQL; the CONCAT function requires the appropriate dialect.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.mysql`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 mysql --batch --skip-column-names < hello.mysql
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://dev.mysql.com/doc/refman/8.4/en/string-functions.html#function_concat](https://dev.mysql.com/doc/refman/8.4/en/string-functions.html#function_concat)

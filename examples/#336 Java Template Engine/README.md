@@ -1,34 +1,34 @@
 # #336 Java Template Engine
 
-Compilare un template JTE Java con parametro target e renderizzare il saluto.
+Fill out a JTE Java template with target parameter and make greetings.
 
-Tipo canonico `programming`, language_id `599494012`.
+Canonical type `programming`, language_id `599494012`.
 
-Toolchain prevista: JDK 21, jte e jte-runtime 3.1.16.
+Suggested toolchain: JDK 21, jte and jte-runtime 3.1.16.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java -cp "$JTE_CLASSPATH" Verify.java build/jte
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Il motore compila il template in Java con la toolchain JDK, poi renderizza il parametro costante.
+The engine compiles the template in Java with the JDK toolchain, then renders the constant parameter.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: OpenJDK 21.0.12 + jte/jte-runtime 3.1.16. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: OpenJDK 21.0.12 + jte/jte-runtime 3.1.16. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [JTE — sintassi](https://jte.gg/syntax/)
 - [JTE — implementazione](https://github.com/casid/jte)
 
-Classpath richiesto: `jte-3.1.16.jar`, `jte-runtime-3.1.16.jar`, `jte-extension-api-3.1.16.jar`. I JAR originali sono disponibili da [Maven Central](https://repo.maven.apache.org/maven2/). Impostare la variabile di classpath del comando; separatore `;` su Windows, `:` su Unix.
+Classpath required: `jte-3.1.16.jar`, `jte-runtime-3.1.16.jar`, `jte-extension-api-3.1.16.jar`. The original JAR are available from [Maven Central](https://repo.maven.apache.org/maven2/). Set the command classpath variable; `;` separator on Windows, `:` on Unix.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jte` | [hello.jte](hello.jte) verificato |
+| `.jte` | [hello.jte](hello.jte) verified |

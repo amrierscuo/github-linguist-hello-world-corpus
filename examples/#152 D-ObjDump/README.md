@@ -1,18 +1,18 @@
 # #152 D-ObjDump
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Produrre un disassemblato autentico di un oggetto D originale associato a un programma Hello, World!.
+Produce an authentic disassembly of an original D object associated with a Hello, World! program.
 
 hello.d-objdump è output testuale originale del vero objdump, non assembly scritto a mano. hello.d è la fixture da cui nasce l’oggetto. Il log conserva SHA-256 dell’oggetto e dei sorgenti, output del tool e esecuzione del programma. La semantica verificata è provenienza e associazione al programma; il dump non si esegue direttamente.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 LDC 1.43.0 BetterC; GNU objdump/Binutils 2.42; Linux ELF x86_64
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 ldc2 -betterC -c hello.d -of=hello.o
@@ -25,24 +25,24 @@ ldc2 -betterC hello.d -of=hello
 Confrontare il dump rigenerato con hello.d-objdump.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Oggetto ELF x86_64 reale, sezioni e simbolo D greeting presenti, literal Hello, World! nei dati; programma associato emette il saluto.
+Item ELF x86_64 real, sections and symbol greeting D present, literal Hello, World! in data; associated program issues greeting.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://sourceware.org/binutils/docs/binutils/objdump.html
 - https://dlang.org/spec/betterc.html
 - https://github.com/ldc-developers/ldc/releases/tag/v1.43.0
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.d-objdump` | [hello.d-objdump](hello.d-objdump) verificato |
+| `.d-objdump` | [hello.d-objdump](hello.d-objdump) verified |

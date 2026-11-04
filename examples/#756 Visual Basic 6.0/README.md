@@ -1,35 +1,35 @@
 # #756 Visual Basic 6.0
 
-Compilare un progetto Visual Basic 6 e mostrare il saluto con MsgBox.
+Fill out a Visual Basic 6 project and show greeting with MsgBox.
 
-Tipo canonico `programming`, language_id `679594952`.
+Canonical type `programming`, language_id `679594952`.
 
-Toolchain prevista: Microsoft Visual Basic 6 compiler/runtime.
+Suggested toolchain: Microsoft Visual Basic 6 compiler/runtime.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 VB6.EXE /make hello.vbp
 ```
 
-Risultato atteso: progetto compilato; finestra MsgBox Hello, World!.
+Expected result: compiled project; window MsgBox Hello, World!.
 
-Non viene sostituito con VB.NET o VBScript.
+It is not replaced with VB.NET or VBScript.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Visual Basic 6 compiler non disponibile.
+Initial state: created; syntax and behavioral verification pending. Visual Basic 6 compiler unavailable.
 
-Fonti:
+Sources:
 
 - [VB6 support](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bas` | [hello.bas](hello.bas) creato, verifiche pendenti |
-| `.cls` | [hello.cls](variants/cls-699ea095/hello.cls) creato, verifiche pendenti |
-| `.ctl` | [hello.ctl](variants/ctl-04279ee3/hello.ctl) creato, verifiche pendenti |
-| `.Dsr` | artefatto da generare Designer DataReport VB6: occorre un export originale dell’IDE e il relativo stream designer .dsx. Non viene inventata una serializzazione OLE. |
-| `.frm` | [hello.frm](variants/frm-f409e81b/hello.frm) creato, verifiche pendenti |
+| `.bas` | [hello.bas](hello.bas) created; verification pending |
+| `.cls` | [hello.cls](variants/cls-699ea095/hello.cls) created; verification pending |
+| `.ctl` | [hello.ctl](variants/ctl-04279ee3/hello.ctl) created; verification pending |
+| `.Dsr` | created by Designer DataReport VB6: an original export of IDE and its stream designer .dsx. is not invented a OLE serialization. |
+| `.frm` | [hello.frm](variants/frm-f409e81b/hello.frm) created; verification pending |

@@ -1,23 +1,23 @@
-# 0567 — PureBasic — `.pbi`
+# 0567: PureBasic: `.pbi`
 
-Include PureBasic che definisce una procedura; il programma chiamante apre la console.
+Includes PureBasic that defines a procedure; the caller program opens the console.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.pbi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 pbcompiler main.pb -e work/hello
 ```
 
-Risultato atteso: Hello, World! e newline.
+Expected result: Hello, World! and newline.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.purebasic.com/documentation/reference/includefile.html](https://www.purebasic.com/documentation/reference/includefile.html)

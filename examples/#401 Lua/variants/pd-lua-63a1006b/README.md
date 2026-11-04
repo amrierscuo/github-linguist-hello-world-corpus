@@ -1,30 +1,30 @@
-# 0401 — Lua: `.pd_lua`
+# 0401: Lua: `.pd_lua`
 
-Ruolo: Classe Pd-Lua pdlua con metodo di bang e outlet simbolico, non print Lua standalone.
+Role: Class Pd-Lua pdlua with bang method and symbolic outlet, do not print Lua standalone.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Lua 5.4.8 native Linux build from original sources. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Lua 5.4.8 native Linux build from original sources. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Pure Data con pdlua: creare [hello], inviare bang e leggere outlet con [print]
 ```
 
-Risultato atteso: Simbolo Hello, World!
+Expected result: Simbolo Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.pd_lua`: `1889785b2e68c5d26445d1a5fd3b7790a8999a87be2124fb91b245677a8af75f`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/agraef/pd-lua
 - https://www.lua.org/manual/5.4/

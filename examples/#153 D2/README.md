@@ -1,18 +1,18 @@
 # #153 D2
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Renderizzare un nodo D2 la cui label è Hello, World!.
+Rendering a D2 node whose label is Hello, World!.
 
 Il sorgente dichiara un nodo rectangle con una label. Il compilatore/renderer originale D2 interpreta il file e genera SVG; la label è testo effettivo dell’output XML. L’SVG generato non è incluso nel corpus.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 D2 0.9.0, distribuzione ufficiale Linux amd64
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 d2 hello.d2 hello.svg
@@ -22,24 +22,24 @@ d2 hello.d2 hello.svg
 Controllare la label nell’SVG prodotto.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il renderer termina exit 0 e l’SVG contiene il testo Hello, World!.
+The maker ends exit 0 and SVG contains the Hello, World! text.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://d2lang.com/tour/hello-world/
 - https://d2lang.com/tour/text/
 - https://github.com/d2lang/d2/releases/tag/v0.9.0
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.d2` | [hello.d2](hello.d2) verificato |
+| `.d2` | [hello.d2](hello.d2) verified |

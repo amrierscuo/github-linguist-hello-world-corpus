@@ -1,38 +1,38 @@
 # #382 Lex
 
-Generare un lexer Lex che riconosce hello e stampa Hello, World!.
+Generate a Lex lexer that recognizes hello and Hello, World! print.
 
 ## Toolchain
 
 flex 2.6.4; GCC 13.3.0
 
-## Comandi e procedura
+## Commands and procedure
 
 flex -o build/hello.c hello.l; gcc build/hello.c -o build/hello; build/hello < input.txt
 
-## Risultato atteso
+## Expected result
 
-Scanner exit 0; una riga Hello, World!.
+Scanner exit 0; a Hello, World! line.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Regex e azioni sono interpretate da Flex originale, il C generato viene compilato ed eseguito. Spazi/newline vengono ignorati; caratteri inattesi producono errore. input.txt rende riproducibile la scansione.
+Regex and actions are interpreted by the original Flex, the generated C is compiled and executed. Spazi/newline are ignored; unexpected characters produce error. input.txt makes the scan reproducible.
 
-Verifica effettiva del 2026-10-08T12:48:20.760493+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:48:20.760493+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://westes.github.io/flex/manual/](https://westes.github.io/flex/manual/)
 - [https://westes.github.io/flex/manual/Simple-Examples.html](https://westes.github.io/flex/manual/Simple-Examples.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.l` | [hello.l](hello.l) verificato |
-| `.lex` | [hello.lex](variants/lex-9335749c/hello.lex) creato, verifiche pendenti |
+| `.l` | [hello.l](hello.l) verified |
+| `.lex` | [hello.lex](variants/lex-9335749c/hello.lex) created; verification pending |

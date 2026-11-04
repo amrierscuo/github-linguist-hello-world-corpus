@@ -1,0 +1,54 @@
+{
+  "ordinal": 270,
+  "name": "GraphQL",
+  "source_hashes": {
+    "examples/#270 GraphQL/variants/ext-gql-2e67716c/hello.gql": "0297a421cd16e21da838542b22c732e0592850c9c0bd142d47b95b0eef0bd8d7",
+    "examples/#270 GraphQL/variants/ext-graphqls-2e6772617068716c73/hello.graphqls": "8a7a80e03972efcfe9e7ae41bf266d208729485088feb028e8c53055db25d425",
+    "examples/#270 GraphQL/schema.graphql": "8a7a80e03972efcfe9e7ae41bf266d208729485088feb028e8c53055db25d425"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\270_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\270_variants",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\native_audit_20261104\\render_variants.cjs",
+        "graphql",
+        "${WORKSPACE}\\work\\tools_261_280\\node",
+        "hello.gql",
+        "hello.graphqls"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\270_variants",
+      "exit_code": 0,
+      "stdout": "GraphQL.js 16.11.0\nhello.gql: Hello, World! (World, Reader and null controls passed)\nhello.graphqls: Hello, World! (World, Reader and null controls passed)\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Load variant query with corpus schema, and variant schema with an independent query; run GraphQL.js with World, Reader, null and the schema default.",
+  "toolchain": "GraphQL.js",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".gql": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".graphqls": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "verified_utc": "2026-11-04T19:36:18.911218+00:00",
+  "recorded_test_source": "270_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

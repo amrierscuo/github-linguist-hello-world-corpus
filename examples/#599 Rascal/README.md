@@ -1,31 +1,31 @@
 # #599 Rascal
 
-Eseguire un entry point Rascal che chiama IO.println.
+Perform an entry point Rascal calling IO.println.
 
-Tipo canonico `programming`, language_id `173616037`.
+Canonical type `programming`, language_id `173616037`.
 
-Toolchain prevista: Rascal interpreter JVM.
+Suggested toolchain: Rascal interpreter JVM.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java -jar rascal-shell.jar Hello.rsc
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Il nome del modulo corrisponde al nome del file; richiede il motore Rascal.
+The name of the module corresponds to the name of the file; it requires the Rascal engine.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Rascal IO](https://www.rascal-mpl.org/docs/Library/IO/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rsc` | [Hello.rsc](Hello.rsc) creato, verifiche pendenti |
+| `.rsc` | [Hello.rsc](Hello.rsc) created; verification pending |

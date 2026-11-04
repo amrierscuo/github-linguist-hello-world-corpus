@@ -1,24 +1,24 @@
-# 0785 — XML — `.cscfg`
+# 0785: XML: `.cscfg`
 
 Azure Cloud Services config fixture: ruolo e setting originali; nessun deploy.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.cscfg`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Local configuration XML/schema validation only
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://learn.microsoft.com/en-us/azure/cloud-services-extended-support/schema-cscfg-file](https://learn.microsoft.com/en-us/azure/cloud-services-extended-support/schema-cscfg-file)

@@ -1,36 +1,36 @@
 # #651 Scenic
 
-Compilare uno scenario Scenic che espone un parametro del saluto.
+Fill out a Scenic scenario that exposes a parameter of greeting.
 
 ## Toolchain
 
 Scenic scenario compiler
 
-## Procedura
+## Procedure
 
-scenic hello.scenic; controllare il parametro greeting nello scenario compilato.
+scenic hello.scenic; check the greeting parameter in the compiled scenario.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il goal è il parametro stringa dello scenario; nessuna simulazione fisica viene inventata.
+The goal is the string parameter of the scenario; no physical simulation is invented.
 
-Requisiti residui:
+Remaining requirements:
 - Scenic compiler/simulator non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.scenic-lang.org/en/latest/syntax_guide.html](https://docs.scenic-lang.org/en/latest/syntax_guide.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.scenic` | [hello.scenic](hello.scenic) creato, verifiche pendenti |
+| `.scenic` | [hello.scenic](hello.scenic) created; verification pending |

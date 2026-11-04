@@ -1,32 +1,32 @@
 # #595 RUNOFF
 
-Formattare un documento RUNOFF contenente il saluto.
+Format a RUNOFF document containing greeting.
 
-Tipo canonico `markup`, language_id `315`.
+Canonical type `markup`, language_id `315`.
 
-Toolchain prevista: Digital Standard Runoff o implementazione compatibile.
+Provided Toolchain: Digital Standard Runoff or compatible implementation.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 RUNOFF hello.rno
 ```
 
-Risultato atteso: documento formattato con Hello, World!.
+Expected result: formatted document with Hello, World!.
 
-Un renderer Markdown non verifica i comandi RUNOFF.
+A Markdown renderr does not verify the RUNOFF commands.
 
 Stato iniziale: creato; sintassi e semantica in attesa. Runtime RUNOFF storico non disponibile.
 
-Fonti:
+Sources:
 
 - [RUNOFF manual DEC](https://bitsavers.org/pdf/dec/vax/vms/5.0/AA-LA51A-TE_VAX_DIGITAL_Standard_Runoff_Reference_Manual_Apr88.pdf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rnh` | [hello.rnh](variants/rnh-1c39dfc9/hello.rnh) creato, verifiche pendenti |
-| `.rno` | [hello.rno](hello.rno) creato, verifiche pendenti |
+| `.rnh` | [hello.rnh](variants/rnh-1c39dfc9/hello.rnh) created; verification pending |
+| `.rno` | [hello.rno](hello.rno) created; verification pending |

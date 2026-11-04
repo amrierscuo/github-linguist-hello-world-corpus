@@ -1,36 +1,36 @@
 # #817 hoon
 
-Valutare una stringa Hoon nel gate di un generatore say.
+Evaluate a Hoon string in the gate of a say generator.
 
 ## Toolchain
 
 Urbit Hoon compiler/dojo
 
-## Procedura
+## Procedure
 
-Inserire hello.hoon nel pier di prova come gen/hello.hoon e invocare +hello nel dojo.
+Insert hello.hoon into the test pier as gen/hello.hoon and invoke +hello in the dojo.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Struttura say generator originale: gate esterno produce %say e gate interno restituisce un %noun cord.
+Original say generator structure: external gate produces %say and inner gate returns a %noun cord.
 
-Requisiti residui:
-- Urbit pier/compiler Hoon non disponibile; type check del generatore e risultato pending.
+Remaining requirements:
+- Urbit pier/compiler Hoon unavailable; type check of the generator and result pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.urbit.org/hoon/](https://docs.urbit.org/hoon/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hoon` | [hello.hoon](hello.hoon) creato, verifiche pendenti |
+| `.hoon` | [hello.hoon](hello.hoon) created; verification pending |

@@ -1,667 +1,668 @@
-# Obiettivo delle statistiche GitHub
+# GitHub language statistics goals
 
-L’obiettivo primario è massimizzare i linguaggi correttamente rilevati negli esempi del repository. Le 836 voci del catalogo rappresentano l’intero snapshot YAML e non il numero di nomi che compariranno nella barra Languages.
+The main goal is to maximize the languages correctly recognized in the repository's examples. The 836 catalog entries represent the entire YAML snapshot. The GitHub Languages bar counts a different set of names.
 
-Riferimento canonico SHA-256: `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`.
-Analisi locale aggiornata: `2026-10-08T22:04:25.589921+00:00`.
+Canonical reference SHA-256: `183243e30496ba53f5f8743b0e39c9f0e0bccc5a32639f7b541cc2285db0e043`.
 
-| Tipo nel YAML | Voci | Partecipazione predefinita alle statistiche |
+Local analysis timestamp: `2026-10-08T22:04:25.589921+00:00`.
+
+| YAML type | Entries | Default participation in statistics |
 | --- | ---: | --- |
-| programming | 563 | Candidati |
-| markup | 71 | Candidati |
-| data | 184 | Esclusi |
-| prose | 18 | Esclusi |
+| programming | 563 | Candidates |
+| markup | 71 | Candidates |
+| data | 184 | Excluded |
+| prose | 18 | Excluded |
 
-Sono quindi 634 voci candidate, aggregate in 578 nomi di gruppo nello snapshot. Il campo `group` fa confluire dialetti o varianti nel linguaggio principale. Questi sono obiettivi teorici: il riconoscimento effettivo dipende dai file, dalle esclusioni, dai formati binari e dalla versione Linguist usata da GitHub.
+The 634 candidate entries aggregate into 578 group names in this snapshot. The `group` field groups dialects or variants under their parent language. These are theoretical targets. Actual recognition depends on the files, exclusions, binary formats and the Linguist version deployed by GitHub.
 
-La barra compatta di GitHub raggruppa i linguaggi meno rappresentati in `Other`. Non elenca centinaia di nomi. La lista completa dei linguaggi rilevati e dei byte è disponibile tramite l’API Languages del repository.
+GitHub's compact bar groups less represented languages under `Other`. The repository's Languages API returns the full list of detected languages and byte counts.
 
-Le percentuali dipendono dai byte rilevati, non dal numero di file, cartelle, loghi o programmi. La sola presenza di un’estensione non prova il corretto riconoscimento.
+Percentages depend on detected bytes. The number of files, folders, logos or programs does not determine the percentages. A file extension alone does not establish that GitHub recognized the file correctly.
 
-`.gitattributes` esclude dalle statistiche riferimenti, tracker, strumenti del corpus, documentazione e log di verifica. La regola `/examples/** linguist-documentation=false` include i campioni come sorgente del repository, superando l’esclusione predefinita della cartella `examples/` come documentazione. Loghi e catalogo HTML sono esclusi da questa esportazione privata; GitHub Pages non è attivo.
-I tipi data e prose conservano il comportamento predefinito. Non sono stati applicati override `linguist-language` agli esempi.
+At this historical checkpoint, `.gitattributes` excluded references, trackers, corpus tools, documentation and verification logs from the statistics. The rule `/examples/** linguist-documentation=false` treated the samples as repository source, overriding the default documentation classification of `examples/`. This private export excluded the logos and HTML catalog, and GitHub Pages was disabled.
+Data and prose retained their default behavior. No `linguist-language` overrides had been applied to examples at this checkpoint.
 
-La sintassi e la semantica registrate riguardano le toolchain dei campioni; sono distinte dal rilevamento GitHub. Nel repository privato, al commit `05dfed82885e7a03369f8d1b8a30a84831cf1e70`, l’API Languages ha rilevato **569 linguaggi** e **259622 byte**. La [baseline completa](github_languages_baseline.json) conserva i risultati precedenti all’esperimento Lean, inclusi i 375 byte attribuiti a Lean.
+The recorded syntax and semantic checks concern the samples' toolchains. GitHub recognition is a separate observation. While the repository was private, the Languages API detected **569 languages** and **259622 bytes** at commit `05dfed82885e7a03369f8d1b8a30a84831cf1e70`. The [full baseline](github_languages_baseline.json) preserves the results before the Lean experiment, including the 375 bytes attributed to Lean.
 
-Nelle 634 voci candidate ci sono 352 campioni con sintassi verificata e 313 con semantica verificata. Le verifiche restanti dei candidati hanno priorità rispetto ai formati data e prose per questo obiettivo.
+Of the 634 candidate entries, 352 had syntax verified and 313 had semantics verified at this checkpoint. For this goal, the remaining candidate checks take priority over data and prose formats.
 
-Fonti primarie: [funzionamento Linguist](https://github.com/github-linguist/linguist/blob/main/docs/how-linguist-works.md), [attributi](https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#detectable), [gruppi](https://github.com/github-linguist/linguist/blob/5fbdfcb8133be2bed88bf3ce62b2335f50474525/lib/linguist/repository.rb#L182), [API completa](https://docs.github.com/en/rest/repos/repos#list-repository-languages). Esempio pubblico della barra con `Other`: [RosettaCodeData](https://github.com/acmeism/RosettaCodeData).
+Primary sources: [how Linguist works](https://github.com/github-linguist/linguist/blob/main/docs/how-linguist-works.md), [attributes](https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#detectable), [groups](https://github.com/github-linguist/linguist/blob/5fbdfcb8133be2bed88bf3ce62b2335f50474525/lib/linguist/repository.rb#L182), [Languages API](https://docs.github.com/en/rest/repos/repos#list-repository-languages). Public example of the bar with `Other`: [RosettaCodeData](https://github.com/acmeism/RosettaCodeData).
 
-## Voci candidate
+## Candidate entries
 
-| Numero | Nome canonico | Tipo | Nome del gruppo nelle statistiche | Sintassi | Semantica |
-| --- | --- | --- | --- | --- | --- |
-| #001 | 1C Enterprise | programming | 1C Enterprise | Verificata | Verificata |
-| #003 | 4D | programming | 4D | Da verificare | Da verificare |
-| #004 | ABAP | programming | ABAP | Verificata | Da verificare |
-| #005 | ABAP CDS | programming | ABAP CDS | Verificata | Da verificare |
-| #007 | AGS Script | programming | AGS Script | Da verificare | Da verificare |
-| #008 | AIDL | programming | AIDL | Da verificare | Da verificare |
-| #009 | AL | programming | AL | Da verificare | Da verificare |
-| #010 | ALGOL | programming | ALGOL | Da verificare | Da verificare |
-| #011 | AMPL | programming | AMPL | Verificata | Verificata |
-| #012 | ANTLR | programming | ANTLR | Verificata | Verificata |
-| #013 | API Blueprint | markup | API Blueprint | Verificata | Verificata |
-| #014 | APL | programming | APL | Verificata | Verificata |
-| #015 | ASL | programming | ASL | Verificata | Verificata |
-| #017 | ASP.NET | programming | ASP.NET | Verificata | Verificata |
-| #018 | ATS | programming | ATS | Da verificare | Da verificare |
-| #019 | ActionScript | programming | ActionScript | Da verificare | Da verificare |
-| #020 | Ada | programming | Ada | Da verificare | Da verificare |
-| #023 | Agda | programming | Agda | Da verificare | Da verificare |
-| #024 | Aiken | programming | Aiken | Verificata | Verificata |
-| #025 | Aleo | programming | Aleo | Verificata | Da verificare |
-| #026 | Alloy | programming | Alloy | Verificata | Verificata |
-| #027 | Alpine Abuild | programming | Shell | Da verificare | Da verificare |
-| #029 | AngelScript | programming | AngelScript | Verificata | Verificata |
-| #030 | Answer Set Programming | programming | Answer Set Programming | Verificata | Verificata |
-| #032 | Antlers | markup | Antlers | Da verificare | Da verificare |
-| #034 | Apex | programming | Apex | Verificata | Da verificare |
-| #035 | Apollo Guidance Computer | programming | Assembly | Verificata | Da verificare |
-| #036 | AppleScript | programming | AppleScript | Da verificare | Da verificare |
-| #037 | Arc | programming | Arc | Verificata | Verificata |
-| #038 | ArkTS | programming | ArkTS | Da verificare | Da verificare |
-| #040 | AspectJ | programming | AspectJ | Verificata | Verificata |
-| #041 | Assembly | programming | Assembly | Verificata | Verificata |
-| #042 | Astro | markup | Astro | Verificata | Da verificare |
-| #043 | Asymptote | programming | Asymptote | Da verificare | Da verificare |
-| #044 | Augeas | programming | Augeas | Verificata | Verificata |
-| #045 | AutoHotkey | programming | AutoHotkey | Verificata | Verificata |
-| #046 | AutoIt | programming | AutoIt | Verificata | Verificata |
-| #048 | Awk | programming | Awk | Verificata | Verificata |
-| #049 | B | programming | B | Da verificare | Da verificare |
-| #050 | B (Formal Method) | programming | B (Formal Method) | Da verificare | Da verificare |
-| #051 | B4X | programming | B4X | Da verificare | Da verificare |
-| #052 | BAML | programming | BAML | Verificata | Da verificare |
-| #053 | BASIC | programming | BASIC | Verificata | Verificata |
-| #054 | BBCode | markup | BBCode | Verificata | Verificata |
-| #056 | BQN | programming | BQN | Verificata | Verificata |
-| #057 | Ballerina | programming | Ballerina | Da verificare | Da verificare |
-| #058 | Batchfile | programming | Batchfile | Verificata | Verificata |
-| #059 | Beef | programming | Beef | Da verificare | Da verificare |
-| #060 | Befunge | programming | Befunge | Verificata | Verificata |
-| #061 | Bend | programming | Bend | Verificata | Verificata |
-| #062 | Berry | programming | Berry | Verificata | Verificata |
-| #063 | BibTeX | markup | TeX | Verificata | Verificata |
-| #064 | BibTeX Style | programming | BibTeX Style | Verificata | Verificata |
-| #065 | Bicep | programming | Bicep | Verificata | Verificata |
-| #066 | Bikeshed | markup | Bikeshed | Da verificare | Da verificare |
-| #067 | Bison | programming | Yacc | Verificata | Verificata |
-| #068 | BitBake | programming | BitBake | Da verificare | Da verificare |
-| #069 | Blade | markup | Blade | Da verificare | Da verificare |
-| #070 | BlitzBasic | programming | BlitzBasic | Da verificare | Da verificare |
-| #071 | BlitzMax | programming | BlitzMax | Da verificare | Da verificare |
-| #072 | Blueprint | markup | Blueprint | Da verificare | Da verificare |
-| #073 | Bluespec | programming | Bluespec | Verificata | Verificata |
-| #074 | Bluespec BH | programming | Bluespec | Verificata | Verificata |
-| #075 | Boo | programming | Boo | Da verificare | Da verificare |
-| #076 | Boogie | programming | Boogie | Verificata | Verificata |
-| #077 | Brainfuck | programming | Brainfuck | Verificata | Verificata |
-| #078 | BrighterScript | programming | BrighterScript | Verificata | Verificata |
-| #079 | Brightscript | programming | Brightscript | Verificata | Verificata |
-| #081 | Bru | markup | Bru | Verificata | Verificata |
-| #083 | C | programming | C | Verificata | Verificata |
-| #084 | C# | programming | C# | Verificata | Verificata |
-| #085 | C++ | programming | C++ | Verificata | Verificata |
-| #087 | C2hs Haskell | programming | Haskell | Verificata | Da verificare |
-| #088 | C3 | programming | C3 | Verificata | Verificata |
-| #089 | CAP CDS | programming | CAP CDS | Verificata | Verificata |
-| #091 | CLIPS | programming | CLIPS | Verificata | Verificata |
-| #092 | CMake | programming | CMake | Verificata | Verificata |
-| #093 | COBOL | programming | COBOL | Verificata | Verificata |
-| #096 | CQL | programming | CQL | Da verificare | Da verificare |
-| #098 | CSS | markup | CSS | Verificata | Verificata |
-| #100 | CUE | programming | CUE | Verificata | Verificata |
-| #101 | CWeb | programming | CWeb | Verificata | Verificata |
-| #104 | Cadence | programming | Cadence | Da verificare | Da verificare |
-| #105 | Cairo | programming | Cairo | Da verificare | Da verificare |
-| #106 | Cairo Zero | programming | Cairo | Da verificare | Da verificare |
-| #107 | CameLIGO | programming | LigoLANG | Da verificare | Da verificare |
-| #108 | Cangjie | programming | Cangjie | Da verificare | Da verificare |
-| #109 | Cap'n Proto | programming | Cap'n Proto | Verificata | Verificata |
-| #110 | Carbon | programming | Carbon | Da verificare | Da verificare |
-| #111 | CartoCSS | programming | CartoCSS | Verificata | Verificata |
-| #112 | Ceylon | programming | Ceylon | Da verificare | Da verificare |
-| #113 | Chapel | programming | Chapel | Da verificare | Da verificare |
-| #114 | Charity | programming | Charity | Da verificare | Da verificare |
-| #116 | ChucK | programming | ChucK | Da verificare | Da verificare |
-| #117 | Circom | programming | Circom | Verificata | Verificata |
-| #118 | Cirru | programming | Cirru | Verificata | Verificata |
-| #119 | Clarion | programming | Clarion | Da verificare | Da verificare |
-| #120 | Clarity | programming | Clarity | Verificata | Verificata |
-| #121 | Classic ASP | programming | Classic ASP | Da verificare | Da verificare |
-| #122 | Clean | programming | Clean | Verificata | Verificata |
-| #123 | Click | programming | Click | Da verificare | Da verificare |
-| #124 | Clojure | programming | Clojure | Verificata | Verificata |
-| #125 | Closure Templates | markup | Closure Templates | Verificata | Verificata |
-| #127 | Clue | programming | Clue | Verificata | Verificata |
-| #129 | CodeQL | programming | CodeQL | Da verificare | Da verificare |
-| #130 | CoffeeScript | programming | CoffeeScript | Verificata | Verificata |
-| #131 | ColdFusion | programming | ColdFusion | Da verificare | Da verificare |
-| #132 | ColdFusion CFC | programming | ColdFusion | Da verificare | Da verificare |
-| #133 | Common Lisp | programming | Common Lisp | Verificata | Verificata |
-| #134 | Common Workflow Language | programming | Common Workflow Language | Da verificare | Da verificare |
-| #135 | Component Pascal | programming | Component Pascal | Da verificare | Da verificare |
-| #136 | Cooklang | markup | Cooklang | Verificata | Verificata |
-| #137 | Cool | programming | Cool | Da verificare | Da verificare |
-| #140 | Crystal | programming | Crystal | Da verificare | Da verificare |
-| #141 | Csound | programming | Csound | Verificata | Verificata |
-| #142 | Csound Document | programming | Csound Document | Verificata | Verificata |
-| #143 | Csound Score | programming | Csound Score | Verificata | Verificata |
-| #144 | Cuda | programming | Cuda | Da verificare | Da verificare |
-| #146 | Curry | programming | Curry | Da verificare | Da verificare |
-| #147 | Cycript | programming | Cycript | Da verificare | Da verificare |
-| #149 | Cypher | programming | Cypher | Verificata | Verificata |
-| #150 | Cython | programming | Cython | Verificata | Verificata |
-| #151 | D | programming | D | Verificata | Verificata |
-| #153 | D2 | markup | D2 | Verificata | Verificata |
-| #154 | DIGITAL Command Language | programming | DIGITAL Command Language | Da verificare | Da verificare |
-| #155 | DM | programming | DM | Da verificare | Da verificare |
-| #157 | DTrace | programming | DTrace | Da verificare | Da verificare |
-| #158 | Dafny | programming | Dafny | Verificata | Verificata |
-| #160 | Dart | programming | Dart | Verificata | Verificata |
-| #161 | Daslang | programming | Daslang | Verificata | Verificata |
-| #162 | DataWeave | programming | DataWeave | Verificata | Verificata |
-| #164 | DenizenScript | programming | DenizenScript | Da verificare | Da verificare |
-| #165 | Dhall | programming | Dhall | Verificata | Verificata |
-| #168 | Dockerfile | programming | Dockerfile | Verificata | Da verificare |
-| #169 | Dogescript | programming | Dogescript | Verificata | Verificata |
-| #171 | Dune | programming | Dune | Verificata | Verificata |
-| #172 | Dylan | programming | Dylan | Da verificare | Da verificare |
-| #173 | E | programming | E | Da verificare | Da verificare |
-| #176 | ECL | programming | ECL | Da verificare | Da verificare |
-| #177 | ECLiPSe | programming | Prolog | Verificata | Verificata |
-| #178 | EJS | markup | EJS | Verificata | Verificata |
-| #179 | EQ | programming | EQ | Da verificare | Da verificare |
-| #181 | Earthly | programming | Earthly | Da verificare | Da verificare |
-| #184 | Ecmarkup | markup | HTML | Verificata | Verificata |
-| #185 | Edge | markup | Edge | Verificata | Verificata |
-| #186 | EdgeQL | programming | EdgeQL | Da verificare | Da verificare |
-| #189 | Eiffel | programming | Eiffel | Da verificare | Da verificare |
-| #190 | Elixir | programming | Elixir | Verificata | Verificata |
-| #191 | Elm | programming | Elm | Da verificare | Da verificare |
-| #192 | Elvish | programming | Elvish | Verificata | Verificata |
-| #193 | Elvish Transcript | programming | Elvish | Verificata | Verificata |
-| #194 | Emacs Lisp | programming | Emacs Lisp | Da verificare | Da verificare |
-| #195 | EmberScript | programming | EmberScript | Verificata | Verificata |
-| #196 | Erlang | programming | Erlang | Verificata | Verificata |
-| #197 | Euphoria | programming | Euphoria | Verificata | Verificata |
-| #198 | F# | programming | F# | Verificata | Verificata |
-| #199 | F* | programming | F* | Da verificare | Da verificare |
-| #201 | FIRRTL | programming | FIRRTL | Da verificare | Da verificare |
-| #202 | FLUX | programming | FLUX | Da verificare | Da verificare |
-| #203 | FPP | programming | FPP | Da verificare | Da verificare |
-| #204 | Factor | programming | Factor | Da verificare | Da verificare |
-| #205 | Fancy | programming | Fancy | Da verificare | Da verificare |
-| #206 | Fantom | programming | Fantom | Verificata | Verificata |
-| #207 | Faust | programming | Faust | Verificata | Verificata |
-| #208 | Fennel | programming | Fennel | Verificata | Verificata |
-| #209 | Filebench WML | programming | Filebench WML | Da verificare | Da verificare |
-| #210 | Filterscript | programming | RenderScript | Da verificare | Da verificare |
-| #212 | Flix | programming | Flix | Verificata | Verificata |
-| #213 | Fluent | programming | Fluent | Verificata | Verificata |
-| #215 | Forth | programming | Forth | Verificata | Verificata |
-| #216 | Fortran | programming | Fortran | Verificata | Verificata |
-| #217 | Fortran Free Form | programming | Fortran | Verificata | Verificata |
-| #218 | FreeBASIC | programming | FreeBASIC | Da verificare | Da verificare |
-| #219 | FreeMarker | programming | FreeMarker | Verificata | Verificata |
-| #220 | Frege | programming | Frege | Verificata | Verificata |
-| #221 | Futhark | programming | Futhark | Verificata | Verificata |
-| #222 | G-code | programming | G-code | Da verificare | Da verificare |
-| #223 | GAML | programming | GAML | Da verificare | Da verificare |
-| #224 | GAMS | programming | GAMS | Da verificare | Da verificare |
-| #225 | GAP | programming | GAP | Verificata | Verificata |
-| #226 | GCC Machine Description | programming | GCC Machine Description | Da verificare | Da verificare |
-| #227 | GDB | programming | GDB | Verificata | Verificata |
-| #228 | GDScript | programming | GDScript | Verificata | Verificata |
-| #229 | GDShader | programming | GDShader | Verificata | Da verificare |
-| #231 | GLSL | programming | GLSL | Verificata | Da verificare |
-| #233 | GSC | programming | GSC | Verificata | Da verificare |
-| #234 | Game Maker Language | programming | Game Maker Language | Da verificare | Da verificare |
-| #237 | Genero 4gl | programming | Genero 4gl | Da verificare | Da verificare |
-| #238 | Genero per | markup | Genero per | Da verificare | Da verificare |
-| #239 | Genie | programming | Genie | Verificata | Verificata |
-| #240 | Genshi | programming | Genshi | Verificata | Verificata |
-| #241 | Gentoo Ebuild | programming | Shell | Verificata | Da verificare |
-| #242 | Gentoo Eclass | programming | Shell | Verificata | Da verificare |
-| #245 | Gherkin | programming | Gherkin | Verificata | Verificata |
-| #250 | Gleam | programming | Gleam | Verificata | Verificata |
-| #251 | Glimmer JS | programming | JavaScript | Verificata | Da verificare |
-| #252 | Glimmer TS | programming | TypeScript | Verificata | Da verificare |
-| #253 | Glyph | programming | Glyph | Da verificare | Da verificare |
-| #255 | Gno | programming | Gno | Verificata | Verificata |
-| #256 | Gnuplot | programming | Gnuplot | Verificata | Verificata |
-| #257 | Go | programming | Go | Verificata | Verificata |
-| #260 | Go Template | markup | Go Template | Verificata | Verificata |
-| #263 | Golo | programming | Golo | Verificata | Verificata |
-| #264 | Gosu | programming | Gosu | Da verificare | Da verificare |
-| #265 | Grace | programming | Grace | Da verificare | Da verificare |
-| #268 | Grammatical Framework | programming | Grammatical Framework | Da verificare | Da verificare |
-| #272 | Groovy | programming | Groovy | Verificata | Verificata |
-| #273 | Groovy Server Pages | programming | Groovy | Da verificare | Da verificare |
-| #276 | HCL | programming | HCL | Verificata | Verificata |
-| #277 | HIP | programming | HIP | Da verificare | Da verificare |
-| #278 | HLSL | programming | HLSL | Verificata | Da verificare |
-| #280 | HTML | markup | HTML | Verificata | Verificata |
-| #281 | HTML+ECR | markup | HTML | Verificata | Verificata |
-| #282 | HTML+EEX | markup | HTML | Verificata | Verificata |
-| #283 | HTML+ERB | markup | HTML | Verificata | Verificata |
-| #284 | HTML+PHP | markup | HTML | Verificata | Verificata |
-| #285 | HTML+Razor | markup | HTML | Da verificare | Da verificare |
-| #288 | Hack | programming | Hack | Da verificare | Da verificare |
-| #289 | Haml | markup | Haml | Verificata | Verificata |
-| #290 | Handlebars | markup | Handlebars | Verificata | Verificata |
-| #291 | Harbour | programming | Harbour | Da verificare | Da verificare |
-| #292 | Hare | programming | Hare | Da verificare | Da verificare |
-| #293 | Haskell | programming | Haskell | Verificata | Verificata |
-| #294 | Haxe | programming | Haxe | Verificata | Verificata |
-| #295 | HiveQL | programming | HiveQL | Verificata | Da verificare |
-| #296 | HolyC | programming | HolyC | Da verificare | Da verificare |
-| #298 | Hurl | programming | Hurl | Verificata | Verificata |
-| #299 | Hy | programming | Hy | Verificata | Verificata |
-| #300 | HyPhy | programming | HyPhy | Verificata | Verificata |
-| #301 | IDL | programming | IDL | Da verificare | Da verificare |
-| #302 | IGOR Pro | programming | IGOR Pro | Da verificare | Da verificare |
-| #303 | IL Assembly | programming | IL Assembly | Verificata | Verificata |
-| #306 | ISPC | programming | ISPC | Verificata | Verificata |
-| #307 | Idris | programming | Idris | Da verificare | Da verificare |
-| #309 | ImHex Pattern Language | programming | ImHex Pattern Language | Da verificare | Da verificare |
-| #310 | ImageJ Macro | programming | ImageJ Macro | Verificata | Verificata |
-| #311 | Imba | programming | Imba | Verificata | Verificata |
-| #312 | Inform 7 | programming | Inform 7 | Verificata | Verificata |
-| #313 | Ink | programming | Ink | Verificata | Verificata |
-| #314 | Inno Setup | programming | Inno Setup | Da verificare | Da verificare |
-| #315 | Io | programming | Io | Da verificare | Da verificare |
-| #316 | Ioke | programming | Ioke | Da verificare | Da verificare |
-| #317 | Isabelle | programming | Isabelle | Da verificare | Da verificare |
-| #318 | Isabelle ROOT | programming | Isabelle | Da verificare | Da verificare |
-| #319 | J | programming | J | Verificata | Verificata |
-| #321 | JASS | programming | JASS | Da verificare | Da verificare |
-| #322 | JCL | programming | JCL | Da verificare | Da verificare |
-| #323 | JFlex | programming | Lex | Verificata | Verificata |
-| #328 | JSONiq | programming | JSONiq | Da verificare | Da verificare |
-| #329 | Jac | programming | Jac | Verificata | Verificata |
-| #330 | Jai | programming | Jai | Da verificare | Da verificare |
-| #331 | Janet | programming | Janet | Verificata | Verificata |
-| #332 | Jasmin | programming | Jasmin | Verificata | Verificata |
-| #333 | Java | programming | Java | Verificata | Verificata |
-| #335 | Java Server Pages | programming | Java | Verificata | Verificata |
-| #336 | Java Template Engine | programming | Java | Verificata | Verificata |
-| #337 | JavaScript | programming | JavaScript | Verificata | Verificata |
-| #338 | JavaScript+ERB | programming | JavaScript | Verificata | Verificata |
-| #340 | JetBrains MPS | programming | JetBrains MPS | Da verificare | Da verificare |
-| #341 | Jinja | markup | Jinja | Verificata | Verificata |
-| #342 | Jison | programming | Yacc | Verificata | Verificata |
-| #343 | Jison Lex | programming | Lex | Verificata | Verificata |
-| #344 | Jolie | programming | Jolie | Da verificare | Da verificare |
-| #345 | Jsonnet | programming | Jsonnet | Verificata | Verificata |
-| #346 | Julia | programming | Julia | Verificata | Verificata |
-| #347 | Julia REPL | programming | Julia | Verificata | Verificata |
-| #348 | Jupyter Notebook | markup | Jupyter Notebook | Verificata | Verificata |
-| #349 | Just | programming | Just | Verificata | Verificata |
-| #350 | KCL | programming | KCL | Verificata | Verificata |
-| #352 | KFramework | programming | KFramework | Da verificare | Da verificare |
-| #353 | KRL | programming | KRL | Verificata | Da verificare |
-| #354 | Kaitai Struct | programming | Kaitai Struct | Verificata | Verificata |
-| #355 | KakouneScript | programming | KakouneScript | Verificata | Verificata |
-| #356 | KerboScript | programming | KerboScript | Da verificare | Da verificare |
-| #361 | Kit | markup | Kit | Da verificare | Da verificare |
-| #362 | KoLmafia ASH | programming | KoLmafia ASH | Da verificare | Da verificare |
-| #363 | Koka | programming | Koka | Verificata | Verificata |
-| #364 | Kotlin | programming | Kotlin | Verificata | Verificata |
-| #366 | LFE | programming | LFE | Verificata | Verificata |
-| #367 | LLVM | programming | LLVM | Verificata | Verificata |
-| #368 | LLVM TableGen | programming | LLVM TableGen | Verificata | Verificata |
-| #369 | LOLCODE | programming | LOLCODE | Verificata | Verificata |
-| #370 | LSL | programming | LSL | Da verificare | Da verificare |
-| #372 | LabVIEW | programming | LabVIEW | Da verificare | Da verificare |
-| #373 | Lambdapi | programming | Lambdapi | Da verificare | Da verificare |
-| #374 | Langium | programming | Langium | Verificata | Verificata |
-| #376 | Lasso | programming | Lasso | Da verificare | Da verificare |
-| #377 | Latte | markup | Latte | Verificata | Verificata |
-| #378 | Lean | programming | Lean | Verificata | Verificata |
-| #379 | Lean 4 | programming | Lean | Verificata | Verificata |
-| #380 | Leo | programming | Leo | Da verificare | Da verificare |
-| #381 | Less | markup | Less | Verificata | Verificata |
-| #382 | Lex | programming | Lex | Verificata | Verificata |
-| #383 | LigoLANG | programming | LigoLANG | Da verificare | Da verificare |
-| #384 | LilyPond | programming | LilyPond | Da verificare | Da verificare |
-| #385 | Limbo | programming | Limbo | Da verificare | Da verificare |
-| #386 | Linear Programming | programming | Linear Programming | Verificata | Verificata |
-| #387 | Linker Script | programming | Linker Script | Verificata | Verificata |
-| #389 | Liquid | markup | Liquid | Verificata | Verificata |
-| #390 | Liquidsoap | programming | Liquidsoap | Da verificare | Da verificare |
-| #391 | Literate Agda | programming | Agda | Da verificare | Da verificare |
-| #392 | Literate CoffeeScript | programming | CoffeeScript | Verificata | Verificata |
-| #393 | Literate Haskell | programming | Haskell | Verificata | Verificata |
-| #394 | LiveCode Script | programming | LiveCode Script | Da verificare | Da verificare |
-| #395 | LiveScript | programming | LiveScript | Verificata | Verificata |
-| #396 | Lobster | programming | Lobster | Verificata | Verificata |
-| #397 | Logos | programming | Logos | Verificata | Da verificare |
-| #398 | Logtalk | programming | Logtalk | Verificata | Verificata |
-| #399 | LookML | programming | LookML | Verificata | Da verificare |
-| #400 | LoomScript | programming | LoomScript | Da verificare | Da verificare |
-| #401 | Lua | programming | Lua | Verificata | Verificata |
-| #402 | Luau | programming | Luau | Verificata | Verificata |
-| #403 | M | programming | M | Da verificare | Da verificare |
-| #405 | M4 | programming | M4 | Verificata | Verificata |
-| #406 | M4Sugar | programming | M4 | Verificata | Verificata |
-| #407 | MATLAB | programming | MATLAB | Da verificare | Da verificare |
-| #408 | MAXScript | programming | MAXScript | Da verificare | Da verificare |
-| #409 | MDX | markup | MDX | Verificata | Verificata |
-| #410 | MLIR | programming | MLIR | Verificata | Verificata |
-| #411 | MQL4 | programming | MQL4 | Da verificare | Da verificare |
-| #412 | MQL5 | programming | MQL5 | Da verificare | Da verificare |
-| #413 | MTML | markup | MTML | Da verificare | Da verificare |
-| #414 | MUF | programming | Forth | Da verificare | Da verificare |
-| #415 | Macaulay2 | programming | Macaulay2 | Da verificare | Da verificare |
-| #416 | Makefile | programming | Makefile | Verificata | Verificata |
-| #417 | Mako | programming | Mako | Verificata | Verificata |
-| #419 | Marko | markup | Marko | Verificata | Verificata |
-| #420 | Mask | markup | Mask | Verificata | Verificata |
-| #421 | Mathematical Programming System | programming | Mathematical Programming System | Verificata | Verificata |
-| #423 | Max | programming | Max | Da verificare | Da verificare |
-| #424 | MeTTa | programming | MeTTa | Da verificare | Da verificare |
-| #425 | Mercury | programming | Mercury | Da verificare | Da verificare |
-| #426 | Mermaid | markup | Mermaid | Verificata | Verificata |
-| #427 | Meson | programming | Meson | Verificata | Verificata |
-| #428 | Metal | programming | Metal | Da verificare | Da verificare |
-| #431 | MiniD | programming | MiniD | Da verificare | Da verificare |
-| #432 | MiniScript | programming | MiniScript | Verificata | Verificata |
-| #434 | MiniZinc | programming | MiniZinc | Verificata | Verificata |
-| #436 | Mint | programming | Mint | Da verificare | Da verificare |
-| #437 | Mirah | programming | Mirah | Da verificare | Da verificare |
-| #438 | Modelica | programming | Modelica | Da verificare | Da verificare |
-| #439 | Modula-2 | programming | Modula-2 | Da verificare | Da verificare |
-| #440 | Modula-3 | programming | Modula-3 | Da verificare | Da verificare |
-| #441 | Module Management System | programming | Module Management System | Da verificare | Da verificare |
-| #442 | Mojo | programming | Mojo | Da verificare | Da verificare |
-| #443 | Monkey | programming | Monkey | Da verificare | Da verificare |
-| #444 | Monkey C | programming | Monkey C | Da verificare | Da verificare |
-| #445 | Moocode | programming | Moocode | Da verificare | Da verificare |
-| #446 | MoonBit | programming | MoonBit | Verificata | Verificata |
-| #447 | MoonScript | programming | MoonScript | Verificata | Verificata |
-| #448 | Motoko | programming | Motoko | Verificata | Verificata |
-| #449 | Motorola 68K Assembly | programming | Assembly | Verificata | Da verificare |
-| #450 | Move | programming | Move | Da verificare | Da verificare |
-| #452 | Mustache | markup | Mustache | Verificata | Verificata |
-| #453 | Myghty | programming | Myghty | Da verificare | Da verificare |
-| #454 | NASL | programming | NASL | Da verificare | Da verificare |
-| #455 | NCL | programming | NCL | Da verificare | Da verificare |
-| #458 | NMODL | programming | NMODL | Verificata | Da verificare |
-| #460 | NSIS | programming | NSIS | Verificata | Da verificare |
-| #461 | NWScript | programming | NWScript | Da verificare | Da verificare |
-| #462 | Nasal | programming | Nasal | Da verificare | Da verificare |
-| #463 | Nearley | programming | Nearley | Verificata | Verificata |
-| #464 | Nemerle | programming | Nemerle | Da verificare | Da verificare |
-| #465 | NetLinx | programming | NetLinx | Da verificare | Da verificare |
-| #466 | NetLinx+ERB | programming | NetLinx+ERB | Verificata | Da verificare |
-| #467 | NetLogo | programming | NetLogo | Da verificare | Da verificare |
-| #468 | NewLisp | programming | NewLisp | Verificata | Verificata |
-| #469 | Nextflow | programming | Nextflow | Da verificare | Da verificare |
-| #471 | Nickel | programming | Nickel | Verificata | Verificata |
-| #472 | Nim | programming | Nim | Verificata | Verificata |
-| #474 | Nit | programming | Nit | Da verificare | Da verificare |
-| #475 | Nix | programming | Nix | Da verificare | Da verificare |
-| #476 | Noir | programming | Noir | Da verificare | Da verificare |
-| #477 | Nu | programming | Nu | Da verificare | Da verificare |
-| #478 | NumPy | programming | Python | Verificata | Verificata |
-| #479 | Nunjucks | markup | Nunjucks | Verificata | Verificata |
-| #480 | Nushell | programming | Nushell | Verificata | Verificata |
-| #485 | OCaml | programming | OCaml | Verificata | Verificata |
-| #486 | OMNeT++ MSG | programming | OMNeT++ MSG | Da verificare | Da verificare |
-| #487 | OMNeT++ NED | programming | OMNeT++ NED | Da verificare | Da verificare |
-| #488 | Oberon | programming | Oberon | Da verificare | Da verificare |
-| #491 | ObjectScript | programming | ObjectScript | Da verificare | Da verificare |
-| #492 | Objective-C | programming | Objective-C | Verificata | Verificata |
-| #493 | Objective-C++ | programming | Objective-C++ | Verificata | Verificata |
-| #494 | Objective-J | programming | Objective-J | Verificata | Da verificare |
-| #495 | Odin | programming | Odin | Verificata | Verificata |
-| #496 | Omgrofl | programming | Omgrofl | Verificata | Verificata |
-| #497 | Opa | programming | Opa | Da verificare | Da verificare |
-| #498 | Opal | programming | Opal | Da verificare | Da verificare |
-| #499 | Open Policy Agent | programming | Open Policy Agent | Verificata | Verificata |
-| #502 | OpenCL | programming | C | Verificata | Da verificare |
-| #503 | OpenEdge ABL | programming | OpenEdge ABL | Da verificare | Da verificare |
-| #504 | OpenQASM | programming | OpenQASM | Verificata | Verificata |
-| #505 | OpenRC runscript | programming | Shell | Verificata | Da verificare |
-| #506 | OpenSCAD | programming | OpenSCAD | Da verificare | Da verificare |
-| #511 | OverPy | programming | OverPy | Da verificare | Da verificare |
-| #512 | OverpassQL | programming | OverpassQL | Da verificare | Da verificare |
-| #513 | Ox | programming | Ox | Da verificare | Da verificare |
-| #514 | Oxygene | programming | Oxygene | Da verificare | Da verificare |
-| #515 | Oz | programming | Oz | Da verificare | Da verificare |
-| #516 | P4 | programming | P4 | Da verificare | Da verificare |
-| #517 | PDDL | programming | PDDL | Verificata | Verificata |
-| #518 | PEG.js | programming | PEG.js | Verificata | Verificata |
-| #519 | PHP | programming | PHP | Verificata | Verificata |
-| #520 | PLSQL | programming | PLSQL | Da verificare | Da verificare |
-| #521 | PLpgSQL | programming | PLpgSQL | Verificata | Verificata |
-| #522 | POV-Ray SDL | programming | POV-Ray SDL | Verificata | Verificata |
-| #523 | Pact | programming | Pact | Da verificare | Da verificare |
-| #524 | Pan | programming | Pan | Verificata | Verificata |
-| #525 | Papyrus | programming | Papyrus | Da verificare | Da verificare |
-| #526 | Parrot | programming | Parrot | Da verificare | Da verificare |
-| #527 | Parrot Assembly | programming | Parrot | Da verificare | Da verificare |
-| #528 | Parrot Internal Representation | programming | Parrot | Da verificare | Da verificare |
-| #529 | Pascal | programming | Pascal | Verificata | Verificata |
-| #530 | Pawn | programming | Pawn | Da verificare | Da verificare |
-| #531 | Pep8 | programming | Pep8 | Da verificare | Da verificare |
-| #532 | Perl | programming | Perl | Verificata | Verificata |
-| #533 | Pic | markup | Roff | Verificata | Verificata |
-| #535 | PicoLisp | programming | PicoLisp | Verificata | Verificata |
-| #536 | PigLatin | programming | PigLatin | Da verificare | Da verificare |
-| #537 | Pike | programming | Pike | Verificata | Verificata |
-| #539 | Pkl | programming | Pkl | Verificata | Verificata |
-| #543 | PogoScript | programming | PogoScript | Verificata | Verificata |
-| #544 | Polar | programming | Polar | Verificata | Verificata |
-| #545 | Pony | programming | Pony | Da verificare | Da verificare |
-| #546 | Portugol | programming | Portugol | Da verificare | Da verificare |
-| #547 | PostCSS | markup | CSS | Verificata | Verificata |
-| #548 | PostScript | markup | PostScript | Verificata | Verificata |
-| #549 | Power Query | programming | Power Query | Da verificare | Da verificare |
-| #550 | PowerBuilder | programming | PowerBuilder | Da verificare | Da verificare |
-| #551 | PowerShell | programming | PowerShell | Verificata | Verificata |
-| #552 | Praat | programming | Praat | Verificata | Verificata |
-| #554 | Pro*C | programming | Pro*C | Da verificare | Da verificare |
-| #555 | Processing | programming | Processing | Da verificare | Da verificare |
-| #556 | Procfile | programming | Procfile | Verificata | Verificata |
-| #558 | Prolog | programming | Prolog | Verificata | Verificata |
-| #559 | Promela | programming | Promela | Verificata | Verificata |
-| #560 | Propeller Spin | programming | Propeller Spin | Verificata | Da verificare |
-| #564 | Pug | markup | Pug | Verificata | Verificata |
-| #565 | Puppet | programming | Puppet | Da verificare | Da verificare |
-| #567 | PureBasic | programming | PureBasic | Da verificare | Da verificare |
-| #568 | PureScript | programming | PureScript | Da verificare | Da verificare |
-| #569 | Pyret | programming | Pyret | Da verificare | Da verificare |
-| #570 | Python | programming | Python | Verificata | Verificata |
-| #571 | Python console | programming | Python | Verificata | Verificata |
-| #573 | Q# | programming | Q# | Da verificare | Da verificare |
-| #574 | QML | programming | QML | Da verificare | Da verificare |
-| #575 | QMake | programming | QMake | Da verificare | Da verificare |
-| #576 | Qt Script | programming | Qt Script | Da verificare | Da verificare |
-| #577 | Quake | programming | Quake | Da verificare | Da verificare |
-| #578 | QuakeC | programming | QuakeC | Verificata | Da verificare |
-| #580 | QuickBASIC | programming | QuickBASIC | Da verificare | Da verificare |
-| #581 | Quint | programming | Quint | Verificata | Verificata |
-| #582 | R | programming | R | Verificata | Verificata |
-| #583 | RAML | markup | RAML | Verificata | Verificata |
-| #584 | RAScript | programming | RAScript | Da verificare | Da verificare |
-| #587 | REALbasic | programming | REALbasic | Da verificare | Da verificare |
-| #588 | REXX | programming | REXX | Verificata | Verificata |
-| #592 | RPC | programming | RPC | Verificata | Verificata |
-| #593 | RPGLE | programming | RPGLE | Da verificare | Da verificare |
-| #595 | RUNOFF | markup | RUNOFF | Da verificare | Da verificare |
-| #596 | Racket | programming | Racket | Verificata | Verificata |
-| #597 | Ragel | programming | Ragel | Verificata | Verificata |
-| #598 | Raku | programming | Raku | Verificata | Verificata |
-| #599 | Rascal | programming | Rascal | Da verificare | Da verificare |
-| #601 | ReScript | programming | ReScript | Verificata | Verificata |
-| #603 | Reason | programming | Reason | Verificata | Verificata |
-| #604 | ReasonLIGO | programming | LigoLANG | Da verificare | Da verificare |
-| #605 | Rebol | programming | Rebol | Verificata | Verificata |
-| #607 | Red | programming | Red | Da verificare | Da verificare |
-| #608 | Redcode | programming | Redcode | Da verificare | Da verificare |
-| #610 | Redscript | programming | Redscript | Da verificare | Da verificare |
-| #612 | Ren'Py | programming | Ren'Py | Da verificare | Da verificare |
-| #613 | RenderScript | programming | RenderScript | Da verificare | Da verificare |
-| #614 | Rez | programming | Rez | Da verificare | Da verificare |
-| #615 | Rhai | programming | Rhai | Verificata | Verificata |
-| #616 | Rich Text Format | markup | Rich Text Format | Verificata | Verificata |
-| #617 | Ring | programming | Ring | Da verificare | Da verificare |
-| #618 | Riot | markup | Riot | Verificata | Verificata |
-| #619 | RobotFramework | programming | RobotFramework | Verificata | Verificata |
-| #621 | Roc | programming | Roc | Da verificare | Da verificare |
-| #622 | Rocq Prover | programming | Rocq Prover | Verificata | Verificata |
-| #623 | Roff | markup | Roff | Verificata | Verificata |
-| #624 | Roff Manpage | markup | Roff | Verificata | Verificata |
-| #625 | Rouge | programming | Rouge | Verificata | Verificata |
-| #626 | RouterOS Script | programming | RouterOS Script | Da verificare | Da verificare |
-| #627 | Ruby | programming | Ruby | Verificata | Verificata |
-| #628 | Rust | programming | Rust | Verificata | Verificata |
-| #629 | SAS | programming | SAS | Da verificare | Da verificare |
-| #630 | SCSS | markup | SCSS | Verificata | Verificata |
-| #632 | SIP | programming | SIP | Verificata | Da verificare |
-| #633 | SMT | programming | SMT | Verificata | Verificata |
-| #635 | SQF | programming | SQF | Da verificare | Da verificare |
-| #637 | SQLPL | programming | SQLPL | Da verificare | Da verificare |
-| #638 | SRecode Template | markup | SRecode Template | Da verificare | Da verificare |
-| #644 | SWIG | programming | SWIG | Verificata | Verificata |
-| #645 | Sage | programming | Sage | Da verificare | Da verificare |
-| #646 | Sail | programming | Sail | Da verificare | Da verificare |
-| #647 | Salt | programming | Salt | Da verificare | Da verificare |
-| #648 | Sass | markup | Sass | Verificata | Verificata |
-| #649 | Scala | programming | Scala | Verificata | Verificata |
-| #650 | Scaml | markup | Scaml | Da verificare | Da verificare |
-| #651 | Scenic | programming | Scenic | Da verificare | Da verificare |
-| #652 | Scheme | programming | Scheme | Verificata | Verificata |
-| #653 | Scilab | programming | Scilab | Da verificare | Da verificare |
-| #654 | Self | programming | Self | Da verificare | Da verificare |
-| #655 | ShaderLab | programming | ShaderLab | Da verificare | Da verificare |
-| #656 | Shell | programming | Shell | Verificata | Verificata |
-| #658 | ShellSession | programming | ShellSession | Verificata | Verificata |
-| #659 | Shen | programming | Shen | Da verificare | Da verificare |
-| #660 | Sieve | programming | Sieve | Da verificare | Da verificare |
-| #662 | Singularity | programming | Singularity | Da verificare | Da verificare |
-| #663 | Slang | programming | Slang | Verificata | Da verificare |
-| #664 | Slash | programming | Slash | Da verificare | Da verificare |
-| #665 | Slice | programming | Slice | Da verificare | Da verificare |
-| #666 | Slim | markup | Slim | Verificata | Verificata |
-| #667 | Slint | markup | Slint | Da verificare | Da verificare |
-| #668 | SmPL | programming | SmPL | Verificata | Verificata |
-| #669 | Smali | programming | Smali | Da verificare | Da verificare |
-| #670 | Smalltalk | programming | Smalltalk | Da verificare | Da verificare |
-| #671 | Smarty | programming | Smarty | Verificata | Verificata |
-| #672 | Smithy | programming | Smithy | Verificata | Verificata |
-| #673 | Snakemake | programming | Python | Verificata | Verificata |
-| #674 | Solidity | programming | Solidity | Verificata | Verificata |
-| #676 | SourcePawn | programming | SourcePawn | Da verificare | Da verificare |
-| #679 | Squirrel | programming | Squirrel | Verificata | Verificata |
-| #680 | Stan | programming | Stan | Da verificare | Da verificare |
-| #681 | Standard ML | programming | Standard ML | Verificata | Verificata |
-| #682 | Starlark | programming | Starlark | Verificata | Verificata |
-| #683 | Stata | programming | Stata | Da verificare | Da verificare |
-| #684 | StringTemplate | markup | StringTemplate | Verificata | Verificata |
-| #685 | Stylus | markup | Stylus | Verificata | Verificata |
-| #687 | SugarSS | markup | SugarSS | Verificata | Verificata |
-| #688 | SuperCollider | programming | SuperCollider | Da verificare | Da verificare |
-| #689 | SurrealQL | programming | SurrealQL | Da verificare | Da verificare |
-| #691 | Svelte | markup | Svelte | Verificata | Verificata |
-| #692 | Sway | programming | Sway | Da verificare | Da verificare |
-| #694 | Swift | programming | Swift | Da verificare | Da verificare |
-| #695 | SystemVerilog | programming | SystemVerilog | Verificata | Verificata |
-| #696 | TI Program | programming | TI Program | Da verificare | Da verificare |
-| #697 | TL-Verilog | programming | TL-Verilog | Da verificare | Da verificare |
-| #698 | TLA | programming | TLA | Verificata | Verificata |
-| #702 | TSQL | programming | TSQL | Da verificare | Da verificare |
-| #704 | TSX | programming | TypeScript | Verificata | Verificata |
-| #705 | TXL | programming | TXL | Da verificare | Da verificare |
-| #706 | Tact | programming | Tact | Verificata | Da verificare |
-| #707 | Talon | programming | Talon | Da verificare | Da verificare |
-| #708 | Tape | programming | Tape | Verificata | Da verificare |
-| #709 | Tcl | programming | Tcl | Verificata | Verificata |
-| #710 | Tcsh | programming | Shell | Verificata | Verificata |
-| #711 | TeX | markup | TeX | Verificata | Verificata |
-| #712 | Tea | markup | Tea | Da verificare | Da verificare |
-| #713 | Teal | programming | Teal | Verificata | Verificata |
-| #714 | Terra | programming | Terra | Da verificare | Da verificare |
-| #715 | Terraform Template | markup | HCL | Verificata | Verificata |
-| #721 | Thrift | programming | Thrift | Verificata | Verificata |
-| #722 | Toit | programming | Toit | Da verificare | Da verificare |
-| #723 | Tolk | programming | Tolk | Verificata | Da verificare |
-| #725 | Tree-sitter Query | programming | Tree-sitter Query | Verificata | Verificata |
-| #726 | Turing | programming | Turing | Da verificare | Da verificare |
-| #728 | Twig | markup | Twig | Da verificare | Da verificare |
-| #730 | TypeScript | programming | TypeScript | Verificata | Verificata |
-| #731 | TypeSpec | programming | TypeSpec | Verificata | Verificata |
-| #732 | Typst | programming | Typst | Verificata | Verificata |
-| #733 | Unified Parallel C | programming | C | Da verificare | Da verificare |
-| #735 | Unix Assembly | programming | Assembly | Verificata | Verificata |
-| #736 | Uno | programming | Uno | Da verificare | Da verificare |
-| #737 | UnrealScript | programming | UnrealScript | Da verificare | Da verificare |
-| #738 | Untyped Plutus Core | programming | Untyped Plutus Core | Da verificare | Da verificare |
-| #739 | UrWeb | programming | UrWeb | Da verificare | Da verificare |
-| #740 | V | programming | V | Da verificare | Da verificare |
-| #741 | VBA | programming | VBA | Da verificare | Da verificare |
-| #742 | VBScript | programming | VBScript | Verificata | Verificata |
-| #743 | VCL | programming | VCL | Da verificare | Da verificare |
-| #744 | VHDL | programming | VHDL | Verificata | Verificata |
-| #745 | Vala | programming | Vala | Verificata | Verificata |
-| #747 | Velocity Template Language | markup | Velocity Template Language | Verificata | Verificata |
-| #748 | Vento | markup | Vento | Verificata | Verificata |
-| #749 | Verilog | programming | Verilog | Verificata | Verificata |
-| #750 | Verse | programming | Verse | Da verificare | Da verificare |
-| #753 | Vim Snippet | markup | Vim Snippet | Da verificare | Da verificare |
-| #754 | Vim script | programming | Vim script | Verificata | Verificata |
-| #755 | Visual Basic .NET | programming | Visual Basic .NET | Verificata | Verificata |
-| #756 | Visual Basic 6.0 | programming | Visual Basic 6.0 | Da verificare | Da verificare |
-| #757 | Volt | programming | Volt | Da verificare | Da verificare |
-| #758 | Vue | markup | Vue | Verificata | Verificata |
-| #759 | Vyper | programming | Vyper | Verificata | Verificata |
-| #760 | WDL | programming | WDL | Verificata | Da verificare |
-| #761 | WGSL | programming | WGSL | Verificata | Da verificare |
-| #765 | WebAssembly | programming | WebAssembly | Verificata | Verificata |
-| #767 | WebIDL | programming | WebIDL | Verificata | Verificata |
-| #770 | Whiley | programming | Whiley | Da verificare | Da verificare |
-| #774 | Witcher Script | programming | Witcher Script | Da verificare | Da verificare |
-| #775 | Wolfram Language | programming | Wolfram Language | Verificata | Verificata |
-| #776 | Wollok | programming | Wollok | Verificata | Verificata |
-| #778 | Wren | programming | Wren | Verificata | Verificata |
-| #782 | X10 | programming | X10 | Da verificare | Da verificare |
-| #783 | XC | programming | XC | Da verificare | Da verificare |
-| #788 | XProc | programming | XProc | Da verificare | Da verificare |
-| #789 | XQuery | programming | XQuery | Verificata | Verificata |
-| #790 | XS | programming | XS | Verificata | Verificata |
-| #791 | XSLT | programming | XSLT | Verificata | Verificata |
-| #792 | Xmake | programming | Xmake | Verificata | Verificata |
-| #793 | Xojo | programming | Xojo | Da verificare | Da verificare |
-| #794 | Xonsh | programming | Xonsh | Verificata | Verificata |
-| #795 | Xtend | programming | Xtend | Da verificare | Da verificare |
-| #798 | YARA | programming | YARA | Verificata | Verificata |
-| #799 | YASnippet | markup | YASnippet | Da verificare | Da verificare |
-| #800 | Yacc | programming | Yacc | Verificata | Verificata |
-| #801 | Yul | programming | Yul | Verificata | Da verificare |
-| #802 | ZAP | programming | ZAP | Verificata | Verificata |
-| #803 | ZIL | programming | ZIL | Verificata | Verificata |
-| #804 | Zeek | programming | Zeek | Da verificare | Da verificare |
-| #805 | ZenScript | programming | ZenScript | Da verificare | Da verificare |
-| #806 | Zephir | programming | Zephir | Da verificare | Da verificare |
-| #807 | Zig | programming | Zig | Verificata | Verificata |
-| #808 | Zimpl | programming | Zimpl | Da verificare | Da verificare |
-| #814 | eC | programming | eC | Da verificare | Da verificare |
-| #816 | fish | programming | Shell | Verificata | Verificata |
-| #817 | hoon | programming | hoon | Da verificare | Da verificare |
-| #819 | jq | programming | jq | Verificata | Verificata |
-| #820 | kvlang | markup | kvlang | Verificata | Da verificare |
-| #821 | mIRC Script | programming | mIRC Script | Da verificare | Da verificare |
-| #822 | mcfunction | programming | mcfunction | Da verificare | Da verificare |
-| #823 | mdsvex | markup | mdsvex | Verificata | Verificata |
-| #824 | mupad | programming | mupad | Da verificare | Da verificare |
-| #826 | nesC | programming | nesC | Da verificare | Da verificare |
-| #827 | ooc | programming | ooc | Da verificare | Da verificare |
-| #829 | q | programming | q | Da verificare | Da verificare |
-| #831 | sed | programming | sed | Verificata | Verificata |
-| #832 | templ | markup | templ | Verificata | Verificata |
-| #833 | ucode | programming | ucode | Verificata | Verificata |
-| #835 | wisp | programming | wisp | Verificata | Verificata |
-| #836 | xBase | programming | xBase | Da verificare | Da verificare |
+| Number | Canonical name | Type | Group name in statistics | Syntax | Semantics |
+| ---: | --- | --- | --- | --- | --- |
+| #001 | 1C Enterprise | programming | 1C Enterprise | Verified | Verified |
+| #003 | 4D | programming | 4D | Pending | Pending |
+| #004 | ABAP | programming | ABAP | Verified | Pending |
+| #005 | ABAP CDS | programming | ABAP CDS | Verified | Pending |
+| #007 | AGS Script | programming | AGS Script | Pending | Pending |
+| #008 | AIDL | programming | AIDL | Pending | Pending |
+| #009 | AL | programming | AL | Pending | Pending |
+| #010 | ALGOL | programming | ALGOL | Pending | Pending |
+| #011 | AMPL | programming | AMPL | Verified | Verified |
+| #012 | ANTLR | programming | ANTLR | Verified | Verified |
+| #013 | API Blueprint | markup | API Blueprint | Verified | Verified |
+| #014 | APL | programming | APL | Verified | Verified |
+| #015 | ASL | programming | ASL | Verified | Verified |
+| #017 | ASP.NET | programming | ASP.NET | Verified | Verified |
+| #018 | ATS | programming | ATS | Pending | Pending |
+| #019 | ActionScript | programming | ActionScript | Pending | Pending |
+| #020 | Ada | programming | Ada | Pending | Pending |
+| #023 | Agda | programming | Agda | Pending | Pending |
+| #024 | Aiken | programming | Aiken | Verified | Verified |
+| #025 | Aleo | programming | Aleo | Verified | Pending |
+| #026 | Alloy | programming | Alloy | Verified | Verified |
+| #027 | Alpine Abuild | programming | Shell | Pending | Pending |
+| #029 | AngelScript | programming | AngelScript | Verified | Verified |
+| #030 | Answer Set Programming | programming | Answer Set Programming | Verified | Verified |
+| #032 | Antlers | markup | Antlers | Pending | Pending |
+| #034 | Apex | programming | Apex | Verified | Pending |
+| #035 | Apollo Guidance Computer | programming | Assembly | Verified | Pending |
+| #036 | AppleScript | programming | AppleScript | Pending | Pending |
+| #037 | Arc | programming | Arc | Verified | Verified |
+| #038 | ArkTS | programming | ArkTS | Pending | Pending |
+| #040 | AspectJ | programming | AspectJ | Verified | Verified |
+| #041 | Assembly | programming | Assembly | Verified | Verified |
+| #042 | Astro | markup | Astro | Verified | Pending |
+| #043 | Asymptote | programming | Asymptote | Pending | Pending |
+| #044 | Augeas | programming | Augeas | Verified | Verified |
+| #045 | AutoHotkey | programming | AutoHotkey | Verified | Verified |
+| #046 | AutoIt | programming | AutoIt | Verified | Verified |
+| #048 | Awk | programming | Awk | Verified | Verified |
+| #049 | B | programming | B | Pending | Pending |
+| #050 | B (Formal Method) | programming | B (Formal Method) | Pending | Pending |
+| #051 | B4X | programming | B4X | Pending | Pending |
+| #052 | BAML | programming | BAML | Verified | Pending |
+| #053 | BASIC | programming | BASIC | Verified | Verified |
+| #054 | BBCode | markup | BBCode | Verified | Verified |
+| #056 | BQN | programming | BQN | Verified | Verified |
+| #057 | Ballerina | programming | Ballerina | Pending | Pending |
+| #058 | Batchfile | programming | Batchfile | Verified | Verified |
+| #059 | Beef | programming | Beef | Pending | Pending |
+| #060 | Befunge | programming | Befunge | Verified | Verified |
+| #061 | Bend | programming | Bend | Verified | Verified |
+| #062 | Berry | programming | Berry | Verified | Verified |
+| #063 | BibTeX | markup | TeX | Verified | Verified |
+| #064 | BibTeX Style | programming | BibTeX Style | Verified | Verified |
+| #065 | Bicep | programming | Bicep | Verified | Verified |
+| #066 | Bikeshed | markup | Bikeshed | Pending | Pending |
+| #067 | Bison | programming | Yacc | Verified | Verified |
+| #068 | BitBake | programming | BitBake | Pending | Pending |
+| #069 | Blade | markup | Blade | Pending | Pending |
+| #070 | BlitzBasic | programming | BlitzBasic | Pending | Pending |
+| #071 | BlitzMax | programming | BlitzMax | Pending | Pending |
+| #072 | Blueprint | markup | Blueprint | Pending | Pending |
+| #073 | Bluespec | programming | Bluespec | Verified | Verified |
+| #074 | Bluespec BH | programming | Bluespec | Verified | Verified |
+| #075 | Boo | programming | Boo | Pending | Pending |
+| #076 | Boogie | programming | Boogie | Verified | Verified |
+| #077 | Brainfuck | programming | Brainfuck | Verified | Verified |
+| #078 | BrighterScript | programming | BrighterScript | Verified | Verified |
+| #079 | Brightscript | programming | Brightscript | Verified | Verified |
+| #081 | Bru | markup | Bru | Verified | Verified |
+| #083 | C | programming | C | Verified | Verified |
+| #084 | C# | programming | C# | Verified | Verified |
+| #085 | C++ | programming | C++ | Verified | Verified |
+| #087 | C2hs Haskell | programming | Haskell | Verified | Pending |
+| #088 | C3 | programming | C3 | Verified | Verified |
+| #089 | CAP CDS | programming | CAP CDS | Verified | Verified |
+| #091 | CLIPS | programming | CLIPS | Verified | Verified |
+| #092 | CMake | programming | CMake | Verified | Verified |
+| #093 | COBOL | programming | COBOL | Verified | Verified |
+| #096 | CQL | programming | CQL | Pending | Pending |
+| #098 | CSS | markup | CSS | Verified | Verified |
+| #100 | CUE | programming | CUE | Verified | Verified |
+| #101 | CWeb | programming | CWeb | Verified | Verified |
+| #104 | Cadence | programming | Cadence | Pending | Pending |
+| #105 | Cairo | programming | Cairo | Pending | Pending |
+| #106 | Cairo Zero | programming | Cairo | Pending | Pending |
+| #107 | CameLIGO | programming | LigoLANG | Pending | Pending |
+| #108 | Cangjie | programming | Cangjie | Pending | Pending |
+| #109 | Cap'n Proto | programming | Cap'n Proto | Verified | Verified |
+| #110 | Carbon | programming | Carbon | Pending | Pending |
+| #111 | CartoCSS | programming | CartoCSS | Verified | Verified |
+| #112 | Ceylon | programming | Ceylon | Pending | Pending |
+| #113 | Chapel | programming | Chapel | Pending | Pending |
+| #114 | Charity | programming | Charity | Pending | Pending |
+| #116 | ChucK | programming | ChucK | Pending | Pending |
+| #117 | Circom | programming | Circom | Verified | Verified |
+| #118 | Cirru | programming | Cirru | Verified | Verified |
+| #119 | Clarion | programming | Clarion | Pending | Pending |
+| #120 | Clarity | programming | Clarity | Verified | Verified |
+| #121 | Classic ASP | programming | Classic ASP | Pending | Pending |
+| #122 | Clean | programming | Clean | Verified | Verified |
+| #123 | Click | programming | Click | Pending | Pending |
+| #124 | Clojure | programming | Clojure | Verified | Verified |
+| #125 | Closure Templates | markup | Closure Templates | Verified | Verified |
+| #127 | Clue | programming | Clue | Verified | Verified |
+| #129 | CodeQL | programming | CodeQL | Pending | Pending |
+| #130 | CoffeeScript | programming | CoffeeScript | Verified | Verified |
+| #131 | ColdFusion | programming | ColdFusion | Pending | Pending |
+| #132 | ColdFusion CFC | programming | ColdFusion | Pending | Pending |
+| #133 | Common Lisp | programming | Common Lisp | Verified | Verified |
+| #134 | Common Workflow Language | programming | Common Workflow Language | Pending | Pending |
+| #135 | Component Pascal | programming | Component Pascal | Pending | Pending |
+| #136 | Cooklang | markup | Cooklang | Verified | Verified |
+| #137 | Cool | programming | Cool | Pending | Pending |
+| #140 | Crystal | programming | Crystal | Pending | Pending |
+| #141 | Csound | programming | Csound | Verified | Verified |
+| #142 | Csound Document | programming | Csound Document | Verified | Verified |
+| #143 | Csound Score | programming | Csound Score | Verified | Verified |
+| #144 | Cuda | programming | Cuda | Pending | Pending |
+| #146 | Curry | programming | Curry | Pending | Pending |
+| #147 | Cycript | programming | Cycript | Pending | Pending |
+| #149 | Cypher | programming | Cypher | Verified | Verified |
+| #150 | Cython | programming | Cython | Verified | Verified |
+| #151 | D | programming | D | Verified | Verified |
+| #153 | D2 | markup | D2 | Verified | Verified |
+| #154 | DIGITAL Command Language | programming | DIGITAL Command Language | Pending | Pending |
+| #155 | DM | programming | DM | Pending | Pending |
+| #157 | DTrace | programming | DTrace | Pending | Pending |
+| #158 | Dafny | programming | Dafny | Verified | Verified |
+| #160 | Dart | programming | Dart | Verified | Verified |
+| #161 | Daslang | programming | Daslang | Verified | Verified |
+| #162 | DataWeave | programming | DataWeave | Verified | Verified |
+| #164 | DenizenScript | programming | DenizenScript | Pending | Pending |
+| #165 | Dhall | programming | Dhall | Verified | Verified |
+| #168 | Dockerfile | programming | Dockerfile | Verified | Pending |
+| #169 | Dogescript | programming | Dogescript | Verified | Verified |
+| #171 | Dune | programming | Dune | Verified | Verified |
+| #172 | Dylan | programming | Dylan | Pending | Pending |
+| #173 | E | programming | E | Pending | Pending |
+| #176 | ECL | programming | ECL | Pending | Pending |
+| #177 | ECLiPSe | programming | Prolog | Verified | Verified |
+| #178 | EJS | markup | EJS | Verified | Verified |
+| #179 | EQ | programming | EQ | Pending | Pending |
+| #181 | Earthly | programming | Earthly | Pending | Pending |
+| #184 | Ecmarkup | markup | HTML | Verified | Verified |
+| #185 | Edge | markup | Edge | Verified | Verified |
+| #186 | EdgeQL | programming | EdgeQL | Pending | Pending |
+| #189 | Eiffel | programming | Eiffel | Pending | Pending |
+| #190 | Elixir | programming | Elixir | Verified | Verified |
+| #191 | Elm | programming | Elm | Pending | Pending |
+| #192 | Elvish | programming | Elvish | Verified | Verified |
+| #193 | Elvish Transcript | programming | Elvish | Verified | Verified |
+| #194 | Emacs Lisp | programming | Emacs Lisp | Pending | Pending |
+| #195 | EmberScript | programming | EmberScript | Verified | Verified |
+| #196 | Erlang | programming | Erlang | Verified | Verified |
+| #197 | Euphoria | programming | Euphoria | Verified | Verified |
+| #198 | F# | programming | F# | Verified | Verified |
+| #199 | F* | programming | F* | Pending | Pending |
+| #201 | FIRRTL | programming | FIRRTL | Pending | Pending |
+| #202 | FLUX | programming | FLUX | Pending | Pending |
+| #203 | FPP | programming | FPP | Pending | Pending |
+| #204 | Factor | programming | Factor | Pending | Pending |
+| #205 | Fancy | programming | Fancy | Pending | Pending |
+| #206 | Fantom | programming | Fantom | Verified | Verified |
+| #207 | Faust | programming | Faust | Verified | Verified |
+| #208 | Fennel | programming | Fennel | Verified | Verified |
+| #209 | Filebench WML | programming | Filebench WML | Pending | Pending |
+| #210 | Filterscript | programming | RenderScript | Pending | Pending |
+| #212 | Flix | programming | Flix | Verified | Verified |
+| #213 | Fluent | programming | Fluent | Verified | Verified |
+| #215 | Forth | programming | Forth | Verified | Verified |
+| #216 | Fortran | programming | Fortran | Verified | Verified |
+| #217 | Fortran Free Form | programming | Fortran | Verified | Verified |
+| #218 | FreeBASIC | programming | FreeBASIC | Pending | Pending |
+| #219 | FreeMarker | programming | FreeMarker | Verified | Verified |
+| #220 | Frege | programming | Frege | Verified | Verified |
+| #221 | Futhark | programming | Futhark | Verified | Verified |
+| #222 | G-code | programming | G-code | Pending | Pending |
+| #223 | GAML | programming | GAML | Pending | Pending |
+| #224 | GAMS | programming | GAMS | Pending | Pending |
+| #225 | GAP | programming | GAP | Verified | Verified |
+| #226 | GCC Machine Description | programming | GCC Machine Description | Pending | Pending |
+| #227 | GDB | programming | GDB | Verified | Verified |
+| #228 | GDScript | programming | GDScript | Verified | Verified |
+| #229 | GDShader | programming | GDShader | Verified | Pending |
+| #231 | GLSL | programming | GLSL | Verified | Pending |
+| #233 | GSC | programming | GSC | Verified | Pending |
+| #234 | Game Maker Language | programming | Game Maker Language | Pending | Pending |
+| #237 | Genero 4gl | programming | Genero 4gl | Pending | Pending |
+| #238 | Genero per | markup | Genero per | Pending | Pending |
+| #239 | Genie | programming | Genie | Verified | Verified |
+| #240 | Genshi | programming | Genshi | Verified | Verified |
+| #241 | Gentoo Ebuild | programming | Shell | Verified | Pending |
+| #242 | Gentoo Eclass | programming | Shell | Verified | Pending |
+| #245 | Gherkin | programming | Gherkin | Verified | Verified |
+| #250 | Gleam | programming | Gleam | Verified | Verified |
+| #251 | Glimmer JS | programming | JavaScript | Verified | Pending |
+| #252 | Glimmer TS | programming | TypeScript | Verified | Pending |
+| #253 | Glyph | programming | Glyph | Pending | Pending |
+| #255 | Gno | programming | Gno | Verified | Verified |
+| #256 | Gnuplot | programming | Gnuplot | Verified | Verified |
+| #257 | Go | programming | Go | Verified | Verified |
+| #260 | Go Template | markup | Go Template | Verified | Verified |
+| #263 | Golo | programming | Golo | Verified | Verified |
+| #264 | Gosu | programming | Gosu | Pending | Pending |
+| #265 | Grace | programming | Grace | Pending | Pending |
+| #268 | Grammatical Framework | programming | Grammatical Framework | Pending | Pending |
+| #272 | Groovy | programming | Groovy | Verified | Verified |
+| #273 | Groovy Server Pages | programming | Groovy | Pending | Pending |
+| #276 | HCL | programming | HCL | Verified | Verified |
+| #277 | HIP | programming | HIP | Pending | Pending |
+| #278 | HLSL | programming | HLSL | Verified | Pending |
+| #280 | HTML | markup | HTML | Verified | Verified |
+| #281 | HTML+ECR | markup | HTML | Verified | Verified |
+| #282 | HTML+EEX | markup | HTML | Verified | Verified |
+| #283 | HTML+ERB | markup | HTML | Verified | Verified |
+| #284 | HTML+PHP | markup | HTML | Verified | Verified |
+| #285 | HTML+Razor | markup | HTML | Pending | Pending |
+| #288 | Hack | programming | Hack | Pending | Pending |
+| #289 | Haml | markup | Haml | Verified | Verified |
+| #290 | Handlebars | markup | Handlebars | Verified | Verified |
+| #291 | Harbour | programming | Harbour | Pending | Pending |
+| #292 | Hare | programming | Hare | Pending | Pending |
+| #293 | Haskell | programming | Haskell | Verified | Verified |
+| #294 | Haxe | programming | Haxe | Verified | Verified |
+| #295 | HiveQL | programming | HiveQL | Verified | Pending |
+| #296 | HolyC | programming | HolyC | Pending | Pending |
+| #298 | Hurl | programming | Hurl | Verified | Verified |
+| #299 | Hy | programming | Hy | Verified | Verified |
+| #300 | HyPhy | programming | HyPhy | Verified | Verified |
+| #301 | IDL | programming | IDL | Pending | Pending |
+| #302 | IGOR Pro | programming | IGOR Pro | Pending | Pending |
+| #303 | IL Assembly | programming | IL Assembly | Verified | Verified |
+| #306 | ISPC | programming | ISPC | Verified | Verified |
+| #307 | Idris | programming | Idris | Pending | Pending |
+| #309 | ImHex Pattern Language | programming | ImHex Pattern Language | Pending | Pending |
+| #310 | ImageJ Macro | programming | ImageJ Macro | Verified | Verified |
+| #311 | Imba | programming | Imba | Verified | Verified |
+| #312 | Inform 7 | programming | Inform 7 | Verified | Verified |
+| #313 | Ink | programming | Ink | Verified | Verified |
+| #314 | Inno Setup | programming | Inno Setup | Pending | Pending |
+| #315 | Io | programming | Io | Pending | Pending |
+| #316 | Ioke | programming | Ioke | Pending | Pending |
+| #317 | Isabelle | programming | Isabelle | Pending | Pending |
+| #318 | Isabelle ROOT | programming | Isabelle | Pending | Pending |
+| #319 | J | programming | J | Verified | Verified |
+| #321 | JASS | programming | JASS | Pending | Pending |
+| #322 | JCL | programming | JCL | Pending | Pending |
+| #323 | JFlex | programming | Lex | Verified | Verified |
+| #328 | JSONiq | programming | JSONiq | Pending | Pending |
+| #329 | Jac | programming | Jac | Verified | Verified |
+| #330 | Jai | programming | Jai | Pending | Pending |
+| #331 | Janet | programming | Janet | Verified | Verified |
+| #332 | Jasmin | programming | Jasmin | Verified | Verified |
+| #333 | Java | programming | Java | Verified | Verified |
+| #335 | Java Server Pages | programming | Java | Verified | Verified |
+| #336 | Java Template Engine | programming | Java | Verified | Verified |
+| #337 | JavaScript | programming | JavaScript | Verified | Verified |
+| #338 | JavaScript+ERB | programming | JavaScript | Verified | Verified |
+| #340 | JetBrains MPS | programming | JetBrains MPS | Pending | Pending |
+| #341 | Jinja | markup | Jinja | Verified | Verified |
+| #342 | Jison | programming | Yacc | Verified | Verified |
+| #343 | Jison Lex | programming | Lex | Verified | Verified |
+| #344 | Jolie | programming | Jolie | Pending | Pending |
+| #345 | Jsonnet | programming | Jsonnet | Verified | Verified |
+| #346 | Julia | programming | Julia | Verified | Verified |
+| #347 | Julia REPL | programming | Julia | Verified | Verified |
+| #348 | Jupyter Notebook | markup | Jupyter Notebook | Verified | Verified |
+| #349 | Just | programming | Just | Verified | Verified |
+| #350 | KCL | programming | KCL | Verified | Verified |
+| #352 | KFramework | programming | KFramework | Pending | Pending |
+| #353 | KRL | programming | KRL | Verified | Pending |
+| #354 | Kaitai Struct | programming | Kaitai Struct | Verified | Verified |
+| #355 | KakouneScript | programming | KakouneScript | Verified | Verified |
+| #356 | KerboScript | programming | KerboScript | Pending | Pending |
+| #361 | Kit | markup | Kit | Pending | Pending |
+| #362 | KoLmafia ASH | programming | KoLmafia ASH | Pending | Pending |
+| #363 | Koka | programming | Koka | Verified | Verified |
+| #364 | Kotlin | programming | Kotlin | Verified | Verified |
+| #366 | LFE | programming | LFE | Verified | Verified |
+| #367 | LLVM | programming | LLVM | Verified | Verified |
+| #368 | LLVM TableGen | programming | LLVM TableGen | Verified | Verified |
+| #369 | LOLCODE | programming | LOLCODE | Verified | Verified |
+| #370 | LSL | programming | LSL | Pending | Pending |
+| #372 | LabVIEW | programming | LabVIEW | Pending | Pending |
+| #373 | Lambdapi | programming | Lambdapi | Pending | Pending |
+| #374 | Langium | programming | Langium | Verified | Verified |
+| #376 | Lasso | programming | Lasso | Pending | Pending |
+| #377 | Latte | markup | Latte | Verified | Verified |
+| #378 | Lean | programming | Lean | Verified | Verified |
+| #379 | Lean 4 | programming | Lean | Verified | Verified |
+| #380 | Leo | programming | Leo | Pending | Pending |
+| #381 | Less | markup | Less | Verified | Verified |
+| #382 | Lex | programming | Lex | Verified | Verified |
+| #383 | LigoLANG | programming | LigoLANG | Pending | Pending |
+| #384 | LilyPond | programming | LilyPond | Pending | Pending |
+| #385 | Limbo | programming | Limbo | Pending | Pending |
+| #386 | Linear Programming | programming | Linear Programming | Verified | Verified |
+| #387 | Linker Script | programming | Linker Script | Verified | Verified |
+| #389 | Liquid | markup | Liquid | Verified | Verified |
+| #390 | Liquidsoap | programming | Liquidsoap | Pending | Pending |
+| #391 | Literate Agda | programming | Agda | Pending | Pending |
+| #392 | Literate CoffeeScript | programming | CoffeeScript | Verified | Verified |
+| #393 | Literate Haskell | programming | Haskell | Verified | Verified |
+| #394 | LiveCode Script | programming | LiveCode Script | Pending | Pending |
+| #395 | LiveScript | programming | LiveScript | Verified | Verified |
+| #396 | Lobster | programming | Lobster | Verified | Verified |
+| #397 | Logos | programming | Logos | Verified | Pending |
+| #398 | Logtalk | programming | Logtalk | Verified | Verified |
+| #399 | LookML | programming | LookML | Verified | Pending |
+| #400 | LoomScript | programming | LoomScript | Pending | Pending |
+| #401 | Lua | programming | Lua | Verified | Verified |
+| #402 | Luau | programming | Luau | Verified | Verified |
+| #403 | M | programming | M | Pending | Pending |
+| #405 | M4 | programming | M4 | Verified | Verified |
+| #406 | M4Sugar | programming | M4 | Verified | Verified |
+| #407 | MATLAB | programming | MATLAB | Pending | Pending |
+| #408 | MAXScript | programming | MAXScript | Pending | Pending |
+| #409 | MDX | markup | MDX | Verified | Verified |
+| #410 | MLIR | programming | MLIR | Verified | Verified |
+| #411 | MQL4 | programming | MQL4 | Pending | Pending |
+| #412 | MQL5 | programming | MQL5 | Pending | Pending |
+| #413 | MTML | markup | MTML | Pending | Pending |
+| #414 | MUF | programming | Forth | Pending | Pending |
+| #415 | Macaulay2 | programming | Macaulay2 | Pending | Pending |
+| #416 | Makefile | programming | Makefile | Verified | Verified |
+| #417 | Mako | programming | Mako | Verified | Verified |
+| #419 | Marko | markup | Marko | Verified | Verified |
+| #420 | Mask | markup | Mask | Verified | Verified |
+| #421 | Mathematical Programming System | programming | Mathematical Programming System | Verified | Verified |
+| #423 | Max | programming | Max | Pending | Pending |
+| #424 | MeTTa | programming | MeTTa | Pending | Pending |
+| #425 | Mercury | programming | Mercury | Pending | Pending |
+| #426 | Mermaid | markup | Mermaid | Verified | Verified |
+| #427 | Meson | programming | Meson | Verified | Verified |
+| #428 | Metal | programming | Metal | Pending | Pending |
+| #431 | MiniD | programming | MiniD | Pending | Pending |
+| #432 | MiniScript | programming | MiniScript | Verified | Verified |
+| #434 | MiniZinc | programming | MiniZinc | Verified | Verified |
+| #436 | Mint | programming | Mint | Pending | Pending |
+| #437 | Mirah | programming | Mirah | Pending | Pending |
+| #438 | Modelica | programming | Modelica | Pending | Pending |
+| #439 | Modula-2 | programming | Modula-2 | Pending | Pending |
+| #440 | Modula-3 | programming | Modula-3 | Pending | Pending |
+| #441 | Module Management System | programming | Module Management System | Pending | Pending |
+| #442 | Mojo | programming | Mojo | Pending | Pending |
+| #443 | Monkey | programming | Monkey | Pending | Pending |
+| #444 | Monkey C | programming | Monkey C | Pending | Pending |
+| #445 | Moocode | programming | Moocode | Pending | Pending |
+| #446 | MoonBit | programming | MoonBit | Verified | Verified |
+| #447 | MoonScript | programming | MoonScript | Verified | Verified |
+| #448 | Motoko | programming | Motoko | Verified | Verified |
+| #449 | Motorola 68K Assembly | programming | Assembly | Verified | Pending |
+| #450 | Move | programming | Move | Pending | Pending |
+| #452 | Mustache | markup | Mustache | Verified | Verified |
+| #453 | Myghty | programming | Myghty | Pending | Pending |
+| #454 | NASL | programming | NASL | Pending | Pending |
+| #455 | NCL | programming | NCL | Pending | Pending |
+| #458 | NMODL | programming | NMODL | Verified | Pending |
+| #460 | NSIS | programming | NSIS | Verified | Pending |
+| #461 | NWScript | programming | NWScript | Pending | Pending |
+| #462 | Nasal | programming | Nasal | Pending | Pending |
+| #463 | Nearley | programming | Nearley | Verified | Verified |
+| #464 | Nemerle | programming | Nemerle | Pending | Pending |
+| #465 | NetLinx | programming | NetLinx | Pending | Pending |
+| #466 | NetLinx+ERB | programming | NetLinx+ERB | Verified | Pending |
+| #467 | NetLogo | programming | NetLogo | Pending | Pending |
+| #468 | NewLisp | programming | NewLisp | Verified | Verified |
+| #469 | Nextflow | programming | Nextflow | Pending | Pending |
+| #471 | Nickel | programming | Nickel | Verified | Verified |
+| #472 | Nim | programming | Nim | Verified | Verified |
+| #474 | Nit | programming | Nit | Pending | Pending |
+| #475 | Nix | programming | Nix | Pending | Pending |
+| #476 | Noir | programming | Noir | Pending | Pending |
+| #477 | Nu | programming | Nu | Pending | Pending |
+| #478 | NumPy | programming | Python | Verified | Verified |
+| #479 | Nunjucks | markup | Nunjucks | Verified | Verified |
+| #480 | Nushell | programming | Nushell | Verified | Verified |
+| #485 | OCaml | programming | OCaml | Verified | Verified |
+| #486 | OMNeT++ MSG | programming | OMNeT++ MSG | Pending | Pending |
+| #487 | OMNeT++ NED | programming | OMNeT++ NED | Pending | Pending |
+| #488 | Oberon | programming | Oberon | Pending | Pending |
+| #491 | ObjectScript | programming | ObjectScript | Pending | Pending |
+| #492 | Objective-C | programming | Objective-C | Verified | Verified |
+| #493 | Objective-C++ | programming | Objective-C++ | Verified | Verified |
+| #494 | Objective-J | programming | Objective-J | Verified | Pending |
+| #495 | Odin | programming | Odin | Verified | Verified |
+| #496 | Omgrofl | programming | Omgrofl | Verified | Verified |
+| #497 | Opa | programming | Opa | Pending | Pending |
+| #498 | Opal | programming | Opal | Pending | Pending |
+| #499 | Open Policy Agent | programming | Open Policy Agent | Verified | Verified |
+| #502 | OpenCL | programming | C | Verified | Pending |
+| #503 | OpenEdge ABL | programming | OpenEdge ABL | Pending | Pending |
+| #504 | OpenQASM | programming | OpenQASM | Verified | Verified |
+| #505 | OpenRC runscript | programming | Shell | Verified | Pending |
+| #506 | OpenSCAD | programming | OpenSCAD | Pending | Pending |
+| #511 | OverPy | programming | OverPy | Pending | Pending |
+| #512 | OverpassQL | programming | OverpassQL | Pending | Pending |
+| #513 | Ox | programming | Ox | Pending | Pending |
+| #514 | Oxygene | programming | Oxygene | Pending | Pending |
+| #515 | Oz | programming | Oz | Pending | Pending |
+| #516 | P4 | programming | P4 | Pending | Pending |
+| #517 | PDDL | programming | PDDL | Verified | Verified |
+| #518 | PEG.js | programming | PEG.js | Verified | Verified |
+| #519 | PHP | programming | PHP | Verified | Verified |
+| #520 | PLSQL | programming | PLSQL | Pending | Pending |
+| #521 | PLpgSQL | programming | PLpgSQL | Verified | Verified |
+| #522 | POV-Ray SDL | programming | POV-Ray SDL | Verified | Verified |
+| #523 | Pact | programming | Pact | Pending | Pending |
+| #524 | Pan | programming | Pan | Verified | Verified |
+| #525 | Papyrus | programming | Papyrus | Pending | Pending |
+| #526 | Parrot | programming | Parrot | Pending | Pending |
+| #527 | Parrot Assembly | programming | Parrot | Pending | Pending |
+| #528 | Parrot Internal Representation | programming | Parrot | Pending | Pending |
+| #529 | Pascal | programming | Pascal | Verified | Verified |
+| #530 | Pawn | programming | Pawn | Pending | Pending |
+| #531 | Pep8 | programming | Pep8 | Pending | Pending |
+| #532 | Perl | programming | Perl | Verified | Verified |
+| #533 | Pic | markup | Roff | Verified | Verified |
+| #535 | PicoLisp | programming | PicoLisp | Verified | Verified |
+| #536 | PigLatin | programming | PigLatin | Pending | Pending |
+| #537 | Pike | programming | Pike | Verified | Verified |
+| #539 | Pkl | programming | Pkl | Verified | Verified |
+| #543 | PogoScript | programming | PogoScript | Verified | Verified |
+| #544 | Polar | programming | Polar | Verified | Verified |
+| #545 | Pony | programming | Pony | Pending | Pending |
+| #546 | Portugol | programming | Portugol | Pending | Pending |
+| #547 | PostCSS | markup | CSS | Verified | Verified |
+| #548 | PostScript | markup | PostScript | Verified | Verified |
+| #549 | Power Query | programming | Power Query | Pending | Pending |
+| #550 | PowerBuilder | programming | PowerBuilder | Pending | Pending |
+| #551 | PowerShell | programming | PowerShell | Verified | Verified |
+| #552 | Praat | programming | Praat | Verified | Verified |
+| #554 | Pro*C | programming | Pro*C | Pending | Pending |
+| #555 | Processing | programming | Processing | Pending | Pending |
+| #556 | Procfile | programming | Procfile | Verified | Verified |
+| #558 | Prolog | programming | Prolog | Verified | Verified |
+| #559 | Promela | programming | Promela | Verified | Verified |
+| #560 | Propeller Spin | programming | Propeller Spin | Verified | Pending |
+| #564 | Pug | markup | Pug | Verified | Verified |
+| #565 | Puppet | programming | Puppet | Pending | Pending |
+| #567 | PureBasic | programming | PureBasic | Pending | Pending |
+| #568 | PureScript | programming | PureScript | Pending | Pending |
+| #569 | Pyret | programming | Pyret | Pending | Pending |
+| #570 | Python | programming | Python | Verified | Verified |
+| #571 | Python console | programming | Python | Verified | Verified |
+| #573 | Q# | programming | Q# | Pending | Pending |
+| #574 | QML | programming | QML | Pending | Pending |
+| #575 | QMake | programming | QMake | Pending | Pending |
+| #576 | Qt Script | programming | Qt Script | Pending | Pending |
+| #577 | Quake | programming | Quake | Pending | Pending |
+| #578 | QuakeC | programming | QuakeC | Verified | Pending |
+| #580 | QuickBASIC | programming | QuickBASIC | Pending | Pending |
+| #581 | Quint | programming | Quint | Verified | Verified |
+| #582 | R | programming | R | Verified | Verified |
+| #583 | RAML | markup | RAML | Verified | Verified |
+| #584 | RAScript | programming | RAScript | Pending | Pending |
+| #587 | REALbasic | programming | REALbasic | Pending | Pending |
+| #588 | REXX | programming | REXX | Verified | Verified |
+| #592 | RPC | programming | RPC | Verified | Verified |
+| #593 | RPGLE | programming | RPGLE | Pending | Pending |
+| #595 | RUNOFF | markup | RUNOFF | Pending | Pending |
+| #596 | Racket | programming | Racket | Verified | Verified |
+| #597 | Ragel | programming | Ragel | Verified | Verified |
+| #598 | Raku | programming | Raku | Verified | Verified |
+| #599 | Rascal | programming | Rascal | Pending | Pending |
+| #601 | ReScript | programming | ReScript | Verified | Verified |
+| #603 | Reason | programming | Reason | Verified | Verified |
+| #604 | ReasonLIGO | programming | LigoLANG | Pending | Pending |
+| #605 | Rebol | programming | Rebol | Verified | Verified |
+| #607 | Red | programming | Red | Pending | Pending |
+| #608 | Redcode | programming | Redcode | Pending | Pending |
+| #610 | Redscript | programming | Redscript | Pending | Pending |
+| #612 | Ren'Py | programming | Ren'Py | Pending | Pending |
+| #613 | RenderScript | programming | RenderScript | Pending | Pending |
+| #614 | Rez | programming | Rez | Pending | Pending |
+| #615 | Rhai | programming | Rhai | Verified | Verified |
+| #616 | Rich Text Format | markup | Rich Text Format | Verified | Verified |
+| #617 | Ring | programming | Ring | Pending | Pending |
+| #618 | Riot | markup | Riot | Verified | Verified |
+| #619 | RobotFramework | programming | RobotFramework | Verified | Verified |
+| #621 | Roc | programming | Roc | Pending | Pending |
+| #622 | Rocq Prover | programming | Rocq Prover | Verified | Verified |
+| #623 | Roff | markup | Roff | Verified | Verified |
+| #624 | Roff Manpage | markup | Roff | Verified | Verified |
+| #625 | Rouge | programming | Rouge | Verified | Verified |
+| #626 | RouterOS Script | programming | RouterOS Script | Pending | Pending |
+| #627 | Ruby | programming | Ruby | Verified | Verified |
+| #628 | Rust | programming | Rust | Verified | Verified |
+| #629 | SAS | programming | SAS | Pending | Pending |
+| #630 | SCSS | markup | SCSS | Verified | Verified |
+| #632 | SIP | programming | SIP | Verified | Pending |
+| #633 | SMT | programming | SMT | Verified | Verified |
+| #635 | SQF | programming | SQF | Pending | Pending |
+| #637 | SQLPL | programming | SQLPL | Pending | Pending |
+| #638 | SRecode Template | markup | SRecode Template | Pending | Pending |
+| #644 | SWIG | programming | SWIG | Verified | Verified |
+| #645 | Sage | programming | Sage | Pending | Pending |
+| #646 | Sail | programming | Sail | Pending | Pending |
+| #647 | Salt | programming | Salt | Pending | Pending |
+| #648 | Sass | markup | Sass | Verified | Verified |
+| #649 | Scala | programming | Scala | Verified | Verified |
+| #650 | Scaml | markup | Scaml | Pending | Pending |
+| #651 | Scenic | programming | Scenic | Pending | Pending |
+| #652 | Scheme | programming | Scheme | Verified | Verified |
+| #653 | Scilab | programming | Scilab | Pending | Pending |
+| #654 | Self | programming | Self | Pending | Pending |
+| #655 | ShaderLab | programming | ShaderLab | Pending | Pending |
+| #656 | Shell | programming | Shell | Verified | Verified |
+| #658 | ShellSession | programming | ShellSession | Verified | Verified |
+| #659 | Shen | programming | Shen | Pending | Pending |
+| #660 | Sieve | programming | Sieve | Pending | Pending |
+| #662 | Singularity | programming | Singularity | Pending | Pending |
+| #663 | Slang | programming | Slang | Verified | Pending |
+| #664 | Slash | programming | Slash | Pending | Pending |
+| #665 | Slice | programming | Slice | Pending | Pending |
+| #666 | Slim | markup | Slim | Verified | Verified |
+| #667 | Slint | markup | Slint | Pending | Pending |
+| #668 | SmPL | programming | SmPL | Verified | Verified |
+| #669 | Smali | programming | Smali | Pending | Pending |
+| #670 | Smalltalk | programming | Smalltalk | Pending | Pending |
+| #671 | Smarty | programming | Smarty | Verified | Verified |
+| #672 | Smithy | programming | Smithy | Verified | Verified |
+| #673 | Snakemake | programming | Python | Verified | Verified |
+| #674 | Solidity | programming | Solidity | Verified | Verified |
+| #676 | SourcePawn | programming | SourcePawn | Pending | Pending |
+| #679 | Squirrel | programming | Squirrel | Verified | Verified |
+| #680 | Stan | programming | Stan | Pending | Pending |
+| #681 | Standard ML | programming | Standard ML | Verified | Verified |
+| #682 | Starlark | programming | Starlark | Verified | Verified |
+| #683 | Stata | programming | Stata | Pending | Pending |
+| #684 | StringTemplate | markup | StringTemplate | Verified | Verified |
+| #685 | Stylus | markup | Stylus | Verified | Verified |
+| #687 | SugarSS | markup | SugarSS | Verified | Verified |
+| #688 | SuperCollider | programming | SuperCollider | Pending | Pending |
+| #689 | SurrealQL | programming | SurrealQL | Pending | Pending |
+| #691 | Svelte | markup | Svelte | Verified | Verified |
+| #692 | Sway | programming | Sway | Pending | Pending |
+| #694 | Swift | programming | Swift | Pending | Pending |
+| #695 | SystemVerilog | programming | SystemVerilog | Verified | Verified |
+| #696 | TI Program | programming | TI Program | Pending | Pending |
+| #697 | TL-Verilog | programming | TL-Verilog | Pending | Pending |
+| #698 | TLA | programming | TLA | Verified | Verified |
+| #702 | TSQL | programming | TSQL | Pending | Pending |
+| #704 | TSX | programming | TypeScript | Verified | Verified |
+| #705 | TXL | programming | TXL | Pending | Pending |
+| #706 | Tact | programming | Tact | Verified | Pending |
+| #707 | Talon | programming | Talon | Pending | Pending |
+| #708 | Tape | programming | Tape | Verified | Pending |
+| #709 | Tcl | programming | Tcl | Verified | Verified |
+| #710 | Tcsh | programming | Shell | Verified | Verified |
+| #711 | TeX | markup | TeX | Verified | Verified |
+| #712 | Tea | markup | Tea | Pending | Pending |
+| #713 | Teal | programming | Teal | Verified | Verified |
+| #714 | Terra | programming | Terra | Pending | Pending |
+| #715 | Terraform Template | markup | HCL | Verified | Verified |
+| #721 | Thrift | programming | Thrift | Verified | Verified |
+| #722 | Toit | programming | Toit | Pending | Pending |
+| #723 | Tolk | programming | Tolk | Verified | Pending |
+| #725 | Tree-sitter Query | programming | Tree-sitter Query | Verified | Verified |
+| #726 | Turing | programming | Turing | Pending | Pending |
+| #728 | Twig | markup | Twig | Pending | Pending |
+| #730 | TypeScript | programming | TypeScript | Verified | Verified |
+| #731 | TypeSpec | programming | TypeSpec | Verified | Verified |
+| #732 | Typst | programming | Typst | Verified | Verified |
+| #733 | Unified Parallel C | programming | C | Pending | Pending |
+| #735 | Unix Assembly | programming | Assembly | Verified | Verified |
+| #736 | Uno | programming | Uno | Pending | Pending |
+| #737 | UnrealScript | programming | UnrealScript | Pending | Pending |
+| #738 | Untyped Plutus Core | programming | Untyped Plutus Core | Pending | Pending |
+| #739 | UrWeb | programming | UrWeb | Pending | Pending |
+| #740 | V | programming | V | Pending | Pending |
+| #741 | VBA | programming | VBA | Pending | Pending |
+| #742 | VBScript | programming | VBScript | Verified | Verified |
+| #743 | VCL | programming | VCL | Pending | Pending |
+| #744 | VHDL | programming | VHDL | Verified | Verified |
+| #745 | Vala | programming | Vala | Verified | Verified |
+| #747 | Velocity Template Language | markup | Velocity Template Language | Verified | Verified |
+| #748 | Vento | markup | Vento | Verified | Verified |
+| #749 | Verilog | programming | Verilog | Verified | Verified |
+| #750 | Verse | programming | Verse | Pending | Pending |
+| #753 | Vim Snippet | markup | Vim Snippet | Pending | Pending |
+| #754 | Vim script | programming | Vim script | Verified | Verified |
+| #755 | Visual Basic .NET | programming | Visual Basic .NET | Verified | Verified |
+| #756 | Visual Basic 6.0 | programming | Visual Basic 6.0 | Pending | Pending |
+| #757 | Volt | programming | Volt | Pending | Pending |
+| #758 | Vue | markup | Vue | Verified | Verified |
+| #759 | Vyper | programming | Vyper | Verified | Verified |
+| #760 | WDL | programming | WDL | Verified | Pending |
+| #761 | WGSL | programming | WGSL | Verified | Pending |
+| #765 | WebAssembly | programming | WebAssembly | Verified | Verified |
+| #767 | WebIDL | programming | WebIDL | Verified | Verified |
+| #770 | Whiley | programming | Whiley | Pending | Pending |
+| #774 | Witcher Script | programming | Witcher Script | Pending | Pending |
+| #775 | Wolfram Language | programming | Wolfram Language | Verified | Verified |
+| #776 | Wollok | programming | Wollok | Verified | Verified |
+| #778 | Wren | programming | Wren | Verified | Verified |
+| #782 | X10 | programming | X10 | Pending | Pending |
+| #783 | XC | programming | XC | Pending | Pending |
+| #788 | XProc | programming | XProc | Pending | Pending |
+| #789 | XQuery | programming | XQuery | Verified | Verified |
+| #790 | XS | programming | XS | Verified | Verified |
+| #791 | XSLT | programming | XSLT | Verified | Verified |
+| #792 | Xmake | programming | Xmake | Verified | Verified |
+| #793 | Xojo | programming | Xojo | Pending | Pending |
+| #794 | Xonsh | programming | Xonsh | Verified | Verified |
+| #795 | Xtend | programming | Xtend | Pending | Pending |
+| #798 | YARA | programming | YARA | Verified | Verified |
+| #799 | YASnippet | markup | YASnippet | Pending | Pending |
+| #800 | Yacc | programming | Yacc | Verified | Verified |
+| #801 | Yul | programming | Yul | Verified | Pending |
+| #802 | ZAP | programming | ZAP | Verified | Verified |
+| #803 | ZIL | programming | ZIL | Verified | Verified |
+| #804 | Zeek | programming | Zeek | Pending | Pending |
+| #805 | ZenScript | programming | ZenScript | Pending | Pending |
+| #806 | Zephir | programming | Zephir | Pending | Pending |
+| #807 | Zig | programming | Zig | Verified | Verified |
+| #808 | Zimpl | programming | Zimpl | Pending | Pending |
+| #814 | eC | programming | eC | Pending | Pending |
+| #816 | fish | programming | Shell | Verified | Verified |
+| #817 | hoon | programming | hoon | Pending | Pending |
+| #819 | jq | programming | jq | Verified | Verified |
+| #820 | kvlang | markup | kvlang | Verified | Pending |
+| #821 | mIRC Script | programming | mIRC Script | Pending | Pending |
+| #822 | mcfunction | programming | mcfunction | Pending | Pending |
+| #823 | mdsvex | markup | mdsvex | Verified | Verified |
+| #824 | mupad | programming | mupad | Pending | Pending |
+| #826 | nesC | programming | nesC | Pending | Pending |
+| #827 | ooc | programming | ooc | Pending | Pending |
+| #829 | q | programming | q | Pending | Pending |
+| #831 | sed | programming | sed | Verified | Verified |
+| #832 | templ | markup | templ | Verified | Verified |
+| #833 | ucode | programming | ucode | Verified | Verified |
+| #835 | wisp | programming | wisp | Verified | Verified |
+| #836 | xBase | programming | xBase | Pending | Pending |

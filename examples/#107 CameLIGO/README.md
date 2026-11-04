@@ -1,32 +1,32 @@
 # #107 CameLIGO
 
-Interpretare il valore greeting di un modulo CameLIGO e ottenere Hello, World!.
+Interpret the greeting value of a CameLIGO module and get Hello, World!.
 
-Tipo canonico: `programming`; `language_id`: `829207807`.
+Canonical type: `programming`; `language_id`: `829207807`.
 
-Toolchain prevista: LIGO 1.14.2 o una versione con CameLIGO e run interpret. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: LIGO 1.14.2 or a version with CameLIGO and run interpreter.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 ligo run interpret greeting --init-file hello.mligo
 ```
 
-Risultato atteso: valore stringa `"Hello, World!"`.
+Expected result: `"Hello, World!"` string value.
 
-L’esempio interpreta un valore del modulo; non invia operazioni Tezos e non richiede un portafoglio.
+The example interprets a module value; does not send Tezos operations and does not require a portfolio.
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Initial state: artifact created, syntax and behavioral verification pending. Specific toolchain not yet performed on this example; syntax and behavior remain to be checked.
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [LIGO — differenze CameLIGO/OCaml](https://ligolang.org/docs/faq/cameligo-ocaml-syntax-diff/)
 - [LIGO — run interpret](https://ligolang.org/docs/1.14.2/manpages/run%20interpret/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mligo` | [hello.mligo](hello.mligo) creato, verifiche pendenti |
+| `.mligo` | [hello.mligo](hello.mligo) created; verification pending |

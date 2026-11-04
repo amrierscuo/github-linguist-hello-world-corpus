@@ -1,12 +1,12 @@
-# 0562 — Protocol Buffer Text Format — `.txtpb`
+# 0562: Protocol Buffer Text Format: `.txtpb`
 
-Variante testuale dello stesso formato, con suffisso canonico .txtpb.
+Textual variation of the same format, with canon suffix .txtpb.
 
-Provenienza: copia del file originale `examples/#562 Protocol Buffer Text Format/hello.textproto`.
+Origin: copy of the original `examples/#562 Protocol Buffer Text Format/hello.textproto` file.
 
 Artefatto principale: `hello.txtpb`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Prerequisiti: protoc e runtime Python google.protobuf compatibili, disponibili in toolchain isolata.
@@ -15,13 +15,13 @@ protoc --proto_path=. --python_out=/absolute/work/protobuf-build hello.proto
 python verify.py /absolute/work/protobuf-build
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://protobuf.dev/programming-guides/proto3/](https://protobuf.dev/programming-guides/proto3/)
 - [https://protobuf.dev/reference/protobuf/textformat-spec/](https://protobuf.dev/reference/protobuf/textformat-spec/)

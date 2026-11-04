@@ -2,49 +2,54 @@
 
 Voce canonica `Jinja`, tipo `markup`, language_id `147`.
 
-Compilare un template Jinja parametrico e verificare il saluto per World, Reader e parametro mancante.
+Fill out a parametric Jinja template and check the greeting for World, Reader and missing parameter.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Jinja compiler/runtime — jinja2 3.1.6. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Jinja compiler/runtime, jinja2 3.1.6. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Jinja 3.1.6 ufficiale già presente su Python 3.13.9. Environment usa StrictUndefined e keep_trailing_newline=True.
+Jinja 3.1.6 official already present on Python 3.13.9. Environment uses StrictUndefined and keep_trailing_newline=True.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python verify.py hello.jinja
 ```
 
-Risultato atteso: Hello, World! e PASS dei controlli parametrici.
+Expected result: Hello, World! and PASS of parametric controls.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il motore reale compila il template e rende due valori esatti. L’assenza del parametro deve sollevare UndefinedError. Nessun template engine alternativo è usato.
+The real engine compiles the template and makes two exact values. The absence of the parameter must lift UndefinedError. No alternative template engine is used.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://jinja.palletsprojects.com/en/stable/api/](https://jinja.palletsprojects.com/en/stable/api/)
 - [https://jinja.palletsprojects.com/en/stable/templates/](https://jinja.palletsprojects.com/en/stable/templates/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jinja` | [hello.jinja](hello.jinja) verificato |
-| `.j2` | [hello.j2](variants/j2-d70c3c7d/hello.j2) creato, verifiche pendenti |
-| `.jinja2` | [hello.jinja2](variants/jinja2-dda60d41/hello.jinja2) creato, verifiche pendenti |
+| `.jinja` | [hello.jinja](hello.jinja) verified |
+| `.j2` | [hello.j2](variants/j2-d70c3c7d/hello.j2) syntax and behavior verified |
+| `.jinja2` | [hello.jinja2](variants/jinja2-dda60d41/hello.jinja2) syntax and behavior verified |
+
+## Additional extension verification
+
+- `.j2`: verified on November 4, 2026. [Evidence](verification/native_20261104_341_variants_result.json).
+- `.jinja2`: verified on November 4, 2026. [Evidence](verification/native_20261104_341_variants_result.json).

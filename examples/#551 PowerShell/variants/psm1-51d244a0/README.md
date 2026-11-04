@@ -1,38 +1,38 @@
-# 0551 — PowerShell: `.psm1`
+# 0551: PowerShell: `.psm1`
 
 Ruolo: Modulo PowerShell con funzione pubblica; Export-ModuleMember evita main top-level.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: PowerShell7.6.5 originale Windows. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: PowerShell7.6.5 originale Windows. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 pwsh -NoProfile -Command "Import-Module ./hello.psm1; Get-CorpusGreeting"
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `true`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `true`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Nessun impedimento per l’ambito effettivamente verificato.
+- No impediment for the scope actually verified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.psm1`: `363ba5e1c6cbede4bcf7e700f92b7472b39c4b13e632d88bd020a2b76a57c78e`
 
-Fonti primarie:
+Primary sources:
 
 - https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module
 - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-PowerShell originale: import del modulo; per .psd1 Test-ModuleManifest; funzione esportata eseguita e stdout esatto. Processo dedicato terminato.
+Original PowerShell: module import; for .psd1 Test-ModuleManifest; exported function performed and exact stdout.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 7.6.5

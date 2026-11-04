@@ -1,23 +1,23 @@
-# 0785 — XML — `.workflow`
+# 0785: XML: `.workflow`
 
-Fixture del linguaggio XML per suffisso .workflow associato a application workflow. Il payload è XML originale ben formato; NON rappresenta lo schema proprietario né un export importabile da quell’applicazione.
+Fixtures of the XML language for suffix .workflow associated with application workflow. The payload is a well formed original XML; NON represents the proprietary scheme or an exportable from that application.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.workflow`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 XML parser: parse hello.workflow and assert fixture/greeting text; native application schema NOT checked
 ```
 
-Risultato atteso: payload XML leggibile e greeting Hello, World!; compatibilità applicativa non dichiarata.
+Expected result: a readable XML payload with the greeting Hello, World!; application compatibility is not claimed.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)

@@ -1,36 +1,36 @@
 # #658 ShellSession
 
-Registrare un transcript autentico di sessione shell del saluto.
+Record an authentic transcript of greeting shell session.
 
 ## Toolchain
 
 Ubuntu dash 0.5.12 POSIX sh
 
-## Procedura
+## Procedure
 
-sh replay.sh; confrontare output con il transcript hello.sh-session
+sh replay.sh; compare output with hello.sh-session transcript
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il transcript contiene i prompt convenzionali e l’output reale dello script equivalente; i prompt non vengono interpretati come comandi.
+The transcript contains the conventional prompts and the actual output of the equivalent script; the prompts are not interpreted as commands.
 
-Verifica reale 2026-10-08T13:23:04.712051+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:23:04.712051+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sh-session` | [hello.sh-session](hello.sh-session) verificato |
+| `.sh-session` | [hello.sh-session](hello.sh-session) verified |

@@ -1,0 +1,64 @@
+{
+  "ordinal": 260,
+  "name": "Go Template",
+  "source_hashes": {
+    "examples/#260 Go Template/variants/ext-gohtml-2e676f68746d6c/hello.gohtml": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7",
+    "examples/#260 Go Template/variants/ext-html-tmpl-2e68746d6c2e746d706c/hello.html.tmpl": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7",
+    "examples/#260 Go Template/variants/ext-tmpl-2e746d706c/hello.tmpl": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7",
+    "examples/#260 Go Template/variants/ext-tpl-2e74706c/hello.tpl": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\260_variants",
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_241_260\\go\\bin\\go.exe",
+        "version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\260_variants",
+      "exit_code": 0,
+      "stdout": "go version go1.27.1 windows/amd64\n",
+      "stderr": "error acquiring upload token: creating token file: open ${USER_PROFILE}\\AppData\\Roaming\\go\\telemetry\\local\\upload.token: Access is denied.\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_241_260\\go\\bin\\go.exe",
+        "run",
+        "${WORKSPACE}\\work\\native_audit_20261104\\render_variants.go",
+        "hello.gohtml",
+        "hello.html.tmpl",
+        "hello.tmpl",
+        "hello.tpl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\260_variants",
+      "exit_code": 0,
+      "stdout": "hello.gohtml: Hello, World!\nhello.gohtml: Hello, &lt;world&gt;!\nhello.html.tmpl: Hello, World!\nhello.html.tmpl: Hello, &lt;world&gt;!\nhello.tmpl: Hello, World!\nhello.tmpl: Hello, &lt;world&gt;!\nhello.tpl: Hello, World!\nhello.tpl: Hello, &lt;world&gt;!\n",
+      "stderr": "error acquiring upload token: creating token file: open ${USER_PROFILE}\\AppData\\Roaming\\go\\telemetry\\local\\upload.token: Access is denied.\n"
+    }
+  ],
+  "description": "Parse and execute original templates with Go html/template; assert the greeting and HTML escaping.",
+  "toolchain": "Go html/template",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".gohtml": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".html.tmpl": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".tmpl": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".tpl": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "verified_utc": "2026-11-04T19:35:58.263013+00:00",
+  "recorded_test_source": "260_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

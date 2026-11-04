@@ -1,18 +1,18 @@
 # #367 LLVM
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Assemblare LLVM IR ed eseguire main che stampa Hello, World! tramite puts.
+Assemble LLVM IR and perform main printing Hello, World! via puts.
 
-L’array di14byte include terminatore NUL. main chiama puts con un puntatore LLVM e restituisce0; llvm-as controlla IR e tipi, lli esegue il codice con JIT nativo.
+The di14byte array includes NUL terminator. main calls puts with a LLVM pointer and returns0; llvm-as controls IR and types, lli executes code with native JIT.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 LLVM18.1.3 Ubuntu, llvm-as e lli
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 llvm-as hello.ll -o hello.bc
@@ -22,23 +22,23 @@ llvm-as hello.ll -o hello.bc
 lli hello.bc
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://llvm.org/docs/LangRef.html
 - https://llvm.org/docs/CommandGuide/lli.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ll` | [hello.ll](hello.ll) verificato |
+| `.ll` | [hello.ll](hello.ll) verified |

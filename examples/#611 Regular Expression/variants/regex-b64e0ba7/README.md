@@ -1,23 +1,23 @@
-# 0611 — Regular Expression — `.regex`
+# 0611: Regular Expression: `.regex`
 
-Variante testuale dello stesso formato, con suffisso canonico .regex.
+Textual variation of the same format, with canon suffix .regex.
 
-Provenienza: copia del file originale `examples/#611 Regular Expression/hello.regexp`.
+Origin: copy of the original `examples/#611 Regular Expression/hello.regexp` file.
 
 Artefatto principale: `hello.regex`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 python -c "import re,pathlib; r=re.compile(pathlib.Path('hello.regex').read_text().strip()); assert r.fullmatch('Hello, World!')"
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto..
+Expected result: Hello, World! in output or compliant data, according to the scope described..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)

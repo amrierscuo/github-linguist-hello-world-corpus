@@ -1,24 +1,24 @@
 # #662 Singularity
 
-Costruire una container image da una definition Singularity e avviare il runscript.
+Build a container image from a Singularity definition and start the runscript.
 
-Tipo canonico `programming`, language_id `987024632`.
+Canonical type `programming`, language_id `987024632`.
 
-Toolchain prevista: Apptainer o SingularityCE.
+Suggested toolchain: Apptainer or SingularityCE.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 apptainer build hello.sif Singularity
 apptainer run hello.sif
 ```
 
-Risultato atteso: runtime container stampa Hello, World! e newline.
+Expected result: Hello, World! and newline printing container runtime.
 
-La costruzione richiede l’immagine base e un runtime container; il file non viene contato come script shell puro.
+The construction requires the basic image and a container runtime; the file is not counted as a pure shell script.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Apptainer definition file](https://apptainer.org/docs/user/latest/definition_files.html)

@@ -1,37 +1,37 @@
 # #568 PureScript
 
-Compilare PureScript ed eseguire main.
+Fill PureScript and run main.
 
 ## Toolchain
 
 PureScript purs; effect/console/Prelude; Node.js
 
-## Procedura
+## Procedure
 
-Nel progetto Spago compatibile copiare Main.purs in src; spago build; spago run
+In the compatible Spago project copy Main.purs in src; spago build; spago run
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Compilatore purs e librerie Spago compatibili non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.purescript.org/](https://www.purescript.org/)
 - [https://github.com/purescript/purescript-console](https://github.com/purescript/purescript-console)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.purs` | [Main.purs](Main.purs) creato, verifiche pendenti |
+| `.purs` | [Main.purs](Main.purs) created; verification pending |

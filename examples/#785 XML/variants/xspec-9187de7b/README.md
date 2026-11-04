@@ -1,24 +1,24 @@
-# 0785 — XML — `.xspec`
+# 0785: XML: `.xspec`
 
-XSpec test descriptor per stylesheet companion originale.
+XSpec descriptor test for original companion stylesheet.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.xspec`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 XSpec native runner hello.xspec, build/output under work
 ```
 
-Risultato atteso: test atteso per output Hello, World!.
+Expected result: expected test for Hello, World! output.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://github.com/xspec/xspec](https://github.com/xspec/xspec)

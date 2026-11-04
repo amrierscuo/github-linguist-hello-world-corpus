@@ -1,37 +1,37 @@
 # #179 EQ
 
-Definire una classe EQ Greeting con metodo statico value che restituisce Hello, World!.
+Define a EQ Greeting class with static value method that returns Hello, World!.
 
 ## Toolchain
 
 EQ del progetto Jkop; toolchain/spec versione non reperita
 
-## Comandi e procedura
+## Commands and procedure
 
-Integrare Greeting.eq in un progetto Jkop EQ e chiamare Greeting.value() nel suo harness; comando del compilatore da identificare
+Integrate Greeting.eq into a Jkop EQ project and call Greeting.value () in its harness; compiler command to identify
 
-## Risultato atteso
+## Expected result
 
 Metodo value restituisce esattamente Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Identificazione basata sui campioni canonici Linguist: header Jkop/Job and Esther Technologies, public class e metodi public static con return(...). La sintassi somiglia a C#, ma non viene trattata come C# e non si inventa un entrypoint console. Il frammento è originale e la toolchain EQ resta da identificare prima di qualsiasi flag di verifica.
+Linguist: header Jkop/Job and Esther Technologies, public class and public static methods with return(...). The syntax resembles C#, but is not treated as C# and does not invent a console entrypoint. The fragment is original and the EQ toolchain remains to be identified before any verification flag.
 
-Requisiti residui:
-- Compilatore/runtime EQ del progetto Jkop non individuato; nessuna verifica sintattica o chiamata di metodo.
+Remaining requirements:
+- Compilatore/runtime EQ of the Jkop project not identified; no syntactic verification or method call.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://github.com/github-linguist/linguist/blob/main/samples/EQ/String.eq](https://github.com/github-linguist/linguist/blob/main/samples/EQ/String.eq)
 - [https://github.com/github-linguist/linguist/blob/main/samples/EQ/SEButtonEntity.eq](https://github.com/github-linguist/linguist/blob/main/samples/EQ/SEButtonEntity.eq)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.eq` | [Greeting.eq](Greeting.eq) creato, verifiche pendenti |
+| `.eq` | [Greeting.eq](Greeting.eq) created; verification pending |

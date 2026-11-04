@@ -1,18 +1,18 @@
 # #373 Lambdapi
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Definire in Lambdapi una lista di13numeri naturali che codifica ASCII Hello, World!.
+Define in Lambdapi a list of13natural numbers coding ASCII Hello, World!.
 
-Nat, zero, succ e List sono dichiarati nel file, senza librerie implicite. n32 ecc. definiscono numeri unari; greeting concatena i valori cons/nil. type e compute richiedono il motore di elaborazione originale.
+Nat, zero, succ and List are declared in the file, without implied libraries. n32 etc. define unari numbers; greeting concatena the cons/nil. type and compute values require the original processing engine.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Lambdapi originale; versione da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 lambdapi check hello.lp
@@ -22,25 +22,25 @@ lambdapi check hello.lp
 lambdapi check hello.lp
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 greeting è ben tipato; compute normalizza i13naturali72,101,108,108,111,44,32,87,111,114,108,100,33.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
 Impedimenti: Lambdapi/ambiente OCaml non preparati; controllo del tipo e normalizzazione pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://lambdapi.readthedocs.io/en/stable/commands.html
 - https://lambdapi.readthedocs.io/en/stable/queries.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lp` | [hello.lp](hello.lp) creato, verifiche pendenti |
+| `.lp` | [hello.lp](hello.lp) created; verification pending |

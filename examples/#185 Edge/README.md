@@ -1,38 +1,38 @@
 # #185 Edge
 
-Renderizzare un template Edge sostituendo target con World e ottenere Hello, World!.
+Render a Edge template by replacing targets with World and get Hello, World!.
 
-Tipo canonico `markup`, language_id `460509620`.
+Canonical type `markup`, language_id `460509620`.
 
-Toolchain prevista: Node.js 22 e edge.js 6.5.1.
+Suggested toolchain: Node.js 22 and edge.js 6.5.1.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: stdout esatto `Hello, World!\n`, uscita 0.
+Expected result: exact stdout `Hello, World!\n`, 0. output
 
 Il dato passato al renderer è locale e costante. Non viene avviato un server web.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + edge.js 6.5.1. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + edge.js 6.5.1. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Edge — documentazione del motore](https://edgejs.dev/docs/introduction)
 - [Edge — implementazione](https://github.com/edge-js/edge)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund edge.js@6.5.1
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.edge` | [hello.edge](hello.edge) verificato |
+| `.edge` | [hello.edge](hello.edge) verified |

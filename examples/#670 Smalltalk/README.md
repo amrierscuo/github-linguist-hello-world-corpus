@@ -1,32 +1,32 @@
 # #670 Smalltalk
 
-Eseguire Smalltalk e scrivere il saluto sul Transcript.
+Run Smalltalk and write greetings on the Transcript.
 
-Tipo canonico `programming`, language_id `352`.
+Canonical type `programming`, language_id `352`.
 
-Toolchain prevista: GNU Smalltalk.
+Suggested toolchain: GNU Smalltalk.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 gst hello.st
 ```
 
-Risultato atteso: Transcript riceve Hello, World! seguito da newline.
+Expected result: Transcript receives Hello, World! followed by newline.
 
-Il dialect scelto è GNU Smalltalk e la riproduzione richiede quel runtime.
+The chosen dialect is GNU Smalltalk and playback requires that runtime.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [GNU Smalltalk](https://www.gnu.org/software/smalltalk/manual/html_node/Hello-world.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.st` | [hello.st](hello.st) creato, verifiche pendenti |
-| `.cs` | [hello.cs](variants/cs-a9f0f152/hello.cs) creato, verifiche pendenti |
+| `.st` | [hello.st](hello.st) created; verification pending |
+| `.cs` | [hello.cs](variants/cs-a9f0f152/hello.cs) created; verification pending |

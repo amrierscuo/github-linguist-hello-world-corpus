@@ -1,32 +1,32 @@
 # #429 Microsoft Developer Studio Project
 
-Descrivere un progetto console Microsoft Developer Studio 6 con un sorgente C di saluto.
+Describe a Microsoft Developer Studio 6 console project with a greeting source C.
 
-Tipo canonico `data`, language_id `800983837`.
+Canonical type `data`, language_id `800983837`.
 
-Toolchain prevista: Microsoft Visual C++ 6 Developer Studio.
+Suggested toolchain: Microsoft Visual C++ 6 Developer Studio.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 msdev hello.dsp /MAKE "Hello - Win32 Debug"
 Debug/Hello.exe
 ```
 
-Risultato atteso: progetto caricato/compilato; programma console stampa Hello, World! e newline.
+Expected result: caricato/compilato project; Hello, World! and newline press console program.
 
-È un formato legacy .dsp distinto da .vcxproj; l’ambiente Visual C++ 6 resta da predisporre.
+It is a legacy .dsp format distinct from .vcxproj; the Visual C++ 6 environment remains to be prepared.
 
 Stato iniziale: creato; sintassi e semantica in attesa. Developer Studio/Visual C++ 6 non disponibile.
 
-Fonti:
+Sources:
 
 - [Microsoft — migrazione progetti Visual C++](https://learn.microsoft.com/en-us/cpp/porting/overview-of-potential-upgrade-issues-visual-cpp)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dsp` | [hello.dsp](hello.dsp) creato, verifiche pendenti |
+| `.dsp` | [hello.dsp](hello.dsp) created; verification pending |

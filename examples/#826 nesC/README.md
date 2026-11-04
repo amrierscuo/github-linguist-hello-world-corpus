@@ -1,37 +1,37 @@
 # #826 nesC
 
-Compilare una configurazione nesC TinyOS e registrare il saluto da Boot.
+Fill in a nesC TinyOS configuration and record your greeting from Boot.
 
 ## Toolchain
 
 nesC; TinyOS; piattaforma/simulatore
 
-## Procedura
+## Procedure
 
-Nel contesto TinyOS con MAKERULES/TOSROOT configurati: make <target-di-prova>; avviare e leggere il canale printf.
+In the context of TinyOS with MAKERULES/TOSROOT configured: make <target-di-prova>; start and read the printf channel.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- nesC/TinyOS compiler, componenti e target di prova non disponibili.
+Remaining requirements:
+- nesC/TinyOS compiler, components and test targets not available.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/tinyos/nesc](https://github.com/tinyos/nesc)
 - [https://github.com/tinyos/tinyos-main](https://github.com/tinyos/tinyos-main)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nc` | [HelloAppC.nc](HelloAppC.nc), [HelloC.nc](HelloC.nc) creato, verifiche pendenti |
+| `.nc` | [HelloAppC.nc](HelloAppC.nc), [HelloC.nc](HelloC.nc) created; verification pending |

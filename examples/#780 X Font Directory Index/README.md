@@ -2,39 +2,39 @@
 
 Voce canonica `X Font Directory Index`, tipo `data`, language_id `208700028`.
 
-Indice X Font Directory originale per un font BDF minimo, con alias `Hello, World!` e proprietà FAMILY_NAME contenente il saluto.
+Index X Source Directory original for a BDF minimum font, with alias `Hello, World!` and FAMILY_NAME properties containing greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-mkfontdir / Xvfb / xlsfonts — 7.7+6build2; 1:7.7+6build3; 2:21.1.12-1ubuntu1.6. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+mkfontdir / Xvfb / xlsfonts, 7.7+6build2; 1:7.7+6build3; 2:21.1.12-1ubuntu1.6. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Linux: xfonts-utils 1:7.7+6build3, x11-utils 7.7+6build2, Xvfb 2:21.1.12-1ubuntu1.6 e Python 3.12. Serve il font path di fallback /usr/share/fonts/X11/misc. Il driver copia font e alias nella directory output esterna; Xvfb viene avviato senza TCP e terminato alla fine.
+Linux: xfonts-utils 1:7.7+6build3, x11-utils 7.7+6build2, Xvfb 2:21.1.12-1ubuntu1.6 and Python 3.12. Serves the font path of fallback / usr/share/fonts/X11/misc. The driver copy font and alias in the external output directory; Xvfb is started without TCP and finished at the end.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python3 verify.py <directory-font-output-esterna>
 ```
 
-Risultato atteso: Indice generato uguale a fonts.dir, alias Hello, World! risolto da Xvfb e PASS.
+Expected result: Index generated equal to fonts.dir, alias Hello, World! solved by Xvfb and PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-mkfontdir genera fonts.dir e viene confrontato con l’indice originale. Un vero Xvfb carica quel font path; xlsfonts risolve l’alias e legge i dati dal server. Il font ha un singolo glifo spazio: la semantica dichiarata riguarda indice, alias e proprietà, non il disegno delle lettere del saluto.
+mkfontdir generates fonts.dir and is compared with the original index. A true Xvfb loads that font path; xlsfonts solves the alias and reads the data from the server. The font has a single glyph space: the declared behavior covers index, alias and property, not the design of the greeting letters.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.x.org/docs/man/man.pdf](https://www.x.org/docs/man/man.pdf)
 - [https://xorg.freedesktop.org/archive/X11R6.9.0/doc/PDF/fonts.pdf](https://xorg.freedesktop.org/archive/X11R6.9.0/doc/PDF/fonts.pdf)

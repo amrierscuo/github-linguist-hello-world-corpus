@@ -1,23 +1,23 @@
-# 0656 — Shell — `.zsh-theme`
+# 0656: Shell: `.zsh-theme`
 
-Tema prompt Zsh: modifica PROMPT nel solo processo di prova.
+Zsh Prompt Theme: PROMPT modification in the trial process alone.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.zsh-theme`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 zsh -f -c 'source ./hello.zsh-theme; print -r -- "$PROMPT"'
 ```
 
-Risultato atteso: prompt include Hello, World!.
+Expected result: prompt includes Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html)

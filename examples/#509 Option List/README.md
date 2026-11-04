@@ -1,23 +1,23 @@
 # #509 Option List
 
-Caricare una lista di opzioni RSpec e ottenere il saluto come intestazione del formatter documentation.
+Upload a list of RSpec options and get the greeting as header of the formatter documentation.
 
-Tipo canonico `data`, language_id `723589315`.
+Canonical type `data`, language_id `723589315`.
 
-Toolchain prevista: Ruby e RSpec.
+Suggested toolchain: Ruby and RSpec.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 rspec hello_spec.rb
 ```
 
-Risultato atteso: formatter documentation mostra Hello, World!; un esempio passa.
+Expected result: formatter documentation shows Hello, World!; an example passes.
 
-L’artefatto primario è .rspec: la verifica deve usare le opzioni di quel file, non un comando che le ripete.
+The primary artifact is .rspec: the verification must use the options of that file, not a command that repeats it.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [RSpec options](https://rspec.info/features/3-13/rspec-core/configuration/command-line/)

@@ -1,30 +1,30 @@
-# 0520 — PLSQL: `.trg`
+# 0520: PLSQL: `.trg`
 
-Ruolo: Trigger PL/SQL di test su una tabella dedicata; nessun DB reale viene modificato in preparazione.
+Role: Trigger PL/SQL test on a dedicated table; no real DB is modified in preparation.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Oracle Database e SQL*Plus. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Oracle Database e SQL*Plus. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Oracle schema temporaneo: creare corpus_events(message VARCHAR2(30)); @hello.trg; INSERT con valore null; SELECT message
 ```
 
-Risultato atteso: Riga contenente Hello, World! dopo trigger
+Expected result: Row containing Hello, World! after trigger
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.trg`: `6cc616bc64aa4c04d9d3929b1a4145fe2ee63ec18908bb661cebb081e26f9ee8`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/plsql-triggers.html
 - https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/DBMS_OUTPUT.html

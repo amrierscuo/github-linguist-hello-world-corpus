@@ -2,48 +2,48 @@
 
 Voce canonica `Graphviz (DOT)`, tipo `data`, language_id `140`.
 
-Renderizzare un nodo DOT con l’etichetta Hello, World! in un SVG prodotto da Graphviz.
+Render a DOT node with the Hello, World! label in a SVG produced by Graphviz.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Genuine Graphviz DOT parser and SVG layout renderer — dot - graphviz version 2.43.0 (0). Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Genuine Graphviz DOT parser and SVG layout maker, dot - graphviz version 2.43.0 ( 0 ). Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Graphviz 2.43.0 disponibile su Ubuntu WSL2. Il prodotto SVG rimane in build. verify_svg.py legge l’XML del prodotto reale.
+Graphviz 2.43.0 available on Ubuntu WSL2. The SVG product remains in build. verify_svg.py reads the XML of the real product.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 dot -Tsvg hello.dot -o build/hello.svg; python verify_svg.py build/hello.svg
 ```
 
-Risultato atteso: SVG valido con testo Hello, World!; PASS.
+Expected result: SVG valid with Hello, World! text; PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Graphviz fa parsing e layout autentici. La verifica semantica conferma la presenza del saluto nel nodo text dell’SVG prodotto; il log registra il suo hash.
+The behavior verification confirms the presence of the greeting in the SVG text node; the log records its hash.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.graphviz.org/doc/info/lang.html](https://www.graphviz.org/doc/info/lang.html)
 - [https://graphviz.org/docs/outputs/svg/](https://graphviz.org/docs/outputs/svg/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dot` | [hello.dot](hello.dot) verificato |
-| `.gv` | [hello.gv](variants/ext-gv-2e6776/hello.gv) creato, verifiche pendenti |
+| `.dot` | [hello.dot](hello.dot) verified |
+| `.gv` | [hello.gv](variants/ext-gv-2e6776/hello.gv) created; verification pending |

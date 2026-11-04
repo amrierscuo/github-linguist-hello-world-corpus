@@ -1,34 +1,34 @@
-# 0198 F# — variante `.fsi`
+# 0198 F#: variant `.fsi`
 
-Ruolo: Signature F# fsi, che vincola la unità di implementazione omonima.
+Role: Signature F# fsi, which binds the implementation unit of the same name.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#198 F#/hello.fsx; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#198 F#/hello.fsx; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 F# compiler: compilare Greeting.fsi, Greeting.fs, Program.fs in questo ordine nel progetto esterno; eseguire.
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://learn.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-command-line](https://learn.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-command-line)
 - [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)

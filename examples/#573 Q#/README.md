@@ -1,36 +1,36 @@
 # #573 Q#
 
-Eseguire una entry point Q# classica che invoca Message.
+Perform a classic Q# entry point that invokes Message.
 
 ## Toolchain
 
 Q# compiler/runtime compatibile
 
-## Procedura
+## Procedure
 
-Compilare Main.qs con toolchain Q# che supporta @EntryPoint e registrare l’esecuzione locale.
+Fill in Main.qs with Q# toolchain that supports @EntryPoint and register local execution.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- Q# compiler/runtime locale non predisposto; compatibilità entry-point da registrare.
+Remaining requirements:
+- Local Q# compiler/runtime not predisposed; entry-point compatibility to be recorded.
 
-## Fonti primarie
+## Primary sources
 
 - [https://learn.microsoft.com/azure/quantum/user-guide/language/statements/calls](https://learn.microsoft.com/azure/quantum/user-guide/language/statements/calls)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.qs` | [Main.qs](Main.qs) creato, verifiche pendenti |
+| `.qs` | [Main.qs](Main.qs) created; verification pending |

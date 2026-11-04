@@ -1,38 +1,38 @@
 # #327 JSONLD
 
-Espandere JSON-LD e associare Hello, World! all’IRI greeting del contesto locale.
+Expand JSON - LD and associate Hello, World! to IRI greeting of the local context.
 
-Tipo canonico `data`, language_id `176`.
+Canonical type `data`, language_id `176`.
 
-Toolchain prevista: Python 3.13 e PyLD.
+Suggested toolchain: Python 3.13 and PyLD.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: valore RDF espanso Hello, World! con IRI previsto; stdout saluto e LF.
+Expected result: RDF expanded Hello, World! with expected IRI; stdout greeting and LF.
 
-Il contesto è incorporato: non servono richieste di rete. example.invalid è usato soltanto come identificatore.
+The context is embedded: no network requests are needed. example.invalid is used only as an identifier.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + PyLD 3.3.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + PyLD 3.3.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [W3C — JSON-LD 1.1](https://www.w3.org/TR/json-ld11/)
 - [Digital Bazaar — PyLD](https://github.com/digitalbazaar/pyld)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install pyld==3.3.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jsonld` | [hello.jsonld](hello.jsonld) verificato |
+| `.jsonld` | [hello.jsonld](hello.jsonld) verified |

@@ -1,36 +1,36 @@
 # #825 nanorc
 
-Caricare una nanorc locale e colorare il saluto nel buffer di prova.
+Load a local nanorc and color the greeting in the test buffer.
 
 ## Toolchain
 
  GNU nano, version 7.2
 
-## Procedura
+## Procedure
 
-nano --rcfile hello.nanorc greeting.hello; uscire senza salvataggio con Ctrl-X.
+nano --rcfile hello.nanorc greeting.hello; exit without rescue with Ctrl-X.
 
-## Risultato atteso
+## Expected result
 
-Nano accetta la nanorc, mostra numeri di riga e colora Hello, World! in blu brillante.
+Nano accepts nanorc, shows row numbers and color Hello, World! in bright blue.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
---rcfile evita configurazioni utente/globali. Il buffer e la regola highlight sono originali; la prova PTY deve confermare parsing e sequenze colore del testo.
+--rcfile avoids utente/globali. configurations The buffer and highlight rule are original; PTY test must confirm parsing and text color sequence.
 
-Verifica reale 2026-10-08T13:50:49.777443+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:50:49.777443+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.nano-editor.org/dist/latest/nanorc.5.html](https://www.nano-editor.org/dist/latest/nanorc.5.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nanorc` | [hello.nanorc](hello.nanorc) verificato |
+| `.nanorc` | [hello.nanorc](hello.nanorc) verified |

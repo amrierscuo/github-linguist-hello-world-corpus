@@ -1,34 +1,34 @@
-# 0186 EdgeQL — variante `.esdl`
+# 0186 EdgeQL: variant `.esdl`
 
-Ruolo: Schema ESDL con tipo Greeting e default della proprietà message, non query EdgeQL.
+Role: Scheme ESDL with Greeting type and default of the message property, not EdgeQL query.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#186 EdgeQL/hello.edgeql; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#186 EdgeQL/hello.edgeql; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 Gel/EdgeDB in istanza temporanea: applicare lo schema hello.esdl; eseguire insert Greeting; select Greeting.message;
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.geldata.com/reference/edgeql/select](https://docs.geldata.com/reference/edgeql/select)
 - [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)

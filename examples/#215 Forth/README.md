@@ -2,54 +2,54 @@
 
 Voce canonica `Forth`, tipo `programming`, language_id `114`.
 
-Definire la parola Forth greet, scrivere il saluto con ." e terminare l’interprete.
+Define the word Forth greet, write greetings with." and finish the interpreter.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Gforth native interpreter and original gforth.fi image — gforth 0.7.3. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+Gforth native interpreter and original gforth.fi image, gforth 0.7.3. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Gforth 0.7.3, con il motore e l’immagine gforth.fi originali della distribuzione Ubuntu. La prova li usa da un’estrazione locale, configurando il percorso delle librerie.
+Gforth 0.7.3, with the original engine and gforth.fi image of the Ubuntu distribution.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 gforth hello.fth
 ```
 
-Risultato atteso: Exit 0; saluto esatto seguito da newline.
+Exit 0; exact greeting followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 La parola viene realmente compilata nell’interprete Forth e poi eseguita; cr aggiunge newline e bye termina con successo.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.complang.tuwien.ac.at/forth/gforth/Docs-html/](https://www.complang.tuwien.ac.at/forth/gforth/Docs-html/)
 - [https://forth-standard.org/standard/core/Dotp](https://forth-standard.org/standard/core/Dotp)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fth` | [hello.fth](hello.fth) verificato |
-| `.4th` | [hello.4th](variants/ext-4th-2e347468/hello.4th) creato, verifiche pendenti |
-| `.f` | [hello.f](variants/ext-f-2e66/hello.f) creato, verifiche pendenti |
-| `.for` | [hello.for](variants/ext-for-2e666f72/hello.for) creato, verifiche pendenti |
-| `.forth` | [hello.forth](variants/ext-forth-2e666f727468/hello.forth) creato, verifiche pendenti |
-| `.fr` | [hello.fr](variants/ext-fr-2e6672/hello.fr) creato, verifiche pendenti |
-| `.frt` | [hello.frt](variants/ext-frt-2e667274/hello.frt) creato, verifiche pendenti |
-| `.fs` | [hello.fs](variants/ext-fs-2e6673/hello.fs) creato, verifiche pendenti |
+| `.fth` | [hello.fth](hello.fth) verified |
+| `.4th` | [hello.4th](variants/ext-4th-2e347468/hello.4th) created; verification pending |
+| `.f` | [hello.f](variants/ext-f-2e66/hello.f) created; verification pending |
+| `.for` | [hello.for](variants/ext-for-2e666f72/hello.for) created; verification pending |
+| `.forth` | [hello.forth](variants/ext-forth-2e666f727468/hello.forth) created; verification pending |
+| `.fr` | [hello.fr](variants/ext-fr-2e6672/hello.fr) created; verification pending |
+| `.frt` | [hello.frt](variants/ext-frt-2e667274/hello.frt) created; verification pending |
+| `.fs` | [hello.fs](variants/ext-fs-2e6673/hello.fs) created; verification pending |

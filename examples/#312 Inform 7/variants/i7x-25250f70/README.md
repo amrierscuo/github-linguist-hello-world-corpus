@@ -1,31 +1,31 @@
-# 0312 — Inform 7: `.i7x`
+# 0312: Inform 7: `.i7x`
 
-Ruolo: Estensione Inform 7 con intestazione Begins/Ends Here e frase riutilizzabile.
+Role: Inform 7 extension with Begins/Ends Here header and reusable phrase.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: inform7 version 10.1.2 'Krypton' (29 August 2022); Inform 6 Inform 6.41 for Linux (22nd July 2022); Frotz 2.54. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: inform7 version 10.1.2 'Krypton' (29 August 2022); Inform 6 Inform 6.41 for Linux (22nd July 2022); Frotz 2.54. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Inform 7: installare Corpus Greeting.i7x e compilare il fixture hello.ni; eseguire lo story file
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `Corpus Greeting.i7x`: `89648915fab2d3344e5b8ee081536d9eeb8ace4ebb4cf0a67d383413453373f5`
 - `hello.ni`: `54009cbe19bf2aea007a5adc7ef87777d0b00e675e75cebfefb0b3e370b81028`
 
-Fonti primarie:
+Primary sources:
 
 - https://ganelson.github.io/inform-website/book/WI_27_1.html
 - https://github.com/ganelson/inform/releases/tag/v10.1.2

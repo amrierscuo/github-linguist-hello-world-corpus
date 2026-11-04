@@ -1,23 +1,23 @@
-# 0588 — REXX — `.rex`
+# 0588: REXX: `.rex`
 
-Variante testuale dello stesso formato, con suffisso canonico .rex.
+Textual variation of the same format, with canon suffix .rex.
 
-Provenienza: copia del file originale `examples/#588 REXX/hello.rexx`.
+Origin: copy of the original `examples/#588 REXX/hello.rexx` file.
 
 Artefatto principale: `hello.rex`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 regina hello.rex
 ```
 
-Risultato atteso: stdout Hello, World! e newline..
+Expected result: stdout Hello, World! and newline..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://regina-rexx.sourceforge.io/](https://regina-rexx.sourceforge.io/)

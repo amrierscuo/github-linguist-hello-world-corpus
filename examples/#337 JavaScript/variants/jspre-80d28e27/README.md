@@ -1,37 +1,37 @@
-# 0337 — JavaScript: `.jspre`
+# 0337: JavaScript: `.jspre`
 
-Ruolo: Sorgente o frammento JavaScript del sottoinsieme ECMAScript con console.log; nessun descriptor o formato binario è implicato.
+Role: Source or JavaScript fragment of the ECMAScript subset with console.log; no descriptor or binary format is implied.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#337 JavaScript/hello.js.
+Origin: Byte-identical copy of the original corpus source: examples/#337 JavaScript/hello.js.
 
-Toolchain richiesta: Node.js 22.20.0. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Node.js 22.20.0. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 node --check hello.jspre (per suffissi non supportati: leggere il testo via vm.Script); eseguire nello stesso host console/ECMAScript del sorgente
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `true`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `true`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Prova limitata a Node via stdin: loader/framework proprietario del suffisso non verificato.
+- Try limited to Node via stdin: loader/framework owner of suffix not verified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.jspre`: `dcc62e4a18325773332e645365de256e46ae08fd1609ff72edd1d7367ed4b632`
 
-Fonti primarie:
+Primary sources:
 
 - https://nodejs.org/api/console.html#consolelogdata-args
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-JavaScript originale analizzato ed eseguito da Node via stdin; stdout esatto Hello, World! e LF. Non verifica loader proprietari del suffisso.
+Node parsed and executed the original JavaScript via stdin. Stdout contained exactly Hello, World! followed by LF. This does not verify proprietary loaders for the suffix.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: v22.20.0

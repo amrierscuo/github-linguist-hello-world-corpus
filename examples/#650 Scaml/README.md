@@ -1,36 +1,36 @@
 # #650 Scaml
 
-Renderizzare un template Scaml.
+Rendering an Scaml template.
 
 ## Toolchain
 
 Scalate Scaml; Scala/JVM
 
-## Procedura
+## Procedure
 
-Caricare hello.scaml con TemplateEngine Scalate e renderizzare il template; registrare API/versione.
+Upload hello.scaml with Scaled Engine Template and render the template; register API/versione.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- Scalate engine/dependency graph non predisposti.
+Remaining requirements:
+- Scales engine/dependency graph not predisposed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://scalate.github.io/scalate/documentation/scaml-reference.html](https://scalate.github.io/scalate/documentation/scaml-reference.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.scaml` | [hello.scaml](hello.scaml) creato, verifiche pendenti |
+| `.scaml` | [hello.scaml](hello.scaml) created; verification pending |

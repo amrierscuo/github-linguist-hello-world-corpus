@@ -1,40 +1,40 @@
 # #377 Latte
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare e renderizzare un template Latte con audience=World.
+Fill out and make a Latte template with audience=World.
 
-Il renderer usa Latte\Engine originale e renderToString. Il driver carica i file originali tramite autoload PSR4; il template è analizzato e compilato dal motore Latte, non sostituito manualmente.
+The original Latte\Engine and renderToString. The driver loads the original files via PSR4 autoload; the template is analyzed and compiled by the Milk engine, not replaced manually.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Latte3.0.26, PHP8.3.6 con tokenizer
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 php render.php
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout <p>Hello, World!</p> seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://latte.nette.org/en/develop
 - https://github.com/nette/latte/tree/v3.0.26
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.latte` | [hello.latte](hello.latte) verificato |
+| `.latte` | [hello.latte](hello.latte) verified |

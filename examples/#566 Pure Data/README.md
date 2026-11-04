@@ -1,37 +1,37 @@
 # #566 Pure Data
 
-Caricare un patch Pure Data e stampare il messaggio del loadbang.
+Load a Pure Data patch and print the loadbang message.
 
 ## Toolchain
 
 Pd-0.54.1 ("") compiled for Debian (0.54.1+ds-4build3) on 2024/04/07 at 07:21:28 UTC
 
-## Procedura
+## Procedure
 
 pd -nogui -noaudio -batch hello.pd
 
-## Risultato atteso
+## Expected result
 
-Console contiene greeting: Hello, World!.
+Console contains greeting: Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Oggetti e connessioni sono originali; niente audio/device. delay invia pd quit per terminare il test.
+Objects and connections are original; no audio/device. delay sends pd quit to finish the test.
 
-Verifica reale 2026-10-08T13:16:51.553751+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:16:51.553751+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/pure-data/pure-data](https://github.com/pure-data/pure-data)
 - [https://msp.ucsd.edu/Pd_documentation/](https://msp.ucsd.edu/Pd_documentation/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pd` | [hello.pd](hello.pd) verificato |
+| `.pd` | [hello.pd](hello.pd) verified |

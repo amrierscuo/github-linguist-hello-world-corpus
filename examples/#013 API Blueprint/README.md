@@ -1,47 +1,47 @@
 # #013 API Blueprint
 
-`hello.apib` descrive una risorsa `GET /hello` con risposta HTTP 200, tipo
-`text/plain` e corpo `Hello, World!` seguito da un ritorno a capo. È un documento
-di contratto API; non avvia un server HTTP.
+`hello.apib` describes a `GET /hello` resource with HTTP 200 response, type
+`text/plain` and `Hello, World!` body followed by a return to the head.
+of contract API; does not start a HTTP server.
 
-## Toolchain e comando
+## Toolchain and command
 
-Serve Node.js e il parser ufficiale Drafter.js 3.2.0, la versione JavaScript
-compilata dal parser C++ di API Blueprint. È possibile installarlo localmente:
+It serves Node.js and the official parser Drafter.js 3.2.0, the JavaScript version
+compiled by the parser C++ of API Blueprint. You can install it locally:
 
 ```powershell
 npm install --prefix .tools --ignore-scripts --no-audit --no-fund drafter.js@3.2.0
 node verify.cjs .tools/node_modules/drafter.js
 ```
 
-`verify.cjs` chiede prima a Drafter di validare il documento senza diagnostiche,
-poi verifica nel suo AST metodo, percorso, stato, tipo e corpo della risposta.
-Non implementa un parser del formato.
+`verify.cjs` asks first to Drafter to validate the document without diagnostics,
+then verify in its AST method, path, state, type and body of the answer.
+It does not implement a parser of the format.
 
-## Verifica eseguita
+## Verification performed
 
-Sintassi e semantica del **contratto documentale** verificate su Windows con
-Drafter.js 3.2.0. Risultato atteso e osservato:
+The syntax and semantics of the **document contract** were verified on Windows with
+Drafter.js 3.2.0. Expected result and observed:
 
 ```text
 Drafter: valid, no warnings
 AST: GET /hello -> 200 text/plain; body = Hello, World! + LF
 ```
 
-Il controllo non prova il comportamento di un server: questo esempio non ne
-contiene uno. I file del parser sono in una cartella di lavoro esterna al corpus;
-origine, SHA-256 e comando eseguito sono registrati in `verification.log`.
+Control does not prove a server's behavior: this example does not
+contains one. Parser files are in a workbook external to the corpus;
+origin, SHA-256 and executed command are recorded in `verification.log`.
 
-## Fonti primarie
+## Primary sources
 
 - [API Blueprint: specifica](https://apiblueprint.org/documentation/specification.html)
 - [API Blueprint: strumenti di parsing](https://apiblueprint.org/developers.html)
 - [Repository ufficiale Drafter.js e API parseSync/validateSync](https://github.com/apiaryio/drafter.js)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.apib` | [hello.apib](hello.apib) verificato |
+| `.apib` | [hello.apib](hello.apib) verified |

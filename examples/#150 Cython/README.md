@@ -1,18 +1,18 @@
 # #150 Cython
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Compilare un modulo Cython con variabile cdef str e stamparne il valore durante l’import.
+Fill out a Cython module with variable cdef str and print its value during import.
 
-Il parser/compiler Cython genera C da hello.pyx; un compilatore C costruisce un’estensione CPython reale e Python la importa. Nel log la compilazione GCC usa header Python isolati ed esegue il .so in WSL. setup.py offre il normale percorso setuptools per riprodurre la build con Cython e un toolchain C disponibili.
+The parser/compiler Cython generates C from hello.pyx; a C compiler builds a real CPython extension and Python imports it. In the log compilation GCC uses header Python isolated and performs the .so in WSL. setup.py offers the normal setuptools path to play build with Cyth
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Cython 3.3.0; GNU C 13.3.0; CPython 3.12.3 Ubuntu WSL (generazione C su Windows Python 3.13.9)
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 python setup.py build_ext --inplace
@@ -22,25 +22,25 @@ python setup.py build_ext --inplace
 python -c "import hello"
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esatto Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.cython.org/en/latest/src/userguide/source_files_and_compilation.html
 - https://github.com/cython/cython
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pyx` | [hello.pyx](hello.pyx), [hello.pyx](variants/ext-pxd-2e707864/hello.pyx), [consumer.pyx](variants/ext-pxi-2e707869/consumer.pyx) creato, verifiche pendenti |
-| `.pxd` | [hello.pxd](variants/ext-pxd-2e707864/hello.pxd) creato, verifiche pendenti |
-| `.pxi` | [hello.pxi](variants/ext-pxi-2e707869/hello.pxi) creato, verifiche pendenti |
+| `.pyx` | [hello.pyx](hello.pyx), [hello.pyx](variants/ext-pxd-2e707864/hello.pyx), [consumer.pyx](variants/ext-pxi-2e707869/consumer.pyx) created; verification pending |
+| `.pxd` | [hello.pxd](variants/ext-pxd-2e707864/hello.pxd) created; verification pending |
+| `.pxi` | [hello.pxi](variants/ext-pxi-2e707869/hello.pxi) created; verification pending |

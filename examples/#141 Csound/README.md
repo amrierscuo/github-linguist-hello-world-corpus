@@ -1,41 +1,41 @@
 # #141 Csound
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Eseguire un’orchestra Csound che stampa Hello, World! all’inizializzazione di instr 1.
+Perform a Csound orchestra that prints Hello, World! at the initialization of instr 1.
 
-hello.orc contiene il programma orchestra; schedule.sco attiva lo strumento. Il saluto proviene dall’opcode prints built-in. -n disabilita output audio; nessun dispositivo audio o file audio è usato. L’avviso sulla directory dei plugin opzionali assente è registrato e non impedisce questa esecuzione.
+hello.orc contains the orchestra program; schedule.sco activates the tool. Greeting comes from the built-in opacode prints. -n disabled audio output; no audio device or audio file is used.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Csound 6.18, pacchetto Ubuntu 6.18.1+dfsg-1ubuntu4 x86_64
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 csound -n -d -m0 hello.orc schedule.sco
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Messaggio Hello, World! seguito da newline; 0 errors in performance e exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://csound.com/docs/manual/prints.html
 - https://csound.com/docs/manual/CommandFlags.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.orc` | [hello.orc](hello.orc), [consumer.orc](variants/ext-udo-2e75646f/consumer.orc) creato, verifiche pendenti |
-| `.udo` | [hello.udo](variants/ext-udo-2e75646f/hello.udo) creato, verifiche pendenti |
+| `.orc` | [hello.orc](hello.orc), [consumer.orc](variants/ext-udo-2e75646f/consumer.orc) created; verification pending |
+| `.udo` | [hello.udo](variants/ext-udo-2e75646f/hello.udo) created; verification pending |

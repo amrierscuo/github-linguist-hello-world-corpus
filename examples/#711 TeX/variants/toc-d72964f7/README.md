@@ -1,24 +1,24 @@
-# 0711 — TeX — `.toc`
+# 0711: TeX: `.toc`
 
-Fragment LaTeX di sommario scritto a mano nel formato contentsline; non dichiarato come output di una compilazione.
+Fragment LaTeX handwritten summary in contentline format; not declared as a compilation output.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.toc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 LaTeX: read this fragment in an isolated document using tableofcontents
 ```
 
-Risultato atteso: sommario include Hello, World!.
+Expected result: summary includes Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.latex-project.org/help/documentation/](https://www.latex-project.org/help/documentation/)
 - [https://ctan.org/pkg/biblatex](https://ctan.org/pkg/biblatex)

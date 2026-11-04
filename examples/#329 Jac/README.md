@@ -1,38 +1,38 @@
 # #329 Jac
 
-Eseguire un blocco entry Jac che stampa Hello, World!.
+Perform an entry block Jac printing Hello, World!.
 
-Tipo canonico `programming`, language_id `235277043`.
+Canonical type `programming`, language_id `235277043`.
 
-Toolchain prevista: Python 3.13 e jaclang CLI.
+Suggested toolchain: Python 3.13 and jaclang CLI.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 jac run hello.jac
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Il programma non usa walker, servizi, modelli o API esterne: richiede soltanto il runtime Jac.
+The program does not use walkers, services, models or external API: it requires only the Jac runtime.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + jaclang 0.16.7. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + jaclang 0.16.7. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Jac — documentazione originale](https://docs.jaseci.org/reference/language/foundation/)
 - [Jaseci/Jac — implementazione](https://github.com/Jaseci-Labs/jaseci)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install jaclang==0.16.7
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jac` | [hello.jac](hello.jac) verificato |
+| `.jac` | [hello.jac](hello.jac) verified |

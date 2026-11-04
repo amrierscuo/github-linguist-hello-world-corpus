@@ -2,47 +2,47 @@
 
 Voce canonica `World of Warcraft Addon Data`, tipo `data`, language_id `396`.
 
-Addon World of Warcraft originale: TOC Greeting.toc dichiara titolo e versione e carica Greeting.lua, che stampa `Hello, World!`.
+Addon World of Warcraft original: TOC Greeting.toc declares title and version and charge Greeting.lua, which prints `Hello, World!`.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-World of Warcraft native addon loader — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+World of Warcraft native addon loader, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Il campo Interface 110200 dichiara un target retail 11.2.0, non una pretesa di compatibilità con ogni versione futura. Per altri client aggiornare esplicitamente quel target e verificare con il loader del client. Fonte: sorgenti UI originali Blizzard distribuiti nel mirror indicato.
+The Interface 110200 field declares a 11.2.0 retail target, not a pretext for compatibility with any future version. For other clients, please explicitly update that target and check with the client loader. Source: Blizzard original UI sources distributed in the mirror indicated.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 Nel client compatibile, collocare Greeting.toc e Greeting.lua in Interface/AddOns/Greeting; abilitare l’addon; ricaricare l’interfaccia e osservare il saluto nella chat.
 ```
 
-Risultato atteso: Loader accetta Greeting.toc, carica Greeting.lua e compare Hello, World! nella chat.
+Expected result: Loader accepts Greeting.toc, charge Greeting.lua and appears Hello, World! in the chat.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Client e caricatore addon assenti. Il titolo TOC e lo script hanno uno scopo reale, ma una sola prova Lua non attesterebbe il caricamento TOC: entrambi i flag restano false.
+The TOC title and the script have a real purpose, but only one Lua test would not wait for the TOC loading: both flags remain false.
 
-Requisiti residui:
+Remaining requirements:
 
 - Client World of Warcraft e caricatore addon assenti; metadata TOC e script sono creati, caricamento non provato.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/Gethe/wow-ui-source](https://github.com/Gethe/wow-ui-source)
 - [https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_APIDocumentation/Blizzard_APIDocumentation.toc](https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_APIDocumentation/Blizzard_APIDocumentation.toc)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.toc` | [Greeting.toc](Greeting.toc) creato, verifiche pendenti |
+| `.toc` | [Greeting.toc](Greeting.toc) created; verification pending |

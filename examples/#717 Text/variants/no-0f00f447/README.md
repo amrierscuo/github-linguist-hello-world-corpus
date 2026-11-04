@@ -1,23 +1,23 @@
-# 0717 — Text — `.no`
+# 0717: Text: `.no`
 
-Variante testuale dello stesso formato, con suffisso canonico .no.
+Textual variation of the same format, with canon suffix .no.
 
-Provenienza: copia del file originale `examples/#717 Text/hello.txt`.
+Origin: copy of the original `examples/#717 Text/hello.txt` file.
 
 Artefatto principale: `hello.no`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Read hello.no as UTF-8; assert exact Hello, World! followed by LF
 ```
 
-Risultato atteso: Hello, World! con LF finale..
+Expected result: Hello, World! with LF final..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.python.org/3/library/pathlib.html](https://docs.python.org/3/library/pathlib.html)

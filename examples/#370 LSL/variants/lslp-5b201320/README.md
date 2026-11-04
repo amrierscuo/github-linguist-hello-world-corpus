@@ -1,30 +1,30 @@
-# 0370 — LSL: `.lslp`
+# 0370: LSL: `.lslp`
 
-Ruolo: Alias di estensione per lo stesso formato testuale del sorgente principale.
+Role: Alias extension for the same text format as the main source.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#370 LSL/hello.lsl.
+Origin: Byte-identical copy of the original corpus source: examples/#370 LSL/hello.lsl.
 
-Toolchain richiesta: Second Life/LSL o runtime compatibile; versione da registrare. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Second Life/LSL o runtime compatibile; versione da registrare. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Usare la toolchain del README principale sul file hello.lslp; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
 ```
 
-Risultato atteso: Chat del proprietario contiene Hello, World!.
+Expected result: Owner's Chat contains Hello, World!.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.lslp`: `28efa102dea0f125f0722c1d15b4b5ade5f749c167ec974684d96ba2193160e3`
 
-Fonti primarie:
+Primary sources:
 
 - https://wiki.secondlife.com/wiki/LSL_Portal
 - https://wiki.secondlife.com/wiki/LlOwnerSay

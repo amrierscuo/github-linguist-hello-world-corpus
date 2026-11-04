@@ -1,23 +1,23 @@
-# 0570 — Python — `.gypi`
+# 0570: Python: `.gypi`
 
-Configurazione GYP in sintassi literal Python; non codice Python eseguibile arbitrario.
+The GYP configuration uses Python literal syntax and is not arbitrary executable Python code.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.gypi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 gyp hello.gyp (oppure includere hello.gypi in una configurazione GYP); build in work
 ```
 
-Risultato atteso: variabile/configurazione originale di saluto.
+Expected result: variabile/configurazione original greeting.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://gyp.gsrc.io/docs/InputFormatReference.md](https://gyp.gsrc.io/docs/InputFormatReference.md)

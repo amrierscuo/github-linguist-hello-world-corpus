@@ -1,32 +1,32 @@
 # #297 Hosts File
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare un Hosts File illustrativo che associa hello-world.example.invalid a 192.0.2.1.
+Analyze an Illustrative Hosts File that associates hello-world.example.invalid to 192.0.2.1.
 
-Un hostname non contiene spazi o punteggiatura del saluto: l’equivalente appropriato è il nome hello-world. Il parser originale Hosts legge soltanto il percorso esplicito della fixture; il file del sistema operativo non viene scritto né usato come resolver.
+A hostname does not contain spaces or punctuation of greetings: the appropriate equivalent is the hello-world name. The original Hosts parser reads only the explicit path of fixtures; the operating system file is not written or used as a resolver.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 python-hosts1.1.3, CPython3.13.9
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Una voce IPv4 con indirizzo192.0.2.1 e nome hello-world.example.invalid; exit 0.
+IPv4 voice with indirizzo192.0.2.1 and hello-world.example.invalid name; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://man7.org/linux/man-pages/man5/hosts.5.html
 - https://github.com/jonhadfield/python-hosts

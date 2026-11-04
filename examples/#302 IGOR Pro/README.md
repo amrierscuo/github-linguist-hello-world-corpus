@@ -1,36 +1,36 @@
 # #302 IGOR Pro
 
-Eseguire HelloWorld in Igor Pro e scrivere il saluto nella History.
+Run HelloWorld in Igor Pro and write greeting in History.
 
 ## Toolchain
 
 WaveMetrics Igor Pro; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-Caricare hello.ipf nella finestra Procedure; Compile; nel comando Igor: HelloWorld()
+Upload hello.ipf in the Procedures window; Complete; in the Igor command: HelloWorld()
 
-## Risultato atteso
+## Expected result
 
-History contiene Hello, World!.
+History contains Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 La funzione originale usa Print; rtGlobals=3 sceglie l’accesso moderno rigoroso alle variabili. Nessuna finestra/grafico è necessaria per il risultato.
 
-Requisiti residui:
-- Igor Pro proprietario/licenza non disponibile; compilazione e History pending.
+Remaining requirements:
+- Igor Pro proprietario/licenza unavailable; compilazione e History pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.wavemetrics.com/products/igorpro/programming](https://www.wavemetrics.com/products/igorpro/programming)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ipf` | [hello.ipf](hello.ipf) creato, verifiche pendenti |
+| `.ipf` | [hello.ipf](hello.ipf) created; verification pending |

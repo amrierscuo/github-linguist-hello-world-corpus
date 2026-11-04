@@ -1,42 +1,42 @@
 # #118 Cirru
 
-Compilare un’espressione CirruScript dalla grammatica Cirru in JavaScript ed eseguirla per stampare Hello, World!.
+Fill out an expression CirruScript from Cirru grammar in JavaScript and execute it to print Hello, World!.
 
-Tipo canonico: `programming`; `language_id`: `58`.
+Canonical type: `programming`; `language_id`: `58`.
 
-Toolchain prevista: Node.js 22 e cirru-script 0.6.2 (implementazione originale storica). La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Node.js 22 and cirru-script 0.6.2 (original historical implementation).
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 cirruscript hello.cirru
 ```
 
-Risultato atteso: stdout `Hello, World!` seguito da newline.
+Expected result: stdout `Hello, World!` followed by newline.
 
 Cirru è una grammatica utilizzabile da più linguaggi; questo esempio seleziona esplicitamente il dialetto CirruScript storico. Il parser della grammatica da solo non prova l’esecuzione del saluto.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain provata: Node.js 22.20.0 + cirru-script 0.6.2. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Tried toolchain: Node.js 22.20.0 + cirru-script 0.6.2. See [log](verification/verification.log).
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [CirruScript — compilatore originale](https://github.com/Cirru/cirru-script)
 - [Cirru — parser originale](https://github.com/Cirru/parser.coffee)
 
-Verifica automatica inclusa: `node verify.cjs`.
+Automatic verification included: `node verify.cjs`.
 
-Dipendenze riproducibili in una cartella di lavoro dedicata:
+Reproducible dependencies in a dedicated workbook:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund cirru-script@0.6.2
 ```
 
-In CirruScript il prefisso `:` identifica un valore stringa. Le virgolette proteggono gli spazi del token; il prefisso non fa parte del testo stampato.
+In CirruScript the `:` prefix identifies a string value. The quotes protect the token spaces; the prefix is not part of the printed text.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cirru` | [hello.cirru](hello.cirru) verificato |
+| `.cirru` | [hello.cirru](hello.cirru) verified |

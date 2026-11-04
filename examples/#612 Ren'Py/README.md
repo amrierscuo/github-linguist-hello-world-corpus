@@ -2,46 +2,46 @@
 
 Voce canonica `Ren'Py`, tipo `programming`, language_id `322`.
 
-Mostrare il saluto come dialogo nel punto start di un progetto Ren’Py originale.
+Show greeting as a dialogue at the start point of an original Ren’Py project.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine renpy compiler/runtime — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine renpy compiler/runtime, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede Ren’Py SDK compatibile e progetto nella directory corrente con game/script.rpy.
+Requires Ren’Py SDK compatible and project in current directory with game/script.rpy.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 renpy . lint; renpy .
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Sorgente originale label start e statement dialogo, non commento. SDK/lint/display non configurati.
+Source original label start and statement dialog, no comment. SDK/lint/display unconfigured.
 
-Requisiti residui:
+Remaining requirements:
 
 - Required renpy compiler/runtime and matching host resources are not available/configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.renpy.org/doc/html/quickstart.html](https://www.renpy.org/doc/html/quickstart.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rpy` | [script.rpy](game/script.rpy) creato, verifiche pendenti |
+| `.rpy` | [script.rpy](game/script.rpy) created; verification pending |

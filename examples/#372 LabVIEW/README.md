@@ -1,27 +1,27 @@
 # #372 LabVIEW
 
-Sono presenti tre **modelli XML di contenitore**, nelle estensioni canoniche `.lvproj`, `.lvlib`, `.lvclass`. La struttura delle radici `Project`, `Library`, `LVClass` e il campo LVVersion seguono gli esempi pubblici NI. Sono modelli da completare e salvare con LabVIEW, non VI grafici eseguibili.
+The example includes three **XML container templates** with the canonical extensions `.lvproj`, `.lvlib`, and `.lvclass`. The root elements `Project`, `Library`, and `LVClass`, and the LVVersion field, follow NI's public examples. These templates need to be completed and saved in LabVIEW; they are not executable graphical VIs.
 
-`Hello.vi` è una dipendenza **ancora da creare**: non viene incluso un file VI fittizio. I riferimenti del progetto e della libreria sono quindi intenzionalmente ancora irrisolti. Il `.lvclass` non contiene dati privati o metodi; richiede completamento nell'editor nativo.
+`Hello.vi` is a dependency that **still needs to be created**. No placeholder VI file is included. The project and library references therefore remain intentionally unresolved. The `.lvclass` contains no private data or methods and needs to be completed in the native editor.
 
-## Procedura richiesta dall'utente
+## User-requested procedure
 
-1. Aprire/ricreare il progetto con LabVIEW e creare `Hello.vi` nella stessa cartella.
-2. Aggiungere uno string indicator al Front Panel.
-3. Inserire una string constant `Hello, World!` nel Block Diagram e collegarla all'indicatore.
-4. Salvare il VI e i contenitori con l'IDE; eseguire e controllare il saluto.
-5. Se il VI appartiene alla libreria, verificarne l'inclusione nel progetto tramite la libreria e salvare i riferimenti risolti.
+1. Open or recreate the project in LabVIEW and create `Hello.vi` in the same folder.
+2. Add a string indicator to the Front Panel.
+3. Add a `Hello, World!` string constant to the Block Diagram and wire it to the indicator.
+4. Save the VI and the containers in the IDE, then run the VI and check the greeting.
+5. If the VI belongs to the library, confirm that the project includes it through the library, then save the resolved references.
 
-Artefatti dei contenitori creati come modelli. **Sintassi LabVIEW e semantica non verificate**. La sola lettura XML non viene conteggiata come verifica LabVIEW.
+The container files were created as templates. **LabVIEW syntax and semantics remain unverified.** Reading the XML alone does not count as LabVIEW verification.
 
-Fonti: materiale dell'utente e strutture dei contenitori NI in https://github.com/ni/labview-memory-management-tools ; https://www.ni.com/en/support/documentation/supplemental/07/labview-project-file-format.html
+Sources: user-provided material and NI container structures at https://github.com/ni/labview-memory-management-tools ; https://www.ni.com/en/support/documentation/supplemental/07/labview-project-file-format.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Checks for the main example and its variants are recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lvproj` | [Hello.lvproj](Hello.lvproj) creato, verifiche pendenti |
-| `.lvclass` | [Hello.lvclass](Hello.lvclass) creato, verifiche pendenti |
-| `.lvlib` | [Hello.lvlib](Hello.lvlib) creato, verifiche pendenti |
+| `.lvproj` | [Hello.lvproj](Hello.lvproj) created, verification pending |
+| `.lvclass` | [Hello.lvclass](Hello.lvclass) created, verification pending |
+| `.lvlib` | [Hello.lvlib](Hello.lvlib) created, verification pending |

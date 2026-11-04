@@ -1,33 +1,33 @@
 # #719 TextMate Properties
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Caricare una proprietà TextMate contenente Hello, World!.
+Upload a TextMate property containing Hello, World!.
 
-Fixture .tm_properties originale con selettore glob e valore stringa; il file non viene installato nella configurazione dell’editor.
+Fixtures .tm_properties original with glob selector and string value; the file is not installed in the editor configuration.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 TextMate2 originale su macOS, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 TextMate: aprire un file .txt nel progetto e leggere GREETING dalle variabili di un comando bundle
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-GREETING = Hello, World! per i file *.txt.
+GREETING = Hello, World! for files * .txt.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: TextMate/macOS non disponibili; parser delle proprietà ed effettiva variabile pendenti.
+Commitments: TextMate/macOS not available; property parser and actual hanging variable.
 
-## Fonti primarie
+## Primary sources
 
 - https://macromates.com/textmate/manual/settings

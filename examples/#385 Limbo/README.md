@@ -1,38 +1,38 @@
 # #385 Limbo
 
-Compilare un modulo Limbo per Inferno che usa Sys->print.
+Fill out a Limbo module for Inferno that uses Sys->print.
 
 ## Toolchain
 
 Inferno/Limbo; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-Nel runtime Inferno: limbo -o hello.dis hello.b; ./hello.dis
+In the runtime Inferno: limbo -o hello.dis hello.b;./ hello.dis
 
-## Risultato atteso
+## Expected result
 
-Modulo carica Sys e scrive Hello, World! più newline.
+Sys charging module and writes Hello, World! more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-init espone l’interfaccia della shell Inferno e carica il modulo Sys autentico. Sys/Draw interfaces provengono dal runtime; non sono stub inclusi nel corpus.
+init exposes the Inferno shell interface and loads the authentic Sys module. Sys/Draw interfaces come from the runtime; they are not stub included in the corpus.
 
-Requisiti residui:
-- Compilatore Limbo e VM Dis Inferno non disponibili; import Sys/Draw e runtime pending.
+Remaining requirements:
+- Filler Limbo and VM Dis Inferno not available; import Sys/Draw and runtime pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.vitanuova.com/inferno/limbo.html](https://www.vitanuova.com/inferno/limbo.html)
 - [https://www.vitanuova.com/inferno/papers/limbo.html](https://www.vitanuova.com/inferno/papers/limbo.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.b` | [hello.b](hello.b), [hello.b](variants/m-f7140aa0/hello.b) creato, verifiche pendenti |
-| `.m` | [hello.m](variants/m-f7140aa0/hello.m) creato, verifiche pendenti |
+| `.b` | [hello.b](hello.b), [hello.b](variants/m-f7140aa0/hello.b) created; verification pending |
+| `.m` | [hello.m](variants/m-f7140aa0/hello.m) created; verification pending |

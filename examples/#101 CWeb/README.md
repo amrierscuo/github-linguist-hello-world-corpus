@@ -1,12 +1,12 @@
 # #101 CWeb
 
-Estrarre un programma C dal sorgente CWEB, compilarlo e stampare Hello, World! seguito da LF.
+Extract a C program from the CWEB source, compile it and print Hello, World! followed by LF.
 
-Tipo canonico: `programming`; `language_id`: `657332628`.
+Canonical type: `programming`; `language_id`: `657332628`.
 
-Toolchain prevista: CWEB 4.x (ctangle) e compilatore C conforme a C11. La versione effettivamente provata, quando disponibile, è nel log.
+Toolchain provided: CWEB 4.x (ctangle) and C compiler compliant with C11.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 ctangle hello.w
@@ -14,21 +14,21 @@ cc -std=c11 -Wall -Wextra hello.c -o hello
 ./hello
 ```
 
-Risultato atteso: stdout esatto `Hello, World!\n`, uscita 0.
+Expected result: exact stdout `Hello, World!\n`, 0. output
 
-Il controllo di ctangle riguarda il sorgente .w; la compilazione C controlla il codice estratto. La composizione tipografica con cweave/TeX è un passaggio distinto.
+The ctangle check covers the .w source; C compilation checks the extracted code. Typesetting with cweave/TeX is a separate step.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain provata: MiKTeX CTANGLE (version banner in log) + GCC 13.3.0 on WSL Ubuntu 24.04. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Tried toolchain: MiKTeX CTANGLE (version banner in log) + GCC 13.3.0 on WSL Ubuntu 24.04. See [log](verification/verification.log).
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [CWEB — Knuth e Levy](https://www-cs-faculty.stanford.edu/~knuth/cweb.html)
 - [Implementazione CWEB](https://github.com/ascherer/cweb)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.w` | [hello.w](hello.w) verificato |
+| `.w` | [hello.w](hello.w) verified |

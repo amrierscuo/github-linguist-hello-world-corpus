@@ -1,38 +1,38 @@
 # #253 Glyph
 
-Caricare PWI_Glyph 2 in Pointwise e scrivere Hello, World! nella finestra messaggi.
+Upload PWI_Glyph 2 in Pointwise and write Hello, World! in the Messages window.
 
 ## Toolchain
 
 Cadence Fidelity Pointwise con PWI_Glyph 2; versione/licenza runtime da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-Aprire hello.glf tramite Script > Execute in Pointwise; oppure usare il tclsh fornito da Pointwise per hello.glf
+Open hello.glf via Script > Execute in Pointwise; or use the tclsh provided by Pointwise for hello.glf
 
-## Risultato atteso
+## Expected result
 
-Package PWI_Glyph caricato; puts scrive il saluto più newline.
+Package PWI_Glyph loaded; puts writes the newest greeting.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 Identificazione originale: Glyph è l’interfaccia Tcl del mesher Pointwise, come documentato dal vendor. package require PWI_Glyph 2 impedisce di confondere un tclsh generico con il runtime Glyph. Non viene contattato un server o consumata una licenza.
 
-Requisiti residui:
+Remaining requirements:
 - Cadence Pointwise/PWI_Glyph 2 runtime non disponibile; package load e puts non eseguiti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://pointwise.github.io/](https://pointwise.github.io/)
 - [https://www.cadence.com/doc/user-manual/getting-started/command-line-options.html](https://www.cadence.com/doc/user-manual/getting-started/command-line-options.html)
 - [https://github.com/pointwise/GlyphClientPython](https://github.com/pointwise/GlyphClientPython)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.glf` | [hello.glf](hello.glf) creato, verifiche pendenti |
+| `.glf` | [hello.glf](hello.glf) created; verification pending |

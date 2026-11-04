@@ -1,14 +1,14 @@
 # #006 ABNF
 
-`hello.abnf` definisce la regola `greeting`, che riconosce esattamente i 13
-caratteri ASCII `Hello, World!`. Usa ABNF RFC 5234 con l'estensione `%s` di
-RFC 7405 per rendere il confronto sensibile alle maiuscole. Il file è ASCII
+`hello.abnf` defines the `greeting` rule, which recognizes exactly the 13
+ASCII `Hello, World!` characters. Use ABNF RFC 5234 with `%s` extension
+RFC 7405 to make matching case-sensitive. The file is ASCII
 con terminatori CRLF.
 
-## Toolchain e comandi
+## Toolchain and commands
 
 **Python 3.10 o successivo** e pacchetto esterno **abnf 2.9.0**. Installazione
-isolata, dalla cartella dell'esempio (Windows PowerShell):
+isolated, from the example folder (Windows PowerShell):
 
 ```powershell
 python -m venv .venv
@@ -16,32 +16,32 @@ python -m venv .venv
 .venv/Scripts/python.exe verify.py
 ```
 
-`verify.py` carica il file nel parser della libreria; non implementa un parser
-ABNF proprio. Accetta il saluto esatto e controlla che siano respinti tre
-controesempi: una maiuscola cambiata, la virgola assente e uno spazio finale.
-La fase di costruzione del parser avviene nel verificatore.
+`verify.py` uploads the file to the library parser; does not implement a parser
+of its own for ABNF. It accepts the exact greeting and checks that three
+counterexamples: a capital changed, the absent comma and a final space.
+The construction phase of the parser takes place in the verification.
 
-Risultato atteso: codice 0, conferma del caricamento della grammatica,
+Expected result: 0 code, confirmation of grammar loading,
 `ACCEPT: Hello, World!`, tre righe `REJECT` e
 `PASS: syntax and exact greeting semantics`.
 
-## Stato
+## Status
 
-Sintassi **verificata** e semantica **verificata** tramite abnf 2.9.0 con
+syntax **verified** e behavior **verified** tramite abnf 2.9.0 con
 Python 3.13.9 su Windows x64. Comando effettivo, output, codice di uscita e hash
-sono in `verification/abnf.json`. La dipendenza usata nella sessione è isolata
-nella cartella di lavoro esterna al corpus.
+are in `verification/abnf.json`. The dependence used in the session is isolated
+in the external workbook to the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [RFC Editor, RFC 5234: ABNF](https://www.rfc-editor.org/rfc/rfc5234).
 - [RFC Editor, RFC 7405: stringhe sensibili alle maiuscole](https://www.rfc-editor.org/rfc/rfc7405.html).
 - [abnf, progetto e API del parser](https://github.com/declaresub/abnf).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.abnf` | [hello.abnf](hello.abnf) verificato |
+| `.abnf` | [hello.abnf](hello.abnf) verified |

@@ -1,38 +1,38 @@
 # #836 xBase
 
-Compilare ed eseguire un programma xBase.
+Fill in and run a xBase program.
 
 ## Toolchain
 
 Harbour xBase compiler/runtime
 
-## Procedura
+## Procedure
 
 hbmk2 hello.prg -obuild/hello; build/hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Harbour/xBase compiler/runtime non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://harbour.github.io/](https://harbour.github.io/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.prg` | [hello.prg](hello.prg), [main.prg](variants/ch-20daa7ca/main.prg) creato, verifiche pendenti |
-| `.ch` | [hello.ch](variants/ch-20daa7ca/hello.ch) creato, verifiche pendenti |
-| `.prw` | [hello.prw](variants/prw-1dc8a242/hello.prw) creato, verifiche pendenti |
+| `.prg` | [hello.prg](hello.prg), [main.prg](variants/ch-20daa7ca/main.prg) created; verification pending |
+| `.ch` | [hello.ch](variants/ch-20daa7ca/hello.ch) created; verification pending |
+| `.prw` | [hello.prw](variants/prw-1dc8a242/hello.prw) created; verification pending |

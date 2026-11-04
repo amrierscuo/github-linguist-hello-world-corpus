@@ -2,48 +2,48 @@
 
 Voce canonica `Motoko`, tipo `programming`, language_id `202937027`.
 
-Eseguire una query Motoko di un actor locale e controllare una seconda stringa parametro.
+Run a Motoko query of a local actor and check a second string parameter.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Authentic Motoko compiler and actor interpreter via official-linked Node bindings — node-motoko 5.0.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Compiler Motoko autentico attraverso il binding Node citato dal progetto ufficiale; la versione realmente usata è nel log.
+Complete Motoko through the binding Node quoted by the official project; the version actually used is in the log.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 npm install --prefix .tools motoko; node verify.cjs .tools
 ```
 
-Risultato atteso: Il risultato Motoko contiene "Hello, World!" : Text; PASS.
+Expected result: The Motoko result contains "Hello, World!": Text; PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-mo.check verifica il tipo, mo.run esegue l’actor e la query, e l’assert Reader controlla il parametro. Ambito: interprete locale, senza deployment di canister.
+mo.check verifies the type, mo.run executes the actor and query, and the Axis Reader controls the parameter. Scope: local interpreter, without canister deployment.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.internetcomputer.org/languages/motoko/reference/compiler-ref/](https://docs.internetcomputer.org/languages/motoko/reference/compiler-ref/)
 - [https://github.com/caffeinelabs/motoko](https://github.com/caffeinelabs/motoko)
 - [https://github.com/caffeinelabs/node-motoko](https://github.com/caffeinelabs/node-motoko)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mo` | [hello.mo](hello.mo) verificato |
+| `.mo` | [hello.mo](hello.mo) verified |

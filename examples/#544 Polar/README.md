@@ -1,40 +1,40 @@
 # #544 Polar
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Caricare una regola Polar e ricavare il binding message=Hello, World!.
+Upload a Polar rule and get binding= Hello, World!.
 
-La regola greeting è un fatto Polar originale. Oso carica la policy e il driver interroga il motore con Variable(message), confrontando il valore del binding. Non è una policy di autorizzazione applicata a risorse; l’avviso Oso per assenza di allow è registrato.
+The greeting rule is an original Polar fact. Oso loads the policy and the driver questions the engine with Variable(message), comparing the binding value. It is not an authorization policy applied to resources; the Oso notice for absence of allow is recorded.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Oso/Polar0.27.3, CFFI1.17.1, Python3.12 Linux
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python3 verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Una soluzione message=Hello, World!, emessa dal driver; exit0.
+A message= Hello, World! solution, issued by the driver; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/osohq/oso
 - https://docs.oso.dev/ruby/getting-started/application/model.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.polar` | [hello.polar](hello.polar) verificato |
+| `.polar` | [hello.polar](hello.polar) verified |

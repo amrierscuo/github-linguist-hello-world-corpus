@@ -1,39 +1,39 @@
 # #426 Mermaid
 
-Analizzare un diagramma Mermaid e leggere l’etichetta del nodo greeting dal database del parser.
+Analyze a Mermaid diagram and read the node greeting label from the parser database.
 
-Tipo canonico `markup`, language_id `385992043`.
+Canonical type `markup`, language_id `385992043`.
 
-Toolchain prevista: Node.js 22, Mermaid e jsdom.
+Suggested toolchain: Node.js 22, Mermaid and jsdom.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: un nodo greeting con testo Hello, World!; stdout saluto e LF.
+Expected result: a greeting node with Hello, World! text; stdout greeting and LF.
 
-L’obiettivo è l’interpretazione del grafo e dell’etichetta con il motore originale. Non certifica geometria SVG o rendering di un browser.
+The goal is to interpret the graph and label with the original engine. It does not certify SVG geometry or rendering of a browser.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + Mermaid 11.12.0 + jsdom 26.1.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + Mermaid 11.12.0 + jsdom 26.1.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Mermaid — flowchart](https://mermaid.js.org/syntax/flowchart.html)
 - [Mermaid — API](https://mermaid.js.org/config/usage.html)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund mermaid@11.12.0 jsdom@26.1.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mmd` | [hello.mmd](hello.mmd) verificato |
-| `.mermaid` | [hello.mermaid](variants/mermaid-4637b47f/hello.mermaid) creato, verifiche pendenti |
+| `.mmd` | [hello.mmd](hello.mmd) verified |
+| `.mermaid` | [hello.mermaid](variants/mermaid-4637b47f/hello.mermaid) created; verification pending |

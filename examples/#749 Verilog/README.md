@@ -1,33 +1,33 @@
 # #749 Verilog
 
-Simulare un modulo Verilog che esegue display e finish.
+Simulate a Verilog module that performs display and finish.
 
-Tipo canonico `programming`, language_id `387`.
+Canonical type `programming`, language_id `387`.
 
-Toolchain prevista: Icarus Verilog12.0 native Linux compiler/vvp.
+Suggested toolchain: Icarus Verilog12.0 native Linux compiler/vvp.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 iverilog -o build/hello.vvp hello.v
 vvp build/hello.vvp
 ```
 
-Risultato atteso: La simulazione stampa una riga Hello, World! e la diagnostica normale $finish called at 0; exit0.
+Expected result: The simulation prints a Hello, World! line and the normal diagnostic $finish called at 0; exit0.
 
-Il programma non descrive un dispositivo esterno: è un testbench di simulazione.
+The program does not describe an external device: it is a simulation testbench.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Icarus Verilog12.0 original compiler/vvp native Linux. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Icarus Verilog12.0 original compiler/vvp native Linux. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Icarus Verilog](https://steveicarus.github.io/iverilog/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.v` | [hello.v](hello.v), [hello.v](variants/veo-6cbf9bdf/hello.v), [main.v](variants/veo-6cbf9bdf/main.v) creato, verifiche pendenti |
-| `.veo` | [hello.veo](variants/veo-6cbf9bdf/hello.veo) creato, verifiche pendenti |
+| `.v` | [hello.v](hello.v), [hello.v](variants/veo-6cbf9bdf/hello.v), [main.v](variants/veo-6cbf9bdf/main.v) created; verification pending |
+| `.veo` | [hello.veo](variants/veo-6cbf9bdf/hello.veo) created; verification pending |

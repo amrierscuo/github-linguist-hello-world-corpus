@@ -1,10 +1,10 @@
 # #087 C2hs Haskell
 
-Risolvere con C2HS la costante C HELLO_SENTINEL=1 e stampare Hello, World! dal programma Haskell generato quando il valore è corretto.
+Solve with C2HS the constant C HELLO_SENTINEL = 1 and print Hello, World! from the Haskell program generated when the value is correct.
 
-## Riproduzione
+## Reproduction
 
-Toolchain: C2HS 0.28.8; GHC 9.4.7. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
+Toolchain: C2HS 0.28.8; GHC 9.4.7. Test environment: Ubuntu 24.04 WSL2 x86_64.
 
 ```text
 mkdir -p build
@@ -13,23 +13,23 @@ ghc build/Hello.hs -o build/hello
 ./build/hello
 ```
 
-Risultato atteso: C2HS genera Haskell con costante 1; GHC compila; runtime stampa Hello, World!, exit 0.
+Expected result: C2HS generates Haskell with constant 1; GHC compile; Hello, World! print runtime, exit 0.
 
-## Verifica
+## Verification
 
-Sintassi e semantica verificate il 2026-10-08T23:34:12.651012+00:00. Le varianti hanno prove separate nel log quando consumate.
+syntax and behavior verified 2026-10-08T23:34:12.651012+00:00. The variants have separate evidence in the log when consumed.
 
-[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
+[Prova nativa](verification/finish_native.json) contains versions, real commands, exit code, output and SHA-256. The local routes are replaced by placeholders.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/haskell/c2hs](https://github.com/haskell/c2hs)
 - [https://github.com/haskell/c2hs/wiki/User-Guide](https://github.com/haskell/c2hs/wiki/User-Guide)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.chs` | [Hello.chs](Hello.chs) sintassi e semantica verificate |
+| `.chs` | [Hello.chs](Hello.chs) syntax and behavior verified |

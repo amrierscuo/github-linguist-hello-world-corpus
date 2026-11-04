@@ -1,31 +1,31 @@
 # #192 Elvish
 
-Eseguire uno script Elvish e stampare Hello, World! seguito da LF.
+Run an Elvish script and print Hello, World! followed by LF.
 
-Tipo canonico `programming`, language_id `570996448`.
+Canonical type `programming`, language_id `570996448`.
 
-Toolchain prevista: Elvish 0.21.0.
+Suggested toolchain: Elvish 0.21.0.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 elvish hello.elv
 ```
 
-Risultato atteso: stdout esatto `Hello, World!\n`, uscita 0.
+Expected result: exact stdout `Hello, World!\n`, 0. output
 
-echo è una funzione builtin Elvish. La stringa è quotata e non espande variabili o comandi.
+echo is a builtin Elvish function. The string is listed and does not expand variables or commands.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Elvish 0.21.0 windows/amd64. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Elvish 0.21.0 windows/amd64. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Elvish — tour](https://elv.sh/learn/tour.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.elv` | [hello.elv](hello.elv) verificato |
+| `.elv` | [hello.elv](hello.elv) verified |

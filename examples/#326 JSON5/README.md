@@ -2,37 +2,37 @@
 
 Analizzare JSON5 con chiave non quotata, stringa con apici e virgola finale.
 
-Tipo canonico `data`, language_id `175`.
+Canonical type `data`, language_id `175`.
 
-Toolchain prevista: Python 3.13 e libreria json5.
+Suggested toolchain: Python 3.13 and json5 library.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: Hello, World! e LF; oggetto con greeting corretto.
+Expected result: Hello, World! and LF; subject with proper greeting.
 
-L’artefatto usa caratteristiche JSON5 effettive.
+The artifact uses actual JSON5 characteristics.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + json5 0.16.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + json5 0.16.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [JSON5 — specifica](https://spec.json5.org/)
 - [pyjson5 — implementazione](https://github.com/dpranke/pyjson5)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install json5==0.16.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.json5` | [hello.json5](hello.json5) verificato |
+| `.json5` | [hello.json5](hello.json5) verified |

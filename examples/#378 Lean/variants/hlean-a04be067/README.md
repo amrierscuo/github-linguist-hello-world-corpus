@@ -1,31 +1,31 @@
-# 0378 — Lean: `.hlean`
+# 0378: Lean: `.hlean`
 
 Ruolo: Definizione Lean 2 HoTT di una stringa del saluto; eval riduce il termine. Non usa IO/main Lean 3.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Lean3.51.1 community ufficiale Windows. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Lean3.51.1 community ufficiale Windows. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Lean 2 originale con libreria HoTT sul LEAN_PATH: lean hello.hlean
 ```
 
-Risultato atteso: Elaborazione del termine greeting:string e output di eval con la stringa Hello, World! (la formattazione del pretty-printer può includere virgolette).
+Expected result: Elaboration of the term greeting:string and eval output with the Hello, World! string (the formatting of the pretty-printer can include quotes).
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- Lean 2 e libreria HoTT compatibili non predisposti. Lean 3 e Lean 4 non validano questo dialetto storico.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- Lean 2 and compatible HoTT bookshelf not prepared. Lean 3 and Lean 4 do not validate this historic dialect.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.hlean`: `bd1f6961b5ef47fc720b2455279d2f8ba0c87eb479f12e3bfd0389549e9d0ba1`
 
-Fonti primarie:
+Primary sources:
 
 - https://raw.githubusercontent.com/leanprover/tutorial/master/05_Interacting_with_Lean.org
 - https://raw.githubusercontent.com/leanprover/lean2/master/hott/init/datatypes.hlean

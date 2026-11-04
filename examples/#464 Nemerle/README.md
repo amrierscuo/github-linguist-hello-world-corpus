@@ -1,18 +1,18 @@
 # #464 Nemerle
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare Nemerle e stampare Hello, World!.
+Fill in Nemerle and print Hello, World!.
 
-module Hello espone Main():void; def definisce audience e Console.WriteLine effettua l’IO.
+Hello module exposes Main():void; def defines audience and Console.WriteLine performs IO.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Compiler Nemerle/.NET originale; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 ncc -out:Hello.exe Hello.n
@@ -22,25 +22,25 @@ ncc -out:Hello.exe Hello.n
 Eseguire Hello.exe dopo compilazione.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Compiler Nemerle non preparato.
+Commitments: Compiler Nemerle not prepared.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/rsdn/nemerle
 - https://rsdn.org/article/Nemerle/TheNemerleLanguage.xml
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.n` | [Hello.n](Hello.n) creato, verifiche pendenti |
+| `.n` | [Hello.n](Hello.n) created; verification pending |

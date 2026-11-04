@@ -1,29 +1,33 @@
-# 0333 — Java: `.jav`
+# 0333: Java: `.jav`
 
-Ruolo: Alias storico di sorgente Java; javac richiede il nome hello.java per la classe pubblica.
+## Recorded verification
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#333 Java/hello.java.
+**Syntax and behavior verified** on November 4, 2026. Copy .jav byte-identically as Hello.java, compile and execute; run the original .jsh as JShell input with local execution engine. [Evidence](../../verification/native_20261104_333_variants_result.json).
 
-Toolchain richiesta: OpenJDK 21.0.12. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Role: historical Alias of Java source; javac requires the name hello.java for the public class.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Origin: Byte-identical copy of the original corpus source: examples/#333 Java/hello.java.
+
+Required toolchain: OpenJDK 21.0.12. The exact toolchain version for this variant was not verified in this batch.
+
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Copiare hello.jav in una directory di build come hello.java; javac hello.java; java Hello
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Earlier status (before this check): Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.jav`: `e8533e4508f5734f52cbfcf23d34a842fcce5d27f9d82b23ca2f4ff6b3bf1e32`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html

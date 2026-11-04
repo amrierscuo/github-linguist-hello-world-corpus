@@ -1,37 +1,37 @@
 # #394 LiveCode Script
 
-Caricare uno stack script-only LiveCode e invocare helloWorld.
+Upload a script-only LiveCode stack and invoke helloWorld.
 
 ## Toolchain
 
 LiveCode Script engine; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-In LiveCode caricare lo stack script-only hello.livecodescript; invocare helloWorld dal Message Box sullo stack
+In LiveCode load the script-only hello.livecodescript stack; invoke helloWorld from Message Box on the stack
 
-## Risultato atteso
+## Expected result
 
-Handler put scrive Hello, World! nel Message Box.
+Handler put writes Hello, World! in the Message Box.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-script HelloWorld identifica uno stack script-only; il saluto è nel gestore originale. Il runtime/compatibilità della versione devono essere registrati prima del claim positivo.
+HelloWorld script identifies a script-only stack; greeting is in the original manager.The runtime/compatibilità of the version must be recorded before the positive claim.
 
-Requisiti residui:
-- Engine LiveCode non predisposto; caricamento stack e handler pending.
+Remaining requirements:
+- Engine LiveCode not predisposed; loading stack and handler pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.livecode.com/](https://docs.livecode.com/)
 - [https://github.com/livecode/livecode](https://github.com/livecode/livecode)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.livecodescript` | [hello.livecodescript](hello.livecodescript) creato, verifiche pendenti |
+| `.livecodescript` | [hello.livecodescript](hello.livecodescript) created; verification pending |

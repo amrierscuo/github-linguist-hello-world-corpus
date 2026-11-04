@@ -1,31 +1,31 @@
 # #665 Slice
 
-Compilare una definizione Slice Ice con costante string message.
+Fill out a Slice Ice definition with constant string message.
 
-Tipo canonico `programming`, language_id `894641667`.
+Canonical type `programming`, language_id `894641667`.
 
-Toolchain prevista: ZeroC Ice slice2cpp e SDK Ice.
+Suggested toolchain: ZeroC Ice slice2cpp and SDK Ice.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 slice2cpp --output-dir build hello.ice
 ```
 
-Risultato atteso: definizione accettata e costante Greeting::message uguale al saluto.
+Expected result: accepted and constant definition Greeting::message equal to greeting.
 
-Il file definisce una costante, senza server, proxy o comunicazioni di rete.
+The file defines a constant, no server, proxy or network communications.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Ice Slice](https://docs.zeroc.com/ice/latest/the-slice-language)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ice` | [hello.ice](hello.ice) creato, verifiche pendenti |
+| `.ice` | [hello.ice](hello.ice) created; verification pending |

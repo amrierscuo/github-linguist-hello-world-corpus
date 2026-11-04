@@ -1,23 +1,23 @@
-# 0622 — Rocq Prover — `.coq`
+# 0622: Rocq Prover: `.coq`
 
-Variante testuale dello stesso formato, con suffisso canonico .coq.
+Textual variation of the same format, with canon suffix .coq.
 
-Provenienza: copia del file originale `examples/#622 Rocq Prover/hello.v`.
+Origin: copy of the original `examples/#622 Rocq Prover/hello.v` file.
 
 Artefatto principale: `hello.coq`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 coqc -o work/hello.vo hello.coq
 ```
 
-Risultato atteso: Compute produce "Hello, World!" : string e la prova compila..
+Expected result: Compute produces "Hello, World!": string and test compile..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://rocq-prover.org/doc/V8.19.2/refman/language/core/definitions.html](https://rocq-prover.org/doc/V8.19.2/refman/language/core/definitions.html)

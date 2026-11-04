@@ -1,23 +1,23 @@
-# 0570 — Python — `.pyw`
+# 0570: Python: `.pyw`
 
-Sorgente Python 3; per .pyw l’esecuzione GUI normalmente non espone una console, mentre il controllo esplicito con python verifica stdout.
+Source Python 3; for .pyw execution GUI normally does not expose a console, while explicit control with python verification stdout.
 
-Provenienza: copia del file originale `examples/#570 Python/hello.py`.
+Origin: copy of the original `examples/#570 Python/hello.py` file.
 
 Artefatto principale: `hello.pyw`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 python hello.pyw
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.python.org/3/tutorial/inputoutput.html](https://docs.python.org/3/tutorial/inputoutput.html)

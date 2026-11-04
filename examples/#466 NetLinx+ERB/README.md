@@ -1,43 +1,43 @@
 # #466 NetLinx+ERB
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Renderizzare NetLinx+ERB e ottenere il programma startup con Hello, World!.
+Render NetLinx+ ERB and get the startup program with Hello, World!.
 
-ERB.new/result(binding) interpola audience nel template .axs.erb e produce sorgente NetLinx. La prova verifica realmente il renderer ERB; la compilazione/esecuzione NetLinx del risultato resta pendente.
+ERB.new /result(binding) interpolates audience in .axs.erb template and produces NetLinx source. The test really checks the ERB renderr; the compilazione/esecuzione NetLinx of the result remains pending.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-ERB originale Ruby3.2.3; compiler/runtime NetLinx non preparati
+ERB original Ruby3.2.3; compiler/runtime NetLinx not prepared
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 ruby render.rb
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Sorgente renderizzato contiene SEND_STRING0 con Hello, World!.
+Source rendered contains SEND_STRING0 with Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: no.
+Artifact created: yes. syntax verified: yes. behavior verified: no.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-Impedimenti: Compiler/runtime NetLinx non disponibili; semantica del target pendente.
+Commitments: Compiler/runtime NetLinx not available; behavior of target pendant.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.ruby-lang.org/en/3.2/ERB.html
 - https://www.amx.com/ko/site_elements/amx-language-reference-guide-netlinx-programming-language
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.axs.erb` | [hello.axs.erb](hello.axs.erb) sintassi verificata |
-| `.axi.erb` | [hello.axi.erb](variants/axi-erb-3273de56/hello.axi.erb) creato, verifiche pendenti |
+| `.axs.erb` | [hello.axs.erb](hello.axs.erb) syntax verified |
+| `.axi.erb` | [hello.axi.erb](variants/axi-erb-3273de56/hello.axi.erb) created; verification pending |

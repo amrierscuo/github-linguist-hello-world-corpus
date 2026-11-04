@@ -1,31 +1,31 @@
 # #679 Squirrel
 
-Eseguire Squirrel e stampare il saluto.
+Run Squirrel and print your greeting.
 
-Tipo canonico `programming`, language_id `355`.
+Canonical type `programming`, language_id `355`.
 
-Toolchain prevista: Squirrel sq CLI originale.
+Suggested toolchain: Squirrel sq CLI original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 sq hello.nut
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Il runtime sq deve essere Squirrel, non un altro tool con lo stesso nome.
+The runtime sq must be Squirrel, not another tool with the same name.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Squirrel 3.2 original sources + native GNU C++ build. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Squirrel 3.2 original sources + native GNU C++ build. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Squirrel](http://www.squirrel-lang.org/squirreldoc/reference/language.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nut` | [hello.nut](hello.nut) verificato |
+| `.nut` | [hello.nut](hello.nut) verified |

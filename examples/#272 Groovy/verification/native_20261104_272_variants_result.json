@@ -1,0 +1,109 @@
+{
+  "ordinal": 272,
+  "name": "Groovy",
+  "source_hashes": {
+    "examples/#272 Groovy/variants/ext-grt-2e677274/hello.grt": "8cfb88e766ed63d4189c6f7fd93bfdd1dc288bc792fcd27e227537e3302472a9",
+    "examples/#272 Groovy/variants/ext-grt-2e677274/render.groovy": "f6f3aac8832700c96d41791f909f71df9e96c67e3fc8a7c29136847984000b34",
+    "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/hello.gtpl": "8cfb88e766ed63d4189c6f7fd93bfdd1dc288bc792fcd27e227537e3302472a9",
+    "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/render.groovy": "b3e3788d7c6f00020c940c66cecc8040a341380160c39c20b34159b509c3091f",
+    "examples/#272 Groovy/variants/ext-gvy-2e677679/hello.gvy": "2b1102bee3a1ab0f083948f3d9d65181c0130d0f1e8d76d775ade01cffc3eaad"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\272_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\272_variants",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-templates-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-xml-3.0.24.jar",
+        "groovy.ui.GroovyMain",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\272_variants",
+      "exit_code": 0,
+      "stdout": "Groovy Version: 3.0.24 JVM: 21.0.12.1 Vendor: Microsoft OS: Windows 11\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-templates-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-xml-3.0.24.jar",
+        "groovy.ui.GroovyMain",
+        "grt/render.groovy"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\272_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-templates-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-xml-3.0.24.jar",
+        "groovy.ui.GroovyMain",
+        "gtpl/render.groovy"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\272_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-templates-3.0.24.jar;${WORKSPACE}\\work\\tools_261_280\\gradle-8.14.3\\lib\\groovy-xml-3.0.24.jar",
+        "groovy.ui.GroovyMain",
+        "gvy/hello.gvy"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\272_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Execute unchanged Groovy source and unchanged GString/Simple template drivers. Aggregate .groovy preserves the prior unchanged main proof.",
+  "toolchain": "Apache Groovy 3.0.24, OpenJDK 21.0.12.1",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".groovy": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".grt": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".gtpl": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".gvy": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "prior_verified_sources": {
+    "examples/#272 Groovy/hello.groovy": {
+      "sha256": "2b1102bee3a1ab0f083948f3d9d65181c0130d0f1e8d76d775ade01cffc3eaad",
+      "verification_log": "examples/#272 Groovy/verification/native.json",
+      "verification_log_sha256": "de94033eb75232649afbfbdeaddcb0bfb7b300893641b4041846f47942927c83"
+    }
+  },
+  "verified_utc": "2026-11-04T19:38:04.899448+00:00",
+  "recorded_test_source": "272_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

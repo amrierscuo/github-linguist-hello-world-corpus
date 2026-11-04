@@ -1,23 +1,23 @@
-# 0756 — Visual Basic 6.0 — `.ctl`
+# 0756: Visual Basic 6.0: `.ctl`
 
-VB6 UserControl contenente una Label nativa; nessuna risorsa .frx inventata.
+VB6 UserControl containing a native Label; no resource .frx invented.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.ctl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 VB6 ActiveX control project: import hello.ctl; instantiate locally
 ```
 
-Risultato atteso: label Hello, World!.
+Expected result: Hello, World! label.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy)

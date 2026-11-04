@@ -1,4 +1,4 @@
-# Unity3D Asset — variante .mask
+# Unity3D Asset: variant .mask
 
 Questo esempio è un asset Unity YAML nativo di tipo `AvatarMask` (classID `319`), adattato da un file reale del repository primario `giacomelli/unity-avatar-mask-and-animation-layers`, pubblicato da Diego Giacomelli, autore del tutorial originale. Il saluto è il valore della proprietà `m_Name`, consultabile nell’Inspector: non è una promessa di stampa a console o di testo disegnato dall’asset.
 
@@ -6,19 +6,19 @@ L’unica modifica ai byte dell’asset è `UpperBody` → `"Hello, World!"` nel
 
 Toolchain prevista: Unity Editor; versione dichiarata dal progetto upstream `2019.1.3f1`. L’Editor non è stato eseguito qui. Sintassi verificata: **false**. Semantica verificata: **false**. I controlli di provenienza in `verification/provenance.json` sono confronti di byte e hash, non verifiche del parser Unity.
 
-Procedura di verifica prevista: In progetto Unity separato compatibile, importare hello.mask; controllare nell’Inspector il tipo AvatarMask e name == "Hello, World!".
+Provisional verification procedure: In compatible separate Unity project, import hello.mask; check in the inspector the type AvatarMask and name == "Hello, World!".
 
-Risultato atteso: un oggetto `AvatarMask` chiamato `Hello, World!`. Dipendenze da risolvere nell’ambiente Unity: Il file AvatarMask originale non contiene riferimenti a rig/mesh esterni (m_Elements: []); il mascheramento effettivo va provato con un Avatar nel proprio progetto Unity.
+Expected result: a `AvatarMask` object called `Hello, World!`. Dependencies to solve in the Unity environment: The original AvatarMask file contains no external rig/mesh references (m_Elements: []); the actual masking should be tried with an Avatar in its Unity project.
 
-Licenza: `MIT`. `LICENSE_UPSTREAM.md` conserva senza modifiche il copyright e il testo di licenza pubblicato dal repository. La notice MIT rimane inclusa con questa copia adattata. Questa modifica al nome è dichiarata qui e nella provenienza.
+License: `MIT`. `LICENSE_UPSTREAM.md` retains without modification the copyright and license text published by the repository. The notice MIT remains included with this adapted copy.
 
-Fonti primarie:
+Primary sources:
 
 - [Asset originale, commit immutabile](https://github.com/giacomelli/unity-avatar-mask-and-animation-layers/blob/1f267607f39ef842a991972e386b1ca2243408b1/avatar-mask-complete/Assets/_Tutorial/Animations/UpperBody.mask)
 - [Licenza originale](https://github.com/giacomelli/unity-avatar-mask-and-animation-layers/blob/1f267607f39ef842a991972e386b1ca2243408b1/LICENSE)
 - [Formato testuale Unity](https://docs.unity3d.com/Manual/FormatDescription.html)
 - [Tipo AvatarMask](https://docs.unity3d.com/ScriptReference/AvatarMask.html)
 
-La fonte primaria dell’autore spiega la creazione di questo AvatarMask tramite Assets/Create/Avatar Mask. Questa fixture conserva la licenza MIT dell’autore; non include altri file, modelli o animazioni del tutorial. Non viene attribuita a Unity Technologies.
+The author’s primary source explains the creation of this AvatarMask via Assets/Create/Avatar Mask. This fixture retains the author’s MIT license; it does not include other files, models or tutorial animations.
 
 - [Tutorial originale dell’autore](https://diegogiacomelli.com.br/unity-avatar-mask-and-animation-layers/)

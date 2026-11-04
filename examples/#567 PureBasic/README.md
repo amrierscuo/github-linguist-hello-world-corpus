@@ -1,37 +1,37 @@
 # #567 PureBasic
 
-Compilare un programma console PureBasic.
+Fill out a PureBasic console program.
 
 ## Toolchain
 
 PureBasic compiler
 
-## Procedura
+## Procedure
 
-Compilare hello.pb come applicazione console con pbcompiler e avviare il risultato.
+Fill hello.pb as a console application with pbcompiler and start the result.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- PureBasic compiler proprietario non disponibile.
+Remaining requirements:
+- PureBasic compiler proprietario unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.purebasic.com/documentation/console/printn.html](https://www.purebasic.com/documentation/console/printn.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pb` | [hello.pb](hello.pb), [main.pb](variants/pbi-e96dcf89/main.pb) creato, verifiche pendenti |
-| `.pbi` | [hello.pbi](variants/pbi-e96dcf89/hello.pbi) creato, verifiche pendenti |
+| `.pb` | [hello.pb](hello.pb), [main.pb](variants/pbi-e96dcf89/main.pb) created; verification pending |
+| `.pbi` | [hello.pbi](variants/pbi-e96dcf89/hello.pbi) created; verification pending |

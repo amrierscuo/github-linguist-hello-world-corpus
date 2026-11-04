@@ -1,41 +1,41 @@
 # #714 Terra
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare JIT una funzione Terra e stampare Hello, World!.
+Fill out JIT a Terra function and print Hello, World!.
 
-Il programma Lua ospitante dichiara una funzione terra, importa stdio e la invoca; Lua senza Terra non esegue questo linguaggio.
+The host Lua program declares a ground function, imports stunt and invokes it; Lua without Earth does not perform this language.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Terra con LLVM/Clang, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 terra hello.t
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! su stdout.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
 Impedimenti: Terra runtime non predisposto; verifica JIT e chiamata C pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://terralang.org/getting-started.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.t` | [hello.t](hello.t) creato, verifiche pendenti |
+| `.t` | [hello.t](hello.t) created; verification pending |

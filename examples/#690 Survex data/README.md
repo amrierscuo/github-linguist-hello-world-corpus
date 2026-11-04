@@ -2,46 +2,46 @@
 
 Voce canonica `Survex data`, tipo `data`, language_id `24470517`.
 
-Processare una misura Survex originale e leggere titolo e stazioni dal suo modello 3d.
+Process an original Survex measurement and read titles and stations from its 3d. model
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Survex Cavern survey processor and dump3d reader — <workspace>/work/tools_681_700/linux/usr/bin/cavern - Survex 1.4.4. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Survex Cavern survey processor and dump3d reader, <workspace>/ work/tools_681_700/linux/usr/bin/cavern - Survex 1.4.4. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Survex 1.4.4 autentico e PROJ9.4 locale. PRoot5.1.0 mappa solo nella vista del processo i message files estratti sotto /usr/share/survex, senza installazione o scrittura globale.
+Survex 1.4.4 authentic and PROJ9.4 local. PRoot5.1.0 map only in the view of the process the message files extracted under / usr/share/survex, without installation or global writing.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 cavern -o build/hello.3d hello.svx; dump3d build/hello.3d
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.
+Expected result: Hello, World! in the conformed result, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 Il titolo Hello, World! eÌâ‚¬ metadata della survey; i dati contengono un ingresso fissato e una camera misurata. Cavern e dump3d autentici producono/leggono il modello.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://survex.com/docs/manual/cavern.htm](https://survex.com/docs/manual/cavern.htm)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.svx` | [hello.svx](hello.svx) verificato |
+| `.svx` | [hello.svx](hello.svx) verified |

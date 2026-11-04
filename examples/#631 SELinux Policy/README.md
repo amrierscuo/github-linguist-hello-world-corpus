@@ -1,41 +1,41 @@
 # #631 SELinux Policy
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare un modulo SELinux che dichiara il tipo hello_world_t.
+Fill out a SELinux module that declares hello_world_t.
 
-hello_world_t è l’equivalente identificatore del saluto per una policy. Il compilatore controlla modulo, tipi e regola allow; la policy non viene caricata nel sistema.
+hello_world_t is the equivalent greeting identifier for a policy. The compiler controls form, types and rule allow; the policy is not loaded into the system.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Checkmodule3.5 originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 checkmodule -M -m -o corpus_greeting.mod hello.te
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Compilazione del modulo termina con exit0.
+Filling the form ends with exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: no.
+Artifact created: yes. syntax verified: yes. behavior verified: no.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-Impedimenti: Comportamento della policy non verificato su un sistema SELinux; semantica operativa pendente.
+Commitments: Behavior of the not verified policy on a SELinux system; behavior operational pendant.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/SELinuxProject/selinux-notebook/blob/main/src/modular_policy_statements.md?plain=1
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.te` | [hello.te](hello.te) sintassi verificata |
+| `.te` | [hello.te](hello.te) syntax verified |

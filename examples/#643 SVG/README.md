@@ -1,36 +1,36 @@
 # #643 SVG
 
-Renderizzare il saluto SVG in Chromium.
+Render the SVG greeting in Chromium.
 
 ## Toolchain
 
 Google Chrome 154.0.8037.98 native SVG renderer
 
-## Procedura
+## Procedure
 
-Chrome --headless --screenshot=build/hello.png hello.svg; controllare testo e immagine.
+Chrome --headless --screenshot= build/hello.png hello.svg; control text and image.
 
-## Risultato atteso
+## Expected result
 
-SVG mostra Hello, World! su sfondo chiaro.
+SVG shows Hello, World! on clear background.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-SVG originale con nodo text; nessun font incorporato. Il browser interpreta il vero SVG e produce uno screenshot.
+SVG original with text node; no embedded font. The browser interprets the true SVG and produces a screenshot.
 
-Verifica reale 2026-10-08T13:23:05.345487+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:23:05.345487+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.w3.org/TR/SVG2/text.html](https://www.w3.org/TR/SVG2/text.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.svg` | [hello.svg](hello.svg) verificato |
+| `.svg` | [hello.svg](hello.svg) verified |

@@ -1,29 +1,29 @@
-# 0529 — Pascal: `.lpr`
+# 0529: Pascal: `.lpr`
 
-Ruolo: Alias di estensione per lo stesso formato testuale del sorgente principale.
+Role: Alias extension for the same text format as the main source.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#529 Pascal/hello.pas.
+Origin: Byte-identical copy of the original corpus source: examples/#529 Pascal/hello.pas.
 
-Toolchain richiesta: Genuine Free Pascal compiler — 3.2.2. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Genuine Free Pascal compiler, 3.2.2. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Usare la toolchain del README principale sul file hello.lpr; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.lpr`: `61390bec262f49020edd581463d7747ae45794775aeab6fad686b6241c28f082`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.freepascal.org/docs.html

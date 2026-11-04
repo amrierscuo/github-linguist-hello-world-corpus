@@ -1,24 +1,24 @@
-# 0785 — XML — `.sch`
+# 0785: XML: `.sch`
 
-ISO Schematron con assertion sul documento originale.
+ISO Schematron with assertion on the original document.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sch`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 lxml.isoschematron.Schematron: validate greeting.xml
 ```
 
-Risultato atteso: schema accettato e assertion valida.
+Expected result: accepted scheme and valid assertion.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://schematron.com/document/3425.html](https://schematron.com/document/3425.html)

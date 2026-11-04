@@ -1,44 +1,44 @@
 # #365 Kusto
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare Kusto e restituire, con il motore query, la colonna greeting contenente Hello, World!.
+Analyze Kusto and return, with the query engine, the greeting column containing Hello, World!.
 
-Il driver carica l’assembly originale Microsoft, usa ParseAndAnalyze e confronta le diagnostiche. print e strcat sono operatori/funzioni Kusto; la verifica del parser non esegue una query sul servizio.
+The driver loads the original Microsoft assembly, uses ParseAndAnalyze and compares diagnostics. print and strcat are operatori/funzioni Kusto; the parser verification does not query the service.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Microsoft.Azure.Kusto.Language12.4.1; PowerShell7 per il driver; query engine non preparato
+Microsoft.Azure.Kusto.Language12.4.1; PowerShell7 for the driver; query engine not prepared
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 pwsh -NoProfile -File verify.ps1 /path/to/Kusto.Language.dll
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Parser e analizzatore producono zero diagnostiche; engine atteso: una riga greeting=Hello, World!.
+Parser and analyzer produce zero diagnostics; expected engine: a greeting line= Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: no.
+Artifact created: yes. syntax verified: yes. behavior verified: no.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-Impedimenti: Motore Kusto non disponibile; esecuzione della query pendente.
+Commitments: Motor Kusto unavailable; execution of the pending query.
 
-## Fonti primarie
+## Primary sources
 
 - https://learn.microsoft.com/en-us/kusto/query/print-operator
 - https://learn.microsoft.com/en-us/kusto/query/strcat-function
 - https://github.com/microsoft/Kusto-Query-Language
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.csl` | [hello.csl](variants/csl-341667e5/hello.csl) creato, verifiche pendenti |
-| `.kql` | [hello.kql](hello.kql) sintassi verificata |
+| `.csl` | [hello.csl](variants/csl-341667e5/hello.csl) created; verification pending |
+| `.kql` | [hello.kql](hello.kql) syntax verified |

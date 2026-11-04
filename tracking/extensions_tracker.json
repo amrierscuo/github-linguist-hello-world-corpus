@@ -1791,10 +1791,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#039 AsciiDoc/verification/native_20261104_039_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#039 AsciiDoc/variants/ext-asciidoc-2e6173636969646f63/hello.asciidoc": "333dd8318a7736f11f1e30e83cefcac66c4602618a26a8f5f63a764d185041c0"
+      },
       "based_on": "examples/#039 AsciiDoc/hello.adoc",
       "documentation": "examples/#039 AsciiDoc/variants/ext-asciidoc-2e6173636969646f63/README.md",
       "supporting_files": [],
@@ -1806,10 +1808,8 @@
         "https://docs.asciidoctor.org/asciidoctor.js/3.0/processor/logging-api/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Load each source with Asciidoctor.js and assert document title, the exact paragraph, rendered HTML and no diagnostics."
     },
     {
       "language_ordinal": 39,
@@ -1848,10 +1848,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#039 AsciiDoc/verification/native_20261104_039_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#039 AsciiDoc/variants/ext-asc-2e617363/hello.asc": "333dd8318a7736f11f1e30e83cefcac66c4602618a26a8f5f63a764d185041c0"
+      },
       "based_on": "examples/#039 AsciiDoc/hello.adoc",
       "documentation": "examples/#039 AsciiDoc/variants/ext-asc-2e617363/README.md",
       "supporting_files": [],
@@ -1863,10 +1865,8 @@
         "https://docs.asciidoctor.org/asciidoctor.js/3.0/processor/logging-api/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Load each source with Asciidoctor.js and assert document title, the exact paragraph, rendered HTML and no diagnostics."
     },
     {
       "language_ordinal": 40,
@@ -5112,10 +5112,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#102 Cabal Config/verification/native_20261104_receipt.json",
+      "verified_artifact_sha256": {
+        "examples/#102 Cabal Config/hello-world.cabal": "b3a1a56b44ebd225205c8a0603448ce53b7851e5b9a91c63660ec907dcc876a4"
+      },
       "based_on": null,
       "documentation": "examples/#102 Cabal Config/README.md",
       "supporting_files": [],
@@ -5127,10 +5129,8 @@
           "url": "https://cabal.readthedocs.io/en/stable/cabal-package-description-file.html"
         }
       ],
-      "blockers": [
-        "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-      ],
-      "notes": "Il .cabal è l’artefatto canonico; Main.hs è il sorgente di supporto. La licenza del corpus deve ancora essere scelta: qui non viene dichiarata una licenza fittizia."
+      "blockers": [],
+      "notes": "The official Cabal Setup driver configured and built the original package. Its executable printed Hello, World!"
     },
     {
       "language_ordinal": 103,
@@ -8956,10 +8956,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#178 EJS/verification/native_20261104_178_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#178 EJS/variants/ext-ejs-t-2e656a732e74/hello.ejs.t": "5f69d234cbec7d1cc40035e3bf5f2a875c87437a3c24175b02dd8a8c5edb9101"
+      },
       "based_on": "examples/#178 EJS/hello.ejs",
       "documentation": "examples/#178 EJS/variants/ext-ejs-t-2e656a732e74/README.md",
       "supporting_files": [],
@@ -8970,10 +8972,8 @@
         "https://github.com/mde/ejs",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template EJS/JST nello stesso sottoinsieme di interpolazione <%= greeting %>. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compile and render each original template with ejs.renderFile; assert greeting and escaped input. .ect requires a distinct engine and is not tested."
     },
     {
       "language_ordinal": 178,
@@ -8984,10 +8984,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#178 EJS/verification/native_20261104_178_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#178 EJS/variants/ext-jst-2e6a7374/hello.jst": "5f69d234cbec7d1cc40035e3bf5f2a875c87437a3c24175b02dd8a8c5edb9101"
+      },
       "based_on": "examples/#178 EJS/hello.ejs",
       "documentation": "examples/#178 EJS/variants/ext-jst-2e6a7374/README.md",
       "supporting_files": [],
@@ -8998,10 +9000,8 @@
         "https://github.com/mde/ejs",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template EJS/JST nello stesso sottoinsieme di interpolazione <%= greeting %>. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compile and render each original template with ejs.renderFile; assert greeting and escaped input. .ect requires a distinct engine and is not tested."
     },
     {
       "language_ordinal": 179,
@@ -13827,10 +13827,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#260 Go Template/verification/native_20261104_260_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#260 Go Template/variants/ext-gohtml-2e676f68746d6c/hello.gohtml": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7"
+      },
       "based_on": "examples/#260 Go Template/hello.gotmpl",
       "documentation": "examples/#260 Go Template/variants/ext-gohtml-2e676f68746d6c/README.md",
       "supporting_files": [],
@@ -13841,10 +13843,8 @@
         "https://pkg.go.dev/text/template#hdr-Actions",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template Go con define/template e interpolazione; suffisso convenzionale della vista, nessun motore template di altri linguaggi. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Parse and execute original templates with Go html/template; assert the greeting and HTML escaping."
     },
     {
       "language_ordinal": 260,
@@ -13882,10 +13882,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#260 Go Template/verification/native_20261104_260_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#260 Go Template/variants/ext-html-tmpl-2e68746d6c2e746d706c/hello.html.tmpl": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7"
+      },
       "based_on": "examples/#260 Go Template/hello.gotmpl",
       "documentation": "examples/#260 Go Template/variants/ext-html-tmpl-2e68746d6c2e746d706c/README.md",
       "supporting_files": [],
@@ -13896,10 +13898,8 @@
         "https://pkg.go.dev/text/template#hdr-Actions",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template Go con define/template e interpolazione; suffisso convenzionale della vista, nessun motore template di altri linguaggi. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Parse and execute original templates with Go html/template; assert the greeting and HTML escaping."
     },
     {
       "language_ordinal": 260,
@@ -13910,10 +13910,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#260 Go Template/verification/native_20261104_260_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#260 Go Template/variants/ext-tmpl-2e746d706c/hello.tmpl": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7"
+      },
       "based_on": "examples/#260 Go Template/hello.gotmpl",
       "documentation": "examples/#260 Go Template/variants/ext-tmpl-2e746d706c/README.md",
       "supporting_files": [],
@@ -13924,10 +13926,8 @@
         "https://pkg.go.dev/text/template#hdr-Actions",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template Go con define/template e interpolazione; suffisso convenzionale della vista, nessun motore template di altri linguaggi. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Parse and execute original templates with Go html/template; assert the greeting and HTML escaping."
     },
     {
       "language_ordinal": 260,
@@ -13938,10 +13938,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#260 Go Template/verification/native_20261104_260_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#260 Go Template/variants/ext-tpl-2e74706c/hello.tpl": "8ed3b84344e83055065d0255386c895a93cdd14ccb2e63c07926bb5eb2da1fe7"
+      },
       "based_on": "examples/#260 Go Template/hello.gotmpl",
       "documentation": "examples/#260 Go Template/variants/ext-tpl-2e74706c/README.md",
       "supporting_files": [],
@@ -13952,10 +13954,8 @@
         "https://pkg.go.dev/text/template#hdr-Actions",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template Go con define/template e interpolazione; suffisso convenzionale della vista, nessun motore template di altri linguaggi. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Parse and execute original templates with Go html/template; assert the greeting and HTML escaping."
     },
     {
       "language_ordinal": 262,
@@ -14405,10 +14405,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#270 GraphQL/verification/native_20261104_270_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#270 GraphQL/variants/ext-gql-2e67716c/hello.gql": "0297a421cd16e21da838542b22c732e0592850c9c0bd142d47b95b0eef0bd8d7"
+      },
       "based_on": "examples/#270 GraphQL/hello.graphql",
       "documentation": "examples/#270 GraphQL/variants/ext-gql-2e67716c/README.md",
       "supporting_files": [],
@@ -14420,10 +14422,8 @@
         "https://spec.graphql.org/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Load variant query with corpus schema, and variant schema with an independent query; run GraphQL.js with World, Reader, null and the schema default."
     },
     {
       "language_ordinal": 270,
@@ -14434,10 +14434,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#270 GraphQL/verification/native_20261104_270_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#270 GraphQL/variants/ext-graphqls-2e6772617068716c73/hello.graphqls": "8a7a80e03972efcfe9e7ae41bf266d208729485088feb028e8c53055db25d425"
+      },
       "based_on": "examples/#270 GraphQL/schema.graphql",
       "documentation": "examples/#270 GraphQL/variants/ext-graphqls-2e6772617068716c73/README.md",
       "supporting_files": [],
@@ -14449,10 +14451,8 @@
         "https://spec.graphql.org/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Schema GraphQL SDL, distinto dal documento di operazione; copia byte-identica dello schema nativo originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Load variant query with corpus schema, and variant schema with an independent query; run GraphQL.js with World, Reader, null and the schema default."
     },
     {
       "language_ordinal": 271,
@@ -14520,10 +14520,14 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#272 Groovy/verification/native_20261104_272_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#272 Groovy/variants/ext-grt-2e677274/render.groovy": "f6f3aac8832700c96d41791f909f71df9e96c67e3fc8a7c29136847984000b34",
+        "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/render.groovy": "b3e3788d7c6f00020c940c66cecc8040a341380160c39c20b34159b509c3091f",
+        "examples/#272 Groovy/hello.groovy": "2b1102bee3a1ab0f083948f3d9d65181c0130d0f1e8d76d775ade01cffc3eaad"
+      },
       "based_on": null,
       "documentation": "examples/#272 Groovy/README.md",
       "supporting_files": [],
@@ -14534,7 +14538,7 @@
         "https://groovy-lang.org/"
       ],
       "blockers": [],
-      "notes": "Il compiler/runtime Groovy autentico analizza ed esegue il sorgente. Non è necessario un progetto Gradle per questa voce."
+      "notes": "Execute unchanged Groovy source and unchanged GString/Simple template drivers. Aggregate .groovy preserves the prior unchanged main proof."
     },
     {
       "language_ordinal": 272,
@@ -14545,10 +14549,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#272 Groovy/verification/native_20261104_272_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#272 Groovy/variants/ext-grt-2e677274/hello.grt": "8cfb88e766ed63d4189c6f7fd93bfdd1dc288bc792fcd27e227537e3302472a9"
+      },
       "based_on": "examples/#272 Groovy/hello.groovy",
       "documentation": "examples/#272 Groovy/variants/ext-grt-2e677274/README.md",
       "supporting_files": [
@@ -14562,10 +14568,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://docs.groovy-lang.org/latest/html/documentation/template-engines.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template Groovy GStringTemplateEngine, distinto da uno script console .groovy. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Execute unchanged Groovy source and unchanged GString/Simple template drivers. Aggregate .groovy preserves the prior unchanged main proof."
     },
     {
       "language_ordinal": 272,
@@ -14576,10 +14580,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#272 Groovy/verification/native_20261104_272_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/hello.gtpl": "8cfb88e766ed63d4189c6f7fd93bfdd1dc288bc792fcd27e227537e3302472a9"
+      },
       "based_on": "examples/#272 Groovy/hello.groovy",
       "documentation": "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/README.md",
       "supporting_files": [
@@ -14593,10 +14599,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://docs.groovy-lang.org/latest/html/documentation/template-engines.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template Groovy SimpleTemplateEngine, distinto da uno script console .groovy. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Execute unchanged Groovy source and unchanged GString/Simple template drivers. Aggregate .groovy preserves the prior unchanged main proof."
     },
     {
       "language_ordinal": 272,
@@ -14607,10 +14611,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#272 Groovy/verification/native_20261104_272_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#272 Groovy/variants/ext-gvy-2e677679/hello.gvy": "2b1102bee3a1ab0f083948f3d9d65181c0130d0f1e8d76d775ade01cffc3eaad"
+      },
       "based_on": "examples/#272 Groovy/hello.groovy",
       "documentation": "examples/#272 Groovy/variants/ext-gvy-2e677679/README.md",
       "supporting_files": [],
@@ -14621,10 +14627,8 @@
         "https://groovy-lang.org/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Execute unchanged Groovy source and unchanged GString/Simple template drivers. Aggregate .groovy preserves the prior unchanged main proof."
     },
     {
       "language_ordinal": 273,
@@ -14920,10 +14924,15 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+      "verified_artifact_sha256": {
+        "examples/#278 HLSL/hello.hlsl": "3a654283d28892115dbc65eb72e12781a0eb76de362f1d188769a76959c5d3e1",
+        "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/consumer.hlsl": "3fbe36ae92240ad104da6ddf1a6a2a09954e5120ee8ad6afed2c542b6c6a2a76",
+        "examples/#278 HLSL/variants/ext-fxh-2e667868/consumer.hlsl": "fc30f2e2bf7081473ee5b1c7d88a7ac5e422c9474e21e8d0f35722c50adb849c",
+        "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/consumer.hlsl": "30be6050a86d8e16eafcaa5e7588f3d50f240f77b3ebf06be57b282c49960596"
+      },
       "based_on": null,
       "documentation": "examples/#278 HLSL/README.md",
       "supporting_files": [],
@@ -14934,10 +14943,8 @@
         "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl",
         "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/sm5-object-rwstructuredbuffer"
       ],
-      "blockers": [
-        "Shader compiled; compute dispatch/readback on a compatible Direct3D runtime is not performed."
-      ],
-      "notes": "Il compiler autentico accetta il sorgente e genera bytecode. La semantica resta pendente: occorre dispatch di un gruppo di 16 thread e readback dei primi tredici uint su Direct3D compatibile. Non viene dedotta dai soli valori nel sorgente."
+      "blockers": [],
+      "notes": "FXC compiled the compute shader and all three include consumers. Direct3D 11 WARP dispatched each shader and read back the expected greeting. The separate Direct3D 10 Effects check rendered the original effect and decoded the same greeting from its pixels."
     },
     {
       "language_ordinal": 278,
@@ -14948,10 +14955,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+      "verified_artifact_sha256": {
+        "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/hello.cginc": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241"
+      },
       "based_on": "examples/#278 HLSL/hello.hlsl",
       "documentation": "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/README.md",
       "supporting_files": [
@@ -14967,10 +14976,8 @@
         "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-appendix-preprocessor",
         "https://docs.unity3d.com/Manual/SL-BuiltinIncludes.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Include Cg/HLSL Unity-style cginc con dati e funzione condivisa, senza entry point. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "FXC compiled the compute shader and all three include consumers. Direct3D 11 WARP dispatched each shader and read back the expected greeting. The separate Direct3D 10 Effects check rendered the original effect and decoded the same greeting from its pixels."
     },
     {
       "language_ordinal": 278,
@@ -14981,10 +14988,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#278 HLSL/verification/native_20261104_hlsl_fx_result.json",
+      "verified_artifact_sha256": {
+        "examples/#278 HLSL/variants/ext-fx-2e6678/hello.fx": "451bce360106272f15e8e68a24a45d28ba5d1887a69865810a529daff38e951f"
+      },
       "based_on": "examples/#278 HLSL/hello.hlsl",
       "documentation": "examples/#278 HLSL/variants/ext-fx-2e6678/README.md",
       "supporting_files": [],
@@ -14997,10 +15006,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-effect-state-management"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Effetto HLSL Effects10 con technique/pass e shader pixel; non compute shader hlsl rinominato. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Load existing compiled unchanged Effects sample; apply its native Direct3D 10 pass, render a full-screen triangle to a 13 x 1 UNORM texture, read RGBA and compare decoded greeting."
     },
     {
       "language_ordinal": 278,
@@ -15011,10 +15018,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+      "verified_artifact_sha256": {
+        "examples/#278 HLSL/variants/ext-fxh-2e667868/hello.fxh": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241"
+      },
       "based_on": "examples/#278 HLSL/hello.hlsl",
       "documentation": "examples/#278 HLSL/variants/ext-fxh-2e667868/README.md",
       "supporting_files": [
@@ -15030,10 +15039,8 @@
         "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-appendix-preprocessor",
         "https://docs.unity3d.com/Manual/SL-BuiltinIncludes.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Include HLSL con dati e funzione condivisa, senza entry point. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "FXC compiled the compute shader and all three include consumers. Direct3D 11 WARP dispatched each shader and read back the expected greeting. The separate Direct3D 10 Effects check rendered the original effect and decoded the same greeting from its pixels."
     },
     {
       "language_ordinal": 278,
@@ -15044,10 +15051,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+      "verified_artifact_sha256": {
+        "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/hello.hlsli": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241"
+      },
       "based_on": "examples/#278 HLSL/hello.hlsl",
       "documentation": "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/README.md",
       "supporting_files": [
@@ -15063,10 +15072,8 @@
         "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-appendix-preprocessor",
         "https://docs.unity3d.com/Manual/SL-BuiltinIncludes.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Include HLSL con dati e funzione condivisa, senza entry point. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "FXC compiled the compute shader and all three include consumers. Direct3D 11 WARP dispatched each shader and read back the expected greeting. The separate Direct3D 10 Effects check rendered the original effect and decoded the same greeting from its pixels."
     },
     {
       "language_ordinal": 279,
@@ -15530,10 +15537,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#285 HTML+Razor/verification/native_20261104_html_razor_result.json",
+      "verified_artifact_sha256": {
+        "examples/#285 HTML+Razor/hello.cshtml": "bfb3db1102b6f95c10d79d644a52390b325cfce89272ba62be38b6aa9a5267be"
+      },
       "based_on": null,
       "documentation": "examples/#285 HTML+Razor/README.md",
       "supporting_files": [],
@@ -15542,10 +15551,8 @@
       "sources": [
         "https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-10.0"
       ],
-      "blockers": [
-        "È disponibile solo un runtime .NET, senza SDK né host Razor preparato; compiler e renderer non eseguiti."
-      ],
-      "notes": "Il sorgente usa un blocco Razor @{...} e l’espressione esplicita @(audience). È una view, non un documento HTML già renderizzato. Per eseguirlo serve un host Razor autentico."
+      "blockers": [],
+      "notes": "The ASP.NET Core MVC view engine rendered the original view, and Blazor HtmlRenderer rendered the original component. Each produced <p>Hello, World!</p> in memory."
     },
     {
       "language_ordinal": 285,
@@ -15556,10 +15563,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#285 HTML+Razor/verification/native_20261104_html_razor_result.json",
+      "verified_artifact_sha256": {
+        "examples/#285 HTML+Razor/variants/razor-c914e96c/Hello.razor": "7e37c225ae71b2b827243c4ace306420be08d7990f782e0d3b8ed74167b9d343"
+      },
       "based_on": null,
       "documentation": "examples/#285 HTML+Razor/variants/razor-c914e96c/README.md",
       "supporting_files": [],
@@ -15569,10 +15578,8 @@
         "https://learn.microsoft.com/en-us/aspnet/core/blazor/components/",
         "https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-10.0"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Componente Razor Blazor con markup e campo C#, distinto dalla pagina MVC .cshtml. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "The ASP.NET Core MVC view engine rendered the original view, and Blazor HtmlRenderer rendered the original component. Each produced <p>Hello, World!</p> in memory."
     },
     {
       "language_ordinal": 286,
@@ -18892,10 +18899,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#333 Java/verification/native_20261104_333_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#333 Java/variants/jav-220a15e8/hello.jav": "e8533e4508f5734f52cbfcf23d34a842fcce5d27f9d82b23ca2f4ff6b3bf1e32"
+      },
       "based_on": "examples/#333 Java/Hello.java",
       "documentation": "examples/#333 Java/variants/jav-220a15e8/README.md",
       "supporting_files": [],
@@ -18904,10 +18913,8 @@
       "sources": [
         "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias storico di sorgente Java; javac richiede il nome Hello.java per la classe pubblica. Copia byte-identica del sorgente originale del corpus: examples/#333 Java/Hello.java. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Copy .jav byte-identically as Hello.java, compile and execute; run the original .jsh as JShell input with local execution engine."
     },
     {
       "language_ordinal": 333,
@@ -18918,10 +18925,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#333 Java/verification/native_20261104_333_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#333 Java/variants/jsh-e38b41dc/hello.jsh": "40c7451ecae69a32ad31a09b931c43d2ee15570efac83d6d59f9ed5f8771f238"
+      },
       "based_on": null,
       "documentation": "examples/#333 Java/variants/jsh-e38b41dc/README.md",
       "supporting_files": [],
@@ -18931,10 +18940,8 @@
         "https://docs.oracle.com/en/java/javase/21/jshell/introduction-jshell.html",
         "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Script JShell con istruzione top-level, distinto da classe Java compilabile. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Copy .jav byte-identically as Hello.java, compile and execute; run the original .jsh as JShell input with local execution engine."
     },
     {
       "language_ordinal": 334,
@@ -19938,10 +19945,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#341 Jinja/verification/native_20261104_341_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#341 Jinja/variants/j2-d70c3c7d/hello.j2": "193487ca91af7ec5fdfd1d0850dfae6f0bbe25258cc0378905c24e65099f8cfb"
+      },
       "based_on": "examples/#341 Jinja/hello.jinja",
       "documentation": "examples/#341 Jinja/variants/j2-d70c3c7d/README.md",
       "supporting_files": [
@@ -19953,10 +19962,8 @@
         "https://jinja.palletsprojects.com/en/stable/api/",
         "https://jinja.palletsprojects.com/en/stable/templates/"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#341 Jinja/hello.jinja. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Run each original variant's included verifier with official Jinja; exact greeting, Reader and missing-variable controls."
     },
     {
       "language_ordinal": 341,
@@ -19967,10 +19974,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#341 Jinja/verification/native_20261104_341_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#341 Jinja/variants/jinja2-dda60d41/hello.jinja2": "193487ca91af7ec5fdfd1d0850dfae6f0bbe25258cc0378905c24e65099f8cfb"
+      },
       "based_on": "examples/#341 Jinja/hello.jinja",
       "documentation": "examples/#341 Jinja/variants/jinja2-dda60d41/README.md",
       "supporting_files": [
@@ -19982,10 +19991,8 @@
         "https://jinja.palletsprojects.com/en/stable/api/",
         "https://jinja.palletsprojects.com/en/stable/templates/"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#341 Jinja/hello.jinja. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Run each original variant's included verifier with official Jinja; exact greeting, Reader and missing-variable controls."
     },
     {
       "language_ordinal": 342,
@@ -31531,10 +31538,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#574 QML/verification/native_20261104_qml_result.json",
+      "verified_artifact_sha256": {
+        "examples/#574 QML/hello.qml": "523b4c48b6b55b3a7deadfe9bd051f4a1314df93ea34e08e9718215bd3aa7a63"
+      },
       "based_on": null,
       "documentation": "examples/#574 QML/README.md",
       "supporting_files": [],
@@ -31543,10 +31552,8 @@
       "sources": [
         "https://doc.qt.io/qt-6/qml-qtquick-text.html"
       ],
-      "blockers": [
-        "Runtime QtQuick/plugin grafici non predisposti; caricamento e rendering pending."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "Qt Quick loaded the original QML and rendered a 320 by 120 frame. The native text item and the visible frame both show Hello, World!"
     },
     {
       "language_ordinal": 574,
@@ -31838,10 +31845,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#582 R/verification/native_20261104_582_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#582 R/variants/rd-0443eb91/hello.rd": "7f604cf71a5cd5706e4d6b086b2f14d77bde728ad7e832c8cfd5669dac2eaeb1"
+      },
       "based_on": null,
       "documentation": "examples/#582 R/variants/rd-0443eb91/README.md",
       "supporting_files": [],
@@ -31850,10 +31859,8 @@
       "sources": [
         "https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Rd-format"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Documento Rd di aiuto R, non script R."
+      "blockers": [],
+      "notes": "Run the original Rd markup through the native R help formatter and assert that the produced help text contains the greeting."
     },
     {
       "language_ordinal": 582,
@@ -32659,10 +32666,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#596 Racket/verification/native_20261104_596_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#596 Racket/variants/rktd-18ea1173/hello.rktd": "87b0da37545f4dbf04f3939a6001fa610a34fb81c3985fc5b2dbf5c4885f324b"
+      },
       "based_on": null,
       "documentation": "examples/#596 Racket/variants/rktd-18ea1173/README.md",
       "supporting_files": [],
@@ -32671,10 +32680,8 @@
       "sources": [
         "https://docs.racket-lang.org/reference/reader.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Datum Racket serializzabile: hash che conserva il saluto."
+      "blockers": [],
+      "notes": "Load the literal hash through the Racket reader, run the loadable file via the original evaluator, and render Scribble to HTML; assert the greeting in each output."
     },
     {
       "language_ordinal": 596,
@@ -32685,10 +32692,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#596 Racket/verification/native_20261104_596_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#596 Racket/variants/rktl-c9a39abc/hello.rktl": "4873648d5e695e0272898975f39470c1afa58cc959acd77f465052180d589da4"
+      },
       "based_on": null,
       "documentation": "examples/#596 Racket/variants/rktl-c9a39abc/README.md",
       "supporting_files": [],
@@ -32697,10 +32706,8 @@
       "sources": [
         "https://docs.racket-lang.org/reference/load.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "File Racket da caricare in un namespace base, senza direttiva #lang."
+      "blockers": [],
+      "notes": "Load the literal hash through the Racket reader, run the loadable file via the original evaluator, and render Scribble to HTML; assert the greeting in each output."
     },
     {
       "language_ordinal": 596,
@@ -37772,8 +37779,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#663 Slang/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#663 Slang/verification/native_20261104_slang_result.json",
       "verified_artifact_sha256": {
         "examples/#663 Slang/hello.slang": "47bd8e6fd84d32bb73123ef76a8c6793cb36e91bde072ae59588f5fe35c756d2"
       },
@@ -37788,10 +37795,8 @@
           "url": "https://shader-slang.org/docs/"
         }
       ],
-      "blockers": [
-        "Compiler Slang genera SPIR-V; host GPU e dispatch non eseguiti."
-      ],
-      "notes": "Slang è il linguaggio shader del compiler shader-slang; la semantica GPU non deriva dal solo output SPIR-V."
+      "blockers": [],
+      "notes": "Slang generated C++ from the original compute shader. A native CPU host dispatched it and read back the exact ASCII greeting."
     },
     {
       "language_ordinal": 664,
@@ -40759,10 +40764,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#730 TypeScript/verification/native_20261104_730_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#730 TypeScript/variants/cts-4d16cc26/hello.cts": "334f20a7db13c9653a3cf877de1119933f809fbd127ecdcbc808b60b9ddc1360"
+      },
       "based_on": null,
       "documentation": "examples/#730 TypeScript/variants/cts-4d16cc26/README.md",
       "supporting_files": [],
@@ -40771,10 +40778,8 @@
       "sources": [
         "https://www.typescriptlang.org/docs/handbook/modules/reference.html#module-format-detection"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Modulo TypeScript CommonJS determinato dal suffisso."
+      "blockers": [],
+      "notes": "Compile both originals using strict NodeNext TypeScript settings and execute emitted .cjs and .mjs using Node."
     },
     {
       "language_ordinal": 730,
@@ -40785,10 +40790,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#730 TypeScript/verification/native_20261104_730_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#730 TypeScript/variants/mts-51a93bd5/hello.mts": "334f20a7db13c9653a3cf877de1119933f809fbd127ecdcbc808b60b9ddc1360"
+      },
       "based_on": null,
       "documentation": "examples/#730 TypeScript/variants/mts-51a93bd5/README.md",
       "supporting_files": [],
@@ -40797,10 +40804,8 @@
       "sources": [
         "https://www.typescriptlang.org/docs/handbook/modules/reference.html#module-format-detection"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Modulo TypeScript ECMAScript determinato dal suffisso."
+      "blockers": [],
+      "notes": "Compile both originals using strict NodeNext TypeScript settings and execute emitted .cjs and .mjs using Node."
     },
     {
       "language_ordinal": 731,
@@ -41447,10 +41452,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#743 VCL/verification/native_20261104_vcl_candidate_receipt.json",
+      "verified_artifact_sha256": {
+        "examples/#743 VCL/hello.vcl": "cf9152c8223f3d5b77c84a6ca1a6eb09528cc89a008a8ae60aa52f4ce7cacb25"
+      },
       "based_on": null,
       "documentation": "examples/#743 VCL/README.md",
       "supporting_files": [],
@@ -41462,10 +41469,8 @@
           "url": "https://varnish-cache.org/docs/trunk/reference/vcl.html"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "La risposta è sintetica: non usa il backend o la rete esterna."
+      "blockers": [],
+      "notes": "Native compilation and a loopback HTTP request confirmed status 200 and the exact greeting followed by a newline. The minimal correction uses a VCL long string to emit a real newline."
     },
     {
       "language_ordinal": 744,
@@ -46795,10 +46800,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#789 XQuery/verification/native_20261104_789_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#789 XQuery/variants/xquery-d1e42ae2/hello.xquery": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388"
+      },
       "based_on": "examples/#789 XQuery/hello.xq",
       "documentation": "examples/#789 XQuery/variants/xquery-d1e42ae2/README.md",
       "supporting_files": [],
@@ -46807,10 +46814,8 @@
       "sources": [
         "https://www.w3.org/TR/xquery-31/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .xquery. Copia byte-identica del sorgente canonico; SHA-256 59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof."
     },
     {
       "language_ordinal": 789,
@@ -46822,10 +46827,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#789 XQuery/verification/native_20261104_789_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#789 XQuery/variants/xqm-6120106c/main.xq": "2d77503f5223f522e61681a44d676b4df0fb16c40de11ae8e590eeac50491313",
+        "examples/#789 XQuery/hello.xq": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388"
+      },
       "based_on": null,
       "documentation": "examples/#789 XQuery/README.md",
       "supporting_files": [],
@@ -46835,7 +46843,7 @@
         "https://www.w3.org/TR/xquery-31/"
       ],
       "blockers": [],
-      "notes": "Saxon analizza e valuta la variabile/concat. Su Windows usare ; come separatore del classpath al posto di :."
+      "notes": "Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof."
     },
     {
       "language_ordinal": 789,
@@ -46846,10 +46854,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#789 XQuery/verification/native_20261104_789_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#789 XQuery/variants/xql-598d9a0b/hello.xql": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388"
+      },
       "based_on": "examples/#789 XQuery/hello.xq",
       "documentation": "examples/#789 XQuery/variants/xql-598d9a0b/README.md",
       "supporting_files": [],
@@ -46858,10 +46868,8 @@
       "sources": [
         "https://www.w3.org/TR/xquery-31/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .xql. Copia byte-identica del sorgente canonico; SHA-256 59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof."
     },
     {
       "language_ordinal": 789,
@@ -46872,10 +46880,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#789 XQuery/verification/native_20261104_789_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#789 XQuery/variants/xqm-6120106c/hello.xqm": "b584398ad3062e14c9c494f2a87517bea557db683d00b104d380b8fe10d74c56"
+      },
       "based_on": null,
       "documentation": "examples/#789 XQuery/variants/xqm-6120106c/README.md",
       "supporting_files": [
@@ -46886,10 +46896,8 @@
       "sources": [
         "https://www.w3.org/TR/xquery-31/#id-module-imports"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Library module XQuery con namespace e funzione, distinto dalla main query."
+      "blockers": [],
+      "notes": "Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof."
     },
     {
       "language_ordinal": 789,
@@ -46900,10 +46908,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#789 XQuery/verification/native_20261104_789_variants_result.json",
+      "verified_artifact_sha256": {
+        "examples/#789 XQuery/variants/xqy-27e37189/hello.xqy": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388"
+      },
       "based_on": "examples/#789 XQuery/hello.xq",
       "documentation": "examples/#789 XQuery/variants/xqy-27e37189/README.md",
       "supporting_files": [],
@@ -46912,10 +46922,8 @@
       "sources": [
         "https://www.w3.org/TR/xquery-31/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .xqy. Copia byte-identica del sorgente canonico; SHA-256 59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof."
     },
     {
       "language_ordinal": 790,
@@ -48091,8 +48099,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#812 desktop/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#812 desktop/verification/native_20261104_receipt.json",
       "verified_artifact_sha256": {
         "examples/#812 desktop/hello.desktop": "05699ee0e3a730b963f3be1cceedb9d81f3d52ce2fbd2e744d0dff282baaa0c8"
       },
@@ -48104,10 +48112,8 @@
       "sources": [
         "https://specifications.freedesktop.org/desktop-entry/latest/"
       ],
-      "blockers": [
-        "Desktop shell UI/launcher consumer pending."
-      ],
-      "notes": "La prova valida il formato offline; applicazione e terminale non vengono lanciati."
+      "blockers": [],
+      "notes": "The native validator accepted the desktop entry. GLib loaded its greeting name, printf command, and terminal setting. No application was launched."
     },
     {
       "language_ordinal": 812,

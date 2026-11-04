@@ -1,24 +1,24 @@
-# 0785 — XML — `.slnx`
+# 0785: XML: `.slnx`
 
 Fixture Visual Studio solution XML con folder originale; nessun progetto esterno.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.slnx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 dotnet sln hello.slnx list in an isolated folder
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln)

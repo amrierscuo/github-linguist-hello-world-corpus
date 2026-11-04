@@ -1,31 +1,31 @@
-# 0533 — Pic: `.chem`
+# 0533: Pic: `.chem`
 
-Ruolo: DSL chem per anello benzene e inserimento Pic documentato di una etichetta; distinto dal blocco Pic .PS.
+Role: DSL chem for benzene ring and documented Pic insert of a label; distinct from the Pic .PS. block
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Genuine GNU Pic and groff ASCII renderer — GNU pic (groff) version 1.23.0. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Genuine GNU Pic and groff ASCII renderer, GNU pic (groff) version 1.23.0. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 chem hello.chem | groff -p -Tps > hello.ps
 ```
 
-Risultato atteso: Diagramma chimico etichettato Hello, World!
+Expected result: Chemical Diagram labeled Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- La combinazione chem/pic deve essere ancora interpretata dal tool originale; nessuna verifica viene ereditata da Pic.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- The chem/pic combination must still be interpreted by the original tool; no verification is inherited by Pic.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.chem`: `808dc33a8c6f4659d1393b523fef3f8764a3b23fc5edc1551e3ae3a411b60c9b`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.gnu.org/software/groff/manual/groff-man-pages.pdf
 - https://www.gnu.org/software/groff/manual/groff.html#Pictures

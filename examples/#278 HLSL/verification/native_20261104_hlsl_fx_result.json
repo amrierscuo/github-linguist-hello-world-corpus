@@ -1,0 +1,72 @@
+{
+  "ordinal": 278,
+  "name": "HLSL_FX",
+  "source_hashes": {
+    "examples/#278 HLSL/variants/ext-fx-2e6678/hello.fx": "451bce360106272f15e8e68a24a45d28ba5d1887a69865810a529daff38e951f"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\fxc.exe",
+        "/T",
+        "vs_4_0",
+        "/E",
+        "main",
+        "/Fo",
+        "fullscreen_vs.dxbc",
+        "fullscreen_vs.hlsl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Direct3D Shader Compiler 10.1\nCopyright (C) 2013 Microsoft. All rights reserved.\n\ncompilation object save succeeded; see ${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\fullscreen_vs.dxbc\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "c++",
+        "-O2",
+        "-std=c++17",
+        "render_fx.cpp",
+        "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x64\\d3d10.lib",
+        "-o",
+        "render_fx.exe"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\render_fx.exe"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Load existing compiled unchanged Effects sample; apply its native Direct3D 10 pass, render a full-screen triangle to a 13 x 1 UNORM texture, read RGBA and compare decoded greeting.",
+  "toolchain": "Microsoft FXC 10.1 SDK 10.0.26100.0 / Direct3D 10 Effects and WARP / Zig C++ 0.15.2",
+  "toolchain_sha256": {
+    "fxc.exe": "31fa10504b1551337de4d06ec2194143885a76a8b5a81177999e2faa34729183",
+    "d3d10.dll": "61a1020e5bac18c2ded229329cbe4314cb8fde3d773e219d4c7f8991c16ee57c"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "extensions": {
+    ".fx": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "prior_compilation_evidence": "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+  "fx_blob_sha256": "d4c75b1edfabcaf530496302d6bd9ddcdb85d8c88c1ec221954e1795e66418e9",
+  "effect": "CorpusGreeting/GreetingPass",
+  "verified_utc": "2026-11-04T19:33:59.003337+00:00",
+  "recorded_test_source": "hlsl_fx_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

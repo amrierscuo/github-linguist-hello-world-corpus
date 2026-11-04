@@ -1,23 +1,23 @@
-# 0636 — SQL — `.inc`
+# 0636: SQL: `.inc`
 
-Fragment SQL includibile che conserva la query originale.
+Includeable Fragment SQL which retains the original query.
 
-Provenienza: copia del file originale `examples/#636 SQL/hello.sql`.
+Origin: copy of the original `examples/#636 SQL/hello.sql` file.
 
 Artefatto principale: `hello.inc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 sqlite3 :memory: < hello.inc
 ```
 
-Risultato atteso: Una riga, colonna greeting, valore Hello, World!..
+Expected result: A line, greeting column, Hello, World! value..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.sqlite.org/lang_select.html](https://www.sqlite.org/lang_select.html)

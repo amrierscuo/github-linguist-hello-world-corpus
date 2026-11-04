@@ -1,36 +1,36 @@
 # #416 Makefile
 
-Eseguire una ricetta Make che stampa il saluto.
+Perform a Make recipe that prints greetings.
 
-Tipo canonico `programming`, language_id `220`.
+Canonical type `programming`, language_id `220`.
 
-Toolchain prevista: GNU Make e shell POSIX.
+Suggested toolchain: GNU Make and shell POSIX.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 make --no-print-directory hello
 ```
 
-Risultato atteso: stdout Hello, World! e LF, exit 0.
+Expected result: stdout Hello, World! and LF, exit 0.
 
-La ricetta usa un tab reale e sopprime l’echo del comando. Non produce file fuori dalla cartella.
+The recipe uses a real tab and suppresses the command echo. It does not produce files outside the folder.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: GNU Make on Ubuntu 24.04. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: GNU Make on Ubuntu 24.04. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [GNU Make — ricette](https://www.gnu.org/software/make/manual/html_node/Recipes.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mak` | [hello.mak](variants/mak-6cee4e0b/hello.mak) creato, verifiche pendenti |
-| `.d` | [hello.d](variants/d-d5992320/hello.d) verificato |
-| `.make` | [hello.make](variants/make-902d3503/hello.make) creato, verifiche pendenti |
-| `.makefile` | [hello.makefile](variants/makefile-1b7c71d7/hello.makefile) creato, verifiche pendenti |
-| `.mk` | [hello.mk](variants/mk-337c4081/hello.mk) creato, verifiche pendenti |
-| `.mkfile` | [hello.mkfile](variants/mkfile-b5a501aa/hello.mkfile) creato, verifiche pendenti |
+| `.mak` | [hello.mak](variants/mak-6cee4e0b/hello.mak) created; verification pending |
+| `.d` | [hello.d](variants/d-d5992320/hello.d) verified |
+| `.make` | [hello.make](variants/make-902d3503/hello.make) created; verification pending |
+| `.makefile` | [hello.makefile](variants/makefile-1b7c71d7/hello.makefile) created; verification pending |
+| `.mk` | [hello.mk](variants/mk-337c4081/hello.mk) created; verification pending |
+| `.mkfile` | [hello.mkfile](variants/mkfile-b5a501aa/hello.mkfile) created; verification pending |

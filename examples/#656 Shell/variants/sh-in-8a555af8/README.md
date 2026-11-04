@@ -1,24 +1,24 @@
-# 0656 — Shell — `.sh.in`
+# 0656: Shell: `.sh.in`
 
-Variante testuale dello stesso formato, con suffisso canonico .sh.in.
+Textual variation of the same format, with canon suffix .sh.in.
 
-Provenienza: copia del file originale `examples/#656 Shell/hello.sh`.
+Origin: copy of the original `examples/#656 Shell/hello.sh` file.
 
 Artefatto principale: `hello.sh.in`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 sh -n hello.sh.in
 sh hello.sh.in
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html)

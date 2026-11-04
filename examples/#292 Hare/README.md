@@ -1,18 +1,18 @@
 # #292 Hare
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare Hare ed emettere Hello, World! usando fmt::printfln.
+Fill Hare and issue Hello, World! using fmt:printfln.
 
-main è esportata, audience è una costante stringa e il formato Hello, {}! sostituisce World. L’operatore ! asserisce il successo dell’IO. La toolchain necessaria comprende i componenti nativi di Hare.
+main is exported, audience is a constant string and Hello format, {}! replaces World. The operator! asserts the success of IO. The necessary toolchain includes the native components of Hare.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Hare, harec, backend QBE e assembler/linker; versioni effettive da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 hare build -o hello hello.ha
@@ -22,25 +22,25 @@ hare build -o hello hello.ha
 ./hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout Hello, World! seguito da newline.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
 Impedimenti: Hare/harec e QBE non preparati; compiler e runtime pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://harelang.org/tutorials/introduction/
 - https://docs.harelang.org/fmt/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ha` | [hello.ha](hello.ha) creato, verifiche pendenti |
+| `.ha` | [hello.ha](hello.ha) created; verification pending |

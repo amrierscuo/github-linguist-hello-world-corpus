@@ -1,39 +1,39 @@
 # #640 STAR
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare un blocco STAR e leggere il dato Hello, World!.
+Analyze a STAR block and read the Hello, World! data.
 
-Questo esempio STAR usa esclusivamente il sottoinsieme scalare compatibile con CIF. Gemmi legge il blocco e decodifica la stringa; non si dichiara verifica di tutti i costrutti STAR.
+This example STAR uses only the subset scalar compatible with CIF. Gemmi reads the block and decodes the string; it does not declare verification of all STAR constructs.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Gemmi0.7.5 originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il valore _greeting è Hello, World!.
+The _greeting value is Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.iucr.org/__data/iucr/cif/standard/cifstd4.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.star` | [hello.star](hello.star) verificato |
+| `.star` | [hello.star](hello.star) verified |

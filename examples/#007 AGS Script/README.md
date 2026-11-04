@@ -1,46 +1,46 @@
 # #007 AGS Script
 
-`room1.asc` è uno script di stanza per **Adventure Game Studio (AGS)**. Il
-gestore `room_AfterFadeIn` mostra `Hello, World!` nella finestra messaggi dopo
-l'ingresso nella stanza. La chiamata è bloccante finché il giocatore chiude il
+`room1.asc` is a room script for **Adventure Game Studio (AGS)**.
+`room_AfterFadeIn` operator shows `Hello, World!` in the message window after
+The call is blocking until the player closes the room.
 messaggio.
 
-## Toolchain e comandi
+## Toolchain and commands
 
-Serve **AGS Editor 3.6.x** e il relativo motore di gioco. Creare un progetto da
-un template con una stanza iniziale e il personaggio configurato. Aprire lo
-script della stanza iniziale e inserire il contenuto di `room1.asc`.
+Serves **AGS Editor 3.6.x** and its game engine. Create a project from
+a template with an initial room and the configured character. Open the
+script of the initial room and enter the content of `room1.asc`.
 
-Nelle proprietà Events della stanza collegare `Enters room after fade-in` alla
-funzione `room_AfterFadeIn`. Il nome della funzione da solo non stabilisce il
-collegamento per un evento di stanza. Se il template ha già il gestore,
-aggiungervi la chiamata `Display` senza definire due funzioni omonime.
+In the Events properties of the room connect `Enters room after fade-in` to the
+`room_AfterFadeIn` function. The function name alone does not establish the
+link for a room event. If the template already has the manager,
+add the `Display` call without defining two functions.
 
 Comando reale di compilazione: `Build > Build EXE` nell'AGS Editor. Comando di
-esecuzione del gioco compilato su Windows: `Compiled/Windows/<nome_gioco>.exe`,
-dove `<nome_gioco>` è il Game file name del progetto host. Deve apparire una
-finestra con `Hello, World!` all'ingresso nella stanza, dopo il fade-in.
+execution of the game compiled on Windows: `Compiled/Windows/<nome_gioco>.exe`,
+where `<nome_gioco>` is the Game file name of the host project.
+window with `Hello, World!` at the entrance into the room, after the fade-in.
 
-Il file `.asc` è l'unità di sorgente dell'esempio; questa cartella non contiene
-un progetto AGS completo, immagini, stanza binaria o un gioco compilato.
+The `.asc` file is the source drive of the example; this folder does not contain
+a complete AGS project, pictures, binary room or a compiled game.
 
-## Stato e limiti
+## Status and limitations
 
-Artefatto creato; sintassi e semantica **non ancora verificate** dal compilatore
-e dal motore AGS. Editor, progetto host e risorse non sono disponibili in questa
+Artifact created; syntax and behavior **non ancora verificate** by compiler
+and from the AGS engine. Editor, host project and resources are not available in this
 sessione.
 
-## Fonti ufficiali
+## Official sources
 
 - [AGS, funzione `Display`](https://adventuregamestudio.github.io/ags-manual/Globalfunctions_Message.html).
 - [AGS, eventi della stanza e `room_AfterFadeIn`](https://adventuregamestudio.github.io/ags-manual/EventTypes.html).
 - [AGS, distribuzione e `Build EXE`](https://adventuregamestudio.github.io/ags-manual/DistGame.html).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asc` | [room1.asc](room1.asc), [greeting.asc](variants/ext-ash-2e617368/greeting.asc) creato, verifiche pendenti |
-| `.ash` | [hello.ash](variants/ext-ash-2e617368/hello.ash) creato, verifiche pendenti |
+| `.asc` | [room1.asc](room1.asc), [greeting.asc](variants/ext-ash-2e617368/greeting.asc) created; verification pending |
+| `.ash` | [hello.ash](variants/ext-ash-2e617368/hello.ash) created; verification pending |

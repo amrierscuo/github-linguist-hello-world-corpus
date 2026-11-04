@@ -1,24 +1,24 @@
-# 0785 — XML — `.vxml`
+# 0785: XML: `.vxml`
 
 VoiceXML con prompt originale.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vxml`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 VoiceXML engine local document
 ```
 
-Risultato atteso: prompt Hello, World!.
+Expected result: Hello, World! prompt.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://www.w3.org/TR/voicexml21/](https://www.w3.org/TR/voicexml21/)

@@ -1,42 +1,42 @@
 # #361 Kit
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Renderizzare un template Kit con variabile audience e ottenere il paragrafo Hello, World!.
+Render a Kit template with variable audience and get the Hello, World! paragraph.
 
-Le direttive sono commenti speciali Kit: assegnazione $audience e sostituzione della variabile. Il saluto non dipende da commenti ordinari ignorati da HTML.
+The directives are special comments Kit: assigning $audience and replacing the variable. Greeting does not depend on ordinary comments ignored by HTML.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 CodeKit con compiler Kit originale; versione da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Compilare hello.kit con CodeKit/Kit.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-HTML contiene <p>Hello, World!</p>.
+HTML contains <p> Hello, World! </p>.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
-Impedimenti: Compiler originale Kit scritto per Cocoa/macOS non disponibile; renderer non eseguito.
+Commitments: Original Compiler Kit written for Cocoa/macOS unavailable; maker not executed.
 
-## Fonti primarie
+## Primary sources
 
 - https://codekitapp.com/help/kit/index.html
 - https://github.com/bdkjones/Kit
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.kit` | [hello.kit](hello.kit) creato, verifiche pendenti |
+| `.kit` | [hello.kit](hello.kit) created; verification pending |

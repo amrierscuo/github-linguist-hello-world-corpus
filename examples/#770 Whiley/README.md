@@ -2,47 +2,47 @@
 
 Voce canonica `Whiley`, tipo `programming`, language_id `888779559`.
 
-Funzione pura Whiley originale greeting() che restituisce il saluto come array di code point interi, conforme al modello di stringhe della specifica Whiley.
+Pure Whiley function original greeting() that returns greeting as an array of entire code points, conforms to the string pattern of the Whiley specification.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Whiley Compiler / verification backend — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Whiley Compiler / verification backend, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Occorre la distribuzione ufficiale Whiley con compilatore e backend compatibili. La guida ufficiale documenta wy init e wy build. Nessun compilatore è stato installato per questa voce.
+The official guide documents wy init and wy build. No compiler has been installed for this item.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 In un progetto Whiley temporaneo: wy init; copiare hello.whiley in src/hello.whiley; wy build; valutare hello.greeting() con il runtime Whiley.
 ```
 
-Risultato atteso: Array di 13 code point corrispondente a Hello, World!.
+Expected result: 13 code point array corresponding to Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Sorgente creato da specifica: la lettura del file non è conteggiata come verifica sintattica. La compilazione e il confronto del risultato restituito restano in attesa.
+Source created from specification: the reading of the file is not counted as a syntactic verification.
 
-Requisiti residui:
+Remaining requirements:
 
-- Compilatore Whiley e backend di verifica assenti; funzione pura definita ma non compilata.
+- Whiley compiler and backend verification absents; pure function defined but not compiled.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://whiley.org/pdfs/WhileyLanguageSpec.pdf](https://whiley.org/pdfs/WhileyLanguageSpec.pdf)
 - [https://whiley.org/learn/](https://whiley.org/learn/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.whiley` | [hello.whiley](hello.whiley) creato, verifiche pendenti |
+| `.whiley` | [hello.whiley](hello.whiley) created; verification pending |

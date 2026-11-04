@@ -1,24 +1,24 @@
-# 0793 — Xojo — `.xojo_toolbar`
+# 0793: Xojo: `.xojo_toolbar`
 
-Bozza originale del componente Toolbar nel formato tagged text REALbasic/Xojo. Sintassi/layout/import IDE non verificati; nessun export dell’IDE o identificativo di progetto preesistente dichiarato.
+Original draft of the Toolbar component in the format tagged text REALbasic/Xojo. Sintassi/layout/import IDE unchecked; no export of the IDE or identification of the existing project declared.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.xojo_toolbar`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Compatible REALbasic/Xojo IDE: import the component into an isolated text project
 ```
 
-Risultato atteso: proprietà del componente/funzione Greeting conservano Hello, World!; import host pendente.
+Expected result: the component or function properties preserve the greeting Hello, World! Import into the host application remains pending.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://documentation.xojo.com/topics/projects/version_control.html](https://documentation.xojo.com/topics/projects/version_control.html)
 - [https://github.com/github-linguist/linguist/tree/main/samples/Xojo](https://github.com/github-linguist/linguist/tree/main/samples/Xojo)

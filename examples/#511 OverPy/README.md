@@ -1,22 +1,22 @@
 # #511 OverPy
 
-Compilare una regola OverPy in Workshop che mostra un big message al giocatore.
+Compile an OverPy rule into an Overwatch Workshop rule that displays a large message to the player.
 
-Tipo canonico `programming`, language_id `492781155`.
+Canonical type `programming`, language_id `492781155`.
 
-Toolchain prevista: OverPy compiler Node e Overwatch Workshop per esecuzione.
+Suggested toolchain: OverPy compiler Node and Overwatch Workshop for execution.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: regola compilata con Big Message e literal Hello, World!; gioco mostra il saluto.
+Expected result: Complete rule with Big Message and literal Hello, World!; game shows greeting.
 
-Il compiler è verificabile localmente; l’esecuzione della regola richiede Overwatch. Non è la libreria Python per Overpass.
+The compiler is verifiable locally; the execution of the rule requires Overwatch. It is not the Python library for Overpass.
 
-Stato registrato: sintassi in attesa; semantica in attesa. Toolchain: Node.js 22.20.0 + original OverPy 9.7.17 compiler. [Log](verification/result.json). exit 1: les\overpy\overpy.js:63484:16)
+Registered state: syntax and behavioral verification pending. Toolchain: Node.js 22.20.0 + original OverPy 9.7.17 compiler. [Log](verification/result.json). exit 1: les\overpy\overpy.js:63484:16)
     at new _Ast (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:49568:23)
     at OverPyCompiler.Ast.OverPyDecompiler.Ast (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:49614:10)
     at ${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:48108:55
@@ -42,20 +42,20 @@ Stato registrato: sintassi in attesa; semantica in attesa. Toolchain: Node.js 22
 }
 
 
-Fonti:
+Sources:
 
 - [OverPy original compiler](https://github.com/Zezombye/overpy)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install overpy@9.7.17
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.opy` | [hello.opy](hello.opy) creato, verifiche pendenti |
+| `.opy` | [hello.opy](hello.opy) created; verification pending |

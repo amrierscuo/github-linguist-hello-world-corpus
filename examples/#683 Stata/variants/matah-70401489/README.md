@@ -1,23 +1,23 @@
-# 0683 — Stata — `.matah`
+# 0683: Stata: `.matah`
 
 Header preprocessore Mata con macro stringa.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.matah`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Stata/Mata: include header and compile companion function
 ```
 
-Risultato atteso: macro produce Hello, World!.
+Expected result: macro produces Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.stata.com/manuals/m-2syntax.pdf](https://www.stata.com/manuals/m-2syntax.pdf)

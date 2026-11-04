@@ -1,43 +1,43 @@
 # #397 Logos
 
-Espandere %ctor Logos e definire un costruttore Objective-C che usa NSLog.
+Expand %ctor Logos and define an Objective-C constructor that uses NSLog.
 
 ## Toolchain
 
 Theos Logos master snapshot; This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi
 
-## Comandi e procedura
+## Commands and procedure
 
-perl logos.pl -c generator=internal -c warnings=error hello.xm; compilare il risultato Objective-C nel target Apple di prova e avviare il costruttore
+perl logos.pl -c generator=internal -c warnings=error hello.xm; fill out the Objective-C result in the Apple test target and start the manufacturer
 
-## Risultato atteso
+## Expected result
 
 Preprocessore senza errori genera constructor; NSLog del target contiene Hello, World!.
 
-## Stato
+## Status
 
-Sintassi verificata; semantica in attesa.
+syntax verified; behavioral verification pending.
 
-Il preprocessore Perl originale espande la direttiva e conserva NSLog; sono registrati hash di tutti i file del tool snapshot. Questa prova valida soltanto la sintassi Logos/preprocessing. Foundation e runtime Apple non sono stati simulati né eseguiti.
+The original Perl pre-processor expands the directive and keeps NSLog; hashs of all files of the snapshot tool are recorded. This test only applies to the syntax Logos/preprocessing. Foundation and Apple runtimes have not been simulated or executed.
 
-Verifica effettiva del 2026-10-08T12:48:20.545080+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:48:20.545080+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-Requisiti residui:
+Remaining requirements:
 - Apple Foundation Objective-C compile/runtime unavailable; NSLog execution pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://theos.dev/docs/logos](https://theos.dev/docs/logos)
 - [https://theos.dev/docs/logos-syntax](https://theos.dev/docs/logos-syntax)
 - [https://github.com/theos/logos](https://github.com/theos/logos)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.xm` | [hello.xm](hello.xm) sintassi verificata |
-| `.x` | [hello.x](variants/x-bb42e4c6/hello.x) creato, verifiche pendenti |
-| `.xi` | [hello.xi](variants/xi-347cda4a/hello.xi) creato, verifiche pendenti |
+| `.xm` | [hello.xm](hello.xm) syntax verified |
+| `.x` | [hello.x](variants/x-bb42e4c6/hello.x) created; verification pending |
+| `.xi` | [hello.xi](variants/xi-347cda4a/hello.xi) created; verification pending |

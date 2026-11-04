@@ -1,34 +1,34 @@
-# 0115 Checksums — variante `.sha1`
+# 0115 Checksums: variant `.sha1`
 
-Ruolo: Manifest checksum SHA1 con digest reale dei byte della fixture originale; .sha2 sceglie SHA-256 e .sha3 sceglie SHA3-256 esplicitamente.
+Role: Manifest checksum SHA1 with real digest of the original fixture bytes; .sha2 chooses SHA-256 and .sha3 chooses SHA3 - 256 explicitly.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#115 Checksums/SHA256SUMS; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#115 Checksums/SHA256SUMS; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 rhash --sha1 --check hello.sha1
 ```
 
-Risultato atteso: Digest del payload corrispondente; greeting.txt OK.
+Expected result: Digest of the corresponding payload; greeting.txt OK.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.gnu.org/software/coreutils/manual/coreutils.html#sha2-utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html#sha2-utilities)
 - [https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)

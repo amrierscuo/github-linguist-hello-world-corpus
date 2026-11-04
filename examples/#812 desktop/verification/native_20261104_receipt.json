@@ -1,0 +1,53 @@
+{
+  "example_ordinal": 812,
+  "language": "desktop",
+  "timestamp_utc": "2026-11-04T19:36:02.642628+00:00",
+  "platform": {
+    "argv": [
+      "uname",
+      "-srmo"
+    ],
+    "exit_code": 0,
+    "stdout": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64 GNU/Linux\n",
+    "stderr": ""
+  },
+  "commands": [
+    {
+      "argv": [
+        "../../tools_801_820/apt-root/usr/bin/desktop-file-validate",
+        "hello.desktop"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "verify_desktop.py",
+        "hello.desktop"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"glib_version\": \"2.80.0\", \"properties\": {\"Name\": \"Hello, World!\", \"Exec\": \"printf \\\"Hello, World!\\\"\", \"Executable\": \"printf\", \"Terminal\": true}, \"application_launched\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#812 desktop/hello.desktop": "05699ee0e3a730b963f3be1cceedb9d81f3d52ce2fbd2e744d0dff282baaa0c8"
+  },
+  "checker_sha256": "7cdd363c6e4a48f1bd820c28101341cd2ca65fbb1021ce3b15d72405b3711efe",
+  "scope": "Native desktop-file-utils validation and GLib GDesktopAppInfo launcher metadata load; no application or GUI launched.",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "recorded_test_source": "receipt.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

@@ -2,50 +2,50 @@
 
 Voce canonica: `Creole`, tipo `prose`, `language_id: 71`.
 
-Renderizzare un documento Creole 1.0 con heading, saluto in grassetto e una frase in corsivo.
+Rendering a document Creole 1.0 with heading, Greeting in bold and a phrase in italics.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Existing creoleparser Creole 1.0 renderer with Genshi — 0.7.5; 0.7.11. Ambiente della prova: **Windows x64**.
+Existing creoleparser Creole 1.0 renderr with Genshi, 0.7.5; 0.7.11. Test environment: **Windows x64**.
 
-Python 3.13.9, creoleparser 0.7.5 e Genshi 0.7.11. Dipendenze isolate in work; per riprodurre usare un venv. Il renderer restituisce byte UTF-8, che verify.py decodifica prima delle asserzioni.
+Python 3.13.9, creoleparser 0.7.5 and Genshi 0.7.11. Insulated dependencies in work; to reproduce use a venv. The returnr returns byte UTF - 8, which verify.py decodes before the assertions.
 
-Comando/procedura dalla directory dell’esempio, salvo la directory build esplicitamente indicata:
+Comando/procedura from the example directory, except the build directory explicitly indicated:
 
 ```text
 python -m pip install creoleparser==0.7.5; python verify.py hello.creole
 ```
 
-Risultato atteso: HTML con <h1>Greeting</h1>, <strong>Hello, World!</strong> e il controllo <em>A small Creole document.</em>; PASS.
+Expected result: HTML with <h1>Greeting</h1>, <strong> Hello, World! </strong> and control <em>A small Creole document.</em>; PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-È il parser/renderer Creole 1.0 esistente, che è permissivo per testo generico. La prova riguarda l’accettazione e il rendering delle tre strutture dichiarate, non un validatore universale strict per tutte le estensioni wiki.
+It is the parser/renderer Creole 1.0 existing, which is permissive for generic text. The test concerns the acceptance and rendering of the three declared structures, not a universal strict validator for all wiki extensions.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-versioni/toolchain e SHA-256 degli artefatti. La proprietà `path_normalization` documenta
-le sostituzioni dei percorsi locali. `<corpus>` identifica i file relativi inclusi nel
-corpus finale, che sono stati verificati prima nella directory di staging. I byte dei
-sorgenti restano quelli identificati dai checksum. I soli probe di disponibilità degli
-strumenti non attestano parsing o esecuzione. Dipendenze e prodotti compilati restano
-nella directory di lavoro e non sono inclusi nel corpus.
+toolchain versions and SHA-256 values for the artifacts. The `path_normalization` property documents
+local route replacements. `<corpus>` identifies the relative files included in
+final corpus, which were first verified in the staging directory.
+sources remain those identified by checksums. The only offspring of availability
+instruments do not attest parsing or execution.
+in the work directory and are not included in the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/wikiotics/creoleparser](https://github.com/wikiotics/creoleparser)
 - [https://creoleparser.readthedocs.io/en/latest/](https://creoleparser.readthedocs.io/en/latest/)
 - [https://www.wikicreole.org/wiki/Creole1.0](https://www.wikicreole.org/wiki/Creole1.0)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.creole` | [hello.creole](hello.creole) verificato |
+| `.creole` | [hello.creole](hello.creole) verified |

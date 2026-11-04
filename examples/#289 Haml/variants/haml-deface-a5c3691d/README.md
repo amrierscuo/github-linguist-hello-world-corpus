@@ -1,31 +1,31 @@
-# 0289 — Haml: `.haml.deface`
+# 0289: Haml: `.haml.deface`
 
-Ruolo: Override Deface Haml con commento direttiva, non semplice rinomina di template.
+Role: Override Deface Haml with commentary directive, not simple template rename.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Haml6.3.0, Temple0.10.7, Tilt2.9.0, Thor1.5.0; Ruby3.2.3. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Haml6.3.0, Temple0.10.7, Tilt2.9.0, Thor1.5.0; Ruby3.2.3. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Deface: collocare hello.html.haml.deface sotto app/overrides/posts/show/ e renderizzare il fixture
 ```
 
-Risultato atteso: Paragrafo Hello, World! aggiunto dopo h1
+Expected result: Hello, World! paragraph added after h1
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `fixture.html.erb`: `9212220934071959eee5b86f08428d18c5f93fdb0b302125e2f217d52c8a5cc3`
 - `hello.html.haml.deface`: `c8e77a714bc31ceff49c6d69ac7b5459fe2c065a496487c1b0ba84e71cb25940`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/spree/deface
 - https://haml.info/docs/yardoc/file.REFERENCE.html

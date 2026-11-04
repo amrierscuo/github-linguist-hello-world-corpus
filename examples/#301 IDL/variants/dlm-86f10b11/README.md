@@ -1,31 +1,31 @@
-# 0301 — IDL: `.dlm`
+# 0301: IDL: `.dlm`
 
-Ruolo: Descriptor IDL Dynamically Loadable Module: nome, versione e dichiarazione della routine; non codice .pro.
+Role: Descriptor IDL Dynamically Loadable Module: name, version and declaration of routine; not .pro. code
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: NV5 Geospatial IDL proprietario; versione da registrare. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: NV5 Geospatial IDL proprietario; versione da registrare. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 IDL con SDK: compilare una libreria che esporta IDL_Load e CORPUS_HELLO; impostare !DLM_PATH e DLM_LOAD, "corpus_hello"
 ```
 
-Risultato atteso: IDL registra il modulo descritto; una futura routine nativa stampa Hello, World!
+Expected result: IDL records the module described; a future native press routine Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
-- La libreria condivisa e l’SDK IDL proprietario non sono disponibili; il solo descriptor non implementa la routine.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
+- The shared library and the owner SDK IDL are not available; the descriptor only does not implement the routine.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.dlm`: `e9f8b8157912ff4e4ebd03da09de88c3663d463d6cf61aad64bf48cd06ffd680`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.nv5geospatialsoftware.com/docs/DLM.html
 - https://www.nv5geospatialsoftware.com/docs/PRINT.html

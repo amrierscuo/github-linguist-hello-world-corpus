@@ -1,42 +1,42 @@
 # #635 SQF
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire SQF e scrivere Hello, World! nel log.
+Run SQF and write Hello, World! in the log.
 
-La variabile locale viene formattata da format e scritta con diag_log; un generico parser C non sostituisce SQF.
+The local variable is formatted and written with diag_log; a generic parser C does not replace SQF.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 VM SQF Arma, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Arma: [] execVM "hello.sqf"
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Hello, World! nel log SQF.
+Hello, World! in the SQF log.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Runtime SQF/Arma non disponibile; verifiche pendenti.
+Impedimenti: Runtime SQF/Arma unavailable; verification pending.
 
-## Fonti primarie
+## Primary sources
 
 - https://community.bohemia.net/wiki/diag_log
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sqf` | [hello.sqf](hello.sqf), [main.sqf](variants/hqf-981d9d8f/main.sqf) creato, verifiche pendenti |
-| `.hqf` | [hello.hqf](variants/hqf-981d9d8f/hello.hqf) creato, verifiche pendenti |
+| `.sqf` | [hello.sqf](hello.sqf), [main.sqf](variants/hqf-981d9d8f/main.sqf) created; verification pending |
+| `.hqf` | [hello.hqf](variants/hqf-981d9d8f/hello.hqf) created; verification pending |

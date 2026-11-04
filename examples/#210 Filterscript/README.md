@@ -2,47 +2,47 @@
 
 Voce canonica `Filterscript`, tipo `programming`, language_id `112`.
 
-Descrivere un kernel Android FilterScript che scrive il carattere ASCII corrispondente a ciascun indice di una allocation U8 di tredici elementi.
+Describe an Android FilterScript kernel that writes the ASCII character corresponding to each U8 allocation index of thirteen items.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required authentic toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required authentic toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede una toolchain Android storica con llvm-rs-cc e un runtime RenderScript/FilterScript compatibile. RenderScript è deprecato; la toolchain corrente qui non è configurata.
+Requires a historical Android toolchain with llvm-rs-cc and a compatible RenderScript/FilterScript runtime. RenderScript is deprecated; the current toolchain here is not configured.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 Progetto Android con SDK/Build Tools storici che supportano FilterScript: compilare hello.fs; invocare ScriptC_hello.forEach_root su allocation U8 lunga 13 e copiarne i byte sul lato Java
 ```
 
-Risultato atteso: Kernel compilato; allocation ricostruita uguale a Hello, World!.
+Expected result: Kernel compiled; allocation equal to Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Il kernel root ritorna valori ASCII reali per x=0..12. Non viene compilato come semplice C per attestare FilterScript; quel controllo ignorerebbe le restrizioni del linguaggio e il runtime.
+The root kernel returns real ASCII values for x= 0..12. It is not compiled as a simple C to attest FilterScript; that control would ignore language restrictions and runtime.
 
-Requisiti residui:
+Remaining requirements:
 
 - Historical Android FilterScript compiler/SDK runtime and compatible device/emulator are unavailable.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://developer.android.com/guide/topics/renderscript/compute](https://developer.android.com/guide/topics/renderscript/compute)
 - [https://source.android.com/docs/core/architecture/graphics/renderscript](https://source.android.com/docs/core/architecture/graphics/renderscript)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fs` | [hello.fs](hello.fs) creato, verifiche pendenti |
+| `.fs` | [hello.fs](hello.fs) created; verification pending |

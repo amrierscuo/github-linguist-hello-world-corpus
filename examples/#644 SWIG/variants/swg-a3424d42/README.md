@@ -1,23 +1,23 @@
-# 0644 — SWIG — `.swg`
+# 0644: SWIG: `.swg`
 
-Variante testuale dello stesso formato, con suffisso canonico .swg.
+Textual variation of the same format, with canon suffix .swg.
 
-Provenienza: copia del file originale `examples/#644 SWIG/hello.i`.
+Origin: copy of the original `examples/#644 SWIG/hello.i` file.
 
 Artefatto principale: `hello.swg`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 swig -python -outdir work -o work/hello_wrap.c hello.swg
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://swig.org/Doc4.3/SWIGDocumentation.html](https://swig.org/Doc4.3/SWIGDocumentation.html)

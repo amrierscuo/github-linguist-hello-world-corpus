@@ -1,26 +1,26 @@
-# 0520 — PLSQL: `.plb`
+# 0520: PLSQL: `.plb`
 
-Ruolo: Variante con ruolo/formato distinto dal sorgente principale.
+Role: Variant with ruolo/formato distinct from the main source.
 
-Provenienza: Solo documentazione del blocco; nessun artefatto con estensione richiesta è stato fabbricato.
+Provenience: Only block documentation; no artifact with required extension was manufactured.
 
-Toolchain richiesta: Oracle Database e SQL*Plus. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Oracle Database e SQL*Plus. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Disponibilità del tool originale necessaria; consultare gli impedimenti.
 ```
 
-Risultato atteso: Da verificare con il formato nativo dopo la risoluzione del blocco.
+Expected result: To check with the native format after the block resolution.
 
-Stato individuale: artefatto creato `false`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `false`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Output del PL/SQL wrap utility, non sorgente testuale ordinario. Il wrapper Oracle originale non è disponibile: non si fabbrica una sequenza wrapped.
+- Output of the PL/SQL wrap utility, not ordinary text source. The original Oracle wrapper is not available: no wrapped sequence is manufactured.
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/wrapping-pl-sql-source-text-pl-sql-wrapper-utility.html
 - https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/DBMS_OUTPUT.html

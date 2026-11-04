@@ -2,31 +2,31 @@
 
 Stampare Hello, World! usando Janet.
 
-Tipo canonico `programming`, language_id `1028705371`.
+Canonical type `programming`, language_id `1028705371`.
 
-Toolchain prevista: Janet CLI originale.
+Suggested toolchain: Janet CLI original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 janet hello.janet
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Programma senza dipendenze esterne.
+Program without external dependencies.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Janet 1.42.1 official Linux x64 release. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Janet 1.42.1 official Linux x64 release. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Janet — manuale](https://janet-lang.org/docs/)
 - [Janet — sorgenti e release](https://github.com/janet-lang/janet)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.janet` | [hello.janet](hello.janet) verificato |
+| `.janet` | [hello.janet](hello.janet) verified |

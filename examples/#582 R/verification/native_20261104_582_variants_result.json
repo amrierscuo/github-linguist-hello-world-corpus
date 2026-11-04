@@ -1,0 +1,47 @@
+{
+  "ordinal": 582,
+  "name": "R",
+  "source_hashes": {
+    "examples/#582 R/variants/rd-0443eb91/hello.rd": "7f604cf71a5cd5706e4d6b086b2f14d77bde728ad7e832c8cfd5669dac2eaeb1"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\582_variants",
+  "steps": [
+    {
+      "command": [
+        "${USER_PROFILE}\\AppData\\Local\\Programs\\R\\R-4.6.1\\bin\\Rscript.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\582_variants",
+      "exit_code": 0,
+      "stdout": "Rscript (R) version 4.6.1 (2026-06-24)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${USER_PROFILE}\\AppData\\Local\\Programs\\R\\R-4.6.1\\bin\\Rscript.exe",
+        "--vanilla",
+        "render.R"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\582_variants",
+      "exit_code": 0,
+      "stdout": "_\bH_\be_\bl_\bl_\bo, _\bW_\bo_\br_\bl_\bd!\n\n_\bD_\be_\bs_\bc_\br_\bi_\bp_\bt_\bi_\bo_\bn:\n\n     Un saluto originale del corpus.\n\n_\bU_\bs_\ba_\bg_\be:\n\n     greeting()\n     \n_\bV_\ba_\bl_\bu_\be:\n\n     La stringa 'Hello, World!'.\n\nVerified title: Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Run the original Rd markup through the native R help formatter and assert that the produced help text contains the greeting.",
+  "toolchain": "GNU R 4.6.1 native Windows R tools::Rd2txt",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".rd": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "prior_verified_sources": {},
+  "rendered_help_sha256": "5eb9932fc0a60c7819da524868f2f3310d4996d6958be00868d229e11f1f1534",
+  "verified_utc": "2026-11-04T19:38:36.360508+00:00",
+  "recorded_test_source": "582_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

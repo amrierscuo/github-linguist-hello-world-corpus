@@ -1,23 +1,23 @@
-# 0570 — Python — `.rpy`
+# 0570: Python: `.rpy`
 
-Risorsa .rpy del web server Twisted, non un copione Ren’Py.
+The Twisted web server .rpy resource, not a Ren’Py script.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rpy`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 twistd web --path .; GET /hello.rpy from localhost
 ```
 
-Risultato atteso: HTTP body Hello, World!.
+Expected result: HTTP body Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.twisted.org/en/stable/web/howto/using-twistedweb.html](https://docs.twisted.org/en/stable/web/howto/using-twistedweb.html)

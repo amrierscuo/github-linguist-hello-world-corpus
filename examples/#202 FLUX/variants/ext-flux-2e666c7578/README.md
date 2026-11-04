@@ -1,34 +1,34 @@
-# 0202 FLUX — variante `.flux`
+# 0202 FLUX: variant `.flux`
 
-Ruolo: Sorgente FLUX UMass nello stesso formato .fx; non il linguaggio InfluxDB Flux.
+Role: Source FLUX UMass in the same .fx format; not InfluxDB Flux language.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#202 FLUX/hello.fx
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 FLUX UMass compiler: generare il C++ da hello.flux e collegare l’implementazione mImpl.cpp del modello in un progetto temporaneo.
 ```
 
-Risultato atteso: Generazione/compilazione riuscite; server emette una riga Hello, World! e termina 0.
+Expected result: Generazione/compilazione successful; server outputs a Hello, World! line and ends 0.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/emeryberger/flux](https://github.com/emeryberger/flux)
 - [https://www.usenix.org/legacy/event/usenix06/tech/full_papers/burns/burns_html/__flux-usenix-06.html](https://www.usenix.org/legacy/event/usenix06/tech/full_papers/burns/burns_html/__flux-usenix-06.html)

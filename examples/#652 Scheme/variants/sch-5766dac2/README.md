@@ -1,23 +1,23 @@
-# 0652 — Scheme — `.sch`
+# 0652: Scheme: `.sch`
 
-Variante testuale dello stesso formato, con suffisso canonico .sch.
+Textual variation of the same format, with canon suffix .sch.
 
-Provenienza: copia del file originale `examples/#652 Scheme/hello.scm`.
+Origin: copy of the original `examples/#652 Scheme/hello.scm` file.
 
 Artefatto principale: `hello.sch`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 scheme --script hello.sch
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.racket-lang.org/r5rs/](https://docs.racket-lang.org/r5rs/)

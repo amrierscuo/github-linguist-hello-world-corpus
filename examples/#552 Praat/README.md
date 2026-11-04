@@ -1,40 +1,40 @@
 # #552 Praat
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire uno script Praat e scrivere Hello, World! nella finestra Info/stdout batch.
+Run a Praat script and write Hello, World! in the Info/stdout batch window.
 
 audience$ è una stringa Praat. writeInfoLine usa il comando nativo; il runtime batch restituisce output UTF16LE, decodificato nel log e confrontato con il saluto. Nessun audio viene registrato o riprodotto.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Praat7.0.02 ufficiale Windows x64v1
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Praat.exe --run hello.praat
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.fon.hum.uva.nl/praat/manual/Scripting.html
 - https://github.com/praat/praat/releases/tag/v7.0.02
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.praat` | [hello.praat](hello.praat) verificato |
+| `.praat` | [hello.praat](hello.praat) verified |

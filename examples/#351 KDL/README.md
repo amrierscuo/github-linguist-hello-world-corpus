@@ -2,47 +2,47 @@
 
 Voce canonica `KDL`, tipo `data`, language_id `931123626`.
 
-Rappresentare il saluto come valore di un nodo nel KDL Document Language e verificarne dati e proprietà.
+Represent greeting as a value of a node in the KDL Document Language and verify its data and properties.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Existing KDL-JS document parser — kdljs 0.3.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Existing KDL - JS document parser, kdljs 0.3.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-KDL-JS 0.3.0 su Node.js 22.20.0. Il documento usa una forma compatibile del node language: greeting, valore stringa e proprietà language=en.
+KDL - JS 0.3.0 on Node.js 22.20.0. The document uses a compatible form of the node language: greeting, string value and language=en property.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 npm install --prefix .tools kdljs@0.3.0; node verify.cjs .tools
 ```
 
-Risultato atteso: Un solo nodo greeting, valore Hello, World!, language=en; PASS.
+Expected result: One greeting node, Hello, World! value, language=en; PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-L’implementazione esistente analizza il documento e deve riportare zero errori. I flag riguardano il modello dati letto dal parser; non una applicazione che consumi quel modello.
+The existing implementation analyses the document and must report zero errors. The flags concern the data model read by the parser; not an application that uses that model.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://kdl.dev/spec/](https://kdl.dev/spec/)
 - [https://github.com/kdl-org/kdl-js](https://github.com/kdl-org/kdl-js)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.kdl` | [hello.kdl](hello.kdl) verificato |
+| `.kdl` | [hello.kdl](hello.kdl) verified |

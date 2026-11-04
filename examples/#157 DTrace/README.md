@@ -1,18 +1,18 @@
 # #157 DTrace
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Eseguire una clausola DTrace BEGIN che stampa Hello, World! e termina immediatamente.
+Perform a DTrace BEGIN clause that prints Hello, World! and ends immediately.
 
-L’estensione .d qui contiene il linguaggio D di DTrace, distinto dal linguaggio D generale. La sola sonda dtrace:::BEGIN viene eseguita all’avvio; non si raccolgono eventi o dati di altri processi. #pragma D option quiet elimina la tabella standard.
+The .d extension here contains the D language of DTrace, distinct from the D-general language. The only probe is:: BEGIN is performed at startup; no events or data are collected from other processes.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 DTrace originale su sistema supportato; versione effettiva da registrare
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 dtrace -e -s hello.d
@@ -22,24 +22,24 @@ dtrace -e -s hello.d
 dtrace -s hello.d
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-stdout Hello, World! seguito da newline; exit(0) chiude il programma DTrace.
+stdout Hello, World! followed by newline; exit( 0) closes the DTrace program.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; parser/compilatore/runtime nativo non è stato eseguito per questa voce.
+The source is documented; native parser/compilatore/runtime has not been performed for this item.
 
-Impedimenti: Runtime DTrace e supporto kernel non preparati in questo ambiente; compilazione e sonda BEGIN restano pendenti.
+Commitments: Runtime DTrace and kernel support not prepared in this environment; compilation and BEGIN probe remain pending.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.oracle.com/cd/F61410_01/dtrace-guide/OL-DTRACE-GUIDE.pdf
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.d` | [hello.d](hello.d) creato, verifiche pendenti |
+| `.d` | [hello.d](hello.d) created; verification pending |

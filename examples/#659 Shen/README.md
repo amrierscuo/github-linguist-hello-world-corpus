@@ -1,36 +1,36 @@
 # #659 Shen
 
-Valutare output nel runtime Shen.
+Evaluate output in the Shen runtime.
 
 ## Toolchain
 
 Shen runtime
 
-## Procedura
+## Procedure
 
 Caricare hello.shen in Shen e registrare output/versione.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Runtime Shen non predisposto.
 
-## Fonti primarie
+## Primary sources
 
 - [https://shenlanguage.org/](https://shenlanguage.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.shen` | [hello.shen](hello.shen) creato, verifiche pendenti |
+| `.shen` | [hello.shen](hello.shen) created; verification pending |

@@ -1,34 +1,39 @@
 # #596 Racket
 
-Eseguire un modulo Racket e stampare il saluto.
+Run a Racket form and print your greeting.
 
-Tipo canonico `programming`, language_id `316`.
+Canonical type `programming`, language_id `316`.
 
-Toolchain prevista: Racket.
+Suggested toolchain: Racket.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 racket hello.rkt
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Modulo base senza dipendenze esterne.
+Basic module without external dependencies.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Racket 8.18 native Windows portable. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Racket 8.18 native Windows portable. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Racket displayln](https://docs.racket-lang.org/reference/Writing.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rkt` | [hello.rkt](hello.rkt) verificato |
-| `.rktd` | [hello.rktd](variants/rktd-18ea1173/hello.rktd) creato, verifiche pendenti |
-| `.rktl` | [hello.rktl](variants/rktl-c9a39abc/hello.rktl) creato, verifiche pendenti |
-| `.scrbl` | [hello.scrbl](variants/scrbl-ba477af2/hello.scrbl) creato, verifiche pendenti |
+| `.rkt` | [hello.rkt](hello.rkt) verified |
+| `.rktd` | [hello.rktd](variants/rktd-18ea1173/hello.rktd) syntax and behavior verified |
+| `.rktl` | [hello.rktl](variants/rktl-c9a39abc/hello.rktl) syntax and behavior verified |
+| `.scrbl` | [hello.scrbl](variants/scrbl-ba477af2/hello.scrbl) created; verification pending |
+
+## Additional extension verification
+
+- `.rktd`: verified on November 4, 2026. [Evidence](verification/native_20261104_596_variants_result.json).
+- `.rktl`: verified on November 4, 2026. [Evidence](verification/native_20261104_596_variants_result.json).

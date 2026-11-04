@@ -1,24 +1,24 @@
-# 0775 — Wolfram Language — `.cdf`
+# 0775: Wolfram Language: `.cdf`
 
-Fixture ASCII Wolfram Notebook expression per .cdf; documento originale statico. Compatibilità/deployment frontend di questa estensione NON verificati e nessuna firma Player inventata.
+Fixtures ASCII Wolfram Notebook expression for .cdf; original static document. Compatibilità/deployment frontend of this NON extension verified and no signature invented Player.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.cdf`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Wolfram Language parser: read Notebook expression; native frontend format import pending
 ```
 
-Risultato atteso: espressione Wolfram valida con cella Hello, World!; deployment/frontend non dichiarato.
+Expected result: a valid Wolfram expression with a Hello, World! cell. Deployment and frontend behavior are not claimed.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://reference.wolfram.com/language/ref/Notebook.html](https://reference.wolfram.com/language/ref/Notebook.html)
 - [https://reference.wolfram.com/language/ref/CDFDeploy.html](https://reference.wolfram.com/language/ref/CDFDeploy.html)

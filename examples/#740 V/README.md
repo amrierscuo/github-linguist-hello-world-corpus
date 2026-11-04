@@ -1,37 +1,37 @@
 # #740 V
 
-Il sorgente originale compila con V e stampa `Hello, World!`.
+The original source compiles with V and `Hello, World!` print.
 
-Tipo canonico `programming`, language_id `603371597`.
+Canonical type `programming`, language_id `603371597`.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Prova eseguita con il compilatore ufficiale V 0.5.2 (commit `7647ce1`) e GCC 13.3.0 in Ubuntu 24.04 WSL2, architettura x86_64.
+Test performed with official compiler V 0.5.2 (commit `7647ce1`) and GCC 13.3.0 in Ubuntu 24.04 WSL2, x86_64 architecture.
 
-Dalla cartella dell'esempio, con una cartella di output già creata:
+From the example folder, with an output folder already created:
 
 ```sh
 v -cc gcc -o build/hello hello.v
 ./build/hello
 ```
 
-Il comando di compilazione termina con exit code 0. Il binario nativo restituisce esattamente `Hello, World!` seguito da newline e termina con exit code 0.
+The compilation command ends with exit code 0. The native track returns exactly `Hello, World!` followed by newline and ends with exit code 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Sintassi e semantica verificate. La sola presenza del file `.v` non determina questo stato: il compilatore V ha accettato i byte registrati e il binario è stato eseguito.
+syntax and behavior verified. The only presence of `.v` file does not determine this state: the V compiler has accepted the registered bytes and the track has been executed.
 
 [Log nativo](verification/native.json) con comandi effettivi, timestamp UTC, versioni, stdout/stderr e SHA256 di sorgente, toolchain e prodotto compilato. I percorsi personali sono sostituiti da `<corpus>`, `<work>` e `<workspace>`; i byte del sorgente rimangono invariati.
 
-## Fonti primarie
+## Primary sources
 
 - [Documentazione V](https://docs.vlang.io/)
 - [Release ufficiale V 0.5.2](https://github.com/vlang/v/releases/tag/0.5.2)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.v` | [hello.v](hello.v) sintassi e semantica verificate |
+| `.v` | [hello.v](hello.v) syntax and behavior verified |

@@ -4,45 +4,45 @@ Voce canonica `Windows Registry Entries`, tipo `data`, language_id `969674868`.
 
 File di importazione Windows Registry originale, con valore Message = `Hello, World!` sotto HKCU\Software\CorpusGreeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Windows .reg import parser in disposable Windows registry hive — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Windows .reg import parser in disposable Windows registry hive, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-La struttura segue il formato REGEDIT5 documentato da Microsoft. Il file usa solo caratteri ASCII. Per una verifica nativa occorre un ambiente Windows usa e getta o un hive isolato supportato dal tool.
+The structure follows the REGEDIT5 format documented by Microsoft. The file only uses ASCII characters. For native verification, a disposable Windows environment or an isolated hive supported by the tool is required.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 Solo in una VM Windows usa e getta: reg import hello.reg; reg query HKCU\Software\CorpusGreeting /v Message
 ```
 
-Risultato atteso: Importazione riuscita e valore Message uguale a Hello, World! nell’ambiente usa e getta.
+Expected result: Successful import and Message value equal to Hello, World! in the disposable environment.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Il log contiene soltanto il probe reg /?; tale comando non interpreta il sorgente e non attesta sintassi o semantica. L’importazione non è stata eseguita sul registro corrente.
+The log contains only the probe reg /?; this command does not interpret the source and does not attest syntax or behavior. Import has not been performed on the current register.
 
-Requisiti residui:
+Remaining requirements:
 
-- Importazione nativa richiede un hive Windows usa e getta; nessuna modifica al registro corrente eseguita.
+- Native import requires a disposable Windows hive; no changes to the current registry performed.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://support.microsoft.com/en-us/topic/how-to-add-modify-or-delete-registry-subkeys-and-values-by-using-a-reg-file-9c7f37cf-a5e9-e1cd-c4fa-2a26218a1a23](https://support.microsoft.com/en-us/topic/how-to-add-modify-or-delete-registry-subkeys-and-values-by-using-a-reg-file-9c7f37cf-a5e9-e1cd-c4fa-2a26218a1a23)
 - [https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.reg` | [hello.reg](hello.reg) creato, verifiche pendenti |
+| `.reg` | [hello.reg](hello.reg) created; verification pending |

@@ -1,34 +1,34 @@
-# 0016 ASN.1 — variante `.asn1`
+# 0016 ASN.1: variant `.asn1`
 
-Ruolo: Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale.
+Role: Textual Alias of the same format and of the same programma/dataset of the original model.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#016 ASN.1/hello.asn
 
-Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso.
+Byte-identical copy of the stated model: byte equality is not equivalent to a new toolchain test on the new suffix.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 asn1tools compile -c uper hello.asn1; applicare lo stesso test encode/decode del modello al file variante.
 ```
 
-Risultato atteso: DER 0c0b48656c6c6f20576f726c64; valore decodificato Hello World; PASS.
+Expected result: DER 0c0b48656c6c6f20576f726c64; decoded value Hello World; PASS.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://asn1tools.readthedocs.io/en/latest/](https://asn1tools.readthedocs.io/en/latest/)
 - [https://github.com/eerimoq/asn1tools](https://github.com/eerimoq/asn1tools)

@@ -1,39 +1,39 @@
 # #244 Gettext Catalog
 
-Compilare un catalogo Gettext che traduce la chiave greeting in Hello, World!.
+Fill out a Gettext catalog that translates the greeting key in Hello, World!.
 
 ## Toolchain
 
 msgfmt (GNU gettext-tools) 0.21; Python 3.13.9 gettext.GNUTranslations
 
-## Comandi e procedura
+## Commands and procedure
 
 msgfmt --check --check-header -o build/hello.mo hello.po; python verify.py build/hello.mo
 
-## Risultato atteso
+## Expected result
 
-Catalogo accettato; lookup greeting restituisce il saluto; chiave sconosciuta conserva il proprio testo.
+Accepted catalog; lookup greeting returns greeting; unknown key keeps your text.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 Il .po include header completi e indirizzi illustrativi example.invalid. GNU msgfmt valida e compila un MO reale; GNUTranslations lo carica per il lookup. Il MO binario è mantenuto solo in work.
 
-Verifica effettiva del 2026-10-08T12:17:31.360561+00:00 su WSL msgfmt + Windows Python: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:17:31.360561+00:00 on WSL msgfmt + Windows Python: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html)
 - [https://www.gnu.org/software/gettext/manual/html_node/msgfmt-Invocation.html](https://www.gnu.org/software/gettext/manual/html_node/msgfmt-Invocation.html)
 - [https://docs.python.org/3/library/gettext.html](https://docs.python.org/3/library/gettext.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.po` | [hello.po](hello.po) verificato |
-| `.pot` | [hello.pot](variants/ext-pot-2e706f74/hello.pot) creato, verifiche pendenti |
+| `.po` | [hello.po](hello.po) verified |
+| `.pot` | [hello.pot](variants/ext-pot-2e706f74/hello.pot) created; verification pending |

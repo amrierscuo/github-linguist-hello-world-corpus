@@ -1,40 +1,40 @@
 # #120 Clarity
 
-Analizzare un contratto Clarity e chiamare localmente greeting, ottenendo la stringa ASCII Hello, World!.
+Analyze a Clarity contract and call locally greeting, getting the string ASCII Hello, World!.
 
-Tipo canonico: `programming`; `language_id`: `91493841`.
+Canonical type: `programming`; `language_id`: `91493841`.
 
-Toolchain prevista: Clarinet o @stacks/clarinet-sdk con simulatore Clarity. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Clarinet or @stacks/clarinet-sdk with Clarity simulator. The version actually tried, when available, is in the log.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: valore Clarity (string-ascii 13) uguale a `Hello, World!`, senza modifiche di stato.
+Expected result: Clarity value (string-ascii 13) equal to `Hello, World!`, without state modifications.
 
-Il contratto espone una funzione read-only; la verifica usa soltanto un simulatore locale e non pubblica un contratto su Stacks.
+The contract exposes a read-only function; the verification uses only a local simulator and does not publish a contract on Stacks.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain provata: Node.js 22.20.0 + @stacks/clarinet-sdk 3.24.1 + @stacks/transactions 7.6.0. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Tried toolchain: Node.js 22.20.0 + @stacks/clarinet-sdk 3.24.1 + @stacks/transactions 7.6.0. See [log](verification/verification.log).
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Clarity — define-read-only](https://docs.stacks.co/reference/clarity)
 - [Clarinet SDK — deployContract e callReadOnlyFn](https://docs.stacks.co/reference/clarinet-js-sdk/sdk-reference)
 
-Verifica automatica inclusa: `node verify.cjs`.
+Automatic verification included: `node verify.cjs`.
 
-Dipendenze riproducibili in una cartella di lavoro dedicata:
+Reproducible dependencies in a dedicated workbook:
 
 ```sh
 npm install --ignore-scripts --no-audit --no-fund @stacks/clarinet-sdk@3.24.1 @stacks/transactions@7.6.0
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.clar` | [hello.clar](hello.clar) verificato |
+| `.clar` | [hello.clar](hello.clar) verified |

@@ -1,23 +1,23 @@
-# 0589 — RMarkdown — `.qmd`
+# 0589: RMarkdown: `.qmd`
 
-Documento Quarto con cella R, distinto dal frontend RMarkdown.
+Document Fourth with cell R, distinct from the frontend RMarkdown.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.qmd`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 quarto render hello.qmd --output-dir work
 ```
 
-Risultato atteso: HTML con output Hello, World!.
+Expected result: HTML with Hello, World! output.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://quarto.org/docs/computations/r.html](https://quarto.org/docs/computations/r.html)

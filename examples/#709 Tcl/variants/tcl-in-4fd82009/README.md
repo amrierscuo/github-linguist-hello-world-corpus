@@ -1,23 +1,23 @@
-# 0709 — Tcl — `.tcl.in`
+# 0709: Tcl: `.tcl.in`
 
-Template Tcl statico senza placeholder: il suo testo resta Tcl valido.
+Static Tcl template without placeholder: its text remains valid Tcl.
 
-Provenienza: copia del file originale `examples/#709 Tcl/hello.tcl`.
+Origin: copy of the original `examples/#709 Tcl/hello.tcl` file.
 
 Artefatto principale: `hello.tcl.in`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 tclsh hello.tcl.in
 ```
 
-Risultato atteso: Hello, World! su stdout..
+Expected result: Hello, World! on stdout..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.tcl-lang.org/man/tcl8.6/TclCmd/puts.htm](https://www.tcl-lang.org/man/tcl8.6/TclCmd/puts.htm)

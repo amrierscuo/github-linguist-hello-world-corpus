@@ -1,33 +1,33 @@
 # #757 Volt
 
-Compilare un programma Volt con il modulo watt.io e stampare il saluto.
+Fill out a Volt program with the watt.io module and print your greeting.
 
-Tipo canonico `programming`, language_id `390`.
+Canonical type `programming`, language_id `390`.
 
-Toolchain prevista: Volt Volta compiler e Watt standard library.
+Suggested toolchain: Volt Volta compiler and Watt standard library.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 volta hello.volt -o hello
 ./hello
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Volt è il linguaggio D-like del progetto VoltLang, distinto da V e dai template Phalcon Volt.
+Volt is the D-like language of the VoltLang project, distinguished by V and Phalcon Volt templates.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Volta compiler e libreria Watt non disponibili.
+Initial state: created; syntax and behavioral verification pending. Volta compiler and Watt library not available.
 
-Fonti:
+Sources:
 
 - [Volt language](https://volt-lang.org/)
 - [Volta source](https://github.com/VoltLang/Volta)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.volt` | [hello.volt](hello.volt) creato, verifiche pendenti |
+| `.volt` | [hello.volt](hello.volt) created; verification pending |

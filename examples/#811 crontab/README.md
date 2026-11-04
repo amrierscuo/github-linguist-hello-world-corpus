@@ -1,29 +1,29 @@
 # #811 crontab
 
-Analizzare una riga crontab ed eseguire soltanto il suo comando nel fixture locale.
+Analyze a crontab line and run only its command in the local fixture.
 
 ## Toolchain
 
 CPython3.13.9; python-crontab3.4.0
 
-## Procedura
+## Procedure
 
 pip install python-crontab; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Schedule 0 9 * * * valida; comando emette Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il parser esistente legge orario e comando; il comando viene provato una volta. Nessun cron viene installato o pianificato.
+The existing parser reads time and command; the command is tried once. No cron is installed or planned.
 
-Verifica reale 2026-10-08T13:38:34.781824+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:38:34.781824+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://man7.org/linux/man-pages/man5/crontab.5.html](https://man7.org/linux/man-pages/man5/crontab.5.html)
 - [https://gitlab.com/doctormo/python-crontab](https://gitlab.com/doctormo/python-crontab)

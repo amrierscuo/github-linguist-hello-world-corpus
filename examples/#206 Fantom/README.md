@@ -2,47 +2,47 @@
 
 Voce canonica `Fantom`, tipo `programming`, language_id `110`.
 
-Compilare lo script Fantom Hello e concatenare il saluto nel metodo main.
+Fill out the script Fantom Hello and concatenate greeting in the main method.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Fantom JVM distribution — 1.0.83. Ambiente della prova: **Windows x64**.
+Official Fantom JVM distribution, 1.0.83. Test environment: **Windows x64**.
 
-Distribuzione portable Fantom 1.0.83 con JVM. La prova usa direttamente java -Dfan.home=<fantom> -cp <fantom>/lib/java/sys.jar fanx.tools.Fan hello.fan. Il log conserva il comando effettivo e l’hash del JAR.
+Portable distribution Fantom 1.0.83 with JVM. The test directly uses java -Dfan.home =<fantom> -cp <fantom>/ lib/java/sys.jar fanx.tools.Fan hello.fan. The log retains the actual command and the JARhash.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 fan hello.fan
 ```
 
-Risultato atteso: Exit 0; stdout esattamente Hello, World! seguito da newline.
+Exit 0; stdout exactly Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il comando -version Fantom restituisce codice 3 nella distribuzione usata, pur riportando la versione completa; l’esecuzione del sorgente termina 0 e produce il saluto esatto.
+The -version Fantom command returns 3 code in the distribution used, while reporting the full version; the output ends 0 and produces the exact greeting.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://fantom.org/](https://fantom.org/)
 - [https://github.com/fantom-lang/fantom/releases/tag/v1.0.83](https://github.com/fantom-lang/fantom/releases/tag/v1.0.83)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fan` | [hello.fan](hello.fan) verificato |
+| `.fan` | [hello.fan](hello.fan) verified |

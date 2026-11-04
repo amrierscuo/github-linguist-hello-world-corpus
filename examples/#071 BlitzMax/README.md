@@ -1,18 +1,18 @@
 # #071 BlitzMax
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Compilare un’applicazione console BlitzMax con BRL.StandardIO e stampare Hello, World!.
+Fill out a BlitzMax console application with BRL.StandardIO and print Hello, World!.
 
-SuperStrict abilita il controllo rigoroso; Framework BRL.StandardIO fornisce l’output console. Non sono necessarie dipendenze grafiche.
+SuperStrict enables strict checking. Framework BRL.StandardIO provides console output. No graphics dependencies are required.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 BlitzMax NG con bmk e modulo BRL.StandardIO; versione effettiva da registrare
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 bmk makeapp -t console -o hello hello.bmx
@@ -22,25 +22,25 @@ bmk makeapp -t console -o hello hello.bmx
 ./hello (su Windows: hello.exe)
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; nessun parser o runtime nativo è stato eseguito per questa voce.
+The source is documented; no native parser or runtime has been performed for this item.
 
-Impedimenti: BlitzMax NG/bmk non disponibile; compilazione ed esecuzione restano da verificare.
+Impedimenti: BlitzMax NG/bmk unavailable; compilazione ed esecuzione restano da verificare.
 
-## Fonti primarie
+## Primary sources
 
 - https://blitzmax.org/docs/en/setup/get_started/
 - https://blitzmax.org/docs/en/api/brl/brl.standardio/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bmx` | [hello.bmx](hello.bmx) creato, verifiche pendenti |
+| `.bmx` | [hello.bmx](hello.bmx) created; verification pending |

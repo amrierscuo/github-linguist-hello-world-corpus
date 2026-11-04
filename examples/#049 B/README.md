@@ -2,46 +2,46 @@
 
 Voce canonica: `B`, tipo `programming`, `language_id: 700792152`.
 
-Emettere i caratteri ASCII di Hello, World! uno per volta tramite la libreria putchar del linguaggio storico B.
+Enter the ASCII characters of Hello, World! one at a time via the putchar library of the historical language B.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-b — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+b, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede una toolchain del B storico di Ken Thompson e la sua libreria putchar. Nessuna toolchain B è stata trovata; non viene compilato come C.
+It requires a toolchain of Ken Thompson's historic B and his putchar library. No toolchain B has been found; it is not compiled as C.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 Compilatore storico B: compilare hello.b con la libreria che espone putchar; eseguire il programma risultante (comando specifico da registrare quando disponibile).
 ```
 
-Risultato atteso: Compilazione B riuscita; stdout Hello, World! seguito da newline.
+Expected result: successful B compilation; stdout Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-extrn dichiara la funzione esterna. La newline usa la convenzione B *n. Il programma evita assunzioni sulla disposizione packed delle stringhe B; le chiamate lavorano con singoli caratteri.
+extrn declares the external function. Newline uses the B*n convention. The program avoids assumptions on the packed layout of B strings; calls work with individual characters.
 
-Requisiti residui:
+Remaining requirements:
 
 - b toolchain not installed or not available in this isolated verification environment.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.bell-labs.com/usr/dmr/www/btut.pdf](https://www.bell-labs.com/usr/dmr/www/btut.pdf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.b` | [hello.b](hello.b) creato, verifiche pendenti |
+| `.b` | [hello.b](hello.b) created; verification pending |

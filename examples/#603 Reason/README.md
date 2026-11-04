@@ -2,47 +2,47 @@
 
 Voce canonica `Reason`, tipo `programming`, language_id `869538413`.
 
-Compilare Reason e invocare print_endline dal programma originale.
+Fill Reason and invoke print_endline from the original program.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Original BuckleScript ReScript/Reason compiler with standard library — BuckleScript 9.0.2 ( Using OCaml:4.06.1+BS ). Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Original BuckleScript ReScript/Reason compiler with standard library, BuckleScript 9.0.2 (Using OCaml: 4.06.1+BS ). Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Frontend Reason di BuckleScript 9.0.2 autentico.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 bsc -I /path/to/bs-platform/lib/ocaml -bs-package-name corpus-greeting -bs-package-output commonjs:. -o Hello.cmj Hello.re; node Hello.js
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il frontend .re distinto legge sintassi Reason con terminatori e compila a JS; Node esegue il risultato e stampa il saluto esatto.
+The frontend .re distinct law syntax Reason with terminators and compile to JS; Node performs the result and prints the exact greeting.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://reasonml.github.io/docs/en/quickstart-javascript](https://reasonml.github.io/docs/en/quickstart-javascript)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.re` | [Hello.re](Hello.re), [Hello.re](variants/rei-88fa759e/Hello.re) creato, verifiche pendenti |
-| `.rei` | [Hello.rei](variants/rei-88fa759e/Hello.rei) creato, verifiche pendenti |
+| `.re` | [Hello.re](Hello.re), [Hello.re](variants/rei-88fa759e/Hello.re) created; verification pending |
+| `.rei` | [Hello.rei](variants/rei-88fa759e/Hello.rei) created; verification pending |

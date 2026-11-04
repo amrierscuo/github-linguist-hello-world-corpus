@@ -1,29 +1,29 @@
 # #171 Dune
 
-Leggere un progetto Dune e costruire l’alias hello che esegue echo del saluto.
+Read a Dune project and build the alias hello that performs echo greeting.
 
 ## Toolchain
 
 Dune 3.14.0; OCaml 4.14.1
 
-## Comandi e procedura
+## Commands and procedure
 
 dune --version; ocamlc -version; dune build --display quiet @hello
 
-## Risultato atteso
+## Expected result
 
-Build exit 0; action echo scrive Hello, World! più newline.
+Build exit 0; action echo writes Hello, World! more newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-dune-project è il nome canonico riconosciuto dalla voce Linguist; dune contiene la regola di supporto. Anche una regola solo echo richiede a Dune un contesto OCaml reale. Build e dipendenze locali rimangono sotto work durante la verifica.
+dune-project is the canonical name recognized by Linguist; dunes contains the support rule. Also a rule only echo requires Dune a real OCaml context. Build and local dependencies remain under work during verification.
 
-Verifica effettiva del 2026-10-08T12:01:45.272622+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T12:01:45.272622+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://dune.readthedocs.io/en/stable/reference/dune-project/index.html](https://dune.readthedocs.io/en/stable/reference/dune-project/index.html)
 - [https://dune.readthedocs.io/en/stable/reference/dune/rule.html](https://dune.readthedocs.io/en/stable/reference/dune/rule.html)

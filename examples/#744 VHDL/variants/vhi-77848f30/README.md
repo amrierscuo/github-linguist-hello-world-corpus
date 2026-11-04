@@ -1,23 +1,23 @@
-# 0744 — VHDL — `.vhi`
+# 0744: VHDL: `.vhi`
 
-Template di istanziazione VHDL da inserire nell’architecture; non unità VHDL autonoma.
+VHDL instance template to be inserted in the storage system; not autonomous VHDL drive.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vhi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 ghdl: analyze greeting.vhdl and expanded main.vhdl; simulate main
 ```
 
-Risultato atteso: signal message assume Hello, World! e report note del chiamante.
+Expected result: signal message assumes Hello, World! and known report of the caller.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.amd.com/r/en-US/ug901-vivado-synthesis/Using-VHDL-Instantiation-Templates](https://docs.amd.com/r/en-US/ug901-vivado-synthesis/Using-VHDL-Instantiation-Templates)

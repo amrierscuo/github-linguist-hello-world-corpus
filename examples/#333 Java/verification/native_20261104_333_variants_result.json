@@ -1,0 +1,90 @@
+{
+  "ordinal": 333,
+  "name": "Java",
+  "source_hashes": {
+    "examples/#333 Java/variants/jav-220a15e8/hello.jav": "e8533e4508f5734f52cbfcf23d34a842fcce5d27f9d82b23ca2f4ff6b3bf1e32",
+    "examples/#333 Java/variants/jsh-e38b41dc/hello.jsh": "40c7451ecae69a32ad31a09b931c43d2ee15570efac83d6d59f9ed5f8771f238"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\333_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\333_variants",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\javac.exe",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\333_variants",
+      "exit_code": 0,
+      "stdout": "javac 21.0.12.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\javac.exe",
+        "-d",
+        ".",
+        "Hello.java"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\333_variants",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        ".",
+        "Hello"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\333_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\jshell.exe",
+        "--execution",
+        "local",
+        "--feedback",
+        "silent",
+        "-J-Djava.util.prefs.userRoot=${WORKSPACE}\\work\\native_audit_20261104\\333_variants\\prefs",
+        "hello.jsh"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\333_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Nov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences <init>\nWARNING: Could not open/create prefs root node Software\\JavaSoft\\Prefs at root 0xffffffff80000001. Windows RegCreateKeyEx(...) returned error code 5.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences WindowsRegOpenKey1\nWARNING: Trying to recreate Windows registry node Software\\JavaSoft\\Prefs at root 0xffffffff80000001.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences openKey\nWARNING: Could not open windows registry node Software\\JavaSoft\\Prefs at root 0xffffffff80000001. Windows RegOpenKey(...) returned error code 2.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences WindowsRegOpenKey1\nWARNING: Trying to recreate Windows registry node Software\\JavaSoft\\Prefs\\tool at root 0xffffffff80000001.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences openKey\nWARNING: Could not open windows registry node Software\\JavaSoft\\Prefs\\tool at root 0xffffffff80000001. Windows RegOpenKey(...) returned error code 2.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences WindowsRegOpenKey1\nWARNING: Trying to recreate Windows registry node Software\\JavaSoft\\Prefs\\tool\\/J/Shell at root 0xffffffff80000001.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences openKey\nWARNING: Could not open windows registry node Software\\JavaSoft\\Prefs\\tool\\/J/Shell at root 0xffffffff80000001. Windows RegOpenKey(...) returned error code 2.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences WindowsRegOpenKey1\nWARNING: Trying to recreate Windows registry node Software\\JavaSoft\\Prefs\\tool\\/J/Shell at root 0xffffffff80000001.\nNov 04, 2026 8:38:01 PM java.util.prefs.WindowsPreferences openKey\nWARNING: Could not open windows registry node Software\\JavaSoft\\Prefs\\tool\\/J/Shell at root 0xffffffff80000001. Windows RegOpenKey(...) returned error code 2.\nNov 04, 2026 8:38:02 PM java.util.prefs.WindowsPreferences WindowsRegOpenKey1\nWARNING: Trying to recreate Windows registry node Software\\JavaSoft\\Prefs\\tool\\/J/Shell at root 0xffffffff80000001.\nNov 04, 2026 8:38:02 PM java.util.prefs.WindowsPreferences openKey\nWARNING: Could not open windows registry node Software\\JavaSoft\\Prefs\\tool\\/J/Shell at root 0xffffffff80000001. Windows RegOpenKey(...) returned error code 2.\n"
+    }
+  ],
+  "description": "Copy .jav byte-identically as Hello.java, compile and execute; run the original .jsh as JShell input with local execution engine.",
+  "toolchain": "OpenJDK 21.0.12.1 (javac, java, JShell local execution)",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".jav": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".jsh": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "prior_verified_sources": {},
+  "verified_utc": "2026-11-04T19:38:02.680115+00:00",
+  "environment_note": "JShell local runtime returned exit 0 and the correct greeting; Windows Java Preferences warnings report denied access to registry, unrelated to source or execution.",
+  "recorded_test_source": "333_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

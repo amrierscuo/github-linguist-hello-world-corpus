@@ -1,42 +1,42 @@
 # #465 NetLinx
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire il codice startup NetLinx che scrive Hello, World! sul canale diagnostico0.
+Run the NetLinx startup code that writes Hello, World! on the diagnostic channel0.
 
-PROGRAM_NAME e DEFINE_START definiscono il programma. SEND_STRING0 usa una string expression NetLinx con il valore del saluto.
+PROGRAM_NAME and DEFINE_START define the program. SEND_STRING0 uses a NetLinx expression string with the value of greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 AMX NetLinx Studio/compiler e controller o runtime compatibile; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Compilare hello.axs ed eseguire DEFINE_START nel runtime NetLinx.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Canale diagnostico0 mostra Hello, World!.
+Diagnostic channel0 shows Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Compiler/runtime AMX non preparati; nessun controller o dispositivo collegato.
+Commitments: Compiler/runtime AMX unprepared; no controller or connected device.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.amx.com/ko/site_elements/amx-language-reference-guide-netlinx-programming-language
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.axs` | [hello.axs](hello.axs), [driver.axs](variants/axi-f70cf351/driver.axs) creato, verifiche pendenti |
-| `.axi` | [hello.axi](variants/axi-f70cf351/hello.axi) creato, verifiche pendenti |
+| `.axs` | [hello.axs](hello.axs), [driver.axs](variants/axi-f70cf351/driver.axs) created; verification pending |
+| `.axi` | [hello.axi](variants/axi-f70cf351/hello.axi) created; verification pending |

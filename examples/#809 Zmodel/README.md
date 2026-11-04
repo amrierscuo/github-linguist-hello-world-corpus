@@ -2,38 +2,38 @@
 
 Voce canonica e ordine originali di reference/languages.yml.
 
-Analizzare uno schema Zmodel con default del saluto.
+Analyze a Zmodel scheme with default greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-ZenStack 2.22.3; Prisma 6.19.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0. Prova eseguita su Windows x64. Le versioni effettive sono nel log.
+ZenStack 2.22.3; Prisma 6.19.0; Node.js 22.20.0; Python 3.13.9; SQLite 3.51.0. Test performed on Windows x64.
 
-Dalla cartella dell'esempio, installare dipendenze isolate e verificare:
+From the example folder, install isolated dependencies and check:
 
 ```text
 npm --prefix .tools install --save-exact zenstack@2.22.3 @zenstackhq/runtime@2.22.3; npm --prefix .tools-prisma install --save-exact prisma@6.19.0
 python verify.py .tools .tools-prisma
 ```
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto creato; sintassi verificata; semantica verificata.
+Artefatto created; syntax verified; behavior verified.
 
-Il parser ufficiale ZenStack carica lo schema originale e il suo PrismaSchemaGenerator produce lo schema Prisma. Prisma 6 valida e genera SQL; SQLite inserisce una riga senza message e verifica il saluto predefinito. La policy allow non è esercitata tramite un client ORM. Dipendenze e risultati sono isolati dalla cartella del campione.
+The official ZenStack parser uploads the original scheme and its PrismaSchemaGenerator produces the Prisma scheme. Prisma 6 valid and generates SQL; SQLite inserts a row without message and checks the default greeting. The policy allow is not exercised through a ORM client. Dependencies and results are isolated from the sample folder.
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
 Log reale: [verification/result.json](verification/result.json) con comandi, versioni, exit code, stdout/stderr e SHA-256. Nessun accesso a servizi cloud o database remoti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/zenstackhq/zenstack/tree/v2.22.3](https://github.com/zenstackhq/zenstack/tree/v2.22.3)
 - [https://zenstack.dev/docs/reference/cli](https://zenstack.dev/docs/reference/cli)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.zmodel` | [hello.zmodel](hello.zmodel) sintassi e semantica verificate |
+| `.zmodel` | [hello.zmodel](hello.zmodel) syntax and behavior verified |

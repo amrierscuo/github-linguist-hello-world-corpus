@@ -2,52 +2,52 @@
 
 Voce canonica: `CoNLL-U`, tipo `data`, `language_id: 421026389`.
 
-Rappresentare Hello, World! come quattro token CoNLL-U con un albero UD e ricostruire esattamente il testo usando SpaceAfter.
+Represent Hello, World! as four tokens CoNLL-U with a UD tree and rebuild exactly the text using SpaceAfter.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Original Universal Dependencies udtools validator and existing conllu reader — 0.2.8; 6.0.0. Ambiente della prova: **Windows x64**.
+Original Universal Dependencies udtools validator and existing conllu reader, 0.2.8; 6.0.0. Test environment: **Windows x64**.
 
-In un venv: python -m pip install udtools==0.2.8 conllu==6.0.0. udvalidate è l’entry point del pacchetto originale UniversalDependencies/tools. La prova locale invoca la medesima funzione udtools.cli.main dal Python isolato sotto work.
+In a venv: python -m pip install udtools== 0.2.8 conllu== 6.0.0. udvalidate is the entry point of the original UniversalDependencies/tools. package The local test invokes the same udtools.cli.main function from Python isolated under work.
 
-Comando/procedura dalla directory dell’esempio, salvo la directory build esplicitamente indicata:
+Comando/procedura from the example directory, except the build directory explicitly indicated:
 
 ```text
 udvalidate --lang en --level 3 hello.conllu; python verify.py hello.conllu
 ```
 
-Risultato atteso: Validatore originale: *** PASSED ***; ricostruzione Hello, World!; PASS delle asserzioni sul token World e sulla radice.
+Expected result: Original Validator: * ** PASSED ** *; Hello, World! reconstruction; PASS of the assertions on the World token and on the root.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il validatore originale verifica livello 3: formato, albero e annotazioni universali. Non si dichiara validazione linguistica completa dei livelli successivi. verify.py usa il parser conllu esistente e controlla detokenizzazione, radice e vocative; le annotazioni sono un piccolo esempio didattico originale, non una treebank esterna.
+The original validator tests 3: format, tree and universal annotations. It does not declare complete linguistic validation of the successive levels. verify.py uses the existing parser conllu and controls detokenization, root and vocations; the annotations are a small original didactic example, not an external treebank.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-versioni/toolchain e SHA-256 degli artefatti. La proprietà `path_normalization` documenta
-le sostituzioni dei percorsi locali. `<corpus>` identifica i file relativi inclusi nel
-corpus finale, che sono stati verificati prima nella directory di staging. I byte dei
-sorgenti restano quelli identificati dai checksum. I soli probe di disponibilità degli
-strumenti non attestano parsing o esecuzione. Dipendenze e prodotti compilati restano
-nella directory di lavoro e non sono inclusi nel corpus.
+toolchain versions and SHA-256 values for the artifacts. The `path_normalization` property documents
+local route replacements. `<corpus>` identifies the relative files included in
+final corpus, which were first verified in the staging directory.
+sources remain those identified by checksums. The only offspring of availability
+instruments do not attest parsing or execution.
+in the work directory and are not included in the corpus.
 
-## Fonti primarie
+## Primary sources
 
 - [https://universaldependencies.org/format.html](https://universaldependencies.org/format.html)
 - [https://github.com/UniversalDependencies/tools/tree/master/udtools](https://github.com/UniversalDependencies/tools/tree/master/udtools)
 - [https://universaldependencies.org/u/dep/vocative.html](https://universaldependencies.org/u/dep/vocative.html)
 - [https://github.com/EmilStenstrom/conllu](https://github.com/EmilStenstrom/conllu)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.conllu` | [hello.conllu](hello.conllu) verificato |
-| `.conll` | [hello.conll](variants/ext-conll-2e636f6e6c6c/hello.conll) creato, verifiche pendenti |
+| `.conllu` | [hello.conllu](hello.conllu) verified |
+| `.conll` | [hello.conll](variants/ext-conll-2e636f6e6c6c/hello.conll) created; verification pending |

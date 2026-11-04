@@ -2,47 +2,47 @@
 
 Voce canonica `Fennel`, tipo `programming`, language_id `239946126`.
 
-Compilare un programma Fennel in Lua e concatenare/stampare il destinatario.
+Fill out a Fennel program in Lua and concatenare/stampare the recipient.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Official Fennel compiler/interpreter CLI with Lua 5.4 — Fennel 1.6.0; Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Compiler/CLI Fennel ufficiale 1.6.0 e Lua 5.4.6. fennel-1.6.0 è lo script compiler originale, posto in una directory strumenti esterna al corpus.
+Compiler/CLI Fennel official 1.6.0 and Lua 5.4.6. fennel-1.6.0 is the original compiler script, placed in an instrument directory external to the corpus.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 lua5.4 fennel-1.6.0 --compile hello.fnl; lua5.4 fennel-1.6.0 hello.fnl
 ```
 
-Risultato atteso: Compilazione riuscita; esecuzione exit 0 e saluto esatto.
+Expected result: Successful Compilation; execution exit 0 and exact greeting.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-La prima invocazione produce il vero Lua compilato; la seconda esegue lo stesso sorgente con il runtime autentico. I checksum di compiler e interprete sono nel log.
+The first invocation produces the real Lua compiled; the second one performs the same source with the authentic runtime.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://fennel-lang.org/](https://fennel-lang.org/)
 - [https://fennel-lang.org/downloads/fennel-1.6.0](https://fennel-lang.org/downloads/fennel-1.6.0)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fnl` | [hello.fnl](hello.fnl) verificato |
+| `.fnl` | [hello.fnl](hello.fnl) verified |

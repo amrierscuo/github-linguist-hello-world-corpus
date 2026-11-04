@@ -1,46 +1,46 @@
 # #520 PLSQL
 
-Eseguire un blocco Oracle PL/SQL e leggere il buffer DBMS_OUTPUT.
+Perform an Oracle PL/SQL block and read the DBMS_OUTPUT buffer.
 
-Tipo canonico `programming`, language_id `273`.
+Canonical type `programming`, language_id `273`.
 
-Toolchain prevista: Oracle Database e SQL*Plus.
+Suggested toolchain: Oracle Database and SQL *Plus.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 sqlplus <connessione-di-prova> @hello.sql
 ```
 
-Risultato atteso: DBMS_OUTPUT contiene Hello, World!.
+Expected result: DBMS_OUTPUT contains Hello, World!.
 
-SET SERVEROUTPUT è una direttiva SQL*Plus; non sono necessarie tabelle o mutazioni di dati.
+SET SERVEROUTPUT is a SQL *Plus directive; no tables or data mutations are required.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Oracle Database di prova e client SQL*Plus non disponibili.
+Initial state: created; syntax and behavioral verification pending. Oracle Test database and SQL*Plus clients not available.
 
-Fonti:
+Sources:
 
 - [Oracle DBMS_OUTPUT](https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/DBMS_OUTPUT.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pls` | [hello.pls](variants/pls-3dffc841/hello.pls) creato, verifiche pendenti |
-| `.bdy` | [hello.bdy](variants/bdy-4c34a409/hello.bdy) creato, verifiche pendenti |
-| `.ddl` | [hello.ddl](variants/ddl-8bc7bf69/hello.ddl) creato, verifiche pendenti |
-| `.fnc` | [hello.fnc](variants/fnc-45334aa2/hello.fnc) creato, verifiche pendenti |
-| `.pck` | [hello.pck](variants/pck-1454aec3/hello.pck) creato, verifiche pendenti |
-| `.pkb` | [hello.pkb](variants/pkb-3cd1ab70/hello.pkb) creato, verifiche pendenti |
-| `.pks` | [hello.pks](variants/pks-3b8251b6/hello.pks) creato, verifiche pendenti |
-| `.plb` | artefatto da generare Output del PL/SQL wrap utility, non sorgente testuale ordinario. Il wrapper Oracle originale non è disponibile: non si fabbrica una sequenza wrapped. |
-| `.plsql` | [hello.plsql](variants/plsql-b119d779/hello.plsql) creato, verifiche pendenti |
-| `.prc` | [hello.prc](variants/prc-8feafefc/hello.prc) creato, verifiche pendenti |
-| `.spc` | [hello.spc](variants/spc-3e58c266/hello.spc) creato, verifiche pendenti |
-| `.sql` | [hello.sql](hello.sql), [spec.sql](variants/bdy-4c34a409/spec.sql), [spec.sql](variants/pkb-3cd1ab70/spec.sql), [body.sql](variants/pks-3b8251b6/body.sql), [body.sql](variants/spc-3e58c266/body.sql), [spec.sql](variants/tpb-372a8945/spec.sql), [body.sql](variants/tps-599a8ac3/body.sql) creato, verifiche pendenti |
-| `.tpb` | [hello.tpb](variants/tpb-372a8945/hello.tpb) creato, verifiche pendenti |
-| `.tps` | [hello.tps](variants/tps-599a8ac3/hello.tps) creato, verifiche pendenti |
-| `.trg` | [hello.trg](variants/trg-cb798897/hello.trg) creato, verifiche pendenti |
-| `.vw` | [hello.vw](variants/vw-2cbbc276/hello.vw) creato, verifiche pendenti |
+| `.pls` | [hello.pls](variants/pls-3dffc841/hello.pls) created; verification pending |
+| `.bdy` | [hello.bdy](variants/bdy-4c34a409/hello.bdy) created; verification pending |
+| `.ddl` | [hello.ddl](variants/ddl-8bc7bf69/hello.ddl) created; verification pending |
+| `.fnc` | [hello.fnc](variants/fnc-45334aa2/hello.fnc) created; verification pending |
+| `.pck` | [hello.pck](variants/pck-1454aec3/hello.pck) created; verification pending |
+| `.pkb` | [hello.pkb](variants/pkb-3cd1ab70/hello.pkb) created; verification pending |
+| `.pks` | [hello.pks](variants/pks-3b8251b6/hello.pks) created; verification pending |
+| `.plb` | artifact to generate PL/SQL wrap utility output, not ordinary text source. The original Oracle wrapper is not available: no wrapped sequence is manufactured. |
+| `.plsql` | [hello.plsql](variants/plsql-b119d779/hello.plsql) created; verification pending |
+| `.prc` | [hello.prc](variants/prc-8feafefc/hello.prc) created; verification pending |
+| `.spc` | [hello.spc](variants/spc-3e58c266/hello.spc) created; verification pending |
+| `.sql` | [hello.sql](hello.sql), [spec.sql](variants/bdy-4c34a409/spec.sql), [spec.sql](variants/pkb-3cd1ab70/spec.sql), [body.sql](variants/pks-3b8251b6/body.sql), [body.sql](variants/spc-3e58c266/body.sql), [spec.sql](variants/tpb-372a8945/spec.sql), [body.sql](variants/tps-599a8ac3/body.sql) created; verification pending |
+| `.tpb` | [hello.tpb](variants/tpb-372a8945/hello.tpb) created; verification pending |
+| `.tps` | [hello.tps](variants/tps-599a8ac3/hello.tps) created; verification pending |
+| `.trg` | [hello.trg](variants/trg-cb798897/hello.trg) created; verification pending |
+| `.vw` | [hello.vw](variants/vw-2cbbc276/hello.vw) created; verification pending |

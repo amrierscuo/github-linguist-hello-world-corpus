@@ -1,0 +1,73 @@
+{
+  "ordinal": 285,
+  "name": "HTML+Razor",
+  "source_hashes": {
+    "examples/#285 HTML+Razor/hello.cshtml": "bfb3db1102b6f95c10d79d644a52390b325cfce89272ba62be38b6aa9a5267be",
+    "examples/#285 HTML+Razor/variants/razor-c914e96c/Hello.razor": "7e37c225ae71b2b827243c4ace306420be08d7990f782e0d3b8ed74167b9d343"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\RazorHarness",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\dotnet.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\RazorHarness",
+      "exit_code": 0,
+      "stdout": "8.0.318\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\dotnet.exe",
+        "--list-runtimes"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\RazorHarness",
+      "exit_code": 0,
+      "stdout": "Microsoft.AspNetCore.App 8.0.21 [C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\shared\\Microsoft.AspNetCore.App]\nMicrosoft.NETCore.App 8.0.21 [C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\shared\\Microsoft.NETCore.App]\nMicrosoft.WindowsDesktop.App 8.0.21 [C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\shared\\Microsoft.WindowsDesktop.App]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\dotnet.exe",
+        "build",
+        "--disable-build-servers",
+        "-c",
+        "Release",
+        "-p:RestoreConfigFile=NuGet.Config"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\RazorHarness",
+      "exit_code": 0,
+      "stdout": "  Determining projects to restore...\n  All projects are up-to-date for restore.\n  RazorHarness -> ${WORKSPACE}\\work\\native_audit_20261104\\RazorHarness\\bin\\Release\\net8.0\\RazorHarness.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:03.51\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.8f1\\Editor\\Data\\DotNetSdk\\dotnet.exe",
+        "bin/Release/net8.0/RazorHarness.dll"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\RazorHarness",
+      "exit_code": 0,
+      "stdout": "cshtml:<p>Hello, World!</p>\nrazor:<p>Hello, World!</p>\n",
+      "stderr": ""
+    }
+  ],
+  "description": "MVC ICompositeViewEngine render of unchanged .cshtml and Blazor HtmlRenderer render of unchanged .razor; no server, external source, or package used.",
+  "toolchain": ".NET SDK 8.0.318 / Microsoft.AspNetCore.App 8.0.21 (installed Unity DotNetSdk), Windows",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "extensions": {
+    ".cshtml": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".razor": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "verified_utc": "2026-11-04T19:33:13.903864+00:00",
+  "recorded_test_source": "html_razor_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

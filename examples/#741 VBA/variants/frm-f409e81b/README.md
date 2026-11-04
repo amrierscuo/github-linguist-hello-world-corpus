@@ -1,21 +1,21 @@
-# 0741 — VBA — `.frm`
+# 0741: VBA: `.frm`
 
-Suffisso canonico .frm del linguaggio VBA.
+Canon suffix .frm of VBA language.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Nessun comando eseguito; occorre il generatore/importatore descritto nelle fonti.
 ```
 
-Risultato atteso: un artefatto genuino esportato/generato dal relativo tool originale.
+Expected result: a genuine artifact esportato/generato from its original tool.
 
-Stato: bloccato; nessun artefatto simulato; sintassi e semantica non verificate.
+Status: blocked; no simulated artifact; syntax and behavior not verified.
 
 Un UserForm VBA esportato normalmente richiede il corrispondente stream binario .frx/OleObjectBlob generato da Office. Non viene inventato quel payload.
 
-Fonti primarie:
+Primary sources:
 
 - [https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/userform-object](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/userform-object)

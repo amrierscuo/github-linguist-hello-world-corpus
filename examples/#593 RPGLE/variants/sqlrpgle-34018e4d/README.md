@@ -1,23 +1,23 @@
-# 0593 — RPGLE — `.sqlrpgle`
+# 0593: RPGLE: `.sqlrpgle`
 
 RPG free form con embedded SQL; necessita SQL precompiler IBM i.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sqlrpgle`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 IBM i CRTSQLRPGI OBJ(TESTLIB/HELLO) SRCSTMF(hello.sqlrpgle); CALL TESTLIB/HELLO
 ```
 
-Risultato atteso: display Hello, World!.
+Expected result: Hello, World! display.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.ibm.com/docs/en/i/7.5.0?topic=applications-coding-sql-statements-in-ile-rpg](https://www.ibm.com/docs/en/i/7.5.0?topic=applications-coding-sql-statements-in-ile-rpg)

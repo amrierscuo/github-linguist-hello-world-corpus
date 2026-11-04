@@ -1,36 +1,36 @@
 # #655 ShaderLab
 
-Caricare uno shader ShaderLab con proprieta del saluto nel material inspector.
+Load a ShaderLab shader with greeting property in the material inspector.
 
 ## Toolchain
 
 Unity ShaderLab compiler/editor
 
-## Procedura
+## Procedure
 
-Importare hello.shader in un progetto Unity compatibile con shader fixed-function; creare un materiale e controllare la proprieta.
+Import hello.shader into a Unity project compatible with shader fixed-function; create a material and control the property.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il goal di formato è la proprieta nominata Hello, World! e il pass che ne consuma il colore, non testo visibile nel rendering.
+The format goal is the property named Hello, World! and the pass that consumes the color, not visible text in the rendering.
 
-Requisiti residui:
-- Unity editor/shader compiler non disponibile; compatibilità fixed-function da provare.
+Remaining requirements:
+- Unity editor/shader compiler unavailable; fixed-function compatibility to try.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.unity3d.com/Manual/SL-Properties.html](https://docs.unity3d.com/Manual/SL-Properties.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.shader` | [hello.shader](hello.shader) creato, verifiche pendenti |
+| `.shader` | [hello.shader](hello.shader) created; verification pending |

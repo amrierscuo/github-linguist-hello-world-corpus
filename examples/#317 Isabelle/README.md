@@ -1,37 +1,37 @@
 # #317 Isabelle
 
-Definire greeting in Isabelle/HOL, dimostrarne il valore e valutarlo.
+Define greeting in Isabelle/HOL, demonstrate its value and evaluate it.
 
 ## Toolchain
 
 Isabelle/HOL; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-isabelle build -D . Hello; oppure aprire Hello.thy in Isabelle/jEdit e verificare value greeting
+isabelle build -D. Hello; or open Hello.thy in Isabelle/jEdit and check value greeting
 
-## Risultato atteso
+## Expected result
 
 Teoria accettata, lemma greeting_correct dimostrato; value restituisce la stringa Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-L’esempio originale usa una stringa HOL, definizione, prova con simp e comando value; il goal è una valutazione/prova, non output console di un programma generico. ROOT fornisce il contesto.
+The original example uses a HOL string, definition, test with simp and value command; the goal is a valutazione/prova, not console output of a generic program. ROOT provides context.
 
-Requisiti residui:
-- Isabelle e immagine HOL non disponibili; type check/proof/value pending.
+Remaining requirements:
+- Isabelle and HOL image not available; type check/proof/value pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://isabelle.in.tum.de/doc/tutorial.pdf](https://isabelle.in.tum.de/doc/tutorial.pdf)
 - [https://isabelle.in.tum.de/doc/isar-ref.pdf](https://isabelle.in.tum.de/doc/isar-ref.pdf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.thy` | [Hello.thy](Hello.thy) creato, verifiche pendenti |
+| `.thy` | [Hello.thy](Hello.thy) created; verification pending |

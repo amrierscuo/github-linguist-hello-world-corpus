@@ -1,34 +1,34 @@
 # #338 JavaScript+ERB
 
-Renderizzare JavaScript+ERB con Ruby e poi eseguire il JavaScript generato in Node.
+Render JavaScript+ ERB with Ruby and then execute the JavaScript generated in Node.
 
-Tipo canonico `programming`, language_id `914318960`.
+Canonical type `programming`, language_id `914318960`.
 
-Toolchain prevista: Ruby ERB standard library e Node.js 22.
+Suggested toolchain: Ruby ERB standard library and Node.js 22.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ruby verify.rb
 ```
 
-Risultato atteso: stdout Hello, World! e LF, entrambi i runtime terminano con successo.
+Expected result: stdout Hello, World! and LF, both runtimes successfully finish.
 
-Il saluto è inserito come literal quotato da Ruby String.dump; il template non è trattato come JavaScript puro.
+Greeting is included as a literal quoted by Ruby String.dump; the template is not treated as pure JavaScript.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Ruby 3.2.3 ERB + Node.js 22.20.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Ruby 3.2.3 ERB + Node.js 22.20.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Ruby — ERB](https://docs.ruby-lang.org/en/master/ERB.html)
 - [Node.js — console](https://nodejs.org/api/console.html)
 
-Ruby ERB viene dalla libreria standard Ruby 3.2.3. NODE_BINARY può indicare un percorso Node completo; il checker lo passa a Open3 come argv, preservando gli spazi nel percorso.
+Ruby ERB comes from the standard Ruby 3.2.3 library. NODE_BINARY can indicate a complete Node path; the checker passes it to Open3 as argv, preserving the spaces in the path.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.js.erb` | [hello.js.erb](hello.js.erb) verificato |
+| `.js.erb` | [hello.js.erb](hello.js.erb) verified |

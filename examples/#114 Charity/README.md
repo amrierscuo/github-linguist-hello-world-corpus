@@ -1,21 +1,21 @@
 # #114 Charity
 
-`hello.ch` conserva la bozza proposta dall'utente. **Non è un esempio Charity convalidato**: la dichiarazione `def hello : unit` e la primitiva `putStrLn` restano da confermare con il manuale e l'interprete Charity originali.
+`hello.ch` retains the draft proposed by the user. **Non è un esempio Charity convalidato**: the `def hello : unit` statement and the primitive `putStrLn` remain to be confirmed with the original manual and the original Charity interpreter.
 
-Artefatto testuale creato come bozza; sintassi e semantica non verificate. La presenza dell'estensione `.ch` non dimostra che il programma sia accettato dal linguaggio.
+Textual artifact created as draft; syntax and behavior not verified. The presence of the `.ch` extension does not show that the program is accepted by language.
 
-Procedura: recuperare un interprete Charity compatibile, adattare la definizione alla grammatica effettiva e controllare l'eventuale operazione di output. Il risultato desiderato è `Hello, World!`.
+Procedure: obtain a compatible Charity interpreter, adapt the definition to its actual grammar, and check whether the output operation works. The desired result is `Hello, World!`.
 
-## Provenienza
+## Provenance
 
-- Snippet fornito dall'utente in questa chat.
-- Campione del riferimento Linguist: https://github.com/github-linguist/linguist/blob/main/samples/Charity/example.ch
-- Sito accademico dell'autore: https://cspages.ucalgary.ca/~robin/
+- Snippet provided by the user in this chat.
+- Reference sample Linguist: https://github.com/github-linguist/linguist/blob/main/samples/Charity/example.ch
+- Author's Academic Site: https://cspages.ucalgary.ca/~robin/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ch` | [hello.ch](hello.ch) creato, verifiche pendenti |
+| `.ch` | [hello.ch](hello.ch) created; verification pending |

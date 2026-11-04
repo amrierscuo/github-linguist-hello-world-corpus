@@ -1,36 +1,36 @@
 # #722 Toit
 
-Eseguire il programma Toit originale.
+Run the original Toit program.
 
 ## Toolchain
 
 Toit compiler/runtime
 
-## Procedura
+## Procedure
 
 toit run hello.toit
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- Runtime Toit non predisposto; sintassi/versione CLI da verificare.
+Remaining requirements:
+- Runtime Toit not predisposed; sintassi/versione CLI to check.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.toit.io/language/](https://docs.toit.io/language/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.toit` | [hello.toit](hello.toit) creato, verifiche pendenti |
+| `.toit` | [hello.toit](hello.toit) created; verification pending |

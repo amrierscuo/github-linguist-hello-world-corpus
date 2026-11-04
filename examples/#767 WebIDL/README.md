@@ -2,47 +2,47 @@
 
 Voce canonica `WebIDL`, tipo `programming`, language_id `395`.
 
-Contratto WebIDL originale: enum GreetingText con valore `Hello, World!` e namespace Greeting esposto a Window, con metodo hello() che restituisce tale enum.
+Original WebIDL Contract: enum GreetingText with `Hello, World!` value and namespace Greeting exposed to Window, with hello() method that returns that enum.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-webidl2 / Node.js 22.20.0 — 24.5.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+webidl2 / Node.js 22.20.0, 24.5.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Node.js 22.20.0 e webidl2, versione nel log. `<prefisso-npm>/node_modules/webidl2` deve essere il pacchetto originale.
+Node.js 22.20.0 and webidl2, version in the log. `<prefisso-npm>/node_modules/webidl2` must be the original package.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 node verify.cjs <prefisso-npm>
 ```
 
-Risultato atteso: Hello, World! e PASS per enum e firma del contratto.
+Expected result: Hello, World! and PASS for enum and signing of the contract.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-webidl2 esegue parsing e validazione. Il driver controlla enum, valore, namespace e tipo restituito. La semantica dichiarata è il contratto IDL verificato; nessuna implementazione di binding browser viene affermata.
+webidl2 performs parsing and validation. The driver controls enum, value, namespace and type returned. The declared behavior is the IDL verified contract; no binding browser implementation is established.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://webidl.spec.whatwg.org/](https://webidl.spec.whatwg.org/)
 - [https://github.com/w3c/webidl2.js](https://github.com/w3c/webidl2.js)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.webidl` | [hello.webidl](hello.webidl) verificato |
+| `.webidl` | [hello.webidl](hello.webidl) verified |

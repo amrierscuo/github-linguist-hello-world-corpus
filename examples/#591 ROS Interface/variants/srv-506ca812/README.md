@@ -1,23 +1,23 @@
-# 0591 — ROS Interface — `.srv`
+# 0591: ROS Interface: `.srv`
 
 Interfaccia ROS service con richiesta e risposta separate da ---.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.srv`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 rosidl_adapter.parser.parse_service_file("corpus_interfaces", Path("hello.srv"))
 ```
 
-Risultato atteso: campi request.audience/response.message; un server reale potrebbe restituire Hello, World!.
+Expected result: request.audience / response.message fields; a real server could return Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://design.ros2.org/articles/interface_definition.html](https://design.ros2.org/articles/interface_definition.html)

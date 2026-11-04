@@ -1,38 +1,38 @@
 # #245 Gherkin
 
-Eseguire uno scenario Gherkin che compone il saluto per il destinatario World.
+Execute a Gherkin scenario that composes greeting to the World recipient.
 
 ## Toolchain
 
 Node.js v22.20.0; official Cucumber.js 13.3.0
 
-## Comandi e procedura
+## Commands and procedure
 
 npm install; npx cucumber-js --require steps.cjs hello.feature
 
-## Risultato atteso
+## Expected result
 
-Una scenario e tre step passed; Then confronta esattamente Hello, World!.
+A scenario and three step passed; Then compares exactly Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-steps.cjs è la glue necessaria alla semantica Gherkin. Il runner Cucumber originale interpreta Given/When/Then e il report JSON reale attesta tre step passed; nessun parser personalizzato.
+steps.cjs is the glue required for behavior Gherkin. The original Cucumber runner interprets Given/When/Then and the JSON real report attestes three step passed; no custom parser.
 
-Verifica effettiva del 2026-10-08T12:17:26.464731+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:17:26.464731+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://cucumber.io/docs/gherkin/reference/](https://cucumber.io/docs/gherkin/reference/)
 - [https://github.com/cucumber/cucumber-js](https://github.com/cucumber/cucumber-js)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.feature` | [hello.feature](hello.feature) verificato |
-| `.story` | [hello.story](variants/ext-story-2e73746f7279/hello.story) creato, verifiche pendenti |
+| `.feature` | [hello.feature](hello.feature) verified |
+| `.story` | [hello.story](variants/ext-story-2e73746f7279/hello.story) created; verification pending |

@@ -1,36 +1,36 @@
 # #248 Git Config
 
-Leggere con Git una configurazione corpus.greeting che contiene Hello, World!.
+Read with Git a corpus.greeting configuration that contains Hello, World!.
 
 ## Toolchain
 
 git version 2.51.0.windows.1
 
-## Comandi e procedura
+## Commands and procedure
 
 python verify.py 248 /percorso/nuovo-repo-temporaneo git
 
-## Risultato atteso
+## Expected result
 
-git config --file .gitconfig --get corpus.greeting restituisce il saluto più newline.
+git config --file .gitconfig --get corpus.greeting returns the most newline greeting.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La sezione corpus è metadata illustrativo letto dal parser Git originale. Il flag --file seleziona il file incluso; nessuna configurazione globale viene cambiata.
+The corpus section is an illustrative metadata read by the original Git parser. The --file flag selects the file included; no overall configuration is changed.
 
-Verifica effettiva del 2026-10-08T12:15:30.771284+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:15:30.771284+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://git-scm.com/docs/git-config](https://git-scm.com/docs/git-config)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gitconfig` | [.gitconfig](.gitconfig) verificato |
+| `.gitconfig` | [.gitconfig](.gitconfig) verified |

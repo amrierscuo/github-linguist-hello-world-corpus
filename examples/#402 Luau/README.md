@@ -1,12 +1,12 @@
 # #402 Luau
 
-Controllare i tipi Luau e stampare Hello, World! da una variabile string.
+Check Luau types and print Hello, World! from a string variable.
 
-Tipo canonico `programming`, language_id `365050359`.
+Canonical type `programming`, language_id `365050359`.
 
-Toolchain prevista: Luau CLI e luau-analyze ufficiali.
+Suggested toolchain: Luau CLI and official luau-analyze.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 luau-analyze hello.luau
@@ -15,19 +15,19 @@ luau hello.luau
 
 Risultato atteso: analisi senza errori; stdout Hello, World! e LF.
 
-Luau è verificato col suo analizzatore/runtime, separatamente da Lua; non usa API Roblox.
+Luau is verified with its analizzatore/runtime, separately from Lua; it does not use API Roblox.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Luau official release 0.741 Windows x64. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Luau official release 0.741 Windows x64. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Luau — sintassi](https://luau.org/syntax)
 - [Luau — release ufficiali](https://github.com/luau-lang/luau/releases)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.luau` | [hello.luau](hello.luau) verificato |
+| `.luau` | [hello.luau](hello.luau) verified |

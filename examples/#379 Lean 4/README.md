@@ -1,18 +1,18 @@
 # #379 Lean 4
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Verificare il teorema greeting_length in Lean4 e stampare Hello, World!.
+Check the greeting_length theorem in Lean4 and print Hello, World!.
 
-Usa String, IO Unit e il tactic decide di Lean4. La distribuzione4.0.0 viene tenuta distinta dal compiler3.51.1; il teorema e main sono verificati dal rispettivo ambiente originale.
+Use String, IO Unit and the tactic decides of Lean4. The distribuzione4.0.0 is held separate from the compiler3.51.1; the theorem and main are verified by the respective original environment.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Lean4.0.0 ufficiale Linux
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 lean hello.lean
@@ -22,23 +22,23 @@ lean hello.lean
 lean --run hello.lean
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il kernel accetta greeting.length=13; stdout Hello, World! seguito da newline.
+The kernel accepts greeting.length = 13; stdout Hello, World! followed by newline.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://lean-lang.org/documentation/
 - https://github.com/leanprover/lean4/releases/tag/v4.0.0
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lean` | [hello.lean](hello.lean) verificato |
+| `.lean` | [hello.lean](hello.lean) verified |

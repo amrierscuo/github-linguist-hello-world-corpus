@@ -1,28 +1,28 @@
 # #571 Python console
 
-Eseguire un transcript Python console con doctest.
+Run a Python console transcript with doctest.
 
 ## Toolchain
 
 CPython Python 3.13.9
 
-## Procedura
+## Procedure
 
 python verify.py
 
-## Risultato atteso
+## Expected result
 
-2 test passed; Hello, World! corrisponde all’output atteso.
+2 test passed; Hello, World! corresponds to the expected output.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-doctest originale legge prompt >>> ed esegue entrambe le istruzioni, confrontando l’output.
+doctest original law prompt >>>>> and performs both instructions, comparing output.
 
-Verifica reale 2026-10-08T13:17:20.095478+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:17:20.095478+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.python.org/3/library/doctest.html](https://docs.python.org/3/library/doctest.html)

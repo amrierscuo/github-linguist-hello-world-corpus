@@ -1,32 +1,32 @@
 # #430 Microsoft Visual Studio Solution
 
-Interpretare una solution Visual Studio con MSBuild e compilare il progetto console referenziato.
+Interpret a Visual Studio solution with MSBuild and fill out the referencing console project.
 
-Tipo canonico `data`, language_id `849523096`.
+Canonical type `data`, language_id `849523096`.
 
-Toolchain prevista: MSBuild .NET Framework 4.x e C# compiler.
+Suggested toolchain: MSBuild .NET Framework 4.x and C# compiler.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 MSBuild.exe Hello.sln /t:Build /p:Configuration=Debug
 build/Hello.exe
 ```
 
-Risultato atteso: solution build riuscita; stdout Hello, World! e newline.
+Expected result: solution build successful; stdout Hello, World! and newline.
 
-Il formato è una solution minimale compatibile con MSBuild legacy. I GUID sono identificatori originali del fixture.
+The format is a minimal solution compatible with MSBuild legacy. The GUID are original fixture identifiers.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: MSBuild .NET Framework 4.8 native compiler. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: MSBuild .NET Framework 4.8 native compiler. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Microsoft — file solution .sln](https://learn.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sln` | [Hello.sln](Hello.sln) verificato |
+| `.sln` | [Hello.sln](Hello.sln) verified |

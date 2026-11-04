@@ -1,18 +1,18 @@
 # #472 Nim
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare Nim e stampare Hello, World!.
+Fill in Nim and print Hello, World!.
 
 let lega una stringa, & concatena e echo effettua l’IO. Il compiler originale esegue parsing/typecheck e produce il programma C compilato da GCC; binario e cache restano in work.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Nim1.6.14 Ubuntu, backend C/GCC
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 nim c --out:hello hello.nim
@@ -22,26 +22,26 @@ nim c --out:hello hello.nim
 ./hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://nim-lang.org/docs/tut1.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nim` | [hello.nim](hello.nim), [hello.nim](variants/nim-cfg-a023dc1f/hello.nim) creato, verifiche pendenti |
-| `.nim.cfg` | [hello.nim.cfg](variants/nim-cfg-a023dc1f/hello.nim.cfg) creato, verifiche pendenti |
-| `.nimble` | [hello.nimble](variants/nimble-ba115bce/hello.nimble) creato, verifiche pendenti |
-| `.nimrod` | [hello.nimrod](variants/nimrod-b772c342/hello.nimrod) creato, verifiche pendenti |
-| `.nims` | [hello.nims](variants/nims-27124d6b/hello.nims) creato, verifiche pendenti |
+| `.nim` | [hello.nim](hello.nim), [hello.nim](variants/nim-cfg-a023dc1f/hello.nim) created; verification pending |
+| `.nim.cfg` | [hello.nim.cfg](variants/nim-cfg-a023dc1f/hello.nim.cfg) created; verification pending |
+| `.nimble` | [hello.nimble](variants/nimble-ba115bce/hello.nimble) created; verification pending |
+| `.nimrod` | [hello.nimrod](variants/nimrod-b772c342/hello.nimrod) created; verification pending |
+| `.nims` | [hello.nims](variants/nims-27124d6b/hello.nims) created; verification pending |

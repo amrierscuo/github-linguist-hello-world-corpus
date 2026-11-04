@@ -1,37 +1,37 @@
-# 0532 — Perl: `.plx`
+# 0532: Perl: `.plx`
 
-Ruolo: Alias di estensione per lo stesso formato testuale del sorgente principale.
+Role: Alias extension for the same text format as the main source.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#532 Perl/hello.pl.
+Origin: Byte-identical copy of the original corpus source: examples/#532 Perl/hello.pl.
 
-Toolchain richiesta: Authentic Perl interpreter — This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Authentic Perl interpreter, This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Usare la toolchain del README principale sul file hello.plx; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `true`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `true`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Nessun impedimento per l’ambito effettivamente verificato.
+- No impediment for the scope actually verified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.plx`: `8282ea45dea2901f533f4afb329f4fb75983a128618abd230e065601b281fb4d`
 
-Fonti primarie:
+Primary sources:
 
 - https://perldoc.perl.org/perlintro
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Perl originale: compile check; esecuzione del driver o TAP con prove. Il .al ha solo sintassi verificata perché AutoLoader non esercitato.
+Perl original: compile check; execution of the driver or TAP with tests. The .al only has syntax verified because AutoLoader is not exercised.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi

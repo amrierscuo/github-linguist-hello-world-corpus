@@ -1,44 +1,44 @@
 # #225 GAP
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Valutare un’espressione GAP, stamparla e terminare con successo.
+Evaluate a GAP expression, print it and finish successfully.
 
-Concatenation costruisce greeting, Print produce il saluto e QUIT_GAP(0) conclude il processo. La verifica esegue il binario GAP autentico con la libreria di base isolata e senza package opzionali.
+Concatenation builds greeting, Print produces greeting and QUIT_GAP (0) concludes the process. The verification executes the authentic GAP track with the isolated basic library and without optional package.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 GAP 4.12.1, pacchetti Ubuntu 4.12.1-2build2
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 gap -q -A -T hello.g
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.gap-system.org/doc/tut/manual.pdf
 - https://www.gap-system.org/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.g` | [hello.g](hello.g), [consumer.g](variants/ext-gd-2e6764/consumer.g), [consumer.g](variants/ext-gi-2e6769/consumer.g) creato, verifiche pendenti |
-| `.gap` | [hello.gap](variants/ext-gap-2e676170/hello.gap) creato, verifiche pendenti |
-| `.gd` | [hello.gd](variants/ext-gd-2e6764/hello.gd) creato, verifiche pendenti |
-| `.gi` | [hello.gi](variants/ext-gi-2e6769/hello.gi) creato, verifiche pendenti |
-| `.tst` | [hello.tst](variants/ext-tst-2e747374/hello.tst) creato, verifiche pendenti |
+| `.g` | [hello.g](hello.g), [consumer.g](variants/ext-gd-2e6764/consumer.g), [consumer.g](variants/ext-gi-2e6769/consumer.g) created; verification pending |
+| `.gap` | [hello.gap](variants/ext-gap-2e676170/hello.gap) created; verification pending |
+| `.gd` | [hello.gd](variants/ext-gd-2e6764/hello.gd) created; verification pending |
+| `.gi` | [hello.gi](variants/ext-gi-2e6769/hello.gi) created; verification pending |
+| `.tst` | [hello.tst](variants/ext-tst-2e747374/hello.tst) created; verification pending |

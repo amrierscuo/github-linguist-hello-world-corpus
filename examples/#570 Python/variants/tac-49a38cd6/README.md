@@ -1,23 +1,23 @@
-# 0570 — Python — `.tac`
+# 0570: Python: `.tac`
 
 Descrittore Twisted application con endpoint limitato a loopback.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.tac`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 twistd --nodaemon --pidfile=work/hello.pid --logfile=work/hello.log -y hello.tac; local GET localhost:8080
 ```
 
-Risultato atteso: HTTP body Hello, World!.
+Expected result: HTTP body Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.twisted.org/en/stable/core/howto/application.html](https://docs.twisted.org/en/stable/core/howto/application.html)

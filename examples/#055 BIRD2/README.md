@@ -2,41 +2,41 @@
 
 Voce canonica: `BIRD2`, tipo `data`, language_id `584191811`.
 
-Caricare una configurazione BIRD2 con costante GREETING = Hello, World! e una route blackhole nella tabella interna; leggere il saluto con il client BIRD.
+Upload a BIRD2 configuration with constant GREETING = Hello, World! and a blackhole route in the internal table; read greetings with the BIRD client.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 BIRD 2.14, pacchetto Ubuntu estratto localmente.
 
-BIRD 2.14. Usare un socket Unix e un PID esclusivi su filesystem Linux. Avviare il daemon in una sessione separata e terminare sempre con birdc down.
+BIRD 2.14. Use an Unix socket and an exclusive PID on Linux filesystem. Launch the daemon in a separate session and always end with birdc down.
 
-Comandi dalla directory dell’esempio; `<output>` indica una directory temporanea esterna al corpus.
+Commands from the directory of the example; `<output>` indicates a temporary directory external to the corpus.
 
-Terminale 1, dalla cartella dell'esempio:
+Terminal 1, from the example folder:
 
 ```sh
 bird -p -c bird.conf
 bird -f -c bird.conf -s /tmp/corpus-bird.sock -P /tmp/corpus-bird.pid
 ```
 
-Terminale 2, mentre il daemon del primo terminale è attivo:
+Terminal 2, while the daemon of the first terminal is active:
 
 ```sh
 birdc -s /tmp/corpus-bird.sock eval GREETING
 birdc -s /tmp/corpus-bird.sock down
 ```
 
-Risultato atteso: Parser exit 0; il client BIRD restituisce la riga Hello, World!; daemon isolato terminato con exit 0.
+Expected result: Parser exit 0; the BIRD client returns the Hello, World! line; isolated daemon finished with exit 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il parser BIRD 2.14 accetta la configurazione. Un daemon con socket e PID isolati valuta GREETING tramite birdc, restituendo Hello, World!. La configurazione usa solo static e non contiene protocolli kernel/device, quindi non esporta route al sistema. Shutdown del processo verificato.
+The BIRD 2.14 parser accepted the configuration. A daemon with an isolated socket and PID evaluated GREETING through birdc and returned Hello, World!. The configuration uses only static and has no kernel/device protocols, so it does not export routes to the system. Process shutdown was verified.
 
-Prova reale: [finish.json](verification/finish.json), con UTC, comandi, versioni, exit code, stdout/stderr e SHA-256 dei sorgenti. Le sostituzioni dei percorsi sono documentate nel log. I prodotti di compilazione e le dipendenze rimangono nelle directory di lavoro.
+Real test: [finish.json](verification/finish.json), with UTC, commands, versions, exit code, stdout/stderr and SHA-256 of sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://bird.nic.cz/doc/bird-2.14.html
 - https://bird.network.cz/doc/bird-3.html

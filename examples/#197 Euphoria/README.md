@@ -1,32 +1,32 @@
 # #197 Euphoria
 
-Eseguire un programma Euphoria che stampa Hello, World! seguito da LF.
+Perform an Euphoria program that prints Hello, World! followed by LF.
 
-Tipo canonico `programming`, language_id `880693982`.
+Canonical type `programming`, language_id `880693982`.
 
-Toolchain prevista: OpenEuphoria 4.1.0, interprete eui.
+Suggested toolchain: OpenEuphoria 4.1.0, interpreter eui.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 eui hello.ex
 ```
 
-Risultato atteso: stdout esatto `Hello, World!\n`, uscita 0.
+Expected result: exact stdout `Hello, World!\n`, 0. output
 
-Il descrittore 1 è lo stdout predefinito di Euphoria. Il programma non richiede include o librerie aggiuntive.
+The 1 descriptor is the default Euphoria stdout. The program does not require additional libraries or included.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: OpenEuphoria 4.1.0 Linux x64. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: OpenEuphoria 4.1.0 Linux x64. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [OpenEuphoria — Hello World](https://openeuphoria.org/wiki/view/tutHelloWorld.wc)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.e` | [hello.e](variants/ext-e-2e65/hello.e) creato, verifiche pendenti |
-| `.ex` | [hello.ex](hello.ex) verificato |
+| `.e` | [hello.e](variants/ext-e-2e65/hello.e) created; verification pending |
+| `.ex` | [hello.ex](hello.ex) verified |

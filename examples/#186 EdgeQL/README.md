@@ -1,32 +1,32 @@
 # #186 EdgeQL
 
-Valutare una query EdgeQL che restituisce un singleton di tipo str contenente Hello, World!.
+Evaluate a EdgeQL query that returns a singleton type str containing Hello, World!.
 
-Tipo canonico `programming`, language_id `925235833`.
+Canonical type `programming`, language_id `925235833`.
 
-Toolchain prevista: Gel/EdgeDB server e client CLI compatibili.
+Provided toolchain: Gel/EdgeDB server and CLI client compatible.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 gel query --file hello.edgeql
 ```
 
-Risultato atteso: insieme singleton {'Hello, World!'}.
+Expected result: together singleton {' Hello, World! '}.
 
-La query è di sola lettura e non richiede uno schema applicativo. Un server Gel locale è comunque necessario per la verifica effettiva.
+The query is read-only and does not require an application scheme. A local Gel server is however necessary for actual verification.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. native toolchain not yet performed: syntax and behavior verifications remain pending.
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [EdgeQL — SELECT](https://docs.geldata.com/reference/edgeql/select)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.edgeql` | [hello.edgeql](hello.edgeql) creato, verifiche pendenti |
-| `.esdl` | [hello.esdl](variants/ext-esdl-2e6573646c/hello.esdl) creato, verifiche pendenti |
+| `.edgeql` | [hello.edgeql](hello.edgeql) created; verification pending |
+| `.esdl` | [hello.esdl](variants/ext-esdl-2e6573646c/hello.esdl) created; verification pending |

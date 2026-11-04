@@ -1,31 +1,31 @@
 # #728 Twig
 
-Renderizzare un template Twig con default ed escaping.
+Render a Twig template with default and escaping.
 
-## Riproduzione
+## Reproduction
 
-Toolchain: PHP 8.3.6; Twig 3.8.0. Ambiente della prova: Ubuntu 24.04 WSL2 x86_64.
+Toolchain: PHP 8.3.6; Twig 3.8.0. Test environment: Ubuntu 24.04 WSL2 x86_64.
 
 ```text
 PHP con autoload Twig: creare FilesystemLoader("."), Environment(autoescape="html") e renderizzare hello.twig con name=World, senza name e con name=<World>. Il log include il comando PHP esatto.
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Verifica
+## Verification
 
-Sintassi e semantica verificate il 2026-10-08T23:32:27.905963+00:00. Le varianti hanno prove separate nel log quando consumate.
+syntax and behavior verified 2026-10-08T23:32:27.905963+00:00. The variants have separate evidence in the log when consumed.
 
-[Prova nativa](verification/finish_native.json) contiene versioni, comandi reali, exit code, output e SHA-256. I percorsi locali sono sostituiti da segnaposto. Compilati e dipendenze restano fuori dal corpus.
+[Prova nativa](verification/finish_native.json) contains versions, real commands, exit code, output and SHA-256. The local routes are replaced by placeholders.
 
-## Fonti primarie
+## Primary sources
 
 - [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche dei suffissi sono registrate separatamente.
+Suffix checks are recorded separately.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.twig` | [hello.twig](hello.twig) sintassi e semantica verificate |
+| `.twig` | [hello.twig](hello.twig) syntax and behavior verified |

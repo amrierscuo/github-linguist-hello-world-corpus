@@ -1,41 +1,41 @@
 # #241 Gentoo Ebuild
 
-Installare uno script originale hello-world attraverso la fase src_install di un ebuild EAPI 8.
+Install an original hello-world script through the src_install phase of an ebuild EAPI 8.
 
 ## Toolchain
 
 GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
 
-## Comandi e procedura
+## Commands and procedure
 
 bash -n hello-world-1.0.ebuild; ebuild hello-world-1.0.ebuild install; eseguire hello-world dall’immagine di installazione temporanea
 
-## Risultato atteso
+## Expected result
 
-Sintassi Bash accettata; Portage installa binario shell che stampa Hello, World! più newline.
+syntax Bash accepted; Portage installs binary shell that print Hello, World! more newline.
 
-## Stato
+## Status
 
-Sintassi verificata; semantica in attesa.
+syntax verified; behavioral verification pending.
 
 La verifica presente è limitata al parser Bash reale e alla fixture shell originale, che stampa il saluto. Le funzioni newbin e le fasi EAPI non sono simulate: l’installazione Portage resta pending. L’URL example.invalid è illustrativo e il pacchetto non scarica sorgenti.
 
-Verifica effettiva del 2026-10-08T12:15:42.652678+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:15:42.652678+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-Requisiti residui:
+Remaining requirements:
 - Gentoo Portage package environment not available: native install/inherit phases pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://devmanual.gentoo.org/ebuild-writing/file-format/index.html](https://devmanual.gentoo.org/ebuild-writing/file-format/index.html)
 - [https://devmanual.gentoo.org/ebuild-writing/functions/src_install/index.html](https://devmanual.gentoo.org/ebuild-writing/functions/src_install/index.html)
 - [https://projects.gentoo.org/pms/latest/pms.html](https://projects.gentoo.org/pms/latest/pms.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ebuild` | [hello-world-1.0.ebuild](hello-world-1.0.ebuild) sintassi verificata |
+| `.ebuild` | [hello-world-1.0.ebuild](hello-world-1.0.ebuild) syntax verified |

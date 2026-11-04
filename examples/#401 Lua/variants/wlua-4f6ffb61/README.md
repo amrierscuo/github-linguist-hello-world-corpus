@@ -1,29 +1,29 @@
-# 0401 — Lua: `.wlua`
+# 0401: Lua: `.wlua`
 
-Ruolo: Sorgente Lua windowed per host Windows; stessa sintassi Lua, stdout potrebbe non avere una console.
+Role: Source Lua windowed for Windows host; same syntax Lua, stdout may not have a console.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#401 Lua/hello.lua.
+Origin: Byte-identical copy of the original corpus source: examples/#401 Lua/hello.lua.
 
-Toolchain richiesta: Lua 5.4.8 native Linux build from original sources. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Lua 5.4.8 native Linux build from original sources. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Usare la toolchain del README principale sul file hello.wlua; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
 ```
 
-Risultato atteso: Il programma richiede un host con stdout o console catturata per osservare Hello, World!.
+Expected result: The program requires a host with stdout or captured console to observe Hello, World!.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.wlua`: `07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.lua.org/manual/5.4/

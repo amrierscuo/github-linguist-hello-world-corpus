@@ -1,37 +1,37 @@
 # #169 Dogescript
 
-Compilare Dogescript in JavaScript e stampare Hello, World! con console.loge.
+Fill out Dogescript in JavaScript and print Hello, World! with console.loge.
 
 ## Toolchain
 
 Node.js v22.20.0; dogescript 2.4.3
 
-## Comandi e procedura
+## Commands and procedure
 
 npm install; node check.cjs
 
-## Risultato atteso
+## Expected result
 
-Compilatore genera JavaScript valido; esecuzione produce esattamente un saluto.
+Filler generates valid JavaScript; execution produces exactly a greeting.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 check.cjs chiama il compilatore Dogescript originale, compila il risultato con vm.Script di Node e ne esegue il codice catturando console.log. Il checker non traduce il linguaggio.
 
-Verifica effettiva del 2026-10-08T11:56:12.746770+00:00 su Windows x64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:12.746770+00:00 on Windows x64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://github.com/dogescript/dogescript](https://github.com/dogescript/dogescript)
 - [https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md](https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.djs` | [hello.djs](hello.djs) verificato |
+| `.djs` | [hello.djs](hello.djs) verified |

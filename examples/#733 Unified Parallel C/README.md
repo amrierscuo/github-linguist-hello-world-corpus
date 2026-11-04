@@ -1,36 +1,36 @@
 # #733 Unified Parallel C
 
-Compilare Unified Parallel C e stampare da un solo thread.
+Fill Unified Parallel C and print from one thread.
 
 ## Toolchain
 
 UPC compiler/runtime
 
-## Procedura
+## Procedure
 
 upcc -o build/hello hello.upc; upcrun -n 2 build/hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - UPC compiler e runtime shared-memory non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://upc.lbl.gov/docs/](https://upc.lbl.gov/docs/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.upc` | [hello.upc](hello.upc) creato, verifiche pendenti |
+| `.upc` | [hello.upc](hello.upc) created; verification pending |

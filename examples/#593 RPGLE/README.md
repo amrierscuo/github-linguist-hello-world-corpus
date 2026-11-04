@@ -1,33 +1,33 @@
 # #593 RPGLE
 
-Compilare RPGLE free-format e visualizzare il saluto con DSPLY.
+Fill in RPGLE free-format and view your greeting with DSPLY.
 
-Tipo canonico `programming`, language_id `609977990`.
+Canonical type `programming`, language_id `609977990`.
 
-Toolchain prevista: IBM i ILE RPG compiler.
+Suggested toolchain: IBM i ILE RPG compiler.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 CRTBNDRPG PGM(TEST/HELLO) SRCSTMF(hello.rpgle)
 CALL PGM(TEST/HELLO)
 ```
 
-Risultato atteso: messaggio DSPLY Hello, World!.
+Expected result: DSPLY Hello, World! message.
 
-I nomi di libreria e path devono essere adattati ad un IBM i di prova.
+Bookcase and path names must be adapted to a IBM test.
 
 Stato iniziale: creato; sintassi e semantica in attesa. IBM i e ILE RPG compiler non disponibili.
 
-Fonti:
+Sources:
 
 - [IBM RPG free form](https://www.ibm.com/docs/en/i/7.5.0?topic=specifications-fully-free-form-statements)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rpgle` | [hello.rpgle](hello.rpgle) creato, verifiche pendenti |
-| `.sqlrpgle` | [hello.sqlrpgle](variants/sqlrpgle-34018e4d/hello.sqlrpgle) creato, verifiche pendenti |
+| `.rpgle` | [hello.rpgle](hello.rpgle) created; verification pending |
+| `.sqlrpgle` | [hello.sqlrpgle](variants/sqlrpgle-34018e4d/hello.sqlrpgle) created; verification pending |

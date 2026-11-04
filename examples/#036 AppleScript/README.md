@@ -6,11 +6,11 @@ Restituire la stringa Hello, World! dallo script AppleScript e farla mostrare da
 
 - `hello.applescript`
 
-## Toolchain e verifica
+## Toolchain and verification
 
-macOS con AppleScript, osacompile e osascript di sistema; versione da registrare durante la prova macOS.
+macOS with AppleScript, osacompile and osascript system; version to be recorded during macOS test.
 
-Eseguire su macOS dalla cartella dell'esempio:
+Run on macOS from the example folder:
 
 ```sh
 sw_vers
@@ -18,34 +18,34 @@ osacompile -o /tmp/hello.scpt hello.applescript
 osascript hello.applescript
 ```
 
-`return` restituisce la stringa al chiamante; `osascript` rende il risultato su
-stdout. La compilazione separata serve a distinguere il controllo di sintassi
+`return` returns the string to the caller; `osascript` makes the result on
+stdout. The separate compilation serves to distinguish control of syntax
 dall'esecuzione. Registrare versione macOS/AppleScript, codici di uscita e
-stdout. Non sono necessarie applicazioni esterne o eventi inviati ad altre app.
+stdout. No external applications or events sent to other apps are required.
 
-## Risultato atteso
+## Expected result
 
 Compilazione exit 0. osascript: exit 0 e stdout esattamente Hello, World! seguito da newline.
 
-## Stato della prova
+## State of the test
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Sorgente confrontata con la documentazione Apple. La consultazione del manuale non è una verifica di sintassi o runtime.
+Source compared with Apple documentation. Manual consultation is not a syntax or runtime verification.
 
-Requisiti residui:
-- Ambiente corrente Windows: runtime AppleScript/macOS non disponibile; nessun parser o interprete AppleScript eseguito.
+Remaining requirements:
+- Ambiente corrente Windows: runtime AppleScript/macOS unavailable; nessun parser o interprete AppleScript eseguito.
 
-## Fonti primarie
+## Primary sources
 
 - [https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_handlers.html](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_handlers.html)
 - [https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.applescript` | [hello.applescript](hello.applescript) creato, verifiche pendenti |
-| `.scpt` | [hello.scpt](variants/ext-scpt-2e73637074/hello.scpt) creato, verifiche pendenti |
+| `.applescript` | [hello.applescript](hello.applescript) created; verification pending |
+| `.scpt` | [hello.scpt](variants/ext-scpt-2e73637074/hello.scpt) created; verification pending |

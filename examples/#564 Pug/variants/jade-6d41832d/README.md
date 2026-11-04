@@ -1,23 +1,23 @@
-# 0564 — Pug — `.jade`
+# 0564: Pug: `.jade`
 
-Variante testuale dello stesso formato, con suffisso canonico .jade.
+Textual variation of the same format, with canon suffix .jade.
 
-Provenienza: copia del file originale `examples/#564 Pug/hello.pug`.
+Origin: copy of the original `examples/#564 Pug/hello.pug` file.
 
 Artefatto principale: `hello.jade`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 pug hello.jade
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://pugjs.org/api/getting-started.html](https://pugjs.org/api/getting-started.html)

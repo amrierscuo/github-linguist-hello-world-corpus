@@ -1,42 +1,42 @@
 # #461 NWScript
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Eseguire main NWScript e inviare Hello, World! al log tramite PrintString.
 
-main concatena una stringa e chiama PrintString. Richiede le dichiarazioni builtin e la VM del gioco; GCC non è un compiler NWScript.
+main concatenate a string and call PrintString. Requires builtin statements and VM of the game; GCC is not a NWScript compiler.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Compiler e VM Neverwinter Nights/NWScript originali; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Compilare hello.nss nel toolset NWN ed eseguirlo in un modulo locale.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Log del runtime contiene Hello, World!.
+Runtime log contains Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
 Impedimenti: Toolset/compiler/VM NWScript non preparati; verifiche pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://forums.beamdog.com/uploads/editor/w4/7kqf0pqj21mb.pdf
 - https://nwn.beamdog.net/docs/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nss` | [hello.nss](hello.nss) creato, verifiche pendenti |
+| `.nss` | [hello.nss](hello.nss) created; verification pending |

@@ -1,0 +1,121 @@
+{
+  "ordinal": 789,
+  "name": "XQuery",
+  "source_hashes": {
+    "examples/#789 XQuery/variants/xquery-d1e42ae2/hello.xquery": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388",
+    "examples/#789 XQuery/variants/xql-598d9a0b/hello.xql": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388",
+    "examples/#789 XQuery/variants/xqy-27e37189/hello.xqy": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388",
+    "examples/#789 XQuery/variants/xqm-6120106c/hello.xqm": "b584398ad3062e14c9c494f2a87517bea557db683d00b104d380b8fe10d74c56",
+    "examples/#789 XQuery/variants/xqm-6120106c/main.xq": "2d77503f5223f522e61681a44d676b4df0fb16c40de11ae8e590eeac50491313"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\789_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\789_variants",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14941484 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14941484 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_781_800\\saxon-he.jar;${WORKSPACE}\\work\\tools_781_800\\xmlresolver.jar",
+        "net.sf.saxon.Query",
+        "-t",
+        "-q:hello.xquery",
+        "!method=text"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\789_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "SaxonJ-HE 12.9 from Saxonica\nJava version 21.0.12.1\nAnalyzing query from hello.xquery\nAnalysis time: 399.8847 milliseconds\nExecution time: 25.394ms\nMemory used: 14Mb\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_781_800\\saxon-he.jar;${WORKSPACE}\\work\\tools_781_800\\xmlresolver.jar",
+        "net.sf.saxon.Query",
+        "-t",
+        "-q:hello.xql",
+        "!method=text"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\789_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "SaxonJ-HE 12.9 from Saxonica\nJava version 21.0.12.1\nAnalyzing query from hello.xql\nAnalysis time: 294.4357 milliseconds\nExecution time: 22.1594ms\nMemory used: 13Mb\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_781_800\\saxon-he.jar;${WORKSPACE}\\work\\tools_781_800\\xmlresolver.jar",
+        "net.sf.saxon.Query",
+        "-t",
+        "-q:hello.xqy",
+        "!method=text"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\789_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "SaxonJ-HE 12.9 from Saxonica\nJava version 21.0.12.1\nAnalyzing query from hello.xqy\nAnalysis time: 309.5612 milliseconds\nExecution time: 23.4435ms\nMemory used: 14Mb\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-21.0.12.101-hotspot\\bin\\java.exe",
+        "-cp",
+        "${WORKSPACE}\\work\\tools_781_800\\saxon-he.jar;${WORKSPACE}\\work\\tools_781_800\\xmlresolver.jar",
+        "net.sf.saxon.Query",
+        "-t",
+        "-q:main.xq",
+        "!method=text"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\789_variants",
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "SaxonJ-HE 12.9 from Saxonica\nJava version 21.0.12.1\nAnalyzing query from main.xq\nUsing parser com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser\nAnalysis time: 397.1043 milliseconds\nExecution time: 23.1338ms\nMemory used: 16Mb\n"
+    }
+  ],
+  "description": "Saxon processes three standalone XQuery suffixes plus the original main.xq importer and hello.xqm library. Aggregate .xq keeps the prior unchanged main example proof.",
+  "toolchain": "Saxon-HE 12.9, XML Resolver 5.3.3, OpenJDK 21.0.12.1",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".xquery": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".xq": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".xql": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".xqm": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".xqy": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "prior_verified_sources": {
+    "examples/#789 XQuery/hello.xq": {
+      "sha256": "59c0006409bb950ab68785f3fa5580f98709e0e3e675a5709fda1033cb5be388",
+      "verification_log": "examples/#789 XQuery/verification/toolchain.json",
+      "verification_log_sha256": "830035ddf0844ba7bc674b8efe5dad08bc03bba474e35ab218598c3118e41c38"
+    }
+  },
+  "verified_utc": "2026-11-04T19:38:03.048368+00:00",
+  "recorded_test_source": "789_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

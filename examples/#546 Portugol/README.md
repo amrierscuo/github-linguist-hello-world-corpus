@@ -1,42 +1,42 @@
 # #546 Portugol
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire un programma Portugol2.0 e scrivere Hello, World!.
+Run a Portugol2.0 program and write Hello, World!.
 
 Il programma usa funcao inicio, cadeia e escreva con argomenti distinti. La forma è Portugol Studio, distinta da VisuAlg/Pascal.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Portugol Studio/UNIVALI originale; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Aprire hello.por in Portugol Studio ed eseguire inicio.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Compiler/runtime Portugol Studio non preparati.
+Commitments: Compiler/runtime Portugol Studio not prepared.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/UNIVALI-LITE/Portugol-Studio
 - https://univali-lite.github.io/Portugol-Studio/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.por` | [hello.por](hello.por) creato, verifiche pendenti |
+| `.por` | [hello.por](hello.por) created; verification pending |

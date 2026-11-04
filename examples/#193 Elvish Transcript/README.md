@@ -1,25 +1,25 @@
 # #193 Elvish Transcript
 
-Rappresentare una sessione Elvish Transcript con un comando echo e il suo risultato atteso.
+Represent an Elvish Transcript session with an echo command and its expected result.
 
-Tipo canonico `programming`, language_id `452025714`.
+Canonical type `programming`, language_id `452025714`.
 
-Toolchain prevista: Parser originale Go src.elv.sh/pkg/transcript e runtime Elvish 0.21.0.
+Suggested toolchain: Parser original Go src.elv.sh / pkg/transcript and runtime Elvish 0.21.0.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 go mod tidy
 go run verify.go [percorso del binario elvish]
 ```
 
-Risultato atteso: una interazione, codice echo del saluto e output `Hello, World!` seguito da LF.
+Expected result: an interaction, echo code of greeting and `Hello, World!` output followed by LF.
 
-Il riferimento canonico non elenca estensioni per questa voce; .elvts è l’estensione del formato nei manuali originali. Un transcript non va passato direttamente all’interprete come se fosse un normale .elv.
+The canonical reference does not list extensions for this item; .elvts is the extension of the format in the original manuals. A transcript should not be passed directly to the interpreter as if it were a normal .elv.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Go 1.27.1 + src.elv.sh/pkg/transcript v0.21.0 + Elvish 0.21.0. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Go 1.27.1 + src.elv.sh/pkg/transcript v0.21.0 + Elvish 0.21.0. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Elvish — formato transcript e parser](https://pkg.go.dev/src.elv.sh/pkg/transcript)
 - [Elvish — test transcript originali](https://github.com/elves/elvish/blob/main/docs/testing.md)

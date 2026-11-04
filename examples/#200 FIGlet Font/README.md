@@ -1,38 +1,38 @@
 # #200 FIGlet Font
 
-Analizzare un font FIGlet originale a una riga e renderizzare Hello, World! mantenendo i singoli glifi.
+Analyze an original FIGlet font to a row and make Hello, World! while maintaining the individual glifi.
 
-Tipo canonico `data`, language_id `686129783`.
+Canonical type `data`, language_id `686129783`.
 
-Toolchain prevista: Python 3 e pyfiglet.
+Suggested toolchain: Python 3 and pyfiglet.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: font caricato, altezza 1, rendering esatto `Hello, World!\n`.
+Expected result: loaded font, 1 height, exact rendering `Hello, World!\n`.
 
-I glifi e il commento del font sono originali: non viene redistribuito un font esterno. Sono presenti i 95 caratteri ASCII obbligatori e i sette caratteri tedeschi previsti dal formato; layout full-width senza smushing.
+The glyphs and the commentary of the font are original: an external font is not redistributed. There are 95 mandatory ASCII characters and the seven German characters provided by the format; full-width layout without smushing.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + pyfiglet 1.0.4. Vedere [log](verification/verification.log). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + pyfiglet 1.0.4. See [log](verification/verification.log).
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [FIGfont — specifica originale](https://github.com/cmatsuoka/figlet/blob/master/figfont.txt)
 - [pyfiglet — parser e renderer](https://github.com/pwaller/pyfiglet)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install pyfiglet==1.0.4
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.flf` | [greeting.flf](greeting.flf) verificato |
+| `.flf` | [greeting.flf](greeting.flf) verified |

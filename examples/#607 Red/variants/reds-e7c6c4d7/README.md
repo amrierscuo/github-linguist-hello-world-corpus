@@ -1,23 +1,23 @@
-# 0607 — Red — `.reds`
+# 0607: Red: `.reds`
 
-Programma Red/System con FFI libc Linux, distinto dalla libreria standard Red.
+Red/System program with FFI Linux libc, distinct from the Red standard library.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.reds`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 red -r hello.reds -o work/hello; work/hello
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://static.red-lang.org/red-system-specs.html](https://static.red-lang.org/red-system-specs.html)

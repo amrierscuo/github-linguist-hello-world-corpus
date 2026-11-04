@@ -1,36 +1,36 @@
 # #647 Salt
 
-Valutare uno stato Salt che mostra una notifica locale.
+Evaluate a state Salt showing a local notification.
 
 ## Toolchain
 
 Salt local state runtime
 
-## Procedura
+## Procedure
 
 salt-call --local --file-root=<cartella> state.apply hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- Salt renderer/state runtime non disponibile; YAML generico non prova lo stato.
+Remaining requirements:
+- Salt renderer/state runtime unavailable; YAML generic does not prove the state.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.saltproject.io/en/latest/ref/states/all/salt.states.test.html](https://docs.saltproject.io/en/latest/ref/states/all/salt.states.test.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sls` | [hello.sls](hello.sls) creato, verifiche pendenti |
+| `.sls` | [hello.sls](hello.sls) created; verification pending |

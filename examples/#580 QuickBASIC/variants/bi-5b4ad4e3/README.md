@@ -1,23 +1,23 @@
-# 0580 — QuickBASIC — `.bi`
+# 0580: QuickBASIC: `.bi`
 
 Header QuickBASIC con dichiarazione e costante condivisa.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.bi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 BC main.bas; LINK main.obj; main.exe
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://archive.org/details/ms-quickbasic-4.5](https://archive.org/details/ms-quickbasic-4.5)

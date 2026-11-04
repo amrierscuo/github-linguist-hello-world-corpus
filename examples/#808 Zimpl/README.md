@@ -1,38 +1,38 @@
 # #808 Zimpl
 
-Generare e risolvere un LP Zimpl il cui ottimo codifica i byte del saluto.
+Generate and solve a LP Zimpl whose excellent encodes greeting bytes.
 
 ## Toolchain
 
 Zimpl; LP solver
 
-## Procedura
+## Procedure
 
-zimpl -o build/hello hello.zpl; glpsol --lp build/hello.lp; leggere e decodificare gli x[i] ottimali.
+zimpl -o build/hello hello.zpl; glpsol --lp build/hello.lp; read and decode the optimal x[i].
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Variabili indicizzate originali hanno bounds [ASCII,ASCII+1]; l’obiettivo minimizzante deve scegliere i codici inferiori.
+Original indexed variables have bounds [ ASCII, ASCII + 1 ]; the minimizing objective must choose the lower codes.
 
-Requisiti residui:
-- Zimpl compiler non disponibile nei pacchetti isolati; parsing/generazione LP e soluzione pending.
+Remaining requirements:
+- Zimpl compiler unavailable nei pacchetti isolati; parsing/generazione LP e soluzione pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://zimpl.zib.de/](https://zimpl.zib.de/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zimpl` | [hello.zimpl](variants/zimpl-c607d319/hello.zimpl) creato, verifiche pendenti |
-| `.zmpl` | [hello.zmpl](variants/zmpl-c5eac23d/hello.zmpl) creato, verifiche pendenti |
-| `.zpl` | [hello.zpl](hello.zpl) creato, verifiche pendenti |
+| `.zimpl` | [hello.zimpl](variants/zimpl-c607d319/hello.zimpl) created; verification pending |
+| `.zmpl` | [hello.zmpl](variants/zmpl-c5eac23d/hello.zmpl) created; verification pending |
+| `.zpl` | [hello.zpl](hello.zpl) created; verification pending |

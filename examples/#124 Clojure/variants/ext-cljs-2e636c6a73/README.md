@@ -1,34 +1,34 @@
-# 0124 Clojure — variante `.cljs`
+# 0124 Clojure: variant `.cljs`
 
-Ruolo: Unità ClojureScript con output console JavaScript.
+Role: ClojureScript unit with JavaScript console output.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#124 Clojure/hello.clj; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#124 Clojure/hello.clj; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 ClojureScript compiler: compilare hello.cljs per target Node e lanciare il JavaScript generato.
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://clojure.org/reference/repl_and_main](https://clojure.org/reference/repl_and_main)
 - [https://clojure.org/reference/special_forms#let](https://clojure.org/reference/special_forms#let)

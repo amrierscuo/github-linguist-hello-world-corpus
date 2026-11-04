@@ -1,32 +1,32 @@
 # #516 P4
 
-Creare un header P4 di 104 bit con il payload ASCII del saluto e inviarlo alla porta di prova 1.
+Create a P4 header of 104 bit with payload ASCII of greeting and send it to test port 1.
 
-Tipo canonico `programming`, language_id `348895984`.
+Canonical type `programming`, language_id `348895984`.
 
-Toolchain prevista: p4c bmv2 backend e BMv2 simple_switch in rete di prova.
+Provided Toolchain: p4c bmv2 backend and BMv2 simple_switch in test network.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 p4c --target bmv2 --arch v1model hello.p4
 ```
 
-Risultato atteso: compilazione riuscita; pacchetto emesso contiene Hello, World!.
+Expected result: successful compilation; issued package contains Hello, World!.
 
-Non configura switch o interfacce reali; semantica richiede un harness BMv2 isolato.
+Do not configure switches or real interfaces; behavior requires an isolated BMv2 harness.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [P4 specification](https://p4.org/p4-spec/docs/P4-16-v1.2.5.html)
 - [p4c v1model](https://github.com/p4lang/p4c/blob/main/p4include/v1model.p4)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.p4` | [hello.p4](hello.p4) creato, verifiche pendenti |
+| `.p4` | [hello.p4](hello.p4) created; verification pending |

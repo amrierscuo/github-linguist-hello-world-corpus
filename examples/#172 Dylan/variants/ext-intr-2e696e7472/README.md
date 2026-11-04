@@ -1,34 +1,34 @@
-# 0172 Dylan — variante `.intr`
+# 0172 Dylan: variant `.intr`
 
-Ruolo: Interfaccia Melange Dylan che importa una funzione da un header C. Forma testuale originale basata sulla sezione Basic Use della documentazione Melange; il companion C implementa il saluto.
+Role: Melange Dylan interface that imports a function from a header C. Original text form based on the Basic Use section of Melange documentation; the companion C implements the greeting.
 
-Tipo variante: **adapted**. Modello di partenza: examples/#172 Dylan/hello.dylan; contenuto adattato/originale per questo suffisso.
+Type: **adapted**. Starting model: examples/#172 Dylan/hello.dylan; adattato/originale content for this suffix.
 
-Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello.
+Original variable adapted to the role of the suffix; the existing main files are not modified. No verification is inherited from the model.
 
-## Comando o procedura di verifica
+## Verification command or procedure
 
-Dalla directory della variante, salvo i riferimenti espliciti al modello. `<output>`
-indica una directory temporanea esterna; dipendenze e prodotti compilati non fanno
-parte del deliverable.
+From the directory of the variant, except for explicit references to the model. `<output>`
+indicates an external temporary directory; dependencies and compiled products do not
+part of the deliverable.
 
 ```text
 melange hello.intr <output>/hello.dylan; cc -c greeting.c -o <output>/greeting.o; compilare i binding generati e collegare l’oggetto nel progetto Dylan/Mindy compatibile; invocare il binding della funzione hello_world.
 ```
 
-Risultato atteso: Melange genera i binding per hello_world; il consumer Dylan collegato invoca la funzione C e stampa Hello, World!.
+Expected result: Melange generates bindings for hello_world; the connected consumer Dylan invokes the C function and Hello, World! print.
 
-## Stato
+## Status
 
-Artefatto: **creato**.
-Sintassi: **non verificata**. Semantica: **non verificata**.
-Nessun flag positivo viene ereditato dal campione principale o da un altro suffisso.
-Il solo controllo dei byte/metadati non viene presentato come parsing o esecuzione.
+Artefatto: **created**.
+syntax: **not verified**. behavior: **not verified**.
+No positive flag is inherited from the main sample or another suffix.
+Checking only the bytes or metadata does not establish parsing or execution.
 
-Requisiti residui:
-- La variante non è ancora stata controllata con la toolchain nativa indicata.
+Remaining requirements:
+- The variant has not yet been checked with the native toolchain indicated.
 
-## Fonti primarie
+## Primary sources
 
 - [https://opendylan.org/getting-started-cli/hello-world.html](https://opendylan.org/getting-started-cli/hello-world.html)
 - [https://opendylan.org/library-reference/io/format-out.html](https://opendylan.org/library-reference/io/format-out.html)

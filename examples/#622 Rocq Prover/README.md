@@ -1,40 +1,40 @@
 # #622 Rocq Prover
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Definire il saluto e verificare una prova di uguaglianza, quindi valutarlo con Compute.
+Define your greeting and check for a proof of equality, then evaluate it with Compute.
 
-Elaborazione nativa e kernel Coq controllano greeting_value; Compute valuta la concatenazione. Coq8.18 è la versione effettivamente eseguita, non un runtime Rocq9.
+Native processing and Coq kernel control greeting_value; Compute evaluates concatenation. Coq8.18 is the actually executed version, not a Rocq9 runtime.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Coq8.18.0 originale (linguaggio oggi denominato Rocq Prover)
+Coq8.18.0 original (language today called Rocq Prover)
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 coqc hello.v
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Compute produce "Hello, World!" : string e la prova compila.
+Compute produces "Hello, World!": string and test compile.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://rocq-prover.org/doc/V8.19.2/refman/language/core/definitions.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.v` | [hello.v](hello.v) verificato |
-| `.coq` | [hello.coq](variants/coq-98f35b68/hello.coq) creato, verifiche pendenti |
+| `.v` | [hello.v](hello.v) verified |
+| `.coq` | [hello.coq](variants/coq-98f35b68/hello.coq) created; verification pending |

@@ -1,0 +1,57 @@
+{
+  "ordinal": 178,
+  "name": "EJS",
+  "source_hashes": {
+    "examples/#178 EJS/variants/ext-ejs-t-2e656a732e74/hello.ejs.t": "5f69d234cbec7d1cc40035e3bf5f2a875c87437a3c24175b02dd8a8c5edb9101",
+    "examples/#178 EJS/variants/ext-jst-2e6a7374/hello.jst": "5f69d234cbec7d1cc40035e3bf5f2a875c87437a3c24175b02dd8a8c5edb9101"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\178_variants",
+  "steps": [
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\178_variants",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "${WORKSPACE}\\work\\native_audit_20261104\\render_variants.cjs",
+        "ejs",
+        "${WORKSPACE}\\work\\tools_161_180\\node",
+        "hello.ejs.t",
+        "hello.jst"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\178_variants",
+      "exit_code": 0,
+      "stdout": "EJS undefined\nhello.ejs.t: <h1>Hello, World!</h1> | <h1>&lt;world&gt;</h1>\nhello.jst: <h1>Hello, World!</h1> | <h1>&lt;world&gt;</h1>\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Compile and render each original template with ejs.renderFile; assert greeting and escaped input. .ect requires a distinct engine and is not tested.",
+  "toolchain": "EJS 7.0.1 / Node.js 22.20.0",
+  "main_status": "unchanged (already verified)",
+  "extensions": {
+    ".ejs.t": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".jst": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "greeting": "Hello, World!",
+  "verified_utc": "2026-11-04T19:35:36.129256+00:00",
+  "toolchain_version_evidence": {
+    "package_metadata": "work/tools_161_180/node/node_modules/ejs/package.json",
+    "sha256": "d9b682dc69fea693b3a52e4f52412db1943a18d9cfeafb6382ddcef534a39e25"
+  },
+  "recorded_test_source": "178_variants_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

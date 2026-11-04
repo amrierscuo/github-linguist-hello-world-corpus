@@ -1,41 +1,41 @@
 # #160 Dart
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Analizzare staticamente ed eseguire un programma Dart che stampa Hello, World!.
+Statically analyze and run a Dart program that prints Hello, World!.
 
-main usa una variabile final, concatenazione di stringhe e print. La toolchain è lo SDK Dart ufficiale isolato in work; non è necessario Flutter. L’esecuzione usa la VM del medesimo SDK.
+main uses a final variable, string concatenation and print. The toolchain is the official SDK Dart isolated in work; it is not necessary Flutter. The execution uses the VM of the same SDK.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Dart SDK ufficiale 3.13.5 stable, Windows x64
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 dart analyze --fatal-infos hello.dart
 dart run hello.dart
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 No issues found; stdout esatto Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://dart.dev/tools/dart-analyze
 - https://dart.dev/tools/dart-run
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dart` | [hello.dart](hello.dart) verificato |
+| `.dart` | [hello.dart](hello.dart) verified |

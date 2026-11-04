@@ -1,23 +1,23 @@
-# 0656 — Shell — `.sbatch`
+# 0656: Shell: `.sbatch`
 
 Script Slurm batch con direttive scheduler.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sbatch`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 sbatch hello.sbatch
 ```
 
-Risultato atteso: job di prova riporta Hello, World!.
+Expected result: test job reports Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)

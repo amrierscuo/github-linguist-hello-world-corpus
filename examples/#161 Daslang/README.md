@@ -6,32 +6,32 @@ Stampare Hello, World! e newline da main esportata in Daslang gen2.
 
 Official Daslang 0.6.4 Windows portable bundle
 
-## Comandi e procedura
+## Commands and procedure
 
 daslang --version; daslang hello.das
 
-## Risultato atteso
+## Expected result
 
-Exit 0; stdout esattamente Hello, World! più newline.
+Exit 0; stdout exactly Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La sintassi gen2 usa parentesi graffe e [export] per main. print non aggiunge newline: la sorgente lo specifica. Il bundle ufficiale contiene interprete e moduli; si usa il suo binario direttamente.
+The syntax gen2 uses braces and [export] for main. print does not add newline: the source specifies it. The official bundle contains interpreters and modules; it is used its track directly.
 
-Verifica effettiva del 2026-10-08T11:56:15.636441+00:00 su Windows x64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:15.636441+00:00 on Windows x64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://daslang.io/doc/reference/tutorials/01_hello_world.html](https://daslang.io/doc/reference/tutorials/01_hello_world.html)
 - [https://github.com/GaijinEntertainment/daScript/releases/tag/v0.6.4](https://github.com/GaijinEntertainment/daScript/releases/tag/v0.6.4)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.das` | [hello.das](hello.das) verificato |
+| `.das` | [hello.das](hello.das) verified |

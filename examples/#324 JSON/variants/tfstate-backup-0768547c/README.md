@@ -1,39 +1,39 @@
-# 0324 — JSON: `.tfstate.backup`
+# 0324: JSON: `.tfstate.backup`
 
-Ruolo: Fixture testuale di stato Terraform schema v4 con output stringa, scritto come dato illustrativo; non dichiara apply o snapshot reali.
+Role: Terraform status text fixtures schema v4 with string output, written as an illustration; it does not declare apply or actual snapshots.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Python 3.13.9 json standard library. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Python 3.13.9 json standard library. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 terraform show -json hello.tfstate.backup
 ```
 
-Risultato atteso: Output greeting con valore Hello, World!
+Expected result: Output greeting with Hello, World! value
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati.
+- The language parser accepted the file; the application-specific schema, loader and semantics remain unverified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.tfstate.backup`: `c90936cf4ed25df3960ef70914546a75a65f5baf5dc70db2382a4d130d4805a6`
 
-Fonti primarie:
+Primary sources:
 
 - https://developer.hashicorp.com/terraform/language/state
 - https://github.com/hashicorp/terraform/blob/main/internal/states/statefile/version4.go
 - https://www.rfc-editor.org/rfc/rfc8259
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato.
+Parsing JSON/JSON Lines real of the canonical grammar alone; no progetto/configurazione application scheme has been validated.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 3.13.9

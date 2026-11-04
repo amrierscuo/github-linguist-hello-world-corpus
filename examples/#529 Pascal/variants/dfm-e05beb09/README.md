@@ -1,30 +1,30 @@
-# 0529 — Pascal: `.dfm`
+# 0529: Pascal: `.dfm`
 
-Ruolo: Risorsa form Delphi in formato testuale con Caption del saluto, non Pascal.
+Role: Resorsa form Delphi in text format with Caption del Greeting, not Pascal.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Genuine Free Pascal compiler — 3.2.2. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Genuine Free Pascal compiler, 3.2.2. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Delphi: associare hello.dfm a unità TGreetingForm ereditata da TForm; aprire il form in progetto GUI locale
 ```
 
-Risultato atteso: Titolo Hello, World!
+Expected result: Title Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.dfm`: `61fd947682af5eeb4a1ab26bd2e3ce1eb65a853b453715df8d55ca1ead6047f2`
 
-Fonti primarie:
+Primary sources:
 
 - https://docwiki.embarcadero.com/RADStudio/en/Form_Files
 - https://www.freepascal.org/docs.html

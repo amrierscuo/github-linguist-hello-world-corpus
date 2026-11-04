@@ -1,23 +1,23 @@
-# 0623 — Roff — `.me`
+# 0623: Roff: `.me`
 
-Documento per il pacchetto macro me.
+Document for the macro me package.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.me`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 groff -Tascii -me hello.me
 ```
 
-Risultato atteso: testo formattato contenente Hello, World!.
+Expected result: formatted text containing Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.gnu.org/software/groff/manual/groff.html](https://www.gnu.org/software/groff/manual/groff.html)

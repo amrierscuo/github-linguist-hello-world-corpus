@@ -1,36 +1,36 @@
 # #496 Omgrofl
 
-Interpretare assegnamenti Omgrofl e rofl per emettere i byte del saluto.
+Interpret Omgrofl and rofl assignments to issue greeting bytes.
 
 ## Toolchain
 
 Java openjdk 21.0.12.1 2026-08-18 LTS; OlegSmelov interpreter commit 6c621627b913771f3896c75ea8a27f06e34f2e65
 
-## Procedura
+## Procedure
 
-Compilare src/omgrofl del tool con javac; java -cp <interpreter-classes> omgrofl.Main hello.omgrofl
+Fill out src/omgrofl of the tool with javac; java -cp < interpreter-classes> omgrofl.Main hello.omgrofl
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Programma originale: un registro lol viene assegnato ai codici ASCII, rofl emette i byte. Interprete community autentico, non parser costruito per questo corpus.
+Original program: a lol register is assigned to ASCII codes, rofl emette i byte. Interpreting authentic community, not parser built for this corpus.
 
-Verifica reale 2026-10-08T13:10:45.310605+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:10:45.310605+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/OlegSmelov/omgrofl-interpreter](https://github.com/OlegSmelov/omgrofl-interpreter)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.omgrofl` | [hello.omgrofl](hello.omgrofl) verificato |
+| `.omgrofl` | [hello.omgrofl](hello.omgrofl) verified |

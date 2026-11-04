@@ -1,18 +1,18 @@
 # #238 Genero per
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare una form Genero con LABEL statica Hello, World!.
+Fill out a Genero form with LABEL static Hello, World!.
 
-hello.per dichiara una GRID e una LABEL statica mediante item tag, identificatore e TEXT. Il goal è il contenuto della form; il file non è un programma 4GL. La verifica richiede compiler form e front-end originali.
+hello.per declares a GRID and a static LABEL by item tag, identifier and TEXT. The goal is the content of the form; the file is not a 4GL. program The verification requires compiler form and front-end original.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Genero BDL fglform e front-end compatibile; versioni effettive da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 fglform hello.per
@@ -22,25 +22,25 @@ fglform hello.per
 Aprire hello.42f con OPEN WINDOW ... WITH FORM in un programma Genero BDL.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-La form espone la LABEL greeting_label con testo Hello, World!.
+The form shows the LABEL greeting_label with Hello, World! text.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
-Impedimenti: Toolchain proprietaria Genero form e front-end non preparati; compilation/rendering pendenti.
+Commitments: Toolchain owner Genero form and front-end not prepared; compilation/rendering pendants.
 
-## Fonti primarie
+## Primary sources
 
 - https://4js.com/techdocs/fjs-fgl-manual/fgl-topics/c_fgl_FormSpecFiles_LABEL.html
 - https://4js.com/online_documentation/fjs-fgl-manual-html/fgl-topics/c_fgl_FormSpecFiles_GRID.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.per` | [hello.per](hello.per) creato, verifiche pendenti |
+| `.per` | [hello.per](hello.per) created; verification pending |

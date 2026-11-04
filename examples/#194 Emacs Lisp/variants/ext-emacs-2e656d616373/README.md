@@ -1,15 +1,15 @@
 # #194 Emacs Lisp variante `.emacs`
 
-File originale con ruolo specifico del suffisso. Eseguito esplicitamente con GNU Emacs 29.3, senza ereditare la verifica di un altro file.
+Original file with specific role of the suffix.Explainly executed with GNU Emacs 29.3, without inherit the verification of another file.
 
-Dalla cartella principale dell'esempio:
+From the main folder of the example:
 
 ```sh
 emacs -Q --batch --load variants/ext-emacs-2e656d616373/hello.emacs
 ```
 
-Risultato reale `Hello, World!`, exit 0. Sintassi e semantica verificate il `2026-10-08T23:33:35.178799+00:00`.
+Result real `Hello, World!`, exit 0. syntax and behavior verified `2026-10-08T23:33:35.178799+00:00`.
 
-[Log della verifica](../../verification/runtime.json) con comando e SHA-256 di questo file.
+[Log della verifica](../../verification/runtime.json) with command and SHA-256 of this file.
 
-Il file di startup viene caricato realmente da Emacs in batch.
+The startup file is actually uploaded by Emacs in batch.

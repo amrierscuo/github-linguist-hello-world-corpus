@@ -1,36 +1,36 @@
 # #824 mupad
 
-Valutare un programma MuPAD legacy.
+Evaluate a legacy MuPAD program.
 
 ## Toolchain
 
 MuPAD symbolic runtime
 
-## Procedura
+## Procedure
 
-Caricare/eseguire hello.mu in MuPAD e registrare la rappresentazione della stringa.
+Caricare/eseguire hello.mu in MuPAD and record string representation.
 
-## Risultato atteso
+## Expected result
 
-MuPAD print mostra il valore stringa Hello, World!, eventualmente delimitato da virgolette.
+MuPAD print shows the Hello, World! string value, possibly bound by quotes.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- MuPAD legacy runtime non disponibile; compatibilità della versione da registrare.
+Remaining requirements:
+- MuPAD legacy runtime unavailable; compatibility of the version to record.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.mathworks.com/help/symbolic/mupad.html](https://www.mathworks.com/help/symbolic/mupad.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mu` | [hello.mu](hello.mu) creato, verifiche pendenti |
+| `.mu` | [hello.mu](hello.mu) created; verification pending |

@@ -1,31 +1,33 @@
 # #663 Slang
 
-Compilare un compute shader Slang che scrive i codici ASCII del saluto.
+Slang generated C++ from the original compute shader. A native CPU host dispatched it and read back the exact ASCII greeting.
 
-Tipo canonico `programming`, language_id `239357863`.
+Canonical type: `programming`. Linguist language ID: `239357863`.
 
-Toolchain prevista: Slang v2026.19 official Windows compiler; SPIR-V compile verified, GPU execution pending.
+## Recorded verification
 
-Dalla cartella dell’esempio:
+**Syntax and behavior verified** on November 4, 2026 with Slang 2026.19 and Zig C++ 0.15.2.
+
+[Recorded commands, outputs and hashes](verification/native_20261104_slang_result.json).
+[Earlier verification record](verification/result.json).
+
+## Reproduce the check
+
+In a scratch directory copy `hello.slang` and `verification/dispatch.cpp`. With the recorded Slang and Zig versions:
 
 ```sh
-slangc hello.slang -entry main -target spirv -o build/hello.spv
+slangc hello.slang -entry main -target cpp -o generated_shader.cpp
+zig c++ -O2 -std=c++17 dispatch.cpp -o dispatch.exe
+./dispatch.exe
 ```
 
-Risultato atteso: shader compilato; dispatch restituisce ASCII Hello, World!.
+This verifies the CPU compute target. GPU dispatch is outside the scope of this run.
 
-Slang è il linguaggio shader del compiler shader-slang; la semantica GPU non deriva dal solo output SPIR-V.
+## Primary sources
 
-Stato registrato: sintassi verificata; semantica in attesa. Toolchain: Slang official Windows release v2026.19. [Log](verification/result.json). Compiler Slang genera SPIR-V; host GPU e dispatch non eseguiti.
 
-Fonti:
+## Extension coverage
 
-- [Shader Slang](https://shader-slang.org/docs/)
-
-## Copertura delle estensioni
-
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
-
-| Estensione | File / stato |
-| --- | --- |
-| `.slang` | [hello.slang](hello.slang) sintassi verificata |
+| Extension | Files | Status |
+| --- | --- | --- |
+| `.slang` | [hello.slang](hello.slang) | Syntax and behavior verified |

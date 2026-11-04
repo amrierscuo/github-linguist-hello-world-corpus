@@ -1,37 +1,37 @@
 # #727 Turtle
 
-Leggere una tripla Turtle e recuperare il literal del saluto.
+Read a triple Turtle and recover the literal greeting.
 
 ## Toolchain
 
 CPython3.13.9; RDFLib7.6.0
 
-## Procedura
+## Procedure
 
 pip install rdflib; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-RDFLib parser autentico; IRIs sono identificatori illustrativi senza richieste di rete.
+RDFLib parser authentic; IRIs are illustrative identifiers without network requests.
 
-Verifica reale 2026-10-08T13:30:05.471503+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:30:05.471503+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.w3.org/TR/turtle/](https://www.w3.org/TR/turtle/)
 - [https://rdflib.readthedocs.io/](https://rdflib.readthedocs.io/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ttl` | [hello.ttl](hello.ttl) verificato |
+| `.ttl` | [hello.ttl](hello.ttl) verified |

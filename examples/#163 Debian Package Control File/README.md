@@ -1,37 +1,37 @@
 # #163 Debian Package Control File
 
-Descrivere ed estrarre un piccolo pacchetto sorgente Debian nativo 1.0; hello.txt estratto deve contenere Hello, World!.
+Describe and extract a small native Debian source package 1.0; hello.txt extract must contain Hello, World!.
 
 ## Toolchain
 
 Debian dpkg-source version 1.22.6.
 
-## Comandi e procedura
+## Commands and procedure
 
 dpkg-source --version; dpkg-source -x hello-world-corpus_1.0.dsc build/source; cat build/source/hello.txt
 
-## Risultato atteso
+## Expected result
 
-Descrittore e checksum accettati; estrazione exit 0; hello.txt contiene il saluto più newline.
+Accepted descriptor and checksum; exit 0; hello.txt contains the newest greeting.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il .dsc è un descrittore di pacchetto sorgente, con MD5, SHA-1 e SHA-256 reali del tar.gz originale incluso. L’archivio deterministico contiene solo hello.txt, senza eseguibili. È unsigned e dimostra estrazione del sorgente: non è una prova di pacchetto binario installabile. Il warning di firma assente è conservato nel log.
+The .dsc is a source package descriptor, with MD5, SHA - 1 and SHA-256 real of the original tar.gz included. The deterministic archive contains only hello.txt, without warnings.
 
-Verifica effettiva del 2026-10-08T11:56:17.956022+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:17.956022+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://www.debian.org/doc/debian-policy/ch-controlfields.html#debian-source-control-files-dsc](https://www.debian.org/doc/debian-policy/ch-controlfields.html#debian-source-control-files-dsc)
 - [https://manpages.debian.org/dpkg-dev/dpkg-source.1.en.html](https://manpages.debian.org/dpkg-dev/dpkg-source.1.en.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dsc` | [hello-world-corpus_1.0.dsc](hello-world-corpus_1.0.dsc) verificato |
+| `.dsc` | [hello-world-corpus_1.0.dsc](hello-world-corpus_1.0.dsc) verified |

@@ -1,42 +1,42 @@
 # #470 Nginx
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Caricare una configurazione Nginx e servire Hello, World! via HTTP su loopback.
+Upload a Nginx configuration and serve Hello, World! via HTTP on loopback.
 
-Il file principale .nginxconf usa return200 nella location/greeting. Il driver invoca nginx-t, avvia solo il processo dedicato su127.0.0.1:18080, confronta il corpo e in finally arresta il processo e verifica la chiusura del listener. File temporanei e log restano nella copia in work.
+The main file .nginxconf uses return200 in location/greeting. The driver invokes nginx-t, starts only the dedicated process su127.0.0.1: 18080, compares the body and finally stops the process and checks the closing of the listener. Temporary files and logs remain in the copy in work.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Nginx1.24.0 Ubuntu, Python3 della fixture locale
+Nginx1.24.0 Ubuntu, Python3 of the local fixture
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python3 verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Configurazione accettata; HTTP200/body esatto Hello, World!; CLEANUP confermato.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return
 - https://nginx.org/en/docs/switches.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nginx` | [hello.nginx](variants/nginx-50552489/hello.nginx) creato, verifiche pendenti |
-| `.nginxconf` | [hello.nginxconf](hello.nginxconf) verificato |
-| `.vhost` | [hello.vhost](variants/vhost-a09033b0/hello.vhost) creato, verifiche pendenti |
+| `.nginx` | [hello.nginx](variants/nginx-50552489/hello.nginx) created; verification pending |
+| `.nginxconf` | [hello.nginxconf](hello.nginxconf) verified |
+| `.vhost` | [hello.vhost](variants/vhost-a09033b0/hello.vhost) created; verification pending |

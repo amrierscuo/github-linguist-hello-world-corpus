@@ -1,30 +1,30 @@
-# 0288 — Hack: `.hh`
+# 0288: Hack: `.hh`
 
-Ruolo: Sorgente Hack con tag <?hh e entry point HHVM; non è un programma PHP.
+Role: Source Hack tagged <?hh and entry point HHVM; it is not a PHP program.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: HHVM/Hack e typechecker hh_client; versioni effettive da registrare. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: HHVM/Hack e typechecker hh_client; versioni effettive da registrare. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 hh_client; hhvm hello.hh
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.hh`: `f0d3a9127b2b5314d4505c825137f6aa22e3e95e47aa32098a8d2af349498045`
 
-Fonti primarie:
+Primary sources:
 
 - https://docs.hhvm.com/hack/getting-started/getting-started
 - https://docs.hhvm.com/hack/source-code-fundamentals/program-structure/

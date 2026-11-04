@@ -1,37 +1,27 @@
 # #574 QML
 
-Mostrare un testo QML in una finestra Qt Quick.
+Qt Quick loaded the original QML and rendered a 320 by 120 frame. The native text item and the visible frame both show Hello, World!
 
-## Toolchain
+Canonical type: `programming`. Linguist language ID: `305`.
 
-Qt 6 QML/QtQuick
+## Recorded verification
 
-## Procedura
+**Syntax and behavior verified** on November 4, 2026 with PySide6 6.9.2 and Qt 6.9.2 software Qt Quick.
 
-qml hello.qml
+[Recorded commands, outputs and hashes](verification/native_20261104_qml_result.json).
+[Rendered frame](verification/native_20261104_frame.png).
 
-## Risultato atteso
+## Reproduce the check
 
-Hello, World!
+To view the example with Qt Quick installed, run `qml hello.qml` from the example directory. The recorded check used QQmlApplicationEngine with the offscreen platform and software Qt Quick, then checked the text item and grabbed the frame. The Qbs project has its own pending check.
 
-## Stato
+## Primary sources
 
-Sintassi e semantica in attesa.
+- https://doc.qt.io/qt-6/qml-qtquick-text.html
 
+## Extension coverage
 
-
-Requisiti residui:
-- Runtime QtQuick/plugin grafici non predisposti; caricamento e rendering pending.
-
-## Fonti primarie
-
-- [https://doc.qt.io/qt-6/qml-qtquick-text.html](https://doc.qt.io/qt-6/qml-qtquick-text.html)
-
-## Copertura delle estensioni
-
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
-
-| Estensione | File / stato |
-| --- | --- |
-| `.qml` | [hello.qml](hello.qml) creato, verifiche pendenti |
-| `.qbs` | [hello.qbs](variants/qbs-7cd27494/hello.qbs) creato, verifiche pendenti |
+| Extension | Files | Status |
+| --- | --- | --- |
+| `.qml` | [hello.qml](hello.qml) | Syntax and behavior verified |
+| `.qbs` | [hello.qbs](variants/qbs-7cd27494/hello.qbs) | Verification pending |

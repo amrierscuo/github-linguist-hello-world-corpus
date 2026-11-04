@@ -1,39 +1,39 @@
 # #301 IDL
 
-Stampare Hello, World! con PRINT in una procedura IDL.
+Print Hello, World! with PRINT in a IDL procedure.
 
 ## Toolchain
 
 NV5 Geospatial IDL proprietario; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 IDL> .compile hello.pro
 IDL> hello
 
-## Risultato atteso
+## Expected result
 
-Console IDL: Hello, World! più newline.
+IDL console: Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-IDL è Interactive Data Language, identificato dalla estensione .pro della baseline. La procedura non è CORBA IDL. PRINT e sintassi sono documentati dal vendor.
+IDL is Interactive Data Language, identified by the .pro extension of the baseline. The procedure is not CORBA IDL. PRINT and syntax are documented by the vendor.
 
-Requisiti residui:
-- Runtime NV5 IDL/licenza non disponibile; compilazione ed esecuzione pending.
+Remaining requirements:
+- Runtime NV5 IDL/licenza unavailable; compilazione ed esecuzione pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.nv5geospatialsoftware.com/docs/PRINT.html](https://www.nv5geospatialsoftware.com/docs/PRINT.html)
 - [https://www.nv5geospatialsoftware.com/docs/Defining_Procedures.html](https://www.nv5geospatialsoftware.com/docs/Defining_Procedures.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pro` | [hello.pro](hello.pro) creato, verifiche pendenti |
-| `.dlm` | [hello.dlm](variants/dlm-86f10b11/hello.dlm) creato, verifiche pendenti |
+| `.pro` | [hello.pro](hello.pro) created; verification pending |
+| `.dlm` | [hello.dlm](variants/dlm-86f10b11/hello.dlm) created; verification pending |

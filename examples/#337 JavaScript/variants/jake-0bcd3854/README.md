@@ -1,30 +1,30 @@
-# 0337 — JavaScript: `.jake`
+# 0337: JavaScript: `.jake`
 
-Ruolo: Task Jake DSL, non main JavaScript generico.
+Role: Jake Task DSL, not main JavaScript generic.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Node.js 22.20.0. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Node.js 22.20.0. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 jake -f hello.jake hello
 ```
 
-Risultato atteso: Hello, World! nel log/valore/risposta o geometria secondo il ruolo; PAC restituisce DIRECT senza rete.
+Expected result: Hello, World! in log/valore/risposta or geometry according to the role; PAC returns DIRECT without network.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.jake`: `dfdc8e6f6117faa5f8b3e8df876bf2e2c573aded23959c5797e8a6937e2ec99e`
 
-Fonti primarie:
+Primary sources:
 
 - https://jakejs.com/
 - https://nodejs.org/api/console.html#consolelogdata-args

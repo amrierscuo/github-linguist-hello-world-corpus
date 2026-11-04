@@ -1,23 +1,27 @@
-# 0730 — TypeScript — `.cts`
+# 0730: TypeScript: `.cts`
 
-Modulo TypeScript CommonJS determinato dal suffisso.
+## Recorded verification
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+**Syntax and behavior verified** on November 4, 2026. Compile both originals using strict NodeNext TypeScript settings and execute emitted .cjs and .mjs using Node. [Evidence](../../verification/native_20261104_730_variants_result.json).
+
+TypeScript CommonJS module determined by the suffix.
+
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.cts`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 tsc --target ES2022 --module NodeNext --moduleResolution NodeNext --outDir work hello.cts; node work/hello.cjs
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.typescriptlang.org/docs/handbook/modules/reference.html#module-format-detection](https://www.typescriptlang.org/docs/handbook/modules/reference.html#module-format-detection)

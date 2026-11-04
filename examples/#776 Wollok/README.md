@@ -2,48 +2,48 @@
 
 Voce canonica `Wollok`, tipo `programming`, language_id `632745969`.
 
-Oggetto Wollok originale greeting con metodo hello(), importato da un programma che invia il risultato a console.println.
+Subject Wollok original greeting with hello( method), imported from a program that sends the result to console.println.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-wollok-ts / Node.js 22.20.0 — 4.3.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+wollok-ts / Node.js 22.20.0, 4.3.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Node.js 22.20.0 e wollok-ts 4.3.0 del progetto Uqbar. Installare il pacchetto in un prefisso esterno e impostare NODE_PATH sul relativo node_modules.
+Node.js 22.20.0 and wollok-ts 4.3.0 of the Uqbar project. Install the package in an external prefix and set NODE_PATH on its node_modules.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 node verify.cjs
 ```
 
-Risultato atteso: Hello, World! prodotto dal programma e PASS.
+Expected result: Hello, World! produced by the program and PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il parser originale analizza entrambi i sorgenti, buildEnvironment li collega con WRE e l’interprete originale esegue il programma. Il driver raccoglie il log della console dell’interprete e lo confronta con il saluto.
+The original parser analyzes both sources, buildEnvironment connects them with WRE and the original interpreter performs the program.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://uqbar-project.github.io/wollok-ts/](https://uqbar-project.github.io/wollok-ts/)
 - [https://github.com/uqbar-project/wollok-ts](https://github.com/uqbar-project/wollok-ts)
 - [https://www.wollok.org/](https://www.wollok.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.wlk` | [greeting.wlk](greeting.wlk) verificato |
+| `.wlk` | [greeting.wlk](greeting.wlk) verified |

@@ -1,39 +1,39 @@
 # #176 ECL
 
-Restituire una stringa scalare Hello, World! come risultato OUTPUT di un workunit HPCC ECL.
+Return a Hello, World! scale string as OUTPUT result of a HPCC ECL workunit.
 
 ## Toolchain
 
 HPCC Systems ECL compiler eclcc e cluster locale; versioni da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-eclcc -syntax hello.ecl; eseguire hello.ecl nella IDE/Playground del cluster di sviluppo locale e leggere Results
+eclcc -syntax hello.ecl; perform hello.ecl in the IDE/Playground of the local development cluster and read Results
 
-## Risultato atteso
+## Expected result
 
-Sintassi accettata; risultato scalare del workunit contiene Hello, World!.
+syntax accepted; result of the workunit contains Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-ECL qui significa Enterprise Control Language di HPCC Systems. OUTPUT restituisce un risultato del workunit; non si dichiara uno stdout console. La voce distinta ECLiPSe usa invece Prolog.
+ECL here means Enterprise Control Language of HPCC Systems. OUTPUT returns a result of the workunit; it does not declare a stdout console.
 
-Requisiti residui:
-- eclcc e cluster HPCC locale non disponibili; parsing e risultato workunit pending.
+Remaining requirements:
+- eclcc and local HPCC cluster not available; parsing and result workunit pending.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://hpccsystems.com/wp-content/uploads/_documents/ECLR_EN_US/OUTPUT.html](https://hpccsystems.com/wp-content/uploads/_documents/ECLR_EN_US/OUTPUT.html)
 - [https://hpccsystems.com/training/documentation/learning-ecl/](https://hpccsystems.com/training/documentation/learning-ecl/)
 - [https://github.com/hpcc-systems/HPCC-Platform/blob/master/ecl/eclcc/eclcc.hpp](https://github.com/hpcc-systems/HPCC-Platform/blob/master/ecl/eclcc/eclcc.hpp)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ecl` | [hello.ecl](hello.ecl) creato, verifiche pendenti |
-| `.eclxml` | [hello.eclxml](variants/ext-eclxml-2e65636c786d6c/hello.eclxml) creato, verifiche pendenti |
+| `.ecl` | [hello.ecl](hello.ecl) created; verification pending |
+| `.eclxml` | [hello.eclxml](variants/ext-eclxml-2e65636c786d6c/hello.eclxml) created; verification pending |

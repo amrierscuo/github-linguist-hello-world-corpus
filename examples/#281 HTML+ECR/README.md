@@ -1,18 +1,18 @@
 # #281 HTML+ECR
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Renderizzare un template HTML+ECR con pubblico World e produrre il paragrafo Hello, World!.
+Render a HTML + ECR template with World audience and produce the Hello, World! paragraph.
 
-ECR.render incorpora il template nel programma Crystal durante la compilazione. audience è un valore del contesto Crystal interpolato nell’HTML. La verifica compila ed esegue il renderer originale; cache, oggetti e binario restano in work.
+ECR.render incorporates the template into the Crystal program during compilation. audience is a value of the Crystal context interpolated in the HTML.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Crystal 1.11.2, LLVM17.0.6, ECR stdlib; GNU linker e PCRE8.39 isolata
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 crystal build render.cr -o render
@@ -22,22 +22,22 @@ crystal build render.cr -o render
 ./render
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout <p>Hello, World!</p> seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://crystal-lang.org/api/1.11.2/ECR.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ecr` | [hello.ecr](hello.ecr) verificato |
+| `.ecr` | [hello.ecr](hello.ecr) verified |

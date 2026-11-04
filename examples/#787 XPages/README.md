@@ -1,42 +1,42 @@
 # #787 XPages
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Caricare un controllo custom XPages configurato per mostrare Hello, World!.
+Upload a custom XPages control configured to show Hello, World!.
 
 L’artefatto canonico .xsp-config registra il controllo, namespace, tag e file composito. La fixture .xsp contiene il valore da renderizzare. Non si attribuisce una verifica XPages alla sola buona formazione XML.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 HCL Domino Designer/XPages, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Domino Designer: importare Greeting.xsp-config e Greeting.xsp nella cartella CustomControls, compilare e inserire il controllo Greeting in una pagina di prova
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Controllo Greeting renderizzato con Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Domino Designer/XPages non disponibile; parser del componente e rendering pendenti.
+Commitments: Domino Designer/XPages unavailable; component parser and hanging renderings.
 
-## Fonti primarie
+## Primary sources
 
 - https://help.hcl-software.com/dom_designer/10.0.1/basic/H_CUSTOM_CONTROLS_IN_ECLIPSE.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.xsp-config` | [Greeting.xsp-config](Greeting.xsp-config) creato, verifiche pendenti |
-| `.xsp.metadata` | artefatto da generare Designer XPages metadata con schema/versione proprietari non identificati: manca una struttura attendibile per questo suffisso composto e non viene rinominato il control .xsp. |
+| `.xsp-config` | [Greeting.xsp-config](Greeting.xsp-config) created; verification pending |
+| `.xsp.metadata` | artifact to generate Designer XPages metadata with schema/versione unidentified owners: there is a reliable structure for this compound suffix and no .xsp. control is renamed |

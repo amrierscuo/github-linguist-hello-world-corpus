@@ -1,37 +1,37 @@
 # #170 Dotenv
 
-Leggere GREETING dal formato Dotenv e popolarlo in un oggetto isolato.
+Read GREETING from Dotenv format and populate it in an isolated object.
 
 ## Toolchain
 
 Node.js v22.20.0; dotenv 18.0.6
 
-## Comandi e procedura
+## Commands and procedure
 
 npm install; node check.cjs
 
-## Risultato atteso
+## Expected result
 
 Oggetto esattamente {GREETING:"Hello, World!"}; saluto stampato e exit 0.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il file .env.example contiene solo un saluto illustrativo, senza credenziali. dotenv.parse interpreta le virgolette; populate usa un oggetto separato e non cambia l’ambiente della macchina.
+The .env.example file contains only an illustrative greeting, without credentials. dotenv.parse interprets quotes; populate uses a separate object and does not change the environment of the machine.
 
-Verifica effettiva del 2026-10-08T11:56:13.144812+00:00 su Windows x64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:13.144812+00:00 on Windows x64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://github.com/motdotla/dotenv#usage](https://github.com/motdotla/dotenv#usage)
 - [https://github.com/motdotla/dotenv#parse](https://github.com/motdotla/dotenv#parse)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.env` | [hello.env](variants/ext-env-2e656e76/hello.env) creato, verifiche pendenti |
+| `.env` | [hello.env](variants/ext-env-2e656e76/hello.env) created; verification pending |

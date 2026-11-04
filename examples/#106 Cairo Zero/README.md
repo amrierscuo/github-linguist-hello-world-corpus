@@ -1,12 +1,12 @@
 # #106 Cairo Zero
 
-Scrivere nell’output Cairo Zero un felt che codifica in ASCII big-endian Hello, World!.
+Write in the Cairo Zero output a felt that encodes in ASCII big-endian Hello, World!.
 
-Tipo canonico: `programming`; `language_id`: `891399890`.
+Canonical type: `programming`; `language_id`: `891399890`.
 
-Toolchain prevista: cairo-lang 0.14.x (Cairo Zero) in un ambiente Python compatibile. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: cairo-lang 0.14.x (Cairo Zero) in a compatible Python environment.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 mkdir -p build
@@ -14,21 +14,21 @@ cairo-compile hello.cairo --output=build/hello.json
 cairo-run --program=build/hello.json --layout=plain --print_output
 ```
 
-Risultato atteso: output numerico `5735816763073854918203775149089`, che decodificato come byte big-endian dà `Hello, World!`.
+Expected result: `5735816763073854918203775149089` numerical output, which decoded as byte big-endian gives `Hello, World!`.
 
-Il runtime Zero espone celle di campo, non una console testuale. La stringa corta di 13 byte rientra in un felt. Questo obiettivo riguarda output e decodifica, senza generazione di una prova crittografica.
+The runtime Zero exposes field cells, not a text console. The short string of 13 byte falls into a felt. This lens is about output and decoding, without cryptographic test generation.
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Initial state: artifact created, syntax and behavioral verification pending. Specific toolchain not yet performed on this example; syntax and behavior remain to be checked.
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Cairo Zero — serialize_word originale](https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/serialize.cairo)
 - [Cairo Zero — segmenti e output](https://docs.cairo-lang.org/cairozero/how_cairo_works/segments.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cairo` | [hello.cairo](hello.cairo) creato, verifiche pendenti |
+| `.cairo` | [hello.cairo](hello.cairo) created; verification pending |

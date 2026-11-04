@@ -1,33 +1,33 @@
 # #503 OpenEdge ABL
 
-Mostrare il saluto in una finestra informativa ABL.
+Show greeting in an informative window ABL.
 
-Tipo canonico `programming`, language_id `264`.
+Canonical type `programming`, language_id `264`.
 
-Toolchain prevista: Progress OpenEdge ABL.
+Suggested toolchain: Progress OpenEdge ABL.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 pro -p hello.p
 ```
 
-Risultato atteso: alert box con Hello, World!.
+Expected result: alert box with Hello, World!.
 
-Richiede il runtime OpenEdge; non viene interpretato come un altro Pascal.
+It requires the OpenEdge runtime; it is not interpreted as another Pascal.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Runtime Progress OpenEdge non disponibile.
+Initial state: created; syntax and behavioral verification pending. Runtime Progress OpenEdge unavailable.
 
-Fonti:
+Sources:
 
 - [Progress MESSAGE](https://docs.progress.com/bundle/abl-reference/page/MESSAGE-statement.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.p` | [hello.p](hello.p), [driver.p](variants/cls-699ea095/driver.p) creato, verifiche pendenti |
-| `.cls` | [CorpusGreeting.cls](variants/cls-699ea095/CorpusGreeting.cls) creato, verifiche pendenti |
-| `.w` | [hello.w](variants/w-931a997c/hello.w) creato, verifiche pendenti |
+| `.p` | [hello.p](hello.p), [driver.p](variants/cls-699ea095/driver.p) created; verification pending |
+| `.cls` | [CorpusGreeting.cls](variants/cls-699ea095/CorpusGreeting.cls) created; verification pending |
+| `.w` | [hello.w](variants/w-931a997c/hello.w) created; verification pending |

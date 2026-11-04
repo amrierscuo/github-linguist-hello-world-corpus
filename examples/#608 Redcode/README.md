@@ -2,46 +2,46 @@
 
 Voce canonica `Redcode`, tipo `programming`, language_id `321`.
 
-Caricare un warrior Redcode originale con i codici ASCII del saluto nel suo segmento dati.
+Upload an original Redcode warrior with ASCII greeting codes in its data segment.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine pmars compiler/runtime — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine pmars compiler/runtime, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede pMARS ICWS-94 con CORESIZE 8000 e accesso alla vista memoria del simulatore.
+It requires pMARS ICWS - 94 with CORESIZE 8000 and access to the memory view of the simulator.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 pmars -a hello.cw; pmars hello.cw hello.cw
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Redcode non possiede I/O stringa: il goal eÌ€ assemblare e osservare i 13 operand A delle DAT, che ricostruiscono Hello, World!, mentre JMP mantiene il processo. Parser/simulatore mancanti; nessun claim di output console.
+Redcode does not possess I/O string: the goal is to assemble and observe the 13 operand A of the DAT, which reconstruct Hello, World!, while JMP maintains the process. Parser/simulatore missing; no claim to output console.
 
-Requisiti residui:
+Remaining requirements:
 
 - Required pmars compiler/runtime and matching host resources are not available/configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [http://www.koth.org/pmars/](http://www.koth.org/pmars/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cw` | [hello.cw](hello.cw) creato, verifiche pendenti |
+| `.cw` | [hello.cw](hello.cw) created; verification pending |

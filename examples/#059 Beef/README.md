@@ -2,46 +2,46 @@
 
 Voce canonica: `Beef`, tipo `programming`, `language_id: 545626333`.
 
-Compilare un’applicazione console Beef e stampare Hello, World! da Program.Main.
+Fill out a Beef console application and print Hello, World! from Program.Main.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-BeefBuild.exe — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+BeefBuild.exe, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede BeefBuild e la libreria System della stessa distribuzione. I file di workspace vanno generati con BeefBuild -new nella copia di lavoro; il corpus contiene il modulo sorgente originale.
+The workspace files must be generated with BeefBuild -new in the work copy; the corpus contains the original source module.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 In una copia di lavoro: BeefBuild -new; sostituire src/Program.bf con il sorgente fornito; BeefBuild -run
 ```
 
-Risultato atteso: Workspace compilato senza errori; console Hello, World! seguito da newline.
+Expected result: Workspace compiled without errors; Hello, World! console followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Usa la funzione main statica e Console.WriteLine della libreria Beef. BeefBuild non è presente: nessuna compilazione o esecuzione è attestata.
+Use the main static and Console.WriteLine function of the Beef library. BeefBuild is not present: no compilation or execution is attested.
 
-Requisiti residui:
+Remaining requirements:
 
 - BeefBuild.exe toolchain not installed or not available in this isolated verification environment.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.beeflang.org/docs/getting-start/](https://www.beeflang.org/docs/getting-start/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bf` | [Program.bf](src/Program.bf) creato, verifiche pendenti |
+| `.bf` | [Program.bf](src/Program.bf) created; verification pending |

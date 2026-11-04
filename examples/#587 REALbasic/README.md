@@ -1,37 +1,37 @@
 # #587 REALbasic
 
-Importare un modulo REALbasic esportato che restituisce il saluto da Message.
+Import an exported REALbasic module that returns greeting from Message.
 
-Tipo canonico `programming`, language_id `310`.
+Canonical type `programming`, language_id `310`.
 
-Toolchain prevista: REALbasic/Xojo con import text project.
+Suggested toolchain: REALbasic/Xojo with import text project.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Importare Greeting.rbbas e chiamare Greeting.Message in un progetto console di prova.
 ```
 
-Risultato atteso: compilazione del modulo; Message restituisce Hello, World!.
+Expected result: filling out the form; Message returns Hello, World!.
 
-Il file è un modulo esportato; l’applicazione host e il compiler sono requisiti ancora aperti.
+The file is an exported form; the host application and the compiler are still open requirements.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Compiler REALbasic/Xojo e progetto host non disponibili.
+Initial state: created; syntax and behavioral verification pending. Compiler REALbasic/Xojo and host project not available.
 
-Fonti:
+Sources:
 
 - [Xojo text project format](https://documentation.xojo.com/topics/projects/version_control.html)
 - [Xojo modules](https://documentation.xojo.com/topics/code_management/modules.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rbbas` | [Greeting.rbbas](Greeting.rbbas) creato, verifiche pendenti |
-| `.rbfrm` | [hello.rbfrm](variants/rbfrm-d996a914/hello.rbfrm) creato, verifiche pendenti |
-| `.rbmnu` | [hello.rbmnu](variants/rbmnu-7e96a970/hello.rbmnu) creato, verifiche pendenti |
-| `.rbres` | artefatto da generare Formato componente/progetto REALbasic specifico: occorre un export reale dell’IDE storico e, per risorse/stato UI, eventuali dati binari associati; un modulo .rbbas non è un sostituto. |
-| `.rbtbar` | [hello.rbtbar](variants/rbtbar-bfa28cac/hello.rbtbar) creato, verifiche pendenti |
-| `.rbuistate` | artefatto da generare Formato componente/progetto REALbasic specifico: occorre un export reale dell’IDE storico e, per risorse/stato UI, eventuali dati binari associati; un modulo .rbbas non è un sostituto. |
+| `.rbbas` | [Greeting.rbbas](Greeting.rbbas) created; verification pending |
+| `.rbfrm` | [hello.rbfrm](variants/rbfrm-d996a914/hello.rbfrm) created; verification pending |
+| `.rbmnu` | [hello.rbmnu](variants/rbmnu-7e96a970/hello.rbmnu) created; verification pending |
+| `.rbres` | artifact to generate componente/progetto format specific REALbasic: a real export of the historical IDE is necessary and, for risorse/stato UI, any associated binary data; a .rbbas module is not a substitute. |
+| `.rbtbar` | [hello.rbtbar](variants/rbtbar-bfa28cac/hello.rbtbar) created; verification pending |
+| `.rbuistate` | artifact to generate componente/progetto format specific REALbasic: a real export of the historical IDE is necessary and, for risorse/stato UI, any associated binary data; a .rbbas module is not a substitute. |

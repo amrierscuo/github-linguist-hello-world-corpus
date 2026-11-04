@@ -2,46 +2,46 @@
 
 Voce canonica `Parrot`, tipo `programming`, language_id `278`.
 
-Fornire un input originale al VM Parrot generico e stampare il saluto.
+Provide an original input to the generic VM Parrot and print the greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine compiler/runtime — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine compiler/runtime, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede Parrot e frontend PASM. Il file .parrot è testo sorgente in formato assembly, selezionato esplicitamente con -a; non è bytecode inventato.
+Parrot and frontend PASM. The .parrot file is source text in assembly format, explicitly selected with -a; it is not invented bytecode.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 parrot -a hello.parrot
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Parrot è il VM comune alle voci PASM e PIR; questa voce generica usa la sua estensione canonica con una selezione del frontend. Toolchain assente, entrambi i flag pending.
+Parrot is the VM common to PASM and PIR voices; this generic voice uses its canonical extension with a selection of the frontend. Toolchain absent, both flag pending.
 
-Requisiti residui:
+Remaining requirements:
 
 - Required parrot compiler/interpreter and matching host libraries are not configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://parrot.github.io/html/docs/intro.pod.html](https://parrot.github.io/html/docs/intro.pod.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.parrot` | [hello.parrot](hello.parrot) creato, verifiche pendenti |
+| `.parrot` | [hello.parrot](hello.parrot) created; verification pending |

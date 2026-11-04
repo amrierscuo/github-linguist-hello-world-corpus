@@ -1,33 +1,33 @@
 # #080 Browserslist
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Risolvere una configurazione Browserslist in due target espliciti e deterministici.
+Solve a Browserslist configuration in two explicit and deterministic targets.
 
-Browserslist è un formato di configurazione di target, quindi il risultato pertinente è la selezione di browser. .browserslistrc è letto e risolto dalla libreria Browserslist autentica; verify.cjs controlla soltanto l’elenco prodotto. Versioni esplicite evitano query dipendenti dalla data.
+Browserslist is a target configuration format, so the relevant result is browser selection. .browserslistrc is read and solved by the authentic Browserslist library; verify.cjs only controls the product list.Explicit versions avoid queries dependent on the date.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Browserslist 4.29.3; Node.js 22.20.0
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 node verify.cjs <directory-node_modules-con-browserslist>
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 chrome 100
 firefox 100
 PASS: expected explicit browser targets
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+The `verification/toolchain.json` log records actual commands, versioni/provenienza of the toolchain, output codes, stdout/stderr and SHA-256 of the proven sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/browserslist/browserslist

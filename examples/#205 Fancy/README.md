@@ -2,47 +2,47 @@
 
 Voce canonica `Fancy`, tipo `programming`, language_id `109`.
 
-Inviare println a una stringa Fancy contenente il saluto.
+Send println to a Fancy string containing greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required authentic toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required authentic toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede il compilatore/runtime Fancy originale e il VM Rubinius compatibile. Nessuna traduzione manuale in Ruby è usata come prova.
+Requires the original compilatore/runtime Fancy and the compatible VM Rubinius. No manual translation in Ruby is used as proof.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 fancy hello.fy
 ```
 
-Risultato atteso: Una riga Hello, World!.
+Expected result: A Hello, World! line.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-La sintassi a invio di messaggi segue il progetto bakkdoor/fancy. Il runtime non è disponibile.
+The syntax sending messages follows the bakkdoor/fancy. project The runtime is not available.
 
-Requisiti residui:
+Remaining requirements:
 
 - Fancy and its required Rubinius VM are unavailable.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/bakkdoor/fancy](https://github.com/bakkdoor/fancy)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fy` | [hello.fy](hello.fy), [greeting.fy](variants/ext-fancypack-2e66616e63797061636b/greeting.fy) creato, verifiche pendenti |
-| `.fancypack` | [hello.fancypack](variants/ext-fancypack-2e66616e63797061636b/hello.fancypack) creato, verifiche pendenti |
+| `.fy` | [hello.fy](hello.fy), [greeting.fy](variants/ext-fancypack-2e66616e63797061636b/greeting.fy) created; verification pending |
+| `.fancypack` | [hello.fancypack](variants/ext-fancypack-2e66616e63797061636b/hello.fancypack) created; verification pending |

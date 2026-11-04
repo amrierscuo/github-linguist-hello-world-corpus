@@ -1,23 +1,23 @@
-# 0808 — Zimpl — `.zimpl`
+# 0808: Zimpl: `.zimpl`
 
-Variante testuale dello stesso formato, con suffisso canonico .zimpl.
+Textual variation of the same format, with canon suffix .zimpl.
 
-Provenienza: copia del file originale `examples/#808 Zimpl/hello.zpl`.
+Origin: copy of the original `examples/#808 Zimpl/hello.zpl` file.
 
 Artefatto principale: `hello.zimpl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 zimpl -o work/hello hello.zimpl
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://zimpl.zib.de/](https://zimpl.zib.de/)

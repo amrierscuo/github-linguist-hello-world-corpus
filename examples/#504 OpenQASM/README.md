@@ -1,39 +1,39 @@
 # #504 OpenQASM
 
-Simulare un circuito OpenQASM 2 che prepara e misura i bit ASCII del saluto.
+Simulate an OpenQASM 2 circuit that prepares and measures the ASCII bits of greeting.
 
-Tipo canonico `programming`, language_id `153739399`.
+Canonical type `programming`, language_id `153739399`.
 
-Toolchain prevista: Qiskit OpenQASM 2 parser e Aer stabilizer simulator.
+Suggested toolchain: Qiskit OpenQASM 2 parser and Aer stabilizer simulator.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: 104 misure deterministiche decodificate in Hello, World!.
+Expected result: 104 decoded deterministic measures in Hello, World!.
 
-X gates preparano stati della base computazionale; il simulatore stabilizer non alloca un vettore di 2^104 stati.
+X gates prepare computational base states; the stabilizer simulator does not allocate a 2 vector 104 states.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Qiskit 2.5.2 + qiskit-aer 0.17.2 native stabilizer simulator. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Qiskit 2.5.2 + qiskit-aer 0.17.2 native stabilizer simulator. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [OpenQASM 2](https://github.com/openqasm/openqasm/tree/main/specs)
 - [Qiskit qasm2](https://docs.quantum.ibm.com/api/qiskit/qasm2)
 - [AerSimulator](https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.AerSimulator.html)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install qiskit==2.5.2 qiskit-aer==0.17.2
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.qasm` | [hello.qasm](hello.qasm) verificato |
+| `.qasm` | [hello.qasm](hello.qasm) verified |

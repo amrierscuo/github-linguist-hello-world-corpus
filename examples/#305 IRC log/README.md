@@ -1,38 +1,38 @@
 # #305 IRC log
 
-Rappresentare un messaggio Hello, World! in un log IRC WeeChat.
+Represent a Hello, World! message in a log IRC WeeChat.
 
 ## Toolchain
 
 WeeChat logger/backlog; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-Aprire hello.weechatlog nel lettore/backlog di WeeChat; verificare timestamp, prefisso corpus-example e messaggio
+Open hello.weechatlog in the lettore/backlog of WeeChat; check timestamps, prefix corpus-example and message
 
-## Risultato atteso
+## Expected result
 
-Una riga: data/ora, prefisso e saluto, separati da TAB.
+A line: data/ora, prefix and greeting, separated by TAB.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Fixture testuale originale con data e nickname illustrativi; non proviene da una conversazione reale e non contiene messaggi inviati a utenti. Il formato segue il logger WeeChat; non è un sorgente eseguibile.
+Original text fixtures with data and illustrative nickname; it does not come from a real conversation and does not contain messages sent to users. The format follows the WeeChat logger; it is not an executable source.
 
-Requisiti residui:
-- Logger/backlog WeeChat reale non eseguito; verifica del formato con tool nativo pending.
+Remaining requirements:
+- Logger/backlog WeeChat real not executed; verification of the format with native tool pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://weechat.org/files/doc/devel/weechat_user.en.html](https://weechat.org/files/doc/devel/weechat_user.en.html)
 - [https://github.com/weechat/weechat/tree/main/src/plugins/logger](https://github.com/weechat/weechat/tree/main/src/plugins/logger)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.irclog` | [hello.irclog](variants/irclog-5327b982/hello.irclog) creato, verifiche pendenti |
-| `.weechatlog` | [hello.weechatlog](hello.weechatlog) creato, verifiche pendenti |
+| `.irclog` | [hello.irclog](variants/irclog-5327b982/hello.irclog) created; verification pending |
+| `.weechatlog` | [hello.weechatlog](hello.weechatlog) created; verification pending |

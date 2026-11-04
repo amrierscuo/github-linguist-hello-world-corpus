@@ -1,24 +1,24 @@
-# 0753 — Vim Snippet — `.snip`
+# 0753: Vim Snippet: `.snip`
 
-Snippet Vim in sintassi SnipMate/neosnippet con espansione indentata, distinta dalla terminazione UltiSnips endsnippet.
+Snippet Vim in syntax SnipMate/neosnippet with indented expansion, distinct from the termination UltiSnips Endnippet.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.snip`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Vim with SnipMate/neosnippet: load hello.snip and expand hello
 ```
 
-Risultato atteso: buffer inserisce Hello, World!.
+Expected result: buffer inserts Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/garbas/vim-snipmate/blob/master/doc/SnipMate.txt](https://github.com/garbas/vim-snipmate/blob/master/doc/SnipMate.txt)
 - [https://github.com/Shougo/neosnippet.vim/blob/master/doc/neosnippet.txt](https://github.com/Shougo/neosnippet.vim/blob/master/doc/neosnippet.txt)

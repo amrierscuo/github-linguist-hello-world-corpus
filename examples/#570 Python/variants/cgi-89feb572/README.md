@@ -1,23 +1,23 @@
-# 0570 — Python — `.cgi`
+# 0570: Python: `.cgi`
 
-Entrypoint CGI che emette header HTTP e body di saluto.
+Entrypoint CGI emitting header HTTP and greeting body.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.cgi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 python hello.cgi
 ```
 
-Risultato atteso: header Content-Type e body Hello, World!.
+Expected result: header Content-Type and body Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.rfc-editor.org/rfc/rfc3875](https://www.rfc-editor.org/rfc/rfc3875)

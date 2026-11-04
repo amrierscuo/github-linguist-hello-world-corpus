@@ -1,23 +1,23 @@
-# 0796 — YAML — `.yaml.sed`
+# 0796: YAML: `.yaml.sed`
 
-Documento YAML dello stesso formato; suffisso composito .yaml.sed conservato esattamente. Il template è statico e non dichiara sostituzioni o una configurazione MySQL specifica.
+YAML document of the same format; .yaml.sed composite suffix preserved exactly. The template is static and does not declare replacements or a specific MySQL configuration.
 
-Provenienza: copia del file originale `examples/#796 YAML/hello.yml`.
+Origin: copy of the original `examples/#796 YAML/hello.yml` file.
 
 Artefatto principale: `hello.yaml.sed`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Python yaml.safe_load: parse hello.yaml.sed; assert greeting == "Hello, World!"
 ```
 
-Risultato atteso: Mapping con greeting = Hello, World!..
+Expected result: Mapping with greeting = Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://pyyaml.org/wiki/PyYAMLDocumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)

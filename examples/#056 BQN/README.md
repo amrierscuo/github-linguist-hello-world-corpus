@@ -2,47 +2,47 @@
 
 Voce canonica: `BQN`, tipo `programming`, `language_id: 330386870`.
 
-Concatenare tre stringhe BQN e scrivere Hello, World! usando il sistema •Out.
+Concatenate three BQN strings and write Hello, World! using the •Out system.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official CBQN C implementation locally built — c893d3e7828899a50150df03ad33c9052fa51d3c. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+Official CBQN C implementation locally built, c893d3e7828899a50150df03ad33c9052fa51d3c. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-CBQN compilato dal repository ufficiale, commit c893d3e7828899a50150df03ad33c9052fa51d3c. Build locale Linux: make REPLXX=0 FFI=0 -j2. Le feature REPL editor e FFI non servono al programma.
+CBQN was compiled from the official repository at commit c893d3e7828899a50150df03ad33c9052fa51d3c. Local Linux build: make REPLXX=0 FFI=0 -j2. The program does not require REPL editor or FFI features.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 BQN hello.bqn
 ```
 
-Risultato atteso: Exit 0; stdout Hello, World! seguito da newline.
+Exit 0; stdout Hello, World! followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-La verifica usa il vero interprete CBQN. Il log contiene commit ed SHA-256 del binario, oltre al SHA-256 del sorgente BQN. La concatenazione ∾ e l’assegnazione ← sono sintassi BQN.
+The verification uses the true CBQN interpreter. The log contains commit and SHA-256 of the track, as well as the SHA-256 of the BQN source. The concatenation  ⁇  and the assignment ← are syntax BQN.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://mlochbaum.github.io/BQN/doc/quick.html](https://mlochbaum.github.io/BQN/doc/quick.html)
 - [https://github.com/dzaima/CBQN](https://github.com/dzaima/CBQN)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bqn` | [hello.bqn](hello.bqn) verificato |
+| `.bqn` | [hello.bqn](hello.bqn) verified |

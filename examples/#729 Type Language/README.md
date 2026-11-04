@@ -1,36 +1,36 @@
 # #729 Type Language
 
-Compilare un costruttore nel Type Language TL di Telegram.
+Fill out a manufacturer in the Type Language TL of Telegram.
 
 ## Toolchain
 
 TL compiler e runtime generato
 
-## Procedura
+## Procedure
 
-Compilare hello.tl con un tool TL compatibile; costruire Greeting(text="Hello, World!") e verificare roundtrip.
+Fill hello.tl with a compatible TL tool; build Greeting(text= "Hello, World!") and check roundtrip.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Lo schema non inventa un constructor ID: il compilatore deve calcolarlo dal costruttore canonico.
+The scheme does not invent a ID constructor: the compiler must calculate it from the canonical constructor.
 
-Requisiti residui:
+Remaining requirements:
 - Compiler TL/runtime per schema originale non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://core.telegram.org/mtproto/TL](https://core.telegram.org/mtproto/TL)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.tl` | [hello.tl](hello.tl) creato, verifiche pendenti |
+| `.tl` | [hello.tl](hello.tl) created; verification pending |

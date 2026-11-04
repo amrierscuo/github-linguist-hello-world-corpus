@@ -1,40 +1,40 @@
 # #519 PHP
 
-Eseguire PHP e stampare il saluto.
+Run PHP and print your greeting.
 
-Tipo canonico `programming`, language_id `272`.
+Canonical type `programming`, language_id `272`.
 
-Toolchain prevista: PHP CLI.
+Suggested toolchain: PHP CLI.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 php hello.php
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Programma CLI senza servizio web.
+CLI program without web service.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: PHP 8.3.6 native Ubuntu CLI. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: PHP 8.3.6 native Ubuntu CLI. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [PHP echo](https://www.php.net/manual/en/function.echo.php)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.php` | [hello.php](hello.php), [driver.php](variants/inc-dd126fb7/driver.php) creato, verifiche pendenti |
-| `.aw` | [hello.aw](variants/aw-61ce44ad/hello.aw) creato, verifiche pendenti |
-| `.ctp` | [hello.ctp](variants/ctp-44fff2c6/hello.ctp) creato, verifiche pendenti |
-| `.fcgi` | [hello.fcgi](variants/fcgi-209194e4/hello.fcgi) creato, verifiche pendenti |
-| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) creato, verifiche pendenti |
-| `.php3` | [hello.php3](variants/php3-408cb19d/hello.php3) creato, verifiche pendenti |
-| `.php4` | [hello.php4](variants/php4-b6a37d4b/hello.php4) creato, verifiche pendenti |
-| `.php5` | [hello.php5](variants/php5-9b1d71b0/hello.php5) creato, verifiche pendenti |
-| `.phps` | [hello.phps](variants/phps-a0d6c078/hello.phps) creato, verifiche pendenti |
-| `.phpt` | [hello.phpt](variants/phpt-10901a17/hello.phpt) creato, verifiche pendenti |
+| `.php` | [hello.php](hello.php), [driver.php](variants/inc-dd126fb7/driver.php) created; verification pending |
+| `.aw` | [hello.aw](variants/aw-61ce44ad/hello.aw) created; verification pending |
+| `.ctp` | [hello.ctp](variants/ctp-44fff2c6/hello.ctp) created; verification pending |
+| `.fcgi` | [hello.fcgi](variants/fcgi-209194e4/hello.fcgi) created; verification pending |
+| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |
+| `.php3` | [hello.php3](variants/php3-408cb19d/hello.php3) created; verification pending |
+| `.php4` | [hello.php4](variants/php4-b6a37d4b/hello.php4) created; verification pending |
+| `.php5` | [hello.php5](variants/php5-9b1d71b0/hello.php5) created; verification pending |
+| `.phps` | [hello.phps](variants/phps-a0d6c078/hello.phps) created; verification pending |
+| `.phpt` | [hello.phpt](variants/phpt-10901a17/hello.phpt) created; verification pending |

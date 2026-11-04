@@ -1,32 +1,32 @@
 # #439 Modula-2
 
-Compilare Modula-2 con libreria PIM InOut e stampare il saluto.
+Fill out Modula- 2 with PIM InOut library and print your greeting.
 
-Tipo canonico `programming`, language_id `234`.
+Canonical type `programming`, language_id `234`.
 
-Toolchain prevista: GNU Modula-2 gm2 con librerie PIM.
+Suggested toolchain: GNU Modula- 2 gm2 with PIM libraries.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 gm2 -fpim Hello.mod -o hello
 ./hello
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-La libreria InOut è della famiglia PIM; la toolchain deve usare il dialect corrispondente.
+The InOut library is of the PIM family; the toolchain must use the corresponding dialect.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [GNU Modula-2 — manuale](https://gcc.gnu.org/onlinedocs/gm2/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mod` | [Hello.mod](Hello.mod) creato, verifiche pendenti |
+| `.mod` | [Hello.mod](Hello.mod) created; verification pending |

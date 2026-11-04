@@ -1,42 +1,42 @@
 # #223 GAML
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Inizializzare un modello GAMA e scrivere Hello, World! nella console.
+Start a GAMA model and write Hello, World! in the console.
 
-Il modello dichiara global/init e un esperimento GUI minimale. write usa la concatenazione GAML; non è un programma Java o un file di configurazione generico.
+The model declares global/init and a minimal GUI experiment. write uses GAML concatenation; it is not a Java program or a generic configuration file.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 GAMA Platform con runtime GAML; versione effettiva da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Aprire hello.gaml in GAMA, avviare l’esperimento greeting.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-La sezione global/init scrive Hello, World! una volta.
+The global/init section writes Hello, World! once.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
-Impedimenti: GAMA/Eclipse e runtime GAML non preparati; nessun parser o esperimento GAMA è stato eseguito.
+Commitments: GAMA/Eclipse and runtime GAML unprepared; no parser or GAMA experiment was executed.
 
-## Fonti primarie
+## Primary sources
 
 - https://gama-platform.org/wiki/Introduction
 - https://gama-platform.org/wiki/next/ModelOrganization
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gaml` | [hello.gaml](hello.gaml) creato, verifiche pendenti |
+| `.gaml` | [hello.gaml](hello.gaml) created; verification pending |

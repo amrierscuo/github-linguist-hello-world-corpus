@@ -1,39 +1,39 @@
 # #314 Inno Setup
 
-Mostrare Hello, World! quando inizializza il wizard di un installer Inno Setup.
+Show Hello, World! when it initializes the wizard of an Inno Setup installer.
 
 ## Toolchain
 
 Inno Setup ISCC; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-ISCC /O"build" hello.iss; avviare build/hello-world-setup.exe in ambiente di prova e controllare il MsgBox
+ISCC /O "build" hello.iss; start build/hello-world-setup.exe in test environment and check the MsgBox
 
-## Risultato atteso
+## Expected result
 
-Compilazione accettata; MsgBox di InitializeWizard contiene il saluto.
+Accepted compilation; MsgBox of InitializeWizard contains greetings.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-La procedura Pascal è un callback originale di Inno Setup. Non sono inclusi file da installare; la prova GUI resta da fare in un ambiente dedicato. Non è stato lanciato alcun installer.
+The Pascal procedure is an original callback of Inno Setup. There are no files to install; the GUI test remains to be done in a dedicated environment. No installer has been launched.
 
-Requisiti residui:
-- ISCC non presente; compilazione script e callback wizard non eseguiti.
+Remaining requirements:
+- ISCC not present; compilation script and callback wizard not executed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://jrsoftware.org/ishelp/topic_setupsection.htm](https://jrsoftware.org/ishelp/topic_setupsection.htm)
 - [https://jrsoftware.org/ishelp/topic_scriptevents.htm](https://jrsoftware.org/ishelp/topic_scriptevents.htm)
 - [https://jrsoftware.org/ishelp/topic_isxfunc_msgbox.htm](https://jrsoftware.org/ishelp/topic_isxfunc_msgbox.htm)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.iss` | [hello.iss](hello.iss), [driver.iss](variants/isl-41200207/driver.iss) creato, verifiche pendenti |
-| `.isl` | [hello.isl](variants/isl-41200207/hello.isl) creato, verifiche pendenti |
+| `.iss` | [hello.iss](hello.iss), [driver.iss](variants/isl-41200207/driver.iss) created; verification pending |
+| `.isl` | [hello.isl](variants/isl-41200207/hello.isl) created; verification pending |

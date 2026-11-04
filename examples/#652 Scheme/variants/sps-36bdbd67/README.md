@@ -1,23 +1,23 @@
-# 0652 — Scheme — `.sps`
+# 0652: Scheme: `.sps`
 
 Programma Scheme R6RS con import esplicito.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sps`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 R6RS runtime --script hello.sps
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.r6rs.org/final/html/r6rs/r6rs.html](https://www.r6rs.org/final/html/r6rs/r6rs.html)

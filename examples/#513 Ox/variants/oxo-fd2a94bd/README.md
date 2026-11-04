@@ -1,26 +1,26 @@
-# 0513 — Ox: `.oxo`
+# 0513: Ox: `.oxo`
 
-Ruolo: Variante con ruolo/formato distinto dal sorgente principale.
+Role: Variant with ruolo/formato distinct from the main source.
 
-Provenienza: Solo documentazione del blocco; nessun artefatto con estensione richiesta è stato fabbricato.
+Provenience: Only block documentation; no artifact with required extension was manufactured.
 
-Toolchain richiesta: Ox Console/OxMetrics e oxstd. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Ox Console/OxMetrics e oxstd. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Disponibilità del tool originale necessaria; consultare gli impedimenti.
 ```
 
-Risultato atteso: Da verificare con il formato nativo dopo la risoluzione del blocco.
+Expected result: To check with the native format after the block resolution.
 
-Stato individuale: artefatto creato `false`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `false`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Oggetto Ox compilato: richiede compilazione originale della versione target; nessun file binario o sorgente .ox rinominato viene prodotto.
+- Ox object compiled: requires original compilation of the target version; no binary or .ox source is produced.
 
-Fonti primarie:
+Primary sources:
 
 - https://www.doornik.com/page_download.html
 - https://www.doornik.com/ox/ox.html

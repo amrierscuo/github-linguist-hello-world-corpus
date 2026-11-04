@@ -1,32 +1,32 @@
 # #506 OpenSCAD
 
-Generare un testo tridimensionale del saluto con OpenSCAD.
+Generate a three-dimensional greeting text with OpenSCAD.
 
-Tipo canonico `programming`, language_id `266`.
+Canonical type `programming`, language_id `266`.
 
-Toolchain prevista: OpenSCAD CLI con font disponibili.
+Suggested toolchain: OpenSCAD CLI with fonts available.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 openscad -o hello.stl hello.scad
 ```
 
-Risultato atteso: compilazione geometrica riuscita e testo estruso Hello, World!.
+Expected result: successful geometric compilation and extruded text Hello, World!.
 
-L’obiettivo richiede il motore geometrico, non soltanto riconoscere la stringa nel sorgente.
+The goal requires the geometric engine, not only to recognize the string in the source.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [OpenSCAD text](https://openscad.org/cheatsheet/)
 - [OpenSCAD manual text](https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Text)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.scad` | [hello.scad](hello.scad) creato, verifiche pendenti |
+| `.scad` | [hello.scad](hello.scad) created; verification pending |

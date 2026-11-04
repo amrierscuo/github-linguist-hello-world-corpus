@@ -1,23 +1,23 @@
-# 0781 — X PixMap — `.pm`
+# 0781: X PixMap: `.pm`
 
-Variante testuale dello stesso formato, con suffisso canonico .pm.
+Textual variation of the same format, with canon suffix .pm.
 
-Provenienza: copia del file originale `examples/#781 X PixMap/hello.xpm`.
+Origin: copy of the original `examples/#781 X PixMap/hello.xpm` file.
 
 Artefatto principale: `hello.pm`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 libXpm or Pillow: decode hello.pm and inspect the original pixel greeting
 ```
 
-Risultato atteso: Immagine con glifi neri Hello, World! su sfondo bianco; preview solo nella build temporanea..
+Expected result: Picture with black glyphs Hello, World! on white background; preview only in temporary build..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.x.org/docs/XPM/xpm.pdf](https://www.x.org/docs/XPM/xpm.pdf)

@@ -1,27 +1,27 @@
 # #068 BitBake .bbappend
 
-Append applicato a hello_1.0.bb. La variante originale del corpus conserva i byte identificati dai checksum.
+The append was applied to hello_1.0.bb. The original corpus variant retains the bytes identified by the checksums.
 
-## Toolchain e verifica
+## Toolchain and verification
 
-BitBake branch 2.10 (runtime 2.9.1), Python 3.12.3 e en_US.UTF-8. Copiare i file della variante nel layer temporaneo del campione principale. Per .bbappend, BBFILES deve scoprire anche ${LAYERDIR}/*.bbappend. Usare un filesystem Linux con socket Unix; i dettagli della locale privata sono nel README principale.
+BitBake branch 2.10 (runtime 2.9.1), Python 3.12.3 and en_US.UTF-8. Copy the variant files into the temporary layer of the main sample. For .bbappend, BBFILES must also discover ${LAYERDIR}/*.bbappend. Use a Linux filesystem that supports Unix sockets. The main README documents the private locale.
 
 ```text
 Nel layer temporaneo configurato: bitbake -p; bitbake hello -c build
 ```
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-La toolchain originale ha controllato questa specifica variante. Il task BitBake o l’eseguibile m68k produce Hello, World! e termina con exit 0. Gli esiti non derivano solo dall’uguaglianza con il campione principale.
+The original toolchain has controlled this specific variant.The BitBake task or the executable m68k produces Hello, World! and ends with exit 0. Exit does not come only from equality with the main sample.
 
-Prova: [finish_variants.json](../../verification/finish_variants.json), con comandi, UTC, versioni, exit code, output e hash. Il log registra ogni variante separatamente.
+Try: [finish_variants.json](../../verification/finish_variants.json), with commands, UTC, versions, exit code, output and hash.
 
-## Sorgenti verificati
+## Verified Sources
 
 - [hello_1.0.bbappend](hello_1.0.bbappend) SHA-256 `2721f0319e22960ec2cd67c142dbec74eabf7d4018191f92bc3d8e6356f41025`.
 - [hello_1.0.bb](hello_1.0.bb) SHA-256 `1496dc662a3a77b71646c974adc8847180cad1bc4b6a147cc54bd5880e7134ea`.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.yoctoproject.org/bitbake/2.10/bitbake-user-manual/bitbake-user-manual-hello.html
 - https://github.com/openembedded/bitbake/tree/2.10

@@ -1503,14 +1503,15 @@
       "example": {
         "semantic_goal": "Costruire un pacchetto APK da APKBUILD, installarlo in Alpine isolato ed eseguire corpus-hello: Hello, World!.",
         "validation_mode": "package_build_install_run",
-        "toolchain": "Alpine Linux 3.23.6 x86_64; abuild 3.16.0-r0; apk-tools; BusyBox /bin/sh",
+        "toolchain": "Alpine Linux 3.23.6, abuild 3.16.0-r0 and apk-tools 3.0.8-r0",
         "files": [
           "examples/#027 Alpine Abuild/APKBUILD",
           "examples/#027 Alpine Abuild/hello.sh",
-          "examples/#027 Alpine Abuild/README.md"
+          "examples/#027 Alpine Abuild/README.md",
+          "examples/#027 Alpine Abuild/verification/native_20261104_alpine_receipt.json"
         ],
         "build_command": "REPODEST=/packages abuild -F -d",
-        "run_or_check_command": "apk --no-network add --allow-untrusted /packages/corpus/x86_64/corpus-hello-1.0.0-r0.apk; cmp /usr/bin/corpus-hello hello.sh; test \"$(corpus-hello)\" = \"Hello, World!\"",
+        "run_or_check_command": "In a disposable Alpine environment: abuild -F -d validate; build the APK; install it offline and run corpus-hello. See README.md.",
         "expected_result": "Abuild fetch/check/package e installazione APK riusciti; script installato uguale al sorgente; greeting Hello, World!.",
         "sources": [
           "https://wiki.alpinelinux.org/wiki/APKBUILD_Reference",
@@ -1522,16 +1523,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Alpine Linux 3.23.6 x86_64 minirootfs in Ubuntu WSL chroot",
-        "verification_timestamp_utc": "2026-10-08T11:02:25.513302+00:00",
-        "verification_log": "examples/#027 Alpine Abuild/verification/toolchain.json",
-        "blockers": [
-          "Abuild nel chroot isolato termina per timeout durante la build; checksum e validazione preliminare compaiono nel log, ma build/installazione non hanno esito completo registrato."
-        ],
-        "notes": "Linguaggio canonico, dialetto/ambiente e risultato descritti nel README. Prove native registrate senza distribuire toolchain o binari generati."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Alpine Linux x86_64 chroot in Ubuntu WSL2",
+        "verification_timestamp_utc": "2026-11-04T19:35:10.624386+00:00",
+        "verification_log": "examples/#027 Alpine Abuild/verification/native_20261104_alpine_receipt.json",
+        "blockers": [],
+        "notes": "A fresh native APK build, its check step, an offline installation into a disposable Alpine root, and execution of the byte-identical installed script all passed.",
+        "verified_artifact_sha256": {
+          "examples/#027 Alpine Abuild/APKBUILD": "db57438e4c66297d5eb379bdd3a55bb6c02f8276a435b2fb61b1d154ab490105",
+          "examples/#027 Alpine Abuild/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6"
+        }
       }
     },
     {
@@ -2195,7 +2198,8 @@
           "examples/#039 AsciiDoc/variants/ext-asciidoc-2e6173636969646f63/hello.asciidoc",
           "examples/#039 AsciiDoc/variants/ext-asciidoc-2e6173636969646f63/README.md",
           "examples/#039 AsciiDoc/variants/ext-asc-2e617363/hello.asc",
-          "examples/#039 AsciiDoc/variants/ext-asc-2e617363/README.md"
+          "examples/#039 AsciiDoc/variants/ext-asc-2e617363/README.md",
+          "examples/#039 AsciiDoc/verification/native_20261104_039_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "npm install; node check.cjs",
@@ -5725,14 +5729,16 @@
       "example": {
         "semantic_goal": "Descrivere un pacchetto Cabal con un eseguibile Haskell che stampa Hello, World!.",
         "validation_mode": "compile_and_run",
-        "toolchain": "cabal-install 3.x e GHC con base 4.14–4.x",
+        "toolchain": "Cabal 3.8.1.0 and GHC 9.4.7",
         "files": [
           "examples/#102 Cabal Config/hello-world.cabal",
           "examples/#102 Cabal Config/src/Main.hs",
-          "examples/#102 Cabal Config/cabal.project"
+          "examples/#102 Cabal Config/cabal.project",
+          "examples/#102 Cabal Config/verification/native_20261104_receipt.json",
+          "examples/#102 Cabal Config/verification/Setup.hs"
         ],
         "build_command": "cabal build hello-world",
-        "run_or_check_command": "cabal run hello-world",
+        "run_or_check_command": "runghc verification/Setup.hs configure --user --builddir=dist; runghc verification/Setup.hs build --builddir=dist; ./dist/build/hello-world/hello-world",
         "expected_result": "build accettato e stdout `Hello, World!\\n`.",
         "sources": [
           {
@@ -5745,16 +5751,19 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-        ],
-        "notes": "Il .cabal è l’artefatto canonico; Main.hs è il sorgente di supporto. La licenza del corpus deve ancora essere scelta: qui non viene dichiarata una licenza fittizia."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64 GNU/Linux",
+        "verification_timestamp_utc": "2026-11-04T19:37:06.074085+00:00",
+        "verification_log": "examples/#102 Cabal Config/verification/native_20261104_receipt.json",
+        "blockers": [],
+        "notes": "The official Cabal Setup driver configured and built the original package. Its executable printed Hello, World!",
+        "verified_artifact_sha256": {
+          "examples/#102 Cabal Config/hello-world.cabal": "b3a1a56b44ebd225205c8a0603448ce53b7851e5b9a91c63660ec907dcc876a4",
+          "examples/#102 Cabal Config/src/Main.hs": "f95a4044f60c74b4c5011dadae9a679d17c1a09c36866e500edd7b87734002aa",
+          "examples/#102 Cabal Config/verification/Setup.hs": "e156b61fe6d96b03419f06fcdfac3d43170aec31d71ec19df402e58d4bc9f2b3"
+        }
       }
     },
     {
@@ -10048,7 +10057,8 @@
           "examples/#178 EJS/variants/ext-ejs-t-2e656a732e74/hello.ejs.t",
           "examples/#178 EJS/variants/ext-ejs-t-2e656a732e74/README.md",
           "examples/#178 EJS/variants/ext-jst-2e6a7374/hello.jst",
-          "examples/#178 EJS/variants/ext-jst-2e6a7374/README.md"
+          "examples/#178 EJS/variants/ext-jst-2e6a7374/README.md",
+          "examples/#178 EJS/verification/native_20261104_178_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "npm install; node check.cjs",
@@ -14835,7 +14845,8 @@
           "examples/#260 Go Template/variants/ext-tmpl-2e746d706c/hello.tmpl",
           "examples/#260 Go Template/variants/ext-tmpl-2e746d706c/README.md",
           "examples/#260 Go Template/variants/ext-tpl-2e74706c/hello.tpl",
-          "examples/#260 Go Template/variants/ext-tpl-2e74706c/README.md"
+          "examples/#260 Go Template/variants/ext-tpl-2e74706c/README.md",
+          "examples/#260 Go Template/verification/native_20261104_260_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "go version; go run render.go",
@@ -15400,7 +15411,8 @@
           "examples/#270 GraphQL/variants/ext-gql-2e67716c/hello.gql",
           "examples/#270 GraphQL/variants/ext-gql-2e67716c/README.md",
           "examples/#270 GraphQL/variants/ext-graphqls-2e6772617068716c73/hello.graphqls",
-          "examples/#270 GraphQL/variants/ext-graphqls-2e6772617068716c73/README.md"
+          "examples/#270 GraphQL/variants/ext-graphqls-2e6772617068716c73/README.md",
+          "examples/#270 GraphQL/verification/native_20261104_270_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "npm install --prefix .tools graphql@16.11.0; node verify.cjs .tools",
@@ -15525,7 +15537,8 @@
           "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/README.md",
           "examples/#272 Groovy/variants/ext-gtpl-2e6774706c/render.groovy",
           "examples/#272 Groovy/variants/ext-gvy-2e677679/hello.gvy",
-          "examples/#272 Groovy/variants/ext-gvy-2e677679/README.md"
+          "examples/#272 Groovy/variants/ext-gvy-2e677679/README.md",
+          "examples/#272 Groovy/verification/native_20261104_272_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "groovy hello.groovy",
@@ -15865,7 +15878,7 @@
       "example": {
         "semantic_goal": "Compilare un compute shader HLSL che scrive tredici codici ASCII in un RWStructuredBuffer.",
         "validation_mode": "official_dxc_hlsl_dxil_compile",
-        "toolchain": "Official Microsoft DirectX Shader Compiler — dxcompiler.dll: 1.9(5512-01b62ad4)(1.9.2609.5) - 1.9.2609.5 (01b62ad47)",
+        "toolchain": "Microsoft FXC 10.1, Windows SDK 10.0.26100.0, Direct3D WARP and Zig C++ 0.15.2",
         "files": [
           "examples/#278 HLSL/hello.hlsl",
           "examples/#278 HLSL/README.md",
@@ -15880,10 +15893,15 @@
           "examples/#278 HLSL/variants/ext-fxh-2e667868/README.md",
           "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/consumer.hlsl",
           "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/hello.hlsli",
-          "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/README.md"
+          "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/README.md",
+          "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+          "examples/#278 HLSL/verification/dispatch.cpp",
+          "examples/#278 HLSL/verification/render_fx.cpp",
+          "examples/#278 HLSL/verification/fullscreen_vs.hlsl",
+          "examples/#278 HLSL/verification/native_20261104_hlsl_fx_result.json"
         ],
         "build_command": "dxc -T cs_6_0 -E main -Fo build/hello.dxil hello.hlsl",
-        "run_or_check_command": "dxc -T cs_6_0 -E main -Fo build/hello.dxil hello.hlsl",
+        "run_or_check_command": "Compile with FXC and run the Direct3D WARP harnesses from verification/ as shown in README.md.",
         "expected_result": "Compilazione exit 0; runtime futuro ricostruisce Hello, World! da tredici uint.",
         "sources": [
           "https://github.com/microsoft/DirectXShaderCompiler",
@@ -15896,17 +15914,25 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T12:36:24.188827+00:00",
-        "verification_log": "examples/#278 HLSL/verification/native.json",
-        "blockers": [
-          "Shader compiled; compute dispatch/readback on a compatible Direct3D runtime is not performed."
-        ],
-        "notes": "Il compiler autentico accetta il sorgente e genera bytecode. La semantica resta pendente: occorre dispatch di un gruppo di 16 thread e readback dei primi tredici uint su Direct3D compatibile. Non viene dedotta dai soli valori nel sorgente.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-04T19:33:02.540029+00:00",
+        "verification_log": "examples/#278 HLSL/verification/native_20261104_hlsl_result.json",
+        "blockers": [],
+        "notes": "FXC compiled the compute shader and all three include consumers. Direct3D 11 WARP dispatched each shader and read back the expected greeting. The separate Direct3D 10 Effects check rendered the original effect and decoded the same greeting from its pixels.",
         "verified_artifact_sha256": {
-          "examples/#278 HLSL/hello.hlsl": "3a654283d28892115dbc65eb72e12781a0eb76de362f1d188769a76959c5d3e1"
+          "examples/#278 HLSL/hello.hlsl": "3a654283d28892115dbc65eb72e12781a0eb76de362f1d188769a76959c5d3e1",
+          "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/hello.cginc": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241",
+          "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/consumer.hlsl": "3fbe36ae92240ad104da6ddf1a6a2a09954e5120ee8ad6afed2c542b6c6a2a76",
+          "examples/#278 HLSL/variants/ext-fxh-2e667868/hello.fxh": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241",
+          "examples/#278 HLSL/variants/ext-fxh-2e667868/consumer.hlsl": "fc30f2e2bf7081473ee5b1c7d88a7ac5e422c9474e21e8d0f35722c50adb849c",
+          "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/hello.hlsli": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241",
+          "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/consumer.hlsl": "30be6050a86d8e16eafcaa5e7588f3d50f240f77b3ebf06be57b282c49960596",
+          "examples/#278 HLSL/variants/ext-fx-2e6678/hello.fx": "451bce360106272f15e8e68a24a45d28ba5d1887a69865810a529daff38e951f",
+          "examples/#278 HLSL/verification/dispatch.cpp": "2f8efde34b4d7f505f0d55ff26c1f0d1d835d08ef71b0fa0d9c274e2c70403f0",
+          "examples/#278 HLSL/verification/render_fx.cpp": "82a4351c1e8a9050af7079b31b29d2f4e8eb6522d61ac70802fbac4bfc9eb658",
+          "examples/#278 HLSL/verification/fullscreen_vs.hlsl": "29d1673cb14a8a40bb0ee28210459ed2cf3fb9b273af3f2c77df5f9e4cc28e74"
         }
       }
     },
@@ -16292,15 +16318,19 @@
       "example": {
         "semantic_goal": "Renderizzare una view Razor .cshtml con variabile C# audience=World.",
         "validation_mode": "native_razor_compile_render",
-        "toolchain": "ASP.NET Core Razor con .NET SDK e applicazione host; versioni effettive da registrare",
+        "toolchain": ".NET SDK 8.0.318 and ASP.NET Core 8.0.21",
         "files": [
           "examples/#285 HTML+Razor/README.md",
           "examples/#285 HTML+Razor/hello.cshtml",
           "examples/#285 HTML+Razor/variants/razor-c914e96c/Hello.razor",
-          "examples/#285 HTML+Razor/variants/razor-c914e96c/README.md"
+          "examples/#285 HTML+Razor/variants/razor-c914e96c/README.md",
+          "examples/#285 HTML+Razor/verification/native_20261104_html_razor_result.json",
+          "examples/#285 HTML+Razor/verification/razor/Program.cs",
+          "examples/#285 HTML+Razor/verification/razor/RazorHarness.csproj",
+          "examples/#285 HTML+Razor/verification/razor/NuGet.Config"
         ],
         "build_command": "In un’app ASP.NET Core MVC, salvare il file come Views/Home/Hello.cshtml ed eseguire dotnet build.",
-        "run_or_check_command": "Renderizzare la view Hello mediante il motore Razor dell’applicazione.",
+        "run_or_check_command": "In the scratch project described by README.md: dotnet build --disable-build-servers -c Release -p:RestoreConfigFile=NuGet.Config; dotnet bin/Release/net8.0/RazorHarness.dll",
         "expected_result": "HTML contiene <p>Hello, World!</p>.",
         "sources": [
           "https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-10.0"
@@ -16310,16 +16340,21 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "È disponibile solo un runtime .NET, senza SDK né host Razor preparato; compiler e renderer non eseguiti."
-        ],
-        "notes": "Il sorgente usa un blocco Razor @{...} e l’espressione esplicita @(audience). È una view, non un documento HTML già renderizzato. Per eseguirlo serve un host Razor autentico."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-04T19:33:13.903864+00:00",
+        "verification_log": "examples/#285 HTML+Razor/verification/native_20261104_html_razor_result.json",
+        "blockers": [],
+        "notes": "The ASP.NET Core MVC view engine rendered the original view, and Blazor HtmlRenderer rendered the original component. Each produced <p>Hello, World!</p> in memory.",
+        "verified_artifact_sha256": {
+          "examples/#285 HTML+Razor/hello.cshtml": "bfb3db1102b6f95c10d79d644a52390b325cfce89272ba62be38b6aa9a5267be",
+          "examples/#285 HTML+Razor/variants/razor-c914e96c/Hello.razor": "7e37c225ae71b2b827243c4ace306420be08d7990f782e0d3b8ed74167b9d343",
+          "examples/#285 HTML+Razor/verification/razor/Program.cs": "6009fad2e4c433b481ae1062555bb63f6c8046dc5fa6433172b95074b7aa0415",
+          "examples/#285 HTML+Razor/verification/razor/RazorHarness.csproj": "4537dcc25db7c3e1ccebd6d0266347195be9de99fa378326912a149c67b8f58f",
+          "examples/#285 HTML+Razor/verification/razor/NuGet.Config": "e497501960554d323eef45860c14474958accd1ae7f3ae6f95b10e4c1d340401"
+        }
       }
     },
     {
@@ -19182,7 +19217,8 @@
           "examples/#333 Java/variants/jav-220a15e8/hello.jav",
           "examples/#333 Java/variants/jav-220a15e8/README.md",
           "examples/#333 Java/variants/jsh-e38b41dc/hello.jsh",
-          "examples/#333 Java/variants/jsh-e38b41dc/README.md"
+          "examples/#333 Java/variants/jsh-e38b41dc/README.md",
+          "examples/#333 Java/verification/native_20261104_333_variants_result.json"
         ],
         "build_command": "javac -d build Hello.java",
         "run_or_check_command": "java -cp build Hello",
@@ -19755,7 +19791,8 @@
           "examples/#341 Jinja/variants/j2-d70c3c7d/README.md",
           "examples/#341 Jinja/variants/jinja2-dda60d41/hello.jinja2",
           "examples/#341 Jinja/variants/jinja2-dda60d41/verify.py",
-          "examples/#341 Jinja/variants/jinja2-dda60d41/README.md"
+          "examples/#341 Jinja/variants/jinja2-dda60d41/README.md",
+          "examples/#341 Jinja/verification/native_20261104_341_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py hello.jinja",
@@ -32824,15 +32861,17 @@
       "example": {
         "semantic_goal": "Mostrare un testo QML in una finestra Qt Quick.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Qt 6 QML/QtQuick",
+        "toolchain": "PySide6 6.9.2 and Qt 6.9.2 software Qt Quick",
         "files": [
           "examples/#574 QML/README.md",
           "examples/#574 QML/hello.qml",
           "examples/#574 QML/variants/qbs-7cd27494/hello.qbs",
-          "examples/#574 QML/variants/qbs-7cd27494/README.md"
+          "examples/#574 QML/variants/qbs-7cd27494/README.md",
+          "examples/#574 QML/verification/native_20261104_qml_result.json",
+          "examples/#574 QML/verification/native_20261104_frame.png"
         ],
         "build_command": null,
-        "run_or_check_command": "qml hello.qml",
+        "run_or_check_command": "qml hello.qml (interactive); the recorded check loads the file in PySide6 Qt Quick offscreen and verifies its rendered greeting.",
         "expected_result": "Hello, World!",
         "sources": [
           "https://doc.qt.io/qt-6/qml-qtquick-text.html"
@@ -32842,16 +32881,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime QtQuick/plugin grafici non predisposti; caricamento e rendering pending."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows, offscreen Qt Quick software renderer",
+        "verification_timestamp_utc": "2026-11-04T19:29:38.970936+00:00",
+        "verification_log": "examples/#574 QML/verification/native_20261104_qml_result.json",
+        "blockers": [],
+        "notes": "Qt Quick loaded the original QML and rendered a 320 by 120 frame. The native text item and the visible frame both show Hello, World!",
+        "verified_artifact_sha256": {
+          "examples/#574 QML/hello.qml": "523b4c48b6b55b3a7deadfe9bd051f4a1314df93ea34e08e9718215bd3aa7a63"
+        }
       }
     },
     {
@@ -33270,7 +33310,8 @@
           "examples/#582 R/variants/rhistory-375f1003/hello.rhistory",
           "examples/#582 R/variants/rhistory-375f1003/README.md",
           "examples/#582 R/variants/rsx-7f28a360/hello.rsx",
-          "examples/#582 R/variants/rsx-7f28a360/README.md"
+          "examples/#582 R/variants/rsx-7f28a360/README.md",
+          "examples/#582 R/verification/native_20261104_582_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "Rscript --vanilla hello.r",
@@ -34077,7 +34118,8 @@
           "examples/#596 Racket/variants/rktl-c9a39abc/hello.rktl",
           "examples/#596 Racket/variants/rktl-c9a39abc/README.md",
           "examples/#596 Racket/variants/scrbl-ba477af2/hello.scrbl",
-          "examples/#596 Racket/variants/scrbl-ba477af2/README.md"
+          "examples/#596 Racket/variants/scrbl-ba477af2/README.md",
+          "examples/#596 Racket/verification/native_20261104_596_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "racket hello.rkt",
@@ -38147,12 +38189,14 @@
       "example": {
         "semantic_goal": "Compilare un compute shader Slang che scrive i codici ASCII del saluto.",
         "validation_mode": "compile_shader_and_assert_buffer",
-        "toolchain": "Slang v2026.19 official Windows compiler; SPIR-V compile verified, GPU execution pending",
+        "toolchain": "Slang 2026.19 and Zig C++ 0.15.2",
         "files": [
-          "examples/#663 Slang/hello.slang"
+          "examples/#663 Slang/hello.slang",
+          "examples/#663 Slang/verification/native_20261104_slang_result.json",
+          "examples/#663 Slang/verification/dispatch.cpp"
         ],
         "build_command": null,
-        "run_or_check_command": "slangc hello.slang -entry main -target spirv -o build/hello.spv",
+        "run_or_check_command": "slangc hello.slang -entry main -target cpp -o generated_shader.cpp; build and run verification/dispatch.cpp as described in README.md.",
         "expected_result": "shader compilato; dispatch restituisce ASCII Hello, World!.",
         "sources": [
           {
@@ -38166,17 +38210,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
-        "verification_timestamp_utc": "2026-10-08T13:48:11.014773+00:00",
-        "verification_log": "examples/#663 Slang/verification/result.json",
-        "blockers": [
-          "Compiler Slang genera SPIR-V; host GPU e dispatch non eseguiti."
-        ],
-        "notes": "Slang è il linguaggio shader del compiler shader-slang; la semantica GPU non deriva dal solo output SPIR-V.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-04T19:32:01.691711+00:00",
+        "verification_log": "examples/#663 Slang/verification/native_20261104_slang_result.json",
+        "blockers": [],
+        "notes": "Slang generated C++ from the original compute shader. A native CPU host dispatched it and read back the exact ASCII greeting.",
         "verified_artifact_sha256": {
-          "examples/#663 Slang/hello.slang": "47bd8e6fd84d32bb73123ef76a8c6793cb36e91bde072ae59588f5fe35c756d2"
+          "examples/#663 Slang/hello.slang": "47bd8e6fd84d32bb73123ef76a8c6793cb36e91bde072ae59588f5fe35c756d2",
+          "examples/#663 Slang/verification/dispatch.cpp": "156b7dd02db7a3ec0d3cf0b2ad08531c55fdcc21625d63c220d3d79b947924b0"
         }
       }
     },
@@ -41906,7 +41949,8 @@
           "examples/#730 TypeScript/variants/cts-4d16cc26/hello.cts",
           "examples/#730 TypeScript/variants/cts-4d16cc26/README.md",
           "examples/#730 TypeScript/variants/mts-51a93bd5/hello.mts",
-          "examples/#730 TypeScript/variants/mts-51a93bd5/README.md"
+          "examples/#730 TypeScript/variants/mts-51a93bd5/README.md",
+          "examples/#730 TypeScript/verification/native_20261104_730_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "tsc hello.ts --strict --target ES2022 --outDir build; node build/hello.js",
@@ -42606,12 +42650,14 @@
       "example": {
         "semantic_goal": "Interpretare Varnish VCL e rispondere con una pagina sintetica di saluto.",
         "validation_mode": "compile_configuration_and_assert_http_response",
-        "toolchain": "Varnish varnishd",
+        "toolchain": "Varnish 7.1.1 in Ubuntu WSL2",
         "files": [
-          "examples/#743 VCL/hello.vcl"
+          "examples/#743 VCL/hello.vcl",
+          "examples/#743 VCL/verification/native_20261104_vcl_candidate_receipt.json",
+          "examples/#743 VCL/verification/native_20261104_before_correction.json"
         ],
         "build_command": null,
-        "run_or_check_command": "varnishd -C -f hello.vcl; avviare una istanza isolata su loopback e richiederne la risposta.",
+        "run_or_check_command": "varnishd -C -f hello.vcl; start an isolated loopback instance and verify the HTTP response as described in README.md.",
         "expected_result": "VCL accettato; HTTP200 body Hello, World! e newline.",
         "sources": [
           {
@@ -42624,16 +42670,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "La risposta è sintetica: non usa il backend o la rete esterna."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Ubuntu x86_64 WSL2",
+        "verification_timestamp_utc": "2026-11-04T19:38:38.051605+00:00",
+        "verification_log": "examples/#743 VCL/verification/native_20261104_vcl_candidate_receipt.json",
+        "blockers": [],
+        "notes": "Native compilation and a loopback HTTP request confirmed status 200 and the exact greeting followed by a newline. The minimal correction uses a VCL long string to emit a real newline.",
+        "verified_artifact_sha256": {
+          "examples/#743 VCL/hello.vcl": "cf9152c8223f3d5b77c84a6ca1a6eb09528cc89a008a8ae60aa52f4ce7cacb25"
+        }
       }
     },
     {
@@ -45711,7 +45758,8 @@
           "examples/#789 XQuery/variants/xqm-6120106c/main.xq",
           "examples/#789 XQuery/variants/xqm-6120106c/README.md",
           "examples/#789 XQuery/variants/xqy-27e37189/hello.xqy",
-          "examples/#789 XQuery/variants/xqy-27e37189/README.md"
+          "examples/#789 XQuery/variants/xqy-27e37189/README.md",
+          "examples/#789 XQuery/verification/native_20261104_789_variants_result.json"
         ],
         "build_command": null,
         "run_or_check_command": "java -cp \"saxon-he.jar:xmlresolver.jar\" net.sf.saxon.Query -q:hello.xq \"!method=text\"",
@@ -47009,16 +47057,18 @@
       "example": {
         "semantic_goal": "Validare una desktop entry originale del saluto.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "desktop-file-utils0.27 native validator",
+        "toolchain": "desktop-file-utils and GLib GDesktopAppInfo 2.80.0",
         "files": [
           "examples/#812 desktop/README.md",
           "examples/#812 desktop/hello.desktop",
           "examples/#812 desktop/verification/result.json",
           "examples/#812 desktop/variants/desktop-in-8bdb31d7/hello.desktop.in",
-          "examples/#812 desktop/variants/desktop-in-8bdb31d7/README.md"
+          "examples/#812 desktop/variants/desktop-in-8bdb31d7/README.md",
+          "examples/#812 desktop/verification/native_20261104_receipt.json",
+          "examples/#812 desktop/verification/verify_desktop.py"
         ],
         "build_command": null,
-        "run_or_check_command": "desktop-file-validate hello.desktop; controllare Name nel reader del desktop di prova.",
+        "run_or_check_command": "desktop-file-validate hello.desktop; python3 verification/verify_desktop.py hello.desktop",
         "expected_result": "Validatore senza errori; Name=Hello, World! e Exec riconosciuti.",
         "sources": [
           "https://specifications.freedesktop.org/desktop-entry/latest/"
@@ -47029,17 +47079,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "WSL Ubuntu 24.04.3",
-        "verification_timestamp_utc": "2026-10-08T13:38:35.207016+00:00",
-        "verification_log": "examples/#812 desktop/verification/result.json",
-        "blockers": [
-          "Desktop shell UI/launcher consumer pending."
-        ],
-        "notes": "La prova valida il formato offline; applicazione e terminale non vengono lanciati.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64 GNU/Linux",
+        "verification_timestamp_utc": "2026-11-04T19:36:02.642628+00:00",
+        "verification_log": "examples/#812 desktop/verification/native_20261104_receipt.json",
+        "blockers": [],
+        "notes": "The native validator accepted the desktop entry. GLib loaded its greeting name, printf command, and terminal setting. No application was launched.",
         "verified_artifact_sha256": {
-          "examples/#812 desktop/hello.desktop": "05699ee0e3a730b963f3be1cceedb9d81f3d52ce2fbd2e744d0dff282baaa0c8"
+          "examples/#812 desktop/hello.desktop": "05699ee0e3a730b963f3be1cceedb9d81f3d52ce2fbd2e744d0dff282baaa0c8",
+          "examples/#812 desktop/verification/verify_desktop.py": "7cdd363c6e4a48f1bd820c28101341cd2ca65fbb1021ce3b15d72405b3711efe"
         }
       }
     },

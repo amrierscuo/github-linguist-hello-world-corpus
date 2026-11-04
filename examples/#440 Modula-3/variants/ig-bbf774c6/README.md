@@ -1,26 +1,26 @@
-# 0440 — Modula-3: `.ig`
+# 0440: Modula-3: `.ig`
 
-Ruolo: Modula-3 generico: parametro formale di interfaccia T e istanziazione con Text; non semplice modulo .m3.
+Role: Modula- 3 generic: formal parameter of T interface and inscription with Text; not simple .m3. module
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Critical Mass Modula-3 cm3 e libm3. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Critical Mass Modula-3 cm3 e libm3. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 cm3 con m3makefile del fixture; ./hello
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `Greeting.ig`: `7cd1246d92461256f6b4b256a7829a3e8a2a13085e07bc8e284a4a5539b36b25`
 - `Greeting.mg`: `d8ccfec665689d926b0877ab34c79092148f18369b824dd0b9168a515e0fd117`
@@ -29,7 +29,7 @@ SHA-256 dei file della variante:
 - `TextGreeting.m3`: `79bc59da58195e2238a75456e78e2471196cb542e921b460361779901d73ef33`
 - `m3makefile`: `813bd87cb8c5e3db7f5d0a923fec3ce654f7954c21f709dceadd6b48492b94a1`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.cs.purdue.edu/homes/hosking/m3/reference/complete/m3-defn-complete.pdf
 - https://github.com/modula3/cm3

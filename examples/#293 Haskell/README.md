@@ -1,42 +1,42 @@
 # #293 Haskell
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Interpretare Haskell98 e stampare il valore greeting = Hello, World!.
+Interpret Haskell98 and print the value greeting = Hello, World!.
 
-Il modulo Main dichiara greeting::String e main::IO(). ++ concatena stringhe e putStrLn realizza l’IO. Il test usa l’interprete Haskell autentico Hugs in modalità +98, con HUGSDIR e search path delle librerie isolati.
+The Main module states greeting::String and main:: IO (). ++ concatena stringhe and putStrLn realizes the IO. The test uses the authentic Haskell Hugs interpreter in + 98 mode, with HUGSDIR and search path of isolated libraries.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Hugs98 September2006, pacchetto98.200609.21-6build3 e librerie bundled Ubuntu
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 runhugs +98 Hello.hs
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.haskell.org/hugs/
 - https://www.haskell.org/onlinereport/haskell2010/haskellch9.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hs` | [Hello.hs](Hello.hs), [Greeting.hs](variants/hs-boot-9862d855/Greeting.hs), [Audience.hs](variants/hs-boot-9862d855/Audience.hs), [Main.hs](variants/hs-boot-9862d855/Main.hs) creato, verifiche pendenti |
-| `.hs-boot` | [Greeting.hs-boot](variants/hs-boot-9862d855/Greeting.hs-boot) creato, verifiche pendenti |
-| `.hsc` | [hello.hsc](variants/hsc-700d6b1e/hello.hsc) creato, verifiche pendenti |
+| `.hs` | [Hello.hs](Hello.hs), [Greeting.hs](variants/hs-boot-9862d855/Greeting.hs), [Audience.hs](variants/hs-boot-9862d855/Audience.hs), [Main.hs](variants/hs-boot-9862d855/Main.hs) created; verification pending |
+| `.hs-boot` | [Greeting.hs-boot](variants/hs-boot-9862d855/Greeting.hs-boot) created; verification pending |
+| `.hsc` | [hello.hsc](variants/hsc-700d6b1e/hello.hsc) created; verification pending |

@@ -1,23 +1,23 @@
 # #031 Ant Build System
 
-`build.xml` è un progetto Ant con target predefinito `hello`; il task ufficiale `echo` produce il greeting.
+`build.xml` is an Ant project with `hello` default target; the official `echo` task produces greeting.
 
-Prerequisiti: Java e Apache Ant 1.10.18. La distribuzione binaria ufficiale è stata confrontata con il checksum SHA-512 pubblicato da Apache. La prova ha usato Microsoft OpenJDK 21.0.12.1 su Windows x64.
+Prerequisites: Java and Apache Ant 1.10.18. The official binary distribution was compared with the SHA checksum - 512 published by Apache. The test used Microsoft OpenJDK 21.0.12.1 on Windows x64.
 
 ```sh
 ant -f build.xml -projecthelp
 ant -f build.xml -silent hello
 ```
 
-Il primo comando fa leggere il progetto ad Ant e conferma il target predefinito. Il secondo termina con exit 0 e produce una riga `Hello, World!`; il launcher usato nella prova emette anche la riga informativa `Buildfile: ...`. Il log riporta i comandi Java equivalenti con `org.apache.tools.ant.launch.Launcher`, `-nouserlib` e `-noclasspath`, che isolano la prova da librerie utente aggiuntive.
+The first command reads the project to Ant and confirms the default target. The second ends with exit 0 and produces a `Hello, World!` line; the launcher used in the test also emits the `Buildfile: ...` information line. The log reports the Java equivalent commands with `org.apache.tools.ant.launch.Launcher`, `-nouserlib` and `-noclasspath`, which isolate the additional user test.
 
 Toolchain: **Apache Ant 1.10.18; Microsoft OpenJDK 21.0.12.1; Windows x64**.
 
-Stato: **Sintassi e semantica verificate.**
+Status: **Sintassi e semantica verificate.**
 
-Evidenza: [log dei comandi e SHA-256 dei sorgenti](verification/toolchain.json). Il log conserva exit code, stdout e stderr; i percorsi della macchina sono normalizzati.
+Evidence: [log dei comandi e SHA-256 dei sorgenti](verification/toolchain.json). The log keeps exit code, stdout and stderr; the machine paths are normalized.
 
-Fonti primarie:
+Primary sources:
 
 - [Documentazione / sorgente ufficiale 1](https://ant.apache.org/manual/Tasks/echo.html)
 - [Documentazione / sorgente ufficiale 2](https://ant.apache.org/manual/running.html)

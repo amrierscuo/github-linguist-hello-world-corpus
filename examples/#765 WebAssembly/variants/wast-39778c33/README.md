@@ -1,24 +1,24 @@
-# 0765 — WebAssembly — `.wast`
+# 0765: WebAssembly: `.wast`
 
-WebAssembly spec test script con module e assertion, non solo WAT rinominato.
+WebAssembly spec test script with module and assertion, not only WAT renamed.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.wast`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 wast2json hello.wast -o work/hello.json; spectest-interp work/hello.json
 ```
 
-Risultato atteso: assert_return passano; il modulo conserva il saluto in memoria.
+Expected result: assert_return pass; the module keeps greeting in memory.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://github.com/WebAssembly/wabt](https://github.com/WebAssembly/wabt)
 - [https://github.com/WebAssembly/spec/tree/main/interpreter](https://github.com/WebAssembly/spec/tree/main/interpreter)

@@ -2,57 +2,57 @@
 
 Voce canonica `Wolfram Language`, tipo `programming`, language_id `224`.
 
-Espressioni Wolfram Language originali che assegnano il destinatario, compongono la stringa con StringJoin e la stampano con Print.
+Original Wolfram Language Expressions that assign the recipient, make up the string with StringJoin and print it with Print.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Mathics3 (compatible Wolfram Language evaluator) — Mathics3 10.0.1; Running on win32 CPython 3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]; using SymPy 1.14.0, mpmath 1.3.0, numpy 2.3.5, cython Not installed, scipy 1.16.3, skimage 0.25.2. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Python 3.13.9 e Mathics3 10.0.1, Mathics3-Scanner 10.0.1, SymPy 1.14.0; installare le dipendenze di Mathics3 in un ambiente isolato. Il driver inizializza i builtin e la sessione del motore originale.
+Python 3.13.9 and Mathics3 10.0.1, Mathics3-Scanner 10.0.1, SymPy 1.14.0; install Mathics3 dependencies in an isolated environment. The driver initializes the builtin and the original engine session.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python verify.py
 ```
 
-Risultato atteso: Hello, World! dall’output Print e PASS.
+Expected result: Hello, World! from the output Print and PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
 Il sorgente .wl è interpretato realmente da Mathics3, motore open source compatibile con questo sottoinsieme Wolfram Language. Il driver controlla l’output Print della sessione. Non viene dichiarata una verifica con Wolfram Kernel proprietario.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://reference.wolfram.com/language/ref/Print.html](https://reference.wolfram.com/language/ref/Print.html)
 - [https://reference.wolfram.com/language/ref/StringJoin.html](https://reference.wolfram.com/language/ref/StringJoin.html)
 - [https://mathics.org/](https://mathics.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mathematica` | [hello.mathematica](variants/mathematica-ce2c0b75/hello.mathematica) creato, verifiche pendenti |
-| `.cdf` | [hello.cdf](variants/cdf-cfab4dd6/hello.cdf) creato, verifiche pendenti |
-| `.m` | [hello.m](variants/m-f7140aa0/hello.m) creato, verifiche pendenti |
-| `.ma` | [hello.ma](variants/ma-bf225f29/hello.ma) creato, verifiche pendenti |
-| `.mt` | [hello.mt](variants/mt-d80ef8fe/hello.mt) creato, verifiche pendenti |
-| `.nb` | [hello.nb](variants/nb-af372417/hello.nb) creato, verifiche pendenti |
+| `.mathematica` | [hello.mathematica](variants/mathematica-ce2c0b75/hello.mathematica) created; verification pending |
+| `.cdf` | [hello.cdf](variants/cdf-cfab4dd6/hello.cdf) created; verification pending |
+| `.m` | [hello.m](variants/m-f7140aa0/hello.m) created; verification pending |
+| `.ma` | [hello.ma](variants/ma-bf225f29/hello.ma) created; verification pending |
+| `.mt` | [hello.mt](variants/mt-d80ef8fe/hello.mt) created; verification pending |
+| `.nb` | [hello.nb](variants/nb-af372417/hello.nb) created; verification pending |
 | `.nbp` | artefatto da generare Formato Wolfram Player/proprietario: richiede un export/conversione reale del frontend compatibile. Non viene rinominato il codice .wl come documento serializzato. |
-| `.wl` | [hello.wl](hello.wl) verificato |
-| `.wls` | [hello.wls](variants/wls-852bcca4/hello.wls) creato, verifiche pendenti |
-| `.wlt` | [hello.wlt](variants/wlt-5420c4e1/hello.wlt) creato, verifiche pendenti |
+| `.wl` | [hello.wl](hello.wl) verified |
+| `.wls` | [hello.wls](variants/wls-852bcca4/hello.wls) created; verification pending |
+| `.wlt` | [hello.wlt](variants/wlt-5420c4e1/hello.wlt) created; verification pending |

@@ -1,18 +1,18 @@
 # #291 Harbour
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire un programma Harbour e scrivere Hello, World! su stdout.
+Run a Harbour program and write Hello, World! on stdout.
 
-La procedura Main crea una variabile xBase locale e usa OutStd con hb_eol. L’artefatto è sorgente Harbour, non una macro generica o un programma Bash.
+The Main procedure creates a local xBase variable and uses OutStd with hb_eol. The artifact is Harbour source, not a generic macro or Bash program.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Harbour hbmk2 o hbrun originali; versioni effettive da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 hbmk2 hello.hb -ohello
@@ -22,25 +22,25 @@ hbmk2 hello.hb -ohello
 ./hello oppure hbrun hello.hb
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-stdout Hello, World! seguito dall’eol della piattaforma.
+stdout Hello, World! followed by the eol of the platform.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
 Impedimenti: Compiler/runtime Harbour non preparati; parsing ed esecuzione pendenti.
 
-## Fonti primarie
+## Primary sources
 
 - https://harbour.github.io/
 - https://github.com/harbour/core/blob/master/utils/hbmk2/doc/hbmk2.en.md
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hb` | [hello.hb](hello.hb) creato, verifiche pendenti |
+| `.hb` | [hello.hb](hello.hb) created; verification pending |

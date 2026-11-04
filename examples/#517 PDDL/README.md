@@ -1,43 +1,43 @@
 # #517 PDDL
 
-Risolvere un problema PDDL il cui obiettivo è greeted hello-world.
+Solve a PDDL problem whose goal is greeted hello-world.
 
-Tipo canonico `programming`, language_id `736235603`.
+Canonical type `programming`, language_id `736235603`.
 
-Toolchain prevista: Python e pyperplan.
+Suggested toolchain: Python and pyperplan.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: piano di un’azione greet hello-world raggiunge il goal.
+Expected result: plan of a hello-world greet action reaches the goal.
 
-PDDL non stampa stringhe: l’obiettivo semantico è il piano valido. L’adapter stampa il saluto solo dopo aver confrontato il piano del planner.
+PDDL does not print strings: the semantic goal is the valid plan. The adaptor prints the greeting only after comparing the planner.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + pyperplan 2.1. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + pyperplan 2.1. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [pyperplan original planner](https://github.com/aibasel/pyperplan)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install pyperplan
 ```
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install pyperplan==2.1
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pddl` | [hello.pddl](hello.pddl), [problem.pddl](problem.pddl) verificato |
+| `.pddl` | [hello.pddl](hello.pddl), [problem.pddl](problem.pddl) verified |

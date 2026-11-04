@@ -1,23 +1,23 @@
-# 0745 — Vala — `.vapi`
+# 0745: Vala: `.vapi`
 
-Binding Vala per una funzione C originale; distinto da un entrypoint Vala.
+Binding Vala for an original C function; distinguished by an entrypoint Vala.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vapi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 valac --vapidir=. --pkg hello -X -I. --directory=work -o hello main.vala greeting.c; work/hello
 ```
 
-Risultato atteso: binding accettato e stdout Hello, World!.
+Expected result: accepted binding and stdout Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.vala.dev/developer-guides/bindings/writing-vapi-files.html](https://docs.vala.dev/developer-guides/bindings/writing-vapi-files.html)

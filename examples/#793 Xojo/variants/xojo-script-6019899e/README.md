@@ -1,23 +1,23 @@
-# 0793 — Xojo — `.xojo_script`
+# 0793: Xojo: `.xojo_script`
 
-Script di automazione Xojo IDE, distinto dal modulo #tag esportato.
+Automation script Xojo IDE, distinguished by the #tag module exported.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.xojo_script`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Xojo IDE: execute hello.xojo_script in Script menu
 ```
 
-Risultato atteso: output IDE Hello, World!.
+Expected result: IDE Hello, World! output.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://documentation.xojo.com/topics/advanced_features/ide_scripting.html](https://documentation.xojo.com/topics/advanced_features/ide_scripting.html)

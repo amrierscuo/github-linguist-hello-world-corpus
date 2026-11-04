@@ -1,23 +1,23 @@
-# 0709 — Tcl — `.sdc`
+# 0709: Tcl: `.sdc`
 
-Constraint Tcl per timing Synopsys SDC; richiede un design con port clk.
+Constraint Tcl for Synopsys SDC timing; requires a design with clk port.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.sdc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 native FPGA/STA tool: load RTL main.v and read SDC hello.sdc
 ```
 
-Risultato atteso: clock corpus_greeting con periodo 10 ns; RTL di simulazione produce Hello, World!.
+Expected result: clock corpus_greeting with period 10 ns; RTL simulation produces Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.amd.com/r/en-US/ug903-vivado-using-constraints/Clock-Definition](https://docs.amd.com/r/en-US/ug903-vivado-using-constraints/Clock-Definition)

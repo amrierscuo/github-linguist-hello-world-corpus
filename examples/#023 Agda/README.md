@@ -1,17 +1,17 @@
 # #023 Agda
 
 Voce canonica: `Agda`, tipo `programming`, `language_id: 12`.
-`Hello.agda` definisce `main : IO ⊤` e invoca `putLine "Hello, World!"`.
-Il postulate di I/O è collegato al backend GHC tramite le pragmas `FOREIGN` e
+`Hello.agda` defines `main : IO ⊤` and invokes `putLine "Hello, World!"`.
+The I/O postulate is connected to the GHC backend via the `FOREIGN` pragmas and
 `COMPILE`; la conversione `Text.unpack` passa la stringa Agda a `putStrLn` Haskell.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Toolchain richiesta: **Agda con backend GHC** e **GHC** con il pacchetto `text`.
-La documentazione consultata è Agda 2.9.0; una versione locale funzionante deve
-essere installata e registrata prima di attestare la verifica. Non serve la
+Required toolchain: **Agda con backend GHC** e **GHC** con il pacchetto `text`.
+The documentation consulted is Agda 2.9.0; a working local version must
+be installed and recorded before verification can be claimed. The
 standard library Agda: si importano soltanto moduli `Agda.Builtin`.
-Dalla directory di questo esempio:
+From the directory of this example:
 
 ```powershell
 agda --version
@@ -21,32 +21,32 @@ agda --compile Hello.agda
 ./Hello.exe
 ```
 
-Su sistemi Unix l'eseguibile generato si invoca come `./Hello`.
-Risultato atteso: typecheck e compilazione senza errori; esecuzione con codice 0 e
-una riga esattamente `Hello, World!`.
+On Unix systems the generated executable is invoked as `./Hello`.
+Expected result: typecheck and compilation without errors; execution with 0 code and
+a row exactly `Hello, World!`.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto creato; sintassi **in attesa**; semantica **in attesa**.
-Requisito mancante: gli eseguibili `agda` e `ghc` non sono disponibili nel PATH
-dell'ambiente verificato. La revisione della struttura rispetto alla documentazione
-non è conteggiata come typecheck. Il postulate è un confine FFI: solo la compilazione
-GHC controlla il collegamento Haskell; il typecheck Agda da solo non prova l'effetto I/O.
+Artefatto created; syntax **in attesa**; behavior **in attesa**.
+Missing requirement: `agda` and `ghc` executables are not available in PATH
+of the tested environment. Reviewing the structure against the documentation
+does not count as type checking. The postulate is an FFI boundary: only compilation
+GHC controls Haskell connection; typecheck Agda alone does not prove the I/O. effect
 
-Log: [environment.json](verification/environment.json), che registra soltanto
-la disponibilità degli strumenti e SHA-256 del sorgente. I percorsi della macchina
-sono normalizzati secondo `path_normalization`; nessuna esecuzione del linguaggio
-è dichiarata.
+Log: [environment.json](verification/environment.json), which registers only
+the availability of tools and SHA-256 of the source.
+are normalized according to `path_normalization`; no language execution
+is declared.
 
-## Fonti ufficiali
+## Official sources
 
 - [Backend GHC, compilazione e esempio di I/O](https://agda.readthedocs.io/en/latest/tools/compilers.html).
 - [FFI, pragmas e mapping String verso Data.Text.Text](https://agda.readthedocs.io/en/latest/language/foreign-function-interface.html).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.agda` | [Hello.agda](Hello.agda) creato, verifiche pendenti |
+| `.agda` | [Hello.agda](Hello.agda) created; verification pending |

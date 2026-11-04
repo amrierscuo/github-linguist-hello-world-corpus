@@ -1,23 +1,23 @@
-# 0700 — TOML — `.toml.example`
+# 0700: TOML: `.toml.example`
 
-Variante testuale dello stesso formato, con suffisso canonico .toml.example.
+Textual variation of the same format, with canon suffix .toml.example.
 
-Provenienza: copia del file originale `examples/#700 TOML/hello.toml`.
+Origin: copy of the original `examples/#700 TOML/hello.toml` file.
 
 Artefatto principale: `hello.toml.example`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Python tomllib: parse hello.toml.example, assert greeting == "Hello, World!"
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto..
+Expected result: Hello, World! in the compliant result, according to the framework described..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://toml.io/en/v1.0.0](https://toml.io/en/v1.0.0)

@@ -1,40 +1,40 @@
 # #479 Nunjucks
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare e renderizzare Nunjucks con audience=World.
+Fill out and render Nunjucks with audience=World.
 
-Il motore originale Environment/FileSystemLoader analizza hello.njk, interpola audience e produce il markup. Il driver confronta l’HTML esatto.
+The original Environment/FileSystemLoader engine analyzes hello.njk, interpola audience and produces the markup. The driver compares the exact HTML.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Nunjucks3.2.4, Node22.20.0
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 node render.js
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout <p>Hello, World!</p> seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://mozilla.github.io/nunjucks/templating.html
 - https://mozilla.github.io/nunjucks/api.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.njk` | [hello.njk](hello.njk) verificato |
+| `.njk` | [hello.njk](hello.njk) verified |

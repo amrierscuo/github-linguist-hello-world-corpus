@@ -1,24 +1,24 @@
 # #505 OpenRC runscript
 
-Interpretare uno script OpenRC che avvia un servizio dimostrativo e mostra il saluto.
+Play an OpenRC script that initiates a demonstration service and shows greeting.
 
-Tipo canonico `programming`, language_id `265`.
+Canonical type `programming`, language_id `265`.
 
-Toolchain prevista: OpenRC openrc-run; sh per il controllo grammaticale iniziale.
+Suggested toolchain: OpenRC openrc-run; sh for initial grammar control.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 sh -n hello
 openrc-run hello start
 ```
 
-Risultato atteso: shell syntax valida; avvio dimostrativo con messaggio Hello, World!.
+Expected result: valid syntax shell; demonstrative start with Hello, World! message.
 
-Lo script resta nel corpus e non viene installato in /etc/init.d. sh -n non prova le funzioni OpenRC.
+The script remains in the corpus and is not installed in / etc/init.d. sh -n does not test the OpenRC functions.
 
-Stato registrato: sintassi verificata; semantica in attesa. Toolchain: Ubuntu POSIX sh syntax only. [Log](verification/result.json). Sintassi POSIX shell verificata; openrc-run non eseguito. Semantica e funzioni OpenRC pendenti.
+Registered state: syntax verified; behavioral verification pending. Toolchain: Ubuntu POSIX sh syntax only. [Log](verification/result.json). Sintassi POSIX shell verificata; openrc-run non eseguito. Semantica e funzioni OpenRC pendenti.
 
-Fonti:
+Sources:
 
 - [OpenRC service scripts](https://github.com/OpenRC/openrc/blob/master/service-script-guide.md)

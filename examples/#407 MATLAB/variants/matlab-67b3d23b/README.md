@@ -1,30 +1,30 @@
-# 0407 — MATLAB: `.matlab`
+# 0407: MATLAB: `.matlab`
 
-Ruolo: Alias di estensione per lo stesso formato testuale del sorgente principale.
+Role: Alias extension for the same text format as the main source.
 
-Provenienza: Copia byte-identica del sorgente originale del corpus: examples/#407 MATLAB/hello.m.
+Origin: Byte-identical copy of the original corpus source: examples/#407 MATLAB/hello.m.
 
-Toolchain richiesta: MATLAB oppure GNU Octave per questo sottoinsieme compatibile. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: MATLAB oppure GNU Octave per questo sottoinsieme compatibile. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 Usare la toolchain del README principale sul file hello.matlab; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.
 ```
 
-Risultato atteso: stdout Hello, World! e LF.
+Expected result: stdout Hello, World! and LF.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.matlab`: `a7c821fc75515533494fb9259e141f9a8206c7aeb15bccdc251747f60d440b60`
 
-Fonti primarie:
+Primary sources:
 
 - https://www.mathworks.com/help/matlab/ref/disp.html
 - https://docs.octave.org/latest/

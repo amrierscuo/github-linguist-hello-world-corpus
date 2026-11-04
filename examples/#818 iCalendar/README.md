@@ -1,38 +1,38 @@
 # #818 iCalendar
 
-Analizzare un evento iCalendar originale e conservare il saluto nel roundtrip.
+Analyze an original iCalendar event and keep your greeting in roundtrip.
 
 ## Toolchain
 
 CPython3.13.9; icalendar7.3.0
 
-## Procedura
+## Procedure
 
 pip install icalendar; python verify.py
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 UID usa example.invalid; nessun evento viene importato in calendari reali. Il parser decodifica l’escaping della virgola e preserva Summary/date.
 
-Verifica reale 2026-10-08T13:38:35.257218+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:38:35.257218+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.rfc-editor.org/rfc/rfc5545](https://www.rfc-editor.org/rfc/rfc5545)
 - [https://icalendar.readthedocs.io/](https://icalendar.readthedocs.io/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ics` | [hello.ics](hello.ics) verificato |
-| `.ical` | [hello.ical](variants/ical-1b64d378/hello.ical) creato, verifiche pendenti |
+| `.ics` | [hello.ics](hello.ics) verified |
+| `.ical` | [hello.ical](variants/ical-1b64d378/hello.ical) created; verification pending |

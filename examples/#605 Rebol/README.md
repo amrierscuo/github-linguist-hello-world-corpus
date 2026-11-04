@@ -2,50 +2,50 @@
 
 Voce canonica `Rebol`, tipo `programming`, language_id `319`.
 
-Eseguire un programma Rebol con rejoin e print.
+Run a Rebol program with rejoin and print.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Original Rebol3 Oldes branch interpreter — Rebol/Bulk 3.22.1 (2026-05-27 19:59:00 UTC); Copyright (c) 2012 REBOL Technologies; Copyright (c) 2012-2026 Rebol Open Source Contributors; Source:       https://github.com/Oldes/Rebol3. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Rebol/Bulk 3.22.1 Oldes branch, originale release Linux x64. SHA dell’asset corrisponde alla release primaria.
+Rebol/Bulk 3.22.1 Oldes branch, original Linux x64 release. SHA of the axit corresponds to the primary release.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 rebol3 -q hello.reb
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Interpreter genuino, script originale e stdout esatto. Il binario Windows non funziona nel terminale non interattivo di prova, quindi eÌ€ usato il runtime Linux ufficiale.
+Genuine Interpreter, original script and exact stdout. The Windows track does not work in the non-interactive test terminal, so it used the official Linux runtime.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/Oldes/Rebol3](https://github.com/Oldes/Rebol3)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.reb` | [hello.reb](hello.reb) verificato |
-| `.r` | [hello.r](variants/r-8dbb84b2/hello.r) creato, verifiche pendenti |
-| `.r2` | [hello.r2](variants/r2-8d1288b8/hello.r2) creato, verifiche pendenti |
-| `.r3` | [hello.r3](variants/r3-172ccdf0/hello.r3) creato, verifiche pendenti |
-| `.rebol` | [hello.rebol](variants/rebol-747e1472/hello.rebol) creato, verifiche pendenti |
+| `.reb` | [hello.reb](hello.reb) verified |
+| `.r` | [hello.r](variants/r-8dbb84b2/hello.r) created; verification pending |
+| `.r2` | [hello.r2](variants/r2-8d1288b8/hello.r2) created; verification pending |
+| `.r3` | [hello.r3](variants/r3-172ccdf0/hello.r3) created; verification pending |
+| `.rebol` | [hello.rebol](variants/rebol-747e1472/hello.rebol) created; verification pending |

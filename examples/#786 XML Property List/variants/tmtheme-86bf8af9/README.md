@@ -1,24 +1,24 @@
-# 0786 — XML Property List — `.tmTheme`
+# 0786: XML Property List: `.tmTheme`
 
-Property-list XML originale per .tmTheme: payload adatto a command/grammar/preference/snippet/theme; UUID locale assegnato dal corpus.
+Property-list XML original for .tmTheme: payload suitable for command/grammar/preference/snippet/theme; local UUID assigned by the corpus.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.tmTheme`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 plistlib original XML plist parser; native TextMate/Sublime import pending
 ```
 
-Risultato atteso: dictionary originale valido; payload di saluto nel ruolo indicato.
+Expected result: valid original dictionary; greeting payload in the specified role.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://macromates.com/manual/en/bundles](https://macromates.com/manual/en/bundles)
 - [https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)

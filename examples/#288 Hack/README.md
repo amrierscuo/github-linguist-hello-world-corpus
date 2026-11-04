@@ -1,18 +1,18 @@
 # #288 Hack
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Eseguire il punto di ingresso Hack e stampare Hello, World!.
+Run the Hack entry point and print Hello, World!.
 
 Il sorgente Hack dichiara <<__EntryPoint>> e main():void, con concatenazione ed echo. Il tag <?hh non è richiesto nei file .hack moderni. PHP non verifica questo punto di ingresso o il sistema di tipi Hack.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 HHVM/Hack e typechecker hh_client; versioni effettive da registrare
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 Con progetto Hack appropriato: hh_client
@@ -22,28 +22,28 @@ Con progetto Hack appropriato: hh_client
 hhvm hello.hack
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout Hello, World! seguito da newline.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compilatore/runtime nativo eseguito per questa voce.
+Documented source; no native parser/compilatore/runtime performed for this item.
 
-Impedimenti: HHVM/Hack e il typechecker non disponibili; verifiche pendenti.
+Commitments: HHVM/Hack and typechecker not available; verification pending.
 
-## Fonti primarie
+## Primary sources
 
 - https://docs.hhvm.com/hack/source-code-fundamentals/program-structure/
 - https://hacklang.org/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hack` | [hello.hack](hello.hack), [driver.hack](variants/hhi-b673df30/driver.hack) creato, verifiche pendenti |
-| `.hh` | [hello.hh](variants/hh-bc9ff2ca/hello.hh) creato, verifiche pendenti |
-| `.hhi` | [hello.hhi](variants/hhi-b673df30/hello.hhi) creato, verifiche pendenti |
-| `.php` | [hello.php](variants/php-7410d4a4/hello.php) creato, verifiche pendenti |
+| `.hack` | [hello.hack](hello.hack), [driver.hack](variants/hhi-b673df30/driver.hack) created; verification pending |
+| `.hh` | [hello.hh](variants/hh-bc9ff2ca/hello.hh) created; verification pending |
+| `.hhi` | [hello.hhi](variants/hhi-b673df30/hello.hhi) created; verification pending |
+| `.php` | [hello.php](variants/php-7410d4a4/hello.php) created; verification pending |

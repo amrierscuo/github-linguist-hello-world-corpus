@@ -1,41 +1,41 @@
 # #477 Nu
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Interpretare Nu e stampare Hello, World!.
 
-La forma puts è il builtin del linguaggio Nu. Il file .nu viene tenuto distinto da Nushell, che condivide l’estensione.
+The puts form is the builtin of the Nu language. The .nu file is kept distinct from Nushell, which shares the extension.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Nu/nush originale con runtime Objective-C/Foundation; versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 nush hello.nu
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
 Impedimenti: Nu/Objective-C Foundation non preparati; runtime pendente.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/programming-nu/nu
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nu` | [hello.nu](hello.nu) creato, verifiche pendenti |
+| `.nu` | [hello.nu](hello.nu) created; verification pending |

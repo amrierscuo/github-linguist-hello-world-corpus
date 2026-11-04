@@ -1,31 +1,31 @@
 # #792 Xmake
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Interpretare xmake.lua, compilare la fixture C ed eseguire Hello, World!.
+Play xmake.lua, fill in the fixture C and execute Hello, World!.
 
-Xmake interpreta target, set_kind e add_files e invoca GCC. Cache/configurazione e build della prova sono isolate in work.
+Xmake interprets target, set_kind and add_files and invokes GCC. Cache/configurazione and build of the test are isolated in work.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Xmake3.1.1+HEAD.3ba37a0 bundle originale e GCC Ubuntu
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 xmake f -y -p linux --toolchain=gcc -o build; xmake -y; ./build/linux/x86_64/release/hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Build exit0 e programma compilato stampa Hello, World!.
+Build exit0 and compiled Hello, World! print program.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://xmake.io/guide/quick-start.html

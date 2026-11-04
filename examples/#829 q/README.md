@@ -1,36 +1,36 @@
 # #829 q
 
-Eseguire un file q che scrive il saluto.
+Run a q file that writes greeting.
 
 ## Toolchain
 
 KX q runtime
 
-## Procedura
+## Procedure
 
-q hello.q; registrare output e uscire dal runtime di prova.
+q hello.q; record output and exit from the test runtime.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
--1 è il handle console text; il campione usa il linguaggio q canonico KX.
+- 1 is the handle console text; the sample uses the q canon language KX.
 
-Requisiti residui:
-- KX q runtime non disponibile.
+Remaining requirements:
+- KX q runtime unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://code.kx.com/q/ref/file-text/](https://code.kx.com/q/ref/file-text/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.q` | [hello.q](hello.q) creato, verifiche pendenti |
+| `.q` | [hello.q](hello.q) created; verification pending |

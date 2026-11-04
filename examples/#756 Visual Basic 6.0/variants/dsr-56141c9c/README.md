@@ -1,21 +1,21 @@
-# 0756 — Visual Basic 6.0 — `.Dsr`
+# 0756: Visual Basic 6.0: `.Dsr`
 
-Suffisso canonico .Dsr del linguaggio Visual Basic 6.0.
+Canon suffix .Dsr of the Visual Basic 6.0 language.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Nessun comando eseguito; occorre il generatore/importatore descritto nelle fonti.
 ```
 
-Risultato atteso: un artefatto genuino esportato/generato dal relativo tool originale.
+Expected result: a genuine artifact esportato/generato from its original tool.
 
-Stato: bloccato; nessun artefatto simulato; sintassi e semantica non verificate.
+Status: blocked; no simulated artifact; syntax and behavior not verified.
 
-Designer DataReport VB6: occorre un export originale dell’IDE e il relativo stream designer .dsx. Non viene inventata una serializzazione OLE.
+Designer DataReport VB6: you need an original export of IDE and the related stream designer .dsx. There is no invented a OLE serialization.
 
-Fonti primarie:
+Primary sources:
 
 - [https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy](https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy)

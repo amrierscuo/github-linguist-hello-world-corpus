@@ -1,40 +1,40 @@
 # #634 SPARQL
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Valutare una query SPARQL che concatena Hello, e World!.
+Evaluate a SPARQL query that chain Hello, and World!.
 
-Query SPARQL1.1 su grafo vuoto; il driver usa parser/evaluatore RDFlib e controlla un’unica soluzione.
+Query SPARQL1.1 on blank graph; the driver uses parser/evaluatore RDFlib and controls a single solution.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 RDFlib7.6.0 originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Un’unica riga con greeting = Hello, World!.
+A single line with greeting = Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.w3.org/TR/sparql11-query/#func-concat
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sparql` | [hello.sparql](variants/sparql-6c620153/hello.sparql) creato, verifiche pendenti |
-| `.rq` | [hello.rq](hello.rq) verificato |
+| `.sparql` | [hello.sparql](variants/sparql-6c620153/hello.sparql) created; verification pending |
+| `.rq` | [hello.rq](hello.rq) verified |

@@ -1,24 +1,24 @@
-# 0570 — Python — `.fcgi`
+# 0570: Python: `.fcgi`
 
-FastCGI process tramite il server originale flup; richiede un frontend locale FastCGI.
+FastCGI process via the original flick server; requires a local FastCGI frontend.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.fcgi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 python hello.fcgi; frontend FastCGI local request
 ```
 
-Risultato atteso: HTTP body Hello, World!.
+Expected result: HTTP body Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.fastcgi.com/devkit/doc/fcgi-spec.html](https://www.fastcgi.com/devkit/doc/fcgi-spec.html)
 - [https://pypi.org/project/flup6/](https://pypi.org/project/flup6/)

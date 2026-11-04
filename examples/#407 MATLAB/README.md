@@ -1,33 +1,33 @@
 # #407 MATLAB
 
-Eseguire uno script MATLAB che stampa Hello, World!.
+Run a MATLAB script that prints Hello, World!.
 
-Tipo canonico `programming`, language_id `225`.
+Canonical type `programming`, language_id `225`.
 
-Toolchain prevista: MATLAB oppure GNU Octave per questo sottoinsieme compatibile.
+Toolchain provided: MATLAB or GNU Octave for this compatible subset.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 octave --no-gui --quiet hello.m
 ```
 
-Risultato atteso: stdout Hello, World! e LF.
+Expected result: stdout Hello, World! and LF.
 
-Un eventuale test Octave verrà indicato come compatibilità Octave; non si attribuisce una prova al runtime MATLAB senza averlo eseguito.
+Any Octave test will be indicated as Octave compatibility; no test is given to MATLAB runtime without having performed it.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [MathWorks — disp](https://www.mathworks.com/help/matlab/ref/disp.html)
 - [GNU Octave — manuale](https://docs.octave.org/latest/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.matlab` | [hello.matlab](variants/matlab-67b3d23b/hello.matlab) creato, verifiche pendenti |
-| `.m` | [hello.m](hello.m) creato, verifiche pendenti |
+| `.matlab` | [hello.matlab](variants/matlab-67b3d23b/hello.matlab) created; verification pending |
+| `.m` | [hello.m](hello.m) created; verification pending |

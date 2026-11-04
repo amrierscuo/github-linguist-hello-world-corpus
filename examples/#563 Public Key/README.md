@@ -1,37 +1,37 @@
 # #563 Public Key
 
-Leggere una chiave pubblica dimostrativa Ed25519 con commento del saluto.
+Read a public demonstration key Ed25519 with commentary on the greeting.
 
 ## Toolchain
 
 OpenSSH_9.6p1 Ubuntu-3ubuntu13.19, OpenSSL 3.0.13 30 Jan 2024
 
-## Procedura
+## Procedure
 
 ssh-keygen -t ed25519 -N "" -C "Hello, World!" -f <work-private-key>; ssh-keygen -lf hello.pub
 
-## Risultato atteso
+## Expected result
 
-ssh-keygen riconosce ED25519 e mostra il commento Hello, World!.
+ssh-keygen recognizes ED25519 and shows the comment Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-hello.pub è generata realmente per questo esempio. Il corpus contiene soltanto la chiave pubblica; la chiave privata temporanea resta in work. Il goal è la chiave valida e il commento, non cifrare il saluto.
+hello.pub is really generated for this example. The corpus contains only the public key; the temporary private key remains in work. The goal is the valid key and comment, do not encrypt greeting.
 
-Verifica reale 2026-10-08T13:16:51.649710+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:16:51.649710+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://man.openbsd.org/ssh-keygen](https://man.openbsd.org/ssh-keygen)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asc` | [hello.asc](variants/asc-431e050a/hello.asc) verificato |
-| `.pub` | [hello.pub](hello.pub) verificato |
+| `.asc` | [hello.asc](variants/asc-431e050a/hello.asc) verified |
+| `.pub` | [hello.pub](hello.pub) verified |

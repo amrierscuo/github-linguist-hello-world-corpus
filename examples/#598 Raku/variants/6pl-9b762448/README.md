@@ -1,23 +1,23 @@
-# 0598 — Raku — `.6pl`
+# 0598: Raku: `.6pl`
 
-Variante testuale dello stesso formato, con suffisso canonico .6pl.
+Textual variation of the same format, with canon suffix. 6pl.
 
-Provenienza: copia del file originale `examples/#598 Raku/hello.raku`.
+Origin: copy of the original `examples/#598 Raku/hello.raku` file.
 
 Artefatto principale: `hello.6pl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 raku hello.6pl
 ```
 
-Risultato atteso: stdout Hello, World! e newline..
+Expected result: stdout Hello, World! and newline..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.raku.org/routine/say](https://docs.raku.org/routine/say)

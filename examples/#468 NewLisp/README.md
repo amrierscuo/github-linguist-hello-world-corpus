@@ -1,41 +1,41 @@
 # #468 NewLisp
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Interpretare newLISP e stampare Hello, World!.
 
-set lega audience; string costruisce il saluto, println realizza l’IO ed exit0 termina il programma. La prova usa l’interprete newLISP autentico.
+set alloy audience; string builds greeting, println realizes the IO and exit0 ends the program.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 newLISP10.7.5 Linux ufficiale Ubuntu
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 newlisp hello.nl
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.newlisp.org/downloads/newlisp_manual.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.nl` | [hello.nl](hello.nl) verificato |
-| `.lisp` | [hello.lisp](variants/lisp-757ceb1b/hello.lisp) creato, verifiche pendenti |
-| `.lsp` | [hello.lsp](variants/lsp-270be2e4/hello.lsp) creato, verifiche pendenti |
+| `.nl` | [hello.nl](hello.nl) verified |
+| `.lisp` | [hello.lisp](variants/lisp-757ceb1b/hello.lisp) created; verification pending |
+| `.lsp` | [hello.lsp](variants/lsp-270be2e4/hello.lsp) created; verification pending |

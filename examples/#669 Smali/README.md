@@ -1,31 +1,31 @@
 # #669 Smali
 
-Assemblare Smali in DEX con un metodo main che stampa il saluto.
+Assemble Smali in DEX with a main method that prints greeting.
 
-Tipo canonico `programming`, language_id `351`.
+Canonical type `programming`, language_id `351`.
 
-Toolchain prevista: Google smali assembler e Android ART/Dalvik per esecuzione.
+Suggested toolchain: Google smali assembler and Android ART/Dalvik for execution.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 smali assemble Hello.smali -o build/hello.dex
 ```
 
-Risultato atteso: DEX valido; main stampa Hello, World! sul runtime Android.
+Expected result: DEX valid; main Hello, World! print on the Android runtime.
 
-Assemblare il DEX non prova l’esecuzione ART; questa resta distinta.
+Assembling the DEX does not prove the ART execution; this remains distinct.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Smali](https://github.com/google/smali)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.smali` | [Hello.smali](Hello.smali) creato, verifiche pendenti |
+| `.smali` | [Hello.smali](Hello.smali) created; verification pending |

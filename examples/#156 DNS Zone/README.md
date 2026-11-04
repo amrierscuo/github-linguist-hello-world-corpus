@@ -1,41 +1,41 @@
 # #156 DNS Zone
 
-Voce canonica e ordine del `reference/languages.yml` del corpus. I sorgenti e fixture sono originali; eventuali dump/bundle provengono dagli strumenti indicati.
+The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
-## Obiettivo
+## Goal
 
-Validare una zona DNS e preservare un record TXT greeting con valore Hello, World!.
+Validate a DNS area and preserve a TXT greeting record with Hello, World! value.
 
-La zona contiene SOA, NS, A per il nameserver e il TXT del saluto. Usa il dominio riservato .example e l’indirizzo di documentazione 192.0.2.1. Il tool originale BIND controlla sintassi e integrità, senza avviare server DNS o modificare resolver del sistema.
+The area contains SOA, NS, A for the nameserver and TXT of greeting. Use the reserved domain .example and the 192.0.2.1 documentation address. The original tool BIND controls syntax and integrity, without starting DNS server or changing resolver
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 ISC BIND named-checkzone 9.18.39-0ubuntu0.24.04.7-Ubuntu
 
-Comandi nella cartella dell’esempio con la toolchain disponibile nel PATH. Usare una copia temporanea: database, oggetti, audio e altri output di prova non appartengono al corpus.
+Commands in the example folder with the toolchain available in PATH. Use a temporary copy: databases, objects, audio and other test outputs do not belong to the corpus.
 
 ```text
 named-checkzone -D -o normalized.zone corpus.example hello.zone
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Zona accettata con serial 2026100801, OK ed exit 0; dump canonico conserva greeting.corpus.example. TXT "Hello, World!".
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra versioni e provenienza, SHA-256 dei sorgenti, comandi effettivi, exit, stdout e stderr normalizzati.
+The `verification/toolchain.json` log records versions and provenance, SHA-256 of the source, actual commands, exit, stdout and stderr normalized.
 
-## Fonti primarie
+## Primary sources
 
 - https://bind9.readthedocs.io/en/latest/manpages.html#named-checkzone-zone-file-validation-tool
 - https://www.isc.org/bind/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.zone` | [hello.zone](hello.zone) verificato |
-| `.arpa` | [hello.arpa](variants/ext-arpa-2e61727061/hello.arpa) creato, verifiche pendenti |
+| `.zone` | [hello.zone](hello.zone) verified |
+| `.arpa` | [hello.arpa](variants/ext-arpa-2e61727061/hello.arpa) created; verification pending |

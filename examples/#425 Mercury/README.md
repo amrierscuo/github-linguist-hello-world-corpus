@@ -1,33 +1,33 @@
 # #425 Mercury
 
-Compilare un programma Mercury deterministico con io state threading.
+Fill out a deterministic Mercury program with me you are threading.
 
-Tipo canonico `programming`, language_id `229`.
+Canonical type `programming`, language_id `229`.
 
-Toolchain prevista: Mercury mmc e grade runtime installata.
+Suggested toolchain: Mercury mmc and grade runtime installed.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mmc --make hello
 ./hello
 ```
 
-Risultato atteso: stdout Hello, World! e LF, exit 0.
+Expected result: stdout Hello, World! and LF, exit 0.
 
-main dichiara determinismo det e usa !IO per passare lo stato di I/O.
+main declares determinism det and uses! IO to pass the state of I/O.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Mercury — programma hello](https://www.mercurylang.org/information/doc-latest/mercury_user_guide/Hello-world.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.m` | [hello.m](hello.m) creato, verifiche pendenti |
-| `.moo` | [hello.moo](variants/moo-3e77aff6/hello.moo) creato, verifiche pendenti |
+| `.m` | [hello.m](hello.m) created; verification pending |
+| `.moo` | [hello.moo](variants/moo-3e77aff6/hello.moo) created; verification pending |

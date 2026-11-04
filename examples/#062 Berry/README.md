@@ -1,18 +1,18 @@
 # #062 Berry
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Compilare ed eseguire una concatenazione di stringhe nella VM Berry.
+Fill and execute a concatenation of strings in the VM Berry.
 
-La build dell’interprete originale omette soltanto la dipendenza opzionale readline per la console interattiva. Il parser e la VM di esecuzione file sono quelli del progetto upstream.
+The build of the original interpreter only omits the optional readline dependence for the interactive console.The parser and VM of file execution are those of the upstream project.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Berry 1.1.0, sorgenti originali berry-lang/berry; GNU C su Ubuntu WSL
+Berry 1.1.0, original sources berry-lang/berry; GNU C on Ubuntu WSL
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 make CFLAGS="-Wall -Wextra -std=c99 -O2" LIBS="-lm -ldl"
@@ -22,23 +22,23 @@ make CFLAGS="-Wall -Wextra -std=c99 -O2" LIBS="-lm -ldl"
 berry hello.be
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esatto: Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+The `verification/toolchain.json` log records actual commands, versioni/provenienza of the toolchain, output codes, stdout/stderr and SHA-256 of the proven sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/berry-lang/berry
 - https://berry.readthedocs.io/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.be` | [hello.be](hello.be) verificato |
+| `.be` | [hello.be](hello.be) verified |

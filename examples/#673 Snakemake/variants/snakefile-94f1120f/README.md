@@ -1,23 +1,23 @@
-# 0673 — Snakemake — `.snakefile`
+# 0673: Snakemake: `.snakefile`
 
-Variante testuale dello stesso formato, con suffisso canonico .snakefile.
+Textual variation of the same format, with canon suffix .snakefile.
 
-Provenienza: copia del file originale `examples/#673 Snakemake/Snakefile`.
+Origin: copy of the original `examples/#673 Snakemake/Snakefile` file.
 
 Artefatto principale: `Snakefile.snakefile`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 snakemake --snakefile Snakefile.snakefile --cores 1 hello
 ```
 
-Risultato atteso: workflow eseguito con successo e riga Hello, World!..
+Expected result: successful workflow and Hello, World! line..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html)

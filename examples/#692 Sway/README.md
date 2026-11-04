@@ -2,46 +2,46 @@
 
 Voce canonica `Sway`, tipo `programming`, language_id `271471144`.
 
-Restituire una stringa di 13 caratteri da uno script Sway originale.
+Return a string of 13 characters from an original Sway script.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine forc compiler/runtime — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine forc compiler/runtime, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede Fuel Sway compiler/forc e un runner locale compatibile, senza invio di transazioni.
+Requires Fuel Sway compiler/forc and a compatible local runner, without sending transactions.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 forc build; forc run --dry-run
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.
+Expected result: Hello, World! in the conformed result, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Sway indica il linguaggio Fuel, con str[13]; il programma non eÌâ‚¬ una configurazione del window manager omonimo. Toolchain assente.
+Sway indicates the language Fuel, with str[ 13 ]; the program is not a configuration of the window manager of the same name. Toolchain absent.
 
-Requisiti residui:
+Remaining requirements:
 
 - Required forc toolchain and matching execution/format resources are not configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://fuellabs.github.io/sway/v0.31.0/basics/variables.html](https://fuellabs.github.io/sway/v0.31.0/basics/variables.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sw` | [main.sw](src/main.sw) creato, verifiche pendenti |
+| `.sw` | [main.sw](src/main.sw) created; verification pending |

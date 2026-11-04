@@ -1,38 +1,38 @@
 # #389 Liquid
 
-Interpretare un template Liquid con default, interpolazione e HTML escaping.
+Interpret a Liquid template with default, interpolation and HTML escaping.
 
 ## Toolchain
 
 liquidjs 10.30.0; Node 22.20.0
 
-## Comandi e procedura
+## Commands and procedure
 
 npm install; node verify.cjs
 
-## Risultato atteso
+## Expected result
 
 World e nome assente danno Hello, World!; <World> viene escapato.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-LiquidJS è un’implementazione community autentica di Liquid; il checker chiama engine.parse/render e prova default/escape. La prova non è un’esecuzione su un negozio Shopify.
+LiquidJS is an authentic implementation community of Liquid; the checker calls engine.parse /render and default/escape. test is not an execution on a Shopify store.
 
-Verifica effettiva del 2026-10-08T12:49:20.783420+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:49:20.783420+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://shopify.github.io/liquid/](https://shopify.github.io/liquid/)
 - [https://liquidjs.com/tutorials/intro-to-liquid.html](https://liquidjs.com/tutorials/intro-to-liquid.html)
 - [https://github.com/harttle/liquidjs](https://github.com/harttle/liquidjs)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.liquid` | [hello.liquid](hello.liquid) verificato |
+| `.liquid` | [hello.liquid](hello.liquid) verified |

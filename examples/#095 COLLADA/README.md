@@ -1,48 +1,48 @@
 # #095 COLLADA
 
-Rappresentare in COLLADA 1.4.1 un asset dal titolo Hello, World!, con scena GreetingScene e nodo HelloWorld senza spostamento; validare XSD e caricare la scena.
+Represent in COLLADA 1.4.1 an asset titled Hello, World!, with scene GreetingScene and node HelloWorld without shift; validate XSD and upload the scene.
 
 ## Toolchain
 
 Python 3.13.9; pycollada 0.9.3; lxml 6.0.2; Khronos COLLADA 1.4.1 XSD
 
-## Comandi e procedura
+## Commands and procedure
 
-Scaricare lo schema 1.4.1 dalla fonte Khronos indicata sotto e mantenerlo in
-una cartella di tool esterna. Dalla cartella dell'esempio:
+Download the 1.4.1 schema from the source Khronos indicated below and keep it in
+an external tool folder. From the example folder:
 
 ```sh
 python -m pip install -r requirements.txt
 python verify.py /percorso/collada_schema_1_4_1.xsd
 ```
 
-Prima lxml valida il documento contro lo schema ufficiale completo; poi
-pycollada lo carica e risolve il collegamento della scena e la matrice del
-nodo. Una sola verifica XML di buona formazione non sarebbe sufficiente.
+First lxml validates the document against the complete official scheme; then
+pycollada loads it and solves the connection of the scene and the matrix of
+Node. Only one XML verification of good training would not be enough.
 
-## Risultato atteso
+## Expected result
 
-XSD valida il documento; parser COLLADA restituisce il titolo esatto, scena attiva GreetingScene, nodo GreetingNode/name HelloWorld e matrice identità.
+XSD valid the document; parser COLLADA returns the exact title, active scene GreetingScene, node GreetingNode/name HelloWorld and matrix identity.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il titolo contiene il saluto; i nomi XML di scena e nodo sono identificatori NCName validi. Si verifica il modello dati e la trasformazione, non una resa grafica 3D. L'hash dello schema ufficiale scaricato è nel log; lo schema non è duplicato nel corpus.
+The title contains the greeting; the XML names of scene and node are valid NCName identifiers. The data model and transformation occurs, not a 3D. graphic rendering The hash of the official schema downloaded is in the log; the schema is not duplicated in the corpus.
 
-Verifica effettiva del 2026-10-08T11:35:41.649498+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:35:41.649498+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.khronos.org/collada/](https://www.khronos.org/collada/)
 - [https://www.khronos.org/files/collada_schema_1_4_1.xsd](https://www.khronos.org/files/collada_schema_1_4_1.xsd)
 - [https://pycollada.readthedocs.io/](https://pycollada.readthedocs.io/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.dae` | [hello.dae](hello.dae) verificato |
+| `.dae` | [hello.dae](hello.dae) verified |

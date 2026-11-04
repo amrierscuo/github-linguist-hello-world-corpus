@@ -2,48 +2,48 @@
 
 Voce canonica `Jsonnet`, tipo `programming`, language_id `664885656`.
 
-Valutare un oggetto Jsonnet con binding locale e stringa concatenata.
+Evaluate a Jsonnet object with local binding and chained string.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Jsonnet C++ compiler/evaluator — Jsonnet commandline interpreter v0.20.0. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Jsonnet C++ compiler/evaluator, Jsonnet commandline interpreter v0.20.0. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Jsonnet C++ 0.20.0 ufficiale dal pacchetto Ubuntu, estratto sotto work senza installazione globale.
+Jsonnet C++ 0.20.0 official from the Ubuntu package, extracted under work without global installation.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 jsonnet hello.jsonnet
 ```
 
-Risultato atteso: JSON esatto {"message":"Hello, World!"}; exit 0.
+Expected result: JSON exact { "message": "Hello, World!" }; exit 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il vero evaluator produce JSON; la verifica legge quel prodotto e confronta esattamente il campo message.
+The true assessor produces JSON; the verification reads that product and compares exactly the message field.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://jsonnet.org/learning/tutorial.html](https://jsonnet.org/learning/tutorial.html)
 - [https://jsonnet.org/ref/spec.html](https://jsonnet.org/ref/spec.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jsonnet` | [hello.jsonnet](hello.jsonnet), [driver.jsonnet](variants/libsonnet-cf82fe81/driver.jsonnet) creato, verifiche pendenti |
-| `.libsonnet` | [hello.libsonnet](variants/libsonnet-cf82fe81/hello.libsonnet) creato, verifiche pendenti |
+| `.jsonnet` | [hello.jsonnet](hello.jsonnet), [driver.jsonnet](variants/libsonnet-cf82fe81/driver.jsonnet) created; verification pending |
+| `.libsonnet` | [hello.libsonnet](variants/libsonnet-cf82fe81/hello.libsonnet) created; verification pending |

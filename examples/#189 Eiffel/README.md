@@ -1,32 +1,32 @@
 # #189 Eiffel
 
-Compilare una classe root Eiffel e stampare Hello, World! seguito da newline.
+Fill in a Eiffel root class and print Hello, World! followed by newline.
 
-Tipo canonico `programming`, language_id `99`.
+Canonical type `programming`, language_id `99`.
 
-Toolchain prevista: EiffelStudio con compilatore ec e libreria base.
+Toolchain provided: EiffelStudio with ec compiler and basic library.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Compilare hello_world.e come classe root HELLO_WORLD, creazione make; eseguire il programma prodotto.
 ```
 
-Risultato atteso: stdout `Hello, World!` seguito da newline.
+Expected result: stdout `Hello, World!` followed by newline.
 
-In Eiffel %N indica il newline dentro una stringa. La configurazione del sistema va creata nell’IDE o con la funzione di compilazione di singolo file documentata per la distribuzione.
+The system configuration goes created in the IDE or with the compilation function of single file documented for distribution.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. native toolchain not yet performed: syntax and behavior verifications remain pending.
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Eiffel — Hello World e compilazione](https://www.eiffel.org/article/hello_world)
 - [Eiffel — tutorial del linguaggio](https://www.eiffel.org/doc/eiffel/ET-_Hello_World)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.e` | [hello_world.e](hello_world.e) creato, verifiche pendenti |
+| `.e` | [hello_world.e](hello_world.e) created; verification pending |

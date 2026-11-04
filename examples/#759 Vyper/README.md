@@ -1,45 +1,45 @@
 # #759 Vyper
 
-Compilare Vyper ed eseguire la funzione pura greeting in un EVM isolato.
+Fill Vyper and perform the pure greeting function in an isolated EVM.
 
-Tipo canonico `programming`, language_id `1055641948`.
+Canonical type `programming`, language_id `1055641948`.
 
-Toolchain prevista: Vyper0.4.3 + eth-tester0.14.0b1/PyEVM0.12.1b1 in-memory EVM.
+Suggested toolchain: Vyper0.4.3 + eth-tester0.14.0b1 / PyEVM0.12.1b1 in-memory EVM.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: Original Vyper compiler produces ABI/bytecode; in-memory EVM returns ABI string Hello, World!.
+Expected result: Original Vyper compiler produces ABI/bytecode; in-memory EVM returns ABI string Hello, World!.
 
-L’esecuzione prevista è in memoria, senza blockchain esterne.
+The expected execution is in memory, without external blockchain.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Original Solidity solc0.8.37 or Vyper0.4.3 compiler + eth-tester0.14.0b1/PyEVM0.12.1b1 in-memory EVM. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Original Solidity solc0.8.37 or Vyper0.4.3 compiler + eth-tester0.14.0b1/PyEVM0.12.1b1 in-memory EVM. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Vyper](https://docs.vyperlang.org/en/stable/)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install vyper==0.4.3
 ```
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install eth-tester[py-evm] vyper==0.4.3
 ```
 
-Verifica completa eseguita: deploy su PyEVM in memoria, transazione locale e chiamata greeting; valore string decodificato dall’ABI e confrontato con Hello, World!. Non è stata usata una rete blockchain esterna.
+The full check deployed to in-memory PyEVM, sent a local transaction and called greeting. It decoded the string value from the ABI and compared it with Hello, World!. No external blockchain network was used.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vy` | [hello.vy](hello.vy) verificato |
+| `.vy` | [hello.vy](hello.vy) verified |

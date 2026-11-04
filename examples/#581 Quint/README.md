@@ -1,39 +1,39 @@
 # #581 Quint
 
-Verificare con Quint una espressione pura che restituisce il saluto.
+Check with Quint a pure expression that returns greeting.
 
-Tipo canonico `programming`, language_id `562056483`.
+Canonical type `programming`, language_id `562056483`.
 
-Toolchain prevista: Quint CLI.
+Suggested toolchain: Quint CLI.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 quint typecheck hello.qnt
 quint test hello.qnt
 ```
 
-Risultato atteso: typecheck riuscito e greetingTest passa.
+Expected result: successful typecheck and greetingTest passes.
 
-Quint è un linguaggio di specifica: la semantica consiste nel valutare il test della stringa, senza pretendere I/O di console.
+Quint is a specific language: the behavior consists in evaluating the string test, without claiming I/O of console.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + original Quint CLI. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + original Quint CLI. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Quint language](https://github.com/quint-co/quint/blob/main/docs/content/docs/lang.md)
 - [Quint CLI](https://github.com/quint-co/quint/blob/main/docs/content/docs/quint.md)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install @informalsystems/quint
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.qnt` | [hello.qnt](hello.qnt) verificato |
+| `.qnt` | [hello.qnt](hello.qnt) verified |

@@ -1,41 +1,41 @@
 # #783 XC
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare xC per un target XMOS e stampare Hello, World!.
+Fill out xC for a XMOS target and print Hello, World!.
 
-Sorgente xC originale con entry point e IO stdio. Occorre una toolchain/target XMOS; compilare come C con GCC non verificherebbe xC.
+Original xC source with entry point and IO stdio. It is necessary a toolchain/target XMOS; filling as C with GCC would not verify xC.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 XMOS XTC/xcc con target appropriato, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 xcc -target=<target-XMOS-di-prova> hello.xc -o hello.xe; xsim hello.xe
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Hello, World! nel terminale del simulatore/target.
+Hello, World! in simulatore/target. terminal
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: XTC/xcc e target/simulatore XMOS non disponibili; verifiche pendenti.
+Commitments: XTC/xcc and target/simulatore XMOS not available; verification pending.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.xmos.com/download/XMOS-Programming-Guide-%28documentation%29%28F%29.pdf
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.xc` | [hello.xc](hello.xc) creato, verifiche pendenti |
+| `.xc` | [hello.xc](hello.xc) created; verification pending |

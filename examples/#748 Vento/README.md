@@ -1,38 +1,38 @@
 # #748 Vento
 
-Renderizzare Vento con un valore target.
+Render Wind with a target value.
 
-Tipo canonico `markup`, language_id `757053899`.
+Canonical type `markup`, language_id `757053899`.
 
-Toolchain prevista: Node.js22.20.0 + Vento2.4.1.
+Suggested toolchain: Node.js22.20.0 + Vento2.4.1.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: template produce Hello, World! e newline.
+Expected result: template produces Hello, World! and newline.
 
-Le doppie graffe vengono elaborate dal motore originale.
+The double scratches are processed by the original engine.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js22 + Vento original template engine. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js22 + Vento original template engine. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Vento](https://vento.js.org/)
 - [Vento source](https://github.com/ventojs/vento)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install ventojs
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vto` | [hello.vto](hello.vto) verificato |
+| `.vto` | [hello.vto](hello.vto) verified |

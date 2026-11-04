@@ -1,36 +1,36 @@
 # #493 Objective-C++
 
-Compilare una classe e inviare un messaggio Objective-C++.
+Fill out a class and send an Objective-C+ message.
 
 ## Toolchain
 
 g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0; GNU libobjc4 14.2.0
 
-## Procedura
+## Procedure
 
 g++ hello.mm -lobjc -o build/hello; build/hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La classe usa Object del runtime GNU e un metodo di classe; Objective-C++ usa realmente anche std::string/std::cout. Nessuna libreria Foundation necessaria.
+The class uses object of the GNU runtime and a class method; Objective-C++ actually uses std:: string/std::cout. No Foundation library needed.
 
-Verifica reale 2026-10-08T13:11:33.760305+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:11:33.760305+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://gcc.gnu.org/onlinedocs/gcc/Objective-C.html](https://gcc.gnu.org/onlinedocs/gcc/Objective-C.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mm` | [hello.mm](hello.mm) verificato |
+| `.mm` | [hello.mm](hello.mm) verified |

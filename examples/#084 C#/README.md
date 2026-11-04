@@ -1,14 +1,14 @@
 # #084 C#
 
-Stampare esattamente Hello, World! seguito da newline da un programma C# console.
+Print exactly Hello, World! followed by newline from a C# console program.
 
 ## Toolchain
 
 Microsoft C# compiler fatal error CS2007: Unrecognized option: '/version'; installed .NET Framework 4.x CLR on Windows
 
-## Comandi e procedura
+## Commands and procedure
 
-Da un prompt sviluppatore Windows in cui csc sia disponibile:
+From a Windows developer prompt where csc is available:
 
 ```powershell
 New-Item -ItemType Directory -Force build
@@ -17,36 +17,36 @@ csc /nologo /target:exe /out:build/Hello.exe Hello.cs
 ./build/Hello.exe
 ```
 
-Nel test csc è stato invocato dal Framework64 di Windows e l'eseguibile
-eseguito dal CLR .NET Framework installato. Il binario è conservato solo
-nella cartella di lavoro, senza distribuirlo nel corpus.
+In the csc test it was invoked by the Windows Framework64 and the executable
+executed by the CLR .NET Framework installed.
+in the workbook, without distributing it in the corpus.
 
-## Risultato atteso
+## Expected result
 
-Compilazione exit 0; runtime exit 0, stdout Hello, World! più newline.
+Exit 0; runtime exit 0, stdout Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Sorgente compatibile con il compilatore csc .NET Framework presente. Il log registra la versione del compilatore osservata; non è una prova di un diverso SDK .NET.
+Source compatible with the csc .NET Framework compiler present. The log records the version of the observed compiler; it is not a proof of a different SDK .NET.
 
-Verifica effettiva del 2026-10-08T11:33:09.613198+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:09.613198+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/)
 - [https://learn.microsoft.com/en-us/dotnet/api/system.console.writeline](https://learn.microsoft.com/en-us/dotnet/api/system.console.writeline)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cs` | [Hello.cs](Hello.cs) verificato |
-| `.cake` | [hello.cake](variants/ext-cake-2e63616b65/hello.cake) creato, verifiche pendenti |
-| `.cs.pp` | [hello.cs.pp](variants/ext-cs-pp-2e63732e7070/hello.cs.pp) creato, verifiche pendenti |
-| `.csx` | [hello.csx](variants/ext-csx-2e637378/hello.csx) creato, verifiche pendenti |
-| `.linq` | [hello.linq](variants/ext-linq-2e6c696e71/hello.linq) creato, verifiche pendenti |
+| `.cs` | [Hello.cs](Hello.cs) verified |
+| `.cake` | [hello.cake](variants/ext-cake-2e63616b65/hello.cake) created; verification pending |
+| `.cs.pp` | [hello.cs.pp](variants/ext-cs-pp-2e63732e7070/hello.cs.pp) created; verification pending |
+| `.csx` | [hello.csx](variants/ext-csx-2e637378/hello.csx) created; verification pending |
+| `.linq` | [hello.linq](variants/ext-linq-2e6c696e71/hello.linq) created; verification pending |

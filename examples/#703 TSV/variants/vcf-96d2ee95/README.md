@@ -1,23 +1,23 @@
-# 0703 — TSV — `.vcf`
+# 0703: TSV: `.vcf`
 
-Variant Call Format: dati sintetici in colonne TSV con header VCF e campo GREETING; non una vCard.
+Variant Call Format: Synthetic data in TSV columns with VCF header and GREETING field; not a vCard.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.vcf`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 bcftools view hello.vcf -Ov -o work/parsed.vcf
 ```
 
-Risultato atteso: VCF accettato e INFO.GREETING decodifica Hello, World!.
+Expected result: VCF accepted and INFO.GREETING decoding Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://samtools.github.io/hts-specs/VCFv4.3.pdf](https://samtools.github.io/hts-specs/VCFv4.3.pdf)

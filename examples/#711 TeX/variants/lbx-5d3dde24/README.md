@@ -1,24 +1,24 @@
-# 0711 — TeX — `.lbx`
+# 0711: TeX: `.lbx`
 
-Localization biblatex che ridefinisce una stringa nota senza inventare chiavi.
+Localization biblatex redefines a note string without inventing keys.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.lbx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 biblatex: DeclareLanguageMapping{english}{hello}; render bibliography string and
 ```
 
-Risultato atteso: stringa di localizzazione Hello, World!.
+Expected result: Hello, World! localization string.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.latex-project.org/help/documentation/](https://www.latex-project.org/help/documentation/)
 - [https://ctan.org/pkg/biblatex](https://ctan.org/pkg/biblatex)

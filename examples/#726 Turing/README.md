@@ -1,37 +1,37 @@
 # #726 Turing
 
-Eseguire un programma Turing.
+Run a Turing program.
 
 ## Toolchain
 
 Holt Turing/Open Turing runtime
 
-## Procedura
+## Procedure
 
-Aprire hello.t in Turing e scegliere Run; registrare versione e output.
+Open hello.t in Turing and choose Run; record version and output.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Turing compiler/runtime non predisposto.
 
-## Fonti primarie
+## Primary sources
 
 - [https://compsci.ca/holtsoft/doc/](https://compsci.ca/holtsoft/doc/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.t` | [hello.t](hello.t) creato, verifiche pendenti |
-| `.tu` | [hello.tu](variants/tu-b8fdb221/hello.tu) creato, verifiche pendenti |
+| `.t` | [hello.t](hello.t) created; verification pending |
+| `.tu` | [hello.tu](variants/tu-b8fdb221/hello.tu) created; verification pending |

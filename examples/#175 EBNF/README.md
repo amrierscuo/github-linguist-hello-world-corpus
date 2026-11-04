@@ -1,37 +1,37 @@
 # #175 EBNF
 
-Definire una grammatica EBNF che riconosce Hello, World! e rifiuta Hello, Moon!.
+Define a EBNF grammar that recognizes Hello, World! and rejects Hello, Moon!.
 
 ## Toolchain
 
 Node.js v22.20.0; ebnf 1.9.1
 
-## Comandi e procedura
+## Commands and procedure
 
 npm install; node check.cjs
 
-## Risultato atteso
+## Expected result
 
-Grammatica compilata; AST Greeting con testo esatto; input diverso rifiutato.
+Completed Grammar; AST Greeting with exact text; different input refused.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il dialetto scelto è W3C EBNF, con ::= e concatenazione di letterali; non è ISO EBNF. Il compilatore di grammatiche ebnf autentico genera il parser e applica le produzioni al testo.
+The chosen dialect is W3C EBNF, with:= and concatenation of literals; it is not ISO EBNF. The authentic grammarian compiler ebnf generates the parser and applies the productions to the text.
 
-Verifica effettiva del 2026-10-08T11:56:13.607325+00:00 su Windows x64: [log](verification/result.json).
-Hash delle sorgenti/checker, versioni e comandi reali, codici di uscita, stdout/stderr e limiti della prova sono nel log.
+Actual verification of 2026-10-08T11:56:13.607325+00:00 on Windows x64: [log](verification/result.json).
+Hash of sorgenti/checker, real versions and commands, output codes, stdout/stderr and test limits are in the log.
 
-## Fonti primarie e riferimento di formato
+## Primary sources and format reference
 
 - [https://www.w3.org/TR/xquery-31/#EBNFNotation](https://www.w3.org/TR/xquery-31/#EBNFNotation)
 - [https://github.com/lys-lang/node-ebnf](https://github.com/lys-lang/node-ebnf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ebnf` | [hello.ebnf](hello.ebnf) verificato |
+| `.ebnf` | [hello.ebnf](hello.ebnf) verified |

@@ -1,31 +1,31 @@
 # #424 MeTTa
 
-Eseguire una espressione MeTTa che chiama println! con il saluto.
+Execute a MeTTa expression that calls println! with greeting.
 
-Tipo canonico `programming`, language_id `1037612668`.
+Canonical type `programming`, language_id `1037612668`.
 
-Toolchain prevista: Python 3.13 e Hyperon MeTTa originale.
+Suggested toolchain: Python 3.13 and Hyperon MeTTa original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: stdout Hello, World! e LF, nessun errore MeTTa.
+Expected result: stdout Hello, World! and LF, no MeTTa error.
 
-Il binding esegue il programma originale con la libreria standard del motore.
+The binding performs the original program with the standard engine library.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Hyperon — implementazione MeTTa](https://github.com/trueagi-io/hyperon-experimental)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.metta` | [hello.metta](hello.metta) creato, verifiche pendenti |
+| `.metta` | [hello.metta](hello.metta) created; verification pending |

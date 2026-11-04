@@ -2,47 +2,47 @@
 
 Voce canonica `TOML`, tipo `data`, language_id `365`.
 
-Decodificare una configurazione TOML originale con message e language.
+Decode an original TOML configuration with message and language.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Python standard-library TOML parser — 3.13.9. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Python standard-library TOML parser, 3.13.9. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Python3.13.9 tomllib nativo.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python verify.py
 ```
 
-Risultato atteso: Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.
+Expected result: Hello, World! in the conformed result, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il parser vero ricostruisce una mappa typed esatta; il campo message produce il saluto.
+The true parser reconstructs an exact typed map; the message field produces greeting.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://toml.io/en/v1.0.0](https://toml.io/en/v1.0.0)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.toml` | [hello.toml](hello.toml) verificato |
-| `.toml.example` | [hello.toml.example](variants/toml-example-35fdb380/hello.toml.example) creato, verifiche pendenti |
+| `.toml` | [hello.toml](hello.toml) verified |
+| `.toml.example` | [hello.toml.example](variants/toml-example-35fdb380/hello.toml.example) created; verification pending |

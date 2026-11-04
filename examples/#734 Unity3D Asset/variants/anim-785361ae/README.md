@@ -1,4 +1,4 @@
-# Unity3D Asset — variante .anim
+# Unity3D Asset: variant .anim
 
 Questo esempio è un asset Unity YAML nativo di tipo `AnimationClip` (classID `74`), adattato da un file reale del repository primario `Unity-Technologies/2d-techdemos`, pubblicato da Unity Technologies. Il saluto è il valore della proprietà `m_Name`, consultabile nell’Inspector: non è una promessa di stampa a console o di testo disegnato dall’asset.
 
@@ -6,13 +6,13 @@ L’unica modifica ai byte dell’asset è `explosion` → `"Hello, World!"` nel
 
 Toolchain prevista: Unity Editor; versione dichiarata dal progetto upstream `6000.3.3f1`. L’Editor non è stato eseguito qui. Sintassi verificata: **false**. Semantica verificata: **false**. I controlli di provenienza in `verification/provenance.json` sono confronti di byte e hash, non verifiche del parser Unity.
 
-Procedura di verifica prevista: In progetto Unity separato compatibile, importare hello.anim; controllare nell’Inspector il tipo AnimationClip e name == "Hello, World!".
+Provisional verification procedure: In compatible separate Unity project, import hello.anim; check in the inspector the type AnimationClip and name == "Hello, World!".
 
-Risultato atteso: un oggetto `AnimationClip` chiamato `Hello, World!`. Dipendenze da risolvere nell’ambiente Unity: Sprite renderer e atlas originale con GUID 195d2ebbbf668124ab3fa9932a849bcb: la grafica originale non è inclusa in questo esempio.
+Expected result: a `AnimationClip` object called `Hello, World!`. Dependencies to solve in the environment Unity: Sprite maker and original atlas with GUID 195d2ebbbf668124ab3fa9932a849bcb: the original graphics are not included in this example.
 
-Licenza: `MIT`. `LICENSE_UPSTREAM.md` conserva senza modifiche il copyright e il testo di licenza pubblicato dal repository. La notice MIT rimane inclusa con questa copia adattata. Questa modifica al nome è dichiarata qui e nella provenienza.
+License: `MIT`. `LICENSE_UPSTREAM.md` retains without modification the copyright and license text published by the repository. The notice MIT remains included with this adapted copy.
 
-Fonti primarie:
+Primary sources:
 
 - [Asset originale, commit immutabile](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Assets/Tilemap/Destructible/Explosion/explosion.anim)
 - [Licenza originale](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/LICENSE.md)

@@ -1,12 +1,12 @@
 # #183 Ecere Projects
 
-Descrivere un progetto Ecere console con un sorgente eC che stampa Hello, World!.
+Describe a project Ecere console with an eC source that prints Hello, World!.
 
-Tipo canonico `data`, language_id `98`.
+Canonical type `data`, language_id `98`.
 
-Toolchain prevista: Ecere SDK con Ecere IDE, ecereCOM ed epj2make.
+Suggested toolchain: Ecere SDK with Ecere IDE, ecereCOM and epj2make.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 epj2make greeting.epj
@@ -14,21 +14,21 @@ make
 ./greeting
 ```
 
-Risultato atteso: progetto accettato e programma console che stampa `Hello, World!` seguito da newline.
+Expected result: accepted project and console program that print `Hello, World!` followed by newline.
 
-Il .epj conserva la struttura documentata della versione 0.2; il sorgente di supporto è eC. La sola lettura del JSON non prova il formato progetto o il linking Ecere.
+The .epj retains the documented structure of the 0.2 version; the support source is eC. The read-only JSON does not test the project format or linking Ecere.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. native toolchain not yet performed: syntax and behavior verifications remain pending.
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [Ecere — progetto console originale](https://github.com/ecere/ecere-sdk/blob/master/samples/eC/HelloWorld/HelloWorld.epj)
 - [Ecere SDK](https://github.com/ecere/ecere-sdk)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.epj` | [greeting.epj](greeting.epj) creato, verifiche pendenti |
+| `.epj` | [greeting.epj](greeting.epj) created; verification pending |

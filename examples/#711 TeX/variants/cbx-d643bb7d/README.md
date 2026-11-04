@@ -1,24 +1,24 @@
-# 0711 — TeX — `.cbx`
+# 0711: TeX: `.cbx`
 
 Stile citazione biblatex con comando greetingcite.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.cbx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 LaTeX/biber local document using citestyle=hello; invoke greetingcite
 ```
 
-Risultato atteso: citazione Hello, World!.
+Expected result: quote Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.latex-project.org/help/documentation/](https://www.latex-project.org/help/documentation/)
 - [https://ctan.org/pkg/biblatex](https://ctan.org/pkg/biblatex)

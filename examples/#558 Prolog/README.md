@@ -1,44 +1,44 @@
 # #558 Prolog
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Interpretare Prolog e risolvere main che stampa Hello, World!.
+Interpret Prolog and solve main printing Hello, World!.
 
-initialization(main,main) definisce l’avvio del programma. atomic_list_concat costruisce il valore e writeln lo emette nel runtime Prolog originale.
+initialization(main,main) defines the program startup. Atomic_list_concat builds the value and writeln issues it in the original Prolog runtime.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 SWI-Prolog9.0.4 ufficiale Ubuntu
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 swipl -q hello.pl
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.swi-prolog.org/pldoc/doc_for?object=atomic_list_concat/2
 - https://www.swi-prolog.org/pldoc/doc_for?object=initialization/2
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pl` | [hello.pl](hello.pl) verificato |
-| `.plt` | [hello.plt](variants/plt-cc71c907/hello.plt) creato, verifiche pendenti |
-| `.pro` | [hello.pro](variants/pro-1d8a87ac/hello.pro) creato, verifiche pendenti |
-| `.prolog` | [hello.prolog](variants/prolog-26531ed3/hello.prolog) creato, verifiche pendenti |
-| `.yap` | [hello.yap](variants/yap-42bad85d/hello.yap) creato, verifiche pendenti |
+| `.pl` | [hello.pl](hello.pl) verified |
+| `.plt` | [hello.plt](variants/plt-cc71c907/hello.plt) created; verification pending |
+| `.pro` | [hello.pro](variants/pro-1d8a87ac/hello.pro) created; verification pending |
+| `.prolog` | [hello.prolog](variants/prolog-26531ed3/hello.prolog) created; verification pending |
+| `.yap` | [hello.yap](variants/yap-42bad85d/hello.yap) created; verification pending |

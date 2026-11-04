@@ -1,39 +1,39 @@
 # #746 Valve Data Format
 
-Analizzare Valve Data Format e leggere il valore message.
+Analyze Valve Data Format and read the message value.
 
-Tipo canonico `data`, language_id `544060961`.
+Canonical type `data`, language_id `544060961`.
 
-Toolchain prevista: Python3.13.9 + ValvePython vdf3.4.
+Suggested toolchain: Python3.13.9 + ValvePython vdf3.4.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: struttura KeyValues con saluto.
+Expected result: KeyValues structure with greeting.
 
-Si usa il formato testuale KeyValues, non JSON.
+The text format KeyValues is used, not JSON.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + ValvePython vdf parser. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + ValvePython vdf parser. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Valve KeyValues](https://developer.valvesoftware.com/wiki/KeyValues)
 - [vdf parser](https://github.com/ValvePython/vdf)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install vdf
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vdf` | [hello.vdf](hello.vdf) verificato |
-| `.vmf` | [hello.vmf](variants/vmf-33d6e045/hello.vmf) creato, verifiche pendenti |
+| `.vdf` | [hello.vdf](hello.vdf) verified |
+| `.vmf` | [hello.vmf](variants/vmf-33d6e045/hello.vmf) created; verification pending |

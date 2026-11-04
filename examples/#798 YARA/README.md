@@ -1,40 +1,40 @@
 # #798 YARA
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Compilare YARA e riconoscere la fixture Hello, World!.
+Fill in YARA and recognize the Hello, World! fixture.
 
-Il motore nativo compila la regola e riconosce il saluto; il controllo negativo Hello, Moon! non deve corrispondere.
+The native motor fills the rule and recognizes the greeting; the negative control Hello, Moon! must not correspond.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 YARA/yara-python4.5.4 originali
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Una corrispondenza CorpusGreeting per Hello, World!, nessuna per Hello, Moon!.
+A correspondence CorpusGreeting for Hello, World!, none for Hello, Moon!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://yara.readthedocs.io/en/stable/writingrules.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.yar` | [hello.yar](hello.yar) verificato |
-| `.yara` | [hello.yara](variants/yara-cc22c747/hello.yara) creato, verifiche pendenti |
+| `.yar` | [hello.yar](hello.yar) verified |
+| `.yara` | [hello.yara](variants/yara-cc22c747/hello.yara) created; verification pending |

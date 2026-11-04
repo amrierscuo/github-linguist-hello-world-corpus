@@ -1,36 +1,36 @@
 # #642 STON
 
-Leggere una mappa STON in Smalltalk.
+Read a STON map in Smalltalk.
 
 ## Toolchain
 
 STON originale su Pharo/Squeak
 
-## Procedura
+## Procedure
 
 STON fromString: (FileSystem workingDirectory / 'hello.ston') contents; leggere la chiave greeting.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - VM Smalltalk e libreria STON non predisposte.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/svenvc/ston/blob/master/ston-spec.md](https://github.com/svenvc/ston/blob/master/ston-spec.md)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ston` | [hello.ston](hello.ston) creato, verifiche pendenti |
+| `.ston` | [hello.ston](hello.ston) created; verification pending |

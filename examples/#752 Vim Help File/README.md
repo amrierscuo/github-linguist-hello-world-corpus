@@ -1,31 +1,31 @@
 # #752 Vim Help File
 
-Generare helptags con Vim e risolvere il tag hello-world nella documentazione.
+Generate helptags with Vim and solve the hello-world tag in documentation.
 
-Tipo canonico `prose`, language_id `508563686`.
+Canonical type `prose`, language_id `508563686`.
 
-Toolchain prevista: Vim help engine.
+Suggested toolchain: Vim help engine.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Copiare hello.txt in una directory doc di prova; :helptags doc; :help hello-world
 ```
 
-Risultato atteso: help tag risolto; buffer help contiene la riga Hello, World!.
+Expected result: help tag solved; buffer help contains the Hello, World! line.
 
-Il tag è letto dal motore help Vim; non si limita a cercare la stringa con Python.
+The tag is read by the Vim help engine; it does not just search for the string with Python.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Vim9 native help tag resolver. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Vim9 native help tag resolver. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Vim help writing](https://vimhelp.org/helphelp.txt.html#help-writing)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.txt` | [hello.txt](hello.txt) verificato |
+| `.txt` | [hello.txt](hello.txt) verified |

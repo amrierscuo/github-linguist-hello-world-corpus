@@ -1,40 +1,40 @@
 # #230 GEDCOM
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare un GEDCOM 5.5.1 e recuperare una NOTE con valore Hello, World!.
+Analyze a GEDCOM 5.5.1 and recover a NOTE with Hello, World! value.
 
 HEAD dichiara versione, formato e UTF-8; la NOTE top-level ha un identificatore e TRLR conclude il documento. La verifica usa Parser.parse_file(strict=True) della libreria originale e controlla la NOTE ottenuta. Non è una validazione completa di tutte le regole genealogiche dello standard.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 python-gedcom 1.1.0, CPython 3.13.9
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 PASS: GEDCOM NOTE = Hello, World!; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://gedcom.io/specifications/ged551.pdf
 - https://github.com/nickreynke/python-gedcom
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ged` | [hello.ged](hello.ged) verificato |
+| `.ged` | [hello.ged](hello.ged) verified |

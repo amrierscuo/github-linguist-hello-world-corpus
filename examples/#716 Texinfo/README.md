@@ -1,41 +1,41 @@
 # #716 Texinfo
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Renderizzare un documento Texinfo con Hello, World!.
+Render a Texinfo document with Hello, World!.
 
-Texi2any/makeinfo originale analizza nodi e direttive e genera testo semplice.
+Texi2any/makeinfo original analyzes nodes and directives and generates simple text.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 GNU Texinfo7.1 originale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 makeinfo --plaintext --output=- hello.texi
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Documento renderizzato contiene Hello, World!.
+Document rendered contains Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Short-Sample.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.texinfo` | [hello.texinfo](variants/texinfo-67e352f4/hello.texinfo) creato, verifiche pendenti |
-| `.texi` | [hello.texi](hello.texi) verificato |
-| `.txi` | [hello.txi](variants/txi-415ac389/hello.txi) creato, verifiche pendenti |
+| `.texinfo` | [hello.texinfo](variants/texinfo-67e352f4/hello.texinfo) created; verification pending |
+| `.texi` | [hello.texi](hello.texi) verified |
+| `.txi` | [hello.txi](variants/txi-415ac389/hello.txi) created; verification pending |

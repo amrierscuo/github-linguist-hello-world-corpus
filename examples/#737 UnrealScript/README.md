@@ -1,36 +1,36 @@
 # #737 UnrealScript
 
-Compilare un Actor UnrealScript e registrarne il saluto all’avvio.
+Fill out an Actor UnrealScript and register your greeting at the start.
 
 ## Toolchain
 
 Unreal Engine3/UDK UnrealScript compiler
 
-## Procedura
+## Procedure
 
-Inserire Hello.uc nel pacchetto UDK di prova; UDK make; istanziare l’Actor nella mappa.
+Insert Hello.uc into the UDK test package; UDK make; place the Actor on the map.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
-- UDK/compiler UnrealScript e mappa runtime non disponibili.
+Remaining requirements:
+- UDK/compiler UnrealScript and runtime map not available.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.unrealengine.com/udk/Three/UnrealScriptReference.html](https://docs.unrealengine.com/udk/Three/UnrealScriptReference.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.uc` | [Hello.uc](Hello.uc) creato, verifiche pendenti |
+| `.uc` | [Hello.uc](Hello.uc) created; verification pending |

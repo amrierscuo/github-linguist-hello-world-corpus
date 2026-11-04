@@ -2,38 +2,38 @@
 
 Voce canonica `Redirect Rules`, tipo `data`, language_id `1020148948`.
 
-Leggere una regola Netlify che riscrive il percorso hello su un file locale con il saluto.
+Read a Netlify rule that rewrites the hello path on a local file with greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Netlify Redirect Parser — 16.1.1. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Netlify Redirect Parser, 16.1.1. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 Parser Netlify ufficiale 16.1.1, Node 22.20.0.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 npm install --prefix .tools @netlify/redirect-parser@16.1.1; node verify.cjs .tools
 ```
 
-Risultato atteso: Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.
+Expected result: Hello, World! in output or compliant data, according to the scope described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-parseAllRedirects valida e normalizza _redirects; il helper controlla from/to/status e il dato del target. Ambito: parsing e risoluzione locale, senza deploy o serving HTTP.
+parseAllRedirects is valid and normalizes _redirects; the helper controls from/to/status and the target data. Scope: parsing and local resolution, without deploy or serving HTTP.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.netlify.com/manage/routing/redirects/overview/](https://docs.netlify.com/manage/routing/redirects/overview/)

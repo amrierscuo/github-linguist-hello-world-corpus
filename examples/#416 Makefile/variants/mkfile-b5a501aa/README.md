@@ -1,30 +1,30 @@
-# 0416 — Makefile: `.mkfile`
+# 0416: Makefile: `.mkfile`
 
-Ruolo: Plan 9 mk: attributo V del target virtuale; sintassi distinta da GNU make.
+Role: Plan 9 mk: attribute V of the virtual target; syntax distinct from GNU make.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: GNU Make on Ubuntu 24.04. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: GNU Make on Ubuntu 24.04. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 mk -f hello.mkfile all
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.mkfile`: `f671b0ee425f33991f4f8343c6920dd18a62a301bd77e518e37a2f686d7f0c98`
 
-Fonti primarie:
+Primary sources:
 
 - https://9p.io/sys/doc/mk.html
 - https://www.gnu.org/software/make/manual/html_node/Recipes.html

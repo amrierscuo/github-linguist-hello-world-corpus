@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.rbi`
+# 0627: Ruby: `.rbi`
 
-Interfaccia Sorbet RBI; il corpo è intenzionalmente dichiarativo.
+Interface Sorbet RBI; the body is intentionally declaring.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rbi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 srb tc --ignore=work
 ```
 
-Risultato atteso: artefatto/risultato originale di saluto nel consumatore indicato.
+Expected result: artefatto/risultato original greeting in the indicated consumer.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://sorbet.org/docs/rbi](https://sorbet.org/docs/rbi)

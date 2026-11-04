@@ -1,23 +1,23 @@
-# 0754 — Vim script — `.vimrc`
+# 0754: Vim script: `.vimrc`
 
-Configurazione Vim in Vimscript, caricata nel processo di prova con -u.
+Configuration Vim in Vimscript, loaded in the trial process with -u.
 
-Provenienza: copia del file originale `examples/#754 Vim script/hello.vim`.
+Origin: copy of the original `examples/#754 Vim script/hello.vim` file.
 
 Artefatto principale: `hello.vimrc`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 vim -Nu hello.vimrc -i NONE -n -es
 ```
 
-Risultato atteso: messaggio effettivo Hello, World!..
+Expected result: actual message Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://vimhelp.org/eval.txt.html#%3Aechomsg](https://vimhelp.org/eval.txt.html#%3Aechomsg)

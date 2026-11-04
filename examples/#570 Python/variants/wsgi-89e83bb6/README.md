@@ -1,23 +1,23 @@
-# 0570 — Python — `.wsgi`
+# 0570: Python: `.wsgi`
 
-Applicazione WSGI conforme alla convenzione application; non è uno script print.
+Application WSGI conforms to the application convention; it is not a print script.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.wsgi`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 WSGI server: load application from hello.wsgi; local request only
 ```
 
-Risultato atteso: HTTP 200 e body Hello, World! seguito da LF.
+Expected result: HTTP 200 and body Hello, World! followed by LF.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://peps.python.org/pep-3333/](https://peps.python.org/pep-3333/)

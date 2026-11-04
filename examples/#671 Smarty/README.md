@@ -1,31 +1,31 @@
 # #671 Smarty
 
-Compilare e renderizzare Smarty con un parametro target.
+Fill and make Smarty with a target parameter.
 
-Tipo canonico `programming`, language_id `353`.
+Canonical type `programming`, language_id `353`.
 
-Toolchain prevista: PHP e Smarty 4.
+Suggested toolchain: PHP and Smarty 4.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 php verify.php
 ```
 
-Risultato atteso: template renderizzato esatto Hello, World! e newline.
+Expected result: exact rendering template Hello, World! and newline.
 
-SMARTY_HOME indica l’installazione originale e SMARTY_BUILD una directory di cache esterna al corpus.
+SMARTY_HOME indicates the original installation and SMARTY_BUILD an external cache directory to the corpus.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: PHP 8.3.6 + Smarty 4.5.4 original engine. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: PHP 8.3.6 + Smarty 4.5.4 original engine. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Smarty templates](https://www.smarty.net/docs/en/language.syntax.tpl)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.tpl` | [hello.tpl](hello.tpl) verificato |
+| `.tpl` | [hello.tpl](hello.tpl) verified |

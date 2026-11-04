@@ -2,50 +2,50 @@
 
 Voce canonica: `AutoHotkey`, tipo `programming`, `language_id: 26`.
 
-Inviare Hello, World! e LF allo stream stdout e terminare AutoHotkey v2.
+Send Hello, World! and LF to the stdout stream and finish AutoHotkey v2.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official AutoHotkey 64-bit portable interpreter v2 — 2.0.27. Ambiente della prova: **Windows x64**.
+Official AutoHotkey 64-bit portable interpreter v2, 2.0.27. Test environment: **Windows x64**.
 
-Estrarre il pacchetto ufficiale AutoHotkey 2.0.27 e usare AutoHotkey64.exe. Il codice richiede v2.0; non è sintassi AutoHotkey v1.
+Extract the official package AutoHotkey 2.0.27 and use AutoHotkey64.exe. The code requires v2.0; it is not syntax AutoHotkey v1.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 AutoHotkey64.exe /ErrorStdOut hello.ahk
 ```
 
-Risultato atteso: Exit 0; stdout catturato esattamente Hello, World! seguito da LF.
+Exit 0; stdout captured exactly Hello, World! followed by LF.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-FileAppend con destinazione * scrive su stdout. Un launcher GUI Windows può non mostrarlo direttamente nel prompt: acquisire o reindirizzare stdout, come nella prova registrata. Nessuna finestra/hotkey viene creata.
+FileAppend with destination * writes on stdout. A GUI Windows launcher may not show it directly in the prompt: acquire or redirect stdout, as in the recorded test. No finestra/hotkey comes created.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/AutoHotkey/AutoHotkeyDocs/blob/v2/docs/lib/FileAppend.htm](https://github.com/AutoHotkey/AutoHotkeyDocs/blob/v2/docs/lib/FileAppend.htm)
 - [https://www.autohotkey.com/download/2.0/](https://www.autohotkey.com/download/2.0/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ahk` | [hello.ahk](hello.ahk) verificato |
-| `.ah1` | [hello.ah1](variants/ext-ah1-2e616831/hello.ah1) creato, verifiche pendenti |
-| `.ah2` | [hello.ah2](variants/ext-ah2-2e616832/hello.ah2) creato, verifiche pendenti |
-| `.ahkl` | [hello.ahkl](variants/ext-ahkl-2e61686b6c/hello.ahkl) creato, verifiche pendenti |
+| `.ahk` | [hello.ahk](hello.ahk) verified |
+| `.ah1` | [hello.ah1](variants/ext-ah1-2e616831/hello.ah1) created; verification pending |
+| `.ah2` | [hello.ah2](variants/ext-ah2-2e616832/hello.ah2) created; verification pending |
+| `.ahkl` | [hello.ahkl](variants/ext-ahkl-2e61686b6c/hello.ahkl) created; verification pending |

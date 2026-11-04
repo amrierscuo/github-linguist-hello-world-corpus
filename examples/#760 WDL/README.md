@@ -2,13 +2,13 @@
 
 Voce canonica `WDL`, tipo `programming`, language_id `374521672`.
 
-Il workflow esegue il task `hello`, che scrive il saluto sul proprio stdout. `read_string(stdout())` legge il file e il workflow espone `greeting.message` uguale a `Hello, World!`.
+The workflow performs the `hello` task, which writes the greeting on its stdout. `read_string(stdout())` reads the file and the workflow exposes `greeting.message` equal to `Hello, World!`.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-miniwdl 1.15.0 originale, Python 3.12.3, backend ufficiale udocker 1.3.17 con englib 1.2.11 e immagine ufficiale `ubuntu:20.04`. Prova su Ubuntu 24.04 WSL2 x86_64, con utente Linux ordinario.
+miniwdl 1.15.0 original, Python 3.12.3 official backend udocker 1.3.17 with englib 1.2.11 and official image `ubuntu:20.04`. Try on Ubuntu 24.04 WSL2 x86_64, with ordinary Linux user.
 
-Installare i package in un ambiente Python dedicato esterno al corpus. Impostare `UDOCKER_DIR` e `UDOCKER_TMP` su cartelle di lavoro dedicate. La prova registrata usa dipendenze Python, archivio delle immagini e directory del run isolati.
+Install the packages in a dedicated Python environment outside the corpus. Set `UDOCKER_DIR` and `UDOCKER_TMP` on dedicated workbooks.
 
 ```sh
 python3 -m venv /path/to/wdl-env
@@ -27,25 +27,25 @@ python3 verify_output.py /path/to/result.json
 
 Sostituire i percorsi `/path/to` con le proprie cartelle di lavoro esterne al clone. Il primo comando richiede il supporto `venv` della propria installazione Python. Il checker finale confronta sia il valore del workflow sia stdout e stderr realmente prodotti dal task. udocker esegue il container in spazio utente e non richiede di avviare Docker o riconfigurare un daemon.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto creato, sintassi verificata, semantica verificata.
+Artefatto created, syntax verified, behavior verified.
 
-Il runner miniwdl originale termina con exit code 0, restituisce `{"greeting.message": "Hello, World!"}` e il task produce esattamente `Hello, World!` seguito da newline, senza stderr. Il parsing/typecheck e il checker sui risultati reali passano. `miniwdl check` segnala l'avviso preesistente `NameCollision` per il nome `greeting`; l'esecuzione del workflow riesce.
+The original miniwdl runner ends with exit code 0, returns `{"greeting.message": "Hello, World!"}` and the task produces exactly `Hello, World!` followed by newline, without stderr. The parsing/typecheck and the checker on the real results pass. `miniwdl check` reports the preexisting notice `NameCollision` for the `greeting` name; the
 
-[Log runtime](verification/runtime.json) con timestamp UTC, versioni, comandi, exit code, output, log del runner, digest dell'immagine e hash dei sorgenti/checker. La precedente prova di solo parsing rimane in [result.json](verification/result.json). Il backend è quello ufficialmente incluso in miniwdl, classificato BETA dalla documentazione. La prova certifica questo workflow minimo in questo ambiente.
+[Log runtime](verification/runtime.json) with timestamp UTC, versions, commands, exit code, output, runner logs, image digest and sorgenti/checker. hash The previous parsing test remains in [result.json](verification/result.json). The backend is officially included in miniwdl, classified BETA by documentation. The test certifies this minimal workflow in this minimum environment
 
-## Fonti primarie
+## Primary sources
 
 - [WDL specification](https://github.com/openwdl/wdl/blob/wdl-1.0/SPEC.md)
 - [miniwdl originale](https://github.com/chanzuckerberg/miniwdl)
 - [Backend ufficiali miniwdl, incluso udocker](https://miniwdl.readthedocs.io/en/latest/runner_backends.html)
 - [udocker originale](https://github.com/indigo-dc/udocker)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.wdl` | [hello.wdl](hello.wdl) sintassi e semantica verificate |
+| `.wdl` | [hello.wdl](hello.wdl) syntax and behavior verified |

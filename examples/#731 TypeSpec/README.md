@@ -1,37 +1,37 @@
 # #731 TypeSpec
 
-Compilare un modello TypeSpec con string literal del saluto.
+Fill out a TypeSpec model with literal string of greeting.
 
 ## Toolchain
 
 Microsoft TypeSpec 1.17.0; Node.js22.20.0
 
-## Procedura
+## Procedure
 
 npm install @typespec/compiler; node verify.cjs
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Si usa compile/NodeHost del compiler originale e si legge il tipo effettivo della proprietà; il modello descrive un vincolo del contratto.
+It is used compile/NodeHost of the original compiler and reads the actual type of property; the model describes a constraint of the contract.
 
-Verifica reale 2026-10-08T13:30:14.870000+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:30:14.870000+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://typespec.io/docs/language-basics/models/](https://typespec.io/docs/language-basics/models/)
 - [https://typespec.io/docs/language-basics/type-literals/](https://typespec.io/docs/language-basics/type-literals/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.tsp` | [hello.tsp](hello.tsp) verificato |
+| `.tsp` | [hello.tsp](hello.tsp) verified |

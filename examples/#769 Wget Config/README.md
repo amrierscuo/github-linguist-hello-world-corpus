@@ -2,38 +2,38 @@
 
 Voce canonica `Wget Config`, tipo `data`, language_id `668457123`.
 
-Configurazione GNU Wget originale che imposta User-Agent su `Hello, World!`, con timeout e numero di tentativi limitati; una risorsa locale restituisce lo stesso saluto.
+Configuration GNU Original Wget setting User-Agent on `Hello, World!`, with timeout and limited number of attempts; a local resource returns the same greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-GNU Wget — GNU Wget 1.21.4 built on linux-gnu.. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+GNU Wget, GNU Wget 1.21.4 built on linux-gnu.. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Linux: GNU Wget 1.21.4 e Python 3.12; avviare il comando nella directory dell’esempio. Il driver imposta WGETRC sul .wgetrc locale, apre una porta loopback temporanea e chiude il server a fine prova.
+Linux: GNU Wget 1.21.4 and Python 3.12; start the command in the directory of the example.The driver sets WGETRC on the local .wgetrc, opens a temporary loopback port and closes the server at the end of the test.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 python3 verify.py
 ```
 
-Risultato atteso: Risposta Hello, World!, User-Agent osservato Hello, World! e PASS.
+Expected result: Hello, World! response, User-Agent observed Hello, World! and PASS.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il comando wget reale legge il config e invia la richiesta HTTP. Il server osserva il valore User-Agent, mentre il driver controlla anche il body ricevuto. Nessuna richiesta a un host esterno è necessaria.
+The real wget command reads the config and sends the HTTP request. The server observes the User-Agent value, while the driver also controls the received body. No request to an external host is required.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html](https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html)

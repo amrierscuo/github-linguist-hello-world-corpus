@@ -1,45 +1,45 @@
 # #097 CSON
 
-Decodificare il file CSON in un oggetto che contiene soltanto greeting=Hello, World!.
+Decode the CSON file in an object that contains only greeting= Hello, World!.
 
 ## Toolchain
 
 Node.js v22.20.0; cson-parser 4.0.9
 
-## Comandi e procedura
+## Commands and procedure
 
-Da questa cartella:
+From this folder:
 
 ```sh
 npm install
 node check.cjs
 ```
 
-package.json fissa la versione del parser; check.cjs confronta l'intero
-oggetto restituito, inclusa l'assenza di campi aggiuntivi.
+package.json fixes the version of the parser; check.cjs compares the whole
+returned object, including the absence of additional fields.
 
-## Risultato atteso
+## Expected result
 
 Parser restituisce esattamente {greeting: "Hello, World!"}; exit 0 e saluto su stdout.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-CSON usa la rappresentazione dati CoffeeScript. Il checker chiama cson-parser e confronta l'oggetto reale; non usa regex per leggere i valori.
+CSON uses CoffeeScript data representation. Checker calls cson-parser and compares the real object; it does not use regex to read values.
 
-Verifica effettiva del 2026-10-08T11:33:44.249893+00:00 su Windows x64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:44.249893+00:00 on Windows x64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/groupon/cson-parser](https://github.com/groupon/cson-parser)
 - [https://github.com/bevry/cson](https://github.com/bevry/cson)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cson` | [hello.cson](hello.cson) verificato |
+| `.cson` | [hello.cson](hello.cson) verified |

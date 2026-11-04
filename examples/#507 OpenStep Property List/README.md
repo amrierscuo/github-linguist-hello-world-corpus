@@ -1,38 +1,38 @@
 # #507 OpenStep Property List
 
-Analizzare una property list OpenStep ASCII e leggere greeting.
+Analyze a property list OpenStep ASCII and read greeting.
 
-Tipo canonico `data`, language_id `598917541`.
+Canonical type `data`, language_id `598917541`.
 
-Toolchain prevista: Python e openstep-parser.
+Suggested toolchain: Python and openstep-parser.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 python verify.py
 ```
 
-Risultato atteso: dizionario con valore Hello, World!.
+Expected result: dictionary with Hello, World! value.
 
-Il formato con parentesi graffe e punto e virgola è distinto da XML e binary plist.
+The format with brackets and cradle and comma is distinguished by XML and binary plist.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + openstep-parser 2.0.3. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + openstep-parser 2.0.3. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [OpenStep parser](https://github.com/kronenthaler/openstep-parser)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install openstep-parser==2.0.3
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.plist` | [hello.plist](hello.plist) verificato |
-| `.glyphs` | [hello.glyphs](variants/glyphs-cb9da07f/hello.glyphs) creato, verifiche pendenti |
+| `.plist` | [hello.plist](hello.plist) verified |
+| `.glyphs` | [hello.glyphs](variants/glyphs-cb9da07f/hello.glyphs) created; verification pending |

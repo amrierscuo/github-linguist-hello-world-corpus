@@ -1,12 +1,12 @@
-# 0800 — Yacc — `.yy`
+# 0800: Yacc: `.yy`
 
-Variante testuale dello stesso formato, con suffisso canonico .yy.
+Textual variation of the same format, with canon suffix .yy.
 
-Provenienza: copia del file originale `examples/#800 Yacc/hello.y`.
+Origin: copy of the original `examples/#800 Yacc/hello.y` file.
 
 Artefatto principale: `hello.yy`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 bison -d -o work/hello.tab.c hello.yy
@@ -15,12 +15,12 @@ gcc work/hello.tab.c work/lex.yy.c -o work/hello
 work/hello < input.txt
 ```
 
-Risultato atteso: Fixture riconosciuta, exit0 e Hello, World! su stdout..
+Expected result: Recognized fixtures, exit0 and Hello, World! on stdout..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.gnu.org/software/bison/manual/bison.html](https://www.gnu.org/software/bison/manual/bison.html)

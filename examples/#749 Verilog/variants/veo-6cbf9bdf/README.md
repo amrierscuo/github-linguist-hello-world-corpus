@@ -1,23 +1,23 @@
-# 0749 — Verilog — `.veo`
+# 0749: Verilog: `.veo`
 
-Template di istanziazione Verilog da includere nel chiamante.
+Verilog instance template to be included in the caller.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.veo`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 iverilog -I . -s main -o work/hello.vvp main.v hello.v; vvp work/hello.vvp
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.amd.com/r/en-US/ug901-vivado-synthesis/Instantiating-Verilog-Modules](https://docs.amd.com/r/en-US/ug901-vivado-synthesis/Instantiating-Verilog-Modules)

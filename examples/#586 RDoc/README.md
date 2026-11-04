@@ -1,31 +1,31 @@
 # #586 RDoc
 
-Renderizzare un titolo RDoc con il formatter HTML originale.
+Render a RDoc title with the original HTML form.
 
-Tipo canonico `prose`, language_id `309`.
+Canonical type `prose`, language_id `309`.
 
-Toolchain prevista: Ruby e RDoc markup parser/HTML formatter.
+Suggested toolchain: Ruby and RDoc markup parser/HTML formatter.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ruby verify.rb
 ```
 
-Risultato atteso: HTML con heading h1 contenente Hello, World!.
+Expected result: HTML with heading h1 containing Hello, World!.
 
-Il risultato viene ottenuto dal parser e dal formatter della libreria Ruby.
+The result is obtained from the parser and the form of the Ruby library.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Ruby 3.2.3 + RDoc markup formatter. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Ruby 3.2.3 + RDoc markup formatter. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Ruby RDoc markup](https://ruby.github.io/rdoc/RDoc/Markup.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.rdoc` | [hello.rdoc](hello.rdoc) verificato |
+| `.rdoc` | [hello.rdoc](hello.rdoc) verified |

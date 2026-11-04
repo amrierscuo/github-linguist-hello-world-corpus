@@ -1,32 +1,32 @@
 # #594 RPM Spec
 
-Analizzare un RPM spec ed eseguire la fase prep per stampare il saluto.
+Analyze a RPM spec and perform the prep phase to print the greeting.
 
-Tipo canonico `data`, language_id `314`.
+Canonical type `data`, language_id `314`.
 
-Toolchain prevista: RPM rpmbuild.
+Suggested toolchain: RPM rpmbuild.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 rpmbuild -bp --nodeps --define "_topdir /percorso/work/rpm" hello.spec
 ```
 
-Risultato atteso: spec accettato e fase prep produce Hello, World!.
+Expected result: accepted spec and prep phase produces Hello, World!.
 
-Il fixture non installa file o pacchetti nel sistema; l’obiettivo è prep e non la distribuzione di un RPM.
+The fixture does not install files or packages in the system; the target is prep and not the distribution of a RPM.
 
-Stato registrato: sintassi in attesa; semantica in attesa. Toolchain: RPM4.18.2 original rpmbuild native prep. [Log](verification/result.json). exit 127: ${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory
+Registered state: syntax and behavioral verification pending. Toolchain: RPM4.18.2 original rpmbuild native prep. [Log](verification/result.json). exit 127: ${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory
 
 
-Fonti:
+Sources:
 
 - [RPM spec](https://rpm.org/docs/4.20.x/manual/spec.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.spec` | [hello.spec](hello.spec) creato, verifiche pendenti |
+| `.spec` | [hello.spec](hello.spec) created; verification pending |

@@ -1,23 +1,23 @@
-# 0682 — Starlark — `.bzl`
+# 0682: Starlark: `.bzl`
 
-Modulo Starlark caricabile che restituisce il saluto.
+Chargeable Starlark module that returns greeting.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.bzl`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Bazel/Starlark load("//:hello.bzl", "greeting"); print(greeting())
 ```
 
-Risultato atteso: valore Hello, World!.
+Expected result: Hello, World! value.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://bazel.build/rules/language](https://bazel.build/rules/language)

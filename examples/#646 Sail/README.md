@@ -1,37 +1,37 @@
 # #646 Sail
 
-Controllare il tipo della costante greeting Sail e leggerne il valore.
+Check the type of the constant greeting Sail and read its value.
 
 ## Toolchain
 
 Sail compiler/interpreter
 
-## Procedura
+## Procedure
 
-sail -i hello.sail; nel REPL valutare greeting e registrare valore/comando effettivo.
+sail -i hello.sail; in REPL evaluate and record actual valore/comando greeting.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Sail compiler/prelude non predisposti; type check e REPL pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/rems-project/sail](https://github.com/rems-project/sail)
 - [https://alasdair.github.io/manual.html](https://alasdair.github.io/manual.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.sail` | [hello.sail](hello.sail) creato, verifiche pendenti |
+| `.sail` | [hello.sail](hello.sail) created; verification pending |

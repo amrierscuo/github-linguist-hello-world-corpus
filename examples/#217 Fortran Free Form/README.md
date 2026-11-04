@@ -2,50 +2,50 @@
 
 Voce canonica `Fortran Free Form`, tipo `programming`, language_id `761352333`.
 
-Compilare un programma Fortran 2008 in forma libera e stampare una concatenazione parametrica.
+Fill out a Fortran 2008 program in free form and print a parametric concatenation.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-GNU Fortran compiler extracted locally from Ubuntu — GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+GNU Fortran compiler extracted locally from Ubuntu, GNU Fortran (Ubuntu 13.3.0-6ubuntu2 ~ 24.04.1 ) 13.3.0. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-GNU Fortran 13.3.0 su Ubuntu 24.04. implicit none, parametro character e righe free form distinguono questo sorgente dalla voce a forma fissa.
+GNU Fortran 13.3.0 on Ubuntu 24.04. implied none, character parameter and free form lines distinguish this source from the fixed-shaped voice.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 gfortran -std=f2008 -ffree-form hello.f90 -o build/hello; ./build/hello
 ```
 
-Risultato atteso: Compilazione/run exit 0; saluto esatto seguito da newline.
+Expected result: Compilazione/run exit 0; exact greeting followed by newline.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il compilatore autentico viene invocato con -ffree-form e -std=f2008. La prova esegue il prodotto compilato e confronta stdout.
+The authentic compiler is invoked with -ffree-form and -std=f2008.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html](https://gcc.gnu.org/onlinedocs/gfortran/Fortran-Dialect-Options.html)
 - [https://gcc.gnu.org/onlinedocs/gfortran/](https://gcc.gnu.org/onlinedocs/gfortran/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.f90` | [hello.f90](hello.f90) verificato |
-| `.f03` | [hello.f03](variants/ext-f03-2e663033/hello.f03) creato, verifiche pendenti |
-| `.f08` | [hello.f08](variants/ext-f08-2e663038/hello.f08) creato, verifiche pendenti |
-| `.f95` | [hello.f95](variants/ext-f95-2e663935/hello.f95) creato, verifiche pendenti |
+| `.f90` | [hello.f90](hello.f90) verified |
+| `.f03` | [hello.f03](variants/ext-f03-2e663033/hello.f03) created; verification pending |
+| `.f08` | [hello.f08](variants/ext-f08-2e663038/hello.f08) created; verification pending |
+| `.f95` | [hello.f95](variants/ext-f95-2e663935/hello.f95) created; verification pending |

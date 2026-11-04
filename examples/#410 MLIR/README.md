@@ -1,12 +1,12 @@
 # #410 MLIR
 
-Verificare MLIR in LLVM dialect, tradurlo in LLVM IR e produrre un eseguibile che chiama puts.
+Check MLIR in LLVM dialect, translate it into LLVM IR and produce an executable that calls puts.
 
-Tipo canonico `programming`, language_id `448253929`.
+Canonical type `programming`, language_id `448253929`.
 
-Toolchain prevista: LLVM/MLIR tools mlir-opt, mlir-translate e clang.
+Suggested toolchain: LLVM/MLIR tools mlir-opt, mlir-translate and clang.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mlir-opt hello.mlir -o build/checked.mlir
@@ -14,22 +14,22 @@ mlir-translate --mlir-to-llvmir build/checked.mlir -o build/hello.ll
 lli build/hello.ll
 ```
 
-Risultato atteso: stdout Hello, World! e LF; exit 0.
+Expected result: stdout Hello, World! and LF; exit 0.
 
-La stringa contiene il terminatore NUL richiesto da puts. Parsing e verifica MLIR sono distinti da traduzione, linking ed esecuzione.
+The string contains the NUL terminator required by puts. Parsing and MLIR verification are distinguished by translation, linking and execution.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Ubuntu LLVM/MLIR 18.1.3 (mlir-opt, mlir-translate, lli). [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Ubuntu LLVM/MLIR 18.1.3 (mlir-opt, mlir-translate, lli). [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [MLIR — LLVM dialect](https://mlir.llvm.org/docs/Dialects/LLVM/)
 
-Verifica effettiva: parsing/verifica del dialect LLVM, traduzione in LLVM IR ed esecuzione JIT con lli. Il saluto proviene dalla chiamata puts nel modulo tradotto.
+Effective verification: parsing/verifica of the dialect LLVM, translation into LLVM IR and JIT execution with lli.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mlir` | [hello.mlir](hello.mlir) verificato |
+| `.mlir` | [hello.mlir](hello.mlir) verified |

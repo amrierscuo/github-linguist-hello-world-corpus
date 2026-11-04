@@ -2,47 +2,47 @@
 
 Voce canonica `Filebench WML`, tipo `programming`, language_id `111`.
 
-Usare il comando echo del Workload Model Language Filebench per emettere il saluto, senza workload di I/O.
+Use the echo command of the Workload Model Language Filebench to issue greetings, without I/O. workload
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required authentic toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required authentic toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede Filebench. L’esempio non crea file dati o processi worker e non cambia parametri di sistema. Il tool non è disponibile.
+The example does not create data files or worker processes and does not change system parameters.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 filebench -f hello.f
 ```
 
-Risultato atteso: File WML accettato; output Filebench contenente Hello, World!.
+Expected result: WML file accepted; Filebench output containing Hello, World!.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Il saluto è un argomento del comando WML echo; manca la prova del vero parser/runtime.
+Greeting is a subject of the WML echo command; the proof of the true parser/runtime. is missing
 
-Requisiti residui:
+Remaining requirements:
 
 - Filebench WML parser/runtime is unavailable.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/filebench/filebench/wiki/Workload-model-language](https://github.com/filebench/filebench/wiki/Workload-model-language)
 - [https://github.com/filebench/filebench](https://github.com/filebench/filebench)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.f` | [hello.f](hello.f) creato, verifiche pendenti |
+| `.f` | [hello.f](hello.f) created; verification pending |

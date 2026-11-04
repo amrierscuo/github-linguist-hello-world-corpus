@@ -1,40 +1,40 @@
-# 0548 — PostScript: `.pfa`
+# 0548: PostScript: `.pfa`
 
 Ruolo: Font PostScript Type 1 ASCII minimo: FullName del saluto e sola glyph .notdef con hsbw/endchar; lenIV -1 disabilita cifratura delle charstring. Non contiene glifi delle lettere del saluto.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Ghostscript10.02.1 ufficiale Ubuntu. La versione osservata nella prova effettiva è riportata nel log; gli ambienti applicativi non esercitati restano pendenti.
+Required toolchain: Ghostscript10.02.1 ufficiale Ubuntu. The log records the version used for the check. Other application environments remain unverified.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 gs -dSAFER -dBATCH -dNOPAUSE -dNODISPLAY hello.pfa verify.ps
 ```
 
-Risultato atteso: Font definito e FontInfo.FullName = Hello, World!; .notdef vuota renderizzabile.
+Expected result: Defined font and FontInfo.FullName = Hello, World!; empty .notdef renderable.
 
-Stato individuale: artefatto creato `true`, sintassi verificata `true`, semantica verificata `true`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `true`, behavior verified `true`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- Nessun impedimento per l’ambito effettivamente verificato.
+- No impediment for the scope actually verified.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.pfa`: `c5df05a925489cb214002efc659f79c61ac44fd67f602cac112352a9b9ede971`
 - `verify.ps`: `dacf972adb3044ad100fdcd921461423b8d3c2a7013926bb4ee32036e238724f`
 
-Fonti primarie:
+Primary sources:
 
 - https://adobe-type-tools.github.io/font-tech-notes/pdfs/T1_SPEC.pdf
 - https://ghostscript.readthedocs.io/en/latest/Use.html
 - https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf
 
-Prova aggiuntiva realmente eseguita:
+Additive test actually performed:
 
-Ghostscript definisce font Type1, legge FullName esatto Hello, World! e interpreta show della glyph .notdef; non pretende glifi testuali del saluto.
+Ghostscript defines type1 font, fullName exact Hello, World! and plays show of glyph .notdef; does not claim to glyph textual greetings.
 
-Log: `verification/native.json`. Le procedure proposte sopra non eseguite restano distinte dai comandi nel log.
+Log: `verification/native.json`. The proposed procedures above that were not run are distinct from the commands recorded in the log.
 
 Tool/versione osservata: 10.02.1

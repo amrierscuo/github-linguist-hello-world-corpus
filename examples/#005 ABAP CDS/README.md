@@ -1,51 +1,51 @@
 # #005 ABAP CDS
 
-`zi_hello_world.ddls.asddls` definisce la view entity `ZI_Hello_World`: per ogni
-cliente presente nella tabella SAP `T000` espone `Client` e il valore costante
-`Hello, World!` nella colonna `Greeting`. È una definizione di dati, non un
-programma che stampa su console. La lettura prevista non modifica `T000`.
+`zi_hello_world.ddls.asddls` defines the view entity `ZI_Hello_World`: for each
+customer present in the table SAP `T000` exposes `Client` and the constant value
+`Hello, World!` in `Greeting` column. It is a data definition, not a
+program that prints on console. The expected reading does not change `T000`.
 
-## Toolchain e comandi
+## Toolchain and commands
 
-Parsing locale: **Node.js 22** e **abaplint 2.120.70**. Dalla cartella dell'esempio:
+Local Parsing: **Node.js 22** and **abaplint 2.120.70**. From the example folder:
 
 ```powershell
 npm install --prefix .tools --ignore-scripts --no-audit --no-fund @abaplint/cli@2.120.70
 node .tools/node_modules/@abaplint/cli/abaplint abaplint.json -f json
 ```
 
-La regola `cds_parser_error` controlla la grammatica DDL; risultato atteso:
-codice 0 e `[]`. Il profilo `v758` è normalizzato da questo abaplint a `v793`
-(on-premise 758), visibile nel log.
+The `cds_parser_error` rule controls DDL grammar; expected result:
+0 code and `[]`. The `v758` profile is normalized by this abaplint to `v793`
+(on-premise 758 ), visible in the log.
 
-Verifica completa prevista: **SAP ABAP Platform con supporto alle view entity**,
-tabella `T000` accessibile e **ABAP Development Tools (ADT)**. Creare una Data
-Definition `ZI_HELLO_WORLD`, inserirvi il sorgente e usare `Activate` (Ctrl+F3).
-Aprire `Data Preview` (F8) dell'entità attivata. Ogni riga deve avere
-`Greeting = Hello, World!`. Non è richiesta una compilazione separata dall'attivazione.
+Full check provided: **SAP ABAP Platform con supporto alle view entity**,
+table `T000` accessible and **ABAP Development Tools (ADT)**. Create a Date
+Definition `ZI_HELLO_WORLD`, insert the source and use `Activate` (Ctrl+F3).
+Open `Data Preview` (F8) of the activated entity.
+`Greeting = Hello, World!`. A separate compilation from activation is not required.
 
-L'oggetto ADT deve avere lo stesso nome della dichiarazione: `ZI_HELLO_WORLD`.
-`T000` è una dipendenza del sistema classico; l'esempio non presume che sia
-un'API rilasciata per ABAP Cloud.
+The ADT object must have the same name as the statement: `ZI_HELLO_WORLD`.
+`T000` is an addiction to the classic system; the example does not assume that it is
+a API released for ABAP Cloud.
 
-## Stato e limiti
+## Status and limitations
 
-Sintassi **verificata dal parser CDS di abaplint**; semantica **non ancora
-verificata**. `verification/abaplint.json` comprende un sorgente negativo
-malformato, realmente respinto. La configurazione non risolve il dizionario
-SAP e non attiva l'oggetto nel database. Manca il sistema SAP/ADT necessario
-per completare la verifica.
+syntax **verificata dal parser CDS di abaplint**; behavior **not yet
+verified **. `verification/abaplint.json` includes a negative source
+malformed, really rejected. Configuration does not solve the dictionary
+for SAP and does not activate the object in the database. The required SAP/ADT system is unavailable
+to complete the verification.
 
-## Fonti primarie
+## Primary sources
 
 - [SAP, CDS view entity e loro impiego](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/abencds_v2_views.htm).
 - [SAP, regole DDL e stringhe tra apici singoli](https://help.sap.com/docs/ABAP_PLATFORM/f2e545608079437ab165c105649b89db/4ed24bd56e391014adc9fffe4e204223.html?version=1709.008).
 - [abaplint, regole `cds_parser_error` e `cds_check_syntax`](https://rules.abaplint.org/).
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.asddls` | [zi_hello_world.ddls.asddls](zi_hello_world.ddls.asddls) sintassi verificata |
+| `.asddls` | [zi_hello_world.ddls.asddls](zi_hello_world.ddls.asddls) syntax verified |

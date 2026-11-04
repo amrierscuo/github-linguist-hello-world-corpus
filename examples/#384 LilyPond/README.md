@@ -1,38 +1,38 @@
 # #384 LilyPond
 
-Impaginare una breve partitura LilyPond originale con titolo Hello, World!.
+Engage a short original LilyPond score with Hello, World! title.
 
 ## Toolchain
 
 LilyPond 2.24 compatibile; versione effettiva da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
 lilypond --svg -o build/hello hello.ly
 
-## Risultato atteso
+## Expected result
 
-SVG della partitura contiene il titolo Hello, World! e quattro note originali.
+SVG of the score contains the title Hello, World! and four original notes.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Le note c d e c e l’impaginazione sono originali. Il goal è la partitura con titolo, non riproduzione vocale del testo. Nessuno spartito esterno o font redistribuito.
+The goal is the score with title, not vocal reproduction of the text. No external score or redistributed font.
 
-Requisiti residui:
+Remaining requirements:
 - Toolchain LilyPond/font/rendering non preparata; compilazione e lettura SVG pending.
 
-## Fonti primarie
+## Primary sources
 
 - [https://lilypond.org/doc/v2.24/Documentation/learning/](https://lilypond.org/doc/v2.24/Documentation/learning/)
 - [https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage](https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ly` | [hello.ly](hello.ly), [driver.ly](variants/ily-225ac663/driver.ly) creato, verifiche pendenti |
-| `.ily` | [hello.ily](variants/ily-225ac663/hello.ily) creato, verifiche pendenti |
+| `.ly` | [hello.ly](hello.ly), [driver.ly](variants/ily-225ac663/driver.ly) created; verification pending |
+| `.ily` | [hello.ily](variants/ily-225ac663/hello.ily) created; verification pending |

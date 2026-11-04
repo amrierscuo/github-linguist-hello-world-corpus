@@ -1,34 +1,34 @@
 # #437 Mirah
 
-Compilare Mirah in bytecode JVM e stampare il saluto.
+Fill out Mirah in bytecode JVM and print your greeting.
 
-Tipo canonico `programming`, language_id `232`.
+Canonical type `programming`, language_id `232`.
 
-Toolchain prevista: Mirah compiler e JVM compatibili.
+Suggested toolchain: Mirah compiler and JVM compatible.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mirahc hello.mirah
 java Hello
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Il sorgente usa la forma Ruby-like Mirah; Ruby da solo non ne verifica il typing o la generazione JVM.
+The source uses the Ruby-like Mirah form; Ruby alone does not verify its typing or JVM generation.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Mirah — guida e compiler](https://github.com/mirah/mirah)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.druby` | [hello.druby](variants/druby-ff72b814/hello.druby) creato, verifiche pendenti |
-| `.duby` | [hello.duby](variants/duby-6fa18d7f/hello.duby) creato, verifiche pendenti |
-| `.mirah` | [hello.mirah](hello.mirah) creato, verifiche pendenti |
+| `.druby` | [hello.druby](variants/druby-ff72b814/hello.druby) created; verification pending |
+| `.duby` | [hello.duby](variants/duby-6fa18d7f/hello.duby) created; verification pending |
+| `.mirah` | [hello.mirah](hello.mirah) created; verification pending |

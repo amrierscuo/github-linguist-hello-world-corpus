@@ -1,32 +1,32 @@
 # #108 Cangjie
 
-Compilare un programma Cangjie che stampa Hello, World! seguito da newline.
+Fill out a Cangjie program that prints Hello, World! followed by newline.
 
-Tipo canonico: `programming`; `language_id`: `581895317`.
+Canonical type: `programming`; `language_id`: `581895317`.
 
-Toolchain prevista: Cangjie SDK 1.0.0 o compatibile, compilatore cjc. La versione effettivamente provata, quando disponibile, è nel log.
+Suggested toolchain: Cangjie SDK 1.0.0 or compatible, cjc compiler.
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+From the example folder, depending on the PATH:
 
 ```sh
 cjc hello.cj -o hello
 ./hello
 ```
 
-Risultato atteso: stdout `Hello, World!` seguito da newline, uscita 0.
+Expected result: stdout `Hello, World!` followed by newline, 0. output
 
-Su Windows produrre hello.exe e avviarlo con .\hello.exe. La firma main e println seguono la guida del compilatore.
+On Windows produce hello.exe and start it with.\ hello.exe. The main signature and println follow the compiler guide.
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
+Initial state: artifact created, syntax and behavioral verification pending. Specific toolchain not yet performed on this example; syntax and behavior remain to be checked.
 
-Fonti primarie o riferimenti originali del progetto:
+Primary sources or original references of the project:
 
 - [Cangjie — primo programma](https://docs.cangjie-lang.cn/en/docs/1.0.0/user_manual/source_en/first_understanding/hello_world.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cj` | [hello.cj](hello.cj) creato, verifiche pendenti |
+| `.cj` | [hello.cj](hello.cj) created; verification pending |

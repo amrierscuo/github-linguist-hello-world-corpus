@@ -1,39 +1,39 @@
 # #794 Xonsh
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
 Eseguire Xonsh e stampare Hello, World!.
 
-Il parser/runtime Xonsh autentico esegue lo script. Il log conserva anche l’avviso sull’assenza di readline per uso interattivo; il saluto è la riga finale e la prova non usa una shell interattiva.
+The authentic parser/runtime Xonsh scripts. The log also keeps the notice of the absence of readline for interactive use; the greeting is the final line and the test does not use an interactive shell.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Xonsh0.24.2 originale, Python3.13
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 python -m xonsh --no-rc --shell-type dumb hello.xsh
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Exit0 e riga finale Hello, World! su stdout.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://xon.sh/tutorial.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.xsh` | [hello.xsh](hello.xsh) verificato |
+| `.xsh` | [hello.xsh](hello.xsh) verified |

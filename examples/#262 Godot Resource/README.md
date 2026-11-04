@@ -2,51 +2,51 @@
 
 Voce canonica `Godot Resource`, tipo `data`, language_id `738107771`.
 
-Caricare una scena testuale Godot con un nodo Label e verificare il suo testo dopo istanziazione.
+Upload a Godot text scene with a Label node and check its text after inscription.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Official Godot PackedScene loader and engine — 4.7.2.stable.official.ed1daf0bf. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Official Godot PackedScene loader and engine, 4.7.2.stable.official.ed1daf0bf. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Godot ufficiale 4.7.2 stable Windows x64. Eseguire in una copia di lavoro con project.godot, hello.tscn e verify.gd: Godot può creare cache .godot e metadati accanto al progetto.
+Official 4.7.2 stable Windows x64 Godot. Run in a work copy with project.godot, hello.tscn and verify.gd: Godot can create .godot cache and metadata next to the project.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 godot --headless --path . --script verify.gd
 ```
 
-Risultato atteso: Hello, World! e PASS: genuine PackedScene loader and Label.text.
+Expected result: Hello, World! and PASS: genuine PackedScene loader and Label.text.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-La prova usa il vero PackedScene loader e confronta Label.text con il saluto. L’ambito semantico è il caricamento della scena e il valore del widget istanziato; non viene dichiarata una verifica visiva dei pixel.
+The test uses the true PackedScene loader and compares Label.text with greeting. The semantic scope is the loading of the scene and the value of the widget allocated; no visual verification of the pixels is declared.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.godotengine.org/en/stable/contributing/development/file_formats/tscn.html](https://docs.godotengine.org/en/stable/contributing/development/file_formats/tscn.html)
 - [https://docs.godotengine.org/en/stable/classes/class_packedscene.html](https://docs.godotengine.org/en/stable/classes/class_packedscene.html)
 - [https://github.com/godotengine/godot/releases](https://github.com/godotengine/godot/releases)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.gdnlib` | [hello.gdnlib](variants/ext-gdnlib-2e67646e6c6962/hello.gdnlib) creato, verifiche pendenti |
-| `.gdns` | [hello.gdns](variants/ext-gdns-2e67646e73/hello.gdns) creato, verifiche pendenti |
-| `.tres` | [hello.tres](variants/ext-tres-2e74726573/hello.tres) creato, verifiche pendenti |
-| `.tscn` | [hello.tscn](hello.tscn) verificato |
+| `.gdnlib` | [hello.gdnlib](variants/ext-gdnlib-2e67646e6c6962/hello.gdnlib) created; verification pending |
+| `.gdns` | [hello.gdns](variants/ext-gdns-2e67646e73/hello.gdns) created; verification pending |
+| `.tres` | [hello.tres](variants/ext-tres-2e74726573/hello.tres) created; verification pending |
+| `.tscn` | [hello.tscn](hello.tscn) verified |

@@ -1,38 +1,38 @@
 # #583 RAML
 
-Validare un contratto RAML con risposta text/plain ed esempio di saluto.
+Validate a RAML contract with text/plain response and an example of greeting.
 
-Tipo canonico `markup`, language_id `308`.
+Canonical type `markup`, language_id `308`.
 
-Toolchain prevista: Node.js e raml-1-parser.
+Suggested toolchain: Node.js and raml- 1-parser.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 node verify.cjs
 ```
 
-Risultato atteso: nessun errore RAML e risposta example uguale al saluto.
+Expected result: no RAML error and example answer equal to greeting.
 
-Il contratto non avvia un servizio; il valore è letto attraverso il parser RAML.
+The contract does not start a service; the value is read through the parser RAML.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Node.js 22.20.0 + raml-1-parser. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Node.js 22.20.0 + raml-1-parser. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [RAML specification](https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md)
 - [RAML parser](https://github.com/raml-org/raml-js-parser-2)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 npm install raml-1-parser
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.raml` | [hello.raml](hello.raml) verificato |
+| `.raml` | [hello.raml](hello.raml) verified |

@@ -1,36 +1,36 @@
 # #488 Oberon
 
-Eseguire un modulo Oberon-2 che usa Out.
+Perform a Oberon- 2 module that uses Out.
 
 ## Toolchain
 
 Compilatore Oberon-2 e modulo standard Out
 
-## Procedura
+## Procedure
 
-Compilare Hello.ob2 e invocare il modulo Hello con il runtime Oberon-2 scelto; registrare il comando effettivo.
+Fill in Hello.ob2 and invoke the Hello form with the Oberon- 2 runtime chosen; register the actual command.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Il file usa il sottoinsieme MODULE/IMPORT/BEGIN comune a Oberon-2; Out è una dipendenza reale del runtime scelto.
+The file uses the MODULE/IMPORT/BEGIN subset common in Oberon- 2; Out is a real dependence of the chosen runtime.
 
-Requisiti residui:
-- Compilatore Oberon-2 e libreria Out non disponibili; comando/versione devono essere registrati nel futuro test.
+Remaining requirements:
+- Oberon- 2 compiler and Out library not available; comando/versione must be recorded in the future test.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.inf.ethz.ch/personal/wirth/Oberon/Oberon07.Report.pdf](https://www.inf.ethz.ch/personal/wirth/Oberon/Oberon07.Report.pdf)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ob2` | [Hello.ob2](Hello.ob2) creato, verifiche pendenti |
+| `.ob2` | [Hello.ob2](Hello.ob2) created; verification pending |

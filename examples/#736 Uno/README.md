@@ -1,36 +1,36 @@
 # #736 Uno
 
-Costruire un’applicazione Uno e registrare il saluto dal costruttore.
+Build an application One and record greeting from the manufacturer.
 
 ## Toolchain
 
-Fuse Uno compiler/runtime
+One compiler/runtime
 
-## Procedura
+## Procedure
 
-Creare il progetto Uno con Hello.uno come Application; uno build per il target di prova e avviare.
+Create Project One with Hello.uno as Application; a build for the test target and start.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - Uno/Fuse compiler e backend non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://fuseopen.com/docs/uno/](https://fuseopen.com/docs/uno/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.uno` | [Hello.uno](Hello.uno) creato, verifiche pendenti |
+| `.uno` | [Hello.uno](Hello.uno) created; verification pending |

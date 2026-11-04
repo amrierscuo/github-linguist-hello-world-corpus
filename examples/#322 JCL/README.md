@@ -1,32 +1,32 @@
 # #322 JCL
 
-Copiare una riga Hello, World! da dati in-stream allo spool SYSOUT con IEBGENER.
+Copy a Hello, World! line from in-stream data to spool SYSOUT with IEBGENER.
 
-Tipo canonico `programming`, language_id `316620079`.
+Canonical type `programming`, language_id `316620079`.
 
-Toolchain prevista: IBM z/OS JES e utility IEBGENER.
+Suggested toolchain: IBM z/OS JES and IEBGENER utilities.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Sottoporre hello.jcl a JES in una coda di prova e leggere SYSUT2.
 ```
 
-Risultato atteso: step COPY con RC 0; SYSUT2 contiene Hello, World!.
+Expected result: step COPY with RC 0; SYSUT2 contains Hello, World!.
 
-La JOB card è illustrativa: ACCT, CLASS e MSGCLASS dipendono dall’installazione. Non è stato eseguito alcun job su un mainframe.
+The JOB card is illustrated: ACCT, CLASS and MSGCLASS depend on the installation. No job has been performed on a mainframe.
 
 Stato iniziale: creato; sintassi e semantica in attesa. Ambiente IBM z/OS JES non disponibile.
 
-Fonti:
+Sources:
 
 - [IBM — IEBGENER](https://www.ibm.com/docs/en/zos/3.1.0?topic=utilities-iebgener-sequential-copygenerate-data-set-program)
 - [IBM — dati in-stream JCL](https://www.ibm.com/docs/en/zos/3.1.0?topic=statement-dd-data)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jcl` | [hello.jcl](hello.jcl) creato, verifiche pendenti |
+| `.jcl` | [hello.jcl](hello.jcl) created; verification pending |

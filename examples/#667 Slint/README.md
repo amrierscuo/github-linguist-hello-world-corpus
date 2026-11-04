@@ -1,31 +1,31 @@
 # #667 Slint
 
-Compilare un componente Slint con proprietà message e Text collegato al saluto.
+Fill out a Slint component with Message and Text properties connected to greeting.
 
-Tipo canonico `markup`, language_id `119900149`.
+Canonical type `markup`, language_id `119900149`.
 
-Toolchain prevista: Slint compiler/interpreter.
+Suggested toolchain: Slint compiler/interpreter.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 slint-viewer hello.slint
 ```
 
-Risultato atteso: componente accettato e visualizzazione del saluto.
+Expected result: accepted component and greeting display.
 
-Per la semantica visiva serve il backend UI. Il corpus non apre finestre durante un controllo di sola sintassi.
+For visual behavior, the UI backend is used. The corpus does not open windows during a syntax control.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [Slint language](https://docs.slint.dev/latest/docs/slint/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.slint` | [hello.slint](hello.slint) creato, verifiche pendenti |
+| `.slint` | [hello.slint](hello.slint) created; verification pending |

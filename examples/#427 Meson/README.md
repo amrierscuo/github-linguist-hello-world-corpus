@@ -1,29 +1,29 @@
 # #427 Meson
 
-Configurare un progetto Meson e lanciare un run_target che stampa il saluto.
+Configure a Meson project and launch a run_target that prints the greeting.
 
-Tipo canonico `programming`, language_id `799141244`.
+Canonical type `programming`, language_id `799141244`.
 
-Toolchain prevista: Meson, Ninja e Python 3.13.
+Suggested toolchain: Meson, Ninja and Python 3.13.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 meson setup build
 meson compile -C build hello
 ```
 
-Risultato atteso: target hello eseguito con successo; stdout contiene una riga Hello, World!.
+Expected result: target hello successfully executed; stdout contains a Hello, World! line.
 
-Il progetto non richiede un compilatore C: Meson interpreta la ricetta e Ninja esegue il target Python.
+The project does not require a C compiler: Meson interprets the recipe and Ninja performs the Python target.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Python 3.13.9 + Meson 1.12.1 + Ninja 1.13.2. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Python 3.13.9 + Meson 1.12.1 + Ninja 1.13.2. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Meson — run targets](https://mesonbuild.com/Run-targets.html)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 python -m pip install meson==1.12.1 ninja==1.13.2

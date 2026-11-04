@@ -1,18 +1,18 @@
 # #378 Lean
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Verificare il tipo e la lunghezza del saluto in Lean3, poi stampare Hello, World!.
+Check the type and length of greeting in Lean3, then print Hello, World!.
 
-Importa system.io, usa string e io unit dell’API Lean3. La prova rfl e il programma sono elaborati dal compiler/kernel originale Lean3 prima dell’esecuzione.
+Import system.io, use string and i API unit Lean3. The rfl test and the program are processed by the original Lean3 compiler/kernel before execution.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Lean3.51.1 community ufficiale Windows
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 lean hello.lean
@@ -22,24 +22,24 @@ lean hello.lean
 lean --run hello.lean
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Il kernel accetta greeting.length=13; stdout Hello, World! seguito da newline.
+The kernel accepts greeting.length = 13; stdout Hello, World! followed by newline.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://github.com/leanprover-community/lean/releases/tag/v3.51.1
 - https://leanprover-community.github.io/lean3/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.lean` | [hello.lean](hello.lean) verificato |
-| `.hlean` | [hello.hlean](variants/hlean-a04be067/hello.hlean) creato, verifiche pendenti |
+| `.lean` | [hello.lean](hello.lean) verified |
+| `.hlean` | [hello.hlean](variants/hlean-a04be067/hello.hlean) created; verification pending |

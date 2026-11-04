@@ -1,24 +1,24 @@
-# 0785 — XML — `.filters`
+# 0785: XML: `.filters`
 
-Filtro Visual Studio con GUID originale assegnato dal corpus.
+Visual Studio filter with original GUID assigned by the corpus.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.filters`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Visual Studio XML project filter load in isolated project
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://learn.microsoft.com/en-us/cpp/build/reference/vcxproj-filters-files](https://learn.microsoft.com/en-us/cpp/build/reference/vcxproj-filters-files)

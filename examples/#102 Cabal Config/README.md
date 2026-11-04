@@ -1,32 +1,32 @@
 # #102 Cabal Config
 
-Descrivere un pacchetto Cabal con un eseguibile Haskell che stampa Hello, World!.
+The official Cabal Setup driver configured and built the original package. Its executable printed Hello, World!
 
-Tipo canonico: `data`; `language_id`: `677095381`.
+Canonical type: `data`. Linguist language ID: `677095381`.
 
-Toolchain prevista: cabal-install 3.x e GHC con base 4.14–4.x. La versione effettivamente provata, quando disponibile, è nel log.
+## Recorded verification
 
-Dalla cartella dell'esempio, con le dipendenze nel PATH:
+**Syntax and behavior verified** on November 4, 2026 with Cabal 3.8.1.0 and GHC 9.4.7.
+
+[Recorded commands, outputs and hashes](verification/native_20261104_receipt.json).
+
+## Reproduce the check
+
+Copy the package, `src/Main.hs` and `verification/Setup.hs` into a scratch directory. With GHC and its Cabal library available, run:
 
 ```sh
-cabal build hello-world
-cabal run hello-world
+runghc Setup.hs configure --user --builddir=dist
+runghc Setup.hs build --builddir=dist
+./dist/build/hello-world
 ```
 
-Risultato atteso: build accettato e stdout `Hello, World!\n`.
+This check used the Cabal library Setup driver. It did not exercise cabal-install or cabal.project.
 
-Il .cabal è l’artefatto canonico; Main.hs è il sorgente di supporto. La licenza del corpus deve ancora essere scelta: qui non viene dichiarata una licenza fittizia.
+## Primary sources
 
-Stato iniziale: artefatto creato, sintassi e semantica in attesa. Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare.
 
-Fonti primarie o riferimenti originali del progetto:
+## Extension coverage
 
-- [Cabal — formato dei pacchetti](https://cabal.readthedocs.io/en/stable/cabal-package-description-file.html)
-
-## Copertura delle estensioni
-
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
-
-| Estensione | File / stato |
-| --- | --- |
-| `.cabal` | [hello-world.cabal](hello-world.cabal) creato, verifiche pendenti |
+| Extension | Files | Status |
+| --- | --- | --- |
+| `.cabal` | [hello-world.cabal](hello-world.cabal) | Syntax and behavior verified |

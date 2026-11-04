@@ -1,23 +1,23 @@
-# 0595 — RUNOFF — `.rnh`
+# 0595: RUNOFF: `.rnh`
 
-Sorgente RUNOFF testuale con suffisso .rnh; il formatter storico resta richiesto.
+Textual source RUNOFF with suffix .rnh; the historical form is required.
 
-Provenienza: copia del file originale `examples/#595 RUNOFF/hello.rno`.
+Origin: copy of the original `examples/#595 RUNOFF/hello.rno` file.
 
 Artefatto principale: `hello.rnh`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 RUNOFF hello.rnh
 ```
 
-Risultato atteso: documento formattato con Hello, World!..
+Expected result: formatted document with Hello, World!..
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://bitsavers.org/pdf/dec/vax/vms/5.0/AA-LA51A-TE_VAX_DIGITAL_Standard_Runoff_Reference_Manual_Apr88.pdf](https://bitsavers.org/pdf/dec/vax/vms/5.0/AA-LA51A-TE_VAX_DIGITAL_Standard_Runoff_Reference_Manual_Apr88.pdf)

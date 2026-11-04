@@ -1,24 +1,24 @@
-# 0828 — pkg-config — `.pc.in`
+# 0828: pkg-config: `.pc.in`
 
-Template pkg-config con placeholder Autoconf reali; richiede sostituzione prima dell’uso.
+Pkg-config template with real Autoconf placeholder; it requires replacement before use.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.pc.in`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 configure/CMake configure_file: replace @prefix@ with /corpus/example and @PACKAGE_VERSION@ with 1.0.0; write /absolute/work/pkg-config/hello.pc
 PKG_CONFIG_PATH=/absolute/work/pkg-config pkg-config --variable=greeting hello
 ```
 
-Risultato atteso: variabile greeting == Hello, World!.
+Expected result: variable greeting = Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://people.freedesktop.org/~dbn/pkg-config-guide.html](https://people.freedesktop.org/~dbn/pkg-config-guide.html)

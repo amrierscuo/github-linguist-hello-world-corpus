@@ -1,36 +1,36 @@
 # #821 mIRC Script
 
-Caricare un alias mIRC che scrive il saluto nella finestra locale.
+Upload an alias mIRC that writes greeting in the local window.
 
 ## Toolchain
 
 mIRC Script runtime
 
-## Procedura
+## Procedure
 
 In mIRC caricare hello.mrc con /load -rs; invocare /hello.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-echo -a produce output locale; il campione non invia messaggi o avvia connessioni.
+echo -a produces local output; the sample does not send messages or start connections.
 
-Requisiti residui:
-- mIRC runtime non disponibile.
+Remaining requirements:
+- mIRC runtime unavailable.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.mirc.com/help/html/aliases.html](https://www.mirc.com/help/html/aliases.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mrc` | [hello.mrc](hello.mrc) creato, verifiche pendenti |
+| `.mrc` | [hello.mrc](hello.mrc) created; verification pending |

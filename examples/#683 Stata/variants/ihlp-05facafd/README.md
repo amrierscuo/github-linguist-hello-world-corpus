@@ -1,23 +1,23 @@
-# 0683 — Stata — `.ihlp`
+# 0683: Stata: `.ihlp`
 
 Documento di aiuto Stata SMCL includibile.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.ihlp`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Stata: view hello.ihlp
 ```
 
-Risultato atteso: documento visualizza Hello, World!.
+Expected result: document displays Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.stata.com/manuals/psmcl.pdf](https://www.stata.com/manuals/psmcl.pdf)

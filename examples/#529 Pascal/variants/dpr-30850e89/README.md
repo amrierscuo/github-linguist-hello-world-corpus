@@ -1,30 +1,30 @@
-# 0529 — Pascal: `.dpr`
+# 0529: Pascal: `.dpr`
 
 Ruolo: Programma Delphi console con direttiva APPTYPE; mantiene entry point program.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Genuine Free Pascal compiler — 3.2.2. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Genuine Free Pascal compiler, 3.2.2. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 dcc32 hello.dpr; hello.exe (oppure FPC in modalità Delphi nel work locale)
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.dpr`: `f6580480e5910b62273a311a3f47fb5b897bf7ecb02c9d4e4ff326d7a7e2dba7`
 
-Fonti primarie:
+Primary sources:
 
 - https://docwiki.embarcadero.com/RADStudio/en/Programs_and_Units_(Delphi)
 - https://www.freepascal.org/docs.html

@@ -1,0 +1,86 @@
+{
+  "ordinal": 663,
+  "name": "Slang",
+  "source_hashes": {
+    "examples/#663 Slang/hello.slang": "47bd8e6fd84d32bb73123ef76a8c6793cb36e91bde072ae59588f5fe35c756d2"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\slang",
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_661_680\\slang\\bin\\slangc.exe",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\slang",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "2026.19\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\slang",
+      "exit_code": 0,
+      "stdout": "0.15.2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_661_680\\slang\\bin\\slangc.exe",
+        "hello.slang",
+        "-entry",
+        "main",
+        "-target",
+        "cpp",
+        "-o",
+        "generated_shader.cpp"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\slang",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning[E40100]: entry point 'main' has been renamed to 'main_0'\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "c++",
+        "-O2",
+        "-std=c++17",
+        "dispatch.cpp",
+        "-o",
+        "dispatch.exe"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\slang",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\native_audit_20261104\\slang\\dispatch.exe"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\slang",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Official Slang C++ backend processes original source; dispatch one group into a zero-initialized 13-element output buffer; compare readback against the expected ASCII greeting.",
+  "toolchain": "Slang 2026.19 (official Windows), Zig C++ 0.15.2; CPU compute backend",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "extensions": {
+    ".slang": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "generated_cpp_sha256": "2d7f4cb49c6d048f2179d438e5806e911f2286171790e303b183597007b4a65e",
+  "proof_limit": "CPU compute dispatch tested; GPU SPIR-V dispatch not executed.",
+  "verified_utc": "2026-11-04T19:32:01.691711+00:00",
+  "recorded_test_source": "slang_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

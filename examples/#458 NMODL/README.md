@@ -2,44 +2,44 @@
 
 Voce canonica `NMODL`, tipo `programming`, `language_id: 136456478`.
 
-## Obiettivo
+## Goal
 
-Compilare e caricare un meccanismo NMODL che stampa il saluto durante `INITIAL`, eseguito da `finitialize` in NEURON.
+Fill and load a NMODL mechanism that prints greetings during `INITIAL`, executed by `finitialize` in NEURON.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Prova autentica con NEURON 9.0.1, CPython 3.12.3 e GCC 13.3.0 su Ubuntu 24.04 WSL2 x86_64. Il runtime deriva dal wheel Linux ufficiale NEURON; compilatore e header di sviluppo devono essere disponibili.
+Authentic test with NEURON 9.0.1, CPython 3.12.3 and GCC 13.3.0 on Ubuntu 24.04 WSL2 x86_64. The runtime comes from the official Linux wheel NEURON; compiler and development header must be available.
 
-Copiare `greeting.mod` e `check.hoc` in una directory temporanea. Dopo aver installato NEURON nel Python scelto e reso disponibili `nrnivmodl` e `nrniv` nel PATH:
+Copy `greeting.mod` and `check.hoc` in a temporary directory. After installing NEURON in the chosen Python and made available `nrnivmodl` and `nrniv` in PATH:
 
 ```sh
 nrnivmodl greeting.mod
 nrniv -nogui check.hoc
 ```
 
-`nrnivmodl` traduce il sorgente in C++, compila il meccanismo e crea `x86_64/libnrnmech.so`. `nrniv` carica la libreria dalla directory corrente. `check.hoc` crea una sezione `soma`, esegue `insert greeting` e chiama `finitialize(-65)`.
+`nrnivmodl` translates the source into C++, compiles the mechanism and creates `x86_64/libnrnmech.so`. `nrniv` loads the library from the current directory. `check.hoc` creates a `soma` section, performs `insert greeting` and calls `finitialize(-65)`.
 
-## Risultato atteso e stato
+## Expected result and status
 
 L'esecuzione di `INITIAL` stampa una riga `Hello, World!`. La console HOC mostra anche il valore di ritorno `1` di `finitialize`; il banner e l'elenco dei meccanismi caricati sono su stderr.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
 La traduzione, la compilazione e il linking terminano con exit code 0. Il processo NEURON carica `greeting.mod`, lo inserisce nella sezione e produce il saluto una sola volta durante l'inizializzazione. La prova precedente con `nocmodl` 8.2.2 resta in [verification/native.json](verification/native.json). La nuova prova completa è [verification/runtime.json](verification/runtime.json), con versioni, comandi, output, ambiente rilevante e SHA-256 dei sorgenti e della libreria compilata. Le sorgenti originali non sono cambiate.
 
-Il log di compilazione conserva un avviso `make` sullo scarto di clock del filesystem montato, pari a 0,013 secondi. Linking, caricamento ed esecuzione del meccanismo sono riusciti. I prodotti compilati e le dipendenze restano fuori dal corpus.
+The compilation log keeps a `make` warning on the clock scrap of the mounted filesystem, equal to 0, 013 seconds. Linking, loading and running the mechanism have been successful.
 
-## Fonti primarie
+## Primary sources
 
 - [Linguaggio NMODL e INITIAL](https://www.neuronsimulator.org/en/latest/nmodl/language/nmodl.html#initial)
 - [Installazione ufficiale e compilazione dei file MOD](https://www.neuronsimulator.org/en/latest/install/install_instructions.html)
 - [Distribuzione NEURON 9.0.1](https://pypi.org/project/neuron/9.0.1/)
 - [Documentazione originaria dell'esempio](https://www.neuronsimulator.org/en/latest/nmodl/NMODL_language.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Ogni suffisso mantiene la propria prova; le varianti pendenti non ereditano le verifiche.
+Each suffix maintains its own test; the pending variants do not inherit verifications.
 
-| Estensione | File e stato |
+| Extension | File and status |
 | --- | --- |
-| `.mod` | [greeting.mod](greeting.mod) sintassi e semantica verificate |
+| `.mod` | [greeting.mod](greeting.mod) syntax and behavior verified |

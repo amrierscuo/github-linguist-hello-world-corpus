@@ -1,30 +1,30 @@
-# 0472 — Nim: `.nimble`
+# 0472: Nim: `.nimble`
 
 Ruolo: Manifest Nimble in NimScript con metadata e task hello.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Nim1.6.14 Ubuntu, backend C/GCC. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Nim1.6.14 Ubuntu, backend C/GCC. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 nimble hello
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.nimble`: `c9cbdcadd41ecac468bfc3894695dc1d6233a260b57cb2183cc9452da33961de`
 
-Fonti primarie:
+Primary sources:
 
 - https://github.com/nim-lang/nimble#creating-packages
 - https://nim-lang.org/docs/tut1.html

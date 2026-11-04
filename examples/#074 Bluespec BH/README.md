@@ -1,18 +1,18 @@
 # #074 Bluespec BH
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
-Simulare una regola nel dialetto Bluespec Haskell che stampa Hello, World! e termina.
+Simulate a rule in the Bluespec Haskell dialect that prints Hello, World! and ends.
 
-Hello.bs è nel dialetto BH: Module, rules, when e action, con indentazione significativa. Il compilatore BSC accetta questo dialetto e genera il simulatore Bluesim; non è una copia di un file BSV con altra estensione.
+Hello.bs is in the BH dialect: Module, rules, when and action, with significant indentation. The BSC compiler accepts this dialect and generates the Bluesim simulator; it is not a copy of a BSV file with other extension.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-B-Lang BSC 2026.07.1 per Ubuntu 24.04; GNU C++; Tcl 8.6.14 isolato
+B-Lang BSC 2026.07.1 for Ubuntu 24.04; GNU C++; Tcl 8.6.14 isolated
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 bsc -u -sim -g mkHello Hello.bs
@@ -23,24 +23,24 @@ bsc -sim -e mkHello -o hello
 ./hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esatto Hello, World! seguito da newline; simulazione exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra comandi effettivi, versioni/provenienza della toolchain, codici di uscita, stdout/stderr e SHA-256 dei sorgenti provati. I percorsi della macchina sono normalizzati.
+The `verification/toolchain.json` log records actual commands, versioni/provenienza of the toolchain, output codes, stdout/stderr and SHA-256 of the proven sources.
 
-## Fonti primarie
+## Primary sources
 
 - https://bluespec.dev/bh-reference/expressions-modules.html
 - https://bluespec.dev/bh-reference/expressions-rules.html
 - https://github.com/B-Lang-org/bsc/releases/tag/2026.07.1
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bs` | [Hello.bs](Hello.bs) verificato |
+| `.bs` | [Hello.bs](Hello.bs) verified |

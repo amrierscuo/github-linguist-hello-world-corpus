@@ -1,0 +1,197 @@
+{
+  "ordinal": 278,
+  "name": "HLSL",
+  "source_hashes": {
+    "examples/#278 HLSL/hello.hlsl": "3a654283d28892115dbc65eb72e12781a0eb76de362f1d188769a76959c5d3e1",
+    "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/hello.cginc": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241",
+    "examples/#278 HLSL/variants/ext-cginc-2e6367696e63/consumer.hlsl": "3fbe36ae92240ad104da6ddf1a6a2a09954e5120ee8ad6afed2c542b6c6a2a76",
+    "examples/#278 HLSL/variants/ext-fxh-2e667868/hello.fxh": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241",
+    "examples/#278 HLSL/variants/ext-fxh-2e667868/consumer.hlsl": "fc30f2e2bf7081473ee5b1c7d88a7ac5e422c9474e21e8d0f35722c50adb849c",
+    "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/hello.hlsli": "e2eac85f524ac23e2c51994b2127b620962ebeac91fc7b7ac99145f7b28af241",
+    "examples/#278 HLSL/variants/ext-hlsli-2e686c736c69/consumer.hlsl": "30be6050a86d8e16eafcaa5e7588f3d50f240f77b3ebf06be57b282c49960596",
+    "examples/#278 HLSL/variants/ext-fx-2e6678/hello.fx": "451bce360106272f15e8e68a24a45d28ba5d1887a69865810a529daff38e951f"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+  "steps": [
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "version"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "0.15.2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\fxc.exe",
+        "/T",
+        "cs_5_0",
+        "/E",
+        "main",
+        "/Fo",
+        "main.dxbc",
+        "hello.hlsl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Direct3D Shader Compiler 10.1\nCopyright (C) 2013 Microsoft. All rights reserved.\n\ncompilation object save succeeded; see ${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\main.dxbc\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\fxc.exe",
+        "/T",
+        "cs_5_0",
+        "/E",
+        "main",
+        "/Fo",
+        "cginc.dxbc",
+        "ext-cginc-2e6367696e63/consumer.hlsl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Direct3D Shader Compiler 10.1\nCopyright (C) 2013 Microsoft. All rights reserved.\n\ncompilation object save succeeded; see ${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\cginc.dxbc\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\fxc.exe",
+        "/T",
+        "cs_5_0",
+        "/E",
+        "main",
+        "/Fo",
+        "fxh.dxbc",
+        "ext-fxh-2e667868/consumer.hlsl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Direct3D Shader Compiler 10.1\nCopyright (C) 2013 Microsoft. All rights reserved.\n\ncompilation object save succeeded; see ${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\fxh.dxbc\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\fxc.exe",
+        "/T",
+        "cs_5_0",
+        "/E",
+        "main",
+        "/Fo",
+        "hlsli.dxbc",
+        "ext-hlsli-2e686c736c69/consumer.hlsl"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Direct3D Shader Compiler 10.1\nCopyright (C) 2013 Microsoft. All rights reserved.\n\ncompilation object save succeeded; see ${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\hlsli.dxbc\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\fxc.exe",
+        "/T",
+        "fx_4_0",
+        "/Fo",
+        "effect.fxo",
+        "ext-fx-2e6678/hello.fx"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Microsoft (R) Direct3D Shader Compiler 10.1\nCopyright (C) 2013 Microsoft. All rights reserved.\n\ncompilation object save succeeded; see ${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\effect.fxo\n",
+      "stderr": "warning X4717: Effects deprecated for D3DCompiler_47\n\n"
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "c++",
+        "-O2",
+        "-std=c++17",
+        "dispatch.cpp",
+        "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\um\\x64\\d3d11.lib",
+        "-o",
+        "dispatch.exe"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\dispatch.exe",
+        "main.dxbc"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\dispatch.exe",
+        "cginc.dxbc"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\dispatch.exe",
+        "fxh.dxbc"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "${WORKSPACE}\\work\\native_audit_20261104\\hlsl\\dispatch.exe",
+        "hlsli.dxbc"
+      ],
+      "cwd": "${WORKSPACE}\\work\\native_audit_20261104\\hlsl",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "description": "Compile original main and three unchanged include consumers with Microsoft FXC cs_5_0; dispatch one group for each compute shader in WARP; read and compare the structured buffer. Legacy effect compiled using FXC fx_4_0.",
+  "toolchain": "Microsoft FXC 10.1 (Windows SDK 10.0.26100.0) / Direct3D 11 WARP feature level 11_0 / Zig C++ 0.15.2",
+  "toolchain_sha256": {
+    "fxc.exe": "31fa10504b1551337de4d06ec2194143885a76a8b5a81177999e2faa34729183",
+    "d3d11.dll": "c9aee071495039e820cd0be0afdeb927b9ad32edc1d0dae460b6d64064b524f6",
+    "d3d10warp.dll": "8da8d6ab8d5ca463a421df65860c7b01d3a4ec18a29e3279cfe63c5ee164300e"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "extensions": {
+    ".hlsl": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".cginc": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".fxh": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".hlsli": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".fx": {
+      "syntax_verified": true,
+      "semantic_verified": false
+    }
+  },
+  "proof_limit": "Original main and three native include consumers run in D3D11 WARP software. Legacy .fx effects profile compiled; native effects technique rendering untested.",
+  "verified_utc": "2026-11-04T19:33:02.540029+00:00",
+  "recorded_test_source": "hlsl_result.json",
+  "path_normalization": "Workspace and user profile prefixes are normalized. Outputs, exit codes, and source hashes retain the recorded values."
+}

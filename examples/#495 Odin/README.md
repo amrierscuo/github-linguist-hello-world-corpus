@@ -1,37 +1,37 @@
 # #495 Odin
 
-Compilare ed eseguire Odin con fmt.println.
+Fill in and execute Odin with fmt.println.
 
 ## Toolchain
 
 <workspace>/work/tools_481_500/odin/odin-linux-amd64-nightly+2026-10-06/odin version dev-2026-10-nightly:84bc3fc; GCC linker
 
-## Procedura
+## Procedure
 
 odin check hello.odin -file; odin build hello.odin -file -build-mode:obj -out:build/hello.o; gcc build/hello-*.o -lm -lpthread -o build/hello; build/hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
 
 
-Verifica reale 2026-10-08T13:12:09.149453+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:12:09.149453+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://odin-lang.org/docs/overview/](https://odin-lang.org/docs/overview/)
 - [https://github.com/odin-lang/Odin/releases/tag/dev-2026-10](https://github.com/odin-lang/Odin/releases/tag/dev-2026-10)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.odin` | [hello.odin](hello.odin) verificato |
+| `.odin` | [hello.odin](hello.odin) verified |

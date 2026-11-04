@@ -1,37 +1,37 @@
 # #835 wisp
 
-Interpretare Wisp come sintassi indentata Scheme.
+Play Wisp as syntax indented Scheme.
 
 ## Toolchain
 
 guile (GNU Guile) 3.0.9; original Wisp1.0.13 reader
 
-## Procedura
+## Procedure
 
-guile --language=wisp hello.wisp dopo aver configurato il reader Wisp originale.
+guile --language=wisp hello.wisp after configuring the original Wisp reader.
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Due espressioni originali equivalgono a (display ...) e (newline); serve il reader Wisp autentico.
+Two original expressions equal to (display...) and (newline); it serves the authentic Wisp reader.
 
-Verifica reale 2026-10-08T13:50:50.760897+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:50:50.760897+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.draketo.de/software/wisp](https://www.draketo.de/software/wisp)
 - [https://www.draketo.de/proj/wisp/](https://www.draketo.de/proj/wisp/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.wisp` | [hello.wisp](hello.wisp) verificato |
+| `.wisp` | [hello.wisp](hello.wisp) verified |

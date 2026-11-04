@@ -1,41 +1,41 @@
 # #707 Talon
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Inserire Hello, World! quando Talon riconosce il comando hello world.
+Enter Hello, World! when Talon recognizes the hello world command.
 
-Il file dichiara un contesto globale e l’azione insert. L’esecuzione richiede Talon e una sessione di input controllata.
+The file declares a global context and the insert action. The execution requires Talon and a controlled input session.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Talon, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 Talon: caricare hello.talon nel profilo di prova e pronunciare hello world
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Testo inserito Hello, World!.
+Text inserted Hello, World!.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Talon non disponibile; riconoscimento e inserimento pendenti.
+Commitments: Talon unavailable; recognition and insertion pending.
 
-## Fonti primarie
+## Primary sources
 
 - https://talonvoice.com/docs/
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.talon` | [hello.talon](hello.talon) creato, verifiche pendenti |
+| `.talon` | [hello.talon](hello.talon) created; verification pending |

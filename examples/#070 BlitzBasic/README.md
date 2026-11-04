@@ -1,18 +1,18 @@
 # #070 BlitzBasic
 
-Voce canonica del `reference/languages.yml` del corpus. Il riferimento e il suo ordine restano invariati. Il sorgente è originale di questo esempio.
+Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
-## Obiettivo
+## Goal
 
 Eseguire Print in BlitzBasic e visualizzare Hello, World!.
 
-L’estensione .bb è condivisa con BitBake, ma questo file usa la sintassi BASIC di Blitz3D. Il sorgente non richiede grafica, media o risorse esterne.
+The .bb extension is shared with BitBake, but this file uses the syntax BASIC of Blitz3D. The source does not require graphics, media or external resources.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Blitz3D/BlitzBasic ufficiale per Windows; versione effettiva da registrare
+Blitz3D/BlitzBasic official for Windows; actual version to record
 
-Comandi dalla cartella dell’esempio, con la toolchain indicata disponibile nel PATH. Eseguire la build in una copia temporanea per mantenere fuori dal corpus i file generati.
+Command from the example folder, with the toolchain indicated available in the PATH. Run the build in a temporary copy to keep the generated files out of the corpus.
 
 ```text
 Aprire hello.bb nell’IDE Blitz3D e usare Build and Run (F5).
@@ -22,26 +22,26 @@ Aprire hello.bb nell’IDE Blitz3D e usare Build and Run (F5).
 Eseguire il programma dalla stessa operazione dell’IDE.
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-La finestra di output mostra Hello, World!; programma terminato con End.
+The output window shows Hello, World!; finished program with End.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Il sorgente è documentato; nessun parser o runtime nativo è stato eseguito per questa voce.
+The source is documented; no native parser or runtime has been performed for this item.
 
-Impedimenti: Compilatore/IDE Blitz3D non disponibile; build e output visuale restano da verificare nel software originale.
+Commitments: Compilatore/IDE Blitz3D unavailable; build and visual output remain to be verified in the original software.
 
-## Fonti primarie
+## Primary sources
 
 - https://blitzresearch.itch.io/blitz3d
 - https://github.com/blitz-research/blitz3d
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bb` | [hello.bb](hello.bb), [consumer.bb](variants/ext-decls-2e6465636c73/consumer.bb) creato, verifiche pendenti |
-| `.decls` | [hello.decls](variants/ext-decls-2e6465636c73/hello.decls) creato, verifiche pendenti |
+| `.bb` | [hello.bb](hello.bb), [consumer.bb](variants/ext-decls-2e6465636c73/consumer.bb) created; verification pending |
+| `.decls` | [hello.decls](variants/ext-decls-2e6465636c73/hello.decls) created; verification pending |

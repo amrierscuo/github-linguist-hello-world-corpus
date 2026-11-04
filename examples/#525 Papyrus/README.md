@@ -2,46 +2,46 @@
 
 Voce canonica `Papyrus`, tipo `programming`, language_id `277`.
 
-Emettere il saluto nel log Papyrus quando una quest originale riceve OnInit.
+Greetings in the Papyrus log when an original one receives OnInit.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine compiler/runtime — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine compiler/runtime, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede Creation Kit Papyrus compiler, script standard Quest/Debug e runtime Skyrim con logging attivo.
+Requires Creation Kit Papyrus compiler, standard script Quest/Debug and runtime Skyrim with active logging.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 PapyrusCompiler CorpusGreeting.psc -f=TESV_Papyrus_Flags.flg -i=/path/to/SkyrimScripts -o=build; collegare a una quest di prova e attivare OnInit nel gioco locale.
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Sorgente originale; compilatore e runtime host non disponibili. Evento e chiamata Debug.Trace sono eseguibili nel relativo host.
+Original source; compiler and runtime host not available. Event and call Debug.Trace are executable in its host.
 
-Requisiti residui:
+Remaining requirements:
 
 - Required PapyrusCompiler compiler/interpreter and matching host libraries are not configured.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://ck.uesp.net/wiki/Trace_-_Debug](https://ck.uesp.net/wiki/Trace_-_Debug)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.psc` | [CorpusGreeting.psc](CorpusGreeting.psc) creato, verifiche pendenti |
+| `.psc` | [CorpusGreeting.psc](CorpusGreeting.psc) created; verification pending |

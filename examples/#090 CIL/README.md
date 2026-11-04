@@ -1,48 +1,48 @@
 # #090 CIL
 
-Compilare una policy SELinux CIL minima che dichiara hello_world_t e autorizza read su greeting_file_t; tutti i simboli e il contesto devono risolversi.
+Fill out a minimum SELinux CIL policy that declares hello_world_t and authorizes read on greeting_file_t; all symbols and context must be resolved.
 
 ## Toolchain
 
 SELinux secilc 3.5-1; Ubuntu libsepol 3.5
 
-## Comandi e procedura
+## Commands and procedure
 
-Con secilc 3.5 su Linux, usando una cartella temporanea di build:
+With secilc 3.5 on Linux, using a temporary build folder:
 
 ```sh
 mkdir -p build
 secilc hello.cil -o build/hello.policy -f build/file_contexts
 ```
 
-Il sorgente è una policy CIL autonoma minima, con classe file, SID kernel,
-utente, ruolo, tipi e una sola regola allow. Il risultato binario dimostra la
-compilazione e risoluzione del modello; non è un artefatto da installare come
-policy effettiva della macchina. Il test non esegue semodule né setenforce.
+The source is a minimal standalone CIL policy, with a file class, kernel SID,
+user, role, types and one rule allow. The binary result demonstrates the
+compilation and resolution of the model; it is not an artifact to install as
+The test does not perform semodule or setenforce.
 
-## Risultato atteso
+## Expected result
 
-Compilazione nativa exit 0 e policy binaria prodotta; nessun simbolo o contesto non risolto.
+native exit 0 compilation and binary policy produced; no unresolved symbol or context.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Questa voce canonica usa SELinux Common Intermediate Language (.cil), non l'IL del CLR. Il saluto è rappresentato dal tipo hello_world_t: CIL non stampa testo. La prova produce una policy temporanea e non la carica sul sistema.
+This canonical entry uses SELinux Common Intermediate Language (.cil), not CLR IL. The hello_world_t type represents the greeting; CIL does not print text. The check produces a temporary policy and does not load it into the system.
 
-Verifica effettiva del 2026-10-08T11:33:17.269986+00:00 su WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente e dei checker, versioni, comandi, codici di uscita, stdout, stderr e limiti della prova.
+Actual verification of 2026-10-08T11:33:17.269986+00:00 on WSL Ubuntu 24.04.3 x86_64: [log](verification/result.json).
+The log includes hash SHA-256 of the source and the checkers, versions, commands, exit codes, stdout, stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/SELinuxProject/selinux/tree/master/secilc/docs](https://github.com/SELinuxProject/selinux/tree/master/secilc/docs)
 - [https://github.com/SELinuxProject/selinux-notebook/blob/main/src/cil_overview.md](https://github.com/SELinuxProject/selinux-notebook/blob/main/src/cil_overview.md)
 - [https://github.com/github-linguist/linguist/tree/main/samples/CIL](https://github.com/github-linguist/linguist/tree/main/samples/CIL)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cil` | [hello.cil](hello.cil) verificato |
+| `.cil` | [hello.cil](hello.cil) verified |

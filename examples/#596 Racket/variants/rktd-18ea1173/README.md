@@ -1,23 +1,27 @@
-# 0596 — Racket — `.rktd`
+# 0596: Racket: `.rktd`
 
-Datum Racket serializzabile: hash che conserva il saluto.
+## Recorded verification
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+**Syntax and behavior verified** on November 4, 2026. Load the literal hash through the Racket reader, run the loadable file via the original evaluator, and render Scribble to HTML; assert the greeting in each output. [Evidence](../../verification/native_20261104_596_variants_result.json).
+
+Datum Racket serializable: hash that keeps greeting.
+
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.rktd`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 racket -e '(displayln (hash-ref (call-with-input-file "hello.rktd" read) (quote greeting)))'
 ```
 
-Risultato atteso: Hello, World!.
+Expected result: Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://docs.racket-lang.org/reference/reader.html](https://docs.racket-lang.org/reference/reader.html)

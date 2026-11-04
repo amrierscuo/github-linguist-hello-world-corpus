@@ -2,47 +2,47 @@
 
 Voce canonica `HIP`, tipo `programming`, language_id `674379998`.
 
-Eseguire un kernel HIP che scrive tredici byte ASCII sulla GPU, copiarli sul lato host e confrontare il saluto.
+Run a HIP kernel that writes thirteen byte ASCII on GPU, copy them to the host side and compare the greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required genuine toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Required genuine toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
-Richiede HIP/ROCm o il backend NVIDIA compatibile, hipcc e GPU/runtime disponibili. Il codice controlla gli errori di allocazione, lancio, sincronizzazione, copia e rilascio.
+Requires HIP/ROCm or compatible NVIDIA backend, hipcc and GPU/runtime available. The code controls allocation, launch, synchronization, copy and release errors.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 hipcc hello.hip -o build/hello; ./build/hello
 ```
 
-Risultato atteso: Kernel eseguito; readback esatto Hello, World!; exit 0.
+Expected result: Kernel executed; exact readback Hello, World!; exit 0.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-Il saluto deriva dai byte scritti dal kernel. La compilazione come C++ normale ignorerebbe semantica/device HIP e non viene presentata come verifica. Hardware/toolchain assenti.
+The greeting comes from bytes written by the kernel. The compilation as normal C++ would ignore semantica/device HIP and is not presented as a verification. Hardware/toolchain absent.
 
-Requisiti residui:
+Remaining requirements:
 
 - HIP compiler, compatible GPU and HIP runtime are not available.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/hip_cpp_language_extensions.html](https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/hip_cpp_language_extensions.html)
 - [https://rocm.docs.amd.com/projects/HIP/en/latest/tutorial/examples.html](https://rocm.docs.amd.com/projects/HIP/en/latest/tutorial/examples.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hip` | [hello.hip](hello.hip) creato, verifiche pendenti |
+| `.hip` | [hello.hip](hello.hip) created; verification pending |

@@ -1,21 +1,21 @@
-# 0787 — XPages — `.xsp.metadata`
+# 0787: XPages: `.xsp.metadata`
 
-Suffisso canonico .xsp.metadata del linguaggio XPages.
+.xsp.metadata canon suffix of the XPages language.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Nessun comando eseguito; occorre il generatore/importatore descritto nelle fonti.
 ```
 
-Risultato atteso: un artefatto genuino esportato/generato dal relativo tool originale.
+Expected result: a genuine artifact esportato/generato from its original tool.
 
-Stato: bloccato; nessun artefatto simulato; sintassi e semantica non verificate.
+Status: blocked; no simulated artifact; syntax and behavior not verified.
 
-Designer XPages metadata con schema/versione proprietari non identificati: manca una struttura attendibile per questo suffisso composto e non viene rinominato il control .xsp.
+Designer XPages metadata with schema/versione unidentified owners: a reliable structure is missing for this compound suffix and the .xsp. control is not renamed
 
-Fonti primarie:
+Primary sources:
 
 - [https://help.hcl-software.com/dom_designer/10.0.1/basic/H_CUSTOM_CONTROLS_IN_ECLIPSE.html](https://help.hcl-software.com/dom_designer/10.0.1/basic/H_CUSTOM_CONTROLS_IN_ECLIPSE.html)

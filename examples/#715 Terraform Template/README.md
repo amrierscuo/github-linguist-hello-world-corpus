@@ -1,39 +1,39 @@
 # #715 Terraform Template
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Valutare un Terraform Template con audience = World.
+Evaluate a Terraform Template with audience = World.
 
-templatefile interpreta realmente il file .tftpl e la variabile. La prova non usa provider, infrastruttura, init, stato remoto o rete.
+templatefile really interprets .tftpl file and variable. The test does not use provider, infrastructure, init, remote status or network.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Terraform1.16.5 ufficiale
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 terraform console < evaluate.txt
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
-Valore stringa Hello, World! seguito da newline; console può usare notazione heredoc.
+String value Hello, World! followed by newline; console can use heredoc notation.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://developer.hashicorp.com/terraform/language/functions/templatefile
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.tftpl` | [hello.tftpl](hello.tftpl) verificato |
+| `.tftpl` | [hello.tftpl](hello.tftpl) verified |

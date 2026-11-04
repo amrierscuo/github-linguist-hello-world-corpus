@@ -1,18 +1,18 @@
 # #557 Proguard
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Applicare regole ProGuard a una fixture Java reale e conservare il saluto Hello, World!.
+Apply ProGuard rules to a real Java fixture and keep the Hello, World! greeting.
 
-hello.pro è il file principale di configurazione. Il driver compila Hello.java e un jar originale, invoca ProGuard con le regole keep e poi esegue il jar processato. L’ottimizzazione/offuscamento sono disabilitati per rendere esplicito il goal della regola keep; binari restano in work.
+hello.pro is the main configuration file. The driver compiles Hello.java and an original jar, invokes ProGuard with the keep rules and then executes the processed jar. The ottimizzazione/offuscamento are disabled to make explicit the goal of the keep rule; binaries remain in work.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 ProGuard7.10.0 ufficiale, JDK21 Microsoft
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 javac Hello.java; jar --create --file input.jar --main-class Hello Hello.class; java -jar proguard.jar @hello.pro
@@ -22,23 +22,23 @@ javac Hello.java; jar --create --file input.jar --main-class Hello Hello.class; 
 java -cp output.jar Hello
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Hello, World! seguito da newline; exit0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log verification/toolchain.json registra SHA-256 dei sorgenti, provenienza/versioni, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The verification/toolchain.json log records SHA-256 of the sources, provenance and versions, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.guardsquare.com/manual/configuration/usage
 - https://github.com/Guardsquare/proguard/releases/tag/v7.10.0
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pro` | [hello.pro](hello.pro) verificato |
+| `.pro` | [hello.pro](hello.pro) verified |

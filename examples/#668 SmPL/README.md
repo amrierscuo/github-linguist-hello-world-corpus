@@ -1,16 +1,16 @@
 # #668 SmPL
 
 La semantic patch originale `hello.cocci` sostituisce `puts("Goodbye")` con
-`puts("Hello, World!")` nella fixture C originale `input.c`.
+`puts("Hello, World!")` in the original C fixtures `input.c`.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Coccinelle spatch 1.1.1, pacchetto Ubuntu amd64 1.1.1.deb-5build1, compilato
 con OCaml 4.14.1; GCC 13.3.0. Ubuntu 24.04 tramite WSL2.
-Il pacchetto originale Coccinelle è estratto solo in una directory di lavoro;
-non sono necessarie installazioni globali o ulteriori dipendenze per questa patch.
+The original Coccinelle package is extracted only in a work directory;
+no global installations or additional dependencies are required for this patch.
 
-Dalla directory dell’esempio, con spatch disponibile e un output esterno:
+From the example directory, with available spatch and an external output:
 
 ```sh
 mkdir -p <output>/build
@@ -20,33 +20,33 @@ gcc -std=c11 -Wall -Wextra -pedantic <output>/build/hello.c -o <output>/build/he
 <output>/build/hello
 ```
 
-Per il pacchetto estratto, usare il binario `<prefisso>/usr/bin/spatch` e impostare
-`COCCINELLE_HOME=<prefisso>/usr/lib/coccinelle`, come nel log reale.
-Risultato: patch applicata, compilazione riuscita e `Hello, World!` seguito da LF,
-exit code 0. Il sorgente generato contiene la sostituzione e non contiene più
+For the extracted package, use the `<prefisso>/usr/bin/spatch` track and set
+`COCCINELLE_HOME=<prefisso>/usr/lib/coccinelle`, as in the real log.
+Result: patch applied, successful compilation and `Hello, World!` followed by LF,
+exit code 0. The source generated contains replacement and no longer contains
 la chiamata precedente.
 
-## Stato ed evidenza
+## Status and evidence
 
-Sintassi **verificata** dal parser SmPL originale; semantica **verificata** tramite
-trasformazione reale, compilazione GCC ed esecuzione del risultato.
-La prova riguarda solo la fixture originale, senza patchare sorgenti di progetto
-o del kernel. I byte di `hello.cocci` e `input.c` rimangono invariati.
+syntax **verified** from the original SmPL parser; behavior **verified** by means of
+real transformation, GCC compilation and execution of the result.
+The test only concerns the original fixtures, without patching project sources
+The bytes of `hello.cocci` and `input.c` remain unchanged.
 
 [Log nativo](verification/native.json): versioni, comandi, exit code, stdout/stderr,
-hash SHA-256 degli artefatti originali, del pacchetto tool, del C generato e del
+hash SHA-256 of original artifacts, package tool, C generated and
 binario eseguito. La nota `path_normalization` descrive le sostituzioni dei percorsi.
-Sorgenti e binari generati rimangono nella directory di lavoro esterna.
+Sources and generated tracks remain in the external work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [Coccinelle, progetto originale](https://coccinelle.gitlabpages.inria.fr/website/)
 - [Repository e documentazione originale](https://github.com/coccinelle/coccinelle)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cocci` | [hello.cocci](hello.cocci) verificato |
+| `.cocci` | [hello.cocci](hello.cocci) verified |

@@ -1,33 +1,33 @@
 # #199 F*
 
-Controllare i tipi di una funzione F* con effetto ML che stampa Hello, World!, poi estrarla ed eseguirla.
+Check the types of an F* function with ML effect that prints Hello, World!, then extract it and execute it.
 
-Tipo canonico `programming`, language_id `336943375`.
+Canonical type `programming`, language_id `336943375`.
 
-Toolchain prevista: F* e backend OCaml con libreria FStar.IO e Z3 compatibile.
+Toolchain provided: F* and backend OCaml with FStar.IO and Z3 compatible library.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 fstar.exe Hello.fst
 ```
 
-Risultato atteso: modulo accettato dal typechecker; chiamando main del modulo estratto, stdout `Hello, World!\n`.
+Expected result: module accepted by typechecker; calling main of the extract module, stdout `Hello, World!\n`.
 
-Il comando documentato verifica i tipi, ma non esegue main. Estrazione OCaml, linking del runtime e chiamata a main restano una prova separata; non sono sostituiti da una semplice ricerca della stringa nel file.
+The documented command verifies the types, but does not run main. OCaml extraction, runtime linking and main call remain a separate test; they are not replaced by a simple search of the string in the file.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. native toolchain not yet performed: syntax and behavior verifications remain pending.
 
-Fonti del linguaggio/formato e implementazioni originali:
+Sources of linguaggio/formato and original implementations:
 
 - [F* — guida alla toolchain](https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html)
 - [FStar.IO — interfaccia originale](https://github.com/FStarLang/FStar/blob/master/ulib/FStar.IO.fsti)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.fst` | [Hello.fst](Hello.fst), [Hello.fst](variants/ext-fsti-2e66737469/Hello.fst) creato, verifiche pendenti |
-| `.fsti` | [Hello.fsti](variants/ext-fsti-2e66737469/Hello.fsti) creato, verifiche pendenti |
+| `.fst` | [Hello.fst](Hello.fst), [Hello.fst](variants/ext-fsti-2e66737469/Hello.fst) created; verification pending |
+| `.fsti` | [Hello.fsti](variants/ext-fsti-2e66737469/Hello.fsti) created; verification pending |

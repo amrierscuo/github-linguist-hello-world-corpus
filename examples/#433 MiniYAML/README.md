@@ -1,33 +1,33 @@
 # #433 MiniYAML
 
-Leggere un albero MiniYaml OpenRA con nodo Greeting e proprietà Text.
+Read a MiniYaml OpenRA tree with Greeting knot and Text properties.
 
-Tipo canonico `data`, language_id `4896465`.
+Canonical type `data`, language_id `4896465`.
 
-Toolchain prevista: OpenRA MiniYaml parser originale.
+Suggested toolchain: OpenRA MiniYaml parser original.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Caricare hello.yaml con OpenRA.MiniYaml.FromFile e confrontare Greeting/Text.
 ```
 
-Risultato atteso: un nodo Greeting, figlio Text uguale a Hello, World!.
+Expected result: a Greeting node, son Text equal to Hello, World!.
 
-MiniYaml non è YAML standard: il tab per livello è previsto dal formato. Un parser YAML generico non viene contato come verifica.
+MiniYaml is not standard YAML: the tab per level is provided by the format. A generic YAML parser is not counted as verification.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain non ancora eseguita: sintassi e semantica restano pendenti.
+Initial state: created; syntax and behavioral verification pending. Toolchain not yet performed: syntax and behavior remain pending.
 
-Fonti:
+Sources:
 
 - [OpenRA — MiniYaml](https://www.openra.net/book/modding/miniyaml/index.html)
 - [OpenRA — parser originale](https://github.com/OpenRA/OpenRA/blob/bleed/OpenRA.Game/MiniYaml.cs)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.yaml` | [hello.yaml](hello.yaml) creato, verifiche pendenti |
-| `.yml` | [hello.yml](variants/yml-ea91093d/hello.yml) creato, verifiche pendenti |
+| `.yaml` | [hello.yaml](hello.yaml) created; verification pending |
+| `.yml` | [hello.yml](variants/yml-ea91093d/hello.yml) created; verification pending |

@@ -1,41 +1,41 @@
 # #705 TXL
 
-Voce e ordine canonici di reference/languages.yml. Sorgente e fixture originali.
+Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Trasformare una sequenza di token in una stringa di saluto TXL.
+Turn a token sequence into a TXL greeting string.
 
-Grammatica program come repeat token e funzione main di riscrittura; l’output stringlit rappresenta il saluto.
+Grammatic program as repeat token and main rewriting function; the stringlit output represents greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 TXL, versione da registrare
 
-Comandi dalla cartella dell’esempio; usare strumenti installati nel PATH e una copia temporanea per build/output. Le dipendenze della prova sono isolate in work.
+Commands from the example folder; use tools installed in PATH and a temporary copy for build/output. The test dependencies are isolated in work.
 
 ```text
 txl input.txt hello.txl
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 Token stringlit "Hello, World!" in output.
 
-Artefatto creato: sì. Sintassi verificata: no. Semantica verificata: no.
+Artifact created: yes. syntax verified: no. behavior verified: no.
 
-Sorgente documentato; nessun parser/compiler/runtime originale eseguito per questa voce.
+Documented source; no original parser/compiler/runtime performed for this item.
 
-Impedimenti: Interprete TXL non disponibile; parser e trasformazione pendenti.
+Commitments: Interpreting TXL unavailable; hanging parser and transformation.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.txl.ca/plow2014.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.txl` | [hello.txl](hello.txl) creato, verifiche pendenti |
+| `.txl` | [hello.txl](hello.txl) created; verification pending |

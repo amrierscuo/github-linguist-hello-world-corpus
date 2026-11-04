@@ -1,37 +1,37 @@
 # #309 ImHex Pattern Language
 
-Mappare 13 byte ASCII di Hello, World! con un pattern ImHex.
+Mapping 13 byte ASCII Hello, World! with an ImHex pattern.
 
 ## Toolchain
 
 ImHex / PatternLanguage ufficiale; versione da registrare
 
-## Comandi e procedura
+## Commands and procedure
 
-In ImHex aprire hello.txt come dati, caricare hello.hexpat e Evaluate; ispezionare greeting
+In ImHex open hello.txt as data, upload hello.hexpat and Evaluate; inspect greeting
 
-## Risultato atteso
+## Expected result
 
-Pattern char greeting[13] all’indirizzo 0 contiene esattamente Hello, World!.
+Pattern greeting[ 13 ] at 0 contains exactly Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-hello.txt è una fixture ASCII senza newline, lunga 13 byte. Il pattern originale descrive una vista sui dati e non stampa. Solo l’evaluator ufficiale potrà validare sintassi e mapping.
+hello.txt is a ASCII fixture without newline, long 13 byte. The original pattern describes a view of data and non-print. Only official evaluator can validate syntax and mapping.
 
-Requisiti residui:
-- ImHex/PatternLanguage evaluator non disponibile; nessun parser personalizzato viene contato come verifica.
+Remaining requirements:
+- ImHex/PatternLanguage assessor unavailable; no custom parser is counted as verification.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/WerWolv/PatternLanguage](https://github.com/WerWolv/PatternLanguage)
 - [https://imhex.werwolv.net/](https://imhex.werwolv.net/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hexpat` | [hello.hexpat](hello.hexpat) creato, verifiche pendenti |
+| `.hexpat` | [hello.hexpat](hello.hexpat) created; verification pending |

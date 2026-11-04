@@ -1,33 +1,33 @@
 # #412 MQL5
 
-Eseguire uno script MQL5 che scrive il saluto nel registro locale.
+Run a MQL5 script that writes greeting in the local registry.
 
-Tipo canonico `programming`, language_id `427`.
+Canonical type `programming`, language_id `427`.
 
-Toolchain prevista: MetaTrader 5 MetaEditor/compiler.
+Suggested toolchain: MetaTrader 5 MetaEditor/compiler.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 Compilare hello.mq5 in MetaEditor; eseguire lo script nel terminale di prova.
 ```
 
-Risultato atteso: compilazione senza errori; registro Experts contiene Hello, World!.
+Expected result: compilation without errors; Experts register contains Hello, World!.
 
-Esempio distinto da MQL4. Nessuna funzione di trading o comunicazione.
+Example distinct from MQL4. No trading or communication functions.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Toolchain MetaTrader 5 non disponibile.
+Initial state: created; syntax and behavioral verification pending. Toolchain MetaTrader 5 unavailable.
 
-Fonti:
+Sources:
 
 - [MetaQuotes — MQL5 OnStart](https://www.mql5.com/en/docs/event_handlers/onstart)
 - [MetaQuotes — MQL5 Print](https://www.mql5.com/en/docs/common/print)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.mq5` | [hello.mq5](hello.mq5), [driver.mq5](variants/mqh-c969556a/driver.mq5) creato, verifiche pendenti |
-| `.mqh` | [hello.mqh](variants/mqh-c969556a/hello.mqh) creato, verifiche pendenti |
+| `.mq5` | [hello.mq5](hello.mq5), [driver.mq5](variants/mqh-c969556a/driver.mq5) created; verification pending |
+| `.mqh` | [hello.mqh](variants/mqh-c969556a/hello.mqh) created; verification pending |

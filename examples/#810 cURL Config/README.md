@@ -1,28 +1,28 @@
 # #810 cURL Config
 
-Leggere .curlrc e consumare il saluto del header via HTTP loopback.
+Read .curlrc and consume header greeting via HTTP loopback.
 
 ## Toolchain
 
 curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP; CPython3.13.9
 
-## Procedura
+## Procedure
 
 python verify.py <curl-executable>
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La risposta del server deriva dal header ricevuto: prova effettiva delle opzioni di configurazione. Porta effimera loopback, nessuna richiesta esterna.
+The server response comes from the received header: actual proof of configuration options. Ephemeral loopback port, no external request.
 
-Verifica reale 2026-10-08T13:38:35.028326+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:38:35.028326+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://curl.se/docs/manpage.html#-K](https://curl.se/docs/manpage.html#-K)

@@ -1,23 +1,23 @@
-# 0796 — YAML — `.yaml-tmlanguage`
+# 0796: YAML: `.yaml-tmlanguage`
 
-Grammar highlighting YAML per TextMate converter con pattern del saluto.
+Grammar highlighting YAML for TextMate converter with greeting pattern.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.yaml-tmlanguage`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 native editor grammar loader: load hello.yaml-tmlanguage; highlight greeting sample
 ```
 
-Risultato atteso: pattern riconosciuto nel documento Hello, World!.
+Expected result: pattern recognized in Hello, World! document.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.sublimetext.com/docs/syntax.html](https://www.sublimetext.com/docs/syntax.html)

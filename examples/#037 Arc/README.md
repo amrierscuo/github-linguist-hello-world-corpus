@@ -6,53 +6,53 @@ Stampare esattamente Hello, World! seguito da newline con prn in Arc.
 
 - `hello.arc`
 
-## Toolchain e verifica
+## Toolchain and verification
 
 Anarki stable (Arc 3.2 con patch comunitarie), commit 8421605f4a75a0f7fc9a0bed83a87affa1137fab; Racket 8.18 [cs].
 
-Installare Racket 8.18 e ottenere Anarki al commit utilizzato:
+Install Racket 8.18 and get Anarki to the client used:
 
 ```sh
 git clone https://github.com/arclanguage/anarki.git anarki
 git -C anarki checkout 8421605f4a75a0f7fc9a0bed83a87affa1137fab
 ```
 
-Il commit appartiene al ramo `stable`, basato su Arc 3.2. Dalla cartella
-dell'esempio, adattare il percorso di Anarki e avviare il loader ufficiale:
+The commit belongs to the `stable` branch, based on Arc 3.2.
+of the example, adapt the path of Anarki and start the official loader:
 
 ```sh
 racket --version
 racket -f /percorso/anarki/as.scm hello.arc
 ```
 
-Su Windows il medesimo comando accetta un percorso quotato verso `as.scm`.
-La distribuzione minima di Racket deve avere anche i pacchetti richiesti da
-Anarki (ad esempio `mzscheme`, `compatibility-lib` e `net-lib`). Il loader
-esegue il file e termina; non apre il ciclo interattivo quando riceve un file.
+On Windows the same command accepts a quoted path towards `as.scm`.
+The minimum distribution of Racket must also have the packages required by
+Anarki (e.g. `mzscheme`, `compatibility-lib` and `net-lib` ).
+Runs the file and ends; it does not open the interactive cycle when receiving a file.
 
-## Risultato atteso
+## Expected result
 
 Exit 0; stdout esattamente Hello, World! seguito da newline; stderr vuoto.
 
-## Stato della prova
+## State of the test
 
-Sintassi verificata. Semantica verificata.
+syntax verified. behavior verified.
 
-Esecuzione reale con Anarki stable su Racket; carica e valuta la sorgente Arc, nessuna emulazione del linguaggio in Python.
+Real execution with Anarki stable on Racket; charge and evaluate the Arc source, no emulation of the Python language.
 
-Prova effettiva Windows x64 del 2026-10-08T11:01:56.068379+00:00: [log](verification/result.json).
-Il log include hash SHA-256 della sorgente, versioni osservate, comandi, codici di uscita, stdout e stderr.
+Actual Windows x64 test of 2026-10-08T11:01:56.068379+00:00: [log](verification/result.json).
+The log includes hash SHA-256 of the source, observed versions, commands, exit codes, stdout and stderr.
 
-## Fonti primarie
+## Primary sources
 
 - [https://arclanguage.github.io/](https://arclanguage.github.io/)
 - [https://github.com/arclanguage/anarki/tree/8421605f4a75a0f7fc9a0bed83a87affa1137fab](https://github.com/arclanguage/anarki/tree/8421605f4a75a0f7fc9a0bed83a87affa1137fab)
 - [https://github.com/arclanguage/anarki/blob/8421605f4a75a0f7fc9a0bed83a87affa1137fab/arc.arc](https://github.com/arclanguage/anarki/blob/8421605f4a75a0f7fc9a0bed83a87affa1137fab/arc.arc)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.arc` | [hello.arc](hello.arc) verificato |
+| `.arc` | [hello.arc](hello.arc) verified |

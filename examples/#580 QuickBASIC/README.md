@@ -1,37 +1,37 @@
 # #580 QuickBASIC
 
-Compilare ed eseguire QuickBASIC console.
+Fill in and run QuickBASIC console.
 
 ## Toolchain
 
 Microsoft QuickBASIC 4.5; DOS emulator
 
-## Procedura
+## Procedure
 
-Nel runtime DOS: BC HELLO.BAS; LINK HELLO.OBJ; HELLO.EXE (registrare opzioni/versioni effettive).
+In the DOS runtime: BC HELLO.BAS; LINK HELLO.OBJ; HELLO.EXE (record opzioni/versioni actual).
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Sorgente originale nel sottoinsieme PRINT/END; una prova con altro BASIC non viene contata come verifica QuickBASIC.
+Original source in the PRINT/END subset; a test with other BASIC is not counted as QuickBASIC verification.
 
-Requisiti residui:
-- Compiler Microsoft QuickBASIC e runtime DOS non disponibili.
+Remaining requirements:
+- Compiler Microsoft QuickBASIC and runtime DOS not available.
 
-## Fonti primarie
+## Primary sources
 
 - [https://archive.org/details/ms-quickbasic-4.5](https://archive.org/details/ms-quickbasic-4.5)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.bas` | [hello.bas](hello.bas), [main.bas](variants/bi-5b4ad4e3/main.bas) creato, verifiche pendenti |
-| `.bi` | [hello.bi](variants/bi-5b4ad4e3/hello.bi) creato, verifiche pendenti |
+| `.bas` | [hello.bas](hello.bas), [main.bas](variants/bi-5b4ad4e3/main.bas) created; verification pending |
+| `.bi` | [hello.bi](variants/bi-5b4ad4e3/hello.bi) created; verification pending |

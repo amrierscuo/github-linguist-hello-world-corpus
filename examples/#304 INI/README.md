@@ -1,52 +1,52 @@
 # #304 INI
 
-Leggere message in una sezione INI greeting e recuperare il saluto.
+Read message in a INI greeting section and recover greeting.
 
 ## Toolchain
 
 Python 3.13.9 stdlib configparser
 
-## Comandi e procedura
+## Commands and procedure
 
 python --version; python verify.py
 
-## Risultato atteso
+## Expected result
 
-Sezione greeting e valore message corretti; stdout Hello, World! più newline.
+Post greeting and correct message value; stdout Hello, World! plus newline.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-Il parser stdlib è reale e strict=True; l’interpolazione è disabilitata perché non serve al file. verify.py controlla anche il nome della sezione.
+The stdlib parser is real and strict=True; the interpolation is disabled because it does not serve the file. verify.py also controls the name of the section.
 
-Verifica effettiva del 2026-10-08T12:29:57.264907+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:29:57.264907+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://docs.python.org/3/library/configparser.html](https://docs.python.org/3/library/configparser.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.ini` | [hello.ini](hello.ini) verificato |
-| `.cfg` | [hello.cfg](variants/cfg-9b787153/hello.cfg) creato, verifiche pendenti |
-| `.cnf` | [hello.cnf](variants/cnf-a92aaf57/hello.cnf) creato, verifiche pendenti |
-| `.container` | [hello.container](variants/container-f1a82e30/hello.container) creato, verifiche pendenti |
-| `.dof` | [hello.dof](variants/dof-3be3c923/hello.dof) creato, verifiche pendenti |
-| `.frm` | artefatto da generare L’estensione include descriptor MySQL di vista legacy e file tabella binari. Senza esportazione genuina da una versione compatibile del server non si inventano metadati interni come timestamp, checksum o SQL-mode. |
-| `.lektorproject` | [hello.lektorproject](variants/lektorproject-74dbf384/hello.lektorproject) creato, verifiche pendenti |
-| `.mount` | [tmp-corpus-hello.mount](variants/mount-c89a52c2/tmp-corpus-hello.mount) creato, verifiche pendenti |
-| `.network` | [hello.network](variants/network-e59c1258/hello.network) creato, verifiche pendenti |
-| `.prefs` | [hello.prefs](variants/prefs-3d6ae810/hello.prefs) creato, verifiche pendenti |
-| `.pro` | [hello.pro](variants/pro-1d8a87ac/hello.pro) creato, verifiche pendenti |
-| `.properties` | [hello.properties](variants/properties-4792f091/hello.properties) creato, verifiche pendenti |
-| `.service` | [corpus-hello.service](variants/service-a434241b/corpus-hello.service) creato, verifiche pendenti |
-| `.socket` | [corpus-hello.socket](variants/socket-342b56ef/corpus-hello.socket) creato, verifiche pendenti |
-| `.target` | [corpus-hello.target](variants/target-459dc81b/corpus-hello.target) creato, verifiche pendenti |
-| `.timer` | [corpus-hello.timer](variants/timer-fc779652/corpus-hello.timer) creato, verifiche pendenti |
-| `.url` | [hello.url](variants/url-4058ac74/hello.url) creato, verifiche pendenti |
+| `.ini` | [hello.ini](hello.ini) verified |
+| `.cfg` | [hello.cfg](variants/cfg-9b787153/hello.cfg) created; verification pending |
+| `.cnf` | [hello.cnf](variants/cnf-a92aaf57/hello.cnf) created; verification pending |
+| `.container` | [hello.container](variants/container-f1a82e30/hello.container) created; verification pending |
+| `.dof` | [hello.dof](variants/dof-3be3c923/hello.dof) created; verification pending |
+| `.frm` | The extension includes legacy view descriptor MySQL and binary table file. No genuine export from a compatible server version does not invent internal metadata such as timestamp, checksum or SQL -mode. |
+| `.lektorproject` | [hello.lektorproject](variants/lektorproject-74dbf384/hello.lektorproject) created; verification pending |
+| `.mount` | [tmp-corpus-hello.mount](variants/mount-c89a52c2/tmp-corpus-hello.mount) created; verification pending |
+| `.network` | [hello.network](variants/network-e59c1258/hello.network) created; verification pending |
+| `.prefs` | [hello.prefs](variants/prefs-3d6ae810/hello.prefs) created; verification pending |
+| `.pro` | [hello.pro](variants/pro-1d8a87ac/hello.pro) created; verification pending |
+| `.properties` | [hello.properties](variants/properties-4792f091/hello.properties) created; verification pending |
+| `.service` | [corpus-hello.service](variants/service-a434241b/corpus-hello.service) created; verification pending |
+| `.socket` | [corpus-hello.socket](variants/socket-342b56ef/corpus-hello.socket) created; verification pending |
+| `.target` | [corpus-hello.target](variants/target-459dc81b/corpus-hello.target) created; verification pending |
+| `.timer` | [corpus-hello.timer](variants/timer-fc779652/corpus-hello.timer) created; verification pending |
+| `.url` | [hello.url](variants/url-4058ac74/hello.url) created; verification pending |

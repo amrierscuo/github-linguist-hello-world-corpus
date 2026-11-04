@@ -1,37 +1,37 @@
 # #497 Opa
 
-Servire una pagina Opa che contiene il saluto.
+Serve an Opa page containing greeting.
 
 ## Toolchain
 
-Opa web compiler, sintassi JS-like
+Opa web compiler, syntax JS -like
 
-## Procedura
+## Procedure
 
-opa --parser js-like hello.opa --; leggere la pagina HTTP locale della porta effettiva
+opa --parser js-like hello.opa --; read the local HTTP page of the actual port
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-Server.start e sintassi page:function sono conformi al campione canonico; verificare l’opzione del compilatore scelto prima del test.
+Server.start and syntax page:function are conform to the canonical sample; check the option of the compiler chosen before the test.
 
-Requisiti residui:
-- Compilatore Opa web storico e runtime Node richiesto non predisposti.
+Remaining requirements:
+- Filler Opa web historical and runtime Node required not predisposed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/MLstate/opalang](https://github.com/MLstate/opalang)
 - [https://github.com/github-linguist/linguist/blob/main/samples/Opa/hello_syntax2.opa](https://github.com/github-linguist/linguist/blob/main/samples/Opa/hello_syntax2.opa)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.opa` | [hello.opa](hello.opa) creato, verifiche pendenti |
+| `.opa` | [hello.opa](hello.opa) created; verification pending |

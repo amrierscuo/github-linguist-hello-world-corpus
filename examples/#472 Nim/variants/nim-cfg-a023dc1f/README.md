@@ -1,31 +1,31 @@
-# 0472 — Nim: `.nim.cfg`
+# 0472: Nim: `.nim.cfg`
 
-Ruolo: Opzioni del compilatore Nim, non un programma Nim.
+Role: Nim compiler options, not a Nim program.
 
-Provenienza: Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata.
+Origin: Original source written for the specific role of the variant, using the mentioned documentation.
 
-Toolchain richiesta: Nim1.6.14 Ubuntu, backend C/GCC. La versione specifica della nuova variante non è attestata da un eseguibile in questo lotto.
+Required toolchain: Nim1.6.14 Ubuntu, backend C/GCC. The exact toolchain version for this variant was not verified in this batch.
 
-Procedura di verifica proposta, non eseguita, dalla directory della variante:
+Proposed verification procedure, not performed, by the directory of the variant:
 
 ```text
 nim c --out:build/hello hello.nim; ./build/hello (Nim carica hello.nim.cfg associato)
 ```
 
-Risultato atteso: Hello, World!
+Expected result: Hello, World!
 
-Stato individuale: artefatto creato `true`, sintassi verificata `false`, semantica verificata `false`. La presenza di dati/configurazioni del saluto non implica esecuzione.
+Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
-Impedimenti:
+Blockers:
 
-- La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate.
+- The variant has not been subject to a new test of the original parser/compiler/runtime; the verifications of the main source are not inherited.
 
-SHA-256 dei file della variante:
+SHA-256 of variant files:
 
 - `hello.nim`: `076562c4b011aa8f2efd2cbc2dc88d3afb525f4e5666e8e97ccbe7c94315c002`
 - `hello.nim.cfg`: `06851203890f5cddb3ccafc38ddbe8b28c3bd825ec38fb5b8ce5725667ea0619`
 
-Fonti primarie:
+Primary sources:
 
 - https://nim-lang.org/docs/nimc.html#compiler-usage-configuration-files
 - https://nim-lang.org/docs/tut1.html

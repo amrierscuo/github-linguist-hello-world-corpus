@@ -1,40 +1,40 @@
 # #286 HTTP
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Analizzare una risposta HTTP/1.1 reale e trasferire Hello, World! tramite una connessione loopback.
+Analyze a real HTTP/1.1 response and transfer Hello, World! via a loopback connection.
 
-hello.http è una risposta wire con header CRLF, linea vuota e 13 byte di corpo. Una fixture la invia intatta via socket su 127.0.0.1; h11 analizza richiesta e risposta e il controllo confronta il body. Il listener usa una porta effimera, il socket viene chiuso e il thread viene atteso.
+hello.http is a wire response with header CRLF, blank line and 13 byte body. A fixture sends it intact via socket on 127.0.0.1; h11 analyzes request and response and controls compares the body. The listener uses an ephemeral port, the socket is closed and the thread is expected.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 h11 0.16.0 e CPython3.13.9
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 python verify.py
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 h11 accetta HTTP200, Content-Length13 e body Hello, World!; fixture conclusa con CLEANUP.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://www.rfc-editor.org/rfc/rfc9112.html
 - https://h11.readthedocs.io/en/stable/basic-usage.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.http` | [hello.http](hello.http) verificato |
+| `.http` | [hello.http](hello.http) verified |

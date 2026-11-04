@@ -1,36 +1,36 @@
 # #489 ObjDump
 
-Produrre una lista ObjDump autentica del programma C del saluto.
+Produce an authentic ObjDump list of the greeting C program.
 
 ## Toolchain
 
 GNU objdump (GNU Binutils for Ubuntu) 2.42; gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
 
-## Procedura
+## Procedure
 
 gcc hello.c -o build/hello; (cd build && objdump -d -s hello > hello.objdump); build/hello; objcopy --dump-section .rodata=build/rodata.bin build/hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-hello.objdump è output testuale reale; l’ELF e la sezione binaria restano in work. Il saluto viene controllato nella sezione .rodata e nell’esecuzione del programma.
+hello.objdump is real text output; ELF and binary section remain in work. Greeting is controlled in .rodata section and in program execution.
 
-Verifica reale 2026-10-08T13:10:44.904153+00:00: [log](verification/result.json).
-Il log include SHA-256 delle sorgenti/checker, versioni, comandi, codici di uscita, stdout/stderr e ambito della verifica.
+Real check 2026-10-08T13:10:44.904153+00:00: [log](verification/result.json).
+The log includes SHA-256 of sorgenti/checker, versions, commands, exit codes, stdout/stderr and verification field.
 
-## Fonti primarie
+## Primary sources
 
 - [https://sourceware.org/binutils/docs/binutils/objdump.html](https://sourceware.org/binutils/docs/binutils/objdump.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.objdump` | [hello.objdump](hello.objdump) verificato |
+| `.objdump` | [hello.objdump](hello.objdump) verified |

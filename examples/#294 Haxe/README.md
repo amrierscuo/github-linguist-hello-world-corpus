@@ -1,41 +1,41 @@
 # #294 Haxe
 
-Voce e ordine canonici del `reference/languages.yml` del corpus. Sorgenti e fixture sono originali.
+Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
-## Obiettivo
+## Goal
 
-Interpretare un programma Haxe che usa Sys.println per Hello, World!.
+Interpret a Haxe program that uses Sys.println for Hello, World!.
 
-La classe Hello espone static main():Void, costruisce una stringa ed usa l’IO Sys. La verifica passa tramite parser, typechecker ed eval interpreter nativi Haxe, senza transpiler sostitutivo.
+Hello class exposes static main():Void, builds a string and uses IO Sys. Verification passes through parser, typechecker and eval interpreter native Haxe, without transpiler replacement.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
 Haxe4.3.3, pacchetto Ubuntu4.3.3-1build2
 
-Comandi nella cartella dell’esempio con gli strumenti disponibili nel PATH. Usare una copia temporanea per build e output; le dipendenze della prova sono isolate in work.
+Commands in the example folder with the tools available in PATH. Use a temporary copy for build and output; test dependencies are isolated in work.
 
 ```text
 haxe -cp . -main Hello --interp
 ```
 
-## Risultato atteso e stato
+## Expected result and status
 
 stdout esattamente Hello, World! seguito da newline; exit 0.
 
-Artefatto creato: sì. Sintassi verificata: sì. Semantica verificata: sì.
+Artifact created: yes. syntax verified: yes. behavior verified: yes.
 
-Il log `verification/toolchain.json` registra provenienza/versioni, SHA-256 dei sorgenti, comandi effettivi, exit/stdout/stderr e ambito della prova.
+The `verification/toolchain.json` log records provenance and versions, SHA-256 of sources, actual commands, exit/stdout/stderr and test scope.
 
-## Fonti primarie
+## Primary sources
 
 - https://haxe.org/manual/introduction-hello-world.html
 - https://api.haxe.org/Sys.html
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.hx` | [Hello.hx](Hello.hx), [Main.hx](variants/hxsl-d037293c/Main.hx) creato, verifiche pendenti |
-| `.hxsl` | [GreetingShader.hxsl](variants/hxsl-d037293c/GreetingShader.hxsl) creato, verifiche pendenti |
+| `.hx` | [Hello.hx](Hello.hx), [Main.hx](variants/hxsl-d037293c/Main.hx) created; verification pending |
+| `.hxsl` | [GreetingShader.hxsl](variants/hxsl-d037293c/GreetingShader.hxsl) created; verification pending |

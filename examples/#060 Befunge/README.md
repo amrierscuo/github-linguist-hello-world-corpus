@@ -2,48 +2,48 @@
 
 Voce canonica: `Befunge`, tipo `programming`, `language_id: 30`.
 
-Emettere i tredici caratteri del saluto dalla pila Befunge-93, aggiungere LF e fermarsi con @.
+Enter the thirteen characters of greeting from the Befunge- 93 pile, add LF and stop with @.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Chris Pressey reference Befunge-93 interpreter — 2.25. Ambiente della prova: **Ubuntu 24.04 WSL2/Linux x86_64**.
+Chris Pressey reference Befunge- 93 interpreter, 2.25. Test environment: **Ubuntu 24.04 WSL2/Linux x86_64**.
 
-Richiede il reference interpreter Befunge-93 v2.25 di Chris Pressey. Compilazione invariata dell’upstream: gcc -O2 -o bef bef.c. Eseguire dalla directory dell’esempio con un nome relativo corto; l’interprete storico ha buffer di percorso limitati.
+Requires the reference interpreter Befunge- 93 v2.25 by Chris Pressey. Unvaried compilation of the upstream: gcc -O2 -o bef bef.c. Run from the directory of the example with a relative short name; the historical interpreter has limited path buffers.
 
-Comando/procedura dalla directory dell’esempio:
+Comando/procedura from the example directory:
 
 ```text
 bef -q hello.befunge
 ```
 
-Risultato atteso: Exit 0; stdout esattamente Hello, World! seguito da LF.
+Exit 0; stdout exactly Hello, World! followed by LF.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-String mode inserisce i caratteri in ordine inverso; tredici virgole estraggono il saluto. 25* produce ASCII 10, la virgola lo scrive e @ termina. -q disabilita il banner dell’interprete. Sono stati usati il parser/runtime esistenti, non un interprete inventato per il corpus.
+String mode pushes characters in reverse order; thirteen commas pop and print the greeting. 25* produces ASCII 10, the comma writes it, and @ terminates execution. -q disables the interpreter banner. The check used the existing parser and runtime, without a custom interpreter for the corpus.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, exit code, stdout/stderr,
-toolchain e SHA-256 degli artefatti. `path_normalization` descrive le sostituzioni dei
-percorsi della macchina; i byte dei sorgenti restano quelli identificati dai checksum.
-Se il log registra solo disponibilità degli strumenti, nessun parsing o runtime è attestato.
-Gli strumenti, le dipendenze e i prodotti di verifica restano nella directory di lavoro.
+toolchain and SHA-256 of artifacts. `path_normalization` describes the replacements of artifacts.
+machine paths; source bytes remain those identified by checksums.
+If the log only records the availability of the tools, no parsing or runtime is attested.
+Tools, dependencies and verification products remain in the work directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://github.com/catseye/Befunge-93](https://github.com/catseye/Befunge-93)
 - [https://github.com/catseye/Befunge-93/blob/master/doc/Befunge-93.markdown](https://github.com/catseye/Befunge-93/blob/master/doc/Befunge-93.markdown)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.befunge` | [hello.befunge](hello.befunge) verificato |
-| `.bf` | [hello.bf](variants/ext-bf-2e6266/hello.bf) creato, verifiche pendenti |
+| `.befunge` | [hello.befunge](hello.befunge) verified |
+| `.bf` | [hello.bf](variants/ext-bf-2e6266/hello.bf) created; verification pending |

@@ -2,47 +2,47 @@
 
 Voce canonica `Factor`, tipo `programming`, language_id `108`.
 
-Concatenare due stringhe sullo stack Factor e stampare il saluto.
+Concatenate two strings on the Factor stack and print the greeting.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Required authentic toolchain not available/configured — non disponibile / non verificata. Ambiente della prova: **Windows x64**.
+Required authentic toolchain not available/configured, unavailable / not verified. Test environment: **Windows x64**.
 
-Richiede il VM del linguaggio Factor e la sua immagine/librerie. Usare l’eseguibile della distribuzione factorcode.org, evitando l’omonimo comando GNU di fattorizzazione intera.
+It requires the VM of the Factor language and its immagine/librerie. Use the factorcode.org distribution executable, avoiding the homonymous GNU command of full factorization.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 factor hello.factor
 ```
 
-Risultato atteso: Una riga Hello, World!.
+Expected result: A Hello, World! line.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **in attesa**; semantica **in attesa**.
+Artifact **created**; syntax verification **pending**; behavioral verification **pending**.
 
-USING importa io e sequences; append concatena le stringhe prima di print. Il VM è assente.
+USING imports me and sequences; hangs strings before print. VM is absent.
 
-Requisiti residui:
+Remaining requirements:
 
 - Factor language VM/image is unavailable; GNU coreutils factor would not verify Factor language.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
 sostituzioni dei percorsi locali; `<corpus>` identifica la collocazione finale dei
-sorgenti verificati in staging. I soli probe di disponibilità non attestano parsing
-o esecuzione. Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+sources verified in staging. The only available probe do not attest parsing
+or execution. Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://factorcode.org/](https://factorcode.org/)
 - [https://github.com/factor/factor](https://github.com/factor/factor)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.factor` | [hello.factor](hello.factor) creato, verifiche pendenti |
+| `.factor` | [hello.factor](hello.factor) created; verification pending |

@@ -2,30 +2,30 @@
 
 Renderizzare Velocity Template Language con parametro target.
 
-Tipo canonico `markup`, language_id `292377326`.
+Canonical type `markup`, language_id `292377326`.
 
-Toolchain prevista: JDK e Apache Velocity engine.
+Suggested toolchain: JDK and Apache Velocity engine.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 java -cp "$VELOCITY_CLASSPATH" Verify.java
 ```
 
-Risultato atteso: output esatto Hello, World! e newline.
+Expected result: exact output Hello, World! and newline.
 
-Il motore Apache interpreta il riferimento $target.
+The Apache engine interprets the $target reference.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: JDK21 + Apache Velocity2.4.1/CommonsLang3.17/SLF4J2.0.16. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: JDK21 + Apache Velocity2.4.1/CommonsLang3.17/SLF4J2.0.16. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Apache Velocity VTL](https://velocity.apache.org/engine/2.4.1/user-guide.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vtl` | [hello.vtl](hello.vtl) verificato |
+| `.vtl` | [hello.vtl](hello.vtl) verified |

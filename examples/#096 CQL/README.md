@@ -1,48 +1,48 @@
 # #096 CQL
 
-In Cassandra CQL 3 creare una tabella greetings, inserire Hello, World! nella riga id=1 e leggerlo con SELECT.
+In Cassandra CQL 3 create a greeting table, insert Hello, World! into the id= 1 line and read it with SELECT.
 
 ## Toolchain
 
-Apache Cassandra con CQL 3 e cqlsh; usare un'istanza di sviluppo dedicata. Versioni non osservate, da registrare alla verifica.
+Apache Cassandra with CQL 3 and cqlsh; use a dedicated development instance. Versions not observed, to be recorded at the verification.
 
-## Comandi e procedura
+## Commands and procedure
 
-Usare un'istanza Cassandra di sviluppo dedicata su localhost, poi:
+Use a dedicated Cassandra instance on localhost, then:
 
 ```sh
 cqlsh --version
 cqlsh 127.0.0.1 9042 -f hello.cql
 ```
 
-Il file crea keyspace e tabella se assenti, scrive la riga id=1 e la legge.
-SimpleStrategy/replication_factor=1 descrive il caso di un singolo nodo
-locale. Registrare output SELECT, versione Cassandra e versione cqlsh per
-chiudere la verifica. Nessuna esecuzione è stata svolta in questa tranche.
+The file creates keyspace and table if absent, writes the line id= 1 and the law.
+SimpleStrategy/replication_factor= 1 describes the case of a single node
+local. Record SELECT output, Cassandra version and cqlsh version for
+close the verification. No execution was carried out in this tranche.
 
-## Risultato atteso
+## Expected result
 
-DDL e INSERT senza errori; SELECT restituisce una riga con message=Hello, World!.
+DDL and INSERT without errors; SELECT returns a line with message= Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
-La voce Linguist è Cassandra Query Language: i campioni canonici contengono create_keyspace/alter_table. Il programma usa un keyspace dedicato hello_world_corpus; non è Clinical Quality Language. Nessun server Cassandra è stato avviato o contattato durante questa tranche.
+Linguist is Cassandra Query Language: canonical samples contain create_keyspace/alter_table. The program uses a dedicated keyspace hello_world_corpus; it is not Clinical Quality Language. No Cassandra server has been started or contacted during this tranche.
 
-Requisiti residui:
-- Istanza Cassandra e cqlsh non disponibili: DDL, INSERT e SELECT non eseguiti.
+Remaining requirements:
+- Casendra and cqlsh not available: DDL, INSERT and SELECT not executed.
 
-## Fonti primarie
+## Primary sources
 
 - [https://cassandra.apache.org/doc/latest/cassandra/developing/cql/index.html](https://cassandra.apache.org/doc/latest/cassandra/developing/cql/index.html)
 - [https://cassandra.apache.org/doc/latest/cassandra/developing/cql/ddl.html](https://cassandra.apache.org/doc/latest/cassandra/developing/cql/ddl.html)
 - [https://github.com/github-linguist/linguist/tree/main/samples/CQL](https://github.com/github-linguist/linguist/tree/main/samples/CQL)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.cql` | [hello.cql](hello.cql) creato, verifiche pendenti |
+| `.cql` | [hello.cql](hello.cql) created; verification pending |

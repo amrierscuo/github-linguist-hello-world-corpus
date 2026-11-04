@@ -1,12 +1,12 @@
 # #745 Vala
 
-Compilare Vala in C e stampare il saluto.
+Fill out Vala in C and print your greeting.
 
-Tipo canonico `programming`, language_id `386`.
+Canonical type `programming`, language_id `386`.
 
-Toolchain prevista: Vala 0.56.16; GLib2.80.0; GCC13.3.0; WSL Ubuntu24.04.
+Toolchain provided: Vala 0.56.16; GLib2.80.0; GCC13.3.0; WSL Ubuntu24.04.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 mkdir -p build
@@ -14,23 +14,23 @@ valac --directory=build -o hello hello.vala
 ./build/hello
 ```
 
-Risultato atteso: stdout Hello, World! e newline.
+Expected result: stdout Hello, World! and newline.
 
-Il controllo deve includere valac; compilare un C scritto a mano non verifica Vala.
+The check must include valac; fill out a handwritten C does not verify Vala.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Vala 0.56.16; GLib2.80.0; GCC13.3.0; WSL Ubuntu24.04. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Vala 0.56.16; GLib2.80.0; GCC13.3.0; WSL Ubuntu24.04. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Vala tutorial](https://docs.vala.dev/tutorials/programming-language/main.html)
 
-La verifica reale usa pacchetti Ubuntu originali estratti sotto `work/tools_741_760/ubuntu` e directory di build separate sotto `work/tools_741_760`; gli artefatti compilati non fanno parte del corpus. I comandi e gli environment effettivi sono nel log.
+The real verification uses original Ubuntu packages extracted under `work/tools_741_760/ubuntu` and build directories separated under `work/tools_741_760`; compiled artifacts are not part of the corpus.
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.vala` | [hello.vala](hello.vala), [main.vala](variants/vapi-45f688d8/main.vala) creato, verifiche pendenti |
-| `.vapi` | [hello.vapi](variants/vapi-45f688d8/hello.vapi) creato, verifiche pendenti |
+| `.vala` | [hello.vala](hello.vala), [main.vala](variants/vapi-45f688d8/main.vala) created; verification pending |
+| `.vapi` | [hello.vapi](variants/vapi-45f688d8/hello.vapi) created; verification pending |

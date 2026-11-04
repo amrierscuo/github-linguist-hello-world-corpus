@@ -1,37 +1,37 @@
 # #666 Slim
 
-Renderizzare un template Slim con un paragrafo di saluto.
+Render a Slim template with a greeting paragraph.
 
-Tipo canonico `markup`, language_id `350`.
+Canonical type `markup`, language_id `350`.
 
-Toolchain prevista: Ruby3.2.3 + Slim5.2.2 / Temple0.10.7 / Tilt2.9.0.
+Suggested toolchain: Ruby3.2.3 + Slim5.2.2 / Temple0.10.7 / Tilt2.9.0.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 ruby verify.rb
 ```
 
-Risultato atteso: HTML esatto <p>Hello, World!</p>.
+Expected result: HTML exact <p> Hello, World! </p>
 
-Il testo viene renderizzato dal motore originale.
+The text is rendered by the original engine.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: Ruby 3.2.3 + Slim 5.2.2 + Temple 0.10.7 + Tilt 2.9.0. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: Ruby 3.2.3 + Slim 5.2.2 + Temple 0.10.7 + Tilt 2.9.0. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Slim](https://github.com/slim-template/slim)
 
-Preparazione delle dipendenze in una cartella dedicata:
+Install the dependencies in a separate directory:
 
 ```sh
 gem install slim -v 5.2.2
 ```
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.slim` | [hello.slim](hello.slim) verificato |
+| `.slim` | [hello.slim](hello.slim) verified |

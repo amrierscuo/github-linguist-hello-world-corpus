@@ -1,24 +1,24 @@
-# 0775 — Wolfram Language — `.wlt`
+# 0775: Wolfram Language: `.wlt`
 
-File Wolfram di unit test, non script Print.
+Wolfram file of unit test, not Print script.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.wlt`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Wolfram Language: TestReport["hello.wlt"]
 ```
 
-Risultato atteso: un VerificationTest riuscito.
+Expected result: a successful VerificationTest.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://reference.wolfram.com/language/ref/VerificationTest.html](https://reference.wolfram.com/language/ref/VerificationTest.html)
 - [https://reference.wolfram.com/language/ref/TestReport.html](https://reference.wolfram.com/language/ref/TestReport.html)

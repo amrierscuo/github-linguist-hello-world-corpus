@@ -1,34 +1,39 @@
 # #333 Java
 
-Compilare ed eseguire una classe Java con metodo main.
+Fill and run a Java class with main method.
 
-Tipo canonico `programming`, language_id `181`.
+Canonical type `programming`, language_id `181`.
 
-Toolchain prevista: Microsoft OpenJDK 21.
+Suggested toolchain: Microsoft OpenJDK 21.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 javac -d build Hello.java
 java -cp build Hello
 ```
 
-Risultato atteso: stdout Hello, World! e LF, uscita 0.
+Expected result: stdout Hello, World! and LF, 0. output
 
-Il controllo esegue il bytecode compilato con javac.
+The control executes the bytecode compiled with javac.
 
-Stato registrato: sintassi verificata; semantica verificata. Toolchain: OpenJDK 21.0.12. [Log](verification/result.json). 
+Recorded status: syntax verified; behavior verified. Toolchain: OpenJDK 21.0.12. [Log](verification/result.json).
 
-Fonti:
+Sources:
 
 - [Oracle — Java main e primo programma](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.java` | [Hello.java](Hello.java) verificato |
-| `.jav` | [hello.jav](variants/jav-220a15e8/hello.jav) creato, verifiche pendenti |
-| `.jsh` | [hello.jsh](variants/jsh-e38b41dc/hello.jsh) creato, verifiche pendenti |
+| `.java` | [Hello.java](Hello.java) verified |
+| `.jav` | [hello.jav](variants/jav-220a15e8/hello.jav) syntax and behavior verified |
+| `.jsh` | [hello.jsh](variants/jsh-e38b41dc/hello.jsh) syntax and behavior verified |
+
+## Additional extension verification
+
+- `.jav`: verified on November 4, 2026. [Evidence](verification/native_20261104_333_variants_result.json).
+- `.jsh`: verified on November 4, 2026. [Evidence](verification/native_20261104_333_variants_result.json).

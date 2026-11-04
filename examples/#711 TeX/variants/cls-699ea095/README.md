@@ -1,24 +1,24 @@
-# 0711 — TeX — `.cls`
+# 0711: TeX: `.cls`
 
 Classe LaTeX originale basata su article.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.cls`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 pdflatex -output-directory=work main.tex
 ```
 
-Risultato atteso: documento con Hello, World!.
+Expected result: document with Hello, World!.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.latex-project.org/help/documentation/](https://www.latex-project.org/help/documentation/)
 - [https://ctan.org/pkg/biblatex](https://ctan.org/pkg/biblatex)

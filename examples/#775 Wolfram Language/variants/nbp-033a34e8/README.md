@@ -1,21 +1,21 @@
-# 0775 — Wolfram Language — `.nbp`
+# 0775: Wolfram Language: `.nbp`
 
-Suffisso canonico .nbp del linguaggio Wolfram Language.
+Canon suffix .nbp of the language Wolfram Language.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Nessun comando eseguito; occorre il generatore/importatore descritto nelle fonti.
 ```
 
-Risultato atteso: un artefatto genuino esportato/generato dal relativo tool originale.
+Expected result: a genuine artifact esportato/generato from its original tool.
 
-Stato: bloccato; nessun artefatto simulato; sintassi e semantica non verificate.
+Status: blocked; no simulated artifact; syntax and behavior not verified.
 
-Formato Wolfram Player/proprietario: richiede un export/conversione reale del frontend compatibile. Non viene rinominato il codice .wl come documento serializzato.
+Wolfram Player/proprietario format: requires a real export/conversione of the compatible frontend. The .wl code is not renamed as a serialized document.
 
-Fonti primarie:
+Primary sources:
 
 - [https://reference.wolfram.com/language/guide/ListingOfSupportedExternalFormats.html](https://reference.wolfram.com/language/guide/ListingOfSupportedExternalFormats.html)

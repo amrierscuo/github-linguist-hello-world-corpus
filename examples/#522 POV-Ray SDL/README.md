@@ -2,47 +2,47 @@
 
 Voce canonica `POV-Ray SDL`, tipo `programming`, language_id `275`.
 
-Valutare una stringa SDL e renderizzare una piccola scena POV-Ray originale.
+Evaluate a SDL string and make a small POV -Ray original scene.
 
-## Toolchain e riproduzione
+## Toolchain and reproduction
 
-Original POV-Ray SDL parser and renderer — POV-Ray 3.7.0.10 Ubuntu 3build4. Ambiente della prova: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
+Original POV -Ray SDL parser and maker, POV -Ray 3.7.0.10 Ubuntu 3build4. Test environment: **Windows x64, Ubuntu 24.04 WSL2 for Linux tools**.
 
 POV-Ray 3.7.0.10 ufficiale, librerie SDL/runtime locali.
 
-Comando/procedura dalla directory dell’esempio, salvo indicazioni esplicite:
+Comando/procedura from the directory of the example, unless explicit indications:
 
 ```text
 povray +Ihello.pov +Obuild/hello.png +W16 +H16 -D +FN
 ```
 
-Risultato atteso: Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.
+Expected result: The conformed result contains Hello, World!, according to the framework described.
 
-## Stato ed evidenza
+## Status and evidence
 
-Artefatto **creato**; sintassi **verificata**; semantica **verificata**.
+Artifact **created**; syntax **verified**; behavior **verified**.
 
-Il saluto è una direttiva #debug realmente valutata, oltre alla scena sphere/camera/light; non è un commento.
+Greeting is a truly rated #debug directive, in addition to the sphere/camera/light scene; it is not a comment.
 
-Requisiti residui:
+Remaining requirements:
 
-Nessun requisito residuo per l’ambito dichiarato.
+No residual requirement for the stated scope.
 
 Log reale: [native.json](verification/native.json), con comandi, versioni, exit code,
-stdout/stderr e SHA-256 degli artefatti. `path_normalization` descrive le sole
-sostituzioni dei percorsi locali; `<corpus>` identifica i sorgenti finali verificati
-prima in staging. I soli probe di disponibilità non attestano parsing o esecuzione.
-Dipendenze e prodotti compilati rimangono nella directory di lavoro.
+stdout/stderr and SHA-256 of artifacts. `path_normalization` describes the sun
+local path substitutions; `<corpus>` identifies the final sources verified
+first in staging. Tool availability checks alone do not establish parsing or execution.
+Dependencies and build outputs stay in the working directory.
 
-## Fonti primarie
+## Primary sources
 
 - [https://www.povray.org/documentation/](https://www.povray.org/documentation/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pov` | [hello.pov](hello.pov), [driver.pov](variants/inc-dd126fb7/driver.pov) creato, verifiche pendenti |
-| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) creato, verifiche pendenti |
+| `.pov` | [hello.pov](hello.pov), [driver.pov](variants/inc-dd126fb7/driver.pov) created; verification pending |
+| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |

@@ -1,33 +1,33 @@
 # #330 Jai
 
-Stampare Hello, World! da main Jai usando il modulo Basic.
+Print Hello, World! from main Jai using the Basic module.
 
-Tipo canonico `programming`, language_id `70127133`.
+Canonical type `programming`, language_id `70127133`.
 
-Toolchain prevista: Compilatore Jai e libreria Basic della distribuzione autorizzata.
+Toolchain provided: Jai Filler and Basic Library of the authorized distribution.
 
-Dalla cartella dell’esempio:
+From the example directory:
 
 ```sh
 jai hello.jai
 ./hello
 ```
 
-Risultato atteso: compilazione riuscita e saluto con newline.
+Expected result: successful compilation and greeting with newline.
 
-Il compilatore Jai non viene sostituito con un simulatore. Sintassi proposta sulla base degli esempi disponibili; compilazione e modulo Basic rimangono da verificare.
+The Jai compiler is not replaced with a simulator. syntax proposed on the basis of the available examples; compilation and Basic form remain to be checked.
 
-Stato iniziale: creato; sintassi e semantica in attesa. Distribuzione del compilatore Jai non disponibile nell’ambiente.
+Initial state: created; syntax and behavioral verification pending. Distribution of the Jai unavailable compiler in the environment.
 
-Fonti:
+Sources:
 
 - [Linguist — sorgenti Jai di riferimento](https://github.com/github-linguist/linguist/tree/main/samples/Jai)
 - [Jai — progetto dell’autore](https://www.jai-lang.org/)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.jai` | [hello.jai](hello.jai) creato, verifiche pendenti |
+| `.jai` | [hello.jai](hello.jai) created; verification pending |

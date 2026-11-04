@@ -1,37 +1,37 @@
 # #575 QMake
 
-Generare e compilare un progetto qmake Qt Core.
+Generate and compile a qmake Qt Core project.
 
 ## Toolchain
 
 qmake; Qt Core; C++
 
-## Procedura
+## Procedure
 
 qmake hello.pro; make; ./hello
 
-## Risultato atteso
+## Expected result
 
 Hello, World!
 
-## Stato
+## Status
 
-Sintassi e semantica in attesa.
+Syntax and behavioral verification pending.
 
 
 
-Requisiti residui:
+Remaining requirements:
 - qmake e Qt Core development libraries non predisposti.
 
-## Fonti primarie
+## Primary sources
 
 - [https://doc.qt.io/qt-6/qmake-project-files.html](https://doc.qt.io/qt-6/qmake-project-files.html)
 
-## Copertura delle estensioni
+## Extension coverage
 
-Le verifiche del campione principale e delle varianti sono registrate separatamente.
+Verification of the main sample and each variant is recorded separately.
 
-| Estensione | File / stato |
+| Extension | File / status |
 | --- | --- |
-| `.pro` | [hello.pro](hello.pro), [main.pro](variants/pri-e5eeb81c/main.pro) creato, verifiche pendenti |
-| `.pri` | [hello.pri](variants/pri-e5eeb81c/hello.pri) creato, verifiche pendenti |
+| `.pro` | [hello.pro](hello.pro), [main.pro](variants/pri-e5eeb81c/main.pro) created; verification pending |
+| `.pri` | [hello.pri](variants/pri-e5eeb81c/hello.pri) created; verification pending |

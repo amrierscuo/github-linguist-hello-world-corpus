@@ -1,24 +1,24 @@
-# 0785 — XML — `.tsx`
+# 0785: XML: `.tsx`
 
-Fixture Tiled external tileset XML con proprietà originale; nessuna immagine/font inventati.
+Fixture Tiled external tileset XML with original property; no immagine/font invented.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.tsx`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 Tiled XML/schema parser; editor import pending
 ```
 
-Risultato atteso: XML ben formato che conserva il saluto; schema/importazione applicativa non verificati.
+Expected result: well-formed XML that preserves the greeting; application schema and import have not been verified.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://www.w3.org/TR/xml/](https://www.w3.org/TR/xml/)
 - [https://doc.mapeditor.org/en/stable/reference/tmx-map-format/](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/)

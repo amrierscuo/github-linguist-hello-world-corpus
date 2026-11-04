@@ -1,28 +1,28 @@
 # #249 Git Revision List
 
-Ignorare con git blame una revisione cosmetica reale che aggiunge lo spazio in Hello, World!.
+Ignore with git blame a real cosmetic review that adds space in Hello, World!.
 
 ## Toolchain
 
 git version 2.51.0.windows.1
 
-## Comandi e procedura
+## Commands and procedure
 
 python verify.py 249 /percorso/nuovo-repo-temporaneo git
 
-## Risultato atteso
+## Expected result
 
-Senza ignore: riga attribuita al commit di formattazione; con la lista: attribuita al commit precedente; testo finale Hello, World!.
+Without ignore: line attributed to the commit formatting; with the list: attributed to the previous commit; final text Hello, World!.
 
-## Stato
+## Status
 
-Sintassi e semantica verificate.
+syntax and behavior verified.
 
-La lista contiene il vero object ID del secondo commit della fixture riproducibile; non un hash inventato. verify.py ricrea i commit con identità/date deterministiche e confronta il valore registrato. Gli ID riguardano questo repository temporaneo e non la storia futura del corpus pubblico.
+The list contains the real ID object of the second repeatable fix commit; not a invented hash. verify.py recreates commits with identità/date deterministic and compares the recorded value. ID relates to this temporary repository and not the future history of the public corpus.
 
-Verifica effettiva del 2026-10-08T12:15:32.429631+00:00 su Windows x64: [log](verification/result.json).
-Il log conserva SHA-256 delle sorgenti/checker, versioni/comandi reali, codici di uscita, stdout/stderr e limiti della prova.
+Actual verification of 2026-10-08T12:15:32.429631+00:00 on Windows x64: [log](verification/result.json).
+The log retains SHA-256 of sorgenti/checker, versioni/comandi real, exit codes, stdout/stderr and test limits.
 
-## Fonti primarie
+## Primary sources
 
 - [https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revs-fileltfilegt](https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revs-fileltfilegt)

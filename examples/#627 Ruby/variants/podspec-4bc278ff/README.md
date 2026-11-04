@@ -1,23 +1,23 @@
-# 0627 — Ruby — `.podspec`
+# 0627: Ruby: `.podspec`
 
-Descrizione CocoaPods originale; URL illustrativo, non un progetto pubblicato.
+Description CocoaPods original; URL illustration, not a project published.
 
-Provenienza: esempio originale scritto per il ruolo di questo suffisso.
+Provenience: original example written for the role of this suffix.
 
 Artefatto principale: `hello.podspec`.
 
-Controllo previsto, dalla cartella della variante:
+Control provided, from the folder of the variant:
 
 ```text
 CocoaPods local development pod consumer, no download/publish
 ```
 
-Risultato atteso: artefatto/risultato originale di saluto nel consumatore indicato.
+Expected result: artefatto/risultato original greeting in the indicated consumer.
 
-Stato: creato; sintassi e semantica non verificate.
+Status: created; syntax and behavior not verified.
 
-Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale.
+This variant has not yet been subjected to its original parser/compiler/host.
 
-Fonti primarie:
+Primary sources:
 
 - [https://guides.cocoapods.org/syntax/podspec.html](https://guides.cocoapods.org/syntax/podspec.html)
