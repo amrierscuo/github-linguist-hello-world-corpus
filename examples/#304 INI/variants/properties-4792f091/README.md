@@ -1,5 +1,9 @@
 # 0304: INI: `.properties`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.properties`. Unchanged suffix variant; main example status unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e70726f70657274696573.json).
+
 Role: Java properties: pair chiave/valore without section header.
 
 Origin: Original source written for the specific role of the variant, using the mentioned documentation.
@@ -14,7 +18,7 @@ Esaminare il file con il lettore originale del prodotto. Per unità systemd: sys
 
 Expected result: the configuration is recognized and the specified value or description contains the greeting. This does not establish runtime behavior.
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

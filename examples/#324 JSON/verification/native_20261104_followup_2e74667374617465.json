@@ -1,0 +1,53 @@
+{
+  "ordinal": 324,
+  "name": "JSON",
+  "extension": ".tfstate",
+  "test_scope": "Terraform show only, local state file read. No init, apply, providers, or cloud activity.",
+  "toolchain": "HashiCorp Terraform 1.16.5",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\324_2e74667374617465",
+  "source_hashes": {
+    "examples/#324 JSON/variants/tfstate-3256bafa/hello.tfstate": "c90936cf4ed25df3960ef70914546a75a65f5baf5dc70db2382a4d130d4805a6"
+  },
+  "steps": [
+    {
+      "command": [
+        "<workspace>\\work\\tools_701_720\\terraform\\terraform.exe",
+        "version",
+        "-json"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\324_2e74667374617465",
+      "started_utc": "2026-11-04T20:00:18.956262+00:00",
+      "elapsed_seconds": 0.542,
+      "exit_code": 0,
+      "stdout": "{\n  \"terraform_version\": \"1.16.5\",\n  \"platform\": \"windows_amd64\",\n  \"provider_selections\": {},\n  \"terraform_outdated\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<workspace>\\work\\tools_701_720\\terraform\\terraform.exe",
+        "show",
+        "-json",
+        "hello.tfstate"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\324_2e74667374617465",
+      "started_utc": "2026-11-04T20:00:19.498859+00:00",
+      "elapsed_seconds": 0.116,
+      "exit_code": 0,
+      "stdout": "{\"format_version\":\"1.0\",\"terraform_version\":\"1.0.0\",\"values\":{\"outputs\":{\"greeting\":{\"sensitive\":false,\"value\":\"Hello, World!\",\"type\":\"string\"}},\"root_module\":{}}}\n",
+      "stderr": ""
+    }
+  ],
+  "observed_value": "Hello, World!",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "verified_utc": "2026-11-04T20:00:19.614870+00:00",
+  "extensions": {
+    ".tfstate": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Terraform show only, local state file read. No init, apply, providers, or cloud activity."
+}

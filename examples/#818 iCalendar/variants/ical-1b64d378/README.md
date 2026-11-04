@@ -1,5 +1,9 @@
 # 0818: iCalendar: `.ical`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.ical`. icalendar: parse and serialize/reparse an event, preserve its summary and validate date ordering. [Recorded evidence](../../verification/native_20261104_followup_2e6963616c.json).
+
 Textual variation of the same format, with canon suffix .ical.
 
 Origin: copy of the original `examples/#818 iCalendar/hello.ics` file.

@@ -1,5 +1,24 @@
 # #085 C++
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.c++`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e632b2b.json).
+- `.cc`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e6363.json).
+- `.cp`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e6370.json).
+- `.cxx`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e637878.json).
+- `.h`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e68.json).
+- `.h++`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e682b2b.json).
+- `.hh`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e6868.json).
+- `.hpp`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e687070.json).
+- `.hxx`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e687878.json).
+- `.inc`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e696e63.json).
+- `.inl`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e696e6c.json).
+- `.ipp`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e697070.json).
+- `.tcc`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e746363.json).
+- `.tpp`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e747070.json).
+- `.txx`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e747878.json).
+
 Stampare esattamente Hello, World! seguito da newline con std::cout in C++17.
 
 ## Toolchain
@@ -42,22 +61,22 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.cpp` | [hello.cpp](hello.cpp), [consumer.cpp](variants/ext-cppm-2e6370706d/consumer.cpp), [consumer.cpp](variants/ext-h-2e68/consumer.cpp), [consumer.cpp](variants/ext-h-2e682b2b/consumer.cpp), [consumer.cpp](variants/ext-hh-2e6868/consumer.cpp), [consumer.cpp](variants/ext-hpp-2e687070/consumer.cpp), [consumer.cpp](variants/ext-hxx-2e687878/consumer.cpp), [consumer.cpp](variants/ext-inc-2e696e63/consumer.cpp), [consumer.cpp](variants/ext-inl-2e696e6c/consumer.cpp), [consumer.cpp](variants/ext-ipp-2e697070/consumer.cpp), [consumer.cpp](variants/ext-ixx-2e697878/consumer.cpp), [consumer.cpp](variants/ext-tcc-2e746363/consumer.cpp), [consumer.cpp](variants/ext-tpp-2e747070/consumer.cpp), [consumer.cpp](variants/ext-txx-2e747878/consumer.cpp) created; verification pending |
-| `.c++` | [hello.c++](variants/ext-c-2e632b2b/hello.c%2B%2B) created; verification pending |
-| `.cc` | [hello.cc](variants/ext-cc-2e6363/hello.cc) created; verification pending |
-| `.cp` | [hello.cp](variants/ext-cp-2e6370/hello.cp) created; verification pending |
+| `.c++` | [hello.c++](variants/ext-c-2e632b2b/hello.c%2B%2B) syntax and behavior verified |
+| `.cc` | [hello.cc](variants/ext-cc-2e6363/hello.cc) syntax and behavior verified |
+| `.cp` | [hello.cp](variants/ext-cp-2e6370/hello.cp) syntax and behavior verified |
 | `.cppm` | [hello.cppm](variants/ext-cppm-2e6370706d/hello.cppm) created; verification pending |
-| `.cxx` | [hello.cxx](variants/ext-cxx-2e637878/hello.cxx) created; verification pending |
-| `.h` | [hello.h](variants/ext-h-2e68/hello.h) created; verification pending |
-| `.h++` | [hello.h++](variants/ext-h-2e682b2b/hello.h%2B%2B) created; verification pending |
-| `.hh` | [hello.hh](variants/ext-hh-2e6868/hello.hh) created; verification pending |
-| `.hpp` | [hello.hpp](variants/ext-hpp-2e687070/hello.hpp) created; verification pending |
-| `.hxx` | [hello.hxx](variants/ext-hxx-2e687878/hello.hxx) created; verification pending |
-| `.inc` | [hello.inc](variants/ext-inc-2e696e63/hello.inc) created; verification pending |
-| `.inl` | [hello.inl](variants/ext-inl-2e696e6c/hello.inl) created; verification pending |
+| `.cxx` | [hello.cxx](variants/ext-cxx-2e637878/hello.cxx) syntax and behavior verified |
+| `.h` | [hello.h](variants/ext-h-2e68/hello.h) syntax and behavior verified |
+| `.h++` | [hello.h++](variants/ext-h-2e682b2b/hello.h%2B%2B) syntax and behavior verified |
+| `.hh` | [hello.hh](variants/ext-hh-2e6868/hello.hh) syntax and behavior verified |
+| `.hpp` | [hello.hpp](variants/ext-hpp-2e687070/hello.hpp) syntax and behavior verified |
+| `.hxx` | [hello.hxx](variants/ext-hxx-2e687878/hello.hxx) syntax and behavior verified |
+| `.inc` | [hello.inc](variants/ext-inc-2e696e63/hello.inc) syntax and behavior verified |
+| `.inl` | [hello.inl](variants/ext-inl-2e696e6c/hello.inl) syntax and behavior verified |
 | `.ino` | [hello.ino](variants/ext-ino-2e696e6f/hello.ino) created; verification pending |
-| `.ipp` | [hello.ipp](variants/ext-ipp-2e697070/hello.ipp) created; verification pending |
+| `.ipp` | [hello.ipp](variants/ext-ipp-2e697070/hello.ipp) syntax and behavior verified |
 | `.ixx` | [hello.ixx](variants/ext-ixx-2e697878/hello.ixx) created; verification pending |
 | `.re` | [hello.re](variants/ext-re-2e7265/hello.re) created; verification pending |
-| `.tcc` | [hello.tcc](variants/ext-tcc-2e746363/hello.tcc) created; verification pending |
-| `.tpp` | [hello.tpp](variants/ext-tpp-2e747070/hello.tpp) created; verification pending |
-| `.txx` | [hello.txx](variants/ext-txx-2e747878/hello.txx) created; verification pending |
+| `.tcc` | [hello.tcc](variants/ext-tcc-2e746363/hello.tcc) syntax and behavior verified |
+| `.tpp` | [hello.tpp](variants/ext-tpp-2e747070/hello.tpp) syntax and behavior verified |
+| `.txx` | [hello.txx](variants/ext-txx-2e747878/hello.txx) syntax and behavior verified |

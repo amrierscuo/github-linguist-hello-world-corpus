@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 830,
+  "name": "reStructuredText",
+  "extension": ".rest",
+  "timestamp_utc": "2026-11-04T19:57:36.305795+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\830-rest",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_821_836\\python"
+  },
+  "artifact_sha256": {
+    "examples/#830 reStructuredText/variants/rest-90077caa/hello.rest": "cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#830 reStructuredText/verify.py",
+    "original_sha256": "a55eddb9dfc1be6b2015f2b266bd6174c0286ed6af2a012bab69d103ba5b8ce7",
+    "staged_sha256": "8b4388d99a6893ca917d2d8a02f6139615ebfb406ae1176d33ffbcb9de8bcfe0",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.rst",
+      "new_input": "hello.rest"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));",
+        "docutils"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"docutils\": null}\n",
+      "stderr": "",
+      "elapsed_seconds": 2.252
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 4.497
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e72657374/verify.py",
+    "sha256": "8b4388d99a6893ca917d2d8a02f6139615ebfb406ae1176d33ffbcb9de8bcfe0"
+  },
+  "test_scope_description": "Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis."
+}

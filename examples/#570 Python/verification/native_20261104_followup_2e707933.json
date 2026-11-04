@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "ordinal": 570,
+  "name": "Python",
+  "extension": ".py3",
+  "timestamp_utc": "2026-11-04T19:59:43.906326+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "CPython console interpreter executes this exact Python variant and captures the greeting. The .pyw check explicitly uses python.exe and does not test Windows GUI file association.",
+  "artifact_sha256": {
+    "examples/#570 Python/variants/py3-2398b90a/hello.py3": "17e5b95a8f4eb8d4105ee8f0d2d6c5394e58f9fd0f62033da2619d2ece5481df"
+  },
+  "verification_driver": null,
+  "versions": [
+    {
+      "label": "CPython version",
+      "command": [
+        "<python>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": "",
+      "elapsed_seconds": 0.03
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact Python variant",
+      "command": [
+        "<python>",
+        "hello.py3"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.064
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "CPython console interpreter executes this exact Python variant and captures the greeting. The .pyw check explicitly uses python.exe and does not test Windows GUI file association."
+}

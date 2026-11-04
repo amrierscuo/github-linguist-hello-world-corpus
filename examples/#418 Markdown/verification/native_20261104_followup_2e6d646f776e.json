@@ -1,0 +1,49 @@
+{
+  "ordinal": 418,
+  "name": "Markdown",
+  "extension": ".mdown",
+  "test_scope": "Original suffix variant; main example unchanged.",
+  "toolchain": "CPython 3.13.9 / markdown-it-py 2.2.0 CommonMark (installed Windows runtime)",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\418_2e6d646f776e",
+  "source_hashes": {
+    "examples/#418 Markdown/variants/mdown-c553b9ee/hello.mdown": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae",
+    "examples/#418 Markdown/variants/mdown-c553b9ee/verify.py": "d66f5e5bb2a43db818494ff849fc7d076432a1d21d02bf2bb8f55a730ef8a818"
+  },
+  "steps": [
+    {
+      "command": [
+        "<user-profile>\\anaconda3\\python.exe",
+        "-c",
+        "from importlib.metadata import version; import sys; print(sys.version.split()[0]); print(version('markdown-it-py'))"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early",
+      "started_utc": "2026-11-04T19:58:06.541701+00:00",
+      "exit_code": 0,
+      "stdout": "3.13.9\n2.2.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<user-profile>\\anaconda3\\python.exe",
+        "verify.py"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\418_2e6d646f776e",
+      "started_utc": "2026-11-04T19:58:07.151298+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "verified_utc": "2026-11-04T19:58:07.401744+00:00",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "extensions": {
+    ".mdown": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Original suffix variant; main example unchanged."
+}

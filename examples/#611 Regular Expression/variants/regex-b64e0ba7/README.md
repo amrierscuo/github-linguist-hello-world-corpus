@@ -1,5 +1,9 @@
 # 0611: Regular Expression: `.regex`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.regex`. CPython re engine: exact named capture, rejection controls. [Recorded evidence](../../verification/native_20261104_followup_2e7265676578.json).
+
 Textual variation of the same format, with canon suffix .regex.
 
 Origin: copy of the original `examples/#611 Regular Expression/hello.regexp` file.

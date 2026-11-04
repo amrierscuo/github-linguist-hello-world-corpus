@@ -1,5 +1,12 @@
 # #830 reStructuredText
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.rest`: Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis. [Evidence](verification/native_20261104_followup_2e72657374.json).
+- `.rest.txt`: Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis. [Evidence](verification/native_20261104_followup_2e726573742e747874.json).
+- `.rst.txt`: Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis. [Evidence](verification/native_20261104_followup_2e7273742e747874.json).
+
 Analizzare e renderizzare reStructuredText in HTML con enfasi.
 
 ## Toolchain
@@ -34,6 +41,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.rst` | [hello.rst](hello.rst) verified |
-| `.rest` | [hello.rest](variants/rest-90077caa/hello.rest) created; verification pending |
-| `.rest.txt` | [hello.rest.txt](variants/rest-txt-4f6501d2/hello.rest.txt) created; verification pending |
-| `.rst.txt` | [hello.rst.txt](variants/rst-txt-05b28309/hello.rst.txt) created; verification pending |
+| `.rest` | [hello.rest](variants/rest-90077caa/hello.rest) syntax and behavior verified |
+| `.rest.txt` | [hello.rest.txt](variants/rest-txt-4f6501d2/hello.rest.txt) syntax and behavior verified |
+| `.rst.txt` | [hello.rst.txt](variants/rst-txt-05b28309/hello.rst.txt) syntax and behavior verified |

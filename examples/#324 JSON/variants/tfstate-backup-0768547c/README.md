@@ -1,5 +1,9 @@
 # 0324: JSON: `.tfstate.backup`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.tfstate.backup`. Terraform show only, local state file read. No init, apply, providers, or cloud activity. [Recorded evidence](../../verification/native_20261104_followup_2e746673746174652e6261636b7570.json).
+
 Role: Terraform status text fixtures schema v4 with string output, written as an illustration; it does not declare apply or actual snapshots.
 
 Origin: Original source written for the specific role of the variant, using the mentioned documentation.
@@ -14,7 +18,7 @@ terraform show -json hello.tfstate.backup
 
 Expected result: Output greeting with Hello, World! value
 
-Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

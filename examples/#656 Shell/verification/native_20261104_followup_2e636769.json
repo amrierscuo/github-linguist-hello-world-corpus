@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "ordinal": 656,
+  "name": "Shell",
+  "extension": ".cgi",
+  "timestamp_utc": "2026-11-04T20:00:08.924311+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed. Check serialized CGI Content-Type header and body without starting a server.",
+  "artifact_sha256": {
+    "examples/#656 Shell/variants/cgi-89feb572/hello.cgi": "98f245ec34e7829179ed4fa2ee83afa0a5084e61f2ee41829e626675462c76af"
+  },
+  "verification_driver": null,
+  "versions": [
+    {
+      "label": "POSIX shell version",
+      "command": [
+        "C:\\Program Files\\Git\\usr\\bin\\sh.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU bash, version 5.2.37(1)-release (x86_64-pc-msys)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": "",
+      "elapsed_seconds": 0.049
+    }
+  ],
+  "steps": [
+    {
+      "label": "Check syntax of exact shell variant",
+      "command": [
+        "C:\\Program Files\\Git\\usr\\bin\\sh.exe",
+        "-n",
+        "hello.cgi"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.038
+    },
+    {
+      "label": "Execute exact shell variant",
+      "command": [
+        "C:\\Program Files\\Git\\usr\\bin\\sh.exe",
+        "hello.cgi"
+      ],
+      "exit_code": 0,
+      "stdout": "Content-Type: text/plain; charset=utf-8\r\n\r\nHello, World!\n",
+      "stdout_hex": "436f6e74656e742d547970653a20746578742f706c61696e3b20636861727365743d7574662d380d0a0d0a48656c6c6f2c20576f726c64210a",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed. Check serialized CGI Content-Type header and body without starting a server."
+}

@@ -1,5 +1,10 @@
 # #700 TOML
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.toml.example`: CPython tomllib: exact parsed configuration and language field. [Evidence](verification/native_20261104_followup_2e746f6d6c2e6578616d706c65.json).
+
 Voce canonica `TOML`, tipo `data`, language_id `365`.
 
 Decode an original TOML configuration with message and language.
@@ -45,4 +50,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.toml` | [hello.toml](hello.toml) verified |
-| `.toml.example` | [hello.toml.example](variants/toml-example-35fdb380/hello.toml.example) created; verification pending |
+| `.toml.example` | [hello.toml.example](variants/toml-example-35fdb380/hello.toml.example) syntax and behavior verified |

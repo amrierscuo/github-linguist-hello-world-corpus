@@ -1,5 +1,10 @@
 # #634 SPARQL
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.sparql`: RDFlib SPARQL parser and query evaluator: one greeting binding. [Evidence](verification/native_20261104_followup_2e73706172716c.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -36,5 +41,5 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sparql` | [hello.sparql](variants/sparql-6c620153/hello.sparql) created; verification pending |
+| `.sparql` | [hello.sparql](variants/sparql-6c620153/hello.sparql) syntax and behavior verified |
 | `.rq` | [hello.rq](hello.rq) verified |

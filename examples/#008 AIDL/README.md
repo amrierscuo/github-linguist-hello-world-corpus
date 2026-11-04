@@ -1,5 +1,20 @@
 # #008 AIDL
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 4, 2026.
+
+Native AOSP compiler generated the intended Binder constant, method signature, Stub and Proxy. No Android IPC or service execution was tested.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261104_followup_main.json). [Earlier evidence](verification.log).
+
+## Extension results
+
+- `.aidl`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 `corpus/hello/IHello.aidl` declares an Android Binder contract: a constant
 `GREETING` with `Hello, World!` value and a method that returns a string.
 A AIDL contract does not implement the service and does not print a message alone.
@@ -38,4 +53,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.aidl` | [IHello.aidl](corpus/hello/IHello.aidl) created; verification pending |
+| `.aidl` | [IHello.aidl](corpus/hello/IHello.aidl) syntax and behavior verified |
+
+</details>

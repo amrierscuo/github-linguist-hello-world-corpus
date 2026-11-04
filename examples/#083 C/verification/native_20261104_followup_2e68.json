@@ -1,0 +1,84 @@
+{
+  "ordinal": 83,
+  "name": "C",
+  "extension": ".h",
+  "toolchain": "Zig 0.15.2; clang version 20.1.2 (https://github.com/ziglang/zig-bootstrap 7ef74e656cf8ddbd6bf891a8475892aa1afa6891); Windows x64",
+  "toolchain_version_steps": [
+    {
+      "command": [
+        "<workspace>\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "version"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early",
+      "exit_code": 0,
+      "stdout": "0.15.2\n",
+      "stderr": "",
+      "started_utc": "2026-11-04T19:56:07.331347+00:00",
+      "elapsed_seconds": 0.783
+    },
+    {
+      "command": [
+        "<workspace>\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "cc",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early",
+      "exit_code": 0,
+      "stdout": "clang version 20.1.2 (https://github.com/ziglang/zig-bootstrap 7ef74e656cf8ddbd6bf891a8475892aa1afa6891)\nTarget: x86_64-unknown-windows-gnu\nThread model: posix\nInstalledDir: <workspace>/work/tools_801_820/zig/zig-x86_64-windows-0.15.2\n",
+      "stderr": "",
+      "started_utc": "2026-11-04T19:56:08.096960+00:00",
+      "elapsed_seconds": 0.679
+    }
+  ],
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\083_2e68",
+  "source_hashes": {
+    "examples/#083 C/variants/ext-h-2e68/hello.h": "2fb69f631ae3c921a0ca1a291334a1c1aa33617a47d7b22fbfa9c234ee7d527f",
+    "examples/#083 C/variants/ext-h-2e68/consumer.c": "0c5f74179aa0384efb728feb9142974efd32fa2383c3e446afbaebc0f9eecb6c"
+  },
+  "test_scope": "Variant only. Main language status and other suffixes unchanged.",
+  "steps": [
+    {
+      "command": [
+        "<workspace>\\work\\tools_801_820\\zig\\zig-x86_64-windows-0.15.2\\zig.exe",
+        "cc",
+        "-std=c11",
+        "-x",
+        "c",
+        "-O0",
+        "consumer.c",
+        "-o",
+        "hello.exe"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\083_2e68",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "started_utc": "2026-11-04T19:56:08.926214+00:00",
+      "elapsed_seconds": 104.059
+    },
+    {
+      "command": [
+        "<workspace>\\work\\native_followup_20261104\\windows_early\\083_2e68\\hello.exe"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_early\\083_2e68",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "started_utc": "2026-11-04T19:57:52.985041+00:00",
+      "elapsed_seconds": 0.092
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "binary_sha256": "c896680d8e8c9bc9eedb8307b464596a0e085b8b8d413eee7086802afb64fd78",
+  "verified_utc": "2026-11-04T19:57:53.078529+00:00",
+  "extensions": {
+    ".h": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Variant only. Main language status and other suffixes unchanged."
+}

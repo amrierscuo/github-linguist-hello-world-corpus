@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 547,
+  "name": "PostCSS",
+  "extension": ".postcss",
+  "timestamp_utc": "2026-11-04T19:57:24.733707+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "PostCSS and the custom properties plugin transform this source and verify the greeting in the CSS content declaration.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\547-postcss",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "NODE_PATH": "<workspace>\\work\\tools_541_560\\npm\\node_modules"
+  },
+  "artifact_sha256": {
+    "examples/#547 PostCSS/variants/postcss-ca8f3f2b/hello.postcss": "7da058442245be1726962a0b9b571bf6e9e0f97b017d63380e9787759d71779c"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#547 PostCSS/verify.js",
+    "original_sha256": "ff2e4abf8e7a8ba5229e6a51467bb1074bf58302742a6a228f10f876d2a45bf2",
+    "staged_sha256": "ed71830e46f5dddcdd00a451ccff75fb5d0de3ca21641cf162a74c339d01a2db",
+    "staged_filename": "verify.js",
+    "adaptation": {
+      "old_input": "hello.pcss",
+      "new_input": "hello.postcss"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<node>",
+        "-e",
+        "const fs=require(\"node:fs\"),p=require(\"node:path\"); const wanted=JSON.parse(process.argv[1]); let result={node:process.version}; for(const id of wanted){const path=p.join(process.env.NODE_PATH,id,\"package.json\");require.resolve(id);result[id]=JSON.parse(fs.readFileSync(path,\"utf8\")).version;} console.log(JSON.stringify(result));",
+        "[\"postcss\", \"postcss-custom-properties\"]"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"node\":\"v22.20.0\",\"postcss\":\"8.5.29\",\"postcss-custom-properties\":\"15.0.4\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.205
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<node>",
+        "verify.js"
+      ],
+      "exit_code": 0,
+      "stdout": ":root { --greeting: \"Hello, World!\"; }\n.greeting::before { content: \"Hello, World!\"; }\n",
+      "stderr": "",
+      "elapsed_seconds": 1.043
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#547 PostCSS/verification/native_20261104_followup_drivers/2e706f7374637373/verify.js",
+    "sha256": "ed71830e46f5dddcdd00a451ccff75fb5d0de3ca21641cf162a74c339d01a2db"
+  },
+  "test_scope_description": "PostCSS and the custom properties plugin transform this source and verify the greeting in the CSS content declaration."
+}

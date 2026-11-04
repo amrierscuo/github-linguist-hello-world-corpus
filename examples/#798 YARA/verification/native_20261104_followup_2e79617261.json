@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "ordinal": 798,
+  "name": "YARA",
+  "extension": ".yara",
+  "timestamp_utc": "2026-11-04T19:58:19.635961+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "YARA: compile the original rules, match the exact declared greeting.txt (including its trailing LF), and reject a separate Hello, Moon! fixture.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\798-yara",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_781_800\\python"
+  },
+  "artifact_sha256": {
+    "examples/#798 YARA/variants/yara-cc22c747/hello.yara": "655358f1e5a685250f8ab63ecc732511db95b5ede522dacf8bf1f1ec318024ea",
+    "examples/#798 YARA/variants/yara-cc22c747/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#798 YARA/verify.py",
+    "original_sha256": "9551bd3693641eb0bc46aa863d24cc89572fce0bc5c7f8b920688edcda4309a6",
+    "staged_sha256": "6d6c840a570c948bc8d357703c247ee2c24ce0355f8d541020ff5edf2adbae4a",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.yar",
+      "new_input": "hello.yara"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));",
+        "yara-python"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"yara-python\": \"4.5.4\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.205
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.086
+    },
+    {
+      "label": "Exact declared positive file and independent negative control",
+      "command": [
+        "<python>",
+        "-c",
+        "import yara\nfrom pathlib import Path\nassert yara.__version__ == '4.5.4', yara.__version__\nassert Path('greeting.txt').read_bytes() == b'Hello, World!\\n'\nassert Path('negative.txt').read_bytes() == b'Hello, Moon!\\n'\nrules = yara.compile(filepath='hello.yara')\npositive = [match.rule for match in rules.match(filepath='greeting.txt')]\nnegative = [match.rule for match in rules.match(filepath='negative.txt')]\nassert positive == ['CorpusGreeting'], positive\nassert negative == [], negative\nprint('greeting.txt: CorpusGreeting')\nprint('negative.txt: no match')\n"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\windows_late\\798-yara",
+      "started_utc": "2026-11-04T20:04:59.055844+00:00",
+      "elapsed_seconds": 0.094,
+      "exit_code": 0,
+      "stdout": "greeting.txt: CorpusGreeting\nnegative.txt: no match\n",
+      "stderr": "",
+      "supporting_input_sha256": {
+        "examples/#798 YARA/variants/yara-cc22c747/greeting.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31"
+      },
+      "generated_negative_fixture": {
+        "file": "negative.txt",
+        "content": "Hello, Moon!\n",
+        "sha256": "19bab965adffd8f833c18e220f4717c04c96b6dc5178d3411814fe0c97689cc0"
+      }
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#798 YARA/verification/native_20261104_followup_drivers/2e79617261/verify.py",
+    "sha256": "6d6c840a570c948bc8d357703c247ee2c24ce0355f8d541020ff5edf2adbae4a"
+  },
+  "test_scope_description": "YARA: compile the original rules, match the exact declared greeting.txt (including its trailing LF), and reject a separate Hello, Moon! fixture."
+}

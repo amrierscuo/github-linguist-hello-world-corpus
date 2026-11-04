@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "ordinal": 570,
+  "name": "Python",
+  "extension": ".wsgi",
+  "timestamp_utc": "2026-11-04T20:00:02.077746+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Standard-library WSGI validator and wsgiref reference handler execute the exact module, asserting its HTTP status, Content-Type, Content-Length and response bytes; in-memory transport.",
+  "artifact_sha256": {
+    "examples/#570 Python/variants/wsgi-89e83bb6/hello.wsgi": "e284c0d30c954e80cdf838161ce023858488e55fc82fc6b84dac6f39ccc1c664"
+  },
+  "verification_driver": {
+    "staged_filename": "verify_wsgi.py",
+    "sha256": "ab8156e931f1a1ba5d3385df15c7cb4c58ef7f695634cefae013dd0f6bbed591"
+  },
+  "versions": [
+    {
+      "label": "CPython version",
+      "command": [
+        "<python>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": "",
+      "elapsed_seconds": 0.022
+    }
+  ],
+  "steps": [
+    {
+      "label": "Load application and run it through reference WSGI handler",
+      "command": [
+        "<python>",
+        "verify_wsgi.py",
+        "hello.wsgi"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: native wsgiref handler returned exact status, headers and body\nHello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.087
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#570 Python/verification/native_20261104_followup_drivers/2e77736769/verify_wsgi.py",
+    "sha256": "ab8156e931f1a1ba5d3385df15c7cb4c58ef7f695634cefae013dd0f6bbed591"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Standard-library WSGI validator and wsgiref reference handler execute the exact module, asserting its HTTP status, Content-Type, Content-Length and response bytes; in-memory transport."
+}

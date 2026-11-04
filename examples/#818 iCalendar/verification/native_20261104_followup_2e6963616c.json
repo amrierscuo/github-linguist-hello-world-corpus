@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 818,
+  "name": "iCalendar",
+  "extension": ".ical",
+  "timestamp_utc": "2026-11-04T19:58:20.283938+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "icalendar: parse and serialize/reparse an event, preserve its summary and validate date ordering.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\818-ical",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_801_820\\python"
+  },
+  "artifact_sha256": {
+    "examples/#818 iCalendar/variants/ical-1b64d378/hello.ical": "d923c701a76a29ac33ccd13faa10546bf0d5f9781a0da93b67385742f16f4877"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#818 iCalendar/verify.py",
+    "original_sha256": "649a324fc264c9219c58988f5b1a4d57e4401783498b592b10b872a47ffbc04c",
+    "staged_sha256": "1a281a670e3c04ed54d810df15a9628230cc793a3abefa7db3916d883fe5779f",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.ics",
+      "new_input": "hello.ical"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));",
+        "icalendar"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"icalendar\": \"7.3.0\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.211
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.312
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#818 iCalendar/verification/native_20261104_followup_drivers/2e6963616c/verify.py",
+    "sha256": "1a281a670e3c04ed54d810df15a9628230cc793a3abefa7db3916d883fe5779f"
+  },
+  "test_scope_description": "icalendar: parse and serialize/reparse an event, preserve its summary and validate date ordering."
+}

@@ -1,5 +1,11 @@
 # #083 C
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.cats`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e63617473.json).
+- `.h`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e68.json).
+
 Print exactly Hello, World! followed by newline from a C11 program.
 
 ## Toolchain
@@ -45,7 +51,7 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.c` | [hello.c](hello.c), [consumer.c](variants/ext-h-2e68/consumer.c), [consumer.c](variants/ext-h-in-2e682e696e/consumer.c) created; verification pending |
-| `.cats` | [hello.cats](variants/ext-cats-2e63617473/hello.cats) created; verification pending |
-| `.h` | [hello.h](variants/ext-h-2e68/hello.h) created; verification pending |
+| `.cats` | [hello.cats](variants/ext-cats-2e63617473/hello.cats) syntax and behavior verified |
+| `.h` | [hello.h](variants/ext-h-2e68/hello.h) syntax and behavior verified |
 | `.h.in` | [hello.h.in](variants/ext-h-in-2e682e696e/hello.h.in) created; verification pending |
 | `.idc` | [hello.idc](variants/ext-idc-2e696463/hello.idc) created; verification pending |

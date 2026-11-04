@@ -1,5 +1,9 @@
 # 0217 Fortran Free Form: variant `.f08`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.f08`. Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Recorded evidence](../../verification/native_20261104_followup_2e663038.json).
+
 Role: Sorgente Fortran free form, distinguished by the heading Fortran fixed form.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#217 Fortran Free Form/hello.f90
@@ -18,8 +22,7 @@ gfortran -x f95 -ffree-form hello.f08 -o <output>/hello; <output>/hello
 
 Expected result: Compilazione/run exit 0; exact greeting followed by newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

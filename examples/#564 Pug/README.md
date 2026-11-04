@@ -1,5 +1,10 @@
 # #564 Pug
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.jade`: Pug template engine renders the greeting and checks HTML escaping of input. [Evidence](verification/native_20261104_followup_2e6a616465.json).
+
 Render a Pug page with interpolation and escaping.
 
 ## Toolchain
@@ -33,5 +38,5 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.jade` | [hello.jade](variants/jade-6d41832d/hello.jade) created; verification pending |
+| `.jade` | [hello.jade](variants/jade-6d41832d/hello.jade) syntax and behavior verified |
 | `.pug` | [hello.pug](hello.pug) verified |

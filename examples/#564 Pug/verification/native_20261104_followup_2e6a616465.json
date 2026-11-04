@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 564,
+  "name": "Pug",
+  "extension": ".jade",
+  "timestamp_utc": "2026-11-04T19:57:27.648021+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Pug template engine renders the greeting and checks HTML escaping of input.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\564-jade",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "NODE_PATH": "<workspace>\\work\\tools_561_580\\node\\node_modules"
+  },
+  "artifact_sha256": {
+    "examples/#564 Pug/variants/jade-6d41832d/hello.jade": "4b1477161d63de3ff47c615032fb2a2c002a56040604ffd74b4245b39909e40a"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#564 Pug/verify.cjs",
+    "original_sha256": "1add4f24ded8b268edf2cb41b86b17d79b9a34a8ec9fb189495769ecae50644d",
+    "staged_sha256": "e8750a9628cfc0466dc2e23634869ac4c6ad60a26aad8211db8158eedfcb30ac",
+    "staged_filename": "verify.cjs",
+    "adaptation": {
+      "old_input": "hello.pug",
+      "new_input": "hello.jade"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<node>",
+        "-e",
+        "const fs=require(\"node:fs\"),p=require(\"node:path\"); const wanted=JSON.parse(process.argv[1]); let result={node:process.version}; for(const id of wanted){const path=p.join(process.env.NODE_PATH,id,\"package.json\");require.resolve(id);result[id]=JSON.parse(fs.readFileSync(path,\"utf8\")).version;} console.log(JSON.stringify(result));",
+        "[\"pug\"]"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"node\":\"v22.20.0\",\"pug\":\"3.0.4\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.176
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<node>",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 3.947
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#564 Pug/verification/native_20261104_followup_drivers/2e6a616465/verify.cjs",
+    "sha256": "e8750a9628cfc0466dc2e23634869ac4c6ad60a26aad8211db8158eedfcb30ac"
+  },
+  "test_scope_description": "Pug template engine renders the greeting and checks HTML escaping of input."
+}

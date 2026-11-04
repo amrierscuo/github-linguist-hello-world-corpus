@@ -1,5 +1,10 @@
 # #280 HTML
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.htm`: Unchanged suffix variant; main example status unchanged. [Evidence](verification/native_20261104_followup_2e68746d.json).
+
 Voce canonica `HTML`, tipo `markup`, language_id `146`.
 
 Analyze a valid HTML5 document and check the visible text of a heading h1 under main.
@@ -48,7 +53,7 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.html` | [hello.html](hello.html) verified |
 | `.hta` | [hello.hta](variants/ext-hta-2e687461/hello.hta) created; verification pending |
-| `.htm` | [hello.htm](variants/ext-htm-2e68746d/hello.htm) created; verification pending |
+| `.htm` | [hello.htm](variants/ext-htm-2e68746d/hello.htm) syntax and behavior verified |
 | `.html.hl` | [hello.html.hl](variants/ext-html-hl-2e68746d6c2e686c/hello.html.hl) created; verification pending |
 | `.inc` | [hello.inc](variants/ext-inc-2e696e63/hello.inc) created; verification pending |
 | `.xht` | [hello.xht](variants/ext-xht-2e786874/hello.xht) created; verification pending |

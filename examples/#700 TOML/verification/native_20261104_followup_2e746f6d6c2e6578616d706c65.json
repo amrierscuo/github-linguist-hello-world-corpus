@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "ordinal": 700,
+  "name": "TOML",
+  "extension": ".toml.example",
+  "timestamp_utc": "2026-11-04T19:57:26.754498+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "CPython tomllib: exact parsed configuration and language field.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\700-toml.example",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {},
+  "artifact_sha256": {
+    "examples/#700 TOML/variants/toml-example-35fdb380/hello.toml.example": "b339b30a75ec65fbe715bd0d61c3a7cf3955e222872d2d5e615eff92719cd6e4"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#700 TOML/verify.py",
+    "original_sha256": "65a888520be0ee810088ca0ea90600867e414386cb972ab9c0d0212eb4cccae0",
+    "staged_sha256": "fa968757e8018202b78ce43b0ad47efbd56eee058e45210f2b69f259777d4020",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.toml",
+      "new_input": "hello.toml.example"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.498
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: native TOML parser and exact configuration model\n",
+      "stderr": "",
+      "elapsed_seconds": 0.425
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#700 TOML/verification/native_20261104_followup_drivers/2e746f6d6c2e6578616d706c65/verify.py",
+    "sha256": "fa968757e8018202b78ce43b0ad47efbd56eee058e45210f2b69f259777d4020"
+  },
+  "test_scope_description": "CPython tomllib: exact parsed configuration and language field."
+}

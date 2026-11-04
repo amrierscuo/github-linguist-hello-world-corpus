@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "ordinal": 570,
+  "name": "Python",
+  "extension": ".cgi",
+  "timestamp_utc": "2026-11-04T19:59:43.943852+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "CPython executes the exact CGI source; validates serialized Content-Type header and body, without starting a CGI server. The driver preserves the source CRLF delimiters on Windows.",
+  "artifact_sha256": {
+    "examples/#570 Python/variants/cgi-89feb572/hello.cgi": "93b04f4895cafd205f297e714a1d8c72b59320c5cea999fdc42a5cac4a254c59"
+  },
+  "verification_driver": {
+    "staged_filename": "verify_cgi.py",
+    "sha256": "4bc191db8248610d1e4d95e742afc4ed6c09be39084540477c01156e44a28d28"
+  },
+  "versions": [
+    {
+      "label": "CPython version",
+      "command": [
+        "<python>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.13.9\n",
+      "stderr": "",
+      "elapsed_seconds": 0.032
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute CGI entrypoint and capture exact bytes",
+      "command": [
+        "<python>",
+        "verify_cgi.py",
+        "hello.cgi"
+      ],
+      "exit_code": 0,
+      "stdout": "Content-Type: text/plain; charset=utf-8\r\n\r\nHello, World!\n",
+      "stdout_hex": "436f6e74656e742d547970653a20746578742f706c61696e3b20636861727365743d7574662d380d0a0d0a48656c6c6f2c20576f726c64210a",
+      "stderr": ""
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#570 Python/verification/native_20261104_followup_drivers/2e636769/verify_cgi.py",
+    "sha256": "4bc191db8248610d1e4d95e742afc4ed6c09be39084540477c01156e44a28d28"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "CPython executes the exact CGI source; validates serialized Content-Type header and body, without starting a CGI server. The driver preserves the source CRLF delimiters on Windows."
+}

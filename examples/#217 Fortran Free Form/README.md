@@ -1,5 +1,12 @@
 # #217 Fortran Free Form
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.f03`: Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Evidence](verification/native_20261104_followup_2e663033.json).
+- `.f08`: Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Evidence](verification/native_20261104_followup_2e663038.json).
+- `.f95`: Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Evidence](verification/native_20261104_followup_2e663935.json).
+
 Voce canonica `Fortran Free Form`, tipo `programming`, language_id `761352333`.
 
 Fill out a Fortran 2008 program in free form and print a parametric concatenation.
@@ -46,6 +53,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.f90` | [hello.f90](hello.f90) verified |
-| `.f03` | [hello.f03](variants/ext-f03-2e663033/hello.f03) created; verification pending |
-| `.f08` | [hello.f08](variants/ext-f08-2e663038/hello.f08) created; verification pending |
-| `.f95` | [hello.f95](variants/ext-f95-2e663935/hello.f95) created; verification pending |
+| `.f03` | [hello.f03](variants/ext-f03-2e663033/hello.f03) syntax and behavior verified |
+| `.f08` | [hello.f08](variants/ext-f08-2e663038/hello.f08) syntax and behavior verified |
+| `.f95` | [hello.f95](variants/ext-f95-2e663935/hello.f95) syntax and behavior verified |

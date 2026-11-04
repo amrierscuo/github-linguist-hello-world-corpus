@@ -1,5 +1,9 @@
 # 0463: Nearley: `.nearley`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.nearley`. Nearley original compiler emits a parser from this grammar file; the parser recognizes the exact greeting. [Recorded evidence](../../verification/native_20261104_followup_2e6e6561726c6579.json).
+
 Role: Alias extension for the same text format as the main source.
 
 Origin: Byte-identical copy of the original corpus source: examples/#463 Nearley/hello.ne.
@@ -14,7 +18,7 @@ nearleyc hello.nearley -o hello.js; node verify.js
 
 Expected result: Hello, World! followed by newline; exit0.
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

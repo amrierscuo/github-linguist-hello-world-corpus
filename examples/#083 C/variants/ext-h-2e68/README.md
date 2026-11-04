@@ -1,5 +1,9 @@
 # 0083 C: variant `.h`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.h`. Variant only. Main language status and other suffixes unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e68.json).
+
 Role: Header C with inline function, included by the consumer.
 
 Type: **adapted**. Starting model: examples/#083 C/hello.c; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ gcc -std=c11 consumer.c -o <output>/hello; <output>/hello
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

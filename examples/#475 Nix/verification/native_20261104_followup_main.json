@@ -1,0 +1,530 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:59:24.936303+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Nix",
+  "ordinal": 475,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for nix-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "nix-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:24.956239+00:00",
+      "exit_code": 0,
+      "stdout": "Package: nix-bin\nArchitecture: amd64\nVersion: 2.18.1+dfsg-1ubuntu5\nPriority: optional\nSection: universe/devel\nSource: nix\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Jordan Justen <jljusten@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 6896\nDepends: bash-static, bzip2, curl, libdbd-sqlite3-perl, libwww-curl-perl, perl, xz-utils, libarchive13t64 (>= 3.2.1), libboost-context1.83.0 (>= 1.83.0), libbrotli1 (>= 0.6.0), libc6 (>= 2.38), libcpuid16 (>= 0.6.0), libcurl3t64-gnutls (>= 7.28.0), libgc1 (>= 1:7.2d), libgcc-s1 (>= 3.3.1), liblowdown1 (>= 1.0.0), libreadline8t64 (>= 6.0), libseccomp2 (>= 1.0.1), libsodium23 (>= 0.7.0), libsqlite3-0 (>= 3.38.0), libssl3t64 (>= 3.0.0), libstdc++6 (>= 13.1)\nRecommends: nix-setup-systemd\nFilename: pool/universe/n/nix/nix-bin_2.18.1+dfsg-1ubuntu5_amd64.deb\nSize: 2684388\nMD5sum: 1a97169eb7c784bc82cbb3f0660de6f2\nSHA1: dd44b2895487035782e7ed8356935ba28c62c5a0\nSHA256: 1aecc4a6435e75791dcd3f0b43992361cfa0f56eaa99ea165a3299725c330947\nSHA512: 1e01f0e9012d2e4d47c73740d9b97b911378be1c1a474160a91e4da01bec3099ae305907a0ee04a8a15b0b7901df1251a47b17cfbcf1be5b8569f9f95dee0cbe\nHomepage: https://nixos.org/nix\nDescription-en: Purely functional package manager (binaries)\n A powerful package manager for Linux and other Unix systems that\n makes package management reliable and reproducible. Nix provides\n atomic upgrades and rollbacks, side-by-side installation of multiple\n versions of a package, multi-user package management and easy setup\n of build environments.\n .\n NOTE: This package only provides the nix binaries. One still needs\n to setup directories, environments variables and configuration files\n to use nix as described in the nix manual.\n The package nix-setup-systemd provides such a setup using systemd\n mechanisms, also see /usr/share/doc/nix-bin/README.Debian.\nDescription-md5: 94e3e72eab4496106b0a66681c8e7956\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only nix-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "nix-bin=2.18.1+dfsg-1ubuntu5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/nix-bin",
+      "timestamp_utc": "2026-11-04T19:59:25.093446+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 nix-bin amd64 2.18.1+dfsg-1ubuntu5 [2684 kB]\nFetched 2684 kB in 4s (731 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract nix-bin without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/nix-bin/nix-bin_2.18.1+dfsg-1ubuntu5_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:29.057221+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libboost-context1.83.0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libboost-context1.83.0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:29.658524+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libboost-context1.83.0\nSource: boost1.83\nPriority: optional\nSection: libs\nInstalled-Size: 2158\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 1.83.0-2.1ubuntu3.2\nDepends: libc6 (>= 2.34), libstdc++6 (>= 4.1.1)\nFilename: pool/main/b/boost1.83/libboost-context1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb\nSize: 237090\nMD5sum: bd0c91b0f6df4ec7e7314b909ad32503\nSHA1: 9269602cd1aedd91d42b9465189ca9239c568a69\nSHA256: ecd7786467c5083f779cf62b7efaa20b4b9bc42b13680e678966b83ee5524577\nSHA512: e287d995baf19894ff8ce0c75953eece658927ba2edbbac75606e3e9de3698601eafb699baeab396221c16b092dc5c81ea175aa5ce68f1d465a57f008efed4f8\nHomepage: http://www.boost.org/libs/context/\nDescription-en: provides a sort of cooperative multitasking on a single thread\n This package forms part of the Boost C++ Libraries collection.\n .\n Boost.Context is a foundational library that provides a sort of\n cooperative multitasking on a single thread. By providing an\n abstraction of the current execution state in the current thread,\n including the stack (with local variables) and stack pointer, all\n registers and CPU flags, and the instruction pointer, a fcontext_t\n instance represents a specific point in the application's execution\n path. This is useful for building higher-level abstractions, like\n coroutines, cooperative threads (userland threads) or an equivalent\n to C# keyword yield in C++.\nDescription-md5: 509bcb267a10afdee403415de2d077bd\nMulti-Arch: same\nOriginal-Maintainer: Debian Boost Team <team+boost@tracker.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: libboost-context1.83.0\nArchitecture: amd64\nVersion: 1.83.0-2.1ubuntu3\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: boost1.83\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Boost Team <team+boost@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2158\nDepends: libc6 (>= 2.34), libstdc++6 (>= 4.1.1)\nFilename: pool/main/b/boost1.83/libboost-context1.83.0_1.83.0-2.1ubuntu3_amd64.deb\nSize: 236958\nMD5sum: af47cf0c50ef847257956bf71a67391a\nSHA1: e18db404136eeace744fca65fbd4c71a76fea6eb\nSHA256: 865bdbc5953c68ef92db3b2b7d4ed8af34a27763c2e8efb2116a1e237d6d6cc2\nSHA512: ffc1ce31ebb20e83edec4600cf212f27848e0b7f81493a1755962f558105bc642c587a480b277a13e4f0f00c1c6ab20a454795dfde0d1f6fe7fbfab309d94ad6\nHomepage: http://www.boost.org/libs/context/\nDescription-en: provides a sort of cooperative multitasking on a single thread\n This package forms part of the Boost C++ Libraries collection.\n .\n Boost.Context is a foundational library that provides a sort of\n cooperative multitasking on a single thread. By providing an\n abstraction of the current execution state in the current thread,\n including the stack (with local variables) and stack pointer, all\n registers and CPU flags, and the instruction pointer, a fcontext_t\n instance represents a specific point in the application's execution\n path. This is useful for building higher-level abstractions, like\n coroutines, cooperative threads (userland threads) or an equivalent\n to C# keyword yield in C++.\nDescription-md5: 509bcb267a10afdee403415de2d077bd\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libboost-context1.83.0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libboost-context1.83.0=1.83.0-2.1ubuntu3.2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libboost-context1.83.0",
+      "timestamp_utc": "2026-11-04T19:59:29.687722+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-context1.83.0 amd64 1.83.0-2.1ubuntu3.2 [237 kB]\nFetched 237 kB in 0s (718 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libboost-context1.83.0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libboost-context1.83.0/libboost-context1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:30.244788+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libcpuid16",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libcpuid16"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:30.320596+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libcpuid16\nArchitecture: amd64\nVersion: 0.6.4+repack1-1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: libcpuid\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Martin Wimpress <code@wimpress.io>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 168\nDepends: libc6 (>= 2.38)\nFilename: pool/universe/libc/libcpuid/libcpuid16_0.6.4+repack1-1_amd64.deb\nSize: 38032\nMD5sum: 9494f2a899ccd1b61f880db873323fcf\nSHA1: d1f72f393d8c02de17d7e99e9d593fc714b92311\nSHA256: 6e32e62306b8dd2520efdb4666bff43db24482a006fbf7f21271ff6a2762f3e4\nSHA512: 0f0ce139e26381446977e3c549bcc57ba6f6f2af6e1120e52fe3788ec2284ff0b39aff056ab23dff546865951af61cd309b1ba89bb92ec5010c91249e1568cb8\nHomepage: https://github.com/anrieff/libcpuid\nDescription-en: C library for x86/x86_64 CPU detection and feature extraction (shared lib)\n libcpuid is a small C library for x86 CPU detection and feature\n extraction. Using it, you can:\n .\n    - get the processor vendor, model, brand string, code name,\n    - get information about CPU features such as: number of cores or logical\n      CPUs, cache sizes, CPU clock,\n    - check if the processor implements a specific instruction set such as\n      the SSE2, 3DNow!,\n    - execute the CPUID and RDTSC instructions (portably!)\n .\n This package ships the libcpuid shared library.\nDescription-md5: a046fed8afd8909c28c838a8f163bbf7\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libcpuid16",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libcpuid16=0.6.4+repack1-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libcpuid16",
+      "timestamp_utc": "2026-11-04T19:59:30.346298+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libcpuid16 amd64 0.6.4+repack1-1 [38.0 kB]\nFetched 38.0 kB in 0s (157 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libcpuid16 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libcpuid16/libcpuid16_0.6.4+repack1-1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:30.867128+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libgc1",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libgc1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:30.915272+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libgc1\nArchitecture: amd64\nVersion: 1:8.2.6-1build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: libgc\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Christoph Egger <christoph@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 395\nDepends: libc6 (>= 2.38), libstdc++6 (>= 4.1.1)\nConflicts: libgc1c2\nReplaces: libgc1c2\nFilename: pool/main/libg/libgc/libgc1_8.2.6-1build1_amd64.deb\nSize: 90274\nMD5sum: ebd74fc3baf024ce46c18474a4aee7a0\nSHA1: 844bea722f930e497d01cca6a31b8d9251ab7934\nSHA256: 67d4d83f1c7f3bc240d44f4d9133e08d0da3e5069e50e6dd15ea998af7bccd06\nSHA512: 905f88965160f254db735fb227c02a33f8fd9f9188ad75c0cdd4e0c38c8498657e5b0c1bbbaa4d1af71d462579b87737bfd3b98f3e05f27c3fca18a5b52c7bd1\nHomepage: https://www.hboehm.info/gc/\nDescription-en: conservative garbage collector for C and C++\n Boehm-Demers-Weiser's GC is a garbage collecting storage allocator that is\n intended to be used as a plug-in replacement for C's malloc or C++'s new().\n .\n It allows you to allocate memory basically as you normally would without\n explicitly deallocating memory that is no longer useful. The collector\n automatically recycles memory when it determines that it can no longer be\n used.\n .\n This version of the collector is thread safe, has C++ support and uses the\n defaults for everything else. However, it does not work as a drop-in malloc(3)\n replacement.\nDescription-md5: fb0bc4e8a25a8d1d4508437085e3f5c8\nTask: kubuntu-desktop, kubuntu-full, lubuntu-desktop, ubuntustudio-desktop, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libgc1",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libgc1=1:8.2.6-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libgc1",
+      "timestamp_utc": "2026-11-04T19:59:30.944360+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libgc1 amd64 1:8.2.6-1build1 [90.3 kB]\nFetched 90.3 kB in 0s (214 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libgc1 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libgc1/libgc1_1%3a8.2.6-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:31.863877+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for liblowdown1",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "liblowdown1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:32.015086+00:00",
+      "exit_code": 0,
+      "stdout": "Package: liblowdown1\nArchitecture: amd64\nVersion: 1.1.0-1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: lowdown\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Faidon Liambotis <paravoid@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 257\nDepends: libbsd0 (>= 0.11.0), libc6 (>= 2.38), libmd0 (>= 0.0.0)\nFilename: pool/universe/l/lowdown/liblowdown1_1.1.0-1_amd64.deb\nSize: 100880\nMD5sum: c4366478d4a912fdeba7a6c7135e6ee6\nSHA1: fd2d8dbda85401d9112f75d2fb5994ad8ad4ba42\nSHA256: e6158e344120ac049850c63177f86745afacb2d4edee5b16c0cce345357b6095\nSHA512: e49ef6ca91cb781b34e529108184c1a88a909ad4f6942880b095238c8b6157f7b480caf33f8565092a2f5feabd143a40cf9dd9bbc4a094c9134596d935c3429b\nHomepage: https://kristaps.bsd.lv/lowdown/\nDescription-en: Simple markdown translator (shared library)\n Lowdown is a Markdown translator producing HTML5, roff documents in the ms and\n man formats, LaTeX, gemini, and terminal output.\n .\n Beyond traditional Markdown syntax support, lowdown supports the following\n Markdown features and extensions:\n  * autolinking\n  * fenced code\n  * tables\n  * superscripts\n  * footnotes\n  * disabled inline HTML\n  * “smart typography”\n  * metadata\n  * commonmark (in progress)\n  * definition lists\n  * extended attributes\n  * task lists\n .\n This package contains the shared runtime library.\nDescription-md5: 01029a5c394303086acabf6ccdae1f15\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only liblowdown1",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "liblowdown1=1.1.0-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/liblowdown1",
+      "timestamp_utc": "2026-11-04T19:59:32.076121+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblowdown1 amd64 1.1.0-1 [101 kB]\nFetched 101 kB in 1s (142 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract liblowdown1 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/liblowdown1/liblowdown1_1.1.0-1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:33.295088+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libsodium23",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libsodium23"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:33.332786+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libsodium23\nSource: libsodium\nPriority: optional\nSection: libs\nInstalled-Size: 401\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 1.0.18-1ubuntu0.24.04.1\nDepends: libc6 (>= 2.34)\nFilename: pool/main/libs/libsodium/libsodium23_1.0.18-1ubuntu0.24.04.1_amd64.deb\nSize: 161290\nMD5sum: 630c21cc1dceb17c12a00f2ad7ab4d80\nSHA1: b1c07499a6600cfc9ae1b25adb59faa1a4d361d5\nSHA256: 74d6f8fbd65f7f71b6f4f4223bef5fb57c1c14cd4e9ce788ead2b88e8c3ee236\nSHA512: 175a6406ef2c930d4c6aae4fbb647a16029dce238911b9a89f7ed7530566247e8076ad91114190432d7c7bf6460fa098f890211337cf89b2ada270514acf1878\nHomepage: https://www.libsodium.org/\nDescription-en: Network communication, cryptography and signaturing library\n NaCl (pronounced \"salt\") is a new easy-to-use high-speed software library for\n network communication, encryption, decryption, signatures, etc.\n .\n NaCl's goal is to provide all of the core operations needed to build\n higher-level cryptographic tools.\n .\n Sodium is a portable, cross-compilable, installable, packageable fork of NaCl,\n with a compatible API.\nDescription-md5: 0affde5b96740664a1c3f33fe4ca7e9f\nMulti-Arch: same\nOriginal-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntu-desktop, cloud-image, cloud-image, ubuntu-wsl, server, ubuntu-server-raspi, mail-server, lamp-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\nPackage: libsodium23\nArchitecture: amd64\nVersion: 1.0.18-1build3\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: libsodium\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 401\nDepends: libc6 (>= 2.34)\nFilename: pool/main/libs/libsodium/libsodium23_1.0.18-1build3_amd64.deb\nSize: 161498\nMD5sum: 9d30c32d6a26a50a23519e945aef7109\nSHA1: 089bc9b851879ddf312a54df9d989ebab80b3bbc\nSHA256: 0bd5072c20e1de04155d7a68c61aa04edccda4f4fe6c60c072a94fae8fbcc1b1\nSHA512: 621fc86d7921a7b575cac8a8fffef15544817298c47a4c144a78d02798d39556012f72559f1279c95e37510e98a4354a00f66e7c2d46d627bf3f6ad4058af996\nHomepage: https://www.libsodium.org/\nDescription-en: Network communication, cryptography and signaturing library\n NaCl (pronounced \"salt\") is a new easy-to-use high-speed software library for\n network communication, encryption, decryption, signatures, etc.\n .\n NaCl's goal is to provide all of the core operations needed to build\n higher-level cryptographic tools.\n .\n Sodium is a portable, cross-compilable, installable, packageable fork of NaCl,\n with a compatible API.\nDescription-md5: 0affde5b96740664a1c3f33fe4ca7e9f\nTask: ubuntu-desktop, cloud-image, cloud-image, ubuntu-wsl, server, ubuntu-server-raspi, mail-server, lamp-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libsodium23",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libsodium23=1.0.18-1ubuntu0.24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libsodium23",
+      "timestamp_utc": "2026-11-04T19:59:33.359451+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsodium23 amd64 1.0.18-1ubuntu0.24.04.1 [161 kB]\nFetched 161 kB in 1s (196 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libsodium23 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libsodium23/libsodium23_1.0.18-1ubuntu0.24.04.1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:34.417996+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Resolve original Nix evaluator libraries",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/bin/nix-instantiate"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T19:59:34.475091+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffc642a2000)\n\tlibboost_context.so.1.83.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libboost_context.so.1.83.0 (0x00007e73a38ca000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007e73a3200000)\n\tlibbrotlienc.so.1 => /lib/x86_64-linux-gnu/libbrotlienc.so.1 (0x00007e73a3823000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x00007e73a3815000)\n\tlibarchive.so.13 => not found\n\tlibcpuid.so.16 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libcpuid.so.16 (0x00007e73a37e8000)\n\tlibsqlite3.so.0 => /lib/x86_64-linux-gnu/libsqlite3.so.0 (0x00007e73a3098000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007e73a2faf000)\n\tlibcurl-gnutls.so.4 => /lib/x86_64-linux-gnu/libcurl-gnutls.so.4 (0x00007e73a372d000)\n\tlibsodium.so.23 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libsodium.so.23 (0x00007e73a2f58000)\n\tlibseccomp.so.2 => /lib/x86_64-linux-gnu/libseccomp.so.2 (0x00007e73a2f38000)\n\tlibgc.so.1 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libgc.so.1 (0x00007e73a2ecd000)\n\tlibhistory.so.8 => /lib/x86_64-linux-gnu/libhistory.so.8 (0x00007e73a371e000)\n\tlibreadline.so.8 => /lib/x86_64-linux-gnu/libreadline.so.8 (0x00007e73a2e78000)\n\tliblowdown.so.1 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/liblowdown.so.1 (0x00007e73a2e3b000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007e73a2a00000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007e73a2e0d000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007e73a2600000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x00007e73a2dea000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007e73a3eef000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x00007e73a2dbf000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007e73a2d9d000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x00007e73a2d7f000)\n\tlibssh.so.4 => /lib/x86_64-linux-gnu/libssh.so.4 (0x00007e73a2d0d000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x00007e73a2cf9000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007e73a2ca4000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007e73a2405000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007e73a29ac000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x00007e73a294e000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x00007e73a2c94000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007e73a2894000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007e73a2878000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007e73a2844000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x00007e73a2c85000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x00007e73a282e000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x00007e73a2258000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007e73a2210000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007e73a218c000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007e73a1fe8000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007e73a2818000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007e73a1f1f000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007e73a1ef3000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007e73a1eed000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007e73a1ee0000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007e73a1ec6000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007e73a1eba000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007e73a1eb3000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007e73a1ea1000)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libarchive13t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libarchive13t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T20:00:59.395775+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libarchive13t64\nSource: libarchive\nPriority: optional\nSection: libs\nInstalled-Size: 905\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 3.7.2-2ubuntu0.9\nReplaces: libarchive13\nSuggests: lrzip\nProvides: libarchive13 (= 3.7.2-2ubuntu0.9)\nDepends: libacl1 (>= 2.2.23), libbz2-1.0, libc6 (>= 2.38), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.2.2), libnettle8t64, libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nBreaks: libarchive13 (<< 3.7.2-2ubuntu0.9)\nFilename: pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb\nSize: 383406\nMD5sum: b102398f56e49747e3258367614f8ad0\nSHA1: fe446f9b669f870fb8fe1fe05dc06d3bd474c723\nSHA256: b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f\nSHA512: f5efd25b09d6f3754fade7666736a02385287b37044c6dc94a92975c7cdbbd462747568bd5ebe1258c7201668bb77c23cec1db52f3736be3130c3881de25215b\nHomepage: https://www.libarchive.org/\nDescription-en: Multi-format archive and compression library (shared library)\n The libarchive library provides a flexible interface for reading and writing\n archives in various formats such as tar and cpio. libarchive also supports\n reading and writing archives compressed using various compression filters such\n as gzip and bzip2. The library is inherently stream-oriented; readers serially\n iterate through the archive, writers serially add things to the archive.\n .\n Archive formats supported are:\n .\n * tar (read and write, including GNU extensions)\n * pax (read and write, including GNU and star extensions)\n * cpio (read and write, including odc and newc variants)\n * iso9660 (read and write, including Joliet and Rockridge extensions, with\n some limitations)\n * zip (read only, with some limitations, uses zlib)\n * mtree (read and write)\n * shar (write only)\n * ar (read and write, including BSD and GNU/SysV variants)\n * empty (read only; in particular, note that no other format will accept an\n empty file)\n * raw (read only)\n * xar (read only)\n * rar (read only, with some limitations)\n * 7zip (read and write, with some limitations)\n .\n Filters supported are:\n .\n * gzip (read and write, uses zlib)\n * bzip2 (read and write, uses bzlib)\n * compress (read and write, uses an internal implementation)\n * uudecode (read only)\n * separate command-line compressors with fixed-signature auto-detection\n * xz and lzma (read and write using liblzma)\n * zstandard (read and write using libzstd)\n .\n This package provides the libarchive shared library.\nDescription-md5: 8f6c8ca66a025bb06a3fcf3791223823\nMulti-Arch: same\nOriginal-Maintainer: Peter Pentchev <roam@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, server, ubuntu-server-raspi, samba-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\nPackage: libarchive13t64\nSource: libarchive\nPriority: optional\nSection: libs\nInstalled-Size: 905\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 3.7.2-2ubuntu0.8\nReplaces: libarchive13\nSuggests: lrzip\nProvides: libarchive13 (= 3.7.2-2ubuntu0.8)\nDepends: libacl1 (>= 2.2.23), libbz2-1.0, libc6 (>= 2.38), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.2.2), libnettle8t64, libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nBreaks: libarchive13 (<< 3.7.2-2ubuntu0.8)\nFilename: pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.8_amd64.deb\nSize: 382584\nMD5sum: 5cbeeb3dda019eb914dcf21ce4ac7fa3\nSHA1: a533c09df84ebd72fe26d954329689a7c4c633db\nSHA256: ba9684092d71656a3bfd909518c76cc15eefeef9cbac0a36a8cef5632c62f56f\nSHA512: 7a5748d5f75562c725d195006941873b4134efc2928a27ab34398045b3dbd0c68452341b2f14d7e64c18a71aa2bf8889d69601ffd3e019eb252f518cf5496d58\nHomepage: https://www.libarchive.org/\nDescription-en: Multi-format archive and compression library (shared library)\n The libarchive library provides a flexible interface for reading and writing\n archives in various formats such as tar and cpio. libarchive also supports\n reading and writing archives compressed using various compression filters such\n as gzip and bzip2. The library is inherently stream-oriented; readers serially\n iterate through the archive, writers serially add things to the archive.\n .\n Archive formats supported are:\n .\n * tar (read and write, including GNU extensions)\n * pax (read and write, including GNU and star extensions)\n * cpio (read and write, including odc and newc variants)\n * iso9660 (read and write, including Joliet and Rockridge extensions, with\n some limitations)\n * zip (read only, with some limitations, uses zlib)\n * mtree (read and write)\n * shar (write only)\n * ar (read and write, including BSD and GNU/SysV variants)\n * empty (read only; in particular, note that no other format will accept an\n empty file)\n * raw (read only)\n * xar (read only)\n * rar (read only, with some limitations)\n * 7zip (read and write, with some limitations)\n .\n Filters supported are:\n .\n * gzip (read and write, uses zlib)\n * bzip2 (read and write, uses bzlib)\n * compress (read and write, uses an internal implementation)\n * uudecode (read only)\n * separate command-line compressors with fixed-signature auto-detection\n * xz and lzma (read and write using liblzma)\n * zstandard (read and write using libzstd)\n .\n This package provides the libarchive shared library.\nDescription-md5: 8f6c8ca66a025bb06a3fcf3791223823\nMulti-Arch: same\nOriginal-Maintainer: Peter Pentchev <roam@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, server, ubuntu-server-raspi, samba-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\nPackage: libarchive13t64\nArchitecture: amd64\nVersion: 3.7.2-2\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: libarchive\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Peter Pentchev <roam@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 904\nProvides: libarchive13 (= 3.7.2-2)\nDepends: libacl1 (>= 2.2.23), libbz2-1.0, libc6 (>= 2.38), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.2.2), libnettle8t64, libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nSuggests: lrzip\nBreaks: libarchive13 (<< 3.7.2-2)\nReplaces: libarchive13\nFilename: pool/main/liba/libarchive/libarchive13t64_3.7.2-2_amd64.deb\nSize: 381452\nMD5sum: fbfcb906a88456ac14a56488c6835ca5\nSHA1: e4c2770d26a4e8be688a8d581cf9e8ff187dbf4c\nSHA256: 90f7f4692ac6b2ce1755c0f2e67f9655e288d764ef9d70dba7c3f7ae8b8a5b4b\nSHA512: a46eef2e3b602ace29135a0f6a8d792df7cb5b7c308d74fddde9ded39353a502e08cab7db581163e0613f42c387e4c6832b4d1df8da13e38e269dbc9bdad0b83\nHomepage: https://www.libarchive.org/\nDescription-en: Multi-format archive and compression library (shared library)\n The libarchive library provides a flexible interface for reading and writing\n archives in various formats such as tar and cpio. libarchive also supports\n reading and writing archives compressed using various compression filters such\n as gzip and bzip2. The library is inherently stream-oriented; readers serially\n iterate through the archive, writers serially add things to the archive.\n .\n Archive formats supported are:\n .\n    * tar (read and write, including GNU extensions)\n    * pax (read and write, including GNU and star extensions)\n    * cpio (read and write, including odc and newc variants)\n    * iso9660 (read and write, including Joliet and Rockridge extensions, with\n      some limitations)\n    * zip (read only, with some limitations, uses zlib)\n    * mtree (read and write)\n    * shar (write only)\n    * ar (read and write, including BSD and GNU/SysV variants)\n    * empty (read only; in particular, note that no other format will accept an\n      empty file)\n    * raw (read only)\n    * xar (read only)\n    * rar (read only, with some limitations)\n    * 7zip (read and write, with some limitations)\n .\n Filters supported are:\n .\n    * gzip (read and write, uses zlib)\n    * bzip2 (read and write, uses bzlib)\n    * compress (read and write, uses an internal implementation)\n    * uudecode (read only)\n    * separate command-line compressors with fixed-signature auto-detection\n    * xz and lzma (read and write using liblzma)\n    * zstandard (read and write using libzstd)\n .\n This package provides the libarchive shared library.\nDescription-md5: 4bc5ca99af95264652d6d79af38b5271\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, server, ubuntu-server-raspi, samba-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libarchive13t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libarchive13t64=3.7.2-2ubuntu0.9"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libarchive13t64",
+      "timestamp_utc": "2026-11-04T20:00:59.528276+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://security.ubuntu.com/ubuntu noble-security/main amd64 libarchive13t64 amd64 3.7.2-2ubuntu0.9 [383 kB]\nFetched 383 kB in 4s (108 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libarchive13t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/packages/libarchive13t64/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T20:01:03.365380+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Resolve original Nix evaluator libraries",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/bin/nix-instantiate"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T20:01:03.458139+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007fffdbb1d000)\n\tlibboost_context.so.1.83.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libboost_context.so.1.83.0 (0x00007aaa5b20a000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007aaa5ac00000)\n\tlibbrotlienc.so.1 => /lib/x86_64-linux-gnu/libbrotlienc.so.1 (0x00007aaa5b163000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x00007aaa5b155000)\n\tlibarchive.so.13 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libarchive.so.13 (0x00007aaa5ab2f000)\n\tlibcpuid.so.16 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libcpuid.so.16 (0x00007aaa5b128000)\n\tlibsqlite3.so.0 => /lib/x86_64-linux-gnu/libsqlite3.so.0 (0x00007aaa5a9c7000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007aaa5a8de000)\n\tlibcurl-gnutls.so.4 => /lib/x86_64-linux-gnu/libcurl-gnutls.so.4 (0x00007aaa5a823000)\n\tlibsodium.so.23 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libsodium.so.23 (0x00007aaa5a7cc000)\n\tlibseccomp.so.2 => /lib/x86_64-linux-gnu/libseccomp.so.2 (0x00007aaa5a7ac000)\n\tlibgc.so.1 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/libgc.so.1 (0x00007aaa5a741000)\n\tlibhistory.so.8 => /lib/x86_64-linux-gnu/libhistory.so.8 (0x00007aaa5b119000)\n\tlibreadline.so.8 => /lib/x86_64-linux-gnu/libreadline.so.8 (0x00007aaa5a6ec000)\n\tliblowdown.so.1 => ${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu/liblowdown.so.1 (0x00007aaa5a6af000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007aaa5a400000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007aaa5a681000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007aaa5a000000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x00007aaa5a3dd000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007aaa5a388000)\n\tlibacl.so.1 => /lib/x86_64-linux-gnu/libacl.so.1 (0x00007aaa5a37e000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007aaa5a34c000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007aaa5a292000)\n\tliblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x00007aaa5a270000)\n\tlibbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x00007aaa5a25c000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007aaa5a240000)\n\tlibxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x00007aaa59e1e000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007aaa5b82f000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x00007aaa5a215000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007aaa59dfc000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x00007aaa59dde000)\n\tlibssh.so.4 => /lib/x86_64-linux-gnu/libssh.so.4 (0x00007aaa59d6c000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x00007aaa59d58000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007aaa59b5d000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007aaa59b09000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x00007aaa59aab000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x00007aaa59a9b000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007aaa59a65000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x00007aaa59a56000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x00007aaa59a40000)\n\tlibicuuc.so.74 => /lib/x86_64-linux-gnu/libicuuc.so.74 (0x00007aaa59800000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x00007aaa59653000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007aaa5960b000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007aaa59587000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007aaa593e3000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007aaa59a28000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007aaa5931a000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007aaa592ee000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007aaa59a20000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007aaa59a13000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007aaa592d4000)\n\tlibicudata.so.74 => /lib/x86_64-linux-gnu/libicudata.so.74 (0x00007aaa57400000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007aaa592c8000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007aaa592c1000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007aaa592af000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib",
+        "NIX_STORE_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/store",
+        "NIX_STATE_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/state",
+        "NIX_LOG_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/logs",
+        "NIX_CONF_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/config",
+        "NIX_REMOTE": "local",
+        "NIX_CONFIG": "build-users-group =\nsubstitute = false\n"
+      }
+    },
+    {
+      "label": "Record Nix version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/bin/nix-instantiate",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T20:01:03.604675+00:00",
+      "exit_code": 0,
+      "stdout": "nix-instantiate (Nix) 2.18.1\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib",
+        "NIX_STORE_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/store",
+        "NIX_STATE_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/state",
+        "NIX_LOG_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/logs",
+        "NIX_CONF_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/config",
+        "NIX_REMOTE": "local",
+        "NIX_CONFIG": "build-users-group =\nsubstitute = false\n"
+      }
+    },
+    {
+      "label": "Evaluate the original pure Nix expression",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/bin/nix-instantiate",
+        "--eval",
+        "--strict",
+        "hello.nix"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/nix",
+      "timestamp_utc": "2026-11-04T20:01:03.771278+00:00",
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/nix/root/usr/lib",
+        "NIX_STORE_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/store",
+        "NIX_STATE_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/state",
+        "NIX_LOG_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/logs",
+        "NIX_CONF_DIR": "${WORKSPACE}/work/native_followup_20261104/wsl/nix/config",
+        "NIX_REMOTE": "local",
+        "NIX_CONFIG": "build-users-group =\nsubstitute = false\n"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "nix-bin",
+      "version": "2.18.1+dfsg-1ubuntu5",
+      "ubuntu_archive_path": "pool/universe/n/nix/nix-bin_2.18.1+dfsg-1ubuntu5_amd64.deb",
+      "sha256": "1aecc4a6435e75791dcd3f0b43992361cfa0f56eaa99ea165a3299725c330947"
+    },
+    {
+      "name": "libboost-context1.83.0",
+      "version": "1.83.0-2.1ubuntu3.2",
+      "ubuntu_archive_path": "pool/main/b/boost1.83/libboost-context1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb",
+      "sha256": "ecd7786467c5083f779cf62b7efaa20b4b9bc42b13680e678966b83ee5524577"
+    },
+    {
+      "name": "libcpuid16",
+      "version": "0.6.4+repack1-1",
+      "ubuntu_archive_path": "pool/universe/libc/libcpuid/libcpuid16_0.6.4+repack1-1_amd64.deb",
+      "sha256": "6e32e62306b8dd2520efdb4666bff43db24482a006fbf7f21271ff6a2762f3e4"
+    },
+    {
+      "name": "libgc1",
+      "version": "1:8.2.6-1build1",
+      "ubuntu_archive_path": "pool/main/libg/libgc/libgc1_8.2.6-1build1_amd64.deb",
+      "sha256": "67d4d83f1c7f3bc240d44f4d9133e08d0da3e5069e50e6dd15ea998af7bccd06"
+    },
+    {
+      "name": "liblowdown1",
+      "version": "1.1.0-1",
+      "ubuntu_archive_path": "pool/universe/l/lowdown/liblowdown1_1.1.0-1_amd64.deb",
+      "sha256": "e6158e344120ac049850c63177f86745afacb2d4edee5b16c0cce345357b6095"
+    },
+    {
+      "name": "libsodium23",
+      "version": "1.0.18-1ubuntu0.24.04.1",
+      "ubuntu_archive_path": "pool/main/libs/libsodium/libsodium23_1.0.18-1ubuntu0.24.04.1_amd64.deb",
+      "sha256": "74d6f8fbd65f7f71b6f4f4223bef5fb57c1c14cd4e9ce788ead2b88e8c3ee236"
+    },
+    {
+      "name": "libarchive13t64",
+      "version": "3.7.2-2ubuntu0.9",
+      "ubuntu_archive_path": "pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+      "sha256": "b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#475 Nix/hello.nix": "34f39b3f5f6ceb40214d05292fb55d80f17eeab270c32717dee6a060ac829644"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "Original Nix evaluator returned exactly the intended string. No derivations, builds, system configuration or network evaluation.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Original Nix evaluator returned exactly the intended string. No derivations, builds, system configuration or network evaluation."
+}

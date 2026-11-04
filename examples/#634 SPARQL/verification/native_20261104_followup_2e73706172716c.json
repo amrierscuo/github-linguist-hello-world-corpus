@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 634,
+  "name": "SPARQL",
+  "extension": ".sparql",
+  "timestamp_utc": "2026-11-04T19:58:20.493571+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "RDFlib SPARQL parser and query evaluator: one greeting binding.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\634-sparql",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_621_640\\python"
+  },
+  "artifact_sha256": {
+    "examples/#634 SPARQL/variants/sparql-6c620153/hello.sparql": "45b0e426a397152eb943951d826ba76ed4b13f3b18ed421436f9f030bbcf20ce"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#634 SPARQL/verify.py",
+    "original_sha256": "7dc3d52da1e4e8f3fa06b9c52a4dca73e3def1322759355d44dc7eae7b4f5a29",
+    "staged_sha256": "5e43960bee3a1fa276ccc438faa6f09976c8b7973cd3e0d565c9f217eafc5867",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.rq",
+      "new_input": "hello.sparql"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));",
+        "rdflib"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"rdflib\": \"7.6.0\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.209
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.955
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#634 SPARQL/verification/native_20261104_followup_drivers/2e73706172716c/verify.py",
+    "sha256": "5e43960bee3a1fa276ccc438faa6f09976c8b7973cd3e0d565c9f217eafc5867"
+  },
+  "test_scope_description": "RDFlib SPARQL parser and query evaluator: one greeting binding."
+}

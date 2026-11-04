@@ -1,5 +1,11 @@
 # #771 Wikitext
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.wiki`: mwparserfromhell: heading AST and extracted plain-text greeting, not full MediaWiki rendering. [Evidence](verification/native_20261104_followup_2e77696b69.json).
+- `.wikitext`: mwparserfromhell: heading AST and extracted plain-text greeting, not full MediaWiki rendering. [Evidence](verification/native_20261104_followup_2e77696b6974657874.json).
+
 Voce canonica `Wikitext`, tipo `prose`, language_id `228`.
 
 Original Wikitext page with a Greeting title and greeting text in the body.
@@ -46,5 +52,5 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.mediawiki` | [hello.mediawiki](hello.mediawiki) verified |
-| `.wiki` | [hello.wiki](variants/wiki-161d167f/hello.wiki) created; verification pending |
-| `.wikitext` | [hello.wikitext](variants/wikitext-b2a94597/hello.wikitext) created; verification pending |
+| `.wiki` | [hello.wiki](variants/wiki-161d167f/hello.wiki) syntax and behavior verified |
+| `.wikitext` | [hello.wikitext](variants/wikitext-b2a94597/hello.wikitext) syntax and behavior verified |

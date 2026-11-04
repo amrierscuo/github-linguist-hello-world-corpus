@@ -1,5 +1,9 @@
 # 0324: JSON: `.jsonl`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.jsonl`. Unchanged suffix variant; main example status unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e6a736f6e6c.json).
+
 Role: JSON Lines: independent JSON record per line.
 
 Origin: Original source written for the specific role of the variant, using the mentioned documentation.
@@ -14,7 +18,7 @@ Lettore JSON Lines: decodificare ogni riga come JSON e leggere greeting
 
 Expected result: A record with greeting Hello, World!
 
-Individual status: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `true`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

@@ -1,5 +1,9 @@
 # 0605: Rebol: `.r`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.r`. Rebol/Bulk original interpreter executes the exact variant filename as a console program. [Recorded evidence](../../verification/native_20261104_followup_2e72.json).
+
 Textual variation of the same format, with canon suffix .r.
 
 Origin: copy of the original `examples/#605 Rebol/hello.reb` file.

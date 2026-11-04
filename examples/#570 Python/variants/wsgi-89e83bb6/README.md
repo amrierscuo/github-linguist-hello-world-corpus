@@ -1,5 +1,9 @@
 # 0570: Python: `.wsgi`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.wsgi`. Standard-library WSGI validator and wsgiref reference handler execute the exact module, asserting its HTTP status, Content-Type, Content-Length and response bytes; in-memory transport. [Recorded evidence](../../verification/native_20261104_followup_2e77736769.json).
+
 Application WSGI conforms to the application convention; it is not a print script.
 
 Provenience: original example written for the role of this suffix.

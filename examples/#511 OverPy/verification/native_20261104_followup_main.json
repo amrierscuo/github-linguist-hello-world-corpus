@@ -1,0 +1,60 @@
+{
+  "ordinal": 511,
+  "name": "OverPy",
+  "verified_utc": "2026-11-04T19:57:16.935420+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "toolchain": "OverPy 9.7.17 with Node.js v22.20.0",
+  "source_hashes": {
+    "examples/#511 OverPy/hello.opy": "c10d9d1298ebe4039f4748ceeb4b8fb71ae1a831a99bd0f60c15acd27f7cdaed",
+    "examples/#511 OverPy/verify.cjs": "2e453263a6c49f1b4252f42e5a2a4939169e50712c4dc0fa465420d326d1ef63"
+  },
+  "syntax_verified": true,
+  "semantic_verified": false,
+  "extensions": {
+    ".opy": {
+      "syntax_verified": true,
+      "semantic_verified": false
+    }
+  },
+  "description": "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified.",
+  "steps": [
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\main\\overpy",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "verify.cjs"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\main\\overpy",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "-e",
+        "const p=require('overpy'); const fs=require('node:fs'); (async()=>{const c=await p.compile(fs.readFileSync('hello.opy','utf8'),'en-US'); console.log(c.result);})().catch(e=>{console.error(e);process.exitCode=1})"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\main\\overpy",
+      "exit_code": 0,
+      "stdout": "rule (\"Greeting\") {\n    event {\n        Ongoing - Each Player;\n        All;\n        All;\n    }\n    actions {\n        Big Message(Event Player, Custom String(\"Hello, World!\"));\n    }\n}\n\n\n",
+      "stderr": ""
+    }
+  ],
+  "corrected_source": {
+    "file": "examples/#511 OverPy/hello.opy",
+    "staged_file": "work/native_followup_20261104/main/overpy/hello.opy",
+    "before_sha256": "048c7037a7c9f0295cd154955314d956987f1a681bb938d303cab4ba0d6d41a6"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified."
+}

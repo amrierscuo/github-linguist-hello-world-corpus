@@ -1,5 +1,15 @@
 # #744 VHDL
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.vhd`: Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Evidence](verification/native_20261104_followup_2e766864.json).
+- `.vhf`: Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Evidence](verification/native_20261104_followup_2e766866.json).
+- `.vho`: Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Evidence](verification/native_20261104_followup_2e76686f.json).
+- `.vhs`: Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Evidence](verification/native_20261104_followup_2e766873.json).
+- `.vht`: Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Evidence](verification/native_20261104_followup_2e766874.json).
+- `.vhw`: Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Evidence](verification/native_20261104_followup_2e766877.json).
+
 Simulate VHDL and produce a report known with greeting.
 
 Canonical type `programming`, language_id `385`.
@@ -34,10 +44,10 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.vhdl` | [hello.vhdl](hello.vhdl), [greeting.vhdl](variants/vhi-77848f30/greeting.vhdl), [main.vhdl](variants/vhi-77848f30/main.vhdl), [testbench.vhdl](variants/vho-0ab0d39a/testbench.vhdl) created; verification pending |
-| `.vhd` | [hello.vhd](variants/vhd-b8ea5231/hello.vhd) created; verification pending |
-| `.vhf` | [hello.vhf](variants/vhf-90e3bf30/hello.vhf) created; verification pending |
+| `.vhd` | [hello.vhd](variants/vhd-b8ea5231/hello.vhd) syntax and behavior verified |
+| `.vhf` | [hello.vhf](variants/vhf-90e3bf30/hello.vhf) syntax and behavior verified |
 | `.vhi` | [hello.vhi](variants/vhi-77848f30/hello.vhi) created; verification pending |
-| `.vho` | [hello.vho](variants/vho-0ab0d39a/hello.vho) created; verification pending |
-| `.vhs` | [hello.vhs](variants/vhs-dc5efabf/hello.vhs) created; verification pending |
-| `.vht` | [hello.vht](variants/vht-b9b9d435/hello.vht) created; verification pending |
-| `.vhw` | [hello.vhw](variants/vhw-27e673c9/hello.vhw) created; verification pending |
+| `.vho` | [hello.vho](variants/vho-0ab0d39a/hello.vho) syntax and behavior verified |
+| `.vhs` | [hello.vhs](variants/vhs-dc5efabf/hello.vhs) syntax and behavior verified |
+| `.vht` | [hello.vht](variants/vht-b9b9d435/hello.vht) syntax and behavior verified |
+| `.vhw` | [hello.vhw](variants/vhw-27e673c9/hello.vhw) syntax and behavior verified |

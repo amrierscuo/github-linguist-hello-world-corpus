@@ -1,5 +1,20 @@
 # #660 Sieve
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 4, 2026.
+
+Pigeonhole compiled the filter and the offline dry run planned fileinto INBOX.CorpusGreeting for the original .eml. No mail delivered.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261104_followup_main.json).
+
+## Extension results
+
+- `.sieve`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Fix a Sieve message offline based on the greeting in the Subject.
 
 ## Toolchain
@@ -34,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sieve` | [hello.sieve](hello.sieve) created; verification pending |
+| `.sieve` | [hello.sieve](hello.sieve) syntax and behavior verified |
+
+</details>

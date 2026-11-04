@@ -1,5 +1,9 @@
 # 0636: SQL: `.inc`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.inc`. Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set. [Recorded evidence](../../verification/native_20261104_followup_2e696e63.json).
+
 Includeable Fragment SQL which retains the original query.
 
 Origin: copy of the original `examples/#636 SQL/hello.sql` file.

@@ -1,5 +1,10 @@
 # #611 Regular Expression
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.regex`: CPython re engine: exact named capture, rejection controls. [Evidence](verification/native_20261104_followup_2e7265676578.json).
+
 Voce canonica `Regular Expression`, tipo `data`, language_id `363378884`.
 
 Fill out a Python regex that recognizes World greeting and captures.
@@ -45,4 +50,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.regexp` | [hello.regexp](hello.regexp) verified |
-| `.regex` | [hello.regex](variants/regex-b64e0ba7/hello.regex) created; verification pending |
+| `.regex` | [hello.regex](variants/regex-b64e0ba7/hello.regex) syntax and behavior verified |

@@ -1,5 +1,9 @@
 # 0656: Shell: `.sh.in`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.sh.in`. Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed. [Recorded evidence](../../verification/native_20261104_followup_2e73682e696e.json).
+
 Textual variation of the same format, with canon suffix .sh.in.
 
 Origin: copy of the original `examples/#656 Shell/hello.sh` file.

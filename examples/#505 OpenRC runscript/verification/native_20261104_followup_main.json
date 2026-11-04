@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T20:01:22.750237+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "OpenRC runscript",
+  "ordinal": 505,
+  "commands": [
+    {
+      "label": "Copy cached Alpine rootfs into work, excluding mounted filesystems",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "60s",
+        "cp",
+        "-ax",
+        "${WORKSPACE}/work/tools_27_33/alpine/.",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/openrc/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/openrc",
+      "timestamp_utc": "2026-11-04T20:01:22.773322+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Download and add signed OpenRC only inside the disposable Alpine copy; skip maintainer scripts",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "chroot",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/openrc/root",
+        "/sbin/apk",
+        "--no-cache",
+        "--no-scripts",
+        "add",
+        "openrc"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/openrc",
+      "timestamp_utc": "2026-11-04T20:01:33.656922+00:00",
+      "exit_code": 0,
+      "stdout": "(1/5) Installing bridge (1.5-r5)\n(2/5) Installing ifupdown-ng (0.12.1-r7)\n(3/5) Installing openrc-user (0.63-r1)\n(4/5) Installing openrc (0.63-r1)\n(5/5) Installing apache2-openrc (2.4.69-r0)\nOK: 23.0 MiB in 50 packages\n",
+      "stderr": ""
+    },
+    {
+      "label": "Record OpenRC package and version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "chroot",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/openrc/root",
+        "/bin/sh",
+        "-ec",
+        "cat /etc/alpine-release; apk info -v openrc; openrc --version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/openrc",
+      "timestamp_utc": "2026-11-04T20:01:36.011041+00:00",
+      "exit_code": 0,
+      "stdout": "3.23.6\nopenrc: OpenRC manages the services, startup and shutdown of a host\nopenrc: https://github.com/OpenRC/openrc\nopenrc: 1336 KiB\nopenrc (OpenRC [WSL]) 0.63\n",
+      "stderr": ""
+    },
+    {
+      "label": "Run the original greeting service without host init or dependencies",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "chroot",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/openrc/root",
+        "/bin/sh",
+        "-ec",
+        "mkdir -p /run/openrc; printf \"%s\\n\" default >/run/openrc/softlevel; RC_SYS=PREFIX /sbin/openrc-run /corpus-openrc/hello start"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/openrc",
+      "timestamp_utc": "2026-11-04T20:01:36.459033+00:00",
+      "exit_code": 0,
+      "stdout": " * Caching service dependencies ... [ ok ]\n * Hello, World! ... [ ok ]\n",
+      "stderr": "Service 'hwdrivers' needs non existent service 'dev'\nService 'machine-id' needs non existent service 'dev'\ngrep: /proc/filesystems: No such file or directory\ngrep: /proc/filesystems: No such file or directory\n"
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#505 OpenRC runscript/hello": "edcb9bc786254373872ffadac0e581e6c121c1952039c682e5540c9fa1b1b2ae"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "Native OpenRC start invoked the original script and ebegin emitted its greeting. Only a disposable Alpine fixture was modified; no host service was started.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native OpenRC start invoked the original script and ebegin emitted its greeting. Only a disposable Alpine fixture was modified; no host service was started."
+}

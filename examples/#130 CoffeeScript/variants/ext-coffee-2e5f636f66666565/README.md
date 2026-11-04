@@ -1,5 +1,9 @@
 # 0130 CoffeeScript: variant `._coffee`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `._coffee`. Unchanged suffix variant; main example status unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e5f636f66666565.json).
+
 Role: Common CoffeeScript subset without asynchronous extensions; the suffix selects the appropriate frontend Streamline/Iced.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#130 CoffeeScript/hello.coffee
@@ -18,8 +22,7 @@ coffee hello._coffee
 
 Expected result: Exit 0; runtime exit 0; Hello, World! followed by newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

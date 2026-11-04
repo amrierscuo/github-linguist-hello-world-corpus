@@ -1,5 +1,9 @@
 # 0744: VHDL: `.vho`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.vho`. Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value. [Recorded evidence](../../verification/native_20261104_followup_2e76686f.json).
+
 Netlist VHDL strutturale scritta a mano con wire/constant cell originali; non dichiarata come export Quartus.
 
 Provenience: original example written for the role of this suffix.

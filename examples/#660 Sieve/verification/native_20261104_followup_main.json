@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:57:35.367111+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Sieve",
+  "ordinal": 660,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for dovecot-sieve",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "dovecot-sieve"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:35.885836+00:00",
+      "exit_code": 0,
+      "stdout": "Package: dovecot-sieve\nSource: dovecot\nPriority: optional\nSection: universe/mail\nInstalled-Size: 1262\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 1:2.3.21+dfsg1-2ubuntu6.5\nReplaces: dovecot-core (<= 1:2.2.13-6), dovecot-imapd (<< 1:2.2.26.0-1~)\nDepends: dovecot-core (= 1:2.3.21+dfsg1-2ubuntu6.5), ucf, libc6 (>= 2.34)\nBreaks: dovecot-core (<= 1:2.2.13-6), dovecot-imapd (<< 1:2.2.26.0-1~)\nFilename: pool/universe/d/dovecot/dovecot-sieve_2.3.21+dfsg1-2ubuntu6.5_amd64.deb\nSize: 377784\nMD5sum: 1eb9ae20fbc5f71133c6f040adcd3c9e\nSHA1: 9d3dafa6045765c251cbe2a4a630039f36da98f1\nSHA256: ac83d37aebda99d4abe4fed34e27c2742b05bf8345f340aefd85e526a7e9bb81\nSHA512: 4fe4db0c8cb300399635f714bda83c9c714e319f5f3fe1ab837e80f390dd1123f9458352f0fa16c5cab4f55d4d2312911ee733f3de0a187f239c074eaa9de824\nHomepage: https://dovecot.org/\nDescription-en: secure POP3/IMAP server - Sieve filters support\n Dovecot is a mail server whose major goals are security and extreme\n reliability. It tries very hard to handle all error conditions and verify\n that all data is valid, making it nearly impossible to crash. It supports\n mbox/Maildir and its own dbox/mdbox formats, and should also be pretty\n fast, extensible, and portable.\n .\n This package provides Sieve filters support for Dovecot.\nDescription-md5: 70234206edc75d829fdb3617a653da24\nOriginal-Maintainer: Dovecot Maintainers <dovecot@packages.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: dovecot-sieve\nArchitecture: amd64\nVersion: 1:2.3.21+dfsg1-2ubuntu5\nPriority: optional\nSection: universe/mail\nSource: dovecot\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Dovecot Maintainers <dovecot@packages.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1260\nDepends: dovecot-core (= 1:2.3.21+dfsg1-2ubuntu5), ucf, libc6 (>= 2.34)\nBreaks: dovecot-core (<= 1:2.2.13-6), dovecot-imapd (<< 1:2.2.26.0-1~)\nReplaces: dovecot-core (<= 1:2.2.13-6), dovecot-imapd (<< 1:2.2.26.0-1~)\nFilename: pool/universe/d/dovecot/dovecot-sieve_2.3.21+dfsg1-2ubuntu5_amd64.deb\nSize: 376464\nMD5sum: a43d558e95c3ff9f1734e005ef3dd075\nSHA1: 25fed47acaa867ec7c98bfa08ecb574bb712f2a9\nSHA256: 0acabb9177830b64bab8d5d6a538a8a9fce6a90457483317dbe6eebe70ca4ae2\nSHA512: fd3c22a53a6d7598ccafd020035ae890cd0ee1bc17f5482d94f9306d6abf66d3153baf98f8d77a9aa09f1ae5bbfcf1e1492be795d11bc5f334236574283f3998\nHomepage: https://dovecot.org/\nDescription-en: secure POP3/IMAP server - Sieve filters support\n Dovecot is a mail server whose major goals are security and extreme\n reliability. It tries very hard to handle all error conditions and verify\n that all data is valid, making it nearly impossible to crash. It supports\n mbox/Maildir and its own dbox/mdbox formats, and should also be pretty\n fast, extensible, and portable.\n .\n This package provides Sieve filters support for Dovecot.\nDescription-md5: 70234206edc75d829fdb3617a653da24\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only dovecot-sieve",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "dovecot-sieve=1:2.3.21+dfsg1-2ubuntu6.5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/dovecot-sieve",
+      "timestamp_utc": "2026-11-04T19:57:36.046260+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 dovecot-sieve amd64 1:2.3.21+dfsg1-2ubuntu6.5 [378 kB]\nFetched 378 kB in 1s (511 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract dovecot-sieve without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/dovecot-sieve/dovecot-sieve_1%3a2.3.21+dfsg1-2ubuntu6.5_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:38.754125+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for dovecot-core",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "dovecot-core=1:2.3.21+dfsg1-2ubuntu6.5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:39.876382+00:00",
+      "exit_code": 0,
+      "stdout": "Package: dovecot-core\nSource: dovecot\nPriority: optional\nSection: mail\nInstalled-Size: 10434\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 1:2.3.21+dfsg1-2ubuntu6.5\nReplaces: dovecot-common (<< 1:2.0.14-2~), mailavenger (<< 0.8.1-4)\nSuggests: dovecot-gssapi, dovecot-imapd, dovecot-ldap, dovecot-lmtpd, dovecot-managesieved, dovecot-mysql, dovecot-pgsql, dovecot-pop3d, dovecot-sieve, dovecot-solr, dovecot-sqlite, dovecot-submissiond, ntp\nProvides: dovecot-abi-2.3.abiv21, dovecot-common\nDepends: adduser, libpam-runtime, openssl, ssl-cert, ucf, libapparmor1 (>= 2.7.0~beta1+bzr1772), libbz2-1.0, libc6 (>= 2.36), libcap2 (>= 1:2.10), libcrypt1 (>= 1:4.1.0), libexttextcat-2.0-0 (>= 3.3.0), libicu74 (>= 74.1-1~), liblua5.4-0 (>= 5.4.6), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.1.1alpha+20120614), libpam0g (>= 0.99.7.1), libsodium23 (>= 1.0.13), libssl3t64 (>= 3.0.0), libstemmer0d (>= 0+svn527), libsystemd0, libunwind8, libwrap0 (>= 7.6-4~), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nPre-Depends: init-system-helpers (>= 1.54~)\nBreaks: dovecot-common (<< 1:2.0.14-2~), mailavenger (<< 0.8.1-4)\nFilename: pool/main/d/dovecot/dovecot-core_2.3.21+dfsg1-2ubuntu6.5_amd64.deb\nSize: 3352158\nMD5sum: f5e35ec254a68f955de7162e41aed9d7\nSHA1: 211df569528dd4e62e418e3a5beef5716402a038\nSHA256: 377621e52d37955998f4e1135def63b24f55074902435d3a3cb60a9ec3243094\nSHA512: f50be6925a4265c94b441bcd01a2724960fbdbf14b3e429a35437f62d330fe7d59787da2d7dd0ec0b34240fc28a2bd69ee4f584739122491748bb0f86a20d0eb\nHomepage: https://dovecot.org/\nDescription-en: secure POP3/IMAP server - core files\n Dovecot is a mail server whose major goals are security and extreme\n reliability. It tries very hard to handle all error conditions and verify\n that all data is valid, making it nearly impossible to crash. It supports\n mbox/Maildir and its own dbox/mdbox formats, and should also be pretty\n fast, extensible, and portable.\n .\n This package contains the Dovecot main server and its command line utility.\nDescription-md5: 42825422b1ef9e3a592c94dfafed375c\nOriginal-Maintainer: Dovecot Maintainers <dovecot@packages.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: mail-server\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only dovecot-core",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "dovecot-core=1:2.3.21+dfsg1-2ubuntu6.5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/dovecot-core",
+      "timestamp_utc": "2026-11-04T19:57:39.984080+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dovecot-core amd64 1:2.3.21+dfsg1-2ubuntu6.5 [3352 kB]\nFetched 3352 kB in 1s (3126 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract dovecot-core without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/dovecot-core/dovecot-core_1%3a2.3.21+dfsg1-2ubuntu6.5_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:42.251939+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libexttextcat-2.0-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libexttextcat-2.0-0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:47.698105+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libexttextcat-2.0-0\nArchitecture: amd64\nVersion: 3.4.7-1build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: libexttextcat\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian LibreOffice Maintainers <debian-openoffice@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 44\nDepends: libc6 (>= 2.4), libexttextcat-data (= 3.4.7-1build1)\nFilename: pool/main/libe/libexttextcat/libexttextcat-2.0-0_3.4.7-1build1_amd64.deb\nSize: 13300\nMD5sum: 0284fd4ee6e9fa9d68675bfa0625e743\nSHA1: 0c0667f3f772f1822a7b9d8ab4ef84bb7093d2ae\nSHA256: 0fcb796934d3dff056a360792534fbc9acc7febcede0dc24a44be96ca5e48c9c\nSHA512: 478623bffb505f583ce3dd062107930524eb40ddd88246f5ab3424604cd1ccb9caea11438510f2a403c40df0078211110560bbcb1bdff150e50ff8c0990cc506\nHomepage: https://wiki.documentfoundation.org/Libexttextcat\nDescription-en: Language detection library\n Libexttextcat is a library with functions that implement the classification\n technique described in Cavnar & Trenkle, \"N-Gram-Based Text Categorization\".\n It was primarily developed for language guessing, a task on which it is known\n to perform with near-perfect accuracy.\nDescription-md5: 04a1291bb513c381f16767f28c35d0df\nTask: ubuntu-desktop, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, ubuntu-desktop-default-languages, mail-server, ubuntu-desktop-raspi, kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-default-languages, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libexttextcat-2.0-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libexttextcat-2.0-0=3.4.7-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/libexttextcat-2.0-0",
+      "timestamp_utc": "2026-11-04T19:57:47.745248+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libexttextcat-2.0-0 amd64 3.4.7-1build1 [13.3 kB]\nFetched 13.3 kB in 0s (71.6 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libexttextcat-2.0-0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/libexttextcat-2.0-0/libexttextcat-2.0-0_3.4.7-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:48.397837+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libstemmer0d",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libstemmer0d"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:48.472005+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libstemmer0d\nArchitecture: amd64\nVersion: 2.2.0-4build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: snowball\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Stefano Rivera <stefanor@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 842\nDepends: libc6 (>= 2.4)\nFilename: pool/main/s/snowball/libstemmer0d_2.2.0-4build1_amd64.deb\nSize: 160766\nMD5sum: 5d2d949f6ba89ccfd8b26d29219c0b8f\nSHA1: 88ada6af92b956092018a38ea52773ac01373bc4\nSHA256: 131d145e9b110df4b4b953b5ab7b95a6531fab86e6d4b461728a63860fe00d53\nSHA512: 513e1cc3691ccc00bedf833e903279005eedad5a28f878b383164fa02caebaf4f3c5fabc61549e7eb2a85371e0ec37439a8534247603ad0b1103d8e9ebba93a2\nHomepage: https://snowballstem.org/\nDescription-en: Snowball stemming algorithms for use in Information Retrieval\n Snowball provides access to efficient algorithms for calculating a\n \"stemmed\" form of a word.  This is a form with most of the common\n morphological endings removed; hopefully representing a common\n linguistic base form.  This is most useful in building search engines\n and information retrieval software; for example, a search with stemming\n enabled should be able to find a document containing \"cycling\" given the\n query \"cycles\".\n .\n Snowball provides algorithms for several (mainly European) languages.\n It also provides access to the classic Porter stemming algorithm for\n English: although this has been superseded by an improved algorithm, the\n original algorithm may be of interest to information retrieval\n researchers wishing to reproduce results of earlier experiments.\nDescription-md5: d31a6b99d05af3ce727c7257c64b1004\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, ubuntu-wsl, server, ubuntu-server-raspi, mail-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libstemmer0d",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libstemmer0d=2.2.0-4build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/libstemmer0d",
+      "timestamp_utc": "2026-11-04T19:57:48.517638+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libstemmer0d amd64 2.2.0-4build1 [161 kB]\nFetched 161 kB in 1s (177 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libstemmer0d without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/packages/libstemmer0d/libstemmer0d_2.2.0-4build1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:49.903208+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Compile the original Sieve filter",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/sievec",
+        "-c",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf",
+        "hello.sieve",
+        "hello.svbin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:57:50.032631+00:00",
+      "exit_code": 84,
+      "stdout": "",
+      "stderr": "sievec(a): Fatal: execv(/usr/bin/doveconf) failed: No such file or directory\n"
+    },
+    {
+      "label": "Compile original Sieve through extracted doveconf",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/doveconf",
+        "-c",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf",
+        "-e",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/sievec",
+        "hello.sieve",
+        "hello.svbin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T19:59:24.959642+00:00",
+      "exit_code": 89,
+      "stdout": "",
+      "stderr": "doveconf: Fatal: Error in configuration file ${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf: default_login_user doesn't exist: dovenull\n"
+    },
+    {
+      "label": "Compile original Sieve through extracted doveconf",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/doveconf",
+        "-c",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf",
+        "-e",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/sievec",
+        "hello.sieve",
+        "hello.svbin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T20:00:59.420294+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/lib",
+        "DOVECOT_CONFIG_FILE": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf"
+      }
+    },
+    {
+      "label": "Dry-run the original fixture through native Pigeonhole without mail delivery",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/doveconf",
+        "-c",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf",
+        "-e",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/bin/sieve-test",
+        "hello.sieve",
+        "hello.eml"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve",
+      "timestamp_utc": "2026-11-04T20:00:59.556558+00:00",
+      "exit_code": 0,
+      "stdout": "\nPerformed actions:\n\n * store message in folder: INBOX.CorpusGreeting\n\nImplicit keep:\n\n  (none)\n\n",
+      "stderr": "sieve-test(a): Info: final result: success\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/sieve/root/usr/lib",
+        "DOVECOT_CONFIG_FILE": "${WORKSPACE}/work/native_followup_20261104/wsl/sieve/dovecot.conf"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "dovecot-sieve",
+      "version": "1:2.3.21+dfsg1-2ubuntu6.5",
+      "ubuntu_archive_path": "pool/universe/d/dovecot/dovecot-sieve_2.3.21+dfsg1-2ubuntu6.5_amd64.deb",
+      "sha256": "ac83d37aebda99d4abe4fed34e27c2742b05bf8345f340aefd85e526a7e9bb81"
+    },
+    {
+      "name": "dovecot-core",
+      "version": "1:2.3.21+dfsg1-2ubuntu6.5",
+      "ubuntu_archive_path": "pool/main/d/dovecot/dovecot-core_2.3.21+dfsg1-2ubuntu6.5_amd64.deb",
+      "sha256": "377621e52d37955998f4e1135def63b24f55074902435d3a3cb60a9ec3243094"
+    },
+    {
+      "name": "libexttextcat-2.0-0",
+      "version": "3.4.7-1build1",
+      "ubuntu_archive_path": "pool/main/libe/libexttextcat/libexttextcat-2.0-0_3.4.7-1build1_amd64.deb",
+      "sha256": "0fcb796934d3dff056a360792534fbc9acc7febcede0dc24a44be96ca5e48c9c"
+    },
+    {
+      "name": "libstemmer0d",
+      "version": "2.2.0-4build1",
+      "ubuntu_archive_path": "pool/main/s/snowball/libstemmer0d_2.2.0-4build1_amd64.deb",
+      "sha256": "131d145e9b110df4b4b953b5ab7b95a6531fab86e6d4b461728a63860fe00d53"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#660 Sieve/hello.sieve": "95619db937471393fb7dc8d4124dc19bae77ac87b83c18ff61608887073c6904",
+    "examples/#660 Sieve/hello.eml": "aefc547ef6f3bca2adabdd0b46b071b3becfc73703ac8b19d1a4f6db55f736ab"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "Pigeonhole compiled the filter and the offline dry run planned fileinto INBOX.CorpusGreeting for the original .eml. No mail delivered.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Pigeonhole compiled the filter and the offline dry run planned fileinto INBOX.CorpusGreeting for the original .eml. No mail delivered."
+}

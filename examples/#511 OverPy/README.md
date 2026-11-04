@@ -1,5 +1,22 @@
 # #511 OverPy
 
+## Latest recorded verification
+
+**Syntax verified; behavior pending** on November 4, 2026.
+
+The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261104_followup_main.json). [Earlier evidence](verification/result.json).
+
+[Original compiler failure](verification/native_20261104_followup_original_failure.json).
+
+## Extension results
+
+- `.opy`: syntax verified; behavior pending.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Compile an OverPy rule into an Overwatch Workshop rule that displays a large message to the player.
 
 Canonical type `programming`, language_id `492781155`.
@@ -58,4 +75,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.opy` | [hello.opy](hello.opy) created; verification pending |
+| `.opy` | [hello.opy](hello.opy) syntax verified; behavior pending |
+
+</details>

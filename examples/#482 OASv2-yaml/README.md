@@ -1,5 +1,10 @@
 # #482 OASv2-yaml
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.yml`: Swagger Parser validates the OpenAPI 2 specification; Ajv checks the response schema; the loopback HTTP fixture returns the exact greeting and no public listener is opened. [Evidence](verification/native_20261104_followup_2e796d6c.json).
+
 Validate the OpenAPI contract and the response of a local HTTP consumer.
 
 ## Toolchain
@@ -36,4 +41,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.yaml` | [hello.yaml](hello.yaml) verified |
-| `.yml` | [hello.yml](variants/yml-ea91093d/hello.yml) created; verification pending |
+| `.yml` | [hello.yml](variants/yml-ea91093d/hello.yml) syntax and behavior verified |

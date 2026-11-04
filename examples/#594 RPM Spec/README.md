@@ -1,5 +1,20 @@
 # #594 RPM Spec
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 4, 2026.
+
+The native RPM parser accepted the spec and rpmbuild ran %prep, printing the exact greeting. No packages were installed and no RPM was built.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261104_followup_main.json). [Earlier evidence](verification/result.json).
+
+## Extension results
+
+- `.spec`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Analyze a RPM spec and perform the prep phase to print the greeting.
 
 Canonical type `data`, language_id `314`.
@@ -29,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.spec` | [hello.spec](hello.spec) created; verification pending |
+| `.spec` | [hello.spec](hello.spec) syntax and behavior verified |
+
+</details>

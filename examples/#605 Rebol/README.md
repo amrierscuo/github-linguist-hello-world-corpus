@@ -1,5 +1,13 @@
 # #605 Rebol
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.r`: Rebol/Bulk original interpreter executes the exact variant filename as a console program. [Evidence](verification/native_20261104_followup_2e72.json).
+- `.r2`: Rebol/Bulk original interpreter executes the exact variant filename as a console program. [Evidence](verification/native_20261104_followup_2e7232.json).
+- `.r3`: Rebol/Bulk original interpreter executes the exact variant filename as a console program. [Evidence](verification/native_20261104_followup_2e7233.json).
+- `.rebol`: Rebol/Bulk original interpreter executes the exact variant filename as a console program. [Evidence](verification/native_20261104_followup_2e7265626f6c.json).
+
 Voce canonica `Rebol`, tipo `programming`, language_id `319`.
 
 Run a Rebol program with rejoin and print.
@@ -45,7 +53,7 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.reb` | [hello.reb](hello.reb) verified |
-| `.r` | [hello.r](variants/r-8dbb84b2/hello.r) created; verification pending |
-| `.r2` | [hello.r2](variants/r2-8d1288b8/hello.r2) created; verification pending |
-| `.r3` | [hello.r3](variants/r3-172ccdf0/hello.r3) created; verification pending |
-| `.rebol` | [hello.rebol](variants/rebol-747e1472/hello.rebol) created; verification pending |
+| `.r` | [hello.r](variants/r-8dbb84b2/hello.r) syntax and behavior verified |
+| `.r2` | [hello.r2](variants/r2-8d1288b8/hello.r2) syntax and behavior verified |
+| `.r3` | [hello.r3](variants/r3-172ccdf0/hello.r3) syntax and behavior verified |
+| `.rebol` | [hello.rebol](variants/rebol-747e1472/hello.rebol) syntax and behavior verified |

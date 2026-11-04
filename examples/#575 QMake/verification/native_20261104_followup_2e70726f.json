@@ -1,0 +1,144 @@
+{
+  "ordinal": 575,
+  "name": "QMake",
+  "main_status": "unchanged",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "extensions": {
+    ".pro": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".pri": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "source_hashes": {
+    "examples/#575 QMake/hello.pro": "948c1e3689008818cd24585e4d4df5a1b42f8164517eb64787e72d7cdadf28aa",
+    "examples/#575 QMake/main.cpp": "4e90b38fc51f6af2111d326514b9ba5ab594da88c114db56bedb31f1de1bd4f9",
+    "examples/#575 QMake/variants/pri-e5eeb81c/main.pro": "8de72fcd641cb1e98dc592847e275390f5a91c53971040ba0a8c699b73787180",
+    "examples/#575 QMake/variants/pri-e5eeb81c/hello.pri": "995c744c00b0f321a5cb3ca10752d88db4f49c64213f87b3d0b19c054d29f74b"
+  },
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "toolchain": "qmake 3.1 and Qt Core 5.15.13, Ubuntu WSL2",
+  "verified_utc": "2026-11-04T20:05:47.085847+00:00",
+  "scope": "The primary .pro previously built and ran the console greeting in the same batch. The exact auxiliary .pro then included hello.pri, emitted Project MESSAGE: Hello, World!, and generated its Makefile. Both .pro files and the .pri are covered by the two linked test phases.",
+  "steps": [
+    {
+      "label": "Record qmake and Qt version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "-v"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:01.017332+00:00",
+      "exit_code": 0,
+      "stdout": "QMake version 3.1\nUsing Qt version 5.15.13 in ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "label": "Generate native makefile from original Qt Core project",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "-spec",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+        "hello.pro"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:01.067207+00:00",
+      "exit_code": 0,
+      "stdout": "Info: creating stash file ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/.qmake.stash\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "label": "Build Qt Core CLI using generated Makefile",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/bin/make",
+        "-j2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:03.821829+00:00",
+      "exit_code": 0,
+      "stdout": "g++ -c -pipe -O2 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_CORE_LIB -I. -Iroot/usr/include/x86_64-linux-gnu/qt5 -Iroot/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -Iroot/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o main.cpp\ng++ -Wl,-O1 -o hello main.o   ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/libQt5Core.so -lpthread   \n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "label": "Run the native Qt Core CLI",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:07.527533+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "-spec",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+        "main.pro",
+        "-o",
+        "Makefile"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake_variant",
+      "exit_code": 0,
+      "stdout": "Info: creating stash file ${WORKSPACE}/work/native_followup_20261104/wsl/qmake_variant/.qmake.stash\n",
+      "stderr": "Project MESSAGE: Hello, World!\n",
+      "environment": {
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake_variant",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5",
+        "XDG_CONFIG_HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake_variant/config"
+      }
+    }
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The primary .pro previously built and ran the console greeting in the same batch. The exact auxiliary .pro then included hello.pri, emitted Project MESSAGE: Hello, World!, and generated its Makefile. Both .pro files and the .pri are covered by the two linked test phases."
+}

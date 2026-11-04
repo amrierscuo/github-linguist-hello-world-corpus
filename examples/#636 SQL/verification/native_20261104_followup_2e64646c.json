@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 636,
+  "name": "SQL",
+  "extension": ".ddl",
+  "timestamp_utc": "2026-11-04T19:59:44.188838+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set.",
+  "artifact_sha256": {
+    "examples/#636 SQL/variants/ddl-8bc7bf69/hello.ddl": "1c1608ca3443ca3c6247d33feb624995e07263af42b026e9f67361b08f3cf2c3"
+  },
+  "verification_driver": {
+    "staged_filename": "verify_sql.py",
+    "sha256": "d771878b1785cdf1ccc334c480463bd38b051040b3f356a5bc93fa40c3187ca1"
+  },
+  "versions": [
+    {
+      "label": "SQLite and interpreter versions",
+      "command": [
+        "<python>",
+        "-c",
+        "import sqlite3,sys; print('CPython',sys.version.split()[0],'SQLite',sqlite3.sqlite_version)"
+      ],
+      "exit_code": 0,
+      "stdout": "CPython 3.13.9 SQLite 3.51.0\n",
+      "stderr": "",
+      "elapsed_seconds": 0.095
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute SQL file and verify result set",
+      "command": [
+        "<python>",
+        "verify_sql.py",
+        "hello.ddl"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.11
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#636 SQL/verification/native_20261104_followup_drivers/2e64646c/verify_sql.py",
+    "sha256": "d771878b1785cdf1ccc334c480463bd38b051040b3f356a5bc93fa40c3187ca1"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set."
+}

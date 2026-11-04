@@ -1,5 +1,9 @@
 # 0216 Fortran: variant `.fpp`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.fpp`. Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Recorded evidence](../../verification/native_20261104_followup_2e667070.json).
+
 Role: Fortran fixed form; the role of .fpp includes preprocession but the model does not require macro.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#216 Fortran/hello.f
@@ -18,8 +22,7 @@ gfortran -x f77 -ffixed-form -cpp hello.fpp -o <output>/hello; <output>/hello
 
 Expected result: Compilazione/run exit 0; exact greeting followed by newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

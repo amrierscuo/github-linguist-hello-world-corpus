@@ -1,5 +1,10 @@
 # #798 YARA
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.yara`: YARA: compile the original rules, match the exact declared greeting.txt (including its trailing LF), and reject a separate Hello, Moon! fixture. [Evidence](verification/native_20261104_followup_2e79617261.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -37,4 +42,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.yar` | [hello.yar](hello.yar) verified |
-| `.yara` | [hello.yara](variants/yara-cc22c747/hello.yara) created; verification pending |
+| `.yara` | [hello.yara](variants/yara-cc22c747/hello.yara) syntax and behavior verified |

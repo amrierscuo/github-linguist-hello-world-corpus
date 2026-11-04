@@ -400,14 +400,15 @@
       "example": {
         "semantic_goal": "Contratto Binder contenente la costante Hello, World! e la firma String getGreeting().",
         "validation_mode": "interface_generation",
-        "toolchain": "Android SDK Build Tools: aidl",
+        "toolchain": "aidl 1:10.0.0+r36-4, android-libbase 1:34.0.4-1build3, android-libcutils 1:34.0.4-1build3",
         "files": [
           "examples/#008 AIDL/corpus/hello/IHello.aidl",
           "examples/#008 AIDL/README.md",
-          "examples/#008 AIDL/verification.log"
+          "examples/#008 AIDL/verification.log",
+          "examples/#008 AIDL/verification/native_20261104_followup_main.json"
         ],
         "build_command": "aidl --lang=java -I. -o .build corpus/hello/IHello.aidl",
-        "run_or_check_command": "aidl --lang=java -I. -o .build corpus/hello/IHello.aidl",
+        "run_or_check_command": "Run the native AOSP aidl compiler with the Java target and verify the generated Binder interface, as recorded in the receipt.",
         "expected_result": "Interfaccia Java IHello generata con GREETING, getGreeting(), Stub e Proxy.",
         "sources": [
           "https://developer.android.com/develop/background-work/services/aidl",
@@ -418,16 +419,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T09:33:59+00:00",
-        "verification_log": "examples/#008 AIDL/verification.log",
-        "blockers": [
-          "Android SDK aidl compiler not found in PATH."
-        ],
-        "notes": "Fonte primaria consultata; compilazione/esecuzione non effettuata. Comandi da completare quando la toolchain sarà disponibile."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:57:27.223083+00:00",
+        "verification_log": "examples/#008 AIDL/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "Native AOSP compiler generated the intended Binder constant, method signature, Stub and Proxy. No Android IPC or service execution was tested.",
+        "verified_artifact_sha256": {
+          "examples/#008 AIDL/corpus/hello/IHello.aidl": "a0fad647aa362d1e95aa180aef328a9d3e27d8597ec0a5e2d07f0b331772fbe1"
+        }
       }
     },
     {
@@ -4602,7 +4604,9 @@
           "examples/#083 C/variants/ext-h-in-2e682e696e/hello.h.in",
           "examples/#083 C/variants/ext-h-in-2e682e696e/README.md",
           "examples/#083 C/variants/ext-idc-2e696463/hello.idc",
-          "examples/#083 C/variants/ext-idc-2e696463/README.md"
+          "examples/#083 C/variants/ext-idc-2e696463/README.md",
+          "examples/#083 C/verification/native_20261104_followup_2e63617473.json",
+          "examples/#083 C/verification/native_20261104_followup_2e68.json"
         ],
         "build_command": "gcc -std=c11 -Wall -Wextra -Werror -o build/hello hello.c",
         "run_or_check_command": "./build/hello",
@@ -4792,7 +4796,22 @@
           "examples/#085 C++/variants/ext-tpp-2e747070/README.md",
           "examples/#085 C++/variants/ext-txx-2e747878/consumer.cpp",
           "examples/#085 C++/variants/ext-txx-2e747878/hello.txx",
-          "examples/#085 C++/variants/ext-txx-2e747878/README.md"
+          "examples/#085 C++/variants/ext-txx-2e747878/README.md",
+          "examples/#085 C++/verification/native_20261104_followup_2e632b2b.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e6363.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e6370.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e637878.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e68.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e682b2b.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e6868.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e687070.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e687878.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e696e63.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e696e6c.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e697070.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e746363.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e747070.json",
+          "examples/#085 C++/verification/native_20261104_followup_2e747878.json"
         ],
         "build_command": "g++ -std=c++17 -Wall -Wextra -Werror -o build/hello hello.cpp",
         "run_or_check_command": "./build/hello",
@@ -7381,7 +7400,9 @@
           "examples/#130 CoffeeScript/variants/ext-coffee-erb-2e636f666665652e657262/hello.coffee.erb",
           "examples/#130 CoffeeScript/variants/ext-coffee-erb-2e636f666665652e657262/README.md",
           "examples/#130 CoffeeScript/variants/ext-iced-2e69636564/hello.iced",
-          "examples/#130 CoffeeScript/variants/ext-iced-2e69636564/README.md"
+          "examples/#130 CoffeeScript/variants/ext-iced-2e69636564/README.md",
+          "examples/#130 CoffeeScript/verification/native_20261104_followup_2e5f636f66666565.json",
+          "examples/#130 CoffeeScript/verification/native_20261104_followup_2e63616b65.json"
         ],
         "build_command": "node .tools/node_modules/coffeescript/bin/coffee --compile --output build hello.coffee",
         "run_or_check_command": "npm install --prefix .tools coffeescript@2.7.0; node .tools/node_modules/coffeescript/bin/coffee --compile --output build hello.coffee; node build/hello.js",
@@ -12221,7 +12242,10 @@
           "examples/#216 Fortran/variants/ext-for-2e666f72/hello.for",
           "examples/#216 Fortran/variants/ext-for-2e666f72/README.md",
           "examples/#216 Fortran/variants/ext-fpp-2e667070/hello.fpp",
-          "examples/#216 Fortran/variants/ext-fpp-2e667070/README.md"
+          "examples/#216 Fortran/variants/ext-fpp-2e667070/README.md",
+          "examples/#216 Fortran/verification/native_20261104_followup_2e663737.json",
+          "examples/#216 Fortran/verification/native_20261104_followup_2e666f72.json",
+          "examples/#216 Fortran/verification/native_20261104_followup_2e667070.json"
         ],
         "build_command": "gfortran -std=legacy -ffixed-form hello.f -o build/hello",
         "run_or_check_command": "gfortran -std=legacy -ffixed-form hello.f -o build/hello; ./build/hello",
@@ -12281,7 +12305,10 @@
           "examples/#217 Fortran Free Form/variants/ext-f08-2e663038/hello.f08",
           "examples/#217 Fortran Free Form/variants/ext-f08-2e663038/README.md",
           "examples/#217 Fortran Free Form/variants/ext-f95-2e663935/hello.f95",
-          "examples/#217 Fortran Free Form/variants/ext-f95-2e663935/README.md"
+          "examples/#217 Fortran Free Form/variants/ext-f95-2e663935/README.md",
+          "examples/#217 Fortran Free Form/verification/native_20261104_followup_2e663033.json",
+          "examples/#217 Fortran Free Form/verification/native_20261104_followup_2e663038.json",
+          "examples/#217 Fortran Free Form/verification/native_20261104_followup_2e663935.json"
         ],
         "build_command": "gfortran -std=f2008 -ffree-form hello.f90 -o build/hello",
         "run_or_check_command": "gfortran -std=f2008 -ffree-form hello.f90 -o build/hello; ./build/hello",
@@ -16038,7 +16065,8 @@
           "examples/#280 HTML/variants/ext-xht-2e786874/hello.xht",
           "examples/#280 HTML/variants/ext-xht-2e786874/README.md",
           "examples/#280 HTML/variants/ext-xhtml-2e7868746d6c/hello.xhtml",
-          "examples/#280 HTML/variants/ext-xhtml-2e7868746d6c/README.md"
+          "examples/#280 HTML/variants/ext-xhtml-2e7868746d6c/README.md",
+          "examples/#280 HTML/verification/native_20261104_followup_2e68746d.json"
         ],
         "build_command": null,
         "run_or_check_command": "python -m pip install html5lib==1.1; python verify.py hello.html",
@@ -17414,7 +17442,9 @@
           "examples/#304 INI/variants/timer-fc779652/corpus-hello.timer",
           "examples/#304 INI/variants/timer-fc779652/README.md",
           "examples/#304 INI/variants/url-4058ac74/hello.url",
-          "examples/#304 INI/variants/url-4058ac74/README.md"
+          "examples/#304 INI/variants/url-4058ac74/README.md",
+          "examples/#304 INI/verification/native_20261104_followup_2e636667.json",
+          "examples/#304 INI/verification/native_20261104_followup_2e70726f70657274696573.json"
         ],
         "build_command": null,
         "run_or_check_command": "python --version; python verify.py",
@@ -18625,7 +18655,10 @@
           "examples/#324 JSON/variants/yy-d3b03e84/verification/native.json",
           "examples/#324 JSON/variants/yyp-2fe8cf30/hello.yyp",
           "examples/#324 JSON/variants/yyp-2fe8cf30/README.md",
-          "examples/#324 JSON/variants/yyp-2fe8cf30/verification/native.json"
+          "examples/#324 JSON/variants/yyp-2fe8cf30/verification/native.json",
+          "examples/#324 JSON/verification/native_20261104_followup_2e6a736f6e6c.json",
+          "examples/#324 JSON/verification/native_20261104_followup_2e74667374617465.json",
+          "examples/#324 JSON/verification/native_20261104_followup_2e746673746174652e6261636b7570.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -24089,7 +24122,13 @@
           "examples/#418 Markdown/variants/scd-4dd9ca08/hello.scd",
           "examples/#418 Markdown/variants/scd-4dd9ca08/README.md",
           "examples/#418 Markdown/variants/workbook-18c428ee/hello.workbook",
-          "examples/#418 Markdown/variants/workbook-18c428ee/README.md"
+          "examples/#418 Markdown/variants/workbook-18c428ee/README.md",
+          "examples/#418 Markdown/verification/native_20261104_followup_2e6d61726b646f776e.json",
+          "examples/#418 Markdown/verification/native_20261104_followup_2e6d646f776e.json",
+          "examples/#418 Markdown/verification/native_20261104_followup_2e6d64776e.json",
+          "examples/#418 Markdown/verification/native_20261104_followup_2e6d6b64.json",
+          "examples/#418 Markdown/verification/native_20261104_followup_2e6d6b646e.json",
+          "examples/#418 Markdown/verification/native_20261104_followup_2e6d6b646f776e.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -24435,13 +24474,14 @@
       "example": {
         "semantic_goal": "Eseguire una espressione MeTTa che chiama println! con il saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Python 3.13 e Hyperon MeTTa originale",
+        "toolchain": "hyperon 0.2.10",
         "files": [
           "examples/#424 MeTTa/hello.metta",
-          "examples/#424 MeTTa/verify.py"
+          "examples/#424 MeTTa/verify.py",
+          "examples/#424 MeTTa/verification/native_20261104_followup_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "python verify.py",
+        "run_or_check_command": "python verify.py (official Hyperon 0.2.10 in an isolated Python environment)",
         "expected_result": "stdout Hello, World! e LF, nessun errore MeTTa.",
         "sources": [
           {
@@ -24454,16 +24494,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Hyperon non offre una distribuzione compatibile per Python 3.13 Windows nella ricerca pip registrata; runtime MeTTa Linux non ancora predisposto."
-        ],
-        "notes": "Il binding esegue il programma originale con la libreria standard del motore."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:57:27.234592+00:00",
+        "verification_log": "examples/#424 MeTTa/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "The official native Hyperon Python binding evaluated the exact MeTTa program, with the exact greeting and LF and no stderr.",
+        "verified_artifact_sha256": {
+          "examples/#424 MeTTa/hello.metta": "6d6b22166683f477b0ecb6dcb3a96868ec9c3000385e6d8ed47a985b98b4667f",
+          "examples/#424 MeTTa/verify.py": "6baca939381418806a02879d87f3a79fd5e440166e82f0c421ddca66d38af10c"
+        }
       }
     },
     {
@@ -26557,7 +26599,8 @@
           "examples/#463 Nearley/verify.js",
           "examples/#463 Nearley/variants/nearley-659604fb/hello.nearley",
           "examples/#463 Nearley/variants/nearley-659604fb/verify.js",
-          "examples/#463 Nearley/variants/nearley-659604fb/README.md"
+          "examples/#463 Nearley/variants/nearley-659604fb/README.md",
+          "examples/#463 Nearley/verification/native_20261104_followup_2e6e6561726c6579.json"
         ],
         "build_command": "nearleyc hello.ne -o hello.js",
         "run_or_check_command": "node verify.js",
@@ -27203,13 +27246,14 @@
       "example": {
         "semantic_goal": "Valutare un’espressione Nix e ottenere Hello, World!.",
         "validation_mode": "native_nix_pure_evaluation",
-        "toolchain": "Nix evaluator originale; versione da registrare",
+        "toolchain": "nix-bin 2.18.1+dfsg-1ubuntu5, libboost-context1.83.0 1.83.0-2.1ubuntu3.2, libcpuid16 0.6.4+repack1-1",
         "files": [
           "examples/#475 Nix/README.md",
-          "examples/#475 Nix/hello.nix"
+          "examples/#475 Nix/hello.nix",
+          "examples/#475 Nix/verification/native_20261104_followup_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "nix-instantiate --eval --strict hello.nix",
+        "run_or_check_command": "Evaluate the exact source with Nix in a disposable local store; see the command and value recorded in the receipt.",
         "expected_result": "Valore stringa \"Hello, World!\".",
         "sources": [
           "https://nix.dev/manual/nix/stable/language/string-interpolation.html"
@@ -27219,16 +27263,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Nix originale non preparato; evaluator pendente."
-        ],
-        "notes": "L’espressione pura let/in usa interpolazione ${audience}. Non contiene derivazioni, fetch o modifiche del sistema; la prova richiede comunque l’evaluator Nix."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:59:24.936303+00:00",
+        "verification_log": "examples/#475 Nix/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "Original Nix evaluator returned exactly the intended string. No derivations, builds, system configuration or network evaluation.",
+        "verified_artifact_sha256": {
+          "examples/#475 Nix/hello.nix": "34f39b3f5f6ceb40214d05292fb55d80f17eeab270c32717dee6a060ac829644"
+        }
       }
     },
     {
@@ -27589,7 +27634,8 @@
           "examples/#482 OASv2-yaml/variants/yml-ea91093d/hello.yml",
           "examples/#482 OASv2-yaml/variants/yml-ea91093d/package.json",
           "examples/#482 OASv2-yaml/variants/yml-ea91093d/verify.cjs",
-          "examples/#482 OASv2-yaml/variants/yml-ea91093d/README.md"
+          "examples/#482 OASv2-yaml/variants/yml-ea91093d/README.md",
+          "examples/#482 OASv2-yaml/verification/native_20261104_followup_2e796d6c.json"
         ],
         "build_command": null,
         "run_or_check_command": "npm install; node verify.cjs hello.yaml",
@@ -27706,7 +27752,8 @@
           "examples/#484 OASv3-yaml/variants/yml-ea91093d/hello.yml",
           "examples/#484 OASv3-yaml/variants/yml-ea91093d/package.json",
           "examples/#484 OASv3-yaml/variants/yml-ea91093d/verify.cjs",
-          "examples/#484 OASv3-yaml/variants/yml-ea91093d/README.md"
+          "examples/#484 OASv3-yaml/variants/yml-ea91093d/README.md",
+          "examples/#484 OASv3-yaml/verification/native_20261104_followup_2e796d6c.json"
         ],
         "build_command": null,
         "run_or_check_command": "npm install; node verify.cjs hello.yaml",
@@ -28878,12 +28925,13 @@
       "example": {
         "semantic_goal": "Interpretare uno script OpenRC che avvia un servizio dimostrativo e mostra il saluto.",
         "validation_mode": "openrc_service_message",
-        "toolchain": "Ubuntu POSIX sh syntax only",
+        "toolchain": "Toolchain and version recorded in the linked evidence",
         "files": [
-          "examples/#505 OpenRC runscript/hello"
+          "examples/#505 OpenRC runscript/hello",
+          "examples/#505 OpenRC runscript/verification/native_20261104_followup_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "sh -n hello\nopenrc-run hello start",
+        "run_or_check_command": "Follow the native command, toolchain version and exact input hashes in the linked verification record.",
         "expected_result": "shell syntax valida; avvio dimostrativo con messaggio Hello, World!.",
         "sources": [
           {
@@ -28900,15 +28948,13 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
-        "verification_timestamp_utc": "2026-10-08T13:13:29.866715+00:00",
-        "verification_log": "examples/#505 OpenRC runscript/verification/result.json",
-        "blockers": [
-          "Sintassi POSIX shell verificata; openrc-run non eseguito. Semantica e funzioni OpenRC pendenti."
-        ],
-        "notes": "Lo script resta nel corpus e non viene installato in /etc/init.d. sh -n non prova le funzioni OpenRC.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T20:01:22.750237+00:00",
+        "verification_log": "examples/#505 OpenRC runscript/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "Native OpenRC start invoked the original script and ebegin emitted its greeting. Only a disposable Alpine fixture was modified; no host service was started.",
         "verified_artifact_sha256": {
           "examples/#505 OpenRC runscript/hello": "edcb9bc786254373872ffadac0e581e6c121c1952039c682e5540c9fa1b1b2ae"
         }
@@ -29220,13 +29266,15 @@
       "example": {
         "semantic_goal": "Compilare una regola OverPy in Workshop che mostra un big message al giocatore.",
         "validation_mode": "compile_overwatch_rule",
-        "toolchain": "Node.js 22.20.0 + original OverPy 9.7.17 compiler",
+        "toolchain": "OverPy 9.7.17 with Node.js v22.20.0",
         "files": [
           "examples/#511 OverPy/hello.opy",
-          "examples/#511 OverPy/verify.cjs"
+          "examples/#511 OverPy/verify.cjs",
+          "examples/#511 OverPy/verification/native_20261104_followup_main.json",
+          "examples/#511 OverPy/verification/native_20261104_followup_original_failure.json"
         ],
         "build_command": null,
-        "run_or_check_command": "node verify.cjs",
+        "run_or_check_command": "node verify.cjs (OverPy 9.7.17; install it in a separate dependency directory)",
         "expected_result": "regola compilata con Big Message e literal Hello, World!; gioco mostra il saluto.",
         "sources": [
           {
@@ -29239,16 +29287,20 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
+        "syntax_verified": true,
         "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
-        "verification_timestamp_utc": "2026-10-08T13:14:07.205399+00:00",
-        "verification_log": "examples/#511 OverPy/verification/result.json",
+        "verification_status": "syntax_verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-04T19:57:16.935420+00:00",
+        "verification_log": "examples/#511 OverPy/verification/native_20261104_followup_main.json",
         "blockers": [
-          "exit 1: les\\overpy\\overpy.js:63484:16)\n    at new _Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49568:23)\n    at OverPyCompiler.Ast.OverPyDecompiler.Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49614:10)\n    at ${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:55\n    at Array.map (<anonymous>)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:39)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48351:25)\n    at Object.compile (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:70876:27)\n    at async ${WORKSPACE}\\work\\staging_501_520\\examples\\0511_overpy\\verify.cjs:5:20 {\n  fileStack: [\n    {\n      name: '<main>',\n      path: '/',\n      startLine: 2,\n      startCol: 5,\n      endCol: 22,\n      endLine: 2,\n      remainingChars: 99999999999,\n      staticMember: true,\n      fileStackMemberType: 'normal'\n    }\n  ],\n  severity: 'error'\n}\n"
+          "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified."
         ],
-        "notes": "Il compiler è verificabile localmente; l’esecuzione della regola richiede Overwatch. Non è la libreria Python per Overpass."
+        "notes": "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified.",
+        "verified_artifact_sha256": {
+          "examples/#511 OverPy/hello.opy": "c10d9d1298ebe4039f4748ceeb4b8fb71ae1a831a99bd0f60c15acd27f7cdaed",
+          "examples/#511 OverPy/verify.cjs": "2e453263a6c49f1b4252f42e5a2a4939169e50712c4dc0fa465420d326d1ef63"
+        }
       }
     },
     {
@@ -29593,7 +29645,9 @@
           "examples/#518 PEG.js/verify.cjs",
           "examples/#518 PEG.js/variants/peggy-64f146b5/hello.peggy",
           "examples/#518 PEG.js/variants/peggy-64f146b5/verify.cjs",
-          "examples/#518 PEG.js/variants/peggy-64f146b5/README.md"
+          "examples/#518 PEG.js/variants/peggy-64f146b5/README.md",
+          "examples/#518 PEG.js/verification/native_20261104_followup_drivers/2e7065676779/verify.cjs",
+          "examples/#518 PEG.js/verification/native_20261104_followup_2e7065676779.json"
         ],
         "build_command": null,
         "run_or_check_command": "node verify.cjs",
@@ -31335,7 +31389,9 @@
           "examples/#547 PostCSS/verify.js",
           "examples/#547 PostCSS/variants/postcss-ca8f3f2b/hello.postcss",
           "examples/#547 PostCSS/variants/postcss-ca8f3f2b/verify.js",
-          "examples/#547 PostCSS/variants/postcss-ca8f3f2b/README.md"
+          "examples/#547 PostCSS/variants/postcss-ca8f3f2b/README.md",
+          "examples/#547 PostCSS/verification/native_20261104_followup_drivers/2e706f7374637373/verify.js",
+          "examples/#547 PostCSS/verification/native_20261104_followup_2e706f7374637373.json"
         ],
         "build_command": null,
         "run_or_check_command": "node verify.js",
@@ -32286,7 +32342,9 @@
           "examples/#564 Pug/verification/result.json",
           "examples/#564 Pug/verify.cjs",
           "examples/#564 Pug/variants/jade-6d41832d/hello.jade",
-          "examples/#564 Pug/variants/jade-6d41832d/README.md"
+          "examples/#564 Pug/variants/jade-6d41832d/README.md",
+          "examples/#564 Pug/verification/native_20261104_followup_drivers/2e6a616465/verify.cjs",
+          "examples/#564 Pug/verification/native_20261104_followup_2e6a616465.json"
         ],
         "build_command": null,
         "run_or_check_command": "npm install pug; node verify.cjs",
@@ -32657,7 +32715,13 @@
           "examples/#570 Python/variants/tac-49a38cd6/README.md",
           "examples/#570 Python/variants/wsgi-89e83bb6/hello.wsgi",
           "examples/#570 Python/variants/wsgi-89e83bb6/README.md",
-          "examples/#570 Python/variants/xpy-ca599cb2/README.md"
+          "examples/#570 Python/variants/xpy-ca599cb2/README.md",
+          "examples/#570 Python/verification/native_20261104_followup_drivers/2e636769/verify_cgi.py",
+          "examples/#570 Python/verification/native_20261104_followup_2e636769.json",
+          "examples/#570 Python/verification/native_20261104_followup_2e707933.json",
+          "examples/#570 Python/verification/native_20261104_followup_2e707977.json",
+          "examples/#570 Python/verification/native_20261104_followup_drivers/2e77736769/verify_wsgi.py",
+          "examples/#570 Python/verification/native_20261104_followup_2e77736769.json"
         ],
         "build_command": null,
         "run_or_check_command": "python hello.py",
@@ -32917,17 +32981,19 @@
       "example": {
         "semantic_goal": "Generare e compilare un progetto qmake Qt Core.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "qmake; Qt Core; C++",
+        "toolchain": "qt5-qmake-bin 5.15.13+dfsg-1ubuntu1, qt5-qmake 5.15.13+dfsg-1ubuntu1, qtbase5-dev 5.15.13+dfsg-1ubuntu1",
         "files": [
           "examples/#575 QMake/README.md",
           "examples/#575 QMake/hello.pro",
           "examples/#575 QMake/main.cpp",
           "examples/#575 QMake/variants/pri-e5eeb81c/hello.pri",
           "examples/#575 QMake/variants/pri-e5eeb81c/main.pro",
-          "examples/#575 QMake/variants/pri-e5eeb81c/README.md"
+          "examples/#575 QMake/variants/pri-e5eeb81c/README.md",
+          "examples/#575 QMake/verification/native_20261104_followup_main.json",
+          "examples/#575 QMake/verification/native_20261104_followup_2e70726f.json"
         ],
         "build_command": null,
-        "run_or_check_command": "qmake hello.pro; make; ./hello",
+        "run_or_check_command": "Generate a build with qmake, build it in a scratch directory and run the console executable as recorded in the receipt.",
         "expected_result": "Hello, World!",
         "sources": [
           "https://doc.qt.io/qt-6/qmake-project-files.html"
@@ -32937,16 +33003,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "qmake e Qt Core development libraries non predisposti."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:59:25.048831+00:00",
+        "verification_log": "examples/#575 QMake/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "The original qmake project was generated and compiled by Qt; its console-only program printed the exact greeting. No GUI was used.",
+        "verified_artifact_sha256": {
+          "examples/#575 QMake/hello.pro": "948c1e3689008818cd24585e4d4df5a1b42f8164517eb64787e72d7cdadf28aa",
+          "examples/#575 QMake/main.cpp": "4e90b38fc51f6af2111d326514b9ba5ab594da88c114db56bedb31f1de1bd4f9"
+        }
       }
     },
     {
@@ -33707,14 +33775,16 @@
       "example": {
         "semantic_goal": "Eseguire un chunk R Markdown e renderizzare il saluto in HTML.",
         "validation_mode": "execute_r_chunk_and_render_document",
-        "toolchain": "R, rmarkdown, knitr e Pandoc",
+        "toolchain": "R 4.6.1, rmarkdown 2.32, knitr 1.52 and Pandoc 3.8.3",
         "files": [
           "examples/#589 RMarkdown/hello.rmd",
           "examples/#589 RMarkdown/variants/qmd-6ffe4344/hello.qmd",
-          "examples/#589 RMarkdown/variants/qmd-6ffe4344/README.md"
+          "examples/#589 RMarkdown/variants/qmd-6ffe4344/README.md",
+          "examples/#589 RMarkdown/verification/native_20261104_followup_main.json",
+          "examples/#589 RMarkdown/verification/native_20261104_followup_2e716d64.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Rscript -e \"rmarkdown::render('hello.rmd')\"",
+        "run_or_check_command": "Rscript --vanilla -e \"rmarkdown::render('hello.rmd')\"",
         "expected_result": "documento HTML con saluto prodotto dal chunk R.",
         "sources": [
           {
@@ -33731,16 +33801,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Un parser Markdown da solo non prova l’esecuzione del chunk."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-04T19:59:16.167832+00:00",
+        "verification_log": "examples/#589 RMarkdown/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "The original R Markdown chunk executed with knitr; Pandoc rendered HTML containing the greeting in the chunk output. Quarto .qmd was not exercised.",
+        "verified_artifact_sha256": {
+          "examples/#589 RMarkdown/hello.rmd": "2741a002db695e1b02a6d651acbb8160d415a1341856be8e0f3d0e6eaa0d86fb"
+        }
       }
     },
     {
@@ -34002,12 +34073,13 @@
       "example": {
         "semantic_goal": "Analizzare un RPM spec ed eseguire la fase prep per stampare il saluto.",
         "validation_mode": "parse_spec_and_execute_prep",
-        "toolchain": "RPM4.18.2 original rpmbuild native prep",
+        "toolchain": "rpm 4.18.2+dfsg-2.1build2, rpm-common 4.18.2+dfsg-2.1build2, librpm9t64 4.18.2+dfsg-2.1build2",
         "files": [
-          "examples/#594 RPM Spec/hello.spec"
+          "examples/#594 RPM Spec/hello.spec",
+          "examples/#594 RPM Spec/verification/native_20261104_followup_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "rpmbuild -bp --nodeps --define \"_topdir /percorso/work/rpm\" hello.spec",
+        "run_or_check_command": "rpmbuild -bp --nodeps hello.spec in a disposable build tree; check the exact greeting from %prep.",
         "expected_result": "spec accettato e fase prep produce Hello, World!.",
         "sources": [
           {
@@ -34020,16 +34092,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64; Linux native tests under WSL Ubuntu 24.04",
-        "verification_timestamp_utc": "2026-10-08T13:46:57.302300+00:00",
-        "verification_log": "examples/#594 RPM Spec/verification/result.json",
-        "blockers": [
-          "exit 127: ${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory\n"
-        ],
-        "notes": "Il fixture non installa file o pacchetti nel sistema; l’obiettivo è prep e non la distribuzione di un RPM."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:57:27.222852+00:00",
+        "verification_log": "examples/#594 RPM Spec/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "The native RPM parser accepted the spec and rpmbuild ran %prep, printing the exact greeting. No packages were installed and no RPM was built.",
+        "verified_artifact_sha256": {
+          "examples/#594 RPM Spec/hello.spec": "ab28f931e32e49cd33d922367c7d5432b561ab3f413ba7a9d36900e1b5a020a3"
+        }
       }
     },
     {
@@ -34680,7 +34753,11 @@
           "examples/#605 Rebol/variants/r3-172ccdf0/hello.r3",
           "examples/#605 Rebol/variants/r3-172ccdf0/README.md",
           "examples/#605 Rebol/variants/rebol-747e1472/hello.rebol",
-          "examples/#605 Rebol/variants/rebol-747e1472/README.md"
+          "examples/#605 Rebol/variants/rebol-747e1472/README.md",
+          "examples/#605 Rebol/verification/native_20261104_followup_2e72.json",
+          "examples/#605 Rebol/verification/native_20261104_followup_2e7232.json",
+          "examples/#605 Rebol/verification/native_20261104_followup_2e7233.json",
+          "examples/#605 Rebol/verification/native_20261104_followup_2e7265626f6c.json"
         ],
         "build_command": null,
         "run_or_check_command": "rebol3 -q hello.reb",
@@ -35016,7 +35093,9 @@
           "examples/#611 Regular Expression/verification/native.json",
           "examples/#611 Regular Expression/verify.py",
           "examples/#611 Regular Expression/variants/regex-b64e0ba7/hello.regex",
-          "examples/#611 Regular Expression/variants/regex-b64e0ba7/README.md"
+          "examples/#611 Regular Expression/variants/regex-b64e0ba7/README.md",
+          "examples/#611 Regular Expression/verification/native_20261104_followup_drivers/2e7265676578/verify.py",
+          "examples/#611 Regular Expression/verification/native_20261104_followup_2e7265676578.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -36528,7 +36607,9 @@
           "examples/#634 SPARQL/hello.rq",
           "examples/#634 SPARQL/verify.py",
           "examples/#634 SPARQL/variants/sparql-6c620153/hello.sparql",
-          "examples/#634 SPARQL/variants/sparql-6c620153/README.md"
+          "examples/#634 SPARQL/variants/sparql-6c620153/README.md",
+          "examples/#634 SPARQL/verification/native_20261104_followup_drivers/2e73706172716c/verify.py",
+          "examples/#634 SPARQL/verification/native_20261104_followup_2e73706172716c.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -36652,7 +36733,15 @@
           "examples/#636 SQL/variants/udf-94d3d68a/hello.udf",
           "examples/#636 SQL/variants/udf-94d3d68a/README.md",
           "examples/#636 SQL/variants/viw-71592285/hello.viw",
-          "examples/#636 SQL/variants/viw-71592285/README.md"
+          "examples/#636 SQL/variants/viw-71592285/README.md",
+          "examples/#636 SQL/verification/native_20261104_followup_drivers/2e64646c/verify_sql.py",
+          "examples/#636 SQL/verification/native_20261104_followup_2e64646c.json",
+          "examples/#636 SQL/verification/native_20261104_followup_drivers/2e696e63/verify_sql.py",
+          "examples/#636 SQL/verification/native_20261104_followup_2e696e63.json",
+          "examples/#636 SQL/verification/native_20261104_followup_drivers/2e746162/verify_sql.py",
+          "examples/#636 SQL/verification/native_20261104_followup_2e746162.json",
+          "examples/#636 SQL/verification/native_20261104_followup_drivers/2e766977/verify_sql.py",
+          "examples/#636 SQL/verification/native_20261104_followup_2e766977.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -37825,7 +37914,13 @@
           "examples/#656 Shell/variants/zsh-55a30bf3/hello.zsh",
           "examples/#656 Shell/variants/zsh-55a30bf3/README.md",
           "examples/#656 Shell/variants/zsh-theme-a4cc3efd/hello.zsh-theme",
-          "examples/#656 Shell/variants/zsh-theme-a4cc3efd/README.md"
+          "examples/#656 Shell/variants/zsh-theme-a4cc3efd/README.md",
+          "examples/#656 Shell/verification/native_20261104_followup_2e62617368.json",
+          "examples/#656 Shell/verification/native_20261104_followup_2e636769.json",
+          "examples/#656 Shell/verification/native_20261104_followup_2e636f6d6d616e64.json",
+          "examples/#656 Shell/verification/native_20261104_followup_2e73682e696e.json",
+          "examples/#656 Shell/verification/native_20261104_followup_2e746f6f6c.json",
+          "examples/#656 Shell/verification/native_20261104_followup_2e74726967676572.json"
         ],
         "build_command": null,
         "run_or_check_command": "sh -n hello.sh; sh hello.sh",
@@ -38030,14 +38125,15 @@
       "example": {
         "semantic_goal": "Filtrare offline un messaggio Sieve in base al saluto nel Subject.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Sieve compiler/test engine",
+        "toolchain": "dovecot-sieve 1:2.3.21+dfsg1-2ubuntu6.5, dovecot-core 1:2.3.21+dfsg1-2ubuntu6.5, libexttextcat-2.0-0 3.4.7-1build1",
         "files": [
           "examples/#660 Sieve/README.md",
           "examples/#660 Sieve/hello.eml",
-          "examples/#660 Sieve/hello.sieve"
+          "examples/#660 Sieve/hello.sieve",
+          "examples/#660 Sieve/verification/native_20261104_followup_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "sievec hello.sieve; sieve-test hello.sieve hello.eml; verificare fileinto INBOX.CorpusGreeting.",
+        "run_or_check_command": "Compile with sievec and run sieve-test against hello.eml in a disposable Pigeonhole configuration; see receipt.",
         "expected_result": "Per il fixture Subject=Hello, World! il risultato è fileinto INBOX.CorpusGreeting.",
         "sources": [
           "https://www.rfc-editor.org/rfc/rfc5228",
@@ -38048,16 +38144,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Sieve compiler/offline test engine non disponibile."
-        ],
-        "notes": "Messaggio originale con indirizzi example.invalid; verifica prevista offline, senza spedizioni."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:57:35.367111+00:00",
+        "verification_log": "examples/#660 Sieve/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "Pigeonhole compiled the filter and the offline dry run planned fileinto INBOX.CorpusGreeting for the original .eml. No mail delivered.",
+        "verified_artifact_sha256": {
+          "examples/#660 Sieve/hello.sieve": "95619db937471393fb7dc8d4124dc19bae77ac87b83c18ff61608887073c6904",
+          "examples/#660 Sieve/hello.eml": "aefc547ef6f3bca2adabdd0b46b071b3becfc73703ac8b19d1a4f6db55f736ab"
+        }
       }
     },
     {
@@ -38999,12 +39097,13 @@
       "example": {
         "semantic_goal": "Aprire un Spline Font Database e recuperare il FullName del font.",
         "validation_mode": "load_font_database_and_assert_fullname",
-        "toolchain": "FontForge",
+        "toolchain": "fontforge 1:20230101~dfsg-1.1build1, libfontforge4 1:20230101~dfsg-1.1build1, libspiro1 1:20221101-1build1",
         "files": [
-          "examples/#678 Spline Font Database/hello.sfd"
+          "examples/#678 Spline Font Database/hello.sfd",
+          "examples/#678 Spline Font Database/verification/native_20261104_followup_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "fontforge -lang=ff -c 'Open($1); Print($fullname);' hello.sfd",
+        "run_or_check_command": "Load hello.sfd with the FontForge command line and read its FullName; see receipt.",
         "expected_result": "FontForge accetta il font e legge FullName Hello, World!.",
         "sources": [
           {
@@ -39017,16 +39116,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il font contiene metadati e nessun glifo: l’obiettivo è il nome del font, non il rendering del saluto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-04T19:59:25.200832+00:00",
+        "verification_log": "examples/#678 Spline Font Database/verification/native_20261104_followup_main.json",
+        "blockers": [],
+        "notes": "Native FontForge loaded the original SFD and reported its exact FullName. No glyph or font rendering was tested.",
+        "verified_artifact_sha256": {
+          "examples/#678 Spline Font Database/hello.sfd": "dbb4e77b76d5525421cb3f7daecc1a6f85a5d88eeff5ae24b4cd471a34f51315"
+        }
       }
     },
     {
@@ -40270,7 +40370,9 @@
           "examples/#700 TOML/verification/native.json",
           "examples/#700 TOML/verify.py",
           "examples/#700 TOML/variants/toml-example-35fdb380/hello.toml.example",
-          "examples/#700 TOML/variants/toml-example-35fdb380/README.md"
+          "examples/#700 TOML/variants/toml-example-35fdb380/README.md",
+          "examples/#700 TOML/verification/native_20261104_followup_drivers/2e746f6d6c2e6578616d706c65/verify.py",
+          "examples/#700 TOML/verification/native_20261104_followup_2e746f6d6c2e6578616d706c65.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -40766,7 +40868,8 @@
           "examples/#709 Tcl/variants/tm-cb765f5d/README.md",
           "examples/#709 Tcl/variants/xdc-305793a9/hello.xdc",
           "examples/#709 Tcl/variants/xdc-305793a9/main.v",
-          "examples/#709 Tcl/variants/xdc-305793a9/README.md"
+          "examples/#709 Tcl/variants/xdc-305793a9/README.md",
+          "examples/#709 Tcl/verification/native_20261104_followup_2e74636c2e696e.json"
         ],
         "build_command": null,
         "run_or_check_command": "tclsh hello.tcl",
@@ -42729,7 +42832,13 @@
           "examples/#744 VHDL/variants/vht-b9b9d435/hello.vht",
           "examples/#744 VHDL/variants/vht-b9b9d435/README.md",
           "examples/#744 VHDL/variants/vhw-27e673c9/hello.vhw",
-          "examples/#744 VHDL/variants/vhw-27e673c9/README.md"
+          "examples/#744 VHDL/variants/vhw-27e673c9/README.md",
+          "examples/#744 VHDL/verification/native_20261104_followup_2e766864.json",
+          "examples/#744 VHDL/verification/native_20261104_followup_2e766866.json",
+          "examples/#744 VHDL/verification/native_20261104_followup_2e76686f.json",
+          "examples/#744 VHDL/verification/native_20261104_followup_2e766873.json",
+          "examples/#744 VHDL/verification/native_20261104_followup_2e766874.json",
+          "examples/#744 VHDL/verification/native_20261104_followup_2e766877.json"
         ],
         "build_command": null,
         "run_or_check_command": "mkdir -p build\nghdl -a --std=08 --workdir=build hello.vhdl\nghdl -e --std=08 --workdir=build hello\nghdl -r --std=08 --workdir=build hello --stop-time=1ns",
@@ -44337,7 +44446,11 @@
           "examples/#771 Wikitext/variants/wiki-161d167f/hello.wiki",
           "examples/#771 Wikitext/variants/wiki-161d167f/README.md",
           "examples/#771 Wikitext/variants/wikitext-b2a94597/hello.wikitext",
-          "examples/#771 Wikitext/variants/wikitext-b2a94597/README.md"
+          "examples/#771 Wikitext/variants/wikitext-b2a94597/README.md",
+          "examples/#771 Wikitext/verification/native_20261104_followup_drivers/2e77696b69/verify.py",
+          "examples/#771 Wikitext/verification/native_20261104_followup_2e77696b69.json",
+          "examples/#771 Wikitext/verification/native_20261104_followup_drivers/2e77696b6974657874/verify.py",
+          "examples/#771 Wikitext/verification/native_20261104_followup_2e77696b6974657874.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -45871,7 +45984,9 @@
           "examples/#791 XSLT/verify.py",
           "examples/#791 XSLT/variants/xslt-6c8e89da/hello.xslt",
           "examples/#791 XSLT/variants/xslt-6c8e89da/input.xml",
-          "examples/#791 XSLT/variants/xslt-6c8e89da/README.md"
+          "examples/#791 XSLT/variants/xslt-6c8e89da/README.md",
+          "examples/#791 XSLT/verification/native_20261104_followup_drivers/2e78736c74/verify.py",
+          "examples/#791 XSLT/verification/native_20261104_followup_2e78736c74.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -46177,7 +46292,9 @@
           "examples/#796 YAML/variants/yaml-sed-463fad60/hello.yaml.sed",
           "examples/#796 YAML/variants/yaml-sed-463fad60/README.md",
           "examples/#796 YAML/variants/yml-mysql-d412fc04/hello.yml.mysql",
-          "examples/#796 YAML/variants/yml-mysql-d412fc04/README.md"
+          "examples/#796 YAML/variants/yml-mysql-d412fc04/README.md",
+          "examples/#796 YAML/verification/native_20261104_followup_drivers/2e79616d6c/verify.py",
+          "examples/#796 YAML/verification/native_20261104_followup_2e79616d6c.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -46283,7 +46400,9 @@
           "examples/#798 YARA/verify.py",
           "examples/#798 YARA/variants/yara-cc22c747/hello.yara",
           "examples/#798 YARA/variants/yara-cc22c747/greeting.txt",
-          "examples/#798 YARA/variants/yara-cc22c747/README.md"
+          "examples/#798 YARA/variants/yara-cc22c747/README.md",
+          "examples/#798 YARA/verification/native_20261104_followup_drivers/2e79617261/verify.py",
+          "examples/#798 YARA/verification/native_20261104_followup_2e79617261.json"
         ],
         "build_command": null,
         "run_or_check_command": "python verify.py",
@@ -47385,7 +47504,9 @@
           "examples/#818 iCalendar/verification/result.json",
           "examples/#818 iCalendar/verify.py",
           "examples/#818 iCalendar/variants/ical-1b64d378/hello.ical",
-          "examples/#818 iCalendar/variants/ical-1b64d378/README.md"
+          "examples/#818 iCalendar/variants/ical-1b64d378/README.md",
+          "examples/#818 iCalendar/verification/native_20261104_followup_drivers/2e6963616c/verify.py",
+          "examples/#818 iCalendar/verification/native_20261104_followup_2e6963616c.json"
         ],
         "build_command": null,
         "run_or_check_command": "pip install icalendar; python verify.py",
@@ -48027,7 +48148,13 @@
           "examples/#830 reStructuredText/variants/rest-txt-4f6501d2/hello.rest.txt",
           "examples/#830 reStructuredText/variants/rest-txt-4f6501d2/README.md",
           "examples/#830 reStructuredText/variants/rst-txt-05b28309/hello.rst.txt",
-          "examples/#830 reStructuredText/variants/rst-txt-05b28309/README.md"
+          "examples/#830 reStructuredText/variants/rst-txt-05b28309/README.md",
+          "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e72657374/verify.py",
+          "examples/#830 reStructuredText/verification/native_20261104_followup_2e72657374.json",
+          "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e726573742e747874/verify.py",
+          "examples/#830 reStructuredText/verification/native_20261104_followup_2e726573742e747874.json",
+          "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e7273742e747874/verify.py",
+          "examples/#830 reStructuredText/verification/native_20261104_followup_2e7273742e747874.json"
         ],
         "build_command": null,
         "run_or_check_command": "pip install docutils; python verify.py",

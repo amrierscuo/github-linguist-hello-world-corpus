@@ -1,5 +1,9 @@
 # 0547: PostCSS: `.postcss`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.postcss`. PostCSS and the custom properties plugin transform this source and verify the greeting in the CSS content declaration. [Recorded evidence](../../verification/native_20261104_followup_2e706f7374637373.json).
+
 Role: Alias extension for the same text format as the main source.
 
 Origin: Byte-identical copy of the original corpus source: examples/#547 PostCSS/hello.pcss.
@@ -14,7 +18,7 @@ Usare la toolchain del README principale sul file hello.postcss; eventuali file 
 
 Expected result: CSS transformer contains content: "Hello, World!".
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

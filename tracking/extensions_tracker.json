@@ -274,10 +274,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#008 AIDL/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#008 AIDL/corpus/hello/IHello.aidl": "a0fad647aa362d1e95aa180aef328a9d3e27d8597ec0a5e2d07f0b331772fbe1"
+      },
       "based_on": null,
       "documentation": "examples/#008 AIDL/README.md",
       "supporting_files": [],
@@ -287,10 +289,8 @@
         "https://developer.android.com/develop/background-work/services/aidl",
         "https://developer.android.com/tools/releases/build-tools"
       ],
-      "blockers": [
-        "Android SDK aidl compiler not found in PATH."
-      ],
-      "notes": "Fonte primaria consultata; compilazione/esecuzione non effettuata. Comandi da completare quando la toolchain sarà disponibile."
+      "blockers": [],
+      "notes": "Native AOSP compiler generated the intended Binder constant, method signature, Stub and Proxy. No Android IPC or service execution was tested."
     },
     {
       "language_ordinal": 9,
@@ -3676,10 +3676,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#083 C/verification/native_20261104_followup_2e63617473.json",
+      "verified_artifact_sha256": {
+        "examples/#083 C/variants/ext-cats-2e63617473/hello.cats": "351116b93db646b5413a114cd4066a84e0e71b352d495072065a59710fb1efc8"
+      },
       "based_on": "examples/#083 C/hello.c",
       "documentation": "examples/#083 C/variants/ext-cats-2e63617473/README.md",
       "supporting_files": [],
@@ -3690,10 +3692,8 @@
         "https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Codice C incorporabile dal FFI ATS; file .cats con grammatica C, non sorgente ATS. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 83,
@@ -3704,10 +3704,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#083 C/verification/native_20261104_followup_2e68.json",
+      "verified_artifact_sha256": {
+        "examples/#083 C/variants/ext-h-2e68/hello.h": "2fb69f631ae3c921a0ca1a291334a1c1aa33617a47d7b22fbfa9c234ee7d527f"
+      },
       "based_on": "examples/#083 C/hello.c",
       "documentation": "examples/#083 C/variants/ext-h-2e68/README.md",
       "supporting_files": [
@@ -3720,10 +3722,8 @@
         "https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header C con funzione inline, incluso dal consumer. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 83,
@@ -3976,10 +3976,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e632b2b.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-c-2e632b2b/hello.c++": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-c-2e632b2b/README.md",
       "supporting_files": [],
@@ -3990,10 +3992,8 @@
         "https://www.open-std.org/jtc1/sc22/wg21/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4004,10 +4004,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e6363.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-cc-2e6363/hello.cc": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-cc-2e6363/README.md",
       "supporting_files": [],
@@ -4018,10 +4020,8 @@
         "https://www.open-std.org/jtc1/sc22/wg21/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4032,10 +4032,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e6370.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-cp-2e6370/hello.cp": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-cp-2e6370/README.md",
       "supporting_files": [],
@@ -4046,10 +4048,8 @@
         "https://www.open-std.org/jtc1/sc22/wg21/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4091,10 +4091,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e637878.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-cxx-2e637878/hello.cxx": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-cxx-2e637878/README.md",
       "supporting_files": [],
@@ -4105,10 +4107,8 @@
         "https://www.open-std.org/jtc1/sc22/wg21/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4119,10 +4119,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e68.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-h-2e68/hello.h": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-h-2e68/README.md",
       "supporting_files": [
@@ -4136,10 +4138,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4150,10 +4150,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e682b2b.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-h-2e682b2b/hello.h++": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-h-2e682b2b/README.md",
       "supporting_files": [
@@ -4167,10 +4169,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4181,10 +4181,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e6868.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-hh-2e6868/hello.hh": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-hh-2e6868/README.md",
       "supporting_files": [
@@ -4198,10 +4200,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4212,10 +4212,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e687070.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-hpp-2e687070/hello.hpp": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-hpp-2e687070/README.md",
       "supporting_files": [
@@ -4229,10 +4231,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4243,10 +4243,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e687878.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-hxx-2e687878/hello.hxx": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-hxx-2e687878/README.md",
       "supporting_files": [
@@ -4260,10 +4262,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4274,10 +4274,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e696e63.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-inc-2e696e63/hello.inc": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-inc-2e696e63/README.md",
       "supporting_files": [
@@ -4291,10 +4293,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4305,10 +4305,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e696e6c.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-inl-2e696e6c/hello.inl": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-inl-2e696e6c/README.md",
       "supporting_files": [
@@ -4322,10 +4324,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4365,10 +4365,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e697070.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-ipp-2e697070/hello.ipp": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-ipp-2e697070/README.md",
       "supporting_files": [
@@ -4382,10 +4384,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header/frammento inline C++ incluso da un consumer; nessun main nel file di include. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4456,10 +4456,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e746363.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-tcc-2e746363/hello.tcc": "7abdc103ee227cba08cac1c17180aa558c30648463fe67130ac460e0a7963353"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-tcc-2e746363/README.md",
       "supporting_files": [
@@ -4473,10 +4475,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Implementazione di template C++ inclusa. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4487,10 +4487,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e747070.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-tpp-2e747070/hello.tpp": "7abdc103ee227cba08cac1c17180aa558c30648463fe67130ac460e0a7963353"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-tpp-2e747070/README.md",
       "supporting_files": [
@@ -4504,10 +4506,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Implementazione di template C++ inclusa. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 85,
@@ -4518,10 +4518,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261104_followup_2e747878.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-txx-2e747878/hello.txx": "7abdc103ee227cba08cac1c17180aa558c30648463fe67130ac460e0a7963353"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-txx-2e747878/README.md",
       "supporting_files": [
@@ -4535,10 +4537,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://isocpp.org/faq/templates"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Implementazione di template C++ inclusa. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Variant only. Main language status and other suffixes unchanged."
     },
     {
       "language_ordinal": 86,
@@ -6657,10 +6657,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#130 CoffeeScript/verification/native_20261104_followup_2e5f636f66666565.json",
+      "verified_artifact_sha256": {
+        "examples/#130 CoffeeScript/variants/ext-coffee-2e5f636f66666565/hello._coffee": "130168342aa2d080a39da70ad44193e069074dfac6959d8037ed8cac1b4e4505"
+      },
       "based_on": "examples/#130 CoffeeScript/hello.coffee",
       "documentation": "examples/#130 CoffeeScript/variants/ext-coffee-2e5f636f66666565/README.md",
       "supporting_files": [],
@@ -6672,10 +6674,8 @@
         "https://github.com/jashkenas/coffeescript",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sottoinsieme CoffeeScript comune senza estensioni asincrone; il suffisso seleziona il frontend Streamline/Iced appropriato. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 130,
@@ -6686,10 +6686,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#130 CoffeeScript/verification/native_20261104_followup_2e63616b65.json",
+      "verified_artifact_sha256": {
+        "examples/#130 CoffeeScript/variants/ext-cake-2e63616b65/hello.cake": "f67590ef6aedeca6a22cdfc134fc187334fd3b1261e0836a901bd9c3f44879ca"
+      },
       "based_on": "examples/#130 CoffeeScript/hello.coffee",
       "documentation": "examples/#130 CoffeeScript/variants/ext-cake-2e63616b65/README.md",
       "supporting_files": [],
@@ -6702,10 +6704,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://coffeescript.org/#cake"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Cake task CoffeeScript, distinto dal file .cake C# della voce 84. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Original .cake copied byte-identically as Cakefile. Official Cake task executed; main example unchanged."
     },
     {
       "language_ordinal": 130,
@@ -10866,10 +10866,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#216 Fortran/verification/native_20261104_followup_2e663737.json",
+      "verified_artifact_sha256": {
+        "examples/#216 Fortran/variants/ext-f77-2e663737/hello.f77": "0a5288942c10d9b173c7f7dcd3e6dafd955860d6e3c768c8d673e694eee098ce"
+      },
       "based_on": "examples/#216 Fortran/hello.f",
       "documentation": "examples/#216 Fortran/variants/ext-f77-2e663737/README.md",
       "supporting_files": [],
@@ -10880,10 +10882,8 @@
         "https://gcc.gnu.org/onlinedocs/gfortran/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Fortran fixed form; il ruolo del .fpp include preprocessamento ma il modello non richiede macro. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor."
     },
     {
       "language_ordinal": 216,
@@ -10894,10 +10894,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#216 Fortran/verification/native_20261104_followup_2e666f72.json",
+      "verified_artifact_sha256": {
+        "examples/#216 Fortran/variants/ext-for-2e666f72/hello.for": "0a5288942c10d9b173c7f7dcd3e6dafd955860d6e3c768c8d673e694eee098ce"
+      },
       "based_on": "examples/#216 Fortran/hello.f",
       "documentation": "examples/#216 Fortran/variants/ext-for-2e666f72/README.md",
       "supporting_files": [],
@@ -10908,10 +10910,8 @@
         "https://gcc.gnu.org/onlinedocs/gfortran/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Fortran fixed form; il ruolo del .fpp include preprocessamento ma il modello non richiede macro. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor."
     },
     {
       "language_ordinal": 216,
@@ -10922,10 +10922,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#216 Fortran/verification/native_20261104_followup_2e667070.json",
+      "verified_artifact_sha256": {
+        "examples/#216 Fortran/variants/ext-fpp-2e667070/hello.fpp": "0a5288942c10d9b173c7f7dcd3e6dafd955860d6e3c768c8d673e694eee098ce"
+      },
       "based_on": "examples/#216 Fortran/hello.f",
       "documentation": "examples/#216 Fortran/variants/ext-fpp-2e667070/README.md",
       "supporting_files": [],
@@ -10936,10 +10938,8 @@
         "https://gcc.gnu.org/onlinedocs/gfortran/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Fortran fixed form; il ruolo del .fpp include preprocessamento ma il modello non richiede macro. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor."
     },
     {
       "language_ordinal": 217,
@@ -10977,10 +10977,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#217 Fortran Free Form/verification/native_20261104_followup_2e663033.json",
+      "verified_artifact_sha256": {
+        "examples/#217 Fortran Free Form/variants/ext-f03-2e663033/hello.f03": "8ddf41fabec2cfaead0210ebe401b195d5c59ebd71e63cc214e7ecfa4adafb89"
+      },
       "based_on": "examples/#217 Fortran Free Form/hello.f90",
       "documentation": "examples/#217 Fortran Free Form/variants/ext-f03-2e663033/README.md",
       "supporting_files": [],
@@ -10991,10 +10993,8 @@
         "https://gcc.gnu.org/onlinedocs/gfortran/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Fortran free form, distinto dalla voce Fortran fixed form. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor."
     },
     {
       "language_ordinal": 217,
@@ -11005,10 +11005,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#217 Fortran Free Form/verification/native_20261104_followup_2e663038.json",
+      "verified_artifact_sha256": {
+        "examples/#217 Fortran Free Form/variants/ext-f08-2e663038/hello.f08": "8ddf41fabec2cfaead0210ebe401b195d5c59ebd71e63cc214e7ecfa4adafb89"
+      },
       "based_on": "examples/#217 Fortran Free Form/hello.f90",
       "documentation": "examples/#217 Fortran Free Form/variants/ext-f08-2e663038/README.md",
       "supporting_files": [],
@@ -11019,10 +11021,8 @@
         "https://gcc.gnu.org/onlinedocs/gfortran/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Fortran free form, distinto dalla voce Fortran fixed form. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor."
     },
     {
       "language_ordinal": 217,
@@ -11033,10 +11033,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#217 Fortran Free Form/verification/native_20261104_followup_2e663935.json",
+      "verified_artifact_sha256": {
+        "examples/#217 Fortran Free Form/variants/ext-f95-2e663935/hello.f95": "8ddf41fabec2cfaead0210ebe401b195d5c59ebd71e63cc214e7ecfa4adafb89"
+      },
       "based_on": "examples/#217 Fortran Free Form/hello.f90",
       "documentation": "examples/#217 Fortran Free Form/variants/ext-f95-2e663935/README.md",
       "supporting_files": [],
@@ -11047,10 +11049,8 @@
         "https://gcc.gnu.org/onlinedocs/gfortran/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Fortran free form, distinto dalla voce Fortran fixed form. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor."
     },
     {
       "language_ordinal": 218,
@@ -15169,10 +15169,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#280 HTML/verification/native_20261104_followup_2e68746d.json",
+      "verified_artifact_sha256": {
+        "examples/#280 HTML/variants/ext-htm-2e68746d/hello.htm": "d98e5884f40a42170746514c8e19df5345b6a58c6ae00f13e72d3cee8c22dcde"
+      },
       "based_on": "examples/#280 HTML/hello.html",
       "documentation": "examples/#280 HTML/variants/ext-htm-2e68746d/README.md",
       "supporting_files": [],
@@ -15184,10 +15186,8 @@
         "https://github.com/html5lib/html5lib-python",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Pagina nel sottoinsieme HTML comune; .html.hl resta formato HTML/Hoplon, non sorgente ClojureScript .cljs.hl. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 280,
@@ -16373,10 +16373,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#304 INI/verification/native_20261104_followup_2e636667.json",
+      "verified_artifact_sha256": {
+        "examples/#304 INI/variants/cfg-9b787153/hello.cfg": "b053725e51f30830c476fe323a2ea0444893437282a774ade38021fb6a6cec34"
+      },
       "based_on": null,
       "documentation": "examples/#304 INI/variants/cfg-9b787153/README.md",
       "supporting_files": [],
@@ -16385,10 +16387,8 @@
       "sources": [
         "https://docs.python.org/3/library/configparser.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Configurazione INI generica. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 304,
@@ -16641,10 +16641,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#304 INI/verification/native_20261104_followup_2e70726f70657274696573.json",
+      "verified_artifact_sha256": {
+        "examples/#304 INI/variants/properties-4792f091/hello.properties": "b39cef82a809353ae1a2ab63aedeb0048b348dd4257df8c9733a7d29042ce150"
+      },
       "based_on": null,
       "documentation": "examples/#304 INI/variants/properties-4792f091/README.md",
       "supporting_files": [],
@@ -16654,10 +16656,8 @@
         "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Properties.html",
         "https://docs.python.org/3/library/configparser.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Java properties: coppia chiave/valore senza intestazione di sezione. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 304,
@@ -17720,8 +17720,8 @@
       "creation_status": "adapted",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#324 JSON/variants/jsonl-365369f9/verification/native.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#324 JSON/verification/native_20261104_followup_2e6a736f6e6c.json",
       "verified_artifact_sha256": {
         "examples/#324 JSON/variants/jsonl-365369f9/hello.jsonl": "fe8fe45846aa1ade756aca6481d1e341c35a442bbaa631dcdeb1cc1b621fad80"
       },
@@ -17734,10 +17734,8 @@
         "https://jsonlines.org/",
         "https://www.rfc-editor.org/rfc/rfc8259"
       ],
-      "blockers": [
-        "Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati."
-      ],
-      "notes": "JSON Lines: record JSON indipendente per riga. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale. Prova reale: Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato. Log: examples/#324 JSON/variants/jsonl-365369f9/verification/native.json"
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 324,
@@ -17867,8 +17865,8 @@
       "creation_status": "adapted",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#324 JSON/variants/tfstate-3256bafa/verification/native.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#324 JSON/verification/native_20261104_followup_2e74667374617465.json",
       "verified_artifact_sha256": {
         "examples/#324 JSON/variants/tfstate-3256bafa/hello.tfstate": "c90936cf4ed25df3960ef70914546a75a65f5baf5dc70db2382a4d130d4805a6"
       },
@@ -17882,10 +17880,8 @@
         "https://github.com/hashicorp/terraform/blob/main/internal/states/statefile/version4.go",
         "https://www.rfc-editor.org/rfc/rfc8259"
       ],
-      "blockers": [
-        "Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati."
-      ],
-      "notes": "Fixture testuale di stato Terraform schema v4 con output stringa, scritto come dato illustrativo; non dichiara apply o snapshot reali. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale. Prova reale: Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato. Log: examples/#324 JSON/variants/tfstate-3256bafa/verification/native.json"
+      "blockers": [],
+      "notes": "Terraform show only, local state file read. No init, apply, providers, or cloud activity."
     },
     {
       "language_ordinal": 324,
@@ -17897,8 +17893,8 @@
       "creation_status": "adapted",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#324 JSON/variants/tfstate-backup-0768547c/verification/native.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#324 JSON/verification/native_20261104_followup_2e746673746174652e6261636b7570.json",
       "verified_artifact_sha256": {
         "examples/#324 JSON/variants/tfstate-backup-0768547c/hello.tfstate.backup": "c90936cf4ed25df3960ef70914546a75a65f5baf5dc70db2382a4d130d4805a6"
       },
@@ -17912,10 +17908,8 @@
         "https://github.com/hashicorp/terraform/blob/main/internal/states/statefile/version4.go",
         "https://www.rfc-editor.org/rfc/rfc8259"
       ],
-      "blockers": [
-        "Parser del linguaggio accettato; schema/loader/semantica applicativa specifici restano non verificati."
-      ],
-      "notes": "Fixture testuale di stato Terraform schema v4 con output stringa, scritto come dato illustrativo; non dichiara apply o snapshot reali. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale. Prova reale: Parsing JSON/JSON Lines reale della sola grammatica canonica; nessuno schema di progetto/configurazione applicativa è stato validato. Log: examples/#324 JSON/variants/tfstate-backup-0768547c/verification/native.json"
+      "blockers": [],
+      "notes": "Terraform show only, local state file read. No init, apply, providers, or cloud activity."
     },
     {
       "language_ordinal": 324,
@@ -23518,10 +23512,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#418 Markdown/verification/native_20261104_followup_2e6d61726b646f776e.json",
+      "verified_artifact_sha256": {
+        "examples/#418 Markdown/variants/markdown-7e4cc6af/hello.markdown": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae"
+      },
       "based_on": "examples/#418 Markdown/hello.md",
       "documentation": "examples/#418 Markdown/variants/markdown-7e4cc6af/README.md",
       "supporting_files": [
@@ -23533,10 +23529,8 @@
         "https://spec.commonmark.org/0.31.2/",
         "https://github.com/executablebooks/markdown-it-py"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#418 Markdown/hello.md. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Original suffix variant; main example unchanged."
     },
     {
       "language_ordinal": 418,
@@ -23547,10 +23541,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#418 Markdown/verification/native_20261104_followup_2e6d646f776e.json",
+      "verified_artifact_sha256": {
+        "examples/#418 Markdown/variants/mdown-c553b9ee/hello.mdown": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae"
+      },
       "based_on": "examples/#418 Markdown/hello.md",
       "documentation": "examples/#418 Markdown/variants/mdown-c553b9ee/README.md",
       "supporting_files": [
@@ -23562,10 +23558,8 @@
         "https://spec.commonmark.org/0.31.2/",
         "https://github.com/executablebooks/markdown-it-py"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#418 Markdown/hello.md. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Original suffix variant; main example unchanged."
     },
     {
       "language_ordinal": 418,
@@ -23576,10 +23570,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#418 Markdown/verification/native_20261104_followup_2e6d64776e.json",
+      "verified_artifact_sha256": {
+        "examples/#418 Markdown/variants/mdwn-d13c3a39/hello.mdwn": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae"
+      },
       "based_on": "examples/#418 Markdown/hello.md",
       "documentation": "examples/#418 Markdown/variants/mdwn-d13c3a39/README.md",
       "supporting_files": [
@@ -23591,10 +23587,8 @@
         "https://spec.commonmark.org/0.31.2/",
         "https://github.com/executablebooks/markdown-it-py"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#418 Markdown/hello.md. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Original suffix variant; main example unchanged."
     },
     {
       "language_ordinal": 418,
@@ -23605,10 +23599,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#418 Markdown/verification/native_20261104_followup_2e6d6b64.json",
+      "verified_artifact_sha256": {
+        "examples/#418 Markdown/variants/mkd-ce2bdbce/hello.mkd": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae"
+      },
       "based_on": "examples/#418 Markdown/hello.md",
       "documentation": "examples/#418 Markdown/variants/mkd-ce2bdbce/README.md",
       "supporting_files": [
@@ -23620,10 +23616,8 @@
         "https://spec.commonmark.org/0.31.2/",
         "https://github.com/executablebooks/markdown-it-py"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#418 Markdown/hello.md. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 418,
@@ -23634,10 +23628,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#418 Markdown/verification/native_20261104_followup_2e6d6b646e.json",
+      "verified_artifact_sha256": {
+        "examples/#418 Markdown/variants/mkdn-ba8fcdf1/hello.mkdn": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae"
+      },
       "based_on": "examples/#418 Markdown/hello.md",
       "documentation": "examples/#418 Markdown/variants/mkdn-ba8fcdf1/README.md",
       "supporting_files": [
@@ -23649,10 +23645,8 @@
         "https://spec.commonmark.org/0.31.2/",
         "https://github.com/executablebooks/markdown-it-py"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#418 Markdown/hello.md. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 418,
@@ -23663,10 +23657,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#418 Markdown/verification/native_20261104_followup_2e6d6b646f776e.json",
+      "verified_artifact_sha256": {
+        "examples/#418 Markdown/variants/mkdown-f8609122/hello.mkdown": "0b4fdcfa10c709d9ab7d679fed4eb63742b2f51d8b073ec9016e5c5165d148ae"
+      },
       "based_on": "examples/#418 Markdown/hello.md",
       "documentation": "examples/#418 Markdown/variants/mkdown-f8609122/README.md",
       "supporting_files": [
@@ -23678,10 +23674,8 @@
         "https://spec.commonmark.org/0.31.2/",
         "https://github.com/executablebooks/markdown-it-py"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#418 Markdown/hello.md. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Unchanged suffix variant; main example status unchanged."
     },
     {
       "language_ordinal": 418,
@@ -24027,10 +24021,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#424 MeTTa/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#424 MeTTa/hello.metta": "6d6b22166683f477b0ecb6dcb3a96868ec9c3000385e6d8ed47a985b98b4667f"
+      },
       "based_on": null,
       "documentation": "examples/#424 MeTTa/README.md",
       "supporting_files": [],
@@ -24042,10 +24038,8 @@
           "url": "https://github.com/trueagi-io/hyperon-experimental"
         }
       ],
-      "blockers": [
-        "Hyperon non offre una distribuzione compatibile per Python 3.13 Windows nella ricerca pip registrata; runtime MeTTa Linux non ancora predisposto."
-      ],
-      "notes": "Il binding esegue il programma originale con la libreria standard del motore."
+      "blockers": [],
+      "notes": "The official native Hyperon Python binding evaluated the exact MeTTa program, with the exact greeting and LF and no stderr."
     },
     {
       "language_ordinal": 425,
@@ -25574,14 +25568,17 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#463 Nearley/verification/native_20261104_followup_2e6e6561726c6579.json",
+      "verified_artifact_sha256": {
+        "examples/#463 Nearley/variants/nearley-659604fb/hello.nearley": "3a88908ad98babe930774529f396d9e79b5d6e41f37dc2ad6f91f13d6851901a"
+      },
       "based_on": "examples/#463 Nearley/hello.ne",
       "documentation": "examples/#463 Nearley/variants/nearley-659604fb/README.md",
       "supporting_files": [
-        "examples/#463 Nearley/variants/nearley-659604fb/verify.js"
+        "examples/#463 Nearley/variants/nearley-659604fb/verify.js",
+        "examples/#463 Nearley/verify.js"
       ],
       "validation_command": "nearleyc hello.nearley -o hello.js; node verify.js",
       "expected_result": "Hello, World! seguito da newline; exit0.",
@@ -25589,10 +25586,8 @@
         "https://nearley.js.org/docs/grammar",
         "https://nearley.js.org/docs/parser"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#463 Nearley/hello.ne. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Nearley original compiler emits a parser from this grammar file; the parser recognizes the exact greeting."
     },
     {
       "language_ordinal": 464,
@@ -26175,10 +26170,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#475 Nix/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#475 Nix/hello.nix": "34f39b3f5f6ceb40214d05292fb55d80f17eeab270c32717dee6a060ac829644"
+      },
       "based_on": null,
       "documentation": "examples/#475 Nix/README.md",
       "supporting_files": [],
@@ -26187,10 +26184,8 @@
       "sources": [
         "https://nix.dev/manual/nix/stable/language/string-interpolation.html"
       ],
-      "blockers": [
-        "Nix originale non preparato; evaluator pendente."
-      ],
-      "notes": "L’espressione pura let/in usa interpolazione ${audience}. Non contiene derivazioni, fetch o modifiche del sistema; la prova richiede comunque l’evaluator Nix."
+      "blockers": [],
+      "notes": "Original Nix evaluator returned exactly the intended string. No derivations, builds, system configuration or network evaluation."
     },
     {
       "language_ordinal": 476,
@@ -26450,15 +26445,18 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#482 OASv2-yaml/verification/native_20261104_followup_2e796d6c.json",
+      "verified_artifact_sha256": {
+        "examples/#482 OASv2-yaml/variants/yml-ea91093d/hello.yml": "69f7c1b92a9e78cb976d08dde918a7c3ba0ed18a332456891fd80e7e60c83d9b"
+      },
       "based_on": "examples/#482 OASv2-yaml/hello.yaml",
       "documentation": "examples/#482 OASv2-yaml/variants/yml-ea91093d/README.md",
       "supporting_files": [
         "examples/#482 OASv2-yaml/variants/yml-ea91093d/package.json",
-        "examples/#482 OASv2-yaml/variants/yml-ea91093d/verify.cjs"
+        "examples/#482 OASv2-yaml/variants/yml-ea91093d/verify.cjs",
+        "examples/#482 OASv2-yaml/verify.cjs"
       ],
       "validation_command": "Usare la toolchain del README principale sul file hello.yml; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.",
       "expected_result": "Hello, World!",
@@ -26467,10 +26465,8 @@
         "https://apidevtools.com/swagger-parser/",
         "https://ajv.js.org/"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#482 OASv2-yaml/hello.yaml. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Swagger Parser validates the OpenAPI 2 specification; Ajv checks the response schema; the loopback HTTP fixture returns the exact greeting and no public listener is opened."
     },
     {
       "language_ordinal": 483,
@@ -26539,15 +26535,18 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#484 OASv3-yaml/verification/native_20261104_followup_2e796d6c.json",
+      "verified_artifact_sha256": {
+        "examples/#484 OASv3-yaml/variants/yml-ea91093d/hello.yml": "0ceb65289f203fe59ba3967c55a71e92885449bdaec146fc17bfb2ceb80834c0"
+      },
       "based_on": "examples/#484 OASv3-yaml/hello.yaml",
       "documentation": "examples/#484 OASv3-yaml/variants/yml-ea91093d/README.md",
       "supporting_files": [
         "examples/#484 OASv3-yaml/variants/yml-ea91093d/package.json",
-        "examples/#484 OASv3-yaml/variants/yml-ea91093d/verify.cjs"
+        "examples/#484 OASv3-yaml/variants/yml-ea91093d/verify.cjs",
+        "examples/#484 OASv3-yaml/verify.cjs"
       ],
       "validation_command": "Usare la toolchain del README principale sul file hello.yml; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.",
       "expected_result": "Hello, World!",
@@ -26556,10 +26555,8 @@
         "https://apidevtools.com/swagger-parser/",
         "https://ajv.js.org/"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#484 OASv3-yaml/hello.yaml. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Swagger Parser validates the OpenAPI 3 specification; Ajv checks the response schema; the loopback HTTP fixture returns the exact greeting and no public listener is opened."
     },
     {
       "language_ordinal": 485,
@@ -27556,10 +27553,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
+      "syntax_verified": true,
       "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "verification_log": "examples/#511 OverPy/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#511 OverPy/hello.opy": "c10d9d1298ebe4039f4748ceeb4b8fb71ae1a831a99bd0f60c15acd27f7cdaed"
+      },
       "based_on": null,
       "documentation": "examples/#511 OverPy/README.md",
       "supporting_files": [],
@@ -27572,9 +27571,9 @@
         }
       ],
       "blockers": [
-        "exit 1: les\\overpy\\overpy.js:63484:16)\n    at new _Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49568:23)\n    at OverPyCompiler.Ast.OverPyDecompiler.Ast (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:49614:10)\n    at ${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:55\n    at Array.map (<anonymous>)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48108:39)\n    at OverPyCompiler.parseLines (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:48351:25)\n    at Object.compile (${WORKSPACE}\\work\\tools_501_520\\npm\\node_modules\\overpy\\overpy.js:70876:27)\n    at async ${WORKSPACE}\\work\\staging_501_520\\examples\\0511_overpy\\verify.cjs:5:20 {\n  fileStack: [\n    {\n      name: '<main>',\n      path: '/',\n      startLine: 2,\n      startCol: 5,\n      endCol: 22,\n      endLine: 2,\n      remainingChars: 99999999999,\n      staticMember: true,\n      fileStackMemberType: 'normal'\n    }\n  ],\n  severity: 'error'\n}\n"
+        "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified."
       ],
-      "notes": "Il compiler è verificabile localmente; l’esecuzione della regola richiede Overwatch. Non è la libreria Python per Overpass."
+      "notes": "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified."
     },
     {
       "language_ordinal": 512,
@@ -27849,24 +27848,25 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#518 PEG.js/verification/native_20261104_followup_2e7065676779.json",
+      "verified_artifact_sha256": {
+        "examples/#518 PEG.js/variants/peggy-64f146b5/hello.peggy": "3636735c9bbd19ff288579658e3b66fdab1bf82ecc3be189c7557b5217e60397"
+      },
       "based_on": "examples/#518 PEG.js/hello.pegjs",
       "documentation": "examples/#518 PEG.js/variants/peggy-64f146b5/README.md",
       "supporting_files": [
-        "examples/#518 PEG.js/variants/peggy-64f146b5/verify.cjs"
+        "examples/#518 PEG.js/variants/peggy-64f146b5/verify.cjs",
+        "examples/#518 PEG.js/verification/native_20261104_followup_drivers/2e7065676779/verify.cjs"
       ],
       "validation_command": "Usare la toolchain del README principale sul file hello.peggy; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.",
       "expected_result": "saluto riconosciuto, input errato rifiutato.",
       "sources": [
         "https://peggyjs.org/documentation.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#518 PEG.js/hello.pegjs. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Peggy builds the parser and verifies exact greeting acceptance and rejection of a different input."
     },
     {
       "language_ordinal": 519,
@@ -29936,14 +29936,17 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#547 PostCSS/verification/native_20261104_followup_2e706f7374637373.json",
+      "verified_artifact_sha256": {
+        "examples/#547 PostCSS/variants/postcss-ca8f3f2b/hello.postcss": "7da058442245be1726962a0b9b571bf6e9e0f97b017d63380e9787759d71779c"
+      },
       "based_on": "examples/#547 PostCSS/hello.pcss",
       "documentation": "examples/#547 PostCSS/variants/postcss-ca8f3f2b/README.md",
       "supporting_files": [
-        "examples/#547 PostCSS/variants/postcss-ca8f3f2b/verify.js"
+        "examples/#547 PostCSS/variants/postcss-ca8f3f2b/verify.js",
+        "examples/#547 PostCSS/verification/native_20261104_followup_drivers/2e706f7374637373/verify.js"
       ],
       "validation_command": "Usare la toolchain del README principale sul file hello.postcss; eventuali file generati e rinomine richieste dal compilatore vanno in una directory di lavoro.",
       "expected_result": "CSS trasformato contiene content: \"Hello, World!\".",
@@ -29951,10 +29954,8 @@
         "https://postcss.org/",
         "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-properties"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#547 PostCSS/hello.pcss. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "PostCSS and the custom properties plugin transform this source and verify the greeting in the CSS content declaration."
     },
     {
       "language_ordinal": 548,
@@ -30824,22 +30825,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#564 Pug/verification/native_20261104_followup_2e6a616465.json",
+      "verified_artifact_sha256": {
+        "examples/#564 Pug/variants/jade-6d41832d/hello.jade": "4b1477161d63de3ff47c615032fb2a2c002a56040604ffd74b4245b39909e40a"
+      },
       "based_on": "examples/#564 Pug/hello.pug",
       "documentation": "examples/#564 Pug/variants/jade-6d41832d/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#564 Pug/verification/native_20261104_followup_drivers/2e6a616465/verify.cjs"
+      ],
       "validation_command": "pug hello.jade",
       "expected_result": "Hello, World!",
       "sources": [
         "https://pugjs.org/api/getting-started.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .jade. Copia byte-identica del sorgente canonico; SHA-256 4b1477161d63de3ff47c615032fb2a2c002a56040604ffd74b4245b39909e40a. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Pug template engine renders the greeting and checks HTML escaping of input."
     },
     {
       "language_ordinal": 564,
@@ -31066,22 +31069,24 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#570 Python/verification/native_20261104_followup_2e636769.json",
+      "verified_artifact_sha256": {
+        "examples/#570 Python/variants/cgi-89feb572/hello.cgi": "93b04f4895cafd205f297e714a1d8c72b59320c5cea999fdc42a5cac4a254c59"
+      },
       "based_on": null,
       "documentation": "examples/#570 Python/variants/cgi-89feb572/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#570 Python/verification/native_20261104_followup_drivers/2e636769/verify_cgi.py"
+      ],
       "validation_command": "python hello.cgi",
       "expected_result": "header Content-Type e body Hello, World!",
       "sources": [
         "https://www.rfc-editor.org/rfc/rfc3875"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Entrypoint CGI che emette header HTTP e body di saluto."
+      "blockers": [],
+      "notes": "CPython executes the exact CGI source; validates serialized Content-Type header and body, without starting a CGI server. The driver preserves the source CRLF delimiters on Windows."
     },
     {
       "language_ordinal": 570,
@@ -31197,10 +31202,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#570 Python/verification/native_20261104_followup_2e707933.json",
+      "verified_artifact_sha256": {
+        "examples/#570 Python/variants/py3-2398b90a/hello.py3": "17e5b95a8f4eb8d4105ee8f0d2d6c5394e58f9fd0f62033da2619d2ece5481df"
+      },
       "based_on": "examples/#570 Python/hello.py",
       "documentation": "examples/#570 Python/variants/py3-2398b90a/README.md",
       "supporting_files": [],
@@ -31209,10 +31216,8 @@
       "sources": [
         "https://docs.python.org/3/tutorial/inputoutput.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Sorgente Python 3; per .pyw l’esecuzione GUI normalmente non espone una console, mentre il controllo esplicito con python verifica stdout. Copia byte-identica del sorgente canonico; SHA-256 17e5b95a8f4eb8d4105ee8f0d2d6c5394e58f9fd0f62033da2619d2ece5481df. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "CPython console interpreter executes this exact Python variant and captures the greeting. The .pyw check explicitly uses python.exe and does not test Windows GUI file association."
     },
     {
       "language_ordinal": 570,
@@ -31330,10 +31335,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#570 Python/verification/native_20261104_followup_2e707977.json",
+      "verified_artifact_sha256": {
+        "examples/#570 Python/variants/pyw-9952e8fc/hello.pyw": "17e5b95a8f4eb8d4105ee8f0d2d6c5394e58f9fd0f62033da2619d2ece5481df"
+      },
       "based_on": "examples/#570 Python/hello.py",
       "documentation": "examples/#570 Python/variants/pyw-9952e8fc/README.md",
       "supporting_files": [],
@@ -31342,10 +31349,8 @@
       "sources": [
         "https://docs.python.org/3/tutorial/inputoutput.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Sorgente Python 3; per .pyw l’esecuzione GUI normalmente non espone una console, mentre il controllo esplicito con python verifica stdout. Copia byte-identica del sorgente canonico; SHA-256 17e5b95a8f4eb8d4105ee8f0d2d6c5394e58f9fd0f62033da2619d2ece5481df. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "CPython console interpreter executes this exact Python variant and captures the greeting. The .pyw check explicitly uses python.exe and does not test Windows GUI file association."
     },
     {
       "language_ordinal": 570,
@@ -31436,22 +31441,24 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#570 Python/verification/native_20261104_followup_2e77736769.json",
+      "verified_artifact_sha256": {
+        "examples/#570 Python/variants/wsgi-89e83bb6/hello.wsgi": "e284c0d30c954e80cdf838161ce023858488e55fc82fc6b84dac6f39ccc1c664"
+      },
       "based_on": null,
       "documentation": "examples/#570 Python/variants/wsgi-89e83bb6/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#570 Python/verification/native_20261104_followup_drivers/2e77736769/verify_wsgi.py"
+      ],
       "validation_command": "WSGI server: load application from hello.wsgi; local request only",
       "expected_result": "HTTP 200 e body Hello, World! seguito da LF",
       "sources": [
         "https://peps.python.org/pep-3333/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Applicazione WSGI conforme alla convenzione application; non è uno script print."
+      "blockers": [],
+      "notes": "Standard-library WSGI validator and wsgiref reference handler execute the exact module, asserting its HTTP status, Content-Type, Content-Length and response bytes; in-memory transport."
     },
     {
       "language_ordinal": 570,
@@ -31592,10 +31599,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#575 QMake/verification/native_20261104_followup_2e70726f.json",
+      "verified_artifact_sha256": {
+        "examples/#575 QMake/hello.pro": "948c1e3689008818cd24585e4d4df5a1b42f8164517eb64787e72d7cdadf28aa",
+        "examples/#575 QMake/variants/pri-e5eeb81c/main.pro": "8de72fcd641cb1e98dc592847e275390f5a91c53971040ba0a8c699b73787180"
+      },
       "based_on": null,
       "documentation": "examples/#575 QMake/README.md",
       "supporting_files": [],
@@ -31604,10 +31614,8 @@
       "sources": [
         "https://doc.qt.io/qt-6/qmake-project-files.html"
       ],
-      "blockers": [
-        "qmake e Qt Core development libraries non predisposti."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The primary .pro previously built and ran the console greeting in the same batch. The exact auxiliary .pro then included hello.pri, emitted Project MESSAGE: Hello, World!, and generated its Makefile. Both .pro files and the .pri are covered by the two linked test phases."
     },
     {
       "language_ordinal": 575,
@@ -31618,10 +31626,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#575 QMake/verification/native_20261104_followup_2e70726f.json",
+      "verified_artifact_sha256": {
+        "examples/#575 QMake/variants/pri-e5eeb81c/hello.pri": "995c744c00b0f321a5cb3ca10752d88db4f49c64213f87b3d0b19c054d29f74b"
+      },
       "based_on": null,
       "documentation": "examples/#575 QMake/variants/pri-e5eeb81c/README.md",
       "supporting_files": [
@@ -31632,10 +31642,8 @@
       "sources": [
         "https://doc.qt.io/qt-6/qmake-project-files.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Include qmake con variabile e message, consumato da un progetto companion."
+      "blockers": [],
+      "notes": "The primary .pro previously built and ran the console greeting in the same batch. The exact auxiliary .pro then included hello.pri, emitted Project MESSAGE: Hello, World!, and generated its Makefile. Both .pro files and the .pri are covered by the two linked test phases."
     },
     {
       "language_ordinal": 576,
@@ -32292,10 +32300,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#589 RMarkdown/verification/native_20261104_followup_2e716d64.json",
+      "verified_artifact_sha256": {
+        "examples/#589 RMarkdown/variants/qmd-6ffe4344/hello.qmd": "2fc2a50e17ddf1b4d44c3c2e947294bdcde04803bc5eec878e88bd6b39f9a128"
+      },
       "based_on": null,
       "documentation": "examples/#589 RMarkdown/variants/qmd-6ffe4344/README.md",
       "supporting_files": [],
@@ -32304,10 +32314,8 @@
       "sources": [
         "https://quarto.org/docs/computations/r.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Documento Quarto con cella R, distinto dal frontend RMarkdown."
+      "blockers": [],
+      "notes": "Quarto executed the original R code chunk and rendered an HTML output block containing exactly the greeting. Render only, with no preview or browser."
     },
     {
       "language_ordinal": 589,
@@ -32318,10 +32326,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#589 RMarkdown/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#589 RMarkdown/hello.rmd": "2741a002db695e1b02a6d651acbb8160d415a1341856be8e0f3d0e6eaa0d86fb"
+      },
       "based_on": null,
       "documentation": "examples/#589 RMarkdown/README.md",
       "supporting_files": [],
@@ -32337,10 +32347,8 @@
           "url": "https://yihui.org/knitr/"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Un parser Markdown da solo non prova l’esecuzione del chunk."
+      "blockers": [],
+      "notes": "The original R Markdown chunk executed with knitr; Pandoc rendered HTML containing the greeting in the chunk output. Quarto .qmd was not exercised."
     },
     {
       "language_ordinal": 590,
@@ -32553,10 +32561,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#594 RPM Spec/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#594 RPM Spec/hello.spec": "ab28f931e32e49cd33d922367c7d5432b561ab3f413ba7a9d36900e1b5a020a3"
+      },
       "based_on": null,
       "documentation": "examples/#594 RPM Spec/README.md",
       "supporting_files": [],
@@ -32568,10 +32578,8 @@
           "url": "https://rpm.org/docs/4.20.x/manual/spec.html"
         }
       ],
-      "blockers": [
-        "exit 127: ${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory\n"
-      ],
-      "notes": "Il fixture non installa file o pacchetti nel sistema; l’obiettivo è prep e non la distribuzione di un RPM."
+      "blockers": [],
+      "notes": "The native RPM parser accepted the spec and rpmbuild ran %prep, printing the exact greeting. No packages were installed and no RPM was built."
     },
     {
       "language_ordinal": 595,
@@ -33352,10 +33360,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#605 Rebol/verification/native_20261104_followup_2e72.json",
+      "verified_artifact_sha256": {
+        "examples/#605 Rebol/variants/r-8dbb84b2/hello.r": "ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8"
+      },
       "based_on": "examples/#605 Rebol/hello.reb",
       "documentation": "examples/#605 Rebol/variants/r-8dbb84b2/README.md",
       "supporting_files": [],
@@ -33364,10 +33374,8 @@
       "sources": [
         "https://github.com/Oldes/Rebol3"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .r. Copia byte-identica del sorgente canonico; SHA-256 ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Rebol/Bulk original interpreter executes the exact variant filename as a console program."
     },
     {
       "language_ordinal": 605,
@@ -33378,10 +33386,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#605 Rebol/verification/native_20261104_followup_2e7232.json",
+      "verified_artifact_sha256": {
+        "examples/#605 Rebol/variants/r2-8d1288b8/hello.r2": "ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8"
+      },
       "based_on": "examples/#605 Rebol/hello.reb",
       "documentation": "examples/#605 Rebol/variants/r2-8d1288b8/README.md",
       "supporting_files": [],
@@ -33390,10 +33400,8 @@
       "sources": [
         "https://github.com/Oldes/Rebol3"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .r2. Copia byte-identica del sorgente canonico; SHA-256 ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Rebol/Bulk original interpreter executes the exact variant filename as a console program."
     },
     {
       "language_ordinal": 605,
@@ -33404,10 +33412,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#605 Rebol/verification/native_20261104_followup_2e7233.json",
+      "verified_artifact_sha256": {
+        "examples/#605 Rebol/variants/r3-172ccdf0/hello.r3": "ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8"
+      },
       "based_on": "examples/#605 Rebol/hello.reb",
       "documentation": "examples/#605 Rebol/variants/r3-172ccdf0/README.md",
       "supporting_files": [],
@@ -33416,10 +33426,8 @@
       "sources": [
         "https://github.com/Oldes/Rebol3"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .r3. Copia byte-identica del sorgente canonico; SHA-256 ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Rebol/Bulk original interpreter executes the exact variant filename as a console program."
     },
     {
       "language_ordinal": 605,
@@ -33430,10 +33438,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#605 Rebol/verification/native_20261104_followup_2e7265626f6c.json",
+      "verified_artifact_sha256": {
+        "examples/#605 Rebol/variants/rebol-747e1472/hello.rebol": "ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8"
+      },
       "based_on": "examples/#605 Rebol/hello.reb",
       "documentation": "examples/#605 Rebol/variants/rebol-747e1472/README.md",
       "supporting_files": [],
@@ -33442,10 +33452,8 @@
       "sources": [
         "https://github.com/Oldes/Rebol3"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .rebol. Copia byte-identica del sorgente canonico; SHA-256 ddcb6ca25344287e84ff101d7e54c491eef96570bbe266c253ecea5248976ff8. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Rebol/Bulk original interpreter executes the exact variant filename as a console program."
     },
     {
       "language_ordinal": 607,
@@ -33586,22 +33594,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#611 Regular Expression/verification/native_20261104_followup_2e7265676578.json",
+      "verified_artifact_sha256": {
+        "examples/#611 Regular Expression/variants/regex-b64e0ba7/hello.regex": "15e9dad17c50d3e1e679a00052461afa6915e9e7dd3e6205a47a8430ea39b8d0"
+      },
       "based_on": "examples/#611 Regular Expression/hello.regexp",
       "documentation": "examples/#611 Regular Expression/variants/regex-b64e0ba7/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#611 Regular Expression/verification/native_20261104_followup_drivers/2e7265676578/verify.py"
+      ],
       "validation_command": "python -c \"import re,pathlib; r=re.compile(pathlib.Path('hello.regex').read_text().strip()); assert r.fullmatch('Hello, World!')\"",
       "expected_result": "Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.",
       "sources": [
         "https://docs.python.org/3/library/re.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .regex. Copia byte-identica del sorgente canonico; SHA-256 15e9dad17c50d3e1e679a00052461afa6915e9e7dd3e6205a47a8430ea39b8d0. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "CPython re engine: exact named capture, rejection controls."
     },
     {
       "language_ordinal": 612,
@@ -36093,22 +36103,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#634 SPARQL/verification/native_20261104_followup_2e73706172716c.json",
+      "verified_artifact_sha256": {
+        "examples/#634 SPARQL/variants/sparql-6c620153/hello.sparql": "45b0e426a397152eb943951d826ba76ed4b13f3b18ed421436f9f030bbcf20ce"
+      },
       "based_on": "examples/#634 SPARQL/hello.rq",
       "documentation": "examples/#634 SPARQL/variants/sparql-6c620153/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#634 SPARQL/verification/native_20261104_followup_drivers/2e73706172716c/verify.py"
+      ],
       "validation_command": "rdflib SPARQL engine: execute hello.sparql and assert the greeting binding",
       "expected_result": "Un’unica riga con greeting = Hello, World!.",
       "sources": [
         "https://www.w3.org/TR/sparql11-query/#func-concat"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .sparql. Copia byte-identica del sorgente canonico; SHA-256 45b0e426a397152eb943951d826ba76ed4b13f3b18ed421436f9f030bbcf20ce. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "RDFlib SPARQL parser and query evaluator: one greeting binding."
     },
     {
       "language_ordinal": 634,
@@ -36226,22 +36238,24 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#636 SQL/verification/native_20261104_followup_2e64646c.json",
+      "verified_artifact_sha256": {
+        "examples/#636 SQL/variants/ddl-8bc7bf69/hello.ddl": "1c1608ca3443ca3c6247d33feb624995e07263af42b026e9f67361b08f3cf2c3"
+      },
       "based_on": null,
       "documentation": "examples/#636 SQL/variants/ddl-8bc7bf69/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#636 SQL/verification/native_20261104_followup_drivers/2e64646c/verify_sql.py"
+      ],
       "validation_command": "sqlite3 :memory: < hello.ddl",
       "expected_result": "Hello, World!",
       "sources": [
         "https://www.sqlite.org/lang_select.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "SQL DDL SQLite con tabella e dato originale."
+      "blockers": [],
+      "notes": "Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set."
     },
     {
       "language_ordinal": 636,
@@ -36252,22 +36266,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#636 SQL/verification/native_20261104_followup_2e696e63.json",
+      "verified_artifact_sha256": {
+        "examples/#636 SQL/variants/inc-dd126fb7/hello.inc": "d96530bdcf8b7d0b84baa464dc3d99ec94a7c702e61737f223129b4433971e97"
+      },
       "based_on": "examples/#636 SQL/hello.sql",
       "documentation": "examples/#636 SQL/variants/inc-dd126fb7/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#636 SQL/verification/native_20261104_followup_drivers/2e696e63/verify_sql.py"
+      ],
       "validation_command": "sqlite3 :memory: < hello.inc",
       "expected_result": "Una riga, colonna greeting, valore Hello, World!.",
       "sources": [
         "https://www.sqlite.org/lang_select.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Fragment SQL includibile che conserva la query originale. Copia byte-identica del sorgente canonico; SHA-256 d96530bdcf8b7d0b84baa464dc3d99ec94a7c702e61737f223129b4433971e97. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set."
     },
     {
       "language_ordinal": 636,
@@ -36330,22 +36346,24 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#636 SQL/verification/native_20261104_followup_2e746162.json",
+      "verified_artifact_sha256": {
+        "examples/#636 SQL/variants/tab-97c85d6e/hello.tab": "43c328874b6b80bef8cc06b50910fde0d1363b19ccabb1465c146a18361ca72b"
+      },
       "based_on": null,
       "documentation": "examples/#636 SQL/variants/tab-97c85d6e/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#636 SQL/verification/native_20261104_followup_drivers/2e746162/verify_sql.py"
+      ],
       "validation_command": "sqlite3 :memory: < hello.tab",
       "expected_result": "Hello, World!",
       "sources": [
         "https://www.sqlite.org/lang_select.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Definizione SQL di tabella con default originale."
+      "blockers": [],
+      "notes": "Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set."
     },
     {
       "language_ordinal": 636,
@@ -36382,22 +36400,24 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#636 SQL/verification/native_20261104_followup_2e766977.json",
+      "verified_artifact_sha256": {
+        "examples/#636 SQL/variants/viw-71592285/hello.viw": "dbf460eef350f4a84cca5be9694a97ac93d42d1236d251de460ab94919d89682"
+      },
       "based_on": null,
       "documentation": "examples/#636 SQL/variants/viw-71592285/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#636 SQL/verification/native_20261104_followup_drivers/2e766977/verify_sql.py"
+      ],
       "validation_command": "sqlite3 :memory: < hello.viw",
       "expected_result": "Hello, World!",
       "sources": [
         "https://www.sqlite.org/lang_select.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Definizione SQL di vista."
+      "blockers": [],
+      "notes": "Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set."
     },
     {
       "language_ordinal": 637,
@@ -37279,10 +37299,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#656 Shell/verification/native_20261104_followup_2e62617368.json",
+      "verified_artifact_sha256": {
+        "examples/#656 Shell/variants/bash-8a9862b8/hello.bash": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+      },
       "based_on": "examples/#656 Shell/hello.sh",
       "documentation": "examples/#656 Shell/variants/bash-8a9862b8/README.md",
       "supporting_files": [],
@@ -37291,10 +37313,8 @@
       "sources": [
         "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .bash. Copia byte-identica del sorgente canonico; SHA-256 9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed."
     },
     {
       "language_ordinal": 656,
@@ -37331,10 +37351,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#656 Shell/verification/native_20261104_followup_2e636769.json",
+      "verified_artifact_sha256": {
+        "examples/#656 Shell/variants/cgi-89feb572/hello.cgi": "98f245ec34e7829179ed4fa2ee83afa0a5084e61f2ee41829e626675462c76af"
+      },
       "based_on": null,
       "documentation": "examples/#656 Shell/variants/cgi-89feb572/README.md",
       "supporting_files": [],
@@ -37343,10 +37365,8 @@
       "sources": [
         "https://www.rfc-editor.org/rfc/rfc3875"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "CGI POSIX shell con header e body."
+      "blockers": [],
+      "notes": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed. Check serialized CGI Content-Type header and body without starting a server."
     },
     {
       "language_ordinal": 656,
@@ -37357,10 +37377,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#656 Shell/verification/native_20261104_followup_2e636f6d6d616e64.json",
+      "verified_artifact_sha256": {
+        "examples/#656 Shell/variants/command-05dd8b8d/hello.command": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+      },
       "based_on": "examples/#656 Shell/hello.sh",
       "documentation": "examples/#656 Shell/variants/command-05dd8b8d/README.md",
       "supporting_files": [],
@@ -37369,10 +37391,8 @@
       "sources": [
         "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .command. Copia byte-identica del sorgente canonico; SHA-256 9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed."
     },
     {
       "language_ordinal": 656,
@@ -37490,10 +37510,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#656 Shell/verification/native_20261104_followup_2e73682e696e.json",
+      "verified_artifact_sha256": {
+        "examples/#656 Shell/variants/sh-in-8a555af8/hello.sh.in": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+      },
       "based_on": "examples/#656 Shell/hello.sh",
       "documentation": "examples/#656 Shell/variants/sh-in-8a555af8/README.md",
       "supporting_files": [],
@@ -37502,10 +37524,8 @@
       "sources": [
         "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .sh.in. Copia byte-identica del sorgente canonico; SHA-256 9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed."
     },
     {
       "language_ordinal": 656,
@@ -37568,10 +37588,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#656 Shell/verification/native_20261104_followup_2e746f6f6c.json",
+      "verified_artifact_sha256": {
+        "examples/#656 Shell/variants/tool-f27eb9a7/hello.tool": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+      },
       "based_on": "examples/#656 Shell/hello.sh",
       "documentation": "examples/#656 Shell/variants/tool-f27eb9a7/README.md",
       "supporting_files": [],
@@ -37580,10 +37602,8 @@
       "sources": [
         "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .tool. Copia byte-identica del sorgente canonico; SHA-256 9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed."
     },
     {
       "language_ordinal": 656,
@@ -37594,10 +37614,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#656 Shell/verification/native_20261104_followup_2e74726967676572.json",
+      "verified_artifact_sha256": {
+        "examples/#656 Shell/variants/trigger-9c81aa55/hello.trigger": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+      },
       "based_on": "examples/#656 Shell/hello.sh",
       "documentation": "examples/#656 Shell/variants/trigger-9c81aa55/README.md",
       "supporting_files": [],
@@ -37606,10 +37628,8 @@
       "sources": [
         "https://pubs.opengroup.org/onlinepubs/9799919799/utilities/sh.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .trigger. Copia byte-identica del sorgente canonico; SHA-256 9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed."
     },
     {
       "language_ordinal": 656,
@@ -37724,10 +37744,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#660 Sieve/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#660 Sieve/hello.sieve": "95619db937471393fb7dc8d4124dc19bae77ac87b83c18ff61608887073c6904"
+      },
       "based_on": null,
       "documentation": "examples/#660 Sieve/README.md",
       "supporting_files": [],
@@ -37737,10 +37759,8 @@
         "https://www.rfc-editor.org/rfc/rfc5228",
         "https://doc.dovecot.org/2.3/configuration_manual/sieve/"
       ],
-      "blockers": [
-        "Sieve compiler/offline test engine non disponibile."
-      ],
-      "notes": "Messaggio originale con indirizzi example.invalid; verifica prevista offline, senza spedizioni."
+      "blockers": [],
+      "notes": "Pigeonhole compiled the filter and the offline dry run planned fileinto INBOX.CorpusGreeting for the original .eml. No mail delivered."
     },
     {
       "language_ordinal": 661,
@@ -38273,10 +38293,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#678 Spline Font Database/verification/native_20261104_followup_main.json",
+      "verified_artifact_sha256": {
+        "examples/#678 Spline Font Database/hello.sfd": "dbb4e77b76d5525421cb3f7daecc1a6f85a5d88eeff5ae24b4cd471a34f51315"
+      },
       "based_on": null,
       "documentation": "examples/#678 Spline Font Database/README.md",
       "supporting_files": [],
@@ -38288,10 +38310,8 @@
           "url": "https://fontforge.org/docs/techref/sfdformat.html"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Il font contiene metadati e nessun glifo: l’obiettivo è il nome del font, non il rendering del saluto."
+      "blockers": [],
+      "notes": "Native FontForge loaded the original SFD and reported its exact FullName. No glyph or font rendering was tested."
     },
     {
       "language_ordinal": 679,
@@ -39262,22 +39282,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#700 TOML/verification/native_20261104_followup_2e746f6d6c2e6578616d706c65.json",
+      "verified_artifact_sha256": {
+        "examples/#700 TOML/variants/toml-example-35fdb380/hello.toml.example": "b339b30a75ec65fbe715bd0d61c3a7cf3955e222872d2d5e615eff92719cd6e4"
+      },
       "based_on": "examples/#700 TOML/hello.toml",
       "documentation": "examples/#700 TOML/variants/toml-example-35fdb380/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#700 TOML/verification/native_20261104_followup_drivers/2e746f6d6c2e6578616d706c65/verify.py"
+      ],
       "validation_command": "Python tomllib: parse hello.toml.example, assert greeting == \"Hello, World!\"",
       "expected_result": "Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.",
       "sources": [
         "https://toml.io/en/v1.0.0"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .toml.example. Copia byte-identica del sorgente canonico; SHA-256 b339b30a75ec65fbe715bd0d61c3a7cf3955e222872d2d5e615eff92719cd6e4. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "CPython tomllib: exact parsed configuration and language field."
     },
     {
       "language_ordinal": 701,
@@ -39605,10 +39627,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#709 Tcl/verification/native_20261104_followup_2e74636c2e696e.json",
+      "verified_artifact_sha256": {
+        "examples/#709 Tcl/variants/tcl-in-4fd82009/hello.tcl.in": "cdf190be044f9b158cd8a64c310196982be7638653fc2fbc0de0979302ec4d77"
+      },
       "based_on": "examples/#709 Tcl/hello.tcl",
       "documentation": "examples/#709 Tcl/variants/tcl-in-4fd82009/README.md",
       "supporting_files": [],
@@ -39617,10 +39641,8 @@
       "sources": [
         "https://www.tcl-lang.org/man/tcl8.6/TclCmd/puts.htm"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Template Tcl statico senza placeholder: il suo testo resta Tcl valido. Copia byte-identica del sorgente canonico; SHA-256 cdf190be044f9b158cd8a64c310196982be7638653fc2fbc0de0979302ec4d77. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "The exact Tcl variant was executed by Tcl. For .tm, Tcl resolved the module through the original main.tcl driver."
     },
     {
       "language_ordinal": 709,
@@ -41511,10 +41533,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#744 VHDL/verification/native_20261104_followup_2e766864.json",
+      "verified_artifact_sha256": {
+        "examples/#744 VHDL/variants/vhd-b8ea5231/hello.vhd": "cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f"
+      },
       "based_on": "examples/#744 VHDL/hello.vhdl",
       "documentation": "examples/#744 VHDL/variants/vhd-b8ea5231/README.md",
       "supporting_files": [],
@@ -41523,10 +41547,8 @@
       "sources": [
         "https://ghdl.github.io/ghdl/using/InvokingGHDL.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .vhd. Copia byte-identica del sorgente canonico; SHA-256 cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
     },
     {
       "language_ordinal": 744,
@@ -41537,10 +41559,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#744 VHDL/verification/native_20261104_followup_2e766866.json",
+      "verified_artifact_sha256": {
+        "examples/#744 VHDL/variants/vhf-90e3bf30/hello.vhf": "cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f"
+      },
       "based_on": "examples/#744 VHDL/hello.vhdl",
       "documentation": "examples/#744 VHDL/variants/vhf-90e3bf30/README.md",
       "supporting_files": [],
@@ -41549,10 +41573,8 @@
       "sources": [
         "https://ghdl.github.io/ghdl/using/InvokingGHDL.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .vhf. Copia byte-identica del sorgente canonico; SHA-256 cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
     },
     {
       "language_ordinal": 744,
@@ -41592,10 +41614,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#744 VHDL/verification/native_20261104_followup_2e76686f.json",
+      "verified_artifact_sha256": {
+        "examples/#744 VHDL/variants/vho-0ab0d39a/hello.vho": "9bd5c2e8ca7c68a2dc5519862bdece43f2c2237505af7dc572c036effe6395a8"
+      },
       "based_on": null,
       "documentation": "examples/#744 VHDL/variants/vho-0ab0d39a/README.md",
       "supporting_files": [
@@ -41606,10 +41630,8 @@
       "sources": [
         "https://ghdl.github.io/ghdl/using/InvokingGHDL.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Netlist VHDL strutturale scritta a mano con wire/constant cell originali; non dichiarata come export Quartus."
+      "blockers": [],
+      "notes": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
     },
     {
       "language_ordinal": 744,
@@ -41620,10 +41642,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#744 VHDL/verification/native_20261104_followup_2e766873.json",
+      "verified_artifact_sha256": {
+        "examples/#744 VHDL/variants/vhs-dc5efabf/hello.vhs": "cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f"
+      },
       "based_on": "examples/#744 VHDL/hello.vhdl",
       "documentation": "examples/#744 VHDL/variants/vhs-dc5efabf/README.md",
       "supporting_files": [],
@@ -41632,10 +41656,8 @@
       "sources": [
         "https://ghdl.github.io/ghdl/using/InvokingGHDL.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .vhs. Copia byte-identica del sorgente canonico; SHA-256 cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
     },
     {
       "language_ordinal": 744,
@@ -41646,10 +41668,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#744 VHDL/verification/native_20261104_followup_2e766874.json",
+      "verified_artifact_sha256": {
+        "examples/#744 VHDL/variants/vht-b9b9d435/hello.vht": "cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f"
+      },
       "based_on": "examples/#744 VHDL/hello.vhdl",
       "documentation": "examples/#744 VHDL/variants/vht-b9b9d435/README.md",
       "supporting_files": [],
@@ -41658,10 +41682,8 @@
       "sources": [
         "https://ghdl.github.io/ghdl/using/InvokingGHDL.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .vht. Copia byte-identica del sorgente canonico; SHA-256 cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
     },
     {
       "language_ordinal": 744,
@@ -41672,10 +41694,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#744 VHDL/verification/native_20261104_followup_2e766877.json",
+      "verified_artifact_sha256": {
+        "examples/#744 VHDL/variants/vhw-27e673c9/hello.vhw": "cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f"
+      },
       "based_on": "examples/#744 VHDL/hello.vhdl",
       "documentation": "examples/#744 VHDL/variants/vhw-27e673c9/README.md",
       "supporting_files": [],
@@ -41684,10 +41708,8 @@
       "sources": [
         "https://ghdl.github.io/ghdl/using/InvokingGHDL.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .vhw. Copia byte-identica del sorgente canonico; SHA-256 cd8412d522944cc9080b1063cf91dc2bd1e9f3ee1efe676415cf178f9215800f. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
     },
     {
       "language_ordinal": 745,
@@ -42854,23 +42876,25 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#771 Wikitext/verification/native_20261104_followup_2e77696b69.json",
+      "verified_artifact_sha256": {
+        "examples/#771 Wikitext/variants/wiki-161d167f/hello.wiki": "0c5439c44e70738091090a1793d06cc4c8756cb652021c68690959fd1d01aae0"
+      },
       "based_on": "examples/#771 Wikitext/hello.mediawiki",
       "documentation": "examples/#771 Wikitext/variants/wiki-161d167f/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#771 Wikitext/verification/native_20261104_followup_drivers/2e77696b69/verify.py"
+      ],
       "validation_command": "MediaWiki parser: render hello.wiki",
       "expected_result": "Titolo Greeting, testo Hello, World! e PASS.",
       "sources": [
         "https://www.mediawiki.org/wiki/Help:Formatting",
         "https://mwparserfromhell.readthedocs.io/en/latest/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .wiki. Copia byte-identica del sorgente canonico; SHA-256 0c5439c44e70738091090a1793d06cc4c8756cb652021c68690959fd1d01aae0. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "mwparserfromhell: heading AST and extracted plain-text greeting, not full MediaWiki rendering."
     },
     {
       "language_ordinal": 771,
@@ -42881,23 +42905,25 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#771 Wikitext/verification/native_20261104_followup_2e77696b6974657874.json",
+      "verified_artifact_sha256": {
+        "examples/#771 Wikitext/variants/wikitext-b2a94597/hello.wikitext": "0c5439c44e70738091090a1793d06cc4c8756cb652021c68690959fd1d01aae0"
+      },
       "based_on": "examples/#771 Wikitext/hello.mediawiki",
       "documentation": "examples/#771 Wikitext/variants/wikitext-b2a94597/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#771 Wikitext/verification/native_20261104_followup_drivers/2e77696b6974657874/verify.py"
+      ],
       "validation_command": "MediaWiki parser: render hello.wikitext",
       "expected_result": "Titolo Greeting, testo Hello, World! e PASS.",
       "sources": [
         "https://www.mediawiki.org/wiki/Help:Formatting",
         "https://mwparserfromhell.readthedocs.io/en/latest/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .wikitext. Copia byte-identica del sorgente canonico; SHA-256 0c5439c44e70738091090a1793d06cc4c8756cb652021c68690959fd1d01aae0. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "mwparserfromhell: heading AST and extracted plain-text greeting, not full MediaWiki rendering."
     },
     {
       "language_ordinal": 772,
@@ -46960,24 +46986,25 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#791 XSLT/verification/native_20261104_followup_2e78736c74.json",
+      "verified_artifact_sha256": {
+        "examples/#791 XSLT/variants/xslt-6c8e89da/hello.xslt": "626f2cd6450a6dc62457bf40380757b96f708dd13baa29b45e7dd8dc47fe3143"
+      },
       "based_on": "examples/#791 XSLT/hello.xsl",
       "documentation": "examples/#791 XSLT/variants/xslt-6c8e89da/README.md",
       "supporting_files": [
-        "examples/#791 XSLT/variants/xslt-6c8e89da/input.xml"
+        "examples/#791 XSLT/variants/xslt-6c8e89da/input.xml",
+        "examples/#791 XSLT/verification/native_20261104_followup_drivers/2e78736c74/verify.py"
       ],
       "validation_command": "xsltproc hello.xslt input.xml",
       "expected_result": "Hello, World! come risultato testuale della trasformazione.",
       "sources": [
         "https://www.w3.org/TR/1999/REC-xslt-19991116"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .xslt. Copia byte-identica del sorgente canonico; SHA-256 626f2cd6450a6dc62457bf40380757b96f708dd13baa29b45e7dd8dc47fe3143. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "libxslt via lxml: compile stylesheet and apply it to the original XML; exact greeting."
     },
     {
       "language_ordinal": 791,
@@ -47387,22 +47414,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#796 YAML/verification/native_20261104_followup_2e79616d6c.json",
+      "verified_artifact_sha256": {
+        "examples/#796 YAML/variants/yaml-fa1b82e8/hello.yaml": "7923d45ccd524220bc8735b412e68935fc177c4e07256f9e0c3116db7d4809ee"
+      },
       "based_on": "examples/#796 YAML/hello.yml",
       "documentation": "examples/#796 YAML/variants/yaml-fa1b82e8/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#796 YAML/verification/native_20261104_followup_drivers/2e79616d6c/verify.py"
+      ],
       "validation_command": "Python yaml.safe_load: parse hello.yaml; assert greeting == \"Hello, World!\"",
       "expected_result": "Mapping con greeting = Hello, World!.",
       "sources": [
         "https://pyyaml.org/wiki/PyYAMLDocumentation"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Documento YAML dello stesso formato; suffisso composito .yaml conservato esattamente. Il template è statico e non dichiara sostituzioni o una configurazione MySQL specifica. Copia byte-identica del sorgente canonico; SHA-256 7923d45ccd524220bc8735b412e68935fc177c4e07256f9e0c3116db7d4809ee. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "PyYAML: parse original YAML and assert exact greeting mapping; this is the ordinary .yaml variant."
     },
     {
       "language_ordinal": 796,
@@ -47543,24 +47572,25 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#798 YARA/verification/native_20261104_followup_2e79617261.json",
+      "verified_artifact_sha256": {
+        "examples/#798 YARA/variants/yara-cc22c747/hello.yara": "655358f1e5a685250f8ab63ecc732511db95b5ede522dacf8bf1f1ec318024ea"
+      },
       "based_on": "examples/#798 YARA/hello.yar",
       "documentation": "examples/#798 YARA/variants/yara-cc22c747/README.md",
       "supporting_files": [
-        "examples/#798 YARA/variants/yara-cc22c747/greeting.txt"
+        "examples/#798 YARA/variants/yara-cc22c747/greeting.txt",
+        "examples/#798 YARA/verification/native_20261104_followup_drivers/2e79617261/verify.py"
       ],
       "validation_command": "yara hello.yara greeting.txt",
       "expected_result": "Una corrispondenza CorpusGreeting per Hello, World!, nessuna per Hello, Moon!.",
       "sources": [
         "https://yara.readthedocs.io/en/stable/writingrules.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .yara. Copia byte-identica del sorgente canonico; SHA-256 655358f1e5a685250f8ab63ecc732511db95b5ede522dacf8bf1f1ec318024ea. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "YARA: compile the original rules, match the exact declared greeting.txt (including its trailing LF), and reject a separate Hello, Moon! fixture."
     },
     {
       "language_ordinal": 799,
@@ -48334,23 +48364,25 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#818 iCalendar/verification/native_20261104_followup_2e6963616c.json",
+      "verified_artifact_sha256": {
+        "examples/#818 iCalendar/variants/ical-1b64d378/hello.ical": "d923c701a76a29ac33ccd13faa10546bf0d5f9781a0da93b67385742f16f4877"
+      },
       "based_on": "examples/#818 iCalendar/hello.ics",
       "documentation": "examples/#818 iCalendar/variants/ical-1b64d378/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#818 iCalendar/verification/native_20261104_followup_drivers/2e6963616c/verify.py"
+      ],
       "validation_command": "Python icalendar: parse hello.ical; assert event SUMMARY",
       "expected_result": "Hello, World!",
       "sources": [
         "https://www.rfc-editor.org/rfc/rfc5545",
         "https://icalendar.readthedocs.io/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .ical. Copia byte-identica del sorgente canonico; SHA-256 d923c701a76a29ac33ccd13faa10546bf0d5f9781a0da93b67385742f16f4877. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "icalendar: parse and serialize/reparse an event, preserve its summary and validate date ordering."
     },
     {
       "language_ordinal": 819,
@@ -48709,22 +48741,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#830 reStructuredText/verification/native_20261104_followup_2e72657374.json",
+      "verified_artifact_sha256": {
+        "examples/#830 reStructuredText/variants/rest-90077caa/hello.rest": "cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29"
+      },
       "based_on": "examples/#830 reStructuredText/hello.rst",
       "documentation": "examples/#830 reStructuredText/variants/rest-90077caa/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e72657374/verify.py"
+      ],
       "validation_command": "docutils: render hello.rest and assert the greeting paragraph",
       "expected_result": "Hello, World!",
       "sources": [
         "https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .rest. Copia byte-identica del sorgente canonico; SHA-256 cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis."
     },
     {
       "language_ordinal": 830,
@@ -48735,22 +48769,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#830 reStructuredText/verification/native_20261104_followup_2e726573742e747874.json",
+      "verified_artifact_sha256": {
+        "examples/#830 reStructuredText/variants/rest-txt-4f6501d2/hello.rest.txt": "cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29"
+      },
       "based_on": "examples/#830 reStructuredText/hello.rst",
       "documentation": "examples/#830 reStructuredText/variants/rest-txt-4f6501d2/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e726573742e747874/verify.py"
+      ],
       "validation_command": "docutils: render hello.rest.txt and assert the greeting paragraph",
       "expected_result": "Hello, World!",
       "sources": [
         "https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .rest.txt. Copia byte-identica del sorgente canonico; SHA-256 cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis."
     },
     {
       "language_ordinal": 830,
@@ -48761,22 +48797,24 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#830 reStructuredText/verification/native_20261104_followup_2e7273742e747874.json",
+      "verified_artifact_sha256": {
+        "examples/#830 reStructuredText/variants/rst-txt-05b28309/hello.rst.txt": "cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29"
+      },
       "based_on": "examples/#830 reStructuredText/hello.rst",
       "documentation": "examples/#830 reStructuredText/variants/rst-txt-05b28309/README.md",
-      "supporting_files": [],
+      "supporting_files": [
+        "examples/#830 reStructuredText/verification/native_20261104_followup_drivers/2e7273742e747874/verify.py"
+      ],
       "validation_command": "docutils: render hello.rst.txt and assert the greeting paragraph",
       "expected_result": "Hello, World!",
       "sources": [
         "https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .rst.txt. Copia byte-identica del sorgente canonico; SHA-256 cfb2361effdd559bf36ad3e8119413e748a84d524d2cf7e7b2bfb61182b65b29. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis."
     },
     {
       "language_ordinal": 831,

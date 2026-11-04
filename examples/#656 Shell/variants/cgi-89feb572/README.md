@@ -1,5 +1,9 @@
 # 0656: Shell: `.cgi`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.cgi`. Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed. Check serialized CGI Content-Type header and body without starting a server. [Recorded evidence](../../verification/native_20261104_followup_2e636769.json).
+
 CGI POSIX shell con header e body.
 
 Provenience: original example written for the role of this suffix.

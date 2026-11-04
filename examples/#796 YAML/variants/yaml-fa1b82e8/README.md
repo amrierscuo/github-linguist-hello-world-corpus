@@ -1,5 +1,9 @@
 # 0796: YAML: `.yaml`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.yaml`. PyYAML: parse original YAML and assert exact greeting mapping; this is the ordinary .yaml variant. [Recorded evidence](../../verification/native_20261104_followup_2e79616d6c.json).
+
 YAML document of the same format; .yaml composite suffix preserved exactly. The template is static and does not declare replacements or a specific MySQL configuration.
 
 Origin: copy of the original `examples/#796 YAML/hello.yml` file.

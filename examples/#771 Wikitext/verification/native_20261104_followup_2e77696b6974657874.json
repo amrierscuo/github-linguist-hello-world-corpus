@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 771,
+  "name": "Wikitext",
+  "extension": ".wikitext",
+  "timestamp_utc": "2026-11-04T19:58:19.809119+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "mwparserfromhell: heading AST and extracted plain-text greeting, not full MediaWiki rendering.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\771-wikitext",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_761_780\\python"
+  },
+  "artifact_sha256": {
+    "examples/#771 Wikitext/variants/wikitext-b2a94597/hello.wikitext": "0c5439c44e70738091090a1793d06cc4c8756cb652021c68690959fd1d01aae0"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#771 Wikitext/verify.py",
+    "original_sha256": "5876c7e23d2ca65da1fcad438b1e9b965449864c80b7c355f6bb4bd871433a3d",
+    "staged_sha256": "2bf5c35c21c5101eebc8d3098f7530bfd3ac3c237d17fa416eb1d1465cf4aae4",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.mediawiki",
+      "new_input": "hello.wikitext"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));",
+        "mwparserfromhell"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"mwparserfromhell\": \"0.7.2\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.204
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Greeting \n\nHello, World!\nPASS: existing MediaWiki source parser and plain-text/body model\n",
+      "stderr": "",
+      "elapsed_seconds": 0.275
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#771 Wikitext/verification/native_20261104_followup_drivers/2e77696b6974657874/verify.py",
+    "sha256": "2bf5c35c21c5101eebc8d3098f7530bfd3ac3c237d17fa416eb1d1465cf4aae4"
+  },
+  "test_scope_description": "mwparserfromhell: heading AST and extracted plain-text greeting, not full MediaWiki rendering."
+}

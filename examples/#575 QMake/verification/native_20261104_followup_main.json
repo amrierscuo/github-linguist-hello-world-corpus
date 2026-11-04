@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:59:25.048831+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "QMake",
+  "ordinal": 575,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for qt5-qmake-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "qt5-qmake-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:25.079555+00:00",
+      "exit_code": 0,
+      "stdout": "Package: qt5-qmake-bin\nArchitecture: amd64\nVersion: 5.15.13+dfsg-1ubuntu1\nMulti-Arch: foreign\nPriority: optional\nSection: universe/devel\nSource: qtbase-opensource-src\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 3143\nDepends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libstdc++6 (>= 4.6)\nFilename: pool/universe/q/qtbase-opensource-src/qt5-qmake-bin_5.15.13+dfsg-1ubuntu1_amd64.deb\nSize: 1140026\nMD5sum: 3189ec6c7937d4faff27773acf28cff3\nSHA1: a0a6d559efc4922384118d850beedf50304fea44\nSHA256: 77b13ed4b9c1ebdae616fbde6ca23c0cfbd443ae2e963e0eb7c02da118d25716\nSHA512: 3c07e3b7a2f5b53d2646547eeeb6133ebaaac527c5e1e0b3d76c6a2a90bbcd6030f46ad972a895dcc1c203734b2ddf1a71ef4a75b13ca033b511263ec2966e2f\nHomepage: https://www.qt.io/developers/\nDescription-en: Qt 5 qmake Makefile generator tool — binary file\n Qt is a cross-platform C++ application framework. Qt's primary feature\n is its rich set of widgets that provide standard GUI functionality.\n .\n This package contains the binary file for qmake buildsystem. Do not\n install this package directly, use qt5-qmake instead.\nDescription-md5: 86cdde8a3c4de9597f2460df4811e75d\nTask: lubuntu-desktop\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only qt5-qmake-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "qt5-qmake-bin=5.15.13+dfsg-1ubuntu1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/qt5-qmake-bin",
+      "timestamp_utc": "2026-11-04T19:59:25.110265+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 qt5-qmake-bin amd64 5.15.13+dfsg-1ubuntu1 [1140 kB]\nFetched 1140 kB in 4s (312 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract qt5-qmake-bin without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/qt5-qmake-bin/qt5-qmake-bin_5.15.13+dfsg-1ubuntu1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:29.042610+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for qt5-qmake",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "qt5-qmake"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:29.225018+00:00",
+      "exit_code": 0,
+      "stdout": "Package: qt5-qmake\nArchitecture: amd64\nVersion: 5.15.13+dfsg-1ubuntu1\nMulti-Arch: same\nPriority: optional\nSection: universe/devel\nSource: qtbase-opensource-src\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1605\nDepends: qt5-qmake-bin (= 5.15.13+dfsg-1ubuntu1), qtchooser (>= 55-gc9562a1-1~)\nReplaces: qt5-qmake-bin (<< 5.11.2+dfsg-3~)\nFilename: pool/universe/q/qtbase-opensource-src/qt5-qmake_5.15.13+dfsg-1ubuntu1_amd64.deb\nSize: 209396\nMD5sum: d9fbd51325323daeb1f27dc13e927bf2\nSHA1: e8de6a98dd05b76b0511b22e4ca6c09f5e14fb88\nSHA256: 5541ec2b013d36bf9c77c9469d95adb2c4002a5903fb8e309bab2fc0b0bec807\nSHA512: 253885717aee5b14f0ce63027b4f1728fad8b87c9fac684a53853125fc17b12f15aed43660a42b40bbba8e2dac4e972ae9a103949a1133816118b5b7e2253a55\nHomepage: https://www.qt.io/developers/\nDescription-en: Qt 5 qmake Makefile generator tool\n Qt is a cross-platform C++ application framework. Qt's primary feature\n is its rich set of widgets that provide standard GUI functionality.\n .\n This package contains the Qt 5 qmake, a tool that helps simplify\n the build process for development project across different platforms.\n qmake automates the generation of Makefiles so that only a few lines of\n information are needed to create each Makefile. qmake can be used for any\n software project, whether it is written using Qt or not.\n .\n Qt 5 qmake requires a platform and compiler description file which contains\n many default values used to generate appropriate Makefiles.\n .\n This package contains also these platform specifications.\nDescription-md5: d22e820ccda7e109fc6cf2c171df093e\nTask: lubuntu-desktop\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only qt5-qmake",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "qt5-qmake=5.15.13+dfsg-1ubuntu1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/qt5-qmake",
+      "timestamp_utc": "2026-11-04T19:59:29.254176+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 qt5-qmake amd64 5.15.13+dfsg-1ubuntu1 [209 kB]\nFetched 209 kB in 1s (245 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract qt5-qmake without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/qt5-qmake/qt5-qmake_5.15.13+dfsg-1ubuntu1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:30.416084+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for qtbase5-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "qtbase5-dev"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:33.184918+00:00",
+      "exit_code": 0,
+      "stdout": "Package: qtbase5-dev\nArchitecture: amd64\nVersion: 5.15.13+dfsg-1ubuntu1\nMulti-Arch: same\nPriority: optional\nSection: universe/libdevel\nSource: qtbase-opensource-src\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 15354\nDepends: libegl-dev, libgl-dev, libglu1-mesa-dev | libglu-dev, libqt5concurrent5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5core5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5dbus5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5gui5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5network5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5printsupport5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5sql5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5test5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5widgets5t64 (= 5.15.13+dfsg-1ubuntu1), libqt5xml5t64 (= 5.15.13+dfsg-1ubuntu1), libvulkan-dev, libxext-dev, qt5-qmake (= 5.15.13+dfsg-1ubuntu1), qtbase5-dev-tools (= 5.15.13+dfsg-1ubuntu1), qtchooser\nRecommends: libqt5opengl5-dev (= 5.15.13+dfsg-1ubuntu1)\nSuggests: default-libmysqlclient-dev, firebird-dev, libpq-dev, libsqlite3-dev, unixodbc-dev\nConflicts: qtbase5-gles-dev\nBreaks: qt5-default (<< 5.15.1+dfsg-2~)\nFilename: pool/universe/q/qtbase-opensource-src/qtbase5-dev_5.15.13+dfsg-1ubuntu1_amd64.deb\nSize: 1125186\nMD5sum: 78273ab4a1080fec4d4895b1a8094ecb\nSHA1: e1b2f29917dab1a2189ad5b005d94f7c28484fc7\nSHA256: c026cc27425a82a5bf5f4c4581a51bb29f5b0248bbf724adb65a818be34a18bf\nSHA512: 008649a29b5bc020c1c4aee529faf3c6cb51148a911b99d1df2e3d8cc427dafaa6e785a7ff2d6c2f97ad7d12217b1b849790652c11353db8d2dbb54f619f9441\nHomepage: https://www.qt.io/developers/\nDescription-en: Qt 5 base development files\n Qt is a cross-platform C++ application framework. Qt's primary feature\n is its rich set of widgets that provide standard GUI functionality.\n .\n This package contains the header development files used for building Qt 5\n applications.\n .\n If you are interested in packaging Qt 5 stuff please take a look at\n https://qt-kde-team.pages.debian.net/packagingqtbasedstuff.html\nDescription-md5: eb1a5e244bfc7327cfdf56f6aff9cab9\nTask: lubuntu-desktop\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only qtbase5-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "qtbase5-dev=5.15.13+dfsg-1ubuntu1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/qtbase5-dev",
+      "timestamp_utc": "2026-11-04T19:59:33.213590+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 qtbase5-dev amd64 5.15.13+dfsg-1ubuntu1 [1125 kB]\nFetched 1125 kB in 1s (1716 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract qtbase5-dev without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/qtbase5-dev/qtbase5-dev_5.15.13+dfsg-1ubuntu1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:34.127603+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libqt5core5t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libqt5core5t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:38.250877+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libqt5core5t64\nArchitecture: amd64\nVersion: 5.15.13+dfsg-1ubuntu1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: qtbase-opensource-src\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 6054\nProvides: libqt5core5a (= 5.15.13+dfsg-1ubuntu1), qtbase-abi-5-15-13\nDepends: shared-mime-info, libc6 (>= 2.35), libdouble-conversion3 (>= 2.0.0), libgcc-s1 (>= 3.4), libglib2.0-0t64 (>= 2.22.0), libicu74 (>= 74.1-1~), libpcre2-16-0 (>= 10.22), libstdc++6 (>= 11), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nRecommends: qttranslations5-l10n\nSuggests: libthai0\nBreaks: libqt5core5a (<< 5.15.13+dfsg-1ubuntu1)\nReplaces: libqt5core5a\nFilename: pool/universe/q/qtbase-opensource-src/libqt5core5t64_5.15.13+dfsg-1ubuntu1_amd64.deb\nSize: 2010540\nMD5sum: 1c90c8f8799a7e6afd385751cc3ffa9b\nSHA1: 341fc395ea9cf98d08621dcc52701865972383bd\nSHA256: 8fb5c6a51ae436fefc41e0c9ad7a363ba8ab6b35db727eff5a469de2ee9f52bc\nSHA512: 78ab7d65714b6953735ad64a86a34299a1f968d16dfaef6c6616e2a3686f448943bb197a46a753c7e356d9547a72c81848b43ff9c7489c86d6b91ebf1016b695\nHomepage: https://www.qt.io/developers/\nDescription-en: Qt 5 core module\n Qt is a cross-platform C++ application framework. Qt's primary feature\n is its rich set of widgets that provide standard GUI functionality.\n .\n The QtCore module contains core non-GUI functionality.\nDescription-md5: 75c9109eafc0c1da6d6b6ca7b292f133\nTask: kubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libqt5core5t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libqt5core5t64=5.15.13+dfsg-1ubuntu1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/libqt5core5t64",
+      "timestamp_utc": "2026-11-04T19:59:38.281168+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libqt5core5t64 amd64 5.15.13+dfsg-1ubuntu1 [2011 kB]\nFetched 2011 kB in 1s (2726 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libqt5core5t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/libqt5core5t64/libqt5core5t64_5.15.13+dfsg-1ubuntu1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:39.260210+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for make",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "make"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:39.406063+00:00",
+      "exit_code": 0,
+      "stdout": "Package: make\nArchitecture: amd64\nVersion: 4.3-4.1build2\nMulti-Arch: allowed\nPriority: optional\nBuild-Essential: yes\nSection: devel\nSource: make-dfsg\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Manoj Srivastava <srivasta@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 404\nDepends: libc6 (>= 2.38)\nSuggests: make-doc\nConflicts: make-guile\nReplaces: make-guile\nFilename: pool/main/m/make-dfsg/make_4.3-4.1build2_amd64.deb\nSize: 179752\nMD5sum: c7d04f7402e6979c2f3d3f1ebed316f6\nSHA1: c9ab7c7949c68820cf113cd3718bfff53edbf628\nSHA256: 1fe6a815b56c7b6e9ce4086a363f09444bbd0a0d30e230c453d0b78e44b57a99\nSHA512: 3294c784a9900c494e1a9f49188aa12bf1ccf74dda5cf0930495e880fe83c0c68401aaf2ce1d42fd36b13d4af720f97910fe9b43128d3e4d769269412981a58e\nHomepage: https://www.gnu.org/software/make/\nDescription-en: utility for directing compilation\n GNU Make is a utility which controls the generation of executables\n and other target files of a program from the program's source\n files. It determines automatically which pieces of a large program\n need to be (re)created, and issues the commands to (re)create\n them. Make can be used to organize any task in which targets (files)\n are to be automatically updated based on input files whenever the\n corresponding input is newer --- it is not limited to building\n computer programs. Indeed, Make is a general purpose dependency\n solver.\nDescription-md5: 3ef13fe0be8e85cb535b13ff062ae8eb\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only make",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "make=4.3-4.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/make",
+      "timestamp_utc": "2026-11-04T19:59:39.437292+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 make amd64 4.3-4.1build2 [180 kB]\nFetched 180 kB in 1s (238 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract make without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/make/make_4.3-4.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:40.421109+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libdouble-conversion3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libdouble-conversion3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:40.491232+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libdouble-conversion3\nArchitecture: amd64\nVersion: 3.3.0-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: double-conversion\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 101\nDepends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libstdc++6 (>= 4.1.1)\nFilename: pool/universe/d/double-conversion/libdouble-conversion3_3.3.0-1build1_amd64.deb\nSize: 40294\nMD5sum: eb416967197665d8701d0b387eee69b7\nSHA1: 055f9366ee53047c7cd604fa6b4c82122d679f28\nSHA256: 856f534738da20fa9d8c271e17781fba3dc180bbbab116c22a0b569f6f506e25\nSHA512: 634bd188a2e3547d9d326ce4312550b696c0b7f72131e5cddec09dd5008de3e90dea81048f9bf354eae53e9411bca18b37e609308100af3e263e940893b2bca5\nHomepage: https://github.com/google/double-conversion\nDescription-en: routines to convert IEEE floats to and from strings\n This library provides routines to convert IEEE single and double floats to and\n from string representations. It offers at lot of flexibility with respect to\n the conversion format: shortest, fixed, precision or exponential\n representation; decimal, octal or hexadecimal basis; control over number of\n digits, leading/trailing zeros and spaces.\n .\n The library consists of efficient conversion routines that have been\n extracted from the V8 JavaScript engine. The code has been refactored\n and improved so that it can be used more easily in other projects.\n .\n This package contains a shared version of the library.\nDescription-md5: d76bc610d27922197310df91f331561e\nTask: kubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libdouble-conversion3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libdouble-conversion3=3.3.0-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/libdouble-conversion3",
+      "timestamp_utc": "2026-11-04T19:59:40.521106+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libdouble-conversion3 amd64 3.3.0-1build1 [40.3 kB]\nFetched 40.3 kB in 0s (90.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libdouble-conversion3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/libdouble-conversion3/libdouble-conversion3_3.3.0-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:41.180028+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libpcre2-16-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libpcre2-16-0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:41.219338+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libpcre2-16-0\nSource: pcre2\nPriority: optional\nSection: libs\nInstalled-Size: 582\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 10.42-4ubuntu2.1\nDepends: libc6 (>= 2.34)\nFilename: pool/main/p/pcre2/libpcre2-16-0_10.42-4ubuntu2.1_amd64.deb\nSize: 210092\nMD5sum: 2dbd595174fa85b0dd097a5e52e74c97\nSHA1: d8cf5fc5647aff8f35bef5b83d5fe04cc7831052\nSHA256: 06bba768fd16e6ea6f744114a0c500d9f5d98ee82630edf0d8a54f2175d3921b\nSHA512: 23b01294c32ffdf5e46463256840b9bb8490fdb705f4d4edb3d18ed10570fb8a03c5b7c5124797648a130b6c8c6ce743ee5d8fbde5289c970b1e39b941f347a7\nHomepage: https://pcre.org/\nDescription-en: New Perl Compatible Regular Expression Library - 16 bit runtime files\n This is PCRE2, the new implementation of PCRE, a library of functions\n to support regular expressions whose syntax and semantics are as\n close as possible to those of the Perl 5 language. New projects\n should use this library in preference to the older library,\n confusingly called pcre3 in Debian.\n .\n This package contains the 16 bit runtime library, which operates on\n UTF-16 input.\nDescription-md5: d6c0e8013a7482f54831f24be8910309\nMulti-Arch: same\nOriginal-Maintainer: Matthew Vernon <matthew@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: kubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\nPackage: libpcre2-16-0\nArchitecture: amd64\nVersion: 10.42-4ubuntu2\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: pcre2\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Matthew Vernon <matthew@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 582\nDepends: libc6 (>= 2.34)\nFilename: pool/main/p/pcre2/libpcre2-16-0_10.42-4ubuntu2_amd64.deb\nSize: 209990\nMD5sum: a20cafb2515d3724656131b02b8327ce\nSHA1: 46e75f7a7c723b5d2cb0288e851e1611d232bee0\nSHA256: ba3608a572b918e40668cf81efc223eeaca41b5a54db9c2932937f3b6c3ab614\nSHA512: c258e82d17ebb8f10ba2d94e49be0814496fa56019ef7d3d8ab8fa0f7809618c67b77b19c18c13bfa5abe1c14f74750b76df38c5fdbc70add8dea5ed037f3ca4\nHomepage: https://pcre.org/\nDescription-en: New Perl Compatible Regular Expression Library - 16 bit runtime files\n This is PCRE2, the new implementation of PCRE, a library of functions\n to support regular expressions whose syntax and semantics are as\n close as possible to those of the Perl 5 language. New projects\n should use this library in preference to the older library,\n confusingly called pcre3 in Debian.\n .\n This package contains the 16 bit runtime library, which operates on\n UTF-16 input.\nDescription-md5: d6c0e8013a7482f54831f24be8910309\nTask: kubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libpcre2-16-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libpcre2-16-0=10.42-4ubuntu2.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/libpcre2-16-0",
+      "timestamp_utc": "2026-11-04T19:59:41.248655+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpcre2-16-0 amd64 10.42-4ubuntu2.1 [210 kB]\nFetched 210 kB in 0s (695 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libpcre2-16-0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/packages/libpcre2-16-0/libpcre2-16-0_10.42-4ubuntu2.1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:41.777972+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Record qmake and Qt version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "-v"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:43.780206+00:00",
+      "exit_code": 0,
+      "stdout": "QMake version 3.1\nUsing Qt version 5.15.13 in ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu\n",
+      "stderr": ""
+    },
+    {
+      "label": "Generate native makefile from original Qt Core project",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "hello.pro"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T19:59:43.841665+00:00",
+      "exit_code": 3,
+      "stdout": "",
+      "stderr": "Could not find qmake spec 'linux-g++'.\nError processing project file: hello.pro\n"
+    },
+    {
+      "label": "Record qmake and Qt version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "-v"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:01.017332+00:00",
+      "exit_code": 0,
+      "stdout": "QMake version 3.1\nUsing Qt version 5.15.13 in ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "label": "Generate native makefile from original Qt Core project",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/qt5/bin/qmake",
+        "-spec",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+        "hello.pro"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:01.067207+00:00",
+      "exit_code": 0,
+      "stdout": "Info: creating stash file ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/.qmake.stash\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "label": "Build Qt Core CLI using generated Makefile",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/bin/make",
+        "-j2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:03.821829+00:00",
+      "exit_code": 0,
+      "stdout": "g++ -c -pipe -O2 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_CORE_LIB -I. -Iroot/usr/include/x86_64-linux-gnu/qt5 -Iroot/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -Iroot/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o main.cpp\ng++ -Wl,-O1 -o hello main.o   ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/libQt5Core.so -lpthread   \n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    },
+    {
+      "label": "Run the native Qt Core CLI",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake",
+      "timestamp_utc": "2026-11-04T20:01:07.527533+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/home",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/dovecot:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib",
+        "QMAKEPATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/qt5"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "qt5-qmake-bin",
+      "version": "5.15.13+dfsg-1ubuntu1",
+      "ubuntu_archive_path": "pool/universe/q/qtbase-opensource-src/qt5-qmake-bin_5.15.13+dfsg-1ubuntu1_amd64.deb",
+      "sha256": "77b13ed4b9c1ebdae616fbde6ca23c0cfbd443ae2e963e0eb7c02da118d25716"
+    },
+    {
+      "name": "qt5-qmake",
+      "version": "5.15.13+dfsg-1ubuntu1",
+      "ubuntu_archive_path": "pool/universe/q/qtbase-opensource-src/qt5-qmake_5.15.13+dfsg-1ubuntu1_amd64.deb",
+      "sha256": "5541ec2b013d36bf9c77c9469d95adb2c4002a5903fb8e309bab2fc0b0bec807"
+    },
+    {
+      "name": "qtbase5-dev",
+      "version": "5.15.13+dfsg-1ubuntu1",
+      "ubuntu_archive_path": "pool/universe/q/qtbase-opensource-src/qtbase5-dev_5.15.13+dfsg-1ubuntu1_amd64.deb",
+      "sha256": "c026cc27425a82a5bf5f4c4581a51bb29f5b0248bbf724adb65a818be34a18bf"
+    },
+    {
+      "name": "libqt5core5t64",
+      "version": "5.15.13+dfsg-1ubuntu1",
+      "ubuntu_archive_path": "pool/universe/q/qtbase-opensource-src/libqt5core5t64_5.15.13+dfsg-1ubuntu1_amd64.deb",
+      "sha256": "8fb5c6a51ae436fefc41e0c9ad7a363ba8ab6b35db727eff5a469de2ee9f52bc"
+    },
+    {
+      "name": "make",
+      "version": "4.3-4.1build2",
+      "ubuntu_archive_path": "pool/main/m/make-dfsg/make_4.3-4.1build2_amd64.deb",
+      "sha256": "1fe6a815b56c7b6e9ce4086a363f09444bbd0a0d30e230c453d0b78e44b57a99"
+    },
+    {
+      "name": "libdouble-conversion3",
+      "version": "3.3.0-1build1",
+      "ubuntu_archive_path": "pool/universe/d/double-conversion/libdouble-conversion3_3.3.0-1build1_amd64.deb",
+      "sha256": "856f534738da20fa9d8c271e17781fba3dc180bbbab116c22a0b569f6f506e25"
+    },
+    {
+      "name": "libpcre2-16-0",
+      "version": "10.42-4ubuntu2.1",
+      "ubuntu_archive_path": "pool/main/p/pcre2/libpcre2-16-0_10.42-4ubuntu2.1_amd64.deb",
+      "sha256": "06bba768fd16e6ea6f744114a0c500d9f5d98ee82630edf0d8a54f2175d3921b"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#575 QMake/hello.pro": "948c1e3689008818cd24585e4d4df5a1b42f8164517eb64787e72d7cdadf28aa",
+    "examples/#575 QMake/main.cpp": "4e90b38fc51f6af2111d326514b9ba5ab594da88c114db56bedb31f1de1bd4f9"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "The original qmake project was generated and compiled by Qt; its console-only program printed the exact greeting. No GUI was used.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The original qmake project was generated and compiled by Qt; its console-only program printed the exact greeting. No GUI was used."
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "ordinal": 791,
+  "name": "XSLT",
+  "extension": ".xslt",
+  "timestamp_utc": "2026-11-04T19:57:29.532589+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "libxslt via lxml: compile stylesheet and apply it to the original XML; exact greeting.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\791-xslt",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_781_800\\python"
+  },
+  "artifact_sha256": {
+    "examples/#791 XSLT/variants/xslt-6c8e89da/hello.xslt": "626f2cd6450a6dc62457bf40380757b96f708dd13baa29b45e7dd8dc47fe3143",
+    "examples/#791 XSLT/input.xml": "0c7214048fd9ad83fa094a06a2727b4ccdd10086dcc7e947791b60926cf120e1",
+    "examples/#791 XSLT/variants/xslt-6c8e89da/input.xml": "0c7214048fd9ad83fa094a06a2727b4ccdd10086dcc7e947791b60926cf120e1"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#791 XSLT/verify.py",
+    "original_sha256": "97644ff925d1e7f569e671be24fd373e8da68e0e11eaf7f63e7612ce88714a11",
+    "staged_sha256": "c97c1bf696a4cf3f0c52f1a59fcac193b0c42a704879a337170af51578c4b3c2",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.xsl",
+      "new_input": "hello.xslt"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "from lxml import etree; import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); out.update({'libxml2':etree.LIBXML_VERSION,'libxslt':etree.LIBXSLT_VERSION}); print(json.dumps(out));",
+        "lxml"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"lxml\": null, \"libxml2\": [2, 13, 9], \"libxslt\": [1, 1, 43]}\n",
+      "stderr": "",
+      "elapsed_seconds": 1.707
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 1.033
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "supporting_input_binding": {
+    "canonical_variant_path": "examples/#791 XSLT/variants/xslt-6c8e89da/input.xml",
+    "staged_filename": "input.xml",
+    "sha256": "0c7214048fd9ad83fa094a06a2727b4ccdd10086dcc7e947791b60926cf120e1",
+    "method": "Byte comparison of the file consumed in the recorded native run and the declared variant input in both checkouts; no rerun."
+  },
+  "published_driver": {
+    "path": "examples/#791 XSLT/verification/native_20261104_followup_drivers/2e78736c74/verify.py",
+    "sha256": "c97c1bf696a4cf3f0c52f1a59fcac193b0c42a704879a337170af51578c4b3c2"
+  },
+  "test_scope_description": "libxslt via lxml: compile stylesheet and apply it to the original XML; exact greeting."
+}

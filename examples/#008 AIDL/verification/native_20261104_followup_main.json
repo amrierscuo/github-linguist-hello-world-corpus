@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:57:27.223083+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "AIDL",
+  "ordinal": 8,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for aidl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "aidl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:27.383369+00:00",
+      "exit_code": 0,
+      "stdout": "Package: aidl\nArchitecture: amd64\nVersion: 1:10.0.0+r36-4\nPriority: optional\nSection: universe/devel\nSource: android-platform-system-tools-aidl\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Android Tools Maintainers <android-tools-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1134\nDepends: android-libbase (>= 1:10.0.0+r36), android-libcutils (>= 1:10.0.0+r36), libatomic1 (>= 4.8), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libstdc++6 (>= 11)\nFilename: pool/universe/a/android-platform-system-tools-aidl/aidl_10.0.0+r36-4_amd64.deb\nSize: 340502\nMD5sum: 56ee5d57eff1b561aac9610c3e7b64f1\nSHA1: 8fee0f187ce2430489b13c23b192cfef3f4d7da5\nSHA256: 8a079e587bba6c2c87d40e47bd9e905fe747349924cd00a37ab678643d16b514\nSHA512: 7e621473b89c1e6e2a72eb79c391d6ca75de71827970aa11b3f13967c543017ed85b734744a8d20a3be4c0a57426c3cb538a15f63af7ee66061fbc7192067e83\nHomepage: https://android.googlesource.com/platform/system/tools/aidl\nDescription-en: Binder generator of AIDL interfaces\n aidl is a utility to generate Java and/or C++ code from Android's\n Android Interface Definition Language (AIDL). AIDL is similar to\n other IDLs you might have worked with. It allows you to define the\n programming interface that both the client and service agree upon in\n order to communicate with each other using interprocess communication\n (IPC). On Android, one process cannot normally access the memory of\n another process. So to talk, they need to decompose their objects\n into primitives that the operating system can understand, and\n marshall the objects across that boundary for you. The code to do\n that marshalling is tedious to write, so Android handles it for you\n with AIDL. This package provides two tools:\n .\n   * \"aidl\" which generates Java bindings.\n   * \"aidl-cpp\" which generates C++ bindings.\n .\n For more info, see:\n https://developer.android.com/guide/components/aidl.html\nDescription-md5: 45859dc0b2ae5ed979acc57a859674e5\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only aidl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "aidl=1:10.0.0+r36-4"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/aidl",
+      "timestamp_utc": "2026-11-04T19:57:27.592471+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 aidl amd64 1:10.0.0+r36-4 [341 kB]\nFetched 341 kB in 1s (505 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract aidl without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/aidl/aidl_1%3a10.0.0+r36-4_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:28.916087+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for android-libbase",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "android-libbase"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:29.233821+00:00",
+      "exit_code": 0,
+      "stdout": "Package: android-libbase\nArchitecture: amd64\nVersion: 1:34.0.4-1build3\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: android-platform-tools (34.0.4-1build3)\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Android Tools Maintainers <android-tools-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 338\nDepends: android-liblog (= 1:34.0.4-1build3), libc6 (>= 2.38), libgcc-s1 (>= 3.0), libstdc++6 (>= 13.1)\nBreaks: android-libbase-dev (<< 1:33)\nFilename: pool/universe/a/android-platform-tools/android-libbase_34.0.4-1build3_amd64.deb\nSize: 98980\nMD5sum: e0cc820ab35b9798aaad6b1302f66a55\nSHA1: 17ac946984f112b785f9e88fd5fa427657f4bc49\nSHA256: 528842562fdf34b62fedbd6c49733cd583ec249820575ce913062232431155d8\nSHA512: 8d750bdd1722408e728dd74173d69ec50b1816662f73925f26d2ceb2353ed53d53d975a456957e66411a1d6f8933c9c83f0e35ac0cf5117cc82766dde45d6791\nHomepage: https://developer.android.com/studio/releases/platform-tools\nDescription-en: Android base library\n This library provides APIs for basic tasks like handling files, Unicode\n strings, logging, memory allocation, integer parsing, etc..\n .\n This library is only used by Android SDK currently.\nDescription-md5: 0c270a1f75d0d57cef9cc7cb5d418366\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only android-libbase",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "android-libbase=1:34.0.4-1build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/android-libbase",
+      "timestamp_utc": "2026-11-04T19:57:29.284591+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 android-libbase amd64 1:34.0.4-1build3 [99.0 kB]\nFetched 99.0 kB in 1s (140 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract android-libbase without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/android-libbase/android-libbase_1%3a34.0.4-1build3_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:30.727067+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for android-libcutils",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "android-libcutils"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:31.028663+00:00",
+      "exit_code": 0,
+      "stdout": "Package: android-libcutils\nArchitecture: amd64\nVersion: 1:34.0.4-1build3\nMulti-Arch: same\nPriority: extra\nSection: universe/libs\nSource: android-platform-tools (34.0.4-1build3)\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Android Tools Maintainers <android-tools-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 122\nDepends: android-libbase (= 1:34.0.4-1build3), android-liblog (>= 34.0.4), libc6 (>= 2.38), libgcc-s1 (>= 3.0), libstdc++6 (>= 13.1), libbsd0\nBreaks: android-libcutils-dev (<< 1:33)\nFilename: pool/universe/a/android-platform-tools/android-libcutils_34.0.4-1build3_amd64.deb\nSize: 35722\nMD5sum: 166a31364e4a88e5c901b3332825045e\nSHA1: ed8996b62704b2adef49a444a877398195a39600\nSHA256: 7bbde3f2e38cc9542128f0b9eeb8bd0fa1aacb795ce151b671ba690d469f5fa2\nSHA512: fc509f1586e0e696bc92f336569e6bdecd2d23c59ab98d2f2376c2d50359584d9c2b4b862ea3d5bd5f0bec3e87c787a6ede19898f51545a1c553f60885ad98c6\nHomepage: https://developer.android.com/studio/releases/platform-tools\nDescription-en: Android utils library for C\n This library provides common functionalities for android related tools.\n .\n This library is only used by Android SDK currently.\nDescription-md5: fd1d222be998cc5b11ef894b0dccf4b2\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only android-libcutils",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "android-libcutils=1:34.0.4-1build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/android-libcutils",
+      "timestamp_utc": "2026-11-04T19:57:31.080142+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 android-libcutils amd64 1:34.0.4-1build3 [35.7 kB]\nFetched 35.7 kB in 1s (38.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract android-libcutils without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/android-libcutils/android-libcutils_1%3a34.0.4-1build3_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:32.926166+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for android-liblog",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "android-liblog"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:33.262225+00:00",
+      "exit_code": 0,
+      "stdout": "Package: android-liblog\nArchitecture: amd64\nVersion: 1:34.0.4-1build3\nMulti-Arch: same\nPriority: extra\nSection: universe/libs\nSource: android-platform-tools (34.0.4-1build3)\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Android Tools Maintainers <android-tools-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 112\nDepends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libstdc++6 (>= 13)\nBreaks: android-liblog-dev (<< 1:33)\nFilename: pool/universe/a/android-platform-tools/android-liblog_34.0.4-1build3_amd64.deb\nSize: 35790\nMD5sum: a0e2851a2c1622184529efc953d8e7a6\nSHA1: 94a4cfc56e417999a2ffecb2ffd3f89d0ca79bf6\nSHA256: 2b91d308ce13d133b69076a3f1fb254dccb51b72dfc216b1865d40a5cf1b53b2\nSHA512: 049b4a71a886f18c76b0348ada8439eee62bc129466d04959a02f3e49a44df851bcbb163379e6751f3d9c6f9880908e573f54e6441fdb35a07da58f5bc097716\nHomepage: https://developer.android.com/studio/releases/platform-tools\nDescription-en: Android NDK logger interfaces\n liblog represents an interface to the volatile Android Logging system for NDK\n (Native) applications and libraries. Interfaces for either writing or reading\n logs. The log buffers are divided up in Main, System, Radio and Events\n sub-logs.\nDescription-md5: 9f7f6cb1971d10d4d4cdf57b3a57437b\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only android-liblog",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "android-liblog=1:34.0.4-1build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/android-liblog",
+      "timestamp_utc": "2026-11-04T19:57:33.354042+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 android-liblog amd64 1:34.0.4-1build3 [35.8 kB]\nFetched 35.8 kB in 0s (140 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract android-liblog without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/packages/android-liblog/android-liblog_1%3a34.0.4-1build3_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:34.510022+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Resolve compiler shared libraries",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/bin/aidl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:34.759933+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffc58529000)\n\tlibaidl-common.so.0 => not found\n\tlibbase.so.0 => /usr/lib/x86_64-linux-gnu/android/libbase.so.0 (0x000078348a417000)\n\tlibatomic.so.1 => /lib/x86_64-linux-gnu/libatomic.so.1 (0x000078348a40c000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000078348a000000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000078348a321000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000078348a2f3000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000783489c00000)\n\tliblog.so.0 => /usr/lib/x86_64-linux-gnu/android/liblog.so.0 (0x000078348a2e4000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000078348a468000)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Generate native Java Binder interface",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/bin/aidl",
+        "--lang=java",
+        "-I.",
+        "-o",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/generated",
+        "corpus/hello/IHello.aidl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:57:35.273426+00:00",
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/bin/aidl: error while loading shared libraries: libaidl-common.so.0: cannot open shared object file: No such file or directory\n"
+    },
+    {
+      "label": "Resolve compiler shared libraries including its Android subdirectory",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/bin/aidl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:59:24.947219+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffdfc46c000)\n\tlibaidl-common.so.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/lib/x86_64-linux-gnu/android/libaidl-common.so.0 (0x00007d29c5002000)\n\tlibbase.so.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/lib/x86_64-linux-gnu/android/libbase.so.0 (0x00007d29c4fbb000)\n\tlibatomic.so.1 => /lib/x86_64-linux-gnu/libatomic.so.1 (0x00007d29c4fa8000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007d29c4c00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007d29c4ebd000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007d29c4e8f000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007d29c4800000)\n\tlibcutils.so.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/lib/x86_64-linux-gnu/android/libcutils.so.0 (0x00007d29c4e7e000)\n\tliblog.so.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/lib/x86_64-linux-gnu/android/liblog.so.0 (0x00007d29c4bf1000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007d29c510e000)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Generate native Java Binder interface",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/root/usr/bin/aidl",
+        "--lang=java",
+        "-I.",
+        "-o",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/aidl/generated",
+        "corpus/hello/IHello.aidl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/aidl",
+      "timestamp_utc": "2026-11-04T19:59:25.103192+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "aidl",
+      "version": "1:10.0.0+r36-4",
+      "ubuntu_archive_path": "pool/universe/a/android-platform-system-tools-aidl/aidl_10.0.0+r36-4_amd64.deb",
+      "sha256": "8a079e587bba6c2c87d40e47bd9e905fe747349924cd00a37ab678643d16b514"
+    },
+    {
+      "name": "android-libbase",
+      "version": "1:34.0.4-1build3",
+      "ubuntu_archive_path": "pool/universe/a/android-platform-tools/android-libbase_34.0.4-1build3_amd64.deb",
+      "sha256": "528842562fdf34b62fedbd6c49733cd583ec249820575ce913062232431155d8"
+    },
+    {
+      "name": "android-libcutils",
+      "version": "1:34.0.4-1build3",
+      "ubuntu_archive_path": "pool/universe/a/android-platform-tools/android-libcutils_34.0.4-1build3_amd64.deb",
+      "sha256": "7bbde3f2e38cc9542128f0b9eeb8bd0fa1aacb795ce151b671ba690d469f5fa2"
+    },
+    {
+      "name": "android-liblog",
+      "version": "1:34.0.4-1build3",
+      "ubuntu_archive_path": "pool/universe/a/android-platform-tools/android-liblog_34.0.4-1build3_amd64.deb",
+      "sha256": "2b91d308ce13d133b69076a3f1fb254dccb51b72dfc216b1865d40a5cf1b53b2"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#008 AIDL/corpus/hello/IHello.aidl": "a0fad647aa362d1e95aa180aef328a9d3e27d8597ec0a5e2d07f0b331772fbe1"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "generated_java": {
+    "sha256": "e98c29da2572319984f39abc091166c5408fc32ea12c23677fbf35700a884192",
+    "assertions": {
+      "constant": true,
+      "method": true,
+      "stub": true,
+      "proxy": true
+    }
+  },
+  "semantic_scope": "Native AOSP compiler generated the intended Binder constant, method signature, Stub and Proxy. No Android IPC or service execution was tested.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native AOSP compiler generated the intended Binder constant, method signature, Stub and Proxy. No Android IPC or service execution was tested."
+}

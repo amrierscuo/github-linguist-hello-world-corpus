@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:57:27.234592+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "MeTTa",
+  "ordinal": 424,
+  "commands": [
+    {
+      "label": "Record Python version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "python3",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/metta",
+      "timestamp_utc": "2026-11-04T19:57:27.421632+00:00",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    {
+      "label": "Run the original MeTTa fixture through native Hyperon",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "python3",
+        "verify.py"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/metta",
+      "timestamp_utc": "2026-11-04T19:57:33.268387+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "hyperon",
+      "version": "0.2.10",
+      "source": "https://files.pythonhosted.org/packages/3a/dc/56194cd1e18924953dfb07187d39a076323e5782b59ab57f64c60e6d768d/hyperon-0.2.10-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "metadata_source": "https://pypi.org/pypi/hyperon/0.2.10/json",
+      "sha256": "12a0479df6afadda7562ffe10e7d63a6701aaec02f7177b91412bc05a09ed419"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#424 MeTTa/hello.metta": "6d6b22166683f477b0ecb6dcb3a96868ec9c3000385e6d8ed47a985b98b4667f",
+    "examples/#424 MeTTa/verify.py": "6baca939381418806a02879d87f3a79fd5e440166e82f0c421ddca66d38af10c"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "The official native Hyperon Python binding evaluated the exact MeTTa program, with the exact greeting and LF and no stderr.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The official native Hyperon Python binding evaluated the exact MeTTa program, with the exact greeting and LF and no stderr."
+}

@@ -1,5 +1,9 @@
 # 0130 CoffeeScript: variant `.cake`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.cake`. Original .cake copied byte-identically as Cakefile. Official Cake task executed; main example unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e63616b65.json).
+
 Role: Cake task CoffeeScript, distinguished from .cake C# file of the 84. voice
 
 Type: **adapted**. Starting model: examples/#130 CoffeeScript/hello.coffee; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ CoffeeScript cake: nel progetto temporaneo caricare hello.cake come Cakefile ed 
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

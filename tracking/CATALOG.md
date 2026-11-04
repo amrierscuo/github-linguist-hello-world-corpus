@@ -11,7 +11,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #005 | [ABAP CDS](../examples/%23005%20ABAP%20CDS/README.md) | Yes | Yes | Pending | 1/1 | No SAP ABAP Platform/ADT system is available to resolve T000, activate the view entity and query results. |
 | #006 | [ABNF](../examples/%23006%20ABNF/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #007 | [AGS Script](../examples/%23007%20AGS%20Script/README.md) | Yes | Pending | Pending | 2/2 | AGS Editor/compiler, host game project and resources are unavailable. |
-| #008 | [AIDL](../examples/%23008%20AIDL/README.md) | Yes | Pending | Pending | 1/1 | Android SDK aidl compiler not found in PATH. |
+| #008 | [AIDL](../examples/%23008%20AIDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #009 | [AL](../examples/%23009%20AL/README.md) | Yes | Pending | Pending | 1/1 | AL compiler alc.exe not found in PATH.; Business Central symbols and sandbox are not configured. |
 | #010 | [ALGOL](../examples/%23010%20ALGOL/README.md) | Yes | Pending | Pending | 1/1 | jff-algol not found in PATH.; jff runtime and C/Cygwin toolchain are not configured. |
 | #011 | [AMPL](../examples/%23011%20AMPL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -427,7 +427,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #421 | [Mathematical Programming System](../examples/%23421%20Mathematical%20Programming%20System/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #422 | [Maven POM](../examples/%23422%20Maven%20POM/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #423 | [Max](../examples/%23423%20Max/README.md) | Yes | Pending | Pending | 5/5 | The Max runtime is unavailable. |
-| #424 | [MeTTa](../examples/%23424%20MeTTa/README.md) | Yes | Pending | Pending | 1/1 | The recorded pip search found no compatible Hyperon distribution for Python 3.13 on Windows. The Linux MeTTa runtime is not yet set up. |
+| #424 | [MeTTa](../examples/%23424%20MeTTa/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #425 | [Mercury](../examples/%23425%20Mercury/README.md) | Yes | Pending | Pending | 2/2 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #426 | [Mermaid](../examples/%23426%20Mermaid/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #427 | [Meson](../examples/%23427%20Meson/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
@@ -478,7 +478,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #472 | [Nim](../examples/%23472%20Nim/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #473 | [Ninja](../examples/%23473%20Ninja/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #474 | [Nit](../examples/%23474%20Nit/README.md) | Yes | Pending | Pending | 1/1 | The Nit compiler and interpreter are not set up. |
-| #475 | [Nix](../examples/%23475%20Nix/README.md) | Yes | Pending | Pending | 1/1 | The original Nix is not set up; evaluator verification is pending. |
+| #475 | [Nix](../examples/%23475%20Nix/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #476 | [Noir](../examples/%23476%20Noir/README.md) | Yes | Pending | Pending | 1/1 | The nargo compiler and runtime are not set up. |
 | #477 | [Nu](../examples/%23477%20Nu/README.md) | Yes | Pending | Pending | 1/1 | Nu and Objective-C Foundation are not set up; runtime verification is pending. |
 | #478 | [NumPy](../examples/%23478%20NumPy/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
@@ -508,13 +508,13 @@ This table reports the main sample's status. Variant states are tracked separate
 | #502 | [OpenCL](../examples/%23502%20OpenCL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #503 | [OpenEdge ABL](../examples/%23503%20OpenEdge%20ABL/README.md) | Yes | Pending | Pending | 3/3 | The Progress OpenEdge runtime is unavailable. |
 | #504 | [OpenQASM](../examples/%23504%20OpenQASM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #505 | [OpenRC runscript](../examples/%23505%20OpenRC%20runscript/README.md) | Yes | Yes | Pending | Nomi speciali / altra modalità | POSIX shell syntax was verified; openrc-run was not executed. OpenRC semantics and functions remain pending. |
+| #505 | [OpenRC runscript](../examples/%23505%20OpenRC%20runscript/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #506 | [OpenSCAD](../examples/%23506%20OpenSCAD/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #507 | [OpenStep Property List](../examples/%23507%20OpenStep%20Property%20List/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #508 | [OpenType Feature File](../examples/%23508%20OpenType%20Feature%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #509 | [Option List](../examples/%23509%20Option%20List/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | The toolchain has not been run; syntax and semantic checks are pending. |
 | #510 | [Org](../examples/%23510%20Org/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #511 | [OverPy](../examples/%23511%20OverPy/README.md) | Yes | Pending | Pending | 1/1 | exit 1: les\overpy\overpy.js:63484:16)     at new _Ast (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:49568:23)     at OverPyCompiler.Ast.OverPyDecompiler.Ast (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:49614:10)     at ${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:48108:55     at Array.map (<anonymous>)     at OverPyCompiler.parseLines (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:48108:39)     at OverPyCompiler.parseLines (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:48351:25)     at Object.compile (${WORKSPACE}\work\tools_501_520\npm\node_modules\overpy\overpy.js:70876:27)     at async ${WORKSPACE}\work\staging_501_520\examples\0511_overpy\verify.cjs:5:20 {   fileStack: [     {       name: '<main>',       path: '/',       startLine: 2,       startCol: 5,       endCol: 22,       endLine: 2,       remainingChars: 99999999999,       staticMember: true,       fileStackMemberType: 'normal'     }   ],   severity: 'error' }  |
+| #511 | [OverPy](../examples/%23511%20OverPy/README.md) | Yes | Yes | Pending | 1/1 | The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified. |
 | #512 | [OverpassQL](../examples/%23512%20OverpassQL/README.md) | Yes | Pending | Pending | 1/1 | A local Overpass engine is unavailable. |
 | #513 | [Ox](../examples/%23513%20Ox/README.md) | Yes | Pending | Pending | 2/3 | The Ox runtime is unavailable. |
 | #514 | [Oxygene](../examples/%23514%20Oxygene/README.md) | Yes | Pending | Pending | 1/1 | The RemObjects Elements compiler and build project are not set up. |
@@ -578,7 +578,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #572 | [Python traceback](../examples/%23572%20Python%20traceback/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #573 | [Q#](../examples/%23573%20Q%23/README.md) | Yes | Pending | Pending | 1/1 | The local Q# compiler and runtime are not set up; entry point compatibility still needs to be recorded. |
 | #574 | [QML](../examples/%23574%20QML/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #575 | [QMake](../examples/%23575%20QMake/README.md) | Yes | Pending | Pending | 2/2 | qmake and the Qt Core development libraries are not set up. |
+| #575 | [QMake](../examples/%23575%20QMake/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #576 | [Qt Script](../examples/%23576%20Qt%20Script/README.md) | Yes | Pending | Pending | 1/1 | The Qt5Script/Qt Core compiler and libraries are not set up. |
 | #577 | [Quake](../examples/%23577%20Quake/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | The CM3/Quake build interpreter is unavailable. |
 | #578 | [QuakeC](../examples/%23578%20QuakeC/README.md) | Yes | Yes | Pending | 1/1 | Quake VM fixture not available; native execution pending. |
@@ -592,12 +592,12 @@ This table reports the main sample's status. Variant states are tracked separate
 | #586 | [RDoc](../examples/%23586%20RDoc/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #587 | [REALbasic](../examples/%23587%20REALbasic/README.md) | Yes | Pending | Pending | 4/6 | The REALbasic/Xojo compiler and host project are unavailable. |
 | #588 | [REXX](../examples/%23588%20REXX/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
-| #589 | [RMarkdown](../examples/%23589%20RMarkdown/README.md) | Yes | Pending | Pending | 2/2 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #589 | [RMarkdown](../examples/%23589%20RMarkdown/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #590 | [RON](../examples/%23590%20RON/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #591 | [ROS Interface](../examples/%23591%20ROS%20Interface/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #592 | [RPC](../examples/%23592%20RPC/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #593 | [RPGLE](../examples/%23593%20RPGLE/README.md) | Yes | Pending | Pending | 2/2 | IBM i and the ILE RPG compiler are unavailable. |
-| #594 | [RPM Spec](../examples/%23594%20RPM%20Spec/README.md) | Yes | Pending | Pending | 1/1 | exit 127: ${WORKSPACE_WSL}/work/tools_581_600/ubuntu/usr/bin/rpmbuild: error while loading shared libraries: librpm.so.9: cannot open shared object file: No such file or directory  |
+| #594 | [RPM Spec](../examples/%23594%20RPM%20Spec/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #595 | [RUNOFF](../examples/%23595%20RUNOFF/README.md) | Yes | Pending | Pending | 2/2 | The historical RUNOFF runtime is unavailable. |
 | #596 | [Racket](../examples/%23596%20Racket/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #597 | [Ragel](../examples/%23597%20Ragel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -663,7 +663,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #657 | [ShellCheck Config](../examples/%23657%20ShellCheck%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #658 | [ShellSession](../examples/%23658%20ShellSession/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #659 | [Shen](../examples/%23659%20Shen/README.md) | Yes | Pending | Pending | 1/1 | The Shen runtime is not set up. |
-| #660 | [Sieve](../examples/%23660%20Sieve/README.md) | Yes | Pending | Pending | 1/1 | The Sieve compiler and offline test engine are unavailable. |
+| #660 | [Sieve](../examples/%23660%20Sieve/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #661 | [Simple File Verification](../examples/%23661%20Simple%20File%20Verification/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #662 | [Singularity](../examples/%23662%20Singularity/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | The toolchain has not been run; syntax and semantic checks are pending. |
 | #663 | [Slang](../examples/%23663%20Slang/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -681,7 +681,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #675 | [Soong](../examples/%23675%20Soong/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | A test AOSP/Soong checkout is unavailable. |
 | #676 | [SourcePawn](../examples/%23676%20SourcePawn/README.md) | Yes | Pending | Pending | 2/2 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #677 | [SpiceDB Schema](../examples/%23677%20SpiceDB%20Schema/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
-| #678 | [Spline Font Database](../examples/%23678%20Spline%20Font%20Database/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #678 | [Spline Font Database](../examples/%23678%20Spline%20Font%20Database/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #679 | [Squirrel](../examples/%23679%20Squirrel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #680 | [Stan](../examples/%23680%20Stan/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #681 | [Standard ML](../examples/%23681%20Standard%20ML/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |

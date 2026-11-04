@@ -1,5 +1,12 @@
 # #216 Fortran
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.f77`: Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Evidence](verification/native_20261104_followup_2e663737.json).
+- `.for`: Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Evidence](verification/native_20261104_followup_2e666f72.json).
+- `.fpp`: Compiled and ran the exact variant with the declared fixed or free source form; .fpp also used the compiler preprocessor. [Evidence](verification/native_20261104_followup_2e667070.json).
+
 Voce canonica `Fortran`, tipo `programming`, language_id `107`.
 
 Fill out a fixed Fortran program and write a chained string of thirteen characters.
@@ -46,6 +53,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.f` | [hello.f](hello.f) verified |
-| `.f77` | [hello.f77](variants/ext-f77-2e663737/hello.f77) created; verification pending |
-| `.for` | [hello.for](variants/ext-for-2e666f72/hello.for) created; verification pending |
-| `.fpp` | [hello.fpp](variants/ext-fpp-2e667070/hello.fpp) created; verification pending |
+| `.f77` | [hello.f77](variants/ext-f77-2e663737/hello.f77) syntax and behavior verified |
+| `.for` | [hello.for](variants/ext-for-2e666f72/hello.for) syntax and behavior verified |
+| `.fpp` | [hello.fpp](variants/ext-fpp-2e667070/hello.fpp) syntax and behavior verified |

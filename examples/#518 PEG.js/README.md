@@ -1,5 +1,10 @@
 # #518 PEG.js
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.peggy`: Peggy builds the parser and verifies exact greeting acceptance and rejection of a different input. [Evidence](verification/native_20261104_followup_2e7065676779.json).
+
 Generate a parser from a PEG.js grammar and recognize greeting.
 
 Canonical type `programming`, language_id `81442128`.
@@ -35,4 +40,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.pegjs` | [hello.pegjs](hello.pegjs) verified |
-| `.peggy` | [hello.peggy](variants/peggy-64f146b5/hello.peggy) created; verification pending |
+| `.peggy` | [hello.peggy](variants/peggy-64f146b5/hello.peggy) syntax and behavior verified |

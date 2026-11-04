@@ -1,5 +1,9 @@
 # 0418: Markdown: `.mdwn`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.mdwn`. Original suffix variant; main example unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e6d64776e.json).
+
 Role: Alias extension for the same text format as the main source.
 
 Origin: Byte-identical copy of the original corpus source: examples/#418 Markdown/hello.md.
@@ -14,7 +18,7 @@ Usare la toolchain del README principale sul file hello.mdwn; eventuali file gen
 
 Expected result: HTML <h1> Hello, World! </h1> and LF; stdout greeting and LF.
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

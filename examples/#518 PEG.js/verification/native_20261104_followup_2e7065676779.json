@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 518,
+  "name": "PEG.js",
+  "extension": ".peggy",
+  "timestamp_utc": "2026-11-04T19:57:23.325799+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Peggy builds the parser and verifies exact greeting acceptance and rejection of a different input.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\518-peggy",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "NODE_PATH": "<workspace>\\work\\tools_501_520\\npm\\node_modules"
+  },
+  "artifact_sha256": {
+    "examples/#518 PEG.js/variants/peggy-64f146b5/hello.peggy": "3636735c9bbd19ff288579658e3b66fdab1bf82ecc3be189c7557b5217e60397"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#518 PEG.js/verify.cjs",
+    "original_sha256": "16f49db8c945620d87febd8eef1c2e659a247717891d55f5bf62fcd8d9bf6aae",
+    "staged_sha256": "be801a915083bf6331a0cae3578224abb89d2c063801eb69f18c64ba0900f890",
+    "staged_filename": "verify.cjs",
+    "adaptation": {
+      "old_input": "hello.pegjs",
+      "new_input": "hello.peggy"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<node>",
+        "-e",
+        "const fs=require(\"node:fs\"),p=require(\"node:path\"); const wanted=JSON.parse(process.argv[1]); let result={node:process.version}; for(const id of wanted){const path=p.join(process.env.NODE_PATH,id,\"package.json\");require.resolve(id);result[id]=JSON.parse(fs.readFileSync(path,\"utf8\")).version;} console.log(JSON.stringify(result));",
+        "[\"peggy\"]"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"node\":\"v22.20.0\",\"peggy\":\"5.1.0\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.23
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<node>",
+        "verify.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.458
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#518 PEG.js/verification/native_20261104_followup_drivers/2e7065676779/verify.cjs",
+    "sha256": "be801a915083bf6331a0cae3578224abb89d2c063801eb69f18c64ba0900f890"
+  },
+  "test_scope_description": "Peggy builds the parser and verifies exact greeting acceptance and rejection of a different input."
+}

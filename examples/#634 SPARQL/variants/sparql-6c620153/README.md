@@ -1,5 +1,9 @@
 # 0634: SPARQL: `.sparql`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.sparql`. RDFlib SPARQL parser and query evaluator: one greeting binding. [Recorded evidence](../../verification/native_20261104_followup_2e73706172716c.json).
+
 Textual variation of the same format, with canon suffix .sparql.
 
 Origin: copy of the original `examples/#634 SPARQL/hello.rq` file.

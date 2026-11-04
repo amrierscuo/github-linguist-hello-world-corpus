@@ -1,0 +1,61 @@
+{
+  "ordinal": 709,
+  "extension": ".tcl.in",
+  "name": "Tcl",
+  "main_status": "unchanged",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "source_hashes": {
+    "examples/#709 Tcl/variants/tcl-in-4fd82009/hello.tcl.in": "cdf190be044f9b158cd8a64c310196982be7638653fc2fbc0de0979302ec4d77"
+  },
+  "steps": [
+    {
+      "label": "Tcl version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "20s",
+        "${WORKSPACE}/work/tools_701_720/ubuntu/usr/bin/tclsh8.6"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/709-tcl.in",
+      "exit_code": 0,
+      "stdout": "8.6.14\n",
+      "stderr": "",
+      "stdin": "puts [info patchlevel]\n",
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TCL_LIBRARY": "${WORKSPACE}/work/tools_701_720/ubuntu/usr/share/tcltk/tcl8.6",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/709-tcl.in"
+      }
+    },
+    {
+      "label": "Native Tcl script/module execution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "20s",
+        "${WORKSPACE}/work/tools_701_720/ubuntu/usr/bin/tclsh8.6",
+        "hello.tcl.in"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/709-tcl.in",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "stdin": null,
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_701_720/ubuntu/usr/lib/x86_64-linux-gnu",
+        "TCL_LIBRARY": "${WORKSPACE}/work/tools_701_720/ubuntu/usr/share/tcltk/tcl8.6",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/709-tcl.in"
+      }
+    }
+  ],
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "verified_utc": "2026-11-04T20:03:22.525018+00:00",
+  "toolchain": {
+    "name": "Tcl",
+    "version": "8.6.14"
+  },
+  "scope": "The exact Tcl variant was executed by Tcl. For .tm, Tcl resolved the module through the original main.tcl driver.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The exact Tcl variant was executed by Tcl. For .tm, Tcl resolved the module through the original main.tcl driver."
+}

@@ -1,5 +1,10 @@
 # #709 Tcl
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.tcl.in`: The exact Tcl variant was executed by Tcl. For .tm, Tcl resolved the module through the original main.tcl driver. [Evidence](verification/native_20261104_followup_2e74636c2e696e.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,6 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 | `.tcl` | [hello.tcl](hello.tcl), [main.tcl](variants/tm-cb765f5d/main.tcl) created; verification pending |
 | `.adp` | [hello.adp](variants/adp-fdf7bf5a/hello.adp) created; verification pending |
 | `.sdc` | [hello.sdc](variants/sdc-c14a8049/hello.sdc) created; verification pending |
-| `.tcl.in` | [hello.tcl.in](variants/tcl-in-4fd82009/hello.tcl.in) created; verification pending |
+| `.tcl.in` | [hello.tcl.in](variants/tcl-in-4fd82009/hello.tcl.in) syntax and behavior verified |
 | `.tm` | [corpus-greeting-0.1.tm](variants/tm-cb765f5d/corpus-greeting-0.1.tm) created; verification pending |
 | `.xdc` | [hello.xdc](variants/xdc-305793a9/hello.xdc) created; verification pending |

@@ -1,5 +1,9 @@
 # 0830: reStructuredText: `.rst.txt`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.rst.txt`. Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis. [Recorded evidence](../../verification/native_20261104_followup_2e7273742e747874.json).
+
 Textual variation of the same format, with canon suffix .rst.txt.
 
 Origin: copy of the original `examples/#830 reStructuredText/hello.rst` file.

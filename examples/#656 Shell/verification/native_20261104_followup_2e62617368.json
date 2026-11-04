@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "ordinal": 656,
+  "name": "Shell",
+  "extension": ".bash",
+  "timestamp_utc": "2026-11-04T20:00:08.926813+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed.",
+  "artifact_sha256": {
+    "examples/#656 Shell/variants/bash-8a9862b8/hello.bash": "9be642ea21ce6d1a6a08c8feb7a6f57122c8a1d8bdda2fe39230c88e08ca90d3"
+  },
+  "verification_driver": null,
+  "versions": [
+    {
+      "label": "POSIX shell version",
+      "command": [
+        "C:\\Program Files\\Git\\usr\\bin\\sh.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU bash, version 5.2.37(1)-release (x86_64-pc-msys)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": "",
+      "elapsed_seconds": 0.049
+    }
+  ],
+  "steps": [
+    {
+      "label": "Check syntax of exact shell variant",
+      "command": [
+        "C:\\Program Files\\Git\\usr\\bin\\sh.exe",
+        "-n",
+        "hello.bash"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.038
+    },
+    {
+      "label": "Execute exact shell variant",
+      "command": [
+        "C:\\Program Files\\Git\\usr\\bin\\sh.exe",
+        "hello.bash"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 0.036
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Git for Windows sh.exe, GNU Bash invoked as POSIX sh, checks and executes the exact source. No OS file association, package manager or GUI integration is claimed."
+}

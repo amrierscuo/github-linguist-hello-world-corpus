@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "ordinal": 611,
+  "name": "Regular Expression",
+  "extension": ".regex",
+  "timestamp_utc": "2026-11-04T19:57:26.268655+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "CPython re engine: exact named capture, rejection controls.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\611-regex",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {},
+  "artifact_sha256": {
+    "examples/#611 Regular Expression/variants/regex-b64e0ba7/hello.regex": "15e9dad17c50d3e1e679a00052461afa6915e9e7dd3e6205a47a8430ea39b8d0"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#611 Regular Expression/verify.py",
+    "original_sha256": "a6da9f52bd00ad5d03719eeaaccb474e5fdd2850a5e5893c4a067ce1d63ec0a2",
+    "staged_sha256": "e925699e5cc2cb79045318f018c135116de8a1ceb844ba8e34a09f2cd497810c",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.regexp",
+      "new_input": "hello.regex"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.509
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPASS: authentic Python re compile/fullmatch and rejection controls\n",
+      "stderr": "",
+      "elapsed_seconds": 0.28
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#611 Regular Expression/verification/native_20261104_followup_drivers/2e7265676578/verify.py",
+    "sha256": "e925699e5cc2cb79045318f018c135116de8a1ceb844ba8e34a09f2cd497810c"
+  },
+  "test_scope_description": "CPython re engine: exact named capture, rejection controls."
+}

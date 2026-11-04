@@ -1,5 +1,9 @@
 # 0518: PEG.js: `.peggy`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.peggy`. Peggy builds the parser and verifies exact greeting acceptance and rejection of a different input. [Recorded evidence](../../verification/native_20261104_followup_2e7065676779.json).
+
 Role: Alias extension for the same text format as the main source.
 
 Origin: Byte-identical copy of the original corpus source: examples/#518 PEG.js / hello.pegjs.
@@ -14,7 +18,7 @@ Usare la toolchain del README principale sul file hello.peggy; eventuali file ge
 
 Expected result: recognized greeting, wrong input refused.
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 796,
+  "name": "YAML",
+  "extension": ".yaml",
+  "timestamp_utc": "2026-11-04T19:57:30.489478+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "PyYAML: parse original YAML and assert exact greeting mapping; this is the ordinary .yaml variant.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\796-yaml",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "PYTHONPATH": "<workspace>\\work\\tools_781_800\\python"
+  },
+  "artifact_sha256": {
+    "examples/#796 YAML/variants/yaml-fa1b82e8/hello.yaml": "7923d45ccd524220bc8735b412e68935fc177c4e07256f9e0c3116db7d4809ee"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#796 YAML/verify.py",
+    "original_sha256": "28c9ba6a3e8e6a36119ea18c00db9a4b42491dc30d6400d2df162ef7387e145c",
+    "staged_sha256": "5004a71f0ba01ec87a2fc4b556f2ab22200a6a541816fe412238d28f9a39c6c2",
+    "staged_filename": "verify.py",
+    "adaptation": {
+      "old_input": "hello.yml",
+      "new_input": "hello.yaml"
+    }
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<python>",
+        "-c",
+        "import sys,json,importlib.metadata as m; out={'python':sys.version.split()[0]}; out.update({k:m.version(k) for k in sys.argv[1:]}); print(json.dumps(out));",
+        "PyYAML"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"python\": \"3.13.9\", \"PyYAML\": null}\n",
+      "stderr": "",
+      "elapsed_seconds": 1.573
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<python>",
+        "verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 1.238
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#796 YAML/verification/native_20261104_followup_drivers/2e79616d6c/verify.py",
+    "sha256": "5004a71f0ba01ec87a2fc4b556f2ab22200a6a541816fe412238d28f9a39c6c2"
+  },
+  "test_scope_description": "PyYAML: parse original YAML and assert exact greeting mapping; this is the ordinary .yaml variant."
+}

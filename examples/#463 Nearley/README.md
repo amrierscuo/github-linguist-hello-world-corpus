@@ -1,5 +1,10 @@
 # #463 Nearley
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.nearley`: Nearley original compiler emits a parser from this grammar file; the parser recognizes the exact greeting. [Evidence](verification/native_20261104_followup_2e6e6561726c6579.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -42,4 +47,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.ne` | [hello.ne](hello.ne) verified |
-| `.nearley` | [hello.nearley](variants/nearley-659604fb/hello.nearley) created; verification pending |
+| `.nearley` | [hello.nearley](variants/nearley-659604fb/hello.nearley) syntax and behavior verified |

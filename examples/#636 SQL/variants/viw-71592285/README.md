@@ -1,5 +1,9 @@
 # 0636: SQL: `.viw`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.viw`. Native SQLite engine through CPython sqlite3, using a new in-memory database; execute every SQL statement in the exact file and assert its only result set. [Recorded evidence](../../verification/native_20261104_followup_2e766977.json).
+
 Definizione SQL di vista.
 
 Provenience: original example written for the role of this suffix.

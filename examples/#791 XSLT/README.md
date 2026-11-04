@@ -1,5 +1,10 @@
 # #791 XSLT
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.xslt`: libxslt via lxml: compile stylesheet and apply it to the original XML; exact greeting. [Evidence](verification/native_20261104_followup_2e78736c74.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -36,5 +41,5 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.xslt` | [hello.xslt](variants/xslt-6c8e89da/hello.xslt) created; verification pending |
+| `.xslt` | [hello.xslt](variants/xslt-6c8e89da/hello.xslt) syntax and behavior verified |
 | `.xsl` | [hello.xsl](hello.xsl) verified |

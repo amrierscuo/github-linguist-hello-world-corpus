@@ -1,5 +1,9 @@
 # 0083 C: variant `.cats`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.cats`. Variant only. Main language status and other suffixes unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e63617473.json).
+
 Role: Code C incorporated by FFI ATS; .cats file with C grammar, not ATS source.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#083 C/hello.c
@@ -18,8 +22,7 @@ gcc -x c hello.cats -o <output>/hello; <output>/hello
 
 Expected result: Exit 0; exit program 0 and stdout Hello, World! plus newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

@@ -1,5 +1,11 @@
 # #130 CoffeeScript
 
+## Latest recorded verification
+
+Latest extension checks:
+- `._coffee`: Unchanged suffix variant; main example status unchanged. [Evidence](verification/native_20261104_followup_2e5f636f66666565.json).
+- `.cake`: Original .cake copied byte-identically as Cakefile. Official Cake task executed; main example unchanged. [Evidence](verification/native_20261104_followup_2e63616b65.json).
+
 Voce canonica: `CoffeeScript`, tipo `programming`, `language_id: 63`.
 
 Interpolate the recipient in a CoffeeScript string, fill in JavaScript and print the greeting with Node.
@@ -49,8 +55,8 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.coffee` | [hello.coffee](hello.coffee) verified |
-| `._coffee` | [hello._coffee](variants/ext-coffee-2e5f636f66666565/hello._coffee) created; verification pending |
-| `.cake` | [hello.cake](variants/ext-cake-2e63616b65/hello.cake) created; verification pending |
+| `._coffee` | [hello._coffee](variants/ext-coffee-2e5f636f66666565/hello._coffee) syntax and behavior verified |
+| `.cake` | [hello.cake](variants/ext-cake-2e63616b65/hello.cake) syntax and behavior verified |
 | `.cjsx` | [hello.cjsx](variants/ext-cjsx-2e636a7378/hello.cjsx) created; verification pending |
 | `.coffee.erb` | [hello.coffee.erb](variants/ext-coffee-erb-2e636f666665652e657262/hello.coffee.erb) created; verification pending |
 | `.iced` | [hello.iced](variants/ext-iced-2e69636564/hello.iced) created; verification pending |

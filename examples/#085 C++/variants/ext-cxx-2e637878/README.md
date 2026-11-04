@@ -1,5 +1,9 @@
 # 0085 C++: variant `.cxx`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.cxx`. Variant only. Main language status and other suffixes unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e637878.json).
+
 Role: Textual Alias of the same format and of the same programma/dataset of the original model.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#085 C++/hello.cpp
@@ -18,8 +22,7 @@ g++ -x c++ hello.cxx -o <output>/hello; <output>/hello
 
 Expected result: Exit 0; exit program 0, stdout Hello, World! plus newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ordinal": 484,
+  "name": "OASv3-yaml",
+  "extension": ".yml",
+  "timestamp_utc": "2026-11-04T19:57:24.966862+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "scope": "Swagger Parser validates the OpenAPI 3 specification; Ajv checks the response schema; the loopback HTTP fixture returns the exact greeting and no public listener is opened.",
+  "working_directory": "<workspace>\\work\\native_followup_20261104\\windows_late\\484-yml",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "environment": {
+    "NODE_PATH": "<workspace>\\work\\tools_481_500\\node\\node_modules"
+  },
+  "artifact_sha256": {
+    "examples/#484 OASv3-yaml/variants/yml-ea91093d/hello.yml": "0ceb65289f203fe59ba3967c55a71e92885449bdaec146fc17bfb2ceb80834c0"
+  },
+  "verification_driver": {
+    "corpus_path": "examples/#484 OASv3-yaml/verify.cjs",
+    "original_sha256": "0abc61b66cac54cb7966da230a2f0de76d1bbd56a25c9800abba2b223f63db97",
+    "staged_sha256": "0abc61b66cac54cb7966da230a2f0de76d1bbd56a25c9800abba2b223f63db97",
+    "staged_filename": "verify.cjs",
+    "adaptation": null
+  },
+  "versions": [
+    {
+      "label": "Version and module availability",
+      "command": [
+        "<node>",
+        "-e",
+        "const fs=require(\"node:fs\"),p=require(\"node:path\"); const wanted=JSON.parse(process.argv[1]); let result={node:process.version}; for(const id of wanted){const path=p.join(process.env.NODE_PATH,id,\"package.json\");require.resolve(id);result[id]=JSON.parse(fs.readFileSync(path,\"utf8\")).version;} console.log(JSON.stringify(result));",
+        "[\"@apidevtools/swagger-parser\", \"ajv\"]"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"node\":\"v22.20.0\",\"@apidevtools/swagger-parser\":\"13.1.0\",\"ajv\":\"8.20.0\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.223
+    }
+  ],
+  "steps": [
+    {
+      "label": "Execute exact native checks on the variant",
+      "command": [
+        "<node>",
+        "verify.cjs",
+        "hello.yml"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "elapsed_seconds": 2.107
+    }
+  ],
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "repo_sources_modified": false,
+  "published_driver": {
+    "path": "examples/#484 OASv3-yaml/verify.cjs",
+    "sha256": "0abc61b66cac54cb7966da230a2f0de76d1bbd56a25c9800abba2b223f63db97"
+  },
+  "test_scope_description": "Swagger Parser validates the OpenAPI 3 specification; Ajv checks the response schema; the loopback HTTP fixture returns the exact greeting and no public listener is opened."
+}

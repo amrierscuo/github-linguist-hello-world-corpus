@@ -1,5 +1,11 @@
 # #304 INI
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.cfg`: Unchanged suffix variant; main example status unchanged. [Evidence](verification/native_20261104_followup_2e636667.json).
+- `.properties`: Unchanged suffix variant; main example status unchanged. [Evidence](verification/native_20261104_followup_2e70726f70657274696573.json).
+
 Read message in a INI greeting section and recover greeting.
 
 ## Toolchain
@@ -34,7 +40,7 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.ini` | [hello.ini](hello.ini) verified |
-| `.cfg` | [hello.cfg](variants/cfg-9b787153/hello.cfg) created; verification pending |
+| `.cfg` | [hello.cfg](variants/cfg-9b787153/hello.cfg) syntax and behavior verified |
 | `.cnf` | [hello.cnf](variants/cnf-a92aaf57/hello.cnf) created; verification pending |
 | `.container` | [hello.container](variants/container-f1a82e30/hello.container) created; verification pending |
 | `.dof` | [hello.dof](variants/dof-3be3c923/hello.dof) created; verification pending |
@@ -44,7 +50,7 @@ Verification of the main sample and each variant is recorded separately.
 | `.network` | [hello.network](variants/network-e59c1258/hello.network) created; verification pending |
 | `.prefs` | [hello.prefs](variants/prefs-3d6ae810/hello.prefs) created; verification pending |
 | `.pro` | [hello.pro](variants/pro-1d8a87ac/hello.pro) created; verification pending |
-| `.properties` | [hello.properties](variants/properties-4792f091/hello.properties) created; verification pending |
+| `.properties` | [hello.properties](variants/properties-4792f091/hello.properties) syntax and behavior verified |
 | `.service` | [corpus-hello.service](variants/service-a434241b/corpus-hello.service) created; verification pending |
 | `.socket` | [corpus-hello.socket](variants/socket-342b56ef/corpus-hello.socket) created; verification pending |
 | `.target` | [corpus-hello.target](variants/target-459dc81b/corpus-hello.target) created; verification pending |

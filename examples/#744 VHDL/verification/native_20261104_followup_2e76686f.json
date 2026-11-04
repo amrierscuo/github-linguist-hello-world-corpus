@@ -1,0 +1,114 @@
+{
+  "ordinal": 744,
+  "extension": ".vho",
+  "name": "VHDL",
+  "main_status": "unchanged",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "source_hashes": {
+    "examples/#744 VHDL/variants/vho-0ab0d39a/hello.vho": "9bd5c2e8ca7c68a2dc5519862bdece43f2c2237505af7dc572c036effe6395a8",
+    "examples/#744 VHDL/variants/vho-0ab0d39a/testbench.vhdl": "3d32d98787c0c5d7492c8cb2479b25ca301b4f46131aa37317ae8e01857ecfdf"
+  },
+  "steps": [
+    {
+      "label": "GHDL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "20s",
+        "${WORKSPACE}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho",
+      "exit_code": 0,
+      "stdout": "GHDL 4.1.0 (Ubuntu 4.1.0+dfsg-0ubuntu2.1) [Dunoon edition]\n Compiled with GNAT Version: 13.3.0\n static elaboration, mcode JIT code generator\nWritten by Tristan Gingold.\n\nCopyright (C) 2003 - 2024 Tristan Gingold.\nGHDL is free software, covered by the GNU General Public License.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n",
+      "stderr": "",
+      "stdin": null,
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GHDL_PREFIX": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho"
+      }
+    },
+    {
+      "label": "Analyze original VHDL variant",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "20s",
+        "${WORKSPACE}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "-a",
+        "--std=08",
+        "--workdir=${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho/build",
+        "hello.vho",
+        "testbench.vhdl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "stdin": null,
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GHDL_PREFIX": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho"
+      }
+    },
+    {
+      "label": "Elaborate the original design",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "20s",
+        "${WORKSPACE}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "-e",
+        "--std=08",
+        "--workdir=${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho/build",
+        "greeting_tb"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "stdin": null,
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GHDL_PREFIX": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho"
+      }
+    },
+    {
+      "label": "Simulate original VHDL variant",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "20s",
+        "${WORKSPACE}/work/tools_741_760/ubuntu/usr/bin/ghdl-mcode",
+        "-r",
+        "--std=08",
+        "--workdir=${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho/build",
+        "greeting_tb",
+        "--stop-time=2ns"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho",
+      "exit_code": 0,
+      "stdout": "testbench.vhdl:4:83:@1ns:(report note): Hello, World!\n",
+      "stderr": "",
+      "stdin": null,
+      "environment": {
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/x86_64-linux-gnu",
+        "GHDL_PREFIX": "${WORKSPACE}/work/tools_741_760/ubuntu/usr/lib/ghdl/mcode/vhdl",
+        "TMPDIR": "${WORKSPACE}/work/native_followup_20261104/wsl/variants/744-vho"
+      }
+    }
+  ],
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "verified_utc": "2026-11-04T20:03:23.559443+00:00",
+  "toolchain": {
+    "name": "GHDL mcode",
+    "version": "GHDL 4.1.0 (Ubuntu 4.1.0+dfsg-0ubuntu2.1) [Dunoon edition]"
+  },
+  "scope": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Exact file analyzed, elaborated and simulated by GHDL. The .vho testbench also asserts the greeting signal value."
+}

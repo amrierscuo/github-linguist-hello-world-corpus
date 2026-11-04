@@ -1,0 +1,62 @@
+{
+  "ordinal": 589,
+  "name": "RMarkdown",
+  "verified_utc": "2026-11-04T19:59:16.167832+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "toolchain": "R 4.6.1, rmarkdown and knitr from CRAN, Pandoc 3.8.3",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "source_hashes": {
+    "examples/#589 RMarkdown/hello.rmd": "2741a002db695e1b02a6d651acbb8160d415a1341856be8e0f3d0e6eaa0d86fb"
+  },
+  "extensions": {
+    ".rmd": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "description": "The original R Markdown chunk executed with knitr; Pandoc rendered HTML containing the greeting in the chunk output. Quarto .qmd was not exercised.",
+  "steps": [
+    {
+      "command": [
+        "<workspace>\\work\\native_followup_20261104\\main\\rmd\\pandoc.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\main\\rmd",
+      "exit_code": 0,
+      "stdout": "pandoc 3.8.3\nFeatures: +server +lua\nScripting engine: Lua 5.4\nUser data directory: <user-profile>\\AppData\\Roaming\\pandoc\nCopyright (C) 2006-2025 John MacFarlane. Web:  https://pandoc.org\nThis is free software; see the source for copying conditions. There is no\nwarranty, not even for merchantability or fitness for a particular purpose.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<user-profile>/AppData/Local/Programs/R/R-4.6.1/bin/Rscript.exe",
+        "--vanilla",
+        "-e",
+        "options(timeout=90); install.packages(\"rmarkdown\", lib=Sys.getenv(\"R_LIBS_USER\"), repos=\"https://cran.r-project.org\", type=\"binary\", dependencies=c(\"Depends\",\"Imports\",\"LinkingTo\")); stopifnot(requireNamespace(\"rmarkdown\",quietly=TRUE), requireNamespace(\"knitr\",quietly=TRUE))"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\main\\rmd",
+      "exit_code": 0,
+      "stdout": "package 'cli' successfully unpacked and MD5 sums checked\npackage 'fs' successfully unpacked and MD5 sums checked\npackage 'R6' successfully unpacked and MD5 sums checked\npackage 'rappdirs' successfully unpacked and MD5 sums checked\npackage 'base64enc' successfully unpacked and MD5 sums checked\npackage 'cachem' successfully unpacked and MD5 sums checked\npackage 'fastmap' successfully unpacked and MD5 sums checked\npackage 'lifecycle' successfully unpacked and MD5 sums checked\npackage 'memoise' successfully unpacked and MD5 sums checked\npackage 'mime' successfully unpacked and MD5 sums checked\npackage 'rlang' successfully unpacked and MD5 sums checked\npackage 'sass' successfully unpacked and MD5 sums checked\npackage 'digest' successfully unpacked and MD5 sums checked\npackage 'highr' successfully unpacked and MD5 sums checked\npackage 'bslib' successfully unpacked and MD5 sums checked\npackage 'evaluate' successfully unpacked and MD5 sums checked\npackage 'fontawesome' successfully unpacked and MD5 sums checked\npackage 'htmltools' successfully unpacked and MD5 sums checked\npackage 'jquerylib' successfully unpacked and MD5 sums checked\npackage 'jsonlite' successfully unpacked and MD5 sums checked\npackage 'knitr' successfully unpacked and MD5 sums checked\npackage 'tinytex' successfully unpacked and MD5 sums checked\npackage 'xfun' successfully unpacked and MD5 sums checked\npackage 'yaml' successfully unpacked and MD5 sums checked\npackage 'rmarkdown' successfully unpacked and MD5 sums checked\n\nThe downloaded binary packages are in\n\t<workspace>\\work\\native_followup_20261104\\main\\rmd\\temp\\RtmpmC0lok\\downloaded_packages\n",
+      "stderr": "also installing the dependencies 'cli', 'fs', 'R6', 'rappdirs', 'base64enc', 'cachem', 'fastmap', 'lifecycle', 'memoise', 'mime', 'rlang', 'sass', 'digest', 'highr', 'bslib', 'evaluate', 'fontawesome', 'htmltools', 'jquerylib', 'jsonlite', 'knitr', 'tinytex', 'xfun', 'yaml'\n\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/cli_3.6.6.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/fs_2.1.0.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/R6_2.6.1.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/rappdirs_0.3.4.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/base64enc_0.1-6.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/cachem_1.1.0.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/fastmap_1.2.0.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/lifecycle_1.0.5.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/memoise_2.0.1.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/mime_0.13.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/rlang_1.3.0.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/sass_0.4.10.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/digest_0.6.39.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/highr_0.12.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/bslib_0.12.0.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/evaluate_1.0.5.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/fontawesome_0.5.3.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/htmltools_0.5.9.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/jquerylib_0.1.4.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/jsonlite_2.0.0.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/knitr_1.52.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/tinytex_0.61.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/xfun_0.62.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/yaml_2.3.12.zip'\ntrying URL 'https://cran.r-project.org/bin/windows/contrib/4.6/rmarkdown_2.32.zip'\n"
+    },
+    {
+      "command": [
+        "<user-profile>/AppData/Local/Programs/R/R-4.6.1/bin/Rscript.exe",
+        "--vanilla",
+        "-e",
+        "cat(R.version.string, \"\\n\"); cat(\"rmarkdown\",as.character(packageVersion(\"rmarkdown\")),\"knitr\",as.character(packageVersion(\"knitr\")),\"pandoc\",as.character(rmarkdown::pandoc_version()),\"\\n\"); rmarkdown::render(\"hello.rmd\",output_file=\"hello.html\",quiet=TRUE,clean=TRUE)"
+      ],
+      "cwd": "<workspace>\\work\\native_followup_20261104\\main\\rmd",
+      "exit_code": 0,
+      "stdout": "R version 4.6.1 (2026-06-24 ucrt) \nrmarkdown 2.32 knitr 1.52 pandoc 3.8.3 \n",
+      "stderr": ""
+    }
+  ],
+  "rendered_sha256": "17b6fb0ff8e097e47d3bfe1ea266042878af7ac8377a8f8e547e10acfc115f24",
+  "toolchain_download": {
+    "url": "https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-windows-x86_64.zip",
+    "sha256": "a77c14078a5c4c6e396d5f5c03f4849eff4a858414bb9e69560bb35528cbf57a"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The original R Markdown chunk executed with knitr; Pandoc rendered HTML containing the greeting in the chunk output. Quarto .qmd was not exercised."
+}

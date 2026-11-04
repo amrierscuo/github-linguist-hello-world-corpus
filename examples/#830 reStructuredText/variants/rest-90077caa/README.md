@@ -1,5 +1,9 @@
 # 0830: reStructuredText: `.rest`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.rest`. Docutils: original AST and HTML5 renderer preserve exact paragraph and inline emphasis. [Recorded evidence](../../verification/native_20261104_followup_2e72657374.json).
+
 Textual variation of the same format, with canon suffix .rest.
 
 Origin: copy of the original `examples/#830 reStructuredText/hello.rst` file.

@@ -1,5 +1,9 @@
 # 0570: Python: `.cgi`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.cgi`. CPython executes the exact CGI source; validates serialized Content-Type header and body, without starting a CGI server. The driver preserves the source CRLF delimiters on Windows. [Recorded evidence](../../verification/native_20261104_followup_2e636769.json).
+
 Entrypoint CGI emitting header HTTP and greeting body.
 
 Provenience: original example written for the role of this suffix.

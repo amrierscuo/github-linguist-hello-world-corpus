@@ -1,5 +1,9 @@
 # 0564: Pug: `.jade`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.jade`. Pug template engine renders the greeting and checks HTML escaping of input. [Recorded evidence](../../verification/native_20261104_followup_2e6a616465.json).
+
 Textual variation of the same format, with canon suffix .jade.
 
 Origin: copy of the original `examples/#564 Pug/hello.pug` file.

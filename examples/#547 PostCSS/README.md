@@ -1,5 +1,10 @@
 # #547 PostCSS
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.postcss`: PostCSS and the custom properties plugin transform this source and verify the greeting in the CSS content declaration. [Evidence](verification/native_20261104_followup_2e706f7374637373.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +43,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.pcss` | [hello.pcss](hello.pcss) verified |
-| `.postcss` | [hello.postcss](variants/postcss-ca8f3f2b/hello.postcss) created; verification pending |
+| `.postcss` | [hello.postcss](variants/postcss-ca8f3f2b/hello.postcss) syntax and behavior verified |

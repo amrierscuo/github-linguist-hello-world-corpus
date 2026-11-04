@@ -1,5 +1,9 @@
 # 0798: YARA: `.yara`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.yara`. YARA: compile the original rules, match the exact declared greeting.txt (including its trailing LF), and reject a separate Hello, Moon! fixture. [Recorded evidence](../../verification/native_20261104_followup_2e79617261.json).
+
 Textual variation of the same format, with canon suffix .yara.
 
 Origin: copy of the original `examples/#798 YARA/hello.yar` file.

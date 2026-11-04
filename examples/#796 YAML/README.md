@@ -1,5 +1,10 @@
 # #796 YAML
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.yaml`: PyYAML: parse original YAML and assert exact greeting mapping; this is the ordinary .yaml variant. [Evidence](verification/native_20261104_followup_2e79616d6c.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -42,7 +47,7 @@ Verification of the main sample and each variant is recorded separately.
 | `.rviz` | [hello.rviz](variants/rviz-2327f1f4/hello.rviz) created; verification pending |
 | `.sublime-syntax` | [hello.sublime-syntax](variants/sublime-syntax-35002c21/hello.sublime-syntax) created; verification pending |
 | `.syntax` | [hello.syntax](variants/syntax-0ed79f06/hello.syntax) created; verification pending |
-| `.yaml` | [hello.yaml](variants/yaml-fa1b82e8/hello.yaml) created; verification pending |
+| `.yaml` | [hello.yaml](variants/yaml-fa1b82e8/hello.yaml) syntax and behavior verified |
 | `.yaml-tmlanguage` | [hello.yaml-tmlanguage](variants/yaml-tmlanguage-f2fa8d15/hello.yaml-tmlanguage) created; verification pending |
 | `.yaml.sed` | [hello.yaml.sed](variants/yaml-sed-463fad60/hello.yaml.sed) created; verification pending |
 | `.yml.mysql` | [hello.yml.mysql](variants/yml-mysql-d412fc04/hello.yml.mysql) created; verification pending |

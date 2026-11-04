@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-04T19:57:27.222852+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "RPM Spec",
+  "ordinal": 594,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for rpm",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "rpm=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:27.289103+00:00",
+      "exit_code": 0,
+      "stdout": "Package: rpm\nArchitecture: amd64\nVersion: 4.18.2+dfsg-2.1build2\nPriority: optional\nSection: universe/admin\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 520\nDepends: libc6 (>= 2.34), libelf1t64 (>= 0.131), libpopt0 (>= 1.14), libreadline8t64 (>= 6.0), librpm9t64 (>= 4.18.0+dfsg), librpmbuild9t64 (>= 4.17.0+dfsg1), librpmio9t64 (>= 4.14.0+dfsg1), librpmsign9t64 (>= 4.17.0+dfsg1), perl:any, rpm2cpio, debugedit (>= 1:5), rpm-common (= 4.18.2+dfsg-2.1build2)\nSuggests: alien, python3, elfutils, rpmlint, rpm-i18n\nFilename: pool/universe/r/rpm/rpm_4.18.2+dfsg-2.1build2_amd64.deb\nSize: 161282\nMD5sum: 904ef0d8b5b32276b24af8d06abc2b42\nSHA1: ce991d326583c1f898d8caab913fd37c7a43bcf9\nSHA256: aa01909d18eb036c641ba7707d0e5f32a3263e65430b730b0c55c2b2622463c3\nSHA512: 2f9f4a0309a550325b1f7bc10b675d14ce4451ade31209e0013a9c68cdd03f47621eed82fd444d981327274361a17a596bdf05aaa4391a9d75a9adfbbe87dea0\nHomepage: https://rpm.org/\nDescription-en: package manager for RPM\n The RPM Package Manager (RPM) is a command-line driven package\n management system capable of installing, uninstalling, verifying,\n querying, and updating computer software packages.\n .\n On Debian and derived systems it is recommended to use \"alien\" to\n convert RPM packages into .deb format instead of bypassing the Debian\n package management system by installing them directly with rpm.\nDescription-md5: b637dea69233214122f83668b1ac634e\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract rpm without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/tools_581_600/debs/rpm_4.18.2+dfsg-2.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:27.634986+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for rpm-common",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "rpm-common=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:28.561513+00:00",
+      "exit_code": 0,
+      "stdout": "Package: rpm-common\nArchitecture: amd64\nVersion: 4.18.2+dfsg-2.1build2\nPriority: optional\nSection: universe/admin\nSource: rpm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 472\nDepends: libaudit1 (>= 1:2.2.1), libc6 (>= 2.33), libdbus-1-3 (>= 1.9.14), librpm9t64 (>= 4.17.0+dfsg1), librpmio9t64 (>= 4.18.0+dfsg), libselinux1 (>= 3.1~)\nFilename: pool/universe/r/rpm/rpm-common_4.18.2+dfsg-2.1build2_amd64.deb\nSize: 33992\nMD5sum: 00d37a7f706486cbb6750a5d9ef70587\nSHA1: fe7342af01ceeb2d4da726395891fb0014f641b9\nSHA256: 579db09f30cb0497e1a66d94433d72d572aef420728f080dc541e48126bcb28c\nSHA512: aa15a4fd168976ed7aa1332fb7523857c4457860180c06fe1a8daeb9da116b1b4f4638415bae4009598f35e620f2ec58f7ea9756126428708c6e4c299b621ff2\nHomepage: https://rpm.org/\nDescription-en: common files for RPM\n The RPM Package Manager (RPM) is a command-line driven package\n management system capable of installing, uninstalling, verifying,\n querying, and updating computer software packages.\n .\n This package contains some scripts and default configuration which is\n used by RPM libraries.\nDescription-md5: 281a776fb3c0b33e3fa2befccc935f42\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract rpm-common without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/tools_581_600/debs/rpm-common_4.18.2+dfsg-2.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:28.641648+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for librpm9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "librpm9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:30.565142+00:00",
+      "exit_code": 0,
+      "stdout": "Package: librpm9t64\nArchitecture: amd64\nVersion: 4.18.2+dfsg-2.1build2\nPriority: optional\nSection: universe/libs\nSource: rpm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 546\nProvides: librpm9 (= 4.18.2+dfsg-2.1build2)\nDepends: libc6 (>= 2.38), libcap2 (>= 1:2.10), liblua5.3-0, libpopt0 (>= 1.14), librpmio9t64 (= 4.18.2+dfsg-2.1build2), libsqlite3-0 (>= 3.7.15)\nRecommends: rpm-common (= 4.18.2+dfsg-2.1build2)\nBreaks: librpm9 (<< 4.18.2+dfsg-2.1build2)\nReplaces: librpm9\nFilename: pool/universe/r/rpm/librpm9t64_4.18.2+dfsg-2.1build2_amd64.deb\nSize: 216762\nMD5sum: e37374b3d38718d06120fc677f09bbf8\nSHA1: 07fcf37ce1694f02f40c47bb2c91f3f7faeb3635\nSHA256: 04e7ec5f2960f43b317d1f6016af9ccd843924783c38a9826d9675915579d3fb\nSHA512: ce65a7d33ab2cc9b34ff64450c3441eebc6659ad886103dfcfaa4fd6a35a8b7c8695edc3003012c69d7fc42b7d0c7072902ae5cede3cee20061615cecbeca626\nHomepage: https://rpm.org/\nDescription-en: RPM shared library\n The RPM Package Manager (RPM) is a command-line driven package\n management system capable of installing, uninstalling, verifying,\n querying, and updating computer software packages.\n .\n This library allows programs to make use of an RPM database or RPM packages\n without going through the program rpm.\nDescription-md5: 43dcb3c7127ac155f80bce6eb02448dc\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only librpm9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "librpm9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpm9t64",
+      "timestamp_utc": "2026-11-04T19:57:30.638737+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 librpm9t64 amd64 4.18.2+dfsg-2.1build2 [217 kB]\nFetched 217 kB in 1s (188 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract librpm9t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpm9t64/librpm9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:32.740185+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for librpmbuild9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "librpmbuild9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:33.110799+00:00",
+      "exit_code": 0,
+      "stdout": "Package: librpmbuild9t64\nArchitecture: amd64\nVersion: 4.18.2+dfsg-2.1build2\nPriority: optional\nSection: universe/libs\nSource: rpm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 223\nProvides: librpmbuild9 (= 4.18.2+dfsg-2.1build2)\nDepends: libc6 (>= 2.38), libdw1t64 (>= 0.177), libelf1t64 (>= 0.142), libgomp1 (>= 4.9), liblua5.3-0, libmagic1t64 (>= 5.12), libpopt0 (>= 1.14), librpm9t64 (= 4.18.2+dfsg-2.1build2), librpmio9t64 (= 4.18.2+dfsg-2.1build2)\nBreaks: librpmbuild9 (<< 4.18.2+dfsg-2.1build2)\nReplaces: librpmbuild9\nFilename: pool/universe/r/rpm/librpmbuild9t64_4.18.2+dfsg-2.1build2_amd64.deb\nSize: 80146\nMD5sum: d4a4a364358744b285b093adb1eecbc6\nSHA1: 5a53404ba183e0e276e49fd9c5859123ccd07e97\nSHA256: 83b717d49615a45346d8b93512cda283a74381192f34612a71f4217815eb7b48\nSHA512: 0c27ce81cbcdc88aba5f57b7c3adb95422a99d233eaf3c290d5e41b811a42325c4a599ef21bc925d587522a0955223460246db9d446ef8aa865c8b4d66e129e4\nHomepage: https://rpm.org/\nDescription-en: RPM build shared library\n The RPM Package Manager (RPM) is a command-line driven package\n management system capable of installing, uninstalling, verifying,\n querying, and updating computer software packages.\n .\n This library provides an interface for building RPM packages.\nDescription-md5: 6c8fdac9007ad1483cb5ded0c7a78d4e\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only librpmbuild9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "librpmbuild9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpmbuild9t64",
+      "timestamp_utc": "2026-11-04T19:57:33.216144+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 librpmbuild9t64 amd64 4.18.2+dfsg-2.1build2 [80.1 kB]\nFetched 80.1 kB in 1s (105 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract librpmbuild9t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpmbuild9t64/librpmbuild9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:35.212739+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for librpmio9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "librpmio9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:35.874677+00:00",
+      "exit_code": 0,
+      "stdout": "Package: librpmio9t64\nArchitecture: amd64\nVersion: 4.18.2+dfsg-2.1build2\nPriority: optional\nSection: universe/libs\nSource: rpm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 250\nProvides: librpmio9 (= 4.18.2+dfsg-2.1build2)\nDepends: libbz2-1.0, libc6 (>= 2.38), libgcrypt20 (>= 1.10.0), liblua5.3-0, liblzma5 (>= 5.2.2), libpopt0 (>= 1.14), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nBreaks: librpmio9 (<< 4.18.2+dfsg-2.1build2)\nReplaces: librpmio9\nFilename: pool/universe/r/rpm/librpmio9t64_4.18.2+dfsg-2.1build2_amd64.deb\nSize: 95170\nMD5sum: d1e500f266736fcfb518aedc186bda4c\nSHA1: a2f9b88f5fbf601e93a5862cd02eae742e076463\nSHA256: 1cd838311f359300983b7df4de609062d8fcffc0987c28b1bc4ab3e828d9fa02\nSHA512: 9f860a46315d1080ee8c64c2d358ba6f4a718142da6669241557ed7a7cd5a45bb537c06e1c3a36864951fc36525998087ac69964d6a4f2e8d97a76105db2c288\nHomepage: https://rpm.org/\nDescription-en: RPM IO shared library\n The RPM Package Manager (RPM) is a command-line driven package\n management system capable of installing, uninstalling, verifying,\n querying, and updating computer software packages.\n .\n This library provides basic IO functionality which is used by librpm.\nDescription-md5: b102b4700b4f67e72b6c457300d1dee3\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only librpmio9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "librpmio9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpmio9t64",
+      "timestamp_utc": "2026-11-04T19:57:35.959756+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 librpmio9t64 amd64 4.18.2+dfsg-2.1build2 [95.2 kB]\nFetched 95.2 kB in 1s (103 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract librpmio9t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpmio9t64/librpmio9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:37.834662+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for librpmsign9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "librpmsign9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:38.403262+00:00",
+      "exit_code": 0,
+      "stdout": "Package: librpmsign9t64\nArchitecture: amd64\nVersion: 4.18.2+dfsg-2.1build2\nPriority: optional\nSection: universe/libs\nSource: rpm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 57\nProvides: librpmsign9 (= 4.18.2+dfsg-2.1build2)\nDepends: libc6 (>= 2.33), libfsverity0 (>= 1.2), libpopt0 (>= 1.14), librpm9t64 (= 4.18.2+dfsg-2.1build2), librpmio9t64 (= 4.18.2+dfsg-2.1build2)\nBreaks: librpmsign9 (<< 4.18.2+dfsg-2.1build2)\nReplaces: librpmsign9\nFilename: pool/universe/r/rpm/librpmsign9t64_4.18.2+dfsg-2.1build2_amd64.deb\nSize: 11960\nMD5sum: e4381d662af83062264b2bd282d191f9\nSHA1: c3136fd2bef6e4c4463792404f72385d1de4e2bc\nSHA256: bf658edb8544e144a757d09a700d2e53825cad60e58ab06bcf1b8ca4ca59c68b\nSHA512: a1999b7d57f37e78610b6fd2f46509e5a04104fa5d3d40858cb18dd4a82be5e2fba82e189ed09a1e0c750a3ce25d444e9cc6a236ee2f4b7822a606a16524cec3\nHomepage: https://rpm.org/\nDescription-en: RPM signing shared library\n The RPM Package Manager (RPM) is a command-line driven package\n management system capable of installing, uninstalling, verifying,\n querying, and updating computer software packages.\n .\n This library provides an interface for signing RPM packages.\nDescription-md5: c2958f0a844ec375af9b40fae17c7280\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only librpmsign9t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "librpmsign9t64=4.18.2+dfsg-2.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpmsign9t64",
+      "timestamp_utc": "2026-11-04T19:57:38.513512+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 librpmsign9t64 amd64 4.18.2+dfsg-2.1build2 [12.0 kB]\nFetched 12.0 kB in 1s (18.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract librpmsign9t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/librpmsign9t64/librpmsign9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:40.616697+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libpopt0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libpopt0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:40.849615+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libpopt0\nArchitecture: amd64\nVersion: 1.19+dfsg-1build1\nMulti-Arch: same\nPriority: important\nSection: libs\nSource: popt\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Håvard F. Aasen <havard.f.aasen@pfft.no>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 120\nDepends: libc6 (>= 2.38)\nFilename: pool/main/p/popt/libpopt0_1.19+dfsg-1build1_amd64.deb\nSize: 28562\nMD5sum: 732703aa246379989a5d45d507a218cd\nSHA1: 1a3a80f1a3bd75f87ac8a2f369f856770db517d6\nSHA256: b3e7ea5192e57c847b77c527d51f5b8d4bce47988d2ba326a5c3193f6d173ded\nSHA512: de347a4711b1cfb9a1abbeeb5b465fe3ff84b4f87dbd05c7b80566cb3cc8c6b6b0c6bd924e7a031489d48b104c72b1d7df4507e07dbb8eb96166b13e86e029fb\nHomepage: https://github.com/rpm-software-management/popt\nDescription-en: lib for parsing cmdline parameters\n Popt was heavily influenced by the getopt() and getopt_long() functions,\n but it allows more powerful argument expansion. It can parse arbitrary\n argv[] style arrays and automatically set variables based on command\n line arguments. It also allows command line arguments to be aliased via\n configuration files and includes utility functions for parsing arbitrary\n strings into argv[] arrays using shell-like rules.\n .\n This package contains the runtime library and locale data.\nDescription-md5: 1bc14780a06cc6b9a0c726cd091c6d96\nTask: minimal, server-minimal\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libpopt0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/tools_581_600/debs/libpopt0_1.19+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:41.014579+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libfsverity0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libfsverity0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:41.345957+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libfsverity0\nArchitecture: amd64\nVersion: 1.5-1.1build3\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: fsverity-utils\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Romain Perier <romain.perier@gmail.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 45\nDepends: libc6 (>= 2.14), libssl3t64 (>= 3.0.0)\nFilename: pool/universe/f/fsverity-utils/libfsverity0_1.5-1.1build3_amd64.deb\nSize: 11282\nMD5sum: fe1f1d41ad12686669e5233a28f71515\nSHA1: b6605a606779fa53ed7c2191fdeed547d2a9a30d\nSHA256: 1cec23aa3ab4a684794a28d77cdf97889171d7d77e0a7b6c9a88995e16ef4413\nSHA512: de9d3de8c4eb923f29cd400f43623513f712dbad34bd0bbc34181fd6b43037bcff0561b933ef70b836a094a75babecb8ddc136e32c064e645ee34531411c37ee\nHomepage: https://git.kernel.org/pub/scm/linux/kernel/git/ebiggers/fsverity-utils.git\nDescription-en: Shared library for fs-verity\n fs-verity is a Linux kernel feature that does transparent on-demand\n integrity/authenticity verification of the contents of read-only files,\n using a hidden Merkle tree (hash tree) associated with the file. The\n mechanism is similar to dm-verity, but implemented at the file level\n rather than at the block device level.\n .\n This package contains the libfsverity shared library.\nDescription-md5: de0c777ddfc8220efc5765488ee3a8ff\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libfsverity0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/tools_581_600/debs/libfsverity0_1.5-1.1build3_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:41.529803+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for liblua5.3-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "liblua5.3-0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:42.125293+00:00",
+      "exit_code": 0,
+      "stdout": "Package: liblua5.3-0\nArchitecture: amd64\nVersion: 5.3.6-2build2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: lua5.3\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Lua Team <pkg-lua-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 494\nDepends: libc6 (>= 2.38), libstdc++6 (>= 4.1.1)\nFilename: pool/universe/l/lua5.3/liblua5.3-0_5.3.6-2build2_amd64.deb\nSize: 142936\nMD5sum: fb001097075419342a5605ef8531d65a\nSHA1: eb96bf92623b96aabe2eb22fbf677193818b45ea\nSHA256: d0c29c8b7275fa9443f2b7274275a5459b4d950301145ee95da08ad8a3512c78\nSHA512: 33e93a517f4bf700c698e665577d5cd0c1a5af5098866472b7ffa67531cadb32af43a2d383ef6d5255c18eaedddcc5831ce954ab81c623d24a11f4073e20aa8a\nHomepage: https://www.lua.org\nDescription-en: Shared library for the Lua interpreter version 5.3\n Lua is a powerful, light-weight programming language designed for extending\n applications.  The language engine is accessible as a library, having a C\n API which allows the application to exchange data with Lua programs and also\n to extend Lua with C functions.  Lua is also used as a general-purpose,\n stand-alone language through the simple command line interpreter provided.\n .\n This package contains runtime libraries.  You shouldn't need to install it\n explicitly.\nDescription-md5: ca24127b6ccd3aae89a4e9de4d35c034\nTask: kubuntu-live, xubuntu-desktop, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only liblua5.3-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "liblua5.3-0=5.3.6-2build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/liblua5.3-0",
+      "timestamp_utc": "2026-11-04T19:57:42.239070+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblua5.3-0 amd64 5.3.6-2build2 [143 kB]\nFetched 143 kB in 1s (243 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract liblua5.3-0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/packages/liblua5.3-0/liblua5.3-0_5.3.6-2build2_amd64.deb",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:44.470242+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native rpmbuild version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root/usr/bin/rpmbuild",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:44.883509+00:00",
+      "exit_code": 0,
+      "stdout": "RPM version 4.18.2\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute only the original spec prep phase",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/rpm/root/usr/bin/rpmbuild",
+        "-bp",
+        "--nodeps",
+        "--define",
+        "_topdir ${WORKSPACE}/work/native_followup_20261104/wsl/rpm/build",
+        "hello.spec"
+      ],
+      "cwd": "${WORKSPACE}/work/native_followup_20261104/wsl/rpm",
+      "timestamp_utc": "2026-11-04T19:57:45.245512+00:00",
+      "exit_code": 0,
+      "stdout": "Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.CQAjfT\nHello, World!\n",
+      "stderr": "+ umask 022\n+ cd ${WORKSPACE}/work/native_followup_20261104/wsl/rpm/build/BUILD\n+ echo Hello, World!\n+ RPM_EC=0\n+ jobs -p\n+ exit 0\n"
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "rpm",
+      "version": "4.18.2+dfsg-2.1build2",
+      "ubuntu_archive_path": "pool/universe/r/rpm/rpm_4.18.2+dfsg-2.1build2_amd64.deb",
+      "sha256": "aa01909d18eb036c641ba7707d0e5f32a3263e65430b730b0c55c2b2622463c3"
+    },
+    {
+      "name": "rpm-common",
+      "version": "4.18.2+dfsg-2.1build2",
+      "ubuntu_archive_path": "pool/universe/r/rpm/rpm-common_4.18.2+dfsg-2.1build2_amd64.deb",
+      "sha256": "579db09f30cb0497e1a66d94433d72d572aef420728f080dc541e48126bcb28c"
+    },
+    {
+      "name": "librpm9t64",
+      "version": "4.18.2+dfsg-2.1build2",
+      "ubuntu_archive_path": "pool/universe/r/rpm/librpm9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+      "sha256": "04e7ec5f2960f43b317d1f6016af9ccd843924783c38a9826d9675915579d3fb"
+    },
+    {
+      "name": "librpmbuild9t64",
+      "version": "4.18.2+dfsg-2.1build2",
+      "ubuntu_archive_path": "pool/universe/r/rpm/librpmbuild9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+      "sha256": "83b717d49615a45346d8b93512cda283a74381192f34612a71f4217815eb7b48"
+    },
+    {
+      "name": "librpmio9t64",
+      "version": "4.18.2+dfsg-2.1build2",
+      "ubuntu_archive_path": "pool/universe/r/rpm/librpmio9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+      "sha256": "1cd838311f359300983b7df4de609062d8fcffc0987c28b1bc4ab3e828d9fa02"
+    },
+    {
+      "name": "librpmsign9t64",
+      "version": "4.18.2+dfsg-2.1build2",
+      "ubuntu_archive_path": "pool/universe/r/rpm/librpmsign9t64_4.18.2+dfsg-2.1build2_amd64.deb",
+      "sha256": "bf658edb8544e144a757d09a700d2e53825cad60e58ab06bcf1b8ca4ca59c68b"
+    },
+    {
+      "name": "libpopt0",
+      "version": "1.19+dfsg-1build1",
+      "ubuntu_archive_path": "pool/main/p/popt/libpopt0_1.19+dfsg-1build1_amd64.deb",
+      "sha256": "b3e7ea5192e57c847b77c527d51f5b8d4bce47988d2ba326a5c3193f6d173ded"
+    },
+    {
+      "name": "libfsverity0",
+      "version": "1.5-1.1build3",
+      "ubuntu_archive_path": "pool/universe/f/fsverity-utils/libfsverity0_1.5-1.1build3_amd64.deb",
+      "sha256": "1cec23aa3ab4a684794a28d77cdf97889171d7d77e0a7b6c9a88995e16ef4413"
+    },
+    {
+      "name": "liblua5.3-0",
+      "version": "5.3.6-2build2",
+      "ubuntu_archive_path": "pool/universe/l/lua5.3/liblua5.3-0_5.3.6-2build2_amd64.deb",
+      "sha256": "d0c29c8b7275fa9443f2b7274275a5459b4d950301145ee95da08ad8a3512c78"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#594 RPM Spec/hello.spec": "ab28f931e32e49cd33d922367c7d5432b561ab3f413ba7a9d36900e1b5a020a3"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "semantic_scope": "The native RPM parser accepted the spec and rpmbuild ran %prep, printing the exact greeting. No packages were installed and no RPM was built.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The native RPM parser accepted the spec and rpmbuild ran %prep, printing the exact greeting. No packages were installed and no RPM was built."
+}

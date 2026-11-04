@@ -1,5 +1,10 @@
 # #818 iCalendar
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.ical`: icalendar: parse and serialize/reparse an event, preserve its summary and validate date ordering. [Evidence](verification/native_20261104_followup_2e6963616c.json).
+
 Analyze an original iCalendar event and keep your greeting in roundtrip.
 
 ## Toolchain
@@ -35,4 +40,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.ics` | [hello.ics](hello.ics) verified |
-| `.ical` | [hello.ical](variants/ical-1b64d378/hello.ical) created; verification pending |
+| `.ical` | [hello.ical](variants/ical-1b64d378/hello.ical) syntax and behavior verified |

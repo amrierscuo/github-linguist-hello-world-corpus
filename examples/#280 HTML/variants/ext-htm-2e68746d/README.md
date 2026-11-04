@@ -1,5 +1,9 @@
 # 0280 HTML: variant `.htm`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.htm`. Unchanged suffix variant; main example status unchanged. [Recorded evidence](../../verification/native_20261104_followup_2e68746d.json).
+
 Role: Page in subset HTML common; .html.hl remains HTML/Hoplon format, not source ClojureScript .cljs.hl.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#280 HTML/hello.html
@@ -18,8 +22,7 @@ Reader HTML del modello: caricare hello.htm e controllare il DOM h1; per .html.h
 
 Expected result: Zero errors parser; heading Hello, World!; PASS.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.
