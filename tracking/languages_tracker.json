@@ -29154,16 +29154,18 @@
         "ace_mode": "sh"
       },
       "example": {
-        "semantic_goal": "Caricare una lista di opzioni RSpec e ottenere il saluto come intestazione del formatter documentation.",
+        "semantic_goal": "Load the original .rspec option list and obtain the greeting as the documentation formatter heading.",
         "validation_mode": "load_options_and_assert_formatter_output",
-        "toolchain": "Ruby e RSpec",
+        "toolchain": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]; RSpec 3.13;   - rspec-core 3.13.0;   - rspec-expectations 3.13.0;   - rspec-mocks 3.13.0;   - rspec-support 3.13.1",
         "files": [
           "examples/#509 Option List/.rspec",
-          "examples/#509 Option List/hello_spec.rb"
+          "examples/#509 Option List/hello_spec.rb",
+          "examples/#509 Option List/README.md",
+          "examples/#509 Option List/verification/native_20261105.json"
         ],
         "build_command": null,
         "run_or_check_command": "rspec hello_spec.rb",
-        "expected_result": "formatter documentation mostra Hello, World!; un esempio passa.",
+        "expected_result": "Documentation formatter shows Hello, World! and adds two integers; 1 example, 0 failures; no ANSI color.",
         "sources": [
           {
             "title": "RSpec options",
@@ -29175,16 +29177,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "L’artefatto primario è .rspec: la verifica deve usare le opzioni di quel file, non un comando che le ripete."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T09:49:14.793027+00:00",
+        "verification_log": "examples/#509 Option List/verification/native_20261105.json",
+        "blockers": [],
+        "notes": "RSpec automatically loaded the exact original .rspec and used its documentation formatter: Hello, World! heading, adds two integers, and 1 example, 0 failures, without ANSI color. A control using the identical hello_spec.rb in a directory without .rspec passed with the progress formatter and no greeting heading. Only this filename-based Option List example is verified; no extension pairs or GitHub language detection are implied.",
+        "verified_artifact_sha256": {
+          "examples/#509 Option List/.rspec": "cbccf1313cc631dd91d819636d476ae2d7ea4206b09b90ae760917a40c679db4",
+          "examples/#509 Option List/hello_spec.rb": "1a9c8f6e3ca0c68ced68e4f3eefd846f8599db8f45f32d8f304b098c5401f05b"
+        }
       }
     },
     {

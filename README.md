@@ -17,11 +17,11 @@ The reference contains 563 programming, 71 markup, 184 data, and 18 prose entrie
 | Recorded coverage | Count |
 | --- | ---: |
 | Canonical entries with an artifact or draft | 836 / 836 |
-| Main samples with verified syntax | 548 / 836 |
-| Main samples with verified behavior | 521 / 836 |
+| Main samples with verified syntax | 549 / 836 |
+| Main samples with verified behavior | 522 / 836 |
 | Language and extension pairs with a file | 1738 / 1749 |
 
-Latest verification batch: **2026-11-04**. It added 9 main syntax checks, 9 main behavior checks, and 90 separately verified extension pairs. See the [recorded checks](tracking/VERIFICATION_20261104_FOLLOWUP.md) and the [earlier batch](tracking/VERIFICATION_20261104.md).
+Latest verification: **2026-11-05**. Option List passed a native RSpec run and a control without its configuration file, adding one main syntax check and one main behavior check. See the [recorded check](tracking/VERIFICATION_20261105.md), the [previous follow-up](tracking/VERIFICATION_20261104_FOLLOWUP.md), and the [earlier batch](tracking/VERIFICATION_20261104.md).
 
 Follow the README in each example directory for its commands, expected result, and limitations. An artifact can still be a draft. A syntax check confirms that the stated validator accepts the sample; behavioral verification also checks the intended result. The audits check recorded evidence, file hashes, and counts. Run the individual commands to reproduce an example's result.
 

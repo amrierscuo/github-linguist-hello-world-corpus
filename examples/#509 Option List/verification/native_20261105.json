@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T09:49:14.793027+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Option List",
+  "ordinal": 509,
+  "commands": [
+    {
+      "label": "Read cached Ruby archive identity",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "--field",
+        "${WORKSPACE}/work/tools_221_240/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "Package",
+        "Version",
+        "Architecture"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:14.836565+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby3.2\nVersion: 3.2.3-1ubuntu0.24.04.8\nArchitecture: amd64\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract cached ruby3.2 into this isolated work tree",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/tools_221_240/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:14.862951+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read cached Ruby archive identity",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "--field",
+        "${WORKSPACE}/work/tools_221_240/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "Package",
+        "Version",
+        "Architecture"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:14.978061+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libruby3.2\nVersion: 3.2.3-1ubuntu0.24.04.8\nArchitecture: amd64\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract cached libruby3.2 into this isolated work tree",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/tools_221_240/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:15.053182+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-rspec-core",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-rspec-core"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:22.020328+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-rspec-core\nArchitecture: all\nVersion: 3.13.0c0e0m0s1-2\nPriority: optional\nSection: universe/ruby\nSource: ruby-rspec\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 778\nDepends: ruby, ruby-rspec-support (= 3.13.0c0e0m0s1-2)\nSuggests: ruby-rspec\nBreaks: ruby-rspec-rails (<< 4.0.0~)\nFilename: pool/universe/r/ruby-rspec/ruby-rspec-core_3.13.0c0e0m0s1-2_all.deb\nSize: 164430\nMD5sum: 15075482a1c2ea049336552bfc3ba40e\nSHA1: 0fd00b8321b13c27f484377eebde7d63c3190833\nSHA256: 68006bad379111fa4b9a71ca6d722f44a1720343d7f5da43895662618558b5da\nSHA512: 4da84e92c9cc5e6e98ca908404a3dbe7ea5f0614e9a4fc9439643ec7c82f43059df65f985a5e8e0a1dae32727bdde2025cdd770b8af7076047b9bce3e9040ede\nHomepage: https://rspec.info/\nDescription-en: Behaviour Driven Development framework for Ruby - core\n RSpec is a Behaviour Driven Development framework for Ruby. It\n provides a framework for writing and executing examples of how your\n Ruby application should behave.\n .\n This package provides the core of the RSpec framework.\nDescription-md5: a8179984cd6b6b50801bcfd23b6b83c5\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-rspec-core",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-rspec-core=3.13.0c0e0m0s1-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-core",
+      "timestamp_utc": "2026-11-05T09:49:22.163447+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-rspec-core all 3.13.0c0e0m0s1-2 [164 kB]\nFetched 164 kB in 3s (48.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-rspec-core without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-core/ruby-rspec-core_3.13.0c0e0m0s1-2_all.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:25.791324+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-rspec-support",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-rspec-support"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:26.264080+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-rspec-support\nArchitecture: all\nVersion: 3.13.0c0e0m0s1-2\nMulti-Arch: foreign\nPriority: optional\nSection: universe/ruby\nSource: ruby-rspec\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 131\nSuggests: ruby-rspec\nBreaks: ruby-rspec-rails (<< 4.0.0~)\nFilename: pool/universe/r/ruby-rspec/ruby-rspec-support_3.13.0c0e0m0s1-2_all.deb\nSize: 29162\nMD5sum: 1e2690e1ee146aa50665cc5ef7fbbd57\nSHA1: e1ec54c3afa7172f4bbea516a0de2d8d55296097\nSHA256: 494d94ac2495cb0c2193565ad25f98c2c0d382c1d63c15ba0548f421c22dfa51\nSHA512: ab6623c4c23afa6ef575a291da49af2e0412242a216200f1dc81bc861bfa0b0d975c9b9dc40fc0c77547c107ba2245533f597ccb47c5b49d6cf0e13ddfa32521\nHomepage: https://rspec.info/\nDescription-en: Behaviour Driven Development framework for Ruby - support\n RSpec is a Behaviour Driven Development framework for Ruby. It\n provides a framework for writing and executing examples of how your\n Ruby application should behave.\n .\n This package provides common functionality to other\n rspec packages. It is considered suitable for internal\n use only at this time.\nDescription-md5: 28c56ce5d1fb12b69b2f0f132320098e\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-rspec-support",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-rspec-support=3.13.0c0e0m0s1-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-support",
+      "timestamp_utc": "2026-11-05T09:49:26.293213+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-rspec-support all 3.13.0c0e0m0s1-2 [29.2 kB]\nFetched 29.2 kB in 0s (119 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-rspec-support without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-support/ruby-rspec-support_3.13.0c0e0m0s1-2_all.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:26.776977+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-rspec-expectations",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-rspec-expectations"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:26.935033+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-rspec-expectations\nArchitecture: all\nVersion: 3.13.0c0e0m0s1-2\nPriority: optional\nSection: universe/ruby\nSource: ruby-rspec\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 418\nDepends: ruby-rspec-support (= 3.13.0c0e0m0s1-2), ruby-diff-lcs\nSuggests: ruby-rspec\nBreaks: ruby-rspec-rails (<< 4.0.0~)\nFilename: pool/universe/r/ruby-rspec/ruby-rspec-expectations_3.13.0c0e0m0s1-2_all.deb\nSize: 89826\nMD5sum: 7adcaccc1c1aed42996e59fda8a34511\nSHA1: bb6f5a0875c3277e6df4198eb9d2700008657cba\nSHA256: 8eb86e9c8d411a891d328921c76a1e7868290178dbbe8cd5c0157669ff367688\nSHA512: e5f53e862f244a979be1765419bc09683b1f4b95a2168ef3e019fbac48e05816b7133bf33b0f19990b45171fdd0a762ca488c92078dd7889ad974cfed97039e6\nHomepage: https://rspec.info/\nDescription-en: Behaviour Driven Development framework for Ruby - expectations\n RSpec is a Behaviour Driven Development framework for Ruby. It\n provides a framework for writing and executing examples of how your\n Ruby application should behave.\n .\n This package provides the handling of expectations (should/should_not and\n matchers).\nDescription-md5: 9d88daafd57037c6be08f060b1de929a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-rspec-expectations",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-rspec-expectations=3.13.0c0e0m0s1-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-expectations",
+      "timestamp_utc": "2026-11-05T09:49:26.964608+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-rspec-expectations all 3.13.0c0e0m0s1-2 [89.8 kB]\nFetched 89.8 kB in 1s (147 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-rspec-expectations without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-expectations/ruby-rspec-expectations_3.13.0c0e0m0s1-2_all.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:27.810125+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-rspec-mocks",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-rspec-mocks"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:28.094264+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-rspec-mocks\nArchitecture: all\nVersion: 3.13.0c0e0m0s1-2\nPriority: optional\nSection: universe/ruby\nSource: ruby-rspec\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 401\nDepends: ruby-rspec-support (= 3.13.0c0e0m0s1-2), ruby-diff-lcs\nSuggests: ruby-rspec\nBreaks: ruby-rspec-rails (<< 4.0.0~)\nFilename: pool/universe/r/ruby-rspec/ruby-rspec-mocks_3.13.0c0e0m0s1-2_all.deb\nSize: 81018\nMD5sum: 9ead640024d8bb83e4b201317b152216\nSHA1: e991b0a2ef6eeb2a0c9d6e65be1e0e4bfe597201\nSHA256: af9fa7e2bfb6b2ed387c795295f9e915e7a63c5af98f67b4475b4fa4fcfbe984\nSHA512: df0f36e57785f25454abf923abecda52f9fa527dc808d2fe1efe5966b49d4ca092f07c46cbe40a6067e1cf1e231ef4c131f5c76e32c524bd204882e6461176a2\nHomepage: https://rspec.info/\nDescription-en: Behaviour Driven Development framework for Ruby - mocks\n RSpec is a Behaviour Driven Development framework for Ruby. It\n provides a framework for writing and executing examples of how your\n Ruby application should behave.\n .\n This package provides support for stubbing and mocking.\nDescription-md5: b09b29822254e67d642b6a48f96af0e6\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-rspec-mocks",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-rspec-mocks=3.13.0c0e0m0s1-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-mocks",
+      "timestamp_utc": "2026-11-05T09:49:28.122620+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-rspec-mocks all 3.13.0c0e0m0s1-2 [81.0 kB]\nFetched 81.0 kB in 0s (380 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-rspec-mocks without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-rspec-mocks/ruby-rspec-mocks_3.13.0c0e0m0s1-2_all.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:28.588956+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-diff-lcs",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-diff-lcs"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:28.862300+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-diff-lcs\nArchitecture: all\nVersion: 1.5.1-1\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 113\nDepends: ruby\nFilename: pool/universe/r/ruby-diff-lcs/ruby-diff-lcs_1.5.1-1_all.deb\nSize: 22766\nMD5sum: 88a8d56f56811a04a8a86351905693e6\nSHA1: d609a0c91994df6ccf282c4800355bcc3c31b46e\nSHA256: ed2ddac9740fc98f9c27f87ca505c7ec657993d7ecbb194d1be54c787b8e0fdc\nSHA512: 1cf8ef0fffeb015bb9fea22bcc828d6db4664a331805108795966f20ae9c6cac389f3e84108eb47477dd377d1c2fd098b0cc945aaa97b5dd9b89cba605cc5647\nHomepage: https://github.com/halostatue/diff-lcs\nDescription-en: McIlroy-Hunt longest common subsequence algorithm implementation\n Diff::LCS is a port of Algorithm::Diff that uses the McIlroy-Hunt\n longest common subsequence (LCS) algorithm to compute intelligent\n differences between two sequenced enumerable containers. The\n implementation is based on Mario I. Wolczko's Smalltalk version,\n and Ned Konz's Perl version (Algorithm::Diff).\nDescription-md5: 2b3aaa6ea461ce5785f9b2787dc26058\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-diff-lcs",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-diff-lcs=1.5.1-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-diff-lcs",
+      "timestamp_utc": "2026-11-05T09:49:28.890568+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-diff-lcs all 1.5.1-1 [22.8 kB]\nFetched 22.8 kB in 0s (129 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-diff-lcs without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_single_20261105/option_list/packages/ruby-diff-lcs/ruby-diff-lcs_1.5.1-1_all.deb",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:29.292794+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Verify Ruby shared libraries resolve",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:29.440293+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffe9b1bb000)\n\tlibruby-3.2.so.3.2 => ${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/libruby-3.2.so.3.2 (0x00007729cf517000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007729cf4f3000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007729cf46f000)\n\tlibcrypt.so.1 => /lib/x86_64-linux-gnu/libcrypt.so.1 (0x00007729cf435000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007729cf34a000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007729cf000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007729cf8d8000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_single_20261105/option_list/home",
+        "TMPDIR": "${WORKSPACE}/work/native_single_20261105/option_list/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/dovecot:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib",
+        "RUBYLIB": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/diff-lcs-1.5.1/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-core-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-expectations-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-mocks-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-support-3.13.1/lib",
+        "XDG_CONFIG_HOME": "${WORKSPACE}/work/native_single_20261105/option_list/empty-config"
+      }
+    },
+    {
+      "label": "Native Ruby version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:29.526191+00:00",
+      "exit_code": 0,
+      "stdout": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_single_20261105/option_list/home",
+        "TMPDIR": "${WORKSPACE}/work/native_single_20261105/option_list/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/dovecot:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib",
+        "RUBYLIB": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/diff-lcs-1.5.1/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-core-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-expectations-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-mocks-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-support-3.13.1/lib",
+        "XDG_CONFIG_HOME": "${WORKSPACE}/work/native_single_20261105/option_list/empty-config"
+      }
+    },
+    {
+      "label": "Native RSpec versions",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/rspec",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:29.594972+00:00",
+      "exit_code": 0,
+      "stdout": "RSpec 3.13\n  - rspec-core 3.13.0\n  - rspec-expectations 3.13.0\n  - rspec-mocks 3.13.0\n  - rspec-support 3.13.1\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_single_20261105/option_list/home",
+        "TMPDIR": "${WORKSPACE}/work/native_single_20261105/option_list/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/dovecot:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib",
+        "RUBYLIB": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/diff-lcs-1.5.1/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-core-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-expectations-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-mocks-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-support-3.13.1/lib",
+        "XDG_CONFIG_HOME": "${WORKSPACE}/work/native_single_20261105/option_list/empty-config"
+      }
+    },
+    {
+      "label": "Auto-load original .rspec; do not repeat formatter options on the command line",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/rspec",
+        "hello_spec.rb"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list",
+      "timestamp_utc": "2026-11-05T09:49:32.545678+00:00",
+      "exit_code": 0,
+      "stdout": "\nHello, World!\n  adds two integers\n\nFinished in 0.1244 seconds (files took 4.82 seconds to load)\n1 example, 0 failures\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_single_20261105/option_list/home",
+        "TMPDIR": "${WORKSPACE}/work/native_single_20261105/option_list/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/dovecot:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib",
+        "RUBYLIB": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/diff-lcs-1.5.1/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-core-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-expectations-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-mocks-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-support-3.13.1/lib",
+        "XDG_CONFIG_HOME": "${WORKSPACE}/work/native_single_20261105/option_list/empty-config"
+      }
+    },
+    {
+      "label": "Control: identical Ruby source without .rspec uses the default progress formatter",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/rspec",
+        "hello_spec.rb"
+      ],
+      "cwd": "${WORKSPACE}/work/native_single_20261105/option_list/control_without_options",
+      "timestamp_utc": "2026-11-05T09:49:37.695200+00:00",
+      "exit_code": 0,
+      "stdout": ".\n\nFinished in 0.30839 seconds (files took 4.97 seconds to load)\n1 example, 0 failures\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_single_20261105/option_list/home",
+        "TMPDIR": "${WORKSPACE}/work/native_single_20261105/option_list/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/dovecot:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib",
+        "RUBYLIB": "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/diff-lcs-1.5.1/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-core-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-expectations-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-mocks-3.13.0/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/share/rubygems-integration/all/gems/rspec-support-3.13.1/lib",
+        "XDG_CONFIG_HOME": "${WORKSPACE}/work/native_single_20261105/option_list/empty-config"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "ruby3.2",
+      "archive": "${WORKSPACE}/work/tools_221_240/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "sha256": "6f11e297b3508e8db95a5a047126a16ccf1358292049a27e3dc72b88180e779a",
+      "metadata": "Package: ruby3.2\nVersion: 3.2.3-1ubuntu0.24.04.8\nArchitecture: amd64\n"
+    },
+    {
+      "name": "libruby3.2",
+      "archive": "${WORKSPACE}/work/tools_221_240/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "sha256": "77c2e98ccfba2c4a4e5edb48ca8c0eb041702e1579eabc40cf07064fd4f3033e",
+      "metadata": "Package: libruby3.2\nVersion: 3.2.3-1ubuntu0.24.04.8\nArchitecture: amd64\n"
+    },
+    {
+      "name": "ruby-rspec-core",
+      "version": "3.13.0c0e0m0s1-2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-rspec/ruby-rspec-core_3.13.0c0e0m0s1-2_all.deb",
+      "sha256": "68006bad379111fa4b9a71ca6d722f44a1720343d7f5da43895662618558b5da"
+    },
+    {
+      "name": "ruby-rspec-support",
+      "version": "3.13.0c0e0m0s1-2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-rspec/ruby-rspec-support_3.13.0c0e0m0s1-2_all.deb",
+      "sha256": "494d94ac2495cb0c2193565ad25f98c2c0d382c1d63c15ba0548f421c22dfa51"
+    },
+    {
+      "name": "ruby-rspec-expectations",
+      "version": "3.13.0c0e0m0s1-2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-rspec/ruby-rspec-expectations_3.13.0c0e0m0s1-2_all.deb",
+      "sha256": "8eb86e9c8d411a891d328921c76a1e7868290178dbbe8cd5c0157669ff367688"
+    },
+    {
+      "name": "ruby-rspec-mocks",
+      "version": "3.13.0c0e0m0s1-2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-rspec/ruby-rspec-mocks_3.13.0c0e0m0s1-2_all.deb",
+      "sha256": "af9fa7e2bfb6b2ed387c795295f9e915e7a63c5af98f67b4475b4fa4fcfbe984"
+    },
+    {
+      "name": "ruby-diff-lcs",
+      "version": "1.5.1-1",
+      "ubuntu_archive_path": "pool/universe/r/ruby-diff-lcs/ruby-diff-lcs_1.5.1-1_all.deb",
+      "sha256": "ed2ddac9740fc98f9c27f87ca505c7ec657993d7ecbb194d1be54c787b8e0fdc"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#509 Option List/.rspec": "cbccf1313cc631dd91d819636d476ae2d7ea4206b09b90ae760917a40c679db4",
+    "examples/#509 Option List/hello_spec.rb": "1a9c8f6e3ca0c68ced68e4f3eefd846f8599db8f45f32d8f304b098c5401f05b"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "assertions": {
+    "greeting_heading": true,
+    "example_description": true,
+    "one_passing_example": true,
+    "no_ansi_color": true,
+    "no_stderr": true
+  },
+  "control_assertions": {
+    "same_spec_passes": true,
+    "no_documentation_heading": true,
+    "no_example_description": true,
+    "progress_marker": true,
+    "no_stderr": true
+  },
+  "toolchain": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]; RSpec 3.13;   - rspec-core 3.13.0;   - rspec-expectations 3.13.0;   - rspec-mocks 3.13.0;   - rspec-support 3.13.1",
+  "isolation": "Ubuntu WSL command-line execution. Ruby and RSpec extracted under work; isolated HOME/config; no system installation, .NET or GUI process.",
+  "sources": [
+    {
+      "title": "RSpec configuration option loading",
+      "url": "https://github.com/rspec/rspec-core/blob/v3.13.0/lib/rspec/core/configuration_options.rb"
+    }
+  ],
+  "semantic_scope": "RSpec automatically loaded the exact original .rspec and used its documentation formatter: Hello, World! heading, adds two integers, and 1 example, 0 failures, without ANSI color. A control using the identical hello_spec.rb in a directory without .rspec passed with the progress formatter and no greeting heading. Only this filename-based Option List example is verified; no extension pairs or GitHub language detection are implied.",
+  "path_normalization": "Workspace prefixes were replaced with ${WORKSPACE}; exact source hashes, command arguments and captured results are retained.",
+  "reproduction": "With Ruby and RSpec 3.13 installed, run rspec hello_spec.rb in the original example directory. To reproduce the control, copy only hello_spec.rb to an empty directory and run the same command there. Do not pass --format documentation on the command line; it must come from .rspec.",
+  "removed_environment_variables": [
+    "RSPEC_OPTS",
+    "SPEC_OPTS",
+    "RUBYOPT",
+    "GEM_HOME",
+    "GEM_PATH",
+    "BUNDLE_GEMFILE"
+  ],
+  "additional_environment_provenance": "RUBYLIB and XDG_CONFIG_HOME were recorded from the exact executed harness configuration after independent evidence review."
+}

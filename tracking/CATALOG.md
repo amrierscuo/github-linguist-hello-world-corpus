@@ -512,7 +512,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #506 | [OpenSCAD](../examples/%23506%20OpenSCAD/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #507 | [OpenStep Property List](../examples/%23507%20OpenStep%20Property%20List/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #508 | [OpenType Feature File](../examples/%23508%20OpenType%20Feature%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #509 | [Option List](../examples/%23509%20Option%20List/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | The toolchain has not been run; syntax and semantic checks are pending. |
+| #509 | [Option List](../examples/%23509%20Option%20List/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #510 | [Org](../examples/%23510%20Org/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #511 | [OverPy](../examples/%23511%20OverPy/README.md) | Yes | Yes | Pending | 1/1 | The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified. |
 | #512 | [OverpassQL](../examples/%23512%20OverpassQL/README.md) | Yes | Pending | Pending | 1/1 | A local Overpass engine is unavailable. |
