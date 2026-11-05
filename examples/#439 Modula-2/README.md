@@ -1,5 +1,20 @@
 # #439 Modula-2
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+GNU Modula-2 compiled the exact PIM module and its native executable printed the exact greeting with LF.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json).
+
+## Extension results
+
+- `.mod`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Fill out Modula- 2 with PIM InOut library and print your greeting.
 
 Canonical type `programming`, language_id `234`.
@@ -29,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mod` | [Hello.mod](Hello.mod) created; verification pending |
+| `.mod` | [Hello.mod](Hello.mod) syntax and behavior verified |
+
+</details>

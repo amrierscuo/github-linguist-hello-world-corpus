@@ -3,8 +3,8 @@
 | Coverage | Status |
 | --- | ---: |
 | Canonical entries with artifacts or drafts | 836 / 836 |
-| Entries with syntax verified for the main sample | 549 / 836 |
-| Entries with semantics verified for the main sample | 522 / 836 |
+| Entries with syntax verified for the main sample | 563 / 836 |
+| Entries with semantics verified for the main sample | 536 / 836 |
 | Language and extension pairs with files | 1738 / 1749 |
 | Distinct extensions with primary artifacts | 1480 / 1489 |
 | Pairs still missing an artifact | 11 |

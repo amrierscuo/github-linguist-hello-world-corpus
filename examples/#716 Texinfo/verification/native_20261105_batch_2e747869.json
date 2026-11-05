@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:33:17.037133+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Texinfo",
+  "ordinal": 716,
+  "commands": [
+    {
+      "label": "Native GNU Texinfo version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_701_720/ubuntu/usr/bin/texi2any",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869",
+      "timestamp_utc": "2026-11-05T12:33:17.104019+00:00",
+      "exit_code": 0,
+      "stdout": "texi2any (GNU texinfo) 7.1\n\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/root/usr/lib",
+        "PERL5LIB": "${WORKSPACE}/work/tools_701_720/ubuntu/usr/share/texinfo:${WORKSPACE}/work/tools_701_720/ubuntu/usr/share/perl5",
+        "TEXINFO_XS": "omit"
+      }
+    },
+    {
+      "label": "Render original Texinfo variant as plain text",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_701_720/ubuntu/usr/bin/texi2any",
+        "--plaintext",
+        "--output=-",
+        "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/variants/txi-415ac389/hello.txi"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/variants/txi-415ac389",
+      "timestamp_utc": "2026-11-05T12:33:17.926426+00:00",
+      "exit_code": 0,
+      "stdout": "Corpus greeting\n***************\n\nHello, World!\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0716_2e747869/root/usr/lib",
+        "PERL5LIB": "${WORKSPACE}/work/tools_701_720/ubuntu/usr/share/texinfo:${WORKSPACE}/work/tools_701_720/ubuntu/usr/share/perl5",
+        "TEXINFO_XS": "omit"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#716 Texinfo/variants/txi-415ac389/hello.txi": "fa43a999f031be93a5be3deee5f0026ba7107b2fe061231a84d596818fec87e4"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".txi",
+  "documentation": "examples/#716 Texinfo/variants/txi-415ac389/README.md",
+  "sources": [
+    "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Short-Sample.html"
+  ],
+  "instructions_read_sha256": {
+    "examples/#716 Texinfo/README.md": "779ee27c51a7185d71f1d2e78e24cc200e3711b632fde266557e3a582db51f9c",
+    "examples/#716 Texinfo/variants/txi-415ac389/README.md": "ab2a0b6f7573ed63c1bed3ff30406a699440afa8b70110dead4b0f8a4497151a"
+  },
+  "toolchain": "texi2any (GNU texinfo) 7.1",
+  "semantic_scope": "GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application."
+}

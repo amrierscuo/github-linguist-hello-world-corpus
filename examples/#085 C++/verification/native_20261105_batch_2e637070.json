@@ -1,0 +1,831 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:30:58.777083+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "C++",
+  "ordinal": 85,
+  "commands": [
+    {
+      "label": "Native compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:30:59.666157+00:00",
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "hello.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:30:59.772123+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:00.637480+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++20 module interface",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "-fmodules-ts",
+        "-x",
+        "c++",
+        "-c",
+        "hello.cppm",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_3.o"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-cppm-2e6370706d",
+      "timestamp_utc": "2026-11-05T12:31:00.786154+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile and link original importing consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "-fmodules-ts",
+        "consumer.cpp",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_3.o",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-cppm-2e6370706d",
+      "timestamp_utc": "2026-11-05T12:31:01.121667+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:02.282634+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_6"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-h-2e68",
+      "timestamp_utc": "2026-11-05T12:31:02.434475+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_6"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:03.411023+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_8"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-h-2e682b2b",
+      "timestamp_utc": "2026-11-05T12:31:03.555929+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_8"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:04.546183+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_10"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-hh-2e6868",
+      "timestamp_utc": "2026-11-05T12:31:04.696678+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_10"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:05.541888+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_12"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-hpp-2e687070",
+      "timestamp_utc": "2026-11-05T12:31:05.659419+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_12"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:06.611259+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_14"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-hxx-2e687878",
+      "timestamp_utc": "2026-11-05T12:31:06.758338+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_14"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:07.703430+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_16"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-inc-2e696e63",
+      "timestamp_utc": "2026-11-05T12:31:07.817905+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_16"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:08.618244+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_18"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-inl-2e696e6c",
+      "timestamp_utc": "2026-11-05T12:31:08.730990+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_18"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:09.676010+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_20"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-ipp-2e697070",
+      "timestamp_utc": "2026-11-05T12:31:09.833488+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_20"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:10.770690+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++20 module interface",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "-fmodules-ts",
+        "-x",
+        "c++",
+        "-c",
+        "hello.ixx",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_22.o"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-ixx-2e697878",
+      "timestamp_utc": "2026-11-05T12:31:10.920382+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile and link original importing consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "-fmodules-ts",
+        "consumer.cpp",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_22.o",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_22"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-ixx-2e697878",
+      "timestamp_utc": "2026-11-05T12:31:11.243587+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_22"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:12.269524+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_25"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-tcc-2e746363",
+      "timestamp_utc": "2026-11-05T12:31:12.421156+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_25"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:13.600657+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_27"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-tpp-2e747070",
+      "timestamp_utc": "2026-11-05T12:31:13.765869+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_27"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:14.725288+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Compile exact C++ consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++20",
+        "consumer.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_29"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/variants/ext-txx-2e747878",
+      "timestamp_utc": "2026-11-05T12:31:14.860800+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute compiled console consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/out_29"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070",
+      "timestamp_utc": "2026-11-05T12:31:15.770230+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e637070/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "ubuntu_archive_path": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295"
+    },
+    {
+      "name": "cmake-data",
+      "version": "3.28.3-1build7",
+      "ubuntu_archive_path": "pool/main/c/cmake/cmake-data_3.28.3-1build7_all.deb",
+      "sha256": "20a3b644211ce82f35c24f1f5052199adeb0ac159978a8740fd6c0959611557f"
+    },
+    {
+      "name": "re2c",
+      "version": "3.1-1build1",
+      "ubuntu_archive_path": "pool/main/r/re2c/re2c_3.1-1build1_amd64.deb",
+      "sha256": "418afd09a7abb6878ddec36b60cefb891a8066856a60b757fd0700e072652616"
+    },
+    {
+      "name": "libuv1t64",
+      "version": "1.48.0-1.1build1",
+      "ubuntu_archive_path": "pool/main/libu/libuv1/libuv1t64_1.48.0-1.1build1_amd64.deb",
+      "sha256": "72a1856b30af1e533494ab90742a2446f4491b15ddebcade6661a6e8d61b4359"
+    },
+    {
+      "name": "libjsoncpp25",
+      "version": "1.9.5-6build1",
+      "ubuntu_archive_path": "pool/main/libj/libjsoncpp/libjsoncpp25_1.9.5-6build1_amd64.deb",
+      "sha256": "8efea5b75952f3ad1c40e6b5b31de687c297ea29f87f8b63efebb55e13467211"
+    },
+    {
+      "name": "librhash0",
+      "version": "1.4.3-3build1",
+      "ubuntu_archive_path": "pool/main/r/rhash/librhash0_1.4.3-3build1_amd64.deb",
+      "sha256": "e9ee69963ff1a56378b9c5ffdd21ea0feaec9647c522349b7612b25103490528"
+    },
+    {
+      "name": "libarchive13t64",
+      "version": "3.7.2-2ubuntu0.9",
+      "ubuntu_archive_path": "pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+      "sha256": "b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#085 C++/hello.cpp": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f",
+    "examples/#085 C++/variants/ext-cppm-2e6370706d/consumer.cpp": "3cb960e29d360b38a9ddbff481f726cbd65f97b5378d8cde4fa14355861debfb",
+    "examples/#085 C++/variants/ext-h-2e68/consumer.cpp": "49dc25fa2a9518ded0939d49f97b147319d9a19a3b4a1204d128b02f558b6989",
+    "examples/#085 C++/variants/ext-h-2e682b2b/consumer.cpp": "f3fbcc65629587f6f6b57530206f470ee344a7e6c3ad071cf2021e13349c8a1f",
+    "examples/#085 C++/variants/ext-hh-2e6868/consumer.cpp": "b53ca886be4d007bc30150dcf61d3136bfd9068335fad0442eb80fc960c067e2",
+    "examples/#085 C++/variants/ext-hpp-2e687070/consumer.cpp": "78830e33e4fc4a711a26af02998737efe42f944c9dde3361806f72bbd58c0a38",
+    "examples/#085 C++/variants/ext-hxx-2e687878/consumer.cpp": "d145019975d39faa87f17ee78e427ffbaf153025db76a48def1e63d504062b26",
+    "examples/#085 C++/variants/ext-inc-2e696e63/consumer.cpp": "f1d6194159fdde6962dd62a9da7f28c5ac8111112b056ebe9781459d21a78d0f",
+    "examples/#085 C++/variants/ext-inl-2e696e6c/consumer.cpp": "ee3d9ea8da0c56dba1f43c3653d69ba22e10cf78de4451da11de17e846b10441",
+    "examples/#085 C++/variants/ext-ipp-2e697070/consumer.cpp": "ae943168172a4c77ed269c37a85fbe69edc469249d211d03419ee143803c93d4",
+    "examples/#085 C++/variants/ext-ixx-2e697878/consumer.cpp": "3cb960e29d360b38a9ddbff481f726cbd65f97b5378d8cde4fa14355861debfb",
+    "examples/#085 C++/variants/ext-tcc-2e746363/consumer.cpp": "6fa7ca53eac9f1131b16370181d7502f77c2dd2588d1e4666a23c500207712a6",
+    "examples/#085 C++/variants/ext-tpp-2e747070/consumer.cpp": "d89ad3803b2c756feb27ac962a137ace1220a753517482abee600ce2e98ab17d",
+    "examples/#085 C++/variants/ext-txx-2e747878/consumer.cpp": "1cf5cf8e9725ba7f6be559bd3338f373023dfb0113a51f8e1f7f766110337772",
+    "examples/#085 C++/variants/ext-c-2e632b2b/hello.c++": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f",
+    "examples/#085 C++/variants/ext-cc-2e6363/hello.cc": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f",
+    "examples/#085 C++/variants/ext-cp-2e6370/hello.cp": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f",
+    "examples/#085 C++/variants/ext-cppm-2e6370706d/hello.cppm": "f93b2cc9d1883d1459574d2c109b41fded488c895e84692030fb7006010eb07f",
+    "examples/#085 C++/variants/ext-cxx-2e637878/hello.cxx": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f",
+    "examples/#085 C++/variants/ext-h-2e68/hello.h": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-h-2e682b2b/hello.h++": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-hh-2e6868/hello.hh": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-hpp-2e687070/hello.hpp": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-hxx-2e687878/hello.hxx": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-inc-2e696e63/hello.inc": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-inl-2e696e6c/hello.inl": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-ipp-2e697070/hello.ipp": "4918800b2e4b5ef72ec39ca76839e137cf347cc62641bb99adb6f1c28d613e4e",
+    "examples/#085 C++/variants/ext-ixx-2e697878/hello.ixx": "f93b2cc9d1883d1459574d2c109b41fded488c895e84692030fb7006010eb07f",
+    "examples/#085 C++/variants/ext-tcc-2e746363/hello.tcc": "7abdc103ee227cba08cac1c17180aa558c30648463fe67130ac460e0a7963353",
+    "examples/#085 C++/variants/ext-tpp-2e747070/hello.tpp": "7abdc103ee227cba08cac1c17180aa558c30648463fe67130ac460e0a7963353",
+    "examples/#085 C++/variants/ext-txx-2e747878/hello.txx": "7abdc103ee227cba08cac1c17180aa558c30648463fe67130ac460e0a7963353"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".cpp",
+  "documentation": "examples/#085 C++/README.md",
+  "sources": [
+    "https://gcc.gnu.org/onlinedocs/gcc/Standards.html",
+    "https://www.open-std.org/jtc1/sc22/wg21/"
+  ],
+  "instructions_read_sha256": {
+    "examples/#085 C++/README.md": "c07a9b4264d95dace8c23f592e30cf8aba6c9a6b8e8079641e8f654dcd16e8fa"
+  },
+  "toolchain": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0; CMake 3.28.3-1build7",
+  "semantic_scope": "The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting.",
+  "additional_environment_provenance": "PATH and isolated pkg-config search variables were copied from the exact executed harness configuration for reproducibility.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting."
+}

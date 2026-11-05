@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:31:19.612132+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Easybuild",
+  "ordinal": 182,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for environment-modules",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "environment-modules"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/easybuild",
+      "timestamp_utc": "2026-11-05T12:31:19.635520+00:00",
+      "exit_code": 0,
+      "stdout": "Package: environment-modules\nArchitecture: amd64\nVersion: 5.4.0-1\nPriority: optional\nSection: universe/devel\nSource: modules\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1412\nDepends: tcl8.6, libc6 (>= 2.34), less, procps, python3\nConflicts: lmod\nFilename: pool/universe/m/modules/environment-modules_5.4.0-1_amd64.deb\nSize: 330620\nMD5sum: 51af2a997b5f016aaebd97cb9f74b32d\nSHA1: bc1716dd1ffa97f9042345a899c757fafd27b1c5\nSHA256: fa80581f449e2e7f117d2f7acf251ec3fd0c33a9fee23f25f1352b360ea1e5b8\nSHA512: 31ccd373c1061de0db493d5aac6d5aedb6ca625b1bc4dba2aa9fce899bda8365122d87b5366d561e7cdc10a2f696d5d5a06983ccbcb0eb3a1a8f70bef4df0c0b\nHomepage: http://modules.sourceforge.net/\nDescription-en: Modular system for handling environment variables\n The Modules package provides for the dynamic modification of a user's\n environment via modulefiles.  Each modulefile contains the information\n needed to configure the shell for an application. Once the Modules\n package is initialized, the environment can be modified dynamically\n on a per-module basis using the module command which interprets\n modulefiles. Typically modulefiles instruct the module command to alter or\n set shell environment variables such as PATH, MANPATH, etc. modulefiles\n may be shared by many users on a system and users may have their own\n collection to supplement or replace the shared modulefiles.  The modules\n environment is common on SGI/Crays and many workstation farms.\nDescription-md5: e68d2dab565934a6f22604cc65023018\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only environment-modules",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "environment-modules=5.4.0-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/packages/environment-modules",
+      "timestamp_utc": "2026-11-05T12:31:19.676468+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 environment-modules amd64 5.4.0-1 [331 kB]\nFetched 331 kB in 1s (324 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract environment-modules without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/easybuild/packages/environment-modules/environment-modules_5.4.0-1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/easybuild/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/easybuild",
+      "timestamp_utc": "2026-11-05T12:31:21.008804+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Create isolated Python virtual environment",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "python3",
+        "-m",
+        "venv",
+        "${WORKSPACE}/work/native_batch_20261105/early/easybuild/venv"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/easybuild",
+      "timestamp_utc": "2026-11-05T12:31:21.361541+00:00",
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/easybuild/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/easybuild/root/usr/lib"
+      }
+    },
+    {
+      "label": "Install official EasyBuild framework and easyblocks only in the virtual environment",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "130s",
+        "python3",
+        "-m",
+        "pip",
+        "install",
+        "--target",
+        "${WORKSPACE}/work/native_batch_20261105/early/easybuild/python",
+        "--disable-pip-version-check",
+        "easybuild-framework",
+        "easybuild-easyblocks"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/easybuild",
+      "timestamp_utc": "2026-11-05T12:32:31.670878+00:00",
+      "exit_code": 124,
+      "stdout": "Collecting easybuild-framework\n  Downloading easybuild_framework-5.4.2.tar.gz (2.2 MB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 5.5 MB/s eta 0:00:00\n  Preparing metadata (setup.py): started\n  Preparing metadata (setup.py): finished with status 'done'\nCollecting easybuild-easyblocks\n  Downloading easybuild_easyblocks-5.4.2.tar.gz (672 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 672.1/672.1 kB 5.3 MB/s eta 0:00:00\n  Preparing metadata (setup.py): started\n  Preparing metadata (setup.py): finished with status 'done'\nBuilding wheels for collected packages: easybuild-framework, easybuild-easyblocks\n  Building wheel for easybuild-framework (setup.py): started\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/easybuild/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/easybuild/root/usr/lib",
+        "PYTHONPATH": "${WORKSPACE}/work/native_batch_20261105/early/easybuild/python"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "environment-modules",
+      "version": "5.4.0-1",
+      "ubuntu_archive_path": "pool/universe/m/modules/environment-modules_5.4.0-1_amd64.deb",
+      "sha256": "fa80581f449e2e7f117d2f7acf251ec3fd0c33a9fee23f25f1352b360ea1e5b8"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#182 Easybuild/HelloWorld-1.0.eb": "4d7d965e7bb57ca7d7c987ad9c49c4553410d95db952ef9d88329b326b8aa6c9"
+  },
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "main_status": "main",
+  "blocker": "No native EasyBuild recipe execution completed: isolated venv creation timed out after 25 seconds; pip target build timed out after 130 seconds while building the framework wheel. No syntax or behavior success is claimed.",
+  "sources": [
+    "https://docs.easybuild.io/writing-easyconfig-files/",
+    "https://docs.easybuild.io/installation/",
+    "https://docs.easybuild.io/configuration/"
+  ],
+  "outcome_description": "Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending."
+}

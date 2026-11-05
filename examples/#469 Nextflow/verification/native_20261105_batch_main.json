@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:27:53.564328+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Nextflow",
+  "ordinal": 469,
+  "commands": [
+    {
+      "label": "Record Nextflow version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nextflow-25.10.9-one.jar",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow",
+      "timestamp_utc": "2026-11-05T12:29:40.143323+00:00",
+      "exit_code": 0,
+      "stdout": "\n      N E X T F L O W\n      version 25.10.9 build 14243\n      created 20-10-2026 20:20 UTC (22:20 CEST)\n      cite doi:10.1038/nbt.3820\n      http://nextflow.io\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib",
+        "NXF_HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nxf-home",
+        "NXF_OFFLINE": "true",
+        "NXF_DISABLE_CHECK_LATEST": "true",
+        "NXF_ANSI_LOG": "false",
+        "NXF_PLUGINS_DEFAULT": ""
+      },
+      "explicitly_unset_environment": [
+        "NXF_PLUGINS_MODE",
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Execute original local DSL2 process workflow offline",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nextflow-25.10.9-one.jar",
+        "run",
+        "hello.nf",
+        "-offline",
+        "-ansi-log",
+        "false",
+        "-work-dir",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tasks"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow",
+      "timestamp_utc": "2026-11-05T12:29:42.241984+00:00",
+      "exit_code": 1,
+      "stdout": "N E X T F L O W  ~  version 25.10.9\nERROR ~ Cannot found PF4J runtime mode with name 'offline'.Must be one value from '[development, prod, dev, deployment].\n\n -- Check '.nextflow.log' file for details\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib",
+        "NXF_HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nxf-home",
+        "NXF_OFFLINE": "true",
+        "NXF_DISABLE_CHECK_LATEST": "true",
+        "NXF_ANSI_LOG": "false",
+        "NXF_PLUGINS_DEFAULT": ""
+      },
+      "explicitly_unset_environment": [
+        "NXF_PLUGINS_MODE",
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Record Nextflow version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nextflow-25.10.9-one.jar",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow",
+      "timestamp_utc": "2026-11-05T12:31:33.429330+00:00",
+      "exit_code": 0,
+      "stdout": "\n      N E X T F L O W\n      version 25.10.9 build 14243\n      created 20-10-2026 20:20 UTC (22:20 CEST)\n      cite doi:10.1038/nbt.3820\n      http://nextflow.io\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib",
+        "NXF_HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nxf-home",
+        "NXF_OFFLINE": "true",
+        "NXF_DISABLE_CHECK_LATEST": "true",
+        "NXF_ANSI_LOG": "false",
+        "NXF_PLUGINS_DEFAULT": ""
+      },
+      "explicitly_unset_environment": [
+        "NXF_PLUGINS_MODE",
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Execute original local DSL2 process workflow offline",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nextflow-25.10.9-one.jar",
+        "run",
+        "hello.nf",
+        "-offline",
+        "-ansi-log",
+        "false",
+        "-work-dir",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tasks"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow",
+      "timestamp_utc": "2026-11-05T12:31:36.129043+00:00",
+      "exit_code": 0,
+      "stdout": "N E X T F L O W  ~  version 25.10.9\nLaunching `hello.nf` [cheesy_coulomb] DSL2 - revision: 1e8e6cab83\n[bf/fa4625] Submitted process > GREETING\nHello, World!\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nextflow/root/usr/lib",
+        "NXF_HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nextflow/nxf-home",
+        "NXF_OFFLINE": "true",
+        "NXF_DISABLE_CHECK_LATEST": "true",
+        "NXF_ANSI_LOG": "false",
+        "NXF_PLUGINS_DEFAULT": ""
+      },
+      "explicitly_unset_environment": [
+        "NXF_PLUGINS_MODE",
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "Nextflow",
+      "version": "25.10.9",
+      "source": "https://www.nextflow.io/releases/v25.10.9/nextflow-25.10.9-one.jar",
+      "metadata_source": "https://api.github.com/repos/nextflow-io/nextflow/releases/tags/v25.10.9",
+      "sha256": "508c2cc1144365390b2fe61dec94e9727d5eb59b271569ffceb83cb4938254e6"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#469 Nextflow/hello.nf": "bff1d466836a58b267a4d60caf41bf0dde19d7c9ef4973c3e3fa7df67f05fd46"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://www.nextflow.io/docs/stable/",
+    "https://github.com/nextflow-io/nextflow/releases/tag/v25.10.9"
+  ],
+  "official_release_assets": [
+    "nextflow",
+    "nextflow-25.10.9-dist"
+  ],
+  "toolchain": {
+    "name": "Nextflow",
+    "version": "N E X T F L O W\n      version 25.10.9 build 14243\n      created 20-10-2026 20:20 UTC (22:20 CEST)\n      cite doi:10.1038/nbt.3820\n      http://nextflow.io"
+  },
+  "task_output_sha256": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+  "semantic_scope": "Nextflow parsed and scheduled the exact original DSL2 workflow offline, completed the local Bash task and emitted the exact stdout greeting. No remote workflow, container or external service.",
+  "environment_metadata_provenance": {
+    "source": "work/native_batch_20261105/middle/verify.py",
+    "sha256_at_annotation": "fbd4d064650c6626c7050dc6b95a9d665075dbf2d3d3fa62fae9f3b2afc068ca",
+    "scope": "These selected variables were assigned by the executed runner. They are metadata added after execution; command text, source bytes and captured output are unchanged. No full inherited environment was copied.",
+    "runner_function": "nextflow_run",
+    "historical_correction": "The first run preserved the invalid NXF_PLUGINS_MODE=offline value and failed explicitly. The succeeding run removed that variable and retained NXF_OFFLINE=true; both outputs remain recorded."
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Nextflow parsed and scheduled the exact original DSL2 workflow offline, completed the local Bash task and emitted the exact stdout greeting. No remote workflow, container or external service."
+}

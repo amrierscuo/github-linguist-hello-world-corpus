@@ -1,5 +1,10 @@
 # #271 Graphviz (DOT)
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.gv`: Graphviz natively parsed and laid out the exact .gv file; the resulting SVG contains a text node exactly Hello, World!. Rendering stayed in files without a viewer. [Evidence](verification/native_20261105_batch_2e6776.json).
+
 Voce canonica `Graphviz (DOT)`, tipo `data`, language_id `140`.
 
 Render a DOT node with the Hello, World! label in a SVG produced by Graphviz.
@@ -46,4 +51,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.dot` | [hello.dot](hello.dot) verified |
-| `.gv` | [hello.gv](variants/ext-gv-2e6776/hello.gv) created; verification pending |
+| `.gv` | [hello.gv](variants/ext-gv-2e6776/hello.gv) syntax and behavior verified |

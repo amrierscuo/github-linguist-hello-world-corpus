@@ -1,5 +1,21 @@
 # #454 NASL
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json). [Earlier evidence](verification/native.json).
+
+## Extension results
+
+- `.nasl`: syntax and behavior verified.
+- `.inc`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica `NASL`, tipo `programming`, language_id `171666519`.
 
 Only perform greeting display in a local NASL script.
@@ -44,5 +60,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nasl` | [hello.nasl](hello.nasl), [driver.nasl](variants/inc-dd126fb7/driver.nasl) created; verification pending |
-| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |
+| `.nasl` | [hello.nasl](hello.nasl), [driver.nasl](variants/inc-dd126fb7/driver.nasl) syntax and behavior verified |
+| `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) syntax and behavior verified |
+
+</details>

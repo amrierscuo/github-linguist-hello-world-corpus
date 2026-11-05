@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:33:09.560907+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Diff",
+  "ordinal": 166,
+  "commands": [
+    {
+      "label": "Native GNU patch version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "patch",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368",
+      "timestamp_utc": "2026-11-05T12:33:09.720167+00:00",
+      "exit_code": 0,
+      "stdout": "GNU patch 2.7.6\nCopyright (C) 2003, 2009-2012 Free Software Foundation, Inc.\nCopyright (C) 1988 Larry Wall\n\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Larry Wall and Paul Eggert\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib"
+      }
+    },
+    {
+      "label": "Dry-run exact patch against a copied original fixture",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "patch",
+        "--dry-run",
+        "--batch",
+        "-p1",
+        "-d",
+        "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/fixture",
+        "-i",
+        "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/variants/ext-patch-2e7061746368/hello.patch"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368",
+      "timestamp_utc": "2026-11-05T12:33:09.800761+00:00",
+      "exit_code": 0,
+      "stdout": "checking file hello.txt\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib"
+      }
+    },
+    {
+      "label": "Apply exact patch only to the copied fixture",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "patch",
+        "--batch",
+        "-p1",
+        "-d",
+        "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/fixture",
+        "-i",
+        "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/variants/ext-patch-2e7061746368/hello.patch"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368",
+      "timestamp_utc": "2026-11-05T12:33:09.880514+00:00",
+      "exit_code": 0,
+      "stdout": "patching file hello.txt\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0166_2e7061746368/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#166 Diff/variants/ext-patch-2e7061746368/hello.patch": "e37a5519cb866ca7321c0ab61968e15198db0aa428ed35cbf68df85912ffc486",
+    "examples/#166 Diff/after/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/#166 Diff/before/hello.txt": "66a045b452102c59d840ec097d59d9467e13a3f34f6494e539ffd32c1bb35f18"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".patch",
+  "documentation": "examples/#166 Diff/variants/ext-patch-2e7061746368/README.md",
+  "sources": [
+    "https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html",
+    "https://www.gnu.org/software/diffutils/manual/html_node/Invoking-patch.html",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#166 Diff/README.md": "37b9c2712af3238e3d9dd64394a482812527516741d514d21f1bff636dbcf751",
+    "examples/#166 Diff/variants/ext-patch-2e7061746368/README.md": "1f9b0bb218c413ca43d7ebde0bcf730d1af6706549eb59365b17ce38b0591366"
+  },
+  "toolchain": "GNU patch 2.7.6",
+  "semantic_scope": "GNU patch accepted the exact variant in a dry run, then applied it only to the copied original before fixture. The result is byte-identical to the original after fixture, exactly Hello, World! plus LF.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "GNU patch accepted the exact variant in a dry run, then applied it only to the copied original before fixture. The result is byte-identical to the original after fixture, exactly Hello, World! plus LF."
+}

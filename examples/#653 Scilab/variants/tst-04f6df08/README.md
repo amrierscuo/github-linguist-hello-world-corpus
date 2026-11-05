@@ -1,5 +1,9 @@
 # 0653: Scilab: `.tst`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.tst`. The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage. [Recorded evidence](../../verification/native_20261105_batch_main.json).
+
 Test Scilab con assertion reale.
 
 Provenience: original example written for the role of this suffix.

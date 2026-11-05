@@ -1,5 +1,9 @@
 # 0828: pkg-config: `.pc.in`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.pc.in`. Native CMake configured the original pkg-config template with its documented prefix/version. The genuine pkg-config consumer read greeting=Hello, World!, version 1.0.0 and prefix /corpus/example from the generated metadata, using only an isolated package search directory. [Recorded evidence](../../verification/native_20261105_batch_2e70632e696e.json).
+
 Pkg-config template with real Autoconf placeholder; it requires replacement before use.
 
 Provenience: original example written for the role of this suffix.

@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:30:40.702359+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Linux Kernel Module",
+  "ordinal": 388,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for linux-headers-generic",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "linux-headers-generic"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:30:40.763421+00:00",
+      "exit_code": 0,
+      "stdout": "Package: linux-headers-generic\nSource: linux-meta\nPriority: optional\nSection: devel\nInstalled-Size: 18\nMaintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 6.8.0-146.146\nDepends: linux-headers-6.8.0-146-generic\nFilename: pool/main/l/linux-meta/linux-headers-generic_6.8.0-146.146_amd64.deb\nSize: 11392\nMD5sum: 90b973d68ed42ea060dbdcde26fe4e73\nSHA1: 9f87f9505f9defa19ed2b872159c2e8d90e95d88\nSHA256: 9f3919986adbb75adb0a5deeb89d3491a5a23e14047fcfa8eb4bd98b2a5199f1\nSHA512: 1a98b8c2d0245146076de92e31ec73d9a03bb0cbe2c0d4f968cf9381440674b92332bd94961e76e9a1aa902140f7fcc10b0a97387d83dbcff823bf5eed20a019\nDescription-en: Generic Linux kernel headers\n This package will always depend on the latest generic kernel headers\n available.\nDescription-md5: 9c9742ab9c289b1e900fab477bc0070d\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: linux-headers-generic\nArchitecture: amd64\nVersion: 6.8.0-31.31\nPriority: optional\nSection: devel\nSource: linux-meta\nOrigin: Ubuntu\nMaintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 16\nDepends: linux-headers-6.8.0-31-generic\nFilename: pool/main/l/linux-meta/linux-headers-generic_6.8.0-31.31_amd64.deb\nSize: 9834\nMD5sum: 6480117d494834b5e1ec7a79f4a9f3ad\nSHA1: b6443118fb8a5f31eb0199ba34b97266c2298781\nSHA256: d34c090e504feedfa7520a35836bca7dbdcb2649a34a1948682fbf0070ca357e\nSHA512: 4895f79a8ceccc9e59634ab1f8cc4e1c30fe8d12c4c8ee9da6d1963f357338150c7de7477f619565e633785041bf6aee6a849a71c9ce07afc4f2d533a23d4ca1\nDescription-en: Generic Linux kernel headers\n This package will always depend on the latest generic kernel headers\n available.\nDescription-md5: 9c9742ab9c289b1e900fab477bc0070d\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only linux-headers-generic",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "linux-headers-generic=6.8.0-146.146"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-generic",
+      "timestamp_utc": "2026-11-05T12:30:41.066250+00:00",
+      "exit_code": 100,
+      "stdout": "Ign:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-headers-generic amd64 6.8.0-146.146\nErr:1 http://security.ubuntu.com/ubuntu noble-updates/main amd64 linux-headers-generic amd64 6.8.0-146.146\n  404  Not Found [IP: 185.125.190.83 80]\n",
+      "stderr": "E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/l/linux-meta/linux-headers-generic_6.8.0-146.146_amd64.deb  404  Not Found [IP: 185.125.190.83 80]\n"
+    },
+    {
+      "label": "Read Ubuntu package metadata for linux-headers-6.8.0-31-generic",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "linux-headers-6.8.0-31-generic=6.8.0-31.31"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:31:59.316050+00:00",
+      "exit_code": 0,
+      "stdout": "Package: linux-headers-6.8.0-31-generic\nArchitecture: amd64\nVersion: 6.8.0-31.31\nPriority: optional\nSection: devel\nSource: linux\nOrigin: Ubuntu\nMaintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 28335\nProvides: linux-headers, linux-headers-3.0\nDepends: linux-headers-6.8.0-31, libc6 (>= 2.38), libelf1t64 (>= 0.144), libgcc-s1 (>= 4.2), libssl3t64 (>= 3.0.0), zlib1g (>= 1:1.2.3.3)\nFilename: pool/main/l/linux/linux-headers-6.8.0-31-generic_6.8.0-31.31_amd64.deb\nSize: 3865730\nMD5sum: 165f9f04861bc672103d9824a451a5fb\nSHA1: af78d45030d0b5ea7e5f4eb4bbe5920a2de9f217\nSHA256: dae8b1c95ad3a07d6a280c505cde6fa214bbc08db9e8ff75f58bbfab7ac991ae\nSHA512: d4df2361d067a140894cc4b463d77990005f91944f30f841f39c50c1c593b2e9946c3debe8c054495e0dcd45a17ed9575140e4396ca619017b341202d5df3dc8\nDescription-en: Linux kernel headers for version 6.8.0 on 64 bit x86 SMP\n This package provides kernel header files for version 6.8.0 on\n 64 bit x86 SMP.\n .\n This is for sites that want the latest kernel headers.  Please read\n /usr/share/doc/linux-headers-6.8.0-31/debian.README.gz for details.\nDescription-md5: 1e1c76c58342084b9f249e1864a40d4a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only linux-headers-6.8.0-31-generic",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "linux-headers-6.8.0-31-generic=6.8.0-31.31"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-6.8.0-31-generic",
+      "timestamp_utc": "2026-11-05T12:31:59.349845+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 linux-headers-6.8.0-31-generic amd64 6.8.0-31.31 [3866 kB]\nFetched 3866 kB in 4s (881 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract linux-headers-6.8.0-31-generic without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-6.8.0-31-generic/linux-headers-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:32:04.080164+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for linux-headers-6.8.0-31",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "linux-headers-6.8.0-31=6.8.0-31.31"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:32:26.860404+00:00",
+      "exit_code": 0,
+      "stdout": "Package: linux-headers-6.8.0-31\nArchitecture: all\nVersion: 6.8.0-31.31\nMulti-Arch: foreign\nPriority: optional\nSection: devel\nSource: linux\nOrigin: Ubuntu\nMaintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 83456\nDepends: coreutils\nFilename: pool/main/l/linux/linux-headers-6.8.0-31_6.8.0-31.31_all.deb\nSize: 13608008\nMD5sum: f6facfe06f26a860555b748962391eb7\nSHA1: 75bce88335c0a92731f6d5c9c3b1a06a1e0fd756\nSHA256: b332a7edf4ea4b5124c52496b5a18d0c1858dd85b1d91fd4dba6f1e2978b3548\nSHA512: 2c1ab0ce423f2a9eeb63e442ace5876f906396a2b62c5317c023ceab2e7e05adcfb6c8d861d8bfd9860fc9dab132fefd428cae72ba44046856732a7fb8b3dfc4\nDescription-en: Header files related to Linux kernel version 6.8.0\n This package provides kernel header files for version 6.8.0, for sites\n that want the latest kernel headers. Please read\n /usr/share/doc/linux-headers-6.8.0-31/debian.README.gz for details\nDescription-md5: ec7f62749a4ad951f71ed5c3a2aa637f\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only linux-headers-6.8.0-31",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "linux-headers-6.8.0-31=6.8.0-31.31"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-6.8.0-31",
+      "timestamp_utc": "2026-11-05T12:32:26.893454+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 linux-headers-6.8.0-31 all 6.8.0-31.31 [13.6 MB]\nFetched 13.6 MB in 1s (14.3 MB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract linux-headers-6.8.0-31 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-6.8.0-31/linux-headers-6.8.0-31_6.8.0-31.31_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:32:28.238403+00:00",
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Complete local extraction of official linux-headers-6.8.0-31-generic",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "150s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-6.8.0-31-generic/linux-headers-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:34:31.851415+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Complete local extraction of official linux-headers-6.8.0-31",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "150s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/packages/linux-headers-6.8.0-31/linux-headers-6.8.0-31_6.8.0-31.31_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:35:46.414384+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Record native C compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "gcc",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:37:18.570626+00:00",
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/lib"
+      }
+    },
+    {
+      "label": "Build external module offline with native Kbuild",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/bin/make",
+        "-C",
+        "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/src/linux-headers-6.8.0-31",
+        "O=${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/src/linux-headers-6.8.0-31-generic",
+        "M=${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+        "-j2",
+        "modules"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild",
+      "timestamp_utc": "2026-11-05T12:37:18.630669+00:00",
+      "exit_code": 0,
+      "stdout": "make: Entering directory '${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/src/linux-headers-6.8.0-31'\nmake[1]: Entering directory '${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/src/linux-headers-6.8.0-31-generic'\n  CC [M]  ${WORKSPACE}/work/native_batch_20261105/middle/kbuild/hello.o\n  MODPOST ${WORKSPACE}/work/native_batch_20261105/middle/kbuild/Module.symvers\n  CC [M]  ${WORKSPACE}/work/native_batch_20261105/middle/kbuild/hello.mod.o\n  LD [M]  ${WORKSPACE}/work/native_batch_20261105/middle/kbuild/hello.ko\n  BTF [M] ${WORKSPACE}/work/native_batch_20261105/middle/kbuild/hello.ko\nmake[1]: Leaving directory '${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/src/linux-headers-6.8.0-31-generic'\nmake: Leaving directory '${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/src/linux-headers-6.8.0-31'\n",
+      "stderr": "warning: the compiler differs from the one used to build the kernel\n  The kernel was built by: x86_64-linux-gnu-gcc-13 (Ubuntu 13.2.0-23ubuntu4) 13.2.0\n  You are using:           gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nSkipping BTF generation for ${WORKSPACE}/work/native_batch_20261105/middle/kbuild/hello.ko due to unavailability of vmlinux\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/kbuild/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "linux-headers-6.8.0-31-generic",
+      "version": "6.8.0-31.31",
+      "ubuntu_archive_path": "pool/main/l/linux/linux-headers-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+      "sha256": "dae8b1c95ad3a07d6a280c505cde6fa214bbc08db9e8ff75f58bbfab7ac991ae"
+    },
+    {
+      "name": "linux-headers-6.8.0-31",
+      "version": "6.8.0-31.31",
+      "ubuntu_archive_path": "pool/main/l/linux/linux-headers-6.8.0-31_6.8.0-31.31_all.deb",
+      "sha256": "b332a7edf4ea4b5124c52496b5a18d0c1858dd85b1d91fd4dba6f1e2978b3548"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#388 Linux Kernel Module/Kbuild": "8d37b44311bad63e24789df83efa1f1e0b030a79b65ac6c5532d5347bec86e4d",
+    "examples/#388 Linux Kernel Module/hello.c": "8f9be30b5124f3067f760f1a08c4f277b6963abc2b85c1f2cc045f112b83c6e7",
+    "examples/#388 Linux Kernel Module/hello.mod": "c1eb68c13e6b69af508026489a0cba88ea64f32650109fd9b00c3e9b66915820"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://docs.kernel.org/kbuild/modules.html",
+    "https://docs.kernel.org/kbuild/makefiles.html"
+  ],
+  "generated_artifacts": {
+    "hello.mod": "9ec75cb96203828310164bbafadb942b17c8a17a612a8173b3964637003dcfce",
+    "hello.ko": "db90cc7e9533f86468898c60efe66a1a8a91e35056fe7f0929dbdfc810241855"
+  },
+  "semantic_scope": "Native Kbuild compiled the original external module, regenerated the canonical .mod object list modulo its temporary directory prefix, and embedded both greeting and module description. No module was loaded or kernel init executed.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native Kbuild compiled the original external module, regenerated the canonical .mod object list modulo its temporary directory prefix, and embedded both greeting and module description. No module was loaded or kernel init executed."
+}

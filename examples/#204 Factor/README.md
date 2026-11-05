@@ -1,5 +1,20 @@
 # #204 Factor
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+Authentic Factor VM loaded the unchanged script, concatenated the two stack strings and printed exactly Hello, World!. No listener or UI was started.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json). [Earlier evidence](verification/native.json).
+
+## Extension results
+
+- `.factor`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica `Factor`, tipo `programming`, language_id `108`.
 
 Concatenate two strings on the Factor stack and print the greeting.
@@ -45,4 +60,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.factor` | [hello.factor](hello.factor) created; verification pending |
+| `.factor` | [hello.factor](hello.factor) syntax and behavior verified |
+
+</details>

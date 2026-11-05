@@ -1102,10 +1102,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#023 Agda/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#023 Agda/Hello.agda": "8b4073c7fbe309b4e28f5f341a66accdb49bd1675f34af540eb3b362b1bb366b"
+      },
       "based_on": null,
       "documentation": "examples/#023 Agda/README.md",
       "supporting_files": [],
@@ -1115,10 +1117,8 @@
         "https://agda.readthedocs.io/en/latest/tools/compilers.html",
         "https://agda.readthedocs.io/en/latest/language/foreign-function-interface.html"
       ],
-      "blockers": [
-        "Agda and GHC executables are not available in PATH; native typecheck, FFI compilation and runtime remain pending."
-      ],
-      "notes": "Uses only Agda.Builtin modules. Review against official documentation is not counted as syntax verification. Environment probe is not a language execution."
+      "blockers": [],
+      "notes": "Agda typechecked the unchanged main : IO declaration; its GHC backend compiled the FFI putLine implementation and the resulting executable printed exactly Hello, World!."
     },
     {
       "language_ordinal": 24,
@@ -2134,10 +2134,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#043 Asymptote/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#043 Asymptote/hello.asy": "ca7996047b748610d3709194a632e5e6a76f0870190265a0958db512d58f8a68"
+      },
       "based_on": null,
       "documentation": "examples/#043 Asymptote/README.md",
       "supporting_files": [],
@@ -2147,10 +2149,8 @@
         "https://asymptote.sourceforge.io/doc/Files.html",
         "https://asymptote.sourceforge.io/doc/Options.html"
       ],
-      "blockers": [
-        "Asymptote interpreter runs, but local MiKTeX standard plain modules produce compiler errors; coherent interpreter/library installation required."
-      ],
-      "notes": "L’interprete MiKTeX locale è stato eseguito davvero, ma non carica il modulo plain: il log mostra errori sui moduli standard prima dell’esecuzione del sorgente. Occorre una toolchain coerente; sintassi e semantica restano false."
+      "blockers": [],
+      "notes": "The native Asymptote interpreter loaded its matching standard modules and concatenated/printed the exact greeting. Console I/O only; no graphics or viewer."
     },
     {
       "language_ordinal": 44,
@@ -2381,10 +2381,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#048 Awk/verification/native_20261105_batch_2e61756b.json",
+      "verified_artifact_sha256": {
+        "examples/#048 Awk/variants/ext-auk-2e61756b/hello.auk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+      },
       "based_on": "examples/#048 Awk/hello.awk",
       "documentation": "examples/#048 Awk/variants/ext-auk-2e61756b/README.md",
       "supporting_files": [],
@@ -2394,10 +2396,8 @@
         "https://www.gnu.org/software/gawk/manual/gawk.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente AWK nel sottoinsieme POSIX comune: concatenazione di stringhe e print in BEGIN. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 48,
@@ -2408,10 +2408,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#048 Awk/verification/native_20261105_batch_2e6761776b.json",
+      "verified_artifact_sha256": {
+        "examples/#048 Awk/variants/ext-gawk-2e6761776b/hello.gawk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+      },
       "based_on": "examples/#048 Awk/hello.awk",
       "documentation": "examples/#048 Awk/variants/ext-gawk-2e6761776b/README.md",
       "supporting_files": [],
@@ -2421,10 +2423,8 @@
         "https://www.gnu.org/software/gawk/manual/gawk.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente AWK nel sottoinsieme POSIX comune: concatenazione di stringhe e print in BEGIN. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 48,
@@ -2435,10 +2435,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#048 Awk/verification/native_20261105_batch_2e6d61776b.json",
+      "verified_artifact_sha256": {
+        "examples/#048 Awk/variants/ext-mawk-2e6d61776b/hello.mawk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+      },
       "based_on": "examples/#048 Awk/hello.awk",
       "documentation": "examples/#048 Awk/variants/ext-mawk-2e6d61776b/README.md",
       "supporting_files": [],
@@ -2448,10 +2450,8 @@
         "https://www.gnu.org/software/gawk/manual/gawk.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente AWK nel sottoinsieme POSIX comune: concatenazione di stringhe e print in BEGIN. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 48,
@@ -2462,10 +2462,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#048 Awk/verification/native_20261105_batch_2e6e61776b.json",
+      "verified_artifact_sha256": {
+        "examples/#048 Awk/variants/ext-nawk-2e6e61776b/hello.nawk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+      },
       "based_on": "examples/#048 Awk/hello.awk",
       "documentation": "examples/#048 Awk/variants/ext-nawk-2e6e61776b/README.md",
       "supporting_files": [],
@@ -2475,10 +2477,8 @@
         "https://www.gnu.org/software/gawk/manual/gawk.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente AWK nel sottoinsieme POSIX comune: concatenazione di stringhe e print in BEGIN. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 49,
@@ -3651,10 +3651,14 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#083 C/verification/native_20261105_batch_2e63.json",
+      "verified_artifact_sha256": {
+        "examples/#083 C/hello.c": "351116b93db646b5413a114cd4066a84e0e71b352d495072065a59710fb1efc8",
+        "examples/#083 C/variants/ext-h-2e68/consumer.c": "0c5f74179aa0384efb728feb9142974efd32fa2383c3e446afbaebc0f9eecb6c",
+        "examples/#083 C/variants/ext-h-in-2e682e696e/consumer.c": "0c5f74179aa0384efb728feb9142974efd32fa2383c3e446afbaebc0f9eecb6c"
+      },
       "based_on": null,
       "documentation": "examples/#083 C/README.md",
       "supporting_files": [],
@@ -3665,7 +3669,7 @@
         "https://www.gnu.org/software/libc/manual/html_node/Simple-Output.html"
       ],
       "blockers": [],
-      "notes": "Compilazione ed esecuzione reali con GCC; puts aggiunge il carattere newline."
+      "notes": "CMake configured the original C header template where required; GCC compiled each recorded C consumer and each resulting executable printed exactly Hello, World! plus LF. All files attached to this extension pair were exercised."
     },
     {
       "language_ordinal": 83,
@@ -3734,10 +3738,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#083 C/verification/native_20261105_batch_2e682e696e.json",
+      "verified_artifact_sha256": {
+        "examples/#083 C/variants/ext-h-in-2e682e696e/hello.h.in": "27373e7c552e350b3a7a2234fe15aef02c1a7f083e6b8ba0794ecfac5210d22e"
+      },
       "based_on": "examples/#083 C/hello.c",
       "documentation": "examples/#083 C/variants/ext-h-in-2e682e696e/README.md",
       "supporting_files": [
@@ -3752,10 +3758,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://cmake.org/cmake/help/latest/command/configure_file.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Header C template CMake con token @GREETING@. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "CMake configured the original C header template where required; GCC compiled each recorded C consumer and each resulting executable printed exactly Hello, World! plus LF. All files attached to this extension pair were exercised."
     },
     {
       "language_ordinal": 83,
@@ -3951,10 +3955,25 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261105_batch_2e637070.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/hello.cpp": "490a9565a75ec789c4d270945dd4f91d6241e9aa9ab1da65ff7a9b570e25f98f",
+        "examples/#085 C++/variants/ext-cppm-2e6370706d/consumer.cpp": "3cb960e29d360b38a9ddbff481f726cbd65f97b5378d8cde4fa14355861debfb",
+        "examples/#085 C++/variants/ext-h-2e68/consumer.cpp": "49dc25fa2a9518ded0939d49f97b147319d9a19a3b4a1204d128b02f558b6989",
+        "examples/#085 C++/variants/ext-h-2e682b2b/consumer.cpp": "f3fbcc65629587f6f6b57530206f470ee344a7e6c3ad071cf2021e13349c8a1f",
+        "examples/#085 C++/variants/ext-hh-2e6868/consumer.cpp": "b53ca886be4d007bc30150dcf61d3136bfd9068335fad0442eb80fc960c067e2",
+        "examples/#085 C++/variants/ext-hpp-2e687070/consumer.cpp": "78830e33e4fc4a711a26af02998737efe42f944c9dde3361806f72bbd58c0a38",
+        "examples/#085 C++/variants/ext-hxx-2e687878/consumer.cpp": "d145019975d39faa87f17ee78e427ffbaf153025db76a48def1e63d504062b26",
+        "examples/#085 C++/variants/ext-inc-2e696e63/consumer.cpp": "f1d6194159fdde6962dd62a9da7f28c5ac8111112b056ebe9781459d21a78d0f",
+        "examples/#085 C++/variants/ext-inl-2e696e6c/consumer.cpp": "ee3d9ea8da0c56dba1f43c3653d69ba22e10cf78de4451da11de17e846b10441",
+        "examples/#085 C++/variants/ext-ipp-2e697070/consumer.cpp": "ae943168172a4c77ed269c37a85fbe69edc469249d211d03419ee143803c93d4",
+        "examples/#085 C++/variants/ext-ixx-2e697878/consumer.cpp": "3cb960e29d360b38a9ddbff481f726cbd65f97b5378d8cde4fa14355861debfb",
+        "examples/#085 C++/variants/ext-tcc-2e746363/consumer.cpp": "6fa7ca53eac9f1131b16370181d7502f77c2dd2588d1e4666a23c500207712a6",
+        "examples/#085 C++/variants/ext-tpp-2e747070/consumer.cpp": "d89ad3803b2c756feb27ac962a137ace1220a753517482abee600ce2e98ab17d",
+        "examples/#085 C++/variants/ext-txx-2e747878/consumer.cpp": "1cf5cf8e9725ba7f6be559bd3338f373023dfb0113a51f8e1f7f766110337772"
+      },
       "based_on": null,
       "documentation": "examples/#085 C++/README.md",
       "supporting_files": [],
@@ -3965,7 +3984,7 @@
         "https://www.open-std.org/jtc1/sc22/wg21/"
       ],
       "blockers": [],
-      "notes": "Compilatore C++ e programma realmente eseguiti; nessun interprete sostitutivo."
+      "notes": "The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting."
     },
     {
       "language_ordinal": 85,
@@ -4060,10 +4079,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261105_batch_2e6370706d.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-cppm-2e6370706d/hello.cppm": "f93b2cc9d1883d1459574d2c109b41fded488c895e84692030fb7006010eb07f"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-cppm-2e6370706d/README.md",
       "supporting_files": [
@@ -4077,10 +4098,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://clang.llvm.org/docs/StandardCPlusPlusModules.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Interfaccia di modulo C++20 esportata, importata dal consumer. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting."
     },
     {
       "language_ordinal": 85,
@@ -4396,10 +4415,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#085 C++/verification/native_20261105_batch_2e697878.json",
+      "verified_artifact_sha256": {
+        "examples/#085 C++/variants/ext-ixx-2e697878/hello.ixx": "f93b2cc9d1883d1459574d2c109b41fded488c895e84692030fb7006010eb07f"
+      },
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-ixx-2e697878/README.md",
       "supporting_files": [
@@ -4413,10 +4434,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://clang.llvm.org/docs/StandardCPlusPlusModules.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Interfaccia di modulo C++20 esportata, importata dal consumer. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting."
     },
     {
       "language_ordinal": 85,
@@ -4429,7 +4448,7 @@
       "artifact_created": true,
       "syntax_verified": false,
       "semantic_verified": false,
-      "verification_log": null,
+      "verification_log": "examples/#085 C++/verification/native_20261105_batch_blocked_2e7265.json",
       "verified_artifact_sha256": {},
       "based_on": "examples/#085 C++/hello.cpp",
       "documentation": "examples/#085 C++/variants/ext-re-2e7265/README.md",
@@ -4443,9 +4462,9 @@
         "https://re2c.org/manual/manual_c.html"
       ],
       "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
+        "The genuine re2c generator accepted the original .re source, but the generated C++ failed to compile because YYLIMIT and YYFILL were not defined. This variant remains unverified and needs a source correction."
       ],
-      "notes": "Sorgente re2c incorporato in C++; non un semplice alias .cpp. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "notes": "The genuine re2c generator accepted the original .re source, but the generated C++ failed to compile because YYLIMIT and YYFILL were not defined. This variant remains unverified and needs a source correction."
     },
     {
       "language_ordinal": 85,
@@ -4716,10 +4735,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#092 CMake/verification/native_20261105_batch_2e636d616b65.json",
+      "verified_artifact_sha256": {
+        "examples/#092 CMake/hello.cmake": "d87c088fed8f3510a90861a6a2272e817f6ba95568e7a32ee5f94119ee9fbf75",
+        "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/configure.cmake": "977416f0a33429844b97b2330e7e7f95744ae8ce50cff9534cc86233dad12e1a"
+      },
       "based_on": null,
       "documentation": "examples/#092 CMake/README.md",
       "supporting_files": [],
@@ -4730,7 +4752,7 @@
         "https://cmake.org/cmake/help/latest/command/message.html"
       ],
       "blockers": [],
-      "notes": "message senza modo STATUS invia il messaggio a stderr: il canale corretto è esplicitamente verificato. Il controllo if/FATAL_ERROR è eseguito dal vero CMake."
+      "notes": "Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel."
     },
     {
       "language_ordinal": 92,
@@ -4741,10 +4763,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#092 CMake/verification/native_20261105_batch_2e636d616b652e696e.json",
+      "verified_artifact_sha256": {
+        "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in": "a6124f8f97de8c5b0e3e3e10e869cb99f47d6595dfecf9e1f488eb1a68b473f0"
+      },
       "based_on": "examples/#092 CMake/hello.cmake",
       "documentation": "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/README.md",
       "supporting_files": [
@@ -4758,10 +4782,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://cmake.org/cmake/help/latest/command/configure_file.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template CMake configurato con configure_file @ONLY. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel."
     },
     {
       "language_ordinal": 93,
@@ -6892,10 +6914,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#133 Common Lisp/verification/native_20261105_batch_2e6c697370.json",
+      "verified_artifact_sha256": {
+        "examples/#133 Common Lisp/hello.lisp": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45",
+        "examples/#133 Common Lisp/variants/ext-asd-2e617364/greeting.lisp": "37e6b1acef9872982825bfe7e5183df4127b8cf3f34704c3768c5ef2fd2b6c91"
+      },
       "based_on": null,
       "documentation": "examples/#133 Common Lisp/README.md",
       "supporting_files": [],
@@ -6907,7 +6932,7 @@
         "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm"
       ],
       "blockers": [],
-      "notes": "Il reader e il compilatore SBCL autentici eseguono il form originale. concatenate usa il tipo risultato string; la direttiva ~A di format scrive il contenuto e ~% aggiunge newline."
+      "notes": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
     },
     {
       "language_ordinal": 133,
@@ -6918,10 +6943,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#133 Common Lisp/verification/native_20261105_batch_2e617364.json",
+      "verified_artifact_sha256": {
+        "examples/#133 Common Lisp/variants/ext-asd-2e617364/hello.asd": "9fe617d5bd293dae8246c692d66ade966ac03c119c6ab102907ced546f75c1b9"
+      },
       "based_on": "examples/#133 Common Lisp/hello.lisp",
       "documentation": "examples/#133 Common Lisp/variants/ext-asd-2e617364/README.md",
       "supporting_files": [
@@ -6936,10 +6963,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://asdf.common-lisp.dev/asdf/Defining-systems-with-defsystem.html"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Descrizione sistema ASDF con componente Lisp che emette il saluto. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
     },
     {
       "language_ordinal": 133,
@@ -6950,10 +6975,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#133 Common Lisp/verification/native_20261105_batch_2e636c.json",
+      "verified_artifact_sha256": {
+        "examples/#133 Common Lisp/variants/ext-cl-2e636c/hello.cl": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45"
+      },
       "based_on": "examples/#133 Common Lisp/hello.lisp",
       "documentation": "examples/#133 Common Lisp/variants/ext-cl-2e636c/README.md",
       "supporting_files": [],
@@ -6965,10 +6992,8 @@
         "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Forme Common Lisp/S-expression; questo suffisso resta nella voce Common Lisp, non nei dialetti omonimi di altre cartelle. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
     },
     {
       "language_ordinal": 133,
@@ -6979,10 +7004,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#133 Common Lisp/verification/native_20261105_batch_2e6c.json",
+      "verified_artifact_sha256": {
+        "examples/#133 Common Lisp/variants/ext-l-2e6c/hello.l": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45"
+      },
       "based_on": "examples/#133 Common Lisp/hello.lisp",
       "documentation": "examples/#133 Common Lisp/variants/ext-l-2e6c/README.md",
       "supporting_files": [],
@@ -6994,10 +7021,8 @@
         "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Forme Common Lisp/S-expression; questo suffisso resta nella voce Common Lisp, non nei dialetti omonimi di altre cartelle. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
     },
     {
       "language_ordinal": 133,
@@ -7008,10 +7033,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#133 Common Lisp/verification/native_20261105_batch_2e6c7370.json",
+      "verified_artifact_sha256": {
+        "examples/#133 Common Lisp/variants/ext-lsp-2e6c7370/hello.lsp": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45"
+      },
       "based_on": "examples/#133 Common Lisp/hello.lisp",
       "documentation": "examples/#133 Common Lisp/variants/ext-lsp-2e6c7370/README.md",
       "supporting_files": [],
@@ -7023,10 +7050,8 @@
         "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Forme Common Lisp/S-expression; questo suffisso resta nella voce Common Lisp, non nei dialetti omonimi di altre cartelle. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
     },
     {
       "language_ordinal": 133,
@@ -7096,10 +7121,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#133 Common Lisp/verification/native_20261105_batch_2e73657870.json",
+      "verified_artifact_sha256": {
+        "examples/#133 Common Lisp/variants/ext-sexp-2e73657870/hello.sexp": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45"
+      },
       "based_on": "examples/#133 Common Lisp/hello.lisp",
       "documentation": "examples/#133 Common Lisp/variants/ext-sexp-2e73657870/README.md",
       "supporting_files": [],
@@ -7111,10 +7138,8 @@
         "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Forme Common Lisp/S-expression; questo suffisso resta nella voce Common Lisp, non nei dialetti omonimi di altre cartelle. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
     },
     {
       "language_ordinal": 134,
@@ -8414,10 +8439,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#166 Diff/verification/native_20261105_batch_2e7061746368.json",
+      "verified_artifact_sha256": {
+        "examples/#166 Diff/variants/ext-patch-2e7061746368/hello.patch": "e37a5519cb866ca7321c0ab61968e15198db0aa428ed35cbf68df85912ffc486"
+      },
       "based_on": "examples/#166 Diff/hello.diff",
       "documentation": "examples/#166 Diff/variants/ext-patch-2e7061746368/README.md",
       "supporting_files": [],
@@ -8428,10 +8455,8 @@
         "https://www.gnu.org/software/diffutils/manual/html_node/Invoking-patch.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "GNU patch accepted the exact variant in a dry run, then applied it only to the copied original before fixture. The result is byte-identical to the original after fixture, exactly Hello, World! plus LF."
     },
     {
       "language_ordinal": 167,
@@ -10256,10 +10281,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#204 Factor/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#204 Factor/hello.factor": "7f14e13bb98dcae21a64734005f023b90c6315d59d705db8e0a29b0c86968ff1"
+      },
       "based_on": null,
       "documentation": "examples/#204 Factor/README.md",
       "supporting_files": [],
@@ -10269,10 +10296,8 @@
         "https://factorcode.org/",
         "https://github.com/factor/factor"
       ],
-      "blockers": [
-        "Factor language VM/image is unavailable; GNU coreutils factor would not verify Factor language."
-      ],
-      "notes": "USING importa io e sequences; append concatena le stringhe prima di print. Il VM è assente."
+      "blockers": [],
+      "notes": "Authentic Factor VM loaded the unchanged script, concatenated the two stack strings and printed exactly Hello, World!. No listener or UI was started."
     },
     {
       "language_ordinal": 205,
@@ -10643,10 +10668,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e347468.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-4th-2e347468/hello.4th": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-4th-2e347468/README.md",
       "supporting_files": [],
@@ -10657,10 +10684,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 215,
@@ -10671,10 +10696,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e66.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-f-2e66/hello.f": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-f-2e66/README.md",
       "supporting_files": [],
@@ -10685,10 +10712,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 215,
@@ -10699,10 +10724,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e666f72.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-for-2e666f72/hello.for": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-for-2e666f72/README.md",
       "supporting_files": [],
@@ -10713,10 +10740,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 215,
@@ -10727,10 +10752,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e666f727468.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-forth-2e666f727468/hello.forth": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-forth-2e666f727468/README.md",
       "supporting_files": [],
@@ -10741,10 +10768,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 215,
@@ -10755,10 +10780,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e6672.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-fr-2e6672/hello.fr": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-fr-2e6672/README.md",
       "supporting_files": [],
@@ -10769,10 +10796,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 215,
@@ -10783,10 +10808,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e667274.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-frt-2e667274/hello.frt": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-frt-2e667274/README.md",
       "supporting_files": [],
@@ -10797,10 +10824,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 215,
@@ -10811,10 +10836,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#215 Forth/verification/native_20261105_batch_2e6673.json",
+      "verified_artifact_sha256": {
+        "examples/#215 Forth/variants/ext-fs-2e6673/hello.fs": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+      },
       "based_on": "examples/#215 Forth/hello.fth",
       "documentation": "examples/#215 Forth/variants/ext-fs-2e6673/README.md",
       "supporting_files": [],
@@ -10825,10 +10852,8 @@
         "https://forth-standard.org/standard/core/Dotp",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Sorgente Forth testuale; .f/.for/.fs in questa cartella non sono sorgenti Fortran o F#. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 216,
@@ -13348,10 +13373,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#244 Gettext Catalog/verification/native_20261105_batch_2e706f74.json",
+      "verified_artifact_sha256": {
+        "examples/#244 Gettext Catalog/variants/ext-pot-2e706f74/hello.pot": "29ccaeb26b3f46c95a8bd400a85df679b85c188e5db86da2fd0d28a71569969b"
+      },
       "based_on": "examples/#244 Gettext Catalog/hello.po",
       "documentation": "examples/#244 Gettext Catalog/variants/ext-pot-2e706f74/README.md",
       "supporting_files": [],
@@ -13363,10 +13390,8 @@
         "https://docs.python.org/3/library/gettext.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Template gettext POT: msgid contiene il testo sorgente e msgstr è vuoto, distinto dal catalogo PO tradotto. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "GNU gettext accepted and compiled the exact POT template; msgattrib returned its untranslated Hello, World! entry. GNUTranslations loaded the compiled catalog and preserved untranslated and unknown keys. This checks template behavior, not a supplied translation."
     },
     {
       "language_ordinal": 245,
@@ -13632,10 +13657,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#256 Gnuplot/verification/native_20261105_batch_2e6770.json",
+      "verified_artifact_sha256": {
+        "examples/#256 Gnuplot/variants/ext-gp-2e6770/hello.gp": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+      },
       "based_on": "examples/#256 Gnuplot/hello.gnuplot",
       "documentation": "examples/#256 Gnuplot/variants/ext-gp-2e6770/README.md",
       "supporting_files": [],
@@ -13646,10 +13673,8 @@
         "https://gnuplot.sourceforge.net/docs/loc18701.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used."
     },
     {
       "language_ordinal": 256,
@@ -13660,10 +13685,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#256 Gnuplot/verification/native_20261105_batch_2e676e75.json",
+      "verified_artifact_sha256": {
+        "examples/#256 Gnuplot/variants/ext-gnu-2e676e75/hello.gnu": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+      },
       "based_on": "examples/#256 Gnuplot/hello.gnuplot",
       "documentation": "examples/#256 Gnuplot/variants/ext-gnu-2e676e75/README.md",
       "supporting_files": [],
@@ -13674,10 +13701,8 @@
         "https://gnuplot.sourceforge.net/docs/loc18701.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used."
     },
     {
       "language_ordinal": 256,
@@ -13715,10 +13740,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#256 Gnuplot/verification/native_20261105_batch_2e70.json",
+      "verified_artifact_sha256": {
+        "examples/#256 Gnuplot/variants/ext-p-2e70/hello.p": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+      },
       "based_on": "examples/#256 Gnuplot/hello.gnuplot",
       "documentation": "examples/#256 Gnuplot/variants/ext-p-2e70/README.md",
       "supporting_files": [],
@@ -13729,10 +13756,8 @@
         "https://gnuplot.sourceforge.net/docs/loc18701.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used."
     },
     {
       "language_ordinal": 256,
@@ -13743,10 +13768,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#256 Gnuplot/verification/native_20261105_batch_2e706c6f74.json",
+      "verified_artifact_sha256": {
+        "examples/#256 Gnuplot/variants/ext-plot-2e706c6f74/hello.plot": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+      },
       "based_on": "examples/#256 Gnuplot/hello.gnuplot",
       "documentation": "examples/#256 Gnuplot/variants/ext-plot-2e706c6f74/README.md",
       "supporting_files": [],
@@ -13757,10 +13784,8 @@
         "https://gnuplot.sourceforge.net/docs/loc18701.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used."
     },
     {
       "language_ordinal": 256,
@@ -13771,10 +13796,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#256 Gnuplot/verification/native_20261105_batch_2e706c74.json",
+      "verified_artifact_sha256": {
+        "examples/#256 Gnuplot/variants/ext-plt-2e706c74/hello.plt": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+      },
       "based_on": "examples/#256 Gnuplot/hello.gnuplot",
       "documentation": "examples/#256 Gnuplot/variants/ext-plt-2e706c74/README.md",
       "supporting_files": [],
@@ -13785,10 +13812,8 @@
         "https://gnuplot.sourceforge.net/docs/loc18701.html",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used."
     },
     {
       "language_ordinal": 257,
@@ -14235,10 +14260,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#265 Grace/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#265 Grace/hello.grace": "8021fc8919802e721947061c24dec15a0c4e76a5e141e772d5cf082fc5c1c3d9"
+      },
       "based_on": null,
       "documentation": "examples/#265 Grace/README.md",
       "supporting_files": [],
@@ -14248,10 +14275,8 @@
         "https://github.com/gracelang/minigrace",
         "https://github.com/gracelang/language"
       ],
-      "blockers": [
-        "Minigrace compiler and standard dialect modules are not configured."
-      ],
-      "notes": "La sintassi di print senza parentesi e interpolazione {name} segue Grace. Non sono configurati il compiler e i moduli, quindi i flag restano false."
+      "blockers": [],
+      "notes": "The official Minigrace compiler parsed and compiled the unchanged Grace source with its standard dialect. The official Grace command-line runner, invoked through the pinned Node runtime rather than its machine-specific shebang, executed the resulting module and printed exactly Hello, World!."
     },
     {
       "language_ordinal": 266,
@@ -14490,10 +14515,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#271 Graphviz (DOT)/verification/native_20261105_batch_2e6776.json",
+      "verified_artifact_sha256": {
+        "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/hello.gv": "3557c921babe8addeaf0209d5f140605685f5b28208c11d05de44fff9729c644"
+      },
       "based_on": "examples/#271 Graphviz (DOT)/hello.dot",
       "documentation": "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/README.md",
       "supporting_files": [],
@@ -14504,10 +14531,8 @@
         "https://graphviz.org/docs/outputs/svg/",
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Alias testuale dello stesso formato e dello stesso programma/dataset del modello originale. Copia byte-identica del modello dichiarato: l’uguaglianza dei byte non equivale a una nuova prova della toolchain sul nuovo suffisso."
+      "blockers": [],
+      "notes": "Graphviz natively parsed and laid out the exact .gv file; the resulting SVG contains a text node exactly Hello, World!. Rendering stayed in files without a viewer."
     },
     {
       "language_ordinal": 272,
@@ -20109,10 +20134,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#345 Jsonnet/verification/native_20261105_batch_2e6a736f6e6e6574.json",
+      "verified_artifact_sha256": {
+        "examples/#345 Jsonnet/hello.jsonnet": "05e9a887feb349eda18e49bdebea78256ccbb8968d656dc7df3e7eadef494c9a",
+        "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/driver.jsonnet": "16baeb51f9d910982b6a0617826211ebc5fbe1a9f6bf1d5c3ab59eae351cb009"
+      },
       "based_on": null,
       "documentation": "examples/#345 Jsonnet/README.md",
       "supporting_files": [],
@@ -20123,7 +20151,7 @@
         "https://jsonnet.org/ref/spec.html"
       ],
       "blockers": [],
-      "notes": "Il vero evaluator produce JSON; la verifica legge quel prodotto e confronta esattamente il campo message."
+      "notes": "The original Jsonnet C++ evaluator loaded and evaluated the exact source and its declared library import; emitted JSON contains the greeting value Hello, World!."
     },
     {
       "language_ordinal": 345,
@@ -20134,10 +20162,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#345 Jsonnet/verification/native_20261105_batch_2e6c6962736f6e6e6574.json",
+      "verified_artifact_sha256": {
+        "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/hello.libsonnet": "fcebf6eae7df3c1c619fe5211b1bc1e31da633193024f31687f21d786d03cb8b"
+      },
       "based_on": null,
       "documentation": "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/README.md",
       "supporting_files": [
@@ -20149,10 +20179,8 @@
         "https://jsonnet.org/learning/tutorial.html",
         "https://jsonnet.org/ref/spec.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Libreria Jsonnet che esporta una stringa; il fixture importa la libreria. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "The original Jsonnet C++ evaluator loaded and evaluated the exact source and its declared library import; emitted JSON contains the greeting value Hello, World!."
     },
     {
       "language_ordinal": 346,
@@ -21826,10 +21854,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#388 Linux Kernel Module/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#388 Linux Kernel Module/hello.mod": "c1eb68c13e6b69af508026489a0cba88ea64f32650109fd9b00c3e9b66915820"
+      },
       "based_on": null,
       "documentation": "examples/#388 Linux Kernel Module/README.md",
       "supporting_files": [],
@@ -21840,10 +21870,8 @@
         "https://docs.kernel.org/kbuild/makefiles.html",
         "https://github.com/torvalds/linux/blob/master/scripts/Makefile.build"
       ],
-      "blockers": [
-        "Header/build tree kernel Kbuild non preparati; compilazione offline e rigenerazione .mod pending."
-      ],
-      "notes": "Linux Kernel Module nella baseline è un formato dati .mod. hello.mod è il campione testuale della lista oggetti, con percorso relativo illustrativo; Kbuild e hello.c ne forniscono il contesto reale. Non è un binario .ko e non può essere caricato direttamente. La futura verifica prevista è compilazione/metadata offline; init/runtime kernel non è attestato."
+      "blockers": [],
+      "notes": "Native Kbuild compiled the original external module, regenerated the canonical .mod object list modulo its temporary directory prefix, and embedded both greeting and module description. No module was loaded or kernel init executed."
     },
     {
       "language_ordinal": 389,
@@ -22610,10 +22638,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#403 M/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#403 M/hello.mumps": "a81e922a3255f5fc417d51cccd5a5748f19bc14fdbb4df8440dcee68c9a9ea39"
+      },
       "based_on": null,
       "documentation": "examples/#403 M/README.md",
       "supporting_files": [],
@@ -22625,10 +22655,8 @@
           "url": "https://docs.yottadb.com/ProgrammersGuide/langfeat.html"
         }
       ],
-      "blockers": [
-        "Runtime YottaDB/GT.M non ancora disponibile."
-      ],
-      "notes": "In M lo spazio iniziale distingue i comandi dalle etichette. Per il runtime installare la routine come HELLO.m in una directory di routine dedicata; il .mumps resta l’artefatto canonico."
+      "blockers": [],
+      "notes": "Native FIS-GT.M compiled and ran the exact M bytes after the documented HELLO.m filename staging. No database access or server was used."
     },
     {
       "language_ordinal": 403,
@@ -23231,10 +23259,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#416 Makefile/verification/native_20261105_batch_2e6d616b.json",
+      "verified_artifact_sha256": {
+        "examples/#416 Makefile/variants/mak-6cee4e0b/hello.mak": "522f2f7a71537199972884632c2535e8f3e0d2fb4222a5e952528af1c0037c57"
+      },
       "based_on": "examples/#416 Makefile/Makefile",
       "documentation": "examples/#416 Makefile/variants/mak-6cee4e0b/README.md",
       "supporting_files": [],
@@ -23243,10 +23273,8 @@
       "sources": [
         "https://www.gnu.org/software/make/manual/html_node/Recipes.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#416 Makefile/Makefile. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF."
     },
     {
       "language_ordinal": 416,
@@ -23289,10 +23317,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#416 Makefile/verification/native_20261105_batch_2e6d616b65.json",
+      "verified_artifact_sha256": {
+        "examples/#416 Makefile/variants/make-902d3503/hello.make": "522f2f7a71537199972884632c2535e8f3e0d2fb4222a5e952528af1c0037c57"
+      },
       "based_on": "examples/#416 Makefile/Makefile",
       "documentation": "examples/#416 Makefile/variants/make-902d3503/README.md",
       "supporting_files": [],
@@ -23301,10 +23331,8 @@
       "sources": [
         "https://www.gnu.org/software/make/manual/html_node/Recipes.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#416 Makefile/Makefile. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF."
     },
     {
       "language_ordinal": 416,
@@ -23315,10 +23343,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#416 Makefile/verification/native_20261105_batch_2e6d616b6566696c65.json",
+      "verified_artifact_sha256": {
+        "examples/#416 Makefile/variants/makefile-1b7c71d7/hello.makefile": "522f2f7a71537199972884632c2535e8f3e0d2fb4222a5e952528af1c0037c57"
+      },
       "based_on": "examples/#416 Makefile/Makefile",
       "documentation": "examples/#416 Makefile/variants/makefile-1b7c71d7/README.md",
       "supporting_files": [],
@@ -23327,10 +23357,8 @@
       "sources": [
         "https://www.gnu.org/software/make/manual/html_node/Recipes.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#416 Makefile/Makefile. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF."
     },
     {
       "language_ordinal": 416,
@@ -23341,10 +23369,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#416 Makefile/verification/native_20261105_batch_2e6d6b.json",
+      "verified_artifact_sha256": {
+        "examples/#416 Makefile/variants/mk-337c4081/hello.mk": "522f2f7a71537199972884632c2535e8f3e0d2fb4222a5e952528af1c0037c57"
+      },
       "based_on": "examples/#416 Makefile/Makefile",
       "documentation": "examples/#416 Makefile/variants/mk-337c4081/README.md",
       "supporting_files": [],
@@ -23353,10 +23383,8 @@
       "sources": [
         "https://www.gnu.org/software/make/manual/html_node/Recipes.html"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Alias di estensione per lo stesso formato testuale del sorgente principale. Copia byte-identica del sorgente originale del corpus: examples/#416 Makefile/Makefile. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF."
     },
     {
       "language_ordinal": 416,
@@ -24581,10 +24609,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#439 Modula-2/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#439 Modula-2/Hello.mod": "e85bd66571a0e3a3d84f33af7768d087d8faa30910740f8877f7d8aa09e24e57"
+      },
       "based_on": null,
       "documentation": "examples/#439 Modula-2/README.md",
       "supporting_files": [],
@@ -24596,10 +24626,8 @@
           "url": "https://gcc.gnu.org/onlinedocs/gm2/"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "La libreria InOut è della famiglia PIM; la toolchain deve usare il dialect corrispondente."
+      "blockers": [],
+      "notes": "GNU Modula-2 compiled the exact PIM module and its native executable printed the exact greeting with LF."
     },
     {
       "language_ordinal": 440,
@@ -25263,10 +25291,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#454 NASL/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#454 NASL/hello.nasl": "d0ef61725baa7afa4a3c95ef685cf6bd84e14f047308acd50099b0b60886bb51",
+        "examples/#454 NASL/variants/inc-dd126fb7/driver.nasl": "85f71558fcc4f5b8cf802078a9b0fb30a5e098b45fc02923e14718fea9a30b3f"
+      },
       "based_on": null,
       "documentation": "examples/#454 NASL/README.md",
       "supporting_files": [],
@@ -25275,10 +25306,8 @@
       "sources": [
         "https://github.com/greenbone/openvas-scanner"
       ],
-      "blockers": [
-        "The genuine Greenbone runtime requires a local Redis KB context that is not configured; execution remains pending."
-      ],
-      "notes": "Non sono presenti primitive di scansione o target esterni. Lo strumento autentico parte, ma il contesto Redis manca: parsing/esecuzione non vengono attestati."
+      "blockers": [],
+      "notes": "Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used."
     },
     {
       "language_ordinal": 454,
@@ -25289,10 +25318,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#454 NASL/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#454 NASL/variants/inc-dd126fb7/hello.inc": "5bfffc3e2878a4a9f76d701681774a11956f300a40f657a451fe903e4fa482be"
+      },
       "based_on": null,
       "documentation": "examples/#454 NASL/variants/inc-dd126fb7/README.md",
       "supporting_files": [
@@ -25303,10 +25334,8 @@
       "sources": [
         "https://github.com/greenbone/openvas-scanner"
       ],
-      "blockers": [
-        "La variante non è stata sottoposta a una nuova prova del parser/compiler/runtime originale; le verifiche del sorgente principale non vengono ereditate."
-      ],
-      "notes": "Include NASL con funzione di saluto e caller separato. Sorgente originale scritto per il ruolo specifico della variante, usando la documentazione citata. Stati separati dal sorgente principale."
+      "blockers": [],
+      "notes": "Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used."
     },
     {
       "language_ordinal": 455,
@@ -25844,10 +25873,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#469 Nextflow/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#469 Nextflow/hello.nf": "bff1d466836a58b267a4d60caf41bf0dde19d7c9ef4973c3e3fa7df67f05fd46"
+      },
       "based_on": null,
       "documentation": "examples/#469 Nextflow/README.md",
       "supporting_files": [],
@@ -25857,10 +25888,8 @@
         "https://nextflow.io/docs/latest/script.html",
         "https://nextflow.io/docs/latest/process.html"
       ],
-      "blockers": [
-        "Runtime Nextflow e dipendenze Java non preparati; pipeline pendente."
-      ],
-      "notes": "Il process GREETING emette stdout dalla propria task Bash; workflow connette il canale a view. Il sorgente è una pipeline DSL2, distinta dallo script della singola task."
+      "blockers": [],
+      "notes": "Nextflow parsed and scheduled the exact original DSL2 workflow offline, completed the local Bash task and emitted the exact stdout greeting. No remote workflow, container or external service."
     },
     {
       "language_ordinal": 470,
@@ -31654,10 +31683,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#576 Qt Script/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#576 Qt Script/hello.qs": "9b27cd9d8ce3af171f266f5e3a58043f2f553f1a48259c3d7b5e082f8b94bf84"
+      },
       "based_on": null,
       "documentation": "examples/#576 Qt Script/README.md",
       "supporting_files": [],
@@ -31666,10 +31697,8 @@
       "sources": [
         "https://doc.qt.io/archives/qt-5.15/qtscript-index.html"
       ],
-      "blockers": [
-        "Qt5Script/Qt Core compiler e librerie non predisposti."
-      ],
-      "notes": "Lo script restituisce una stringa come valore finale; il consumer C++ usa evaluate e controlla le eccezioni native."
+      "blockers": [],
+      "notes": "The unchanged C++ QCoreApplication consumer loaded the exact hello.qs into the native Qt5 QScriptEngine and printed its final value, Hello, World!, with exit0 and no exceptions. No display variables were supplied, and no QtGui/QtWidgets libraries or GUI processes were used."
     },
     {
       "language_ordinal": 578,
@@ -32248,10 +32277,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#588 REXX/verification/native_20261105_batch_2e70707278.json",
+      "verified_artifact_sha256": {
+        "examples/#588 REXX/variants/pprx-57f86225/hello.pprx": "ab6afe53228f4176743b1e5143a5dcff51930de23b02397bd4ed5e3755018b50"
+      },
       "based_on": "examples/#588 REXX/hello.rexx",
       "documentation": "examples/#588 REXX/variants/pprx-57f86225/README.md",
       "supporting_files": [],
@@ -32260,10 +32291,8 @@
       "sources": [
         "https://regina-rexx.sourceforge.io/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .pprx. Copia byte-identica del sorgente canonico; SHA-256 ab6afe53228f4176743b1e5143a5dcff51930de23b02397bd4ed5e3755018b50. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Regina REXX parsed and executed the exact suffix variant, printing exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 588,
@@ -32274,10 +32303,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#588 REXX/verification/native_20261105_batch_2e726578.json",
+      "verified_artifact_sha256": {
+        "examples/#588 REXX/variants/rex-31adbc05/hello.rex": "ab6afe53228f4176743b1e5143a5dcff51930de23b02397bd4ed5e3755018b50"
+      },
       "based_on": "examples/#588 REXX/hello.rexx",
       "documentation": "examples/#588 REXX/variants/rex-31adbc05/README.md",
       "supporting_files": [],
@@ -32286,10 +32317,8 @@
       "sources": [
         "https://regina-rexx.sourceforge.io/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .rex. Copia byte-identica del sorgente canonico; SHA-256 ab6afe53228f4176743b1e5143a5dcff51930de23b02397bd4ed5e3755018b50. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Regina REXX parsed and executed the exact suffix variant, printing exactly Hello, World! plus LF without stderr."
     },
     {
       "language_ordinal": 589,
@@ -33516,10 +33545,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#608 Redcode/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#608 Redcode/hello.cw": "4b6608c2dcac15cadb2c66ba4abd61a12f7f6b83d84bd5cdff65f1748d63cce1"
+      },
       "based_on": null,
       "documentation": "examples/#608 Redcode/README.md",
       "supporting_files": [],
@@ -33528,10 +33559,8 @@
       "sources": [
         "http://www.koth.org/pmars/"
       ],
-      "blockers": [
-        "Required pmars compiler/runtime and matching host resources are not available/configured."
-      ],
-      "notes": "Redcode non possiede I/O stringa: il goal eÌ€ assemblare e osservare i 13 operand A delle DAT, che ricostruiscono Hello, World!, mentre JMP mantiene il processo. Parser/simulatore mancanti; nessun claim di output console."
+      "blockers": [],
+      "notes": "The genuine pMARS assembler accepted the original warrior. Its generated load listing contained the thirteen ASCII data fields decoding to Hello, World!, and a bounded native battle ran its JMP loop. This Redcode sample encodes data, does not print text. Display updates were disabled and no display environment was supplied."
     },
     {
       "language_ordinal": 610,
@@ -33965,10 +33994,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e726f6666.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/hello.roff": "1d73e7e4748b0e22e6431089d5affcde63d5592226032ca44459486bf75acc35",
+        "examples/#623 Roff/variants/tmac-730eca82/main.roff": "24db3c010ddc790486ac7bd2e0dbfe9f14ae9e32d12d901df1b959e32c4a37a7"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/README.md",
       "supporting_files": [],
@@ -33978,7 +34010,7 @@
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
       "blockers": [],
-      "notes": "Documento roff originale senza pacchetto macro; la prova usa formatter e postprocessor GNU groff."
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -33989,10 +34021,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e31.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/1-f7f4791a/hello.1": "1f28950f7d1707bb1465c8d8a2156afacec3edfe41c9de14533e3dce9d13836c"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/1-f7f4791a/README.md",
       "supporting_files": [],
@@ -34001,10 +34035,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34015,10 +34047,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e31696e.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/1in-6e7b1a94/hello.1in": "1f28950f7d1707bb1465c8d8a2156afacec3edfe41c9de14533e3dce9d13836c"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/1in-6e7b1a94/README.md",
       "supporting_files": [],
@@ -34027,10 +34061,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34041,10 +34073,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e316d.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/1m-7f066f37/hello.1m": "43ef161d433ffe98525e5e8f86937a7fbcc8e2322dae5f35d7648518818b453d"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/1m-7f066f37/README.md",
       "supporting_files": [],
@@ -34053,10 +34087,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1m; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34067,10 +34099,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e3178.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/1x-7bfba87c/hello.1x": "95b0060e3ad3fa93ffd35ca77b87004021a2075601675ad3c5a72e5112959758"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/1x-7bfba87c/README.md",
       "supporting_files": [],
@@ -34079,10 +34113,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1x; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34093,10 +34125,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e32.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/2-4d02623e/hello.2": "13d0975e76a7d8941901dc776bcd8142e2d63fc7e48788a335ecc56c817bdab9"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/2-4d02623e/README.md",
       "supporting_files": [],
@@ -34105,10 +34139,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 2; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34119,10 +34151,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e33.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3-935a3a42/hello.3": "d7c7fa0cd84302c4b7b768bcf32b8d7d23cf007de1abc408090901c89883a262"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3-935a3a42/README.md",
       "supporting_files": [],
@@ -34131,10 +34165,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34145,10 +34177,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e33696e.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3in-5e94d8c2/hello.3in": "d7c7fa0cd84302c4b7b768bcf32b8d7d23cf007de1abc408090901c89883a262"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3in-5e94d8c2/README.md",
       "supporting_files": [],
@@ -34157,10 +34191,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34171,10 +34203,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e336d.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3m-9b77779e/hello.3m": "7784506fe7b98de1a7a4320fa833b3e36118939ffe066febb6d7c0ee03c4fba1"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3m-9b77779e/README.md",
       "supporting_files": [],
@@ -34183,10 +34217,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3m; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34197,10 +34229,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e3370.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3p-3cf4f404/hello.3p": "4a2924623c41cbeafbd0b3bd1cefe05bdbe6f15585bc2085a8f4888c55cea696"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3p-3cf4f404/README.md",
       "supporting_files": [],
@@ -34209,10 +34243,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3p; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34223,10 +34255,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e33706d.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3pm-8f3210f6/hello.3pm": "54842ea66b54838174333d334af5ffabb41c83fa2770e27b56389aa5eb1e3625"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3pm-8f3210f6/README.md",
       "supporting_files": [],
@@ -34235,10 +34269,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3pm; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34249,10 +34281,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e337174.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3qt-f5ff2f97/hello.3qt": "c82a077ca960f6d51566c2a7e77b74bb2df158fb0807b6d67e52c0db010d4c99"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3qt-f5ff2f97/README.md",
       "supporting_files": [],
@@ -34261,10 +34295,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3qt; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34275,10 +34307,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e3378.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/3x-a9b9c037/hello.3x": "07aa138aa38e183da18db6ae0dd1c8285dad6d702bfe64a24d5be61f60af7a08"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/3x-a9b9c037/README.md",
       "supporting_files": [],
@@ -34287,10 +34321,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3x; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34301,10 +34333,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e34.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/4-33df2dbc/hello.4": "7183958e2922a9af4a0968d73f2021ebb747022ee2b12866f626ebec59478217"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/4-33df2dbc/README.md",
       "supporting_files": [],
@@ -34313,10 +34347,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 4; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34327,10 +34359,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e35.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/5-4b1e53e6/hello.5": "e03ee56165304502096a400b1705c1f5b8d6fee1c20eb20dbe8cda11eae1d649"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/5-4b1e53e6/README.md",
       "supporting_files": [],
@@ -34339,10 +34373,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 5; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34353,10 +34385,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e36.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/6-ae3ae580/hello.6": "ef88a6bd256cf8e8f7f35d170ecf6a28f6c8d7bdfafe15d3bd17233a7ab56240"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/6-ae3ae580/README.md",
       "supporting_files": [],
@@ -34365,10 +34399,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 6; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34379,10 +34411,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e37.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/7-11de1834/hello.7": "b626d9f931daf7474235180a11b02bb686023ec6180d1fbe87cb6033d0a5fa7e"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/7-11de1834/README.md",
       "supporting_files": [],
@@ -34391,10 +34425,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 7; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34405,10 +34437,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e38.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/8-5429ab03/hello.8": "d9a029297ee883eeb7ef5bc340e3300e982440b65e9a42290ee943d1d886f8e1"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/8-5429ab03/README.md",
       "supporting_files": [],
@@ -34417,10 +34451,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 8; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34431,10 +34463,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e39.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/9-523c2e7c/hello.9": "c916e03237ffc98f517b152777a5aa87f05ff0e2bf03ffec76ff58da443ed25c"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/9-523c2e7c/README.md",
       "supporting_files": [],
@@ -34443,10 +34477,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 9; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34457,10 +34489,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6c.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/l-ac16c41b/hello.l": "caeacbb5e510312c5aabc28e03306c987b191f603dd5de85296936a7e47583cc"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/l-ac16c41b/README.md",
       "supporting_files": [],
@@ -34469,10 +34503,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione l; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34483,10 +34515,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6d616e.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/man-ced7911e/hello.man": "1f28950f7d1707bb1465c8d8a2156afacec3edfe41c9de14533e3dce9d13836c"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/man-ced7911e/README.md",
       "supporting_files": [],
@@ -34495,10 +34529,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34509,10 +34541,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6d646f63.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/mdoc-e2a9af6c/hello.mdoc": "f98ad2860575def3a9cc1e62694539c954a5d2cb89269837a329d20fc9b83aa8"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/mdoc-e2a9af6c/README.md",
       "supporting_files": [],
@@ -34521,10 +34555,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Manuale BSD mdoc con macro semantiche."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34535,10 +34567,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6d65.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/me-a72dc235/hello.me": "80842a95cf3a9b732948ea4fc8bcc83fbca9cb6bf1d28c80c36272fe998fa0b2"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/me-a72dc235/README.md",
       "supporting_files": [],
@@ -34547,10 +34581,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Documento per il pacchetto macro me."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34561,10 +34593,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6d73.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/ms-5138d9ae/hello.ms": "4180a0ef388d89bd85d1f1f288cb42ba845e050e2a05cc97a018c75c99a45d67"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/ms-5138d9ae/README.md",
       "supporting_files": [],
@@ -34573,10 +34607,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Documento per il pacchetto macro ms."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34587,10 +34619,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6e.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/n-3852639b/hello.n": "70f62400e2dad041292dff6e6e07aff852711cb49c4fa1858eb830027a6041b0"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/n-3852639b/README.md",
       "supporting_files": [],
@@ -34599,10 +34633,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione n; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34613,10 +34645,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e6e72.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/nr-ec75feb3/hello.nr": "1d73e7e4748b0e22e6431089d5affcde63d5592226032ca44459486bf75acc35"
+      },
       "based_on": "examples/#623 Roff/hello.roff",
       "documentation": "examples/#623 Roff/variants/nr-ec75feb3/README.md",
       "supporting_files": [],
@@ -34625,10 +34659,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Sorgente nroff/troff testuale; nessuna conversione in RUNOFF DEC è dichiarata. Copia byte-identica del sorgente canonico; SHA-256 1d73e7e4748b0e22e6431089d5affcde63d5592226032ca44459486bf75acc35. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34639,10 +34671,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e726e6f.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/rno-4ebd8568/hello.rno": "1d73e7e4748b0e22e6431089d5affcde63d5592226032ca44459486bf75acc35"
+      },
       "based_on": "examples/#623 Roff/hello.roff",
       "documentation": "examples/#623 Roff/variants/rno-4ebd8568/README.md",
       "supporting_files": [],
@@ -34651,10 +34685,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Sorgente nroff/troff testuale; nessuna conversione in RUNOFF DEC è dichiarata. Copia byte-identica del sorgente canonico; SHA-256 1d73e7e4748b0e22e6431089d5affcde63d5592226032ca44459486bf75acc35. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 623,
@@ -34665,10 +34697,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#623 Roff/verification/native_20261105_batch_2e746d6163.json",
+      "verified_artifact_sha256": {
+        "examples/#623 Roff/variants/tmac-730eca82/hello.tmac": "b89ad7b405cd51719877b900057b55289a190d979550227a6cd75adc13cf821f"
+      },
       "based_on": null,
       "documentation": "examples/#623 Roff/variants/tmac-730eca82/README.md",
       "supporting_files": [
@@ -34679,10 +34713,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "File di macro troff caricato da un documento companion."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34719,10 +34751,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e31696e.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/1in-6e7b1a94/hello.1in": "1f28950f7d1707bb1465c8d8a2156afacec3edfe41c9de14533e3dce9d13836c"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/1in-6e7b1a94/README.md",
       "supporting_files": [],
@@ -34731,10 +34765,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34745,10 +34777,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e316d.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/1m-7f066f37/hello.1m": "43ef161d433ffe98525e5e8f86937a7fbcc8e2322dae5f35d7648518818b453d"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/1m-7f066f37/README.md",
       "supporting_files": [],
@@ -34757,10 +34791,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1m; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34771,10 +34803,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e3178.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/1x-7bfba87c/hello.1x": "95b0060e3ad3fa93ffd35ca77b87004021a2075601675ad3c5a72e5112959758"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/1x-7bfba87c/README.md",
       "supporting_files": [],
@@ -34783,10 +34817,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1x; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34797,10 +34829,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e32.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/2-4d02623e/hello.2": "13d0975e76a7d8941901dc776bcd8142e2d63fc7e48788a335ecc56c817bdab9"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/2-4d02623e/README.md",
       "supporting_files": [],
@@ -34809,10 +34843,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 2; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34823,10 +34855,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e33.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3-935a3a42/hello.3": "d7c7fa0cd84302c4b7b768bcf32b8d7d23cf007de1abc408090901c89883a262"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3-935a3a42/README.md",
       "supporting_files": [],
@@ -34835,10 +34869,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34849,10 +34881,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e33696e.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3in-5e94d8c2/hello.3in": "d7c7fa0cd84302c4b7b768bcf32b8d7d23cf007de1abc408090901c89883a262"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3in-5e94d8c2/README.md",
       "supporting_files": [],
@@ -34861,10 +34895,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34875,10 +34907,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e336d.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3m-9b77779e/hello.3m": "7784506fe7b98de1a7a4320fa833b3e36118939ffe066febb6d7c0ee03c4fba1"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3m-9b77779e/README.md",
       "supporting_files": [],
@@ -34887,10 +34921,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3m; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34901,10 +34933,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e3370.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3p-3cf4f404/hello.3p": "4a2924623c41cbeafbd0b3bd1cefe05bdbe6f15585bc2085a8f4888c55cea696"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3p-3cf4f404/README.md",
       "supporting_files": [],
@@ -34913,10 +34947,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3p; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34927,10 +34959,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e33706d.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3pm-8f3210f6/hello.3pm": "54842ea66b54838174333d334af5ffabb41c83fa2770e27b56389aa5eb1e3625"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3pm-8f3210f6/README.md",
       "supporting_files": [],
@@ -34939,10 +34973,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3pm; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34953,10 +34985,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e337174.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3qt-f5ff2f97/hello.3qt": "c82a077ca960f6d51566c2a7e77b74bb2df158fb0807b6d67e52c0db010d4c99"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3qt-f5ff2f97/README.md",
       "supporting_files": [],
@@ -34965,10 +34999,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3qt; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -34979,10 +35011,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e3378.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/3x-a9b9c037/hello.3x": "07aa138aa38e183da18db6ae0dd1c8285dad6d702bfe64a24d5be61f60af7a08"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/3x-a9b9c037/README.md",
       "supporting_files": [],
@@ -34991,10 +35025,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 3x; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35005,10 +35037,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e34.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/4-33df2dbc/hello.4": "7183958e2922a9af4a0968d73f2021ebb747022ee2b12866f626ebec59478217"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/4-33df2dbc/README.md",
       "supporting_files": [],
@@ -35017,10 +35051,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 4; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35031,10 +35063,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e35.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/5-4b1e53e6/hello.5": "e03ee56165304502096a400b1705c1f5b8d6fee1c20eb20dbe8cda11eae1d649"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/5-4b1e53e6/README.md",
       "supporting_files": [],
@@ -35043,10 +35077,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 5; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35057,10 +35089,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e36.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/6-ae3ae580/hello.6": "ef88a6bd256cf8e8f7f35d170ecf6a28f6c8d7bdfafe15d3bd17233a7ab56240"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/6-ae3ae580/README.md",
       "supporting_files": [],
@@ -35069,10 +35103,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 6; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35083,10 +35115,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e37.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/7-11de1834/hello.7": "b626d9f931daf7474235180a11b02bb686023ec6180d1fbe87cb6033d0a5fa7e"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/7-11de1834/README.md",
       "supporting_files": [],
@@ -35095,10 +35129,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 7; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35109,10 +35141,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e38.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/8-5429ab03/hello.8": "d9a029297ee883eeb7ef5bc340e3300e982440b65e9a42290ee943d1d886f8e1"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/8-5429ab03/README.md",
       "supporting_files": [],
@@ -35121,10 +35155,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 8; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35135,10 +35167,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e39.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/9-523c2e7c/hello.9": "c916e03237ffc98f517b152777a5aa87f05ff0e2bf03ffec76ff58da443ed25c"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/9-523c2e7c/README.md",
       "supporting_files": [],
@@ -35147,10 +35181,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 9; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35161,10 +35193,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e6d616e.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/man-ced7911e/hello.man": "1f28950f7d1707bb1465c8d8a2156afacec3edfe41c9de14533e3dce9d13836c"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/man-ced7911e/README.md",
       "supporting_files": [],
@@ -35173,10 +35207,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Pagina man originale della sezione 1; .in è un template statico senza sostituzioni."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 624,
@@ -35187,10 +35219,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#624 Roff Manpage/verification/native_20261105_batch_2e6d646f63.json",
+      "verified_artifact_sha256": {
+        "examples/#624 Roff Manpage/variants/mdoc-e2a9af6c/hello.mdoc": "f98ad2860575def3a9cc1e62694539c954a5d2cb89269837a329d20fc9b83aa8"
+      },
       "based_on": null,
       "documentation": "examples/#624 Roff Manpage/variants/mdoc-e2a9af6c/README.md",
       "supporting_files": [],
@@ -35199,10 +35233,8 @@
       "sources": [
         "https://www.gnu.org/software/groff/manual/groff.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Manuale BSD mdoc con macro semantiche."
+      "blockers": [],
+      "notes": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
     },
     {
       "language_ordinal": 625,
@@ -37140,10 +37172,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#653 Scilab/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#653 Scilab/variants/sci-27617630/hello.sci": "0c4d93a0377d592635c8ecfe545397e9e308f459e3bbec2d056fd3ba42309be0"
+      },
       "based_on": null,
       "documentation": "examples/#653 Scilab/variants/sci-27617630/README.md",
       "supporting_files": [
@@ -37154,10 +37188,8 @@
       "sources": [
         "https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "File Scilab di funzione, caricato dal chiamante."
+      "blockers": [],
+      "notes": "The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage."
     },
     {
       "language_ordinal": 653,
@@ -37169,10 +37201,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#653 Scilab/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#653 Scilab/hello.sce": "0751a8f396f9a42df3df547a93677e824b30aa8ab41f9ad3b2c542b4f0f4c109",
+        "examples/#653 Scilab/variants/sci-27617630/main.sce": "00e3ba3a54b18a1398272c188194f799d961af9d5acc327bb01f77ad38238b3d"
+      },
       "based_on": null,
       "documentation": "examples/#653 Scilab/README.md",
       "supporting_files": [],
@@ -37181,10 +37216,8 @@
       "sources": [
         "https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html"
       ],
-      "blockers": [
-        "Scilab runtime non disponibile."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage."
     },
     {
       "language_ordinal": 653,
@@ -37195,10 +37228,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#653 Scilab/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#653 Scilab/variants/tst-04f6df08/hello.tst": "2efb60761c8317132406872c0abe20fb5cf3fa428cba7c5e12089d6aa3f11387"
+      },
       "based_on": null,
       "documentation": "examples/#653 Scilab/variants/tst-04f6df08/README.md",
       "supporting_files": [],
@@ -37207,10 +37242,8 @@
       "sources": [
         "https://help.scilab.org/docs/2025.1.0/en_US/assert_checkequal.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Test Scilab con assertion reale."
+      "blockers": [],
+      "notes": "The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage."
     },
     {
       "language_ordinal": 654,
@@ -37856,10 +37889,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#665 Slice/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#665 Slice/hello.ice": "a7f06e3188b5d4a65aafbad5710e35cab03efc7f3c77f7684384a42bb25b4404"
+      },
       "based_on": null,
       "documentation": "examples/#665 Slice/README.md",
       "supporting_files": [],
@@ -37871,10 +37906,8 @@
           "url": "https://docs.zeroc.com/ice/latest/the-slice-language"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Il file definisce una costante, senza server, proxy o comunicazioni di rete."
+      "blockers": [],
+      "notes": "The genuine ZeroC Slice compiler accepted the exact original definition, generated its C++ constant, and a native C++ program compiled against the genuine Ice SDK read Greeting::message and printed the exact greeting. The definition contains no server or proxy; no network or daemon was started."
     },
     {
       "language_ordinal": 666,
@@ -40261,10 +40294,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#716 Texinfo/verification/native_20261105_batch_2e746578696e666f.json",
+      "verified_artifact_sha256": {
+        "examples/#716 Texinfo/variants/texinfo-67e352f4/hello.texinfo": "fa43a999f031be93a5be3deee5f0026ba7107b2fe061231a84d596818fec87e4"
+      },
       "based_on": "examples/#716 Texinfo/hello.texi",
       "documentation": "examples/#716 Texinfo/variants/texinfo-67e352f4/README.md",
       "supporting_files": [],
@@ -40273,10 +40308,8 @@
       "sources": [
         "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Short-Sample.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .texinfo. Copia byte-identica del sorgente canonico; SHA-256 fa43a999f031be93a5be3deee5f0026ba7107b2fe061231a84d596818fec87e4. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application."
     },
     {
       "language_ordinal": 716,
@@ -40313,10 +40346,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#716 Texinfo/verification/native_20261105_batch_2e747869.json",
+      "verified_artifact_sha256": {
+        "examples/#716 Texinfo/variants/txi-415ac389/hello.txi": "fa43a999f031be93a5be3deee5f0026ba7107b2fe061231a84d596818fec87e4"
+      },
       "based_on": "examples/#716 Texinfo/hello.texi",
       "documentation": "examples/#716 Texinfo/variants/txi-415ac389/README.md",
       "supporting_files": [],
@@ -40325,10 +40360,8 @@
       "sources": [
         "https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Short-Sample.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .txi. Copia byte-identica del sorgente canonico; SHA-256 fa43a999f031be93a5be3deee5f0026ba7107b2fe061231a84d596818fec87e4. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application."
     },
     {
       "language_ordinal": 717,
@@ -48024,10 +48057,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#808 Zimpl/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#808 Zimpl/variants/zimpl-c607d319/hello.zimpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38"
+      },
       "based_on": "examples/#808 Zimpl/hello.zpl",
       "documentation": "examples/#808 Zimpl/variants/zimpl-c607d319/README.md",
       "supporting_files": [],
@@ -48036,10 +48071,8 @@
       "sources": [
         "https://zimpl.zib.de/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .zimpl. Copia byte-identica del sorgente canonico; SHA-256 7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "After explicitly binding the indexed-variable iterator in the three declared sources, native Zimpl generated each LP and GLPK solved it to optimality. The thirteen native solution variables decode to exactly Hello, World!. Each suffix was compiled and solved separately."
     },
     {
       "language_ordinal": 808,
@@ -48050,10 +48083,12 @@
       ],
       "creation_status": "alias",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#808 Zimpl/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#808 Zimpl/variants/zmpl-c5eac23d/hello.zmpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38"
+      },
       "based_on": "examples/#808 Zimpl/hello.zpl",
       "documentation": "examples/#808 Zimpl/variants/zmpl-c5eac23d/README.md",
       "supporting_files": [],
@@ -48062,10 +48097,8 @@
       "sources": [
         "https://zimpl.zib.de/"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Variante testuale dello stesso formato, con suffisso canonico .zmpl. Copia byte-identica del sorgente canonico; SHA-256 7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b. La copia non eredita le verifiche del file principale."
+      "blockers": [],
+      "notes": "After explicitly binding the indexed-variable iterator in the three declared sources, native Zimpl generated each LP and GLPK solved it to optimality. The thirteen native solution variables decode to exactly Hello, World!. Each suffix was compiled and solved separately."
     },
     {
       "language_ordinal": 808,
@@ -48076,10 +48109,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#808 Zimpl/verification/native_20261105_batch_main.json",
+      "verified_artifact_sha256": {
+        "examples/#808 Zimpl/hello.zpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38"
+      },
       "based_on": null,
       "documentation": "examples/#808 Zimpl/README.md",
       "supporting_files": [],
@@ -48088,10 +48123,8 @@
       "sources": [
         "https://zimpl.zib.de/"
       ],
-      "blockers": [
-        "Zimpl compiler non disponibile nei pacchetti isolati; parsing/generazione LP e soluzione pending."
-      ],
-      "notes": "Variabili indicizzate originali hanno bounds [ASCII,ASCII+1]; l’obiettivo minimizzante deve scegliere i codici inferiori."
+      "blockers": [],
+      "notes": "After explicitly binding the indexed-variable iterator in the three declared sources, native Zimpl generated each LP and GLPK solved it to optimality. The thirteen native solution variables decode to exactly Hello, World!. Each suffix was compiled and solved separately."
     },
     {
       "language_ordinal": 809,
@@ -48663,10 +48696,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#828 pkg-config/verification/native_20261105_batch_2e70632e696e.json",
+      "verified_artifact_sha256": {
+        "examples/#828 pkg-config/variants/pc-in-477d8206/hello.pc.in": "e69f974a8f9e4b735db9ee551d6197a81d3ebd74d0888340055956e329f4179d"
+      },
       "based_on": null,
       "documentation": "examples/#828 pkg-config/variants/pc-in-477d8206/README.md",
       "supporting_files": [],
@@ -48675,10 +48710,8 @@
       "sources": [
         "https://people.freedesktop.org/~dbn/pkg-config-guide.html"
       ],
-      "blockers": [
-        "Questa variante non è ancora stata sottoposta al suo parser/compiler/host originale."
-      ],
-      "notes": "Template pkg-config con placeholder Autoconf reali; richiede sostituzione prima dell’uso."
+      "blockers": [],
+      "notes": "Native CMake configured the original pkg-config template with its documented prefix/version. The genuine pkg-config consumer read greeting=Hello, World!, version 1.0.0 and prefix /corpus/example from the generated metadata, using only an isolated package search directory."
     },
     {
       "language_ordinal": 829,

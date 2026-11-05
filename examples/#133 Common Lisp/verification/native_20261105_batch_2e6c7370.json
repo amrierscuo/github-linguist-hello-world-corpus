@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:33:08.659897+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Common Lisp",
+  "ordinal": 133,
+  "commands": [
+    {
+      "label": "Native SBCL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_121_140/linux/usr/bin/sbcl",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370",
+      "timestamp_utc": "2026-11-05T12:33:08.741015+00:00",
+      "exit_code": 0,
+      "stdout": "SBCL 2.2.9.debian\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/root/usr/lib",
+        "SBCL_HOME": "${WORKSPACE}/work/tools_121_140/linux/usr/lib/sbcl"
+      }
+    },
+    {
+      "label": "Read, compile and execute exact Common Lisp variant",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_121_140/linux/usr/bin/sbcl",
+        "--noinform",
+        "--disable-debugger",
+        "--script",
+        "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/variants/ext-lsp-2e6c7370/hello.lsp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/variants/ext-lsp-2e6c7370",
+      "timestamp_utc": "2026-11-05T12:33:08.810582+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0133_2e6c7370/root/usr/lib",
+        "SBCL_HOME": "${WORKSPACE}/work/tools_121_140/linux/usr/lib/sbcl"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#133 Common Lisp/variants/ext-lsp-2e6c7370/hello.lsp": "08d4388fb75fa14127029c2924e6ac1f994833e4b553610fb72296d783944b45"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".lsp",
+  "documentation": "examples/#133 Common Lisp/variants/ext-lsp-2e6c7370/README.md",
+  "sources": [
+    "https://www.sbcl.org/manual/#Shebang-Scripts",
+    "https://www.lispworks.com/documentation/HyperSpec/Body/f_concat.htm",
+    "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#133 Common Lisp/README.md": "30e516747e01f3dccfb0bcab0d2b7a91cb1ae98e606240dd6b9952c62e924ae5",
+    "examples/#133 Common Lisp/variants/ext-lsp-2e6c7370/README.md": "56f023809d4d15eb901ffeb76b4eb4e40a242ad5b604679297939ef66fe8ed3b"
+  },
+  "toolchain": "SBCL 2.2.9.debian",
+  "semantic_scope": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
+}

@@ -1,5 +1,9 @@
 # 0256 Gnuplot: variant `.plt`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.plt`. The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used. [Recorded evidence](../../verification/native_20261105_batch_2e706c74.json).
+
 Role: Textual Alias of the same format and of the same programma/dataset of the original model.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#256 Gnuplot/hello.gnuplot
@@ -18,8 +22,7 @@ gnuplot hello.plt
 
 Exit 0; graph ASCII contains the title Hello, World! and the y=x line.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

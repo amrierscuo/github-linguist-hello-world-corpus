@@ -3,6 +3,13 @@
 ## Latest recorded verification
 
 Latest extension checks:
+- `.cpp`: The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting. [Evidence](verification/native_20261105_batch_2e637070.json).
+- `.cppm`: The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting. [Evidence](verification/native_20261105_batch_2e6370706d.json).
+- `.ixx`: The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting. [Evidence](verification/native_20261105_batch_2e697878.json).
+
+## Latest recorded verification
+
+Latest extension checks:
 - `.c++`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e632b2b.json).
 - `.cc`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e6363.json).
 - `.cp`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e6370.json).
@@ -60,11 +67,11 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cpp` | [hello.cpp](hello.cpp), [consumer.cpp](variants/ext-cppm-2e6370706d/consumer.cpp), [consumer.cpp](variants/ext-h-2e68/consumer.cpp), [consumer.cpp](variants/ext-h-2e682b2b/consumer.cpp), [consumer.cpp](variants/ext-hh-2e6868/consumer.cpp), [consumer.cpp](variants/ext-hpp-2e687070/consumer.cpp), [consumer.cpp](variants/ext-hxx-2e687878/consumer.cpp), [consumer.cpp](variants/ext-inc-2e696e63/consumer.cpp), [consumer.cpp](variants/ext-inl-2e696e6c/consumer.cpp), [consumer.cpp](variants/ext-ipp-2e697070/consumer.cpp), [consumer.cpp](variants/ext-ixx-2e697878/consumer.cpp), [consumer.cpp](variants/ext-tcc-2e746363/consumer.cpp), [consumer.cpp](variants/ext-tpp-2e747070/consumer.cpp), [consumer.cpp](variants/ext-txx-2e747878/consumer.cpp) created; verification pending |
+| `.cpp` | [hello.cpp](hello.cpp), [consumer.cpp](variants/ext-cppm-2e6370706d/consumer.cpp), [consumer.cpp](variants/ext-h-2e68/consumer.cpp), [consumer.cpp](variants/ext-h-2e682b2b/consumer.cpp), [consumer.cpp](variants/ext-hh-2e6868/consumer.cpp), [consumer.cpp](variants/ext-hpp-2e687070/consumer.cpp), [consumer.cpp](variants/ext-hxx-2e687878/consumer.cpp), [consumer.cpp](variants/ext-inc-2e696e63/consumer.cpp), [consumer.cpp](variants/ext-inl-2e696e6c/consumer.cpp), [consumer.cpp](variants/ext-ipp-2e697070/consumer.cpp), [consumer.cpp](variants/ext-ixx-2e697878/consumer.cpp), [consumer.cpp](variants/ext-tcc-2e746363/consumer.cpp), [consumer.cpp](variants/ext-tpp-2e747070/consumer.cpp), [consumer.cpp](variants/ext-txx-2e747878/consumer.cpp) syntax and behavior verified |
 | `.c++` | [hello.c++](variants/ext-c-2e632b2b/hello.c%2B%2B) syntax and behavior verified |
 | `.cc` | [hello.cc](variants/ext-cc-2e6363/hello.cc) syntax and behavior verified |
 | `.cp` | [hello.cp](variants/ext-cp-2e6370/hello.cp) syntax and behavior verified |
-| `.cppm` | [hello.cppm](variants/ext-cppm-2e6370706d/hello.cppm) created; verification pending |
+| `.cppm` | [hello.cppm](variants/ext-cppm-2e6370706d/hello.cppm) syntax and behavior verified |
 | `.cxx` | [hello.cxx](variants/ext-cxx-2e637878/hello.cxx) syntax and behavior verified |
 | `.h` | [hello.h](variants/ext-h-2e68/hello.h) syntax and behavior verified |
 | `.h++` | [hello.h++](variants/ext-h-2e682b2b/hello.h%2B%2B) syntax and behavior verified |
@@ -75,8 +82,8 @@ Verification of the main sample and each variant is recorded separately.
 | `.inl` | [hello.inl](variants/ext-inl-2e696e6c/hello.inl) syntax and behavior verified |
 | `.ino` | [hello.ino](variants/ext-ino-2e696e6f/hello.ino) created; verification pending |
 | `.ipp` | [hello.ipp](variants/ext-ipp-2e697070/hello.ipp) syntax and behavior verified |
-| `.ixx` | [hello.ixx](variants/ext-ixx-2e697878/hello.ixx) created; verification pending |
-| `.re` | [hello.re](variants/ext-re-2e7265/hello.re) created; verification pending |
+| `.ixx` | [hello.ixx](variants/ext-ixx-2e697878/hello.ixx) syntax and behavior verified |
+| `.re` | [hello.re](variants/ext-re-2e7265/hello.re) verification pending |
 | `.tcc` | [hello.tcc](variants/ext-tcc-2e746363/hello.tcc) syntax and behavior verified |
 | `.tpp` | [hello.tpp](variants/ext-tpp-2e747070/hello.tpp) syntax and behavior verified |
 | `.txx` | [hello.txx](variants/ext-txx-2e747878/hello.txx) syntax and behavior verified |

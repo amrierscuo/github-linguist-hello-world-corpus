@@ -1,5 +1,10 @@
 # #166 Diff
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.patch`: GNU patch accepted the exact variant in a dry run, then applied it only to the copied original before fixture. The result is byte-identical to the original after fixture, exactly Hello, World! plus LF. [Evidence](verification/native_20261105_batch_2e7061746368.json).
+
 Apply a unified patch diff that turns Hello into Hello, World!.
 
 ## Toolchain
@@ -35,4 +40,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.diff` | [hello.diff](hello.diff) verified |
-| `.patch` | [hello.patch](variants/ext-patch-2e7061746368/hello.patch) created; verification pending |
+| `.patch` | [hello.patch](variants/ext-patch-2e7061746368/hello.patch) syntax and behavior verified |

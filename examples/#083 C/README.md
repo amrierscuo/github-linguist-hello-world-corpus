@@ -3,6 +3,12 @@
 ## Latest recorded verification
 
 Latest extension checks:
+- `.c`: CMake configured the original C header template where required; GCC compiled each recorded C consumer and each resulting executable printed exactly Hello, World! plus LF. All files attached to this extension pair were exercised. [Evidence](verification/native_20261105_batch_2e63.json).
+- `.h.in`: CMake configured the original C header template where required; GCC compiled each recorded C consumer and each resulting executable printed exactly Hello, World! plus LF. All files attached to this extension pair were exercised. [Evidence](verification/native_20261105_batch_2e682e696e.json).
+
+## Latest recorded verification
+
+Latest extension checks:
 - `.cats`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e63617473.json).
 - `.h`: Variant only. Main language status and other suffixes unchanged. [Evidence](verification/native_20261104_followup_2e68.json).
 
@@ -50,8 +56,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.c` | [hello.c](hello.c), [consumer.c](variants/ext-h-2e68/consumer.c), [consumer.c](variants/ext-h-in-2e682e696e/consumer.c) created; verification pending |
+| `.c` | [hello.c](hello.c), [consumer.c](variants/ext-h-2e68/consumer.c), [consumer.c](variants/ext-h-in-2e682e696e/consumer.c) syntax and behavior verified |
 | `.cats` | [hello.cats](variants/ext-cats-2e63617473/hello.cats) syntax and behavior verified |
 | `.h` | [hello.h](variants/ext-h-2e68/hello.h) syntax and behavior verified |
-| `.h.in` | [hello.h.in](variants/ext-h-in-2e682e696e/hello.h.in) created; verification pending |
+| `.h.in` | [hello.h.in](variants/ext-h-in-2e682e696e/hello.h.in) syntax and behavior verified |
 | `.idc` | [hello.idc](variants/ext-idc-2e696463/hello.idc) created; verification pending |

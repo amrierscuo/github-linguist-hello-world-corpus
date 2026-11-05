@@ -1,5 +1,9 @@
 # 0092 CMake: variant `.cmake.in`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.cmake.in`. Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel. [Recorded evidence](../../verification/native_20261105_batch_2e636d616b652e696e.json).
+
 Ruolo: Template CMake configurato con configure_file @ONLY.
 
 Type: **adapted**. Starting model: examples/#092 CMake/hello.cmake; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ cmake -DOUT=<output> -P configure.cmake; cmake -P <output>/hello.cmake
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

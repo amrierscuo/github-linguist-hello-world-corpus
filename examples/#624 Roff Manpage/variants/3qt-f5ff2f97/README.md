@@ -1,5 +1,9 @@
 # 0624: Roff Manpage: `.3qt`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.3qt`. Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used. [Recorded evidence](../../verification/native_20261105_batch_2e337174.json).
+
 Original man page of the 3qt section; .in is a static template without replacements.
 
 Provenience: original example written for the role of this suffix.

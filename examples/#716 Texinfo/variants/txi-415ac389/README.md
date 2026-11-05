@@ -1,5 +1,9 @@
 # 0716: Texinfo: `.txi`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.txi`. GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application. [Recorded evidence](../../verification/native_20261105_batch_2e747869.json).
+
 Textual variation of the same format, with canon suffix .txi.
 
 Origin: copy of the original `examples/#716 Texinfo/hello.texi` file.

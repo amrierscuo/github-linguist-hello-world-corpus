@@ -1,5 +1,10 @@
 # #244 Gettext Catalog
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.pot`: GNU gettext accepted and compiled the exact POT template; msgattrib returned its untranslated Hello, World! entry. GNUTranslations loaded the compiled catalog and preserved untranslated and unknown keys. This checks template behavior, not a supplied translation. [Evidence](verification/native_20261105_batch_2e706f74.json).
+
 Fill out a Gettext catalog that translates the greeting key in Hello, World!.
 
 ## Toolchain
@@ -36,4 +41,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.po` | [hello.po](hello.po) verified |
-| `.pot` | [hello.pot](variants/ext-pot-2e706f74/hello.pot) created; verification pending |
+| `.pot` | [hello.pot](variants/ext-pot-2e706f74/hello.pot) syntax and behavior verified |

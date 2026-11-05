@@ -1,5 +1,9 @@
 # 0133 Common Lisp: variant `.asd`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.asd`. SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Recorded evidence](../../verification/native_20261105_batch_2e617364.json).
+
 Role: Description ASDF system with Lisp component that emits greeting.
 
 Version type: **adapted**. Start model: examples/#133 Common Lisp/hello.lisp; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ SBCL: require asdf; asdf:load-asd sul file hello.asd; asdf:load-system "corpus-g
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

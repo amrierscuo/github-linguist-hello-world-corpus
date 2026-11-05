@@ -1,5 +1,20 @@
 # #608 Redcode
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+The genuine pMARS assembler accepted the original warrior. Its generated load listing contained the thirteen ASCII data fields decoding to Hello, World!, and a bounded native battle ran its JMP loop. This Redcode sample encodes data, does not print text. Display updates were disabled and no display environment was supplied.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json). [Earlier evidence](verification/native.json).
+
+## Extension results
+
+- `.cw`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica `Redcode`, tipo `programming`, language_id `321`.
 
 Upload an original Redcode warrior with ASCII greeting codes in its data segment.
@@ -44,4 +59,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cw` | [hello.cw](hello.cw) created; verification pending |
+| `.cw` | [hello.cw](hello.cw) syntax and behavior verified |
+
+</details>

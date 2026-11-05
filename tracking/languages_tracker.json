@@ -1289,14 +1289,15 @@
       "example": {
         "semantic_goal": "Compilare main : IO ⊤ con il backend GHC di Agda e stampare esattamente Hello, World! mediante il postulate FFI putLine.",
         "validation_mode": "typecheck_compile_run",
-        "toolchain": "Agda GHC backend and GHC with text package required; no locally verified versions (documentation Agda 2.9.0)",
+        "toolchain": "Agda 2.6.3 with GHC 9.4.7 and text 2.0.2, Ubuntu WSL",
         "files": [
           "examples/#023 Agda/Hello.agda",
           "examples/#023 Agda/README.md",
-          "examples/#023 Agda/verification/environment.json"
+          "examples/#023 Agda/verification/environment.json",
+          "examples/#023 Agda/verification/native_20261105_batch_main.json"
         ],
         "build_command": "agda --compile Hello.agda",
-        "run_or_check_command": "agda Hello.agda; agda --compile Hello.agda; ./Hello.exe",
+        "run_or_check_command": "agda --compile Hello.agda; ./Hello (Agda data and GHC paths are recorded in the receipt)",
         "expected_result": "Agda typecheck and GHC compilation exit 0; executable prints exactly Hello, World! followed by newline.",
         "sources": [
           "https://agda.readthedocs.io/en/latest/tools/compilers.html",
@@ -1307,16 +1308,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:01:35.107240+00:00",
-        "verification_log": "examples/#023 Agda/verification/environment.json",
-        "blockers": [
-          "Agda and GHC executables are not available in PATH; native typecheck, FFI compilation and runtime remain pending."
-        ],
-        "notes": "Uses only Agda.Builtin modules. Review against official documentation is not counted as syntax verification. Environment probe is not a language execution."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:29:45.234728+00:00",
+        "verification_log": "examples/#023 Agda/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "Agda typechecked the unchanged main : IO declaration; its GHC backend compiled the FFI putLine implementation and the resulting executable printed exactly Hello, World!.",
+        "verified_artifact_sha256": {
+          "examples/#023 Agda/Hello.agda": "8b4073c7fbe309b4e28f5f341a66accdb49bd1675f34af540eb3b362b1bb366b"
+        }
       }
     },
     {
@@ -2436,11 +2438,12 @@
       "example": {
         "semantic_goal": "Concatenare Hello, e World! e scrivere il saluto su stdout Asymptote.",
         "validation_mode": "native_interpret",
-        "toolchain": "Asymptote interpreter distributed with MiKTeX — miktex-asy version 2.88 [(C) 2004 Andy Hammerlindl, John C. Bowman, Tom Prince]",
+        "toolchain": "Asymptote 2.87 Ubuntu portable extraction (matching standard modules)",
         "files": [
           "examples/#043 Asymptote/hello.asy",
           "examples/#043 Asymptote/README.md",
-          "examples/#043 Asymptote/verification/native.json"
+          "examples/#043 Asymptote/verification/native.json",
+          "examples/#043 Asymptote/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "asy -noV hello.asy",
@@ -2454,16 +2457,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:30:22.837352+00:00",
-        "verification_log": "examples/#043 Asymptote/verification/native.json",
-        "blockers": [
-          "Asymptote interpreter runs, but local MiKTeX standard plain modules produce compiler errors; coherent interpreter/library installation required."
-        ],
-        "notes": "L’interprete MiKTeX locale è stato eseguito davvero, ma non carica il modulo plain: il log mostra errori sui moduli standard prima dell’esecuzione del sorgente. Occorre una toolchain coerente; sintassi e semantica restano false."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:28:45.270694+00:00",
+        "verification_log": "examples/#043 Asymptote/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "The native Asymptote interpreter loaded its matching standard modules and concatenated/printed the exact greeting. Console I/O only; no graphics or viewer.",
+        "verified_artifact_sha256": {
+          "examples/#043 Asymptote/hello.asy": "ca7996047b748610d3709194a632e5e6a76f0870190265a0958db512d58f8a68"
+        }
       }
     },
     {
@@ -2729,7 +2733,11 @@
           "examples/#048 Awk/variants/ext-mawk-2e6d61776b/hello.mawk",
           "examples/#048 Awk/variants/ext-mawk-2e6d61776b/README.md",
           "examples/#048 Awk/variants/ext-nawk-2e6e61776b/hello.nawk",
-          "examples/#048 Awk/variants/ext-nawk-2e6e61776b/README.md"
+          "examples/#048 Awk/variants/ext-nawk-2e6e61776b/README.md",
+          "examples/#048 Awk/verification/native_20261105_batch_2e61756b.json",
+          "examples/#048 Awk/verification/native_20261105_batch_2e6761776b.json",
+          "examples/#048 Awk/verification/native_20261105_batch_2e6d61776b.json",
+          "examples/#048 Awk/verification/native_20261105_batch_2e6e61776b.json"
         ],
         "build_command": null,
         "run_or_check_command": "gawk -f hello.awk",
@@ -4606,7 +4614,9 @@
           "examples/#083 C/variants/ext-idc-2e696463/hello.idc",
           "examples/#083 C/variants/ext-idc-2e696463/README.md",
           "examples/#083 C/verification/native_20261104_followup_2e63617473.json",
-          "examples/#083 C/verification/native_20261104_followup_2e68.json"
+          "examples/#083 C/verification/native_20261104_followup_2e68.json",
+          "examples/#083 C/verification/native_20261105_batch_2e63.json",
+          "examples/#083 C/verification/native_20261105_batch_2e682e696e.json"
         ],
         "build_command": "gcc -std=c11 -Wall -Wextra -Werror -o build/hello hello.c",
         "run_or_check_command": "./build/hello",
@@ -4811,7 +4821,11 @@
           "examples/#085 C++/verification/native_20261104_followup_2e697070.json",
           "examples/#085 C++/verification/native_20261104_followup_2e746363.json",
           "examples/#085 C++/verification/native_20261104_followup_2e747070.json",
-          "examples/#085 C++/verification/native_20261104_followup_2e747878.json"
+          "examples/#085 C++/verification/native_20261104_followup_2e747878.json",
+          "examples/#085 C++/verification/native_20261105_batch_2e637070.json",
+          "examples/#085 C++/verification/native_20261105_batch_2e6370706d.json",
+          "examples/#085 C++/verification/native_20261105_batch_2e697878.json",
+          "examples/#085 C++/verification/native_20261105_batch_blocked_2e7265.json"
         ],
         "build_command": "g++ -std=c++17 -Wall -Wextra -Werror -o build/hello hello.cpp",
         "run_or_check_command": "./build/hello",
@@ -5194,7 +5208,9 @@
           "examples/#092 CMake/verification/result.json",
           "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/configure.cmake",
           "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in",
-          "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/README.md"
+          "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/README.md",
+          "examples/#092 CMake/verification/native_20261105_batch_2e636d616b65.json",
+          "examples/#092 CMake/verification/native_20261105_batch_2e636d616b652e696e.json"
         ],
         "build_command": null,
         "run_or_check_command": "cmake -P hello.cmake",
@@ -7596,7 +7612,13 @@
           "examples/#133 Common Lisp/variants/ext-podsl-2e706f64736c/hello.podsl",
           "examples/#133 Common Lisp/variants/ext-podsl-2e706f64736c/README.md",
           "examples/#133 Common Lisp/variants/ext-sexp-2e73657870/hello.sexp",
-          "examples/#133 Common Lisp/variants/ext-sexp-2e73657870/README.md"
+          "examples/#133 Common Lisp/variants/ext-sexp-2e73657870/README.md",
+          "examples/#133 Common Lisp/verification/native_20261105_batch_2e617364.json",
+          "examples/#133 Common Lisp/verification/native_20261105_batch_2e636c.json",
+          "examples/#133 Common Lisp/verification/native_20261105_batch_2e6c.json",
+          "examples/#133 Common Lisp/verification/native_20261105_batch_2e6c697370.json",
+          "examples/#133 Common Lisp/verification/native_20261105_batch_2e6c7370.json",
+          "examples/#133 Common Lisp/verification/native_20261105_batch_2e73657870.json"
         ],
         "build_command": null,
         "run_or_check_command": "sbcl --script hello.lisp",
@@ -9378,7 +9400,8 @@
           "examples/#166 Diff/hello.diff",
           "examples/#166 Diff/verification/result.json",
           "examples/#166 Diff/variants/ext-patch-2e7061746368/hello.patch",
-          "examples/#166 Diff/variants/ext-patch-2e7061746368/README.md"
+          "examples/#166 Diff/variants/ext-patch-2e7061746368/README.md",
+          "examples/#166 Diff/verification/native_20261105_batch_2e7061746368.json"
         ],
         "build_command": null,
         "run_or_check_command": "diff -u --label a/hello.txt before/hello.txt --label b/hello.txt after/hello.txt; copiare before/hello.txt in build/hello.txt; da build: patch --batch -p1 -i ../hello.diff",
@@ -10293,7 +10316,8 @@
         "validation_mode": "parse_recipe_and_install",
         "toolchain": "EasyBuild 5.x in Linux, strumenti per moduli d’ambiente",
         "files": [
-          "examples/#182 Easybuild/HelloWorld-1.0.eb"
+          "examples/#182 Easybuild/HelloWorld-1.0.eb",
+          "examples/#182 Easybuild/verification/native_20261105_batch_blocked_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "eb HelloWorld-1.0.eb --prefix ./build/easybuild",
@@ -10316,13 +10340,13 @@
         "syntax_verified": false,
         "semantic_verified": false,
         "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:31:19.612132+00:00",
+        "verification_log": "examples/#182 Easybuild/verification/native_20261105_batch_blocked_main.json",
         "blockers": [
-          "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
+          "Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending."
         ],
-        "notes": "Bundle non compila librerie: le istruzioni postinstall producono uno script originale. example.invalid è un URL illustrativo; non viene usato per scaricare sorgenti. Il prefisso di esempio è locale."
+        "notes": "Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending."
       }
     },
     {
@@ -11579,14 +11603,15 @@
       "example": {
         "semantic_goal": "Concatenare due stringhe sullo stack Factor e stampare il saluto.",
         "validation_mode": "native_factor_vm",
-        "toolchain": "Required authentic toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Factor 0.102 official Linux x86-64 VM/image",
         "files": [
           "examples/#204 Factor/hello.factor",
           "examples/#204 Factor/README.md",
-          "examples/#204 Factor/verification/native.json"
+          "examples/#204 Factor/verification/native.json",
+          "examples/#204 Factor/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "factor hello.factor",
+        "run_or_check_command": "factor -no-user-init hello.factor",
         "expected_result": "Una riga Hello, World!.",
         "sources": [
           "https://factorcode.org/",
@@ -11597,16 +11622,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:21:54.398416+00:00",
-        "verification_log": "examples/#204 Factor/verification/native.json",
-        "blockers": [
-          "Factor language VM/image is unavailable; GNU coreutils factor would not verify Factor language."
-        ],
-        "notes": "USING importa io e sequences; append concatena le stringhe prima di print. Il VM è assente."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:35:42.200279+00:00",
+        "verification_log": "examples/#204 Factor/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "Authentic Factor VM loaded the unchanged script, concatenated the two stack strings and printed exactly Hello, World!. No listener or UI was started.",
+        "verified_artifact_sha256": {
+          "examples/#204 Factor/hello.factor": "7f14e13bb98dcae21a64734005f023b90c6315d59d705db8e0a29b0c86968ff1"
+        }
       }
     },
     {
@@ -12182,7 +12208,14 @@
           "examples/#215 Forth/variants/ext-frt-2e667274/hello.frt",
           "examples/#215 Forth/variants/ext-frt-2e667274/README.md",
           "examples/#215 Forth/variants/ext-fs-2e6673/hello.fs",
-          "examples/#215 Forth/variants/ext-fs-2e6673/README.md"
+          "examples/#215 Forth/variants/ext-fs-2e6673/README.md",
+          "examples/#215 Forth/verification/native_20261105_batch_2e347468.json",
+          "examples/#215 Forth/verification/native_20261105_batch_2e66.json",
+          "examples/#215 Forth/verification/native_20261105_batch_2e666f72.json",
+          "examples/#215 Forth/verification/native_20261105_batch_2e666f727468.json",
+          "examples/#215 Forth/verification/native_20261105_batch_2e6672.json",
+          "examples/#215 Forth/verification/native_20261105_batch_2e667274.json",
+          "examples/#215 Forth/verification/native_20261105_batch_2e6673.json"
         ],
         "build_command": null,
         "run_or_check_command": "gforth hello.fth",
@@ -13926,7 +13959,8 @@
           "examples/#244 Gettext Catalog/verification/result.json",
           "examples/#244 Gettext Catalog/verify.py",
           "examples/#244 Gettext Catalog/variants/ext-pot-2e706f74/hello.pot",
-          "examples/#244 Gettext Catalog/variants/ext-pot-2e706f74/README.md"
+          "examples/#244 Gettext Catalog/variants/ext-pot-2e706f74/README.md",
+          "examples/#244 Gettext Catalog/verification/native_20261105_batch_2e706f74.json"
         ],
         "build_command": "msgfmt --check --check-header -o build/hello.mo hello.po",
         "run_or_check_command": "msgfmt --check --check-header -o build/hello.mo hello.po; python verify.py build/hello.mo",
@@ -14629,7 +14663,12 @@
           "examples/#256 Gnuplot/variants/ext-plot-2e706c6f74/hello.plot",
           "examples/#256 Gnuplot/variants/ext-plot-2e706c6f74/README.md",
           "examples/#256 Gnuplot/variants/ext-plt-2e706c74/hello.plt",
-          "examples/#256 Gnuplot/variants/ext-plt-2e706c74/README.md"
+          "examples/#256 Gnuplot/variants/ext-plt-2e706c74/README.md",
+          "examples/#256 Gnuplot/verification/native_20261105_batch_2e676e75.json",
+          "examples/#256 Gnuplot/verification/native_20261105_batch_2e6770.json",
+          "examples/#256 Gnuplot/verification/native_20261105_batch_2e70.json",
+          "examples/#256 Gnuplot/verification/native_20261105_batch_2e706c6f74.json",
+          "examples/#256 Gnuplot/verification/native_20261105_batch_2e706c74.json"
         ],
         "build_command": null,
         "run_or_check_command": "gnuplot --version; gnuplot hello.gnuplot",
@@ -15164,14 +15203,15 @@
       "example": {
         "semantic_goal": "Interpolare una binding immutabile in Grace e stampare il risultato con il dialetto standard.",
         "validation_mode": "native_minigrace_compile_run",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Official minigrace 1.0.5171, sha 3.0.0 / graceful-fs 4.2.11, Node.js 22.20.0, Ubuntu WSL",
         "files": [
           "examples/#265 Grace/hello.grace",
           "examples/#265 Grace/README.md",
-          "examples/#265 Grace/verification/native.json"
+          "examples/#265 Grace/verification/native.json",
+          "examples/#265 Grace/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "minigrace-js hello.grace",
+        "run_or_check_command": "Compile hello.grace using minigrace-js, then run the generated hello.js through the official Grace runner with Node; see the recorded invocation.",
         "expected_result": "Compilazione ed esecuzione del sorgente producono Hello, World!.",
         "sources": [
           "https://github.com/gracelang/minigrace",
@@ -15182,16 +15222,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T12:36:02.703287+00:00",
-        "verification_log": "examples/#265 Grace/verification/native.json",
-        "blockers": [
-          "Minigrace compiler and standard dialect modules are not configured."
-        ],
-        "notes": "La sintassi di print senza parentesi e interpolazione {name} segue Grace. Non sono configurati il compiler e i moduli, quindi i flag restano false."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:37:33.601197+00:00",
+        "verification_log": "examples/#265 Grace/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "The official Minigrace compiler parsed and compiled the unchanged Grace source with its standard dialect. The official Grace command-line runner, invoked through the pinned Node runtime rather than its machine-specific shebang, executed the resulting module and printed exactly Hello, World!.",
+        "verified_artifact_sha256": {
+          "examples/#265 Grace/hello.grace": "8021fc8919802e721947061c24dec15a0c4e76a5e141e772d5cf082fc5c1c3d9"
+        }
       }
     },
     {
@@ -15497,7 +15538,8 @@
           "examples/#271 Graphviz (DOT)/verification/native.json",
           "examples/#271 Graphviz (DOT)/verify_svg.py",
           "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/hello.gv",
-          "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/README.md"
+          "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/README.md",
+          "examples/#271 Graphviz (DOT)/verification/native_20261105_batch_2e6776.json"
         ],
         "build_command": null,
         "run_or_check_command": "dot -Tsvg hello.dot -o build/hello.svg; python verify_svg.py build/hello.svg",
@@ -20043,7 +20085,9 @@
           "examples/#345 Jsonnet/verification/native.json",
           "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/hello.libsonnet",
           "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/driver.jsonnet",
-          "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/README.md"
+          "examples/#345 Jsonnet/variants/libsonnet-cf82fe81/README.md",
+          "examples/#345 Jsonnet/verification/native_20261105_batch_2e6a736f6e6e6574.json",
+          "examples/#345 Jsonnet/verification/native_20261105_batch_2e6c6962736f6e6e6574.json"
         ],
         "build_command": null,
         "run_or_check_command": "jsonnet hello.jsonnet",
@@ -22366,15 +22410,16 @@
       "example": {
         "semantic_goal": "Associare metadata .mod e Kbuild al modulo originale che contiene il saluto.",
         "validation_mode": "linux_kbuild_offline_module_compile_metadata",
-        "toolchain": "Linux kernel headers/toolchain Kbuild compatibili; versione da registrare",
+        "toolchain": "linux-headers-6.8.0-31-generic 6.8.0-31.31, linux-headers-6.8.0-31 6.8.0-31.31",
         "files": [
           "examples/#388 Linux Kernel Module/Kbuild",
           "examples/#388 Linux Kernel Module/README.md",
           "examples/#388 Linux Kernel Module/hello.c",
-          "examples/#388 Linux Kernel Module/hello.mod"
+          "examples/#388 Linux Kernel Module/hello.mod",
+          "examples/#388 Linux Kernel Module/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Copiare Kbuild/hello.c in build; make -C <kernel-headers> M=<percorso-assoluto-build> modules; confrontare hello.mod normalizzando il prefisso della cartella oggetti",
+        "run_or_check_command": "Build the original external module using native Kbuild in a scratch directory; inspect the generated .mod and .ko as recorded. Do not load the module.",
         "expected_result": "Kbuild genera hello.mod riferito a hello.o; build offline accettata; modulo contiene il messaggio e MODULE_DESCRIPTION del saluto.",
         "sources": [
           "https://docs.kernel.org/kbuild/modules.html",
@@ -22386,16 +22431,19 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Header/build tree kernel Kbuild non preparati; compilazione offline e rigenerazione .mod pending."
-        ],
-        "notes": "Linux Kernel Module nella baseline è un formato dati .mod. hello.mod è il campione testuale della lista oggetti, con percorso relativo illustrativo; Kbuild e hello.c ne forniscono il contesto reale. Non è un binario .ko e non può essere caricato direttamente. La futura verifica prevista è compilazione/metadata offline; init/runtime kernel non è attestato."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:30:40.702359+00:00",
+        "verification_log": "examples/#388 Linux Kernel Module/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "Native Kbuild compiled the original external module, regenerated the canonical .mod object list modulo its temporary directory prefix, and embedded both greeting and module description. No module was loaded or kernel init executed.",
+        "verified_artifact_sha256": {
+          "examples/#388 Linux Kernel Module/Kbuild": "8d37b44311bad63e24789df83efa1f1e0b030a79b65ac6c5532d5347bec86e4d",
+          "examples/#388 Linux Kernel Module/hello.c": "8f9be30b5124f3067f760f1a08c4f277b6963abc2b85c1f2cc045f112b83c6e7",
+          "examples/#388 Linux Kernel Module/hello.mod": "c1eb68c13e6b69af508026489a0cba88ea64f32650109fd9b00c3e9b66915820"
+        }
       }
     },
     {
@@ -23211,14 +23259,15 @@
       "example": {
         "semantic_goal": "Eseguire una routine M/MUMPS che scrive il saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "YottaDB o GT.M con routine M abilitata",
+        "toolchain": "FIS-GT.M native M compiler and interpreter GT.M V7.0-005 Linux x86_64",
         "files": [
           "examples/#403 M/hello.mumps",
           "examples/#403 M/variants/m-f7140aa0/hello.m",
-          "examples/#403 M/variants/m-f7140aa0/README.md"
+          "examples/#403 M/variants/m-f7140aa0/README.md",
+          "examples/#403 M/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "yottadb -run HELLO",
+        "run_or_check_command": "Stage the exact hello.mumps bytes as routines/HELLO.m; compile with mumps, then mumps -run HELLO using the isolated GT.M environment in the receipt.",
         "expected_result": "stdout Hello, World! e LF.",
         "sources": [
           {
@@ -23231,16 +23280,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime YottaDB/GT.M non ancora disponibile."
-        ],
-        "notes": "In M lo spazio iniziale distingue i comandi dalle etichette. Per il runtime installare la routine come HELLO.m in una directory di routine dedicata; il .mumps resta l’artefatto canonico."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:27:53.564352+00:00",
+        "verification_log": "examples/#403 M/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "Native FIS-GT.M compiled and ran the exact M bytes after the documented HELLO.m filename staging. No database access or server was used.",
+        "verified_artifact_sha256": {
+          "examples/#403 M/hello.mumps": "a81e922a3255f5fc417d51cccd5a5748f19bc14fdbb4df8440dcee68c9a9ea39"
+        }
       }
     },
     {
@@ -23972,7 +24022,11 @@
           "examples/#416 Makefile/variants/mk-337c4081/hello.mk",
           "examples/#416 Makefile/variants/mk-337c4081/README.md",
           "examples/#416 Makefile/variants/mkfile-b5a501aa/hello.mkfile",
-          "examples/#416 Makefile/variants/mkfile-b5a501aa/README.md"
+          "examples/#416 Makefile/variants/mkfile-b5a501aa/README.md",
+          "examples/#416 Makefile/verification/native_20261105_batch_2e6d616b.json",
+          "examples/#416 Makefile/verification/native_20261105_batch_2e6d616b65.json",
+          "examples/#416 Makefile/verification/native_20261105_batch_2e6d616b6566696c65.json",
+          "examples/#416 Makefile/verification/native_20261105_batch_2e6d6b.json"
         ],
         "build_command": null,
         "run_or_check_command": "make --no-print-directory hello",
@@ -25289,12 +25343,13 @@
       "example": {
         "semantic_goal": "Compilare Modula-2 con libreria PIM InOut e stampare il saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "GNU Modula-2 gm2 con librerie PIM",
+        "toolchain": "GNU Modula-2 x86_64-linux-gnu-gm2-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
         "files": [
-          "examples/#439 Modula-2/Hello.mod"
+          "examples/#439 Modula-2/Hello.mod",
+          "examples/#439 Modula-2/verification/native_20261105_batch_main.json"
         ],
         "build_command": "gm2 -fpim Hello.mod -o hello",
-        "run_or_check_command": "./hello",
+        "run_or_check_command": "gm2 -fpim Hello.mod -o hello; ./hello (the extracted compiler library paths are recorded in the receipt)",
         "expected_result": "stdout Hello, World! e newline.",
         "sources": [
           {
@@ -25307,16 +25362,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "La libreria InOut è della famiglia PIM; la toolchain deve usare il dialect corrispondente."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:27:53.564203+00:00",
+        "verification_log": "examples/#439 Modula-2/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "GNU Modula-2 compiled the exact PIM module and its native executable printed the exact greeting with LF.",
+        "verified_artifact_sha256": {
+          "examples/#439 Modula-2/Hello.mod": "e85bd66571a0e3a3d84f33af7768d087d8faa30910740f8877f7d8aa09e24e57"
+        }
       }
     },
     {
@@ -26118,18 +26174,19 @@
       "example": {
         "semantic_goal": "Eseguire soltanto display del saluto in un script NASL locale.",
         "validation_mode": "official_greenbone_nasl_offline_display",
-        "toolchain": "Authentic Greenbone OpenVAS NASL interpreter — openvas-nasl 22.7.9; ; Copyright (C) 2002 - 2004 Tenable Network Security; Copyright (C) 2022 Greenbone Networks GmbH",
+        "toolchain": "Greenbone OpenVAS NASL openvas-nasl 22.7.9",
         "files": [
           "examples/#454 NASL/hello.nasl",
           "examples/#454 NASL/README.md",
           "examples/#454 NASL/verification/native.json",
           "examples/#454 NASL/variants/inc-dd126fb7/hello.inc",
           "examples/#454 NASL/variants/inc-dd126fb7/driver.nasl",
-          "examples/#454 NASL/variants/inc-dd126fb7/README.md"
+          "examples/#454 NASL/variants/inc-dd126fb7/README.md",
+          "examples/#454 NASL/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "openvas-nasl -X hello.nasl",
-        "expected_result": "Hello, World!",
+        "run_or_check_command": "openvas-nasl -X -c <isolated-redis-config> hello.nasl; verify the greeting in native stderr logging as recorded.",
+        "expected_result": "The native display() greeting is recorded by Greenbone GLib message logging on stderr; the source and include fixture emit Hello, World!.",
         "sources": [
           "https://github.com/greenbone/openvas-scanner"
         ]
@@ -26138,16 +26195,19 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:11:38.152924+00:00",
-        "verification_log": "examples/#454 NASL/verification/native.json",
-        "blockers": [
-          "The genuine Greenbone runtime requires a local Redis KB context that is not configured; execution remains pending."
-        ],
-        "notes": "Non sono presenti primitive di scansione o target esterni. Lo strumento autentico parte, ma il contesto Redis manca: parsing/esecuzione non vengono attestati."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:28:54.854713+00:00",
+        "verification_log": "examples/#454 NASL/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used.",
+        "verified_artifact_sha256": {
+          "examples/#454 NASL/hello.nasl": "d0ef61725baa7afa4a3c95ef685cf6bd84e14f047308acd50099b0b60886bb51",
+          "examples/#454 NASL/variants/inc-dd126fb7/hello.inc": "5bfffc3e2878a4a9f76d701681774a11956f300a40f657a451fe903e4fa482be",
+          "examples/#454 NASL/variants/inc-dd126fb7/driver.nasl": "85f71558fcc4f5b8cf802078a9b0fb30a5e098b45fc02923e14718fea9a30b3f"
+        }
       }
     },
     {
@@ -26917,13 +26977,14 @@
       "example": {
         "semantic_goal": "Eseguire un workflow locale Nextflow che produce Hello, World!.",
         "validation_mode": "native_compile_or_interpret",
-        "toolchain": "NextflowDSL2, Java21 e Bash; versioni effettive da registrare",
+        "toolchain": "Nextflow 25.10.9",
         "files": [
           "examples/#469 Nextflow/README.md",
-          "examples/#469 Nextflow/hello.nf"
+          "examples/#469 Nextflow/hello.nf",
+          "examples/#469 Nextflow/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "nextflow run hello.nf",
+        "run_or_check_command": "nextflow run hello.nf -offline -ansi-log false -work-dir <scratch-tasks>",
         "expected_result": "Hello, World! seguito da newline; exit0.",
         "sources": [
           "https://nextflow.io/docs/latest/script.html",
@@ -26934,16 +26995,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Nextflow e dipendenze Java non preparati; pipeline pendente."
-        ],
-        "notes": "Il process GREETING emette stdout dalla propria task Bash; workflow connette il canale a view. Il sorgente è una pipeline DSL2, distinta dallo script della singola task."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:27:53.564328+00:00",
+        "verification_log": "examples/#469 Nextflow/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "Nextflow parsed and scheduled the exact original DSL2 workflow offline, completed the local Bash task and emitted the exact stdout greeting. No remote workflow, container or external service.",
+        "verified_artifact_sha256": {
+          "examples/#469 Nextflow/hello.nf": "bff1d466836a58b267a4d60caf41bf0dde19d7c9ef4973c3e3fa7df67f05fd46"
+        }
       }
     },
     {
@@ -32400,7 +32462,8 @@
         "toolchain": "Puppet",
         "files": [
           "examples/#565 Puppet/README.md",
-          "examples/#565 Puppet/hello.pp"
+          "examples/#565 Puppet/hello.pp",
+          "examples/#565 Puppet/verification/native_20261105_batch_blocked_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "puppet parser validate hello.pp; puppet apply hello.pp",
@@ -32416,13 +32479,13 @@
         "syntax_verified": false,
         "semantic_verified": false,
         "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:29:05.033591+00:00",
+        "verification_log": "examples/#565 Puppet/verification/native_20261105_batch_blocked_main.json",
         "blockers": [
-          "Puppet parser/catalog/runtime Ruby non predisposti."
+          "The prepared Puppet command line timed out during initialization, including the bounded extended attempt; the original manifest was not verified."
         ],
-        "notes": ""
+        "notes": "The prepared Puppet command line timed out during initialization, including the bounded extended attempt; the original manifest was not verified."
       }
     },
     {
@@ -33044,14 +33107,15 @@
       "example": {
         "semantic_goal": "Valutare ECMAScript nel vero QScriptEngine.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Qt 5 QtScript; C++",
+        "toolchain": "Qt Script native engine; g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
         "files": [
           "examples/#576 Qt Script/README.md",
           "examples/#576 Qt Script/hello.qs",
-          "examples/#576 Qt Script/main.cpp"
+          "examples/#576 Qt Script/main.cpp",
+          "examples/#576 Qt Script/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Compilare main.cpp collegando Qt5Core e Qt5Script; eseguire nella cartella di hello.qs.",
+        "run_or_check_command": "Compile main.cpp with Qt5Core and Qt5Script, then run the console executable beside hello.qs; see the recorded include and link flags.",
         "expected_result": "Hello, World!",
         "sources": [
           "https://doc.qt.io/archives/qt-5.15/qtscript-index.html"
@@ -33061,16 +33125,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Qt5Script/Qt Core compiler e librerie non predisposti."
-        ],
-        "notes": "Lo script restituisce una stringa come valore finale; il consumer C++ usa evaluate e controlla le eccezioni native."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:27:45.334736+00:00",
+        "verification_log": "examples/#576 Qt Script/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "The unchanged C++ QCoreApplication consumer loaded the exact hello.qs into the native Qt5 QScriptEngine and printed its final value, Hello, World!, with exit0 and no exceptions. No display variables were supplied, and no QtGui/QtWidgets libraries or GUI processes were used.",
+        "verified_artifact_sha256": {
+          "examples/#576 Qt Script/hello.qs": "9b27cd9d8ce3af171f266f5e3a58043f2f553f1a48259c3d7b5e082f8b94bf84",
+          "examples/#576 Qt Script/main.cpp": "bd93afd1a0eef293a609d3c02711b29ee6dd31f781c61863ccdaa8309bffa462"
+        }
       }
     },
     {
@@ -33729,7 +33795,9 @@
           "examples/#588 REXX/variants/pprx-57f86225/hello.pprx",
           "examples/#588 REXX/variants/pprx-57f86225/README.md",
           "examples/#588 REXX/variants/rex-31adbc05/hello.rex",
-          "examples/#588 REXX/variants/rex-31adbc05/README.md"
+          "examples/#588 REXX/variants/rex-31adbc05/README.md",
+          "examples/#588 REXX/verification/native_20261105_batch_2e70707278.json",
+          "examples/#588 REXX/verification/native_20261105_batch_2e726578.json"
         ],
         "build_command": null,
         "run_or_check_command": "regina hello.rexx",
@@ -34922,14 +34990,15 @@
       "example": {
         "semantic_goal": "Caricare un warrior Redcode originale con i codici ASCII del saluto nel suo segmento dati.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine pmars compiler/runtime — non disponibile / non verificata",
+        "toolchain": "pMARS 0.9.4 official source compiled in SERVER mode without graphics, native ICWS94 assembler and simulator",
         "files": [
           "examples/#608 Redcode/hello.cw",
           "examples/#608 Redcode/README.md",
-          "examples/#608 Redcode/verification/native.json"
+          "examples/#608 Redcode/verification/native.json",
+          "examples/#608 Redcode/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "pmars -a hello.cw; pmars hello.cw hello.cw",
+        "run_or_check_command": "pmars -A hello.cw; pmars -b -F1000 -r1 -c50 hello.cw hello.cw (headless SERVER build)",
         "expected_result": "Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.",
         "primary_artifacts": [
           "examples/#608 Redcode/hello.cw"
@@ -34942,16 +35011,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:26:13.301592+00:00",
-        "verification_log": "examples/#608 Redcode/verification/native.json",
-        "blockers": [
-          "Required pmars compiler/runtime and matching host resources are not available/configured."
-        ],
-        "notes": "Redcode non possiede I/O stringa: il goal eÌ€ assemblare e osservare i 13 operand A delle DAT, che ricostruiscono Hello, World!, mentre JMP mantiene il processo. Parser/simulatore mancanti; nessun claim di output console."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:29:05.133017+00:00",
+        "verification_log": "examples/#608 Redcode/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "The genuine pMARS assembler accepted the original warrior. Its generated load listing contained the thirteen ASCII data fields decoding to Hello, World!, and a bounded native battle ran its JMP loop. This Redcode sample encodes data, does not print text. Display updates were disabled and no display environment was supplied.",
+        "verified_artifact_sha256": {
+          "examples/#608 Redcode/hello.cw": "4b6608c2dcac15cadb2c66ba4abd61a12f7f6b83d84bd5cdff65f1748d63cce1"
+        }
       }
     },
     {
@@ -35857,7 +35927,35 @@
           "examples/#623 Roff/variants/rno-4ebd8568/README.md",
           "examples/#623 Roff/variants/tmac-730eca82/hello.tmac",
           "examples/#623 Roff/variants/tmac-730eca82/main.roff",
-          "examples/#623 Roff/variants/tmac-730eca82/README.md"
+          "examples/#623 Roff/variants/tmac-730eca82/README.md",
+          "examples/#623 Roff/verification/native_20261105_batch_2e31.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e31696e.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e316d.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e3178.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e32.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e33.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e33696e.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e336d.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e3370.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e33706d.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e337174.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e3378.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e34.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e35.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e36.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e37.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e38.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e39.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6c.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6d616e.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6d646f63.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6d65.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6d73.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6e.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e6e72.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e726e6f.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e726f6666.json",
+          "examples/#623 Roff/verification/native_20261105_batch_2e746d6163.json"
         ],
         "build_command": null,
         "run_or_check_command": "groff -Tascii hello.roff",
@@ -35963,7 +36061,26 @@
           "examples/#624 Roff Manpage/variants/man-ced7911e/hello.man",
           "examples/#624 Roff Manpage/variants/man-ced7911e/README.md",
           "examples/#624 Roff Manpage/variants/mdoc-e2a9af6c/hello.mdoc",
-          "examples/#624 Roff Manpage/variants/mdoc-e2a9af6c/README.md"
+          "examples/#624 Roff Manpage/variants/mdoc-e2a9af6c/README.md",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e31696e.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e316d.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e3178.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e32.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e33.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e33696e.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e336d.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e3370.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e33706d.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e337174.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e3378.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e34.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e35.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e36.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e37.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e38.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e39.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e6d616e.json",
+          "examples/#624 Roff Manpage/verification/native_20261105_batch_2e6d646f63.json"
         ],
         "build_command": null,
         "run_or_check_command": "groff -Tascii -man hello.1",
@@ -37661,7 +37778,7 @@
       "example": {
         "semantic_goal": "Eseguire un file Scilab.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Scilab CLI",
+        "toolchain": "Scilab minimal CLI Scilab version \"2024.0.0.988271013\"\nscilab-branch-main",
         "files": [
           "examples/#653 Scilab/README.md",
           "examples/#653 Scilab/hello.sce",
@@ -37669,10 +37786,11 @@
           "examples/#653 Scilab/variants/sci-27617630/main.sce",
           "examples/#653 Scilab/variants/sci-27617630/README.md",
           "examples/#653 Scilab/variants/tst-04f6df08/hello.tst",
-          "examples/#653 Scilab/variants/tst-04f6df08/README.md"
+          "examples/#653 Scilab/variants/tst-04f6df08/README.md",
+          "examples/#653 Scilab/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "scilab-cli -nb -f hello.sce",
+        "run_or_check_command": "Follow the native command, toolchain version and exact input hashes in the linked verification record.",
         "expected_result": "Hello, World!",
         "sources": [
           "https://help.scilab.org/docs/2025.1.0/en_US/mprintf.html"
@@ -37682,16 +37800,20 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Scilab runtime non disponibile."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:32:54.793805+00:00",
+        "verification_log": "examples/#653 Scilab/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage.",
+        "verified_artifact_sha256": {
+          "examples/#653 Scilab/hello.sce": "0751a8f396f9a42df3df547a93677e824b30aa8ab41f9ad3b2c542b4f0f4c109",
+          "examples/#653 Scilab/variants/sci-27617630/hello.sci": "0c4d93a0377d592635c8ecfe545397e9e308f459e3bbec2d056fd3ba42309be0",
+          "examples/#653 Scilab/variants/sci-27617630/main.sce": "00e3ba3a54b18a1398272c188194f799d961af9d5acc327bb01f77ad38238b3d",
+          "examples/#653 Scilab/variants/tst-04f6df08/hello.tst": "2efb60761c8317132406872c0abe20fb5cf3fa428cba7c5e12089d6aa3f11387"
+        }
       }
     },
     {
@@ -38395,12 +38517,13 @@
       "example": {
         "semantic_goal": "Compilare una definizione Slice Ice con costante string message.",
         "validation_mode": "compile_idl_and_assert_constant",
-        "toolchain": "ZeroC Ice slice2cpp e SDK Ice",
+        "toolchain": "ZeroC Ice slice2cpp 3.7.10 and native C++11 compiler",
         "files": [
-          "examples/#665 Slice/hello.ice"
+          "examples/#665 Slice/hello.ice",
+          "examples/#665 Slice/verification/native_20261105_batch_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "slice2cpp --output-dir build hello.ice",
+        "run_or_check_command": "Generate the Ice C++ binding with slice2cpp, then compile and run the constant consumer as recorded; no remote service is required.",
         "expected_result": "definizione accettata e costante Greeting::message uguale al saluto.",
         "sources": [
           {
@@ -38413,16 +38536,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il file definisce una costante, senza server, proxy o comunicazioni di rete."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:38:09.105958+00:00",
+        "verification_log": "examples/#665 Slice/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "The genuine ZeroC Slice compiler accepted the exact original definition, generated its C++ constant, and a native C++ program compiled against the genuine Ice SDK read Greeting::message and printed the exact greeting. The definition contains no server or proxy; no network or daemon was started.",
+        "verified_artifact_sha256": {
+          "examples/#665 Slice/hello.ice": "a7f06e3188b5d4a65aafbad5710e35cab03efc7f3c77f7684384a42bb25b4404"
+        }
       }
     },
     {
@@ -41281,7 +41405,9 @@
           "examples/#716 Texinfo/variants/texinfo-67e352f4/hello.texinfo",
           "examples/#716 Texinfo/variants/texinfo-67e352f4/README.md",
           "examples/#716 Texinfo/variants/txi-415ac389/hello.txi",
-          "examples/#716 Texinfo/variants/txi-415ac389/README.md"
+          "examples/#716 Texinfo/variants/txi-415ac389/README.md",
+          "examples/#716 Texinfo/verification/native_20261105_batch_2e746578696e666f.json",
+          "examples/#716 Texinfo/verification/native_20261105_batch_2e747869.json"
         ],
         "build_command": null,
         "run_or_check_command": "makeinfo --plaintext --output=- hello.texi",
@@ -46961,17 +47087,19 @@
       "example": {
         "semantic_goal": "Generare e risolvere un LP Zimpl il cui ottimo codifica i byte del saluto.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Zimpl; LP solver",
+        "toolchain": "Official Zimpl3.2.0 static compiler and GLPK5.0",
         "files": [
           "examples/#808 Zimpl/README.md",
           "examples/#808 Zimpl/hello.zpl",
           "examples/#808 Zimpl/variants/zimpl-c607d319/hello.zimpl",
           "examples/#808 Zimpl/variants/zimpl-c607d319/README.md",
           "examples/#808 Zimpl/variants/zmpl-c5eac23d/hello.zmpl",
-          "examples/#808 Zimpl/variants/zmpl-c5eac23d/README.md"
+          "examples/#808 Zimpl/variants/zmpl-c5eac23d/README.md",
+          "examples/#808 Zimpl/verification/native_20261105_batch_main.json",
+          "examples/#808 Zimpl/verification/native_20261105_batch_original_failure.json"
         ],
         "build_command": null,
-        "run_or_check_command": "zimpl -o build/hello hello.zpl; glpsol --lp build/hello.lp; leggere e decodificare gli x[i] ottimali.",
+        "run_or_check_command": "zimpl -o <scratch>/hello hello.zpl; solve the generated LP with glpsol and decode the thirteen optimal values as recorded.",
         "expected_result": "Hello, World!",
         "sources": [
           "https://zimpl.zib.de/"
@@ -46981,16 +47109,19 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Zimpl compiler non disponibile nei pacchetti isolati; parsing/generazione LP e soluzione pending."
-        ],
-        "notes": "Variabili indicizzate originali hanno bounds [ASCII,ASCII+1]; l’obiettivo minimizzante deve scegliere i codici inferiori."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T12:32:02.783021+00:00",
+        "verification_log": "examples/#808 Zimpl/verification/native_20261105_batch_main.json",
+        "blockers": [],
+        "notes": "After explicitly binding the indexed-variable iterator in the three declared sources, native Zimpl generated each LP and GLPK solved it to optimality. The thirteen native solution variables decode to exactly Hello, World!. Each suffix was compiled and solved separately.",
+        "verified_artifact_sha256": {
+          "examples/#808 Zimpl/hello.zpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+          "examples/#808 Zimpl/variants/zimpl-c607d319/hello.zimpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+          "examples/#808 Zimpl/variants/zmpl-c5eac23d/hello.zmpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38"
+        }
       }
     },
     {
@@ -48042,7 +48173,8 @@
           "examples/#828 pkg-config/hello.pc",
           "examples/#828 pkg-config/verification/result.json",
           "examples/#828 pkg-config/variants/pc-in-477d8206/hello.pc.in",
-          "examples/#828 pkg-config/variants/pc-in-477d8206/README.md"
+          "examples/#828 pkg-config/variants/pc-in-477d8206/README.md",
+          "examples/#828 pkg-config/verification/native_20261105_batch_2e70632e696e.json"
         ],
         "build_command": null,
         "run_or_check_command": "PKG_CONFIG_PATH=<cartella-assoluta> pkg-config --validate hello; pkg-config --variable=greeting hello",

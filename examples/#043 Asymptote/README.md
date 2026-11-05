@@ -1,5 +1,20 @@
 # #043 Asymptote
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+The native Asymptote interpreter loaded its matching standard modules and concatenated/printed the exact greeting. Console I/O only; no graphics or viewer.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json). [Earlier evidence](verification/native.json).
+
+## Extension results
+
+- `.asy`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica: `Asymptote`, tipo `programming`, `language_id: 591605007`.
 
 Concatenate Hello, and World! and write greetings on stdout Asymptote.
@@ -45,4 +60,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.asy` | [hello.asy](hello.asy) created; verification pending |
+| `.asy` | [hello.asy](hello.asy) syntax and behavior verified |
+
+</details>

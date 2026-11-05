@@ -1,0 +1,1678 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:32:54.793805+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Scilab",
+  "ordinal": 653,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for scilab-cli",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "scilab-cli"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:32:54.892683+00:00",
+      "exit_code": 0,
+      "stdout": "Package: scilab-cli\nArchitecture: all\nVersion: 2024.0.0+dfsg-5build3\nPriority: optional\nSection: universe/math\nSource: scilab\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 653\nDepends: scilab-data (= 2024.0.0+dfsg-5build3), scilab-include (>= 2024.0.0+dfsg-5build3), scilab-minimal-bin (>= 2024.0.0+dfsg-5build3)\nSuggests: gcc, gfortran\nFilename: pool/universe/s/scilab/scilab-cli_2024.0.0+dfsg-5build3_all.deb\nSize: 398846\nMD5sum: 5bd22ab8884e5931c7e1ef3c7d9ba2eb\nSHA1: a77ab93c76497724dabc6f8c2889274eb4e9811c\nSHA256: 2fdf3936518d65dca1c782e37a2b4384fba328e9a8622f1ad8ec16dd0dc421f1\nSHA512: ccac758a91c9f50f6eaa40f985109895a2e1fabdf949237826101c77a25475fb97247aae2f6d9739506f0c6e05b9594195e3f9876fc086e9dbaf76fbcf08dfef\nHomepage: https://www.scilab.org\nDescription-en: Scientific software package - Command Line Interpreter\n Scilab is a matrix-based scientific software package.\n Scilab contains hundreds of built-in mathematical functions, rich\n data structures (including polynomials, rationals, linear systems, lists,\n etc...) and comes with a number of specific toolboxes for\n control, signal processing, ...\n .\n This package provides Scilab as Command Line Interpreter (CLI). This package\n provides Scilab as a computing engine or script interpreter.\n Please install the package \"scilab\" to have all features.\nDescription-md5: c82205392ad1a90583774dae1eb33898\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only scilab-cli",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "120s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "scilab-cli=2024.0.0+dfsg-5build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-cli",
+      "timestamp_utc": "2026-11-05T12:32:54.933994+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 scilab-cli all 2024.0.0+dfsg-5build3 [399 kB]\nFetched 399 kB in 1s (791 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract scilab-cli without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-cli/scilab-cli_2024.0.0+dfsg-5build3_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:32:55.720616+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for scilab-minimal-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "scilab-minimal-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:32:56.217938+00:00",
+      "exit_code": 0,
+      "stdout": "Package: scilab-minimal-bin\nArchitecture: amd64\nVersion: 2024.0.0+dfsg-5build3\nPriority: optional\nSection: universe/math\nSource: scilab\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 19653\nDepends: default-jre-headless, scilab-data (= 2024.0.0+dfsg-5build3), libamd3 (>= 1:7.0.1), libarchive13t64 (>= 3.2.1), libarpack2t64 (>= 2.1), libblas3 | libblas.so.3, libc6 (>= 2.38), libcurl4t64 (>= 7.16.2), libfftw3-double3 (>= 3.3.10), libgcc-s1 (>= 4.0), libgfortran5 (>= 8), libgomp1 (>= 4.9), libhdf5-103-1t64, libhdf5-hl-100t64, libklu2 (>= 1:7.0.1), liblapack3 | liblapack.so.3, libmatio11 (>= 1.5.4), libncurses6 (>= 6), libpcre2-8-0 (>= 10.22), libpcre2-posix3 (>= 10.34), libquadmath0 (>= 4.6), libstdc++6 (>= 13.1), libtcl8.6 (>= 8.6.0), libtinfo6 (>= 6), libtk8.6 (>= 8.6.0), libumfpack6 (>= 1:7.0.1), libxml2 (>= 2.8.0)\nBreaks: scilab-full-bin (<< 5.4.1-3)\nReplaces: scilab-bin, scilab-full-bin (<< 5.4.1-3)\nFilename: pool/universe/s/scilab/scilab-minimal-bin_2024.0.0+dfsg-5build3_amd64.deb\nSize: 5241268\nMD5sum: 87dd09acbc3186fa4d55538b3801df08\nSHA1: f426ad1c65f6b3380a3f7268564d1a60b835cb87\nSHA256: a9a82103f55239372af0a4d18948482da2b4c46b64177fa8105df1e374bd41d9\nSHA512: 5ebe33e45efcc70acefc5b9baa0b6bb480f44f953e5ffeb22448a96cb43cea3baa6c4e548855cd5f24a677449644bed9a2765ac00caffa44f84aa9da3a7403eb\nHomepage: https://www.scilab.org\nDescription-en: Scientific software package for numerical computations (minimal binary files)\n Scilab is a matrix-based scientific software package.\n Scilab contains hundreds of built-in mathematical functions, rich\n data structures (including polynomials, rationals, linear systems, lists,\n etc...) and comes with a number of specific toolboxes for\n control, signal processing, ...\n .\n This package also provides Xcos, a graphical editor to design hybrid\n dynamical systems models. Models can be designed, loaded, saved, compiled and\n simulated.\n Stable and efficient solution for industrial and academics needs, Xcos\n provides functionalities for modeling of mechanical systems (automotive,\n aeronautics...), hydraulic circuits (dam, pipe modeling...), control systems,\n etc. Modelica capabilities are also provided.\n .\n This package contains the architecture specific binary files.\n All mandatory libraries for scilab-cli are shipped in this package.\n Please install the package \"scilab\" to have all features.\nDescription-md5: 019d4762370977bc7990af8b542c30a3\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only scilab-minimal-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "120s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "scilab-minimal-bin=2024.0.0+dfsg-5build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-minimal-bin",
+      "timestamp_utc": "2026-11-05T12:32:56.250176+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 scilab-minimal-bin amd64 2024.0.0+dfsg-5build3 [5241 kB]\nFetched 5241 kB in 1s (8804 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract scilab-minimal-bin without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-minimal-bin/scilab-minimal-bin_2024.0.0+dfsg-5build3_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:32:57.197286+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for scilab-data",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "scilab-data"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:32:58.248363+00:00",
+      "exit_code": 0,
+      "stdout": "Package: scilab-data\nArchitecture: all\nVersion: 2024.0.0+dfsg-5build3\nMulti-Arch: foreign\nPriority: optional\nSection: universe/math\nSource: scilab\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 90122\nFilename: pool/universe/s/scilab/scilab-data_2024.0.0+dfsg-5build3_all.deb\nSize: 36421918\nMD5sum: 42dfa9457ddb2928879cee671a1e8422\nSHA1: 78c7299581bfc3263e40afb13c481547c00448ad\nSHA256: de302dea69719a5a3fd783c50d74d51e30751a84ca4d6245e8797242fc7209e2\nSHA512: 13af8c7fc453dd68f292dd8f5c0bc8b60b86f760e0fc6737909203d2b83ae2b74efe2120caa3aeaec94818a052941a92795744814ae14f6b9cdfe2487b676336\nHomepage: https://www.scilab.org\nDescription-en: Scientific software package for numerical computations (data files)\n Scilab is a matrix-based scientific software package.\n Scilab contains hundreds of built-in mathematical functions, rich\n data structures (including polynomials, rationals, linear systems, lists,\n etc...) and comes with a number of specific toolboxes for\n control, signal processing, ...\n .\n This package also provides Xcos, a graphical editor to design hybrid\n dynamical systems models. Models can be designed, loaded, saved, compiled and\n simulated.\n Stable and efficient solution for industrial and academics needs, Xcos\n provides functionalities for modeling of mechanical systems (automotive,\n aeronautics...), hydraulic circuits (dam, pipe modeling...), control systems,\n etc. Modelica capabilities are also provided.\n .\n This package contains the data files for Scilab.\nDescription-md5: fa23f61e370b384e580df50863a46510\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only scilab-data",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "120s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "scilab-data=2024.0.0+dfsg-5build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-data",
+      "timestamp_utc": "2026-11-05T12:32:58.284006+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 scilab-data all 2024.0.0+dfsg-5build3 [36.4 MB]\nFetched 36.4 MB in 3s (10.9 MB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract scilab-data without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-data/scilab-data_2024.0.0+dfsg-5build3_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:33:02.300397+00:00",
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract scilab-data without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "180s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-data/scilab-data_2024.0.0+dfsg-5build3_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:35:54.653476+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for scilab-include",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "scilab-include"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:36:53.153977+00:00",
+      "exit_code": 0,
+      "stdout": "Package: scilab-include\nArchitecture: amd64\nVersion: 2024.0.0+dfsg-5build3\nPriority: optional\nSection: universe/math\nSource: scilab\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1416\nFilename: pool/universe/s/scilab/scilab-include_2024.0.0+dfsg-5build3_amd64.deb\nSize: 174692\nMD5sum: e2668bfe8d3b5c95be08959923b79c29\nSHA1: 16e32154acaf85169197d39658dd57b8e2566b3f\nSHA256: c282fa66b2b79562d6355733ccc427ae5462ccf3c9833f4e8344e62028acd683\nSHA512: 9d1bd6cd5ebb62aaf7d4c53e2d32fab4924d14c16f823d0307772e5675c23ab77bc1d04ef07f43579004a30c588c7c3ffa29857cd422842bea1f79f74dadf037\nHomepage: https://www.scilab.org\nDescription-en: Scientific software package for numerical computations (include files)\n Scilab is a matrix-based scientific software package.\n Scilab contains hundreds of built-in mathematical functions, rich\n data structures (including polynomials, rationals, linear systems, lists,\n etc...) and comes with a number of specific toolboxes for\n control, signal processing, ...\n .\n This package also provides Xcos, a graphical editor to design hybrid\n dynamical systems models. Models can be designed, loaded, saved, compiled and\n simulated.\n Stable and efficient solution for industrial and academics needs, Xcos\n provides functionalities for modeling of mechanical systems (automotive,\n aeronautics...), hydraulic circuits (dam, pipe modeling...), control systems,\n etc. Modelica capabilities are also provided.\n .\n This package contains the include files for Scilab (used in the dynamic link).\nDescription-md5: 4fac92985e7799483e0d96922456d1f4\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only scilab-include",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "180s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "scilab-include=2024.0.0+dfsg-5build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-include",
+      "timestamp_utc": "2026-11-05T12:36:53.217157+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 scilab-include amd64 2024.0.0+dfsg-5build3 [175 kB]\nFetched 175 kB in 4s (49.7 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract scilab-include without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "180s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/scilab-include/scilab-include_2024.0.0+dfsg-5build3_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:36:57.189142+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read CLI shared library dependencies",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:36:58.556686+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007fffebb46000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000751f37200000)\n\tlibscilab-cli.so.2024 => not found\n\tlibarchive.so.13 => not found\n\tlibscifunctions.so.2024 => not found\n\tlibscicall_scilab.so.2024 => not found\n\tlibscidifferential_equations.so.2024 => not found\n\tlibscisundials.so.2024 => not found\n\tlibklu.so.2 => not found\n\tlibumfpack.so.6 => not found\n\tlibamd.so.3 => not found\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x0000751f3755c000)\n\tlibsciarnoldi.so.2024 => not found\n\tlibarpack.so.2 => not found\n\tlibscilocalization.so.2024 => not found\n\tlibscispecial_functions.so.2024 => not found\n\tlibscicompletion.so.2024 => not found\n\tlibscihistory_manager.so.2024 => not found\n\tlibpcre2-posix.so.3 => not found\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x0000751f374c0000)\n\tlibscihdf5.so.2024 => not found\n\tlibhdf5_serial.so.103 => not found\n\tlibhdf5_serial_hl.so.100 => not found\n\tlibfftw3.so.3 => not found\n\tlibscistatistics.so.2024 => not found\n\tlibsciast.so.2024 => not found\n\tlibscifunctions_manager.so.2024 => not found\n\tlibscixml.so.2024 => not found\n\tlibsciexternal_objects.so.2024 => not found\n\tlibscislint.so.2024 => not found\n\tlibscicoverage.so.2024 => not found\n\tlibxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x0000751f3701e000)\n\tlibscigui-disable.so.2024 => not found\n\tlibscigraphics-disable.so.2024 => not found\n\tlibscigraphic_export-disable.so.2024 => not found\n\tlibsciconsole-minimal.so.2024 => not found\n\tlibncurses.so.6 => /lib/x86_64-linux-gnu/libncurses.so.6 (0x0000751f3748f000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x0000751f36fea000)\n\tlibsciaction_binding-disable.so.2024 => not found\n\tlibscijvm-disable.so.2024 => not found\n\tlibscixcos-disable.so.2024 => not found\n\tlibscigraphic_objects-disable.so.2024 => not found\n\tlibsciscinotes-disable.so.2024 => not found\n\tlibsciui_data-disable.so.2024 => not found\n\tlibscihistory_browser-disable.so.2024 => not found\n\tlibscicommons-disable.so.2024 => not found\n\tlibscipreferences-cli.so.2024 => not found\n\tlibscitclsci-disable.so.2024 => not found\n\tlibblas.so.3 => /lib/x86_64-linux-gnu/libblas.so.3 (0x0000751f36f43000)\n\tliblapack.so.3 => /lib/x86_64-linux-gnu/liblapack.so.3 (0x0000751f36800000)\n\tlibgfortran.so.5 => /lib/x86_64-linux-gnu/libgfortran.so.5 (0x0000751f36400000)\n\tlibquadmath.so.0 => /lib/x86_64-linux-gnu/libquadmath.so.0 (0x0000751f36efa000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000751f36317000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000751f367d2000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000751f36000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000751f375c7000)\n\tlibicuuc.so.74 => /lib/x86_64-linux-gnu/libicuuc.so.74 (0x0000751f35c00000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x0000751f367b6000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x0000751f36784000)\n\tlibicudata.so.74 => /lib/x86_64-linux-gnu/libicudata.so.74 (0x0000751f33e00000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib"
+      }
+    },
+    {
+      "label": "Read Ubuntu package metadata for libarchive13t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libarchive13t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:05.211996+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libarchive13t64\nSource: libarchive\nPriority: optional\nSection: libs\nInstalled-Size: 905\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 3.7.2-2ubuntu0.9\nReplaces: libarchive13\nSuggests: lrzip\nProvides: libarchive13 (= 3.7.2-2ubuntu0.9)\nDepends: libacl1 (>= 2.2.23), libbz2-1.0, libc6 (>= 2.38), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.2.2), libnettle8t64, libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nBreaks: libarchive13 (<< 3.7.2-2ubuntu0.9)\nFilename: pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb\nSize: 383406\nMD5sum: b102398f56e49747e3258367614f8ad0\nSHA1: fe446f9b669f870fb8fe1fe05dc06d3bd474c723\nSHA256: b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f\nSHA512: f5efd25b09d6f3754fade7666736a02385287b37044c6dc94a92975c7cdbbd462747568bd5ebe1258c7201668bb77c23cec1db52f3736be3130c3881de25215b\nHomepage: https://www.libarchive.org/\nDescription-en: Multi-format archive and compression library (shared library)\n The libarchive library provides a flexible interface for reading and writing\n archives in various formats such as tar and cpio. libarchive also supports\n reading and writing archives compressed using various compression filters such\n as gzip and bzip2. The library is inherently stream-oriented; readers serially\n iterate through the archive, writers serially add things to the archive.\n .\n Archive formats supported are:\n .\n * tar (read and write, including GNU extensions)\n * pax (read and write, including GNU and star extensions)\n * cpio (read and write, including odc and newc variants)\n * iso9660 (read and write, including Joliet and Rockridge extensions, with\n some limitations)\n * zip (read only, with some limitations, uses zlib)\n * mtree (read and write)\n * shar (write only)\n * ar (read and write, including BSD and GNU/SysV variants)\n * empty (read only; in particular, note that no other format will accept an\n empty file)\n * raw (read only)\n * xar (read only)\n * rar (read only, with some limitations)\n * 7zip (read and write, with some limitations)\n .\n Filters supported are:\n .\n * gzip (read and write, uses zlib)\n * bzip2 (read and write, uses bzlib)\n * compress (read and write, uses an internal implementation)\n * uudecode (read only)\n * separate command-line compressors with fixed-signature auto-detection\n * xz and lzma (read and write using liblzma)\n * zstandard (read and write using libzstd)\n .\n This package provides the libarchive shared library.\nDescription-md5: 8f6c8ca66a025bb06a3fcf3791223823\nMulti-Arch: same\nOriginal-Maintainer: Peter Pentchev <roam@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, server, ubuntu-server-raspi, samba-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\nPackage: libarchive13t64\nSource: libarchive\nPriority: optional\nSection: libs\nInstalled-Size: 905\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 3.7.2-2ubuntu0.8\nReplaces: libarchive13\nSuggests: lrzip\nProvides: libarchive13 (= 3.7.2-2ubuntu0.8)\nDepends: libacl1 (>= 2.2.23), libbz2-1.0, libc6 (>= 2.38), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.2.2), libnettle8t64, libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nBreaks: libarchive13 (<< 3.7.2-2ubuntu0.8)\nFilename: pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.8_amd64.deb\nSize: 382584\nMD5sum: 5cbeeb3dda019eb914dcf21ce4ac7fa3\nSHA1: a533c09df84ebd72fe26d954329689a7c4c633db\nSHA256: ba9684092d71656a3bfd909518c76cc15eefeef9cbac0a36a8cef5632c62f56f\nSHA512: 7a5748d5f75562c725d195006941873b4134efc2928a27ab34398045b3dbd0c68452341b2f14d7e64c18a71aa2bf8889d69601ffd3e019eb252f518cf5496d58\nHomepage: https://www.libarchive.org/\nDescription-en: Multi-format archive and compression library (shared library)\n The libarchive library provides a flexible interface for reading and writing\n archives in various formats such as tar and cpio. libarchive also supports\n reading and writing archives compressed using various compression filters such\n as gzip and bzip2. The library is inherently stream-oriented; readers serially\n iterate through the archive, writers serially add things to the archive.\n .\n Archive formats supported are:\n .\n * tar (read and write, including GNU extensions)\n * pax (read and write, including GNU and star extensions)\n * cpio (read and write, including odc and newc variants)\n * iso9660 (read and write, including Joliet and Rockridge extensions, with\n some limitations)\n * zip (read only, with some limitations, uses zlib)\n * mtree (read and write)\n * shar (write only)\n * ar (read and write, including BSD and GNU/SysV variants)\n * empty (read only; in particular, note that no other format will accept an\n empty file)\n * raw (read only)\n * xar (read only)\n * rar (read only, with some limitations)\n * 7zip (read and write, with some limitations)\n .\n Filters supported are:\n .\n * gzip (read and write, uses zlib)\n * bzip2 (read and write, uses bzlib)\n * compress (read and write, uses an internal implementation)\n * uudecode (read only)\n * separate command-line compressors with fixed-signature auto-detection\n * xz and lzma (read and write using liblzma)\n * zstandard (read and write using libzstd)\n .\n This package provides the libarchive shared library.\nDescription-md5: 8f6c8ca66a025bb06a3fcf3791223823\nMulti-Arch: same\nOriginal-Maintainer: Peter Pentchev <roam@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, server, ubuntu-server-raspi, samba-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\nPackage: libarchive13t64\nArchitecture: amd64\nVersion: 3.7.2-2\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: libarchive\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Peter Pentchev <roam@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 904\nProvides: libarchive13 (= 3.7.2-2)\nDepends: libacl1 (>= 2.2.23), libbz2-1.0, libc6 (>= 2.38), liblz4-1 (>= 0.0~r130), liblzma5 (>= 5.2.2), libnettle8t64, libxml2 (>= 2.7.4), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nSuggests: lrzip\nBreaks: libarchive13 (<< 3.7.2-2)\nReplaces: libarchive13\nFilename: pool/main/liba/libarchive/libarchive13t64_3.7.2-2_amd64.deb\nSize: 381452\nMD5sum: fbfcb906a88456ac14a56488c6835ca5\nSHA1: e4c2770d26a4e8be688a8d581cf9e8ff187dbf4c\nSHA256: 90f7f4692ac6b2ce1755c0f2e67f9655e288d764ef9d70dba7c3f7ae8b8a5b4b\nSHA512: a46eef2e3b602ace29135a0f6a8d792df7cb5b7c308d74fddde9ded39353a502e08cab7db581163e0613f42c387e4c6832b4d1df8da13e38e269dbc9bdad0b83\nHomepage: https://www.libarchive.org/\nDescription-en: Multi-format archive and compression library (shared library)\n The libarchive library provides a flexible interface for reading and writing\n archives in various formats such as tar and cpio. libarchive also supports\n reading and writing archives compressed using various compression filters such\n as gzip and bzip2. The library is inherently stream-oriented; readers serially\n iterate through the archive, writers serially add things to the archive.\n .\n Archive formats supported are:\n .\n    * tar (read and write, including GNU extensions)\n    * pax (read and write, including GNU and star extensions)\n    * cpio (read and write, including odc and newc variants)\n    * iso9660 (read and write, including Joliet and Rockridge extensions, with\n      some limitations)\n    * zip (read only, with some limitations, uses zlib)\n    * mtree (read and write)\n    * shar (write only)\n    * ar (read and write, including BSD and GNU/SysV variants)\n    * empty (read only; in particular, note that no other format will accept an\n      empty file)\n    * raw (read only)\n    * xar (read only)\n    * rar (read only, with some limitations)\n    * 7zip (read and write, with some limitations)\n .\n Filters supported are:\n .\n    * gzip (read and write, uses zlib)\n    * bzip2 (read and write, uses bzlib)\n    * compress (read and write, uses an internal implementation)\n    * uudecode (read only)\n    * separate command-line compressors with fixed-signature auto-detection\n    * xz and lzma (read and write using liblzma)\n    * zstandard (read and write using libzstd)\n .\n This package provides the libarchive shared library.\nDescription-md5: 4bc5ca99af95264652d6d79af38b5271\nTask: ubuntu-desktop-minimal, ubuntu-desktop, cloud-image, cloud-image, server, ubuntu-server-raspi, samba-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libarchive13t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libarchive13t64=3.7.2-2ubuntu0.9"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libarchive13t64",
+      "timestamp_utc": "2026-11-05T12:40:05.352028+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://security.ubuntu.com/ubuntu noble-security/main amd64 libarchive13t64 amd64 3.7.2-2ubuntu0.9 [383 kB]\nFetched 383 kB in 0s (777 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libarchive13t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libarchive13t64/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:06.095391+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libarpack2t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libarpack2t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:06.170432+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libarpack2t64\nArchitecture: amd64\nVersion: 3.9.1-1.1build2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: arpack\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 312\nProvides: libarpack2 (= 3.9.1-1.1build2)\nDepends: libblas3 | libblas.so.3, libc6 (>= 2.29), libgcc-s1 (>= 4.0), libgfortran5 (>= 8), liblapack3 | liblapack.so.3\nBreaks: libarpack2 (<< 3.9.1-1.1build2)\nReplaces: libarpack2\nFilename: pool/universe/a/arpack/libarpack2t64_3.9.1-1.1build2_amd64.deb\nSize: 105512\nMD5sum: b1ce97982dcbfcfed7988b70c4a18161\nSHA1: d313db33f92e286bbb2655e889ee0a60be4be0d4\nSHA256: b9d203dd5fbbd8ce353c9ac366d02fe029f4e59d9e29554d8f63ef5674d62519\nSHA512: cc59239148b5f25682b59679bcb0e9cccb4d888ac490cfb22f1c5ff4926bd17353fe6e19eee871b82451e9b7c6285e4e6975ca6a72a6922c435e700af5fb6099\nHomepage: https://github.com/opencollab/arpack-ng\nDescription-en: Fortran77 subroutines to solve large scale eigenvalue problems\n ARPACK software is capable of solving large scale symmetric,\n nonsymmetric, and generalized eigenproblems from significant\n application areas. The software is designed to compute a few (k)\n eigenvalues with user specified features such as those of largest\n real part or largest magnitude. Storage requirements are on the order\n of n*k locations. No auxiliary storage is required. A set of Schur\n basis vectors for the desired k-dimensional eigen-space is computed\n which is numerically orthogonal to working precision. Numerically\n accurate eigenvectors are available on request.\n .\n Important Features:\n .\n  * Reverse Communication Interface.\n  * Single and Double Precision Real Arithmetic Versions for Symmetric,\n    Non-symmetric,\n  * Standard or Generalized Problems.\n  * Single and Double Precision Complex Arithmetic Versions for Standard or\n    Generalized Problems.\n  * Routines for Banded Matrices - Standard or Generalized Problems.\n  * Routines for The Singular Value Decomposition.\n  * Example driver routines that may be used as templates to implement\n    numerous Shift-Invert strategies for all problem types, data types and\n    precision.\n .\n This package contains the shared library.\nDescription-md5: 2930973bf6f522d792538129ee506be1\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libarpack2t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libarpack2t64=3.9.1-1.1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libarpack2t64",
+      "timestamp_utc": "2026-11-05T12:40:06.201775+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libarpack2t64 amd64 3.9.1-1.1build2 [106 kB]\nFetched 106 kB in 1s (168 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libarpack2t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libarpack2t64/libarpack2t64_3.9.1-1.1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:07.126754+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libklu2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libklu2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:07.200912+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libklu2\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 219\nDepends: libamd3 (>= 1:7.0.1), libbtf2 (>= 1:7.0.1), libc6 (>= 2.4), libcholmod5 (>= 1:7.3.1), libcolamd3 (>= 1:7.0.1), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libklu2_7.6.1+dfsg-1build1_amd64.deb\nSize: 78974\nMD5sum: bd5063a62517d25bd8119418655cb26d\nSHA1: 8d0f4c40530a9b8600cdbcef6f371f7e9268bc9e\nSHA256: 62b08bb498300c3b37ccd357de537539fd778d51879cfcacf4990cf41b079a7f\nSHA512: 8163b053041fbf54e12143c155108c824a18cc1163a9d1f8a6df4e4286336c3b8a76b9bfce417efc7e34f9b53b36c09f5e828fb8b007ea6442fae13c223dfbc2\nHomepage: http://suitesparse.com\nDescription-en: circuit simulation sparse LU factorization library\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The KLU library provides routines for LU factorization, primarily for circuit\n simulation.\nDescription-md5: cb9e9673de39ce87ec542c57d2ec569e\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libklu2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libklu2=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libklu2",
+      "timestamp_utc": "2026-11-05T12:40:07.230193+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libklu2 amd64 1:7.6.1+dfsg-1build1 [79.0 kB]\nFetched 79.0 kB in 1s (124 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libklu2 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libklu2/libklu2_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:08.200404+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libumfpack6",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libumfpack6"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:08.264810+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libumfpack6\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 768\nDepends: libamd3 (>= 1:7.0.1), libblas3 | libblas.so.3, libc6 (>= 2.29), libcholmod5 (>= 1:7.3.1), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libumfpack6_7.6.1+dfsg-1build1_amd64.deb\nSize: 267576\nMD5sum: ddd86d25e11302e8b5c45dbcea9f001b\nSHA1: 769c48b35e2516991cd1f45e51e911d69ccdfbdf\nSHA256: 5f947859dd49e944c6e8ed3d627cfa99da29045ea301d696c88a4a8affbaf483\nSHA512: 551978c0e3e265a80af22f141c1e916f94c93919ddb4597770476bc2a26f07df204cdfa81c00fbea6e8d60c6a6c6f903d2537fb676214044833d1af7c777de9e\nHomepage: http://suitesparse.com\nDescription-en: sparse LU factorization library\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The UMFPACK library provides a set of routines solving sparse linear systems\n via LU factorization.\nDescription-md5: 07c504a80ed5d6310d58f98bb638446f\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libumfpack6",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libumfpack6=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libumfpack6",
+      "timestamp_utc": "2026-11-05T12:40:08.292290+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libumfpack6 amd64 1:7.6.1+dfsg-1build1 [268 kB]\nFetched 268 kB in 0s (637 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libumfpack6 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libumfpack6/libumfpack6_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:08.938066+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libamd3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:09.005842+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libamd3\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 81\nDepends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libamd3_7.6.1+dfsg-1build1_amd64.deb\nSize: 27152\nMD5sum: a26f3e63900c18cdb57bb12a4b6e8328\nSHA1: 9f555f936872fe9d18352b58e467aa8511b45859\nSHA256: 557b88b1688b6ebfb058bd6c621daadb62bbb40059a1e33ed3fd3b7bef744f06\nSHA512: 7344e629c3d142d65ecdcb074d64c5a0b3c7b293ed5fd2023704c579d7b27ea4f7134c7f6200265554bcda75002a30a3f981549ebb315d95eaff62137f9379fd\nHomepage: http://suitesparse.com\nDescription-en: approximate minimum degree ordering library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The AMD library provides a set of routines for pre-ordering sparse matrices\n prior to Cholesky or LU factorization, using the \"Approximate Minimum Degree\n ordering\" algorithm.\nDescription-md5: 2d9505165b7b29c0b5677c11d21645cd\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libamd3=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libamd3",
+      "timestamp_utc": "2026-11-05T12:40:09.035788+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libamd3 amd64 1:7.6.1+dfsg-1build1 [27.2 kB]\nFetched 27.2 kB in 0s (118 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libamd3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libamd3/libamd3_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:09.560047+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libcolamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libcolamd3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:09.653255+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libcolamd3\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 65\nDepends: libc6 (>= 2.4), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/main/s/suitesparse/libcolamd3_7.6.1+dfsg-1build1_amd64.deb\nSize: 19382\nMD5sum: 903aa113bae04003426ffa19ff5bdffb\nSHA1: 2366dd0a50f59bf500c3307fb70b36be91ae9a4d\nSHA256: 8f4c416275c325b2a14463da0e040b90802e3eb72d7fae4e4a6c3cd497e71e48\nSHA512: d811fac4a0f2051a0aa51b5a01a79471e67c10a7c1779aa98d2014b21bf4b6cc00798dd2ab2cf11f0aa4343625cfc111db93e22bc77f8955d51f75fce192879f\nHomepage: http://suitesparse.com\nDescription-en: column approximate minimum degree ordering library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The COLAMD library implements the \"COLumn Approximate Minimum Degree ordering\"\n algorithm. It computes a permutation vector P such that the LU factorization\n of A (:,P) tends to be sparser than that of A. The Cholesky factorization of\n (A (:,P))'*(A (:,P)) will also tend to be sparser than that of A'*A.\nDescription-md5: 6d693e970300aa191a71ea529934c483\nTask: ubuntu-desktop, ubuntu-desktop-raspi, kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libcolamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libcolamd3=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcolamd3",
+      "timestamp_utc": "2026-11-05T12:40:09.684362+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libcolamd3 amd64 1:7.6.1+dfsg-1build1 [19.4 kB]\nFetched 19.4 kB in 0s (131 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libcolamd3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcolamd3/libcolamd3_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:10.102527+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libcamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libcamd3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:10.151713+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libcamd3\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 73\nDepends: libc6 (>= 2.2.5), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libcamd3_7.6.1+dfsg-1build1_amd64.deb\nSize: 23788\nMD5sum: d525ab06886b0fa4ac442b77d619099f\nSHA1: 8638431d4f565d6c166a6e07075f174989ee9811\nSHA256: 40c209739ede6dde19f1d32428e0ff36f1d6ba9c142762946ac486c2b45e78a8\nSHA512: 800ed7a957cb0d4c99e2cf7f196a2dafa743b61766f63ae34016ed2f647232b2cea82a4911301c83248065002935f03c5f709809a4fe10731eecea57e5a9ec29\nHomepage: http://suitesparse.com\nDescription-en: symmetric approximate minimum degree library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The CAMD library provides a set of routines for pre-ordering sparse matrices\n prior to Cholesky or LU factorization, using the approximate minimum degree\n ordering algorithm with optional ordering constraints.\nDescription-md5: 92a1aaeac0ca277e1f73622181a3c900\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libcamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libcamd3=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcamd3",
+      "timestamp_utc": "2026-11-05T12:40:10.178492+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libcamd3 amd64 1:7.6.1+dfsg-1build1 [23.8 kB]\nFetched 23.8 kB in 0s (94.7 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libcamd3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcamd3/libcamd3_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:10.655985+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libccolamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libccolamd3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:10.714001+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libccolamd3\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 77\nDepends: libc6 (>= 2.4), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libccolamd3_7.6.1+dfsg-1build1_amd64.deb\nSize: 25900\nMD5sum: 62de092ee3fe0c5b8eef5d6686736a4e\nSHA1: 2b342a2fd1561dff742f10aa286d435bb04300d0\nSHA256: 002dc5a486cc312aececd7a92c500941a550cae1c5901e15aae2b43504431c9c\nSHA512: 7d7bc0fba3fa9d503f1cc427a03f6f7dad1a87d28835a073f29b1c81ef484f8688fa333f1b8a9b01f808f7d1e2ab4472507a044a6ba32c59d284b99b3db8979d\nHomepage: http://suitesparse.com\nDescription-en: constrained column approximate library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The CCOLAMD library implements the \"Constrained COLumn Approximate Minimum\n Degree ordering\" algorithm. It computes a permutation vector P such that the\n LU factorization of A (:,P) tends to be sparser than that of A. The Cholesky\n factorization of (A (:,P))'*(A (:,P)) will also tend to be sparser than that\n of A'*A.\nDescription-md5: 7837a1290ee0cf3371ba8acb52f1427a\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libccolamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libccolamd3=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libccolamd3",
+      "timestamp_utc": "2026-11-05T12:40:10.751476+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libccolamd3 amd64 1:7.6.1+dfsg-1build1 [25.9 kB]\nFetched 25.9 kB in 0s (122 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libccolamd3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libccolamd3/libccolamd3_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:11.250460+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libsuitesparseconfig7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libsuitesparseconfig7"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:11.306056+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libsuitesparseconfig7\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 53\nDepends: libc6 (>= 2.35), libgomp1 (>= 4.2.1)\nFilename: pool/main/s/suitesparse/libsuitesparseconfig7_7.6.1+dfsg-1build1_amd64.deb\nSize: 12860\nMD5sum: 905ebdbd76ef6bab4c9222bac8bf2346\nSHA1: 3470b1caa69eff70d89a18fb43dd15536cb6f4f5\nSHA256: a27c55b471ebd184136567f0649f2d1425825ec535b0329ea3917c0fe6440471\nSHA512: 0910880dc3c104bd56eb6302ba81eb4f28bf2e98e263d4e32a9186b1a259b8632368b872c6e2d6ecf6b34c152cda8070dda393c4f03e931bd1818919e369de9b\nHomepage: http://suitesparse.com\nDescription-en: configuration routines for all SuiteSparse modules\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The SuiteSparse_config library provides configuration routines that are common\n to all SuiteSparse libraries.\nDescription-md5: be384a2041b6480d81cce68d7d5847dd\nTask: ubuntu-desktop, ubuntu-desktop-raspi, kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libsuitesparseconfig7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libsuitesparseconfig7=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libsuitesparseconfig7",
+      "timestamp_utc": "2026-11-05T12:40:11.332780+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libsuitesparseconfig7 amd64 1:7.6.1+dfsg-1build1 [12.9 kB]\nFetched 12.9 kB in 0s (39.3 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libsuitesparseconfig7 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libsuitesparseconfig7/libsuitesparseconfig7_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:11.923021+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libcholmod5",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libcholmod5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:11.979125+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libcholmod5\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1857\nDepends: libamd3 (>= 1:7.0.1), libblas3 | libblas.so.3, libc6 (>= 2.29), libcamd3 (>= 1:7.0.1), libccolamd3 (>= 1:7.0.1), libcolamd3 (>= 1:7.0.1), libgomp1 (>= 4.9), liblapack3 | liblapack.so.3, libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libcholmod5_7.6.1+dfsg-1build1_amd64.deb\nSize: 666724\nMD5sum: f4139b703cbf198b791defae6457ad53\nSHA1: fe5e8723ebe4716a1b862d5830dd4d8408a4344c\nSHA256: 5766e1c220c315850680c4f19c6bd12b953a20ef1b30754392ef956bd65df94e\nSHA512: 18c4a2db0c2014950a4c8979116dfb047df8ba906373989f8e14381c9c976d9fb52a0b525b796150035d1a92c56f0504293c3819076ffa1be9b91f6124c2ec46\nHomepage: http://suitesparse.com\nDescription-en: sparse Cholesky factorization library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The CHOLMOD library provides a set of routines for factorizing sparse\n symmetric positive definite matrices of the form A or AA', updating/downdating\n a sparse Cholesky factorization, solving linear systems, updating/downdating\n the solution to the triangular system Lx=b, and many other sparse matrix\n functions for both symmetric and unsymmetric matrices. Its supernodal Cholesky\n factorization relies on LAPACK and the Level-3 BLAS, and obtains a substantial\n fraction of the peak performance of the BLAS.\nDescription-md5: 6bc514d42de735d8cd9783bc9eebb69f\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libcholmod5",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libcholmod5=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcholmod5",
+      "timestamp_utc": "2026-11-05T12:40:12.008879+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libcholmod5 amd64 1:7.6.1+dfsg-1build1 [667 kB]\nFetched 667 kB in 1s (1208 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libcholmod5 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcholmod5/libcholmod5_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:12.837198+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libbtf2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libbtf2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:12.919917+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libbtf2\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 53\nDepends: libc6 (>= 2.2.5)\nFilename: pool/universe/s/suitesparse/libbtf2_7.6.1+dfsg-1build1_amd64.deb\nSize: 13594\nMD5sum: 07cb486028d8283eae3269c3e7688b70\nSHA1: cd2ae21bed8c6ba3ce27ddfa2ece385fdb82cff5\nSHA256: ce8d3be0501db2f6189b0a973d514e985146e1883f35e8c8e80d041ff6b0c950\nSHA512: 9bfd84d3d036adc6213e2bfa823d0d36a15c0f518978058462f3a7742679289a0eb90f1478136f5843395142b205aef00fa7bdd8c9db88ba02d23acd574ba27d\nHomepage: http://suitesparse.com\nDescription-en: permutation to block triangular form library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The BTF library is a software package for permuting a matrix into Block upper\n Triangular Form. It includes a maximum transversal algorithm, which finds a\n permutation of a square or rectangular matrix so that it has a zero-free\n diagonal (if one exists); otherwise, it finds a maximal matching which\n maximizes the number of nonzeros on the diagonal. The package also includes a\n method for finding the strongly connected components of a graph. These two\n methods together give the permutation to block upper triangular form.\nDescription-md5: 051b2cdc9ff424226df9ac31bfffed85\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libbtf2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libbtf2=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libbtf2",
+      "timestamp_utc": "2026-11-05T12:40:12.948152+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libbtf2 amd64 1:7.6.1+dfsg-1build1 [13.6 kB]\nFetched 13.6 kB in 0s (66.1 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libbtf2 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libbtf2/libbtf2_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:13.421116+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libcxsparse4",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libcxsparse4"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:13.465881+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libcxsparse4\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 219\nDepends: libc6 (>= 2.7)\nFilename: pool/universe/s/suitesparse/libcxsparse4_7.6.1+dfsg-1build1_amd64.deb\nSize: 75086\nMD5sum: 9c8fc4ea53f59a1e83ebfda94cb3ac20\nSHA1: 607eccd4608f0634278ec9b03bd62f904bfc7ddc\nSHA256: 1d8a3d16c38979c09d2a968459472073a40debab79695b8c2a17ab0fdde05a27\nSHA512: 372dfe4cdce47b65bab1d0ae9fdac9e9d9f0fc67cb935a5ac19c655635ffa93df3490fe57d99ab2a34d7aee4dc31085717a9b727bb62df16e0375a3b6dab94c9\nHomepage: http://suitesparse.com\nDescription-en: concise sparse matrix library\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The CXSparse library provides several matrix algorithms. The focus is on direct\n methods; iterative methods and solvers for eigenvalue problems are beyond the\n scope of this package.\n .\n The performance of the sparse factorization methods in CXSparse will not be\n competitive with UMFPACK or CHOLMOD, but the codes are much more concise and\n easy to understand. Other methods are competitive.\nDescription-md5: c7ec3e255980b79debe7e029568c19da\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libcxsparse4",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libcxsparse4=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcxsparse4",
+      "timestamp_utc": "2026-11-05T12:40:13.494411+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libcxsparse4 amd64 1:7.6.1+dfsg-1build1 [75.1 kB]\nFetched 75.1 kB in 1s (114 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libcxsparse4 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libcxsparse4/libcxsparse4_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:14.382274+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libmetis5",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libmetis5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:14.436569+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libmetis5\nArchitecture: amd64\nVersion: 5.1.0.dfsg-7build3\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: metis\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 440\nDepends: libc6 (>= 2.38)\nFilename: pool/universe/m/metis/libmetis5_5.1.0.dfsg-7build3_amd64.deb\nSize: 180548\nMD5sum: 52059dcb18876e8a3a933bd63695c045\nSHA1: 3e3f15e208e1cbff13d879dc4b86173b889239b7\nSHA256: ab24cdd5afad4cd794a5b273032730b80685cac08dbcbc8cf07e46cac814ea49\nSHA512: a268d9cfca9d819b8477cd078e3a513fc03f5101ba093a012d541d19ec8464915f3b40d8731a75ae81b8e6c31258f39bb5c8f70cc4b5d7d3d47fdbceab20044b\nHomepage: http://glaros.dtc.umn.edu/gkhome/metis/metis/overview\nDescription-en: Serial Graph Partitioning and Fill-reducing Matrix Ordering\n METIS is a set of serial programs for partitioning graphs, partitioning finite\n element meshes, and producing fill reducing orderings for sparse matrices.\n The algorithms implemented in METIS are based on the multilevel\n recursive-bisection, multilevel k-way, and multi-constraint partitioning\n schemes.\nDescription-md5: 5ecba79562a1f64953b11cec5c00f5d1\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libmetis5",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libmetis5=5.1.0.dfsg-7build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libmetis5",
+      "timestamp_utc": "2026-11-05T12:40:14.466473+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmetis5 amd64 5.1.0.dfsg-7build3 [181 kB]\nFetched 181 kB in 0s (490 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libmetis5 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libmetis5/libmetis5_5.1.0.dfsg-7build3_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:15.079165+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libpcre2-posix3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libpcre2-posix3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:15.129915+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libpcre2-posix3\nSource: pcre2\nPriority: optional\nSection: libs\nInstalled-Size: 36\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 10.42-4ubuntu2.1\nReplaces: libpcre2-posix0\nDepends: libc6 (>= 2.4), libpcre2-8-0 (>= 10.22)\nConflicts: libpcre2-posix0\nFilename: pool/main/p/pcre2/libpcre2-posix3_10.42-4ubuntu2.1_amd64.deb\nSize: 6748\nMD5sum: dfcb3629a65082c2b5ec793cd83ec0ca\nSHA1: 9af40d5ab5a8d9e5b3321706c7883a6914264538\nSHA256: 8660cea205a97cf6a97a5b7a0d601c2549f6d44d5083417eb2bbfcb9f137ee5f\nSHA512: c017526ed14ce83ba682f9eeb2e7b1814f294085d1a75f9da4103c3a16f68b813fe668bd15df9d628de5a46725cf9aab61f0dc8d7835f47bdd500762f4492b71\nHomepage: https://pcre.org/\nDescription-en: New Perl Compatible Regular Expression Library - posix-compatible runtime files\n This is PCRE2, the new implementation of PCRE, a library of functions\n to support regular expressions whose syntax and semantics are as\n close as possible to those of the Perl 5 language. New projects\n should use this library in preference to the older library,\n confusingly called pcre3 in Debian.\n .\n This package contains the runtime library for the posix-compatible API.\nDescription-md5: 36d3623865b28406ab156b00d782f2f2\nMulti-Arch: same\nOriginal-Maintainer: Matthew Vernon <matthew@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: lubuntu-desktop, ubuntustudio-photography, ubuntu-unity-desktop\n\nPackage: libpcre2-posix3\nArchitecture: amd64\nVersion: 10.42-4ubuntu2\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: pcre2\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Matthew Vernon <matthew@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 36\nDepends: libc6 (>= 2.4), libpcre2-8-0 (>= 10.22)\nConflicts: libpcre2-posix0\nReplaces: libpcre2-posix0\nFilename: pool/main/p/pcre2/libpcre2-posix3_10.42-4ubuntu2_amd64.deb\nSize: 6686\nMD5sum: ad1d02729ec4872c1ec98612ef07b378\nSHA1: 3bdd975271dedadbcfada440cf1334258fcaa2bc\nSHA256: 7766135c10bdabd9f0f7c9e25e5cb9afe0f6f6f1172d9f314f321853695bb299\nSHA512: 28041f99dfacc0ca9effabe363f4290b7dfa6f53001801257d72d89d99d8eee1d981e3ed0cce5b3883cd0dc269849ae73e3563fb813ed7e22e2f9d366eb96956\nHomepage: https://pcre.org/\nDescription-en: New Perl Compatible Regular Expression Library - posix-compatible runtime files\n This is PCRE2, the new implementation of PCRE, a library of functions\n to support regular expressions whose syntax and semantics are as\n close as possible to those of the Perl 5 language. New projects\n should use this library in preference to the older library,\n confusingly called pcre3 in Debian.\n .\n This package contains the runtime library for the posix-compatible API.\nDescription-md5: 36d3623865b28406ab156b00d782f2f2\nTask: lubuntu-desktop, ubuntustudio-photography, ubuntu-unity-desktop\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libpcre2-posix3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libpcre2-posix3=10.42-4ubuntu2.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libpcre2-posix3",
+      "timestamp_utc": "2026-11-05T12:40:15.160525+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpcre2-posix3 amd64 10.42-4ubuntu2.1 [6748 B]\nFetched 6748 B in 0s (20.9 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libpcre2-posix3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libpcre2-posix3/libpcre2-posix3_10.42-4ubuntu2.1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:15.731781+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libhdf5-103-1t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libhdf5-103-1t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:15.781641+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libhdf5-103-1t64\nArchitecture: amd64\nVersion: 1.10.10+repack-3.1ubuntu4\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: hdf5\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Gilles Filippini <pini@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 3712\nProvides: libhdf5-103-1 (= 1.10.10+repack-3.1ubuntu4)\nDepends: libc6 (>= 2.38), libcurl4 (>= 7.16.2), libssl3 (>= 3.0.0), libsz2 (>= 1.1.2), zlib1g (>= 1:1.1.4)\nBreaks: libhdf5-103 (<< 1.10.5), libhdf5-103-1 (<< 1.10.10+repack-3.1ubuntu4)\nReplaces: libhdf5-103 (<< 1.10.5), libhdf5-103-1\nFilename: pool/universe/h/hdf5/libhdf5-103-1t64_1.10.10+repack-3.1ubuntu4_amd64.deb\nSize: 1269972\nMD5sum: fd07954e2e99aaeedda09ff442346446\nSHA1: 634215848ecf9c283f77073d162245f83f8e4d92\nSHA256: 875e7de8aff8e6af3df2ed8b4455f767c3e9b021652a1ee2bd924f76932d22d1\nSHA512: 2fd0809f0401d8a0bb3dcca2483f46089851af6d275332575d8613e6d8b16797aa18ebf49b75eea07e1c208ff5cb7e187cae574d715f142a5dee0d93d58c66d7\nHomepage: http://hdfgroup.org/HDF5/\nDescription-en: HDF5 C runtime files - serial version\n Hierarchical Data Format 5 (HDF5) is a file format and library for\n storing scientific data.  HDF5 was designed and implemented to address\n the deficiencies of HDF4.x. It has a more powerful and flexible data\n model, supports files larger than 2 GB, and supports parallel I/O.\n .\n This package contains the C runtime files for serial platforms.\nDescription-md5: 0058d2fd2a000aa6e520a6728baf452a\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-audio, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libhdf5-103-1t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libhdf5-103-1t64=1.10.10+repack-3.1ubuntu4"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libhdf5-103-1t64",
+      "timestamp_utc": "2026-11-05T12:40:15.811415+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libhdf5-103-1t64 amd64 1.10.10+repack-3.1ubuntu4 [1270 kB]\nFetched 1270 kB in 1s (1766 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libhdf5-103-1t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libhdf5-103-1t64/libhdf5-103-1t64_1.10.10+repack-3.1ubuntu4_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:16.819098+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libhdf5-hl-100t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libhdf5-hl-100t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:16.938737+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libhdf5-hl-100t64\nArchitecture: amd64\nVersion: 1.10.10+repack-3.1ubuntu4\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: hdf5\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Gilles Filippini <pini@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 186\nProvides: libhdf5-hl-100 (= 1.10.10+repack-3.1ubuntu4)\nDepends: libc6 (>= 2.38), libhdf5-103-1t64\nConflicts: libhdf5-100, libhdf5-101, libhdf5-102, libhdf5-103 (<< 1.10.5)\nBreaks: libhdf5-hl-100 (<< 1.10.10+repack-3.1ubuntu4)\nReplaces: libhdf5-100, libhdf5-101, libhdf5-102, libhdf5-103 (<< 1.10.5), libhdf5-hl-100\nFilename: pool/universe/h/hdf5/libhdf5-hl-100t64_1.10.10+repack-3.1ubuntu4_amd64.deb\nSize: 56016\nMD5sum: f728cfba8c5d090bd8022939c1df18c3\nSHA1: 0e05c8f18059a94719ad5fac7c702011c93a4633\nSHA256: ff89c6606df070ab1e4adbd9c66c46820acaed39ab61bca5e3ca947feb05fd9d\nSHA512: dc734c3560d6afd878f4141ddb120bba3101ed5b9acf20b9de39d9ad3fede8371b1553e2ad521419783bf98373d5ac4e73a1182d9918de5434aae8f3bd99dc97\nHomepage: http://hdfgroup.org/HDF5/\nDescription-en: HDF5 High Level runtime files - serial version\n Hierarchical Data Format 5 (HDF5) is a file format and library for\n storing scientific data.  HDF5 was designed and implemented to address\n the deficiencies of HDF4.x. It has a more powerful and flexible data\n model, supports files larger than 2 GB, and supports parallel I/O.\n .\n This package contains the high level C API runtime files for serial platforms.\nDescription-md5: c9045d102978306f9b038586e565d46d\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libhdf5-hl-100t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libhdf5-hl-100t64=1.10.10+repack-3.1ubuntu4"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libhdf5-hl-100t64",
+      "timestamp_utc": "2026-11-05T12:40:16.967019+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libhdf5-hl-100t64 amd64 1.10.10+repack-3.1ubuntu4 [56.0 kB]\nFetched 56.0 kB in 0s (142 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libhdf5-hl-100t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libhdf5-hl-100t64/libhdf5-hl-100t64_1.10.10+repack-3.1ubuntu4_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:17.593533+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libfftw3-double3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libfftw3-double3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:17.680847+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libfftw3-double3\nArchitecture: amd64\nVersion: 3.3.10-1ubuntu3\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: fftw3\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2282\nDepends: libc6 (>= 2.34), libgomp1 (>= 4.9)\nSuggests: libfftw3-bin, libfftw3-dev\nFilename: pool/main/f/fftw3/libfftw3-double3_3.3.10-1ubuntu3_amd64.deb\nSize: 838254\nMD5sum: 6714effc5f6ae7e06f2c671c4bccf112\nSHA1: 3b777cea1f79aab80196268fbb3eb133f7404a3d\nSHA256: ff9396076103b305efe741e9acff11d52a040c6d95527c0f2dbd11e82a11bab8\nSHA512: 0d808ff9a4818d255b81632dacc8b2b213844f9a0a5dae471c9714d99c610ec8289b801ad7999b2bf9d2a99d02d2ad6508b2b9d95d8b36b0239e317ce4aafd20\nHomepage: https://fftw.org\nDescription-en: Library for computing Fast Fourier Transforms - Double precision\n The FFTW library computes Fast Fourier Transforms (FFT) in one or more\n dimensions. It is extremely fast. This package contains the shared library\n for double precision transforms.\n .\n To get the static library and the header files, you need to install\n libfftw3-dev. For documentation, see libfftw3-doc.\nDescription-md5: 9621f1cfaad5927e844a719259a992d4\nTask: kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libfftw3-double3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libfftw3-double3=3.3.10-1ubuntu3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libfftw3-double3",
+      "timestamp_utc": "2026-11-05T12:40:17.715957+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libfftw3-double3 amd64 3.3.10-1ubuntu3 [838 kB]\nFetched 838 kB in 3s (241 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libfftw3-double3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libfftw3-double3/libfftw3-double3_3.3.10-1ubuntu3_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:21.465341+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libmatio11",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libmatio11"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:21.563148+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libmatio11\nArchitecture: amd64\nVersion: 1.5.26-1build3\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: libmatio\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 523\nDepends: libc6 (>= 2.14), libhdf5-103-1t64, zlib1g (>= 1:1.2.0)\nFilename: pool/universe/libm/libmatio/libmatio11_1.5.26-1build3_amd64.deb\nSize: 118914\nMD5sum: 8eb6ddeebfb0fc35e004c8b0bcbf58ff\nSHA1: e80a873cb548b172a64dd16cfacb5e999dd4ff04\nSHA256: fc4b71922edf74d30380624d2fdaaa2413aca0f623fd859b1f9b3f5b092fc2d4\nSHA512: 4c50c7761de33c5c1c2248f9dd5e37667c3412833301f8d27b6d3616cdc835083457c4c8ceda21d66888d5500590ec32986141398338656a39a3b61f9734c524\nHomepage: https://sourceforge.net/projects/matio\nDescription-en: MATLAB MAT File I/O Library - shared library\n matio is a C library for reading and writing MATLAB MAT files.\n .\n This package contains the shared version of the library.\nDescription-md5: 28a1a330dd486ff4a1c4fec3cf57d2da\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libmatio11",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libmatio11=1.5.26-1build3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libmatio11",
+      "timestamp_utc": "2026-11-05T12:40:21.590681+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmatio11 amd64 1.5.26-1build3 [119 kB]\nFetched 119 kB in 0s (304 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libmatio11 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libmatio11/libmatio11_1.5.26-1build3_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:22.200744+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Check minimal CLI runtime linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:40:22.254985+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffe9238d000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000074b045400000)\n\tlibscilab-cli.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscilab-cli.so.2024 (0x000074b044f1d000)\n\tlibarchive.so.13 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libarchive.so.13 (0x000074b0456cf000)\n\tlibscifunctions.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscifunctions.so.2024 (0x000074b0456bc000)\n\tlibscicall_scilab.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicall_scilab.so.2024 (0x000074b0456b5000)\n\tlibscidifferential_equations.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscidifferential_equations.so.2024 (0x000074b044e07000)\n\tlibscisundials.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscisundials.so.2024 (0x000074b044d0e000)\n\tlibklu.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libklu.so.2 (0x000074b04568a000)\n\tlibumfpack.so.6 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libumfpack.so.6 (0x000074b044c59000)\n\tlibamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libamd.so.3 (0x000074b044c4c000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x000074b044bf6000)\n\tlibsciarnoldi.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciarnoldi.so.2024 (0x000074b044be6000)\n\tlibarpack.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libarpack.so.2 (0x000074b044b9c000)\n\tlibscilocalization.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscilocalization.so.2024 (0x000074b044b87000)\n\tlibscispecial_functions.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscispecial_functions.so.2024 (0x000074b044b67000)\n\tlibscicompletion.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicompletion.so.2024 (0x000074b044b51000)\n\tlibscihistory_manager.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscihistory_manager.so.2024 (0x000074b044b3d000)\n\tlibpcre2-posix.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libpcre2-posix.so.3 (0x000074b045681000)\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x000074b044aa3000)\n\tlibscihdf5.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscihdf5.so.2024 (0x000074b04491d000)\n\tlibhdf5_serial.so.103 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libhdf5_serial.so.103 (0x000074b0445a9000)\n\tlibhdf5_serial_hl.so.100 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so.100 (0x000074b044584000)\n\tlibfftw3.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libfftw3.so.3 (0x000074b044361000)\n\tlibscistatistics.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscistatistics.so.2024 (0x000074b044341000)\n\tlibsciast.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciast.so.2024 (0x000074b043cef000)\n\tlibscifunctions_manager.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscifunctions_manager.so.2024 (0x000074b043ccf000)\n\tlibscixml.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscixml.so.2024 (0x000074b043c96000)\n\tlibsciexternal_objects.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciexternal_objects.so.2024 (0x000074b043c62000)\n\tlibscislint.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscislint.so.2024 (0x000074b043b99000)\n\tlibscicoverage.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicoverage.so.2024 (0x000074b043b31000)\n\tlibxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x000074b04394f000)\n\tlibscigui-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigui-disable.so.2024 (0x000074b04394a000)\n\tlibscigraphics-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigraphics-disable.so.2024 (0x000074b043945000)\n\tlibscigraphic_export-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigraphic_export-disable.so.2024 (0x000074b04393e000)\n\tlibsciconsole-minimal.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciconsole-minimal.so.2024 (0x000074b043930000)\n\tlibncurses.so.6 => /lib/x86_64-linux-gnu/libncurses.so.6 (0x000074b043907000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x000074b0438d3000)\n\tlibsciaction_binding-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciaction_binding-disable.so.2024 (0x000074b0438ce000)\n\tlibscijvm-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscijvm-disable.so.2024 (0x000074b0438c7000)\n\tlibscixcos-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscixcos-disable.so.2024 (0x000074b0438c2000)\n\tlibscigraphic_objects-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigraphic_objects-disable.so.2024 (0x000074b0438bd000)\n\tlibsciscinotes-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciscinotes-disable.so.2024 (0x000074b0438b8000)\n\tlibsciui_data-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciui_data-disable.so.2024 (0x000074b0438b3000)\n\tlibscihistory_browser-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscihistory_browser-disable.so.2024 (0x000074b0438ac000)\n\tlibscicommons-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicommons-disable.so.2024 (0x000074b0438a7000)\n\tlibscipreferences-cli.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscipreferences-cli.so.2024 (0x000074b0438a0000)\n\tlibscitclsci-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscitclsci-disable.so.2024 (0x000074b04389b000)\n\tlibblas.so.3 => /lib/x86_64-linux-gnu/libblas.so.3 (0x000074b0437f4000)\n\tliblapack.so.3 => /lib/x86_64-linux-gnu/liblapack.so.3 (0x000074b043000000)\n\tlibgfortran.so.5 => /lib/x86_64-linux-gnu/libgfortran.so.5 (0x000074b042c00000)\n\tlibquadmath.so.0 => /lib/x86_64-linux-gnu/libquadmath.so.0 (0x000074b0437a9000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000074b042b17000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000074b04377b000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000074b042800000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000074b0457b1000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x000074b043724000)\n\tlibacl.so.1 => /lib/x86_64-linux-gnu/libacl.so.1 (0x000074b04371a000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x000074b042fce000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000074b042a5d000)\n\tliblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x000074b0436f8000)\n\tlibbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x000074b042fba000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000074b042f9e000)\n\tlibcolamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libcolamd.so.3 (0x000074b042f95000)\n\tlibbtf.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libbtf.so.2 (0x000074b0436f0000)\n\tlibsuitesparseconfig.so.7 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so.7 (0x000074b042f90000)\n\tlibcholmod.so.5 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libcholmod.so.5 (0x000074b042641000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x000074b042000000)\n\tlibcurl.so.4 => /lib/x86_64-linux-gnu/libcurl.so.4 (0x000074b042580000)\n\tlibsz.so.2 => not found\n\tlibicuuc.so.74 => /lib/x86_64-linux-gnu/libicuuc.so.74 (0x000074b041c00000)\n\tlibcamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libcamd.so.3 (0x000074b042f81000)\n\tlibccolamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libccolamd.so.3 (0x000074b042f75000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x000074b042f4a000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x000074b042f26000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x000074b042a3f000)\n\tlibssh.so.4 => /lib/x86_64-linux-gnu/libssh.so.4 (0x000074b041f8e000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x000074b042a2b000)\n\tlibssl.so.3 => /lib/x86_64-linux-gnu/libssl.so.3 (0x000074b041ee4000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x000074b04252c000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x000074b041e86000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x000074b042a1b000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x000074b04251e000)\n\tlibicudata.so.74 => /lib/x86_64-linux-gnu/libicudata.so.74 (0x000074b03fe00000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x000074b03fc53000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x000074b03fa58000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x000074b041e3e000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x000074b041b7c000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x000074b03f98f000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x000074b041e12000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x000074b042a15000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x000074b041b6f000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x000074b03f975000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x000074b03f952000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x000074b03f7ae000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x000074b03f798000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x000074b042517000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x000074b03f786000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x000074b041b63000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab"
+      }
+    },
+    {
+      "label": "Read Ubuntu package metadata for libsz2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libsz2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:10.045545+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libsz2\nArchitecture: amd64\nVersion: 1.1.2-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: libaec\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 28\nDepends: libaec0 (>= 1.1.2), libc6 (>= 2.14)\nFilename: pool/universe/liba/libaec/libsz2_1.1.2-1build1_amd64.deb\nSize: 5476\nMD5sum: ea04864dbcbd8ec714896855627dfe5b\nSHA1: 36fe1da2c129caf14a9afcfd2fc6cdd0dacf1aef\nSHA256: d442719f0f7597886df1d87fb4978f15941c468a452bba7f85fd7b2d93f1400f\nSHA512: b6f90e121a6bc959a5d6cbdab30e67e575387e776290386e90093e9d71f5ad02133cecd232aab62042977fae1d305b1560c716a6de97a7b3b015e4b97142093d\nHomepage: https://gitlab.dkrz.de/k202009/libaec\nDescription-en: Adaptive Entropy Coding library - SZIP\n Libaec provides fast lossless compression of 1 up to 32 bit wide\n signed or unsigned integers (samples).\n Libaec implements Golomb Rice coding as defined in the Space Data\n System Standard documents 121.0-B-2 [1] and 120.0-G-2[2].\n .\n This package provides a free drop-in replacement for the SZIP\n compression library.\nDescription-md5: 81965572fa7032369ae23b1dacd70f5a\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-audio, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libsz2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libsz2=1.1.2-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libsz2",
+      "timestamp_utc": "2026-11-05T12:42:10.222964+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libsz2 amd64 1.1.2-1build1 [5476 B]\nFetched 5476 B in 3s (1687 B/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libsz2 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libsz2/libsz2_1.1.2-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:13.813143+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libaec0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libaec0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:13.868687+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libaec0\nArchitecture: amd64\nVersion: 1.1.2-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: libaec\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 57\nDepends: libc6 (>= 2.14)\nFilename: pool/universe/liba/libaec/libaec0_1.1.2-1build1_amd64.deb\nSize: 22918\nMD5sum: b6012c328ac179c0c869497ab402edfb\nSHA1: 0422bdbfa0dd3dbcd47a09fd6ab21b38c94dc2e5\nSHA256: c045fd79f37e38e69520172137700cee2dd2be72fa2ce5698a3a835809bfd2e0\nSHA512: 420c47777e241582a4729a683a7d875157323a5518f973bd7587ca11d038d46c5c29bfb6b63fe55313f2e06e8db26e2067a7c5c114a399377ac9ed785c10bf77\nHomepage: https://gitlab.dkrz.de/k202009/libaec\nDescription-en: Adaptive Entropy Coding library\n Libaec provides fast lossless compression of 1 up to 32 bit wide\n signed or unsigned integers (samples). The library achieves best\n results for low entropy data as often encountered in space imaging\n instrument data or numerical model output from weather or climate\n simulations. While floating point representations are not directly\n supported, they can also be efficiently coded by grouping exponents\n and mantissa.\n .\n Libaec implements Golomb Rice coding as defined in the Space Data\n System Standard documents 121.0-B-2 [1] and 120.0-G-2[2].\nDescription-md5: 6f869029a4e6830b22265120c82b6704\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-audio, ubuntustudio-publishing, ubuntukylin-desktop, ubuntukylin-desktop-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libaec0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libaec0=1.1.2-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libaec0",
+      "timestamp_utc": "2026-11-05T12:42:13.895994+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libaec0 amd64 1.1.2-1build1 [22.9 kB]\nFetched 22.9 kB in 0s (50.9 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libaec0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/packages/libaec0/libaec0_1.1.2-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:14.645759+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Check minimal CLI runtime linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:14.720307+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffe92568000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007970d3a00000)\n\tlibscilab-cli.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscilab-cli.so.2024 (0x00007970d351d000)\n\tlibarchive.so.13 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libarchive.so.13 (0x00007970d3cc6000)\n\tlibscifunctions.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscifunctions.so.2024 (0x00007970d3cb3000)\n\tlibscicall_scilab.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicall_scilab.so.2024 (0x00007970d3cac000)\n\tlibscidifferential_equations.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscidifferential_equations.so.2024 (0x00007970d3407000)\n\tlibscisundials.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscisundials.so.2024 (0x00007970d330e000)\n\tlibklu.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libklu.so.2 (0x00007970d3c81000)\n\tlibumfpack.so.6 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libumfpack.so.6 (0x00007970d3259000)\n\tlibamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libamd.so.3 (0x00007970d324c000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007970d31f6000)\n\tlibsciarnoldi.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciarnoldi.so.2024 (0x00007970d31e6000)\n\tlibarpack.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libarpack.so.2 (0x00007970d319c000)\n\tlibscilocalization.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscilocalization.so.2024 (0x00007970d3185000)\n\tlibscispecial_functions.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscispecial_functions.so.2024 (0x00007970d3165000)\n\tlibscicompletion.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicompletion.so.2024 (0x00007970d314f000)\n\tlibscihistory_manager.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscihistory_manager.so.2024 (0x00007970d313b000)\n\tlibpcre2-posix.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libpcre2-posix.so.3 (0x00007970d3136000)\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007970d309a000)\n\tlibscihdf5.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscihdf5.so.2024 (0x00007970d2f14000)\n\tlibhdf5_serial.so.103 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libhdf5_serial.so.103 (0x00007970d2ba0000)\n\tlibhdf5_serial_hl.so.100 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so.100 (0x00007970d2b7b000)\n\tlibfftw3.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libfftw3.so.3 (0x00007970d2958000)\n\tlibscistatistics.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscistatistics.so.2024 (0x00007970d2938000)\n\tlibsciast.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciast.so.2024 (0x00007970d22e6000)\n\tlibscifunctions_manager.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscifunctions_manager.so.2024 (0x00007970d22c6000)\n\tlibscixml.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscixml.so.2024 (0x00007970d228d000)\n\tlibsciexternal_objects.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciexternal_objects.so.2024 (0x00007970d2259000)\n\tlibscislint.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscislint.so.2024 (0x00007970d2190000)\n\tlibscicoverage.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicoverage.so.2024 (0x00007970d2128000)\n\tlibxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x00007970d1f46000)\n\tlibscigui-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigui-disable.so.2024 (0x00007970d1f41000)\n\tlibscigraphics-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigraphics-disable.so.2024 (0x00007970d1f3c000)\n\tlibscigraphic_export-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigraphic_export-disable.so.2024 (0x00007970d1f35000)\n\tlibsciconsole-minimal.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciconsole-minimal.so.2024 (0x00007970d1f27000)\n\tlibncurses.so.6 => /lib/x86_64-linux-gnu/libncurses.so.6 (0x00007970d1efe000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007970d1eca000)\n\tlibsciaction_binding-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciaction_binding-disable.so.2024 (0x00007970d1ec5000)\n\tlibscijvm-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscijvm-disable.so.2024 (0x00007970d1ebe000)\n\tlibscixcos-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscixcos-disable.so.2024 (0x00007970d1eb9000)\n\tlibscigraphic_objects-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscigraphic_objects-disable.so.2024 (0x00007970d1eb4000)\n\tlibsciscinotes-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciscinotes-disable.so.2024 (0x00007970d1eaf000)\n\tlibsciui_data-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libsciui_data-disable.so.2024 (0x00007970d1eaa000)\n\tlibscihistory_browser-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscihistory_browser-disable.so.2024 (0x00007970d1ea3000)\n\tlibscicommons-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscicommons-disable.so.2024 (0x00007970d1e9e000)\n\tlibscipreferences-cli.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscipreferences-cli.so.2024 (0x00007970d1e97000)\n\tlibscitclsci-disable.so.2024 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab/libscitclsci-disable.so.2024 (0x00007970d1e92000)\n\tlibblas.so.3 => /lib/x86_64-linux-gnu/libblas.so.3 (0x00007970d1deb000)\n\tliblapack.so.3 => /lib/x86_64-linux-gnu/liblapack.so.3 (0x00007970d1600000)\n\tlibgfortran.so.5 => /lib/x86_64-linux-gnu/libgfortran.so.5 (0x00007970d1200000)\n\tlibquadmath.so.0 => /lib/x86_64-linux-gnu/libquadmath.so.0 (0x00007970d1da0000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007970d1117000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007970d1d72000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007970d0e00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007970d3da8000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007970d1d1b000)\n\tlibacl.so.1 => /lib/x86_64-linux-gnu/libacl.so.1 (0x00007970d1d11000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007970d15ce000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007970d105d000)\n\tliblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x00007970d15ac000)\n\tlibbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x00007970d1cfb000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007970d1590000)\n\tlibcolamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libcolamd.so.3 (0x00007970d1cf2000)\n\tlibbtf.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libbtf.so.2 (0x00007970d158a000)\n\tlibsuitesparseconfig.so.7 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so.7 (0x00007970d1585000)\n\tlibcholmod.so.5 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libcholmod.so.5 (0x00007970d0c41000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007970d0600000)\n\tlibcurl.so.4 => /lib/x86_64-linux-gnu/libcurl.so.4 (0x00007970d0b80000)\n\tlibsz.so.2 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libsz.so.2 (0x00007970d1580000)\n\tlibicuuc.so.74 => /lib/x86_64-linux-gnu/libicuuc.so.74 (0x00007970d0200000)\n\tlibcamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libcamd.so.3 (0x00007970d1573000)\n\tlibccolamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libccolamd.so.3 (0x00007970d1567000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x00007970d153c000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007970d103b000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x00007970d101d000)\n\tlibssh.so.4 => /lib/x86_64-linux-gnu/libssh.so.4 (0x00007970d058e000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x00007970d1526000)\n\tlibssl.so.3 => /lib/x86_64-linux-gnu/libssl.so.3 (0x00007970d04e4000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007970d0b2c000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x00007970d0486000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x00007970d0b1c000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x00007970d0478000)\n\tlibaec.so.0 => ${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/libaec.so.0 (0x00007970d1014000)\n\tlibicudata.so.74 => /lib/x86_64-linux-gnu/libicudata.so.74 (0x00007970ce400000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x00007970ce253000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007970ce058000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007970d0430000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007970d017c000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007970cdf8f000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007970cdf63000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007970d0b16000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007970d0423000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007970d0162000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x00007970cdf40000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007970cdd9c000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007970d040d000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007970cdd95000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007970cdd83000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007970cdd77000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab"
+      }
+    },
+    {
+      "label": "Native Scilab CLI version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin",
+        "-version",
+        "-nwni"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:15.043640+00:00",
+      "exit_code": 0,
+      "stdout": "Scilab version \"2024.0.0.988271013\"\nscilab-branch-main\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab"
+      }
+    },
+    {
+      "label": "Execute exact Scilab source hello.sce",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin",
+        "-nb",
+        "-nwni",
+        "-nouserstartup",
+        "-scihome",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "-f",
+        "hello.sce"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab",
+      "timestamp_utc": "2026-11-05T12:42:15.329032+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab"
+      }
+    },
+    {
+      "label": "Execute exact Scilab source variants/sci-27617630/main.sce",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin",
+        "-nb",
+        "-nwni",
+        "-nouserstartup",
+        "-scihome",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "-f",
+        "main.sce"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/variants/sci-27617630",
+      "timestamp_utc": "2026-11-05T12:42:18.208474+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab"
+      }
+    },
+    {
+      "label": "Execute exact Scilab source variants/tst-04f6df08/hello.tst",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin",
+        "-nb",
+        "-nwni",
+        "-nouserstartup",
+        "-scihome",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "-f",
+        "hello.tst",
+        "-quit"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/scilab/variants/tst-04f6df08",
+      "timestamp_utc": "2026-11-05T12:42:20.719852+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "scilab-cli",
+      "version": "2024.0.0+dfsg-5build3",
+      "ubuntu_archive_path": "pool/universe/s/scilab/scilab-cli_2024.0.0+dfsg-5build3_all.deb",
+      "sha256": "2fdf3936518d65dca1c782e37a2b4384fba328e9a8622f1ad8ec16dd0dc421f1"
+    },
+    {
+      "name": "scilab-minimal-bin",
+      "version": "2024.0.0+dfsg-5build3",
+      "ubuntu_archive_path": "pool/universe/s/scilab/scilab-minimal-bin_2024.0.0+dfsg-5build3_amd64.deb",
+      "sha256": "a9a82103f55239372af0a4d18948482da2b4c46b64177fa8105df1e374bd41d9"
+    },
+    {
+      "name": "scilab-data",
+      "version": "2024.0.0+dfsg-5build3",
+      "ubuntu_archive_path": "pool/universe/s/scilab/scilab-data_2024.0.0+dfsg-5build3_all.deb",
+      "sha256": "de302dea69719a5a3fd783c50d74d51e30751a84ca4d6245e8797242fc7209e2"
+    },
+    {
+      "name": "scilab-include",
+      "version": "2024.0.0+dfsg-5build3",
+      "ubuntu_archive_path": "pool/universe/s/scilab/scilab-include_2024.0.0+dfsg-5build3_amd64.deb",
+      "sha256": "c282fa66b2b79562d6355733ccc427ae5462ccf3c9833f4e8344e62028acd683"
+    },
+    {
+      "name": "libarchive13t64",
+      "version": "3.7.2-2ubuntu0.9",
+      "ubuntu_archive_path": "pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+      "sha256": "b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f"
+    },
+    {
+      "name": "libarpack2t64",
+      "version": "3.9.1-1.1build2",
+      "ubuntu_archive_path": "pool/universe/a/arpack/libarpack2t64_3.9.1-1.1build2_amd64.deb",
+      "sha256": "b9d203dd5fbbd8ce353c9ac366d02fe029f4e59d9e29554d8f63ef5674d62519"
+    },
+    {
+      "name": "libklu2",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libklu2_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "62b08bb498300c3b37ccd357de537539fd778d51879cfcacf4990cf41b079a7f"
+    },
+    {
+      "name": "libumfpack6",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libumfpack6_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "5f947859dd49e944c6e8ed3d627cfa99da29045ea301d696c88a4a8affbaf483"
+    },
+    {
+      "name": "libamd3",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libamd3_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "557b88b1688b6ebfb058bd6c621daadb62bbb40059a1e33ed3fd3b7bef744f06"
+    },
+    {
+      "name": "libcolamd3",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/main/s/suitesparse/libcolamd3_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "8f4c416275c325b2a14463da0e040b90802e3eb72d7fae4e4a6c3cd497e71e48"
+    },
+    {
+      "name": "libcamd3",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libcamd3_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "40c209739ede6dde19f1d32428e0ff36f1d6ba9c142762946ac486c2b45e78a8"
+    },
+    {
+      "name": "libccolamd3",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libccolamd3_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "002dc5a486cc312aececd7a92c500941a550cae1c5901e15aae2b43504431c9c"
+    },
+    {
+      "name": "libsuitesparseconfig7",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/main/s/suitesparse/libsuitesparseconfig7_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "a27c55b471ebd184136567f0649f2d1425825ec535b0329ea3917c0fe6440471"
+    },
+    {
+      "name": "libcholmod5",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libcholmod5_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "5766e1c220c315850680c4f19c6bd12b953a20ef1b30754392ef956bd65df94e"
+    },
+    {
+      "name": "libbtf2",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libbtf2_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "ce8d3be0501db2f6189b0a973d514e985146e1883f35e8c8e80d041ff6b0c950"
+    },
+    {
+      "name": "libcxsparse4",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libcxsparse4_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "1d8a3d16c38979c09d2a968459472073a40debab79695b8c2a17ab0fdde05a27"
+    },
+    {
+      "name": "libmetis5",
+      "version": "5.1.0.dfsg-7build3",
+      "ubuntu_archive_path": "pool/universe/m/metis/libmetis5_5.1.0.dfsg-7build3_amd64.deb",
+      "sha256": "ab24cdd5afad4cd794a5b273032730b80685cac08dbcbc8cf07e46cac814ea49"
+    },
+    {
+      "name": "libpcre2-posix3",
+      "version": "10.42-4ubuntu2.1",
+      "ubuntu_archive_path": "pool/main/p/pcre2/libpcre2-posix3_10.42-4ubuntu2.1_amd64.deb",
+      "sha256": "8660cea205a97cf6a97a5b7a0d601c2549f6d44d5083417eb2bbfcb9f137ee5f"
+    },
+    {
+      "name": "libhdf5-103-1t64",
+      "version": "1.10.10+repack-3.1ubuntu4",
+      "ubuntu_archive_path": "pool/universe/h/hdf5/libhdf5-103-1t64_1.10.10+repack-3.1ubuntu4_amd64.deb",
+      "sha256": "875e7de8aff8e6af3df2ed8b4455f767c3e9b021652a1ee2bd924f76932d22d1"
+    },
+    {
+      "name": "libhdf5-hl-100t64",
+      "version": "1.10.10+repack-3.1ubuntu4",
+      "ubuntu_archive_path": "pool/universe/h/hdf5/libhdf5-hl-100t64_1.10.10+repack-3.1ubuntu4_amd64.deb",
+      "sha256": "ff89c6606df070ab1e4adbd9c66c46820acaed39ab61bca5e3ca947feb05fd9d"
+    },
+    {
+      "name": "libfftw3-double3",
+      "version": "3.3.10-1ubuntu3",
+      "ubuntu_archive_path": "pool/main/f/fftw3/libfftw3-double3_3.3.10-1ubuntu3_amd64.deb",
+      "sha256": "ff9396076103b305efe741e9acff11d52a040c6d95527c0f2dbd11e82a11bab8"
+    },
+    {
+      "name": "libmatio11",
+      "version": "1.5.26-1build3",
+      "ubuntu_archive_path": "pool/universe/libm/libmatio/libmatio11_1.5.26-1build3_amd64.deb",
+      "sha256": "fc4b71922edf74d30380624d2fdaaa2413aca0f623fd859b1f9b3f5b092fc2d4"
+    },
+    {
+      "name": "libsz2",
+      "version": "1.1.2-1build1",
+      "ubuntu_archive_path": "pool/universe/liba/libaec/libsz2_1.1.2-1build1_amd64.deb",
+      "sha256": "d442719f0f7597886df1d87fb4978f15941c468a452bba7f85fd7b2d93f1400f"
+    },
+    {
+      "name": "libaec0",
+      "version": "1.1.2-1build1",
+      "ubuntu_archive_path": "pool/universe/liba/libaec/libaec0_1.1.2-1build1_amd64.deb",
+      "sha256": "c045fd79f37e38e69520172137700cee2dd2be72fa2ce5698a3a835809bfd2e0"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#653 Scilab/hello.sce": "0751a8f396f9a42df3df547a93677e824b30aa8ab41f9ad3b2c542b4f0f4c109",
+    "examples/#653 Scilab/variants/sci-27617630/hello.sci": "0c4d93a0377d592635c8ecfe545397e9e308f459e3bbec2d056fd3ba42309be0",
+    "examples/#653 Scilab/variants/sci-27617630/main.sce": "00e3ba3a54b18a1398272c188194f799d961af9d5acc327bb01f77ad38238b3d",
+    "examples/#653 Scilab/variants/tst-04f6df08/hello.tst": "2efb60761c8317132406872c0abe20fb5cf3fa428cba7c5e12089d6aa3f11387"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "environment_setup": {
+    "SCI": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/share/scilab",
+    "SCIHOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+    "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib:${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/lib/x86_64-linux-gnu/scilab",
+    "HOME": "${WORKSPACE}/work/native_batch_20261105/late/scilab/home",
+    "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/scilab/tmp"
+  },
+  "results": [
+    {
+      "file": "hello.sce",
+      "stdout": "Hello, World!\n"
+    },
+    {
+      "file": "variants/sci-27617630/main.sce",
+      "stdout": "Hello, World!\n"
+    },
+    {
+      "file": "variants/tst-04f6df08/hello.tst",
+      "stdout": "Hello, World!\n\n"
+    }
+  ],
+  "verified_extensions": [
+    ".sce",
+    ".sci",
+    ".tst"
+  ],
+  "main_status": "main",
+  "toolchain": "Scilab minimal CLI Scilab version \"2024.0.0.988271013\"\nscilab-branch-main",
+  "sources": [
+    {
+      "title": "Scilab mprintf",
+      "url": "https://help.scilab.org/docs/2024.0.0/en_US/mprintf.html"
+    }
+  ],
+  "semantic_scope": "The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage.",
+  "flags": {
+    "nwni": true,
+    "gui_disabled": true,
+    "jvm_disabled": true,
+    "no_display_environment": true
+  },
+  "versions": [
+    {
+      "label": "Native Scilab CLI version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/scilab/root/usr/bin/scilab-cli-bin",
+        "-version",
+        "-nwni"
+      ],
+      "exit_code": 0,
+      "stdout": "Scilab version \"2024.0.0.988271013\"\nscilab-branch-main\n\n",
+      "stderr": ""
+    }
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The minimal native Scilab command-line interpreter ran the original .sce script; separately loaded and called the original .sci function through its original companion driver; and executed the .tst assertion. Each emitted the exact greeting. The nwni mode uses GUI/graphics/JVM-disabled libraries, with no display supplied and no GUI library linkage."
+}

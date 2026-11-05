@@ -1,5 +1,20 @@
 # #023 Agda
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+Agda typechecked the unchanged main : IO declaration; its GHC backend compiled the FFI putLine implementation and the resulting executable printed exactly Hello, World!.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json). [Earlier evidence](verification/environment.json).
+
+## Extension results
+
+- `.agda`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica: `Agda`, tipo `programming`, `language_id: 12`.
 `Hello.agda` defines `main : IO ⊤` and invokes `putLine "Hello, World!"`.
 The I/O postulate is connected to the GHC backend via the `FOREIGN` pragmas and
@@ -49,4 +64,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.agda` | [Hello.agda](Hello.agda) created; verification pending |
+| `.agda` | [Hello.agda](Hello.agda) syntax and behavior verified |
+
+</details>

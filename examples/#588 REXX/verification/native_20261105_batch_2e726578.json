@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:33:13.487031+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "REXX",
+  "ordinal": 588,
+  "commands": [
+    {
+      "label": "Native Regina REXX version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_581_600/ubuntu/usr/bin/regina",
+        "-v"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578",
+      "timestamp_utc": "2026-11-05T12:33:13.554587+00:00",
+      "exit_code": 0,
+      "stdout": "${WORKSPACE}/work/tools_581_600/ubuntu/usr/bin/regina: REXX-Regina_3.9.5(MT) 5.00 25 Jun 2022 (64 bit)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/root/usr/lib"
+      }
+    },
+    {
+      "label": "Execute exact REXX variant",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_581_600/ubuntu/usr/bin/regina",
+        "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/variants/rex-31adbc05/hello.rex"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/variants/rex-31adbc05",
+      "timestamp_utc": "2026-11-05T12:33:13.659370+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_581_600/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0588_2e726578/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#588 REXX/variants/rex-31adbc05/hello.rex": "ab6afe53228f4176743b1e5143a5dcff51930de23b02397bd4ed5e3755018b50"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".rex",
+  "documentation": "examples/#588 REXX/variants/rex-31adbc05/README.md",
+  "sources": [
+    "https://regina-rexx.sourceforge.io/"
+  ],
+  "instructions_read_sha256": {
+    "examples/#588 REXX/README.md": "becf0798b51be57e13f94f8d3ff287ebdb3ca37e5ef97973fb92d84b5afa148f",
+    "examples/#588 REXX/variants/rex-31adbc05/README.md": "25d2d5e651c1a585eaf1ed6897f997ff05e86283d41cf9f95aa34c90ed42a333"
+  },
+  "toolchain": "${WORKSPACE}/work/tools_581_600/ubuntu/usr/bin/regina: REXX-Regina_3.9.5(MT) 5.00 25 Jun 2022 (64 bit)",
+  "semantic_scope": "Regina REXX parsed and executed the exact suffix variant, printing exactly Hello, World! plus LF without stderr.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Regina REXX parsed and executed the exact suffix variant, printing exactly Hello, World! plus LF without stderr."
+}

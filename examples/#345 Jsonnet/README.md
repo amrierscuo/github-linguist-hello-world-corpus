@@ -1,5 +1,11 @@
 # #345 Jsonnet
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.jsonnet`: The original Jsonnet C++ evaluator loaded and evaluated the exact source and its declared library import; emitted JSON contains the greeting value Hello, World!. [Evidence](verification/native_20261105_batch_2e6a736f6e6e6574.json).
+- `.libsonnet`: The original Jsonnet C++ evaluator loaded and evaluated the exact source and its declared library import; emitted JSON contains the greeting value Hello, World!. [Evidence](verification/native_20261105_batch_2e6c6962736f6e6e6574.json).
+
 Voce canonica `Jsonnet`, tipo `programming`, language_id `664885656`.
 
 Evaluate a Jsonnet object with local binding and chained string.
@@ -45,5 +51,5 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.jsonnet` | [hello.jsonnet](hello.jsonnet), [driver.jsonnet](variants/libsonnet-cf82fe81/driver.jsonnet) created; verification pending |
-| `.libsonnet` | [hello.libsonnet](variants/libsonnet-cf82fe81/hello.libsonnet) created; verification pending |
+| `.jsonnet` | [hello.jsonnet](hello.jsonnet), [driver.jsonnet](variants/libsonnet-cf82fe81/driver.jsonnet) syntax and behavior verified |
+| `.libsonnet` | [hello.libsonnet](variants/libsonnet-cf82fe81/hello.libsonnet) syntax and behavior verified |

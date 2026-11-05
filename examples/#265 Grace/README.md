@@ -1,5 +1,20 @@
 # #265 Grace
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+The official Minigrace compiler parsed and compiled the unchanged Grace source with its standard dialect. The official Grace command-line runner, invoked through the pinned Node runtime rather than its machine-specific shebang, executed the resulting module and printed exactly Hello, World!.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json). [Earlier evidence](verification/native.json).
+
+## Extension results
+
+- `.grace`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica `Grace`, tipo `programming`, language_id `135`.
 
 Interpolate an unchangeable binding in Grace and print the result with the standard dialect.
@@ -45,4 +60,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.grace` | [hello.grace](hello.grace) created; verification pending |
+| `.grace` | [hello.grace](hello.grace) syntax and behavior verified |
+
+</details>

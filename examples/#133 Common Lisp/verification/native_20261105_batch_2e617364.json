@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:33:04.586922+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Common Lisp",
+  "ordinal": 133,
+  "commands": [
+    {
+      "label": "Native SBCL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_121_140/linux/usr/bin/sbcl",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364",
+      "timestamp_utc": "2026-11-05T12:33:04.691480+00:00",
+      "exit_code": 0,
+      "stdout": "SBCL 2.2.9.debian\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/root/usr/lib",
+        "SBCL_HOME": "${WORKSPACE}/work/tools_121_140/linux/usr/lib/sbcl"
+      }
+    },
+    {
+      "label": "Load exact ASDF system definition and its source",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_121_140/linux/usr/bin/sbcl",
+        "--noinform",
+        "--non-interactive",
+        "--eval",
+        "(require :asdf)",
+        "--eval",
+        "(asdf:load-asd (truename \"hello.asd\"))",
+        "--eval",
+        "(asdf:load-system \"corpus-greeting\")"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/variants/ext-asd-2e617364",
+      "timestamp_utc": "2026-11-05T12:33:04.760584+00:00",
+      "exit_code": 0,
+      "stdout": "; compiling file \"${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/variants/ext-asd-2e617364/greeting.lisp\" (written 05 NOV 2026 01:33:04 PM):\n\n; wrote ${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/home/.cache/common-lisp/sbcl-2.2.9.debian-linux-x64${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/variants/ext-asd-2e617364/greeting-tmpGHU3ALSV.fasl\n; compilation finished in 0:00:00.035\nHello, World!\n",
+      "stderr": "WARNING: System definition file #P\"${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/variants/ext-asd-2e617364/hello.asd\" contains definition for system \"corpus-greeting\". Please only define \"hello\" and secondary systems with a name starting with \"hello/\" (e.g. \"hello/test\") in that file.\nWARNING: System definition file #P\"${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/variants/ext-asd-2e617364/hello.asd\" contains definition for system \"corpus-greeting\". Please only define \"hello\" and secondary systems with a name starting with \"hello/\" (e.g. \"hello/test\") in that file.\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0133_2e617364/root/usr/lib",
+        "SBCL_HOME": "${WORKSPACE}/work/tools_121_140/linux/usr/lib/sbcl"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#133 Common Lisp/variants/ext-asd-2e617364/hello.asd": "9fe617d5bd293dae8246c692d66ade966ac03c119c6ab102907ced546f75c1b9",
+    "examples/#133 Common Lisp/variants/ext-asd-2e617364/greeting.lisp": "37e6b1acef9872982825bfe7e5183df4127b8cf3f34704c3768c5ef2fd2b6c91"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".asd",
+  "documentation": "examples/#133 Common Lisp/variants/ext-asd-2e617364/README.md",
+  "sources": [
+    "https://www.sbcl.org/manual/#Shebang-Scripts",
+    "https://www.lispworks.com/documentation/HyperSpec/Body/f_concat.htm",
+    "https://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
+    "https://asdf.common-lisp.dev/asdf/Defining-systems-with-defsystem.html"
+  ],
+  "instructions_read_sha256": {
+    "examples/#133 Common Lisp/README.md": "30e516747e01f3dccfb0bcab0d2b7a91cb1ae98e606240dd6b9952c62e924ae5",
+    "examples/#133 Common Lisp/variants/ext-asd-2e617364/README.md": "2801e90b174ab78618bbb827256c1c4f0f1cea5a0b3ec49675ad8239901c0be0"
+  },
+  "toolchain": "SBCL 2.2.9.debian",
+  "semantic_scope": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied."
+}

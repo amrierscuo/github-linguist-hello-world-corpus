@@ -1,5 +1,9 @@
 # #565 Puppet
 
+## Latest recorded verification
+
+**Native verification remains pending.** The prepared Puppet command line timed out during initialization, including the bounded extended attempt; the original manifest was not verified. [Attempt evidence](verification/native_20261105_batch_blocked_main.json).
+
 Apply a notify Puppet resource.
 
 ## Toolchain

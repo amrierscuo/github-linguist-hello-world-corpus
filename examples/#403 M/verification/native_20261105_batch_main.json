@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:27:53.564352+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "M",
+  "ordinal": 403,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for fis-gtm-7.0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "fis-gtm-7.0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/mumps",
+      "timestamp_utc": "2026-11-05T12:27:53.603098+00:00",
+      "exit_code": 0,
+      "stdout": "Package: fis-gtm-7.0\nArchitecture: amd64\nVersion: 7.0-005-1build2\nMulti-Arch: same\nPriority: optional\nSection: universe/database\nSource: fis-gtm\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 125653\nProvides: gtm, mumps\nDepends: libc6 (>= 2.38), libelf1t64 (>= 0.131), libtinfo6 (>= 6), libicu-dev\nRecommends: zlib1g\nFilename: pool/universe/f/fis-gtm/fis-gtm-7.0_7.0-005-1build2_amd64.deb\nSize: 12245892\nMD5sum: 5b1ab0d24a37c972843fb2bafbcea81c\nSHA1: 19cb7b27407594902039d982ad301198349d5073\nSHA256: f6daeb3db61357a646a1741993bba5d7eeead68facb0c5c449ebc521278b0aa4\nSHA512: 61fe5743c1fe11b1e072f3748f0b1495636fb51b18e4a4be4fb257c53c0e8c5c7c5b8b012ed5f01fbcdee6124678ef65ec12d3a271ec1fe3b10713bc1cafd014\nHomepage: http://sourceforge.net/projects/fis-gtm\nDescription-en: FIS-GT.M database version 7.0-002\n GT.M is a database engine with scalability proven in large real-time\n transaction processing systems that have thousands of concurrent\n users, individual database file sizes to the Terabyte range (with\n virtually unlimited aggregate database sizes).  Yet the light\n footprint of GT.M allows it to also scale down for use in small\n applications and software appliances (virtual machines).\n .\n The GT.M data model is hierarchical associative memory (i.e.,\n multi-dimensional array) that imposes no restrictions on the data\n types of the indexes or content - the application logic can impose\n any schema, dictionary or data organization suited to its problem\n domain.  (Database engines that do not impose schemas, but which\n allow layered application software to impose and use whatever schema\n that is appropriate to the application are popularly referred to as\n \"document oriented\", \"schemaless\" or \"schema-free\" databases.)\n .\n GT.M's compiler for the standard M (also known as MUMPS) scripting\n language implements full support for ACID (Atomic, Consistent,\n Isolated, Durable) transactions, using optimistic concurrency control\n and software transactional memory (STM) that resolves the common\n mismatch between databases and programming languages. Its unique\n ability to create and deploy logical multi-site configurations of\n applications provides unrivaled continuity of business in the face of\n not just unplanned events, but also planned events, including planned\n events that include changes to application logic and schema.\nDescription-md5: b541d485aa4aaae147699293baaa93d4\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only fis-gtm-7.0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "fis-gtm-7.0=7.0-005-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/packages/fis-gtm-7.0",
+      "timestamp_utc": "2026-11-05T12:27:53.652871+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 fis-gtm-7.0 amd64 7.0-005-1build2 [12.2 MB]\nFetched 12.2 MB in 1s (11.8 MB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract fis-gtm-7.0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/mumps/packages/fis-gtm-7.0/fis-gtm-7.0_7.0-005-1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/mumps",
+      "timestamp_utc": "2026-11-05T12:27:55.146048+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Record FIS-GT.M runtime version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64/mumps",
+        "-run",
+        "%XCMD",
+        "write $ZVERSION,!"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/mumps",
+      "timestamp_utc": "2026-11-05T12:27:59.550570+00:00",
+      "exit_code": 0,
+      "stdout": "GT.M V7.0-005 Linux x86_64\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib",
+        "gtm_dist": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64",
+        "gtmroutines": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/routines ${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64",
+        "gtm_chset": "M"
+      }
+    },
+    {
+      "label": "Compile original M source using required routine filename",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64/mumps",
+        "${WORKSPACE}/work/native_batch_20261105/middle/mumps/routines/HELLO.m"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/mumps",
+      "timestamp_utc": "2026-11-05T12:27:59.645739+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib",
+        "gtm_dist": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64",
+        "gtmroutines": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/routines ${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64",
+        "gtm_chset": "M"
+      }
+    },
+    {
+      "label": "Run native M routine without a database",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64/mumps",
+        "-run",
+        "HELLO"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/mumps",
+      "timestamp_utc": "2026-11-05T12:27:59.733601+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib",
+        "gtm_dist": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64",
+        "gtmroutines": "${WORKSPACE}/work/native_batch_20261105/middle/mumps/routines ${WORKSPACE}/work/native_batch_20261105/middle/mumps/root/usr/lib/x86_64-linux-gnu/fis-gtm/V7.0-005_x86_64",
+        "gtm_chset": "M"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "fis-gtm-7.0",
+      "version": "7.0-005-1build2",
+      "ubuntu_archive_path": "pool/universe/f/fis-gtm/fis-gtm-7.0_7.0-005-1build2_amd64.deb",
+      "sha256": "f6daeb3db61357a646a1741993bba5d7eeead68facb0c5c449ebc521278b0aa4"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#403 M/hello.mumps": "a81e922a3255f5fc417d51cccd5a5748f19bc14fdbb4df8440dcee68c9a9ea39"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://docs.yottadb.com/ProgrammersGuide/langfeat.html",
+    "https://packages.ubuntu.com/noble/fis-gtm-7.0"
+  ],
+  "semantic_scope": "Native FIS-GT.M compiled and ran the exact M bytes after the documented HELLO.m filename staging. No database access or server was used.",
+  "toolchain": {
+    "name": "FIS-GT.M native M compiler and interpreter",
+    "version": "GT.M V7.0-005 Linux x86_64"
+  },
+  "environment_metadata_provenance": {
+    "source": "work/native_batch_20261105/middle/verify.py",
+    "sha256_at_annotation": "fbd4d064650c6626c7050dc6b95a9d665075dbf2d3d3fa62fae9f3b2afc068ca",
+    "scope": "These selected variables were assigned by the executed runner. They are metadata added after execution; command text, source bytes and captured output are unchanged. No full inherited environment was copied.",
+    "runner_function": "mumps_run"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native FIS-GT.M compiled and ran the exact M bytes after the documented HELLO.m filename staging. No database access or server was used."
+}

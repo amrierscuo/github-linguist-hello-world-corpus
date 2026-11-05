@@ -1,0 +1,1073 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:29:05.033591+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Puppet",
+  "ordinal": 565,
+  "commands": [
+    {
+      "label": "Package dependency metadata puppet-agent",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "puppet-agent"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.051575+00:00",
+      "exit_code": 0,
+      "stdout": "Package: puppet-agent\nArchitecture: all\nVersion: 8.4.0-1\nPriority: optional\nSection: universe/admin\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 8381\nPre-Depends: init-system-helpers (>= 1.54~)\nDepends: adduser, facter (>= 4.3.0), ruby, ruby-augeas, ruby-concurrent, ruby-deep-merge, ruby-puppet-resource-api, ruby-semantic-puppet, ruby-shadow, ruby-sorted-set, debconf (>= 0.5) | debconf-2.0\nRecommends: augeas-tools, debconf-utils, lsb-release, ruby-selinux\nSuggests: hiera-eyaml, ruby-hocon, ruby-msgpack\nBreaks: puppet (<< 7.16.0), puppet-common (<< 4.5.1-1), puppet-master (<< 7.9.3), puppet-master-passenger (<< 7.9.3), puppetserver (<< 8)\nReplaces: puppet (<< 7.16.0), puppet-common (<< 4.5.1-1)\nFilename: pool/universe/p/puppet-agent/puppet-agent_8.4.0-1_all.deb\nSize: 1396290\nMD5sum: 709a914278a5281306c00bb7f8c5a377\nSHA1: a2cca3b6d4e9c65586e90f8567fd8cf263d1d5dc\nSHA256: e76b55a3f09bd95db1f50c526f0a66e27b7b88b14225fb02d0ade8840d7601e8\nSHA512: 1ad6cf2b821d750ac3e6ab656c4731d5395b7d6400a191843078934cf31c19b2c584c94f4e6493d871a6ea54d9da17c5d5c8f2bba98b629e5c5fe4b12405b424\nHomepage: https://github.com/puppetlabs/puppet\nDescription-en: configuration management system, agent\n Puppet is a configuration management system that allows you to define\n the state of your IT infrastructure, then automatically enforces the\n correct state.\n .\n This package contains the main Puppet libraries and the agent application.\nDescription-md5: 9c11faacf3d08afaeacee81d1e4a7435\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata facter",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "facter"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.079955+00:00",
+      "exit_code": 0,
+      "stdout": "Package: facter\nArchitecture: all\nVersion: 4.3.0-2\nPriority: optional\nSection: universe/admin\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1589\nDepends: ruby, ruby-hocon (>= 1.3), ruby-thor (>= 1.0.1), ruby-thor (<< 2.0)\nRecommends: dmidecode, pciutils, ruby-sys-filesystem, virt-what\nFilename: pool/universe/f/facter/facter_4.3.0-2_all.deb\nSize: 155474\nMD5sum: 2aae859ba3a7d5cb07a0247d9859935a\nSHA1: 048808873e78dfe8c6ac0b746307d413a4da901f\nSHA256: 4dd4854386d7d9facf579b3fdd3a9b6af6919512a3c25d3ddc1ed88460fb7eb5\nSHA512: a816d24eee29a809d14bc23c22752e3ec005c99d99567fdf379320db5d5d7447b0c706f42823fde70258baa99724aa6dc5f2550a5e172401a3bdb2976fbfd4d5\nHomepage: https://github.com/puppetlabs/facter\nDescription-en: collect and display facts about the system\n Facter is Puppet’s cross-platform system profiling library. It discovers and\n reports per-node facts, which are collected by the Puppet agent and are made\n available in Puppet manifests as variables. Facter comes with a number of\n built-in facts providing information about the operating system, hardware, SSH\n keys, etc., but is also easily extensible through the following interfaces:\n .\n  * Through custom facts using Facter's Ruby API.\n  * Through `external' facts which can be either executables, or static data\n    files.\n .\n This package contains the facter binary and the ruby module making facter\n available to Puppet.\nDescription-md5: 88cdf9a1db3df211de4539a0570abd0a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-facter",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-facter"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.110716+00:00",
+      "exit_code": 100,
+      "stdout": "",
+      "stderr": "E: No packages found\n"
+    },
+    {
+      "label": "Package dependency metadata ruby-augeas",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-augeas"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.138186+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-augeas\nArchitecture: amd64\nVersion: 1:0.5.0+gem-1build4\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 50\nDepends: libaugeas0 (>= 1.0.0), libc6 (>= 2.4), libxml2 (>= 2.6.27), libruby3.2 (>= 3.2.0~preview1), libruby (>= 1:3.2~0), libruby (<< 1:3.3~)\nFilename: pool/universe/r/ruby-augeas/ruby-augeas_0.5.0+gem-1build4_amd64.deb\nSize: 11056\nMD5sum: 1433ea82b74d2aded6223dd437c9aefb\nSHA1: 3aca505481b14a367ebb1f6928fffe29fa025f9d\nSHA256: 9d5fd8dc6f85391b661eef1fef42184851c6456cbcf8532754947251a021f2ec\nSHA512: 066551273220581ac9eb467c0ef207e24d5908ff3eea10ff6c08c1b524b9cb7f5a33905785417d00d58b201266d33a149d4845086df73d7404132d933335cb26\nHomepage: https://augeas.net/\nDescription-en: Augeas bindings for the Ruby language\n Augeas is a configuration editing tool. It parses configuration files in their\n native formats and transforms them into a tree. Configuration changes are made\n by populating this tree and saving it back into native config files.\nDescription-md5: 3269a10ed3d3ca1e0a44a9a42c449a53\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-concurrent",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-concurrent"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.168996+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-concurrent\nArchitecture: all\nVersion: 1.2.3-2build1\nMulti-Arch: foreign\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1061\nProvides: ruby-concurrent-edge, ruby-concurrent-ruby (= 1.2.3-2build1), ruby-concurrent-ruby-edge\nFilename: pool/universe/r/ruby-concurrent/ruby-concurrent_1.2.3-2build1_all.deb\nSize: 281660\nMD5sum: b4c92952caf95d672a5864fd99cf1c94\nSHA1: 2ae7ea208218dcdf32cf3da14b5c1aa0083c1172\nSHA256: 29f796205b5f735d3d2e387ed7cf79bfb4c3217ddf11a00380161a4653126db7\nSHA512: 2768cda5cadffe117f70b050ab6401cd15ceda7ba46046df40ab53b095e39fc78f8ed3c757d09cb9acc37150d74629e5b3291d18c8e05839aaaca57282e9eb1c\nHomepage: https://github.com/ruby-concurrency/concurrent-ruby\nDescription-en: Modern concurrency tools for Ruby\n Concurrent Ruby provides modern concurrency tools including agents, futures,\n promises, thread pools, actors, supervisors, and more. Inspired by Erlang,\n Clojure, Go, JavaScript, actors, and classic concurrency patterns.\n .\n This package also includes experimental edge features via the\n concurrent-ruby-edge gem and the Java native extension for JRuby.\nDescription-md5: 04fc348d434f7acc0aa5945f83e5eedb\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-deep-merge",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-deep-merge"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.200869+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-deep-merge\nArchitecture: all\nVersion: 1.1.1-2\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 36\nFilename: pool/universe/r/ruby-deep-merge/ruby-deep-merge_1.1.1-2_all.deb\nSize: 9244\nMD5sum: 7d668b5855d2d56317df78a44c01fd24\nSHA1: 32358480efbaeb40b71fd689262bf3b23e41f197\nSHA256: 5971e02535a176e53d9c5a6955fa23bfa2c5da1458875437c08a85662f64d6f1\nSHA512: 6d8cd75620dc7a0ca32ac0645479f782813e555ab0ae5e3e6b03c75b29846f5030c6bb6d417b7c4a7fd80dc8326f90c142300a044915fc2253b044d42c9d5889\nHomepage: https://github.com/danielsdeleo/deep_merge\nDescription-en: recursively merge Hash elements in Ruby\n Deep Merge is a simple set of utility functions for Ruby hashes. It allows\n merging elements inside a hash together recursively. Since there is no\n standard for this, the merging is done in an arbitrary way, but should end\n up being pretty intuitive and do what is expected.\nDescription-md5: a032e044559155c37994c9a7ae4bbe4c\nRuby-Versions: all\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-puppet-resource-api",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-puppet-resource-api"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.231610+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-puppet-resource-api\nArchitecture: all\nVersion: 1.9.0-1\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 119\nDepends: ruby-hocon (>= 1.0)\nFilename: pool/universe/r/ruby-puppet-resource-api/ruby-puppet-resource-api_1.9.0-1_all.deb\nSize: 22826\nMD5sum: 0feea728b9fcc6777a6a8cd635baa854\nSHA1: 9bb020289def13e0546544b93f7663ba9bf1752f\nSHA256: b99792d4043e23ff521c5e0281d8eaba2534af00f66095c0e7343ba37fc55c91\nSHA512: 3267bf2512bc9fca6bf59bfe09f0879d6994613eb5c4c4a8026dacbdc35ff6a6a6b6f9794f735a0438aac70ba9368987c2f4509446a9076f1aab192c794f8ca5\nHomepage: https://github.com/puppetlabs/puppet-resource_api/\nDescription-en: Implementation of the Puppet Resource API specification\n A resource is the basic unit that is managed by Puppet. Each resource has a set\n of attributes describing its current state. Some attributes can be changed\n throughout the lifetime of the resource, whereas others are only reported back\n but cannot be changed. This library provides a simple way to write new native\n resources for Puppet.\nDescription-md5: b4badae28482bf3df7bf2946613a3943\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-semantic-puppet",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-semantic-puppet"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.258992+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-semantic-puppet\nArchitecture: all\nVersion: 1.0.4-1\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 70\nFilename: pool/universe/r/ruby-semantic-puppet/ruby-semantic-puppet_1.0.4-1_all.deb\nSize: 14784\nMD5sum: e4a08bc37fe86a314c692e9ec9dfebea\nSHA1: 9be94fbdb9730c63ff3bf77356eb3ec304aa6a82\nSHA256: 68b7a1c2c75df6c3c1702757d8c7777df9ce0cf2cc9c9ac718d3c0d591472218\nSHA512: 46017e959271a6a72a1c19ddf0b79806edd0e8eb9d53fc6461c09c0717b758e64ebbd195fc44e425a7ed163b1d8aff3c5eae67a68ebf3dd0467f39b6e385f5fd\nHomepage: https://github.com/puppetlabs/semantic_puppet\nDescription-en: Useful tools for working with semantic versions with Puppet\n Tools used by Puppet to parse, validate, and compare semantic versions and\n version ranges and to query and resolve module dependencies.\n .\n This library is used by a number of Puppet Labs projects, including Puppet and\n r10k.\nDescription-md5: e43424318841417d3dacd3e2ca56ac1e\nRuby-Versions: all\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-shadow",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-shadow"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.292226+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-shadow\nArchitecture: amd64\nVersion: 2.5.1-1ubuntu2\nPriority: extra\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 42\nDepends: libc6 (>= 2.4), libruby3.2 (>= 3.2.0~preview1), libruby (>= 1:3.2~0), libruby (<< 1:3.3~)\nFilename: pool/universe/r/ruby-shadow/ruby-shadow_2.5.1-1ubuntu2_amd64.deb\nSize: 9572\nMD5sum: a849e36911d01b0b466ee1c1c3e7698e\nSHA1: aee6a732f6ed318c7b57138b4504f8300e79913f\nSHA256: 82397aa37bb834ed3b75d58288dd5c0b71e41e96554fbf6505c2ea5480bafc25\nSHA512: 73a24763924396b570b8f090b48da3662579dce08a17538430df651ce09f6077b4e7b4991980d68e0148e98cefd5ec3e7977059c472c2ae4c973f7b00265c6bf\nHomepage: https://github.com/apalmblad/ruby-shadow\nDescription-en: interface of shadow password for Ruby\n This is a module which is used when you want to access shadow password files\n from the Ruby programming language. It gives access to the same C level\n functions provided by the shadow password API.\nDescription-md5: 19211e2801f26505fbd939dd6cf0c11f\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Package dependency metadata ruby-sorted-set",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-sorted-set"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:29:05.321108+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-sorted-set\nArchitecture: all\nVersion: 1.0.3-3\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 22\nDepends: ruby-rbtree\nBreaks: ruby-hamster (<< 3.0.0-3~), ruby-semantic-puppet (<< 1.0.4-1~)\nFilename: pool/universe/r/ruby-sorted-set/ruby-sorted-set_1.0.3-3_all.deb\nSize: 4258\nMD5sum: 637561ff19502093db70b11a5ef956d5\nSHA1: 0f9835633551609239e3361c6e5c8120dd4d916d\nSHA256: 4494c1015461ca6e33724ac76939ac2eac116569d083185b008b4fad33747240\nSHA512: cb525381af8d1e3a23b090c8edb0a9f8685a18fe6b8a0ce92ccaa267e2ebb09a644053411e0fe0b712447329d56c0eed82e9cc25221c93b9b2b736193377a931\nHomepage: https://github.com/knu/sorted_set\nDescription-en: variant of Set with elements sorted in ascending order\n This Ruby library implements a variant of Set whose elements are sorted in\n ascending order.\n .\n The sorted_set library used to be part of Ruby's standard library before\n ruby3.0.\nDescription-md5: 806aed1d231b95f3d98c85681698ae3c\nRuby-Versions: all\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for puppet-agent",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "puppet-agent"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:30:49.381957+00:00",
+      "exit_code": 0,
+      "stdout": "Package: puppet-agent\nArchitecture: all\nVersion: 8.4.0-1\nPriority: optional\nSection: universe/admin\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 8381\nPre-Depends: init-system-helpers (>= 1.54~)\nDepends: adduser, facter (>= 4.3.0), ruby, ruby-augeas, ruby-concurrent, ruby-deep-merge, ruby-puppet-resource-api, ruby-semantic-puppet, ruby-shadow, ruby-sorted-set, debconf (>= 0.5) | debconf-2.0\nRecommends: augeas-tools, debconf-utils, lsb-release, ruby-selinux\nSuggests: hiera-eyaml, ruby-hocon, ruby-msgpack\nBreaks: puppet (<< 7.16.0), puppet-common (<< 4.5.1-1), puppet-master (<< 7.9.3), puppet-master-passenger (<< 7.9.3), puppetserver (<< 8)\nReplaces: puppet (<< 7.16.0), puppet-common (<< 4.5.1-1)\nFilename: pool/universe/p/puppet-agent/puppet-agent_8.4.0-1_all.deb\nSize: 1396290\nMD5sum: 709a914278a5281306c00bb7f8c5a377\nSHA1: a2cca3b6d4e9c65586e90f8567fd8cf263d1d5dc\nSHA256: e76b55a3f09bd95db1f50c526f0a66e27b7b88b14225fb02d0ade8840d7601e8\nSHA512: 1ad6cf2b821d750ac3e6ab656c4731d5395b7d6400a191843078934cf31c19b2c584c94f4e6493d871a6ea54d9da17c5d5c8f2bba98b629e5c5fe4b12405b424\nHomepage: https://github.com/puppetlabs/puppet\nDescription-en: configuration management system, agent\n Puppet is a configuration management system that allows you to define\n the state of your IT infrastructure, then automatically enforces the\n correct state.\n .\n This package contains the main Puppet libraries and the agent application.\nDescription-md5: 9c11faacf3d08afaeacee81d1e4a7435\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only puppet-agent",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "puppet-agent=8.4.0-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/puppet-agent",
+      "timestamp_utc": "2026-11-05T12:30:49.412177+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 puppet-agent all 8.4.0-1 [1396 kB]\nFetched 1396 kB in 1s (2287 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract puppet-agent without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/puppet-agent/puppet-agent_8.4.0-1_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:30:50.284005+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for facter",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "facter"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:30:59.185858+00:00",
+      "exit_code": 0,
+      "stdout": "Package: facter\nArchitecture: all\nVersion: 4.3.0-2\nPriority: optional\nSection: universe/admin\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1589\nDepends: ruby, ruby-hocon (>= 1.3), ruby-thor (>= 1.0.1), ruby-thor (<< 2.0)\nRecommends: dmidecode, pciutils, ruby-sys-filesystem, virt-what\nFilename: pool/universe/f/facter/facter_4.3.0-2_all.deb\nSize: 155474\nMD5sum: 2aae859ba3a7d5cb07a0247d9859935a\nSHA1: 048808873e78dfe8c6ac0b746307d413a4da901f\nSHA256: 4dd4854386d7d9facf579b3fdd3a9b6af6919512a3c25d3ddc1ed88460fb7eb5\nSHA512: a816d24eee29a809d14bc23c22752e3ec005c99d99567fdf379320db5d5d7447b0c706f42823fde70258baa99724aa6dc5f2550a5e172401a3bdb2976fbfd4d5\nHomepage: https://github.com/puppetlabs/facter\nDescription-en: collect and display facts about the system\n Facter is Puppet’s cross-platform system profiling library. It discovers and\n reports per-node facts, which are collected by the Puppet agent and are made\n available in Puppet manifests as variables. Facter comes with a number of\n built-in facts providing information about the operating system, hardware, SSH\n keys, etc., but is also easily extensible through the following interfaces:\n .\n  * Through custom facts using Facter's Ruby API.\n  * Through `external' facts which can be either executables, or static data\n    files.\n .\n This package contains the facter binary and the ruby module making facter\n available to Puppet.\nDescription-md5: 88cdf9a1db3df211de4539a0570abd0a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only facter",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "facter=4.3.0-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/facter",
+      "timestamp_utc": "2026-11-05T12:30:59.224310+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 facter all 4.3.0-2 [155 kB]\nFetched 155 kB in 1s (202 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract facter without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/facter/facter_4.3.0-2_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:00.349105+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-augeas",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-augeas"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:04.959170+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-augeas\nArchitecture: amd64\nVersion: 1:0.5.0+gem-1build4\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 50\nDepends: libaugeas0 (>= 1.0.0), libc6 (>= 2.4), libxml2 (>= 2.6.27), libruby3.2 (>= 3.2.0~preview1), libruby (>= 1:3.2~0), libruby (<< 1:3.3~)\nFilename: pool/universe/r/ruby-augeas/ruby-augeas_0.5.0+gem-1build4_amd64.deb\nSize: 11056\nMD5sum: 1433ea82b74d2aded6223dd437c9aefb\nSHA1: 3aca505481b14a367ebb1f6928fffe29fa025f9d\nSHA256: 9d5fd8dc6f85391b661eef1fef42184851c6456cbcf8532754947251a021f2ec\nSHA512: 066551273220581ac9eb467c0ef207e24d5908ff3eea10ff6c08c1b524b9cb7f5a33905785417d00d58b201266d33a149d4845086df73d7404132d933335cb26\nHomepage: https://augeas.net/\nDescription-en: Augeas bindings for the Ruby language\n Augeas is a configuration editing tool. It parses configuration files in their\n native formats and transforms them into a tree. Configuration changes are made\n by populating this tree and saving it back into native config files.\nDescription-md5: 3269a10ed3d3ca1e0a44a9a42c449a53\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-augeas",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-augeas=1:0.5.0+gem-1build4"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-augeas",
+      "timestamp_utc": "2026-11-05T12:31:04.991194+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-augeas amd64 1:0.5.0+gem-1build4 [11.1 kB]\nFetched 11.1 kB in 0s (83.1 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-augeas without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-augeas/ruby-augeas_1%3a0.5.0+gem-1build4_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:05.403489+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-concurrent",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-concurrent"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:05.514333+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-concurrent\nArchitecture: all\nVersion: 1.2.3-2build1\nMulti-Arch: foreign\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1061\nProvides: ruby-concurrent-edge, ruby-concurrent-ruby (= 1.2.3-2build1), ruby-concurrent-ruby-edge\nFilename: pool/universe/r/ruby-concurrent/ruby-concurrent_1.2.3-2build1_all.deb\nSize: 281660\nMD5sum: b4c92952caf95d672a5864fd99cf1c94\nSHA1: 2ae7ea208218dcdf32cf3da14b5c1aa0083c1172\nSHA256: 29f796205b5f735d3d2e387ed7cf79bfb4c3217ddf11a00380161a4653126db7\nSHA512: 2768cda5cadffe117f70b050ab6401cd15ceda7ba46046df40ab53b095e39fc78f8ed3c757d09cb9acc37150d74629e5b3291d18c8e05839aaaca57282e9eb1c\nHomepage: https://github.com/ruby-concurrency/concurrent-ruby\nDescription-en: Modern concurrency tools for Ruby\n Concurrent Ruby provides modern concurrency tools including agents, futures,\n promises, thread pools, actors, supervisors, and more. Inspired by Erlang,\n Clojure, Go, JavaScript, actors, and classic concurrency patterns.\n .\n This package also includes experimental edge features via the\n concurrent-ruby-edge gem and the Java native extension for JRuby.\nDescription-md5: 04fc348d434f7acc0aa5945f83e5eedb\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-concurrent",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-concurrent=1.2.3-2build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-concurrent",
+      "timestamp_utc": "2026-11-05T12:31:05.544828+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-concurrent all 1.2.3-2build1 [282 kB]\nFetched 282 kB in 0s (783 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-concurrent without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-concurrent/ruby-concurrent_1.2.3-2build1_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:06.191745+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-deep-merge",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-deep-merge"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:07.296180+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-deep-merge\nArchitecture: all\nVersion: 1.1.1-2\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 36\nFilename: pool/universe/r/ruby-deep-merge/ruby-deep-merge_1.1.1-2_all.deb\nSize: 9244\nMD5sum: 7d668b5855d2d56317df78a44c01fd24\nSHA1: 32358480efbaeb40b71fd689262bf3b23e41f197\nSHA256: 5971e02535a176e53d9c5a6955fa23bfa2c5da1458875437c08a85662f64d6f1\nSHA512: 6d8cd75620dc7a0ca32ac0645479f782813e555ab0ae5e3e6b03c75b29846f5030c6bb6d417b7c4a7fd80dc8326f90c142300a044915fc2253b044d42c9d5889\nHomepage: https://github.com/danielsdeleo/deep_merge\nDescription-en: recursively merge Hash elements in Ruby\n Deep Merge is a simple set of utility functions for Ruby hashes. It allows\n merging elements inside a hash together recursively. Since there is no\n standard for this, the merging is done in an arbitrary way, but should end\n up being pretty intuitive and do what is expected.\nDescription-md5: a032e044559155c37994c9a7ae4bbe4c\nRuby-Versions: all\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-deep-merge",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-deep-merge=1.1.1-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-deep-merge",
+      "timestamp_utc": "2026-11-05T12:31:07.330597+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-deep-merge all 1.1.1-2 [9244 B]\nFetched 9244 B in 0s (27.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-deep-merge without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-deep-merge/ruby-deep-merge_1.1.1-2_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:08.017371+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-puppet-resource-api",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-puppet-resource-api"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:08.118327+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-puppet-resource-api\nArchitecture: all\nVersion: 1.9.0-1\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@alioth-lists.debian.net>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 119\nDepends: ruby-hocon (>= 1.0)\nFilename: pool/universe/r/ruby-puppet-resource-api/ruby-puppet-resource-api_1.9.0-1_all.deb\nSize: 22826\nMD5sum: 0feea728b9fcc6777a6a8cd635baa854\nSHA1: 9bb020289def13e0546544b93f7663ba9bf1752f\nSHA256: b99792d4043e23ff521c5e0281d8eaba2534af00f66095c0e7343ba37fc55c91\nSHA512: 3267bf2512bc9fca6bf59bfe09f0879d6994613eb5c4c4a8026dacbdc35ff6a6a6b6f9794f735a0438aac70ba9368987c2f4509446a9076f1aab192c794f8ca5\nHomepage: https://github.com/puppetlabs/puppet-resource_api/\nDescription-en: Implementation of the Puppet Resource API specification\n A resource is the basic unit that is managed by Puppet. Each resource has a set\n of attributes describing its current state. Some attributes can be changed\n throughout the lifetime of the resource, whereas others are only reported back\n but cannot be changed. This library provides a simple way to write new native\n resources for Puppet.\nDescription-md5: b4badae28482bf3df7bf2946613a3943\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-puppet-resource-api",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-puppet-resource-api=1.9.0-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-puppet-resource-api",
+      "timestamp_utc": "2026-11-05T12:31:08.147633+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-puppet-resource-api all 1.9.0-1 [22.8 kB]\nFetched 22.8 kB in 0s (48.9 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-puppet-resource-api without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-puppet-resource-api/ruby-puppet-resource-api_1.9.0-1_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:08.883146+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-semantic-puppet",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-semantic-puppet"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:09.047311+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-semantic-puppet\nArchitecture: all\nVersion: 1.0.4-1\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Puppet Package Maintainers <pkg-puppet-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 70\nFilename: pool/universe/r/ruby-semantic-puppet/ruby-semantic-puppet_1.0.4-1_all.deb\nSize: 14784\nMD5sum: e4a08bc37fe86a314c692e9ec9dfebea\nSHA1: 9be94fbdb9730c63ff3bf77356eb3ec304aa6a82\nSHA256: 68b7a1c2c75df6c3c1702757d8c7777df9ce0cf2cc9c9ac718d3c0d591472218\nSHA512: 46017e959271a6a72a1c19ddf0b79806edd0e8eb9d53fc6461c09c0717b758e64ebbd195fc44e425a7ed163b1d8aff3c5eae67a68ebf3dd0467f39b6e385f5fd\nHomepage: https://github.com/puppetlabs/semantic_puppet\nDescription-en: Useful tools for working with semantic versions with Puppet\n Tools used by Puppet to parse, validate, and compare semantic versions and\n version ranges and to query and resolve module dependencies.\n .\n This library is used by a number of Puppet Labs projects, including Puppet and\n r10k.\nDescription-md5: e43424318841417d3dacd3e2ca56ac1e\nRuby-Versions: all\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-semantic-puppet",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-semantic-puppet=1.0.4-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-semantic-puppet",
+      "timestamp_utc": "2026-11-05T12:31:09.078988+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-semantic-puppet all 1.0.4-1 [14.8 kB]\nFetched 14.8 kB in 0s (47.7 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-semantic-puppet without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-semantic-puppet/ruby-semantic-puppet_1.0.4-1_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:09.708994+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-shadow",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-shadow"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:09.863716+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-shadow\nArchitecture: amd64\nVersion: 2.5.1-1ubuntu2\nPriority: extra\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 42\nDepends: libc6 (>= 2.4), libruby3.2 (>= 3.2.0~preview1), libruby (>= 1:3.2~0), libruby (<< 1:3.3~)\nFilename: pool/universe/r/ruby-shadow/ruby-shadow_2.5.1-1ubuntu2_amd64.deb\nSize: 9572\nMD5sum: a849e36911d01b0b466ee1c1c3e7698e\nSHA1: aee6a732f6ed318c7b57138b4504f8300e79913f\nSHA256: 82397aa37bb834ed3b75d58288dd5c0b71e41e96554fbf6505c2ea5480bafc25\nSHA512: 73a24763924396b570b8f090b48da3662579dce08a17538430df651ce09f6077b4e7b4991980d68e0148e98cefd5ec3e7977059c472c2ae4c973f7b00265c6bf\nHomepage: https://github.com/apalmblad/ruby-shadow\nDescription-en: interface of shadow password for Ruby\n This is a module which is used when you want to access shadow password files\n from the Ruby programming language. It gives access to the same C level\n functions provided by the shadow password API.\nDescription-md5: 19211e2801f26505fbd939dd6cf0c11f\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-shadow",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-shadow=2.5.1-1ubuntu2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-shadow",
+      "timestamp_utc": "2026-11-05T12:31:09.896569+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-shadow amd64 2.5.1-1ubuntu2 [9572 B]\nFetched 9572 B in 0s (56.7 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-shadow without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-shadow/ruby-shadow_2.5.1-1ubuntu2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:10.351867+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-sorted-set",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-sorted-set"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:10.484692+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-sorted-set\nArchitecture: all\nVersion: 1.0.3-3\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 22\nDepends: ruby-rbtree\nBreaks: ruby-hamster (<< 3.0.0-3~), ruby-semantic-puppet (<< 1.0.4-1~)\nFilename: pool/universe/r/ruby-sorted-set/ruby-sorted-set_1.0.3-3_all.deb\nSize: 4258\nMD5sum: 637561ff19502093db70b11a5ef956d5\nSHA1: 0f9835633551609239e3361c6e5c8120dd4d916d\nSHA256: 4494c1015461ca6e33724ac76939ac2eac116569d083185b008b4fad33747240\nSHA512: cb525381af8d1e3a23b090c8edb0a9f8685a18fe6b8a0ce92ccaa267e2ebb09a644053411e0fe0b712447329d56c0eed82e9cc25221c93b9b2b736193377a931\nHomepage: https://github.com/knu/sorted_set\nDescription-en: variant of Set with elements sorted in ascending order\n This Ruby library implements a variant of Set whose elements are sorted in\n ascending order.\n .\n The sorted_set library used to be part of Ruby's standard library before\n ruby3.0.\nDescription-md5: 806aed1d231b95f3d98c85681698ae3c\nRuby-Versions: all\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-sorted-set",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-sorted-set=1.0.3-3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-sorted-set",
+      "timestamp_utc": "2026-11-05T12:31:10.517262+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-sorted-set all 1.0.3-3 [4258 B]\nFetched 4258 B in 0s (23.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-sorted-set without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-sorted-set/ruby-sorted-set_1.0.3-3_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:11.047318+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-hocon",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-hocon"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:11.139515+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-hocon\nArchitecture: all\nVersion: 1.3.1-2\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 429\nDepends: ruby\nFilename: pool/universe/r/ruby-hocon/ruby-hocon_1.3.1-2_all.deb\nSize: 76196\nMD5sum: 9b52500a52d09f59d077e33691946d8d\nSHA1: a2ff7145c109540cbadd66577d365eb4de0003e3\nSHA256: 48ce8a2d1b2d21e731535c7d71f431d6c4257c55a63ecd711004fbc0ebf8ee57\nSHA512: 96e9fa2441d57923e0cf1bf427d86e10a68de9815ec60a92fb6f3cb0508196a33e0859e3201a1d7cb3c2a9718e8f3fb889d0681124607bfc05b71a91e9fa09b4\nHomepage: https://github.com/puppetlabs/ruby-hocon\nDescription-en: Ruby port of the Typesafe Config library\n ruby-hocon is a port of the Typesafe Config Java library to Ruby.\n The library provides Ruby support for the HOCON configuration file\n format. It supports parsing and modification of existing HOCON/JSON\n files as well as rendering parsed config objects back to a Ruby String.\nDescription-md5: 5c94c74723a7a26a9d953c12466f204d\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-hocon",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-hocon=1.3.1-2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-hocon",
+      "timestamp_utc": "2026-11-05T12:31:11.172168+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-hocon all 1.3.1-2 [76.2 kB]\nFetched 76.2 kB in 0s (191 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-hocon without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-hocon/ruby-hocon_1.3.1-2_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:11.857905+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-thor",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-thor"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:12.355768+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-thor\nArchitecture: all\nVersion: 1.3.1-1\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 237\nDepends: ruby\nBreaks: ruby-coveralls (<< 0.8.23-1~)\nFilename: pool/universe/r/ruby-thor/ruby-thor_1.3.1-1_all.deb\nSize: 50000\nMD5sum: 36dd576d2e43fdbc1ea27ab24bf7a225\nSHA1: 80e24638ad7e2d33c159f7ee0bd0ea02fbf3b95a\nSHA256: fb676995635a52b586a3d3253188c096f79e4d6cbc466edb2484bf7ecf272278\nSHA512: aaf821e28cceb62f6849a0a8a3521e492d8495630122a71dcdb0224a55fe693d77f8d18849d7fa352bcc381d0ef47e6b1c84153f4791e6a95c421355fd18f099\nHomepage: http://whatisthor.com/\nDescription-en: Ruby scripting framework\n Thor is a simple and efficient scripting framework for building\n self-documenting command line utilities.\n .\n It can be used to replace rake, sake and rubigen.\nDescription-md5: 611fec1535f35a1f489c246cfddf2378\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-thor",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-thor=1.3.1-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-thor",
+      "timestamp_utc": "2026-11-05T12:31:12.393280+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-thor all 1.3.1-1 [50.0 kB]\nFetched 50.0 kB in 0s (137 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-thor without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-thor/ruby-thor_1.3.1-1_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:13.133950+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for ruby-rbtree",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "ruby-rbtree"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:13.480565+00:00",
+      "exit_code": 0,
+      "stdout": "Package: ruby-rbtree\nArchitecture: amd64\nVersion: 0.4.6-1build2\nPriority: optional\nSection: universe/ruby\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 80\nDepends: libc6 (>= 2.4), libruby3.2 (>= 3.2.2), libruby (>= 1:3.2~0), libruby (<< 1:3.3~)\nFilename: pool/universe/r/ruby-rbtree/ruby-rbtree_0.4.6-1build2_amd64.deb\nSize: 23408\nMD5sum: 86813403fdfac02ead048a87b4a6df24\nSHA1: 4f2927c7e18d83c4cc99b33023f08edbc85d30fe\nSHA256: 01037e8f84ec9c56cd20c3f820a6eff81e5e96abfdd0c3d1c21d53416718e7a2\nSHA512: a84ffd135c47bec75655cc6fd6781cc6f1e38057b9bbd6b7dd52ea6b2265784d2fdeac8d381b3ea2c731ecca5eb9036d44b3e6a643300c9cb6d4459b7553ba72\nHomepage: https://github.com/mame/rbtree\nDescription-en: sorted associative collection for Ruby\n A RBTree is a sorted associative collection that is implemented with a\n Red-Black Tree. It maps keys to values like a Hash, but maintains its\n elements in ascending key order. The interface is the almost identical\n to that of Hash.\nDescription-md5: 4b145a4df799722db7476fe864bcc175\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only ruby-rbtree",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "ruby-rbtree=0.4.6-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-rbtree",
+      "timestamp_utc": "2026-11-05T12:31:13.532113+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 ruby-rbtree amd64 0.4.6-1build2 [23.4 kB]\nFetched 23.4 kB in 0s (51.0 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract ruby-rbtree without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/ruby-rbtree/ruby-rbtree_0.4.6-1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:14.385535+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libaugeas0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libaugeas0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:14.519121+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libaugeas0\nArchitecture: amd64\nVersion: 1.14.1-1build2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: augeas\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Hilko Bengen <bengen@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 400\nDepends: libc6 (>= 2.38), libselinux1 (>= 3.1~), libxml2 (>= 2.7.4), augeas-lenses\nSuggests: augeas-tools\nFilename: pool/universe/a/augeas/libaugeas0_1.14.1-1build2_amd64.deb\nSize: 166054\nMD5sum: ad4b4035dbcf19beba66e0121e38f89a\nSHA1: 45b73903fb14927ed55fc656181b5b7e6640fb9e\nSHA256: 8ade699eab95ed8696c509d4958a189238ba86abebb2734d4b040b3b56dbf2f4\nSHA512: ca2726f2bbbffb9d8fed318885203dcbd8da979f55869d21cd8026aae7f83793415da8243947bd23b7f12307df9d81c2f91f00f61b441de45c77ffce2d7c4cf1\nHomepage: http://augeas.net/\nDescription-en: Augeas configuration editing library and API\n Augeas is a configuration editing tool. It parses configuration files in their\n native formats and transforms them into a tree. Configuration changes are made\n by manipulating this tree and saving it back into native config files.\n .\n The transformation works very hard to preserve comments and formatting\n details. It is controlled by ``lens'' definitions that describe the file\n format and the transformation into a tree.\nDescription-md5: 309877ef689bd8ed561675486502059a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libaugeas0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libaugeas0=1.14.1-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/libaugeas0",
+      "timestamp_utc": "2026-11-05T12:31:14.551774+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libaugeas0 amd64 1.14.1-1build2 [166 kB]\nFetched 166 kB in 0s (434 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libaugeas0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/libaugeas0/libaugeas0_1.14.1-1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:15.237570+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for augeas-lenses",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "augeas-lenses"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:15.309829+00:00",
+      "exit_code": 0,
+      "stdout": "Package: augeas-lenses\nArchitecture: all\nVersion: 1.14.1-1build2\nMulti-Arch: foreign\nPriority: optional\nSection: universe/misc\nSource: augeas\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Hilko Bengen <bengen@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1874\nSuggests: augeas-doc\nFilename: pool/universe/a/augeas/augeas-lenses_1.14.1-1build2_all.deb\nSize: 322682\nMD5sum: 465a9620998c8ddebcbf9b2c39f101b2\nSHA1: e1a8cdb48a6c2ba6992e7763d02fc5e9b7f2456b\nSHA256: bddd7e148a7269bee843b34609996ec21bad18a9970183a150574be0399f1215\nSHA512: f0d5ca993c7583a6f7e2cf33b1f33e5c99bb0508936cab31636fe1802ec40500e4d3ca6af983fe853566599b7a5cac8c04d7c8c398f6819803e351a4305f49a6\nHomepage: http://augeas.net/\nDescription-en: Set of lenses needed by libaugeas0 to parse config files\n Augeas parses configuration files described in lenses into a tree structure,\n which it exposes through its public API. Changes made through the API are\n written back to the initially read files.\n .\n Lenses are the building blocks of the file <-> tree transformation; they\n combine parsing a file and building the tree (the get transformation), with\n turning the tree back into an (updated) file (the put transformation).\n .\n The transformation works very hard to preserve comments and formatting\n details. It is controlled by ``lens'' definitions that describe the file\n format and the transformation into a tree. This package includes the official\n set of lenses.\nDescription-md5: be11d5488843917c54ba7d49005b36de\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only augeas-lenses",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "augeas-lenses=1.14.1-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/augeas-lenses",
+      "timestamp_utc": "2026-11-05T12:31:15.344486+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 augeas-lenses all 1.14.1-1build2 [323 kB]\nFetched 323 kB in 1s (340 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract augeas-lenses without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/packages/augeas-lenses/augeas-lenses_1.14.1-1build2_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:16.594890+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Puppet native version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/bin/puppet",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:31:18.810286+00:00",
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/puppet/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/puppet/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Puppet native version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/bin/puppet",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:34:54.783101+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "cannot load such file -- concurrent\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/puppet/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/puppet/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Puppet native version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "${WORKSPACE}/work/native_single_20261105/option_list/root/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/bin/puppet",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/puppet",
+      "timestamp_utc": "2026-11-05T12:37:18.909462+00:00",
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "\u001b[1;31mError: Could not initialize global default settings: SIGTERM\u001b[0m\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/puppet/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/puppet/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib:${WORKSPACE}/work/native_single_20261105/option_list/root/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "puppet-agent",
+      "version": "8.4.0-1",
+      "ubuntu_archive_path": "pool/universe/p/puppet-agent/puppet-agent_8.4.0-1_all.deb",
+      "sha256": "e76b55a3f09bd95db1f50c526f0a66e27b7b88b14225fb02d0ade8840d7601e8"
+    },
+    {
+      "name": "facter",
+      "version": "4.3.0-2",
+      "ubuntu_archive_path": "pool/universe/f/facter/facter_4.3.0-2_all.deb",
+      "sha256": "4dd4854386d7d9facf579b3fdd3a9b6af6919512a3c25d3ddc1ed88460fb7eb5"
+    },
+    {
+      "name": "ruby-augeas",
+      "version": "1:0.5.0+gem-1build4",
+      "ubuntu_archive_path": "pool/universe/r/ruby-augeas/ruby-augeas_0.5.0+gem-1build4_amd64.deb",
+      "sha256": "9d5fd8dc6f85391b661eef1fef42184851c6456cbcf8532754947251a021f2ec"
+    },
+    {
+      "name": "ruby-concurrent",
+      "version": "1.2.3-2build1",
+      "ubuntu_archive_path": "pool/universe/r/ruby-concurrent/ruby-concurrent_1.2.3-2build1_all.deb",
+      "sha256": "29f796205b5f735d3d2e387ed7cf79bfb4c3217ddf11a00380161a4653126db7"
+    },
+    {
+      "name": "ruby-deep-merge",
+      "version": "1.1.1-2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-deep-merge/ruby-deep-merge_1.1.1-2_all.deb",
+      "sha256": "5971e02535a176e53d9c5a6955fa23bfa2c5da1458875437c08a85662f64d6f1"
+    },
+    {
+      "name": "ruby-puppet-resource-api",
+      "version": "1.9.0-1",
+      "ubuntu_archive_path": "pool/universe/r/ruby-puppet-resource-api/ruby-puppet-resource-api_1.9.0-1_all.deb",
+      "sha256": "b99792d4043e23ff521c5e0281d8eaba2534af00f66095c0e7343ba37fc55c91"
+    },
+    {
+      "name": "ruby-semantic-puppet",
+      "version": "1.0.4-1",
+      "ubuntu_archive_path": "pool/universe/r/ruby-semantic-puppet/ruby-semantic-puppet_1.0.4-1_all.deb",
+      "sha256": "68b7a1c2c75df6c3c1702757d8c7777df9ce0cf2cc9c9ac718d3c0d591472218"
+    },
+    {
+      "name": "ruby-shadow",
+      "version": "2.5.1-1ubuntu2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-shadow/ruby-shadow_2.5.1-1ubuntu2_amd64.deb",
+      "sha256": "82397aa37bb834ed3b75d58288dd5c0b71e41e96554fbf6505c2ea5480bafc25"
+    },
+    {
+      "name": "ruby-sorted-set",
+      "version": "1.0.3-3",
+      "ubuntu_archive_path": "pool/universe/r/ruby-sorted-set/ruby-sorted-set_1.0.3-3_all.deb",
+      "sha256": "4494c1015461ca6e33724ac76939ac2eac116569d083185b008b4fad33747240"
+    },
+    {
+      "name": "ruby-hocon",
+      "version": "1.3.1-2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-hocon/ruby-hocon_1.3.1-2_all.deb",
+      "sha256": "48ce8a2d1b2d21e731535c7d71f431d6c4257c55a63ecd711004fbc0ebf8ee57"
+    },
+    {
+      "name": "ruby-thor",
+      "version": "1.3.1-1",
+      "ubuntu_archive_path": "pool/universe/r/ruby-thor/ruby-thor_1.3.1-1_all.deb",
+      "sha256": "fb676995635a52b586a3d3253188c096f79e4d6cbc466edb2484bf7ecf272278"
+    },
+    {
+      "name": "ruby-rbtree",
+      "version": "0.4.6-1build2",
+      "ubuntu_archive_path": "pool/universe/r/ruby-rbtree/ruby-rbtree_0.4.6-1build2_amd64.deb",
+      "sha256": "01037e8f84ec9c56cd20c3f820a6eff81e5e96abfdd0c3d1c21d53416718e7a2"
+    },
+    {
+      "name": "libaugeas0",
+      "version": "1.14.1-1build2",
+      "ubuntu_archive_path": "pool/universe/a/augeas/libaugeas0_1.14.1-1build2_amd64.deb",
+      "sha256": "8ade699eab95ed8696c509d4958a189238ba86abebb2734d4b040b3b56dbf2f4"
+    },
+    {
+      "name": "augeas-lenses",
+      "version": "1.14.1-1build2",
+      "ubuntu_archive_path": "pool/universe/a/augeas/augeas-lenses_1.14.1-1build2_all.deb",
+      "sha256": "bddd7e148a7269bee843b34609996ec21bad18a9970183a150574be0399f1215"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#565 Puppet/hello.pp": "f1a2b014afae0da85333ecc05e58328315265222cde6b68940840f6f547be6f2"
+  },
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "blocker": "\u001b[1;31mError: Could not initialize global default settings: SIGTERM\u001b[0m\n",
+  "outcome_description": "The prepared Puppet command line timed out during initialization, including the bounded extended attempt; the original manifest was not verified."
+}

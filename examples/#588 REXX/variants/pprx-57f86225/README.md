@@ -1,5 +1,9 @@
 # 0588: REXX: `.pprx`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.pprx`. Regina REXX parsed and executed the exact suffix variant, printing exactly Hello, World! plus LF without stderr. [Recorded evidence](../../verification/native_20261105_batch_2e70707278.json).
+
 Textual variation of the same format, with canon suffix .pprx.
 
 Origin: copy of the original `examples/#588 REXX/hello.rexx` file.

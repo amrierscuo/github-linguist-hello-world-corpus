@@ -1,0 +1,914 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:54.854713+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "NASL",
+  "ordinal": 454,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for redis-server",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "redis-server"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:54.883131+00:00",
+      "exit_code": 0,
+      "stdout": "Package: redis-server\nSource: redis\nPriority: optional\nSection: universe/misc\nInstalled-Size: 183\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 5:7.0.15-1ubuntu0.24.04.5\nDepends: redis-tools (= 5:7.0.15-1ubuntu0.24.04.5), sysvinit-utils\nPre-Depends: init-system-helpers (>= 1.54~)\nFilename: pool/universe/r/redis/redis-server_7.0.15-1ubuntu0.24.04.5_amd64.deb\nSize: 51686\nMD5sum: b7c7c3707fe8cebd5465d9a9f3271e86\nSHA1: aaedf1eea3250cc31fafc5cab886f228b87edac1\nSHA256: 5f41607fb77674078c013b2a6196a748c3a5f6ec4bd3201cd08478dce3e26d05\nSHA512: 600231df23a0403aff1ce8993d97c2f5f401b58f0ac58a2ad313f335909954a14a6aa884d13b876edb9060d8201bb922bcf6c9fc714ab2505013ae6449a5c6e8\nHomepage: https://redis.io/\nDescription-en: Persistent key-value database with network interface\n Redis is a key-value database in a similar vein to memcache but the dataset\n is non-volatile. Redis additionally provides native support for atomically\n manipulating and querying data structures such as lists and sets.\n .\n The dataset is stored entirely in memory and periodically flushed to disk.\nDescription-md5: 9160ed1405585ab844f8750a9305d33f\nOriginal-Maintainer: Chris Lamb <lamby@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: redis-server\nArchitecture: amd64\nVersion: 5:7.0.15-1build2\nPriority: optional\nSection: universe/misc\nSource: redis\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Chris Lamb <lamby@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 182\nPre-Depends: init-system-helpers (>= 1.54~)\nDepends: redis-tools (= 5:7.0.15-1build2), sysvinit-utils\nFilename: pool/universe/r/redis/redis-server_7.0.15-1build2_amd64.deb\nSize: 51680\nMD5sum: b8662250fb7c13f02988f95bdb96ac88\nSHA1: c1fc4df9baed0e7c4d93ad6262156be1d3ec2414\nSHA256: 09a7f28a2f81efcc577f81b1bf546af9bd0e5bf2c2ccdc037f66f26369ce43a4\nSHA512: d73b412a2702ceb00e3742fdd412ecc04cebf064a76338d87bc1f7b16315a75fccc0b388f91f3f544442d2fe2403935140c7203d7dde0ef298dda943ad9c282e\nHomepage: https://redis.io/\nDescription-en: Persistent key-value database with network interface\n Redis is a key-value database in a similar vein to memcache but the dataset\n is non-volatile. Redis additionally provides native support for atomically\n manipulating and querying data structures such as lists and sets.\n .\n The dataset is stored entirely in memory and periodically flushed to disk.\nDescription-md5: 9160ed1405585ab844f8750a9305d33f\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only redis-server",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "redis-server=5:7.0.15-1ubuntu0.24.04.5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/redis-server",
+      "timestamp_utc": "2026-11-05T12:28:54.919768+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 redis-server amd64 5:7.0.15-1ubuntu0.24.04.5 [51.7 kB]\nFetched 51.7 kB in 1s (86.6 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract redis-server without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/redis-server/redis-server_5%3a7.0.15-1ubuntu0.24.04.5_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:55.788383+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for redis-tools",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "redis-tools"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:55.886643+00:00",
+      "exit_code": 0,
+      "stdout": "Package: redis-tools\nSource: redis\nPriority: optional\nSection: universe/database\nInstalled-Size: 6333\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 5:7.0.15-1ubuntu0.24.04.5\nReplaces: redis-server (<< 2:2.6.16-1)\nSuggests: ruby-redis\nDepends: adduser, libatomic1 (>= 4.8), libc6 (>= 2.38), libjemalloc2 (>= 3.5.0), liblzf1 (>= 1.5), libssl3t64 (>= 3.0.0), libsystemd0\nBreaks: redis-server (<< 2:2.6.16-1)\nFilename: pool/universe/r/redis/redis-tools_7.0.15-1ubuntu0.24.04.5_amd64.deb\nSize: 1166518\nMD5sum: 2276d184d8af9dbc972ef0c1d49e7acc\nSHA1: 9c6f6d88af42d96a1fadf03a1d5d7310a0881a8e\nSHA256: 6e5c009ce7761d0a956dafcfcf054ddeecc7a51efcc38215f26bb5794a4e93e1\nSHA512: a483111fdb19f85da1ae4f58e72b2c352784cb0d0ace19af64af0f6c1d973831eaa2e2b933d1aca72848e08c54ed695a31a5f9261b22871268d9a8b8aa7f5d30\nHomepage: https://redis.io/\nDescription-en: Persistent key-value database with network interface (client)\n Redis is a key-value database in a similar vein to memcache but the dataset\n is non-volatile. Redis additionally provides native support for atomically\n manipulating and querying data structures such as lists and sets.\n .\n This package contains the command line client and other tools.\nDescription-md5: 73e12355ae0942ddf9ddc6d068f95d50\nOriginal-Maintainer: Chris Lamb <lamby@debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: redis-tools\nArchitecture: amd64\nVersion: 5:7.0.15-1build2\nPriority: optional\nSection: universe/database\nSource: redis\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Chris Lamb <lamby@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 6324\nDepends: adduser, libatomic1 (>= 4.8), libc6 (>= 2.38), libjemalloc2 (>= 3.5.0), liblzf1 (>= 1.5), libssl3t64 (>= 3.0.0), libsystemd0\nSuggests: ruby-redis\nBreaks: redis-server (<< 2:2.6.16-1)\nReplaces: redis-server (<< 2:2.6.16-1)\nFilename: pool/universe/r/redis/redis-tools_7.0.15-1build2_amd64.deb\nSize: 1165392\nMD5sum: e5c84a22c10e6f708f7d6b87d6d23fa6\nSHA1: ee61f6c5f570aea3e01f0b8e40e74b42a5de392f\nSHA256: c02e7a8a11d0b7611bfce1bcb93bc44540769122ebd08fa6dc5493440281f7ee\nSHA512: 7ad2994a6fe19c45b35ee149471f1a2ee9d297f9b6463987308e83b3bc58f40a2943947383f508053e82c062de4236a8e3cc9fbabdd87dbea5ee5ab592c594b7\nHomepage: https://redis.io/\nDescription-en: Persistent key-value database with network interface (client)\n Redis is a key-value database in a similar vein to memcache but the dataset\n is non-volatile. Redis additionally provides native support for atomically\n manipulating and querying data structures such as lists and sets.\n .\n This package contains the command line client and other tools.\nDescription-md5: 73e12355ae0942ddf9ddc6d068f95d50\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only redis-tools",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "redis-tools=5:7.0.15-1ubuntu0.24.04.5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/redis-tools",
+      "timestamp_utc": "2026-11-05T12:28:55.920709+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 redis-tools amd64 5:7.0.15-1ubuntu0.24.04.5 [1167 kB]\nFetched 1167 kB in 1s (909 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract redis-tools without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/redis-tools/redis-tools_5%3a7.0.15-1ubuntu0.24.04.5_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:57.504304+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libjemalloc2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libjemalloc2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:57.760349+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libjemalloc2\nArchitecture: amd64\nVersion: 5.3.0-2build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: jemalloc\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Faidon Liambotis <paravoid@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 839\nDepends: libc6 (>= 2.34), libgcc-s1 (>= 3.3), libstdc++6 (>= 4.4)\nFilename: pool/universe/j/jemalloc/libjemalloc2_5.3.0-2build1_amd64.deb\nSize: 256148\nMD5sum: f5e698200675d087dd3f795b94d1ac9a\nSHA1: 7a2783c346dfa26ade4fcfd0cc3e41701453cfda\nSHA256: 0cccf7701765b5a633b964ed551c2bd1c074cad17daea8fa20a4e9cad0adb5a8\nSHA512: 1b55456509bc1de324ddc12296b7f1ebdcd69533a1c53fb0c14e25a26ffde1a3e8c84d257020a1ceb924486354c52e01a181189211c55d0c9af57b5e467cfdda\nHomepage: https://jemalloc.net/\nDescription-en: general-purpose scalable concurrent malloc(3) implementation\n A library providing a malloc(3) implementation for multi-threaded processes on\n multi-processor systems.\n .\n Notable features are reduced lock contention, predictable low fragmentation,\n and introspection with heap profiling.\nDescription-md5: 178d355533ed77770701dbe22e8a79f5\nTask: ubuntustudio-video, ubuntustudio-graphics\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libjemalloc2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libjemalloc2=5.3.0-2build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/libjemalloc2",
+      "timestamp_utc": "2026-11-05T12:28:57.795515+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libjemalloc2 amd64 5.3.0-2build1 [256 kB]\nFetched 256 kB in 1s (272 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libjemalloc2 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/libjemalloc2/libjemalloc2_5.3.0-2build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:59.025321+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for liblzf1",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "liblzf1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:59.079673+00:00",
+      "exit_code": 0,
+      "stdout": "Package: liblzf1\nArchitecture: amd64\nVersion: 3.6-4\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: liblzf\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Timo Röhling <roehling@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 36\nDepends: libc6 (>= 2.4)\nFilename: pool/universe/libl/liblzf/liblzf1_3.6-4_amd64.deb\nSize: 7624\nMD5sum: b039e3bf6072b4c426efd3daeec6a306\nSHA1: b4de23db0115a387ba4dc6f263bb0ab7fc2c7d05\nSHA256: 253182d4718271565d6c24125f27dd93da56fce34b34d8226615cb3553bbe73f\nSHA512: 846125ed8cb4fc1a114b8389083cef1ff7d131d48a1089c638187490c4fd94e76c275818c6f57d70c2d229fba51a9105bdc6b80a13f5f0dac6b3535064827635\nHomepage: http://software.schmorp.de/pkg/liblzf.html\nDescription-en: Very small data compression library\n This library implements the very, very fast LZF compression algorithm written\n in C. Compression ratios are moderate with 40 to 50 percent for typical\n binary data, but decompression speed is basically at unoptimized memcpy\n speed.\nDescription-md5: 877aea019a6222e979f902a326f8df7a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only liblzf1",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "liblzf1=3.6-4"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/liblzf1",
+      "timestamp_utc": "2026-11-05T12:28:59.109379+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblzf1 amd64 3.6-4 [7624 B]\nFetched 7624 B in 0s (41.4 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract liblzf1 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/liblzf1/liblzf1_3.6-4_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:59.582702+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for liblua5.1-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "liblua5.1-0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:28:59.631600+00:00",
+      "exit_code": 0,
+      "stdout": "Package: liblua5.1-0\nArchitecture: amd64\nVersion: 5.1.5-9build2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: lua5.1\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian QA Group <packages@qa.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 422\nDepends: libc6 (>= 2.38), libstdc++6 (>= 4.1.1)\nFilename: pool/universe/l/lua5.1/liblua5.1-0_5.1.5-9build2_amd64.deb\nSize: 119800\nMD5sum: 655189bad4226b1beb89a8274f66bc7f\nSHA1: 1e09d92aca5bcfe1f5661cee3ebafcbb2695b4f3\nSHA256: 2faa6821017f587d016afac1a30e092cc33fcc4ca0afac3349b6523aa8ade5bd\nSHA512: b5612ac1fdcc3e909655bf968a05bdc9be4b676742eeb6d6d3002b07780c47ce081f4d5e2cab0501d4b07ec820454c77a70414925dba567d88f477212dbed5e9\nHomepage: http://www.lua.org\nDescription-en: Shared library for the Lua interpreter version 5.1\n Lua is a powerful, light-weight programming language designed for extending\n applications.  The language engine is accessible as a library, having a C\n API which allows the application to exchange data with Lua programs and also\n to extend Lua with C functions.  Lua is also used as a general-purpose,\n stand-alone language through the simple command line interpreter provided.\n .\n This package contains runtime libraries.  You shouldn't need to install it\n explicitly.\nDescription-md5: bc352b5115dff05ff2aede2bb7cb6dbb\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only liblua5.1-0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "liblua5.1-0=5.1.5-9build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/liblua5.1-0",
+      "timestamp_utc": "2026-11-05T12:28:59.663386+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblua5.1-0 amd64 5.1.5-9build2 [120 kB]\nFetched 120 kB in 0s (310 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract liblua5.1-0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/packages/liblua5.1-0/liblua5.1-0_5.1.5-9build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:29:00.354452+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Record isolated Redis version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:29:00.421399+00:00",
+      "exit_code": 0,
+      "stdout": "Redis server v=7.0.15 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=d064f9f48c901a92\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Record native Greenbone NASL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:29:00.640592+00:00",
+      "exit_code": 0,
+      "stdout": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Isolated local Redis KB, TCP disabled",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--port",
+        "0",
+        "--unixsocket",
+        "redis.sock",
+        "--unixsocketperm",
+        "600",
+        "--save",
+        "",
+        "--appendonly",
+        "no"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:29:01.246150+00:00",
+      "exit_code": 1,
+      "stdout": "1255:C 05 Nov 2026 13:29:01.373 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo\n1255:C 05 Nov 2026 13:29:01.373 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=1255, just started\n1255:C 05 Nov 2026 13:29:01.373 # Configuration loaded\n1255:M 05 Nov 2026 13:29:01.374 * monotonic clock: POSIX clock_gettime\n1255:M 05 Nov 2026 13:29:01.375 # Failed opening Unix socket: bind: Operation not supported\n",
+      "stderr": "",
+      "own_process_stopped": true
+    },
+    {
+      "label": "Record isolated Redis version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:31:33.424133+00:00",
+      "exit_code": 0,
+      "stdout": "Redis server v=7.0.15 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=d064f9f48c901a92\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Record native Greenbone NASL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:31:33.722349+00:00",
+      "exit_code": 0,
+      "stdout": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Parse exact NASL source with isolated Redis KB",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-p",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "hello.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:31:34.752751+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute only original display script; no scans or remote hosts",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "hello.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:31:35.043952+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "** WARNING : packet forgery will not work\n** as NASL is not running as root\nlib  nasl-Message: 13:31:35.306: Hello, World!\n\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Isolated local Redis KB, TCP disabled",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--port",
+        "0",
+        "--unixsocket",
+        "/tmp/corpus-nasl-st4oxolp/redis.sock",
+        "--unixsocketperm",
+        "600",
+        "--save",
+        "",
+        "--appendonly",
+        "no"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:31:34.442188+00:00",
+      "exit_code": 0,
+      "stdout": "1209:C 05 Nov 2026 13:31:34.676 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo\n1209:C 05 Nov 2026 13:31:34.677 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=1209, just started\n1209:C 05 Nov 2026 13:31:34.677 # Configuration loaded\n1209:M 05 Nov 2026 13:31:34.678 * monotonic clock: POSIX clock_gettime\n1209:M 05 Nov 2026 13:31:34.683 * Running mode=standalone, port=0.\n1209:M 05 Nov 2026 13:31:34.683 # Server initialized\n1209:M 05 Nov 2026 13:31:34.684 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.\n1209:M 05 Nov 2026 13:31:34.688 * The server is now ready to accept connections at /tmp/corpus-nasl-st4oxolp/redis.sock\n1209:signal-handler (1793881895) Received SIGTERM scheduling shutdown...\n1209:M 05 Nov 2026 13:31:35.391 # User requested shutdown...\n1209:M 05 Nov 2026 13:31:35.391 * Removing the unix socket file.\n1209:M 05 Nov 2026 13:31:35.392 # Redis is now ready to exit, bye bye...\n",
+      "stderr": "",
+      "own_process_stopped": true
+    },
+    {
+      "label": "Record isolated Redis version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:20.311592+00:00",
+      "exit_code": 0,
+      "stdout": "Redis server v=7.0.15 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=d064f9f48c901a92\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Record native Greenbone NASL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:20.621716+00:00",
+      "exit_code": 0,
+      "stdout": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Parse exact NASL source with isolated Redis KB",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-p",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "hello.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:21.653998+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute only original display script; no scans or remote hosts",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "hello.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:21.923487+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "** WARNING : packet forgery will not work\n** as NASL is not running as root\nlib  nasl-Message: 13:33:22.173: Hello, World!\n\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Parse exact NASL include fixture through native driver",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-p",
+        "-I",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant/driver.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:22.250147+00:00",
+      "exit_code": 0,
+      "stdout": "Unknown option -I\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute exact native NASL include fixture",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-I",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant/driver.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:22.563318+00:00",
+      "exit_code": 0,
+      "stdout": "Unknown option -I\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Isolated local Redis KB, TCP disabled",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--port",
+        "0",
+        "--unixsocket",
+        "/tmp/corpus-nasl-wid8gxql/redis.sock",
+        "--unixsocketperm",
+        "600",
+        "--save",
+        "",
+        "--appendonly",
+        "no"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:33:21.344801+00:00",
+      "exit_code": 0,
+      "stdout": "1739:C 05 Nov 2026 13:33:21.556 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo\n1739:C 05 Nov 2026 13:33:21.557 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=1739, just started\n1739:C 05 Nov 2026 13:33:21.557 # Configuration loaded\n1739:M 05 Nov 2026 13:33:21.558 * monotonic clock: POSIX clock_gettime\n1739:M 05 Nov 2026 13:33:21.561 * Running mode=standalone, port=0.\n1739:M 05 Nov 2026 13:33:21.561 # Server initialized\n1739:M 05 Nov 2026 13:33:21.561 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.\n1739:M 05 Nov 2026 13:33:21.565 * The server is now ready to accept connections at /tmp/corpus-nasl-wid8gxql/redis.sock\n1739:signal-handler (1793882002) Received SIGTERM scheduling shutdown...\n1739:M 05 Nov 2026 13:33:22.873 # User requested shutdown...\n1739:M 05 Nov 2026 13:33:22.873 * Removing the unix socket file.\n1739:M 05 Nov 2026 13:33:22.874 # Redis is now ready to exit, bye bye...\n",
+      "stderr": "",
+      "own_process_stopped": true
+    },
+    {
+      "label": "Record isolated Redis version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:35:07.313376+00:00",
+      "exit_code": 0,
+      "stdout": "Redis server v=7.0.15 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=d064f9f48c901a92\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Record native Greenbone NASL version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:35:07.579225+00:00",
+      "exit_code": 0,
+      "stdout": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Parse exact NASL source with isolated Redis KB",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-p",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "hello.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:35:08.464308+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute only original display script; no scans or remote hosts",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "hello.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:35:08.726845+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "** WARNING : packet forgery will not work\n** as NASL is not running as root\nlib  nasl-Message: 13:35:08.977: Hello, World!\n\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Parse exact NASL include fixture through native driver",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-p",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "driver.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant",
+      "timestamp_utc": "2026-11-05T12:35:09.052821+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Execute exact native NASL include fixture",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+        "-X",
+        "-c",
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+        "driver.nasl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant",
+      "timestamp_utc": "2026-11-05T12:35:09.311257+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "** WARNING : packet forgery will not work\n** as NASL is not running as root\nlib  nasl-Message: 13:35:09.533: Hello, World!\n\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Isolated local Redis KB, TCP disabled",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/bin/redis-server",
+        "--port",
+        "0",
+        "--unixsocket",
+        "/tmp/corpus-nasl-9dh6naxw/redis.sock",
+        "--unixsocketperm",
+        "600",
+        "--save",
+        "",
+        "--appendonly",
+        "no"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl",
+      "timestamp_utc": "2026-11-05T12:35:08.254417+00:00",
+      "exit_code": 0,
+      "stdout": "1887:C 05 Nov 2026 13:35:08.449 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo\n1887:C 05 Nov 2026 13:35:08.450 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=1887, just started\n1887:C 05 Nov 2026 13:35:08.450 # Configuration loaded\n1887:M 05 Nov 2026 13:35:08.451 * monotonic clock: POSIX clock_gettime\n1887:M 05 Nov 2026 13:35:08.454 * Running mode=standalone, port=0.\n1887:M 05 Nov 2026 13:35:08.455 # Server initialized\n1887:M 05 Nov 2026 13:35:08.455 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.\n1887:M 05 Nov 2026 13:35:08.458 * The server is now ready to accept connections at /tmp/corpus-nasl-9dh6naxw/redis.sock\n1887:signal-handler (1793882109) Received SIGTERM scheduling shutdown...\n1887:M 05 Nov 2026 13:35:09.564 # User requested shutdown...\n1887:M 05 Nov 2026 13:35:09.564 * Removing the unix socket file.\n1887:M 05 Nov 2026 13:35:09.564 # Redis is now ready to exit, bye bye...\n",
+      "stderr": "",
+      "own_process_stopped": true
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "redis-server",
+      "version": "5:7.0.15-1ubuntu0.24.04.5",
+      "ubuntu_archive_path": "pool/universe/r/redis/redis-server_7.0.15-1ubuntu0.24.04.5_amd64.deb",
+      "sha256": "5f41607fb77674078c013b2a6196a748c3a5f6ec4bd3201cd08478dce3e26d05"
+    },
+    {
+      "name": "redis-tools",
+      "version": "5:7.0.15-1ubuntu0.24.04.5",
+      "ubuntu_archive_path": "pool/universe/r/redis/redis-tools_7.0.15-1ubuntu0.24.04.5_amd64.deb",
+      "sha256": "6e5c009ce7761d0a956dafcfcf054ddeecc7a51efcc38215f26bb5794a4e93e1"
+    },
+    {
+      "name": "libjemalloc2",
+      "version": "5.3.0-2build1",
+      "ubuntu_archive_path": "pool/universe/j/jemalloc/libjemalloc2_5.3.0-2build1_amd64.deb",
+      "sha256": "0cccf7701765b5a633b964ed551c2bd1c074cad17daea8fa20a4e9cad0adb5a8"
+    },
+    {
+      "name": "liblzf1",
+      "version": "3.6-4",
+      "ubuntu_archive_path": "pool/universe/libl/liblzf/liblzf1_3.6-4_amd64.deb",
+      "sha256": "253182d4718271565d6c24125f27dd93da56fce34b34d8226615cb3553bbe73f"
+    },
+    {
+      "name": "liblua5.1-0",
+      "version": "5.1.5-9build2",
+      "ubuntu_archive_path": "pool/universe/l/lua5.1/liblua5.1-0_5.1.5-9build2_amd64.deb",
+      "sha256": "2faa6821017f587d016afac1a30e092cc33fcc4ca0afac3349b6523aa8ade5bd"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#454 NASL/hello.nasl": "d0ef61725baa7afa4a3c95ef685cf6bd84e14f047308acd50099b0b60886bb51",
+    "examples/#454 NASL/variants/inc-dd126fb7/hello.inc": "5bfffc3e2878a4a9f76d701681774a11956f300a40f657a451fe903e4fa482be",
+    "examples/#454 NASL/variants/inc-dd126fb7/driver.nasl": "85f71558fcc4f5b8cf802078a9b0fb30a5e098b45fc02923e14718fea9a30b3f"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://github.com/greenbone/openvas-scanner/blob/v22.7.9/nasl/nasl.c",
+    "https://github.com/greenbone/openvas-scanner/blob/v22.7.9/INSTALL.md"
+  ],
+  "toolchain": {
+    "name": "Greenbone OpenVAS NASL",
+    "version": "openvas-nasl 22.7.9\n\nCopyright (C) 2002 - 2004 Tenable Network Security\nCopyright (C) 2022 Greenbone Networks GmbH",
+    "executable_sha256": "98812e40c646dcf8855e8804f3deca07cc82eaf23697f59d6b1a45f7b89d7a21"
+  },
+  "temporary_socket_directory_removed": true,
+  "native_display_payload": "Hello, World!\n",
+  "variant_results": [
+    {
+      "ordinal": 454,
+      "main_status": "unchanged",
+      "extension": ".inc",
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "source_hashes": {
+        "examples/#454 NASL/variants/inc-dd126fb7/hello.inc": "5bfffc3e2878a4a9f76d701681774a11956f300a40f657a451fe903e4fa482be",
+        "examples/#454 NASL/variants/inc-dd126fb7/driver.nasl": "85f71558fcc4f5b8cf802078a9b0fb30a5e098b45fc02923e14718fea9a30b3f"
+      },
+      "steps": [
+        {
+          "label": "Parse exact NASL include fixture through native driver",
+          "command": [
+            "timeout",
+            "--kill-after=3s",
+            "25s",
+            "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+            "-X",
+            "-p",
+            "-c",
+            "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+            "driver.nasl"
+          ],
+          "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant",
+          "timestamp_utc": "2026-11-05T12:35:09.052821+00:00",
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "isolation_environment": {
+            "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+            "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+            "LC_ALL": "C.UTF-8",
+            "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+          }
+        },
+        {
+          "label": "Execute exact native NASL include fixture",
+          "command": [
+            "timeout",
+            "--kill-after=3s",
+            "25s",
+            "${WORKSPACE}/work/tools_441_460/linux/usr/bin/openvas-nasl",
+            "-X",
+            "-c",
+            "${WORKSPACE}/work/native_batch_20261105/middle/nasl/openvas.conf",
+            "driver.nasl"
+          ],
+          "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/include_variant",
+          "timestamp_utc": "2026-11-05T12:35:09.311257+00:00",
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "** WARNING : packet forgery will not work\n** as NASL is not running as root\nlib  nasl-Message: 13:35:09.533: Hello, World!\n\n",
+          "isolation_environment": {
+            "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/home",
+            "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/tmp",
+            "LC_ALL": "C.UTF-8",
+            "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/nasl/root/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib:${WORKSPACE}/work/tools_441_460/linux/usr/lib/x86_64-linux-gnu"
+          }
+        }
+      ],
+      "scope": "Native NASL parser and original driver load the exact .inc file and display its greeting through Greenbone logging."
+    }
+  ],
+  "semantic_scope": "Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used.",
+  "checker_corrections": [
+    {
+      "initial_assertion": "stdout == \"Hello, World!\\n\"",
+      "observed": "Greenbone display() uses its GLib message logger on stderr; successful native exit0 and exact message preserved in the command records.",
+      "change": "Match the exact greeting payload in the native stderr record. No source bytes changed."
+    },
+    {
+      "initial_invocation": "Native include driver invoked with -I",
+      "observed": "Version22.7.9 reports Unknown option -I (stdout); these failed command records are preserved.",
+      "change": "Run the unchanged driver from its include directory with no unsupported option."
+    }
+  ],
+  "extensions_verified": [
+    ".nasl",
+    ".inc"
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used."
+}

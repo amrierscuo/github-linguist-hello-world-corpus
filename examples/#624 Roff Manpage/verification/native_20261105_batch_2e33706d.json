@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:58.142536+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Roff Manpage",
+  "ordinal": 624,
+  "commands": [
+    {
+      "label": "Native groff version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_621_640/ubuntu/usr/bin/groff",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d",
+      "timestamp_utc": "2026-11-05T12:28:58.183230+00:00",
+      "exit_code": 0,
+      "stdout": "GNU groff version 1.23.0\nCopyright (C) 2022 Free Software Foundation, Inc.\nGNU groff comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute copies of groff and its subprograms\nunder the terms of the GNU General Public License.\nFor more information about these matters, see the file\nnamed COPYING.\n\ncalled subprograms:\n\nGNU troff (groff) version 1.23.0\nGNU grops (groff) version 1.23.0\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/bin:/usr/bin:/bin",
+        "GROFF_FONT_PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/font",
+        "GROFF_TMAC_PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/tmac",
+        "GROFF_NO_SGR": "1"
+      }
+    },
+    {
+      "label": "Render exact Roff variant with its intended macro package",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_621_640/ubuntu/usr/bin/groff",
+        "-Tascii",
+        "-man",
+        "hello.3pm"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/variants/3pm-8f3210f6",
+      "timestamp_utc": "2026-11-05T12:28:58.261650+00:00",
+      "exit_code": 0,
+      "stdout": "_\bH_\bE_\bL_\bL_\bO(3PM)                       Corpus Manual                      _\bH_\bE_\bL_\bL_\bO(3PM)\n\nN\bNA\bAM\bME\bE\n       hello - corpus greeting\n\nD\bDE\bES\bSC\bCR\bRI\bIP\bPT\bTI\bIO\bON\bN\n       Hello, World!\n\nCorpus Example                    2026-10-08                        _\bH_\bE_\bL_\bL_\bO(3PM)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0624_2e33706d/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/bin:/usr/bin:/bin",
+        "GROFF_FONT_PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/font",
+        "GROFF_TMAC_PATH": "${WORKSPACE}/work/tools_621_640/ubuntu/usr/share/groff/1.23.0/tmac",
+        "GROFF_NO_SGR": "1"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#624 Roff Manpage/variants/3pm-8f3210f6/hello.3pm": "54842ea66b54838174333d334af5ffabb41c83fa2770e27b56389aa5eb1e3625"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".3pm",
+  "documentation": "examples/#624 Roff Manpage/variants/3pm-8f3210f6/README.md",
+  "sources": [
+    "https://www.gnu.org/software/groff/manual/groff.html"
+  ],
+  "instructions_read_sha256": {
+    "examples/#624 Roff Manpage/README.md": "180994f2732d051b6f067c67d7a92416d069fe933c4f5d314c9a9487e5569306",
+    "examples/#624 Roff Manpage/variants/3pm-8f3210f6/README.md": "fea16275a956428691f9d46418ebe8549bcc34cd419159331b810e71585a7428"
+  },
+  "toolchain": "GNU groff version 1.23.0",
+  "semantic_scope": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used."
+}

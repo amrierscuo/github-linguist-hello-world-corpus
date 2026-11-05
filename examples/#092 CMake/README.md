@@ -1,5 +1,11 @@
 # #092 CMake
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.cmake`: Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel. [Evidence](verification/native_20261105_batch_2e636d616b65.json).
+- `.cmake.in`: Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel. [Evidence](verification/native_20261105_batch_2e636d616b652e696e.json).
+
 Perform in CMake script mode a check on the value greeting and write Hello, World! with message.
 
 ## Toolchain
@@ -42,5 +48,5 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cmake` | [hello.cmake](hello.cmake), [configure.cmake](variants/ext-cmake-in-2e636d616b652e696e/configure.cmake) created; verification pending |
-| `.cmake.in` | [hello.cmake.in](variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in) created; verification pending |
+| `.cmake` | [hello.cmake](hello.cmake), [configure.cmake](variants/ext-cmake-in-2e636d616b652e696e/configure.cmake) syntax and behavior verified |
+| `.cmake.in` | [hello.cmake.in](variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in) syntax and behavior verified |

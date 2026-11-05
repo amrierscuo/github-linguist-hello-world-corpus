@@ -1,5 +1,9 @@
 # 0085 C++: variant `.re`
 
+## Latest recorded verification
+
+**Verification pending** for `.re`. The genuine re2c generator accepted the original .re source, but the generated C++ failed to compile because YYLIMIT and YYFILL were not defined. This variant remains unverified and needs a source correction. [Attempt evidence](../../verification/native_20261105_batch_blocked_2e7265.json).
+
 Role: Re2c source embedded in C++; not a simple alias .cpp.
 
 Type: **adapted**. Starting model: examples/#085 C++/hello.cpp; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ re2c hello.re -o <output>/hello.cpp; g++ <output>/hello.cpp -o <output>/hello; <
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

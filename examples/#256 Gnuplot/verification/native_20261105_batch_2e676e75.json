@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:43.568941+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Gnuplot",
+  "ordinal": 256,
+  "commands": [
+    {
+      "label": "Native no-X Gnuplot version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_241_260/apt-root/usr/bin/gnuplot-nox",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75",
+      "timestamp_utc": "2026-11-05T12:28:43.614510+00:00",
+      "exit_code": 0,
+      "stdout": "gnuplot 6.0 patchlevel 0\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_241_260/apt-root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/root/usr/lib",
+        "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell:<user-profile>/.codex/tmp/arg0-windows/codex-arg0u6ifjv:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libheif/libheif/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/jxrlib/jxrlib/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:<user-profile>/anaconda3:<user-profile>/anaconda3/Library/mingw-w64/bin:<user-profile>/anaconda3/Library/usr/bin:<user-profile>/anaconda3/Library/bin:<user-profile>/anaconda3/Scripts:<user-profile>/anaconda3/bin:<user-profile>/anaconda3/condabin:/mnt/c/Program Files/Microsoft/jdk-21.0.12.101-hotspot/bin:/mnt/c/Python313/Scripts:/mnt/c/Python313:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files (x86)/cloudflared:/mnt/c/Program Files/nodejs:<user-profile>/AppData/Local/Muse Hub/lib:/mnt/c/Program Files/WireGuard:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/usbipd-win:/mnt/c/Program Files/GitHub CLI:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:<user-profile>/AppData/Local/Muse Hub/lib:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell:<user-profile>/AppData/Local/Microsoft/WindowsApps:<user-profile>/AppData/Local/Microsoft/WinGet/Links:<user-profile>/AppData/Roaming/npm:<user-profile>/AppData/Local/Muse Hub/lib:<user-profile>/AppData/Roaming/Python/Python313/Scripts:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:<user-profile>/AppData/Local/Muse Hub/lib:<user-profile>/AppData/Roaming/Python/Python313/Scripts:<user-profile>/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:<user-profile>/AppData/Local/Programs/MiKTeX/miktex/bin/x64:<user-profile>/.dotnet/tools:<user-profile>/AppData/Local/Microsoft/WinGet/Packages/Genymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe/scrcpy-win64-v4.1:/mnt/c/Program Files/Microsoft/jdk-21.0.12.101-hotspot/bin:<user-profile>/AppData/Local/Programs/R/R-4.6.1/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/cmd:<user-profile>/AppData/Local/OpenAI/Codex/bin/85e840bd9ad04c3b:<user-profile>/AppData/Local/OpenAI/Codex/bin/a159911ff70742e9"
+      }
+    },
+    {
+      "label": "Render exact Gnuplot script in its ASCII dumb terminal",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_241_260/apt-root/usr/bin/gnuplot-nox",
+        "hello.gnu"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/variants/ext-gnu-2e676e75",
+      "timestamp_utc": "2026-11-05T12:28:43.752835+00:00",
+      "exit_code": 0,
+      "stdout": "\f                                                            \n                                                            \n                         Hello, World!                      \n    1 +-------------------------------------------------+   \n      |         +         +         +         + ******  |   \n  0.8 |-+                                 ******      +-|   \n      |                              ******             |   \n  0.6 |-+                      ******                 +-|   \n  0.4 |-+                 ******                      +-|   \n      |             ******                              |   \n  0.2 |-+      ******                                 +-|   \n      |  ****** +         +         +         +         |   \n    0 +-------------------------------------------------+   \n      0        0.2       0.4       0.6       0.8        1   \n                                                            \n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_241_260/apt-root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0256_2e676e75/root/usr/lib",
+        "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell:<user-profile>/.codex/tmp/arg0-windows/codex-arg0u6ifjv:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libheif/libheif/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/jxrlib/jxrlib/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:<user-profile>/anaconda3:<user-profile>/anaconda3/Library/mingw-w64/bin:<user-profile>/anaconda3/Library/usr/bin:<user-profile>/anaconda3/Library/bin:<user-profile>/anaconda3/Scripts:<user-profile>/anaconda3/bin:<user-profile>/anaconda3/condabin:/mnt/c/Program Files/Microsoft/jdk-21.0.12.101-hotspot/bin:/mnt/c/Python313/Scripts:/mnt/c/Python313:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files (x86)/cloudflared:/mnt/c/Program Files/nodejs:<user-profile>/AppData/Local/Muse Hub/lib:/mnt/c/Program Files/WireGuard:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/usbipd-win:/mnt/c/Program Files/GitHub CLI:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:<user-profile>/AppData/Local/Muse Hub/lib:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell:<user-profile>/AppData/Local/Microsoft/WindowsApps:<user-profile>/AppData/Local/Microsoft/WinGet/Links:<user-profile>/AppData/Roaming/npm:<user-profile>/AppData/Local/Muse Hub/lib:<user-profile>/AppData/Roaming/Python/Python313/Scripts:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:<user-profile>/AppData/Local/Muse Hub/lib:<user-profile>/AppData/Roaming/Python/Python313/Scripts:<user-profile>/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:<user-profile>/AppData/Local/Programs/MiKTeX/miktex/bin/x64:<user-profile>/.dotnet/tools:<user-profile>/AppData/Local/Microsoft/WinGet/Packages/Genymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe/scrcpy-win64-v4.1:/mnt/c/Program Files/Microsoft/jdk-21.0.12.101-hotspot/bin:<user-profile>/AppData/Local/Programs/R/R-4.6.1/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:<user-profile>/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/cmd:<user-profile>/AppData/Local/OpenAI/Codex/bin/85e840bd9ad04c3b:<user-profile>/AppData/Local/OpenAI/Codex/bin/a159911ff70742e9"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#256 Gnuplot/variants/ext-gnu-2e676e75/hello.gnu": "cf1bb1789002865229debfd8647a1b8e88f2fdef89e34bf51659005e5bb29ac1"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".gnu",
+  "documentation": "examples/#256 Gnuplot/variants/ext-gnu-2e676e75/README.md",
+  "sources": [
+    "https://www.gnuplot.info/documentation.html",
+    "https://gnuplot.sourceforge.net/docs/loc18701.html",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#256 Gnuplot/README.md": "2d063c9b9a89847b8d5845675da6c9ccb2cf1d08d4d978ca201f22e3d74e3335",
+    "examples/#256 Gnuplot/variants/ext-gnu-2e676e75/README.md": "9e645e5d310b9b9014a1ac9a717646c854d4c2eddb2f232eb673de74a4bd072c"
+  },
+  "toolchain": "gnuplot 6.0 patchlevel 0",
+  "semantic_scope": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used."
+}

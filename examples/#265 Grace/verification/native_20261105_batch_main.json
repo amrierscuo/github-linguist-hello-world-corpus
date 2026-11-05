@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:30:40.698501+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Grace",
+  "ordinal": 265,
+  "commands": [
+    {
+      "label": "Download official distribution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "105s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "100",
+        "https://nodejs.org/dist/v22.20.0/node-v22.20.0-linux-x64.tar.xz",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node-linux.tar.xz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:30:40.832988+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Download official distribution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "105s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "100",
+        "https://nodejs.org/dist/v22.20.0/SHASUMS256.txt",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node-shasums.txt"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:30:45.751486+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Node runtime version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:34:27.935647+00:00",
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/grace/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/grace/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib"
+      }
+    },
+    {
+      "label": "Download official compiler package metadata or archive",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "65s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "60",
+        "https://registry.npmjs.org/minigrace/latest",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/npm_metadata.json"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:34:28.079260+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Download official compiler package metadata or archive",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "65s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "60",
+        "https://registry.npmjs.org/minigrace/-/minigrace-1.0.5171.tgz",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/minigrace.tgz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:34:28.477833+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract official archive using bounded native tar",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "150s",
+        "tar",
+        "--extract",
+        "--file",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/minigrace.tgz",
+        "--directory",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:34:29.055196+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Official Minigrace compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "bash",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/minigrace-js",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:35:24.580836+00:00",
+      "exit_code": 0,
+      "stdout": "minigrace version 5171\ngit revision b57591d29fc5ee5270d114920bf671367b8c3ecb\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/grace/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/grace/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile and execute unchanged Grace program",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "60s",
+        "bash",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/minigrace-js",
+        "hello.grace"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:35:26.161225+00:00",
+      "exit_code": 3,
+      "stdout": "",
+      "stderr": "EnvironmentException: Can't load JavaScript module 'sha': is it installed?\n  raised from sha256OfFile(_) at line 23 of shasum\n  requested from block.apply at line 214 of xmodule\n  requested from dictionary(_).at(_)ifAbsent(_) at line 1008 of collections\n  requested from findOrBuildCompiledModule(_,_,_) at line 208 of xmodule\n  requested from checkExternalModule(_) at line 186 of xmodule\n  requested from checkDialect(_) at line 66 of xmodule\n  requested from setupContext(_) at line 407 of identifierresolution\n  requested from resolve(_) at line 1090 of identifierresolution\n  requested from block.apply at line 77 of compiler\n  requested from compileInputFile at line 23 of compiler\n  requested from module initialization in ${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/compiler.js\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/grace/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/grace/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib"
+      }
+    },
+    {
+      "label": "Read declared official npm dependency metadata",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "curl",
+        "-fsSL",
+        "--max-time",
+        "20",
+        "https://registry.npmjs.org/sha/3.0.0",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/sha-3.0.0.json"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:28.704502+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Fetch only the missing declared compiler dependency",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "curl",
+        "-fsSL",
+        "--max-time",
+        "20",
+        "https://registry.npmjs.org/sha/-/sha-3.0.0.tgz",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/sha-3.0.0.tgz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:29.092948+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract npm dependency only inside compiler tool directory",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "tar",
+        "-xf",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/sha-3.0.0.tgz",
+        "-C",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/node_modules/sha",
+        "--strip-components=1",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:29.322742+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read declared official npm dependency metadata",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "curl",
+        "-fsSL",
+        "--max-time",
+        "20",
+        "https://registry.npmjs.org/graceful-fs/4.2.11",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/graceful-fs-4.2.11.json"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:29.367993+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Fetch only the missing declared compiler dependency",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "curl",
+        "-fsSL",
+        "--max-time",
+        "20",
+        "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/graceful-fs-4.2.11.tgz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:29.809909+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract npm dependency only inside compiler tool directory",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "tar",
+        "-xf",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/graceful-fs-4.2.11.tgz",
+        "-C",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/node_modules/graceful-fs",
+        "--strip-components=1",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:30.006543+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Compile and execute original Grace with its complete declared dependencies",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "40s",
+        "bash",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/minigrace-js",
+        "hello.grace"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:36:30.062941+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "minigrace: program hello exited with code 0.\n\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/grace/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/grace/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib"
+      }
+    },
+    {
+      "label": "Execute compiler output with the official Grace runner invoked explicitly through Node",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "30s",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/tool/package/grace",
+        "hello.js"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/grace",
+      "timestamp_utc": "2026-11-05T12:37:33.601197+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/grace/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/grace/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/grace/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#265 Grace/hello.grace": "8021fc8919802e721947061c24dec15a0c4e76a5e141e772d5cf082fc5c1c3d9"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "downloads": [
+    {
+      "url": "https://nodejs.org/dist/v22.20.0/node-v22.20.0-linux-x64.tar.xz",
+      "filename": "node-linux.tar.xz",
+      "sha256": "00bbd05e306ea68b6e13e17360d0e2f680b493ef95f2fea1c4296ff7437530bc",
+      "bytes": 30737976
+    },
+    {
+      "url": "https://nodejs.org/dist/v22.20.0/SHASUMS256.txt",
+      "filename": "node-shasums.txt",
+      "sha256": "bf8c265bcf527d132273051e4d57c7b4a1da51c90c4acf121b9784a6e2e81e47",
+      "bytes": 3777
+    },
+    {
+      "url": "https://registry.npmjs.org/minigrace/latest",
+      "filename": "npm_metadata.json",
+      "sha256": "a8b6e2a07e1a472e07fc386fce3518880152d7309d98edeef14e83e71197b02c",
+      "bytes": 2158
+    },
+    {
+      "url": "https://registry.npmjs.org/minigrace/-/minigrace-1.0.5171.tgz",
+      "filename": "minigrace.tgz",
+      "sha256": "ac75d9e3fa39ba78f03ab913c03c8ffee13eb6d978ef9a74360e8b1cef27c719",
+      "bytes": 1806628
+    },
+    {
+      "url": "https://registry.npmjs.org/sha/-/sha-3.0.0.tgz",
+      "sha256": "a537f03b741081b3e15492784d26c951f52c37df769ddfe587db246afa1a7352",
+      "name": "sha",
+      "version": "3.0.0"
+    },
+    {
+      "url": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+      "sha256": "3961374aa161e6fed80d6f4b6aaf2fb7eafd2c9e5be34e865b375f0114dd099c",
+      "name": "graceful-fs",
+      "version": "4.2.11"
+    }
+  ],
+  "minigrace_version": "1.0.5171",
+  "toolchain": "Official minigrace 1.0.5171, sha 3.0.0 / graceful-fs 4.2.11, Node.js 22.20.0, Ubuntu WSL",
+  "generated_javascript": {
+    "sha256": "67972b09b6d9ce7ba7c0aa1251386b0ece7e1ebd266bd32e7828c051d040c653"
+  },
+  "sources": [
+    "https://github.com/gracelang/minigrace",
+    "https://github.com/gracelang/language"
+  ],
+  "semantic_scope": "The official Minigrace compiler parsed and compiled the unchanged Grace source with its standard dialect. The official Grace command-line runner, invoked through the pinned Node runtime rather than its machine-specific shebang, executed the resulting module and printed exactly Hello, World!.",
+  "verified_utc": "2026-11-05T12:37:33.601197+00:00",
+  "name": "Grace",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The official Minigrace compiler parsed and compiled the unchanged Grace source with its standard dialect. The official Grace command-line runner, invoked through the pinned Node runtime rather than its machine-specific shebang, executed the resulting module and printed exactly Hello, World!."
+}

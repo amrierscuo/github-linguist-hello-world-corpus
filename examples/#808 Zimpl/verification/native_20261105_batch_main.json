@@ -1,0 +1,805 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:32:02.783021+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Zimpl",
+  "ordinal": 808,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for glpk-utils",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "glpk-utils"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:06.515905+00:00",
+      "exit_code": 0,
+      "stdout": "Package: glpk-utils\nArchitecture: amd64\nVersion: 5.0-1build2\nPriority: optional\nSection: universe/math\nSource: glpk\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 1008\nDepends: libc6 (>= 2.38), libglpk40 (>= 4.59)\nFilename: pool/universe/g/glpk/glpk-utils_5.0-1build2_amd64.deb\nSize: 226814\nMD5sum: 588bec9f75056045f1ec1b7147cc7fc4\nSHA1: 4500d59d8b8fba46f622b488cd14968c10d23c62\nSHA256: 99dc35ce8a8fd638d839882e1135d0043ce6dbb9c61b7b685f5990f8e62fb5df\nSHA512: c2840b2eae1aa1b4f7dd91af2ceadcb12c2177ce83ab8df265fe533081724ab7e611418b1ea1697d98c93f3a8f30542641c683358d04b8c6e9cd4787cab3741e\nHomepage: https://www.gnu.org/software/glpk/glpk.html\nDescription-en: linear programming kit - utility files\n GLPK (GNU Linear Programming Kit) is intended for solving large-scale\n linear programming (LP), mixed integer programming (MIP), and other\n related problems. It is a set of routines written in ANSI C and\n organized in the form of a callable library.\n .\n This package contains a stand-alone LP/MIP solver (glpsol) and several example\n problems.\nDescription-md5: 859e10cd030ac3d469c3454c2a4638bb\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only glpk-utils",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "glpk-utils=5.0-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/glpk-utils",
+      "timestamp_utc": "2026-11-05T12:32:06.562625+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 glpk-utils amd64 5.0-1build2 [227 kB]\nFetched 227 kB in 1s (259 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract glpk-utils without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/glpk-utils/glpk-utils_5.0-1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:07.814808+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libglpk40",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libglpk40"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:08.620859+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libglpk40\nArchitecture: amd64\nVersion: 5.0-1build2\nMulti-Arch: same\nPriority: optional\nSection: universe/math\nSource: glpk\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 832\nDepends: libamd3 (>= 1:7.0.1), libc6 (>= 2.38), libcolamd3 (>= 1:7.0.1), libgmp10 (>= 2:6.3.0+dfsg), libltdl7 (>= 2.4.7), zlib1g (>= 1:1.1.4)\nSuggests: libiodbc2-dev, default-libmysqlclient-dev\nFilename: pool/universe/g/glpk/libglpk40_5.0-1build2_amd64.deb\nSize: 369010\nMD5sum: 11b2497ba368d7a644e687dcfc4517dd\nSHA1: 47a689c171e702d9ed76209005ad290f56533707\nSHA256: 93d855e7d9a394ea21b1e8b551210549c3b6af1c92f39065ac92237a54547a67\nSHA512: 108ae4bfb734efff82f374ff51ed46ec5d961a15ec5414a885c7186450cd2840d605d7d2a94ae57590f3ad6578a9a27b805fb347c765118ec35bf7cf5ed5fca6\nHomepage: https://www.gnu.org/software/glpk/glpk.html\nDescription-en: linear programming kit with integer (MIP) support\n GLPK (GNU Linear Programming Kit) is intended for solving large-scale\n linear programming (LP), mixed integer programming (MIP), and other\n related problems. It is a set of routines written in ANSI C and\n organized in the form of a callable library.\n .\n GLPK supports the GNU MathProg language, which is a subset of the\n AMPL language.  GLPK also supports the standard MPS and LP formats.\n .\n The GLPK package includes the following main components:\n    * Revised simplex method.\n    * Primal-dual interior point method.\n    * Branch-and-bound method.\n    * Translator for GNU MathProg modeling language.\n    * Application program interface (API).\n .\n In order to get connections between the internal MathProg model\n objects and external database tables, please install the\n libiodbc2-dev (for the iODBC table driver) and libmysqlclient-dev\n (for the MySQL table driver).\nDescription-md5: a59dfd97ae7c98fa4132822ad0935832\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libglpk40",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libglpk40=5.0-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libglpk40",
+      "timestamp_utc": "2026-11-05T12:32:08.658580+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libglpk40 amd64 5.0-1build2 [369 kB]\nFetched 369 kB in 1s (736 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libglpk40 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libglpk40/libglpk40_5.0-1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:09.506199+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libamd3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:09.592053+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libamd3\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 81\nDepends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/universe/s/suitesparse/libamd3_7.6.1+dfsg-1build1_amd64.deb\nSize: 27152\nMD5sum: a26f3e63900c18cdb57bb12a4b6e8328\nSHA1: 9f555f936872fe9d18352b58e467aa8511b45859\nSHA256: 557b88b1688b6ebfb058bd6c621daadb62bbb40059a1e33ed3fd3b7bef744f06\nSHA512: 7344e629c3d142d65ecdcb074d64c5a0b3c7b293ed5fd2023704c579d7b27ea4f7134c7f6200265554bcda75002a30a3f981549ebb315d95eaff62137f9379fd\nHomepage: http://suitesparse.com\nDescription-en: approximate minimum degree ordering library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The AMD library provides a set of routines for pre-ordering sparse matrices\n prior to Cholesky or LU factorization, using the \"Approximate Minimum Degree\n ordering\" algorithm.\nDescription-md5: 2d9505165b7b29c0b5677c11d21645cd\nTask: xubuntu-desktop, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-publishing, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libamd3=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libamd3",
+      "timestamp_utc": "2026-11-05T12:32:09.631513+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libamd3 amd64 1:7.6.1+dfsg-1build1 [27.2 kB]\nFetched 27.2 kB in 1s (53.3 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libamd3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libamd3/libamd3_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:10.446541+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libcolamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libcolamd3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:10.515362+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libcolamd3\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 65\nDepends: libc6 (>= 2.4), libsuitesparseconfig7 (>= 1:7.0.1)\nFilename: pool/main/s/suitesparse/libcolamd3_7.6.1+dfsg-1build1_amd64.deb\nSize: 19382\nMD5sum: 903aa113bae04003426ffa19ff5bdffb\nSHA1: 2366dd0a50f59bf500c3307fb70b36be91ae9a4d\nSHA256: 8f4c416275c325b2a14463da0e040b90802e3eb72d7fae4e4a6c3cd497e71e48\nSHA512: d811fac4a0f2051a0aa51b5a01a79471e67c10a7c1779aa98d2014b21bf4b6cc00798dd2ab2cf11f0aa4343625cfc111db93e22bc77f8955d51f75fce192879f\nHomepage: http://suitesparse.com\nDescription-en: column approximate minimum degree ordering library for sparse matrices\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The COLAMD library implements the \"COLumn Approximate Minimum Degree ordering\"\n algorithm. It computes a permutation vector P such that the LU factorization\n of A (:,P) tends to be sparser than that of A. The Cholesky factorization of\n (A (:,P))'*(A (:,P)) will also tend to be sparser than that of A'*A.\nDescription-md5: 6d693e970300aa191a71ea529934c483\nTask: ubuntu-desktop, ubuntu-desktop-raspi, kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libcolamd3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libcolamd3=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libcolamd3",
+      "timestamp_utc": "2026-11-05T12:32:10.551427+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libcolamd3 amd64 1:7.6.1+dfsg-1build1 [19.4 kB]\nFetched 19.4 kB in 0s (44.2 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libcolamd3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libcolamd3/libcolamd3_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:11.288996+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libsuitesparseconfig7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libsuitesparseconfig7"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:11.356817+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libsuitesparseconfig7\nArchitecture: amd64\nVersion: 1:7.6.1+dfsg-1build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: suitesparse\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 53\nDepends: libc6 (>= 2.35), libgomp1 (>= 4.2.1)\nFilename: pool/main/s/suitesparse/libsuitesparseconfig7_7.6.1+dfsg-1build1_amd64.deb\nSize: 12860\nMD5sum: 905ebdbd76ef6bab4c9222bac8bf2346\nSHA1: 3470b1caa69eff70d89a18fb43dd15536cb6f4f5\nSHA256: a27c55b471ebd184136567f0649f2d1425825ec535b0329ea3917c0fe6440471\nSHA512: 0910880dc3c104bd56eb6302ba81eb4f28bf2e98e263d4e32a9186b1a259b8632368b872c6e2d6ecf6b34c152cda8070dda393c4f03e931bd1818919e369de9b\nHomepage: http://suitesparse.com\nDescription-en: configuration routines for all SuiteSparse modules\n Suitesparse is a collection of libraries for computations involving\n sparse matrices.\n .\n The SuiteSparse_config library provides configuration routines that are common\n to all SuiteSparse libraries.\nDescription-md5: be384a2041b6480d81cce68d7d5847dd\nTask: ubuntu-desktop, ubuntu-desktop-raspi, kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libsuitesparseconfig7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libsuitesparseconfig7=1:7.6.1+dfsg-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libsuitesparseconfig7",
+      "timestamp_utc": "2026-11-05T12:32:11.390127+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libsuitesparseconfig7 amd64 1:7.6.1+dfsg-1build1 [12.9 kB]\nFetched 12.9 kB in 0s (53.5 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libsuitesparseconfig7 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libsuitesparseconfig7/libsuitesparseconfig7_1%3a7.6.1+dfsg-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:11.939771+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libltdl7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libltdl7"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:12.027876+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libltdl7\nArchitecture: amd64\nVersion: 2.4.7-7build1\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: libtool\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 421\nDepends: libc6 (>= 2.38)\nFilename: pool/main/libt/libtool/libltdl7_2.4.7-7build1_amd64.deb\nSize: 40258\nMD5sum: 48f37c5874863bd1d0eca4050aa30cae\nSHA1: 0d8cd784421bb1818ab43cd59533bf42ed964fdb\nSHA256: 02d0d2d7e1bf73f838a92f8df7a9b07b698c837e82bd89aee6a581cf793cd966\nSHA512: d29c7aae96d4f92e802c7be70b42d135112f0c0f5fb33052cccbf2b6ee4dbe0837c1d158103370eed52b96b434a2d3d44126c0c4183b0008ec997eb282278323\nHomepage: https://www.gnu.org/software/libtool/\nDescription-en: System independent dlopen wrapper for GNU libtool\n This package contains the run-time libltdl library.\n .\n A small library that aims at hiding the various difficulties of\n dlopening libraries from programmers.  It is a system independent\n dlopen wrapper for GNU libtool.\n .\n It supports the following dlopen interfaces:\n   * dlopen (Solaris, Linux and various BSD flavors)\n   * shl_load (HP-UX)\n   * LoadLibrary (Win16 and Win32)\n   * load_add_on (BeOS)\n   * GNU DLD (emulates dynamic linking for static libraries)\n   * libtool's dlpreopen\nDescription-md5: 52e45b791bdc69939d2238401cd6f7fe\nTask: ubuntu-desktop-minimal, ubuntu-desktop, print-server, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libltdl7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libltdl7=2.4.7-7build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libltdl7",
+      "timestamp_utc": "2026-11-05T12:32:12.062937+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libltdl7 amd64 2.4.7-7build1 [40.3 kB]\nFetched 40.3 kB in 0s (150 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libltdl7 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/packages/libltdl7/libltdl7_2.4.7-7build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:12.660208+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Original static Zimpl version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-V"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:12.734357+00:00",
+      "exit_code": 0,
+      "stdout": "3.2.0\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Resolve GLPK shared libraries",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:12.786409+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffead18a000)\n\tlibglpk.so.40 => ${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu/libglpk.so.40 (0x0000712bfbd2f000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000712bfbc3e000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000712bfba00000)\n\tlibcolamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu/libcolamd.so.3 (0x0000712bfbc35000)\n\tlibamd.so.3 => ${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu/libamd.so.3 (0x0000712bfbc26000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x0000712bfb9e4000)\n\tlibltdl.so.7 => ${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu/libltdl.so.7 (0x0000712bfbc1b000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x0000712bfb960000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000712bfbe07000)\n\tlibsuitesparseconfig.so.7 => ${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so.7 (0x0000712bfbc16000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000712bfb932000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x0000712bfb8dc000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "GLPK native version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:12.922833+00:00",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nCopyright (C) 2000-2020 Free Software Foundation, Inc.\n\nThis program has ABSOLUTELY NO WARRANTY.\n\nThis program is free software; you may re-distribute it under the terms\nof the GNU General Public License version 3 or later.\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Generate LP from exact hello.zpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/result0/hello",
+        "hello.zpl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:32:13.003352+00:00",
+      "exit_code": 1,
+      "stdout": "****************************************************\n* Zuse Institute Mathematical Programming Language *\n* Release 3.2.0 Copyright (C)2011 by Thorsten Koch *\n****************************************************\n*   This is free software and you are welcome to   *\n*     redistribute it under certain conditions     *\n*      ZIMPL comes with ABSOLUTELY NO WARRANTY     *\n****************************************************\n\nReading hello.zpl\n",
+      "stderr": "*** Error 800: File hello.zpl Line 3 : syntax error, unexpected SETSYM\n*** var x[I] real >= code[I] <= code[I]+1;\n***                       ^^^\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Generate LP from corrected hello.zpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello",
+        "hello.zpl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:34:54.618484+00:00",
+      "exit_code": 0,
+      "stdout": "****************************************************\n* Zuse Institute Mathematical Programming Language *\n* Release 3.2.0 Copyright (C)2011 by Thorsten Koch *\n****************************************************\n*   This is free software and you are welcome to   *\n*     redistribute it under certain conditions     *\n*      ZIMPL comes with ABSOLUTELY NO WARRANTY     *\n****************************************************\n\nReading hello.zpl\nInstructions evaluated: 537\nName: hello.zpl   Variables: 13   Constraints: 1   Non Zeros: 13\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp]\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.tbl]\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Solve corrected generated LP hello.zpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol",
+        "--lp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp",
+        "--write",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.sol",
+        "--wglp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.glp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:34:54.697109+00:00",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nParameter(s) specified in the command line:\n --lp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp\n --write ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.sol\n --wglp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.glp\nReading problem data from '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp'...\n1 row, 13 columns, 13 non-zeros\n32 lines were read\nWriting problem data to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.glp'...\n57 lines were written\nGLPK Simplex Optimizer 5.0\n1 row, 13 columns, 13 non-zeros\nPreprocessing...\n~     0: obj =   1.129000000e+03  infeas =  0.000e+00\nOPTIMAL SOLUTION FOUND BY LP PREPROCESSOR\nTime used:   0.0 secs\nMemory used: 0.0 Mb (39693 bytes)\nWriting basic solution to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.sol'...\n23 lines were written\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Generate LP from corrected hello.zpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello",
+        "hello.zpl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:36:29.444378+00:00",
+      "exit_code": 0,
+      "stdout": "****************************************************\n* Zuse Institute Mathematical Programming Language *\n* Release 3.2.0 Copyright (C)2011 by Thorsten Koch *\n****************************************************\n*   This is free software and you are welcome to   *\n*     redistribute it under certain conditions     *\n*      ZIMPL comes with ABSOLUTELY NO WARRANTY     *\n****************************************************\n\nReading hello.zpl\nInstructions evaluated: 537\nName: hello.zpl   Variables: 13   Constraints: 1   Non Zeros: 13\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp]\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.tbl]\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Solve corrected generated LP hello.zpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol",
+        "--lp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp",
+        "--write",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.sol",
+        "--wglp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.glp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:36:29.512741+00:00",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nParameter(s) specified in the command line:\n --lp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp\n --write ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.sol\n --wglp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.glp\nReading problem data from '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.lp'...\n1 row, 13 columns, 13 non-zeros\n32 lines were read\nWriting problem data to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.glp'...\n57 lines were written\nGLPK Simplex Optimizer 5.0\n1 row, 13 columns, 13 non-zeros\nPreprocessing...\n~     0: obj =   1.129000000e+03  infeas =  0.000e+00\nOPTIMAL SOLUTION FOUND BY LP PREPROCESSOR\nTime used:   0.0 secs\nMemory used: 0.0 Mb (39693 bytes)\nWriting basic solution to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result0/hello.sol'...\n23 lines were written\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Generate LP from corrected variants/zimpl-c607d319/hello.zimpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello",
+        "variants/zimpl-c607d319/hello.zimpl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:36:29.639390+00:00",
+      "exit_code": 0,
+      "stdout": "****************************************************\n* Zuse Institute Mathematical Programming Language *\n* Release 3.2.0 Copyright (C)2011 by Thorsten Koch *\n****************************************************\n*   This is free software and you are welcome to   *\n*     redistribute it under certain conditions     *\n*      ZIMPL comes with ABSOLUTELY NO WARRANTY     *\n****************************************************\n\nReading variants/zimpl-c607d319/hello.zimpl\nInstructions evaluated: 537\nName: variants/zimpl-c607d319/hello.zimpl   Variables: 13   Constraints: 1   Non Zeros: 13\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.lp]\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.tbl]\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Solve corrected generated LP variants/zimpl-c607d319/hello.zimpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol",
+        "--lp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.lp",
+        "--write",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.sol",
+        "--wglp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.glp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:36:29.710980+00:00",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nParameter(s) specified in the command line:\n --lp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.lp\n --write ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.sol\n --wglp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.glp\nReading problem data from '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.lp'...\n1 row, 13 columns, 13 non-zeros\n32 lines were read\nWriting problem data to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.glp'...\n57 lines were written\nGLPK Simplex Optimizer 5.0\n1 row, 13 columns, 13 non-zeros\nPreprocessing...\n~     0: obj =   1.129000000e+03  infeas =  0.000e+00\nOPTIMAL SOLUTION FOUND BY LP PREPROCESSOR\nTime used:   0.0 secs\nMemory used: 0.0 Mb (39693 bytes)\nWriting basic solution to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result1/hello.sol'...\n23 lines were written\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Generate LP from corrected variants/zmpl-c5eac23d/hello.zmpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello",
+        "variants/zmpl-c5eac23d/hello.zmpl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:36:29.834237+00:00",
+      "exit_code": 0,
+      "stdout": "****************************************************\n* Zuse Institute Mathematical Programming Language *\n* Release 3.2.0 Copyright (C)2011 by Thorsten Koch *\n****************************************************\n*   This is free software and you are welcome to   *\n*     redistribute it under certain conditions     *\n*      ZIMPL comes with ABSOLUTELY NO WARRANTY     *\n****************************************************\n\nReading variants/zmpl-c5eac23d/hello.zmpl\nInstructions evaluated: 537\nName: variants/zmpl-c5eac23d/hello.zmpl   Variables: 13   Constraints: 1   Non Zeros: 13\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.lp]\nWriting [${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.tbl]\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Solve corrected generated LP variants/zmpl-c5eac23d/hello.zmpl",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol",
+        "--lp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.lp",
+        "--write",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.sol",
+        "--wglp",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.glp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/zimpl",
+      "timestamp_utc": "2026-11-05T12:36:29.907755+00:00",
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nParameter(s) specified in the command line:\n --lp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.lp\n --write ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.sol\n --wglp ${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.glp\nReading problem data from '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.lp'...\n1 row, 13 columns, 13 non-zeros\n32 lines were read\nWriting problem data to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.glp'...\n57 lines were written\nGLPK Simplex Optimizer 5.0\n1 row, 13 columns, 13 non-zeros\nPreprocessing...\n~     0: obj =   1.129000000e+03  infeas =  0.000e+00\nOPTIMAL SOLUTION FOUND BY LP PREPROCESSOR\nTime used:   0.0 secs\nMemory used: 0.0 Mb (39693 bytes)\nWriting basic solution to '${WORKSPACE}/work/native_batch_20261105/late/zimpl/fixed_result2/hello.sol'...\n23 lines were written\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "glpk-utils",
+      "version": "5.0-1build2",
+      "ubuntu_archive_path": "pool/universe/g/glpk/glpk-utils_5.0-1build2_amd64.deb",
+      "sha256": "99dc35ce8a8fd638d839882e1135d0043ce6dbb9c61b7b685f5990f8e62fb5df"
+    },
+    {
+      "name": "libglpk40",
+      "version": "5.0-1build2",
+      "ubuntu_archive_path": "pool/universe/g/glpk/libglpk40_5.0-1build2_amd64.deb",
+      "sha256": "93d855e7d9a394ea21b1e8b551210549c3b6af1c92f39065ac92237a54547a67"
+    },
+    {
+      "name": "libamd3",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/universe/s/suitesparse/libamd3_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "557b88b1688b6ebfb058bd6c621daadb62bbb40059a1e33ed3fd3b7bef744f06"
+    },
+    {
+      "name": "libcolamd3",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/main/s/suitesparse/libcolamd3_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "8f4c416275c325b2a14463da0e040b90802e3eb72d7fae4e4a6c3cd497e71e48"
+    },
+    {
+      "name": "libsuitesparseconfig7",
+      "version": "1:7.6.1+dfsg-1build1",
+      "ubuntu_archive_path": "pool/main/s/suitesparse/libsuitesparseconfig7_7.6.1+dfsg-1build1_amd64.deb",
+      "sha256": "a27c55b471ebd184136567f0649f2d1425825ec535b0329ea3917c0fe6440471"
+    },
+    {
+      "name": "libltdl7",
+      "version": "2.4.7-7build1",
+      "ubuntu_archive_path": "pool/main/libt/libtool/libltdl7_2.4.7-7build1_amd64.deb",
+      "sha256": "02d0d2d7e1bf73f838a92f8df7a9b07b698c837e82bd89aee6a581cf793cd966"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#808 Zimpl/hello.zpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+    "examples/#808 Zimpl/variants/zimpl-c607d319/hello.zimpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+    "examples/#808 Zimpl/variants/zmpl-c5eac23d/hello.zmpl": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain_source": {
+    "url": "https://zimpl.zib.de/download/zimpl-3.2.0.linux.x86_64.gnu.static.opt",
+    "sha256": "c2fdb6ab26b325c2c869affbbd9726a2cc94c9add18ac25024f4e9f55c5e6026",
+    "integrity_basis": "Observed SHA-256 of the static Linux binary downloaded over TLS from the official Zimpl site."
+  },
+  "original_artifact_sha256": {
+    "examples/#808 Zimpl/hello.zpl": "7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b",
+    "examples/#808 Zimpl/variants/zimpl-c607d319/hello.zimpl": "7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b",
+    "examples/#808 Zimpl/variants/zmpl-c5eac23d/hello.zmpl": "7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b"
+  },
+  "proposed_source_changes": [
+    {
+      "corpus_path": "examples/#808 Zimpl/hello.zpl",
+      "original_sha256": "7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b",
+      "tested_sha256": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+      "old_text": "var x[I] real >= code[I] <= code[I]+1;",
+      "new_text": "var x[<i> in I] real >= code[i] <= code[i]+1;",
+      "staged_file": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/hello.zpl"
+    },
+    {
+      "corpus_path": "examples/#808 Zimpl/variants/zimpl-c607d319/hello.zimpl",
+      "original_sha256": "7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b",
+      "tested_sha256": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+      "old_text": "var x[I] real >= code[I] <= code[I]+1;",
+      "new_text": "var x[<i> in I] real >= code[i] <= code[i]+1;",
+      "staged_file": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/variants/zimpl-c607d319/hello.zimpl"
+    },
+    {
+      "corpus_path": "examples/#808 Zimpl/variants/zmpl-c5eac23d/hello.zmpl",
+      "original_sha256": "7b47d69faea7455f159a9ed2504b8671089a605539d6c8421804136d872b1b2b",
+      "tested_sha256": "609be25a59eb79ba10faaf8e010b06fa4695403f5adb838da0e6647f33256b38",
+      "old_text": "var x[I] real >= code[I] <= code[I]+1;",
+      "new_text": "var x[<i> in I] real >= code[i] <= code[i]+1;",
+      "staged_file": "${WORKSPACE}/work/native_batch_20261105/late/zimpl/variants/zmpl-c5eac23d/hello.zmpl"
+    }
+  ],
+  "requires_source_change": true,
+  "results": [
+    {
+      "file": "hello.zpl",
+      "decoded_greeting": "Hello, World!",
+      "variables": {
+        "1": 72,
+        "2": 101,
+        "3": 108,
+        "4": 108,
+        "5": 111,
+        "6": 44,
+        "7": 32,
+        "8": 87,
+        "9": 111,
+        "10": 114,
+        "11": 108,
+        "12": 100,
+        "13": 33
+      },
+      "solution_sha256": "794982a849d5a62a403e73d03d8f9a365cdd27063a58a9cd0b44293053ce3c0b",
+      "lp_sha256": "82019e18eb77bed353cc2b65a899b53c9e5068e158d14ddd58e5bdacc6c695c8"
+    },
+    {
+      "file": "variants/zimpl-c607d319/hello.zimpl",
+      "decoded_greeting": "Hello, World!",
+      "variables": {
+        "1": 72,
+        "2": 101,
+        "3": 108,
+        "4": 108,
+        "5": 111,
+        "6": 44,
+        "7": 32,
+        "8": 87,
+        "9": 111,
+        "10": 114,
+        "11": 108,
+        "12": 100,
+        "13": 33
+      },
+      "solution_sha256": "794982a849d5a62a403e73d03d8f9a365cdd27063a58a9cd0b44293053ce3c0b",
+      "lp_sha256": "0948f639f133b722caaeb09c7a935e7f7e8d0f5ffd309f733f73b21a9cf1e2da"
+    },
+    {
+      "file": "variants/zmpl-c5eac23d/hello.zmpl",
+      "decoded_greeting": "Hello, World!",
+      "variables": {
+        "1": 72,
+        "2": 101,
+        "3": 108,
+        "4": 108,
+        "5": 111,
+        "6": 44,
+        "7": 32,
+        "8": 87,
+        "9": 111,
+        "10": 114,
+        "11": 108,
+        "12": 100,
+        "13": 33
+      },
+      "solution_sha256": "794982a849d5a62a403e73d03d8f9a365cdd27063a58a9cd0b44293053ce3c0b",
+      "lp_sha256": "df430dc6245b926161e3f387547cfe0a66dd3eed6d65c0787584deec0af0aee7"
+    }
+  ],
+  "main_status": "proposed_fix",
+  "verified_extensions": [
+    ".zpl",
+    ".zimpl",
+    ".zmpl"
+  ],
+  "toolchain": "Official Zimpl3.2.0 static compiler and GLPK5.0",
+  "sources": [
+    {
+      "title": "Zimpl official downloads",
+      "url": "https://zimpl.zib.de/download/"
+    },
+    {
+      "title": "GNU GLPK",
+      "url": "https://www.gnu.org/software/glpk/"
+    }
+  ],
+  "semantic_scope": "Pending the explicit source correction listed in proposed_source_changes: the real Zimpl compiler generated each LP, GLPK solved it to optimality, and thirteen native solution variables decoded to the exact greeting. Current corpus files were not changed; only the work copies were corrected.",
+  "versions": [
+    {
+      "label": "Original static Zimpl version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/zimpl",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "3.2.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "GLPK native version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/zimpl/root/usr/bin/glpsol",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GLPSOL--GLPK LP/MIP Solver 5.0\nCopyright (C) 2000-2020 Free Software Foundation, Inc.\n\nThis program has ABSOLUTELY NO WARRANTY.\n\nThis program is free software; you may re-distribute it under the terms\nof the GNU General Public License version 3 or later.\n",
+      "stderr": ""
+    }
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "After explicitly binding the indexed-variable iterator in the three declared sources, native Zimpl generated each LP and GLPK solved it to optimality. The thirteen native solution variables decode to exactly Hello, World!. Each suffix was compiled and solved separately.",
+  "source_change_application": "The exact tested corrections listed in proposed_source_changes were applied to the corpus during integration. Original source hashes and native failure evidence are retained."
+}

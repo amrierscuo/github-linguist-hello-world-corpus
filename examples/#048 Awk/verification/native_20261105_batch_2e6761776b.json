@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:42.608868+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Awk",
+  "ordinal": 48,
+  "commands": [
+    {
+      "label": "Native Awk version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "gawk",
+        "-W",
+        "version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0048_2e6761776b",
+      "timestamp_utc": "2026-11-05T12:28:42.650983+00:00",
+      "exit_code": 0,
+      "stdout": "GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)\nCopyright (C) 1989, 1991-2022 Free Software Foundation.\n\nThis program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see http://www.gnu.org/licenses/.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute exact Awk variant",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "gawk",
+        "-f",
+        "hello.gawk"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0048_2e6761776b/variants/ext-gawk-2e6761776b",
+      "timestamp_utc": "2026-11-05T12:28:42.658712+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#048 Awk/variants/ext-gawk-2e6761776b/hello.gawk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".gawk",
+  "documentation": "examples/#048 Awk/variants/ext-gawk-2e6761776b/README.md",
+  "sources": [
+    "https://www.gnu.org/software/gawk/manual/gawk.html",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#048 Awk/README.md": "0c2fe377844412190a60acaac8f322e4a85ea716b098d4936aefea5db02d798c",
+    "examples/#048 Awk/variants/ext-gawk-2e6761776b/README.md": "57a251cb087915ee24d35288adccd53cbe7e1d58feef00cc2c0acfe5a45d6caf"
+  },
+  "toolchain": "GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)",
+  "semantic_scope": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr."
+}

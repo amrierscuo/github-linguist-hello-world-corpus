@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:45.389250+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Makefile",
+  "ordinal": 416,
+  "commands": [
+    {
+      "label": "Native GNU Make version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "make",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0416_2e6d616b65",
+      "timestamp_utc": "2026-11-05T12:28:45.451540+00:00",
+      "exit_code": 0,
+      "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute original Make recipe",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "make",
+        "--no-print-directory",
+        "-f",
+        "hello.make",
+        "hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0416_2e6d616b65/variants/make-902d3503",
+      "timestamp_utc": "2026-11-05T12:28:45.459343+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#416 Makefile/variants/make-902d3503/hello.make": "522f2f7a71537199972884632c2535e8f3e0d2fb4222a5e952528af1c0037c57"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".make",
+  "documentation": "examples/#416 Makefile/variants/make-902d3503/README.md",
+  "sources": [
+    "https://www.gnu.org/software/make/manual/html_node/Recipes.html"
+  ],
+  "instructions_read_sha256": {
+    "examples/#416 Makefile/README.md": "39026beec6ab36ebf73778d5dc9a20977828b0d995fc9a94c92ad5d431cad655",
+    "examples/#416 Makefile/variants/make-902d3503/README.md": "df8182cded48fed28b46b194a22d37e4d7c2854e88a653c410d85d9a598eaa21"
+  },
+  "toolchain": "GNU Make 4.3",
+  "semantic_scope": "GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF."
+}

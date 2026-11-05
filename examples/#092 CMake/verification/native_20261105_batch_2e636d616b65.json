@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:31:17.720324+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "CMake",
+  "ordinal": 92,
+  "commands": [
+    {
+      "label": "Native CMake version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin/cmake",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65",
+      "timestamp_utc": "2026-11-05T12:31:17.832917+00:00",
+      "exit_code": 0,
+      "stdout": "cmake version 3.28.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Run exact main CMake script",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin/cmake",
+        "-P",
+        "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/hello.cmake"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65",
+      "timestamp_utc": "2026-11-05T12:31:18.103362+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Hello, World!\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Configure real CMake @GREETING@ template",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin/cmake",
+        "-DOUT=${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/generated",
+        "-P",
+        "configure.cmake"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/variants/ext-cmake-in-2e636d616b652e696e",
+      "timestamp_utc": "2026-11-05T12:31:18.362272+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Execute generated CMake script",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin/cmake",
+        "-P",
+        "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/generated/hello.cmake"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65",
+      "timestamp_utc": "2026-11-05T12:31:18.631758+00:00",
+      "exit_code": 0,
+      "stdout": "-- Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0092_2e636d616b65/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib",
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin:/usr/bin:/bin"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "ubuntu_archive_path": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295"
+    },
+    {
+      "name": "cmake-data",
+      "version": "3.28.3-1build7",
+      "ubuntu_archive_path": "pool/main/c/cmake/cmake-data_3.28.3-1build7_all.deb",
+      "sha256": "20a3b644211ce82f35c24f1f5052199adeb0ac159978a8740fd6c0959611557f"
+    },
+    {
+      "name": "re2c",
+      "version": "3.1-1build1",
+      "ubuntu_archive_path": "pool/main/r/re2c/re2c_3.1-1build1_amd64.deb",
+      "sha256": "418afd09a7abb6878ddec36b60cefb891a8066856a60b757fd0700e072652616"
+    },
+    {
+      "name": "libuv1t64",
+      "version": "1.48.0-1.1build1",
+      "ubuntu_archive_path": "pool/main/libu/libuv1/libuv1t64_1.48.0-1.1build1_amd64.deb",
+      "sha256": "72a1856b30af1e533494ab90742a2446f4491b15ddebcade6661a6e8d61b4359"
+    },
+    {
+      "name": "libjsoncpp25",
+      "version": "1.9.5-6build1",
+      "ubuntu_archive_path": "pool/main/libj/libjsoncpp/libjsoncpp25_1.9.5-6build1_amd64.deb",
+      "sha256": "8efea5b75952f3ad1c40e6b5b31de687c297ea29f87f8b63efebb55e13467211"
+    },
+    {
+      "name": "librhash0",
+      "version": "1.4.3-3build1",
+      "ubuntu_archive_path": "pool/main/r/rhash/librhash0_1.4.3-3build1_amd64.deb",
+      "sha256": "e9ee69963ff1a56378b9c5ffdd21ea0feaec9647c522349b7612b25103490528"
+    },
+    {
+      "name": "libarchive13t64",
+      "version": "3.7.2-2ubuntu0.9",
+      "ubuntu_archive_path": "pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+      "sha256": "b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#092 CMake/hello.cmake": "d87c088fed8f3510a90861a6a2272e817f6ba95568e7a32ee5f94119ee9fbf75",
+    "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/configure.cmake": "977416f0a33429844b97b2330e7e7f95744ae8ce50cff9534cc86233dad12e1a",
+    "examples/#092 CMake/variants/ext-cmake-in-2e636d616b652e696e/hello.cmake.in": "a6124f8f97de8c5b0e3e3e10e869cb99f47d6595dfecf9e1f488eb1a68b473f0"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".cmake",
+  "documentation": "examples/#092 CMake/README.md",
+  "sources": [
+    "https://cmake.org/cmake/help/latest/manual/cmake.1.html",
+    "https://cmake.org/cmake/help/latest/command/message.html"
+  ],
+  "instructions_read_sha256": {
+    "examples/#092 CMake/README.md": "9ae48f3b3777cbbe2aa8f17ef983b0acff7544bb4b3c62a9551f0ddb19fbd7a7"
+  },
+  "generated_cmake_sha256": "5efb3952cbe1374080300aa4e3241ab6ebf09bed909ef89a13fcf2270afd193d",
+  "toolchain": "cmake version 3.28.3; CMake 3.28.3-1build7",
+  "semantic_scope": "Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel.",
+  "additional_environment_provenance": "PATH and isolated pkg-config search variables were copied from the exact executed harness configuration for reproducibility.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Native CMake executed the exact configuration script, substituted the original @GREETING@ template, and executed its generated script with the expected greeting. The aggregate .cmake record also ran the original main script and checked its stderr channel."
+}

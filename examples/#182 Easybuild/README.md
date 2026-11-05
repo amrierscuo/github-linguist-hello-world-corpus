@@ -1,5 +1,9 @@
 # #182 Easybuild
 
+## Latest recorded verification
+
+**Native verification remains pending.** Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending. [Attempt evidence](verification/native_20261105_batch_blocked_main.json).
+
 Describe an EasyBuild recipe that installs a hello-world local script and performs its minimal control.
 
 Canonical type `data`, language_id `342840477`.

@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:31:15.903104+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "C++",
+  "ordinal": 85,
+  "commands": [
+    {
+      "label": "Native compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265",
+      "timestamp_utc": "2026-11-05T12:31:15.963674+00:00",
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native re2c version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin/re2c",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265",
+      "timestamp_utc": "2026-11-05T12:31:16.080702+00:00",
+      "exit_code": 0,
+      "stdout": "re2c 3.1\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib"
+      }
+    },
+    {
+      "label": "Generate C++ from original re2c input",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/bin/re2c",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/variants/ext-re-2e7265/hello.re",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265",
+      "timestamp_utc": "2026-11-05T12:31:16.172966+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile generated scanner",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated_hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265",
+      "timestamp_utc": "2026-11-05T12:31:16.275547+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp: In function ‘const char* scan(const char*)’:\n${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp:10:14: error: ‘YYLIMIT’ was not declared in this scope\n   10 |         if ((YYLIMIT - YYCURSOR) < 5) YYFILL(5);\n      |              ^~~~~~~\n${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp:10:39: error: ‘YYFILL’ was not declared in this scope\n   10 |         if ((YYLIMIT - YYCURSOR) < 5) YYFILL(5);\n      |                                       ^~~~~~\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/cmake_setup/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "ubuntu_archive_path": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295"
+    },
+    {
+      "name": "cmake-data",
+      "version": "3.28.3-1build7",
+      "ubuntu_archive_path": "pool/main/c/cmake/cmake-data_3.28.3-1build7_all.deb",
+      "sha256": "20a3b644211ce82f35c24f1f5052199adeb0ac159978a8740fd6c0959611557f"
+    },
+    {
+      "name": "re2c",
+      "version": "3.1-1build1",
+      "ubuntu_archive_path": "pool/main/r/re2c/re2c_3.1-1build1_amd64.deb",
+      "sha256": "418afd09a7abb6878ddec36b60cefb891a8066856a60b757fd0700e072652616"
+    },
+    {
+      "name": "libuv1t64",
+      "version": "1.48.0-1.1build1",
+      "ubuntu_archive_path": "pool/main/libu/libuv1/libuv1t64_1.48.0-1.1build1_amd64.deb",
+      "sha256": "72a1856b30af1e533494ab90742a2446f4491b15ddebcade6661a6e8d61b4359"
+    },
+    {
+      "name": "libjsoncpp25",
+      "version": "1.9.5-6build1",
+      "ubuntu_archive_path": "pool/main/libj/libjsoncpp/libjsoncpp25_1.9.5-6build1_amd64.deb",
+      "sha256": "8efea5b75952f3ad1c40e6b5b31de687c297ea29f87f8b63efebb55e13467211"
+    },
+    {
+      "name": "librhash0",
+      "version": "1.4.3-3build1",
+      "ubuntu_archive_path": "pool/main/r/rhash/librhash0_1.4.3-3build1_amd64.deb",
+      "sha256": "e9ee69963ff1a56378b9c5ffdd21ea0feaec9647c522349b7612b25103490528"
+    },
+    {
+      "name": "libarchive13t64",
+      "version": "3.7.2-2ubuntu0.9",
+      "ubuntu_archive_path": "pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+      "sha256": "b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#085 C++/variants/ext-re-2e7265/hello.re": "9a4a2dabc4cf28f5bd7d833d517b0f71055e59e3e2874353bd4ae92bac46e089"
+  },
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "main_status": "unchanged",
+  "extension": ".re",
+  "documentation": "examples/#085 C++/variants/ext-re-2e7265/README.md",
+  "sources": [
+    "https://gcc.gnu.org/onlinedocs/gcc/Standards.html",
+    "https://www.open-std.org/jtc1/sc22/wg21/",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
+    "https://re2c.org/manual/manual_c.html"
+  ],
+  "instructions_read_sha256": {
+    "examples/#085 C++/README.md": "c07a9b4264d95dace8c23f592e30cf8aba6c9a6b8e8079641e8f654dcd16e8fa",
+    "examples/#085 C++/variants/ext-re-2e7265/README.md": "145f45a1940be4ec0e52f027d6bf64d82362fd9baacb50e930e88cee5edcd82e"
+  },
+  "blocker": "RuntimeError: ${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp: In function ‘const char* scan(const char*)’:\n${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp:10:14: error: ‘YYLIMIT’ was not declared in this scope\n   10 |         if ((YYLIMIT - YYCURSOR) < 5) YYFILL(5);\n      |              ^~~~~~~\n${WORKSPACE}/work/native_batch_20261105/root/0085_2e7265/generated.cpp:10:39: error: ‘YYFILL’ was not declared in this scope\n   10 |         if ((YYLIMIT - YYCURSOR) < 5) YYFILL(5);\n      |                                       ^~~~~~\n",
+  "outcome_description": "The genuine re2c generator accepted the original .re source, but the generated C++ failed to compile because YYLIMIT and YYFILL were not defined. This variant remains unverified and needs a source correction."
+}

@@ -1,5 +1,9 @@
 # 0454: NASL: `.inc`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.inc`. Original NASL parsed and display() emitted the exact greeting through Greenbone GLib message logging on stderr using a disposable Unix-socket Redis knowledge base. TCP was disabled; no vulnerability scans, probe scripts or remote targets were used. [Recorded evidence](../../verification/native_20261105_batch_main.json).
+
 Ruolo: Include NASL con funzione di saluto e caller separato.
 
 Origin: Original source written for the specific role of the variant, using the mentioned documentation.
@@ -14,7 +18,7 @@ NASL originale: caricare driver.nasl senza target di rete
 
 Expected result: Hello, World!
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

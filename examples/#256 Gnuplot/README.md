@@ -1,5 +1,14 @@
 # #256 Gnuplot
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.gnu`: The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used. [Evidence](verification/native_20261105_batch_2e676e75.json).
+- `.gp`: The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used. [Evidence](verification/native_20261105_batch_2e6770.json).
+- `.p`: The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used. [Evidence](verification/native_20261105_batch_2e70.json).
+- `.plot`: The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used. [Evidence](verification/native_20261105_batch_2e706c6f74.json).
+- `.plt`: The genuine Gnuplot no-X executable evaluated the exact script and rendered its y=x plot to ASCII, including Hello, World! and plotted line markers. No graphical terminal was used. [Evidence](verification/native_20261105_batch_2e706c74.json).
+
 Play a Gnuplot script and produce a ASCII graph of y=x with title Hello, World!.
 
 ## Toolchain
@@ -34,9 +43,9 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gp` | [hello.gp](variants/ext-gp-2e6770/hello.gp) created; verification pending |
-| `.gnu` | [hello.gnu](variants/ext-gnu-2e676e75/hello.gnu) created; verification pending |
+| `.gp` | [hello.gp](variants/ext-gp-2e6770/hello.gp) syntax and behavior verified |
+| `.gnu` | [hello.gnu](variants/ext-gnu-2e676e75/hello.gnu) syntax and behavior verified |
 | `.gnuplot` | [hello.gnuplot](hello.gnuplot) verified |
-| `.p` | [hello.p](variants/ext-p-2e70/hello.p) created; verification pending |
-| `.plot` | [hello.plot](variants/ext-plot-2e706c6f74/hello.plot) created; verification pending |
-| `.plt` | [hello.plt](variants/ext-plt-2e706c74/hello.plt) created; verification pending |
+| `.p` | [hello.p](variants/ext-p-2e70/hello.p) syntax and behavior verified |
+| `.plot` | [hello.plot](variants/ext-plot-2e706c6f74/hello.plot) syntax and behavior verified |
+| `.plt` | [hello.plt](variants/ext-plt-2e706c74/hello.plt) syntax and behavior verified |

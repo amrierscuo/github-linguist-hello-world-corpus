@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:29:05.133017+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Redcode",
+  "ordinal": 608,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for pmars",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "pmars"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:29:05.151360+00:00",
+      "exit_code": 0,
+      "stdout": "Package: pmars\nArchitecture: amd64\nVersion: 0.9.4-1\nPriority: optional\nSection: universe/games\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 159\nDepends: libc6 (>= 2.34), libx11-6\nFilename: pool/universe/p/pmars/pmars_0.9.4-1_amd64.deb\nSize: 75056\nMD5sum: 04572b50924b828508fec0b91662b90b\nSHA1: 43cf04cc04d243216b0afee4bab96b8fc0a48a2f\nSHA256: 6825c2672c351b95c790e04830eb3529d218874da5b138325172abc9ca7d3cad\nSHA512: 31d224deeaa48f64e5d2b8207dbf0f3eeca87daf4c31f9f3a4e283c980063f9c38f7ade5f7d4619aa937d30a47c72331bacb7172171caad02f1b4dc81b9d0075\nHomepage: http://www.koth.org/pmars\nDescription-en: Portable MARS, Core War simulator\n Portable MARS is the official Core War simulator of the ICWS and the\n rec.games.corewar newsgroup. pMARS serves as a test bed for new Redcode\n standards and tournament styles. It has also been used in genetic algorithm\n experiments and as an assembly language teaching aid.\nDescription-md5: 9eb6cce6ab4a629fb413a88536e1f4d3\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only pmars",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "pmars=0.9.4-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode/packages/pmars",
+      "timestamp_utc": "2026-11-05T12:29:05.191845+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 pmars amd64 0.9.4-1 [75.1 kB]\nFetched 75.1 kB in 0s (205 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract pmars without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/packages/pmars/pmars_0.9.4-1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:29:05.878552+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Native version query without a display",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/games/pmars",
+        "-v",
+        "0",
+        "-Q",
+        "1000"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:30:16.909417+00:00",
+      "exit_code": 94,
+      "stdout": "",
+      "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   Enter debugger                \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -P   Permutate starting positions  \n  -R # Read limit size                 -W # Read limit size               \n  -A   Assemble warriors only          -= $ Score formula $ [(W*W-1)/S]   \n  -  -@ $ Read options from file $\n  -display  $ Display to connect to     -geometry $ Geometry of the window  \n  -fn       $ X font to use           \nNo warrior file specified\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Assemble exact warrior to canonical Redcode load listing",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/games/pmars",
+        "-v",
+        "0",
+        "-A",
+        "hello.cw"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:30:16.943757+00:00",
+      "exit_code": 0,
+      "stdout": "       ORG          0\n       JMP.B  $     0, $     0     \n       DAT.F  #    72, #     0     \n       DAT.F  #   101, #     0     \n       DAT.F  #   108, #     0     \n       DAT.F  #   108, #     0     \n       DAT.F  #   111, #     0     \n       DAT.F  #    44, #     0     \n       DAT.F  #    32, #     0     \n       DAT.F  #    87, #     0     \n       DAT.F  #   111, #     0     \n       DAT.F  #   114, #     0     \n       DAT.F  #   108, #     0     \n       DAT.F  #   100, #     0     \n       DAT.F  #    33, #     0     \n       END\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run one bounded headless battle against the identical warrior",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/games/pmars",
+        "-v",
+        "0",
+        "-b",
+        "-F",
+        "1000",
+        "-r",
+        "1",
+        "-c",
+        "50",
+        "hello.cw",
+        "hello.cw"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:30:16.975168+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Can't connect to X server \"\"\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Build original pMARS in SERVER mode without graphics",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "make",
+        "-j2",
+        "CFLAGS=-O2 -DSERVER -DEXT94 -DPERMUTATE -DRWLIMIT",
+        "LIB="
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src",
+      "timestamp_utc": "2026-11-05T12:32:30.084053+00:00",
+      "exit_code": 0,
+      "stdout": "Making pmars with compiler flags -O2 -DSERVER -DEXT94 -DPERMUTATE -DRWLIMIT\nCompiling pmars.o\nCompiling asm.o\nCompiling eval.o\nCompiling disasm.o\nCompiling cdb.o\nCompiling sim.o\nCompiling pos.o\nCompiling clparse.o\nCompiling global.o\nCompiling str_eng.o\nCompiling token.o\nLinking pmars\ndone\n",
+      "stderr": "asm.c: In function ‘textout’:\nasm.c:659:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  659 |     fprintf(stderr, str);\n      |     ^~~~~~~\nasm.c:685:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  685 |     fprintf(stderr, str);\n      |     ^~~~~~~\nasm.c: In function ‘errprn’:\nasm.c:830:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  830 |     fprintf(stderr, notEnoughMemErr);\n      |     ^~~~~~~\nasm.c:913:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  913 |     sprintf(outs, tooManyMsgErr);\n      |     ^~~~~~~\nIn file included from disasm.c:26:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\nIn file included from cdb.c:30:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\ncdb.c: In function ‘results’:\ncdb.c:2602:7: warning: format not a string literal and no format arguments [-Wformat-security]\n 2602 |       fprintf(outp, resultsAre);\n      |       ^~~~~~~\nIn file included from sim.c:29:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\nIn file included from pos.c:24:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\npos.c: In function ‘rc5_schedule’:\npos.c:154:12: warning: conversion from ‘long unsigned int’ to ‘U32_T’ {aka ‘unsigned int’} changes value from ‘8393868501’ to ‘4098901205’ [-Woverflow]\n  154 | #define _P 0xb7e15163UL\n      |            ^~~~~~~~~~~~\npos.c:219:14: note: in expansion of macro ‘_P’\n  219 |   for ( S[2]=_P+2*_Q, i=3; i<NKEYS; i++) S[i] = S[i-1]+_Q;\n      |              ^~\nclparse.c: In function ‘clp_parse’:\nclparse.c:296:19: warning: format not a string literal and no format arguments [-Wformat-security]\n  296 |                   fprintf(stderr, readingStdin);\n      |                   ^~~~~~~\nclparse.c:437:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  437 |     sprintf(outs, outOfMemory);\n      |     ^~~~~~~\nclparse.c:441:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  441 |     sprintf(outs, cannotOpenParameterFile);\n      |     ^~~~~~~\nclparse.c: In function ‘next_input’:\nclparse.c:231:5: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  231 |     fscanf(filep, \"%s\", inputs);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c:238:9: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  238 |         fscanf(filep, \"%[^\\\"]%*[\\\"]\", inputs + i);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c:241:7: warning: ignoring return value of ‘fgets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  241 |       fgets(inputs, 100, filep);\n      |       ^~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c:243:7: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  243 |       fscanf(filep, \"%s\", inputs);\n      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c: In function ‘parse_param’:\nclparse.c:114:32: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]\n  114 |      options[optI].word        = pword;    \\\n      |                                ^\nclparse.c:543:3: note: in expansion of macro ‘record’\n  543 |   record((char) 0, (clp_dtype_t) 0, NULL, 0, 0,\n      |   ^~~~~~\nclparse.c:470:20: note: at offset 1176 into destination object ‘options’ of size 1176\n  470 |   static clp_opt_t options[OPTNUM];\n      |                    ^~~~~~~\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Confirm server binary has no X11 linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:32:32.896131+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffeb1fc1000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000702f05e00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000702f0614e000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native version query without a display",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+        "-v",
+        "0",
+        "-Q",
+        "1000"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:32:33.025046+00:00",
+      "exit_code": -11,
+      "stdout": "",
+      "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nSERVER version without debugger\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   (disabled in SERVER version)  \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -P   Permutate starting positions  \n  -R # Read limit size                 -W # Read limit size               \n  -A   Assemble warriors only          -= $ Score formula $ [(W*W-1)/S]   \ntimeout: the monitored command dumped core\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      },
+      "expected_exit_code": 94
+    },
+    {
+      "label": "Build original pMARS in SERVER mode without graphics",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "make",
+        "-j2",
+        "CFLAGS=-O2 -DSERVER -DEXT94 -DPERMUTATE -DRWLIMIT",
+        "LIB="
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src",
+      "timestamp_utc": "2026-11-05T12:33:44.967599+00:00",
+      "exit_code": 0,
+      "stdout": "Making pmars with compiler flags -O2 -DSERVER -DEXT94 -DPERMUTATE -DRWLIMIT\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Confirm server binary has no X11 linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:33:45.060617+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffc04ff3000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000077dd87e00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000077dd881e0000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native version query without a display",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+        "-Q",
+        "1000"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:33:45.156674+00:00",
+      "exit_code": -11,
+      "stdout": "",
+      "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nSERVER version without debugger\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   (disabled in SERVER version)  \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -P   Permutate starting positions  \n  -R # Read limit size                 -W # Read limit size               \n  -A   Assemble warriors only          -= $ Score formula $ [(W*W-1)/S]   \ntimeout: the monitored command dumped core\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      },
+      "expected_exit_code": 94
+    },
+    {
+      "label": "Build original pMARS in SERVER mode without graphics",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "make",
+        "-B",
+        "-j2",
+        "CFLAGS=-O2 -DSERVER -DEXT94",
+        "LIB="
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src",
+      "timestamp_utc": "2026-11-05T12:35:33.869762+00:00",
+      "exit_code": 0,
+      "stdout": "Making pmars with compiler flags -O2 -DSERVER -DEXT94\nCompiling pmars.o\nCompiling asm.o\nCompiling eval.o\nCompiling disasm.o\nCompiling cdb.o\nCompiling sim.o\nCompiling pos.o\nCompiling clparse.o\nCompiling global.o\nCompiling token.o\nCompiling str_eng.o\nLinking pmars\ndone\n",
+      "stderr": "asm.c: In function ‘textout’:\nasm.c:659:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  659 |     fprintf(stderr, str);\n      |     ^~~~~~~\nasm.c:685:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  685 |     fprintf(stderr, str);\n      |     ^~~~~~~\nasm.c: In function ‘errprn’:\nasm.c:830:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  830 |     fprintf(stderr, notEnoughMemErr);\n      |     ^~~~~~~\nasm.c:913:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  913 |     sprintf(outs, tooManyMsgErr);\n      |     ^~~~~~~\nIn file included from disasm.c:26:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\nIn file included from cdb.c:30:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\ncdb.c: In function ‘results’:\ncdb.c:2602:7: warning: format not a string literal and no format arguments [-Wformat-security]\n 2602 |       fprintf(outp, resultsAre);\n      |       ^~~~~~~\nIn file included from sim.c:29:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\nIn file included from pos.c:24:\nsim.h:92:12: warning: built-in function ‘round’ declared as non-function [-Wbuiltin-declaration-mismatch]\n   92 | extern int round;\n      |            ^~~~~\npos.c: In function ‘rc5_schedule’:\npos.c:154:12: warning: conversion from ‘long unsigned int’ to ‘U32_T’ {aka ‘unsigned int’} changes value from ‘8393868501’ to ‘4098901205’ [-Woverflow]\n  154 | #define _P 0xb7e15163UL\n      |            ^~~~~~~~~~~~\npos.c:219:14: note: in expansion of macro ‘_P’\n  219 |   for ( S[2]=_P+2*_Q, i=3; i<NKEYS; i++) S[i] = S[i-1]+_Q;\n      |              ^~\nclparse.c: In function ‘clp_parse’:\nclparse.c:296:19: warning: format not a string literal and no format arguments [-Wformat-security]\n  296 |                   fprintf(stderr, readingStdin);\n      |                   ^~~~~~~\nclparse.c:437:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  437 |     sprintf(outs, outOfMemory);\n      |     ^~~~~~~\nclparse.c:441:5: warning: format not a string literal and no format arguments [-Wformat-security]\n  441 |     sprintf(outs, cannotOpenParameterFile);\n      |     ^~~~~~~\nclparse.c: In function ‘next_input’:\nclparse.c:231:5: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  231 |     fscanf(filep, \"%s\", inputs);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c:238:9: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  238 |         fscanf(filep, \"%[^\\\"]%*[\\\"]\", inputs + i);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c:241:7: warning: ignoring return value of ‘fgets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  241 |       fgets(inputs, 100, filep);\n      |       ^~~~~~~~~~~~~~~~~~~~~~~~~\nclparse.c:243:7: warning: ignoring return value of ‘fscanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  243 |       fscanf(filep, \"%s\", inputs);\n      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Confirm server binary has no X11 linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:35:36.378604+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007fffd53ba000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000760808600000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000760808889000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native version query without a display",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+        "-Q",
+        "1000"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:35:36.483745+00:00",
+      "exit_code": 94,
+      "stdout": "",
+      "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nSERVER version without debugger\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   (disabled in SERVER version)  \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -A   Assemble warriors only        \n  -= $ Score formula $ [(W*W-1)/S]     -@ $ Read options from file $\n\nNo warrior file specified\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      },
+      "expected_exit_code": 94
+    },
+    {
+      "label": "Assemble exact warrior to canonical Redcode load listing",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+        "-A",
+        "hello.cw"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:35:36.548375+00:00",
+      "exit_code": 0,
+      "stdout": "       ORG          0\n       JMP.B  $     0, $     0     \n       DAT.F  #    72, #     0     \n       DAT.F  #   101, #     0     \n       DAT.F  #   108, #     0     \n       DAT.F  #   108, #     0     \n       DAT.F  #   111, #     0     \n       DAT.F  #    44, #     0     \n       DAT.F  #    32, #     0     \n       DAT.F  #    87, #     0     \n       DAT.F  #   111, #     0     \n       DAT.F  #   114, #     0     \n       DAT.F  #   108, #     0     \n       DAT.F  #   100, #     0     \n       DAT.F  #    33, #     0     \n       END\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run one bounded headless battle against the identical warrior",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+        "-b",
+        "-F",
+        "1000",
+        "-r",
+        "1",
+        "-c",
+        "50",
+        "hello.cw",
+        "hello.cw"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+      "timestamp_utc": "2026-11-05T12:35:36.613384+00:00",
+      "exit_code": 0,
+      "stdout": "Corpus Greeting by Anonymous scores 1\nCorpus Greeting by Anonymous scores 1\nResults: 0 0 1\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "pmars",
+      "version": "0.9.4-1",
+      "ubuntu_archive_path": "pool/universe/p/pmars/pmars_0.9.4-1_amd64.deb",
+      "sha256": "6825c2672c351b95c790e04830eb3529d218874da5b138325172abc9ca7d3cad"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#608 Redcode/hello.cw": "4b6608c2dcac15cadb2c66ba4abd61a12f7f6b83d84bd5cdff65f1748d63cce1"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "version_query": {
+    "label": "Native version query without a display",
+    "command": [
+      "timeout",
+      "--kill-after=3s",
+      "25s",
+      "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+      "-Q",
+      "1000"
+    ],
+    "cwd": "${WORKSPACE}/work/native_batch_20261105/late/redcode",
+    "timestamp_utc": "2026-11-05T12:35:36.483745+00:00",
+    "exit_code": 94,
+    "stdout": "",
+    "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nSERVER version without debugger\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   (disabled in SERVER version)  \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -A   Assemble warriors only        \n  -= $ Score formula $ [(W*W-1)/S]     -@ $ Read options from file $\n\nNo warrior file specified\n",
+    "isolation_environment": {
+      "HOME": "${WORKSPACE}/work/native_batch_20261105/late/redcode/home",
+      "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/redcode/tmp",
+      "LC_ALL": "C.UTF-8",
+      "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/lib"
+    },
+    "expected_exit_code": 94
+  },
+  "source_archive": {
+    "source_url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/pmars/pmars_0.9.4.orig.tar.xz",
+    "sha256": "d0467d602c37af6e887ac81f4cbb812d090224411196d3401023843630fdd00d",
+    "metadata_url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/pmars/pmars_0.9.4-1.dsc",
+    "metadata_sha256": "086f191d145a98d7bce648dcba5bed17a429d110c4a5c7ea6724bd6e3e65d5f2"
+  },
+  "assertions": {
+    "greeting_from_native_load_listing": "Hello, World!",
+    "bounded_battle_score": "Corpus Greeting by Anonymous scores 1\nCorpus Greeting by Anonymous scores 1\nResults: 0 0 1"
+  },
+  "main_status": "main",
+  "toolchain": "pMARS 0.9.4 official source compiled in SERVER mode without graphics, native ICWS94 assembler and simulator",
+  "sources": [
+    {
+      "title": "pMARS upstream",
+      "url": "https://corewar.co.uk/pmars/"
+    }
+  ],
+  "semantic_scope": "The genuine pMARS assembler accepted the original warrior. Its generated load listing contained the thirteen ASCII data fields decoding to Hello, World!, and a bounded native battle ran its JMP loop. This Redcode sample encodes data, does not print text. Display updates were disabled and no display environment was supplied.",
+  "versions": [
+    {
+      "label": "Native version query without a display",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/root/usr/games/pmars",
+        "-v",
+        "0",
+        "-Q",
+        "1000"
+      ],
+      "exit_code": 94,
+      "stdout": "",
+      "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   Enter debugger                \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -P   Permutate starting positions  \n  -R # Read limit size                 -W # Read limit size               \n  -A   Assemble warriors only          -= $ Score formula $ [(W*W-1)/S]   \n  -  -@ $ Read options from file $\n  -display  $ Display to connect to     -geometry $ Geometry of the window  \n  -fn       $ X font to use           \nNo warrior file specified\n"
+    },
+    {
+      "label": "Native version query without a display",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/redcode/source/pmars-0.9.4/src/pmars",
+        "-Q",
+        "1000"
+      ],
+      "exit_code": 94,
+      "stdout": "",
+      "stderr": "pMARS v0.9.4, 04/07/22, corewar simulator with ICWS'94 extensions\nCopyright (C) 1993-95 Albert Ma, Na'ndor Sieben, Stefan Strack and Mintardjo Wangsaw\nSERVER version without debugger\nUsage:\n   pmars [options] file1 [files ..]\n   The special file - stands for standard input\n\nOptions:\n  -r # Rounds to play [1]              -e   (disabled in SERVER version)  \n  -s # Size of core [8000]             -b   Brief mode (no source listings)\n  -c # Cycles until tie [80000]        -V   Verbose assembly              \n  -p # Max. processes [8000]           -k   Output in KotH format         \n  -l # Max. warrior length [100]       -8   Enforce ICWS'88 rules         \n  -d # Min. warriors distance          -f   Fixed position series         \n  -F $ Fixed position of warrior #2    -o   Sort result output by score   \n  -S # Size of P-space [1/16th core]   -A   Assemble warriors only        \n  -= $ Score formula $ [(W*W-1)/S]     -@ $ Read options from file $\n\nNo warrior file specified\n"
+    }
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The genuine pMARS assembler accepted the original warrior. Its generated load listing contained the thirteen ASCII data fields decoding to Hello, World!, and a bounded native battle ran its JMP loop. This Redcode sample encodes data, does not print text. Display updates were disabled and no display environment was supplied."
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:45.054283+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Graphviz (DOT)",
+  "ordinal": 271,
+  "commands": [
+    {
+      "label": "Native Graphviz version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dot",
+        "-V"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0271_2e6776",
+      "timestamp_utc": "2026-11-05T12:28:45.139041+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "dot - graphviz version 2.43.0 (0)\n"
+    },
+    {
+      "label": "Native DOT parser, layout and SVG render",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dot",
+        "-Tsvg",
+        "hello.gv",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/root/0271_2e6776/output.svg"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0271_2e6776/variants/ext-gv-2e6776",
+      "timestamp_utc": "2026-11-05T12:28:45.163054+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/hello.gv": "3557c921babe8addeaf0209d5f140605685f5b28208c11d05de44fff9729c644"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".gv",
+  "documentation": "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/README.md",
+  "sources": [
+    "https://www.graphviz.org/doc/info/lang.html",
+    "https://graphviz.org/docs/outputs/svg/",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#271 Graphviz (DOT)/README.md": "1ddc8583cf0cb933e2a405120c6ed6244b993c4107050f9df97f3923b3540b86",
+    "examples/#271 Graphviz (DOT)/variants/ext-gv-2e6776/README.md": "e29b898604c2f87eed39f59f86ce0a44121c96f98c16423fb46123d0ac47e9a6"
+  },
+  "generated_svg": {
+    "sha256": "86557db901b313cca304c764b670616c77f24f0402021c0ccd9a5cc4c9c11024",
+    "text_nodes": [
+      "Hello, World!"
+    ]
+  },
+  "toolchain": "dot - graphviz version 2.43.0 (0)",
+  "semantic_scope": "Graphviz natively parsed and laid out the exact .gv file; the resulting SVG contains a text node exactly Hello, World!. Rendering stayed in files without a viewer.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Graphviz natively parsed and laid out the exact .gv file; the resulting SVG contains a text node exactly Hello, World!. Rendering stayed in files without a viewer."
+}

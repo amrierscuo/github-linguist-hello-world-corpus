@@ -1,5 +1,9 @@
 # 0083 C: variant `.h.in`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.h.in`. CMake configured the original C header template where required; GCC compiled each recorded C consumer and each resulting executable printed exactly Hello, World! plus LF. All files attached to this extension pair were exercised. [Recorded evidence](../../verification/native_20261105_batch_2e682e696e.json).
+
 Ruolo: Header C template CMake con token @GREETING@.
 
 Type: **adapted**. Starting model: examples/#083 C/hello.c; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ cmake -DOUT=<output> -P configure.cmake; gcc -std=c11 -I<output> consumer.c -o <
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

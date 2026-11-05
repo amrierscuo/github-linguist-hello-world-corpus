@@ -1,5 +1,9 @@
 # 0623: Roff: `.ms`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.ms`. Native groff rendered the exact variant using its plain, man, mdoc, me or ms input as recorded; the rendered text contains Hello, World!. Macro includes were loaded natively when present. No GUI renderer was used. [Recorded evidence](../../verification/native_20261105_batch_2e6d73.json).
+
 Document for the macro ms package.
 
 Provenience: original example written for the role of this suffix.

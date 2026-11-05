@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:27:45.334736+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Qt Script",
+  "ordinal": 576,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for libqt5script5",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libqt5script5"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:45.384605+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libqt5script5\nArchitecture: amd64\nVersion: 5.15.13+dfsg-1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: qtscript-opensource-src\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2441\nProvides: qtscript-abi-5-6-0\nPre-Depends: dpkg (>= 1.15.6~)\nDepends: libc6 (>= 2.38), libqt5core5t64 (>= 5.15.1), libstdc++6 (>= 5), qtbase-abi-5-15-13\nFilename: pool/universe/q/qtscript-opensource-src/libqt5script5_5.15.13+dfsg-1_amd64.deb\nSize: 758194\nMD5sum: d2855a172daac4fe428c0052967ee739\nSHA1: 2168ec5cbf5ce47fdebf8aef357ea8b167f524ce\nSHA256: e0be9535a8c6868f94b9e7faddcb6dad1a1c3549a5329ef08549272b0289454a\nSHA512: 63f6093d01e781920838a54c5714d28a0481532f138634bcd5d4a5cfa62aa46b4429de9049ad01a225ffb40a74a086fa7957c5d0181413706f0b04c5666a3f57\nHomepage: https://doc.qt.io/qt-5/qtscript-index.html\nDescription-en: Qt 5 script module\n Qt is a cross-platform C++ application framework. Qt's primary feature\n is its rich set of widgets that provide standard GUI functionality.\n .\n The QtScript module provides classes for making Qt applications scriptable.\nDescription-md5: d3c4a0e8070a26c56f291248544e83a5\nTask: ubuntustudio-video, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libqt5script5",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libqt5script5=5.15.13+dfsg-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/packages/libqt5script5",
+      "timestamp_utc": "2026-11-05T12:27:45.438420+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libqt5script5 amd64 5.15.13+dfsg-1 [758 kB]\nFetched 758 kB in 3s (218 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libqt5script5 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/qt_script/packages/libqt5script5/libqt5script5_5.15.13+dfsg-1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/qt_script/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:49.252182+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for qtscript5-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "qtscript5-dev"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:49.356265+00:00",
+      "exit_code": 0,
+      "stdout": "Package: qtscript5-dev\nArchitecture: amd64\nVersion: 5.15.13+dfsg-1\nMulti-Arch: same\nPriority: optional\nSection: universe/libdevel\nSource: qtscript-opensource-src\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 169\nPre-Depends: dpkg (>= 1.15.6~)\nDepends: libqt5script5 (= 5.15.13+dfsg-1), libqt5scripttools5 (= 5.15.13+dfsg-1), qtbase5-dev | qtbase5-gles-dev\nFilename: pool/universe/q/qtscript-opensource-src/qtscript5-dev_5.15.13+dfsg-1_amd64.deb\nSize: 18872\nMD5sum: 17ebccac2938cf1c42665acf6b2a7a7a\nSHA1: 3de89e4cf0b1c6299020cb24e5c4eb330ab9dd29\nSHA256: bcdf081af0b19c8123c60a4602ab39dcc919728d58bbe3f145f6e79e0d1c621c\nSHA512: 9ded99c2429de84851496fbe9cb6346fd372f4ac517b425a5dc353beaa2c68894dd0898893d608639f40683b2bafa1a179ee1d8a33666a0a6ceacc921ed5fa8d\nHomepage: https://doc.qt.io/qt-5/qtscript-index.html\nDescription-en: Qt 5 script development files\n Qt is a cross-platform C++ application framework. Qt's primary feature\n is its rich set of widgets that provide standard GUI functionality.\n .\n This package contains the header development files used for building Qt 5\n applications using QtScript and QtScriptTools libraries.\nDescription-md5: 9c895e1d9010a1b23470d0c0eed496d9\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only qtscript5-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "qtscript5-dev=5.15.13+dfsg-1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/packages/qtscript5-dev",
+      "timestamp_utc": "2026-11-05T12:27:49.384754+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 qtscript5-dev amd64 5.15.13+dfsg-1 [18.9 kB]\nFetched 18.9 kB in 0s (71.4 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract qtscript5-dev without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/qt_script/packages/qtscript5-dev/qtscript5-dev_5.15.13+dfsg-1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/qt_script/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:49.897932+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "G++ version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:50.167658+00:00",
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Compile the unchanged QtScript consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-fPIC",
+        "-I${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/include/x86_64-linux-gnu/qt5",
+        "-I${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/include/x86_64-linux-gnu/qt5/QtCore",
+        "-I${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/include/x86_64-linux-gnu/qt5",
+        "-I${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/include/x86_64-linux-gnu/qt5/QtScript",
+        "main.cpp",
+        "-o",
+        "hello",
+        "-L${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/x86_64-linux-gnu",
+        "-L${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath-link,${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu",
+        "-lQt5Script",
+        "-lQt5Core"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:50.283670+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Verify no GUI library is linked",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/qt_script/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:57.969318+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffc4d9b8000)\n\tlibQt5Script.so.5 => ${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/x86_64-linux-gnu/libQt5Script.so.5 (0x000077a86377c000)\n\tlibQt5Core.so.5 => ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/libQt5Core.so.5 (0x000077a863209000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000077a862e00000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000077a8631d3000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000077a862a00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000077a8630e8000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000077a8630cc000)\n\tlibdouble-conversion.so.3 => ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/libdouble-conversion.so.3 (0x000077a8630b7000)\n\tlibicui18n.so.74 => /lib/x86_64-linux-gnu/libicui18n.so.74 (0x000077a862600000)\n\tlibicuuc.so.74 => /lib/x86_64-linux-gnu/libicuuc.so.74 (0x000077a862200000)\n\tlibpcre2-16.so.0 => ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu/libpcre2-16.so.0 (0x000077a862d74000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000077a862cba000)\n\tlibglib-2.0.so.0 => /lib/x86_64-linux-gnu/libglib-2.0.so.0 (0x000077a8624b7000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000077a8639f7000)\n\tlibicudata.so.74 => /lib/x86_64-linux-gnu/libicudata.so.74 (0x000077a860400000)\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x000077a862c20000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Evaluate the exact original script with QScriptEngine",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/qt_script/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/qt_script",
+      "timestamp_utc": "2026-11-05T12:27:58.190837+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/qt_script/root/usr/lib:${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "libqt5script5",
+      "version": "5.15.13+dfsg-1",
+      "ubuntu_archive_path": "pool/universe/q/qtscript-opensource-src/libqt5script5_5.15.13+dfsg-1_amd64.deb",
+      "sha256": "e0be9535a8c6868f94b9e7faddcb6dad1a1c3549a5329ef08549272b0289454a"
+    },
+    {
+      "name": "qtscript5-dev",
+      "version": "5.15.13+dfsg-1",
+      "ubuntu_archive_path": "pool/universe/q/qtscript-opensource-src/qtscript5-dev_5.15.13+dfsg-1_amd64.deb",
+      "sha256": "bcdf081af0b19c8123c60a4602ab39dcc919728d58bbe3f145f6e79e0d1c621c"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#576 Qt Script/hello.qs": "9b27cd9d8ce3af171f266f5e3a58043f2f553f1a48259c3d7b5e082f8b94bf84",
+    "examples/#576 Qt Script/main.cpp": "bd93afd1a0eef293a609d3c02711b29ee6dd31f781c61863ccdaa8309bffa462"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "toolchain": "Qt Script native engine; g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "sources": [
+    {
+      "title": "Qt Script QScriptEngine",
+      "url": "https://doc.qt.io/archives/qt-5.15/qscriptengine.html"
+    }
+  ],
+  "semantic_scope": "The unchanged C++ QCoreApplication consumer loaded the exact hello.qs into the native Qt5 QScriptEngine and printed its final value, Hello, World!, with exit0 and no exceptions. No display variables were supplied, and no QtGui/QtWidgets libraries or GUI processes were used.",
+  "versions": [
+    {
+      "label": "G++ version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    }
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The unchanged C++ QCoreApplication consumer loaded the exact hello.qs into the native Qt5 QScriptEngine and printed its final value, Hello, World!, with exit0 and no exceptions. No display variables were supplied, and no QtGui/QtWidgets libraries or GUI processes were used."
+}

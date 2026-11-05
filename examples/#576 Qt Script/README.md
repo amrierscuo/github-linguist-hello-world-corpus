@@ -1,5 +1,20 @@
 # #576 Qt Script
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+The unchanged C++ QCoreApplication consumer loaded the exact hello.qs into the native Qt5 QScriptEngine and printed its final value, Hello, World!, with exit0 and no exceptions. No display variables were supplied, and no QtGui/QtWidgets libraries or GUI processes were used.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json).
+
+## Extension results
+
+- `.qs`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Evaluate ECMAScript in the real QScriptEngine.
 
 ## Toolchain
@@ -33,4 +48,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.qs` | [hello.qs](hello.qs) created; verification pending |
+| `.qs` | [hello.qs](hello.qs) syntax and behavior verified |
+
+</details>

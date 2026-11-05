@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:27:53.564203+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Modula-2",
+  "ordinal": 439,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for gm2-13",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "gm2-13"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:53.603553+00:00",
+      "exit_code": 0,
+      "stdout": "Package: gm2-13\nSource: gcc-13\nPriority: optional\nSection: universe/devel\nInstalled-Size: 140\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 13.3.0-6ubuntu2~24.04.1\nProvides: gm2, m2-compiler\nDepends: gm2-13-x86-64-linux-gnu (= 13.3.0-6ubuntu2~24.04.1), gcc-13-base (>= 13), g++-13 (>= 13)\nFilename: pool/universe/g/gcc-13/gm2-13_13.3.0-6ubuntu2~24.04.1_amd64.deb\nSize: 75196\nMD5sum: 9494353e236ac2c0ba9b2d5053209ba3\nSHA1: df334b1c83ab5539cfcb2f977ce9cac01acf2257\nSHA256: 2a2aa4cbc34b04b47cad830b7af0daba7bfdb58296b6ebb5802e373294d95e7c\nSHA512: 8026a1984418e58194d6875682d5db8c908659f5ff9f5d59b3c803e3a48d68dc40c45ed63e557fe442ac6d99ae00317ea0d83e6fc56af81dc4af5a99ebfaf26f\nHomepage: http://gcc.gnu.org/\nDescription-en: GNU D compiler (version 2)\n This is the GNU Modula-2 compiler, which compiles Modula-2 on platforms\n supported by gcc.  It uses the gcc backend to generate optimised code.\nDescription-md5: 86da0732fb89cbbbb777aebc6d46bb28\nOriginal-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: gm2-13\nArchitecture: amd64\nVersion: 13.2.0-23ubuntu4\nPriority: optional\nSection: universe/devel\nSource: gcc-13\nOrigin: Ubuntu\nMaintainer: Ubuntu Core developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 137\nProvides: gm2, m2-compiler\nDepends: gm2-13-x86-64-linux-gnu (= 13.2.0-23ubuntu4), gcc-13-base (>= 13), g++-13 (>= 13)\nFilename: pool/universe/g/gcc-13/gm2-13_13.2.0-23ubuntu4_amd64.deb\nSize: 13808\nMD5sum: 6759afe0ce9e83b4d039f1d293413fd8\nSHA1: e7fa819bddb6365f6b07f437173ff47b6657a797\nSHA256: d636781f2a3a833983b804c0b5d0a2ab022942b94246340d8934414857c4ad62\nSHA512: d22390d99cb622f45197687de7d6015045e0309d8517bcd1b5b48dabd04c716d52d4c282259d55b483779196bff55198359bb7340e176a0031bcb3a098df5558\nHomepage: http://gcc.gnu.org/\nDescription-en: GNU D compiler (version 2)\n This is the GNU Modula-2 compiler, which compiles Modula-2 on platforms\n supported by gcc.  It uses the gcc backend to generate optimised code.\nDescription-md5: 86da0732fb89cbbbb777aebc6d46bb28\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only gm2-13",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "gm2-13=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/gm2-13",
+      "timestamp_utc": "2026-11-05T12:27:53.652485+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 gm2-13 amd64 13.3.0-6ubuntu2~24.04.1 [75.2 kB]\nFetched 75.2 kB in 0s (232 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract gm2-13 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/gm2-13/gm2-13_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:54.348374+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libgm2-13-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libgm2-13-dev=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:54.413749+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libgm2-13-dev\nSource: gcc-13\nPriority: optional\nSection: universe/libdevel\nInstalled-Size: 5463\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 13.3.0-6ubuntu2~24.04.1\nDepends: gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), libgm2-18 (>= 13.3.0-6ubuntu2~24.04.1)\nFilename: pool/universe/g/gcc-13/libgm2-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb\nSize: 849474\nMD5sum: aa56bf06a3532cd43d89c961fd48bb88\nSHA1: 7d0be208a376189c04b6b34d5f794bfa0ac184b1\nSHA256: d0172fd1e7ee0cee19388a79f38a0691f4404e7c75026e9518510bf73eee5323\nSHA512: ec3a2105bfb3749c384efd75c00b4e5ae357768c43fa03ddda4ff0ed05958c71af8b24af6146426a1d52d37ab5648fadadc304acd364fa097915b3b39d99c62e\nHomepage: http://gcc.gnu.org/\nDescription-en: GNU Modula-2 standard library\n This is the Modula-2 standard library that comes with the gm2 compiler.\nDescription-md5: e3610e2377e77eddbfb5ac76ab6b4834\nMulti-Arch: same\nOriginal-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libgm2-13-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libgm2-13-dev=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/libgm2-13-dev",
+      "timestamp_utc": "2026-11-05T12:27:54.449840+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libgm2-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [849 kB]\nFetched 849 kB in 0s (2070 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libgm2-13-dev without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/libgm2-13-dev/libgm2-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:55.161063+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libgm2-18",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libgm2-18=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:56.548116+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libgm2-18\nSource: gcc-13\nPriority: optional\nSection: universe/libs\nInstalled-Size: 572\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 13.3.0-6ubuntu2~24.04.1\nDepends: gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), libc6 (>= 2.38)\nFilename: pool/universe/g/gcc-13/libgm2-18_13.3.0-6ubuntu2~24.04.1_amd64.deb\nSize: 164784\nMD5sum: d5fdc79558c34e42f79702076277fede\nSHA1: 9f1d4e34067cf1a29bd8549c6fab832fd8cea943\nSHA256: a4ad358a04256d146cf6036b7555863370ccc5e3280b791f75155f78fbe54280\nSHA512: fceade416564a70c1972af6a48b52054a8f3d6356aeeca6a38fba1fce06b9139866798000615533c6d145279ae87d029dfb98d455f867ba783341a27d831b0c4\nHomepage: http://gcc.gnu.org/\nDescription-en: GNU Modula-2 standard library (runtime library)\n This is the GNU Modula-2 standard library that comes with the gm2 compiler.\nDescription-md5: 2b6f235369b3172b9f6a3f7d22bc9978\nMulti-Arch: same\nOriginal-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libgm2-18",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libgm2-18=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/libgm2-18",
+      "timestamp_utc": "2026-11-05T12:27:56.586765+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libgm2-18 amd64 13.3.0-6ubuntu2~24.04.1 [165 kB]\nFetched 165 kB in 1s (218 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libgm2-18 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/libgm2-18/libgm2-18_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:57.695703+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "GNU Modula-2 version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/bin/x86_64-linux-gnu-gm2-13",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:27:57.798631+00:00",
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "timeout: failed to run command ‘${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/bin/x86_64-linux-gnu-gm2-13’: No such file or directory\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib"
+      }
+    },
+    {
+      "label": "Read Ubuntu package metadata for gm2-13-x86-64-linux-gnu",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "gm2-13-x86-64-linux-gnu=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:29:37.574673+00:00",
+      "exit_code": 0,
+      "stdout": "Package: gm2-13-x86-64-linux-gnu\nSource: gcc-13\nPriority: optional\nSection: universe/devel\nInstalled-Size: 31021\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 13.3.0-6ubuntu2~24.04.1\nReplaces: gm2 (<< 4.4.6-5), gm2-13 (<< 13.2.0-11)\nDepends: gcc-13-base (>= 13), g++-13-x86-64-linux-gnu (>= 13.3.0-6ubuntu2~24.04.1), libgm2-13-dev (= 13.3.0-6ubuntu2~24.04.1), libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libgmp10 (>= 2:6.3.0+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libstdc++6 (>= 5), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)\nBreaks: gm2-13 (<< 13.2.0-11)\nFilename: pool/universe/g/gcc-13/gm2-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb\nSize: 10768804\nMD5sum: c792ef58089e7735185728672c427ccc\nSHA1: 4bf7041e864127415b84b45476a55afc1f17c433\nSHA256: ccb7da8381452b7659319f16c3a5ffb30f36b68f0f8a56524728d4c7a36d6aa9\nSHA512: 204ccc9ba9e3f0441eee5bb0ebc3e8418ccc26c2f2aec2bedb0929d73a2b01375516d9359e6674a95e40f14a67a74cd2ace6a70b30adad26c4c4cf34e24b16ee\nHomepage: http://gcc.gnu.org/\nDescription-en: GNU Modula-2 compiler for the x86_64-linux-gnu architecture\n This is the GNU Modula-2 compiler for the x86_64-linux-gnu architecture,\n which compiles Modula-2 on platforms supported by gcc.  It uses the gcc\n backend to generate optimised code.\nDescription-md5: 715017f94accf8a4e1546b56f9253afd\nMulti-Arch: foreign\nOriginal-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only gm2-13-x86-64-linux-gnu",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "gm2-13-x86-64-linux-gnu=13.3.0-6ubuntu2~24.04.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/gm2-13-x86-64-linux-gnu",
+      "timestamp_utc": "2026-11-05T12:29:37.723809+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 gm2-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [10.8 MB]\nFetched 10.8 MB in 1s (8697 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract gm2-13-x86-64-linux-gnu without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/packages/gm2-13-x86-64-linux-gnu/gm2-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:29:39.339416+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "GNU Modula-2 version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/bin/x86_64-linux-gnu-gm2-13",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:29:40.124859+00:00",
+      "exit_code": 0,
+      "stdout": "x86_64-linux-gnu-gm2-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile unchanged PIM Modula-2 module",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/bin/x86_64-linux-gnu-gm2-13",
+        "-B${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/gcc/x86_64-linux-gnu/13/",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/13/",
+        "-L${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/x86_64-linux-gnu",
+        "-fpim",
+        "Hello.mod",
+        "-o",
+        "hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:29:40.215599+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib"
+      }
+    },
+    {
+      "label": "Execute native Modula-2 program",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/middle/gm2/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/middle/gm2",
+      "timestamp_utc": "2026-11-05T12:29:42.189118+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/middle/gm2/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "gm2-13",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "ubuntu_archive_path": "pool/universe/g/gcc-13/gm2-13_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "2a2aa4cbc34b04b47cad830b7af0daba7bfdb58296b6ebb5802e373294d95e7c"
+    },
+    {
+      "name": "libgm2-13-dev",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "ubuntu_archive_path": "pool/universe/g/gcc-13/libgm2-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "d0172fd1e7ee0cee19388a79f38a0691f4404e7c75026e9518510bf73eee5323"
+    },
+    {
+      "name": "libgm2-18",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "ubuntu_archive_path": "pool/universe/g/gcc-13/libgm2-18_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "a4ad358a04256d146cf6036b7555863370ccc5e3280b791f75155f78fbe54280"
+    },
+    {
+      "name": "gm2-13-x86-64-linux-gnu",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "ubuntu_archive_path": "pool/universe/g/gcc-13/gm2-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "ccb7da8381452b7659319f16c3a5ffb30f36b68f0f8a56524728d4c7a36d6aa9"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#439 Modula-2/Hello.mod": "e85bd66571a0e3a3d84f33af7768d087d8faa30910740f8877f7d8aa09e24e57"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://gcc.gnu.org/onlinedocs/gm2/",
+    "https://packages.ubuntu.com/noble/gm2-13"
+  ],
+  "toolchain": {
+    "name": "GNU Modula-2",
+    "version": "x86_64-linux-gnu-gm2-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "semantic_scope": "GNU Modula-2 compiled the exact PIM module and its native executable printed the exact greeting with LF.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "GNU Modula-2 compiled the exact PIM module and its native executable printed the exact greeting with LF."
+}

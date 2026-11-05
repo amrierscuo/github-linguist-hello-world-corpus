@@ -1,5 +1,9 @@
 # 0416: Makefile: `.mak`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.mak`. GNU Make parsed the exact variant and executed its hello recipe, emitting exactly Hello, World! plus LF. [Recorded evidence](../../verification/native_20261105_batch_2e6d616b.json).
+
 Role: Alias extension for the same text format as the main source.
 
 Origin: Byte-identical copy of the original corpus source: examples/#416 Makefile/Makefile.
@@ -14,7 +18,7 @@ Usare la toolchain del README principale sul file hello.mak; eventuali file gene
 
 Expected result: stdout Hello, World! and LF, exit 0.
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

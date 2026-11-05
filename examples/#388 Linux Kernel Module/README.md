@@ -1,5 +1,20 @@
 # #388 Linux Kernel Module
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+Native Kbuild compiled the original external module, regenerated the canonical .mod object list modulo its temporary directory prefix, and embedded both greeting and module description. No module was loaded or kernel init executed.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json).
+
+## Extension results
+
+- `.mod`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Associate metadata .mod and Kbuild to the original form that contains the greeting.
 
 ## Toolchain
@@ -35,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mod` | [hello.mod](hello.mod) created; verification pending |
+| `.mod` | [hello.mod](hello.mod) syntax and behavior verified |
+
+</details>

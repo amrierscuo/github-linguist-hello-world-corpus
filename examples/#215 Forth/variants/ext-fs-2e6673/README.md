@@ -1,5 +1,9 @@
 # 0215 Forth: variant `.fs`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.fs`. Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr. [Recorded evidence](../../verification/native_20261105_batch_2e6673.json).
+
 Role: Textual Source Forth; .f / .for / .fs in this folder are not Fortran or F# sources.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#215 Forth/hello.fth
@@ -18,8 +22,7 @@ gforth hello.fs
 
 Exit 0; exact greeting followed by newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

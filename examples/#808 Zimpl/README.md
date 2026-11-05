@@ -1,5 +1,24 @@
 # #808 Zimpl
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+After explicitly binding the indexed-variable iterator in the three declared sources, native Zimpl generated each LP and GLPK solved it to optimality. The thirteen native solution variables decode to exactly Hello, World!. Each suffix was compiled and solved separately.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json).
+
+The indexed variable declaration was minimally corrected to bind its iterator explicitly. The same correction was compiled and solved separately for every suffix listed below. [Original compiler failure](verification/native_20261105_batch_original_failure.json).
+
+## Extension results
+
+- `.zimpl`: syntax and behavior verified.
+- `.zmpl`: syntax and behavior verified.
+- `.zpl`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Generate and solve a LP Zimpl whose excellent encodes greeting bytes.
 
 ## Toolchain
@@ -33,6 +52,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.zimpl` | [hello.zimpl](variants/zimpl-c607d319/hello.zimpl) created; verification pending |
-| `.zmpl` | [hello.zmpl](variants/zmpl-c5eac23d/hello.zmpl) created; verification pending |
-| `.zpl` | [hello.zpl](hello.zpl) created; verification pending |
+| `.zimpl` | [hello.zimpl](variants/zimpl-c607d319/hello.zimpl) syntax and behavior verified |
+| `.zmpl` | [hello.zmpl](variants/zmpl-c5eac23d/hello.zmpl) syntax and behavior verified |
+| `.zpl` | [hello.zpl](hello.zpl) syntax and behavior verified |
+
+</details>

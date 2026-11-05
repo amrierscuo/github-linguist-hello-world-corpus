@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:33:09.991012+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Forth",
+  "ordinal": 215,
+  "commands": [
+    {
+      "label": "Native Gforth version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth-ditc",
+        "-i",
+        "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth.fi",
+        "-p",
+        "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3:${WORKSPACE}/work/tools_201_220/linux/usr/share/gforth/0.7.3",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468",
+      "timestamp_utc": "2026-11-05T12:33:10.081625+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "gforth 0.7.3\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile and execute original Forth words",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth-ditc",
+        "-i",
+        "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3/gforth.fi",
+        "-p",
+        "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu/gforth/0.7.3:${WORKSPACE}/work/tools_201_220/linux/usr/share/gforth/0.7.3",
+        "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/variants/ext-4th-2e347468/hello.4th"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/variants/ext-4th-2e347468",
+      "timestamp_utc": "2026-11-05T12:33:10.200114+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/tools_201_220/linux/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/root/0215_2e347468/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#215 Forth/variants/ext-4th-2e347468/hello.4th": "e79b119c9256cff8a2f8adc2f21e3d43b79e7bf0736c2bf90288481c98b0b762"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".4th",
+  "documentation": "examples/#215 Forth/variants/ext-4th-2e347468/README.md",
+  "sources": [
+    "https://www.complang.tuwien.ac.at/forth/gforth/Docs-html/",
+    "https://forth-standard.org/standard/core/Dotp",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#215 Forth/README.md": "f05b21a8bdaf772703a22d50f3c55dcc9a5746774e86a1b7e031e52f672751f3",
+    "examples/#215 Forth/variants/ext-4th-2e347468/README.md": "21318b49d144226324f3bf975ca80faf63e45a19457a9f507b6bbe94e4378523"
+  },
+  "toolchain": "gforth 0.7.3",
+  "semantic_scope": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Gforth loaded its original VM image, compiled and executed the exact suffix variant, and printed exactly Hello, World! plus LF without stderr."
+}

@@ -1,5 +1,9 @@
 # 0166 Diff: variant `.patch`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.patch`. GNU patch accepted the exact variant in a dry run, then applied it only to the copied original before fixture. The result is byte-identical to the original after fixture, exactly Hello, World! plus LF. [Recorded evidence](../../verification/native_20261105_batch_2e7061746368.json).
+
 Role: Textual Alias of the same format and of the same programma/dataset of the original model.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#166 Diff/hello.diff
@@ -18,8 +22,7 @@ GNU patch --dry-run -p1 -d <copia-fixture-originale> < hello.patch; applicare al
 
 Expected result: diff exit 1 because there are differences; patch exit 0; resulting file equal to after/hello.txt.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

@@ -1,5 +1,20 @@
 # #403 M
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+Native FIS-GT.M compiled and ran the exact M bytes after the documented HELLO.m filename staging. No database access or server was used.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_batch_main.json).
+
+## Extension results
+
+- `.mumps`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Perform a M/MUMPS routine that writes greeting.
 
 Canonical type `programming`, language_id `214`.
@@ -28,5 +43,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mumps` | [hello.mumps](hello.mumps) created; verification pending |
+| `.mumps` | [hello.mumps](hello.mumps) syntax and behavior verified |
 | `.m` | [hello.m](variants/m-f7140aa0/hello.m) created; verification pending |
+
+</details>

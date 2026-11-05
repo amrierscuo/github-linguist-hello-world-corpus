@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:36.831292+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Agda",
+  "ordinal": 23,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for agda-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "agda-bin"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:36.854367+00:00",
+      "exit_code": 0,
+      "stdout": "Package: agda-bin\nArchitecture: amd64\nVersion: 2.6.3-1build1\nPriority: optional\nSection: universe/haskell\nSource: agda\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 68292\nDepends: libc6 (>= 2.38), libffi8 (>= 3.4), libgmp10 (>= 2:6.3.0+dfsg), libtinfo6 (>= 6), zlib1g (>= 1:1.1.4), libghc-agda-dev (<< 2.6.3+~), libghc-agda-dev (>= 2.6.3)\nSuggests: elpa-agda2-mode\nFilename: pool/universe/a/agda/agda-bin_2.6.3-1build1_amd64.deb\nSize: 10985550\nMD5sum: 5792055d31b76bb5b8eb605a7103bcfd\nSHA1: cf85be4b6e71df6776d52556473dc919eb62a50f\nSHA256: 17d3b7d5453e8a199db789bf9b199b5635e485db93864e454aa6832a03ba5902\nSHA512: 904ffc76551bcbca0f3b40eeca337a1904e28d23f262472fe0c5863d140042e511d6cc663bda1687750b8c6db0d8cc0475b39c4efb1587d437e34abea9b97a6a\nHomepage: https://wiki.portal.chalmers.se/agda/\nDescription-en: commandline interface to Agda\n Agda is a dependently typed functional programming language: It has inductive\n families, which are like Haskell's GADTs, but they can be indexed by values and\n not just types. It also has parameterised modules, mixfix operators, Unicode\n characters, and an interactive Emacs interface (the type checker can assist in\n the development of your code).\n .\n Agda is also a proof assistant: It is an interactive system for writing and\n checking proofs. Agda is based on intuitionistic type theory, a foundational\n system for constructive mathematics developed by the Swedish logician Per\n Martin-Löf. It has many similarities with other proof assistants based on\n dependent types, such as Coq, Epigram and NuPRL.\n .\n This package provides a command-line program for type-checking and compiling\n Agda programs. The program can also generate hyperlinked, highlighted HTML\n files from Agda sources.\nDescription-md5: f8e26d204d9ccc3a3cfdad460ae35595\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only agda-bin",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "agda-bin=2.6.3-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda/packages/agda-bin",
+      "timestamp_utc": "2026-11-05T12:28:37.126243+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 agda-bin amd64 2.6.3-1build1 [11.0 MB]\nFetched 11.0 MB in 2s (6690 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract agda-bin without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/packages/agda-bin/agda-bin_2.6.3-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:39.150126+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libghc-agda-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libghc-agda-dev"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:40.356700+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libghc-agda-dev\nArchitecture: amd64\nVersion: 2.6.3-1build1\nPriority: extra\nSection: universe/haskell\nSource: agda\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 222057\nProvides: libghc-agda-dev-2.6.3-882a2\nDepends: libghc-aeson-dev-2.1.2.1-b87c3, libghc-array-dev-0.5.4.0-0952c, libghc-async-dev-2.2.4-2b734, libghc-base-dev-4.17.2.0-68dfe, libghc-binary-dev-0.8.9.1-6a9d2, libghc-blaze-html-dev-0.9.1.2-38c38, libghc-boxes-dev-0.1.5-c48de, libghc-bytestring-dev-0.11.5.2-6590e, libghc-case-insensitive-dev-1.2.1.0-d0ee4, libghc-containers-dev-0.6.7-a1650, libghc-data-hash-dev-0.2.0.1-27079, libghc-deepseq-dev-1.4.8.0-ddf16, libghc-directory-dev-1.3.7.1-e5694, libghc-dlist-dev-1.0-afbc1, libghc-edit-distance-dev-0.2.2.1-56d08, libghc-equivalence-dev-0.4.1-d6c01, libghc-exceptions-dev-0.10.5-3dbf4, libghc-filepath-dev-1.4.2.2-290a6, libghc-ghc-compact-dev-0.1.0.0-d6f68, libghc-gitrev-dev-1.3.1-0e910, libghc-hashable-dev-1.4.3.0-e937e, libghc-haskeline-dev-0.8.2-390ba, libghc-monad-control-dev-1.0.3.1-d981c, libghc-mtl-dev-2.2.2-6f39a, libghc-murmur-hash-dev-0.1.0.10-db7ab, libghc-parallel-dev-3.2.2.0-afc9a, libghc-pretty-dev-1.1.3.6-1aa0a, libghc-process-dev-1.6.17.0-29e15, libghc-regex-tdfa-dev-1.3.2.2-4f08e, libghc-split-dev-0.2.3.5-0947f, libghc-stm-dev-2.5.1.0-c4a56, libghc-stmonadtrans-dev-0.4.7-29b5b, libghc-strict-dev-0.5-6de3b, libghc-text-dev-2.0.2-0847e, libghc-time-compat-dev-1.9.6.1-267b5, libghc-time-dev-1.12.2-491a0, libghc-transformers-dev-0.5.6.2-931c3, libghc-unordered-containers-dev-0.2.19.1-4f4d5, libghc-uri-encode-dev-1.5.0.7-a7d4e, libghc-vector-dev-0.13.1.0-1ffee, libghc-vector-hashtables-dev-0.1.1.3-36ab5, libghc-zlib-dev-0.6.3.0-b4315, libc6 (>= 2.29), libgmp10 (>= 2:6.3.0+dfsg), libtinfo6 (>= 6), zlib1g (>= 1:1.1.4)\nFilename: pool/universe/a/agda/libghc-agda-dev_2.6.3-1build1_amd64.deb\nSize: 25485196\nMD5sum: e0eb872338d3bbf3e580ced3a6bbde54\nSHA1: c0c5603c7f9b53fa6886a5fa13df38a8b2b039d2\nSHA256: 84c8810cb45493aa26b6838928b0aec5a233d7e9ae4a0830b63cb85efc3d0388\nSHA512: 19786e4fd3ebef450ca6b1305bec1796cff88de896bc8db33faf15bb006b920b94ddfa19bcb9b5c239a3712d38e0749f4e9457baa05273c8162bb9266afd6d66\nHomepage: https://wiki.portal.chalmers.se/agda/\nDescription-en: dependently typed functional programming language\n Agda is a dependently typed functional programming language: It has inductive\n families, which are like Haskell's GADTs, but they can be indexed by values and\n not just types. It also has parameterised modules, mixfix operators, Unicode\n characters, and an interactive Emacs interface (the type checker can assist in\n the development of your code).\n .\n Agda is also a proof assistant: It is an interactive system for writing and\n checking proofs. Agda is based on intuitionistic type theory, a foundational\n system for constructive mathematics developed by the Swedish logician Per\n Martin-Löf. It has many similarities with other proof assistants based on\n dependent types, such as Coq, Epigram and NuPRL.\n .\n This package provides a library for the Haskell programming language.\n See http://www.haskell.org/ for more information on Haskell.\nDescription-md5: 367dee38c949eb56c7f0325161eedb49\nGhc-Package: Agda-2.6.3-F91ij4KwIR0JAPMMfugHqV\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libghc-agda-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libghc-agda-dev=2.6.3-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda/packages/libghc-agda-dev",
+      "timestamp_utc": "2026-11-05T12:28:40.394324+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libghc-agda-dev amd64 2.6.3-1build1 [25.5 MB]\nFetched 25.5 MB in 3s (8563 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libghc-agda-dev without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/packages/libghc-agda-dev/libghc-agda-dev_2.6.3-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:43.841650+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Inspect Agda linked native libraries",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/bin/agda"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:51.511684+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffd721ca000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000714b6d324000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x0000714b6d308000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x0000714b6d2d4000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x0000714b6d250000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000714b6d000000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x0000714b6d242000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000714b6d417000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/agda/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/agda/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib"
+      }
+    },
+    {
+      "label": "Agda version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/bin/agda",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:51.616505+00:00",
+      "exit_code": 0,
+      "stdout": "Agda version 2.6.3\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/agda/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/agda/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native GHC version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ghc",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:51.710191+00:00",
+      "exit_code": 0,
+      "stdout": "The Glorious Glasgow Haskell Compilation System, version 9.4.7\n",
+      "stderr": ""
+    },
+    {
+      "label": "Agda native typecheck",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "60s",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/bin/agda",
+        "--no-libraries",
+        "-i",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim",
+        "-i",
+        ".",
+        "Hello.agda"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:28:52.130267+00:00",
+      "exit_code": 1,
+      "stdout": "The lib directory ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/lib does not exist\nCallStack (from HasCallStack):\n  error, called at src/full/Agda/Interaction/Library.hs:144:8 in Agda-2.6.3-F91ij4KwIR0JAPMMfugHqV:Agda.Interaction.Library",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/agda/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/agda/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib"
+      }
+    },
+    {
+      "label": "Typecheck with correct portable Agda data root",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "60s",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/bin/agda",
+        "--no-libraries",
+        "-i",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim",
+        "-i",
+        ".",
+        "Hello.agda"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:29:36.503573+00:00",
+      "exit_code": 0,
+      "stdout": "Checking Hello (${WORKSPACE}/work/native_batch_20261105/early/agda/Hello.agda).\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/agda/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/agda/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile original Agda through GHC backend",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/bin/agda",
+        "--no-libraries",
+        "-i",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim",
+        "-i",
+        ".",
+        "--compile",
+        "Hello.agda"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:29:38.764069+00:00",
+      "exit_code": 0,
+      "stdout": "Compiling Agda.Primitive in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Primitive.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Primitive.hs\nCompiling Agda.Builtin.Sigma in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/Sigma.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/Sigma.hs\nCompiling Agda.Builtin.Maybe in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/Maybe.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/Maybe.hs\nCompiling Agda.Builtin.Bool in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/Bool.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/Bool.hs\nCompiling Agda.Builtin.Nat in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/Nat.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/Nat.hs\nCompiling Agda.Builtin.Char in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/Char.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/Char.hs\nCompiling Agda.Builtin.List in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/List.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/List.hs\nCompiling Agda.Builtin.String in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/String.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/String.hs\nCompiling Agda.Builtin.Unit in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/Unit.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/Unit.hs\nCompiling Agda.Builtin.IO in ${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/share/libghc-agda-dev/lib/prim/Agda/Builtin/IO.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Agda/Builtin/IO.hs\nCompiling Hello in ${WORKSPACE}/work/native_batch_20261105/early/agda/Hello.agdai to ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Hello.hs\nCalling: ghc -O -o ${WORKSPACE}/work/native_batch_20261105/early/agda/Hello -Werror -i${WORKSPACE}/work/native_batch_20261105/early/agda -main-is MAlonzo.Code.Hello ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Hello.hs --make -fwarn-incomplete-patterns\n[1 of 6] Compiling MAlonzo.RTE      ( MAlonzo/RTE.hs, MAlonzo/RTE.o )\n[2 of 6] Compiling MAlonzo.Code.Agda.Builtin.Unit ( MAlonzo/Code/Agda/Builtin/Unit.hs, MAlonzo/Code/Agda/Builtin/Unit.o )\n[3 of 6] Compiling MAlonzo.Code.Agda.Builtin.String ( MAlonzo/Code/Agda/Builtin/String.hs, MAlonzo/Code/Agda/Builtin/String.o )\n[4 of 6] Compiling MAlonzo.Code.Agda.Builtin.IO ( MAlonzo/Code/Agda/Builtin/IO.hs, MAlonzo/Code/Agda/Builtin/IO.o )\n[5 of 6] Compiling MAlonzo.Code.Hello ( ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Hello.hs, ${WORKSPACE}/work/native_batch_20261105/early/agda/MAlonzo/Code/Hello.o )\n[6 of 6] Linking ${WORKSPACE}/work/native_batch_20261105/early/agda/Hello\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/agda/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/agda/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run the generated native binary",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/early/agda/Hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/agda",
+      "timestamp_utc": "2026-11-05T12:29:45.234728+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/agda/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/agda/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/agda/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "agda-bin",
+      "version": "2.6.3-1build1",
+      "ubuntu_archive_path": "pool/universe/a/agda/agda-bin_2.6.3-1build1_amd64.deb",
+      "sha256": "17d3b7d5453e8a199db789bf9b199b5635e485db93864e454aa6832a03ba5902"
+    },
+    {
+      "name": "libghc-agda-dev",
+      "version": "2.6.3-1build1",
+      "ubuntu_archive_path": "pool/universe/a/agda/libghc-agda-dev_2.6.3-1build1_amd64.deb",
+      "sha256": "84c8810cb45493aa26b6838928b0aec5a233d7e9ae4a0830b63cb85efc3d0388"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#023 Agda/Hello.agda": "8b4073c7fbe309b4e28f5f341a66accdb49bd1675f34af540eb3b362b1bb366b"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "toolchain": "Agda 2.6.3 with GHC 9.4.7 and text 2.0.2, Ubuntu WSL",
+  "sources": [
+    "https://agda.readthedocs.io/en/latest/tools/compilers.html",
+    "https://agda.readthedocs.io/en/latest/language/foreign-function-interface.html"
+  ],
+  "semantic_scope": "Agda typechecked the unchanged main : IO declaration; its GHC backend compiled the FFI putLine implementation and the resulting executable printed exactly Hello, World!.",
+  "verified_utc": "2026-11-05T12:29:45.234728+00:00",
+  "name": "Agda",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Agda typechecked the unchanged main : IO declaration; its GHC backend compiled the FFI putLine implementation and the resulting executable printed exactly Hello, World!."
+}

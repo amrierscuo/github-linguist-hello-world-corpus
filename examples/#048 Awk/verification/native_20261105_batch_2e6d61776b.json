@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:42.688023+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Awk",
+  "ordinal": 48,
+  "commands": [
+    {
+      "label": "Native Awk version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "mawk",
+        "-W",
+        "version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0048_2e6d61776b",
+      "timestamp_utc": "2026-11-05T12:28:42.739795+00:00",
+      "exit_code": 0,
+      "stdout": "mawk 1.3.4 20240123\nCopyright 2008-2023,2024, Thomas E. Dickey\nCopyright 1991-1996,2014, Michael D. Brennan\n\nrandom-funcs:       arc4random_stir/arc4random\nregex-funcs:        internal\n\ncompiled limits:\nsprintf buffer      8192\nmaximum-integer     9223372036854775808\n",
+      "stderr": ""
+    },
+    {
+      "label": "Execute exact Awk variant",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "mawk",
+        "-f",
+        "hello.mawk"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/root/0048_2e6d61776b/variants/ext-mawk-2e6d61776b",
+      "timestamp_utc": "2026-11-05T12:28:42.749627+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#048 Awk/variants/ext-mawk-2e6d61776b/hello.mawk": "a40ae7506bbebfeabd0353ee1cdd50e18500ec4a7876ece8e891098894a2c681"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "unchanged",
+  "extension": ".mawk",
+  "documentation": "examples/#048 Awk/variants/ext-mawk-2e6d61776b/README.md",
+  "sources": [
+    "https://www.gnu.org/software/gawk/manual/gawk.html",
+    "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml"
+  ],
+  "instructions_read_sha256": {
+    "examples/#048 Awk/README.md": "0c2fe377844412190a60acaac8f322e4a85ea716b098d4936aefea5db02d798c",
+    "examples/#048 Awk/variants/ext-mawk-2e6d61776b/README.md": "d779fc872c336d1b363909a69657a7356f10773f2e00745e58e5fefb8a07fcea"
+  },
+  "toolchain": "mawk 1.3.4 20240123",
+  "semantic_scope": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr."
+}

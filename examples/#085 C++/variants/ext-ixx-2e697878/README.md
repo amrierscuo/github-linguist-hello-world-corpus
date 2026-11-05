@@ -1,5 +1,9 @@
 # 0085 C++: variant `.ixx`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.ixx`. The genuine native C++ toolchain compiled the exact module, importing consumer, ordinary consumer or re2c-generated scanner as recorded. Every resulting console executable printed exactly Hello, World! plus LF. Module interfaces were compiled with GCC C++20 Modules TS, without text rewriting. [Recorded evidence](../../verification/native_20261105_batch_2e697878.json).
+
 Role: C++ 20 module interface exported, imported from the consumer.
 
 Type: **adapted**. Starting model: examples/#085 C++/hello.cpp; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ Clang con moduli C++20: clang++ -std=c++20 -x c++-module --precompile hello.ixx 
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

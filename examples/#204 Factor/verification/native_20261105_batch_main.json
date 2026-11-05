@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:30:40.697917+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Factor",
+  "ordinal": 204,
+  "commands": [
+    {
+      "label": "Download official distribution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "105s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "100",
+        "https://downloads.factorcode.org/releases/0.102/factor-linux-x86-64-0.102.tar.gz",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/early/factor/factor-linux-x86-64-0.102.tar.gz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/factor",
+      "timestamp_utc": "2026-11-05T12:30:40.718914+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract official archive using bounded native tar",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "150s",
+        "tar",
+        "--extract",
+        "--file",
+        "${WORKSPACE}/work/native_batch_20261105/early/factor/factor-linux-x86-64-0.102.tar.gz",
+        "--directory",
+        "${WORKSPACE}/work/native_batch_20261105/early/factor/tool",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/factor",
+      "timestamp_utc": "2026-11-05T12:34:29.943031+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Official Factor VM version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/early/factor/tool/factor/factor",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/factor",
+      "timestamp_utc": "2026-11-05T12:35:41.181972+00:00",
+      "exit_code": 0,
+      "stdout": "Factor 0.102 x86.64 (2336, heads/master-6f604bb0fa, Oct 13 2026 17:38:48)\n[Clang (GCC Ubuntu Clang 14.0.0)] on linux\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/factor/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/factor/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/factor/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/factor/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/factor/root/usr/lib"
+      }
+    },
+    {
+      "label": "Execute unchanged script in native Factor VM",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "50s",
+        "${WORKSPACE}/work/native_batch_20261105/early/factor/tool/factor/factor",
+        "-no-user-init",
+        "hello.factor"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/factor",
+      "timestamp_utc": "2026-11-05T12:35:42.200279+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/factor/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/factor/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/factor/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/factor/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/factor/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#204 Factor/hello.factor": "7f14e13bb98dcae21a64734005f023b90c6315d59d705db8e0a29b0c86968ff1"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "downloads": [
+    {
+      "url": "https://downloads.factorcode.org/releases/0.102/factor-linux-x86-64-0.102.tar.gz",
+      "filename": "factor-linux-x86-64-0.102.tar.gz",
+      "sha256": "567239b0b5fe4222d26bb871ad4c6b6f00f7dc885e149191d4fef7197e280551",
+      "bytes": 52286335
+    }
+  ],
+  "toolchain": "Factor 0.102 official Linux x86-64 VM/image",
+  "sources": [
+    "https://factorcode.org/",
+    "https://docs.factorcode.org/content/article-command-line.html",
+    "https://docs.factorcode.org/content/article-cookbook-scripts.html"
+  ],
+  "semantic_scope": "Authentic Factor VM loaded the unchanged script, concatenated the two stack strings and printed exactly Hello, World!. No listener or UI was started.",
+  "verified_utc": "2026-11-05T12:35:42.200279+00:00",
+  "name": "Factor",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Authentic Factor VM loaded the unchanged script, concatenated the two stack strings and printed exactly Hello, World!. No listener or UI was started."
+}

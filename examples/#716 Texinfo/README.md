@@ -1,5 +1,11 @@
 # #716 Texinfo
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.texinfo`: GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application. [Evidence](verification/native_20261105_batch_2e746578696e666f.json).
+- `.txi`: GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application. [Evidence](verification/native_20261105_batch_2e747869.json).
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -36,6 +42,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.texinfo` | [hello.texinfo](variants/texinfo-67e352f4/hello.texinfo) created; verification pending |
+| `.texinfo` | [hello.texinfo](variants/texinfo-67e352f4/hello.texinfo) syntax and behavior verified |
 | `.texi` | [hello.texi](hello.texi) verified |
-| `.txi` | [hello.txi](variants/txi-415ac389/hello.txi) created; verification pending |
+| `.txi` | [hello.txi](variants/txi-415ac389/hello.txi) syntax and behavior verified |

@@ -1,5 +1,13 @@
 # #048 Awk
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.auk`: The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr. [Evidence](verification/native_20261105_batch_2e61756b.json).
+- `.gawk`: The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr. [Evidence](verification/native_20261105_batch_2e6761776b.json).
+- `.mawk`: The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr. [Evidence](verification/native_20261105_batch_2e6d61776b.json).
+- `.nawk`: The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr. [Evidence](verification/native_20261105_batch_2e6e61776b.json).
+
 Voce canonica: `Awk`, tipo `programming`, `language_id: 28`.
 
 Perform the BEGIN Awk block without input and print the concatenate greeting.
@@ -45,7 +53,7 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.awk` | [hello.awk](hello.awk) verified |
-| `.auk` | [hello.auk](variants/ext-auk-2e61756b/hello.auk) created; verification pending |
-| `.gawk` | [hello.gawk](variants/ext-gawk-2e6761776b/hello.gawk) created; verification pending |
-| `.mawk` | [hello.mawk](variants/ext-mawk-2e6d61776b/hello.mawk) created; verification pending |
-| `.nawk` | [hello.nawk](variants/ext-nawk-2e6e61776b/hello.nawk) created; verification pending |
+| `.auk` | [hello.auk](variants/ext-auk-2e61756b/hello.auk) syntax and behavior verified |
+| `.gawk` | [hello.gawk](variants/ext-gawk-2e6761776b/hello.gawk) syntax and behavior verified |
+| `.mawk` | [hello.mawk](variants/ext-mawk-2e6d61776b/hello.mawk) syntax and behavior verified |
+| `.nawk` | [hello.nawk](variants/ext-nawk-2e6e61776b/hello.nawk) syntax and behavior verified |

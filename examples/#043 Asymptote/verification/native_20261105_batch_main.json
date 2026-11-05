@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:28:36.831545+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Asymptote",
+  "ordinal": 43,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for asymptote",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "asymptote"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:36.852847+00:00",
+      "exit_code": 0,
+      "stdout": "Package: asymptote\nArchitecture: amd64\nVersion: 2.87+ds-1build2\nPriority: optional\nSection: universe/tex\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian TeX Task Force <debian-tex-maint@lists.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 6840\nDepends: tex-common (>= 6.13), python3:any, libboost-filesystem1.83.0 (>= 1.83.0), libc6 (>= 2.38), libcurl3t64-gnutls (>= 7.16.2), libfftw3-double3 (>= 3.3.10), libgc1 (>= 1:7.2d), libgcc-s1 (>= 4.0), libgl1, libglew2.2 (>= 2.2.0-4), libglut3.12 (>= 3.4.0), libglx0, libgsl27 (>= 2.7.1), libreadline8t64 (>= 6.0), libsigsegv2 (>= 2.9), libstdc++6 (>= 13.1), libtinfo6 (>= 6), libtirpc3t64 (>= 1.0.2), zlib1g (>= 1:1.2.0), ghostscript, imagemagick, texlive-binaries, texlive-latex-base, texlive-pstricks, texlive-plain-generic, xdg-utils\nRecommends: asymptote-doc\nSuggests: asymptote-x11\nFilename: pool/universe/a/asymptote/asymptote_2.87+ds-1build2_amd64.deb\nSize: 1951724\nMD5sum: 9054d643daf3dd8149ae8bc77f9e87e7\nSHA1: f043142b698d66323005dd0ac392413c6d1fe175\nSHA256: 6ba6b8b5704ea45855f2d391e7d99a3a3c6e3a04d65b26a8d26d317b0abb8336\nSHA512: 535e2b688449062a8fd1da92f1f46f6c5a7d54d340c389a42890faeb5fe7aea5dd2e825a79c691424decabece436f8626fcfa1309a472574fba8c5281dbf4886\nHomepage: https://asymptote.sourceforge.net/\nDescription-en: script-based vector graphics language inspired by MetaPost\n Asymptote is a powerful script-based vector graphics language for technical\n drawings, inspired by MetaPost but with an improved C++-like syntax.\n Asymptote provides for figures the same high-quality level of typesetting that\n LaTeX does for scientific text.\nDescription-md5: c1b6aa3ffb76bbaec115cd7c61f16b76\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only asymptote",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "asymptote=2.87+ds-1build2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:37.122097+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 asymptote amd64 2.87+ds-1build2 [1952 kB]\nFetched 1952 kB in 1s (1409 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract asymptote without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/asymptote/asymptote_2.87+ds-1build2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:38.805540+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Inspect native shared-library requirements",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/bin/asy"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:39.383825+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffd6197c000)\n\tlibreadline.so.8 => /lib/x86_64-linux-gnu/libreadline.so.8 (0x000071c3db5e2000)\n\tlibfftw3.so.3 => not found\n\tlibtirpc.so.3 => /lib/x86_64-linux-gnu/libtirpc.so.3 (0x000071c3db5b5000)\n\tlibgsl.so.27 => not found\n\tlibGLEW.so.2.2 => not found\n\tlibGLX.so.0 => /lib/x86_64-linux-gnu/libGLX.so.0 (0x000071c3db580000)\n\tlibglut.so.3.12 => not found\n\tlibcurl-gnutls.so.4 => /lib/x86_64-linux-gnu/libcurl-gnutls.so.4 (0x000071c3db4c5000)\n\tlibsigsegv.so.2 => /lib/x86_64-linux-gnu/libsigsegv.so.2 (0x000071c3db4bf000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000071c3db4a1000)\n\tlibgc.so.1 => /lib/x86_64-linux-gnu/libgc.so.1 (0x000071c3db436000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x000071c3db402000)\n\tlibGL.so.1 => /lib/x86_64-linux-gnu/libGL.so.1 (0x000071c3db37b000)\n\tlibboost_filesystem.so.1.83.0 => not found\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000071c3db000000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000071c3db290000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000071c3dafd2000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000071c3dac00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000071c3dbbc4000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x000071c3daf7e000)\n\tlibGLdispatch.so.0 => /lib/x86_64-linux-gnu/libGLdispatch.so.0 (0x000071c3daec6000)\n\tlibX11.so.6 => /lib/x86_64-linux-gnu/libX11.so.6 (0x000071c3daac3000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x000071c3dae9b000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x000071c3dae79000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x000071c3dae5b000)\n\tlibssh.so.4 => /lib/x86_64-linux-gnu/libssh.so.4 (0x000071c3daa51000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x000071c3dae47000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x000071c3da9fc000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x000071c3da801000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x000071c3da7a3000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x000071c3dae37000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000071c3da6e9000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x000071c3db27e000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x000071c3da620000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x000071c3da5f4000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x000071c3dae2f000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x000071c3dae22000)\n\tlibxcb.so.1 => /lib/x86_64-linux-gnu/libxcb.so.1 (0x000071c3da5cb000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x000071c3da41e000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x000071c3da3d6000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x000071c3da352000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x000071c3d9e00000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x000071c3d9c5c000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x000071c3da33c000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x000071c3da322000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x000071c3d9c39000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x000071c3dae17000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x000071c3d9c27000)\n\tlibXau.so.6 => /lib/x86_64-linux-gnu/libXau.so.6 (0x000071c3da31c000)\n\tlibXdmcp.so.6 => /lib/x86_64-linux-gnu/libXdmcp.so.6 (0x000071c3da314000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x000071c3d9c1b000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x000071c3d9c05000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x000071c3d9bf6000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib"
+      }
+    },
+    {
+      "label": "Read Ubuntu package metadata for libfftw3-double3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libfftw3-double3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:39.467106+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libfftw3-double3\nArchitecture: amd64\nVersion: 3.3.10-1ubuntu3\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: fftw3\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2282\nDepends: libc6 (>= 2.34), libgomp1 (>= 4.9)\nSuggests: libfftw3-bin, libfftw3-dev\nFilename: pool/main/f/fftw3/libfftw3-double3_3.3.10-1ubuntu3_amd64.deb\nSize: 838254\nMD5sum: 6714effc5f6ae7e06f2c671c4bccf112\nSHA1: 3b777cea1f79aab80196268fbb3eb133f7404a3d\nSHA256: ff9396076103b305efe741e9acff11d52a040c6d95527c0f2dbd11e82a11bab8\nSHA512: 0d808ff9a4818d255b81632dacc8b2b213844f9a0a5dae471c9714d99c610ec8289b801ad7999b2bf9d2a99d02d2ad6508b2b9d95d8b36b0239e317ce4aafd20\nHomepage: https://fftw.org\nDescription-en: Library for computing Fast Fourier Transforms - Double precision\n The FFTW library computes Fast Fourier Transforms (FFT) in one or more\n dimensions. It is extremely fast. This package contains the shared library\n for double precision transforms.\n .\n To get the static library and the header files, you need to install\n libfftw3-dev. For documentation, see libfftw3-doc.\nDescription-md5: 9621f1cfaad5927e844a719259a992d4\nTask: kubuntu-desktop, kubuntu-full, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop, ubuntucinnamon-desktop, ubuntucinnamon-desktop-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libfftw3-double3",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libfftw3-double3=3.3.10-1ubuntu3"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libfftw3-double3",
+      "timestamp_utc": "2026-11-05T12:28:39.497821+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libfftw3-double3 amd64 3.3.10-1ubuntu3 [838 kB]\nFetched 838 kB in 1s (1629 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libfftw3-double3 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libfftw3-double3/libfftw3-double3_3.3.10-1ubuntu3_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:40.283955+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libgsl27",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libgsl27"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:40.390916+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libgsl27\nArchitecture: amd64\nVersion: 2.7.1+dfsg-6ubuntu2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: gsl\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Dirk Eddelbuettel <edd@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2804\nDepends: libc6 (>= 2.38), libgslcblas0 (= 2.7.1+dfsg-6ubuntu2)\nSuggests: gsl-ref-psdoc | gsl-doc-pdf | gsl-doc-info | gsl-ref-html\nConflicts: gsl, libgsl0, libgsl0ldbl\nBreaks: libgsl25\nReplaces: gsl, libgsl0 (<= 1.9-4), libgsl0ldbl (<= 1.16+dfsg-4)\nFilename: pool/universe/g/gsl/libgsl27_2.7.1+dfsg-6ubuntu2_amd64.deb\nSize: 986886\nMD5sum: 78532426c8fdb886448d66e8a9f7485b\nSHA1: 8a2eac7cc956e1b46d1cef7d8c47705667f85d88\nSHA256: a633774cf0eb1e5cd9fa7671da18ce503ef4d31585d52e27c56de7effcdb321e\nSHA512: b58bd46e5d927f3165ee787124be2d40112f32346b0bb0f91a4f46ebdcf2001e10925e52e5d13991f4dee4eb47d46e282c318f6957e09545911e0c10de9a82e6\nHomepage: https://www.gnu.org/software/gsl\nDescription-en: GNU Scientific Library (GSL) -- library package\n The GNU Scientific Library (GSL) is a collection of routines for\n numerical analysis.  The routines are written from scratch by the GSL\n team in C, and present a modern API for C programmers, while allowing\n wrappers to be written for very high level languages.\n .\n GSL includes data types and routines for complex numbers, vectors,\n matrices, basic linear algebra subroutines (BLAS), eigensystems,\n simulated annealing, minimization, root finding, pseudo-random\n numbers, least-squares fitting, fast Fourier transforms (FFT),\n differential equations, quadrature, Monte Carlo integration, special\n functions, physical constants, and much more.\n .\n This package provides the shared libraries required to run programs\n compiled with GNU GSL. To compile your own programs you also need to\n install libgsl-dev.\n .\n URL: http://www.gnu.org/software/gsl/\nDescription-md5: 62750ac09428d38c26408b7d740e75a8\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-audio, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libgsl27",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libgsl27=2.7.1+dfsg-6ubuntu2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libgsl27",
+      "timestamp_utc": "2026-11-05T12:28:40.421161+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libgsl27 amd64 2.7.1+dfsg-6ubuntu2 [987 kB]\nFetched 987 kB in 1s (1904 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libgsl27 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libgsl27/libgsl27_2.7.1+dfsg-6ubuntu2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:41.217025+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libgslcblas0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libgslcblas0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:41.336121+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libgslcblas0\nArchitecture: amd64\nVersion: 2.7.1+dfsg-6ubuntu2\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: gsl\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Dirk Eddelbuettel <edd@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 279\nDepends: libc6 (>= 2.3.4)\nSuggests: gsl-ref-psdoc | gsl-doc-pdf | gsl-doc-info | gsl-ref-html\nConflicts: gsl, libgsl0, libgsl0ldbl, libgsl2\nReplaces: gsl, libgsl0 (<= 1.9-4), libgsl0ldbl (<= 1.16+dfsg-4), libgsl2, libgsl23 (<< 2.4+dfsg-4)\nFilename: pool/universe/g/gsl/libgslcblas0_2.7.1+dfsg-6ubuntu2_amd64.deb\nSize: 103606\nMD5sum: d8b5d6e068cde9494445822d82bd3b8b\nSHA1: a0c3f5133e57b8231fa56c5d7b441bd741a84138\nSHA256: 34ba0c31dd59224734a8cfba704ac381a11bcdb2ba91ff09888e8eda173617d4\nSHA512: 4cd4a0d2e69bc4bccb3d9e335a82e5c20cd1d17db6e318d2a4b6f53a4d295de1a795263e933c2254ba853784fa3d424701a3b6e038040311929757c283997d1e\nHomepage: https://www.gnu.org/software/gsl\nDescription-en: GNU Scientific Library (GSL) -- blas library package\n The GNU Scientific Library (GSL) is a collection of routines for\n numerical analysis.  The routines are written from scratch by the GSL\n team in C, and present a modern API for C programmers, while allowing\n wrappers to be written for very high level languages.\n .\n GSL includes data types and routines for complex numbers, vectors,\n matrices, basic linear algebra subroutines (BLAS), eigensystems,\n simulated annealing, minimization, root finding, pseudo-random\n numbers, least-squares fitting, fast Fourier transforms (FFT),\n differential equations, quadrature, Monte Carlo integration, special\n functions, physical constants, and much more.\n .\n This package provides the shared blas library required to run programs\n compiled with GNU GSL. To compile your own programs you also need to\n install libgsl-dev.\n .\n URL: http://www.gnu.org/software/gsl/\nDescription-md5: 14a49f7bd27b4049c731067d7809d0fb\nTask: ubuntustudio-video, ubuntustudio-photography, ubuntustudio-graphics, ubuntustudio-audio, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libgslcblas0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libgslcblas0=2.7.1+dfsg-6ubuntu2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libgslcblas0",
+      "timestamp_utc": "2026-11-05T12:28:41.374196+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libgslcblas0 amd64 2.7.1+dfsg-6ubuntu2 [104 kB]\nFetched 104 kB in 1s (145 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libgslcblas0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libgslcblas0/libgslcblas0_2.7.1+dfsg-6ubuntu2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:42.380306+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libglew2.2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libglew2.2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:42.430741+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libglew2.2\nArchitecture: amd64\nVersion: 2.2.0-4build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: glew\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Alastair McKinstry <mckinstry@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 933\nDepends: libgl1\nSuggests: glew-utils\nFilename: pool/universe/g/glew/libglew2.2_2.2.0-4build1_amd64.deb\nSize: 187350\nMD5sum: b96660811d18c1bc0df3428452d6254d\nSHA1: 304d790e44ce833c81132917eab07a58b3bc6bc2\nSHA256: ffef730aac883b1cb1641eae6149da4091a890330d786916f29ea10de362ba9e\nSHA512: ee2f9eb1dd368afd921bd45dc0ad9aa3f2d72c5e317dfe361abc9afbfb0c9de8ea1aeb8e5347c6b886d3cdbe0b5bfd14bb96f4f4216a0edccb936fa5605d03ce\nHomepage: http://glew.sourceforge.net\nDescription-en: OpenGL Extension Wrangler - runtime environment\n For more information about GLEW please refer to the description of the\n libglew-dev package.\n .\n This package contains the runtime support files.\nDescription-md5: 6745d43b8defe395b5a7da9eac9e1e7e\nTask: ubuntustudio-audio, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libglew2.2",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libglew2.2=2.2.0-4build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libglew2.2",
+      "timestamp_utc": "2026-11-05T12:28:42.464611+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libglew2.2 amd64 2.2.0-4build1 [187 kB]\nFetched 187 kB in 0s (602 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libglew2.2 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libglew2.2/libglew2.2_2.2.0-4build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:43.078088+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libglut3.12",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libglut3.12"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:43.138677+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libglut3.12\nArchitecture: amd64\nVersion: 3.4.0-1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: freeglut\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Anton Gladky <gladk@debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 352\nDepends: libc6 (>= 2.15), libgl1, libx11-6 (>= 2:1.2.99.901), libxi6 (>= 2:1.2.99.4), libxxf86vm1\nFilename: pool/universe/f/freeglut/libglut3.12_3.4.0-1build1_amd64.deb\nSize: 97960\nMD5sum: c309a9cd425c6da8a521ccdc68ecfca2\nSHA1: fa333d00f2879d59a1c7b3a806d1bcc085b03659\nSHA256: c0ac5a072cf8b9283bd71e646ffbd6861292307e5a5128d4d4a43ce74d52d646\nSHA512: ccc74d60d237d524bbc32c2842dbf94c6cc72f94a14b30601fe4439ec8d9e45f12d9ca1f5a9b95fd04127d2ccedb015bed5c2c2fbb1f86cb3a0d1c5af4380635\nHomepage: https://freeglut.sourceforge.net/\nDescription-en: OpenGL Utility Toolkit\n GLUT is a window system independent toolkit for writing OpenGL programs,\n implementing a simple windowing API, which makes learning about and\n exploring OpenGL programming very easy.\n .\n GLUT is designed for constructing small to medium sized OpenGL programs,\n however it is not a full-featured toolkit, so large applications requiring\n sophisticated user interfaces are better off using native window system\n toolkits like GTK+ or Motif.\nDescription-md5: a6aaac3592e8283681e07e3278c82c7d\nTask: ubuntustudio-audio, ubuntustudio-publishing, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libglut3.12",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libglut3.12=3.4.0-1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libglut3.12",
+      "timestamp_utc": "2026-11-05T12:28:43.170085+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libglut3.12 amd64 3.4.0-1build1 [98.0 kB]\nFetched 98.0 kB in 0s (343 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libglut3.12 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libglut3.12/libglut3.12_3.4.0-1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:43.731556+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libboost-filesystem1.83.0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libboost-filesystem1.83.0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:43.805616+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libboost-filesystem1.83.0\nSource: boost1.83\nPriority: optional\nSection: libs\nInstalled-Size: 2279\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 1.83.0-2.1ubuntu3.2\nDepends: libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 5.2)\nFilename: pool/main/b/boost1.83/libboost-filesystem1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb\nSize: 283562\nMD5sum: 11a118fc20b54f59a873b563e0f3c3ee\nSHA1: 9e5dfd100c429419cbd269836c33d72bdee7af39\nSHA256: 154b74fe60f7fc6223b0ff86063b8eb9429bfd1f532085fce66b555ebf2bf96c\nSHA512: 67a78a67e870ccb302e6bd5152c22feb969e8c5dc2df473d4ee2a756c4ba85566aa59a7b99410844b88d1c3b35503aa6cf827fdaac1b36b2c433c825c0d3aaa3\nHomepage: http://boost.org/libs/filesystem/\nDescription-en: filesystem operations (portable paths, iteration over directories, etc) in C++\n This package forms part of the Boost C++ Libraries collection.\n .\n The Boost Filesystem Library provides portable facilities to query and\n manipulate paths, files, and directories.  The goal is to\n facilitate portable script-like operations from within C++ programs.\nDescription-md5: 2491b00e1306a35046eca365dc71ba1d\nMulti-Arch: same\nOriginal-Maintainer: Debian Boost Team <team+boost@tracker.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nTask: kubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\nPackage: libboost-filesystem1.83.0\nArchitecture: amd64\nVersion: 1.83.0-2.1ubuntu3\nMulti-Arch: same\nPriority: optional\nSection: libs\nSource: boost1.83\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Debian Boost Team <team+boost@tracker.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 2279\nDepends: libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 5.2)\nFilename: pool/main/b/boost1.83/libboost-filesystem1.83.0_1.83.0-2.1ubuntu3_amd64.deb\nSize: 283350\nMD5sum: e64f910a8374e4f4b862c9a198479382\nSHA1: cf7e2e1d93c713c68ba48b381b4909ad764b4edc\nSHA256: d36329139070037ce08aad7f12ecbf6ad14ae764b5dd824915fdc7e319205369\nSHA512: 2b00a48c6ddad99d6e9ba7372f02392faf0e7b09dbffdc0f54989f658105d67be11346a40838e0d5e751028c9b770e4fb5240d63a99130e182755a7755cbbb85\nHomepage: http://boost.org/libs/filesystem/\nDescription-en: filesystem operations (portable paths, iteration over directories, etc) in C++\n This package forms part of the Boost C++ Libraries collection.\n .\n The Boost Filesystem Library provides portable facilities to query and\n manipulate paths, files, and directories.  The goal is to\n facilitate portable script-like operations from within C++ programs.\nDescription-md5: 2491b00e1306a35046eca365dc71ba1d\nTask: kubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, edubuntu-desktop-gnome, edubuntu-desktop-gnome-raspi\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libboost-filesystem1.83.0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libboost-filesystem1.83.0=1.83.0-2.1ubuntu3.2"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libboost-filesystem1.83.0",
+      "timestamp_utc": "2026-11-05T12:28:43.844523+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libboost-filesystem1.83.0 amd64 1.83.0-2.1ubuntu3.2 [284 kB]\nFetched 284 kB in 0s (675 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libboost-filesystem1.83.0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/packages/libboost-filesystem1.83.0/libboost-filesystem1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:44.692197+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Confirm runtime library resolution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/bin/asy"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:44.857017+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffeff7bc000)\n\tlibreadline.so.8 => /lib/x86_64-linux-gnu/libreadline.so.8 (0x00007666e8a78000)\n\tlibfftw3.so.3 => ${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu/libfftw3.so.3 (0x00007666e8855000)\n\tlibtirpc.so.3 => /lib/x86_64-linux-gnu/libtirpc.so.3 (0x00007666e8828000)\n\tlibgsl.so.27 => ${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu/libgsl.so.27 (0x00007666e857c000)\n\tlibGLEW.so.2.2 => ${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu/libGLEW.so.2.2 (0x00007666e84bc000)\n\tlibGLX.so.0 => /lib/x86_64-linux-gnu/libGLX.so.0 (0x00007666e8489000)\n\tlibglut.so.3.12 => ${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu/libglut.so.3.12 (0x00007666e83d0000)\n\tlibcurl-gnutls.so.4 => /lib/x86_64-linux-gnu/libcurl-gnutls.so.4 (0x00007666e8315000)\n\tlibsigsegv.so.2 => /lib/x86_64-linux-gnu/libsigsegv.so.2 (0x00007666e830f000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007666e82f1000)\n\tlibgc.so.1 => /lib/x86_64-linux-gnu/libgc.so.1 (0x00007666e8286000)\n\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007666e8252000)\n\tlibGL.so.1 => /lib/x86_64-linux-gnu/libGL.so.1 (0x00007666e81cb000)\n\tlibboost_filesystem.so.1.83.0 => ${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0 (0x00007666e81a8000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007666e7e00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007666e80bd000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007666e808f000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007666e7a00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007666e905a000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007666e7dac000)\n\tlibgslcblas.so.0 => ${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu/libgslcblas.so.0 (0x00007666e7d6c000)\n\tlibGLdispatch.so.0 => /lib/x86_64-linux-gnu/libGLdispatch.so.0 (0x00007666e7cb4000)\n\tlibX11.so.6 => /lib/x86_64-linux-gnu/libX11.so.6 (0x00007666e78c3000)\n\tlibXxf86vm.so.1 => /lib/x86_64-linux-gnu/libXxf86vm.so.1 (0x00007666e8086000)\n\tlibXi.so.6 => /lib/x86_64-linux-gnu/libXi.so.6 (0x00007666e7ca1000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x00007666e7c76000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007666e7c54000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x00007666e7c36000)\n\tlibssh.so.4 => /lib/x86_64-linux-gnu/libssh.so.4 (0x00007666e7851000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x00007666e7c22000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007666e77fc000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007666e7601000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x00007666e75a3000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x00007666e7593000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007666e74d9000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x00007666e7c14000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007666e7410000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007666e73e4000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007666e73de000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007666e73d1000)\n\tlibxcb.so.1 => /lib/x86_64-linux-gnu/libxcb.so.1 (0x00007666e73a8000)\n\tlibXext.so.6 => /lib/x86_64-linux-gnu/libXext.so.6 (0x00007666e7394000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x00007666e71e7000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007666e719f000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007666e711b000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007666e6c00000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007666e6a5c000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007666e6a46000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007666e6a2c000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x00007666e6a09000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007666e6a02000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007666e69f0000)\n\tlibXau.so.6 => /lib/x86_64-linux-gnu/libXau.so.6 (0x00007666e69ea000)\n\tlibXdmcp.so.6 => /lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007666e69e2000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007666e69d6000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x00007666e69c0000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x00007666e69b1000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native Asymptote version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/bin/asy",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:45.083731+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Asymptote version 2.87 [(C) 2004 Andy Hammerlindl, John C. Bowman, Tom Prince]\n\nENABLED OPTIONS:\nV3D      3D vector graphics output\nWebGL    3D HTML rendering\nOpenGL   3D OpenGL rendering\nSSBO     GLSL shader storage buffer objects\nGSL      GNU Scientific Library (special functions)\nFFTW3    Fast Fourier transforms\nEigen    Eigenvalue library\nXDR      External Data Representation (portable binary file format for V3D)\nCURL     URL support\nLSP      Language Server Protocol\nReadline Interactive history and editing\nSigsegv  Distinguish stack overflows from segmentation faults\nGC       Boehm garbage collector\nthreads  Render OpenGL in separate thread\n\nDISABLED OPTIONS:\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib"
+      }
+    },
+    {
+      "label": "Interpret original source without any viewer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/bin/asy",
+        "-noV",
+        "hello.asy"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/early/asymptote",
+      "timestamp_utc": "2026-11-05T12:28:45.270694+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/early/asymptote/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "asymptote",
+      "version": "2.87+ds-1build2",
+      "ubuntu_archive_path": "pool/universe/a/asymptote/asymptote_2.87+ds-1build2_amd64.deb",
+      "sha256": "6ba6b8b5704ea45855f2d391e7d99a3a3c6e3a04d65b26a8d26d317b0abb8336"
+    },
+    {
+      "name": "libfftw3-double3",
+      "version": "3.3.10-1ubuntu3",
+      "ubuntu_archive_path": "pool/main/f/fftw3/libfftw3-double3_3.3.10-1ubuntu3_amd64.deb",
+      "sha256": "ff9396076103b305efe741e9acff11d52a040c6d95527c0f2dbd11e82a11bab8"
+    },
+    {
+      "name": "libgsl27",
+      "version": "2.7.1+dfsg-6ubuntu2",
+      "ubuntu_archive_path": "pool/universe/g/gsl/libgsl27_2.7.1+dfsg-6ubuntu2_amd64.deb",
+      "sha256": "a633774cf0eb1e5cd9fa7671da18ce503ef4d31585d52e27c56de7effcdb321e"
+    },
+    {
+      "name": "libgslcblas0",
+      "version": "2.7.1+dfsg-6ubuntu2",
+      "ubuntu_archive_path": "pool/universe/g/gsl/libgslcblas0_2.7.1+dfsg-6ubuntu2_amd64.deb",
+      "sha256": "34ba0c31dd59224734a8cfba704ac381a11bcdb2ba91ff09888e8eda173617d4"
+    },
+    {
+      "name": "libglew2.2",
+      "version": "2.2.0-4build1",
+      "ubuntu_archive_path": "pool/universe/g/glew/libglew2.2_2.2.0-4build1_amd64.deb",
+      "sha256": "ffef730aac883b1cb1641eae6149da4091a890330d786916f29ea10de362ba9e"
+    },
+    {
+      "name": "libglut3.12",
+      "version": "3.4.0-1build1",
+      "ubuntu_archive_path": "pool/universe/f/freeglut/libglut3.12_3.4.0-1build1_amd64.deb",
+      "sha256": "c0ac5a072cf8b9283bd71e646ffbd6861292307e5a5128d4d4a43ce74d52d646"
+    },
+    {
+      "name": "libboost-filesystem1.83.0",
+      "version": "1.83.0-2.1ubuntu3.2",
+      "ubuntu_archive_path": "pool/main/b/boost1.83/libboost-filesystem1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb",
+      "sha256": "154b74fe60f7fc6223b0ff86063b8eb9429bfd1f532085fce66b555ebf2bf96c"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#043 Asymptote/hello.asy": "ca7996047b748610d3709194a632e5e6a76f0870190265a0958db512d58f8a68"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "toolchain": "Asymptote 2.87 Ubuntu portable extraction (matching standard modules)",
+  "sources": [
+    "https://asymptote.sourceforge.io/doc/Files.html",
+    "https://asymptote.sourceforge.io/doc/Options.html"
+  ],
+  "semantic_scope": "The native Asymptote interpreter loaded its matching standard modules and concatenated/printed the exact greeting. Console I/O only; no graphics or viewer.",
+  "verified_utc": "2026-11-05T12:28:45.270694+00:00",
+  "name": "Asymptote",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The native Asymptote interpreter loaded its matching standard modules and concatenated/printed the exact greeting. Console I/O only; no graphics or viewer."
+}

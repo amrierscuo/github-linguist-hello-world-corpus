@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T12:38:09.105958+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Slice",
+  "ordinal": 665,
+  "commands": [
+    {
+      "label": "Read Ubuntu package metadata for zeroc-ice-compilers",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "zeroc-ice-compilers"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:38:09.131425+00:00",
+      "exit_code": 0,
+      "stdout": "Package: zeroc-ice-compilers\nArchitecture: amd64\nVersion: 3.7.10-2.1build1\nMulti-Arch: foreign\nPriority: extra\nSection: universe/devel\nSource: zeroc-ice\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: José Gutiérrez de la Concha <jose@zeroc.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 9931\nDepends: libzeroc-ice3.7t64 (= 3.7.10-2.1build1), zeroc-ice-slice (= 3.7.10-2.1build1), libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libmcpp0, libstdc++6 (>= 13.1)\nFilename: pool/universe/z/zeroc-ice/zeroc-ice-compilers_3.7.10-2.1build1_amd64.deb\nSize: 2576148\nMD5sum: 6cc4d3056b79d8e1854e2808fcd59870\nSHA1: 7e5edc2a98ff7ef32475ca108d9a45d9791641d6\nSHA256: a1168f16af4a637e09870fdb3c76d8fd26430b8cc6362820bc2c09e49dd7b15f\nSHA512: 29044a32d839e78d09100d475b1b181bc97b408d24c2c8d2f757d57c03a7de811d9499fe66a607dea5c99be35b0f4546d0a765e2653cea20292b77d0a4c3312d\nHomepage: https://zeroc.com\nDescription-en: Slice compilers for developing Ice applications\n This package contains Slice compilers for developing Ice applications.\n .\n Ice is a comprehensive RPC framework that helps you network your software\n with minimal effort. Ice takes care of all interactions with low-level\n network programming interfaces and allows you to focus your efforts on\n your application logic.\nDescription-md5: 0f63ac9908f148a36e69397ebec0d2f8\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only zeroc-ice-compilers",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "zeroc-ice-compilers=3.7.10-2.1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/zeroc-ice-compilers",
+      "timestamp_utc": "2026-11-05T12:38:09.170370+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 zeroc-ice-compilers amd64 3.7.10-2.1build1 [2576 kB]\nFetched 2576 kB in 5s (569 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract zeroc-ice-compilers without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/zeroc-ice-compilers/zeroc-ice-compilers_3.7.10-2.1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:38:14.007213+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libzeroc-ice-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libzeroc-ice-dev"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:38:14.323601+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libzeroc-ice-dev\nArchitecture: amd64\nVersion: 3.7.10-2.1build1\nMulti-Arch: same\nPriority: extra\nSection: universe/libdevel\nSource: zeroc-ice\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: José Gutiérrez de la Concha <jose@zeroc.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 43646\nDepends: libzeroc-ice3.7t64 (= 3.7.10-2.1build1), zeroc-ice-compilers (= 3.7.10-2.1build1), zeroc-ice-slice (= 3.7.10-2.1build1)\nReplaces: libice++-dev, libzeroc-ice35-dev\nFilename: pool/universe/z/zeroc-ice/libzeroc-ice-dev_3.7.10-2.1build1_amd64.deb\nSize: 4545390\nMD5sum: eea63539a49f4c5b0736491906f664d7\nSHA1: 20df7211db59e33d3262ba84e58d461c97611f25\nSHA256: a5e7d3020216c46e28999e64eca3db47f809c21784c2bd37799ca477717f59c7\nSHA512: 0d8b15dc8c02fd1add51e7a94b042086c774c52d1459743e32889a7c261fe1ec20daea9bee1154936037d3aa87e5c366475b8cc8dd0b9c97a2c6d1d13c798233\nHomepage: https://zeroc.com\nDescription-en: libraries and headers for developing Ice applications in C++\n This package contains the libraries and headers needed for developing\n Ice applications in C++.\n .\n Ice is a comprehensive RPC framework that helps you network your software\n with minimal effort. Ice takes care of all interactions with low-level\n network programming interfaces and allows you to focus your efforts on\n your application logic.\nDescription-md5: d208728fd79f878dfb15aa641583f2a6\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libzeroc-ice-dev",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libzeroc-ice-dev=3.7.10-2.1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/libzeroc-ice-dev",
+      "timestamp_utc": "2026-11-05T12:38:14.359023+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libzeroc-ice-dev amd64 3.7.10-2.1build1 [4545 kB]\nFetched 4545 kB in 1s (6916 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libzeroc-ice-dev without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/libzeroc-ice-dev/libzeroc-ice-dev_3.7.10-2.1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:38:15.358664+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libzeroc-ice3.7",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libzeroc-ice3.7"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:38:17.021262+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libzeroc-ice3.7t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libzeroc-ice3.7t64"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:17.771113+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libzeroc-ice3.7t64\nArchitecture: amd64\nVersion: 3.7.10-2.1build1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: zeroc-ice\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: José Gutiérrez de la Concha <jose@zeroc.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 11479\nProvides: libzeroc-ice3.7 (= 3.7.10-2.1build1)\nDepends: adduser, libbz2-1.0, libc6 (>= 2.38), libcrypt1 (>= 1:4.1.0), libdbus-1-3 (>= 1.9.14), libexpat1 (>= 2.0.1), libgcc-s1 (>= 3.3.1), liblmdb0 (>= 0.9.7), libssl3t64 (>= 3.0.0), libstdc++6 (>= 13.1), libsystemd0\nBreaks: libzeroc-ice3.7 (<< 3.7.10-2.1build1)\nReplaces: libzeroc-ice3.7\nFilename: pool/universe/z/zeroc-ice/libzeroc-ice3.7t64_3.7.10-2.1build1_amd64.deb\nSize: 2717004\nMD5sum: a1c025ec6e9b110008d58f93fc3af8ab\nSHA1: 7743926e918ee843b2b48db9a49eb4d2d9db6364\nSHA256: 5808efa79b7e7961a4ceb9f6221e9bd41da9fa3b215b24c40a6a83f8aa5b8fb1\nSHA512: 244c24a8828cf9bafb6f25164dbf8d6c9451db29175d5e6ffb6c71d4d4ad0112d6cfe56b0c1fd9e3ceb53bb0d2d1a7bf8838aa521ad2ef3541cb492a9fe14857\nHomepage: https://zeroc.com\nDescription-en: C++ run-time libraries for the Ice framework\n This package contains C++ run-time libraries for the Ice framework.\n .\n Ice is a comprehensive RPC framework that helps you network your software\n with minimal effort. Ice takes care of all interactions with low-level\n network programming interfaces and allows you to focus your efforts on\n your application logic.\nDescription-md5: 1d48e84a92738c58a039c8d80a1d1814\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libzeroc-ice3.7t64",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libzeroc-ice3.7t64=3.7.10-2.1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/libzeroc-ice3.7t64",
+      "timestamp_utc": "2026-11-05T12:39:17.942070+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libzeroc-ice3.7t64 amd64 3.7.10-2.1build1 [2717 kB]\nFetched 2717 kB in 3s (943 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libzeroc-ice3.7t64 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/libzeroc-ice3.7t64/libzeroc-ice3.7t64_3.7.10-2.1build1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:21.175729+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for zeroc-ice-slice",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "zeroc-ice-slice"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:21.531035+00:00",
+      "exit_code": 0,
+      "stdout": "Package: zeroc-ice-slice\nArchitecture: all\nVersion: 3.7.10-2.1build1\nMulti-Arch: foreign\nPriority: extra\nSection: universe/devel\nSource: zeroc-ice\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: José Gutiérrez de la Concha <jose@zeroc.com>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 380\nFilename: pool/universe/z/zeroc-ice/zeroc-ice-slice_3.7.10-2.1build1_all.deb\nSize: 57084\nMD5sum: 73d2ea4968635609869e29c2065b7370\nSHA1: 64a75c9f7ac561159947f49269613a78f2347312\nSHA256: df727c12320670851a78098679fb394e9f3b9608abd10213bbeafe0b924e335f\nSHA512: 67140c8a98dac11bba0fc11fa536bf4da045bcdf00a77a6f4a556cb3802e03635022c91d47a9c33abc6484b3fb7724a3d4383af7e5e75404ece529b06523d2c1\nHomepage: https://zeroc.com\nDescription-en: Slice files for Ice\n This package contains Slice files used by the Ice framework.\n .\n Ice is a comprehensive RPC framework that helps you network your software\n with minimal effort. Ice takes care of all interactions with low-level\n network programming interfaces and allows you to focus your efforts on\n your application logic.\nDescription-md5: 8dc75941ba50d429ff937f9d5534d3db\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only zeroc-ice-slice",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "zeroc-ice-slice=3.7.10-2.1build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/zeroc-ice-slice",
+      "timestamp_utc": "2026-11-05T12:39:21.560128+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 zeroc-ice-slice all 3.7.10-2.1build1 [57.1 kB]\nFetched 57.1 kB in 0s (279 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract zeroc-ice-slice without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/zeroc-ice-slice/zeroc-ice-slice_3.7.10-2.1build1_all.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:22.020176+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for libmcpp0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "libmcpp0"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:22.363638+00:00",
+      "exit_code": 0,
+      "stdout": "Package: libmcpp0\nArchitecture: amd64\nVersion: 2.7.2-5.1\nMulti-Arch: same\nPriority: optional\nSection: universe/libs\nSource: mcpp\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Kiyoshi Matsui <kmatsui@t3.rim.or.jp>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 168\nDepends: libc6 (>= 2.33)\nFilename: pool/universe/m/mcpp/libmcpp0_2.7.2-5.1_amd64.deb\nSize: 73334\nMD5sum: 330dea0f6045c9e2d4454cfe71700625\nSHA1: 5df0ad771ba628586bd9e08735a26a8562df0fc4\nSHA256: e8a5c3fad4d8d60b7d31759543429ff8480a7cb15a4b5c3a70723b3d0c975ba6\nSHA512: c6e3b51b65415fff83cb35b7e647d8712f599aa9b6bd626a5f66cda89ef39a2dda0c80d387cc7979805f86e39b4f1b218b12c254d01cf0998c11ce87fceeeb88\nHomepage: http://mcpp.sourceforge.net/\nDescription-en: Alternative C/C++ preprocessor (shared library)\n This package installs the shared library version of mcpp.\nDescription-md5: 50d35e9f6b87fff3c47b700d85bb7bc0\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only libmcpp0",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "libmcpp0=2.7.2-5.1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/libmcpp0",
+      "timestamp_utc": "2026-11-05T12:39:22.395826+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmcpp0 amd64 2.7.2-5.1 [73.3 kB]\nFetched 73.3 kB in 0s (326 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract libmcpp0 without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/packages/libmcpp0/libmcpp0_2.7.2-5.1_amd64.deb",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:22.887017+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Resolve native Slice compiler libraries",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/bin/slice2cpp"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:22.935917+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffea272d000)\n\tlibmcpp.so.0 => ${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu/libmcpp.so.0 (0x0000723dab44c000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000723dab000000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000723dab416000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000723daac00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000723dab32b000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000723dab61f000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/slice/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/slice/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib"
+      }
+    },
+    {
+      "label": "Slice compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/bin/slice2cpp",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:23.024555+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "3.7.10\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/slice/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/slice/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile unchanged Slice definition to C++",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/bin/slice2cpp",
+        "--output-dir",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/generated",
+        "hello.ice"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:23.079137+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/slice/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/slice/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile the generated constant with the genuine Ice SDK",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "g++",
+        "-std=c++11",
+        "-DICE_CPP11_MAPPING",
+        "-I${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/include",
+        "-I${WORKSPACE}/work/native_batch_20261105/late/slice/generated",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/consume.cpp",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/generated/hello.cpp",
+        "-L${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu",
+        "-lIce++11",
+        "-o",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/consume"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:23.162807+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/slice/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/slice/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run generated C++ constant consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/consume"
+      ],
+      "cwd": "${WORKSPACE}/work/native_batch_20261105/late/slice",
+      "timestamp_utc": "2026-11-05T12:39:26.061645+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_batch_20261105/late/slice/home",
+        "TMPDIR": "${WORKSPACE}/work/native_batch_20261105/late/slice/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib/dovecot:${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "zeroc-ice-compilers",
+      "version": "3.7.10-2.1build1",
+      "ubuntu_archive_path": "pool/universe/z/zeroc-ice/zeroc-ice-compilers_3.7.10-2.1build1_amd64.deb",
+      "sha256": "a1168f16af4a637e09870fdb3c76d8fd26430b8cc6362820bc2c09e49dd7b15f"
+    },
+    {
+      "name": "libzeroc-ice-dev",
+      "version": "3.7.10-2.1build1",
+      "ubuntu_archive_path": "pool/universe/z/zeroc-ice/libzeroc-ice-dev_3.7.10-2.1build1_amd64.deb",
+      "sha256": "a5e7d3020216c46e28999e64eca3db47f809c21784c2bd37799ca477717f59c7"
+    },
+    {
+      "name": "libzeroc-ice3.7t64",
+      "version": "3.7.10-2.1build1",
+      "ubuntu_archive_path": "pool/universe/z/zeroc-ice/libzeroc-ice3.7t64_3.7.10-2.1build1_amd64.deb",
+      "sha256": "5808efa79b7e7961a4ceb9f6221e9bd41da9fa3b215b24c40a6a83f8aa5b8fb1"
+    },
+    {
+      "name": "zeroc-ice-slice",
+      "version": "3.7.10-2.1build1",
+      "ubuntu_archive_path": "pool/universe/z/zeroc-ice/zeroc-ice-slice_3.7.10-2.1build1_all.deb",
+      "sha256": "df727c12320670851a78098679fb394e9f3b9608abd10213bbeafe0b924e335f"
+    },
+    {
+      "name": "libmcpp0",
+      "version": "2.7.2-5.1",
+      "ubuntu_archive_path": "pool/universe/m/mcpp/libmcpp0_2.7.2-5.1_amd64.deb",
+      "sha256": "e8a5c3fad4d8d60b7d31759543429ff8480a7cb15a4b5c3a70723b3d0c975ba6"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#665 Slice/hello.ice": "a7f06e3188b5d4a65aafbad5710e35cab03efc7f3c77f7684384a42bb25b4404"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "generated_header_sha256": "d1cc4ae3571c1a1739eecfdc0c6bce3757c9510a74b8652a37e95a27df3919b8",
+  "verification_driver": {
+    "file": "consume.cpp",
+    "sha256": "47cacf3c67b1ca7b91ed995b1e1e94ce583ebc47d14c73ea18cfaafb377f5beb",
+    "content_utf8": "#include \"hello.h\"\n#include <iostream>\nint main(){std::cout << Greeting::message << std::endl; return Greeting::message == \"Hello, World!\" ? 0:1;}\n",
+    "staged_file": "work/native_batch_20261105/late/slice/consume.cpp"
+  },
+  "main_status": "main",
+  "toolchain": "ZeroC Ice slice2cpp 3.7.10 and native C++11 compiler",
+  "sources": [
+    {
+      "title": "Ice Slice language",
+      "url": "https://docs.zeroc.com/ice/latest/the-slice-language"
+    }
+  ],
+  "semantic_scope": "The genuine ZeroC Slice compiler accepted the exact original definition, generated its C++ constant, and a native C++ program compiled against the genuine Ice SDK read Greeting::message and printed the exact greeting. The definition contains no server or proxy; no network or daemon was started.",
+  "versions": [
+    {
+      "label": "Slice compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_batch_20261105/late/slice/root/usr/bin/slice2cpp",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "3.7.10\n"
+    }
+  ],
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The genuine ZeroC Slice compiler accepted the exact original definition, generated its C++ constant, and a native C++ program compiled against the genuine Ice SDK read Greeting::message and printed the exact greeting. The definition contains no server or proxy; no network or daemon was started."
+}

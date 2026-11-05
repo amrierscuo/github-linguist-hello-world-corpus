@@ -1,5 +1,9 @@
 # 0133 Common Lisp: variant `.sexp`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.sexp`. SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Recorded evidence](../../verification/native_20261105_batch_2e73657870.json).
+
 Role: Common Lisp/S-expression Shapes; this suffix remains in Common Lisp, not in the omonymous dialects of other folders.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#133 Common Lisp/hello.lisp
@@ -18,8 +22,7 @@ sbcl --script hello.sexp
 
 Exit 0; stdout Hello, World! followed by newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

@@ -1,5 +1,9 @@
 # 0345: Jsonnet: `.libsonnet`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.libsonnet`. The original Jsonnet C++ evaluator loaded and evaluated the exact source and its declared library import; emitted JSON contains the greeting value Hello, World!. [Recorded evidence](../../verification/native_20261105_batch_2e6c6962736f6e6e6574.json).
+
 Role: Jsonnet Library that exports a string; fixtures import the library.
 
 Origin: Original source written for the specific role of the variant, using the mentioned documentation.
@@ -14,7 +18,7 @@ jsonnet driver.jsonnet
 
 Expected result: "Hello, World!"
 
-Individual status: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
+Status before this check: artifact created `true`, syntax verified `false`, behavior verified `false`. Greeting data or configuration alone does not establish execution.
 
 Blockers:
 

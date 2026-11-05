@@ -1,5 +1,10 @@
 # #828 pkg-config
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.pc.in`: Native CMake configured the original pkg-config template with its documented prefix/version. The genuine pkg-config consumer read greeting=Hello, World!, version 1.0.0 and prefix /corpus/example from the generated metadata, using only an isolated package search directory. [Evidence](verification/native_20261105_batch_2e70632e696e.json).
+
 Read metadata pkg-config and greeting variable.
 
 ## Toolchain
@@ -34,4 +39,4 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.pc` | [hello.pc](hello.pc) verified |
-| `.pc.in` | [hello.pc.in](variants/pc-in-477d8206/hello.pc.in) created; verification pending |
+| `.pc.in` | [hello.pc.in](variants/pc-in-477d8206/hello.pc.in) syntax and behavior verified |

@@ -1,5 +1,9 @@
 # 0716: Texinfo: `.texinfo`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.texinfo`. GNU Texinfo parsed and rendered the exact suffix variant as plain text containing Hello, World!, without a viewer or graphical application. [Recorded evidence](../../verification/native_20261105_batch_2e746578696e666f.json).
+
 Textual variation of the same format, with canon suffix .texinfo.
 
 Origin: copy of the original `examples/#716 Texinfo/hello.texi` file.

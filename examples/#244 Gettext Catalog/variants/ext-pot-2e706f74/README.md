@@ -1,5 +1,9 @@
 # 0244 Gettext Catalog: variant `.pot`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.pot`. GNU gettext accepted and compiled the exact POT template; msgattrib returned its untranslated Hello, World! entry. GNUTranslations loaded the compiled catalog and preserved untranslated and unknown keys. This checks template behavior, not a supplied translation. [Recorded evidence](../../verification/native_20261105_batch_2e706f74.json).
+
 Role: Template gettext POT: msgid contains the source text and msgstr is empty, distinct from the translated PO catalog.
 
 Version type: **adapted**. Starting model: examples/#244 Gettext Catalog/hello.po; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ msgfmt --check --check-format hello.pot -o <output>/template.mo; gettext reader:
 
 Expected result: valid template catalog; msgid Hello, World! not translated.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

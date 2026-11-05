@@ -1,5 +1,15 @@
 # #133 Common Lisp
 
+## Latest recorded verification
+
+Latest extension checks:
+- `.asd`: SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Evidence](verification/native_20261105_batch_2e617364.json).
+- `.cl`: SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Evidence](verification/native_20261105_batch_2e636c.json).
+- `.l`: SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Evidence](verification/native_20261105_batch_2e6c.json).
+- `.lisp`: SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Evidence](verification/native_20261105_batch_2e6c697370.json).
+- `.lsp`: SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Evidence](verification/native_20261105_batch_2e6c7370.json).
+- `.sexp`: SBCL natively read and executed the exact Lisp variant; when declared, ASDF loaded the original system definition and companion source. The actual script/load output includes Hello, World!. No editor or historical plugin host is implied. [Evidence](verification/native_20261105_batch_2e73657870.json).
+
 Voce canonica: `Common Lisp`, tipo `programming`, `language_id: 66`.
 
 Concatenare stringhe Common Lisp e scriverle sullo standard output con format.
@@ -48,11 +58,11 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.lisp` | [hello.lisp](hello.lisp), [greeting.lisp](variants/ext-asd-2e617364/greeting.lisp) created; verification pending |
-| `.asd` | [hello.asd](variants/ext-asd-2e617364/hello.asd) created; verification pending |
-| `.cl` | [hello.cl](variants/ext-cl-2e636c/hello.cl) created; verification pending |
-| `.l` | [hello.l](variants/ext-l-2e6c/hello.l) created; verification pending |
-| `.lsp` | [hello.lsp](variants/ext-lsp-2e6c7370/hello.lsp) created; verification pending |
+| `.lisp` | [hello.lisp](hello.lisp), [greeting.lisp](variants/ext-asd-2e617364/greeting.lisp) syntax and behavior verified |
+| `.asd` | [hello.asd](variants/ext-asd-2e617364/hello.asd) syntax and behavior verified |
+| `.cl` | [hello.cl](variants/ext-cl-2e636c/hello.cl) syntax and behavior verified |
+| `.l` | [hello.l](variants/ext-l-2e6c/hello.l) syntax and behavior verified |
+| `.lsp` | [hello.lsp](variants/ext-lsp-2e6c7370/hello.lsp) syntax and behavior verified |
 | `.ny` | [hello.ny](variants/ext-ny-2e6e79/hello.ny) created; verification pending |
 | `.podsl` | [hello.podsl](variants/ext-podsl-2e706f64736c/hello.podsl) created; verification pending |
-| `.sexp` | [hello.sexp](variants/ext-sexp-2e73657870/hello.sexp) created; verification pending |
+| `.sexp` | [hello.sexp](variants/ext-sexp-2e73657870/hello.sexp) syntax and behavior verified |

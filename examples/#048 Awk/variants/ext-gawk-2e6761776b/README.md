@@ -1,5 +1,9 @@
 # 0048 Awk: variant `.gawk`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.gawk`. The native Awk implementation executed the exact suffix variant and emitted exactly Hello, World! plus LF without stderr. [Recorded evidence](../../verification/native_20261105_batch_2e6761776b.json).
+
 Role: Source AWK in subset POSIX common: concatenation of strings and print in BEGIN.
 
 Tipo variante: **alias**. Copia byte-identica di examples/#048 Awk/hello.awk
@@ -18,8 +22,7 @@ gawk -f hello.gawk
 
 Exit 0; stdout Hello, World! followed by newline.
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.
