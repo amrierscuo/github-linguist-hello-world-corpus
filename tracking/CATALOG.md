@@ -108,7 +108,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #102 | [Cabal Config](../examples/%23102%20Cabal%20Config/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #103 | [Caddyfile](../examples/%23103%20Caddyfile/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #104 | [Cadence](../examples/%23104%20Cadence/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
-| #105 | [Cairo](../examples/%23105%20Cairo/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
+| #105 | [Cairo](../examples/%23105%20Cairo/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #106 | [Cairo Zero](../examples/%23106%20Cairo%20Zero/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
 | #107 | [CameLIGO](../examples/%23107%20CameLIGO/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
 | #108 | [Cangjie](../examples/%23108%20Cangjie/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
@@ -221,7 +221,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #215 | [Forth](../examples/%23215%20Forth/README.md) | Yes | Yes | Yes | 8/8 | Evidence recorded |
 | #216 | [Fortran](../examples/%23216%20Fortran/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #217 | [Fortran Free Form](../examples/%23217%20Fortran%20Free%20Form/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
-| #218 | [FreeBASIC](../examples/%23218%20FreeBASIC/README.md) | Yes | Pending | Pending | 2/2 | FreeBASIC native fbc compiler is unavailable. |
+| #218 | [FreeBASIC](../examples/%23218%20FreeBASIC/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #219 | [FreeMarker](../examples/%23219%20FreeMarker/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #220 | [Frege](../examples/%23220%20Frege/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #221 | [Futhark](../examples/%23221%20Futhark/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -271,7 +271,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #265 | [Grace](../examples/%23265%20Grace/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #266 | [Gradle](../examples/%23266%20Gradle/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #267 | [Gradle Kotlin DSL](../examples/%23267%20Gradle%20Kotlin%20DSL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #268 | [Grammatical Framework](../examples/%23268%20Grammatical%20Framework/README.md) | Yes | Pending | Pending | 1/1 | GF compiler and interactive grammar runtime are not configured. |
+| #268 | [Grammatical Framework](../examples/%23268%20Grammatical%20Framework/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #269 | [Graph Modeling Language](../examples/%23269%20Graph%20Modeling%20Language/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #270 | [GraphQL](../examples/%23270%20GraphQL/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #271 | [Graphviz (DOT)](../examples/%23271%20Graphviz%20%28DOT%29/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -294,7 +294,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #288 | [Hack](../examples/%23288%20Hack/README.md) | Yes | Pending | Pending | 4/4 | HHVM/Hack and its typechecker are unavailable; checks are pending. |
 | #289 | [Haml](../examples/%23289%20Haml/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #290 | [Handlebars](../examples/%23290%20Handlebars/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #291 | [Harbour](../examples/%23291%20Harbour/README.md) | Yes | Pending | Pending | 1/1 | The Harbour compiler and runtime are not set up; parsing and execution are pending. |
+| #291 | [Harbour](../examples/%23291%20Harbour/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #292 | [Hare](../examples/%23292%20Hare/README.md) | Yes | Pending | Pending | 1/1 | Hare/harec and QBE are not set up; compiler and runtime checks are pending. |
 | #293 | [Haskell](../examples/%23293%20Haskell/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #294 | [Haxe](../examples/%23294%20Haxe/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -319,7 +319,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #313 | [Ink](../examples/%23313%20Ink/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #314 | [Inno Setup](../examples/%23314%20Inno%20Setup/README.md) | Yes | Pending | Pending | 2/2 | ISCC is unavailable; the script was not compiled and the wizard callbacks were not run. |
 | #315 | [Io](../examples/%23315%20Io/README.md) | Yes | Pending | Pending | 1/1 | The native Io interpreter is not set up; parsing and evaluation are pending. |
-| #316 | [Ioke](../examples/%23316%20Ioke/README.md) | Yes | Pending | Pending | 1/1 | The historical Ioke runtime is unavailable; no generic Io check was used. |
+| #316 | [Ioke](../examples/%23316%20Ioke/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #317 | [Isabelle](../examples/%23317%20Isabelle/README.md) | Yes | Pending | Pending | 1/1 | Isabelle and the HOL image are unavailable; type, proof and value checks are pending. |
 | #318 | [Isabelle ROOT](../examples/%23318%20Isabelle%20ROOT/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | An Isabelle session build is unavailable; ROOT and its consumer remain pending. |
 | #319 | [J](../examples/%23319%20J/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -440,7 +440,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #434 | [MiniZinc](../examples/%23434%20MiniZinc/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #435 | [MiniZinc Data](../examples/%23435%20MiniZinc%20Data/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #436 | [Mint](../examples/%23436%20Mint/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
-| #437 | [Mirah](../examples/%23437%20Mirah/README.md) | Yes | Pending | Pending | 3/3 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #437 | [Mirah](../examples/%23437%20Mirah/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #438 | [Modelica](../examples/%23438%20Modelica/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #439 | [Modula-2](../examples/%23439%20Modula-2/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #440 | [Modula-3](../examples/%23440%20Modula-3/README.md) | Yes | Pending | Pending | 4/4 | The toolchain has not been run; syntax and semantic checks are pending. |
@@ -620,7 +620,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #614 | [Rez](../examples/%23614%20Rez/README.md) | Yes | Pending | Pending | 1/1 | Required Rez compiler/runtime and matching host resources are not available/configured. |
 | #615 | [Rhai](../examples/%23615%20Rhai/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #616 | [Rich Text Format](../examples/%23616%20Rich%20Text%20Format/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #617 | [Ring](../examples/%23617%20Ring/README.md) | Yes | Pending | Pending | 1/1 | Required ring compiler/runtime and matching host resources are not available/configured. |
+| #617 | [Ring](../examples/%23617%20Ring/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #618 | [Riot](../examples/%23618%20Riot/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #619 | [RobotFramework](../examples/%23619%20RobotFramework/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #620 | [Robots Exclusion Rules](../examples/%23620%20Robots%20Exclusion%20Rules/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
@@ -708,7 +708,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #702 | [TSQL](../examples/%23702%20TSQL/README.md) | Yes | Pending | Pending | 1/1 | SQL Server and sqlcmd are unavailable; parsing and execution are pending. |
 | #703 | [TSV](../examples/%23703%20TSV/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #704 | [TSX](../examples/%23704%20TSX/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #705 | [TXL](../examples/%23705%20TXL/README.md) | Yes | Pending | Pending | 1/1 | The TXL interpreter is unavailable; parsing and transformation are pending. |
+| #705 | [TXL](../examples/%23705%20TXL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #706 | [Tact](../examples/%23706%20Tact/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #707 | [Talon](../examples/%23707%20Talon/README.md) | Yes | Pending | Pending | 1/1 | Talon is unavailable; recognition and insertion are pending. |
 | #708 | [Tape](../examples/%23708%20Tape/README.md) | Yes | Yes | Pending | 1/1 | Video recording and verification were not performed; ttyd, ffmpeg and a compatible browser are required. |
@@ -725,7 +725,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #719 | [TextMate Properties](../examples/%23719%20TextMate%20Properties/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | TextMate and macOS are unavailable; the properties parser and effective variable are still pending. |
 | #720 | [Textile](../examples/%23720%20Textile/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #721 | [Thrift](../examples/%23721%20Thrift/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #722 | [Toit](../examples/%23722%20Toit/README.md) | Yes | Pending | Pending | 1/1 | The Toit runtime is not set up; syntax and CLI version still need checking. |
+| #722 | [Toit](../examples/%23722%20Toit/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #723 | [Tolk](../examples/%23723%20Tolk/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #724 | [Tor Config](../examples/%23724%20Tor%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #725 | [Tree-sitter Query](../examples/%23725%20Tree-sitter%20Query/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -741,7 +741,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #735 | [Unix Assembly](../examples/%23735%20Unix%20Assembly/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #736 | [Uno](../examples/%23736%20Uno/README.md) | Yes | Pending | Pending | 1/1 | The Uno/Fuse compiler and backend are not set up. |
 | #737 | [UnrealScript](../examples/%23737%20UnrealScript/README.md) | Yes | Pending | Pending | 1/1 | The UDK and UnrealScript compiler and the runtime map are unavailable. |
-| #738 | [Untyped Plutus Core](../examples/%23738%20Untyped%20Plutus%20Core/README.md) | Yes | Pending | Pending | 1/1 | The UPLC/CEK toolchain is not set up; evaluation is pending. |
+| #738 | [Untyped Plutus Core](../examples/%23738%20Untyped%20Plutus%20Core/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #739 | [UrWeb](../examples/%23739%20UrWeb/README.md) | Yes | Pending | Pending | 2/2 | The UrWeb compiler, runtime and native dependencies are not set up. |
 | #740 | [V](../examples/%23740%20V/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #741 | [VBA](../examples/%23741%20VBA/README.md) | Yes | Pending | Pending | 3/4 | A VBA test host is not set up. |

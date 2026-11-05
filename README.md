@@ -17,11 +17,11 @@ The reference contains 563 programming, 71 markup, 184 data, and 18 prose entrie
 | Recorded coverage | Count |
 | --- | ---: |
 | Canonical entries with an artifact or draft | 836 / 836 |
-| Main samples with verified syntax | 563 / 836 |
-| Main samples with verified behavior | 536 / 836 |
+| Main samples with verified syntax | 573 / 836 |
+| Main samples with verified behavior | 546 / 836 |
 | Language and extension pairs with a file | 1738 / 1749 |
 
-Latest verification batch: **2026-11-05**. It added 14 main syntax checks, 14 main behavior checks, and 109 separately verified extension pairs. See the [recorded checks](tracking/VERIFICATION_20261105_BATCH.md) and the [earlier single check](tracking/VERIFICATION_20261105.md).
+Latest verification batch: **2026-11-05**. It added 10 main syntax checks, 10 main behavior checks, and 11 separately verified extension pairs. See the [recorded checks](tracking/VERIFICATION_20261105_TARGET546.md) and the [previous batch](tracking/VERIFICATION_20261105_BATCH.md).
 
 Follow the README in each example directory for its commands, expected result, and limitations. An artifact can still be a draft. A syntax check confirms that the stated validator accepts the sample; behavioral verification also checks the intended result. The audits check recorded evidence, file hashes, and counts. Run the individual commands to reproduce an example's result.
 

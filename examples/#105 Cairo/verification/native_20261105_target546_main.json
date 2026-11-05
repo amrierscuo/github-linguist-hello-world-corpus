@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:34:46.888364+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Cairo",
+  "ordinal": 105,
+  "commands": [
+    {
+      "label": "Fetch official toolchain distribution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "85",
+        "https://github.com/software-mansion/scarb/releases/download/v2.11.4/scarb-v2.11.4-x86_64-unknown-linux-gnu.tar.gz",
+        "-o",
+        "${WORKSPACE}/work/native_target546_20261105/early/cairo/scarb.tar.gz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/cairo",
+      "timestamp_utc": "2026-11-05T13:34:46.928553+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract official archive locally",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "tar",
+        "-xf",
+        "${WORKSPACE}/work/native_target546_20261105/early/cairo/scarb.tar.gz",
+        "-C",
+        "${WORKSPACE}/work/native_target546_20261105/early/cairo/tools",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/cairo",
+      "timestamp_utc": "2026-11-05T13:34:51.523277+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Pinned Scarb and Cairo version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/cairo/tools/scarb-v2.11.4-x86_64-unknown-linux-gnu/bin/scarb",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/cairo",
+      "timestamp_utc": "2026-11-05T13:34:56.031916+00:00",
+      "exit_code": 0,
+      "stdout": "scarb 2.11.4 (c0ef5ec6a 2025-04-09)\ncairo: 2.11.4 (https://crates.io/crates/cairo-lang-compiler/2.11.4)\nsierra: 1.7.0\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/cairo/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/cairo/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile unchanged executable project",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "100s",
+        "${WORKSPACE}/work/native_target546_20261105/early/cairo/tools/scarb-v2.11.4-x86_64-unknown-linux-gnu/bin/scarb",
+        "build"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/cairo",
+      "timestamp_utc": "2026-11-05T13:34:56.183372+00:00",
+      "exit_code": 0,
+      "stdout": "   Compiling greeting v0.1.0 (${WORKSPACE}/work/native_target546_20261105/early/cairo/Scarb.toml)\n    Finished `dev` profile target(s) in 14 seconds\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/cairo/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/cairo/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run actual Cairo executable",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "100s",
+        "${WORKSPACE}/work/native_target546_20261105/early/cairo/tools/scarb-v2.11.4-x86_64-unknown-linux-gnu/bin/scarb",
+        "execute"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/cairo",
+      "timestamp_utc": "2026-11-05T13:35:10.603681+00:00",
+      "exit_code": 0,
+      "stdout": "   Compiling greeting v0.1.0 (${WORKSPACE}/work/native_target546_20261105/early/cairo/Scarb.toml)\n    Finished `dev` profile target(s) in 8 seconds\n   Executing greeting\nHello, World!\nSaving output to: target/execute/greeting/execution1\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/cairo/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/cairo/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/cairo/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#105 Cairo/Scarb.toml": "dc167442887ec17ee1eed17908868448c888ff68753429d5fa70b8c285a34b4e",
+    "examples/#105 Cairo/src/lib.cairo": "847881ed956545c6c4f542b2c982909ad3997273ee71a71fd51fc6f1883b6133"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "downloads": [
+    {
+      "url": "https://github.com/software-mansion/scarb/releases/download/v2.11.4/scarb-v2.11.4-x86_64-unknown-linux-gnu.tar.gz",
+      "filename": "scarb.tar.gz",
+      "sha256": "356b0211123cb8aefc589bc277d7475168032dce0675de55fcaf0dabe684abfb",
+      "bytes": 52850864
+    }
+  ],
+  "toolchain": "Scarb 2.11.4 with its bundled Cairo compiler and cairo_execute 2.11.4, Linux x86-64",
+  "sources": [
+    "https://www.starknet.io/cairo-book/ch01-02-hello-world.html",
+    "https://docs.swmansion.com/scarb/docs/extensions/execute.html",
+    "https://github.com/software-mansion/scarb/releases/tag/v2.11.4"
+  ],
+  "semantic_scope": "Pinned Scarb compiled the unchanged Cairo executable project and cairo_execute ran it, producing the exact greeting line. No Starknet contract, wallet or network transaction was involved.",
+  "name": "Cairo",
+  "verified_utc": "2026-11-05T13:35:10.603681+00:00",
+  "generated_dependency_lock_sha256": "4f6441ce75de652e982ab275c158ea2e2f108cc01d63e268e0476584a1177dd5",
+  "generated_artifacts": {
+    "target\\dev\\greeting_main.executable.json": "5f1d0a8ac161f4fc5d98e097dba2a980597cad67754d4b2bf4666db9d5245eb3"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Pinned Scarb compiled the unchanged Cairo executable project and cairo_execute ran it, producing the exact greeting line. No Starknet contract, wallet or network transaction was involved."
+}

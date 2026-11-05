@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:36:15.454218+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Harbour",
+  "ordinal": 291,
+  "commands": [
+    {
+      "label": "Build genuine Harbour compiler and console runtime without contributions or graphics",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "180s",
+        "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/bin/make",
+        "-s",
+        "-j4"
+      ],
+      "cwd": "/tmp/corpus-harbour-l6e8qspd",
+      "timestamp_utc": "2026-11-05T13:37:56.430020+00:00",
+      "exit_code": 0,
+      "stdout": "! Building Harbour 3.2.0 from source - https://harbour.github.io\n! MAKE: ${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/bin/make 4.3 /bin/sh  s \n! HB_HOST_PLAT: linux (x86_64)  HB_SHELL: sh\n! LD_LIBRARY_PATH: /tmp/corpus-harbour-l6e8qspd/lib/linux/gcc:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib\n! HB_PLATFORM: linux (x86_64) (auto-detected)\n! HB_COMPILER: gcc (auto-detected: /usr/bin/)\n! HB_HOST_PKGM: deb\n! Component: 'zlib' found in /usr/include \n! Component: 'pcre' found in /tmp/corpus-harbour-l6e8qspd/src/3rd/pcre (local)\n! Component: 'gpm' explicitly disabled\n! Component: 'slang' not found\n! Component: 'curses' explicitly disabled\n! Component: 'x11' explicitly disabled\n! Component: 'wattcp/watt-32' not supported on linux platform\n! HB_INSTALL_PREFIX automatically set to: /usr/local\n! 'hbdossrl' library skipped (platform or compiler not supported)\n! 'hbzlib' library skipped (unused)\nHarbour Preprocessor 3.2.0\nCopyright (c) 1999-present, https://harbour.github.io/\n! 'gtdos' library skipped (platform not supported)\n! 'gtcrs' library skipped (component not found)\n! 'gtgui' library skipped (platform not supported)\n! 'gtos2' library skipped (platform not supported)\n! 'gtsln' library skipped (component not found)\n! 'gtwin' library skipped (platform not supported)\n! 'gtwvt' library skipped (platform not supported)\n! 'gtxwc' library skipped (component not found)\n! HB_BUILD_CONTRIBS: no\n! postinst script finished\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib",
+        "HB_BUILD_CONTRIBS": "no",
+        "HB_BUILD_ADDONS": "no",
+        "HB_BUILD_DOC": "no",
+        "HB_WITH_X11": "no",
+        "HB_WITH_CURSES": "no",
+        "HB_WITH_GPM": "no",
+        "PATH": "${WORKSPACE}/work/native_followup_20261104/wsl/qmake/root/usr/bin:/usr/bin:/bin"
+      }
+    },
+    {
+      "label": "Record native Harbour version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:39:27.976010+00:00",
+      "exit_code": 0,
+      "stdout": "Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)\nCopyright (c) 1999-present, Viktor Szakats\nhttps://github.com/harbour/core/\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile exact Harbour .hb example",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "hello.hb",
+        "-ohello",
+        "-gtstd"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:39:28.038496+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run native Harbour executable",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:39:28.150900+00:00",
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "timeout: failed to run command ‘${WORKSPACE}/work/native_target546_20261105/middle/harbour/hello’: No such file or directory\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib"
+      }
+    },
+    {
+      "label": "Record native Harbour version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:41:09.811173+00:00",
+      "exit_code": 0,
+      "stdout": "Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)\nCopyright (c) 1999-present, Viktor Szakats\nhttps://github.com/harbour/core/\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib",
+        "HB_ROOT": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Parse and execute unchanged .hb with the genuine native Harbour script runtime",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbrun",
+        "hello.hb"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:41:09.906472+00:00",
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "timeout: failed to run command ‘${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbrun’: No such file or directory\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib"
+      }
+    },
+    {
+      "label": "Record native Harbour version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:42:28.435030+00:00",
+      "exit_code": 0,
+      "stdout": "Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)\nCopyright (c) 1999-present, Viktor Szakats\nhttps://github.com/harbour/core/\n\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib",
+        "HB_ROOT": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Parse and execute unchanged .hb with genuine native hbmk2 script mode",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "hello.hb"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/harbour",
+      "timestamp_utc": "2026-11-05T13:42:28.509312+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/harbour/root/usr/lib",
+        "HB_ROOT": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#291 Harbour/hello.hb": "4d1530556226383c406899b2b3771726430801d56334e2000ddd42777e33e947"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://github.com/harbour/core",
+    "https://github.com/harbour/core/blob/master/utils/hbmk2/doc/hbmk2.en.md"
+  ],
+  "downloads": [
+    {
+      "source": "https://github.com/harbour/core/releases/download/v3.2.0/harbour-3.2.0.src.tar.gz",
+      "file": "harbour-source.tar.gz",
+      "bytes": 15126907,
+      "sha256": "48cdab059c8b933ab033868e6cbaa33f5e09a80d42c3d7e5b8299a957ab2989e"
+    }
+  ],
+  "toolchain": {
+    "name": "Harbour hbmk2 and native C runtime",
+    "version": "Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)\nCopyright (c) 1999-present, Viktor Szakats\nhttps://github.com/harbour/core/",
+    "root": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0"
+  },
+  "temporary_build_directory_removed": true,
+  "preserved_toolchain": {
+    "bin/linux/gcc/hbmk2": "50fdf849c92d265163e54b8982d13467d6a5787754337df82a6da9ab3685e6e3",
+    "bin/linux/gcc/harbour": "e0b7522f2d3b2f60b705da9260a9351de9a94f04303465d176fdc721e2b60c29"
+  },
+  "harbour_source_root": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0",
+  "checker_correction": "The earlier hbmk2 .hb invocation ran the script directly and printed the greeting; it did not create a standalone hello executable. Harbour3.2.0 core uses hbmk2 script mode rather than a separately built hbrun executable. This check makes no standalone-executable claim.",
+  "semantic_scope": "The genuine native Harbour hbmk2 script mode, built from the official source, parsed and executed the unchanged .hb script and emitted the exact greeting and LF. No UI, database or service was used.",
+  "selected_environment_metadata_provenance": {
+    "runner": "work/native_target546_20261105/middle/verify.py",
+    "sha256_at_annotation": "09ee820fcdb6adebc3878b7ddbafafe68123b9d4a0fba183376248ff86cbf705",
+    "scope": "Added only explicitly configured PATH/build flags from the executed runner; command text, source hashes and actual outputs are unchanged."
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The genuine native Harbour hbmk2 script mode, built from the official source, parsed and executed the unchanged .hb script and emitted the exact greeting and LF. No UI, database or service was used."
+}

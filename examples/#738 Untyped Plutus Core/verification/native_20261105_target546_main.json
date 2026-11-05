@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:36:28.458304+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Untyped Plutus Core",
+  "ordinal": 738,
+  "commands": [
+    {
+      "label": "Download fixed official Aiken Linux musl release",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "65s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--max-time",
+        "60",
+        "https://github.com/aiken-lang/aiken/releases/download/v1.1.24/aiken-x86_64-unknown-linux-musl.tar.gz",
+        "--output",
+        "${WORKSPACE}/work/native_target546_20261105/root/uplc/aiken-x86_64-unknown-linux-musl.tar.gz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/root/uplc",
+      "timestamp_utc": "2026-11-05T13:36:28.527382+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract only the verified official release archive",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "45s",
+        "tar",
+        "-xf",
+        "${WORKSPACE}/work/native_target546_20261105/root/uplc/aiken-x86_64-unknown-linux-musl.tar.gz",
+        "-C",
+        "${WORKSPACE}/work/native_target546_20261105/root/uplc/tool",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/root/uplc",
+      "timestamp_utc": "2026-11-05T13:36:30.209393+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Record native Aiken version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/root/uplc/tool/aiken-x86_64-unknown-linux-musl/aiken",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/root/uplc",
+      "timestamp_utc": "2026-11-05T13:36:31.123436+00:00",
+      "exit_code": 0,
+      "stdout": "aiken v1.1.24+bacbeb3\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/root/uplc/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/root/uplc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib"
+      }
+    },
+    {
+      "label": "Record native UPLC evaluator help",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/root/uplc/tool/aiken-x86_64-unknown-linux-musl/aiken",
+        "uplc",
+        "eval",
+        "--help"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/root/uplc",
+      "timestamp_utc": "2026-11-05T13:36:31.189261+00:00",
+      "exit_code": 0,
+      "stdout": "Evaluate an Untyped Plutus Core program\n\nUsage: aiken uplc eval [OPTIONS] <SCRIPT> [ARGS]...\n\nArguments:\n  <SCRIPT>   \n  [ARGS]...  Arguments to pass to the UPLC program\n\nOptions:\n  -f, --flat   \n  -c, --cbor   \n  -d, --debug  \n  -h, --help   Print help\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/root/uplc/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/root/uplc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib"
+      }
+    },
+    {
+      "label": "Parse and evaluate the exact UPLC source in the native CEK machine",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/root/uplc/tool/aiken-x86_64-unknown-linux-musl/aiken",
+        "uplc",
+        "eval",
+        "hello.uplc"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/root/uplc",
+      "timestamp_utc": "2026-11-05T13:36:31.255133+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"(con string \\\"Hello, World!\\\")\",\n  \"cpu\": 16100,\n  \"mem\": 200\n}\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/root/uplc/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/root/uplc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/root/uplc/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#738 Untyped Plutus Core/hello.uplc": "3d7ba6a6e67fecf83965c065d1fc6792e3b8c4bceae5df7e51d5e8a3937fcefe"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain_download": {
+    "release_tag": "v1.1.24",
+    "release_page": "https://github.com/aiken-lang/aiken/releases/tag/v1.1.24",
+    "url": "https://github.com/aiken-lang/aiken/releases/download/v1.1.24/aiken-x86_64-unknown-linux-musl.tar.gz",
+    "sha256": "c378acccdaf9533f3375ea623c948d3dcb21f7e8c5ecbb741162c53653470b13",
+    "github_release_digest": "sha256:c378acccdaf9533f3375ea623c948d3dcb21f7e8c5ecbb741162c53653470b13"
+  },
+  "main_status": "main",
+  "toolchain": "aiken v1.1.24+bacbeb3 native Rust UPLC parser/CEK evaluator",
+  "evaluator_result": {
+    "result": "(con string \"Hello, World!\")",
+    "cpu": 16100,
+    "mem": 200
+  },
+  "toolchain_executable_sha256": "4257cc8be37cbde5bf7b5dd111e43a1277f45352fb2433ad7a7e647209aa7677",
+  "sources": [
+    "https://aiken-lang.org/uplc/cli",
+    "https://github.com/aiken-lang/aiken/tree/main/crates/uplc"
+  ],
+  "semantic_scope": "The maintained Aiken native UPLC parser and CEK evaluator loaded the exact original program and evaluated it to (con string \"Hello, World!\") with recorded positive CPU/memory budget usage. This verifies the pure UPLC constant only; no blockchain, wallet, deployment or transaction was involved.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The maintained Aiken native UPLC parser and CEK evaluator loaded the exact original program and evaluated it to (con string \"Hello, World!\") with recorded positive CPU/memory budget usage. This verifies the pure UPLC constant only; no blockchain, wallet, deployment or transaction was involved."
+}

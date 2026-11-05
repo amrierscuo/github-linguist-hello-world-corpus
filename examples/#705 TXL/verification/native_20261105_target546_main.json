@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:34:53.503888+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "TXL",
+  "ordinal": 705,
+  "commands": [
+    {
+      "label": "Check native OpenTXL linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/bin/txl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/txl",
+      "timestamp_utc": "2026-11-05T13:36:29.022435+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffff6d20000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007acbfc000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007acbfd01c000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/txl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/txl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native TXL version and usage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/bin/txl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/txl",
+      "timestamp_utc": "2026-11-05T13:36:29.095169+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "OpenTxl v11.3.7 (2.10.25) (c) 2025 James R. Cordy and others\nUsage:  txl [txloptions] [-o outputfile] inputfile [txlfile] [- progoptions]\n(for more information use txl -help)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/txl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/txl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Execute exact TXL grammar and transformation on original input",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/bin/txl",
+        "-q",
+        "input.txt",
+        "hello.txl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/txl",
+      "timestamp_utc": "2026-11-05T13:36:29.131958+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "[hello.txl] : TXL0195E replacement of function 'main' - [program] syntax error, at or near:\n\t>>> Greeting <<< \n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/txl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/txl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile and execute minimally corrected TXL transformation",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/bin/txl",
+        "-q",
+        "input.txt",
+        "hello.txl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/txl",
+      "timestamp_utc": "2026-11-05T13:37:59.326020+00:00",
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/txl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/txl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#705 TXL/input.txt": "cf8bddf701fbb93b52400a0476a15fefdbe786f01f45709a5e20177edd825b32",
+    "examples/#705 TXL/hello.txl": "d724dd56d6008990414bffcc039df504d69bca060e51a89241e44ae3d12e6934"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "runtime_release": {
+    "tag": "v11.3.7",
+    "source": "https://github.com/CordyJ/OpenTxl/releases/tag/v11.3.7",
+    "manifest_file": "${WORKSPACE}/work/native_target546_20261105/late/OpenTxl_release.json",
+    "asset_url": "https://github.com/CordyJ/OpenTxl/releases/download/v11.3.7/opentxl-11.3.7-linux-x64.tar.gz",
+    "asset_name": "opentxl-11.3.7-linux-x64.tar.gz",
+    "sha256": "5e9956f85ca88a3ecd6be0713a929ef3e32757b94fc7733c47e6718302823be3",
+    "digest_source": "GitHub official release asset sha256 digest"
+  },
+  "environment_setup": {
+    "TXLLIB": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/lib"
+  },
+  "version_output": {
+    "label": "Native TXL version and usage",
+    "command": [
+      "timeout",
+      "--kill-after=3s",
+      "25s",
+      "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/bin/txl"
+    ],
+    "cwd": "${WORKSPACE}/work/native_target546_20261105/late/txl",
+    "timestamp_utc": "2026-11-05T13:36:29.095169+00:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "OpenTxl v11.3.7 (2.10.25) (c) 2025 James R. Cordy and others\nUsage:  txl [txloptions] [-o outputfile] inputfile [txlfile] [- progoptions]\n(for more information use txl -help)\n",
+    "isolation_environment": {
+      "HOME": "${WORKSPACE}/work/native_target546_20261105/late/txl/home",
+      "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/txl/tmp",
+      "LC_ALL": "C.UTF-8",
+      "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib"
+    }
+  },
+  "original_artifact_sha256": {
+    "examples/#705 TXL/input.txt": "cf8bddf701fbb93b52400a0476a15fefdbe786f01f45709a5e20177edd825b32",
+    "examples/#705 TXL/hello.txl": "30012ed6e1105cfe3d70ffe3cf1d23d1f0caf162204bfb7d00e3ece0aca36f9b"
+  },
+  "proposed_source_changes": [
+    {
+      "corpus_path": "examples/#705 TXL/hello.txl",
+      "original_sha256": "30012ed6e1105cfe3d70ffe3cf1d23d1f0caf162204bfb7d00e3ece0aca36f9b",
+      "tested_sha256": "d724dd56d6008990414bffcc039df504d69bca060e51a89241e44ae3d12e6934",
+      "staged_file": "${WORKSPACE}/work/native_target546_20261105/late/txl/hello.txl",
+      "old_text": "construct Greeting [stringlit]",
+      "new_text": "construct Greeting [program]"
+    }
+  ],
+  "requires_source_change": true,
+  "main_status": "proposed_fix",
+  "toolchain": "Official OpenTXL11.3.7 Linuxx64",
+  "sources": [
+    {
+      "title": "Official OpenTXL release",
+      "url": "https://github.com/CordyJ/OpenTxl/releases/tag/v11.3.7"
+    },
+    {
+      "title": "TXL language documentation",
+      "url": "https://www.txl.ca/txl-docs.html"
+    }
+  ],
+  "versions": [
+    {
+      "label": "Native TXL version and usage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/txl/root/opentxl-11.3.7-linux-x64/bin/txl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/txl",
+      "timestamp_utc": "2026-11-05T13:36:29.095169+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "OpenTxl v11.3.7 (2.10.25) (c) 2025 James R. Cordy and others\nUsage:  txl [txloptions] [-o outputfile] inputfile [txlfile] [- progoptions]\n(for more information use txl -help)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/txl/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/txl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/txl/root/usr/lib"
+      }
+    }
+  ],
+  "semantic_scope": "After the single declared construct-type correction, the official native OpenTXL compiler/interpreter parsed the grammar and rewrite function and transformed the original input.txt into exactly the quoted Hello, World! stringlit token. The original TXL0195E failure is retained; current corpus files were not modified by this test.",
+  "original_receipt": "work/native_target546_20261105/late/txl.json",
+  "version_probe_note": "The no-argument native OpenTXL invocation prints version/usage and exits1 because input/program arguments are missing. The actual corrected transformation exits0.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "After the minimal construct-type correction, native OpenTXL parsed the grammar and rewrite function and transformed the original input.txt into exactly the quoted Hello, World! string-literal token. The output is a transformed program token, not an unquoted console print. The original compiler failure is retained.",
+  "source_change_application": "The exact tested correction listed in proposed_source_changes was applied to the corpus during integration. Original source hashes and native failure evidence are retained."
+}

@@ -5,7 +5,7 @@ end define
 function main
     replace [program]
         Input [repeat token]
-    construct Greeting [stringlit]
+    construct Greeting [program]
         "Hello, World!"
     by
         Greeting

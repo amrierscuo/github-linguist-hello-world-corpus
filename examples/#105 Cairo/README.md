@@ -1,5 +1,22 @@
 # #105 Cairo
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+Pinned Scarb compiled the unchanged Cairo executable project and cairo_execute ran it, producing the exact greeting line. No Starknet contract, wallet or network transaction was involved.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_target546_main.json).
+
+Current native command or procedure: `scarb build; scarb execute (use the pinned project manifest and Scarb 2.11.4 recorded in the receipt)`.
+
+## Extension results
+
+- `.cairo`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Fill out and execute a modern Cairo program that prints Hello, World!.
 
 Canonical type: `programming`; `language_id`: `620599567`.
@@ -29,4 +46,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cairo` | [lib.cairo](src/lib.cairo) created; verification pending |
+| `.cairo` | [lib.cairo](src/lib.cairo) syntax and behavior verified |
+
+</details>

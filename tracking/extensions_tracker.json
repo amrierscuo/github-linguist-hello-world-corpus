@@ -5224,10 +5224,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#105 Cairo/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#105 Cairo/src/lib.cairo": "847881ed956545c6c4f542b2c982909ad3997273ee71a71fd51fc6f1883b6133"
+      },
       "based_on": null,
       "documentation": "examples/#105 Cairo/README.md",
       "supporting_files": [],
@@ -5239,10 +5241,8 @@
           "url": "https://www.starknet.io/cairo-book/ch01-02-hello-world.html"
         }
       ],
-      "blockers": [
-        "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-      ],
-      "notes": "Cairo moderno e Cairo Zero sono voci separate del riferimento. Questo progetto usa l’attributo executable e Scarb; non è un contratto Starknet."
+      "blockers": [],
+      "notes": "Pinned Scarb compiled the unchanged Cairo executable project and cairo_execute ran it, producing the exact greeting line. No Starknet contract, wallet or network transaction was involved."
     },
     {
       "language_ordinal": 106,
@@ -11086,10 +11086,12 @@
       ],
       "creation_status": "adapted",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#218 FreeBASIC/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#218 FreeBASIC/variants/ext-bi-2e6269/hello.bi": "e2be25d952dde00085d5e8aeb8676543d57b7cd483f1e094b39523edfa183096"
+      },
       "based_on": "examples/#218 FreeBASIC/hello.bas",
       "documentation": "examples/#218 FreeBASIC/variants/ext-bi-2e6269/README.md",
       "supporting_files": [
@@ -11103,10 +11105,8 @@
         "https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml",
         "https://www.freebasic.net/wiki/KeyPgInclude"
       ],
-      "blockers": [
-        "La variante non è ancora stata controllata con la toolchain nativa indicata."
-      ],
-      "notes": "Include FreeBASIC bi con funzione, incluso dal programma companion. Variante originale adattata al ruolo del suffisso; i file principali esistenti non sono modificati. Nessuna verifica viene ereditata dal modello."
+      "blockers": [],
+      "notes": "Authentic FreeBASIC compiled the unchanged main and original .bi include consumer; both native executables printed exactly Hello, World!. Required compatibility libraries were extracted locally without system installation."
     },
     {
       "language_ordinal": 218,
@@ -11118,10 +11118,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#218 FreeBASIC/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#218 FreeBASIC/hello.bas": "48881bdce8411eb52084c72a13e52042640092e0ba6c18a9deb84ec92c51e04a",
+        "examples/#218 FreeBASIC/variants/ext-bi-2e6269/consumer.bas": "73d2e78bc735b73fb0b9b4c54709472569c751dbe868672cf378170d51a14b70"
+      },
       "based_on": null,
       "documentation": "examples/#218 FreeBASIC/README.md",
       "supporting_files": [],
@@ -11131,10 +11134,8 @@
         "https://www.freebasic.net/wiki/KeyPgPrint",
         "https://www.freebasic.net/wiki/KeyPgString"
       ],
-      "blockers": [
-        "FreeBASIC native fbc compiler is unavailable."
-      ],
-      "notes": "Dim As String, concatenazione + e End 0 sono sorgente FreeBASIC originale; una esecuzione con un diverso BASIC non è attestata."
+      "blockers": [],
+      "notes": "Authentic FreeBASIC compiled the unchanged main and original .bi include consumer; both native executables printed exactly Hello, World!. Required compatibility libraries were extracted locally without system installation."
     },
     {
       "language_ordinal": 219,
@@ -14346,10 +14347,13 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#268 Grammatical Framework/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#268 Grammatical Framework/Greeting.gf": "a4916aff68b1d62ad1b6e22a6fb576f2846659f70b90acdd2246a68d4b44c7ca",
+        "examples/#268 Grammatical Framework/GreetingEng.gf": "185b5568ffeba8622ffd71d7fda7ec5294627a0c62bda449a95c46cb76653ee2"
+      },
       "based_on": null,
       "documentation": "examples/#268 Grammatical Framework/README.md",
       "supporting_files": [],
@@ -14359,10 +14363,8 @@
         "https://www.grammaticalframework.org/doc/gf-refman.html",
         "https://www.grammaticalframework.org/doc/gf-shell-reference.html"
       ],
-      "blockers": [
-        "GF compiler and interactive grammar runtime are not configured."
-      ],
-      "notes": "L’obiettivo semantico è la linearizzazione dell’albero, non un programma console generale. La toolchain GF è assente."
+      "blockers": [],
+      "notes": "The native GF compiler accepted the exact abstract and concrete grammar, generated the PGF, and the GF runtime linearized the Hello tree to exactly Hello, World!. No RGL dependency or GUI."
     },
     {
       "language_ordinal": 269,
@@ -15897,10 +15899,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#291 Harbour/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#291 Harbour/hello.hb": "4d1530556226383c406899b2b3771726430801d56334e2000ddd42777e33e947"
+      },
       "based_on": null,
       "documentation": "examples/#291 Harbour/README.md",
       "supporting_files": [],
@@ -15910,10 +15914,8 @@
         "https://harbour.github.io/",
         "https://github.com/harbour/core/blob/master/utils/hbmk2/doc/hbmk2.en.md"
       ],
-      "blockers": [
-        "Compiler/runtime Harbour non preparati; parsing ed esecuzione pendenti."
-      ],
-      "notes": "La procedura Main crea una variabile xBase locale e usa OutStd con hb_eol. L’artefatto è sorgente Harbour, non una macro generica o un programma Bash."
+      "blockers": [],
+      "notes": "The genuine native Harbour hbmk2 script mode, built from the official source, parsed and executed the unchanged .hb script and emitted the exact greeting and LF. No UI, database or service was used."
     },
     {
       "language_ordinal": 292,
@@ -17245,10 +17247,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#316 Ioke/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#316 Ioke/hello.ik": "fa7786b98b719f853d89e1a61195dc494c942d4fe8e7f43dfabd4b9819bc7e40"
+      },
       "based_on": null,
       "documentation": "examples/#316 Ioke/README.md",
       "supporting_files": [],
@@ -17257,10 +17261,8 @@
       "sources": [
         "https://github.com/olabini/ioke"
       ],
-      "blockers": [
-        "Runtime Ioke storico non disponibile; nessuna verifica con Io generico."
-      ],
-      "notes": "Ioke è il linguaggio a messaggi del progetto originale, distinto da Io. Il file .ik è un esempio concreto; compatibilità con Java/CLR e runtime vanno ancora provati."
+      "blockers": [],
+      "notes": "The official Ioke JVM implementation parsed and executed the unchanged Ioke message-send source and printed exactly Hello, World! with LF. No Io substitution, CLR backend or GUI was used."
     },
     {
       "language_ordinal": 317,
@@ -24547,10 +24549,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#437 Mirah/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#437 Mirah/hello.mirah": "ba07db485f6c6435a90f606a9a265d92857a1ce6fb411b80a82977938b737d52"
+      },
       "based_on": null,
       "documentation": "examples/#437 Mirah/README.md",
       "supporting_files": [],
@@ -24562,10 +24566,8 @@
           "url": "https://github.com/mirah/mirah"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Il sorgente usa la forma Ruby-like Mirah; Ruby da solo non ne verifica il typing o la generazione JVM."
+      "blockers": [],
+      "notes": "The original Mirah source was compiled by Mirah and its generated JVM class printed exactly Hello, World! plus LF. No Ruby substitution or GUI was used."
     },
     {
       "language_ordinal": 438,
@@ -33810,10 +33812,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#617 Ring/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#617 Ring/hello.ring": "5a6210e5752c0043497bcb4373121aab82f1c579c568547511229f43c8f2e0d0"
+      },
       "based_on": null,
       "documentation": "examples/#617 Ring/README.md",
       "supporting_files": [],
@@ -33822,10 +33826,8 @@
       "sources": [
         "https://ring-lang.github.io/doc1.25/introduction.html"
       ],
-      "blockers": [
-        "Required ring compiler/runtime and matching host resources are not available/configured."
-      ],
-      "notes": "Programma originale; interpreter non configurato."
+      "blockers": [],
+      "notes": "The official Ring1.27 console VM compiled the unchanged source and executed see/concatenation, emitting the exact greeting and LF. Only ANSI-C language/VM/standard-function sources were built; no GUI extensions, IDE or system installation."
     },
     {
       "language_ordinal": 618,
@@ -39473,10 +39475,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#705 TXL/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#705 TXL/hello.txl": "d724dd56d6008990414bffcc039df504d69bca060e51a89241e44ae3d12e6934"
+      },
       "based_on": null,
       "documentation": "examples/#705 TXL/README.md",
       "supporting_files": [],
@@ -39485,10 +39489,8 @@
       "sources": [
         "https://www.txl.ca/plow2014.html"
       ],
-      "blockers": [
-        "Interprete TXL non disponibile; parser e trasformazione pendenti."
-      ],
-      "notes": "Grammatica program come repeat token e funzione main di riscrittura; l’output stringlit rappresenta il saluto."
+      "blockers": [],
+      "notes": "After the minimal construct-type correction, native OpenTXL parsed the grammar and rewrite function and transformed the original input.txt into exactly the quoted Hello, World! string-literal token. The output is a transformed program token, not an unquoted console print. The original compiler failure is retained."
     },
     {
       "language_ordinal": 706,
@@ -40580,10 +40582,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#722 Toit/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#722 Toit/hello.toit": "66db8a1e7597ec81e9175aaef7ffb83b7192403c680f8f5fe6c6b82b2bc8f755"
+      },
       "based_on": null,
       "documentation": "examples/#722 Toit/README.md",
       "supporting_files": [],
@@ -40592,10 +40596,8 @@
       "sources": [
         "https://docs.toit.io/language/"
       ],
-      "blockers": [
-        "Runtime Toit non predisposto; sintassi/versione CLI da verificare."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The official native Toit2.0 compiler/runtime compiled and ran the exact original main/print source on Linux and emitted exactly the greeting and LF. No embedded device, cloud service or GUI was used."
     },
     {
       "language_ordinal": 723,
@@ -41265,10 +41267,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#738 Untyped Plutus Core/verification/native_20261105_target546_main.json",
+      "verified_artifact_sha256": {
+        "examples/#738 Untyped Plutus Core/hello.uplc": "3d7ba6a6e67fecf83965c065d1fc6792e3b8c4bceae5df7e51d5e8a3937fcefe"
+      },
       "based_on": null,
       "documentation": "examples/#738 Untyped Plutus Core/README.md",
       "supporting_files": [],
@@ -41277,10 +41281,8 @@
       "sources": [
         "https://plutus.cardano.intersectmbo.org/docs/"
       ],
-      "blockers": [
-        "Toolchain UPLC/CEK non predisposta; valutazione pending."
-      ],
-      "notes": "Il programma è una costante, senza transazioni o deployment."
+      "blockers": [],
+      "notes": "The maintained Aiken native UPLC parser and CEK evaluator loaded the exact original program and evaluated it to (con string \"Hello, World!\") with recorded positive CPU/memory budget usage. This verifies the pure UPLC constant only; no blockchain, wallet, deployment or transaction was involved."
     },
     {
       "language_ordinal": 739,

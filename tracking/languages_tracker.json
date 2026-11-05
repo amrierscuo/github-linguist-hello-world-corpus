@@ -5936,13 +5936,14 @@
       "example": {
         "semantic_goal": "Compilare ed eseguire un programma Cairo moderno che stampa Hello, World!.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Scarb 2.11.4 con cairo_execute 2.11.4 (progetto fissato alla versione della guida)",
+        "toolchain": "Scarb 2.11.4 with its bundled Cairo compiler and cairo_execute 2.11.4, Linux x86-64",
         "files": [
           "examples/#105 Cairo/Scarb.toml",
-          "examples/#105 Cairo/src/lib.cairo"
+          "examples/#105 Cairo/src/lib.cairo",
+          "examples/#105 Cairo/verification/native_20261105_target546_main.json"
         ],
         "build_command": "scarb build",
-        "run_or_check_command": "scarb execute",
+        "run_or_check_command": "scarb build; scarb execute (use the pinned project manifest and Scarb 2.11.4 recorded in the receipt)",
         "expected_result": "tra i messaggi di Scarb, una riga `Hello, World!` e uscita 0.",
         "sources": [
           {
@@ -5955,16 +5956,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-        ],
-        "notes": "Cairo moderno e Cairo Zero sono voci separate del riferimento. Questo progetto usa l’attributo executable e Scarb; non è un contratto Starknet."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:35:10.603681+00:00",
+        "verification_log": "examples/#105 Cairo/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "Pinned Scarb compiled the unchanged Cairo executable project and cairo_execute ran it, producing the exact greeting line. No Starknet contract, wallet or network transaction was involved.",
+        "verified_artifact_sha256": {
+          "examples/#105 Cairo/Scarb.toml": "dc167442887ec17ee1eed17908868448c888ff68753429d5fa70b8c285a34b4e",
+          "examples/#105 Cairo/src/lib.cairo": "847881ed956545c6c4f542b2c982909ad3997273ee71a71fd51fc6f1883b6133"
+        }
       }
     },
     {
@@ -12391,17 +12394,18 @@
       "example": {
         "semantic_goal": "Concatenare stringhe FreeBASIC e stamparle con Print.",
         "validation_mode": "native_freebasic_compile_run",
-        "toolchain": "Required authentic toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "FreeBASIC 1.10.1 official Linux x86-64 compiler, Ubuntu libtinfo5 6.3 compatibility runtime",
         "files": [
           "examples/#218 FreeBASIC/hello.bas",
           "examples/#218 FreeBASIC/README.md",
           "examples/#218 FreeBASIC/verification/native.json",
           "examples/#218 FreeBASIC/variants/ext-bi-2e6269/consumer.bas",
           "examples/#218 FreeBASIC/variants/ext-bi-2e6269/hello.bi",
-          "examples/#218 FreeBASIC/variants/ext-bi-2e6269/README.md"
+          "examples/#218 FreeBASIC/variants/ext-bi-2e6269/README.md",
+          "examples/#218 FreeBASIC/verification/native_20261105_target546_main.json"
         ],
         "build_command": "fbc hello.bas -x build/hello",
-        "run_or_check_command": "fbc hello.bas -x build/hello; ./build/hello",
+        "run_or_check_command": "fbc hello.bas -x hello; ./hello (also compile/run the original .bi consumer as recorded)",
         "expected_result": "Exit 0; Hello, World! seguito da newline.",
         "sources": [
           "https://www.freebasic.net/wiki/KeyPgPrint",
@@ -12412,16 +12416,19 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:21:59.818701+00:00",
-        "verification_log": "examples/#218 FreeBASIC/verification/native.json",
-        "blockers": [
-          "FreeBASIC native fbc compiler is unavailable."
-        ],
-        "notes": "Dim As String, concatenazione + e End 0 sono sorgente FreeBASIC originale; una esecuzione con un diverso BASIC non è attestata."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:36:44.211622+00:00",
+        "verification_log": "examples/#218 FreeBASIC/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "Authentic FreeBASIC compiled the unchanged main and original .bi include consumer; both native executables printed exactly Hello, World!. Required compatibility libraries were extracted locally without system installation.",
+        "verified_artifact_sha256": {
+          "examples/#218 FreeBASIC/hello.bas": "48881bdce8411eb52084c72a13e52042640092e0ba6c18a9deb84ec92c51e04a",
+          "examples/#218 FreeBASIC/variants/ext-bi-2e6269/consumer.bas": "73d2e78bc735b73fb0b9b4c54709472569c751dbe868672cf378170d51a14b70",
+          "examples/#218 FreeBASIC/variants/ext-bi-2e6269/hello.bi": "e2be25d952dde00085d5e8aeb8676543d57b7cd483f1e094b39523edfa183096"
+        }
       }
     },
     {
@@ -15363,15 +15370,16 @@
       "example": {
         "semantic_goal": "Definire una grammatica GF con un albero astratto Hello e linearizzarlo nella concrete syntax inglese.",
         "validation_mode": "native_gf_compile_linearize",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Grammatical Framework 3.12 official Ubuntu 24.04 package",
         "files": [
           "examples/#268 Grammatical Framework/Greeting.gf",
           "examples/#268 Grammatical Framework/GreetingEng.gf",
           "examples/#268 Grammatical Framework/README.md",
-          "examples/#268 Grammatical Framework/verification/native.json"
+          "examples/#268 Grammatical Framework/verification/native.json",
+          "examples/#268 Grammatical Framework/verification/native_20261105_target546_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "gf -make GreetingEng.gf; gf GreetingEng.gf; nella shell GF: l Hello",
+        "run_or_check_command": "Compile both original GF modules and linearize Hello through the native GF runtime as recorded.",
         "expected_result": "Grammatica compilata; l Hello restituisce Hello, World!.",
         "sources": [
           "https://www.grammaticalframework.org/doc/gf-refman.html",
@@ -15382,16 +15390,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T12:36:12.279223+00:00",
-        "verification_log": "examples/#268 Grammatical Framework/verification/native.json",
-        "blockers": [
-          "GF compiler and interactive grammar runtime are not configured."
-        ],
-        "notes": "L’obiettivo semantico è la linearizzazione dell’albero, non un programma console generale. La toolchain GF è assente."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:34:51.417021+00:00",
+        "verification_log": "examples/#268 Grammatical Framework/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The native GF compiler accepted the exact abstract and concrete grammar, generated the PGF, and the GF runtime linearized the Hello tree to exactly Hello, World!. No RGL dependency or GUI.",
+        "verified_artifact_sha256": {
+          "examples/#268 Grammatical Framework/Greeting.gf": "a4916aff68b1d62ad1b6e22a6fb576f2846659f70b90acdd2246a68d4b44c7ca",
+          "examples/#268 Grammatical Framework/GreetingEng.gf": "185b5568ffeba8622ffd71d7fda7ec5294627a0c62bda449a95c46cb76653ee2"
+        }
       }
     },
     {
@@ -16725,13 +16735,14 @@
       "example": {
         "semantic_goal": "Eseguire un programma Harbour e scrivere Hello, World! su stdout.",
         "validation_mode": "native_harbour_compile_execute",
-        "toolchain": "Harbour hbmk2 o hbrun originali; versioni effettive da registrare",
+        "toolchain": "Harbour hbmk2 and native C runtime Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)",
         "files": [
           "examples/#291 Harbour/README.md",
-          "examples/#291 Harbour/hello.hb"
+          "examples/#291 Harbour/hello.hb",
+          "examples/#291 Harbour/verification/native_20261105_target546_main.json"
         ],
         "build_command": "hbmk2 hello.hb -ohello",
-        "run_or_check_command": "./hello oppure hbrun hello.hb",
+        "run_or_check_command": "hbmk2 hello.hb (native Harbour script mode, not a standalone executable)",
         "expected_result": "stdout Hello, World! seguito dall’eol della piattaforma.",
         "sources": [
           "https://harbour.github.io/",
@@ -16742,16 +16753,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compiler/runtime Harbour non preparati; parsing ed esecuzione pendenti."
-        ],
-        "notes": "La procedura Main crea una variabile xBase locale e usa OutStd con hb_eol. L’artefatto è sorgente Harbour, non una macro generica o un programma Bash."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:36:15.454218+00:00",
+        "verification_log": "examples/#291 Harbour/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The genuine native Harbour hbmk2 script mode, built from the official source, parsed and executed the unchanged .hb script and emitted the exact greeting and LF. No UI, database or service was used.",
+        "verified_artifact_sha256": {
+          "examples/#291 Harbour/hello.hb": "4d1530556226383c406899b2b3771726430801d56334e2000ddd42777e33e947"
+        }
       }
     },
     {
@@ -18156,13 +18168,14 @@
       "example": {
         "semantic_goal": "Invocare println sul testo del saluto nel runtime Ioke.",
         "validation_mode": "native_ioke_message_evaluation",
-        "toolchain": "Ioke JVM/CLR; versione da registrare",
+        "toolchain": "Official Ioke Java implementation P0.4.0 snapshot",
         "files": [
           "examples/#316 Ioke/README.md",
-          "examples/#316 Ioke/hello.ik"
+          "examples/#316 Ioke/hello.ik",
+          "examples/#316 Ioke/verification/native_20261105_target546_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "ioke hello.ik",
+        "run_or_check_command": "java -jar ioke.jar hello.ik (use the native JVM build and classpath recorded in the receipt)",
         "expected_result": "Hello, World! più newline.",
         "sources": [
           "https://github.com/olabini/ioke"
@@ -18172,16 +18185,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Ioke storico non disponibile; nessuna verifica con Io generico."
-        ],
-        "notes": "Ioke è il linguaggio a messaggi del progetto originale, distinto da Io. Il file .ik è un esempio concreto; compatibilità con Java/CLR e runtime vanno ancora provati."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:41:09.756148+00:00",
+        "verification_log": "examples/#316 Ioke/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The official Ioke JVM implementation parsed and executed the unchanged Ioke message-send source and printed exactly Hello, World! with LF. No Io substitution, CLR backend or GUI was used.",
+        "verified_artifact_sha256": {
+          "examples/#316 Ioke/hello.ik": "fa7786b98b719f853d89e1a61195dc494c942d4fe8e7f43dfabd4b9819bc7e40"
+        }
       }
     },
     {
@@ -25234,16 +25248,17 @@
       "example": {
         "semantic_goal": "Compilare Mirah in bytecode JVM e stampare il saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Mirah compiler e JVM compatibili",
+        "toolchain": "Mirah complete JVM compiler 0.2.1",
         "files": [
           "examples/#437 Mirah/hello.mirah",
           "examples/#437 Mirah/variants/druby-ff72b814/hello.druby",
           "examples/#437 Mirah/variants/druby-ff72b814/README.md",
           "examples/#437 Mirah/variants/duby-6fa18d7f/hello.duby",
-          "examples/#437 Mirah/variants/duby-6fa18d7f/README.md"
+          "examples/#437 Mirah/variants/duby-6fa18d7f/README.md",
+          "examples/#437 Mirah/verification/native_20261105_target546_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "mirahc hello.mirah\njava Hello",
+        "run_or_check_command": "Compile hello.mirah with Mirah 0.2.1 under JDK8, then java HelloTopLevel; see the exact compiler invocation in the receipt.",
         "expected_result": "stdout Hello, World! e newline.",
         "sources": [
           {
@@ -25256,16 +25271,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il sorgente usa la forma Ruby-like Mirah; Ruby da solo non ne verifica il typing o la generazione JVM."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:36:15.454411+00:00",
+        "verification_log": "examples/#437 Mirah/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The original Mirah source was compiled by Mirah and its generated JVM class printed exactly Hello, World! plus LF. No Ruby substitution or GUI was used.",
+        "verified_artifact_sha256": {
+          "examples/#437 Mirah/hello.mirah": "ba07db485f6c6435a90f606a9a265d92857a1ce6fb411b80a82977938b737d52"
+        }
       }
     },
     {
@@ -35498,11 +35514,12 @@
       "example": {
         "semantic_goal": "Eseguire un programma Ring con see e concatenazione.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine ring compiler/runtime — non disponibile / non verificata",
+        "toolchain": "Official Ring1.27 console interpreter, compiled with GCC",
         "files": [
           "examples/#617 Ring/hello.ring",
           "examples/#617 Ring/README.md",
-          "examples/#617 Ring/verification/native.json"
+          "examples/#617 Ring/verification/native.json",
+          "examples/#617 Ring/verification/native_20261105_target546_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "ring hello.ring",
@@ -35518,16 +35535,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:26:16.715632+00:00",
-        "verification_log": "examples/#617 Ring/verification/native.json",
-        "blockers": [
-          "Required ring compiler/runtime and matching host resources are not available/configured."
-        ],
-        "notes": "Programma originale; interpreter non configurato."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:34:53.398685+00:00",
+        "verification_log": "examples/#617 Ring/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The official Ring1.27 console VM compiled the unchanged source and executed see/concatenation, emitting the exact greeting and LF. Only ANSI-C language/VM/standard-function sources were built; no GUI extensions, IDE or system installation.",
+        "verified_artifact_sha256": {
+          "examples/#617 Ring/hello.ring": "5a6210e5752c0043497bcb4373121aab82f1c579c568547511229f43c8f2e0d0"
+        }
       }
     },
     {
@@ -40761,15 +40779,17 @@
       "example": {
         "semantic_goal": "Trasformare una sequenza di token in una stringa di saluto TXL.",
         "validation_mode": "native_txl_transform",
-        "toolchain": "TXL, versione da registrare",
+        "toolchain": "Official OpenTXL11.3.7 Linuxx64",
         "files": [
           "examples/#705 TXL/README.md",
           "examples/#705 TXL/hello.txl",
-          "examples/#705 TXL/input.txt"
+          "examples/#705 TXL/input.txt",
+          "examples/#705 TXL/verification/native_20261105_target546_main.json",
+          "examples/#705 TXL/verification/native_20261105_target546_original_failure.json"
         ],
         "build_command": null,
         "run_or_check_command": "txl input.txt hello.txl",
-        "expected_result": "Token stringlit \"Hello, World!\" in output.",
+        "expected_result": "The transformed program is exactly the quoted string-literal token Hello, World!, followed by LF.",
         "sources": [
           "https://www.txl.ca/plow2014.html"
         ]
@@ -40778,16 +40798,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Interprete TXL non disponibile; parser e trasformazione pendenti."
-        ],
-        "notes": "Grammatica program come repeat token e funzione main di riscrittura; l’output stringlit rappresenta il saluto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:34:53.503888+00:00",
+        "verification_log": "examples/#705 TXL/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "After the minimal construct-type correction, native OpenTXL parsed the grammar and rewrite function and transformed the original input.txt into exactly the quoted Hello, World! string-literal token. The output is a transformed program token, not an unquoted console print. The original compiler failure is retained.",
+        "verified_artifact_sha256": {
+          "examples/#705 TXL/input.txt": "cf8bddf701fbb93b52400a0476a15fefdbe786f01f45709a5e20177edd825b32",
+          "examples/#705 TXL/hello.txl": "d724dd56d6008990414bffcc039df504d69bca060e51a89241e44ae3d12e6934"
+        }
       }
     },
     {
@@ -41748,13 +41770,14 @@
       "example": {
         "semantic_goal": "Eseguire il programma Toit originale.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Toit compiler/runtime",
+        "toolchain": "Official Toit2.0.0 Linux amd64",
         "files": [
           "examples/#722 Toit/README.md",
-          "examples/#722 Toit/hello.toit"
+          "examples/#722 Toit/hello.toit",
+          "examples/#722 Toit/verification/native_20261105_target546_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "toit run hello.toit",
+        "run_or_check_command": "toit.run hello.toit",
         "expected_result": "Hello, World!",
         "sources": [
           "https://docs.toit.io/language/"
@@ -41764,16 +41787,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Toit non predisposto; sintassi/versione CLI da verificare."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:34:53.730966+00:00",
+        "verification_log": "examples/#722 Toit/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The official native Toit2.0 compiler/runtime compiled and ran the exact original main/print source on Linux and emitted exactly the greeting and LF. No embedded device, cloud service or GUI was used.",
+        "verified_artifact_sha256": {
+          "examples/#722 Toit/hello.toit": "66db8a1e7597ec81e9175aaef7ffb83b7192403c680f8f5fe6c6b82b2bc8f755"
+        }
       }
     },
     {
@@ -42615,14 +42639,15 @@
       "example": {
         "semantic_goal": "Analizzare e valutare una costante stringa Untyped Plutus Core.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "UPLC parser/CEK evaluator",
+        "toolchain": "aiken v1.1.24+bacbeb3 native Rust UPLC parser/CEK evaluator",
         "files": [
           "examples/#738 Untyped Plutus Core/README.md",
-          "examples/#738 Untyped Plutus Core/hello.uplc"
+          "examples/#738 Untyped Plutus Core/hello.uplc",
+          "examples/#738 Untyped Plutus Core/verification/native_20261105_target546_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Usare il parser/evaluatore UPLC ufficiale della versione compatibile per valutare hello.uplc.",
-        "expected_result": "Hello, World!",
+        "run_or_check_command": "aiken uplc eval hello.uplc",
+        "expected_result": "Native UPLC evaluation returns (con string \"Hello, World!\") with positive CPU and memory usage; no blockchain execution is claimed.",
         "sources": [
           "https://plutus.cardano.intersectmbo.org/docs/"
         ]
@@ -42631,16 +42656,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain UPLC/CEK non predisposta; valutazione pending."
-        ],
-        "notes": "Il programma è una costante, senza transazioni o deployment."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+        "verification_timestamp_utc": "2026-11-05T13:36:28.458304+00:00",
+        "verification_log": "examples/#738 Untyped Plutus Core/verification/native_20261105_target546_main.json",
+        "blockers": [],
+        "notes": "The maintained Aiken native UPLC parser and CEK evaluator loaded the exact original program and evaluated it to (con string \"Hello, World!\") with recorded positive CPU/memory budget usage. This verifies the pure UPLC constant only; no blockchain, wallet, deployment or transaction was involved.",
+        "verified_artifact_sha256": {
+          "examples/#738 Untyped Plutus Core/hello.uplc": "3d7ba6a6e67fecf83965c065d1fc6792e3b8c4bceae5df7e51d5e8a3937fcefe"
+        }
       }
     },
     {

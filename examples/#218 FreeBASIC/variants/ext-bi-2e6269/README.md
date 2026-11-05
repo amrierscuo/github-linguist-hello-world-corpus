@@ -1,5 +1,9 @@
 # 0218 FreeBASIC: variant `.bi`
 
+## Latest recorded verification
+
+**Syntax and behavior verified** for `.bi`. Authentic FreeBASIC compiled the unchanged main and original .bi include consumer; both native executables printed exactly Hello, World!. Required compatibility libraries were extracted locally without system installation. [Recorded evidence](../../verification/native_20261105_target546_main.json).
+
 Role: Includes FreeBASIC bi with function, included by the companion program.
 
 Type: **adapted**. Starting model: examples/#218 FreeBASIC/hello.bas; adattato/originale content for this suffix.
@@ -18,8 +22,7 @@ fbc consumer.bas -x <output>/hello; <output>/hello
 
 Expected result: Hello, World!
 
-## Status
-
+## Earlier status and evidence
 Artefatto: **created**.
 syntax: **not verified**. behavior: **not verified**.
 No positive flag is inherited from the main sample or another suffix.

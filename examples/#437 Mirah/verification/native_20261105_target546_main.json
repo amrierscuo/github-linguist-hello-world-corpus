@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:36:15.454411+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Mirah",
+  "ordinal": 437,
+  "commands": [
+    {
+      "label": "Record headless Java version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:36:16.603573+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile exact Mirah source to JVM bytecode",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/mirah-complete-0.2.1.jar",
+        "hello.mirah"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:36:16.839448+00:00",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Exception in thread \"main\" java.lang.IllegalArgumentException: Unsupported jvm version 21\n\tat org.mirah.jvm.compiler.JvmVersion.<init>(jvm_version.mirah:47)\n\tat org.mirah.jvm.compiler.JvmVersion.<init>(jvm_version.mirah:28)\n\tat org.mirah.tool.MirahArguments.<init>(mirah_arguments.mirah:84)\n\tat org.mirah.tool.MirahArguments.<init>(mirah_arguments.mirah:78)\n\tat org.mirah.tool.MirahTool.reset(mirah_tool.mirah:70)\n\tat org.mirah.tool.MirahTool.<init>(mirah_tool.mirah:62)\n\tat org.mirah.tool.Mirahc.<init>(mirahc.mirah)\n\tat org.mirah.MirahCommand.compile(mirah_command.mirah:27)\n\tat org.mirah.MirahCommand.main(mirah_command.mirah:45)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib"
+      }
+    },
+    {
+      "label": "Read available isolated legacy OpenJDK8 metadata",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "openjdk-8-jre-headless"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:37:54.875876+00:00",
+      "exit_code": 0,
+      "stdout": "Package: openjdk-8-jre-headless\nSource: openjdk-8\nPriority: optional\nSection: universe/java\nInstalled-Size: 101540\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 8u504-ga-1ubuntu1~24.04.3\nSuggests: libnss-mdns, fonts-dejavu-extra, fonts-nanum, fonts-ipafont-gothic, fonts-ipafont-mincho, fonts-wqy-microhei, fonts-wqy-zenhei, fonts-indic\nProvides: java-runtime-headless (= 8), java2-runtime-headless, java5-runtime-headless, java6-runtime-headless, java7-runtime-headless, java8-runtime-headless\nDepends: ca-certificates-java, java-common (>= 0.28), libcups2t64, liblcms2-2 (>= 2.2+git20110628), libjpeg8 (>= 8c), libfontconfig1, libnss3 (>= 2:3.26), util-linux (>= 2.26.2-4), libc6 (>= 2.38), libfreetype6 (>= 2.3.5), libgcc-s1 (>= 3.0), libpcsclite1 (>= 1.3.0), libstdc++6 (>= 4.1.1), libx11-6, libxext6, libxi6, libxrender1, libxtst6, zlib1g (>= 1:1.1.4)\nBreaks: ca-certificates-java (<< 20160321~), oracle-java8-installer (<< 8u77+8u77arm-1)\nFilename: pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u504-ga-1ubuntu1~24.04.3_amd64.deb\nSize: 30736444\nMD5sum: e4b2cbee9bfb425733e3c6d4f8b55bc3\nSHA1: 0060619e87481e9ef8ec9f78ca6d4245b4abef3f\nSHA256: 2102eec7636335f8203c6fa8eac613dc853a80134b129a8385f66f805bcf094a\nSHA512: 92a9b790064aeb3d740880f15f146597ee4a5df6e1b254c8e7e07f12b05a86c2c2399da28a6a4cc1c352fee8407eb1fbbf8638ce8bb8f6d671a8ce679cd72e73\nHomepage: https://openjdk.org/projects/jdk8u/\nDescription-en: OpenJDK Java runtime, using Hotspot JIT (headless)\n Minimal Java runtime - needed for executing non GUI Java programs,\n using Hotspot JIT.\n .\n The packages are built using the IcedTea build support and patches\n from the IcedTea project.\nDescription-md5: 20eb08d56f9496cba7ae5bc1fc762f93\nMulti-Arch: same\nOriginal-Maintainer: Java Maintenance <pkg-java-maintainers@lists.alioth.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\n\nPackage: openjdk-8-jre-headless\nArchitecture: amd64\nVersion: 8u402-ga-8build1\nMulti-Arch: same\nPriority: optional\nSection: universe/java\nSource: openjdk-8\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Java Maintenance <pkg-java-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 101397\nProvides: java-runtime-headless (= 8), java2-runtime-headless, java5-runtime-headless, java6-runtime-headless, java7-runtime-headless, java8-runtime-headless\nDepends: ca-certificates-java, java-common (>= 0.28), libcups2t64, liblcms2-2 (>= 2.2+git20110628), libjpeg-turbo8, libfontconfig1, libnss3 (>= 2:3.26), util-linux (>= 2.26.2-4), libc6 (>= 2.38), libfreetype6 (>= 2.3.5), libgcc-s1 (>= 3.0), libjpeg8 (>= 8c), libpcsclite1 (>= 1.3.0), libstdc++6 (>= 4.1.1), libx11-6, libxext6, libxi6, libxrender1, libxtst6, zlib1g (>= 1:1.1.4)\nSuggests: libnss-mdns, fonts-dejavu-extra, fonts-nanum, fonts-ipafont-gothic, fonts-ipafont-mincho, fonts-wqy-microhei, fonts-wqy-zenhei, fonts-indic\nBreaks: ca-certificates-java (<< 20160321~), oracle-java8-installer (<< 8u77+8u77arm-1)\nFilename: pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u402-ga-8build1_amd64.deb\nSize: 30684140\nMD5sum: 376af99ea7eea13788707781945f7f0c\nSHA1: 4b7ffe2d2cc575090b3cf1e2dcc052dcd4a11559\nSHA256: 273ba4cadb7c10f57e02e51ade3f0a9ff8c68979dd18142270e21dc3c7393223\nSHA512: 938481853df930601c6cd9c54fd873402248384cc6bb0ce6416ce5b850e5ba5af3657d370664367483ac1dfceb9555e61a41a98900821ce47292ab11ef32148a\nHomepage: https://openjdk.org/projects/jdk8u/\nDescription-en: OpenJDK Java runtime, using Hotspot JIT (headless)\n Minimal Java runtime - needed for executing non GUI Java programs,\n using Hotspot JIT.\n .\n The packages are built using the IcedTea build support and patches\n from the IcedTea project.\nDescription-md5: 20eb08d56f9496cba7ae5bc1fc762f93\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for openjdk-8-jre-headless",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "openjdk-8-jre-headless=8u402-ga-8build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:37:55.067287+00:00",
+      "exit_code": 0,
+      "stdout": "Package: openjdk-8-jre-headless\nArchitecture: amd64\nVersion: 8u402-ga-8build1\nMulti-Arch: same\nPriority: optional\nSection: universe/java\nSource: openjdk-8\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Java Maintenance <pkg-java-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 101397\nProvides: java-runtime-headless (= 8), java2-runtime-headless, java5-runtime-headless, java6-runtime-headless, java7-runtime-headless, java8-runtime-headless\nDepends: ca-certificates-java, java-common (>= 0.28), libcups2t64, liblcms2-2 (>= 2.2+git20110628), libjpeg-turbo8, libfontconfig1, libnss3 (>= 2:3.26), util-linux (>= 2.26.2-4), libc6 (>= 2.38), libfreetype6 (>= 2.3.5), libgcc-s1 (>= 3.0), libjpeg8 (>= 8c), libpcsclite1 (>= 1.3.0), libstdc++6 (>= 4.1.1), libx11-6, libxext6, libxi6, libxrender1, libxtst6, zlib1g (>= 1:1.1.4)\nSuggests: libnss-mdns, fonts-dejavu-extra, fonts-nanum, fonts-ipafont-gothic, fonts-ipafont-mincho, fonts-wqy-microhei, fonts-wqy-zenhei, fonts-indic\nBreaks: ca-certificates-java (<< 20160321~), oracle-java8-installer (<< 8u77+8u77arm-1)\nFilename: pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u402-ga-8build1_amd64.deb\nSize: 30684140\nMD5sum: 376af99ea7eea13788707781945f7f0c\nSHA1: 4b7ffe2d2cc575090b3cf1e2dcc052dcd4a11559\nSHA256: 273ba4cadb7c10f57e02e51ade3f0a9ff8c68979dd18142270e21dc3c7393223\nSHA512: 938481853df930601c6cd9c54fd873402248384cc6bb0ce6416ce5b850e5ba5af3657d370664367483ac1dfceb9555e61a41a98900821ce47292ab11ef32148a\nHomepage: https://openjdk.org/projects/jdk8u/\nDescription-en: OpenJDK Java runtime, using Hotspot JIT (headless)\n Minimal Java runtime - needed for executing non GUI Java programs,\n using Hotspot JIT.\n .\n The packages are built using the IcedTea build support and patches\n from the IcedTea project.\nDescription-md5: 20eb08d56f9496cba7ae5bc1fc762f93\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only openjdk-8-jre-headless",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "openjdk-8-jre-headless=8u402-ga-8build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/packages/openjdk-8-jre-headless",
+      "timestamp_utc": "2026-11-05T13:37:55.120864+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 openjdk-8-jre-headless amd64 8u402-ga-8build1 [30.7 MB]\nFetched 30.7 MB in 3s (10.7 MB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract openjdk-8-jre-headless without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/packages/openjdk-8-jre-headless/openjdk-8-jre-headless_8u402-ga-8build1_amd64.deb",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:37:58.667714+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Read Ubuntu package metadata for openjdk-8-jdk-headless",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-cache",
+        "show",
+        "openjdk-8-jdk-headless=8u402-ga-8build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:38:02.575065+00:00",
+      "exit_code": 0,
+      "stdout": "Package: openjdk-8-jdk-headless\nArchitecture: amd64\nVersion: 8u402-ga-8build1\nMulti-Arch: same\nPriority: optional\nSection: universe/java\nSource: openjdk-8\nOrigin: Ubuntu\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nOriginal-Maintainer: Java Maintenance <pkg-java-maintainers@lists.alioth.debian.org>\nBugs: https://bugs.launchpad.net/ubuntu/+filebug\nInstalled-Size: 38829\nProvides: java-sdk-headless (= 8), java2-sdk-headless, java5-sdk-headless, java6-sdk-headless, java7-sdk-headless, java8-sdk-headless\nDepends: openjdk-8-jre-headless (= 8u402-ga-8build1), libc6 (>= 2.34), zlib1g (>= 1:1.1.4)\nSuggests: openjdk-8-demo, openjdk-8-source\nBreaks: openjdk-8-jre-headless (<< 8u232-b07-1)\nReplaces: openjdk-8-jdk (<< 8u72-b15-4), openjdk-8-jre-headless (<< 8u232-b07-1)\nFilename: pool/universe/o/openjdk-8/openjdk-8-jdk-headless_8u402-ga-8build1_amd64.deb\nSize: 8832434\nMD5sum: c40e935464e89638b29de9b9c1526667\nSHA1: c999680370a546f45d7c391f303ef3a443837623\nSHA256: 62b4f22fcf407afaef22842716632d64575f4e7ff8e4a3b260d1d249db62a7a8\nSHA512: 7bc37f51f57637e647d6cc6cec3b3146390ce650ca38b43a1796436f167ea99152bdd1c396bc0ba4f43f37b3b05d57ff703acddd9536e20b15125a2663e3b4b4\nHomepage: https://openjdk.org/projects/jdk8u/\nDescription-en: OpenJDK Development Kit (JDK) (headless)\n OpenJDK is a development environment for building applications,\n applets, and components using the Java programming language.\n .\n This binary package contains almost the full JDK, except for some\n tools (appletviewer, jconsole) and headers (jawt) that make sense\n only in GUI environments.\n .\n The packages are built using the IcedTea build support and patches\n from the IcedTea project.\nDescription-md5: 8728353da59d7b1608e908f191d9b820\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Download only openjdk-8-jdk-headless",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=12",
+        "download",
+        "openjdk-8-jdk-headless=8u402-ga-8build1"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/packages/openjdk-8-jdk-headless",
+      "timestamp_utc": "2026-11-05T13:38:02.624700+00:00",
+      "exit_code": 0,
+      "stdout": "Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 openjdk-8-jdk-headless amd64 8u402-ga-8build1 [8832 kB]\nFetched 8832 kB in 2s (5403 kB/s)\n",
+      "stderr": ""
+    },
+    {
+      "label": "Extract openjdk-8-jdk-headless without installing it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/packages/openjdk-8-jdk-headless/openjdk-8-jdk-headless_8u402-ga-8build1_amd64.deb",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:38:04.781443+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Record headless Java version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:38:06.160251+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"1.8.0_402\"\nOpenJDK Runtime Environment (build 1.8.0_402-8u402-ga-8build1-b06)\nOpenJDK 64-Bit Server VM (build 25.402-b06, mixed mode)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile exact Mirah source to JVM bytecode",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/mirah-complete-0.2.1.jar",
+        "hello.mirah"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:38:06.624836+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib"
+      }
+    },
+    {
+      "label": "Record headless Java version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:41:09.792900+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"1.8.0_402\"\nOpenJDK Runtime Environment (build 1.8.0_402-8u402-ga-8build1-b06)\nOpenJDK 64-Bit Server VM (build 25.402-b06, mixed mode)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Compile exact Mirah source to JVM bytecode",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/mirah-complete-0.2.1.jar",
+        "hello.mirah"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:41:10.237000+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Execute compiled Mirah program on JVM",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "-cp",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+        "HelloTopLevel"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/mirah",
+      "timestamp_utc": "2026-11-05T13:41:12.012311+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "openjdk-8-jre-headless",
+      "version": "8u402-ga-8build1",
+      "ubuntu_archive_path": "pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u402-ga-8build1_amd64.deb",
+      "sha256": "273ba4cadb7c10f57e02e51ade3f0a9ff8c68979dd18142270e21dc3c7393223"
+    },
+    {
+      "name": "openjdk-8-jdk-headless",
+      "version": "8u402-ga-8build1",
+      "ubuntu_archive_path": "pool/universe/o/openjdk-8/openjdk-8-jdk-headless_8u402-ga-8build1_amd64.deb",
+      "sha256": "62b4f22fcf407afaef22842716632d64575f4e7ff8e4a3b260d1d249db62a7a8"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#437 Mirah/hello.mirah": "ba07db485f6c6435a90f606a9a265d92857a1ce6fb411b80a82977938b737d52"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://github.com/mirah/mirah",
+    "https://repo.maven.apache.org/maven2/org/mirah/mirah-complete/0.2.1/"
+  ],
+  "downloads": [
+    {
+      "source": "https://repo.maven.apache.org/maven2/org/mirah/mirah-complete/0.2.1/mirah-complete-0.2.1.jar",
+      "file": "mirah-complete-0.2.1.jar",
+      "bytes": 4191430,
+      "sha256": "f7cb00930976c4b0b60ed0490024ea4b70c74f3a6a0d5399bf7a858567fba7f7"
+    }
+  ],
+  "maven_published_sha1": "9f896292486bcfbecb7869698f6a3122e249b786",
+  "toolchain": {
+    "name": "Mirah complete JVM compiler",
+    "version": "0.2.1",
+    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.8.2\r\nCreated-By: 1.8.0_101-b13 (Oracle Corporation)\r\nMain-Class: org.mirah.MirahCommand\r\n\r\n"
+  },
+  "generated_main_class": {
+    "name": "HelloTopLevel",
+    "sha256": "0eb53f913755a45ee2077ce0a1c512025a2b69779967ba6ea40f0b0d991729ce"
+  },
+  "semantic_scope": "The original Mirah source was compiled by Mirah and its generated JVM class printed exactly Hello, World! plus LF. No Ruby substitution or GUI was used.",
+  "checker_correction": "The original hello.mirah compiles to HelloTopLevel.class in Mirah0.2.1. The old README expected Hello, and the first checker looked for that name. The successful run invokes the actual generated main class. The original source is unchanged. Java21 failure and the isolated Java8 retry are retained.",
+  "selected_environment_metadata_provenance": {
+    "runner": "work/native_target546_20261105/middle/verify.py",
+    "sha256_at_annotation": "09ee820fcdb6adebc3878b7ddbafafe68123b9d4a0fba183376248ff86cbf705",
+    "scope": "Added only explicitly configured PATH/build flags from the executed runner; command text, source hashes and actual outputs are unchanged."
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The original Mirah source was compiled by Mirah and its generated JVM class printed exactly Hello, World! plus LF. No Ruby substitution or GUI was used."
+}

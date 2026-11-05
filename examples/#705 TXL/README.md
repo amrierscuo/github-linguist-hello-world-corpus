@@ -1,5 +1,24 @@
 # #705 TXL
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+After the minimal construct-type correction, native OpenTXL parsed the grammar and rewrite function and transformed the original input.txt into exactly the quoted Hello, World! string-literal token. The output is a transformed program token, not an unquoted console print. The original compiler failure is retained.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_target546_main.json).
+
+Current native command or procedure: `txl input.txt hello.txl`.
+
+The rewrite variable is now constructed with the program type required by the replacement. [Original compiler failure](verification/native_20261105_target546_original_failure.json).
+
+## Extension results
+
+- `.txl`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.txl` | [hello.txl](hello.txl) created; verification pending |
+| `.txl` | [hello.txl](hello.txl) syntax and behavior verified |
+
+</details>

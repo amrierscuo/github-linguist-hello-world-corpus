@@ -1,5 +1,22 @@
 # #268 Grammatical Framework
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+The native GF compiler accepted the exact abstract and concrete grammar, generated the PGF, and the GF runtime linearized the Hello tree to exactly Hello, World!. No RGL dependency or GUI.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_target546_main.json). [Earlier evidence](verification/native.json).
+
+Current native command or procedure: `Compile both original GF modules and linearize Hello through the native GF runtime as recorded.`.
+
+## Extension results
+
+- `.gf`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica `Grammatical Framework`, tipo `programming`, language_id `137`.
 
 Define a GF grammar with an abstract Hello tree and linearize it in the concrete English syntax.
@@ -45,4 +62,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gf` | [Greeting.gf](Greeting.gf), [GreetingEng.gf](GreetingEng.gf) created; verification pending |
+| `.gf` | [Greeting.gf](Greeting.gf), [GreetingEng.gf](GreetingEng.gf) syntax and behavior verified |
+
+</details>

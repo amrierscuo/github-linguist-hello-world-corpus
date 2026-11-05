@@ -1,5 +1,22 @@
 # #617 Ring
 
+## Latest recorded verification
+
+**Syntax and behavior verified** on November 5, 2026.
+
+The official Ring1.27 console VM compiled the unchanged source and executed see/concatenation, emitting the exact greeting and LF. Only ANSI-C language/VM/standard-function sources were built; no GUI extensions, IDE or system installation.
+
+[Native commands, versions, outputs and SHA-256](verification/native_20261105_target546_main.json). [Earlier evidence](verification/native.json).
+
+Current native command or procedure: `ring hello.ring`.
+
+## Extension results
+
+- `.ring`: syntax and behavior verified.
+
+<details>
+<summary>Original instructions and earlier status</summary>
+
 Voce canonica `Ring`, tipo `programming`, language_id `431`.
 
 Run a Ring program with see and concatenation.
@@ -44,4 +61,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ring` | [hello.ring](hello.ring) created; verification pending |
+| `.ring` | [hello.ring](hello.ring) syntax and behavior verified |
+
+</details>

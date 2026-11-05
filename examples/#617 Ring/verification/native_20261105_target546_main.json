@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:34:53.398685+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Ring",
+  "ordinal": 617,
+  "commands": [
+    {
+      "label": "Compile only the original Ring console VM and standard functions",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "gcc",
+        "-O0",
+        "-s",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/ring.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/general.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/state.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/ext.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/hashlib.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/rhtable.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmgc.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/os_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/rstring.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/rlist.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/ritem.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/ritems.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/scanner.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/parser.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/stmt.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/expr.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/codegen.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vm.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmerror.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmeval.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmthread.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmexpr.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmvars.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmlists.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmfuncs.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/ringapi.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmoop.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmtry.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmstr.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmjump.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmrange.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/list_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/meta_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vminfo_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmperf.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmexit.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmstack.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/vmstate.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/genlib_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/math_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/file_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/dll_e.c",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/src/objfile.c",
+        "-I${WORKSPACE}/work/native_target546_20261105/late/ring/root/ring/language/include",
+        "-o",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/ring",
+        "-lm",
+        "-ldl"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/ring",
+      "timestamp_utc": "2026-11-05T13:36:26.379982+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/ring/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/ring/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib"
+      }
+    },
+    {
+      "label": "Check CLI-only linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/ring"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/ring",
+      "timestamp_utc": "2026-11-05T13:36:50.371591+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffcf94df000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000713273d9a000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000713273a00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000713273f6b000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/ring/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/ring/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native Ring version and usage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/ring"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/ring",
+      "timestamp_utc": "2026-11-05T13:36:50.415936+00:00",
+      "exit_code": 0,
+      "stdout": "===========================================================================\nRing version 1.27.0 \n2013-2026, Mahmoud Fayed <msfclipper@yahoo.com>\nUsage : ring filename.ring [Options]\n===========================================================================\n-tokens   :  Print a list of tokens in the source code file\n-rules    :  Print grammar rules applied on the tokens\n-ic       :  Print the intermediate byte code (before execution)\n-icfinal  :  Print the final byte code (after execution)\n-cgi      :  Print http response header before error messages\n-norun    :  Don't run the program after compiling\n-ins      :  Print instruction operation code before execution\n-clock    :  Print clock before and after program execution\n-go       :  Generate object file\n-geo      :  Generate embedded object file (C source code)\n-w        :  Display Warnings\n===========================================================================\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/ring/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/ring/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile exact Ring source without running it",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/ring",
+        "hello.ring",
+        "-norun"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/ring",
+      "timestamp_utc": "2026-11-05T13:36:50.445774+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/ring/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/ring/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run exact original Ring program",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/ring",
+        "hello.ring"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/ring",
+      "timestamp_utc": "2026-11-05T13:36:50.478932+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/ring/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/ring/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#617 Ring/hello.ring": "5a6210e5752c0043497bcb4373121aab82f1c579c568547511229f43c8f2e0d0"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "runtime_release": {
+    "tag": "v1.27",
+    "source": "https://github.com/ring-lang/ring/releases/tag/v1.27",
+    "manifest_file": "${WORKSPACE}/work/native_target546_20261105/late/ring_release.json",
+    "asset_url": "https://github.com/ring-lang/ring/releases/download/v1.27/Ring_1.27_LightRelease_SourceCode.zip",
+    "asset_name": "Ring_1.27_LightRelease_SourceCode.zip",
+    "sha256": "abd8260eab56997c3135aebcb72e6dc14bef2ac6abe49062b46fcfb3aa1f28f3",
+    "digest_source": "GitHub official release asset sha256 digest"
+  },
+  "main_status": "main",
+  "toolchain": "Official Ring1.27 console interpreter, compiled with GCC",
+  "sources": [
+    {
+      "title": "Official Ring1.27 release",
+      "url": "https://github.com/ring-lang/ring/releases/tag/v1.27"
+    },
+    {
+      "title": "Ring source build instructions",
+      "url": "https://github.com/ring-lang/ring/tree/master/language"
+    }
+  ],
+  "versions": [
+    {
+      "label": "Native Ring version and usage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/ring/ring"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/ring",
+      "timestamp_utc": "2026-11-05T13:36:50.415936+00:00",
+      "exit_code": 0,
+      "stdout": "===========================================================================\nRing version 1.27.0 \n2013-2026, Mahmoud Fayed <msfclipper@yahoo.com>\nUsage : ring filename.ring [Options]\n===========================================================================\n-tokens   :  Print a list of tokens in the source code file\n-rules    :  Print grammar rules applied on the tokens\n-ic       :  Print the intermediate byte code (before execution)\n-icfinal  :  Print the final byte code (after execution)\n-cgi      :  Print http response header before error messages\n-norun    :  Don't run the program after compiling\n-ins      :  Print instruction operation code before execution\n-clock    :  Print clock before and after program execution\n-go       :  Generate object file\n-geo      :  Generate embedded object file (C source code)\n-w        :  Display Warnings\n===========================================================================\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/ring/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/ring/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/ring/root/usr/lib"
+      }
+    }
+  ],
+  "isolation": "Headless native Linux CLI only; all toolchains extracted/built under work; no system package installation, .NET/Mono or display.",
+  "semantic_scope": "The official Ring1.27 console VM compiled the unchanged source and executed see/concatenation, emitting the exact greeting and LF. Only ANSI-C language/VM/standard-function sources were built; no GUI extensions, IDE or system installation.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The official Ring1.27 console VM compiled the unchanged source and executed see/concatenation, emitting the exact greeting and LF. Only ANSI-C language/VM/standard-function sources were built; no GUI extensions, IDE or system installation."
+}

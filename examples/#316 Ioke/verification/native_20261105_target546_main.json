@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:41:09.756148+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Ioke",
+  "ordinal": 316,
+  "commands": [
+    {
+      "label": "Record headless Java version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/ioke",
+      "timestamp_utc": "2026-11-05T13:41:11.023245+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"1.8.0_402\"\nOpenJDK Runtime Environment (build 1.8.0_402-8u402-ga-8build1-b06)\nOpenJDK 64-Bit Server VM (build 25.402-b06, mixed mode)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Build original Ioke Java implementation, without tests or CLR backend",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-jar",
+        "${WORKSPACE}/work/tools_27_33/apache-ant-1.10.18/lib/ant-launcher.jar",
+        "-Djavac.version=1.8",
+        "jar-notest"
+      ],
+      "cwd": "/tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4",
+      "timestamp_utc": "2026-11-05T13:41:11.336583+00:00",
+      "exit_code": 1,
+      "stdout": "Buildfile: /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build.xml\n\nprepare:\n    [mkdir] Created dir: /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build\n    [mkdir] Created dir: /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/coverage\n    [mkdir] Created dir: /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/classes\n    [mkdir] Created dir: /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/test-results\n    [mkdir] Created dir: /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/test-results/html\n\ngenerate_filters:\n\ncompile:\n",
+      "stderr": "     [exec] Execute failed: java.io.IOException: Cannot run program \"ruby\" (in directory \"/tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4\"): error=2, No such file or directory\n\nBUILD FAILED\n/tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build.xml:75: Could not read filters from file /tmp/corpus-ioke-9_d3g8a2/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/version_data.properties as it doesn't exist.\n\nTotal time: 1 second\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib"
+      }
+    },
+    {
+      "label": "Record headless Java version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/ioke",
+      "timestamp_utc": "2026-11-05T13:43:35.294448+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"1.8.0_402\"\nOpenJDK Runtime Environment (build 1.8.0_402-8u402-ga-8build1-b06)\nOpenJDK 64-Bit Server VM (build 25.402-b06, mixed mode)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Build original Ioke Java implementation, without tests or CLR backend",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-jar",
+        "${WORKSPACE}/work/tools_27_33/apache-ant-1.10.18/lib/ant-launcher.jar",
+        "-Djavac.version=1.8",
+        "jar-notest"
+      ],
+      "cwd": "/tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4",
+      "timestamp_utc": "2026-11-05T13:43:35.603583+00:00",
+      "exit_code": 0,
+      "stdout": "Buildfile: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build.xml\n\nprepare:\n    [mkdir] Created dir: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build\n    [mkdir] Created dir: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/coverage\n    [mkdir] Created dir: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/classes\n    [mkdir] Created dir: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/test-results\n    [mkdir] Created dir: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/test-results/html\n\ngenerate_filters:\n     [exec] fatal: not a git repository (or any of the parent directories): .git\n     [exec] Had a problem when finding out commit info - undefined method `to_a' for \"\":String (THIS IS NOT A CATASTROPHIC ERROR, you can still build Ioke)\n\ncompile:\n    [javac] /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build.xml:80: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds\n    [javac] Compiling 225 source files to /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/classes\n    [javac] Note: Some input files use unchecked or unsafe operations.\n    [javac] Note: Recompile with -Xlint:unchecked for details.\n     [copy] Copying 3 files to /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/classes\n     [copy] Copying 36 files to /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/build/classes\n\nci-jar:\n      [jar] Building jar: /tmp/corpus-ioke-7idn5wb9/ioke-c5f345b3983a95f3e5725d07ff5b4e02afc860e4/lib/ioke.jar\n\njar-notest:\n\nBUILD SUCCESSFUL\nTotal time: 5 seconds\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib:${WORKSPACE}/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "ANT_HOME": "${WORKSPACE}/work/tools_27_33/apache-ant-1.10.18",
+        "CORPUS_RUBY": "${WORKSPACE}/work/tools_221_240/ubuntu/usr/bin/ruby3.2",
+        "RUBYLIB": "${WORKSPACE}/work/tools_221_240/ubuntu/usr/lib/ruby/3.2.0:${WORKSPACE}/work/tools_221_240/ubuntu/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/tools_221_240/ubuntu/usr/lib/ruby/vendor_ruby",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/helpers:${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Record headless Java version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/ioke",
+      "timestamp_utc": "2026-11-05T13:43:42.383736+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"1.8.0_402\"\nOpenJDK Runtime Environment (build 1.8.0_402-8u402-ga-8build1-b06)\nOpenJDK 64-Bit Server VM (build 25.402-b06, mixed mode)\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Record genuine Ioke JVM runtime version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_target546_20261105/middle/ioke/ioke.jar",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/ioke",
+      "timestamp_utc": "2026-11-05T13:43:42.714064+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Ioke P ikj 0.4.0-SNAPSHOT [2026-11-05 14:43 -- ???]\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    },
+    {
+      "label": "Run unchanged Ioke source through its native JVM implementation",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
+        "-Djava.awt.headless=true",
+        "-Duser.home=${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "-Djava.io.tmpdir=${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "-jar",
+        "${WORKSPACE}/work/native_target546_20261105/middle/ioke/ioke.jar",
+        "hello.ik"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/middle/ioke",
+      "timestamp_utc": "2026-11-05T13:43:44.464982+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/middle/ioke/root/usr/lib",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/bin:/bin"
+      },
+      "explicitly_unset_environment": [
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ]
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#316 Ioke/hello.ik": "fa7786b98b719f853d89e1a61195dc494c942d4fe8e7f43dfabd4b9819bc7e40"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "primary_sources": [
+    "https://github.com/olabini/ioke",
+    "https://github.com/olabini/ioke/blob/master/build.xml"
+  ],
+  "downloads": [
+    {
+      "source": "https://codeload.github.com/olabini/ioke/tar.gz/c5f345b3983a95f3e5725d07ff5b4e02afc860e4",
+      "file": "ioke-source.tar.gz",
+      "bytes": 2482528,
+      "sha256": "bc1f2f2003113b1ca0998f58b195bec1437e496f42bc362b8ab1a889f218d25d"
+    }
+  ],
+  "temporary_build_directory_removed": true,
+  "helper_files": [
+    {
+      "file": "helpers/ruby",
+      "content_utf8": "#!/bin/sh\nexec \"$CORPUS_RUBY\" --disable-gems \"$@\"\n",
+      "sha256": "870b51997ea142b857082796918c2834be494953ac3ac6113e24a19508d71e83"
+    }
+  ],
+  "toolchain": {
+    "name": "Official Ioke Java implementation",
+    "version": "P0.4.0 snapshot",
+    "source_commit": "c5f345b3983a95f3e5725d07ff5b4e02afc860e4",
+    "ant": "1.10.18",
+    "java_target": "1.8",
+    "built_jar_sha256": "205c75197b07345d5fa0ef3d0366c3f95ace1faed65fda0b707d970e3e5e8a94"
+  },
+  "runtime_version_output": "Ioke P ikj 0.4.0-SNAPSHOT [2026-11-05 14:43 -- ???]\n",
+  "semantic_scope": "The official Ioke JVM implementation parsed and executed the unchanged Ioke message-send source and printed exactly Hello, World! with LF. No Io substitution, CLR backend or GUI was used.",
+  "selected_environment_metadata_provenance": {
+    "runner": "work/native_target546_20261105/middle/verify.py",
+    "sha256_at_annotation": "09ee820fcdb6adebc3878b7ddbafafe68123b9d4a0fba183376248ff86cbf705",
+    "scope": "Added only explicitly configured PATH/build flags from the executed runner; command text, source hashes and actual outputs are unchanged."
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The official Ioke JVM implementation parsed and executed the unchanged Ioke message-send source and printed exactly Hello, World! with LF. No Io substitution, CLR backend or GUI was used."
+}

@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:34:46.888574+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "FreeBASIC",
+  "ordinal": 218,
+  "commands": [
+    {
+      "label": "Fetch official toolchain distribution",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "55s",
+        "curl",
+        "--fail",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "50",
+        "https://downloads.sourceforge.net/project/fbc/FreeBASIC-1.10.1/Binaries-Linux/FreeBASIC-1.10.1-linux-x86_64.tar.xz",
+        "-o",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/freebasic.tar.xz"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:34:46.911919+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract official archive locally",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "90s",
+        "tar",
+        "-xf",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/freebasic.tar.xz",
+        "-C",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools",
+        "--no-same-owner"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:34:55.127472+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "FreeBASIC compiler version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:35:07.776100+00:00",
+      "exit_code": 127,
+      "stdout": "",
+      "stderr": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc: error while loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory\n",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib"
+      }
+    },
+    {
+      "label": "Fetch officially checksummed libtinfo5 compatibility runtime",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "35s",
+        "curl",
+        "-fsSL",
+        "--max-time",
+        "30",
+        "https://security.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2ubuntu0.3_amd64.deb",
+        "-o",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/libtinfo5.deb"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:36:37.464535+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Extract compatibility runtime without system installation",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/libtinfo5.deb",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:36:41.299528+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "FreeBASIC compiler version with its required ABI5 library",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc",
+        "-version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:36:41.399786+00:00",
+      "exit_code": 0,
+      "stdout": "FreeBASIC Compiler - Version 1.10.1 (2023-12-24), built for linux-x86_64 (64bit)\nCopyright (C) 2004-2023 The FreeBASIC development team.\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile unchanged FreeBASIC main program",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc",
+        "hello.bas",
+        "-x",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:36:41.544975+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib"
+      }
+    },
+    {
+      "label": "Run native FreeBASIC main executable",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/hello"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic",
+      "timestamp_utc": "2026-11-05T13:36:42.830946+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile exact FreeBASIC include consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc",
+        "consumer.bas",
+        "-x",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/include/consumer"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/include",
+      "timestamp_utc": "2026-11-05T13:36:42.987291+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib"
+      }
+    },
+    {
+      "label": "Execute native include consumer",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/include/consumer"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/include",
+      "timestamp_utc": "2026-11-05T13:36:44.211622+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [
+    {
+      "name": "libtinfo5",
+      "version": "6.3-2ubuntu0.3",
+      "source": "https://security.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2ubuntu0.3_amd64.deb",
+      "sha256": "4df4288404108f1a156d014e8764a064e977e34e6d44931ab60451694c03c90d",
+      "integrity_source": "https://packages.ubuntu.com/jammy/amd64/libtinfo5/download"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#218 FreeBASIC/hello.bas": "48881bdce8411eb52084c72a13e52042640092e0ba6c18a9deb84ec92c51e04a",
+    "examples/#218 FreeBASIC/variants/ext-bi-2e6269/consumer.bas": "73d2e78bc735b73fb0b9b4c54709472569c751dbe868672cf378170d51a14b70",
+    "examples/#218 FreeBASIC/variants/ext-bi-2e6269/hello.bi": "e2be25d952dde00085d5e8aeb8676543d57b7cd483f1e094b39523edfa183096"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "main_status": "main",
+  "downloads": [
+    {
+      "url": "https://downloads.sourceforge.net/project/fbc/FreeBASIC-1.10.1/Binaries-Linux/FreeBASIC-1.10.1-linux-x86_64.tar.xz",
+      "filename": "freebasic.tar.xz",
+      "sha256": "8a3e82f5e07664ef47932733358257a2c70e4c16279c844a6080b48e2da256b1",
+      "bytes": 4532048
+    }
+  ],
+  "toolchain": "FreeBASIC 1.10.1 official Linux x86-64 compiler, Ubuntu libtinfo5 6.3 compatibility runtime",
+  "extensions": {
+    ".bas": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    },
+    ".bi": {
+      "syntax_verified": true,
+      "semantic_verified": true
+    }
+  },
+  "sources": [
+    "https://www.freebasic.net/wiki/KeyPgPrint",
+    "https://www.freebasic.net/wiki/KeyPgString",
+    "https://www.freebasic.net/wiki/CompilerInstalling",
+    "https://github.com/freebasic/fbc/releases/tag/1.10.1"
+  ],
+  "semantic_scope": "Authentic FreeBASIC compiled the unchanged main and original .bi include consumer; both native executables printed exactly Hello, World!. Required compatibility libraries were extracted locally without system installation.",
+  "name": "FreeBASIC",
+  "verified_utc": "2026-11-05T13:36:44.211622+00:00",
+  "generated_artifacts": {
+    "hello": "b71bcd4a296d3f41c5feef16e5d58713f2c5081e67a775cfe35d56eaa871826e",
+    "include/consumer": "557d47701b761599c8f63234149a67e469b168b846b95d235cc65056712f52cb"
+  },
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "Authentic FreeBASIC compiled the unchanged main and original .bi include consumer; both native executables printed exactly Hello, World!. Required compatibility libraries were extracted locally without system installation."
+}

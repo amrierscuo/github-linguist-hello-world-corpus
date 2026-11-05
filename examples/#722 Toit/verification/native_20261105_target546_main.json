@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-05T13:34:53.730966+00:00",
+  "platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
+  "language": "Toit",
+  "ordinal": 722,
+  "commands": [
+    {
+      "label": "Extract official Toit package without installation",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "dpkg-deb",
+        "-x",
+        "${WORKSPACE}/work/native_target546_20261105/late/toit/toit_2.0.0-1_amd64.deb",
+        "${WORKSPACE}/work/native_target546_20261105/late/toit/root"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/toit",
+      "timestamp_utc": "2026-11-05T13:34:55.025912+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Check native Toit linkage",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "ldd",
+        "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/bin/toit"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/toit",
+      "timestamp_utc": "2026-11-05T13:36:29.507223+00:00",
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffe0afee000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000785af01fb000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000785aefe00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000785af079d000)\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/toit/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/toit/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib"
+      }
+    },
+    {
+      "label": "Native Toit version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/bin/toit",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/toit",
+      "timestamp_utc": "2026-11-05T13:36:29.681105+00:00",
+      "exit_code": 0,
+      "stdout": "v2.0.0\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/toit/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/toit/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib"
+      }
+    },
+    {
+      "label": "Compile and execute original Toit source",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/bin/toit",
+        "run",
+        "hello.toit"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/toit",
+      "timestamp_utc": "2026-11-05T13:36:29.788102+00:00",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/toit/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/toit/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib"
+      }
+    }
+  ],
+  "toolchain_packages": [],
+  "artifact_sha256": {
+    "examples/#722 Toit/hello.toit": "66db8a1e7597ec81e9175aaef7ffb83b7192403c680f8f5fe6c6b82b2bc8f755"
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "runtime_release": {
+    "tag": "v2.0.0",
+    "source": "https://github.com/toitlang/toit/releases/tag/v2.0.0",
+    "manifest_file": "${WORKSPACE}/work/native_target546_20261105/late/toit_release.json",
+    "asset_url": "https://github.com/toitlang/toit/releases/download/v2.0.0/toit_2.0.0-1_amd64.deb",
+    "asset_name": "toit_2.0.0-1_amd64.deb",
+    "sha256": "c5cfda769426f87b35e91461425fb4ece72b26c2b9f45704d39457c8c4338c55",
+    "digest_source": "GitHub official release asset sha256 digest"
+  },
+  "main_status": "main",
+  "toolchain": "Official Toit2.0.0 Linux amd64",
+  "sources": [
+    {
+      "title": "Official Toit release",
+      "url": "https://github.com/toitlang/toit/releases/tag/v2.0.0"
+    },
+    {
+      "title": "Toit language documentation",
+      "url": "https://docs.toit.io/language/"
+    }
+  ],
+  "versions": [
+    {
+      "label": "Native Toit version",
+      "command": [
+        "timeout",
+        "--kill-after=3s",
+        "25s",
+        "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/bin/toit",
+        "--version"
+      ],
+      "cwd": "${WORKSPACE}/work/native_target546_20261105/late/toit",
+      "timestamp_utc": "2026-11-05T13:36:29.681105+00:00",
+      "exit_code": 0,
+      "stdout": "v2.0.0\n",
+      "stderr": "",
+      "isolation_environment": {
+        "HOME": "${WORKSPACE}/work/native_target546_20261105/late/toit/home",
+        "TMPDIR": "${WORKSPACE}/work/native_target546_20261105/late/toit/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib/dovecot:${WORKSPACE}/work/native_target546_20261105/late/toit/root/usr/lib"
+      }
+    }
+  ],
+  "isolation": "Headless native Linux CLI only; all toolchains extracted/built under work; no system package installation, .NET/Mono or display.",
+  "semantic_scope": "The official native Toit2.0 compiler/runtime compiled and ran the exact original main/print source on Linux and emitted exactly the greeting and LF. No embedded device, cloud service or GUI was used.",
+  "path_normalization": "The checkout and user profile prefixes were normalized for publication; captured output and checked source hashes are retained.",
+  "test_scope_description": "The official native Toit2.0 compiler/runtime compiled and ran the exact original main/print source on Linux and emitted exactly the greeting and LF. No embedded device, cloud service or GUI was used."
+}
