@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "ordinal": 569,
+  "language": "Pyret",
+  "timestamp_utc": "2026-11-18T17:38:18.096588+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Install the generated program’s Node module resolver and standard support packages",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "resolve@1.22.10",
+        "seedrandom@3.0.5",
+        "js-numbers",
+        "immutable"
+      ],
+      "cwd": "${SCRATCH}/569-wkf1fjcv",
+      "timestamp_utc": "2026-11-18T17:38:18.111043+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "\nadded 9 packages in 16s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/569-wkf1fjcv/home",
+        "TMPDIR": "${SCRATCH}/569-wkf1fjcv/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute the genuine compiler output for the exact Pyret input",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "greeting.jarr"
+      ],
+      "cwd": "${SCRATCH}/569-wkf1fjcv",
+      "timestamp_utc": "2026-11-18T17:38:35.433218+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!The program didn't define any tests.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/569-wkf1fjcv/home",
+        "TMPDIR": "${SCRATCH}/569-wkf1fjcv/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false",
+        "NODE_PATH": "${SCRATCH}/569-wkf1fjcv/node_modules:${SCRATCH}/569-l99_2el_/node_modules"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#569 Pyret/hello.arr": "3c451ba317fcb19be6b42d72099d7042975ddd9129ee1bcd7958ee9ddb56d882"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://pyret.org/docs/latest/",
+    "https://code.pyret.org/"
+  ],
+  "previous_verification_log": null,
+  "compiled_sha256": "9095d7539863511d58672ba0b8f5cfb0fd6c70ef0d6a62f99d6aa61cde60f2a1",
+  "compiled_source_stage_receipt": "${SCRATCH}/569-julmo42p",
+  "toolchain": "Pyret CLI 0.1.29",
+  "reproduction_command": "pyret --port <private-socket> hello.arr --outfile greeting.jarr; node greeting.jarr with the pinned npm dependency directory",
+  "semantic_scope": "The official Pyret compiler translated the exact source. Running its generated program emitted the original greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

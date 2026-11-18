@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "ordinal": 203,
+  "language": "FPP",
+  "timestamp_utc": "2026-11-18T17:26:45.293196+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/203-2d8ph9j9",
+      "timestamp_utc": "2026-11-18T17:26:45.345837+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/203-2d8ph9j9/home",
+        "TMPDIR": "${SCRATCH}/203-2d8ph9j9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/203-2d8ph9j9/.venv/bin/python",
+        "fprime-fpp"
+      ],
+      "cwd": "${SCRATCH}/203-2d8ph9j9",
+      "timestamp_utc": "2026-11-18T17:26:45.363625+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 1 package in 1ms\nInstalled 1 package in 4ms\n + fprime-fpp==3.4.0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/203-2d8ph9j9/home",
+        "TMPDIR": "${SCRATCH}/203-2d8ph9j9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record NASA FPP distribution version",
+      "command": [
+        "${SCRATCH}/203-2d8ph9j9/.venv/bin/python",
+        "-c",
+        "from importlib.metadata import version; print(version(\"fprime-fpp\"))"
+      ],
+      "cwd": "${SCRATCH}/203-2d8ph9j9",
+      "timestamp_utc": "2026-11-18T17:26:45.424190+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "3.4.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/057-0d_hfs4r/java25/bin:${SCRATCH}/203-2d8ph9j9/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/203-2d8ph9j9/home",
+        "TMPDIR": "${SCRATCH}/203-2d8ph9j9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/203-2d8ph9j9/home",
+        "JAVA_HOME": "${SCRATCH}/057-0d_hfs4r/java25"
+      }
+    },
+    {
+      "label": "Check the unchanged FPP model",
+      "command": [
+        "${SCRATCH}/203-2d8ph9j9/.venv/bin/fpp-check",
+        "hello.fpp"
+      ],
+      "cwd": "${SCRATCH}/203-2d8ph9j9",
+      "timestamp_utc": "2026-11-18T17:26:45.482340+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/057-0d_hfs4r/java25/bin:${SCRATCH}/203-2d8ph9j9/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/203-2d8ph9j9/home",
+        "TMPDIR": "${SCRATCH}/203-2d8ph9j9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/203-2d8ph9j9/home",
+        "JAVA_HOME": "${SCRATCH}/057-0d_hfs4r/java25"
+      }
+    },
+    {
+      "label": "Write compiler semantic analysis JSON for the original model",
+      "command": [
+        "${SCRATCH}/203-2d8ph9j9/.venv/bin/fpp-to-json",
+        "-d",
+        "output",
+        "hello.fpp"
+      ],
+      "cwd": "${SCRATCH}/203-2d8ph9j9",
+      "timestamp_utc": "2026-11-18T17:26:45.524758+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/203-2d8ph9j9/home\n",
+      "environment": {
+        "PATH": "${SCRATCH}/057-0d_hfs4r/java25/bin:${SCRATCH}/203-2d8ph9j9/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/203-2d8ph9j9/home",
+        "TMPDIR": "${SCRATCH}/203-2d8ph9j9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/203-2d8ph9j9/home",
+        "JAVA_HOME": "${SCRATCH}/057-0d_hfs4r/java25"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#203 FPP/hello.fpp": "5013aa9a27564fc3e7d815f7d3911c925c2e2ebf5712522378094660523bc0ca"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://nasa.github.io/fpp/fpp-spec.html",
+    "https://nasa.github.io/fpp/fpp-users-guide.html",
+    "https://github.com/nasa/fpp"
+  ],
+  "previous_verification_log": "examples/#203 FPP/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "installed_cli_tools": [
+    "fpp-format",
+    "fpp-from-xml",
+    "fpp-locate-uses",
+    "fpp-locate-defs",
+    "fpp-filenames",
+    "fpp-check",
+    "fpp-to-cpp",
+    "fpp-to-dict",
+    "fpp-depend",
+    "fpp-to-json",
+    "fpp-to-layout",
+    "fpp-syntax",
+    "fpp"
+  ],
+  "FPP_analysis": {
+    "fpp-analysis.json": "{\"fppVersion\":\"v3.4.0\",\"analysis\":{\"componentInstanceMap\":{},\"componentMap\":{},\"frameworkDefinitions\":{\"constantMap\":{},\"typeMap\":{}},\"includedFileSet\":[],\"inputFileSet\":[\"${SCRATCH}/203-2d8ph9j9/hello.fpp\"],\"locationSpecifierMap\":[],\"parentSymbolMap\":{\"5\":{\"Module\":{\"nodeId\":6,\"unqualifiedName\":\"Corpus\"}}},\"symbolScopeMap\":{\"6\":{\"map\":{\"Value\":{\"map\":{\"Greeting\":{\"Constant\":{\"nodeId\":5,\"unqualifiedName\":\"Greeting\"}}}}}}},\"topologyMap\":{},\"typeMap\":{\"4\":{\"String\":{\"size\":\"None\"}},\"5\":{\"String\":{\"size\":\"None\"}}},\"useDefMap\":{},\"valueMap\":{\"4\":{\"String\":{\"value\":\"Hello, World!\"}},\"5\":{\"String\":{\"value\":\"Hello, World!\"}}},\"stateMachineMap\":{},\"dictionarySymbolSet\":[],\"interfaceMap\":{},\"dictionaryMap\":{}}}\n",
+    "fpp-loc-map.json": "{\"fppVersion\":\"v3.4.0\",\"locationMap\":{\"0\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"2.23\",\"includingLoc\":\"None\"},\"1\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"2.3\",\"includingLoc\":\"None\"},\"2\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"2.23\",\"includingLoc\":\"None\"},\"3\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"2.3\",\"includingLoc\":\"None\"},\"4\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"2.23\",\"includingLoc\":\"None\"},\"5\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"2.3\",\"includingLoc\":\"None\"},\"6\":{\"file\":\"${SCRATCH}/203-2d8ph9j9/hello.fpp\",\"pos\":\"1.1\",\"includingLoc\":\"None\"}}}\n",
+    "fpp-ast.json": "{\"fppVersion\":\"v3.4.0\",\"ast\":[{\"members\":[[[],{\"DefModule\":{\"node\":{\"AstNode\":{\"data\":{\"name\":\"Corpus\",\"members\":[[[],{\"DefConstant\":{\"node\":{\"AstNode\":{\"data\":{\"name\":\"Greeting\",\"value\":{\"AstNode\":{\"data\":{\"ExprLiteralString\":{\"value\":\"Hello, World!\"}},\"id\":4}},\"isDictionaryDef\":false},\"id\":5}}}},[]]]},\"id\":6}}}},[]]]}]}\n"
+  },
+  "toolchain": "3.4.0",
+  "reproduction_command": "fpp-check hello.fpp; fpp-to-json -d output hello.fpp",
+  "semantic_scope": "The FPP command-line tool analyzed the original model and its compiler representation exposes the expected greeting constant.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #129 CodeQL
 
+## Verified on November 18, 2026
+
+The CodeQL engine executed the original constant-only table query against a synthetic one-file database. The decoded result contained exactly one row and the expected greeting.
+
+Run `codeql database create <scratch>; codeql query run --database <scratch> --output hello.bqrs hello.ql; codeql bqrs decode --format=csv hello.bqrs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `CodeQL`, tipo `programming`, `language_id: 424259634`.
 
 Return one single line CodeQL with greeting column equal to Hello, World! by concatenation of strings.
@@ -50,3 +63,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.ql` | [hello.ql](hello.ql), [consumer.ql](variants/ext-qll-2e716c6c/consumer.ql) created; verification pending |
 | `.qll` | [hello.qll](variants/ext-qll-2e716c6c/hello.qll) created; verification pending |
+
+</details>

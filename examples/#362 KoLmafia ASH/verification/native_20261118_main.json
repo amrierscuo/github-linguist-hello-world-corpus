@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "ordinal": 362,
+  "language": "KoLmafia ASH",
+  "timestamp_utc": "2026-11-18T17:25:28.012138+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Inspect output stream API of the official KoLmafia runtime",
+      "command": [
+        "javap",
+        "-private",
+        "-classpath",
+        "${SCRATCH}/tools/kolmafia/KoLmafia-29444.jar",
+        "net.sourceforge.kolmafia.RequestLogger"
+      ],
+      "cwd": "${SCRATCH}/362-8xzbprq7",
+      "timestamp_utc": "2026-11-18T17:25:28.129419+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Compiled from \"RequestLogger.java\"\npublic class net.sourceforge.kolmafia.RequestLogger extends net.sourceforge.kolmafia.utilities.NullStream {\n  public static final net.sourceforge.kolmafia.RequestLogger INSTANCE;\n  private static java.io.PrintStream outputStream;\n  private static final java.util.Deque<java.io.PrintStream> replacedOutputStreams;\n  private static java.io.PrintStream mirrorStream;\n  private static java.io.PrintStream sessionStream;\n  private static java.io.PrintStream debugStream;\n  private static java.io.PrintStream traceStream;\n  private static java.lang.String lastURLString;\n  public static java.lang.String previousUpdateString;\n  private static boolean wasLastRequestSimple;\n  private static final java.lang.StringBuilder traceBuffer;\n  private net.sourceforge.kolmafia.RequestLogger();\n  public static java.lang.String getLastURLString();\n  public void println();\n  public void println(java.lang.String);\n  public static void printList(java.util.List<?>, java.io.PrintStream);\n  public static void printList(java.util.List<?>);\n  public static void printLine();\n  public static void printLine(java.lang.String);\n  public static void printLine(java.lang.String, boolean);\n  public static void printLine(net.sourceforge.kolmafia.KoLConstants$MafiaState, java.lang.String);\n  public static void printLine(net.sourceforge.kolmafia.KoLConstants$MafiaState, java.lang.String, boolean);\n  public static void printHtml(java.lang.String);\n  public static void printHtml(java.lang.String, boolean);\n  public static void printHtml(net.sourceforge.kolmafia.KoLConstants$MafiaState, java.lang.String);\n  public static void printHtml(net.sourceforge.kolmafia.KoLConstants$MafiaState, java.lang.String, boolean);\n  private static void printLine(net.sourceforge.kolmafia.KoLConstants$MafiaState, java.lang.String, boolean, boolean);\n  public static java.io.PrintStream openStream(java.lang.String, java.io.PrintStream, boolean);\n  public static void closeStream(java.io.PrintStream);\n  public static void openCustom(java.io.PrintStream);\n  public static void closeCustom();\n  public static void openMirror(java.lang.String);\n  public static void closeMirror();\n  public static void setSessionStream(java.io.PrintStream);\n  public static java.io.PrintStream getSessionStream();\n  public static void openSessionLog();\n  public static void closeSessionLog();\n  public static void updateSessionLog();\n  public static void updateSessionLog(java.lang.String);\n  public static boolean isDebugging();\n  public static java.io.PrintStream getDebugStream();\n  public static void openDebugLog();\n  public static void closeDebugLog();\n  public static void updateDebugLog();\n  public static void updateDebugLog(java.lang.String);\n  public static void updateDebugLog(java.lang.Throwable);\n  public static void updateDebugLog(java.lang.Object);\n  public static boolean isTracing();\n  public static java.io.PrintStream getTraceStream();\n  public static void openTraceStream();\n  public static void closeTraceStream();\n  public static synchronized void trace(java.lang.String);\n  public static void registerRequest(net.sourceforge.kolmafia.request.GenericRequest, java.lang.String);\n  private static void doRegister(net.sourceforge.kolmafia.request.GenericRequest, java.lang.String);\n  public static void registerLocation(java.lang.String);\n  public static void registerLastLocation();\n  static {};\n}\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/362-8xzbprq7/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/362-8xzbprq7/home",
+        "TMPDIR": "${SCRATCH}/362-8xzbprq7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/362-8xzbprq7/home"
+      }
+    },
+    {
+      "label": "Invoke the unchanged ASH file in KoLmafia with console capture",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/tools/kolmafia/KoLmafia-29444.jar",
+        "RunAsh.java"
+      ],
+      "cwd": "${SCRATCH}/362-8xzbprq7",
+      "timestamp_utc": "2026-11-18T17:25:28.481641+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/362-8xzbprq7/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/362-8xzbprq7/home",
+        "TMPDIR": "${SCRATCH}/362-8xzbprq7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/362-8xzbprq7/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#362 KoLmafia ASH/hello.ash": "cd810358cdbc59d3b35baad4c697e79789c2108032a2e996e9496e9415813e2e"
+  },
+  "fixture_sha256": {
+    "RunAsh.java": {
+      "sha256": "ecd9b1c08fe2f315cdeb070f0f20005d6dafaa5049306f88be2782f105317b0c",
+      "content_utf8": "import java.io.File;\nimport java.lang.reflect.Field;\nimport net.sourceforge.kolmafia.textui.AshRuntime;\nimport net.sourceforge.kolmafia.RequestLogger;\npublic class RunAsh {\n public static void main(String[] args) throws Exception {\n  Field stream=RequestLogger.class.getDeclaredField(\"outputStream\");\n  stream.setAccessible(true);\n  stream.set(null, System.out);\n  AshRuntime runtime=new AshRuntime();\n  if(!runtime.validate(new File(\"hello.ash\"),null)) throw new AssertionError(\"ASH validation failed\");\n  runtime.execute(\"main\", new Object[0]);\n }\n}\n"
+    }
+  },
+  "sources": [
+    "https://github.com/kolmafia/kolmafia",
+    "https://raw.githubusercontent.com/kolmafia/kolmafia/main/src/net/sourceforge/kolmafia/textui/Parser.java"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/kolmafia/kolmafia/releases/download/r29444/KoLmafia-29444.jar",
+      "sha256": "2b292426b95b18fac1fcfae23cad129f7852738315967b8a0189dfb970a5f701",
+      "expected_sha256": null
+    }
+  ],
+  "logging_fields": [
+    "private static java.io.PrintStream outputStream;",
+    "private static final java.util.Deque<java.io.PrintStream> replacedOutputStreams;",
+    "private static java.io.PrintStream mirrorStream;",
+    "private static java.io.PrintStream sessionStream;",
+    "private static java.io.PrintStream debugStream;",
+    "private static java.io.PrintStream traceStream;",
+    "public static void printList(java.util.List<?>, java.io.PrintStream);",
+    "public static java.io.PrintStream openStream(java.lang.String, java.io.PrintStream, boolean);",
+    "public static void closeStream(java.io.PrintStream);",
+    "public static void openCustom(java.io.PrintStream);",
+    "public static void setSessionStream(java.io.PrintStream);",
+    "public static java.io.PrintStream getSessionStream();",
+    "public static java.io.PrintStream getDebugStream();",
+    "public static java.io.PrintStream getTraceStream();"
+  ],
+  "toolchain": "KoLmafia KoLmafia-29444.jar",
+  "reproduction_command": "java -cp <KoLmafia JAR> RunAsh.java",
+  "semantic_scope": "The genuine KoLmafia interpreter executed the original ASH entry point. The configured console logger captured its actual greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

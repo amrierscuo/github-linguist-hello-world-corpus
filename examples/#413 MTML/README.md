@@ -1,5 +1,16 @@
 # #413 MTML
 
+## Verified on November 18, 2026
+
+Movable Type compiled and rendered the unchanged original template. The template’s variable assignment and lookup produced the greeting.
+
+Run `perl render.pl with Movable Type Perl libraries`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Assign a MTML variable and make Hello, World!.
 
 Canonical type `markup`, language_id `218`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mtml` | [hello.mtml](hello.mtml) created; verification pending |
+| `.mtml` | [hello.mtml](hello.mtml) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #670 Smalltalk
 
+## Verified on November 18, 2026
+
+GNU Smalltalk evaluated the original Transcript message sequence in its genuine image and printed the greeting.
+
+Run `gst -I <GNU image> -q hello.st`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Run Smalltalk and write greetings on the Transcript.
 
 Canonical type `programming`, language_id `352`.
@@ -28,5 +39,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.st` | [hello.st](hello.st) created; verification pending |
+| `.st` | [hello.st](hello.st) Syntax and behavior verified |
 | `.cs` | [hello.cs](variants/cs-a9f0f152/hello.cs) created; verification pending |
+
+</details>

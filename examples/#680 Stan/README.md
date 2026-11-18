@@ -1,5 +1,16 @@
 # #680 Stan
 
+## Verified on November 18, 2026
+
+The native Stan C++ service initialized the original compiled zero-parameter model. The model’s transformed data initialization emitted the exact greeting.
+
+Run `python check.py with httpstan 4.13.0`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Stan model that prints greeting in the transformed data phase.
 
 Canonical type `programming`, language_id `356`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.stan` | [hello.stan](hello.stan) created; verification pending |
+| `.stan` | [hello.stan](hello.stan) Syntax and behavior verified |
+
+</details>

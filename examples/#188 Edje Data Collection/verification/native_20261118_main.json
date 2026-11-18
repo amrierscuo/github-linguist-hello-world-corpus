@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "ordinal": 188,
+  "language": "Edje Data Collection",
+  "timestamp_utc": "2026-11-18T17:29:28.939895+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the unchanged native Edje resource",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/edje_cc",
+        "hello.edc",
+        "hello.edj"
+      ],
+      "cwd": "${SCRATCH}/188-ax4doolb",
+      "timestamp_utc": "2026-11-18T17:29:28.976920+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/188-ax4doolb/home",
+        "TMPDIR": "${SCRATCH}/188-ax4doolb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig",
+        "ELM_ENGINE": "buffer",
+        "ECORE_EVAS_ENGINE": "buffer",
+        "EINA_LOG_LEVEL": "0"
+      }
+    },
+    {
+      "label": "Resolve EFL compositor-free renderer build flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "edje",
+        "ecore-evas"
+      ],
+      "cwd": "${SCRATCH}/188-ax4doolb",
+      "timestamp_utc": "2026-11-18T17:29:29.002200+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "-I${SCRATCH}/tools/apt/usr/include/edje-1 -I${SCRATCH}/tools/apt/usr/include/evas-1 -I${SCRATCH}/tools/apt/usr/include/evas-1/canvas -I${SCRATCH}/tools/apt/usr/include/evas-1/gesture -I${SCRATCH}/tools/apt/usr/include/eina-1 -I${SCRATCH}/tools/apt/usr/include/eina-1/eina -I${SCRATCH}/tools/apt/usr/include/x86_64-linux-gnu -I${SCRATCH}/tools/apt/usr/include/ecore-1 -I${SCRATCH}/tools/apt/usr/include/eo-1 -I${SCRATCH}/tools/apt/usr/include/efl-1 -I${SCRATCH}/tools/apt/usr/include/efl-1/interfaces -I${SCRATCH}/tools/apt/usr/include/ector-1 -I${SCRATCH}/tools/apt/usr/include/emile-1 -I${SCRATCH}/tools/apt/usr/include -I${SCRATCH}/tools/apt/usr/include/eet-1 -I${SCRATCH}/tools/apt/usr/include/lua5.1 -I${SCRATCH}/tools/apt/usr/include/freetype2 -I${SCRATCH}/tools/apt/usr/include/libpng16 -I${SCRATCH}/tools/apt/usr/include/fribidi -I${SCRATCH}/tools/apt/usr/include/harfbuzz -I${SCRATCH}/tools/apt/usr/include/glib-2.0 -I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/glib-2.0/include -I${SCRATCH}/tools/apt/usr/include/ecore-evas-1 -I${SCRATCH}/tools/apt/usr/include/ecore-input-evas-1 -I${SCRATCH}/tools/apt/usr/include/ecore-input-1 -I${SCRATCH}/tools/apt/usr/include/eeze-1 -I${SCRATCH}/tools/apt/usr/include/ecore-file-1 -I${SCRATCH}/tools/apt/usr/include/ecore-con-1 -I${SCRATCH}/tools/apt/usr/include/eldbus-1 -I${SCRATCH}/tools/apt/usr/include/dbus-1.0 -I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I${SCRATCH}/tools/apt/usr/include/libmount -I${SCRATCH}/tools/apt/usr/include/blkid -I${SCRATCH}/tools/apt/usr/include/ecore-imf-1 -I${SCRATCH}/tools/apt/usr/include/ecore-imf-evas-1 -I${SCRATCH}/tools/apt/usr/include/embryo-1 -I${SCRATCH}/tools/apt/usr/include/efreet-1 -I${SCRATCH}/tools/apt/usr/include/ecore-ipc-1 -I${SCRATCH}/tools/apt/usr/include/eio-1 -I${SCRATCH}/tools/apt/usr/include/ecore-audio-1 -I${SCRATCH}/tools/apt/usr/include/opus -D_REENTRANT -pthread -L${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu -ledje -llua5.1 -lecore_evas -levas -lemile -lecore -lector -lefl -leo -leina -pthread -lm -lrt -ldl \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/188-ax4doolb/home",
+        "TMPDIR": "${SCRATCH}/188-ax4doolb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig",
+        "ELM_ENGINE": "buffer",
+        "ECORE_EVAS_ENGINE": "buffer",
+        "EINA_LOG_LEVEL": "0"
+      }
+    },
+    {
+      "label": "Build the separate Edje native-reader fixture",
+      "command": [
+        "gcc",
+        "verify_edje.c",
+        "-o",
+        "check",
+        "-L${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath-link,${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-I${SCRATCH}/tools/apt/usr/include/edje-1",
+        "-I${SCRATCH}/tools/apt/usr/include/evas-1",
+        "-I${SCRATCH}/tools/apt/usr/include/evas-1/canvas",
+        "-I${SCRATCH}/tools/apt/usr/include/evas-1/gesture",
+        "-I${SCRATCH}/tools/apt/usr/include/eina-1",
+        "-I${SCRATCH}/tools/apt/usr/include/eina-1/eina",
+        "-I${SCRATCH}/tools/apt/usr/include/x86_64-linux-gnu",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-1",
+        "-I${SCRATCH}/tools/apt/usr/include/eo-1",
+        "-I${SCRATCH}/tools/apt/usr/include/efl-1",
+        "-I${SCRATCH}/tools/apt/usr/include/efl-1/interfaces",
+        "-I${SCRATCH}/tools/apt/usr/include/ector-1",
+        "-I${SCRATCH}/tools/apt/usr/include/emile-1",
+        "-I${SCRATCH}/tools/apt/usr/include",
+        "-I${SCRATCH}/tools/apt/usr/include/eet-1",
+        "-I${SCRATCH}/tools/apt/usr/include/lua5.1",
+        "-I${SCRATCH}/tools/apt/usr/include/freetype2",
+        "-I${SCRATCH}/tools/apt/usr/include/libpng16",
+        "-I${SCRATCH}/tools/apt/usr/include/fribidi",
+        "-I${SCRATCH}/tools/apt/usr/include/harfbuzz",
+        "-I${SCRATCH}/tools/apt/usr/include/glib-2.0",
+        "-I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-evas-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-input-evas-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-input-1",
+        "-I${SCRATCH}/tools/apt/usr/include/eeze-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-file-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-con-1",
+        "-I${SCRATCH}/tools/apt/usr/include/eldbus-1",
+        "-I${SCRATCH}/tools/apt/usr/include/dbus-1.0",
+        "-I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/dbus-1.0/include",
+        "-I${SCRATCH}/tools/apt/usr/include/libmount",
+        "-I${SCRATCH}/tools/apt/usr/include/blkid",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-imf-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-imf-evas-1",
+        "-I${SCRATCH}/tools/apt/usr/include/embryo-1",
+        "-I${SCRATCH}/tools/apt/usr/include/efreet-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-ipc-1",
+        "-I${SCRATCH}/tools/apt/usr/include/eio-1",
+        "-I${SCRATCH}/tools/apt/usr/include/ecore-audio-1",
+        "-I${SCRATCH}/tools/apt/usr/include/opus",
+        "-D_REENTRANT",
+        "-pthread",
+        "-L${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-ledje",
+        "-llua5.1",
+        "-lecore_evas",
+        "-levas",
+        "-lemile",
+        "-lecore",
+        "-lector",
+        "-lefl",
+        "-leo",
+        "-leina",
+        "-pthread",
+        "-lm",
+        "-lrt",
+        "-ldl"
+      ],
+      "cwd": "${SCRATCH}/188-ax4doolb",
+      "timestamp_utc": "2026-11-18T17:29:29.033012+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/188-ax4doolb/home",
+        "TMPDIR": "${SCRATCH}/188-ax4doolb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig",
+        "ELM_ENGINE": "buffer",
+        "ECORE_EVAS_ENGINE": "buffer",
+        "EINA_LOG_LEVEL": "0"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/proot",
+        "-b",
+        "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/evas:/usr/lib/x86_64-linux-gnu/evas",
+        "-b",
+        "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ecore_evas:/usr/lib/x86_64-linux-gnu/ecore_evas",
+        "-b",
+        "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/edje:/usr/lib/x86_64-linux-gnu/edje",
+        "${SCRATCH}/188-ax4doolb/check"
+      ],
+      "cwd": "${SCRATCH}/188-ax4doolb",
+      "timestamp_utc": "2026-11-18T17:29:29.234985+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/188-ax4doolb/home",
+        "TMPDIR": "${SCRATCH}/188-ax4doolb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig",
+        "ELM_ENGINE": "buffer",
+        "ECORE_EVAS_ENGINE": "buffer",
+        "EINA_LOG_LEVEL": "0"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#188 Edje Data Collection/hello.edc": "e843d468027a21c77eb5c6d12c4878ae9a5c8748beccd14b0d97d2d333e932e5"
+  },
+  "fixture_sha256": {
+    "verify_edje.c": {
+      "sha256": "0b17fca3c59c765259d3cf5dc88251dfb50b00411a6afc12029afad659db0082",
+      "content_utf8": "#include <stdio.h>\n#include <string.h>\n#include <Edje.h>\n#include <Ecore_Evas.h>\nint main(void) {\n if (!ecore_evas_init() || !edje_init()) return 2;\n Ecore_Evas *offscreen = ecore_evas_buffer_new(320,200);\n if (!offscreen) return 3;\n Evas_Object *view = edje_object_add(ecore_evas_get(offscreen));\n if (!edje_object_file_set(view,\"hello.edj\",\"greeting\")) return 4;\n const char *text=edje_object_part_text_get(view,\"label\");\n if (!text || strcmp(text,\"Hello, World!\") != 0) return 5;\n puts(text);\n ecore_evas_free(offscreen);\n edje_shutdown();\n ecore_evas_shutdown();\n return 0;\n}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Edje riferimento EDC originale",
+      "url": "https://github.com/Enlightenment/efl/blob/master/doc/edcref.dox"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "libefl-all-dev",
+      "version": "1.27.0-1.1build4",
+      "filename": "pool/universe/e/efl/libefl-all-dev_1.27.0-1.1build4_amd64.deb",
+      "sha256": "851546ed0d0dfd4f13028ac0df5cf636f22b3b10214df86689beb8e0b392bb7a",
+      "bytes": 1582566,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/e/efl/libefl-all-dev_1.27.0-1.1build4_amd64.deb"
+    },
+    {
+      "name": "libedje-bin",
+      "version": "1.27.0-1.1build4",
+      "filename": "pool/universe/e/efl/libedje-bin_1.27.0-1.1build4_amd64.deb",
+      "sha256": "90b7542027e095bfadc9eeacf58abe13499af0a3bc2cf66c2eaa1e14e28da41f",
+      "bytes": 237834,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/e/efl/libedje-bin_1.27.0-1.1build4_amd64.deb"
+    },
+    {
+      "name": "libecore-evas1",
+      "version": "1.27.0-1.1build4",
+      "filename": "pool/universe/e/efl/libecore-evas1_1.27.0-1.1build4_amd64.deb",
+      "sha256": "73ae63fe540149c73a0dadd638571afce35659084c9e8a5ccf85fea9efb10284",
+      "bytes": 143080,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/e/efl/libecore-evas1_1.27.0-1.1build4_amd64.deb"
+    }
+  ],
+  "toolchain": "Ubuntu Edje 1.27.0-1.1build4",
+  "reproduction_command": "edje_cc hello.edc hello.edj; run verify_edje.c with Edje and Ecore-Evas",
+  "semantic_scope": "Edje compiled the original collection. In a private rendering buffer the runtime loaded the collection and exposed the exact text of its genuine label part.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

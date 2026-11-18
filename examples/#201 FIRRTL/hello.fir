@@ -1,3 +1,4 @@
+FIRRTL version 2.0.0
 circuit Hello :
   module Hello :
     input clock : Clock

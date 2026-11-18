@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "ordinal": 274,
+  "language": "GtkRC",
+  "timestamp_utc": "2026-11-18T17:29:29.025592+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Identify GTK2 through pkg-config",
+      "command": [
+        "pkg-config",
+        "--modversion",
+        "gtk+-2.0"
+      ],
+      "cwd": "${SCRATCH}/274-2v90kpwm",
+      "timestamp_utc": "2026-11-18T17:29:29.061311+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "2.24.33\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/274-2v90kpwm/home",
+        "TMPDIR": "${SCRATCH}/274-2v90kpwm/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig"
+      }
+    },
+    {
+      "label": "Resolve GTK2 compiler flags in scratch",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-2.0"
+      ],
+      "cwd": "${SCRATCH}/274-2v90kpwm",
+      "timestamp_utc": "2026-11-18T17:29:29.070069+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "-I${SCRATCH}/tools/apt/usr/include/gtk-2.0 -I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I${SCRATCH}/tools/apt/usr/include/pango-1.0 -I${SCRATCH}/tools/apt/usr/include -I${SCRATCH}/tools/apt/usr/include/glib-2.0 -I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/glib-2.0/include -I${SCRATCH}/tools/apt/usr/include/harfbuzz -I${SCRATCH}/tools/apt/usr/include/freetype2 -I${SCRATCH}/tools/apt/usr/include/libpng16 -I${SCRATCH}/tools/apt/usr/include/libmount -I${SCRATCH}/tools/apt/usr/include/blkid -I${SCRATCH}/tools/apt/usr/include/fribidi -I${SCRATCH}/tools/apt/usr/include/cairo -I${SCRATCH}/tools/apt/usr/include/pixman-1 -I${SCRATCH}/tools/apt/usr/include/gdk-pixbuf-2.0 -I${SCRATCH}/tools/apt/usr/include/x86_64-linux-gnu -I${SCRATCH}/tools/apt/usr/include/webp -I${SCRATCH}/tools/apt/usr/include/atk-1.0 -pthread -L${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/274-2v90kpwm/home",
+        "TMPDIR": "${SCRATCH}/274-2v90kpwm/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig"
+      }
+    },
+    {
+      "label": "Build the existing GTK2 verifier",
+      "command": [
+        "gcc",
+        "check.c",
+        "-o",
+        "check",
+        "-L${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath-link,${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-I${SCRATCH}/tools/apt/usr/include/gtk-2.0",
+        "-I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/gtk-2.0/include",
+        "-I${SCRATCH}/tools/apt/usr/include/pango-1.0",
+        "-I${SCRATCH}/tools/apt/usr/include",
+        "-I${SCRATCH}/tools/apt/usr/include/glib-2.0",
+        "-I${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+        "-I${SCRATCH}/tools/apt/usr/include/harfbuzz",
+        "-I${SCRATCH}/tools/apt/usr/include/freetype2",
+        "-I${SCRATCH}/tools/apt/usr/include/libpng16",
+        "-I${SCRATCH}/tools/apt/usr/include/libmount",
+        "-I${SCRATCH}/tools/apt/usr/include/blkid",
+        "-I${SCRATCH}/tools/apt/usr/include/fribidi",
+        "-I${SCRATCH}/tools/apt/usr/include/cairo",
+        "-I${SCRATCH}/tools/apt/usr/include/pixman-1",
+        "-I${SCRATCH}/tools/apt/usr/include/gdk-pixbuf-2.0",
+        "-I${SCRATCH}/tools/apt/usr/include/x86_64-linux-gnu",
+        "-I${SCRATCH}/tools/apt/usr/include/webp",
+        "-I${SCRATCH}/tools/apt/usr/include/atk-1.0",
+        "-pthread",
+        "-L${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-lgtk-x11-2.0",
+        "-lgdk-x11-2.0",
+        "-lpangocairo-1.0",
+        "-latk-1.0",
+        "-lcairo",
+        "-lgdk_pixbuf-2.0",
+        "-lgio-2.0",
+        "-lpangoft2-1.0",
+        "-lpango-1.0",
+        "-lgobject-2.0",
+        "-lglib-2.0",
+        "-lharfbuzz",
+        "-lfontconfig",
+        "-lfreetype",
+        "-lexpat",
+        "-lfreetype",
+        "-lpng16",
+        "-lz"
+      ],
+      "cwd": "${SCRATCH}/274-2v90kpwm",
+      "timestamp_utc": "2026-11-18T17:29:29.083539+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "In file included from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkobject.h:37,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkwidget.h:36,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkcontainer.h:35,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkbin.h:35,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkwindow.h:36,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkdialog.h:35,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkaboutdialog.h:32,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtk.h:33,\n                 from check.c:1:\n${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtktypeutils.h:236:1: warning: ‘GTypeDebugFlags’ is deprecated [-Wdeprecated-declarations]\n  236 | void            gtk_type_init   (GTypeDebugFlags    debug_flags);\n      | ^~~~\nIn file included from ${SCRATCH}/tools/apt/usr/include/glib-2.0/gobject/gobject.h:26,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/gobject/gbinding.h:31,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/glib-object.h:24,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/gio/gioenums.h:30,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/gio/giotypes.h:30,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/gio/gio.h:28,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gdk/gdk.h:32,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtk.h:32:\n${SCRATCH}/tools/apt/usr/include/glib-2.0/gobject/gtype.h:725:1: note: declared here\n  725 | {\n      | ^\nIn file included from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtktoolitem.h:31,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtktoolbutton.h:30,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtkmenutoolbutton.h:30,\n                 from ${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtk.h:126:\n${SCRATCH}/tools/apt/usr/include/gtk-2.0/gtk/gtktooltips.h:73:3: warning: ‘GTimeVal’ is deprecated: Use 'GDateTime' instead [-Wdeprecated-declarations]\n   73 |   GTimeVal last_popdown;\n      |   ^~~~~~~~\nIn file included from ${SCRATCH}/tools/apt/usr/include/glib-2.0/glib/galloca.h:34,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/glib.h:32,\n                 from ${SCRATCH}/tools/apt/usr/include/glib-2.0/gobject/gbinding.h:30:\n${SCRATCH}/tools/apt/usr/include/glib-2.0/glib/gtypes.h:580:8: note: declared here\n  580 | struct _GTimeVal\n      |        ^~~~~~~~~\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/274-2v90kpwm/home",
+        "TMPDIR": "${SCRATCH}/274-2v90kpwm/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig"
+      }
+    },
+    {
+      "label": "Run the existing style check inside a private memory-only X display",
+      "command": [
+        "sh",
+        "-ceu",
+        "mkdir -p \"$HOME/bin\"; ln -s \"$1\" \"$HOME/bin/Xvfb\"; export PATH=\"$HOME/bin:$PATH\"; exec xvfb-run -a -s \"-screen 0 320x200x24 -nolisten tcp\" \"$2\" hello.gtkrc",
+        "sh",
+        "${SCRATCH}/tools/apt/usr/bin/Xvfb",
+        "${SCRATCH}/274-2v90kpwm/check"
+      ],
+      "cwd": "${SCRATCH}/274-2v90kpwm",
+      "timestamp_utc": "2026-11-18T17:29:29.357810+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/274-2v90kpwm/home",
+        "TMPDIR": "${SCRATCH}/274-2v90kpwm/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PKG_CONFIG_SYSROOT_DIR": "${SCRATCH}/tools/apt",
+        "PKG_CONFIG_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/tools/apt/usr/share/pkgconfig"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#274 GtkRC/check.c": "276afa9ea13569e97041ac865dd769c60f01c2695e8a4f2b1706894358e48038",
+    "examples/#274 GtkRC/hello.gtkrc": "b6bd453e231ee74206d938d39c393d19de09a8851d0b2c9d766deb197d3e48ee"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-2-24/gtk/gtkrc.c",
+    "https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-2-24/docs/reference/gtk/tmpl/gtkrc.sgml"
+  ],
+  "previous_verification_log": "examples/#274 GtkRC/verification/native.json",
+  "ubuntu_archives": [
+    {
+      "name": "libgtk2.0-dev",
+      "version": "2.24.33-4ubuntu1.1",
+      "filename": "pool/universe/g/gtk+2.0/libgtk2.0-dev_2.24.33-4ubuntu1.1_amd64.deb",
+      "sha256": "bae3e40f873357eb8138e56a72b5ff1efd9efa73dc56a8f65bbda37e589732f5",
+      "bytes": 779000,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/gtk+2.0/libgtk2.0-dev_2.24.33-4ubuntu1.1_amd64.deb"
+    },
+    {
+      "name": "xvfb",
+      "version": "2:21.1.12-1ubuntu1.9",
+      "filename": "pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb",
+      "sha256": "2011271eabcc2eb460e99995c5ef26e46633e87d04f570e305b62f178f7b452c",
+      "bytes": 877038,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb"
+    },
+    {
+      "name": "xauth",
+      "version": "1:1.1.2-1build1",
+      "filename": "pool/main/x/xauth/xauth_1.1.2-1build1_amd64.deb",
+      "sha256": "037e70571f39384e28c4ad0db07b44de11f0911ee6c02445560979b417012650",
+      "bytes": 25594,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/x/xauth/xauth_1.1.2-1build1_amd64.deb"
+    }
+  ],
+  "toolchain": "GTK 2.24.33",
+  "reproduction_command": "gcc check.c -o check $(pkg-config --cflags --libs gtk+-2.0); xvfb-run -a ./check hello.gtkrc",
+  "semantic_scope": "The genuine GTK2 runtime loaded the original resource file. The original verifier confirmed the RGB values and the actual label text in a private virtual framebuffer.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

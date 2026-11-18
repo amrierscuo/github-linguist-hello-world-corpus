@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ordinal": 413,
+  "language": "MTML",
+  "timestamp_utc": "2026-11-18T17:26:46.903939+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute exact example",
+      "command": [
+        "perl",
+        "render.pl"
+      ],
+      "cwd": "${SCRATCH}/413-cldy0q8j",
+      "timestamp_utc": "2026-11-18T17:26:47.058508+00:00",
+      "timeout_seconds": 48,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/413-cldy0q8j/home",
+        "TMPDIR": "${SCRATCH}/413-cldy0q8j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PERL5LIB": "${SCRATCH}/tools/movabletype-movabletype-develop/source/movabletype-develop/lib:${SCRATCH}/tools/movabletype-movabletype-develop/source/movabletype-develop/extlib:${SCRATCH}/tools/apt/usr/share/perl5:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/perl5/5.38",
+        "MT_HOME": "${SCRATCH}/tools/movabletype-movabletype-develop/source/movabletype-develop",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "MT_CONFIG": "${SCRATCH}/413-cldy0q8j/mt-config.cgi"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#413 MTML/hello.mtml": "0311850adff2631e598c10c91811f0fc7861d60fba05a80f4f42e2840a5cff9d"
+  },
+  "fixture_sha256": {
+    "mt-config.cgi": {
+      "sha256": "4364c7135e6d6c3c91260e123e61dd77f6fffd5cefb91d73416e5bdc9bd5b784",
+      "content_utf8": "CGIPath http://127.0.0.1/mt/\nObjectDriver DBI::sqlite\nDatabase ${SCRATCH}/413-cldy0q8j/mt.sqlite\nTempDir ${SCRATCH}/413-cldy0q8j/tmp\n"
+    },
+    "render.pl": {
+      "sha256": "5aab966cec035e3e6f464d449ac56325e48cd9d64609e42eb523d13732053fcf",
+      "content_utf8": "use strict;\nuse warnings;\nuse MT;\nuse MT::Builder;\nuse MT::Template::Context;\nMT->new(Config => 'mt-config.cgi') or die MT->errstr;\nmy $ctx = MT::Template::Context->new;\nmy $builder = MT::Builder->new;\nopen my $fh, '<', 'hello.mtml' or die $!;\nlocal $/; my $text = <$fh>;\nmy $tokens = $builder->compile($ctx, $text) or die($builder->errstr);\nmy $result = $builder->build($ctx, $tokens);\ndie($builder->errstr) unless defined $result;\nprint $result;\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Movable Type Var",
+      "url": "https://www.movabletype.org/documentation/appendices/tags/var.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/movabletype/movabletype/tar.gz/develop",
+      "ref": "develop",
+      "sha256": "60399a0008dc84542f4b9961e00e0af5da92a284e8603896f3cdb72ff6f36249"
+    }
+  ],
+  "toolchain": "Movable Type template builder (source SHA-256 in receipt)",
+  "reproduction_command": "perl render.pl with Movable Type Perl libraries",
+  "semantic_scope": "Movable Type compiled and rendered the unchanged original template. The template’s variable assignment and lookup produced the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

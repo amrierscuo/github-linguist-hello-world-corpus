@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "ordinal": 50,
+  "language": "B (Formal Method)",
+  "timestamp_utc": "2026-11-18T17:01:02.260864+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Search for and execute the named operation in the exact ProB machine",
+      "command": [
+        "${SCRATCH}/tools/prob-1.16.1/dist/ProB/probcli",
+        "HelloWorld.mch",
+        "-strict",
+        "-cbc_sequence",
+        "hello",
+        "-his",
+        "sequence.txt",
+        "-his_option",
+        "show_states"
+      ],
+      "cwd": "${SCRATCH}/050-f0dawoi3",
+      "timestamp_utc": "2026-11-18T17:01:02.538754+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "% Starting Constraint-Based Check for Sequence: hello\nLooking for solution for trace hello\n\nALL OPERATIONS COVERED\n% Runtime: 64 ms (with gc: 64 ms, walltime: 65 ms)\n% *** FOUND PATH: SETUP_CONSTANTS INITIALISATION hello-->\"Hello, World!\" \nSequence found and executed\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/050-f0dawoi3/home",
+        "TMPDIR": "${SCRATCH}/050-f0dawoi3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/050-f0dawoi3/home"
+      }
+    },
+    {
+      "label": "Enter the genuine command-line animator and enumerate enabled operations",
+      "command": [
+        "${SCRATCH}/tools/prob-1.16.1/dist/ProB/probcli",
+        "HelloWorld.mch",
+        "-init",
+        "-i"
+      ],
+      "cwd": "${SCRATCH}/050-f0dawoi3",
+      "timestamp_utc": "2026-11-18T17:01:05.338244+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "stdout": "% Runtime for SOLUTION for SETUP_CONSTANTS: 63 ms (walltime: 64 ms)\n% Runtime to FINALISE SETUP_CONSTANTS: 0 ms (walltime: 0 ms)\n\nIMPORTANT: Do not use this mode for automatic tools.\nThe output format can change arbitrarily in future versions.\nPlease terminate your input with a dot (.) and then type return.\n\nID ==> 1\ngreeting=\"Hello, World!\"\n\nALL OPERATIONS COVERED\nEnabled Operations: \n 1:hello-->\"Hello, World!\"\n ==> ID ==> 1\ngreeting=\"Hello, World!\"\nEnabled Operations: \n 1:hello-->\"Hello, World!\"\n ==> ID ==> 1\ngreeting=\"Hello, World!\"\nEnabled Operations: \n 1:hello-->\"Hello, World!\"\n ==> \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/050-f0dawoi3/home",
+        "TMPDIR": "${SCRATCH}/050-f0dawoi3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/050-f0dawoi3/home"
+      },
+      "stdin": "1.\n1.\nquit.\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#050 B (Formal Method)/HelloWorld.mch": "f9aa11cace15f38f16823c2b5d97ce131a6f6ccfaf2f7905090fb075aa24f443"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://prob.hhu.de/w/index.php?title=Summary_of_B_Syntax",
+    "https://prob.hhu.de/w/index.php?title=ProB_Cli"
+  ],
+  "previous_verification_log": "examples/#050 B (Formal Method)/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://stups.hhu-hosting.de/downloads/prob/tcltk/releases/1.16.1/ProB.linux64.tar.gz",
+      "sha256": "e9f0c74a6bbf177c9146d01869afa1c4276f5fc8d3b670f31b0230f035753bef",
+      "expected_sha256": null
+    }
+  ],
+  "constraint_sequence_history_utf8": "/* Constants\n   greeting = \"Hello, World!\"\n*/\n/* Initialisation */\n/* Variables\n*/\nhello-->\"Hello, World!\"\n/* Variables\n*/\n",
+  "toolchain": "ProB 1.16.1",
+  "reproduction_command": "probcli HelloWorld.mch -init -i; select hello",
+  "semantic_scope": "The ProB animator invoked the unchanged hello operation and recorded the exact returned greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

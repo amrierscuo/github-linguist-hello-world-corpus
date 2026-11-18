@@ -1,5 +1,16 @@
 # #096 CQL
 
+## Verified on November 18, 2026
+
+Apache Cassandra executed the original keyspace, write and read statements in a disposable local cluster. The final query returned one row with the exact greeting.
+
+Run `cqlsh 127.0.0.1 <disposable-port> -f hello.cql`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 In Cassandra CQL 3 create a greeting table, insert Hello, World! into the id= 1 line and read it with SELECT.
 
 ## Toolchain
@@ -45,4 +56,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cql` | [hello.cql](hello.cql) created; verification pending |
+| `.cql` | [hello.cql](hello.cql) Syntax and behavior verified |
+
+</details>

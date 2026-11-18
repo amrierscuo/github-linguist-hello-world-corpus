@@ -1,5 +1,18 @@
 # #467 NetLogo
 
+## Verified on November 18, 2026
+
+NetLogo’s loader required viewport and default shape metadata. The repaired file preserves the original greet procedure, and the actual headless runtime executed it and printed the exact greeting.
+
+Run `java -cp <NetLogo jars> RunNetLogo.java hello.nlogo`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Prior attempt](verification/native_20261118_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +52,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nlogo` | [hello.nlogo](hello.nlogo) created; verification pending |
+| `.nlogo` | [hello.nlogo](hello.nlogo) Syntax and behavior verified |
+
+</details>

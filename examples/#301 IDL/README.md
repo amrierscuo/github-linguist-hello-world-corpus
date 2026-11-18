@@ -1,5 +1,16 @@
 # #301 IDL
 
+## Verified on November 18, 2026
+
+GNU Data Language compiled the original IDL syntax and invoked the original hello procedure, which emitted the exact greeting.
+
+Run `gdl -quiet check.gdl (.compile hello.pro, hello, exit)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Print Hello, World! with PRINT in a IDL procedure.
 
 ## Toolchain
@@ -35,5 +46,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pro` | [hello.pro](hello.pro) created; verification pending |
+| `.pro` | [hello.pro](hello.pro) Syntax and behavior verified |
 | `.dlm` | [hello.dlm](variants/dlm-86f10b11/hello.dlm) created; verification pending |
+
+</details>

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "ordinal": 131,
+  "language": "ColdFusion",
+  "timestamp_utc": "2026-11-18T17:19:10.430261+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Fetch and validate the exact original template as a real HTTP response",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--silent",
+        "--show-error",
+        "--fail-with-body",
+        "--include",
+        "http://127.0.0.1:45655/hello.cfm"
+      ],
+      "cwd": "${SCRATCH}/131-a84z_6ma",
+      "timestamp_utc": "2026-11-18T17:19:14.316144+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "HTTP/1.1 200 \nContent-Type: text/plain;charset=utf-8\nContent-Length: 14\nDate: Wed, 18 Nov 2026 17:19:19 GMT\n\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/131-a84z_6ma/home",
+        "TMPDIR": "${SCRATCH}/131-a84z_6ma/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/131-a84z_6ma/home",
+        "CATALINA_HOME": "${SCRATCH}/131-a84z_6ma/runtime",
+        "CATALINA_BASE": "${SCRATCH}/131-a84z_6ma/runtime",
+        "LUCEE_ADMIN_ENABLED": "false"
+      }
+    },
+    {
+      "label": "Official Lucee Express in scratch (stopped after the test)",
+      "command": [
+        "java",
+        "-Dcatalina.home=${SCRATCH}/131-a84z_6ma/runtime",
+        "-Dcatalina.base=${SCRATCH}/131-a84z_6ma/runtime",
+        "-Djava.io.tmpdir=${SCRATCH}/131-a84z_6ma/tmp",
+        "-cp",
+        "${SCRATCH}/131-a84z_6ma/runtime/bin/bootstrap.jar:${SCRATCH}/131-a84z_6ma/runtime/bin/tomcat-juli.jar",
+        "org.apache.catalina.startup.Bootstrap",
+        "start"
+      ],
+      "cwd": "${SCRATCH}/131-a84z_6ma",
+      "timestamp_utc": "2026-11-18T17:19:13.108599+00:00",
+      "exit_code": 143,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/131-a84z_6ma/home\nNov 18, 2026 6:19:13 PM org.apache.tomcat.util.digester.Digester endElement\nWARNING: No rules found matching [Server/Service/Engine/Host/JarScanner]\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Server version name:   Apache Tomcat/11.0.22\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Server built:          May 1 2026 18:29:05 UTC\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Server version number: 11.0.22.0\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: OS Name:               Linux\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: OS Version:            6.6.87.2-microsoft-standard-WSL2\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Architecture:          amd64\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Java Home:             /usr/lib/jvm/java-21-openjdk-amd64\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: JVM Version:           21.0.12.1+1-1-24.04.4-Ubuntu\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: JVM Vendor:            Ubuntu\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: CATALINA_BASE:         ${SCRATCH}/131-a84z_6ma/runtime\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: CATALINA_HOME:         ${SCRATCH}/131-a84z_6ma/runtime\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Command line argument: -Djava.awt.headless=true\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Command line argument: -Duser.home=${SCRATCH}/131-a84z_6ma/home\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Command line argument: -Dcatalina.home=${SCRATCH}/131-a84z_6ma/runtime\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Command line argument: -Dcatalina.base=${SCRATCH}/131-a84z_6ma/runtime\nNov 18, 2026 6:19:13 PM org.apache.catalina.startup.VersionLoggerListener log\nINFO: Command line argument: -Djava.io.tmpdir=${SCRATCH}/131-a84z_6ma/tmp\nNov 18, 2026 6:19:13 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent\nINFO: The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]\nNov 18, 2026 6:19:14 PM org.apache.coyote.AbstractProtocol init\nINFO: Initializing ProtocolHandler [\"http-nio-127.0.0.1-45655\"]\nNov 18, 2026 6:19:14 PM org.apache.catalina.startup.Catalina load\nINFO: Server initialization in [908] milliseconds\nNov 18, 2026 6:19:14 PM org.apache.catalina.core.StandardService startInternal\nINFO: Starting service [Catalina]\nNov 18, 2026 6:19:14 PM org.apache.catalina.core.StandardEngine startInternal\nINFO: Starting Servlet engine: [Apache Tomcat/11.0.22]\nNov 18, 2026 6:19:14 PM org.apache.catalina.startup.HostConfig deployDirectory\nINFO: Deploying web application directory [${SCRATCH}/131-a84z_6ma/runtime/webapps/ROOT]\nNov 18, 2026 6:19:19 PM org.apache.catalina.startup.HostConfig deployDirectory\nINFO: Deployment of web application directory [${SCRATCH}/131-a84z_6ma/runtime/webapps/ROOT] has finished in [5,057] ms\nNov 18, 2026 6:19:19 PM org.apache.coyote.AbstractProtocol start\nINFO: Starting ProtocolHandler [\"http-nio-127.0.0.1-45655\"]\nNov 18, 2026 6:19:19 PM org.apache.catalina.startup.Catalina start\nINFO: Server startup in [5169] milliseconds\n",
+      "environment": {
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/131-a84z_6ma/home",
+        "CATALINA_HOME": "${SCRATCH}/131-a84z_6ma/runtime",
+        "CATALINA_BASE": "${SCRATCH}/131-a84z_6ma/runtime",
+        "LUCEE_ADMIN_ENABLED": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#131 ColdFusion/hello.cfm": "6f98ea9131bf6973615588aee654979c91e7fac3151e0d3fb64dbda924763fa4"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.lucee.org/reference/tags/output.html",
+    "https://docs.lucee.org/reference/tags/content.html",
+    "https://docs.lucee.org/reference/tags/setting.html"
+  ],
+  "previous_verification_log": "examples/#131 ColdFusion/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://cdn.lucee.org/lucee-express-6.2.9.4.zip",
+      "sha256": "c7daf81c06493fd0544c9ae6e95e70c3c2ddd1c8f23e3181150084afe6ba93b2",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Lucee Express 6.2.9.4",
+  "reproduction_command": "Run the official Lucee Express server on a private loopback port; fetch /hello.cfm",
+  "semantic_scope": "The official Lucee Express HTTP server evaluated the unchanged template and returned the exact greeting as a plain-text response.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "ordinal": 753,
+  "language": "Vim Snippet",
+  "timestamp_utc": "2026-11-18T17:01:02.267044+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record packaged Vim version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/vim.nox",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/753-vmhzp8k5",
+      "timestamp_utc": "2026-11-18T17:01:02.389768+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Aug 24 2026 22:13:04)\nIncluded patches: 1-16, 647, 678, 697\nModified by team+vim@tracker.debian.org\nCompiled by team+vim@tracker.debian.org\nHuge version without GUI.  Features included (+) or not (-):\n+acl               +file_in_path      +mouse_urxvt       -tag_any_white\n+arabic            +find_in_path      +mouse_xterm       +tcl\n+autocmd           +float             +multi_byte        +termguicolors\n+autochdir         +folding           +multi_lang        +terminal\n-autoservername    -footer            -mzscheme          +terminfo\n-balloon_eval      +fork()            +netbeans_intg     +termresponse\n+balloon_eval_term +gettext           +num64             +textobjects\n-browse            -hangul_input      +packages          +textprop\n++builtin_terms    +iconv             +path_extra        +timers\n+byte_offset       +insert_expand     +perl              +title\n+channel           +ipv6              +persistent_undo   -toolbar\n+cindent           +job               +popupwin          +user_commands\n-clientserver      +jumplist          +postscript        +vartabs\n-clipboard         +keymap            +printer           +vertsplit\n+cmdline_compl     +lambda            +profile           +vim9script\n+cmdline_hist      +langmap           -python            +viminfo\n+cmdline_info      +libcall           +python3           +virtualedit\n+comments          +linebreak         +quickfix          +visual\n+conceal           +lispindent        +reltime           +visualextra\n+cryptv            +listcmds          +rightleft         +vreplace\n+cscope            +localmap          +ruby              +wildignore\n+cursorbind        +lua               +scrollbind        +wildmenu\n+cursorshape       +menu              +signs             +windows\n+dialog_con        +mksession         +smartindent       +writebackup\n+diff              +modify_fname      +sodium            -X11\n+digraphs          +mouse             -sound             +xattr\n-dnd               -mouseshape        +spell             -xfontset\n-ebcdic            +mouse_dec         +startuptime       -xim\n+emacs_tags        +mouse_gpm         +statusline        -xpm\n+eval              -mouse_jsbterm     -sun_workshop      -xsmp\n+ex_extra          +mouse_netterm     +syntax            -xterm_clipboard\n+extra_search      +mouse_sgr         +tag_binary        -xterm_save\n-farsi             -mouse_sysmouse    -tag_old_static    \n   system vimrc file: \"/etc/vim/vimrc\"\n     user vimrc file: \"$HOME/.vimrc\"\n 2nd user vimrc file: \"~/.vim/vimrc\"\n      user exrc file: \"$HOME/.exrc\"\n       defaults file: \"$VIMRUNTIME/defaults.vim\"\n  fall-back for $VIM: \"/usr/share/vim\"\nCompilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H -Wdate-time -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/vim-tepDcz/vim-9.1.0016=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/vim-tepDcz/vim-9.1.0016=/usr/src/vim-2:9.1.0016-1ubuntu7.20 -DSYS_VIMRC_FILE=\\\"/etc/vim/vimrc\\\" -DSYS_GVIMRC_FILE=\\\"/etc/vim/gvimrc\\\" -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 \nLinking: gcc -Wl,-E -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim -lm -ltinfo -lselinux -lsodium -lacl -lattr -lgpm -L/usr/lib -llua5.1 -Wl,-E -fstack-protector-strong -L/usr/local/lib -L/usr/lib/x86_64-linux-gnu/perl/5.38/CORE -lperl -ldl -lm -lpthread -lcrypt -L/usr/lib/python3.12/config-3.12-x86_64-linux-gnu -lpython3.12 -ldl -lm -L/usr/lib/x86_64-linux-gnu -ltcl8.6 -ldl -lz -lpthread -lm -lruby-3.2 -lm -lpthread -L/usr/lib \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/753-vmhzp8k5/home",
+        "TMPDIR": "${SCRATCH}/753-vmhzp8k5/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "VIMRUNTIME": "${SCRATCH}/tools/apt/usr/share/vim/vim91",
+        "PYTHONWARNINGS": "ignore::SyntaxWarning"
+      }
+    },
+    {
+      "label": "Expand original snippet using the actual Vim UltiSnips plugin",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/vim.nox",
+        "-Nu",
+        "NONE",
+        "-n",
+        "-es",
+        "-V1",
+        "-S",
+        "expand.vim"
+      ],
+      "cwd": "${SCRATCH}/753-vmhzp8k5",
+      "timestamp_utc": "2026-11-18T17:01:02.415485+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\u0007",
+      "stderr": "Reading viminfo file \"${SCRATCH}/753-vmhzp8k5/home/.viminfo\" info oldfiles FAILED Writing viminfo file \"${SCRATCH}/753-vmhzp8k5/home/.viminfo\"",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/753-vmhzp8k5/home",
+        "TMPDIR": "${SCRATCH}/753-vmhzp8k5/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "VIMRUNTIME": "${SCRATCH}/tools/apt/usr/share/vim/vim91",
+        "PYTHONWARNINGS": "ignore::SyntaxWarning"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#753 Vim Snippet/hello.snippets": "64243cc5ca9f01d2636188d82343ddd199536979ebb0c87178b4b68df27f153c"
+  },
+  "fixture_sha256": {
+    "expand.vim": {
+      "sha256": "f3942bd7902079c1da22801efad74a56c7eca3b1eeb42a5749ef6f5042232aa7",
+      "content_utf8": "set nocompatible\nset encoding=utf-8\nset runtimepath^=${SCRATCH}/tools/SirVer-ultisnips-3.2/source/ultisnips-3.2\nset runtimepath^=.\nlet g:UltiSnipsSnippetDirectories=['case-snippets']\nfiletype on\nruntime plugin/UltiSnips.vim\nset filetype=fixture\ncall setline(1, 'hello')\ncall cursor(1, 5)\ncall feedkeys(\"a\\<Tab>\\<Esc>\", \"xt\")\ncall writefile(getline(1, '$'), 'rendered.txt')\nqa!\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "UltiSnips",
+      "url": "https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/SirVer/ultisnips/tar.gz/3.2",
+      "ref": "3.2",
+      "sha256": "550365cdf6bf030b9e5b77e511b4e6b1427660ea6a117c4b6bb77afcb950c4ce"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "vim-nox",
+      "version": "2:9.1.0016-1ubuntu7.20",
+      "filename": "pool/universe/v/vim/vim-nox_9.1.0016-1ubuntu7.20_amd64.deb",
+      "sha256": "8c89590de282f584fe824fce96f5010712ec76325bbc4b36b656ae6167b8f5c1",
+      "bytes": 2103594,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/v/vim/vim-nox_9.1.0016-1ubuntu7.20_amd64.deb"
+    },
+    {
+      "name": "vim-runtime",
+      "version": "2:9.1.0016-1ubuntu7.20",
+      "filename": "pool/main/v/vim/vim-runtime_9.1.0016-1ubuntu7.20_all.deb",
+      "sha256": "c6956fd0fcf9cfc7d27265454e224329a2aa05af9860844b22e1b7974b01a9dc",
+      "bytes": 7273294,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/v/vim/vim-runtime_9.1.0016-1ubuntu7.20_all.deb"
+    }
+  ],
+  "expanded_buffer_utf8": "Hello, World!\n",
+  "toolchain": "UltiSnips 3.2 / VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Aug 24 2026 22:13:04)",
+  "reproduction_command": "vim -Nu NONE -n -es -S expand.vim",
+  "semantic_scope": "The real Vim and UltiSnips runtime expanded the unchanged snippet into the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

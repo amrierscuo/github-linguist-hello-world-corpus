@@ -1,5 +1,18 @@
 # #010 ALGOL
 
+## Verified on November 18, 2026
+
+JFF compiled the unchanged ALGOL 60 program from its own native toolchain and the executable printed the greeting. The raw output retains the trailing NUL emitted by this runtime.
+
+Run `jff-algol hello.alg; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification.log).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `hello.alg` is a ALGOL 60 program for the dialect and environment of I/O
 **jff-algol**, which uses `outstring` and `newline` on the 1. channel
 expected is a `Hello, World!` line. The canonical entry uses `source.algol60`;
@@ -36,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.alg` | [hello.alg](hello.alg) created; verification pending |
+| `.alg` | [hello.alg](hello.alg) Syntax and behavior verified |
+
+</details>

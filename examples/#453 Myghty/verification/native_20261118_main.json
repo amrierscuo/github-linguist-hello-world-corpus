@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ordinal": 453,
+  "language": "Myghty",
+  "timestamp_utc": "2026-11-18T17:25:27.887831+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/python-2.7.18/install/bin/python2.7",
+        "check.py"
+      ],
+      "cwd": "${SCRATCH}/453-6egldwho",
+      "timestamp_utc": "2026-11-18T17:25:28.589895+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n\n",
+      "stderr": "${SCRATCH}/453-6egldwho/dist-Myghty/Myghty-1.2/lib/myghty/resolver.py:614: SyntaxWarning: assertion is always true, perhaps remove parentheses?\n  assert(False, \"enableDhandler loop failed\")\n${SCRATCH}/453-6egldwho/dist-Myghty/Myghty-1.2/lib/myghty/resolver.py:673: SyntaxWarning: assertion is always true, perhaps remove parentheses?\n  assert(False, \"UpwardsResolve loop failed\")\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/453-6egldwho/home",
+        "TMPDIR": "${SCRATCH}/453-6egldwho/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/453-6egldwho/dist-Myghty/Myghty-1.2/lib:${SCRATCH}/453-6egldwho/dist-MyghtyUtils/MyghtyUtils-0.52/lib"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#453 Myghty/hello.myt": "5d0719331e64c5643cd8734513cd506b6d7f68e88ec0d547a6e9523ad7df1f3f"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "5e0f05b9144297824608e3f96467ec19d69d8ffeebf134699b849fd1e32bff22",
+      "content_utf8": "from StringIO import StringIO\nfrom myghty.interp import Interpreter\nfrom os import getcwd\ni = Interpreter(component_root=[{\"main\": getcwd()}])\ns=StringIO()\ni.execute(\"hello.myt\", request_args={\"name\":\"World\"}, out_buffer=s)\nprint s.getvalue()\n"
+    }
+  },
+  "sources": [
+    "https://pythonhosted.org/Myghty/documentation.html"
+  ],
+  "previous_verification_log": "examples/#453 Myghty/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz",
+      "sha256": "da3080e3b488f648a3d7a4560ddee895284c3380b11d6de75edb986526b9a814",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/57/68/61b9a3be9ccf06234fc29c169a79d37b4b22335668630febb5e1963d7149/Myghty-1.2.tar.gz",
+      "sha256": "3de2d5bfd7ad8bd7cc33827b3b481fe8143dbe67eb0bcb53d38d46530a2fa7aa"
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/ec/30/d0ab10372ee7603dd0fc07f1317794b43692cd94503aed86ce496c29242b/MyghtyUtils-0.52.zip",
+      "sha256": "2bbf206bd4c07b7d690b0397714fd893ab380f0ba5a82a897cda3647a3641cb5"
+    }
+  ],
+  "toolchain": "Myghty 1.2 / MyghtyUtils 0.52 / CPython 2.7.18",
+  "reproduction_command": "python2.7 check.py (with Myghty and MyghtyUtils)",
+  "semantic_scope": "The original Myghty template was rendered by its historical engine using an independent audience parameter and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

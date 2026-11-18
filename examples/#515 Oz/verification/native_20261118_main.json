@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "ordinal": 515,
+  "language": "Oz",
+  "timestamp_utc": "2026-11-18T17:13:58.344019+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the unchanged Oz expression with offscreen console output fixture",
+      "command": [
+        "${SCRATCH}/tools/oz-v2.0.1/dist/usr/bin/ozc",
+        "-x",
+        "check.oz",
+        "-o",
+        "hello-oz"
+      ],
+      "cwd": "${SCRATCH}/515-m0kenqt4",
+      "timestamp_utc": "2026-11-18T17:13:58.396897+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/oz-v2.0.1/dist/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/515-m0kenqt4/home",
+        "TMPDIR": "${SCRATCH}/515-m0kenqt4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "OZHOME": "${SCRATCH}/tools/oz-v2.0.1/dist/usr",
+        "LD_LIBRARY_PATH": ""
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/oz-v2.0.1/dist/usr/bin/ozengine",
+        "hello-oz"
+      ],
+      "cwd": "${SCRATCH}/515-m0kenqt4",
+      "timestamp_utc": "2026-11-18T17:13:58.557608+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/oz-v2.0.1/dist/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/515-m0kenqt4/home",
+        "TMPDIR": "${SCRATCH}/515-m0kenqt4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "OZHOME": "${SCRATCH}/tools/oz-v2.0.1/dist/usr",
+        "LD_LIBRARY_PATH": ""
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#515 Oz/hello.oz": "35c832485a18cf475ff7c294714c13b1f4164ffac125181793b75ab21d7a5bf2"
+  },
+  "fixture_sha256": {
+    "check.oz": {
+      "sha256": "42e5aa016024f64e8a1a5612a967848df500b9dcd70e51945069a2c28492d4d7",
+      "content_utf8": "functor\nimport System Application\ndefine\n  Browse = System.showInfo\n  {Browse \"Hello, World!\"}\n\n  {Application.exit 0}\nend\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Mozart Oz tutorial",
+      "url": "https://mozart.github.io/mozart-v1/doc-1.4.0/tutorial/index.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/mozart/mozart2/releases/download/v2.0.1/mozart2-2.0.1-x86_64-linux.deb",
+      "sha256": "e9a956a43246cac61073d9bb5b6e5d35beeb256df124aa161137fa1636cc9e53",
+      "release": "v2.0.1",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Mozart Oz v2.0.1",
+  "reproduction_command": "ozc -x check.oz -o hello-oz; ozengine hello-oz",
+  "semantic_scope": "Mozart evaluated the exact expression in a headless harness. The harness sent Browse’s actual argument to the standard console reporter and observed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #536 PigLatin
 
+## Verified on November 18, 2026
+
+Apache Pig executed the original Pig Latin pipeline on the unchanged input TSV. The original DUMP produced the exact tuple.
+
+Run `pig -x local hello.pig`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `PigLatin`, tipo `programming`, language_id `286`.
 
 Upload a local TSV and turn World into a PigLatin record with greeting.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pig` | [hello.pig](hello.pig) created; verification pending |
+| `.pig` | [hello.pig](hello.pig) Syntax and behavior verified |
+
+</details>

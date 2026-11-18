@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "ordinal": 57,
+  "language": "Ballerina",
+  "timestamp_utc": "2026-11-18T17:13:58.019853+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record official Ballerina version on the relocated JDK25",
+      "command": [
+        "${SCRATCH}/tools/ballerina-v2201.14.2/dist/ballerina-2201.14.2-swan-lake/bin/bal",
+        "version"
+      ],
+      "cwd": "${SCRATCH}/057-0d_hfs4r",
+      "timestamp_utc": "2026-11-18T17:14:00.494655+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Ballerina 2201.14.2 (Swan Lake Update 14)\nLanguage specification 2024R1\nUpdate Tool 1.6.1\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true\n",
+      "environment": {
+        "PATH": "${SCRATCH}/057-0d_hfs4r/java25/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/057-0d_hfs4r/home",
+        "TMPDIR": "${SCRATCH}/057-0d_hfs4r/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_HOME": "${SCRATCH}/057-0d_hfs4r/java25",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true",
+        "USER": "corpus",
+        "XDG_CONFIG_HOME": "${SCRATCH}/057-0d_hfs4r/config"
+      }
+    },
+    {
+      "label": "Execute original Ballerina from the official console launcher",
+      "command": [
+        "${SCRATCH}/tools/ballerina-v2201.14.2/dist/ballerina-2201.14.2-swan-lake/bin/bal",
+        "run",
+        "--offline",
+        "hello.bal"
+      ],
+      "cwd": "${SCRATCH}/057-0d_hfs4r",
+      "timestamp_utc": "2026-11-18T17:14:01.133594+00:00",
+      "timeout_seconds": 130,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true\nCompiling source\n\thello.bal\n\nRunning executable\n\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true\n",
+      "environment": {
+        "PATH": "${SCRATCH}/057-0d_hfs4r/java25/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/057-0d_hfs4r/home",
+        "TMPDIR": "${SCRATCH}/057-0d_hfs4r/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_HOME": "${SCRATCH}/057-0d_hfs4r/java25",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true",
+        "USER": "corpus",
+        "XDG_CONFIG_HOME": "${SCRATCH}/057-0d_hfs4r/config"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#057 Ballerina/hello.bal": "bb3fcf247f2e1c4b5fcafe1ee6e347adfa8668cc107ea5a8e803cda9c6ed1cb4"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://ballerina.io/learn/by-example/hello-world/"
+  ],
+  "previous_verification_log": "examples/#057 Ballerina/verification/native.json",
+  "toolchain_archives": [
+    {
+      "name": "ballerina-2201.14.2-swan-lake.zip",
+      "size": 368196791,
+      "url": "https://github.com/ballerina-platform/ballerina-distribution/releases/download/v2201.14.2/ballerina-2201.14.2-swan-lake.zip",
+      "sha256": "4217b97a1893bf18db573d0db06b67ed92c547f109a06aaab63595f8d2b45e1e",
+      "release": "https://github.com/ballerina-platform/ballerina-distribution/releases/tag/v2201.14.2",
+      "observed_sha256": "4217b97a1893bf18db573d0db06b67ed92c547f109a06aaab63595f8d2b45e1e"
+    }
+  ],
+  "toolchain": "Ballerina 2201.14.2 (Swan Lake Update 14)",
+  "reproduction_command": "bal run --offline hello.bal",
+  "semantic_scope": "The official Ballerina CLI compiled the original file on Java 25 and ran it from the console. The program printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

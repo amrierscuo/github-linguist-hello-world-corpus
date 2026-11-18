@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "ordinal": 104,
+  "language": "Cadence",
+  "timestamp_utc": "2026-11-18T17:19:10.431505+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute the original script through the official Cadence VM runtime API",
+      "command": [
+        "${SCRATCH}/tools/go/dist/go/bin/go",
+        "run",
+        "-mod=mod",
+        "."
+      ],
+      "cwd": "${SCRATCH}/104-to855imy",
+      "timestamp_utc": "2026-11-18T17:19:10.725966+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/104-to855imy/home",
+        "TMPDIR": "${SCRATCH}/104-to855imy/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GOBIN": "${SCRATCH}/104-to855imy/bin",
+        "GOPATH": "${SCRATCH}/tools/gopath",
+        "GOCACHE": "${SCRATCH}/tools/gocache",
+        "GOMAXPROCS": "3"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#104 Cadence/hello.cdc": "243b318cc8b78dc460d866be10b6f73c4813ccdb0c67032da18bff01091402db"
+  },
+  "fixture_sha256": {
+    "go.mod": {
+      "sha256": "14713d4d4d6a66a1cfc6908d18b73610074641ed64067317aeb32c3ba5ac0016",
+      "content_utf8": "module corpus-greeting\n\ngo 1.25.1\nrequire github.com/onflow/cadence v1.8.10\n"
+    },
+    "main.go": {
+      "sha256": "3cffa7ab655da7042b0b3e2637891139e88fa7c83d19f38bada59e6909f8d0e3",
+      "content_utf8": "package main\nimport (\n \"fmt\"\n \"os\"\n \"github.com/onflow/cadence/common\"\n \"github.com/onflow/cadence/runtime\"\n runutils \"github.com/onflow/cadence/test_utils/runtime_utils\"\n)\nfunc main() {\n source,err:=os.ReadFile(\"hello.cdc\")\n if err!=nil { panic(err) }\n r:=runtime.NewRuntime(runtime.Config{})\n ctx:=runtime.Context{Interface:&runutils.TestRuntimeInterface{}, Location:common.ScriptLocation{1}}\n result,err:=r.ExecuteScript(runtime.Script{Source:source},ctx)\n if err!=nil { panic(err) }\n fmt.Println(result)\n}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Cadence funzioni",
+      "url": "https://cadence-lang.org/docs/language/functions"
+    },
+    {
+      "title": "Cadence interprete standalone originale",
+      "url": "https://github.com/onflow/cadence/tree/master/cmd/main"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://go.dev/dl/go1.25.1.linux-amd64.tar.gz",
+      "sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e",
+      "expected_sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e"
+    }
+  ],
+  "toolchain": "Cadence v1.8.10",
+  "reproduction_command": "go run -mod=mod . with the recorded local runtime harness",
+  "semantic_scope": "The official Cadence VM ran the exact original script. The returned Cadence String was the expected greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

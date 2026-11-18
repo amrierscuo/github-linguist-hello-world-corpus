@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ordinal": 490,
+  "language": "Object Data Instance Notation",
+  "timestamp_utc": "2026-11-18T17:01:01.857873+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/490-_uor__al",
+      "timestamp_utc": "2026-11-18T17:01:01.890067+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/490-_uor__al/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  1.715 s\n[INFO] Finished at: 2026-11-18T18:01:09+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/490-_uor__al/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/490-_uor__al/home",
+        "TMPDIR": "${SCRATCH}/490-_uor__al/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/490-_uor__al/home"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/archie-all/3.20.0/archie-all-3.20.0.jar:${SCRATCH}/tools/maven-cache/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:${SCRATCH}/tools/maven-cache/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:${SCRATCH}/tools/maven-cache/com/fasterxml/jackson/core/jackson-databind/2.22.2/jackson-databind-2.22.2.jar:${SCRATCH}/tools/maven-cache/com/fasterxml/jackson/core/jackson-core/2.22.2/jackson-core-2.22.2.jar:${SCRATCH}/tools/maven-cache/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.22.2/jackson-datatype-jsr310-2.22.2.jar:${SCRATCH}/tools/maven-cache/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:${SCRATCH}/tools/maven-cache/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:${SCRATCH}/tools/maven-cache/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-core-2.3.0.1.jar:${SCRATCH}/tools/maven-cache/javax/activation/activation/1.1.1/activation-1.1.1.jar:${SCRATCH}/tools/maven-cache/org/threeten/threeten-extra/1.10.0/threeten-extra-1.10.0.jar:${SCRATCH}/tools/maven-cache/com/github/zafarkhaja/java-semver/0.10.2/java-semver-0.10.2.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/aom/3.20.0/aom-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/grammars/3.20.0/grammars-3.20.0.jar:${SCRATCH}/tools/maven-cache/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.jar:${SCRATCH}/tools/maven-cache/org/antlr/antlr4/4.13.2/antlr4-4.13.2.jar:${SCRATCH}/tools/maven-cache/org/antlr/antlr-runtime/3.5.3/antlr-runtime-3.5.3.jar:${SCRATCH}/tools/maven-cache/org/antlr/ST4/4.3.4/ST4-4.3.4.jar:${SCRATCH}/tools/maven-cache/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/base/3.20.0/base-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/odin/3.20.0/odin-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/utils/3.20.0/utils-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/bmm/3.20.0/bmm-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/openehr-terminology/3.20.0/openehr-terminology-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/openehr-rm/3.20.0/openehr-rm-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/path-queries/3.20.0/path-queries-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/archie-utils/3.20.0/archie-utils-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/tools/3.20.0/tools-3.20.0.jar:${SCRATCH}/tools/maven-cache/org/leadpony/justify/justify/3.1.0/justify-3.1.0.jar:${SCRATCH}/tools/maven-cache/jakarta/json/jakarta.json-api/2.0.0/jakarta.json-api-2.0.0.jar:${SCRATCH}/tools/maven-cache/com/ibm/icu/icu4j/68.1/icu4j-68.1.jar:${SCRATCH}/tools/maven-cache/org/glassfish/jakarta.json/2.0.1/jakarta.json-2.0.1-module.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/referencemodels/3.20.0/referencemodels-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/nedap/healthcare/archie/i18n/3.20.0/i18n-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/google/guava/guava/33.7.1-jre/guava-33.7.1-jre.jar:${SCRATCH}/tools/maven-cache/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:${SCRATCH}/tools/maven-cache/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:${SCRATCH}/tools/maven-cache/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:${SCRATCH}/tools/maven-cache/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar:${SCRATCH}/tools/maven-cache/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:${SCRATCH}/tools/maven-cache/org/reflections/reflections/0.10.2/reflections-0.10.2.jar:${SCRATCH}/tools/maven-cache/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar:${SCRATCH}/tools/maven-cache/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:${SCRATCH}/tools/maven-cache/com/esotericsoftware/kryo/kryo5/5.6.2/kryo5-5.6.2.jar:${SCRATCH}/tools/maven-cache/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar:${SCRATCH}/tools/maven-cache/org/apache/commons/commons-text/1.15.0/commons-text-1.15.0.jar:${SCRATCH}/tools/maven-cache/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:${SCRATCH}/tools/maven-cache/com/sun/xml/bind/jaxb-impl/2.3.9/jaxb-impl-2.3.9.jar:${SCRATCH}/tools/maven-cache/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:${SCRATCH}/tools/maven-cache/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar",
+        "ReadOdin.java"
+      ],
+      "cwd": "${SCRATCH}/490-_uor__al",
+      "timestamp_utc": "2026-11-18T17:01:09.787396+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/490-_uor__al/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/490-_uor__al/home",
+        "TMPDIR": "${SCRATCH}/490-_uor__al/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/490-_uor__al/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#490 Object Data Instance Notation/hello.odin": "17f7e6fb74cef044e157025f7d92b806d194f500458218e0fcd5486b80c1dbb8"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "06bb8c7cc7f5d920427c13406d5c9f43c5a5a980f0d5d5c2e089bdea72920e9b",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>com.nedap.healthcare.archie</groupId><artifactId>archie-all</artifactId><version>3.20.0</version></dependency></dependencies></project>\n"
+    },
+    "ReadOdin.java": {
+      "sha256": "0b98a76fe80c59eebe249b8edd0d88bd646c54649e81f1deed655f2c4ef4fb74",
+      "content_utf8": "import java.nio.file.*;\nimport com.nedap.archie.serializer.odin.OdinObjectParser;\nimport java.util.Map;\npublic class ReadOdin {\n public static void main(String[] args) throws Exception {\n  String input=Files.readString(Path.of(\"hello.odin\"));\n  Map result=OdinObjectParser.convert(input, Map.class);\n  System.out.println(result.get(\"greeting\"));\n }\n}\n"
+    }
+  },
+  "sources": [
+    "https://specifications.openehr.org/releases/BASE/latest/odin.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "openEHR Archie 3.20.0",
+  "reproduction_command": "java -cp <Archie dependencies> ReadOdin.java",
+  "semantic_scope": "Archie’s ODIN parser converted the exact original document. The resulting object contains the exact greeting value.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

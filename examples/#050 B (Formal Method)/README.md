@@ -1,5 +1,18 @@
 # #050 B (Formal Method)
 
+## Verified on November 18, 2026
+
+The ProB animator invoked the unchanged hello operation and recorded the exact returned greeting.
+
+Run `probcli HelloWorld.mch -init -i; select hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `B (Formal Method)`, tipo `programming`, `language_id: 993355937`.
 
 Define a Classical B machine with constant greeting equal to Hello, World! and hello operation that returns the constant one.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mch` | [HelloWorld.mch](HelloWorld.mch) created; verification pending |
+| `.mch` | [HelloWorld.mch](HelloWorld.mch) Syntax and behavior verified |
+
+</details>

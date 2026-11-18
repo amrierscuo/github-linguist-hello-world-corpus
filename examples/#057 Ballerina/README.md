@@ -1,5 +1,18 @@
 # #057 Ballerina
 
+## Verified on November 18, 2026
+
+The official Ballerina CLI compiled the original file on Java 25 and ran it from the console. The program printed the exact greeting.
+
+Run `bal run --offline hello.bal`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Ballerina`, tipo `programming`, `language_id: 720859680`.
 
 Concatenare e stampare Hello, World! con io:println in Ballerina.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.bal` | [hello.bal](hello.bal) created; verification pending |
+| `.bal` | [hello.bal](hello.bal) Syntax and behavior verified |
+
+</details>

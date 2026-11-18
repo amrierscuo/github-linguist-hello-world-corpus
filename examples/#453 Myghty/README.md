@@ -1,5 +1,18 @@
 # #453 Myghty
 
+## Verified on November 18, 2026
+
+The original Myghty template was rendered by its historical engine using an independent audience parameter and emitted the exact greeting.
+
+Run `python2.7 check.py (with Myghty and MyghtyUtils)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Myghty`, tipo `programming`, language_id `239`.
 
 Render a Myghty component with a stated parameter in the args block.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.myt` | [hello.myt](hello.myt) created; verification pending |
+| `.myt` | [hello.myt](hello.myt) Syntax and behavior verified |
+
+</details>

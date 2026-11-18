@@ -1,5 +1,18 @@
 # #380 Leo
 
+## Verified on November 18, 2026
+
+The official Leo simulator executed the original greeting body and returned the exact ASCII array. Its current function declaration syntax was applied if required.
+
+Run `leo run main`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Prior attempt](verification/native_20261118_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,4 +56,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.leo` | [main.leo](src/main.leo) created; verification pending |
+| `.leo` | [main.leo](src/main.leo) Syntax and behavior verified |
+
+</details>

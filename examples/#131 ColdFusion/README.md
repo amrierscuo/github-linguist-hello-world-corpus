@@ -1,5 +1,18 @@
 # #131 ColdFusion
 
+## Verified on November 18, 2026
+
+The official Lucee Express HTTP server evaluated the unchanged template and returned the exact greeting as a plain-text response.
+
+Run `Run the official Lucee Express server on a private loopback port; fetch /hello.cfm`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `ColdFusion`, tipo `programming`, `language_id: 64`.
 
 Serve a ColdFusion .cfm template that concatenates the greeting parts in cfoutput.
@@ -48,5 +61,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cfm` | [hello.cfm](hello.cfm) created; verification pending |
+| `.cfm` | [hello.cfm](hello.cfm) Syntax and behavior verified |
 | `.cfml` | [hello.cfml](variants/ext-cfml-2e63666d6c/hello.cfml) created; verification pending |
+
+</details>

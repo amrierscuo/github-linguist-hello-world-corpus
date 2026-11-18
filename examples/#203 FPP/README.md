@@ -1,5 +1,18 @@
 # #203 FPP
 
+## Verified on November 18, 2026
+
+The FPP command-line tool analyzed the original model and its compiler representation exposes the expected greeting constant.
+
+Run `fpp-check hello.fpp; fpp-to-json -d output hello.fpp`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `FPP`, tipo `programming`, language_id `252360067`.
 
 Declare a constant Greeting string in the Corpus module of the NASA FPP language.
@@ -48,3 +61,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.fpp` | [hello.fpp](hello.fpp), [consumer.fpp](variants/ext-fppi-2e66707069/consumer.fpp) created; verification pending |
 | `.fppi` | [hello.fppi](variants/ext-fppi-2e66707069/hello.fppi) created; verification pending |
+
+</details>

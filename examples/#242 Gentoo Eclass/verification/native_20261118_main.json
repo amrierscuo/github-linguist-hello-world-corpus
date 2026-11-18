@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "ordinal": 242,
+  "language": "Gentoo Eclass",
+  "timestamp_utc": "2026-11-18T17:16:47.157968+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/242-u2u1ae7j",
+      "timestamp_utc": "2026-11-18T17:16:47.254751+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/242-u2u1ae7j/home",
+        "TMPDIR": "${SCRATCH}/242-u2u1ae7j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/242-u2u1ae7j/.venv/bin/python",
+        "portage"
+      ],
+      "cwd": "${SCRATCH}/242-u2u1ae7j",
+      "timestamp_utc": "2026-11-18T17:16:47.277896+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 1 package in 1ms\nPrepared 1 package in 1.06s\nInstalled 1 package in 55ms\n + portage==3.0.83\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/242-u2u1ae7j/home",
+        "TMPDIR": "${SCRATCH}/242-u2u1ae7j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record portage package version",
+      "command": [
+        "${SCRATCH}/242-u2u1ae7j/.venv/bin/python",
+        "-c",
+        "import portage; print(portage.VERSION)"
+      ],
+      "cwd": "${SCRATCH}/242-u2u1ae7j",
+      "timestamp_utc": "2026-11-18T17:16:48.504618+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "3.0.83\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/242-u2u1ae7j/home",
+        "TMPDIR": "${SCRATCH}/242-u2u1ae7j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "PORTAGE_CONFIGROOT": "${SCRATCH}/242-u2u1ae7j/cfg",
+        "PORTAGE_TMPDIR": "${SCRATCH}/242-u2u1ae7j/temp",
+        "ROOT": "${SCRATCH}/242-u2u1ae7j/root",
+        "SYSROOT": "${SCRATCH}/242-u2u1ae7j/sysroot",
+        "DISTDIR": "${SCRATCH}/242-u2u1ae7j/dist",
+        "PORT_LOGDIR": "${SCRATCH}/242-u2u1ae7j/logs",
+        "PORTAGE_USERNAME": "a",
+        "PORTAGE_GRPNAME": "a",
+        "ACCEPT_KEYWORDS": "~amd64",
+        "FEATURES": "-sandbox -usersandbox -userpriv -pid-sandbox -ipc-sandbox -network-sandbox -mount-sandbox -strict"
+      }
+    },
+    {
+      "label": "Run actual Portage install phase on the unchanged files",
+      "command": [
+        "${SCRATCH}/242-u2u1ae7j/.venv/bin/ebuild",
+        "${SCRATCH}/242-u2u1ae7j/repo/app-misc/hello-world/hello-world-1.0.ebuild",
+        "clean",
+        "install"
+      ],
+      "cwd": "${SCRATCH}/242-u2u1ae7j",
+      "timestamp_utc": "2026-11-18T17:16:48.636750+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": ">>> Unpacking source...\n>>> Source unpacked in ${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/work\n>>> Preparing source in ${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/work ...\n>>> Source prepared.\n>>> Configuring source in ${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/work ...\n>>> Source configured.\n>>> Compiling source in ${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/work ...\n>>> Source compiled.\n>>> Test phase [not enabled]: app-misc/hello-world-1.0\n\n>>> Install app-misc/hello-world-1.0 into ${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/image\n>>> Completed installing app-misc/hello-world-1.0 into ${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/image\n\n * Final size of build directory:  4 KiB\n * Final size of installed tree:  36 KiB\n\n${SCRATCH}/242-u2u1ae7j/.venv/lib/portage/bin/estrip: line 362: scanelf: command not found\n${SCRATCH}/242-u2u1ae7j/.venv/lib/portage/bin/estrip: line 535: scanelf: command not found\n",
+      "stderr": "!!! Section 'gentoo' in repos.conf has location attribute set to nonexistent directory: '/var/db/repos/gentoo'\n!!! Repository 'gentoo' is missing masters attribute in '/var/db/repos/gentoo/metadata/layout.conf'\n!!! Set 'masters = corpus' in this file for future compatibility\n!!! Invalid Repository Location (not a dir): '/var/db/repos/gentoo'\n!!! Section 'gentoo' in repos.conf has location attribute set to nonexistent directory: '/var/db/repos/gentoo'\n!!! Repository 'gentoo' is missing masters attribute in '/var/db/repos/gentoo/metadata/layout.conf'\n!!! Set 'masters = corpus' in this file for future compatibility\n!!! Invalid Repository Location (not a dir): '/var/db/repos/gentoo'\n!!! Section 'gentoo' in repos.conf has location attribute set to nonexistent directory: '/var/db/repos/gentoo'\n!!! Repository 'gentoo' is missing masters attribute in '/var/db/repos/gentoo/metadata/layout.conf'\n!!! Set 'masters = corpus' in this file for future compatibility\n!!! Invalid Repository Location (not a dir): '/var/db/repos/gentoo'\n\n\n!!! ${SCRATCH}/242-u2u1ae7j/cfg/etc/portage/make.profile is not a symlink and will probably prevent most merges.\n!!! It should point into a profile within ${SCRATCH}/242-u2u1ae7j/repo/profiles/\n!!! (You can safely ignore this message when syncing. It's harmless.)\n\n\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/242-u2u1ae7j/home",
+        "TMPDIR": "${SCRATCH}/242-u2u1ae7j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "PORTAGE_CONFIGROOT": "${SCRATCH}/242-u2u1ae7j/cfg",
+        "PORTAGE_TMPDIR": "${SCRATCH}/242-u2u1ae7j/temp",
+        "ROOT": "${SCRATCH}/242-u2u1ae7j/root",
+        "SYSROOT": "${SCRATCH}/242-u2u1ae7j/sysroot",
+        "DISTDIR": "${SCRATCH}/242-u2u1ae7j/dist",
+        "PORT_LOGDIR": "${SCRATCH}/242-u2u1ae7j/logs",
+        "PORTAGE_USERNAME": "a",
+        "PORTAGE_GRPNAME": "a",
+        "ACCEPT_KEYWORDS": "~amd64",
+        "FEATURES": "-sandbox -usersandbox -userpriv -pid-sandbox -ipc-sandbox -network-sandbox -mount-sandbox -strict"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/242-u2u1ae7j/temp/portage/app-misc/hello-world-1.0/image${SCRATCH}/242-u2u1ae7j/.venv/usr/bin/hello-world"
+      ],
+      "cwd": "${SCRATCH}/242-u2u1ae7j",
+      "timestamp_utc": "2026-11-18T17:16:50.730493+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/242-u2u1ae7j/home",
+        "TMPDIR": "${SCRATCH}/242-u2u1ae7j/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#242 Gentoo Eclass/hello-world-1.0.ebuild": "dcccdfc7c714563f84cfd0078231b4b3937c2ef1e8dceabb8d344b487392f7df",
+    "examples/#242 Gentoo Eclass/files/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6",
+    "examples/#242 Gentoo Eclass/hello-world.eclass": "9878c5345b185827e6ed30cdf1f125f74ecdf179e415d403f25c10cb022baee6"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://devmanual.gentoo.org/eclass-writing/index.html",
+    "https://projects.gentoo.org/pms/latest/pms.html"
+  ],
+  "previous_verification_log": "examples/#242 Gentoo Eclass/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [],
+  "toolchain": "Portage 3.0.83",
+  "reproduction_command": "ebuild hello-world-1.0.ebuild install (isolated overlay); run its image/usr/bin/hello-world",
+  "semantic_scope": "Portage executed the original eclass and its actual inherit/EXPORT_FUNCTIONS consumer in its disposable package image. The installed executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

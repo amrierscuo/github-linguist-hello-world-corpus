@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "ordinal": 488,
+  "language": "Oberon",
+  "timestamp_utc": "2026-11-18T17:38:18.095124+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Assemble the standard O2 runtime library from the genuine upstream compiled objects",
+      "command": [
+        "ar",
+        "rcs",
+        "libvoc-O2.a",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Files.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Heap.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/In.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Math.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/MathL.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Modules.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Oberon.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Out.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Platform.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/PlatformNative.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Reals.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/SYSTEM.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Strings.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/Texts.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2/VT100.o",
+        "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/OPM.o"
+      ],
+      "cwd": "${SCRATCH}/488-1472yvm3",
+      "timestamp_utc": "2026-11-18T17:38:18.135344+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/488-1472yvm3/home",
+        "TMPDIR": "${SCRATCH}/488-1472yvm3/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile and link unchanged Oberon-2 code against the genuine O2 standard library",
+      "command": [
+        "${SCRATCH}/488-38zvue66/src/voc",
+        "-m",
+        "-O2",
+        "Hello.ob2"
+      ],
+      "cwd": "${SCRATCH}/488-1472yvm3",
+      "timestamp_utc": "2026-11-18T17:38:18.163652+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "Hello.ob2  Compiling Hello.  Main program.  407 chars.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/488-38zvue66/src:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/488-1472yvm3/home",
+        "TMPDIR": "${SCRATCH}/488-1472yvm3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "OBERON": "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc",
+        "C_INCLUDE_PATH": "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2:${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc",
+        "LIBRARY_PATH": "${SCRATCH}/488-1472yvm3:${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2:${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/488-1472yvm3/Hello"
+      ],
+      "cwd": "${SCRATCH}/488-1472yvm3",
+      "timestamp_utc": "2026-11-18T17:38:18.200815+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/488-38zvue66/src:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/488-1472yvm3/home",
+        "TMPDIR": "${SCRATCH}/488-1472yvm3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "OBERON": "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc",
+        "C_INCLUDE_PATH": "${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2:${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc",
+        "LIBRARY_PATH": "${SCRATCH}/488-1472yvm3:${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc/2:${SCRATCH}/488-38zvue66/src/build/ubuntu.LP64.gcc"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#488 Oberon/Hello.ob2": "6be6c3a7730bf9fa521e006668aec53c97f6ab5a2ef4ea4e3004149e770619c6"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.inf.ethz.ch/personal/wirth/Oberon/Oberon07.Report.pdf"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "Vishap Oberon Compiler and original Oberon-2 library",
+  "reproduction_command": "voc -m -O2 Hello.ob2; ./Hello",
+  "semantic_scope": "The native Oberon-2 translator compiled the original module and linked it with the genuine standard library. The executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

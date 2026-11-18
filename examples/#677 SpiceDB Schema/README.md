@@ -1,5 +1,16 @@
 # #677 SpiceDB Schema
 
+## Verified on November 18, 2026
+
+The genuine SpiceDB instance loaded the unchanged schema. It granted the synthetic view permission for the exact greeting and denied the same relationship with a different message.
+
+Run `zed schema write hello.zed; create the caveated fixture relationship; zed permission check with actual and control strings`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Validate a SpiceDB scheme and a caveat that allows reading message is greeting.
 
 Canonical type `data`, language_id `864005057`.
@@ -31,4 +42,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.zed` | [hello.zed](hello.zed) created; verification pending |
+| `.zed` | [hello.zed](hello.zed) Syntax and behavior verified |
+
+</details>

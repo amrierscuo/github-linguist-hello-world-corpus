@@ -1,5 +1,20 @@
 # #201 FIRRTL
 
+## Verified on November 18, 2026
+
+CIRCT translated the FIRRTL circuit. The RTL simulator returned the exact port bytes independently of the programmed printf output.
+
+Run `firtool hello.fir -o hello.sv; iverilog -g2012 -s tb -o sim tb.sv hello.sv; vvp sim`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+[Prior attempt](verification/native_20261118_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `FIRRTL`, tipo `programming`, language_id `906694254`.
 
 Describe a FIRRTL circuit with thirteen ASCII outputs that form greeting and an active printf when reset is low.
@@ -45,4 +60,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.fir` | [hello.fir](hello.fir) created; verification pending |
+| `.fir` | [hello.fir](hello.fir) Syntax and behavior verified |
+
+</details>

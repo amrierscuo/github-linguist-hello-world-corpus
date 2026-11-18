@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "ordinal": 10,
+  "language": "ALGOL",
+  "timestamp_utc": "2026-11-18T17:16:35.756798+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Configure the original JFF compiler for a disposable prefix",
+      "command": [
+        "sh",
+        "configure",
+        "--prefix=${SCRATCH}/010-kt7f2vat/jff"
+      ],
+      "cwd": "${SCRATCH}/010-kt7f2vat/src",
+      "timestamp_utc": "2026-11-18T17:16:36.176021+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "checking for a BSD-compatible install... /usr/bin/install -c\nchecking whether build environment is sane... yes\nchecking for a thread-safe mkdir -p... /usr/bin/mkdir -p\nchecking for gawk... gawk\nchecking whether make sets $(MAKE)... yes\nchecking whether make supports nested variables... yes\nchecking for gcc... gcc\nchecking whether the C compiler works... yes\nchecking for C compiler default output file name... a.out\nchecking for suffix of executables... \nchecking whether we are cross compiling... no\nchecking for suffix of object files... o\nchecking whether we are using the GNU C compiler... yes\nchecking whether gcc accepts -g... yes\nchecking for gcc option to accept ISO C89... none needed\nchecking whether gcc understands -c and -o together... yes\nchecking whether make supports the include directive... yes (GNU style)\nchecking dependency style of gcc... gcc3\nchecking for ranlib... ranlib\nchecking for indent... no\nchecking how to run the C preprocessor... gcc -E\nchecking for grep that handles long lines and -e... /usr/bin/grep\nchecking for egrep... /usr/bin/grep -E\nchecking for ANSI C header files... yes\nchecking that generated files are newer than configure... done\nconfigure: creating ./config.status\nconfig.status: creating Makefile\nconfig.status: executing depfiles commands\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/010-kt7f2vat/home",
+        "TMPDIR": "${SCRATCH}/010-kt7f2vat/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Build and install the published JFF toolchain locally",
+      "command": [
+        "make",
+        "-j4",
+        "install"
+      ],
+      "cwd": "${SCRATCH}/010-kt7f2vat/src",
+      "timestamp_utc": "2026-11-18T17:16:37.530501+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "gcc -DPACKAGE_NAME=\\\"\\\" -DPACKAGE_TARNAME=\\\"\\\" -DPACKAGE_VERSION=\\\"\\\" -DPACKAGE_STRING=\\\"\\\" -DPACKAGE_BUGREPORT=\\\"\\\" -DPACKAGE_URL=\\\"\\\" -DPACKAGE=\\\"jff-a2c\\\" -DVERSION=\\\"2.3\\\" -DSTDC_HEADERS=1 -I.    -O3 -g -DOPERATOR=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/operator\\\" -DPRELUDE=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/prelude\\\" -DRUNTIME=\\\"${SCRATCH}/010-kt7f2vat/jff/lib/lib_jff.a\\\" -DHEADER=\\\"${SCRATCH}/010-kt7f2vat/jff/include/jff_header.h\\\" -DINDENT=\\\"/usr/bin/indent\\\" -DCCOMPILER=\\\"gcc\\\" -DACOMPILER=\\\"${SCRATCH}/010-kt7f2vat/jff/bin/jff-a2c\\\" -g -O2 -MT frontend.o -MD -MP -MF .deps/frontend.Tpo -c -o frontend.o frontend.c\ngcc -DPACKAGE_NAME=\\\"\\\" -DPACKAGE_TARNAME=\\\"\\\" -DPACKAGE_VERSION=\\\"\\\" -DPACKAGE_STRING=\\\"\\\" -DPACKAGE_BUGREPORT=\\\"\\\" -DPACKAGE_URL=\\\"\\\" -DPACKAGE=\\\"jff-a2c\\\" -DVERSION=\\\"2.3\\\" -DSTDC_HEADERS=1 -I.    -O3 -g -DOPERATOR=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/operator\\\" -DPRELUDE=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/prelude\\\" -DRUNTIME=\\\"${SCRATCH}/010-kt7f2vat/jff/lib/lib_jff.a\\\" -DHEADER=\\\"${SCRATCH}/010-kt7f2vat/jff/include/jff_header.h\\\" -DINDENT=\\\"/usr/bin/indent\\\" -DCCOMPILER=\\\"gcc\\\" -DACOMPILER=\\\"${SCRATCH}/010-kt7f2vat/jff/bin/jff-a2c\\\" -g -O2 -MT jff-algol.o -MD -MP -MF .deps/jff-algol.Tpo -c -o jff-algol.o jff-algol.c\ngcc -DPACKAGE_NAME=\\\"\\\" -DPACKAGE_TARNAME=\\\"\\\" -DPACKAGE_VERSION=\\\"\\\" -DPACKAGE_STRING=\\\"\\\" -DPACKAGE_BUGREPORT=\\\"\\\" -DPACKAGE_URL=\\\"\\\" -DPACKAGE=\\\"jff-a2c\\\" -DVERSION=\\\"2.3\\\" -DSTDC_HEADERS=1 -I.    -O3 -g -DOPERATOR=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/operator\\\" -DPRELUDE=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/prelude\\\" -DRUNTIME=\\\"${SCRATCH}/010-kt7f2vat/jff/lib/lib_jff.a\\\" -DHEADER=\\\"${SCRATCH}/010-kt7f2vat/jff/include/jff_header.h\\\" -DINDENT=\\\"/usr/bin/indent\\\" -DCCOMPILER=\\\"gcc\\\" -DACOMPILER=\\\"${SCRATCH}/010-kt7f2vat/jff/bin/jff-a2c\\\" -g -O2 -MT runtime.o -MD -MP -MF .deps/runtime.Tpo -c -o runtime.o runtime.c\nmv -f .deps/jff-algol.Tpo .deps/jff-algol.Po\ngcc -O3 -g -DOPERATOR=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/operator\\\" -DPRELUDE=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/prelude\\\" -DRUNTIME=\\\"${SCRATCH}/010-kt7f2vat/jff/lib/lib_jff.a\\\" -DHEADER=\\\"${SCRATCH}/010-kt7f2vat/jff/include/jff_header.h\\\" -DINDENT=\\\"/usr/bin/indent\\\" -DCCOMPILER=\\\"gcc\\\" -DACOMPILER=\\\"${SCRATCH}/010-kt7f2vat/jff/bin/jff-a2c\\\" -g -O2   -o jff-algol jff-algol.o  \nmv -f .deps/runtime.Tpo .deps/runtime.Po\nrm -f lib_jff.a\nar cru lib_jff.a runtime.o \nranlib lib_jff.a\nmv -f .deps/frontend.Tpo .deps/frontend.Po\ngcc -O3 -g -DOPERATOR=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/operator\\\" -DPRELUDE=\\\"${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c/prelude\\\" -DRUNTIME=\\\"${SCRATCH}/010-kt7f2vat/jff/lib/lib_jff.a\\\" -DHEADER=\\\"${SCRATCH}/010-kt7f2vat/jff/include/jff_header.h\\\" -DINDENT=\\\"/usr/bin/indent\\\" -DCCOMPILER=\\\"gcc\\\" -DACOMPILER=\\\"${SCRATCH}/010-kt7f2vat/jff/bin/jff-a2c\\\" -g -O2   -o jff-a2c frontend.o  \nmake[1]: Entering directory '${SCRATCH}/010-kt7f2vat/src'\n /usr/bin/mkdir -p '${SCRATCH}/010-kt7f2vat/jff/bin'\n /usr/bin/mkdir -p '${SCRATCH}/010-kt7f2vat/jff/lib'\n /usr/bin/mkdir -p '${SCRATCH}/010-kt7f2vat/jff/include'\n /usr/bin/mkdir -p '${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c'\n /usr/bin/install -c -m 644  lib_jff.a '${SCRATCH}/010-kt7f2vat/jff/lib'\n /usr/bin/install -c -m 644 jff_header.h '${SCRATCH}/010-kt7f2vat/jff/include'\n /usr/bin/install -c -m 644 operator prelude '${SCRATCH}/010-kt7f2vat/jff/share/jff-a2c'\n  /usr/bin/install -c jff-a2c jff-algol '${SCRATCH}/010-kt7f2vat/jff/bin'\n ( cd '${SCRATCH}/010-kt7f2vat/jff/lib' && ranlib lib_jff.a )\nmake[1]: Leaving directory '${SCRATCH}/010-kt7f2vat/src'\n",
+      "stderr": "jff-algol.c: In function ‘process_file’:\njff-algol.c:131:15: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  131 |               system (v);\n      |               ^~~~~~~~~~\njff-algol.c:136:12: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  136 |            system (v);\n      |            ^~~~~~~~~~\njff-algol.c:143:9: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  143 |         system (v);\n      |         ^~~~~~~~~~\nfrontend.c: In function ‘get_nodeid’:\nfrontend.c:129:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  129 |         return  (int)(t [NODEID]. f);\n      |                 ^\nfrontend.c: In function ‘get_lineno’:\nfrontend.c:141:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  141 |         return (int)(t [LINE_NO]. f);\n      |                ^\nfrontend.c: In function ‘set_lineno’:\nfrontend.c:145:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  145 |         t [LINE_NO]. f = (treenode *)l;\n      |                          ^\nfrontend.c: In function ‘get_charno’:\nfrontend.c:149:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  149 |         return (int)(t [CHAR_NO]. f);\n      |                ^\nfrontend.c: In function ‘set_charno’:\nfrontend.c:153:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  153 |         t [CHAR_NO]. f = (treenode *)cn;\n      |                          ^\nfrontend.c: In function ‘get_flags’:\nfrontend.c:157:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  157 |         return (unsigned int)(t [NODE_FLAGS]. f);\n      |                ^\nfrontend.c: In function ‘set_flags’:\nfrontend.c:161:29: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  161 |         t [NODE_FLAGS]. f = (treenode *)f;\n      |                             ^\nfrontend.c: In function ‘get_binary_prio’:\nfrontend.c:374:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  374 |         return (int)(t [BINARY_PRIO]. f);\n      |                ^\nfrontend.c: In function ‘set_binary_prio’:\nfrontend.c:378:30: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  378 |         t [BINARY_PRIO]. f = (treenode *)prio;\n      |                              ^\nfrontend.c: In function ‘get_unary_prio’:\nfrontend.c:446:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  446 |         return (int)(t [UNARY_PRIO]. f);\n      |                ^\nfrontend.c: In function ‘set_unary_prio’:\nfrontend.c:450:29: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  450 |         t [UNARY_PRIO]. f = (treenode *)prio;\n      |                             ^\nfrontend.c: In function ‘get_num_of_actuals’:\nfrontend.c:839:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  839 |         return (int)(t [NUM_OF_ACTUALS]. f);\n      |                ^\nfrontend.c: In function ‘set_num_of_actuals’:\nfrontend.c:843:33: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  843 |         t [NUM_OF_ACTUALS]. f = (treenode *)n;\n      |                                 ^\nfrontend.c: In function ‘get_num_of_subscripts’:\nfrontend.c:885:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  885 |         return (int)(t [NUM_OF_SUBSCRIPTS]. f);\n      |                ^\nfrontend.c: In function ‘set_num_of_subscripts’:\nfrontend.c:889:36: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n  889 |         t [NUM_OF_SUBSCRIPTS]. f = (treenode *)num;\n      |                                    ^\nfrontend.c: In function ‘get_blockno_of_proc’:\nfrontend.c:1075:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n 1075 |         return (int)(t [BLOCKNO_OF_PROC]. f);\n      |                ^\nfrontend.c: In function ‘set_blockno_of_proc’:\nfrontend.c:1079:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1079 |         t [BLOCKNO_OF_PROC]. f = (treenode *)bn;\n      |                                  ^\nfrontend.c: In function ‘get_num_of_pars’:\nfrontend.c:1083:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n 1083 |         return (int)(t [NUM_OF_PARS]. f);\n      |                ^\nfrontend.c: In function ‘set_num_of_pars’:\nfrontend.c:1087:30: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1087 |         t [NUM_OF_PARS]. f = (treenode *)nop;\n      |                              ^\nfrontend.c: In function ‘get_proc_level’:\nfrontend.c:1091:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n 1091 |         return (int)(t [PROC_LEVEL]. f);\n      |                ^\nfrontend.c: In function ‘set_proc_level’:\nfrontend.c:1095:29: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1095 |         t [PROC_LEVEL]. f = (treenode *)l;\n      |                             ^\nfrontend.c: In function ‘get_block_number’:\nfrontend.c:1127:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n 1127 |         return (int)(t [BLOCK_NUMBER]. f);\n      |                ^\nfrontend.c: In function ‘set_block_number’:\nfrontend.c:1131:31: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1131 |         t [BLOCK_NUMBER]. f = (treenode *)bn;\n      |                               ^\nfrontend.c: In function ‘get_subtype_dims’:\nfrontend.c:1169:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n 1169 |         return (int)(t [SUBTYPE_DIMS]. f);\n      |                ^\nfrontend.c: In function ‘set_subtype_dims’:\nfrontend.c:1173:31: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1173 |         t [SUBTYPE_DIMS]. f = (treenode *)dims;\n      |                               ^\nfrontend.c: In function ‘get_num_of_switch_elements’:\nfrontend.c:1309:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n 1309 |         return (int)(t [NUM_OF_SWITCH_ELEMENTS]. f);\n      |                ^\nfrontend.c: In function ‘set_num_of_switch_elements’:\nfrontend.c:1313:41: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1313 |         t [NUM_OF_SWITCH_ELEMENTS]. f = (treenode *)nose;\n      |                                         ^\nfrontend.c: In function ‘new_node’:\nfrontend.c:1373:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1373 |         t [NODEID].  f = (treenode *)id;\n      |                          ^\nfrontend.c:1374:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1374 |         t [LINE_NO]. f = (treenode *)l;\n      |                          ^\nfrontend.c:1375:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n 1375 |         t [CHAR_NO]. f = (treenode *)cn;\n      |                          ^\njff-algol.c: In function ‘process_filenames’:\njff-algol.c:79:25: warning: ‘.c’ directive writing 2 bytes into a region of size between 1 and 100 [-Wformat-overflow=]\n   79 |         sprintf (v1, \"%s.c\", v0);\n      |                         ^~\nIn file included from /usr/include/stdio.h:980,\n                 from jff-algol.c:37:\nIn function ‘sprintf’,\n    inlined from ‘process_filenames’ at jff-algol.c:79:3:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:10: note: ‘__builtin___sprintf_chk’ output between 3 and 102 bytes into a destination of size 100\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\njff-algol.c: In function ‘process_filenames’:\njff-algol.c:82:25: warning: ‘.h’ directive writing 2 bytes into a region of size between 1 and 100 [-Wformat-overflow=]\n   82 |         sprintf (v2, \"%s.h\", v0);\n      |                         ^~\nIn function ‘sprintf’,\n    inlined from ‘process_filenames’ at jff-algol.c:82:2:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:10: note: ‘__builtin___sprintf_chk’ output between 3 and 102 bytes into a destination of size 100\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\nruntime.c: In function ‘__param_type’:\nruntime.c:300:15: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  300 |         *t = ((int)(p1) >> 8);\n      |               ^\nruntime.c:301:15: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  301 |         *k = ((int)(p1) & 0377);\n      |               ^\nfrontend.c: In function ‘add_to_output’:\nfrontend.c:8030:9: warning: format not a string literal and no format arguments [-Wformat-security]\n 8030 |         fprintf (f_out, s);\n      |         ^~~~~~~\nar: `u' modifier ignored since `D' is the default (see `U')\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/010-kt7f2vat/home",
+        "TMPDIR": "${SCRATCH}/010-kt7f2vat/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile unchanged ALGOL example desktop-independent",
+      "command": [
+        "${SCRATCH}/010-kt7f2vat/jff/bin/jff-algol",
+        "hello.alg"
+      ],
+      "cwd": "${SCRATCH}/010-kt7f2vat",
+      "timestamp_utc": "2026-11-18T17:16:41.324681+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/010-kt7f2vat/home",
+        "TMPDIR": "${SCRATCH}/010-kt7f2vat/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Run the unchanged ALGOL 60 program",
+      "command": [
+        "${SCRATCH}/010-kt7f2vat/hello"
+      ],
+      "cwd": "${SCRATCH}/010-kt7f2vat",
+      "timestamp_utc": "2026-11-18T17:16:41.391584+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\u0000\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/010-kt7f2vat/home",
+        "TMPDIR": "${SCRATCH}/010-kt7f2vat/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#010 ALGOL/hello.alg": "6767141d25be5fab1ee8b3865fa3f60f8a0d0317791330915e4a75dc755a8343"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://gtoal.com/languages/algol60/jff-algol-60-compiler/doc/jff-manual.pdf"
+  ],
+  "previous_verification_log": "examples/#010 ALGOL/verification.log",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/JvanKatwijk/algol-60-compiler/tar.gz/jff-algol-2.3",
+      "ref": "jff-algol-2.3",
+      "sha256": "0f0af03af15d1fd7a50b11106028aa3d5badf7d3e70caea88bb8a4e0e2ab62ac"
+    }
+  ],
+  "display_greeting": "Hello, World!",
+  "toolchain": "jff-algol 2.3",
+  "reproduction_command": "jff-algol hello.alg; ./hello",
+  "semantic_scope": "JFF compiled the unchanged ALGOL 60 program from its own native toolchain and the executable printed the greeting. The raw output retains the trailing NUL emitted by this runtime.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

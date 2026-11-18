@@ -1,5 +1,16 @@
 # #753 Vim Snippet
 
+## Verified on November 18, 2026
+
+The real Vim and UltiSnips runtime expanded the unchanged snippet into the exact greeting.
+
+Run `vim -Nu NONE -n -es -S expand.vim`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Expand a snippet UltiSnips to get greeting.
 
 Canonical type `markup`, language_id `81265970`.
@@ -30,4 +41,6 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.snip` | [hello.snip](variants/snip-4fb5d1ae/hello.snip) created; verification pending |
 | `.snippet` | [hello.snippet](variants/snippet-29acba5e/hello.snippet) created; verification pending |
-| `.snippets` | [hello.snippets](hello.snippets) created; verification pending |
+| `.snippets` | [hello.snippets](hello.snippets) Syntax and behavior verified |
+
+</details>

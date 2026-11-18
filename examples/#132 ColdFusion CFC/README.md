@@ -1,5 +1,18 @@
 # #132 ColdFusion CFC
 
+## Verified on November 18, 2026
+
+The official Lucee Express runtime loaded the unchanged CFC from its original harness and both original assertions passed. The real HTTP response contained the exact greeting.
+
+Run `Run the official Lucee Express server on a private loopback port; fetch /check.cfm`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `ColdFusion CFC`, tipo `programming`, `language_id: 65`.
 
 Define the CFML Greeting component and call hello() from the control template, also checking a different recipient.
@@ -48,4 +61,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cfc` | [Greeting.cfc](Greeting.cfc) created; verification pending |
+| `.cfc` | [Greeting.cfc](Greeting.cfc) Syntax and behavior verified |
+
+</details>

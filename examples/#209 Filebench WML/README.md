@@ -1,5 +1,18 @@
 # #209 Filebench WML
 
+## Verified on November 18, 2026
+
+The official Filebench WML interpreter ran the original echo input and emitted the exact greeting.
+
+Run `filebench -f hello.f`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Filebench WML`, tipo `programming`, language_id `111`.
 
 Use the echo command of the Workload Model Language Filebench to issue greetings, without I/O. workload
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.f` | [hello.f](hello.f) created; verification pending |
+| `.f` | [hello.f](hello.f) Syntax and behavior verified |
+
+</details>

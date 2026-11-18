@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "ordinal": 712,
+  "language": "Tea",
+  "timestamp_utc": "2026-11-18T17:26:45.293564+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/712-0r4mrlxu",
+      "timestamp_utc": "2026-11-18T17:26:45.488298+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/712-0r4mrlxu/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  1.768 s\n[INFO] Finished at: 2026-11-18T18:26:52+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/712-0r4mrlxu/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/712-0r4mrlxu/home",
+        "TMPDIR": "${SCRATCH}/712-0r4mrlxu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/712-0r4mrlxu/home"
+      }
+    },
+    {
+      "label": "Compile the Tea fixture under the supported Java 8 runtime",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin/javac",
+        "-cp",
+        "${SCRATCH}/tools/maven-cache/org/teatrove/tea/4.1.2/tea-4.1.2.jar:${SCRATCH}/tools/maven-cache/org/teatrove/trove/4.1.2/trove-4.1.2.jar:${SCRATCH}/tools/maven-cache/org/jdom/jdom/1.1/jdom-1.1.jar:${SCRATCH}/tools/maven-cache/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:${SCRATCH}/tools/maven-cache/junit/junit/4.8.2/junit-4.8.2.jar:${SCRATCH}/tools/maven-cache/joda-time/joda-time/1.6.2/joda-time-1.6.2.jar",
+        "TeaCheck.java"
+      ],
+      "cwd": "${SCRATCH}/712-0r4mrlxu",
+      "timestamp_utc": "2026-11-18T17:26:52.549959+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/712-0r4mrlxu/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/712-0r4mrlxu/home",
+        "TMPDIR": "${SCRATCH}/712-0r4mrlxu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/712-0r4mrlxu/home"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java",
+        "-cp",
+        "${SCRATCH}/tools/maven-cache/org/teatrove/tea/4.1.2/tea-4.1.2.jar:${SCRATCH}/tools/maven-cache/org/teatrove/trove/4.1.2/trove-4.1.2.jar:${SCRATCH}/tools/maven-cache/org/jdom/jdom/1.1/jdom-1.1.jar:${SCRATCH}/tools/maven-cache/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:${SCRATCH}/tools/maven-cache/junit/junit/4.8.2/junit-4.8.2.jar:${SCRATCH}/tools/maven-cache/joda-time/joda-time/1.6.2/joda-time-1.6.2.jar:.",
+        "TeaCheck"
+      ],
+      "cwd": "${SCRATCH}/712-0r4mrlxu",
+      "timestamp_utc": "2026-11-18T17:26:54.207277+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/712-0r4mrlxu/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/712-0r4mrlxu/home",
+        "TMPDIR": "${SCRATCH}/712-0r4mrlxu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/712-0r4mrlxu/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#712 Tea/hello.tea": "486bd51ce97f1df89b1d24988a47a03d3d3ed9498dbcea7bee925a53f4d09f56"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "93792d0289b72e908d33cbbf879a23d2e23ed000688d70b86896dea04bb2d2ae",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.teatrove</groupId><artifactId>tea</artifactId><version>4.1.2</version></dependency></dependencies></project>\n"
+    },
+    "TeaCheck.java": {
+      "sha256": "e7bebeb6765e15e9742f721d732108134a4d425f656c4afbed16cf6cb5319505",
+      "content_utf8": "import java.io.File;\nimport org.teatrove.tea.runtime.DefaultContext;\nimport org.teatrove.tea.runtime.TemplateLoader;\nimport org.teatrove.tea.util.FileCompiler;\nimport org.teatrove.trove.util.ClassInjector;\npublic class TeaCheck {\n public static final class RenderContext extends DefaultContext {\n  final StringBuilder result = new StringBuilder();\n  public void print(Object value) { result.append(value); }\n  public void write(char[] data, int offset, int size) { result.append(data,offset,size); }\n  public void flush() {}\n  public void close() {}\n }\n public static void main(String[] args) throws Exception {\n  ClassInjector ci=new ClassInjector();\n  FileCompiler fc=new FileCompiler(new File(\".\"), \"corpus.tea\", null, ci);\n  fc.setRuntimeContext(RenderContext.class);\n  fc.compile(\"hello\");\n  if (fc.getErrorCount()!=0) throw new AssertionError(\"Tea compilation failed\");\n  TemplateLoader.Template template=new TemplateLoader(ci, \"corpus.tea\").getTemplate(\"hello\");\n  RenderContext context=new RenderContext();\n  template.execute(context,new Object[]{\"World\"});\n  System.out.print(context.result.toString());\n }\n}\n"
+    }
+  },
+  "sources": [
+    "https://github.com/teatrove/teatrove/wiki/Tea-Templates"
+  ],
+  "previous_verification_log": null,
+  "maven_coordinates": [
+    "org.teatrove:tea:4.1.2"
+  ],
+  "toolchain": "TeaTrove Tea 4.1.2",
+  "reproduction_command": "java -cp <TeaTrove classpath> TeaCheck.java",
+  "semantic_scope": "The Tea compiler compiled the original template. The runtime accepted the original template parameter and emitted the exact rendered text.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

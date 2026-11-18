@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "ordinal": 328,
+  "language": "JSONiq",
+  "timestamp_utc": "2026-11-18T16:57:31.829911+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Evaluate the unchanged query in the local RumbleDB processor",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java",
+        "-jar",
+        "${SCRATCH}/tools/rumble-1.20/rumbledb-1.20.0-standalone.jar",
+        "run",
+        "--query-path",
+        "hello.jq",
+        "--output-path",
+        "result.json",
+        "--overwrite",
+        "yes"
+      ],
+      "cwd": "${SCRATCH}/328-mwmgz9we",
+      "timestamp_utc": "2026-11-18T16:59:29.722371+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "69   [main] WARN  org.apache.hadoop.util.NativeCodeLoader  - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/328-mwmgz9we/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/328-mwmgz9we/home",
+        "TMPDIR": "${SCRATCH}/328-mwmgz9we/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/328-mwmgz9we/home",
+        "SPARK_LOCAL_IP": "127.0.0.1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#328 JSONiq/hello.jq": "3d06fb53e9c298962adc719bc0de13f8595cc33b83dc6f644c3457bc3a208e6e"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "JSONiq specifica",
+      "url": "https://www.jsoniq.org/docs/JSONiq/html-single/index.html"
+    },
+    {
+      "title": "RumbleDB motore originale",
+      "url": "https://github.com/RumbleDB/rumble"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/RumbleDB/rumble/releases/download/v1.20.0/rumbledb-1.20.0-standalone.jar",
+      "sha256": "2e00181e7110938d33b6d688f2d81ebe56e83ee8be81bf7e684e91fd574a2ce3"
+    }
+  ],
+  "native_result_utf8": "\"Hello, World!\"\n",
+  "toolchain": "RumbleDB 1.20.0",
+  "reproduction_command": "java -jar rumbledb-1.20.0-standalone.jar run --query-path hello.jq --output-path result.json",
+  "semantic_scope": "The native JSONiq runtime executed the exact query and serialized the one matching greeting string.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

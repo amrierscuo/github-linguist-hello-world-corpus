@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "ordinal": 390,
+  "language": "Liquidsoap",
+  "timestamp_utc": "2026-11-18T17:01:02.260415+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Liquidsoap version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/bwrap",
+        "--die-with-parent",
+        "--ro-bind",
+        "/",
+        "/",
+        "--tmpfs",
+        "/usr/share",
+        "--bind",
+        "${SCRATCH}/390-2d82bgx2",
+        "${SCRATCH}/390-2d82bgx2",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--unshare-net",
+        "--ro-bind",
+        "${SCRATCH}/tools/apt/usr/share/liquidsoap-lang",
+        "/usr/share/liquidsoap-lang",
+        "--",
+        "${SCRATCH}/tools/apt/usr/bin/liquidsoap",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/390-2d82bgx2",
+      "timestamp_utc": "2026-11-18T17:01:02.884180+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Liquidsoap 2.2.4-1+dev\nCopyright (c) 2003-2023 Savonet team\nLiquidsoap is open-source software, released under GNU General Public License.\nSee <http://liquidsoap.info> for more information.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/390-2d82bgx2/home",
+        "TMPDIR": "${SCRATCH}/390-2d82bgx2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/bwrap",
+        "--die-with-parent",
+        "--ro-bind",
+        "/",
+        "/",
+        "--tmpfs",
+        "/usr/share",
+        "--bind",
+        "${SCRATCH}/390-2d82bgx2",
+        "${SCRATCH}/390-2d82bgx2",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--unshare-net",
+        "--ro-bind",
+        "${SCRATCH}/tools/apt/usr/share/liquidsoap-lang",
+        "/usr/share/liquidsoap-lang",
+        "--",
+        "${SCRATCH}/tools/apt/usr/bin/liquidsoap",
+        "--check",
+        "hello.liq"
+      ],
+      "cwd": "${SCRATCH}/390-2d82bgx2",
+      "timestamp_utc": "2026-11-18T17:01:03.283512+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/390-2d82bgx2/home",
+        "TMPDIR": "${SCRATCH}/390-2d82bgx2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#390 Liquidsoap/hello.liq": "07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.liquidsoap.info/doc-2.2.5/language.html",
+    "https://www.liquidsoap.info/doc-2.2.5/script_loading.html"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "liquidsoap",
+      "version": "2.2.4-1",
+      "filename": "pool/universe/l/liquidsoap/liquidsoap_2.2.4-1_amd64.deb",
+      "sha256": "cae750e27c76bc7ba1f2c59ea1127184b866a88cdea50f3ed04dc0dcc12da4dc",
+      "bytes": 17975882,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/liquidsoap/liquidsoap_2.2.4-1_amd64.deb"
+    }
+  ],
+  "toolchain": "Liquidsoap 2.2.4-1+dev",
+  "reproduction_command": "liquidsoap --check hello.liq",
+  "semantic_scope": "The native Liquidsoap CLI evaluated its original print operation during the check. The script did not start streaming.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "ordinal": 4,
+  "language": "ABAP",
+  "timestamp_utc": "2026-11-18T17:16:35.834135+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Install the ABAP transpiler and compatible runtime in scratch",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "@abaplint/transpiler-cli",
+        "@abaplint/runtime"
+      ],
+      "cwd": "${SCRATCH}/004-h1solovt",
+      "timestamp_utc": "2026-11-18T17:16:35.856251+00:00",
+      "timeout_seconds": 140,
+      "exit_code": 0,
+      "stdout": "\nadded 5 packages in 10s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/004-h1solovt/home",
+        "TMPDIR": "${SCRATCH}/004-h1solovt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Translate the unchanged ABAP report into executable JavaScript",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/004-h1solovt/node_modules/.bin/abap_transpile",
+        "abap_transpile.json"
+      ],
+      "cwd": "${SCRATCH}/004-h1solovt",
+      "timestamp_utc": "2026-11-18T17:16:46.427172+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Transpiler CLI\nUsing config: abap_transpile.json\n1 files added from source\n0 files skipped in source\n\nBuilding\n\nOutput\nOutput files: 4 written\n",
+      "stderr": "\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/004-h1solovt/home",
+        "TMPDIR": "${SCRATCH}/004-h1solovt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute emitted ABAP report and capture the WRITE result",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "execute.mjs"
+      ],
+      "cwd": "${SCRATCH}/004-h1solovt",
+      "timestamp_utc": "2026-11-18T17:16:46.991574+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/004-h1solovt/home",
+        "TMPDIR": "${SCRATCH}/004-h1solovt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#004 ABAP/zhello_world.prog.abap": "6756f9863485fa7bfcce375a89fc4371742cf42aca08dcf5128a804cc3f27554"
+  },
+  "fixture_sha256": {
+    "abap_transpile.json": {
+      "sha256": "bb4df10499824e1797f1faf3fe7a5a2d6f31738adcbe07c6613c6c720db57bd8",
+      "content_utf8": "{\"input_folder\": \"src\", \"output_folder\": \"output\", \"libs\": [], \"write_unit_tests\": false, \"options\": {\"ignoreSyntaxCheck\": false}}"
+    },
+    "execute.mjs": {
+      "sha256": "181f0e2e24a4853b88ed53c87a203ec98d2e6d5952fe72bde18737570cecebde",
+      "content_utf8": "import * as runtime from \"@abaplint/runtime\";\nglobalThis.abap = new runtime.ABAP({console:new runtime.MemoryConsole()});\nconst report=await import(\"./output/project/zhello_world.prog.mjs\");\nif (typeof report.main == \"function\") await report.main();\nconst output=abap.console.get();\nprocess.stdout.write(output.trimStart());\n"
+    }
+  },
+  "sources": [
+    "https://help.sap.com/docs/SAP_NETWEAVER_701/6da3d9466c4b1014a5a2e370bd8c5dc8/4a49ea1bea8b1c46e10000000a42189c.html",
+    "https://help.sap.com/saphelp_scm700_ehp02/helpdata/en/fc/eb2d5a358411d1829f0000e829fbfe/content.htm?no_cache=true",
+    "https://github.com/abaplint/abaplint"
+  ],
+  "previous_verification_log": "examples/#004 ABAP/verification/abaplint.json",
+  "toolchain": "abaplint runtime 2.14.33",
+  "reproduction_command": "abap_transpile abap_transpile.json; node execute.mjs",
+  "semantic_scope": "The compatible ABAP runtime executed the code generated from the exact original report and returned its WRITE output.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

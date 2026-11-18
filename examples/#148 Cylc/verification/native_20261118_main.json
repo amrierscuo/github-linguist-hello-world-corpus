@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "ordinal": 148,
+  "language": "Cylc",
+  "timestamp_utc": "2026-11-18T17:29:28.938508+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/148-d1_5iv_0",
+      "timestamp_utc": "2026-11-18T17:29:29.008956+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/148-d1_5iv_0/home",
+        "TMPDIR": "${SCRATCH}/148-d1_5iv_0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/148-d1_5iv_0/.venv/bin/python",
+        "cylc-flow==8.6.6"
+      ],
+      "cwd": "${SCRATCH}/148-d1_5iv_0",
+      "timestamp_utc": "2026-11-18T17:29:29.029585+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 18 packages in 440ms\nInstalled 18 packages in 29ms\n + ansimarkup==2.2.0\n + colorama==0.4.6\n + cylc-flow==8.6.6\n + graphene==3.4.3\n + graphql-core==3.2.14\n + graphql-relay==3.2.0\n + jinja2==3.0.3\n + markupsafe==3.0.4\n + metomi-isodatetime==1!3.1.0\n + packaging==26.3\n + protobuf==7.36.2\n + psutil==7.2.2\n + python-dateutil==2.9.0.post0\n + pyzmq==27.3.0\n + six==1.17.0\n + typing-extensions==4.16.0\n + urwid==3.0.5\n + wcwidth==0.9.4\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/148-d1_5iv_0/home",
+        "TMPDIR": "${SCRATCH}/148-d1_5iv_0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record Cylc CLI version",
+      "command": [
+        "${SCRATCH}/148-d1_5iv_0/.venv/bin/cylc",
+        "version"
+      ],
+      "cwd": "${SCRATCH}/148-d1_5iv_0",
+      "timestamp_utc": "2026-11-18T17:29:29.570541+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "8.6.6\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/148-d1_5iv_0/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/148-d1_5iv_0/home",
+        "TMPDIR": "${SCRATCH}/148-d1_5iv_0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "CYLC_CONF_PATH": "${SCRATCH}/148-d1_5iv_0/config"
+      }
+    },
+    {
+      "label": "Validate the untouched workflow",
+      "command": [
+        "${SCRATCH}/148-d1_5iv_0/.venv/bin/cylc",
+        "validate",
+        "${SCRATCH}/148-d1_5iv_0/workflow"
+      ],
+      "cwd": "${SCRATCH}/148-d1_5iv_0",
+      "timestamp_utc": "2026-11-18T17:29:29.730108+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "Valid for cylc-8.6.6\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/148-d1_5iv_0/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/148-d1_5iv_0/home",
+        "TMPDIR": "${SCRATCH}/148-d1_5iv_0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "CYLC_CONF_PATH": "${SCRATCH}/148-d1_5iv_0/config"
+      }
+    },
+    {
+      "label": "Install only the original staged workflow",
+      "command": [
+        "${SCRATCH}/148-d1_5iv_0/.venv/bin/cylc",
+        "install",
+        "${SCRATCH}/148-d1_5iv_0/workflow",
+        "--workflow-name",
+        "corpus-greeting"
+      ],
+      "cwd": "${SCRATCH}/148-d1_5iv_0",
+      "timestamp_utc": "2026-11-18T17:29:30.868524+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "INSTALLED corpus-greeting/run1 from ${SCRATCH}/148-d1_5iv_0/workflow\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/148-d1_5iv_0/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/148-d1_5iv_0/home",
+        "TMPDIR": "${SCRATCH}/148-d1_5iv_0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "CYLC_CONF_PATH": "${SCRATCH}/148-d1_5iv_0/config"
+      }
+    },
+    {
+      "label": "Run the exact one-task workflow in the foreground",
+      "command": [
+        "${SCRATCH}/148-d1_5iv_0/.venv/bin/cylc",
+        "play",
+        "--no-detach",
+        "corpus-greeting"
+      ],
+      "cwd": "${SCRATCH}/148-d1_5iv_0",
+      "timestamp_utc": "2026-11-18T17:29:31.724071+00:00",
+      "timeout_seconds": 105,
+      "exit_code": 0,
+      "stdout": "\n ▪ ■  Cylc Workflow Engine 8.6.6\n ██   Copyright (C) 2008-2026 NIWA\n▝▘    & British Crown (Met Office) & Contributors\n\n",
+      "stderr": "INFO - Extracting job.sh to ${SCRATCH}/148-d1_5iv_0/home/cylc-run/corpus-greeting/run1/.service/etc/job.sh\nINFO - Workflow: corpus-greeting/run1\nINFO - Scheduler: url=tcp://<test-host>:43021 pid=78200\nINFO - Workflow publisher: url=tcp://<test-host>:43059\nINFO - Run: (re)start number=1, log rollover=1\nINFO - Cylc version: 8.6.6\nINFO - Run mode: live\nINFO - Initial point: 1\nINFO - Final point: 1\nINFO - Cold start from 1\nINFO - New flow: 1 (original flow from 1) 2026-11-18T18:29:32\nINFO - [1/greeting:waiting(runahead)] => waiting\nINFO - [1/greeting:waiting] => waiting(queued)\nINFO - [1/greeting:waiting(queued)] => waiting\nINFO - [1/greeting:waiting] => preparing\nINFO - [1/greeting/01:preparing] submitted to localhost:background[79178]\nINFO - [1/greeting/01:preparing] => submitted\nINFO - [1/greeting/01:submitted] => running\nINFO - [1/greeting/01:running] => succeeded\nINFO - Workflow shutting down - AUTOMATIC\nINFO - DONE\n",
+      "environment": {
+        "PATH": "${SCRATCH}/148-d1_5iv_0/.venv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/148-d1_5iv_0/home",
+        "TMPDIR": "${SCRATCH}/148-d1_5iv_0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "CYLC_CONF_PATH": "${SCRATCH}/148-d1_5iv_0/config"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#148 Cylc/flow.cylc": "be9933a44fbf08c3eccc546cfbb44a529e08951314a5fbe9bdc65839a9ae30f7"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://cylc.github.io/cylc-doc/latest/html/tutorial/runtime/introduction.html",
+    "https://github.com/cylc/cylc-flow"
+  ],
+  "previous_verification_log": "examples/#148 Cylc/verification/toolchain.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "real_job_trace": "Workflow : corpus-greeting/run1\nJob : 1/greeting/01 (try 1)\nUser@Host: a@gysgh\n\nHello, World!\n2026-11-18T18:29:33+01:00 INFO - started\n2026-11-18T18:29:34+01:00 INFO - succeeded\n",
+  "toolchain": "Cylc 8.6.6",
+  "reproduction_command": "cylc validate workflow; cylc install workflow --workflow-name corpus-greeting; cylc play --no-detach corpus-greeting",
+  "semantic_scope": "Cylc ran the original one-task workflow in foreground. The actual greeting job stdout contained the exact message.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

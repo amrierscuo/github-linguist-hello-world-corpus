@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "ordinal": 301,
+  "language": "IDL",
+  "timestamp_utc": "2026-11-18T17:01:01.032460+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record GNU Data Language version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/gdl",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/301-g19r5ovj",
+      "timestamp_utc": "2026-11-18T17:01:01.067388+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "\n*** PLPLOT ERROR, ABORTING OPERATION ***\nplInitDispatchTable: Could not open drivers directory, aborting operation\nGDL - GNU Data Language, Version 1.0.4\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/301-g19r5ovj/home",
+        "TMPDIR": "${SCRATCH}/301-g19r5ovj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "GDL_PATH": "${SCRATCH}/tools/apt/usr/share/gnudatalanguage/lib",
+        "GDL_DISABLE_WX_PLOTS": "1"
+      }
+    },
+    {
+      "label": "Compile and execute original IDL routine with GNU Data Language",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/gdl",
+        "-quiet",
+        "check.gdl"
+      ],
+      "cwd": "${SCRATCH}/301-g19r5ovj",
+      "timestamp_utc": "2026-11-18T17:01:01.203896+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "\n*** PLPLOT ERROR, ABORTING OPERATION ***\nplInitDispatchTable: Could not open drivers directory, aborting operation\n% Compiled module: HELLO.\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/301-g19r5ovj/home",
+        "TMPDIR": "${SCRATCH}/301-g19r5ovj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "GDL_PATH": "${SCRATCH}/tools/apt/usr/share/gnudatalanguage/lib",
+        "GDL_DISABLE_WX_PLOTS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#301 IDL/hello.pro": "a7da4b5c82f4291a8f14c4e35982bcfc98b4ab524a8ea87b3933a569711c773e"
+  },
+  "fixture_sha256": {
+    "check.gdl": {
+      "sha256": "d6be4d790bfa43aaa9d7a7bfea6bafcffbdce6c81841670b05b6f0587a0d9126",
+      "content_utf8": ".compile hello.pro\nhello\nexit\n"
+    }
+  },
+  "sources": [
+    "https://www.nv5geospatialsoftware.com/docs/PRINT.html",
+    "https://www.nv5geospatialsoftware.com/docs/Defining_Procedures.html"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "gnudatalanguage",
+      "version": "1.0.4-1build6",
+      "filename": "pool/universe/g/gnudatalanguage/gnudatalanguage_1.0.4-1build6_amd64.deb",
+      "sha256": "981a01553175026984eba52c1a06aaeabfef7f5daf5e74c9af3210b145663e04",
+      "bytes": 74224,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/gnudatalanguage/gnudatalanguage_1.0.4-1build6_amd64.deb"
+    }
+  ],
+  "toolchain": "GDL - GNU Data Language, Version 1.0.4",
+  "reproduction_command": "gdl -quiet check.gdl (.compile hello.pro, hello, exit)",
+  "semantic_scope": "GNU Data Language compiled the original IDL syntax and invoked the original hello procedure, which emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

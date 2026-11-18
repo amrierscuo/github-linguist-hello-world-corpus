@@ -1,5 +1,16 @@
 # #577 Quake
 
+## Verified on November 18, 2026
+
+CM3 executed the original Quake build description and printed the greeting.
+
+Run `cm3 -build`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Perform a m3makefile in the Quake language of the Modula- 3. build system
 
 ## Toolchain
@@ -27,3 +38,5 @@ Remaining requirements:
 
 - [https://github.com/modula3/cm3](https://github.com/modula3/cm3)
 - [https://www.cs.purdue.edu/homes/hosking/m3/help/quake/quake.html](https://www.cs.purdue.edu/homes/hosking/m3/help/quake/quake.html)
+
+</details>

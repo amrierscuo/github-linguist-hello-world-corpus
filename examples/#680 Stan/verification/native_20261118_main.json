@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "ordinal": 680,
+  "language": "Stan",
+  "timestamp_utc": "2026-11-18T17:29:27.649323+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Instantiate the original compiled Stan model through its native service extension",
+      "command": [
+        "${SCRATCH}/680-384ld1eo/.venv/bin/python",
+        "check.py"
+      ],
+      "cwd": "${SCRATCH}/680-4imy67k3",
+      "timestamp_utc": "2026-11-18T17:29:27.676445+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nMODULE stan_services\nEXPORTS ['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'constrained_param_names', 'fixed_param_wrapper', 'get_dims', 'get_param_names', 'hmc_nuts_diag_e_adapt_wrapper', 'log_prob', 'log_prob_grad', 'model_name', 'transform_inits', 'write_array']\nSTAN_MODEL_WITHOUT_PARAMETERS\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/680-4imy67k3/home",
+        "TMPDIR": "${SCRATCH}/680-4imy67k3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "XDG_CACHE_HOME": "${SCRATCH}/680-384ld1eo/cache",
+        "HTTPSTAN_DEBUG": "1",
+        "CXX": "g++"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#680 Stan/hello.stan": "7c9dd573dc33ba87b1c9c0524448af51f9b40d8e08e9dc0f4c98cdb97c4eae3c"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "204719210de300578448d4bc258f886d46be5c5aa1933fb9d21acb1081474c5d",
+      "content_utf8": "import asyncio\nimport pathlib\nimport httpstan.models\ncode=pathlib.Path(\"hello.stan\").read_text()\nname=httpstan.models.calculate_model_name(code)\ntry:\n    module=httpstan.models.import_services_extension_module(name)\nexcept (FileNotFoundError,ImportError):\n    asyncio.run(httpstan.models.build_services_extension_module(code))\n    module=httpstan.models.import_services_extension_module(name)\nprint(\"MODULE\",module.__name__)\nprint(\"EXPORTS\",dir(module))\nassert module.get_param_names({})==[]\nprint(\"STAN_MODEL_WITHOUT_PARAMETERS\")\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Stan print",
+      "url": "https://mc-stan.org/docs/reference-manual/statements.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [],
+  "toolchain": "Stan C++ via httpstan 4.13.0",
+  "reproduction_command": "python check.py with httpstan 4.13.0",
+  "semantic_scope": "The native Stan C++ service initialized the original compiled zero-parameter model. The model’s transformed data initialization emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

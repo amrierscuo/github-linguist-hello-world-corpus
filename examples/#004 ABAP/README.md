@@ -1,5 +1,18 @@
 # #004 ABAP
 
+## Verified on November 18, 2026
+
+The compatible ABAP runtime executed the code generated from the exact original report and returned its WRITE output.
+
+Run `abap_transpile abap_transpile.json; node execute.mjs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/abaplint.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `zhello_world.prog.abap` is a classic ABAP executable report. `WRITE` inserts
 `Hello, World!` in the output list; `/` begins a new line.
 
@@ -43,4 +56,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.abap` | [zhello_world.prog.abap](zhello_world.prog.abap) syntax verified |
+| `.abap` | [zhello_world.prog.abap](zhello_world.prog.abap) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #032 Antlers
 
+## Verified on November 18, 2026
+
+The package’s native template renderer evaluated the original template and the exact tracked verifier produced the expected HTML paragraph.
+
+Run `php verify.php (placed in the root of the versioned application scaffold)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `hello.antlers.html` uses the variable Antlers `audience`. The expected result is `<p>Hello, World!</p>` followed by newline.
 
 Expected prerequisites: a working Statamic 6.x application with Composer, PHP 8.3 or later, and the extensions listed in the documentation. Actual versions have not been recorded because this environment has not been set up or run.
@@ -30,6 +41,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.antlers.html` | [hello.antlers.html](hello.antlers.html) created; verification pending |
+| `.antlers.html` | [hello.antlers.html](hello.antlers.html) Syntax and behavior verified |
 | `.antlers.php` | [hello.antlers.php](variants/ext-antlers-php-2e616e746c6572732e706870/hello.antlers.php) created; verification pending |
 | `.antlers.xml` | [hello.antlers.xml](variants/ext-antlers-xml-2e616e746c6572732e786d6c/hello.antlers.xml) created; verification pending |
+
+</details>

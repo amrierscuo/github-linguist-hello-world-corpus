@@ -1,5 +1,16 @@
 # #188 Edje Data Collection
 
+## Verified on November 18, 2026
+
+Edje compiled the original collection. In a private rendering buffer the runtime loaded the collection and exposed the exact text of its genuine label part.
+
+Run `edje_cc hello.edc hello.edj; run verify_edje.c with Edje and Ecore-Evas`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Edje group with a textual part showing Hello, World!.
 
 Canonical type `data`, language_id `342840478`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.edc` | [hello.edc](hello.edc) created; verification pending |
+| `.edc` | [hello.edc](hello.edc) Syntax and behavior verified |
+
+</details>

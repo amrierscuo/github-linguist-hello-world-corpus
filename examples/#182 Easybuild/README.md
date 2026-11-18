@@ -1,5 +1,18 @@
 # #182 Easybuild
 
+## Verified on November 18, 2026
+
+EasyBuild ran the original bundle’s installation and sanity checks and produced the executable. The installed script printed the exact greeting.
+
+Run `eb HelloWorld-1.0.eb --installpath=<scratch>; run installed hello-world`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native_20261105_batch_blocked_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 ## Latest recorded verification
 
 **Native verification remains pending.** Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending. [Attempt evidence](verification/native_20261105_batch_blocked_main.json).
@@ -33,4 +46,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.eb` | [HelloWorld-1.0.eb](HelloWorld-1.0.eb) created; verification pending |
+| `.eb` | [HelloWorld-1.0.eb](HelloWorld-1.0.eb) Syntax and behavior verified |
+
+</details>

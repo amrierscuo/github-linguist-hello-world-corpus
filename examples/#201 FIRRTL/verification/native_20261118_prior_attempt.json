@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "ordinal": 201,
+  "language": "FIRRTL",
+  "timestamp_utc": "2026-11-18T16:52:41.492910+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Record CIRCT version",
+      "command": [
+        "${SCRATCH}/tools/circt-firtool-1.164.0/dist/firtool-1.164.0/bin/firtool",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/201-et3lzloj",
+      "timestamp_utc": "2026-11-18T16:52:42.187289+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "LLVM (http://llvm.org/):\n  LLVM version 24.0.0git\n  Optimized build.\nCIRCT firtool-1.164.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/201-et3lzloj/home",
+        "TMPDIR": "${SCRATCH}/201-et3lzloj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Attempt to lower original circuit",
+      "command": [
+        "${SCRATCH}/tools/circt-firtool-1.164.0/dist/firtool-1.164.0/bin/firtool",
+        "hello.fir",
+        "-o",
+        "hello.sv"
+      ],
+      "cwd": "${SCRATCH}/201-et3lzloj",
+      "timestamp_utc": "2026-11-18T16:52:42.203122+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "hello.fir:1:1: error: expected 'FIRRTL'\ncircuit Hello :\n^\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/201-et3lzloj/home",
+        "TMPDIR": "${SCRATCH}/201-et3lzloj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Lower checked circuit with current FIRRTL header",
+      "command": [
+        "${SCRATCH}/tools/circt-firtool-1.164.0/dist/firtool-1.164.0/bin/firtool",
+        "hello.fir",
+        "-o",
+        "hello.sv"
+      ],
+      "cwd": "${SCRATCH}/201-et3lzloj",
+      "timestamp_utc": "2026-11-18T16:52:42.295410+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/201-et3lzloj/home",
+        "TMPDIR": "${SCRATCH}/201-et3lzloj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile emitted SystemVerilog and independent observation testbench",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/iverilog",
+        "-B",
+        "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ivl",
+        "-g2012",
+        "-s",
+        "tb",
+        "-o",
+        "sim",
+        "tb.sv",
+        "hello.sv"
+      ],
+      "cwd": "${SCRATCH}/201-et3lzloj",
+      "timestamp_utc": "2026-11-18T16:52:42.360963+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/201-et3lzloj/home",
+        "TMPDIR": "${SCRATCH}/201-et3lzloj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Run the generated original circuit on Icarus Verilog",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/vvp",
+        "sim"
+      ],
+      "cwd": "${SCRATCH}/201-et3lzloj",
+      "timestamp_utc": "2026-11-18T16:52:42.395475+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\ntb.sv:12: $finish called at 3 (1s)\n",
+      "stderr": "Hello, World!\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/201-et3lzloj/home",
+        "TMPDIR": "${SCRATCH}/201-et3lzloj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#201 FIRRTL/hello.fir": "150247bd51ac26d2e65ea85230604c2b2f35a88af25f18cab7d663105e49c7d6"
+  },
+  "fixture_sha256": {
+    "tb.sv": {
+      "sha256": "8e8048734b7eca24f9915338815fbe9565c025e40880fca6aaa35a2bf42aca8c",
+      "content_utf8": "module tb;\nreg clock=0;\nreg reset=1;\nwire [7:0] value [12:0];\nHello subject(.clock(clock), .reset(reset), .greeting_0(value[0]), .greeting_1(value[1]), .greeting_2(value[2]), .greeting_3(value[3]), .greeting_4(value[4]), .greeting_5(value[5]), .greeting_6(value[6]), .greeting_7(value[7]), .greeting_8(value[8]), .greeting_9(value[9]), .greeting_10(value[10]), .greeting_11(value[11]), .greeting_12(value[12]));\ninitial begin\n  #1;\n  for (integer i=0; i<13; i=i+1) $write(\"%c\", value[i]);\n  $write(\"\\n\");\n  reset=0;\n  #1; clock=1;\n  #1; $finish;\nend\nendmodule\n"
+    }
+  },
+  "sources": [
+    "https://github.com/chipsalliance/firrtl-spec",
+    "https://circt.llvm.org/docs/Dialects/FIRRTL/"
+  ],
+  "previous_verification_log": "examples/#201 FIRRTL/verification/native.json",
+  "toolchain_archives": [
+    {
+      "name": "firrtl-bin-linux-x64.tar.gz",
+      "size": 103550432,
+      "url": "https://github.com/llvm/circt/releases/download/firtool-1.164.0/firrtl-bin-linux-x64.tar.gz",
+      "sha256": "f6a59900c75cadb790880492f7328e569ca0dec56bda72bd2ca48613ac23162a",
+      "release": "https://github.com/llvm/circt/releases/tag/firtool-1.164.0",
+      "observed_sha256": "f6a59900c75cadb790880492f7328e569ca0dec56bda72bd2ca48613ac23162a"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#201 FIRRTL/hello.fir",
+      "original_sha256": "1d3c99efe9aae56528b6059e826a6331035d5551b79170271a03ef307b3b7bac",
+      "tested_sha256": "150247bd51ac26d2e65ea85230604c2b2f35a88af25f18cab7d663105e49c7d6",
+      "staged_file": "work/native_target636_20261118/corrected/201/hello.fir",
+      "original_fragment": "circuit Hello :",
+      "replacement": "FIRRTL version 2.0.0\ncircuit Hello :"
+    }
+  ],
+  "blocker": "AssertionError: Hello, World!\ntb.sv:12: $finish called at 3 (1s)\n"
+}

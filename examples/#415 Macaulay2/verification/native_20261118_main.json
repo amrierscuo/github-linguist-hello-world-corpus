@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "ordinal": 415,
+  "language": "Macaulay2",
+  "timestamp_utc": "2026-11-18T17:01:02.266572+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Macaulay2 CLI version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/bwrap",
+        "--die-with-parent",
+        "--ro-bind",
+        "/",
+        "/",
+        "--tmpfs",
+        "/usr/share",
+        "--bind",
+        "${SCRATCH}/415-it11pmzj",
+        "${SCRATCH}/415-it11pmzj",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--unshare-net",
+        "--ro-bind",
+        "${SCRATCH}/tools/apt/usr/share/singular",
+        "/usr/share/singular",
+        "--",
+        "${SCRATCH}/tools/apt/usr/bin/M2",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/415-it11pmzj",
+      "timestamp_utc": "2026-11-18T17:01:02.346756+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "1.22\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/415-it11pmzj/home",
+        "TMPDIR": "${SCRATCH}/415-it11pmzj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/bwrap",
+        "--die-with-parent",
+        "--ro-bind",
+        "/",
+        "/",
+        "--tmpfs",
+        "/usr/share",
+        "--bind",
+        "${SCRATCH}/415-it11pmzj",
+        "${SCRATCH}/415-it11pmzj",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--unshare-net",
+        "--ro-bind",
+        "${SCRATCH}/tools/apt/usr/share/singular",
+        "/usr/share/singular",
+        "--",
+        "${SCRATCH}/tools/apt/usr/bin/M2",
+        "--script",
+        "hello.m2"
+      ],
+      "cwd": "${SCRATCH}/415-it11pmzj",
+      "timestamp_utc": "2026-11-18T17:01:02.460677+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/415-it11pmzj/home",
+        "TMPDIR": "${SCRATCH}/415-it11pmzj/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#415 Macaulay2/hello.m2": "0893f0ba1b9850a777261774f9db226b4d8e866a5b171aecd3a82db25d59fc65"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Macaulay2 print",
+      "url": "https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/Macaulay2Doc/html/_print.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "macaulay2",
+      "version": "1.22+ds-6build2",
+      "filename": "pool/universe/m/macaulay2/macaulay2_1.22+ds-6build2_amd64.deb",
+      "sha256": "7bf62644091fce9677728bafd9cbec91509b1a210dab9f0294721a27ce73651a",
+      "bytes": 2664006,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/m/macaulay2/macaulay2_1.22+ds-6build2_amd64.deb"
+    },
+    {
+      "name": "macaulay2-common",
+      "version": "1.22+ds-6build2",
+      "filename": "pool/universe/m/macaulay2/macaulay2-common_1.22+ds-6build2_all.deb",
+      "sha256": "e2f5acb693cb11198114a323621d10c9f6f01084d8ff07c8aed37732cbe186dd",
+      "bytes": 23810458,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/m/macaulay2/macaulay2-common_1.22+ds-6build2_all.deb"
+    },
+    {
+      "name": "singular-data",
+      "version": "1:4.3.2-p10+ds-1.1build1",
+      "filename": "pool/universe/s/singular/singular-data_4.3.2-p10+ds-1.1build1_all.deb",
+      "sha256": "162f83de2e1acc19d1db7d15323b6c3b617183f91cabff0f48e4b65b36114558",
+      "bytes": 4920922,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/singular/singular-data_4.3.2-p10+ds-1.1build1_all.deb"
+    }
+  ],
+  "toolchain": "Macaulay2 1.22",
+  "reproduction_command": "M2 --script hello.m2",
+  "semantic_scope": "Macaulay2 executed the unchanged course source and printed the exact greeting. Its packaged singular data were mounted read-only in a private namespace.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

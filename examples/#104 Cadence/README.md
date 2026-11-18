@@ -1,5 +1,16 @@
 # #104 Cadence
 
+## Verified on November 18, 2026
+
+The official Cadence VM ran the exact original script. The returned Cadence String was the expected greeting.
+
+Run `go run -mod=mod . with the recorded local runtime harness`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Evaluate a Cadence 1.0 script and get the Hello, World! string.
 
 Canonical type: `programming`; `language_id`: `270184138`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cdc` | [hello.cdc](hello.cdc) created; verification pending |
+| `.cdc` | [hello.cdc](hello.cdc) Syntax and behavior verified |
+
+</details>

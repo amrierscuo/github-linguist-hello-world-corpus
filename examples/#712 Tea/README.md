@@ -1,5 +1,16 @@
 # #712 Tea
 
+## Verified on November 18, 2026
+
+The Tea compiler compiled the original template. The runtime accepted the original template parameter and emitted the exact rendered text.
+
+Run `java -cp <TeaTrove classpath> TeaCheck.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.tea` | [hello.tea](hello.tea) created; verification pending |
+| `.tea` | [hello.tea](hello.tea) Syntax and behavior verified |
+
+</details>

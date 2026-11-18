@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "ordinal": 182,
+  "language": "Easybuild",
+  "timestamp_utc": "2026-11-18T17:39:33.723375+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Check Lua POSIX binding from the package archive",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/lua5.3",
+        "-e",
+        "local p=require(\"posix\"); print(p.version)"
+      ],
+      "cwd": "${SCRATCH}/182-zhnwktuz",
+      "timestamp_utc": "2026-11-18T17:39:33.632538+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "posix for Lua 5.3 / luaposix 36.2.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/182-zhnwktuz/bin:${SCRATCH}/182-sol3i6wr/.venv/bin:${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/182-zhnwktuz/home",
+        "TMPDIR": "${SCRATCH}/182-zhnwktuz/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "LUA_PATH": "${SCRATCH}/tools/apt/usr/share/lua/5.3/?.lua;${SCRATCH}/tools/apt/usr/share/lua/5.3/?/init.lua;;",
+        "LUA_CPATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lua/5.3/?.so;;",
+        "LMOD_DIR": "${SCRATCH}/182-zhnwktuz/bin",
+        "LMOD_CMD": "${SCRATCH}/182-zhnwktuz/bin/lmod",
+        "EASYBUILD_INSTALLPATH": "${SCRATCH}/182-zhnwktuz/installed",
+        "EASYBUILD_BUILDPATH": "${SCRATCH}/182-zhnwktuz/build",
+        "EASYBUILD_PREFIX": "${SCRATCH}/182-zhnwktuz",
+        "EASYBUILD_MODULES_TOOL": "Lmod",
+        "EASYBUILD_MODULE_SYNTAX": "Lua",
+        "LMOD_IGNORE_CACHE": "1",
+        "MODULEPATH": "${SCRATCH}/182-zhnwktuz/modules"
+      }
+    },
+    {
+      "label": "Build exact original EasyBuild recipe in isolated prefix",
+      "command": [
+        "${SCRATCH}/182-sol3i6wr/.venv/bin/eb",
+        "HelloWorld-1.0.eb",
+        "--force",
+        "--modules-tool=Lmod",
+        "--module-syntax=Lua"
+      ],
+      "cwd": "${SCRATCH}/182-zhnwktuz",
+      "timestamp_utc": "2026-11-18T17:39:33.645605+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "== Temporary log file in case of crash ${SCRATCH}/182-zhnwktuz/tmp/eb-3xhl3whf/easybuild-csrexr_j.log\n== found valid index for ${SCRATCH}/182-sol3i6wr/.venv/easybuild/easyconfigs, so using it...\n== processing EasyBuild easyconfig ${SCRATCH}/182-zhnwktuz/HelloWorld-1.0.eb\n== building and installing HelloWorld/1.0...\n  >> installation prefix: ${SCRATCH}/182-zhnwktuz/installed/software/HelloWorld/1.0\n== fetching files and verifying checksums...\n== ... (took < 1 sec)\n== creating build dir, resetting environment...\n  >> build dir: ${SCRATCH}/182-zhnwktuz/build/HelloWorld/1.0/system-system\n== ... (took < 1 sec)\n== unpacking...\n== ... (took < 1 sec)\n== patching...\n== ... (took < 1 sec)\n== preparing...\n== ... (took < 1 sec)\n== configuring...\n== ... (took < 1 sec)\n== building...\n== ... (took < 1 sec)\n== testing...\n== ... (took < 1 sec)\n== installing...\n== ... (took < 1 sec)\n== taking care of extensions...\n== ... (took < 1 sec)\n== restore after iterating...\n== ... (took < 1 sec)\n== postprocessing...\n  >> running shell command:\n\tmkdir -p ${SCRATCH}/182-zhnwktuz/installed/software/HelloWorld/1.0/bin\n\t[started at: 2026-11-18 18:39:34]\n\t[working dir: ${SCRATCH}/182-zhnwktuz/build/HelloWorld/1.0/system-system]\n\t[output and state saved to ${SCRATCH}/182-zhnwktuz/tmp/eb-3xhl3whf/run-shell-cmd-output/mkdir-c6bz9wwu]\n  >> command completed: exit 0, ran in < 1s\n  >> running shell command:\n\tprintf '#!/bin/sh\nprintf \"Hello, World!\\n\"\n' > ${SCRATCH}/182-zhnwktuz/installed/software/HelloWorld/1.0/bin/hello-world\n\t[started at: 2026-11-18 18:39:34]\n\t[working dir: ${SCRATCH}/182-zhnwktuz/build/HelloWorld/1.0/system-system]\n\t[output and state saved to ${SCRATCH}/182-zhnwktuz/tmp/eb-3xhl3whf/run-shell-cmd-output/printf-3nm963jo]\n  >> command completed: exit 0, ran in < 1s\n  >> running shell command:\n\tchmod +x ${SCRATCH}/182-zhnwktuz/installed/software/HelloWorld/1.0/bin/hello-world\n\t[started at: 2026-11-18 18:39:34]\n\t[working dir: ${SCRATCH}/182-zhnwktuz/build/HelloWorld/1.0/system-system]\n\t[output and state saved to ${SCRATCH}/182-zhnwktuz/tmp/eb-3xhl3whf/run-shell-cmd-output/chmod-vpnz021s]\n  >> command completed: exit 0, ran in < 1s\n== ... (took < 1 sec)\n== sanity checking...\n  >> file 'bin/hello-world' found: OK\n  >> loading modules: HelloWorld/1.0...\n  >> running command 'hello-world' ...\n  >> result for command 'hello-world': OK\n== ... (took < 1 sec)\n== cleaning up...\n== ... (took < 1 sec)\n== creating module...\n  >> generating module file @ ${SCRATCH}/182-zhnwktuz/installed/modules/all/HelloWorld/1.0.lua\n== ... (took < 1 sec)\n== permissions...\n== ... (took < 1 sec)\n== packaging...\n== ... (took < 1 sec)\n== COMPLETED: Installation ended successfully (took 0 secs)\n== Results of the build can be found in the log file(s) ${SCRATCH}/182-zhnwktuz/installed/software/HelloWorld/1.0/easybuild/easybuild-HelloWorld-1.0-20261118.183934.log\n== Build succeeded for 1 out of 1 (total: 0 secs)\n== Summary:\n   * [SUCCESS] HelloWorld/1.0\n== Temporary log file(s) ${SCRATCH}/182-zhnwktuz/tmp/eb-3xhl3whf/easybuild-csrexr_j.log* have been removed.\n== Temporary directory ${SCRATCH}/182-zhnwktuz/tmp/eb-3xhl3whf has been removed.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/182-zhnwktuz/bin:${SCRATCH}/182-sol3i6wr/.venv/bin:${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/182-zhnwktuz/home",
+        "TMPDIR": "${SCRATCH}/182-zhnwktuz/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "LUA_PATH": "${SCRATCH}/tools/apt/usr/share/lua/5.3/?.lua;${SCRATCH}/tools/apt/usr/share/lua/5.3/?/init.lua;;",
+        "LUA_CPATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lua/5.3/?.so;;",
+        "LMOD_DIR": "${SCRATCH}/182-zhnwktuz/bin",
+        "LMOD_CMD": "${SCRATCH}/182-zhnwktuz/bin/lmod",
+        "EASYBUILD_INSTALLPATH": "${SCRATCH}/182-zhnwktuz/installed",
+        "EASYBUILD_BUILDPATH": "${SCRATCH}/182-zhnwktuz/build",
+        "EASYBUILD_PREFIX": "${SCRATCH}/182-zhnwktuz",
+        "EASYBUILD_MODULES_TOOL": "Lmod",
+        "EASYBUILD_MODULE_SYNTAX": "Lua",
+        "LMOD_IGNORE_CACHE": "1",
+        "MODULEPATH": "${SCRATCH}/182-zhnwktuz/modules"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/182-zhnwktuz/installed/software/HelloWorld/1.0/bin/hello-world"
+      ],
+      "cwd": "${SCRATCH}/182-zhnwktuz",
+      "timestamp_utc": "2026-11-18T17:39:34.959403+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/182-zhnwktuz/bin:${SCRATCH}/182-sol3i6wr/.venv/bin:${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/182-zhnwktuz/home",
+        "TMPDIR": "${SCRATCH}/182-zhnwktuz/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "LUA_PATH": "${SCRATCH}/tools/apt/usr/share/lua/5.3/?.lua;${SCRATCH}/tools/apt/usr/share/lua/5.3/?/init.lua;;",
+        "LUA_CPATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lua/5.3/?.so;;",
+        "LMOD_DIR": "${SCRATCH}/182-zhnwktuz/bin",
+        "LMOD_CMD": "${SCRATCH}/182-zhnwktuz/bin/lmod",
+        "EASYBUILD_INSTALLPATH": "${SCRATCH}/182-zhnwktuz/installed",
+        "EASYBUILD_BUILDPATH": "${SCRATCH}/182-zhnwktuz/build",
+        "EASYBUILD_PREFIX": "${SCRATCH}/182-zhnwktuz",
+        "EASYBUILD_MODULES_TOOL": "Lmod",
+        "EASYBUILD_MODULE_SYNTAX": "Lua",
+        "LMOD_IGNORE_CACHE": "1",
+        "MODULEPATH": "${SCRATCH}/182-zhnwktuz/modules"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#182 Easybuild/HelloWorld-1.0.eb": "4d7d965e7bb57ca7d7c987ad9c49c4553410d95db952ef9d88329b326b8aa6c9"
+  },
+  "fixture_sha256": {
+    "bin/lmod": {
+      "sha256": "4960706891361e6460bac4292887da2d7be2d07035b9db6fbc9d4c4758b4690b",
+      "content_utf8": "#!/bin/sh\nexec ${SCRATCH}/tools/apt/usr/bin/lua5.3 -e 'require(\"posix\"); require(\"lfs\")' ${SCRATCH}/tools/apt/usr/share/lmod/8.6.19/libexec/lmod \"$@\"\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "EasyBuild easyconfig",
+      "url": "https://docs.easybuild.io/writing-easyconfig-files/"
+    },
+    {
+      "title": "Bundle easyblock originale",
+      "url": "https://github.com/easybuilders/easybuild-easyblocks/blob/develop/easybuild/easyblocks/generic/bundle.py"
+    }
+  ],
+  "previous_verification_log": "examples/#182 Easybuild/verification/native_20261105_batch_blocked_main.json",
+  "ubuntu_archives": [
+    {
+      "name": "lmod",
+      "version": "8.6.19-1",
+      "filename": "pool/universe/l/lmod/lmod_8.6.19-1_amd64.deb",
+      "sha256": "90da24e677e51bfbe63fda9ec5d807f5fcc81a9756b171a073bfd83fa83787e8",
+      "bytes": 206642,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/lmod/lmod_8.6.19-1_amd64.deb"
+    },
+    {
+      "name": "lua5.3",
+      "version": "5.3.6-2build2",
+      "filename": "pool/universe/l/lua5.3/lua5.3_5.3.6-2build2_amd64.deb",
+      "sha256": "9dd4f1b6b30a646ff1a108259cb9f4e49f70a73dc0d6b05a125a6debf87c5f01",
+      "bytes": 144736,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/lua5.3/lua5.3_5.3.6-2build2_amd64.deb"
+    },
+    {
+      "name": "lua-posix",
+      "version": "36.2.1-2",
+      "filename": "pool/universe/l/lua-posix/lua-posix_36.2.1-2_amd64.deb",
+      "sha256": "1ec8fb55bcbff856e890632e804f7f24548591b38adb84e3f9af1d0effb82881",
+      "bytes": 169852,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/lua-posix/lua-posix_36.2.1-2_amd64.deb"
+    }
+  ],
+  "paths_for_posix": [
+    "${SCRATCH}/tools/apt/usr/lib/php/20230831/posix.so"
+  ],
+  "toolchain": "EasyBuild 5.2.1 / Lmod 8.6.19",
+  "reproduction_command": "eb HelloWorld-1.0.eb --installpath=<scratch>; run installed hello-world",
+  "semantic_scope": "EasyBuild ran the original bundle’s installation and sanity checks and produced the executable. The installed script printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

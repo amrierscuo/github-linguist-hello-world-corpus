@@ -1,5 +1,16 @@
 # #069 Blade
 
+## Verified on November 18, 2026
+
+The package’s native template renderer evaluated the original template and the exact tracked verifier produced the expected HTML paragraph.
+
+Run `php verify.php (placed in the root of the versioned application scaffold)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.blade` | [hello.blade](variants/ext-blade-2e626c616465/hello.blade) created; verification pending |
-| `.blade.php` | [hello.blade.php](hello.blade.php) created; verification pending |
+| `.blade.php` | [hello.blade.php](hello.blade.php) Syntax and behavior verified |
+
+</details>

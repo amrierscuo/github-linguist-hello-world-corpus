@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "ordinal": 677,
+  "language": "SpiceDB Schema",
+  "timestamp_utc": "2026-11-18T17:01:02.102064+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record SpiceDB and zed versions",
+      "command": [
+        "${SCRATCH}/tools/spicedb-v1.57.1/dist/spicedb",
+        "version"
+      ],
+      "cwd": "${SCRATCH}/677-0rxsu_mt",
+      "timestamp_utc": "2026-11-18T17:01:04.410972+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "spicedb v1.57.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/677-0rxsu_mt/home",
+        "TMPDIR": "${SCRATCH}/677-0rxsu_mt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Write the unchanged schema to the local in-memory instance",
+      "command": [
+        "${SCRATCH}/tools/zed-v1.2.1/dist/zed",
+        "--endpoint",
+        "127.0.0.1:50045",
+        "--token",
+        "disposable-corpus-test",
+        "--insecure",
+        "schema",
+        "write",
+        "hello.zed"
+      ],
+      "cwd": "${SCRATCH}/677-0rxsu_mt",
+      "timestamp_utc": "2026-11-18T17:01:04.867299+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/677-0rxsu_mt/home",
+        "TMPDIR": "${SCRATCH}/677-0rxsu_mt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Create one local test relationship with the declared caveat",
+      "command": [
+        "${SCRATCH}/tools/zed-v1.2.1/dist/zed",
+        "--endpoint",
+        "127.0.0.1:50045",
+        "--token",
+        "disposable-corpus-test",
+        "--insecure",
+        "relationship",
+        "create",
+        "document:fixture",
+        "reader",
+        "user:reader",
+        "--caveat",
+        "greeting"
+      ],
+      "cwd": "${SCRATCH}/677-0rxsu_mt",
+      "timestamp_utc": "2026-11-18T17:01:05.162755+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Gh8KEzE3OTUwMjEyNjUyMDkyODM5NTISCDcwMjI4NWM0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/677-0rxsu_mt/home",
+        "TMPDIR": "${SCRATCH}/677-0rxsu_mt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Evaluate permission with a separate caveat test input",
+      "command": [
+        "${SCRATCH}/tools/zed-v1.2.1/dist/zed",
+        "--endpoint",
+        "127.0.0.1:50045",
+        "--token",
+        "disposable-corpus-test",
+        "--insecure",
+        "permission",
+        "check",
+        "document:fixture",
+        "view",
+        "user:reader",
+        "--caveat-context",
+        "{\"message\": \"Hello, World!\"}",
+        "--consistency-full"
+      ],
+      "cwd": "${SCRATCH}/677-0rxsu_mt",
+      "timestamp_utc": "2026-11-18T17:01:05.380602+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "true\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/677-0rxsu_mt/home",
+        "TMPDIR": "${SCRATCH}/677-0rxsu_mt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Evaluate permission with a separate caveat test input",
+      "command": [
+        "${SCRATCH}/tools/zed-v1.2.1/dist/zed",
+        "--endpoint",
+        "127.0.0.1:50045",
+        "--token",
+        "disposable-corpus-test",
+        "--insecure",
+        "permission",
+        "check",
+        "document:fixture",
+        "view",
+        "user:reader",
+        "--caveat-context",
+        "{\"message\": \"Hello, Reader!\"}",
+        "--consistency-full"
+      ],
+      "cwd": "${SCRATCH}/677-0rxsu_mt",
+      "timestamp_utc": "2026-11-18T17:01:05.594342+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "false\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/677-0rxsu_mt/home",
+        "TMPDIR": "${SCRATCH}/677-0rxsu_mt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "SpiceDB local in-memory test (stopped after the test)",
+      "command": [
+        "${SCRATCH}/tools/spicedb-v1.57.1/dist/spicedb",
+        "serve",
+        "--grpc-addr",
+        "127.0.0.1:50045",
+        "--grpc-preshared-key",
+        "disposable-corpus-test",
+        "--datastore-engine",
+        "memory",
+        "--http-enabled=false",
+        "--metrics-enabled=false",
+        "--dispatch-cluster-enabled=false"
+      ],
+      "cwd": "${SCRATCH}/677-0rxsu_mt",
+      "timestamp_utc": "2026-11-18T17:01:04.465563+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"level\":\"info\",\"format\":\"auto\",\"log_level\":\"info\",\"provider\":\"zerolog\",\"async\":false,\"time\":\"2026-11-18T18:01:04.503907112+01:00\",\"message\":\"configured logging\"}\n{\"level\":\"info\",\"time\":\"2026-11-18T18:01:04.504365862+01:00\",\"GOMEMLIMIT\":15056252928,\"package\":\"github.com/KimMachineGun/automemlimit/memlimit\",\"previous\":9223372036854775807,\"time\":\"2026-11-18T18:01:04.504384913+01:00\",\"message\":\"GOMEMLIMIT is updated\"}\n{\"level\":\"info\",\"latest-released-version\":\"v1.57.1\",\"time\":\"2026-11-18T18:01:04.666711649+01:00\",\"message\":\"this is the latest released version of SpiceDB\"}\n{\"level\":\"info\",\"available-memory-bytes\":11292189696,\"source\":\"GOMEMLIMIT\",\"time\":\"2026-11-18T18:01:04.666791437+01:00\",\"message\":\"determined available memory for percent-based budgets\"}\n{\"level\":\"info\",\"otter\":true,\"time\":\"2026-11-18T18:01:04.667007446+01:00\",\"message\":\"configured namespace cache\"}\n{\"level\":\"info\",\"time\":\"2026-11-18T18:01:04.667036227+01:00\",\"message\":\"using memory datastore engine\"}\n{\"level\":\"warn\",\"time\":\"2026-11-18T18:01:04.667039504+01:00\",\"message\":\"in-memory datastore is not persistent and not feasible to run in a high availability fashion\"}\n{\"level\":\"info\",\"otter\":true,\"time\":\"2026-11-18T18:01:04.667184534+01:00\",\"message\":\"configured stored schema cache\"}\n{\"level\":\"info\",\"time\":\"2026-11-18T18:01:04.667194777+01:00\",\"message\":\"schema watch explicitly disabled\"}\n{\"level\":\"info\",\"otter\":true,\"time\":\"2026-11-18T18:01:04.667223557+01:00\",\"message\":\"configured LR3 resource chunk cache\"}\n{\"level\":\"info\",\"otter\":true,\"time\":\"2026-11-18T18:01:04.667325775+01:00\",\"message\":\"configured dispatch cache\"}\n{\"level\":\"info\",\"concurrency-limit-check-permission\":50,\"concurrency-limit-lookup-resources\":50,\"concurrency-limit-lookup-subjects\":50,\"concurrency-limit-reachable-resources\":50,\"balancerconfig\":{\"loadBalancingConfig\":[{\"consistent-hashring\":{\"replicationFactor\":100,\"spread\":1}}]},\"time\":\"2026-11-18T18:01:04.667488115+01:00\",\"message\":\"configured dispatcher\"}\n{\"level\":\"info\",\"name\":\"dispatch-middleware\",\"provider\":\"*rtml.GoRealTimeMemoryLimiter\",\"time\":\"2026-11-18T18:01:04.667569848+01:00\",\"message\":\"memory protection middleware initialized\"}\n{\"level\":\"info\",\"name\":\"unary-middleware\",\"provider\":\"*rtml.GoRealTimeMemoryLimiter\",\"time\":\"2026-11-18T18:01:04.667587977+01:00\",\"message\":\"memory protection middleware initialized\"}\n{\"level\":\"info\",\"name\":\"stream-middleware\",\"provider\":\"*rtml.GoRealTimeMemoryLimiter\",\"time\":\"2026-11-18T18:01:04.667596171+01:00\",\"message\":\"memory protection middleware initialized\"}\n{\"level\":\"info\",\"addr\":\"127.0.0.1:50045\",\"network\":\"tcp\",\"service\":\"grpc\",\"workers\":0,\"insecure\":true,\"time\":\"2026-11-18T18:01:04.670952353+01:00\",\"message\":\"grpc server started serving\"}\n{\"level\":\"info\",\"ClusterDispatchCacheConfig.Enabled\":true,\"ClusterDispatchCacheConfig.MaxCost\":\"70%\",\"ClusterDispatchCacheConfig.Metrics\":true,\"ClusterDispatchCacheConfig.Name\":\"cluster_dispatch\",\"ClusterDispatchCacheConfig.NumCounters\":0,\"Datastore\":null,\"DatastoreConfig.AllowedMigrations\":\"(slice of size 0)\",\"DatastoreConfig.BootstrapFileContents\":\"nil\",\"DatastoreConfig.BootstrapFiles\":[],\"DatastoreConfig.BootstrapOverwrite\":false,\"DatastoreConfig.BootstrapSchemaMode\":0,\"DatastoreConfig.BootstrapTimeout\":10000,\"DatastoreConfig.ConnectRate\":100,\"DatastoreConfig.CredentialsProviderName\":\"(empty)\",\"DatastoreConfig.DisableStats\":false,\"DatastoreConfig.EnableConnectionBalancing\":true,\"DatastoreConfig.EnableDatastoreMetrics\":true,\"DatastoreConfig.EnableRevisionHeartbeat\":false,\"DatastoreConfig.Engine\":\"memory\",\"DatastoreConfig.ExperimentalColumnOptimization\":true,\"DatastoreConfig.FollowerReadDelay\":4800,\"DatastoreConfig.GCInterval\":180000,\"DatastoreConfig.GCMaxOperationTime\":60000,\"DatastoreConfig.GCWindow\":86400000,\"DatastoreConfig.IncludeQueryParametersInTraces\":false,\"DatastoreConfig.LegacyFuzzing\":-0.000001,\"DatastoreConfig.MaxRetries\":10,\"DatastoreConfig.MaxRevisionStalenessPercent\":0.1,\"DatastoreConfig.MigrationPhase\":\"(empty)\",\"DatastoreConfig.OverlapKey\":\"key\",\"DatastoreConfig.OverlapStrategy\":\"static\",\"DatastoreConfig.ReadConnPool.HealthCheckInterval\":30000,\"DatastoreConfig.ReadConnPool.MaxIdleTime\":1800000,\"DatastoreConfig.ReadConnPool.MaxLifetime\":1800000,\"DatastoreConfig.ReadConnPool.MaxLifetimeJitter\":0,\"DatastoreConfig.ReadConnPool.MaxOpenConns\":20,\"DatastoreConfig.ReadConnPool.MinOpenConns\":20,\"DatastoreConfig.ReadConnPool.PingTimeout\":5000,\"DatastoreConfig.ReadOnly\":false,\"DatastoreConfig.ReadReplicaConnPool.HealthCheckInterval\":30000,\"DatastoreConfig.ReadReplicaConnPool.MaxIdleTime\":1800000,\"DatastoreConfig.ReadReplicaConnPool.MaxLifetime\":1800000,\"DatastoreConfig.ReadReplicaConnPool.MaxLifetimeJitter\":0,\"DatastoreConfig.ReadReplicaConnPool.MaxOpenConns\":20,\"DatastoreConfig.ReadReplicaConnPool.MinOpenConns\":20,\"DatastoreConfig.ReadReplicaConnPool.PingTimeout\":5000,\"DatastoreConfig.ReadReplicaCredentialsProviderName\":\"(empty)\",\"DatastoreConfig.ReadReplicaURIs\":\"(sensitive)\",\"DatastoreConfig.RelationshipIntegrityCurrentKey.KeyFilename\":\"(empty)\",\"DatastoreConfig.RelationshipIntegrityCurrentKey.KeyID\":\"(empty)\",\"DatastoreConfig.RelationshipIntegrityEnabled\":false,\"DatastoreConfig.RelationshipIntegrityExpiredKeys\":\"(slice of size 0)\",\"DatastoreConfig.RelaxedIsolationLevel\":false,\"DatastoreConfig.RequestHedgingEnabled\":false,\"DatastoreConfig.RequestHedgingInitialSlowValue\":0,\"DatastoreConfig.RequestHedgingMaxRequests\":0,\"DatastoreConfig.RequestHedgingQuantile\":0,\"DatastoreConfig.RevisionQuantization\":5000,\"DatastoreConfig.SpannerCredentialsFile\":\"(empty)\",\"DatastoreConfig.SpannerCredentialsJSON\":\"(sensitive)\",\"DatastoreConfig.SpannerDatastoreMetricsOption\":\"otel\",\"DatastoreConfig.SpannerEmulatorHost\":\"(empty)\",\"DatastoreConfig.SpannerMaxSessions\":400,\"DatastoreConfig.SpannerMinSessions\":100,\"DatastoreConfig.TablePrefix\":\"(empty)\",\"DatastoreConfig.URI\":\"(empty)\",\"DatastoreConfig.WatchBufferLength\":1024,\"DatastoreConfig.WatchBufferWriteTimeout\":1000,\"DatastoreConfig.WatchChangeBufferMaximumSize\":\"15%\",\"DatastoreConfig.WatchConnectTimeout\":1000,\"DatastoreConfig.WriteAcquisitionTimeout\":30,\"DatastoreConfig.WriteConnPool.HealthCheckInterval\":30000,\"DatastoreConfig.WriteConnPool.MaxIdleTime\":1800000,\"DatastoreConfig.WriteConnPool.MaxLifetime\":1800000,\"DatastoreConfig.WriteConnPool.MaxLifetimeJitter\":0,\"DatastoreConfig.WriteConnPool.MaxOpenConns\":10,\"DatastoreConfig.WriteConnPool.MinOpenConns\":10,\"DatastoreConfig.WriteConnPool.PingTimeout\":5000,\"DisableGRPCLatencyHistogram\":false,\"DisableV1SchemaAPI\":false,\"DisableVersionResponse\":false,\"DispatchCacheConfig.Enabled\":true,\"DispatchCacheConfig.MaxCost\":\"30%\",\"DispatchCacheConfig.Metrics\":true,\"DispatchCacheConfig.Name\":\"dispatch\",\"DispatchCacheConfig.NumCounters\":0,\"DispatchChunkSize\":100,\"DispatchClientMetricsEnabled\":true,\"DispatchClientMetricsPrefix\":\"(empty)\",\"DispatchClusterMetricsEnabled\":true,\"DispatchClusterMetricsPrefix\":\"(empty)\",\"DispatchConcurrencyLimits.Check\":0,\"DispatchConcurrencyLimits.LookupResources\":0,\"DispatchConcurrencyLimits.LookupSubjects\":0,\"DispatchConcurrencyLimits.ReachableResources\":0,\"DispatchHashringReplicationFactor\":100,\"DispatchHashringSpread\":1,\"DispatchMaxDepth\":50,\"DispatchSecondaryMaximumPrimaryHedgingDelays\":\"nil\",\"DispatchSecondaryUpstreamAddrs\":\"nil\",\"DispatchSecondaryUpstreamExprs\":\"nil\",\"DispatchServer.Address\":\":50053\",\"DispatchServer.BufferSize\":0,\"DispatchServer.ClientCAPath\":\"(empty)\",\"DispatchServer.Enabled\":false,\"DispatchServer.MaxConnAge\":30000,\"DispatchServer.MaxWorkers\":0,\"DispatchServer.Network\":\"tcp\",\"DispatchServer.TLSCertPath\":\"(empty)\",\"DispatchServer.TLSKeyPath\":\"(empty)\",\"DispatchUpstreamAddr\":\"(empty)\",\"DispatchUpstreamCAPath\":\"(empty)\",\"DispatchUpstreamTimeout\":60000,\"Dispatcher\":null,\"EnableExperimentalLookupResources\":false,\"EnableExperimentalWatchableSchemaCache\":false,\"EnableMemoryProtectionMiddleware\":true,\"EnablePerformanceInsightMetrics\":false,\"EnableRelationshipExpiration\":true,\"EnableRequestLogs\":false,\"EnableResponseLogs\":false,\"EnableRevisionHeartbeat\":true,\"ExperimentalFullRelationCache\":\"disabled\",\"ExperimentalLookupResourcesVersion\":\"(empty)\",\"ExperimentalQueryPlan\":\"nil\",\"ExperimentalSchemaMode\":\"read-legacy-write-legacy\",\"FullRelationCacheConfig.Enabled\":true,\"FullRelationCacheConfig.MaxCost\":\"30%\",\"FullRelationCacheConfig.Metrics\":true,\"FullRelationCacheConfig.Name\":\"full_relation\",\"FullRelationCacheConfig.NumCounters\":0,\"FullRelationCacheMaterializeThreshold\":3,\"FullRelationCacheMaximumSetSize\":1024,\"GRPCAuthFunc\":\"marshaling error: json: unsupported type: auth.AuthFunc\",\"GRPCServer.Address\":\"127.0.0.1:50045\",\"GRPCServer.BufferSize\":1048576,\"GRPCServer.ClientCAPath\":\"(empty)\",\"GRPCServer.Enabled\":true,\"GRPCServer.MaxConnAge\":30000,\"GRPCServer.MaxWorkers\":0,\"GRPCServer.Network\":\"tcp\",\"GRPCServer.TLSCertPath\":\"(empty)\",\"GRPCServer.TLSKeyPath\":\"(empty)\",\"GlobalDispatchConcurrencyLimit\":50,\"HTTPGateway.HTTPAddress\":\":8443\",\"HTTPGateway.HTTPEnabled\":false,\"HTTPGateway.HTTPTLSCertPath\":\"(empty)\",\"HTTPGateway.HTTPTLSKeyPath\":\"(empty)\",\"HTTPGatewayCorsAllowedOrigins\":[\"*\"],\"HTTPGatewayCorsEnabled\":false,\"HTTPGatewayUpstreamAddr\":\"127.0.0.1:50045\",\"HTTPGatewayUpstreamTLSCertPath\":\"(empty)\",\"LR3ResourceChunkCacheConfig.Enabled\":true,\"LR3ResourceChunkCacheConfig.MaxCost\":\"50MiB\",\"LR3ResourceChunkCacheConfig.Metrics\":false,\"LR3ResourceChunkCacheConfig.Name\":\"lr3_chunk\",\"LR3ResourceChunkCacheConfig.NumCounters\":0,\"MaxBulkExportRelationshipsLimit\":10000,\"MaxCaveatContextSize\":4096,\"MaxDatastoreReadPageSize\":1000,\"MaxDeleteRelationshipsLimit\":1000,\"MaxLookupResourcesLimit\":1000,\"MaxReadRelationshipsLimit\":1000,\"MaxRelationshipContextSize\":25000,\"MaximumPreconditionCount\":1000,\"MaximumUpdatesPerWrite\":1000,\"MetricsAPI.HTTPAddress\":\":9090\",\"MetricsAPI.HTTPEnabled\":false,\"MetricsAPI.HTTPTLSCertPath\":\"(empty)\",\"MetricsAPI.HTTPTLSKeyPath\":\"(empty)\",\"MismatchZedTokenBehavior\":\"full-consistency\",\"NamespaceCacheConfig.Enabled\":true,\"NamespaceCacheConfig.MaxCost\":\"32MiB\",\"NamespaceCacheConfig.Metrics\":true,\"NamespaceCacheConfig.Name\":\"namespace\",\"NamespaceCacheConfig.NumCounters\":0,\"OTel.Endpoint\":\"(empty)\",\"OTel.Provider\":\"none\",\"OTel.SampleRatio\":0.01,\"OTel.ServiceName\":\"spicedb\",\"OTel.TracePropagator\":\"w3c\",\"OTel.UsePlaintext\":false,\"PresharedSecureKey\":\"(sensitive)\",\"SchemaPrefixesRequired\":false,\"SchemaWatchHeartbeat\":1000,\"ServerName\":\"(empty)\",\"ShutdownDrainDelay\":0,\"ShutdownGracePeriod\":5000,\"SilentlyDisableTelemetry\":false,\"StoredSchemaCacheConfig.Enabled\":true,\"StoredSchemaCacheConfig.MaxCost\":\"32MiB\",\"StoredSchemaCacheConfig.Metrics\":true,\"StoredSchemaCacheConfig.Name\":\"stored_schema\",\"StoredSchemaCacheConfig.NumCounters\":0,\"StreamingAPITimeout\":30000,\"TelemetryCAOverridePath\":\"(empty)\",\"TelemetryEndpoint\":\"https://telemetry.authzed.com\",\"TelemetryInterval\":3600000,\"V1SchemaAdditiveOnly\":false,\"WatchHeartbeat\":1000,\"time\":\"2026-11-18T18:01:04.693282313+01:00\",\"message\":\"configuration\"}\n{\"level\":\"info\",\"datastore\":\"*schemacaching.definitionCachingProxy\",\"time\":\"2026-11-18T18:01:04.693547075+01:00\",\"message\":\"running server\"}\n{\"level\":\"info\",\"time\":\"2026-11-18T18:01:04.693578826+01:00\",\"message\":\"HEALTHCHECK\"}\n{\"level\":\"info\",\"interval\":\"1h0m0s\",\"endpoint\":\"https://telemetry.authzed.com\",\"next\":\"5m56s\",\"time\":\"2026-11-18T18:01:04.693628706+01:00\",\"message\":\"telemetry reporter scheduled\"}\n{\"level\":\"info\",\"protocol\":\"grpc\",\"grpc.component\":\"server\",\"grpc.service\":\"authzed.api.v1.SchemaService\",\"grpc.method\":\"ReadSchema\",\"grpc.method_type\":\"unary\",\"requestID\":\"dbutjk09vlioslaibdo0\",\"peer.address\":\"127.0.0.1:59392\",\"grpc.start_time\":\"2026-11-18T18:01:04.96952167+01:00\",\"grpc.code\":\"NotFound\",\"grpc.error\":\"rpc error: code = NotFound desc = no schema has been defined; please call WriteSchema to start\",\"grpc.time_ms\":0,\"time\":\"2026-11-18T18:01:04.969950308+01:00\",\"message\":\"finished call\"}\n{\"level\":\"info\",\"protocol\":\"grpc\",\"grpc.component\":\"server\",\"grpc.service\":\"authzed.api.v1.SchemaService\",\"grpc.method\":\"WriteSchema\",\"grpc.method_type\":\"unary\",\"requestID\":\"dbutjk09vlioslaibdog\",\"peer.address\":\"127.0.0.1:59392\",\"grpc.start_time\":\"2026-11-18T18:01:04.971310172+01:00\",\"grpc.code\":\"OK\",\"grpc.time_ms\":25,\"time\":\"2026-11-18T18:01:04.996639884+01:00\",\"message\":\"finished call\"}\n{\"level\":\"info\",\"protocol\":\"grpc\",\"grpc.component\":\"server\",\"grpc.service\":\"authzed.api.v1.PermissionsService\",\"grpc.method\":\"WriteRelationships\",\"grpc.method_type\":\"unary\",\"requestID\":\"dbutjk89vlioslaibdp0\",\"peer.address\":\"127.0.0.1:59406\",\"grpc.start_time\":\"2026-11-18T18:01:05.207598589+01:00\",\"grpc.code\":\"OK\",\"grpc.time_ms\":1,\"time\":\"2026-11-18T18:01:05.209468415+01:00\",\"message\":\"finished call\"}\n{\"level\":\"info\",\"protocol\":\"grpc\",\"grpc.component\":\"server\",\"grpc.service\":\"authzed.api.v1.PermissionsService\",\"grpc.method\":\"CheckPermission\",\"grpc.method_type\":\"unary\",\"requestID\":\"dbutjk89vlioslaibdpg\",\"peer.address\":\"127.0.0.1:47454\",\"grpc.start_time\":\"2026-11-18T18:01:05.423807576+01:00\",\"grpc.code\":\"OK\",\"grpc.time_ms\":1,\"time\":\"2026-11-18T18:01:05.424923367+01:00\",\"message\":\"finished call\"}\n{\"level\":\"info\",\"protocol\":\"grpc\",\"grpc.component\":\"server\",\"grpc.service\":\"authzed.api.v1.PermissionsService\",\"grpc.method\":\"CheckPermission\",\"grpc.method_type\":\"unary\",\"requestID\":\"dbutjk89vlioslaibdq0\",\"peer.address\":\"127.0.0.1:47460\",\"grpc.start_time\":\"2026-11-18T18:01:05.639911273+01:00\",\"grpc.code\":\"OK\",\"grpc.time_ms\":0,\"time\":\"2026-11-18T18:01:05.640753391+01:00\",\"message\":\"finished call\"}\n{\"level\":\"info\",\"service\":\"grpc\",\"grace-period\":5000,\"time\":\"2026-11-18T18:01:05.8074379+01:00\",\"message\":\"gracefully shutting down\"}\n{\"level\":\"info\",\"service\":\"grpc\",\"time\":\"2026-11-18T18:01:05.807604029+01:00\",\"message\":\"graceful shutdown complete\"}\n{\"level\":\"info\",\"service\":\"dispatch server\",\"grace-period\":5000,\"time\":\"2026-11-18T18:01:05.807612223+01:00\",\"message\":\"gracefully shutting down\"}\n{\"level\":\"info\",\"service\":\"dispatch server\",\"time\":\"2026-11-18T18:01:05.807618369+01:00\",\"message\":\"graceful shutdown complete\"}\n",
+      "environment": {}
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#677 SpiceDB Schema/hello.zed": "4954f42c61a4ec8b68f26b78a50ac785313908d82218dc66ff48ab9c28e645b5"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "SpiceDB schema",
+      "url": "https://authzed.com/docs/spicedb/concepts/schema"
+    },
+    {
+      "title": "SpiceDB caveats",
+      "url": "https://authzed.com/docs/spicedb/concepts/caveats"
+    },
+    {
+      "title": "zed raw schema validator command",
+      "url": "https://github.com/authzed/zed/blob/main/internal/cmd/validate.go"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "spicedb_1.57.1_linux_amd64.tar.gz",
+      "size": 25268638,
+      "url": "https://github.com/authzed/spicedb/releases/download/v1.57.1/spicedb_1.57.1_linux_amd64.tar.gz",
+      "sha256": "2dcce08149b432448fe4d0093e630c360134c289ac824a34b3023acbe28f4c61",
+      "release": "https://github.com/authzed/spicedb/releases/tag/v1.57.1",
+      "observed_sha256": "2dcce08149b432448fe4d0093e630c360134c289ac824a34b3023acbe28f4c61"
+    },
+    {
+      "name": "zed_1.2.1_linux_amd64_gnu.tar.gz",
+      "size": 24890422,
+      "url": "https://github.com/authzed/zed/releases/download/v1.2.1/zed_1.2.1_linux_amd64_gnu.tar.gz",
+      "sha256": "600dbe497ddabb26372aeb69b7a15ff8624a41925f1e47146177132635f4b752",
+      "release": "https://github.com/authzed/zed/releases/tag/v1.2.1",
+      "observed_sha256": "600dbe497ddabb26372aeb69b7a15ff8624a41925f1e47146177132635f4b752"
+    }
+  ],
+  "toolchain": "SpiceDB spicedb v1.57.1",
+  "reproduction_command": "zed schema write hello.zed; create the caveated fixture relationship; zed permission check with actual and control strings",
+  "semantic_scope": "The genuine SpiceDB instance loaded the unchanged schema. It granted the synthetic view permission for the exact greeting and denied the same relationship with a different message.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

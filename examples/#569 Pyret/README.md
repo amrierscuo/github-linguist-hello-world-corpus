@@ -1,5 +1,16 @@
 # #569 Pyret
 
+## Verified on November 18, 2026
+
+The official Pyret compiler translated the exact source. Running its generated program emitted the original greeting.
+
+Run `pyret --port <private-socket> hello.arr --outfile greeting.jarr; node greeting.jarr with the pinned npm dependency directory`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Evaluate the original Pyret program.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.arr` | [hello.arr](hello.arr) created; verification pending |
+| `.arr` | [hello.arr](hello.arr) Syntax and behavior verified |
+
+</details>

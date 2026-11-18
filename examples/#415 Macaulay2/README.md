@@ -1,5 +1,16 @@
 # #415 Macaulay2
 
+## Verified on November 18, 2026
+
+Macaulay2 executed the unchanged course source and printed the exact greeting. Its packaged singular data were mounted read-only in a private namespace.
+
+Run `M2 --script hello.m2`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Stampare Hello, World! in Macaulay2.
 
 Canonical type `programming`, language_id `34167825`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.m2` | [hello.m2](hello.m2) created; verification pending |
+| `.m2` | [hello.m2](hello.m2) Syntax and behavior verified |
+
+</details>

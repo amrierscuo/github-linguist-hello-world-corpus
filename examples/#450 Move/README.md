@@ -1,5 +1,18 @@
 # #450 Move
 
+## Verified on November 18, 2026
+
+The Move VM executed the original unit test. Its assertion confirmed the exact returned string.
+
+Run `aptos move test --package-dir . --named-addresses std=0x1`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Move`, tipo `programming`, language_id `638334599`.
 
 Build a module in the original Move language and test the function that returns a string.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.move` | [greeting.move](sources/greeting.move) created; verification pending |
+| `.move` | [greeting.move](sources/greeting.move) Syntax and behavior verified |
+
+</details>

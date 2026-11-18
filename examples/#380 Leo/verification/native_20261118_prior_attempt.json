@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "ordinal": 380,
+  "language": "Leo",
+  "timestamp_utc": "2026-11-18T17:16:35.760754+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Attempt the original Leo source in current CLI",
+      "command": [
+        "${SCRATCH}/tools/leo-leo-lang-v4.4.6/dist/leo",
+        "run",
+        "main"
+      ],
+      "cwd": "${SCRATCH}/380-bfm12cqi",
+      "timestamp_utc": "2026-11-18T17:16:36.207305+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 85,
+      "stdout": "⚠️ No network specified, defaulting to 'testnet'.\n⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.\n\n       Leo 🔨 Compiling 'corpus_greeting.aleo'\n",
+      "stderr": "\u001b[31m[EPAR0370005] Error:\u001b[0m expected '}', '@', 'record', 'struct', 'fn', 'final', 'const', 'mapping', 'storage', 'script', 'interface', found `transition`\n   \u001b[38;5;246m╭\u001b[0m\u001b[38;5;246m─\u001b[0m\u001b[38;5;246m[\u001b[0m ${SCRATCH}/380-bfm12cqi/src/main.leo:2:5 \u001b[38;5;246m]\u001b[0m\n   \u001b[38;5;246m│\u001b[0m\n \u001b[38;5;246m2 │\u001b[0m \u001b[38;5;249m \u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m \u001b[0m\u001b[31mt\u001b[0m\u001b[31mr\u001b[0m\u001b[31ma\u001b[0m\u001b[31mn\u001b[0m\u001b[31ms\u001b[0m\u001b[31mi\u001b[0m\u001b[31mt\u001b[0m\u001b[31mi\u001b[0m\u001b[31mo\u001b[0m\u001b[31mn\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249mm\u001b[0m\u001b[38;5;249ma\u001b[0m\u001b[38;5;249mi\u001b[0m\u001b[38;5;249mn\u001b[0m\u001b[38;5;249m(\u001b[0m\u001b[38;5;249m)\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m-\u001b[0m\u001b[38;5;249m>\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m[\u001b[0m\u001b[38;5;249mu\u001b[0m\u001b[38;5;249m8\u001b[0m\u001b[38;5;249m;\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m1\u001b[0m\u001b[38;5;249m3\u001b[0m\u001b[38;5;249m]\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m{\u001b[0m\n \u001b[38;5;240m  │\u001b[0m \n \u001b[38;5;240m  │\u001b[0m \u001b[38;5;115mHelp\u001b[0m: Replace the highlighted token with what the parser expects, or insert the missing syntax before it.\n\u001b[38;5;246m───╯\u001b[0m\n\n\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/380-bfm12cqi/home",
+        "TMPDIR": "${SCRATCH}/380-bfm12cqi/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact original transition body in the official Leo simulator",
+      "command": [
+        "${SCRATCH}/tools/leo-leo-lang-v4.4.6/dist/leo",
+        "run",
+        "main"
+      ],
+      "cwd": "${SCRATCH}/380-bfm12cqi",
+      "timestamp_utc": "2026-11-18T17:16:36.501857+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 116,
+      "stdout": "⚠️ No network specified, defaulting to 'testnet'.\n⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.\n\n       Leo 🔨 Compiling 'corpus_greeting.aleo'\n",
+      "stderr": "\u001b[31m[ETYC0372084] Error:\u001b[0m a program must declare a constructor\n   \u001b[38;5;246m╭\u001b[0m\u001b[38;5;246m─\u001b[0m\u001b[38;5;246m[\u001b[0m ${SCRATCH}/380-bfm12cqi/src/main.leo:1:9 \u001b[38;5;246m]\u001b[0m\n   \u001b[38;5;246m│\u001b[0m\n \u001b[38;5;246m1 │\u001b[0m \u001b[38;5;249mp\u001b[0m\u001b[38;5;249mr\u001b[0m\u001b[38;5;249mo\u001b[0m\u001b[38;5;249mg\u001b[0m\u001b[38;5;249mr\u001b[0m\u001b[38;5;249ma\u001b[0m\u001b[38;5;249mm\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[31mc\u001b[0m\u001b[31mo\u001b[0m\u001b[31mr\u001b[0m\u001b[31mp\u001b[0m\u001b[31mu\u001b[0m\u001b[31ms\u001b[0m\u001b[31m_\u001b[0m\u001b[31mg\u001b[0m\u001b[31mr\u001b[0m\u001b[31me\u001b[0m\u001b[31me\u001b[0m\u001b[31mt\u001b[0m\u001b[31mi\u001b[0m\u001b[31mn\u001b[0m\u001b[31mg\u001b[0m\u001b[31m.\u001b[0m\u001b[31ma\u001b[0m\u001b[31ml\u001b[0m\u001b[31me\u001b[0m\u001b[31mo\u001b[0m\u001b[38;5;249m \u001b[0m\u001b[38;5;249m{\u001b[0m\n \u001b[38;5;240m  │\u001b[0m         \u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\u001b[31m─\u001b[0m\n \u001b[38;5;240m  │\u001b[0m \n \u001b[38;5;240m  │\u001b[0m \u001b[38;5;115mHelp\u001b[0m: Add a constructor such as `@noupgrade constructor() {}` inside the `program` block.\n\u001b[38;5;246m───╯\u001b[0m\n\n\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/380-bfm12cqi/home",
+        "TMPDIR": "${SCRATCH}/380-bfm12cqi/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Run with the explicit no-upgrade constructor required by Leo 4",
+      "command": [
+        "${SCRATCH}/tools/leo-leo-lang-v4.4.6/dist/leo",
+        "run",
+        "main"
+      ],
+      "cwd": "${SCRATCH}/380-bfm12cqi",
+      "timestamp_utc": "2026-11-18T17:16:36.838188+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "⚠️ No network specified, defaulting to 'testnet'.\n⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.\n\n       Leo 🔨 Compiling 'corpus_greeting.aleo'\n       Leo     Program size: 0.23 KB / 2000.00 KB\n       Leo ✅ Compiled 'corpus_greeting.aleo' into Aleo instructions.\n       Leo ✅ Generated ABI for program 'corpus_greeting.aleo'.\n⚠️ No network specified, defaulting to 'testnet'.\n⚠️ No valid private key specified, defaulting to '<ephemeral-test-key>'.\n\n➕Adding programs to the VM in the following order:\n  - corpus_greeting.aleo (local)\n\n➡️  Output\n\n • [\n  72u8,\n  101u8,\n  108u8,\n  108u8,\n  111u8,\n  44u8,\n  32u8,\n  87u8,\n  111u8,\n  114u8,\n  108u8,\n  100u8,\n  33u8\n]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/380-bfm12cqi/home",
+        "TMPDIR": "${SCRATCH}/380-bfm12cqi/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#380 Leo/program.json": "75e5f34c0b0417afb6360b3e6794640fc16a9308e660cd5a910d19cbf4fd72a3",
+    "examples/#380 Leo/src/main.leo": "851afe366fea8cee937ca05d9878e4e36f46152f10cdfdb5d060e1d23b4a4cf5"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/ProvableHQ/leo",
+    "https://provable.com/blog/introducing-the-leo-native-testing-framework"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/aleo-labs-protocol/leo/releases/download/leo-lang-v4.4.6/leo-lang-v4.4.6-x86_64-unknown-linux-gnu.zip",
+      "sha256": "7888ee2f03554590d9ac9d61ba02a8d0833e37b5b24666f79a735317a0ad8902",
+      "release": "leo-lang-v4.4.6",
+      "expected_sha256": "7888ee2f03554590d9ac9d61ba02a8d0833e37b5b24666f79a735317a0ad8902"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#380 Leo/src/main.leo",
+      "original_sha256": "a318108b8666d3b6fbc448e701916a40b28d6058bc96f36f4746fc3aba6dae9d",
+      "tested_sha256": "8598fd8ca4f88f7be7bb4f13280dc30876f68b71bc4d38d51d5e80051c60dcae",
+      "staged_file": "work/native_target636_20261118/corrected/380/src/main.leo",
+      "original_fragment": "    transition main()",
+      "replacement": "    fn main()"
+    },
+    {
+      "path": "examples/#380 Leo/src/main.leo",
+      "original_sha256": "8598fd8ca4f88f7be7bb4f13280dc30876f68b71bc4d38d51d5e80051c60dcae",
+      "tested_sha256": "851afe366fea8cee937ca05d9878e4e36f46152f10cdfdb5d060e1d23b4a4cf5",
+      "staged_file": "work/native_target636_20261118/corrected/380/src/main.leo",
+      "original_fragment": "program corpus_greeting.aleo {",
+      "replacement": "program corpus_greeting.aleo {\n    @noupgrade\n    constructor() {}"
+    }
+  ],
+  "blocker": "AssertionError: (\"⚠️ No network specified, defaulting to 'testnet'.\\n⚠️ No endpoint specified, defaulting to 'https://api.explorer.provable.com/v1'.\\n\\n       Leo 🔨 Compiling 'corpus_greeting.aleo'\\n       Leo     Program size: 0.23 KB / 2000.00 KB\\n       Leo ✅ Compiled 'corpus_greeting.aleo' into Aleo instructions.\\n       Leo ✅ Generated ABI for program 'corpus_greeting.aleo'.\\n⚠️ No network specified, defaulting to 'testnet'.\\n⚠️ No valid private key specified, defaulting to '<ephemeral-test-key>'.\\n\\n➕Adding programs to the VM in the following order:\\n  - corpus_greeting.aleo (local)\\n\\n➡️  Output\\n\\n • [\\n  72u8,\\n  101u8,\\n  108u8,\\n  108u8,\\n  111u8,\\n  44u8,\\n  32u8,\\n  87u8,\\n  111u8,\\n  114u8,\\n  108u8,\\n  100u8,\\n  33u8\\n]\\n\", '')"
+}

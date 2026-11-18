@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "ordinal": 450,
+  "language": "Move",
+  "timestamp_utc": "2026-11-18T17:13:58.019675+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute native Move unit tests with the standard-library address set to 0x1",
+      "command": [
+        "${SCRATCH}/tools/aptos-aptos-cli-v7.11.0/dist/aptos",
+        "move",
+        "test",
+        "--package-dir",
+        ".",
+        "--named-addresses",
+        "std=0x1"
+      ],
+      "cwd": "${SCRATCH}/450-doahs9wm",
+      "timestamp_utc": "2026-11-18T17:13:58.302120+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "INCLUDING DEPENDENCY MoveStdlib\nBUILDING CorpusGreeting\nRunning Move unit tests\n[ PASS    ] 0x42::greeting::greeting_is_exact\nTest result: OK. Total tests: 1; passed: 1; failed: 0\n{\n  \"Result\": \"Success\"\n}\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/450-doahs9wm/home",
+        "TMPDIR": "${SCRATCH}/450-doahs9wm/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#450 Move/Move.toml": "0654e7076e87ad5282e5487d1e96d2759bb5795b001d79c20de294d2bd89c803",
+    "examples/#450 Move/sources/greeting.move": "4d03b407386190c356f46d9aec305fd3b8e0c8b0dcc19d3ddb8165fa00b8e9c8"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/move-language/move",
+    "https://move-language.github.io/move/strings.html"
+  ],
+  "previous_verification_log": "examples/#450 Move/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.11.0/aptos-cli-7.11.0-Ubuntu-24.04-x86_64.zip",
+      "sha256": "2fd176882391efce2d89e2a794f0ed476bdb61335154052874a1884dbf4da947",
+      "release": "aptos-cli-v7.11.0",
+      "expected_sha256": "2fd176882391efce2d89e2a794f0ed476bdb61335154052874a1884dbf4da947"
+    }
+  ],
+  "toolchain": "Aptos CLI aptos-cli-v7.11.0",
+  "reproduction_command": "aptos move test --package-dir . --named-addresses std=0x1",
+  "semantic_scope": "The Move VM executed the original unit test. Its assertion confirmed the exact returned string.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

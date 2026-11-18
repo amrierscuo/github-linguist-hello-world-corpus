@@ -179,14 +179,15 @@
       "example": {
         "semantic_goal": "Produrre una riga Hello, World! nella lista di output di un report ABAP classico.",
         "validation_mode": "static_analyze_then_run",
-        "toolchain": "Node.js 22.20.0; @abaplint/cli 2.120.70; SAP AS ABAP classic required for runtime semantics",
+        "toolchain": "abaplint runtime 2.14.33",
         "files": [
           "examples/#004 ABAP/zhello_world.prog.abap",
           "examples/#004 ABAP/abaplint.json",
-          "examples/#004 ABAP/README.md"
+          "examples/#004 ABAP/README.md",
+          "examples/#004 ABAP/verification/native_20261118_main.json"
         ],
         "build_command": "SAP ABAP Editor: syntax check and Activate report ZHELLO_WORLD",
-        "run_or_check_command": "node .tools/node_modules/@abaplint/cli/abaplint abaplint.json -f json; SAP ABAP Editor: Execute (F8)",
+        "run_or_check_command": "abap_transpile abap_transpile.json; node execute.mjs",
         "expected_result": "Static check exit 0 with [] issues; after SAP activation and execution, the list contains Hello, World!",
         "sources": [
           "https://help.sap.com/docs/SAP_NETWEAVER_701/6da3d9466c4b1014a5a2e370bd8c5dc8/4a49ea1bea8b1c46e10000000a42189c.html",
@@ -199,18 +200,15 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T09:31:17.101359+00:00",
-        "verification_log": "examples/#004 ABAP/verification/abaplint.json",
-        "blockers": [
-          "No SAP AS ABAP runtime is available for activation and list-output execution."
-        ],
-        "notes": "Actual abaplint parser_error/check_syntax pass and malformed-source negative control fail are logged. This is static syntax verification, not SAP activation or runtime semantics. v758 config is normalized by this version to v793/on-premise 758.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:16:35.834135+00:00",
+        "verification_log": "examples/#004 ABAP/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The compatible ABAP runtime executed the code generated from the exact original report and returned its WRITE output.",
         "verified_artifact_sha256": {
-          "examples/#004 ABAP/zhello_world.prog.abap": "6756f9863485fa7bfcce375a89fc4371742cf42aca08dcf5128a804cc3f27554",
-          "examples/#004 ABAP/abaplint.json": "327aa5200901638fd3065579dcfbaac7bd0eb649b58724db5d80be46f6fce0bf"
+          "examples/#004 ABAP/zhello_world.prog.abap": "6756f9863485fa7bfcce375a89fc4371742cf42aca08dcf5128a804cc3f27554"
         }
       }
     },
@@ -507,14 +505,15 @@
       "example": {
         "semantic_goal": "Stampare Hello, World! in ALGOL 60 usando I/O del dialetto jff-algol.",
         "validation_mode": "compile_and_run",
-        "toolchain": "jff-algol (ALGOL 60), jff runtime, C compiler under Linux/Cygwin",
+        "toolchain": "jff-algol 2.3",
         "files": [
           "examples/#010 ALGOL/hello.alg",
           "examples/#010 ALGOL/README.md",
-          "examples/#010 ALGOL/verification.log"
+          "examples/#010 ALGOL/verification.log",
+          "examples/#010 ALGOL/verification/native_20261118_main.json"
         ],
         "build_command": "jff-algol hello.alg",
-        "run_or_check_command": "./hello",
+        "run_or_check_command": "jff-algol hello.alg; ./hello",
         "expected_result": "Una riga Hello, World!.",
         "sources": [
           "https://gtoal.com/languages/algol60/jff-algol-60-compiler/doc/jff-manual.pdf"
@@ -524,17 +523,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T09:33:59+00:00",
-        "verification_log": "examples/#010 ALGOL/verification.log",
-        "blockers": [
-          "jff-algol not found in PATH.",
-          "jff runtime and C/Cygwin toolchain are not configured."
-        ],
-        "notes": "Fonte primaria consultata; compilazione/esecuzione non effettuata. Comandi da completare quando la toolchain sarà disponibile."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:16:35.756798+00:00",
+        "verification_log": "examples/#010 ALGOL/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "JFF compiled the unchanged ALGOL 60 program from its own native toolchain and the executable printed the greeting. The raw output retains the trailing NUL emitted by this runtime.",
+        "verified_artifact_sha256": {
+          "examples/#010 ALGOL/hello.alg": "6767141d25be5fab1ee8b3865fa3f60f8a0d0317791330915e4a75dc755a8343"
+        }
       }
     },
     {
@@ -1789,7 +1788,7 @@
       "example": {
         "semantic_goal": "Renderizzare con Antlers il template usando audience=World e ottenere <p>Hello, World!</p> con newline.",
         "validation_mode": "native_template_render",
-        "toolchain": "Target Statamic 6.x in applicazione Laravel configurata; PHP >=8.3 e Composer; nessuna versione eseguita",
+        "toolchain": "statamic/cms v5.74.7",
         "files": [
           "examples/#032 Antlers/hello.antlers.html",
           "examples/#032 Antlers/verify.php",
@@ -1797,10 +1796,11 @@
           "examples/#032 Antlers/variants/ext-antlers-php-2e616e746c6572732e706870/hello.antlers.php",
           "examples/#032 Antlers/variants/ext-antlers-php-2e616e746c6572732e706870/README.md",
           "examples/#032 Antlers/variants/ext-antlers-xml-2e616e746c6572732e786d6c/hello.antlers.xml",
-          "examples/#032 Antlers/variants/ext-antlers-xml-2e616e746c6572732e786d6c/README.md"
+          "examples/#032 Antlers/variants/ext-antlers-xml-2e616e746c6572732e786d6c/README.md",
+          "examples/#032 Antlers/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Copiare hello.antlers.html e verify.php nella root di un sito Statamic; php verify.php",
+        "run_or_check_command": "php verify.php (placed in the root of the versioned application scaffold)",
         "expected_result": "Motore Statamic Antlers sostituisce audience: stdout esattamente <p>Hello, World!</p> seguito da newline; exit 0.",
         "sources": [
           "https://statamic.dev/frontend/antlers",
@@ -1812,16 +1812,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Applicazione Statamic e ambiente PHP/Composer con dipendenze non preparati; parser Antlers non eseguito."
-        ],
-        "notes": "Sorgente Antlers e helper PHP documentati. Nessun parser Antlers è stato eseguito; le verifiche native di sintassi e semantica restano da eseguire in un sito Statamic configurato."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:26:46.514991+00:00",
+        "verification_log": "examples/#032 Antlers/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The package’s native template renderer evaluated the original template and the exact tracked verifier produced the expected HTML paragraph.",
+        "verified_artifact_sha256": {
+          "examples/#032 Antlers/hello.antlers.html": "ec5ff4a8083513afc5ed3f885a33bb78f65d4084cc780f797d0e4b6f62a994da",
+          "examples/#032 Antlers/verify.php": "9f305c452cc52a1adfc2dbb9a2d7aa2e8c3b88681d4d8dc566877e3190fc2ee6"
+        }
       }
     },
     {
@@ -2832,14 +2834,15 @@
       "example": {
         "semantic_goal": "Definire una macchina Classical B con costante greeting uguale a Hello, World! e operazione hello che restituisce quella costante.",
         "validation_mode": "native_b_typecheck_animate",
-        "toolchain": "probcli — non disponibile / non verificata",
+        "toolchain": "ProB 1.16.1",
         "files": [
           "examples/#050 B (Formal Method)/HelloWorld.mch",
           "examples/#050 B (Formal Method)/README.md",
-          "examples/#050 B (Formal Method)/verification/native.json"
+          "examples/#050 B (Formal Method)/verification/native.json",
+          "examples/#050 B (Formal Method)/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "ProB2 UI: aprire HelloWorld.mch, eseguire setup dei constants e l’operazione hello, controllare result = \"Hello, World!\".",
+        "run_or_check_command": "probcli HelloWorld.mch -init -i; select hello",
         "expected_result": "Macchina caricata e tipizzata; operazione hello abilitata e output result esattamente Hello, World!.",
         "sources": [
           "https://prob.hhu.de/w/index.php?title=Summary_of_B_Syntax",
@@ -2850,16 +2853,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:29:36.519173+00:00",
-        "verification_log": "examples/#050 B (Formal Method)/verification/native.json",
-        "blockers": [
-          "probcli toolchain not installed or not available in this isolated verification environment."
-        ],
-        "notes": "Questa voce canonica è il metodo formale B. La macchina non stampa: il saluto è il valore simbolico e il risultato dell’operazione. Nessun parser/animatore B è stato eseguito in questa prova."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:02.260864+00:00",
+        "verification_log": "examples/#050 B (Formal Method)/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The ProB animator invoked the unchanged hello operation and recorded the exact returned greeting.",
+        "verified_artifact_sha256": {
+          "examples/#050 B (Formal Method)/HelloWorld.mch": "f9aa11cace15f38f16823c2b5d97ce131a6f6ccfaf2f7905090fb075aa24f443"
+        }
       }
     },
     {
@@ -3200,14 +3204,15 @@
       "example": {
         "semantic_goal": "Concatenare e stampare Hello, World! con io:println in Ballerina.",
         "validation_mode": "native_compile_run",
-        "toolchain": "bal — non disponibile / non verificata",
+        "toolchain": "Ballerina 2201.14.2 (Swan Lake Update 14)",
         "files": [
           "examples/#057 Ballerina/hello.bal",
           "examples/#057 Ballerina/README.md",
-          "examples/#057 Ballerina/verification/native.json"
+          "examples/#057 Ballerina/verification/native.json",
+          "examples/#057 Ballerina/verification/native_20261118_main.json"
         ],
         "build_command": "bal build hello.bal",
-        "run_or_check_command": "bal version; bal run hello.bal",
+        "run_or_check_command": "bal run --offline hello.bal",
         "expected_result": "Compilazione ed esecuzione riuscite; stdout Hello, World! seguito da newline.",
         "sources": [
           "https://ballerina.io/learn/by-example/hello-world/"
@@ -3217,16 +3222,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:29:39.073528+00:00",
-        "verification_log": "examples/#057 Ballerina/verification/native.json",
-        "blockers": [
-          "bal toolchain not installed or not available in this isolated verification environment."
-        ],
-        "notes": "Sorgente originale con funzione main pubblica e stringa locale. Non è stato compilato o eseguito poiché bal non è presente."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:13:58.019853+00:00",
+        "verification_log": "examples/#057 Ballerina/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Ballerina CLI compiled the original file on Java 25 and ran it from the console. The program printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#057 Ballerina/hello.bal": "bb3fcf247f2e1c4b5fcafe1ee6e347adfa8668cc107ea5a8e803cda9c6ed1cb4"
+        }
       }
     },
     {
@@ -3852,16 +3858,17 @@
       "example": {
         "semantic_goal": "Renderizzare un template Blade con audience = World e ottenere il paragrafo Hello, World!.",
         "validation_mode": "native_laravel_blade_render",
-        "toolchain": "Laravel 12.x con PHP compatibile e applicazione configurata; versione effettiva da registrare",
+        "toolchain": "laravel/framework v12.73.0",
         "files": [
           "examples/#069 Blade/README.md",
           "examples/#069 Blade/hello.blade.php",
           "examples/#069 Blade/verify.php",
           "examples/#069 Blade/variants/ext-blade-2e626c616465/hello.blade",
-          "examples/#069 Blade/variants/ext-blade-2e626c616465/README.md"
+          "examples/#069 Blade/variants/ext-blade-2e626c616465/README.md",
+          "examples/#069 Blade/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Copiare hello.blade.php e verify.php nella root di un’app Laravel configurata, poi: php verify.php",
+        "run_or_check_command": "php verify.php (placed in the root of the versioned application scaffold)",
         "expected_result": "stdout esatto <p>Hello, World!</p> seguito da newline; exit 0.",
         "sources": [
           "https://laravel.com/docs/12.x/blade"
@@ -3871,16 +3878,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "PHP e un’applicazione Laravel completa non sono preparati in questo ambiente; il motore Blade non è stato eseguito."
-        ],
-        "notes": "La fixture carica l’autoloader e bootstrap/app.php, avvia il kernel console e usa il motore Blade::render della framework. L’interpolazione usa l’escaping HTML nativo. Il controllo del risultato non sostituisce il parser Blade."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:26:46.515254+00:00",
+        "verification_log": "examples/#069 Blade/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The package’s native template renderer evaluated the original template and the exact tracked verifier produced the expected HTML paragraph.",
+        "verified_artifact_sha256": {
+          "examples/#069 Blade/hello.blade.php": "fe5cc199c0fce992e8124ab91885b3dc46bae02c7f61ca4ed551df6312b077e5",
+          "examples/#069 Blade/verify.php": "dff4694c5b9553fc121299b265400a4d7462c1673cb40b76bae9e4377e392d3f"
+        }
       }
     },
     {
@@ -5438,13 +5447,14 @@
       "example": {
         "semantic_goal": "In Cassandra CQL 3 creare una tabella greetings, inserire Hello, World! nella riga id=1 e leggerlo con SELECT.",
         "validation_mode": "cassandra_cql_execute_and_select",
-        "toolchain": "Apache Cassandra con CQL 3 e cqlsh; usare un'istanza di sviluppo dedicata. Versioni non osservate, da registrare alla verifica.",
+        "toolchain": "Apache Cassandra 5.0.6",
         "files": [
           "examples/#096 CQL/README.md",
-          "examples/#096 CQL/hello.cql"
+          "examples/#096 CQL/hello.cql",
+          "examples/#096 CQL/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "cqlsh 127.0.0.1 9042 -f hello.cql",
+        "run_or_check_command": "cqlsh 127.0.0.1 <disposable-port> -f hello.cql",
         "expected_result": "DDL e INSERT senza errori; SELECT restituisce una riga con message=Hello, World!.",
         "sources": [
           "https://cassandra.apache.org/doc/latest/cassandra/developing/cql/index.html",
@@ -5456,16 +5466,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Istanza Cassandra e cqlsh non disponibili: DDL, INSERT e SELECT non eseguiti."
-        ],
-        "notes": "La voce Linguist è Cassandra Query Language: i campioni canonici contengono create_keyspace/alter_table. Il programma usa un keyspace dedicato hello_world_corpus; non è Clinical Quality Language. Nessun server Cassandra è stato avviato o contattato durante questa tranche."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:25:27.696768+00:00",
+        "verification_log": "examples/#096 CQL/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Apache Cassandra executed the original keyspace, write and read statements in a disposable local cluster. The final query returned one row with the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#096 CQL/hello.cql": "2c0badd4cb50bf0a89f3b9c5ea8088bd56bf35d6ac7e104fb0476af63b781143"
+        }
       }
     },
     {
@@ -5884,12 +5895,13 @@
       "example": {
         "semantic_goal": "Valutare uno script Cadence 1.0 e ottenere la stringa Hello, World!.",
         "validation_mode": "interpret_expression",
-        "toolchain": "Interprete standalone Cadence del progetto onflow/cadence, Go; Cadence 1.x",
+        "toolchain": "Cadence v1.8.10",
         "files": [
-          "examples/#104 Cadence/hello.cdc"
+          "examples/#104 Cadence/hello.cdc",
+          "examples/#104 Cadence/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "cadence hello.cdc",
+        "run_or_check_command": "go run -mod=mod . with the recorded local runtime harness",
         "expected_result": "il valore restituito da main è la stringa `Hello, World!`.",
         "sources": [
           {
@@ -5906,16 +5918,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-        ],
-        "notes": "È uno script puro, senza contratti, conti, chiavi o transazioni sulla rete. La sintassi access(all) appartiene a Cadence 1.x."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:19:10.431505+00:00",
+        "verification_log": "examples/#104 Cadence/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Cadence VM ran the exact original script. The returned Cadence String was the expected greeting.",
+        "verified_artifact_sha256": {
+          "examples/#104 Cadence/hello.cdc": "243b318cc8b78dc460d866be10b6f73c4813ccdb0c67032da18bff01091402db"
+        }
       }
     },
     {
@@ -7350,7 +7363,7 @@
       "example": {
         "semantic_goal": "Restituire una sola riga CodeQL con colonna greeting uguale a Hello, World! mediante concatenazione di stringhe.",
         "validation_mode": "native_codeql_compile_evaluate",
-        "toolchain": "Required native toolchain unavailable or not configured — versione non disponibile / non verificata",
+        "toolchain": "CodeQL 2.27.4",
         "files": [
           "examples/#129 CodeQL/hello.ql",
           "examples/#129 CodeQL/qlpack.yml",
@@ -7359,10 +7372,11 @@
           "examples/#129 CodeQL/variants/ext-qll-2e716c6c/consumer.ql",
           "examples/#129 CodeQL/variants/ext-qll-2e716c6c/hello.qll",
           "examples/#129 CodeQL/variants/ext-qll-2e716c6c/qlpack.yml",
-          "examples/#129 CodeQL/variants/ext-qll-2e716c6c/README.md"
+          "examples/#129 CodeQL/variants/ext-qll-2e716c6c/README.md",
+          "examples/#129 CodeQL/verification/native_20261118_main.json"
         ],
         "build_command": "codeql query compile hello.ql",
-        "run_or_check_command": "codeql query compile hello.ql; codeql query run hello.ql --output hello.bqrs; codeql bqrs decode --format=csv hello.bqrs",
+        "run_or_check_command": "codeql database create <scratch>; codeql query run --database <scratch> --output hello.bqrs hello.ql; codeql bqrs decode --format=csv hello.bqrs",
         "expected_result": "Query compilata; tabella con una colonna greeting e una riga Hello, World!.",
         "sources": [
           "https://codeql.github.com/docs/ql-language-reference/queries/",
@@ -7374,16 +7388,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:55:08.631277+00:00",
-        "verification_log": "examples/#129 CodeQL/verification/native.json",
-        "blockers": [
-          "CodeQL native CLI is unavailable; query compile/evaluation remains pending and requires no external repository/account."
-        ],
-        "notes": "Il saluto è un valore della select QL, non un commento. Non è stata trovata la CLI e non sono stati compilati o decodificati risultati. Nessun repository remoto, token o account è un requisito per la preparazione locale di questo esempio."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:19:10.420702+00:00",
+        "verification_log": "examples/#129 CodeQL/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The CodeQL engine executed the original constant-only table query against a synthetic one-file database. The decoded result contained exactly one row and the expected greeting.",
+        "verified_artifact_sha256": {
+          "examples/#129 CodeQL/hello.ql": "7cb216bbad73b4cf89c77519aba1cba40bd5c5a577201c1dc50136b8f23eb17d",
+          "examples/#129 CodeQL/qlpack.yml": "c18b7db2b3493eaf696a234db72ee3f0f801f5b9a6fea3f937242c8ee143a2e8"
+        }
       }
     },
     {
@@ -7487,16 +7503,17 @@
       "example": {
         "semantic_goal": "Servire un template ColdFusion .cfm che concatena le parti del saluto dentro cfoutput.",
         "validation_mode": "native_cfml_http_template",
-        "toolchain": "Required native toolchain unavailable or not configured — versione non disponibile / non verificata",
+        "toolchain": "Lucee Express 6.2.9.4",
         "files": [
           "examples/#131 ColdFusion/hello.cfm",
           "examples/#131 ColdFusion/README.md",
           "examples/#131 ColdFusion/verification/native.json",
           "examples/#131 ColdFusion/variants/ext-cfml-2e63666d6c/hello.cfml",
-          "examples/#131 ColdFusion/variants/ext-cfml-2e63666d6c/README.md"
+          "examples/#131 ColdFusion/variants/ext-cfml-2e63666d6c/README.md",
+          "examples/#131 ColdFusion/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Server Lucee/Adobe ColdFusion locale: servire hello.cfm; curl http://localhost:<porta>/hello.cfm",
+        "run_or_check_command": "Run the official Lucee Express server on a private loopback port; fetch /hello.cfm",
         "expected_result": "HTTP 200; risposta text/plain contenente Hello, World!, senza debug output.",
         "sources": [
           "https://docs.lucee.org/reference/tags/output.html",
@@ -7508,16 +7525,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:55:09.275434+00:00",
-        "verification_log": "examples/#131 ColdFusion/verification/native.json",
-        "blockers": [
-          "No Adobe ColdFusion/Lucee engine is configured to serve the template."
-        ],
-        "notes": "cfcontent reset=true cancella eventuali output precedenti e cfsetting disabilita il debug. Nessun motore è configurato, dunque la pagina non è stata parsata o richiesta realmente."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:19:10.430261+00:00",
+        "verification_log": "examples/#131 ColdFusion/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Lucee Express HTTP server evaluated the unchanged template and returned the exact greeting as a plain-text response.",
+        "verified_artifact_sha256": {
+          "examples/#131 ColdFusion/hello.cfm": "6f98ea9131bf6973615588aee654979c91e7fac3151e0d3fb64dbda924763fa4"
+        }
       }
     },
     {
@@ -7542,15 +7560,16 @@
       "example": {
         "semantic_goal": "Definire il componente CFML Greeting e chiamare hello() dal template di controllo, verificando anche un destinatario diverso.",
         "validation_mode": "native_cfc_invoke_http",
-        "toolchain": "Required native toolchain unavailable or not configured — versione non disponibile / non verificata",
+        "toolchain": "Lucee Express 6.2.9.4",
         "files": [
           "examples/#132 ColdFusion CFC/check.cfm",
           "examples/#132 ColdFusion CFC/Greeting.cfc",
           "examples/#132 ColdFusion CFC/README.md",
-          "examples/#132 ColdFusion CFC/verification/native.json"
+          "examples/#132 ColdFusion CFC/verification/native.json",
+          "examples/#132 ColdFusion CFC/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Server Lucee/Adobe ColdFusion locale: servire check.cfm con Greeting.cfc nella stessa directory; curl http://localhost:<porta>/check.cfm",
+        "run_or_check_command": "Run the official Lucee Express server on a private loopback port; fetch /check.cfm",
         "expected_result": "Componente caricato; hello() restituisce Hello, World!; hello(\"Reader\") restituisce Hello, Reader!; risposta HTTP con il saluto.",
         "sources": [
           "https://docs.lucee.org/reference/tags/component.html",
@@ -7562,16 +7581,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:55:09.714491+00:00",
-        "verification_log": "examples/#132 ColdFusion CFC/verification/native.json",
-        "blockers": [
-          "No Adobe ColdFusion/Lucee engine is configured to load and invoke the component."
-        ],
-        "notes": "La voce canonica CFC è separata dal template ColdFusion. Il saluto è il risultato effettivo di un metodo, e il controllo usa un secondo argomento. Nessuna invocazione del componente è attestata finché il motore manca."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:19:10.429993+00:00",
+        "verification_log": "examples/#132 ColdFusion CFC/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Lucee Express runtime loaded the unchanged CFC from its original harness and both original assertions passed. The real HTTP response contained the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#132 ColdFusion CFC/check.cfm": "9f63ac9dfdde739683797275b6e55b20f0dd41ccc5cc800696547e83d793e443",
+          "examples/#132 ColdFusion CFC/Greeting.cfc": "57ad810f215e86995ae7917ff5d9d075f1ba8ca345db450684687d3fd858342e"
+        }
       }
     },
     {
@@ -8443,13 +8464,14 @@
       "example": {
         "semantic_goal": "Definire un workflow Cylc a un ciclo con un task che stampa Hello, World!.",
         "validation_mode": "native_workflow_validation_and_scheduler_run",
-        "toolchain": "Cylc Flow 8.6.6; Python 3.12.3 su Ubuntu WSL",
+        "toolchain": "Cylc 8.6.6",
         "files": [
           "examples/#148 Cylc/README.md",
-          "examples/#148 Cylc/flow.cylc"
+          "examples/#148 Cylc/flow.cylc",
+          "examples/#148 Cylc/verification/native_20261118_main.json"
         ],
         "build_command": "cylc validate .\ncylc install . --workflow-name corpus-greeting",
-        "run_or_check_command": "cylc play corpus-greeting",
+        "run_or_check_command": "cylc validate workflow; cylc install workflow --workflow-name corpus-greeting; cylc play --no-detach corpus-greeting",
         "expected_result": "Workflow valido; il job greeting/1 produce Hello, World! e il workflow conclude l’unico ciclo.",
         "sources": [
           "https://cylc.github.io/cylc-doc/latest/html/tutorial/runtime/introduction.html",
@@ -8460,16 +8482,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Ubuntu WSL x86_64",
-        "verification_timestamp_utc": "2026-10-08T12:09:14.194764+00:00",
-        "verification_log": "examples/#148 Cylc/verification/toolchain.json",
-        "blockers": [
-          "Cylc 8.6.6 avvia correttamente il CLI, ma validate non termina entro 90 secondi nel WSL. Il tentativo è registrato e il relativo processo è stato arrestato; scheduler e task non sono stati avviati."
-        ],
-        "notes": "flow.cylc usa cycling mode integer e graph R1, con task runtime esplicito. La prova effettuata riguarda il validatore originale di configurazione e grafo. Per verificare la semantica di scheduling occorre eseguire install/play e controllare il job log; non si conteggia una semplice esecuzione manuale dello script shell."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:29:28.938508+00:00",
+        "verification_log": "examples/#148 Cylc/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Cylc ran the original one-task workflow in foreground. The actual greeting job stdout contained the exact message.",
+        "verified_artifact_sha256": {
+          "examples/#148 Cylc/flow.cylc": "be9933a44fbf08c3eccc546cfbb44a529e08951314a5fbe9bdc65839a9ae30f7"
+        }
       }
     },
     {
@@ -10334,13 +10357,14 @@
       "example": {
         "semantic_goal": "Descrivere una ricetta EasyBuild che installa uno script locale hello-world e ne esegue il controllo minimo.",
         "validation_mode": "parse_recipe_and_install",
-        "toolchain": "EasyBuild 5.x in Linux, strumenti per moduli d’ambiente",
+        "toolchain": "EasyBuild 5.2.1 / Lmod 8.6.19",
         "files": [
           "examples/#182 Easybuild/HelloWorld-1.0.eb",
-          "examples/#182 Easybuild/verification/native_20261105_batch_blocked_main.json"
+          "examples/#182 Easybuild/verification/native_20261105_batch_blocked_main.json",
+          "examples/#182 Easybuild/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "eb HelloWorld-1.0.eb --prefix ./build/easybuild",
+        "run_or_check_command": "eb HelloWorld-1.0.eb --installpath=<scratch>; run installed hello-world",
         "expected_result": "ricetta accettata; script bin/hello-world installato nel prefisso dedicato; esecuzione stampa `Hello, World!\\n`.",
         "sources": [
           {
@@ -10357,16 +10381,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Linux 6.6.87.2-microsoft-standard-WSL2 x86_64",
-        "verification_timestamp_utc": "2026-11-05T12:31:19.612132+00:00",
-        "verification_log": "examples/#182 Easybuild/verification/native_20261105_batch_blocked_main.json",
-        "blockers": [
-          "Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending."
-        ],
-        "notes": "Native EasyBuild toolchain preparation timed out before the easyconfig could be executed; syntax and behavior remain pending."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:39:33.723375+00:00",
+        "verification_log": "examples/#182 Easybuild/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "EasyBuild ran the original bundle’s installation and sanity checks and produced the executable. The installed script printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#182 Easybuild/HelloWorld-1.0.eb": "4d7d965e7bb57ca7d7c987ad9c49c4553410d95db952ef9d88329b326b8aa6c9"
+        }
       }
     },
     {
@@ -10672,12 +10697,13 @@
       "example": {
         "semantic_goal": "Compilare un gruppo Edje con una parte testuale che mostra Hello, World!.",
         "validation_mode": "compile_and_run",
-        "toolchain": "EFL/Edje con edje_cc e viewer edje_player o applicazione Edje",
+        "toolchain": "Ubuntu Edje 1.27.0-1.1build4",
         "files": [
-          "examples/#188 Edje Data Collection/hello.edc"
+          "examples/#188 Edje Data Collection/hello.edc",
+          "examples/#188 Edje Data Collection/verification/native_20261118_main.json"
         ],
         "build_command": "edje_cc hello.edc hello.edj",
-        "run_or_check_command": "edje_player hello.edj -g greeting",
+        "run_or_check_command": "edje_cc hello.edc hello.edj; run verify_edje.c with Edje and Ecore-Evas",
         "expected_result": "collezione greeting compilata; nella parte label compare Hello, World!.",
         "sources": [
           {
@@ -10690,16 +10716,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-        ],
-        "notes": "La compilazione della collezione e l’osservazione del testo nel viewer sono controlli distinti; serve un ambiente grafico EFL con font Sans disponibile."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:29:28.939895+00:00",
+        "verification_log": "examples/#188 Edje Data Collection/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Edje compiled the original collection. In a private rendering buffer the runtime loaded the collection and exposed the exact text of its genuine label part.",
+        "verified_artifact_sha256": {
+          "examples/#188 Edje Data Collection/hello.edc": "e843d468027a21c77eb5c6d12c4878ae9a5c8748beccd14b0d97d2d333e932e5"
+        }
       }
     },
     {
@@ -11460,14 +11487,16 @@
       "example": {
         "semantic_goal": "Descrivere un circuito FIRRTL con tredici uscite ASCII che formano il saluto e un printf attivo quando reset è basso.",
         "validation_mode": "native_firrtl_compile_rtl_sim",
-        "toolchain": "Required authentic toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "CIRCT firtool-1.164.0 / Icarus Verilog",
         "files": [
           "examples/#201 FIRRTL/hello.fir",
           "examples/#201 FIRRTL/README.md",
-          "examples/#201 FIRRTL/verification/native.json"
+          "examples/#201 FIRRTL/verification/native.json",
+          "examples/#201 FIRRTL/verification/native_20261118_prior_attempt.json",
+          "examples/#201 FIRRTL/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "firtool hello.fir -o build/hello.sv; simulare il modulo Hello con clock e reset in un testbench RTL",
+        "run_or_check_command": "firtool hello.fir -o hello.sv; iverilog -g2012 -s tb -o sim tb.sv hello.sv; vvp sim",
         "expected_result": "Compilatore accetta il circuito; uscite ASCII e printf producono Hello, World! durante la simulazione.",
         "sources": [
           "https://github.com/chipsalliance/firrtl-spec",
@@ -11478,16 +11507,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:21:54.395930+00:00",
-        "verification_log": "examples/#201 FIRRTL/verification/native.json",
-        "blockers": [
-          "CIRCT firtool and RTL simulation are unavailable."
-        ],
-        "notes": "Il testo è un circuito originale, con vettore UInt<8>[13] e printf del linguaggio FIRRTL. Nessun compilatore/simulatore è disponibile; i soli byte presenti nel sorgente non sono una prova di esecuzione."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:02.259779+00:00",
+        "verification_log": "examples/#201 FIRRTL/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "CIRCT translated the FIRRTL circuit. The RTL simulator returned the exact port bytes independently of the programmed printf output.",
+        "verified_artifact_sha256": {
+          "examples/#201 FIRRTL/hello.fir": "150247bd51ac26d2e65ea85230604c2b2f35a88af25f18cab7d663105e49c7d6"
+        }
       }
     },
     {
@@ -11566,17 +11596,18 @@
       "example": {
         "semantic_goal": "Dichiarare una costante stringa Greeting nel modulo Corpus del linguaggio NASA FPP.",
         "validation_mode": "native_fpp_analysis",
-        "toolchain": "Required authentic toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "3.4.0",
         "files": [
           "examples/#203 FPP/hello.fpp",
           "examples/#203 FPP/README.md",
           "examples/#203 FPP/verification/native.json",
           "examples/#203 FPP/variants/ext-fppi-2e66707069/consumer.fpp",
           "examples/#203 FPP/variants/ext-fppi-2e66707069/hello.fppi",
-          "examples/#203 FPP/variants/ext-fppi-2e66707069/README.md"
+          "examples/#203 FPP/variants/ext-fppi-2e66707069/README.md",
+          "examples/#203 FPP/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "fpp-check hello.fpp; fpp-to-xml -d build hello.fpp",
+        "run_or_check_command": "fpp-check hello.fpp; fpp-to-json -d output hello.fpp",
         "expected_result": "FPP accettato; costante Corpus.Greeting uguale a Hello, World!.",
         "sources": [
           "https://nasa.github.io/fpp/fpp-spec.html",
@@ -11588,16 +11619,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:21:54.397930+00:00",
-        "verification_log": "examples/#203 FPP/verification/native.json",
-        "blockers": [
-          "FPP analysis/translation tools are unavailable; current upstream build requires Scala sbt and JDK 25."
-        ],
-        "notes": "Il saluto è il valore effettivo della costante. Nessun parser XML o YAML generico sostituisce fpp-check."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:26:45.293196+00:00",
+        "verification_log": "examples/#203 FPP/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The FPP command-line tool analyzed the original model and its compiler representation exposes the expected greeting constant.",
+        "verified_artifact_sha256": {
+          "examples/#203 FPP/hello.fpp": "5013aa9a27564fc3e7d815f7d3911c925c2e2ebf5712522378094660523bc0ca"
+        }
       }
     },
     {
@@ -11888,11 +11920,12 @@
       "example": {
         "semantic_goal": "Usare il comando echo del Workload Model Language Filebench per emettere il saluto, senza workload di I/O.",
         "validation_mode": "native_filebench_wml",
-        "toolchain": "Required authentic toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Filebench 1.5-alpha3",
         "files": [
           "examples/#209 Filebench WML/hello.f",
           "examples/#209 Filebench WML/README.md",
-          "examples/#209 Filebench WML/verification/native.json"
+          "examples/#209 Filebench WML/verification/native.json",
+          "examples/#209 Filebench WML/verification/native_20261118_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "filebench -f hello.f",
@@ -11906,16 +11939,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:21:54.745263+00:00",
-        "verification_log": "examples/#209 Filebench WML/verification/native.json",
-        "blockers": [
-          "Filebench WML parser/runtime is unavailable."
-        ],
-        "notes": "Il saluto è un argomento del comando WML echo; manca la prova del vero parser/runtime."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:32:47.134849+00:00",
+        "verification_log": "examples/#209 Filebench WML/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Filebench WML interpreter ran the original echo input and emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#209 Filebench WML/hello.f": "cf4de8709c40d3e7cc30fb5e859b52358f9f0f6c9241551d49f3c09c4ce5bdb6"
+        }
       }
     },
     {
@@ -13753,15 +13787,16 @@
       "example": {
         "semantic_goal": "Installare uno script originale hello-world attraverso la fase src_install di un ebuild EAPI 8.",
         "validation_mode": "bash_parse_then_native_portage_install",
-        "toolchain": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+        "toolchain": "Portage 3.0.83",
         "files": [
           "examples/#241 Gentoo Ebuild/README.md",
           "examples/#241 Gentoo Ebuild/files/hello.sh",
           "examples/#241 Gentoo Ebuild/hello-world-1.0.ebuild",
-          "examples/#241 Gentoo Ebuild/verification/result.json"
+          "examples/#241 Gentoo Ebuild/verification/result.json",
+          "examples/#241 Gentoo Ebuild/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "bash -n hello-world-1.0.ebuild; ebuild hello-world-1.0.ebuild install; eseguire hello-world dall’immagine di installazione temporanea",
+        "run_or_check_command": "ebuild hello-world-1.0.ebuild install (isolated overlay); run its image/usr/bin/hello-world",
         "expected_result": "Sintassi Bash accettata; Portage installa binario shell che stampa Hello, World! più newline.",
         "sources": [
           "https://devmanual.gentoo.org/ebuild-writing/file-format/index.html",
@@ -13774,18 +13809,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "WSL Ubuntu 24.04.3 x86_64",
-        "verification_timestamp_utc": "2026-10-08T12:15:42.652678+00:00",
-        "verification_log": "examples/#241 Gentoo Ebuild/verification/result.json",
-        "blockers": [
-          "Gentoo Portage package environment not available: native install/inherit phases pending."
-        ],
-        "notes": "La verifica presente è limitata al parser Bash reale e alla fixture shell originale, che stampa il saluto. Le funzioni newbin e le fasi EAPI non sono simulate: l’installazione Portage resta pending. L’URL example.invalid è illustrativo e il pacchetto non scarica sorgenti.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:16:46.281676+00:00",
+        "verification_log": "examples/#241 Gentoo Ebuild/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Portage executed the original ebuild in its disposable package image. The installed executable printed the exact greeting.",
         "verified_artifact_sha256": {
-          "examples/#241 Gentoo Ebuild/files/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6",
-          "examples/#241 Gentoo Ebuild/hello-world-1.0.ebuild": "8494775e8b619da51872b6df31d4bb37f3fd467eb520621e591c259113025d87"
+          "examples/#241 Gentoo Ebuild/hello-world-1.0.ebuild": "8494775e8b619da51872b6df31d4bb37f3fd467eb520621e591c259113025d87",
+          "examples/#241 Gentoo Ebuild/files/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6"
         }
       }
     },
@@ -13809,16 +13842,17 @@
       "example": {
         "semantic_goal": "Esportare src_install da un eclass EAPI 8 e installare lo script hello-world nel suo ebuild consumatore.",
         "validation_mode": "bash_parse_then_portage_inherit_and_install",
-        "toolchain": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+        "toolchain": "Portage 3.0.83",
         "files": [
           "examples/#242 Gentoo Eclass/README.md",
           "examples/#242 Gentoo Eclass/files/hello.sh",
           "examples/#242 Gentoo Eclass/hello-world-1.0.ebuild",
           "examples/#242 Gentoo Eclass/hello-world.eclass",
-          "examples/#242 Gentoo Eclass/verification/result.json"
+          "examples/#242 Gentoo Eclass/verification/result.json",
+          "examples/#242 Gentoo Eclass/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "bash -n hello-world.eclass; bash -n hello-world-1.0.ebuild; inserire l’eclass in eclass/ di un overlay temporaneo; ebuild hello-world-1.0.ebuild install",
+        "run_or_check_command": "ebuild hello-world-1.0.ebuild install (isolated overlay); run its image/usr/bin/hello-world",
         "expected_result": "Portage risolve inherit hello-world ed EXPORT_FUNCTIONS; immagine contiene hello-world che stampa il saluto.",
         "sources": [
           "https://devmanual.gentoo.org/eclass-writing/index.html",
@@ -13830,18 +13864,16 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "WSL Ubuntu 24.04.3 x86_64",
-        "verification_timestamp_utc": "2026-10-08T12:15:43.041537+00:00",
-        "verification_log": "examples/#242 Gentoo Eclass/verification/result.json",
-        "blockers": [
-          "Gentoo Portage package environment not available: native install/inherit phases pending."
-        ],
-        "notes": "L’eclass originale gestisce EAPI 8 ed esporta hello-world_src_install. Il consumer è incluso per rendere concreta la verifica futura. Bash -n verifica il linguaggio ospite; inheritance, metadata e newbin richiedono Portage reale e restano da provare.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:16:47.157968+00:00",
+        "verification_log": "examples/#242 Gentoo Eclass/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Portage executed the original eclass and its actual inherit/EXPORT_FUNCTIONS consumer in its disposable package image. The installed executable printed the exact greeting.",
         "verified_artifact_sha256": {
-          "examples/#242 Gentoo Eclass/files/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6",
           "examples/#242 Gentoo Eclass/hello-world-1.0.ebuild": "dcccdfc7c714563f84cfd0078231b4b3937c2ef1e8dceabb8d344b487392f7df",
+          "examples/#242 Gentoo Eclass/files/hello.sh": "05c1baae3df0db4d880ee09983ea5bf31f5b61552300fb1e08722d706fff2ed6",
           "examples/#242 Gentoo Eclass/hello-world.eclass": "9878c5345b185827e6ed30cdf1f125f74ecdf179e415d403f25c10cb022baee6"
         }
       }
@@ -15743,15 +15775,16 @@
       "example": {
         "semantic_goal": "Definire uno stile GtkRC chiamato Hello, World! e applicarne il colore al widget greeting di una prova GTK 2.",
         "validation_mode": "native_gtk2_rc_widget_style",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "GTK 2.24.33",
         "files": [
           "examples/#274 GtkRC/check.c",
           "examples/#274 GtkRC/hello.gtkrc",
           "examples/#274 GtkRC/README.md",
-          "examples/#274 GtkRC/verification/native.json"
+          "examples/#274 GtkRC/verification/native.json",
+          "examples/#274 GtkRC/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "cc check.c -o build/check $(pkg-config --cflags --libs gtk+-2.0); xvfb-run build/check hello.gtkrc",
+        "run_or_check_command": "gcc check.c -o check $(pkg-config --cflags --libs gtk+-2.0); xvfb-run -a ./check hello.gtkrc",
         "expected_result": "Parsing e style lookup riusciti; colore corretto e saluto emesso dal widget.",
         "sources": [
           "https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-2-24/gtk/gtkrc.c",
@@ -15762,16 +15795,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T12:36:23.062410+00:00",
-        "verification_log": "examples/#274 GtkRC/verification/native.json",
-        "blockers": [
-          "GTK 2 runtime package is available locally, but headers/toolchain and a headless display for widget style assertion are not configured."
-        ],
-        "notes": "Il saluto è un identificatore effettivo di stile GtkRC, non un commento. check.c crea un GtkLabel con quel testo e deve verificare i valori RGB 0x2020/0x3030/0x4040 del colore risolto. La semplice presenza della libreria non attesta il parsing."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:29:29.025592+00:00",
+        "verification_log": "examples/#274 GtkRC/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The genuine GTK2 runtime loaded the original resource file. The original verifier confirmed the RGB values and the actual label text in a private virtual framebuffer.",
+        "verified_artifact_sha256": {
+          "examples/#274 GtkRC/check.c": "276afa9ea13569e97041ac865dd769c60f01c2695e8a4f2b1706894358e48038",
+          "examples/#274 GtkRC/hello.gtkrc": "b6bd453e231ee74206d938d39c393d19de09a8851d0b2c9d766deb197d3e48ee"
+        }
       }
     },
     {
@@ -17294,15 +17329,16 @@
       "example": {
         "semantic_goal": "Stampare Hello, World! con PRINT in una procedura IDL.",
         "validation_mode": "nv5_idl_compile_and_runtime",
-        "toolchain": "NV5 Geospatial IDL proprietario; versione da registrare",
+        "toolchain": "GDL - GNU Data Language, Version 1.0.4",
         "files": [
           "examples/#301 IDL/README.md",
           "examples/#301 IDL/hello.pro",
           "examples/#301 IDL/variants/dlm-86f10b11/hello.dlm",
-          "examples/#301 IDL/variants/dlm-86f10b11/README.md"
+          "examples/#301 IDL/variants/dlm-86f10b11/README.md",
+          "examples/#301 IDL/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "IDL> .compile hello.pro\nIDL> hello",
+        "run_or_check_command": "gdl -quiet check.gdl (.compile hello.pro, hello, exit)",
         "expected_result": "Console IDL: Hello, World! più newline.",
         "sources": [
           "https://www.nv5geospatialsoftware.com/docs/PRINT.html",
@@ -17313,16 +17349,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime NV5 IDL/licenza non disponibile; compilazione ed esecuzione pending."
-        ],
-        "notes": "IDL è Interactive Data Language, identificato dalla estensione .pro della baseline. La procedura non è CORBA IDL. PRINT e sintassi sono documentati dal vendor."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:01.032460+00:00",
+        "verification_log": "examples/#301 IDL/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "GNU Data Language compiled the original IDL syntax and invoked the original hello procedure, which emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#301 IDL/hello.pro": "a7da4b5c82f4291a8f14c4e35982bcfc98b4ab524a8ea87b3933a569711c773e"
+        }
       }
     },
     {
@@ -17673,15 +17710,16 @@
       "example": {
         "semantic_goal": "Tipizzare ed eseguire un main Idris che usa putStrLn.",
         "validation_mode": "idris_native_typecheck_and_io",
-        "toolchain": "Idris; scegliere/registrare una versione compatibile con .idr",
+        "toolchain": "Idris 2 0.8.0 / Chez Scheme",
         "files": [
           "examples/#307 Idris/README.md",
           "examples/#307 Idris/hello.idr",
           "examples/#307 Idris/variants/lidr-f41f21bf/hello.lidr",
-          "examples/#307 Idris/variants/lidr-f41f21bf/README.md"
+          "examples/#307 Idris/variants/lidr-f41f21bf/README.md",
+          "examples/#307 Idris/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "idris --check hello.idr; idris hello.idr -o build/hello; build/hello",
+        "run_or_check_command": "idris2 --cg chez hello.idr -o hi_run; run the generated executable or Chez program",
         "expected_result": "Tipo main : IO (); programma stampa Hello, World! più newline.",
         "sources": [
           "https://docs.idris-lang.org/en/latest/tutorial/introduction.html",
@@ -17692,16 +17730,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compilatore/backend Idris non disponibili in questa tranche; type check e runtime pending."
-        ],
-        "notes": "Il modulo Main e il tipo IO rendono concreto il goal. Questo campione semplice è documentato secondo Idris 1; un’eventuale migrazione Idris 2 dovrà registrare tool/backend effettivi."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:32:14.605269+00:00",
+        "verification_log": "examples/#307 Idris/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The published Idris 2 compiler built the original source against the original Idris standard libraries. The compiled Chez program emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#307 Idris/hello.idr": "08b7fe98b3532ac404f590c2c0a1fb242b87fee675992dbf3fccee26bc180714"
+        }
       }
     },
     {
@@ -19042,12 +19081,13 @@
       "example": {
         "semantic_goal": "Valutare un’espressione JSONiq che restituisce una stringa di saluto.",
         "validation_mode": "evaluate_query_and_assert_value",
-        "toolchain": "RumbleDB, oppure Zorba con supporto JSONiq",
+        "toolchain": "RumbleDB 1.20.0",
         "files": [
-          "examples/#328 JSONiq/hello.jq"
+          "examples/#328 JSONiq/hello.jq",
+          "examples/#328 JSONiq/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "rumble --query-path hello.jq",
+        "run_or_check_command": "java -jar rumbledb-1.20.0-standalone.jar run --query-path hello.jq --output-path result.json",
         "expected_result": "sequenza JSONiq con un solo item stringa Hello, World!.",
         "sources": [
           {
@@ -19064,16 +19104,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Un literal è una query valida: la verifica richiede il motore JSONiq; caricare il file con json.loads non prova questo linguaggio."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T16:57:31.829911+00:00",
+        "verification_log": "examples/#328 JSONiq/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The native JSONiq runtime executed the exact query and serialized the one matching greeting string.",
+        "verified_artifact_sha256": {
+          "examples/#328 JSONiq/hello.jq": "3d06fb53e9c298962adc719bc0de13f8595cc33b83dc6f644c3457bc3a208e6e"
+        }
       }
     },
     {
@@ -21060,13 +21101,14 @@
       "example": {
         "semantic_goal": "Interpretare KoLmafia ASH e stampare Hello, World!.",
         "validation_mode": "native_kolmafia_ash_execution",
-        "toolchain": "KoLmafia/ASH originale; versione da registrare",
+        "toolchain": "KoLmafia KoLmafia-29444.jar",
         "files": [
           "examples/#362 KoLmafia ASH/README.md",
-          "examples/#362 KoLmafia ASH/hello.ash"
+          "examples/#362 KoLmafia ASH/hello.ash",
+          "examples/#362 KoLmafia ASH/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Nel CLI KoLmafia: call hello.ash",
+        "run_or_check_command": "java -cp <KoLmafia JAR> RunAsh.java",
         "expected_result": "Console contiene Hello, World!.",
         "sources": [
           "https://github.com/kolmafia/kolmafia",
@@ -21077,16 +21119,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "KoLmafia non preparato; nessuna connessione al gioco effettuata."
-        ],
-        "notes": "Il punto di ingresso main concatena una variabile string con print. La prova richiede il parser/interprete ASH della distribuzione KoLmafia."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:25:28.012138+00:00",
+        "verification_log": "examples/#362 KoLmafia ASH/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The genuine KoLmafia interpreter executed the original ASH entry point. The configured console logger captured its actual greeting.",
+        "verified_artifact_sha256": {
+          "examples/#362 KoLmafia ASH/hello.ash": "cd810358cdbc59d3b35baad4c697e79789c2108032a2e996e9496e9415813e2e"
+        }
       }
     },
     {
@@ -22012,11 +22055,13 @@
       "example": {
         "semantic_goal": "Compilare Leo e restituire i13byte ASCII di Hello, World! come risultato della transition main.",
         "validation_mode": "native_leo_circuit_compile_run",
-        "toolchain": "Leo/Aleo originale; versione da registrare",
+        "toolchain": "Leo leo-lang-v4.4.6",
         "files": [
           "examples/#380 Leo/README.md",
           "examples/#380 Leo/program.json",
-          "examples/#380 Leo/src/main.leo"
+          "examples/#380 Leo/src/main.leo",
+          "examples/#380 Leo/verification/native_20261118_prior_attempt.json",
+          "examples/#380 Leo/verification/native_20261118_main.json"
         ],
         "build_command": "leo build",
         "run_or_check_command": "leo run main",
@@ -22030,16 +22075,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compiler/runtime Leo non preparati; build e valutazione locale pendenti."
-        ],
-        "notes": "I circuiti Leo restituiscono dati tipati anziché stampare testo: la transition espone un array di13u8. program.json identifica il programma locale; nessun deploy o transazione di rete è richiesto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:25:27.695182+00:00",
+        "verification_log": "examples/#380 Leo/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Leo simulator executed the original greeting body and returned the exact ASCII array. Its current function declaration syntax was applied if required.",
+        "verified_artifact_sha256": {
+          "examples/#380 Leo/program.json": "75e5f34c0b0417afb6360b3e6794640fc16a9308e660cd5a910d19cbf4fd72a3",
+          "examples/#380 Leo/src/main.leo": "851afe366fea8cee937ca05d9878e4e36f46152f10cdfdb5d060e1d23b4a4cf5"
+        }
       }
     },
     {
@@ -22569,13 +22616,14 @@
       "example": {
         "semantic_goal": "Valutare uno script Liquidsoap che stampa il saluto senza configurare streaming.",
         "validation_mode": "liquidsoap_native_typecheck_and_evaluate",
-        "toolchain": "Liquidsoap; versione da registrare",
+        "toolchain": "Liquidsoap 2.2.4-1+dev",
         "files": [
           "examples/#390 Liquidsoap/README.md",
-          "examples/#390 Liquidsoap/hello.liq"
+          "examples/#390 Liquidsoap/hello.liq",
+          "examples/#390 Liquidsoap/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "liquidsoap --check hello.liq; liquidsoap --check-and-evaluate hello.liq (verificare disponibilità opzione nella versione scelta)",
+        "run_or_check_command": "liquidsoap --check hello.liq",
         "expected_result": "Tipo del print accettato; valutazione scrive Hello, World!.",
         "sources": [
           "https://www.liquidsoap.info/doc-2.2.5/language.html",
@@ -22586,16 +22634,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Liquidsoap non predisposto; parsing/type check e valutazione pending."
-        ],
-        "notes": "Il campione è puro testo e non apre sorgenti, device o stream. Il comando di valutazione deve essere adattato/registrato secondo il CLI effettivo; non si conta un parser generico OCaml."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:02.260415+00:00",
+        "verification_log": "examples/#390 Liquidsoap/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The native Liquidsoap CLI evaluated its original print operation during the check. The script did not start streaming.",
+        "verified_artifact_sha256": {
+          "examples/#390 Liquidsoap/hello.liq": "07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782"
+        }
       }
     },
     {
@@ -23873,12 +23922,13 @@
       "example": {
         "semantic_goal": "Assegnare una variabile MTML e renderizzare Hello, World!.",
         "validation_mode": "render_mtml_template",
-        "toolchain": "Movable Type template engine",
+        "toolchain": "Movable Type template builder (source SHA-256 in receipt)",
         "files": [
-          "examples/#413 MTML/hello.mtml"
+          "examples/#413 MTML/hello.mtml",
+          "examples/#413 MTML/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Renderizzare hello.mtml con il motore template Movable Type locale.",
+        "run_or_check_command": "perl render.pl with Movable Type Perl libraries",
         "expected_result": "output Hello, World! e newline.",
         "sources": [
           {
@@ -23891,16 +23941,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "L’assegnazione Var con value non produce output. La lettura senza value produce il nome; non basta interpretare il documento come HTML."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:26:46.903939+00:00",
+        "verification_log": "examples/#413 MTML/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Movable Type compiled and rendered the unchanged original template. The template’s variable assignment and lookup produced the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#413 MTML/hello.mtml": "0311850adff2631e598c10c91811f0fc7861d60fba05a80f4f42e2840a5cff9d"
+        }
       }
     },
     {
@@ -23980,9 +24031,10 @@
       "example": {
         "semantic_goal": "Stampare Hello, World! in Macaulay2.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Macaulay2 M2 CLI",
+        "toolchain": "Macaulay2 1.22",
         "files": [
-          "examples/#415 Macaulay2/hello.m2"
+          "examples/#415 Macaulay2/hello.m2",
+          "examples/#415 Macaulay2/verification/native_20261118_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "M2 --script hello.m2",
@@ -23998,16 +24050,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "La forma print non richiede costruire anelli o installare pacchetti aggiuntivi."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:02.266572+00:00",
+        "verification_log": "examples/#415 Macaulay2/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Macaulay2 executed the unchanged course source and printed the exact greeting. Its packaged singular data were mounted read-only in a private namespace.",
+        "verified_artifact_sha256": {
+          "examples/#415 Macaulay2/hello.m2": "0893f0ba1b9850a777261774f9db226b4d8e866a5b171aecd3a82db25d59fc65"
+        }
       }
     },
     {
@@ -25451,7 +25504,7 @@
       "example": {
         "semantic_goal": "Compilare Modula-3 con IO e un programma Main.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Critical Mass Modula-3 cm3 e libm3",
+        "toolchain": "Critical Mass Modula-3 d5.11.9",
         "files": [
           "examples/#440 Modula-3/Hello.m3",
           "examples/#440 Modula-3/m3makefile",
@@ -25473,10 +25526,11 @@
           "examples/#440 Modula-3/variants/mg-63058c94/TextGreeting.m3",
           "examples/#440 Modula-3/variants/mg-63058c94/Main.m3",
           "examples/#440 Modula-3/variants/mg-63058c94/m3makefile",
-          "examples/#440 Modula-3/variants/mg-63058c94/README.md"
+          "examples/#440 Modula-3/variants/mg-63058c94/README.md",
+          "examples/#440 Modula-3/verification/native_20261118_main.json"
         ],
         "build_command": "cm3",
-        "run_or_check_command": "Eseguire l’eseguibile hello della directory target generata da cm3.",
+        "run_or_check_command": "cm3 -build; run the generated hello executable",
         "expected_result": "stdout Hello, World! e newline.",
         "sources": [
           {
@@ -25489,16 +25543,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "EXPORTS Main rende il modulo il punto d’ingresso del programma."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:13:58.019171+00:00",
+        "verification_log": "examples/#440 Modula-3/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "CM3 compiled the original Modula-3 project and the executable emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#440 Modula-3/Hello.m3": "f96fc846b19ce15564387016e9f353b5cc6212035a58afc491d6dcf444ba4a11",
+          "examples/#440 Modula-3/m3makefile": "ef309fc431de1ca42a5b94047f36f7aa7b09f97aea8aaa87c916a79a45526374"
+        }
       }
     },
     {
@@ -26021,15 +26077,16 @@
       "example": {
         "semantic_goal": "Costruire un modulo nel linguaggio Move originale e testare la funzione che restituisce una stringa.",
         "validation_mode": "original_move_build_test",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Aptos CLI aptos-cli-v7.11.0",
         "files": [
           "examples/#450 Move/Move.toml",
           "examples/#450 Move/README.md",
           "examples/#450 Move/sources/greeting.move",
-          "examples/#450 Move/verification/native.json"
+          "examples/#450 Move/verification/native.json",
+          "examples/#450 Move/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "move build; move test",
+        "run_or_check_command": "aptos move test --package-dir . --named-addresses std=0x1",
         "expected_result": "Hello, World!",
         "sources": [
           "https://github.com/move-language/move",
@@ -26040,16 +26097,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:03:26.755971+00:00",
-        "verification_log": "examples/#450 Move/verification/native.json",
-        "blockers": [
-          "Original Move compiler/test runner and matching stdlib are not configured."
-        ],
-        "notes": "Modulo e test originali; toolchain Move non disponibile. Non è richiesto alcun account o deployment su blockchain."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:13:58.019675+00:00",
+        "verification_log": "examples/#450 Move/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The Move VM executed the original unit test. Its assertion confirmed the exact returned string.",
+        "verified_artifact_sha256": {
+          "examples/#450 Move/Move.toml": "0654e7076e87ad5282e5487d1e96d2759bb5795b001d79c20de294d2bd89c803",
+          "examples/#450 Move/sources/greeting.move": "4d03b407386190c356f46d9aec305fd3b8e0c8b0dcc19d3ddb8165fa00b8e9c8"
+        }
       }
     },
     {
@@ -26179,14 +26238,15 @@
       "example": {
         "semantic_goal": "Renderizzare una componente Myghty con parametro dichiarato nel blocco args.",
         "validation_mode": "native_myghty_component_render",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Myghty 1.2 / MyghtyUtils 0.52 / CPython 2.7.18",
         "files": [
           "examples/#453 Myghty/hello.myt",
           "examples/#453 Myghty/README.md",
-          "examples/#453 Myghty/verification/native.json"
+          "examples/#453 Myghty/verification/native.json",
+          "examples/#453 Myghty/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Configurare Myghty Interpreter con component_root della cartella e invocare hello.myt con name=World.",
+        "run_or_check_command": "python2.7 check.py (with Myghty and MyghtyUtils)",
         "expected_result": "Hello, World!",
         "sources": [
           "https://pythonhosted.org/Myghty/documentation.html"
@@ -26196,16 +26256,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:03:27.089568+00:00",
-        "verification_log": "examples/#453 Myghty/verification/native.json",
-        "blockers": [
-          "Historical Myghty template runtime/Python compatibility is not configured."
-        ],
-        "notes": "Componente originale; engine storico non configurato. Il nome è un parametro args e l’espressione lo inserisce nel corpo."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:25:27.887831+00:00",
+        "verification_log": "examples/#453 Myghty/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The original Myghty template was rendered by its historical engine using an independent audience parameter and emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#453 Myghty/hello.myt": "5d0719331e64c5643cd8734513cd506b6d7f68e88ec0d547a6e9523ad7df1f3f"
+        }
       }
     },
     {
@@ -26923,13 +26984,15 @@
       "example": {
         "semantic_goal": "Eseguire la procedura greet di un modello NetLogo e stampare Hello, World!.",
         "validation_mode": "native_compile_or_interpret",
-        "toolchain": "NetLogo6.4.0 o versione compatibile; non preparato",
+        "toolchain": "NetLogo v6.4.0",
         "files": [
           "examples/#467 NetLogo/README.md",
-          "examples/#467 NetLogo/hello.nlogo"
+          "examples/#467 NetLogo/hello.nlogo",
+          "examples/#467 NetLogo/verification/native_20261118_prior_attempt.json",
+          "examples/#467 NetLogo/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Aprire hello.nlogo in NetLogo e invocare greet.",
+        "run_or_check_command": "java -cp <NetLogo jars> RunNetLogo.java hello.nlogo",
         "expected_result": "Console del modello contiene Hello, World!.",
         "sources": [
           "https://docs.netlogo.org/dict/print.html",
@@ -26940,16 +27003,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Loader/compiler/runtime NetLogo non preparati; modello non aperto."
-        ],
-        "notes": "La procedura usa word e print; le sezioni .nlogo includono codice, info, versione e un esperimento BehaviorSpace originale. L’obiettivo è l’output della procedura, non il testo informativo del modello."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:29:27.650350+00:00",
+        "verification_log": "examples/#467 NetLogo/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "NetLogo’s loader required viewport and default shape metadata. The repaired file preserves the original greet procedure, and the actual headless runtime executed it and printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#467 NetLogo/hello.nlogo": "1ebf5482dfd46914f91094a67058dddc93d3102d2c1fd20de94191bf226bb8ae"
+        }
       }
     },
     {
@@ -28106,13 +28170,14 @@
       "example": {
         "semantic_goal": "Eseguire un modulo Oberon-2 che usa Out.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Compilatore Oberon-2 e modulo standard Out",
+        "toolchain": "Vishap Oberon Compiler and original Oberon-2 library",
         "files": [
           "examples/#488 Oberon/Hello.ob2",
-          "examples/#488 Oberon/README.md"
+          "examples/#488 Oberon/README.md",
+          "examples/#488 Oberon/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Compilare Hello.ob2 e invocare il modulo Hello con il runtime Oberon-2 scelto; registrare il comando effettivo.",
+        "run_or_check_command": "voc -m -O2 Hello.ob2; ./Hello",
         "expected_result": "Hello, World!",
         "sources": [
           "https://www.inf.ethz.ch/personal/wirth/Oberon/Oberon07.Report.pdf"
@@ -28122,16 +28187,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compilatore Oberon-2 e libreria Out non disponibili; comando/versione devono essere registrati nel futuro test."
-        ],
-        "notes": "Il file usa il sottoinsieme MODULE/IMPORT/BEGIN comune a Oberon-2; Out è una dipendenza reale del runtime scelto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:38:18.095124+00:00",
+        "verification_log": "examples/#488 Oberon/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The native Oberon-2 translator compiled the original module and linked it with the genuine standard library. The executable printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#488 Oberon/Hello.ob2": "6be6c3a7730bf9fa521e006668aec53c97f6ab5a2ef4ea4e3004149e770619c6"
+        }
       }
     },
     {
@@ -28206,13 +28272,14 @@
       "example": {
         "semantic_goal": "Decodificare l’attributo greeting ODIN di openEHR.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Parser ODIN openEHR conforme",
+        "toolchain": "openEHR Archie 3.20.0",
         "files": [
           "examples/#490 Object Data Instance Notation/README.md",
-          "examples/#490 Object Data Instance Notation/hello.odin"
+          "examples/#490 Object Data Instance Notation/hello.odin",
+          "examples/#490 Object Data Instance Notation/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Caricare hello.odin con un parser ODIN openEHR e leggere greeting; registrare API/versione/risultato.",
+        "run_or_check_command": "java -cp <Archie dependencies> ReadOdin.java",
         "expected_result": "Hello, World!",
         "sources": [
           "https://specifications.openehr.org/releases/BASE/latest/odin.html"
@@ -28222,16 +28289,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Parser ODIN openEHR non predisposto."
-        ],
-        "notes": "ODIN è Object Data Instance Notation di openEHR; il valore primitivo stringa è racchiuso in < >. Non contiene dati di pazienti."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:01.857873+00:00",
+        "verification_log": "examples/#490 Object Data Instance Notation/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Archie’s ODIN parser converted the exact original document. The resulting object contains the exact greeting value.",
+        "verified_artifact_sha256": {
+          "examples/#490 Object Data Instance Notation/hello.odin": "17f7e6fb74cef044e157025f7d92b806d194f500458218e0fcd5486b80c1dbb8"
+        }
       }
     },
     {
@@ -29606,12 +29674,13 @@
       "example": {
         "semantic_goal": "Mostrare il saluto nel Browser di Mozart Oz.",
         "validation_mode": "oz_browser_display",
-        "toolchain": "Mozart Oz runtime e Browser",
+        "toolchain": "Mozart Oz v2.0.1",
         "files": [
-          "examples/#515 Oz/hello.oz"
+          "examples/#515 Oz/hello.oz",
+          "examples/#515 Oz/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "ozengine hello.oz",
+        "run_or_check_command": "ozc -x check.oz -o hello-oz; ozengine hello-oz",
         "expected_result": "Browser mostra la stringa Hello, World!.",
         "sources": [
           {
@@ -29624,16 +29693,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Mozart runtime non disponibile."
-        ],
-        "notes": "Browse è una visualizzazione nel runtime, non una stampa stdout garantita."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:13:58.344019+00:00",
+        "verification_log": "examples/#515 Oz/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Mozart evaluated the exact expression in a headless harness. The harness sent Browse’s actual argument to the standard console reporter and observed the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#515 Oz/hello.oz": "35c832485a18cf475ff7c294714c13b1f4164ffac125181793b75ab21d7a5bf2"
+        }
       }
     },
     {
@@ -30919,12 +30989,13 @@
       "example": {
         "semantic_goal": "Caricare un TSV locale e trasformare World in un record PigLatin con il saluto.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine compiler/runtime — non disponibile / non verificata",
+        "toolchain": "Apache Pig version 0.17.0 (r1797386) ",
         "files": [
           "examples/#536 PigLatin/hello.pig",
           "examples/#536 PigLatin/names.tsv",
           "examples/#536 PigLatin/README.md",
-          "examples/#536 PigLatin/verification/native.json"
+          "examples/#536 PigLatin/verification/native.json",
+          "examples/#536 PigLatin/verification/native_20261118_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "pig -x local hello.pig",
@@ -30941,16 +31012,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:16:21.509566+00:00",
-        "verification_log": "examples/#536 PigLatin/verification/native.json",
-        "blockers": [
-          "Required pig compiler/interpreter and matching host libraries are not configured."
-        ],
-        "notes": "LOAD, FOREACH GENERATE e CONCAT originali. DUMP deve mostrare (Hello, World!); toolchain locale non configurata."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:05:24.129516+00:00",
+        "verification_log": "examples/#536 PigLatin/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "Apache Pig executed the original Pig Latin pipeline on the unchanged input TSV. The original DUMP produced the exact tuple.",
+        "verified_artifact_sha256": {
+          "examples/#536 PigLatin/hello.pig": "a07d2cef48e0f6eb39e68a6c6fbb93b76657ed488831520383ea746b8b8256e6",
+          "examples/#536 PigLatin/names.tsv": "aa1db5c660d3d1f3f4f9361b9848694300929be94b74c84452a87420c59e5df9"
+        }
       }
     },
     {
@@ -32734,13 +32807,14 @@
       "example": {
         "semantic_goal": "Valutare il programma Pyret originale.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Pyret compiler/runtime",
+        "toolchain": "Pyret CLI 0.1.29",
         "files": [
           "examples/#569 Pyret/README.md",
-          "examples/#569 Pyret/hello.arr"
+          "examples/#569 Pyret/hello.arr",
+          "examples/#569 Pyret/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Aprire hello.arr in code.pyret.org e premere Run; oppure usare CLI ufficiale della versione registrata.",
+        "run_or_check_command": "pyret --port <private-socket> hello.arr --outfile greeting.jarr; node greeting.jarr with the pinned npm dependency directory",
         "expected_result": "Hello, World!",
         "sources": [
           "https://pyret.org/docs/latest/",
@@ -32751,16 +32825,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compiler/runtime Pyret non predisposto; valutazione pending."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:38:18.096588+00:00",
+        "verification_log": "examples/#569 Pyret/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The official Pyret compiler translated the exact source. Running its generated program emitted the original greeting.",
+        "verified_artifact_sha256": {
+          "examples/#569 Pyret/hello.arr": "3c451ba317fcb19be6b42d72099d7042975ddd9129ee1bcd7958ee9ddb56d882"
+        }
       }
     },
     {
@@ -33236,13 +33311,14 @@
       "example": {
         "semantic_goal": "Eseguire un m3makefile nel linguaggio Quake del build system Modula-3.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "CM3 Quake interpreter",
+        "toolchain": "Critical Mass Modula-3 d5.11.9",
         "files": [
           "examples/#577 Quake/README.md",
-          "examples/#577 Quake/m3makefile"
+          "examples/#577 Quake/m3makefile",
+          "examples/#577 Quake/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "cm3 -build nella cartella del progetto di prova con questo m3makefile; registrare output e versione.",
+        "run_or_check_command": "cm3 -build",
         "expected_result": "Hello, World!",
         "sources": [
           "https://github.com/modula3/cm3",
@@ -33253,16 +33329,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Build interpreter CM3/Quake non disponibile."
-        ],
-        "notes": "Il nome canonico m3makefile identifica il linguaggio di scripting del build system Modula-3."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:13:58.594072+00:00",
+        "verification_log": "examples/#577 Quake/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "CM3 executed the original Quake build description and printed the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#577 Quake/m3makefile": "df2a74edc97631f072065d4ee6650fd63ac449ace205a9480039b924efd0602b"
+        }
       }
     },
     {
@@ -38298,13 +38375,14 @@
       "example": {
         "semantic_goal": "Valutare output nel runtime Shen.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Shen runtime",
+        "toolchain": "Shen/Scheme v0.54",
         "files": [
           "examples/#659 Shen/README.md",
-          "examples/#659 Shen/hello.shen"
+          "examples/#659 Shen/hello.shen",
+          "examples/#659 Shen/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Caricare hello.shen in Shen e registrare output/versione.",
+        "run_or_check_command": "shen-scheme < hello.shen",
         "expected_result": "Hello, World!",
         "sources": [
           "https://shenlanguage.org/"
@@ -38314,16 +38392,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Shen non predisposto."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:05:24.605950+00:00",
+        "verification_log": "examples/#659 Shen/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The Shen/Scheme interpreter evaluated the unchanged original forms from standard input and printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#659 Shen/hello.shen": "e17c566a0706cf756f1246d24864a8e195ed9edf45dc9b041612ed7f9697ec5d"
+        }
       }
     },
     {
@@ -38881,14 +38960,15 @@
       "example": {
         "semantic_goal": "Eseguire Smalltalk e scrivere il saluto sul Transcript.",
         "validation_mode": "compile_and_run",
-        "toolchain": "GNU Smalltalk",
+        "toolchain": "GNU Smalltalk version 3.2.5",
         "files": [
           "examples/#670 Smalltalk/hello.st",
           "examples/#670 Smalltalk/variants/cs-a9f0f152/hello.cs",
-          "examples/#670 Smalltalk/variants/cs-a9f0f152/README.md"
+          "examples/#670 Smalltalk/variants/cs-a9f0f152/README.md",
+          "examples/#670 Smalltalk/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "gst hello.st",
+        "run_or_check_command": "gst -I <GNU image> -q hello.st",
         "expected_result": "Transcript riceve Hello, World! seguito da newline.",
         "sources": [
           {
@@ -38901,16 +38981,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il dialect scelto è GNU Smalltalk e la riproduzione richiede quel runtime."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:37:11.624820+00:00",
+        "verification_log": "examples/#670 Smalltalk/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "GNU Smalltalk evaluated the original Transcript message sequence in its genuine image and printed the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#670 Smalltalk/hello.st": "4c6816d755af89780817cc765c85276ab18fe6b0a519ef7cfa0d709d736e570a"
+        }
       }
     },
     {
@@ -39264,12 +39345,13 @@
       "example": {
         "semantic_goal": "Validare uno schema SpiceDB e una caveat che concede lettura quando message è il saluto.",
         "validation_mode": "validate_schema_and_evaluate_caveat",
-        "toolchain": "SpiceDB e zed in ambiente isolato",
+        "toolchain": "SpiceDB spicedb v1.57.1",
         "files": [
-          "examples/#677 SpiceDB Schema/hello.zed"
+          "examples/#677 SpiceDB Schema/hello.zed",
+          "examples/#677 SpiceDB Schema/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "zed validate hello.zed; valutare la caveat greeting in un backend SpiceDB isolato con message=\"Hello, World!\".",
+        "run_or_check_command": "zed schema write hello.zed; create the caveated fixture relationship; zed permission check with actual and control strings",
         "expected_result": "schema accettato; caveat greeting true soltanto per Hello, World!.",
         "sources": [
           {
@@ -39290,16 +39372,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "L’esempio non modifica un database di autorizzazioni. Il comando esatto dipende dalla versione zed predisposta."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:02.102064+00:00",
+        "verification_log": "examples/#677 SpiceDB Schema/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The genuine SpiceDB instance loaded the unchanged schema. It granted the synthetic view permission for the exact greeting and denied the same relationship with a different message.",
+        "verified_artifact_sha256": {
+          "examples/#677 SpiceDB Schema/hello.zed": "4954f42c61a4ec8b68f26b78a50ac785313908d82218dc66ff48ab9c28e645b5"
+        }
       }
     },
     {
@@ -39425,12 +39508,13 @@
       "example": {
         "semantic_goal": "Compilare un modello Stan che stampa il saluto nella fase transformed data.",
         "validation_mode": "compile_model_and_execute_transformed_data",
-        "toolchain": "Stan stanc compiler e CmdStan runtime",
+        "toolchain": "Stan C++ via httpstan 4.13.0",
         "files": [
-          "examples/#680 Stan/hello.stan"
+          "examples/#680 Stan/hello.stan",
+          "examples/#680 Stan/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "stanc hello.stan --o=build/hello.hpp",
+        "run_or_check_command": "python check.py with httpstan 4.13.0",
         "expected_result": "modello compilato; l’inizializzazione CmdStan stampa Hello, World!.",
         "sources": [
           {
@@ -39443,16 +39527,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il print dipende dal runtime: il C++ generato dal compiler da solo prova la sintassi."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:29:27.649323+00:00",
+        "verification_log": "examples/#680 Stan/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The native Stan C++ service initialized the original compiled zero-parameter model. The model’s transformed data initialization emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#680 Stan/hello.stan": "7c9dd573dc33ba87b1c9c0524448af51f9b40d8e08e9dc0f4c98cdb97c4eae3c"
+        }
       }
     },
     {
@@ -41298,13 +41383,14 @@
       "example": {
         "semantic_goal": "Renderizzare un template Tea con parametro audience = World.",
         "validation_mode": "native_tea_template",
-        "toolchain": "Tea compiler/runtime TeaTrove, versione da registrare",
+        "toolchain": "TeaTrove Tea 4.1.2",
         "files": [
           "examples/#712 Tea/README.md",
-          "examples/#712 Tea/hello.tea"
+          "examples/#712 Tea/hello.tea",
+          "examples/#712 Tea/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "TeaTrove: compilare hello.tea e invocare hello con parametro World",
+        "run_or_check_command": "java -cp <TeaTrove classpath> TeaCheck.java",
         "expected_result": "Hello, World! con newline finale.",
         "sources": [
           "https://github.com/teatrove/teatrove/wiki/Tea-Templates"
@@ -41314,16 +41400,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "TeaTrove compiler/runtime non disponibili; parser e rendering pendenti."
-        ],
-        "notes": "Template Tea nel sistema Java TeaTrove: la regione testo e l’espressione audience producono il saluto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:26:45.293564+00:00",
+        "verification_log": "examples/#712 Tea/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The Tea compiler compiled the original template. The runtime accepted the original template parameter and emitted the exact rendered text.",
+        "verified_artifact_sha256": {
+          "examples/#712 Tea/hello.tea": "486bd51ce97f1df89b1d24988a47a03d3d3ed9498dbcea7bee925a53f4d09f56"
+        }
       }
     },
     {
@@ -43581,16 +43668,17 @@
       "example": {
         "semantic_goal": "Espandere uno snippet UltiSnips per ottenere il saluto.",
         "validation_mode": "load_snippet_and_expand",
-        "toolchain": "Vim con UltiSnips originale",
+        "toolchain": "UltiSnips 3.2 / VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Aug 24 2026 22:13:04)",
         "files": [
           "examples/#753 Vim Snippet/hello.snippets",
           "examples/#753 Vim Snippet/variants/snip-4fb5d1ae/hello.snip",
           "examples/#753 Vim Snippet/variants/snip-4fb5d1ae/README.md",
           "examples/#753 Vim Snippet/variants/snippet-29acba5e/hello.snippet",
-          "examples/#753 Vim Snippet/variants/snippet-29acba5e/README.md"
+          "examples/#753 Vim Snippet/variants/snippet-29acba5e/README.md",
+          "examples/#753 Vim Snippet/verification/native_20261118_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Caricare hello.snippets come filetype fixture; digitare hello e attivare l’espansione.",
+        "run_or_check_command": "vim -Nu NONE -n -es -S expand.vim",
         "expected_result": "buffer contiene Hello, World!.",
         "sources": [
           {
@@ -43603,16 +43691,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "La verifica richiede il loader e l’espansore, non un parser inventato per queste tre righe."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-18T17:01:02.267044+00:00",
+        "verification_log": "examples/#753 Vim Snippet/verification/native_20261118_main.json",
+        "blockers": [],
+        "notes": "The real Vim and UltiSnips runtime expanded the unchanged snippet into the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#753 Vim Snippet/hello.snippets": "64243cc5ca9f01d2636188d82343ddd199536979ebb0c87178b4b68df27f153c"
+        }
       }
     },
     {

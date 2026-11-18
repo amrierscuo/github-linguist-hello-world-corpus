@@ -1,5 +1,18 @@
 # #242 Gentoo Eclass
 
+## Verified on November 18, 2026
+
+Portage executed the original eclass and its actual inherit/EXPORT_FUNCTIONS consumer in its disposable package image. The installed executable printed the exact greeting.
+
+Run `ebuild hello-world-1.0.ebuild install (isolated overlay); run its image/usr/bin/hello-world`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Export src_install from an eclass EAPI 8 and install the hello-world script in its ebuild consumer.
 
 ## Toolchain
@@ -37,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.eclass` | [hello-world.eclass](hello-world.eclass) syntax verified |
+| `.eclass` | [hello-world.eclass](hello-world.eclass) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #362 KoLmafia ASH
 
+## Verified on November 18, 2026
+
+The genuine KoLmafia interpreter executed the original ASH entry point. The configured console logger captured its actual greeting.
+
+Run `java -cp <KoLmafia JAR> RunAsh.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ash` | [hello.ash](hello.ash) created; verification pending |
+| `.ash` | [hello.ash](hello.ash) Syntax and behavior verified |
+
+</details>

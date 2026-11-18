@@ -1,5 +1,18 @@
 # #274 GtkRC
 
+## Verified on November 18, 2026
+
+The genuine GTK2 runtime loaded the original resource file. The original verifier confirmed the RGB values and the actual label text in a private virtual framebuffer.
+
+Run `gcc check.c -o check $(pkg-config --cflags --libs gtk+-2.0); xvfb-run -a ./check hello.gtkrc`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `GtkRC`, tipo `data`, language_id `876401352`.
 
 Define a GtkRC style called Hello, World! and apply the color to the widget greeting of a GTK 2. test
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gtkrc` | [hello.gtkrc](hello.gtkrc) created; verification pending |
+| `.gtkrc` | [hello.gtkrc](hello.gtkrc) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #307 Idris
 
+## Verified on November 18, 2026
+
+The published Idris 2 compiler built the original source against the original Idris standard libraries. The compiled Chez program emitted the exact greeting.
+
+Run `idris2 --cg chez hello.idr -o hi_run; run the generated executable or Chez program`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Type and run a main Idris that uses putStrLn.
 
 ## Toolchain
@@ -34,5 +45,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.idr` | [hello.idr](hello.idr) created; verification pending |
+| `.idr` | [hello.idr](hello.idr) Syntax and behavior verified |
 | `.lidr` | [hello.lidr](variants/lidr-f41f21bf/hello.lidr) created; verification pending |
+
+</details>

@@ -1,5 +1,16 @@
 # #488 Oberon
 
+## Verified on November 18, 2026
+
+The native Oberon-2 translator compiled the original module and linked it with the genuine standard library. The executable printed the exact greeting.
+
+Run `voc -m -O2 Hello.ob2; ./Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Perform a Oberon- 2 module that uses Out.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ob2` | [Hello.ob2](Hello.ob2) created; verification pending |
+| `.ob2` | [Hello.ob2](Hello.ob2) Syntax and behavior verified |
+
+</details>
