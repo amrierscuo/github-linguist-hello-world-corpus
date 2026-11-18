@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "ordinal": 578,
+  "language": "QuakeC",
+  "timestamp_utc": "2026-11-18T23:05:04.213680+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Bind the real Quake server entry and map the console-only broadcast sink",
+      "command": [
+        "python3",
+        "${SCRATCH}/578-5kw4j14x/dedicated-host.py"
+      ],
+      "cwd": "${SCRATCH}/578-5kw4j14x/gmqcc",
+      "timestamp_utc": "2026-11-18T23:05:04.330827+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/578-5kw4j14x/home",
+        "TMPDIR": "${SCRATCH}/578-5kw4j14x/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Build the GMQCC compiler and native QuakeC VM",
+      "command": [
+        "make",
+        "-j3"
+      ],
+      "cwd": "${SCRATCH}/578-5kw4j14x/gmqcc",
+      "timestamp_utc": "2026-11-18T23:05:02.974645+00:00",
+      "timeout_seconds": 160,
+      "exit_code": 0,
+      "stdout": "g++ -MT .build/objs/ast.o -MMD -MP -MF .build/deps/ast.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/ast.o ast.cpp\ng++ -MT .build/objs/code.o -MMD -MP -MF .build/deps/code.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/code.o code.cpp\ng++ -MT .build/objs/conout.o -MMD -MP -MF .build/deps/conout.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/conout.o conout.cpp\ng++ -MT .build/objs/fold.o -MMD -MP -MF .build/deps/fold.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/fold.o fold.cpp\ng++ -MT .build/objs/ftepp.o -MMD -MP -MF .build/deps/ftepp.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/ftepp.o ftepp.cpp\ng++ -MT .build/objs/intrin.o -MMD -MP -MF .build/deps/intrin.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/intrin.o intrin.cpp\ng++ -MT .build/objs/ir.o -MMD -MP -MF .build/deps/ir.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/ir.o ir.cpp\ng++ -MT .build/objs/lexer.o -MMD -MP -MF .build/deps/lexer.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/lexer.o lexer.cpp\ng++ -MT .build/objs/main.o -MMD -MP -MF .build/deps/main.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/main.o main.cpp\ng++ -MT .build/objs/opts.o -MMD -MP -MF .build/deps/opts.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/opts.o opts.cpp\ng++ -MT .build/objs/parser.o -MMD -MP -MF .build/deps/parser.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/parser.o parser.cpp\ng++ -MT .build/objs/stat.o -MMD -MP -MF .build/deps/stat.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/stat.o stat.cpp\ng++ -MT .build/objs/utf8.o -MMD -MP -MF .build/deps/utf8.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/utf8.o utf8.cpp\ng++ -MT .build/objs/util.o -MMD -MP -MF .build/deps/util.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/util.o util.cpp\ng++ -MT .build/objs/exec.o -MMD -MP -MF .build/deps/exec.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/exec.o exec.cpp\ng++ -MT .build/objs/test.o -MMD -MP -MF .build/deps/test.Td -Wall -Wextra -Wno-parentheses -Wno-class-memaccess -Wno-implicit-fallthrough -std=c++11 -fno-exceptions -fno-rtti -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -fno-stack-protector -fno-stack-check -fomit-frame-pointer -O3 -c -o .build/objs/test.o test.cpp\ng++ .build/objs/conout.o .build/objs/opts.o .build/objs/stat.o .build/objs/test.o .build/objs/util.o -Wl,--gc-sections -o testsuite\nstrip testsuite\ng++ .build/objs/ast.o .build/objs/code.o .build/objs/conout.o .build/objs/fold.o .build/objs/ftepp.o .build/objs/intrin.o .build/objs/ir.o .build/objs/lexer.o .build/objs/main.o .build/objs/opts.o .build/objs/parser.o .build/objs/stat.o .build/objs/utf8.o .build/objs/util.o -Wl,--gc-sections -o gmqcc\ng++ .build/objs/exec.o .build/objs/conout.o .build/objs/opts.o .build/objs/stat.o .build/objs/util.o -Wl,--gc-sections -o qcvm\nstrip gmqcc\nstrip qcvm\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/578-5kw4j14x/home",
+        "TMPDIR": "${SCRATCH}/578-5kw4j14x/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Record native QuakeC compiler version",
+      "command": [
+        "${SCRATCH}/578-5kw4j14x/gmqcc/gmqcc",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/578-5kw4j14x",
+      "timestamp_utc": "2026-11-18T23:05:10.010676+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "GMQCC 0.3.6 Built Nov 19 2026 00:05:06\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/578-5kw4j14x/home",
+        "TMPDIR": "${SCRATCH}/578-5kw4j14x/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile the exact progs.src and hello.qc files",
+      "command": [
+        "${SCRATCH}/578-5kw4j14x/gmqcc/gmqcc"
+      ],
+      "cwd": "${SCRATCH}/578-5kw4j14x",
+      "timestamp_utc": "2026-11-18T23:05:10.019231+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Mode: progs.src\nThere are 1 items to compile:\n  item: hello.qc (qc)\nwriting 'progs.dat'\n\nOptimizations:\n\nFile statistics:\n    dat:\n        name: progs.dat\n        size: 504 (bytes)\n        crc:  0x327B\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/578-5kw4j14x/home",
+        "TMPDIR": "${SCRATCH}/578-5kw4j14x/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/578-5kw4j14x/gmqcc/qcvm",
+        "progs.dat"
+      ],
+      "cwd": "${SCRATCH}/578-5kw4j14x",
+      "timestamp_utc": "2026-11-18T23:05:10.029883+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/578-5kw4j14x/home",
+        "TMPDIR": "${SCRATCH}/578-5kw4j14x/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#578 QuakeC/progs.src": "a5f55e6cfbfa1f9bfe6b534bed53125b1bb7a6f404094510ea4438380e28667a",
+    "examples/#578 QuakeC/hello.qc": "c7850dad4664d33d60c460612433c2e994e65af949db79442ceedb88b9e83a60"
+  },
+  "fixture_sha256": {
+    "dedicated-host.py": {
+      "sha256": "f146027ccdb183fd6b657a41ca2b6140fad8daeb0e62554d28f6aeb5b217cac6",
+      "content_utf8": "import pathlib, re\nsource = pathlib.Path(\"exec.cpp\")\ntext = source.read_text()\ntext, n = re.subn(r\"(&qc_stov\\s+)(/\\*\\s*16\\s*\\*/)\",r\"\\g<1>, \\2\\n    nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,\\n    &qc_print /* Quake server bprint, 23 */\",text)\nassert n == 1\ntext, n = re.subn(r'((?:strcmp|strncmp)\\([^\\n]*?)\"main\"',r'\\1\"worldspawn\"',text)\nassert n == 1\nsource.write_text(text)\n"
+    }
+  },
+  "sources": [
+    "https://github.com/fte-team/fteqw",
+    "https://github.com/id-Software/Quake/blob/master/WinQuake/pr_cmds.c"
+  ],
+  "previous_verification_log": "examples/#578 QuakeC/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/graphitemaster/gmqcc/tar.gz/main",
+      "ref": "main",
+      "sha256": "aea7db183439d4dda013a53416b961bf7e677d64697f645b1554b4a885ca0cdd"
+    }
+  ],
+  "compiled_program_sha256": "a1ed08440196766b5d6b652307b9ad475c8f9d286a9965613ddc275c5a887e93",
+  "toolchain": "GMQCC 0.3.6 Built Nov 19 2026 00:05:06 and its QCVM with Quake server host bindings",
+  "reproduction_command": "gmqcc && qcvm progs.dat (build QCVM with the recorded dedicated-host.py adapter)",
+  "semantic_scope": "The native compiler loaded the original progs.src and hello.qc. The upstream VM executed worldspawn from the generated program. The test host bound Quake builtin number 23 to the VM console print implementation and captured the exact broadcast argument.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

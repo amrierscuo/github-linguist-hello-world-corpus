@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "ordinal": 305,
+  "language": "IRC log",
+  "timestamp_utc": "2026-11-18T23:20:40.559975+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the native WeeChat version",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/weechat-headless",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/305-esq7sy0m",
+      "timestamp_utc": "2026-11-18T23:20:40.581601+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "4.1.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/305-esq7sy0m/home",
+        "TMPDIR": "${SCRATCH}/305-esq7sy0m/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WEECHAT_EXTRA_LIBDIR": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/weechat/plugins"
+      }
+    },
+    {
+      "label": "Load the unchanged IRC log into the native logger backlog",
+      "command": [
+        "timeout",
+        "18",
+        "${TOOL_CACHE}/tools/apt/usr/bin/weechat-headless",
+        "--dir",
+        "${SCRATCH}/305-esq7sy0m/home",
+        "--stdout",
+        "--no-connect",
+        "--no-plugin",
+        "--run",
+        "/plugin load ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/weechat/plugins/logger.so;/plugin load ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/weechat/plugins/python.so;/python load ${SCRATCH}/305-esq7sy0m/replay.py"
+      ],
+      "cwd": "${SCRATCH}/305-esq7sy0m",
+      "timestamp_utc": "2026-11-18T23:20:40.604163+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "[2026-11-19 00:20:40] WeeChat 4.1.1 (compiled on Apr  1 2024 04:39:52)\n[2026-11-19 00:20:40] Writing configuration file sec.conf (default options)\n[2026-11-19 00:20:40] Reading configuration file sec.conf\n[2026-11-19 00:20:40] Writing configuration file weechat.conf (default options)\n[2026-11-19 00:20:40] Reading configuration file weechat.conf\nWeeChat is running in headless mode (ctrl-c to quit).\n[2026-11-19 00:20:40] Writing configuration file plugins.conf (default options)\n[2026-11-19 00:20:40] Reading configuration file plugins.conf\n[2026-11-19 00:20:40] Writing configuration file logger.conf (default options)\n[2026-11-19 00:20:40] Reading configuration file logger.conf\n[2026-11-19 00:20:40] Writing configuration file python.conf (default options)\n[2026-11-19 00:20:40] Reading configuration file python.conf\n[2026-11-19 00:20:41] Writing configuration file plugins.conf\n[2026-11-19 00:20:41] Writing configuration file python.conf\n[2026-11-19 00:20:41] Writing configuration file logger.conf\n[2026-11-19 00:20:41] Writing configuration file weechat.conf\n[2026-11-19 00:20:41] Writing configuration file sec.conf\n",
+      "stderr": "\u001b[?1002l\u001b[?1000l\u001b[?1005l\u001b[?2004h\u001b[?2004l\u001b[?1002l\u001b[?1000l\u001b[?1005l",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/305-esq7sy0m/home",
+        "TMPDIR": "${SCRATCH}/305-esq7sy0m/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WEECHAT_EXTRA_LIBDIR": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/weechat/plugins"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#305 IRC log/hello.weechatlog": "bebcff53abb9eb93725e14c1f2ee293c7a38abac0b37aceb75df7a0e01bccaac"
+  },
+  "fixture_sha256": {
+    "replay.py": {
+      "sha256": "e83ff1e7a1a06277d9369f266096bd73824449d13b81606daa6a5a7b815a539b",
+      "content_utf8": "import ctypes\n\nimport json\n\nimport os\n\nfrom pathlib import Path\n\nimport weechat as w\n\n\n\nreceived = []\n\n\n\ndef on_print(data, buffer, date, tags, displayed, highlight, prefix, message):\n\n    received.append({\"source\": prefix, \"message\": message, \"tags\": tags})\n\n    return w.WEECHAT_RC_OK\n\n\n\ndef replay(data, remaining):\n\n    b = w.buffer_search(\"python\", \"hello\")\n\n    if not b:\n\n        b = w.current_buffer()\n\n    w.hook_print(b, \"\", \"\", 1, \"on_print\", \"\")\n\n    logger = ctypes.CDLL(str(Path(os.environ[\"WEECHAT_EXTRA_LIBDIR\"]) / \"logger.so\"))\n\n    logger.logger_backlog_file.argtypes = [ctypes.c_void_p, ctypes.c_char_p, ctypes.c_int]\n\n    logger.logger_backlog_file.restype = None\n\n    logger.logger_backlog_file(int(b, 16), os.fsencode(\"hello.weechatlog\"), 10)\n\n    signal_rc = 0\n\n    rows = []\n\n    lines = w.hdata_pointer(w.hdata_get(\"buffer\"), b, \"lines\")\n\n    line = w.hdata_pointer(w.hdata_get(\"lines\"), lines, \"first_line\")\n\n    while line:\n\n        data = w.hdata_pointer(w.hdata_get(\"line\"), line, \"data\")\n\n        hd = w.hdata_get(\"line_data\")\n\n        values = [w.string_remove_color(w.hdata_string(hd, data, key), \"\") for key in (\"prefix\", \"message\")]\n\n        rows.append(values)\n\n        line = w.hdata_move(w.hdata_get(\"line\"), line, 1)\n\n    Path(\"observed.json\").write_text(json.dumps({\"buffer\": w.buffer_get_string(b, \"full_name\"),\"signal_rc\": signal_rc,\"lines\": rows,\"printed\": received}))\n\n    w.command(\"\", \"/quit\")\n\n    return w.WEECHAT_RC_OK\n\n\n\nif w.register(\"corpus_probe\", \"Corpus\", \"1\", \"MIT\", \"Read native logger backlog\", \"\", \"\"):\n\n    prefix = Path(\"logs\").resolve()\n\n    w.command(\"\", \"/set logger.file.path \" + str(prefix) + \"/\")\n\n    w.command(\"\", \"/set logger.file.mask corpus.weechatlog\")\n\n    w.command(\"\", \"/set logger.look.backlog 10\")\n\n    w.command(\"\", \"/set logger.file.auto_log on\")\n\n    b = w.buffer_new(\"hello\", \"\", \"\", \"\", \"\")\n\n    w.hook_timer(500, 0, 1, \"replay\", \"\")\n\n"
+    }
+  },
+  "sources": [
+    "https://weechat.org/files/doc/devel/weechat_user.en.html",
+    "https://github.com/weechat/weechat/tree/main/src/plugins/logger"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "weechat-headless",
+      "version": "4.1.1-1build7",
+      "filename": "pool/universe/w/weechat/weechat-headless_4.1.1-1build7_amd64.deb",
+      "sha256": "cec41a1a3632b7ec40766e6d4e1ceae48c160e119996baa906c03e921e0f316f",
+      "bytes": 421224,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/w/weechat/weechat-headless_4.1.1-1build7_amd64.deb"
+    },
+    {
+      "name": "weechat-plugins",
+      "version": "4.1.1-1build7",
+      "filename": "pool/universe/w/weechat/weechat-plugins_4.1.1-1build7_amd64.deb",
+      "sha256": "b0c79aa3886d0e54b9e77fa3f4b13c60bf6427a724b9d6a44874003fc5733ebf",
+      "bytes": 169308,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/w/weechat/weechat-plugins_4.1.1-1build7_amd64.deb"
+    },
+    {
+      "name": "weechat-python",
+      "version": "4.1.1-1build7",
+      "filename": "pool/universe/w/weechat/weechat-python_4.1.1-1build7_amd64.deb",
+      "sha256": "240bb77a1a62b40a96b0db7d0f98725cfac55821ae8a50ae1da78c83af508798",
+      "bytes": 59378,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/w/weechat/weechat-python_4.1.1-1build7_amd64.deb"
+    }
+  ],
+  "buffer_readback": {
+    "buffer": "python.hello",
+    "signal_rc": 0,
+    "lines": [
+      [
+        "corpus-example",
+        "Hello, World!"
+      ],
+      [
+        "===",
+        "========== End of backlog (1 lines) =========="
+      ]
+    ],
+    "printed": []
+  },
+  "toolchain": "WeeChat 4.1.1 with native logger plugin",
+  "reproduction_command": "weechat-headless --no-connect --no-plugin --run <load logger, Python and the recorded replay.py fixture>",
+  "semantic_scope": "WeeChat’s real logger plugin replayed the original input. The probe read the exact sender and greeting back from the live buffer.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

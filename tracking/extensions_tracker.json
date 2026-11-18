@@ -9052,8 +9052,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#180 Eagle/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#180 Eagle/verification/native_20261119_wave756_main.json",
       "verified_artifact_sha256": {
         "examples/#180 Eagle/hello.sch": "254292f02f3d9ed10e45ae37b82b23ee0c795fda7bf0cc7c6ef77c4f7c0ac333"
       },
@@ -9067,10 +9067,8 @@
         "https://github.com/github-linguist/linguist/blob/main/samples/Eagle/Eagle.sch",
         "https://github.com/drtrigon/eagle/blob/master/doc/eagle.dtd"
       ],
-      "blockers": [
-        "Autodesk EAGLE/Fusion Electronics CAD opening and visual text check not performed."
-      ],
-      "notes": "Lo schematico è un artefatto XML EAGLE con drawing/settings/grid/layers/schematic/sheets/plain/text, senza circuiti o componenti inventati. Il DTD originale del vendor è reperito in un mirror terzo ed è conservato solo in work con hash nel log. Il checker usa quel DTD completo, non una validazione personalizzata. L’apertura e la resa nella CAD restano da provare."
+      "blockers": [],
+      "notes": "The compatible Eagle viewer parsed the untouched schematic and its native vector renderer exported the Info-layer text geometry as SVG. The rendered SVG text contains the exact greeting."
     },
     {
       "language_ordinal": 180,
@@ -11383,10 +11381,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#224 GAMS/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#224 GAMS/hello.gms": "23fa104fa2f0490ca06a914a80560e77622b9fdab479f157293ce1a4d62e34a7"
+      },
       "based_on": null,
       "documentation": "examples/#224 GAMS/README.md",
       "supporting_files": [],
@@ -11395,10 +11395,8 @@
       "sources": [
         "https://www.gams.com/53/docs/UG_Put.html"
       ],
-      "blockers": [
-        "Runtime proprietario GAMS non preparato; parsing ed esecuzione put restano pendenti."
-      ],
-      "notes": "Il sorgente usa un file GAMS, put e putclose. Il risultato è un file di testo, non l’output di un solver: non viene definito un modello di ottimizzazione."
+      "blockers": [],
+      "notes": "The vendor command-line GAMS runtime executed the original file declarations and put statements. The generated greeting.txt contains the exact greeting."
     },
     {
       "language_ordinal": 225,
@@ -16134,10 +16132,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#296 HolyC/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#296 HolyC/hello.hc": "490c3c2a25c75ea8441f71ae74beffcbdc20253a4aba7623fd69081dc5497ea6"
+      },
       "based_on": null,
       "documentation": "examples/#296 HolyC/README.md",
       "supporting_files": [],
@@ -16147,10 +16147,8 @@
         "https://raw.githubusercontent.com/cia-foundation/TempleOS/archive/Doc/HolyC.DD",
         "https://github.com/cia-foundation/TempleOS/tree/archive"
       ],
-      "blockers": [
-        "TempleOS e compiler/runtime HolyC non disponibili; nessuna verifica con GCC sostitutivo."
-      ],
-      "notes": "Il file definisce una funzione U0 e un puntatore U8* al pubblico. Il codice top-level chiama Greeting(), come previsto da HolyC; non usa un main C. Il formato %s viene interpretato dal Print nativo TempleOS."
+      "blockers": [],
+      "notes": "The compatible compiler evaluated the unmodified HolyC source in the console runtime and printed the greeting."
     },
     {
       "language_ordinal": 298,
@@ -16836,10 +16834,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#305 IRC log/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#305 IRC log/hello.weechatlog": "bebcff53abb9eb93725e14c1f2ee293c7a38abac0b37aceb75df7a0e01bccaac"
+      },
       "based_on": null,
       "documentation": "examples/#305 IRC log/README.md",
       "supporting_files": [],
@@ -16849,10 +16849,8 @@
         "https://weechat.org/files/doc/devel/weechat_user.en.html",
         "https://github.com/weechat/weechat/tree/main/src/plugins/logger"
       ],
-      "blockers": [
-        "Logger/backlog WeeChat reale non eseguito; verifica del formato con tool nativo pending."
-      ],
-      "notes": "Fixture testuale originale con data e nickname illustrativi; non proviene da una conversazione reale e non contiene messaggi inviati a utenti. Il formato segue il logger WeeChat; non è un sorgente eseguibile."
+      "blockers": [],
+      "notes": "WeeChat’s real logger plugin replayed the original input. The probe read the exact sender and greeting back from the live buffer."
     },
     {
       "language_ordinal": 306,
@@ -22277,8 +22275,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#399 LookML/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#399 LookML/verification/native_20261119_wave756_main.json",
       "verified_artifact_sha256": {
         "examples/#399 LookML/hello.view.lkml": "59870c7955ce0f2e9462e464fc8a32eeeadca43bd96782da82e1b38ce43d262e"
       },
@@ -22291,10 +22289,8 @@
         "https://docs.cloud.google.com/looker/docs/reference/param-view-derived-table",
         "https://github.com/joshtemple/lkml"
       ],
-      "blockers": [
-        "Google Looker project/database connection and native validator/runtime pending."
-      ],
-      "notes": "lkml è un parser community esistente, non un validatore implementato qui. SQLite esegue il SQL estratto dal vero AST e trova il saluto. La sostituzione ${TABLE}, connessione e semantica Looker restano pending."
+      "blockers": [],
+      "notes": "The compatible lkml parser loaded the original view. The test selected its declared greeting dimension by substituting the derived table alias for the documented TABLE reference and executing the resulting projected query in SQLite. The negative control confirms missing columns are rejected."
     },
     {
       "language_ordinal": 399,
@@ -23151,10 +23147,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#414 MUF/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#414 MUF/hello.muf": "fca9bc311b87a87fd9e8a0733cd22a9603816483aec68f307287a2cb0ec36f2b"
+      },
       "based_on": null,
       "documentation": "examples/#414 MUF/README.md",
       "supporting_files": [],
@@ -23166,10 +23164,8 @@
           "url": "https://www.fuzzball.org/docs/mufman.html"
         }
       ],
-      "blockers": [
-        "Runtime locale MUCK/MUF non disponibile."
-      ],
-      "notes": "Nessun collegamento a server pubblici: la semantica richiede un runtime MUCK locale con il destinatario me."
+      "blockers": [],
+      "notes": "Fuzzball loaded the original MUF source through its editor, compiled it, dispatched it as an action and delivered the exact native notification to the test player."
     },
     {
       "language_ordinal": 414,
@@ -25492,10 +25488,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#461 NWScript/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#461 NWScript/hello.nss": "086295e9f81e79fa0912cb84d648e5fd3471eedc49e75409ae5371b04814620f"
+      },
       "based_on": null,
       "documentation": "examples/#461 NWScript/README.md",
       "supporting_files": [],
@@ -25505,10 +25503,8 @@
         "https://forums.beamdog.com/uploads/editor/w4/7kqf0pqj21mb.pdf",
         "https://nwn.beamdog.net/docs/"
       ],
-      "blockers": [
-        "Toolset/compiler/VM NWScript non preparati; verifiche pendenti."
-      ],
-      "notes": "main concatena una stringa e chiama PrintString. Richiede le dichiarazioni builtin e la VM del gioco; GCC non è un compiler NWScript."
+      "blockers": [],
+      "notes": "The bundled official compiler compiled the original NWScript. The compatible VM executed the resulting bytecode and dispatched the computed greeting to the registered PrintString host callback."
     },
     {
       "language_ordinal": 462,
@@ -29129,10 +29125,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#531 Pep8/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#531 Pep8/hello.pep": "4c59cf76c58ec0738b1addfccf4e77cdfe14fa40784afbcd04859e509af61261"
+      },
       "based_on": null,
       "documentation": "examples/#531 Pep8/README.md",
       "supporting_files": [],
@@ -29141,10 +29139,8 @@
       "sources": [
         "https://www.computersystemsbook.com/4th-edition/pep8/"
       ],
-      "blockers": [
-        "Required pep8 compiler/interpreter and matching host libraries are not configured."
-      ],
-      "notes": "Sorgente originale STRO direct, STOP e dati ASCII dopo il codice; strumenti non disponibili."
+      "blockers": [],
+      "notes": "The official Pep/8 command-line assembler assembled the original source. The matching CPU simulator executed the program and emitted the exact greeting from the STRO trap."
     },
     {
       "language_ordinal": 532,
@@ -30082,10 +30078,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#549 Power Query/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#549 Power Query/hello.pq": "541b3610166192a017e5688b65fed418c9c8b7748db8151d1809f8ea1f6b292d"
+      },
       "based_on": null,
       "documentation": "examples/#549 Power Query/README.md",
       "supporting_files": [],
@@ -30095,10 +30093,8 @@
         "https://learn.microsoft.com/en-us/powerquery-m/m-spec-introduction",
         "https://learn.microsoft.com/en-us/powerquery-m/m-spec-consolidated-grammar"
       ],
-      "blockers": [
-        "Engine PowerQuery non preparato; parsing/evaluation pendenti."
-      ],
-      "notes": "let lega Audience e Greeting; & concatena stringhe e in restituisce il valore. Il programma è M, distinto da PowerShell."
+      "blockers": [],
+      "notes": "The compatible M interpreter evaluated the original let bindings and text concatenation, returning the exact greeting as the query result."
     },
     {
       "language_ordinal": 550,
@@ -31682,8 +31678,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#578 QuakeC/verification/result.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#578 QuakeC/verification/native_20261119_wave756_main.json",
       "verified_artifact_sha256": {
         "examples/#578 QuakeC/hello.qc": "c7850dad4664d33d60c460612433c2e994e65af949db79442ceedb88b9e83a60"
       },
@@ -31696,10 +31692,8 @@
         "https://github.com/fte-team/fteqw",
         "https://github.com/id-Software/Quake/blob/master/WinQuake/pr_cmds.c"
       ],
-      "blockers": [
-        "Quake VM fixture not available; native execution pending."
-      ],
-      "notes": "Builtin #23 è bprint della VM Quake; il compilatore reale può verificare il bytecode, ma non si simula il builtin."
+      "blockers": [],
+      "notes": "The native compiler loaded the original progs.src and hello.qc. The upstream VM executed worldspawn from the generated program. The test host bound Quake builtin number 23 to the VM console print implementation and captured the exact broadcast argument."
     },
     {
       "language_ordinal": 579,
@@ -47914,10 +47908,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#805 ZenScript/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#805 ZenScript/hello.zs": "6867a07f1d52fff37f3fc0d15d654f9d22959402b6f737cd404e798e6771295f"
+      },
       "based_on": null,
       "documentation": "examples/#805 ZenScript/README.md",
       "supporting_files": [],
@@ -47926,10 +47922,8 @@
       "sources": [
         "https://docs.blamejared.com/1.12/en/Getting_Started/"
       ],
-      "blockers": [
-        "CraftTweaker/Minecraft runtime non disponibile; versione ZenScript da registrare."
-      ],
-      "notes": "Il campione sceglie ZenScript CraftTweaker1.12 con println; nessuna ricetta o contenuto esterno viene modificato."
+      "blockers": [],
+      "notes": "The upstream ZenScript compiler emitted and loaded JVM bytecode for the original script. Executing it called the host println global with the exact greeting."
     },
     {
       "language_ordinal": 806,
@@ -48475,10 +48469,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#822 mcfunction/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#822 mcfunction/hello.mcfunction": "38121383b987bed553f6fa34e7516e40621ce2adc3dfa637c75bff7da6dd29d3"
+      },
       "based_on": null,
       "documentation": "examples/#822 mcfunction/README.md",
       "supporting_files": [],
@@ -48488,10 +48484,8 @@
         "https://minecraft.wiki/w/Commands/data",
         "https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21"
       ],
-      "blockers": [
-        "Minecraft Java runtime/datapack di prova non disponibile."
-      ],
-      "notes": "Il goal è una stringa locale nello storage del mondo di prova, senza messaggi chat o connessioni esterne."
+      "blockers": [],
+      "notes": "The compatible interpreter loaded the exact function as a datapack entry, executed data modify storage, and read the greeting back under the declared corpus:hello storage key."
     },
     {
       "language_ordinal": 823,
@@ -48530,10 +48524,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#824 mupad/verification/native_20261119_wave756_main.json",
+      "verified_artifact_sha256": {
+        "examples/#824 mupad/hello.mu": "dfed36a1f32f9d18ddbe5ae1bdc2c507879953c18ff35f02f684656e67ddc7b3"
+      },
       "based_on": null,
       "documentation": "examples/#824 mupad/README.md",
       "supporting_files": [],
@@ -48542,10 +48538,8 @@
       "sources": [
         "https://www.mathworks.com/help/symbolic/mupad.html"
       ],
-      "blockers": [
-        "MuPAD legacy runtime non disponibile; compatibilità della versione da registrare."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The compatible Giac runtime executed the unchanged MuPAD program bytes after selecting its MuPAD compatibility mode, and the print call emitted the exact greeting."
     },
     {
       "language_ordinal": 825,

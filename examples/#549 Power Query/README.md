@@ -1,5 +1,16 @@
 # #549 Power Query
 
+## Verified on November 19, 2026
+
+The compatible M interpreter evaluated the original let bindings and text concatenation, returning the exact greeting as the query result.
+
+Run `pq eval hello.pq`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pq` | [hello.pq](hello.pq) created; verification pending |
+| `.pq` | [hello.pq](hello.pq) Syntax and behavior verified |
+
+</details>

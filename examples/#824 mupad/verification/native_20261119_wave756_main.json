@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "ordinal": 824,
+  "language": "mupad",
+  "timestamp_utc": "2026-11-18T23:18:25.890230+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the native Giac console version",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/giac",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/824-9jys9m_p",
+      "timestamp_utc": "2026-11-18T23:18:25.920426+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "// (c) 2001, 2021 B. Parisse & others\n1.9.0\n",
+      "stderr": "// Using locale /usr/share/locale/\n// C.UTF-8\n// /usr/share/locale/\n// giac\n// UTF-8\n// Maximum number of parallel threads 16\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/824-9jys9m_p/home",
+        "TMPDIR": "${SCRATCH}/824-9jys9m_p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the original MuPAD input in the compatible console mode",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/giac"
+      ],
+      "cwd": "${SCRATCH}/824-9jys9m_p",
+      "timestamp_utc": "2026-11-18T23:18:26.151348+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Welcome to giac readline interface, version 1.9.0\n(c) 2002,2023 B. Parisse & others\nHomepage https://www-fourier.univ-grenoble-alpes.fr/~parisse/giac.html\nReleased under the GPL license 3.0 or above\nSee http://www.gnu.org for license details\nMay contain BSD licensed software parts (lapack, atlas, tinymt)\n-------------------------------------------------\nPress CTRL and D simultaneously to finish session\nType ?commandname for help\n*** Type xcas to launch a light version of Xcas ***\n0>> xcas_mode(2);\n\"Warning: some commands like subs might change arguments order\"\n1>> print(\"Hello, World!\");\n0\n2>> ",
+      "stderr": "// Using locale /usr/share/locale/\n// C.UTF-8\n// /usr/share/locale/\n// giac\n// UTF-8\n// Maximum number of parallel threads 16\n// Unable to find keyword file ${TOOL_CACHE}/tools/apt/usr/share/giac/doc/en/keywords\nAdded 0 synonyms\nUnable to open HTML doc directory ./doc/\n// Time 0\nHello, World!\n// Time 0\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/824-9jys9m_p/home",
+        "TMPDIR": "${SCRATCH}/824-9jys9m_p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      },
+      "stdin": "xcas_mode(2);\nprint(\"Hello, World!\");\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#824 mupad/hello.mu": "dfed36a1f32f9d18ddbe5ae1bdc2c507879953c18ff35f02f684656e67ddc7b3"
+  },
+  "fixture_sha256": {
+    "configure-mupad.xws": {
+      "sha256": "6e51194fb92a70919cc3d2eb4608c67af69321b6579e4d52af8a0d00b9593f93",
+      "content_utf8": "xcas_mode(2);\n"
+    }
+  },
+  "sources": [
+    "https://www.mathworks.com/help/symbolic/mupad.html"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "libgiac0t64",
+      "version": "1.9.0.93+dfsg2-2",
+      "filename": "pool/universe/g/giac/libgiac0t64_1.9.0.93+dfsg2-2_amd64.deb",
+      "sha256": "36f7ec9ee6fb7aad66a1a8b7a449317895e4f3e46f490f7dbb424e13b7c38e84",
+      "bytes": 7819994,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/giac/libgiac0t64_1.9.0.93+dfsg2-2_amd64.deb"
+    },
+    {
+      "name": "xcas",
+      "version": "1.9.0.93+dfsg2-2",
+      "filename": "pool/universe/g/giac/xcas_1.9.0.93+dfsg2-2_amd64.deb",
+      "sha256": "16ad6a0ee2497bdb4d9c3845f5b9f56cd0e294d130eed9197b492b6494ea5f7c",
+      "bytes": 1781346,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/giac/xcas_1.9.0.93+dfsg2-2_amd64.deb"
+    }
+  ],
+  "toolchain": "Giac 1.9.0 console MuPAD compatibility mode",
+  "reproduction_command": "{ printf \"xcas_mode(2);\\n\"; cat hello.mu; } | icas",
+  "semantic_scope": "The compatible Giac runtime executed the unchanged MuPAD program bytes after selecting its MuPAD compatibility mode, and the print call emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

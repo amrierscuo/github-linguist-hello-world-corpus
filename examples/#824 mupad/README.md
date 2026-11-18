@@ -1,5 +1,16 @@
 # #824 mupad
 
+## Verified on November 19, 2026
+
+The compatible Giac runtime executed the unchanged MuPAD program bytes after selecting its MuPAD compatibility mode, and the print call emitted the exact greeting.
+
+Run `{ printf "xcas_mode(2);\n"; cat hello.mu; } | icas`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Evaluate a legacy MuPAD program.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mu` | [hello.mu](hello.mu) created; verification pending |
+| `.mu` | [hello.mu](hello.mu) Syntax and behavior verified |
+
+</details>

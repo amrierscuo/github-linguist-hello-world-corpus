@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "ordinal": 224,
+  "language": "GAMS",
+  "timestamp_utc": "2026-11-18T23:10:01.819201+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/224-owgiq37j",
+      "timestamp_utc": "2026-11-18T23:10:01.879569+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/224-owgiq37j/home",
+        "TMPDIR": "${SCRATCH}/224-owgiq37j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/224-owgiq37j/.venv/bin/python",
+        "gamspy-base"
+      ],
+      "cwd": "${SCRATCH}/224-owgiq37j",
+      "timestamp_utc": "2026-11-18T23:10:01.950654+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 2 packages in 419ms\nDownloading gamspy-base (35.2MiB)\n Downloaded gamspy-base\nPrepared 2 packages in 5.26s\nInstalled 2 packages in 4ms\n + gamspy-base==54.7.0\n + pyyaml==6.0.3\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/224-owgiq37j/home",
+        "TMPDIR": "${SCRATCH}/224-owgiq37j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record the vendor GAMS console version",
+      "command": [
+        "${SCRATCH}/224-owgiq37j/.venv/lib/python3.12/site-packages/gamspy_base/gams",
+        "?"
+      ],
+      "cwd": "${SCRATCH}/224-owgiq37j",
+      "timestamp_utc": "2026-11-18T23:10:07.739588+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "--- Job ? Start 11/19/26 00:10:07 54.7.0 8b4e16d1 LEX-LEG x86 64bit/Linux\n*** \n*** GAMS Base Module 54.7.0 8b4e16d1 Nov 9, 2026           LEG x86 64bit/Linux    \n*** \n*** GAMS Development Corporation\n*** support@gams.com, www.gams.com\n*** \n*** GAMS Release     : 54.7.0 8b4e16d1 LEX-LEG x86 64bit/Linux\n*** Release Date     : Nov 9, 2026          \n*** To use this release, you must have a valid license file for\n*** this platform with maintenance expiration date later than\n*** Jun 15, 2026\n*** System Directory : ${SCRATCH}/224-owgiq37j/.venv/lib/python3.12/site-packages/gamspy_base/\n***\n*** License          : ${SCRATCH}/224-owgiq37j/.venv/lib/python3.12/site-packages/gamspy_base/gamslice.txt\n*** GAMS Demo, for EULA and demo limitations see   G261028+0003Cc-GEN\n*** https://www.gams.com/latest/docs/UG%5FLicense.html               \n*** aaaed85b-f808-48f1\n*** DC0000                                                           \n*** v:2                                                              \n***\n*** Licensed platform                             : Generic platforms\n*** The installed license is valid.\n*** Time-limited license stops working on : Jan 26, 2027\n*** Note: For solvers, earlier expiration dates may apply.\n*** Status: Normal completion\n--- Job ? Stop 11/19/26 00:10:07 elapsed 0:00:00.002\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/224-owgiq37j/home",
+        "TMPDIR": "${SCRATCH}/224-owgiq37j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${SCRATCH}/224-owgiq37j/.venv/lib/python3.12/site-packages/gamspy_base"
+      }
+    },
+    {
+      "label": "Run the exact GAMS file-writing program",
+      "command": [
+        "${SCRATCH}/224-owgiq37j/.venv/lib/python3.12/site-packages/gamspy_base/gams",
+        "hello.gms",
+        "lo=2"
+      ],
+      "cwd": "${SCRATCH}/224-owgiq37j",
+      "timestamp_utc": "2026-11-18T23:10:07.760812+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/224-owgiq37j/home",
+        "TMPDIR": "${SCRATCH}/224-owgiq37j/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${SCRATCH}/224-owgiq37j/.venv/lib/python3.12/site-packages/gamspy_base"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#224 GAMS/hello.gms": "23fa104fa2f0490ca06a914a80560e77622b9fdab479f157293ce1a4d62e34a7"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.gams.com/53/docs/UG_Put.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "written_artifact": {
+    "sha256": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "text": "Hello, World!\n"
+  },
+  "toolchain": "GAMS 54.7.0  8b4e16d1 Nov 9, 2026           LEX-LEG x86 64bit/Linux - 11/19/26 00:10:07 Page 1",
+  "reproduction_command": "gams hello.gms lo=2",
+  "semantic_scope": "The vendor command-line GAMS runtime executed the original file declarations and put statements. The generated greeting.txt contains the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #180 Eagle
 
+## Verified on November 19, 2026
+
+The compatible Eagle viewer parsed the untouched schematic and its native vector renderer exported the Info-layer text geometry as SVG. The rendered SVG text contains the exact greeting.
+
+Run `eagle-viewer --sch hello.sch --json-only --no-open > design.json && python3 export_schematic.py <viewer source>`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Open a schematic EAGLE minimum original with Hello, World! text on the Info 97. layer
 
 ## Toolchain
@@ -38,5 +51,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sch` | [hello.sch](hello.sch) syntax verified |
+| `.sch` | [hello.sch](hello.sch) Syntax and behavior verified |
 | `.brd` | [hello.brd](variants/ext-brd-2e627264/hello.brd) created; verification pending |
+
+</details>

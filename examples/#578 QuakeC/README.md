@@ -1,5 +1,18 @@
 # #578 QuakeC
 
+## Verified on November 19, 2026
+
+The native compiler loaded the original progs.src and hello.qc. The upstream VM executed worldspawn from the generated program. The test host bound Quake builtin number 23 to the VM console print implementation and captured the exact broadcast argument.
+
+Run `gmqcc && qcvm progs.dat (build QCVM with the recorded dedicated-host.py adapter)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill QuakeC and invoke worldspawn in a compatible VM.
 
 ## Toolchain
@@ -37,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.qc` | [hello.qc](hello.qc) syntax verified |
+| `.qc` | [hello.qc](hello.qc) Syntax and behavior verified |
+
+</details>

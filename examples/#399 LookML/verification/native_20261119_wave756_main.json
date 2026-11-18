@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "ordinal": 399,
+  "language": "LookML",
+  "timestamp_utc": "2026-11-18T23:13:58.783174+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/399-zlsrrlf4",
+      "timestamp_utc": "2026-11-18T23:13:58.842980+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/399-zlsrrlf4/home",
+        "TMPDIR": "${SCRATCH}/399-zlsrrlf4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/399-zlsrrlf4/.venv/bin/python",
+        "lkml==1.3.7"
+      ],
+      "cwd": "${SCRATCH}/399-zlsrrlf4",
+      "timestamp_utc": "2026-11-18T23:13:58.963847+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 1 package in 1.26s\nPrepared 1 package in 33ms\nInstalled 1 package in 4ms\n + lkml==1.3.7\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/399-zlsrrlf4/home",
+        "TMPDIR": "${SCRATCH}/399-zlsrrlf4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/399-zlsrrlf4/.venv/bin/python",
+        "evaluate_view.py",
+        "hello.view.lkml"
+      ],
+      "cwd": "${SCRATCH}/399-zlsrrlf4",
+      "timestamp_utc": "2026-11-18T23:14:00.389977+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "lkml 1.3.7; SQLite 3.45.1\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/399-zlsrrlf4/home",
+        "TMPDIR": "${SCRATCH}/399-zlsrrlf4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#399 LookML/hello.view.lkml": "59870c7955ce0f2e9462e464fc8a32eeeadca43bd96782da82e1b38ce43d262e"
+  },
+  "fixture_sha256": {
+    "evaluate_view.py": {
+      "sha256": "baf789adac7682eb389a86aa9257c572c7e7a20505fe813eaa122e62b7108c4d",
+      "content_utf8": "from importlib.metadata import version\nfrom pathlib import Path\nimport sqlite3\nimport sys\nimport lkml\n\nwith Path(sys.argv[1]).open(encoding=\"utf-8\") as source:\n    definition = lkml.load(source)\n\nview, = definition[\"views\"]\ndimension, = view[\"dimensions\"]\nassert view[\"name\"] == \"hello\" and dimension[\"name\"] == \"greeting\"\nassert dimension[\"type\"] == \"string\"\nassert \"${TABLE}\" in dimension[\"sql\"]\nwith sqlite3.connect(\":memory:\") as database:\n    alias = '\"hello\"'\n    relation = view[\"derived_table\"][\"sql\"]\n    projection = dimension[\"sql\"].replace(\"${TABLE}\", alias)\n    select = f\"SELECT {projection} AS greeting FROM ({relation}) AS {alias}\"\n    rows = database.execute(select).fetchall()\n    assert rows == [(\"Hello, World!\",)]\n    try:\n        database.execute(f\"SELECT {alias}.nonexistent FROM ({relation}) AS {alias}\")\n    except sqlite3.OperationalError:\n        pass\n    else:\n        raise AssertionError(\"The projection must resolve in the derived table\")\n    print(f\"lkml {version('lkml')}; SQLite {sqlite3.sqlite_version}\", file=sys.stderr)\n    print(rows[0][0])\n"
+    }
+  },
+  "sources": [
+    "https://docs.cloud.google.com/looker/docs/reference/param-view-derived-table",
+    "https://github.com/joshtemple/lkml"
+  ],
+  "previous_verification_log": "examples/#399 LookML/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "lkml 1.3.7; SQLite 3.45.1 with documented LookML SQL projection mapping",
+  "reproduction_command": "python evaluate_view.py hello.view.lkml",
+  "semantic_scope": "The compatible lkml parser loaded the original view. The test selected its declared greeting dimension by substituting the derived table alias for the documented TABLE reference and executing the resulting projected query in SQLite. The negative control confirms missing columns are rejected.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,16 @@
 # #296 HolyC
 
+## Verified on November 19, 2026
+
+The compatible compiler evaluated the unmodified HolyC source in the console runtime and printed the greeting.
+
+Run `aiwnios -b && aiwnios -c T:/HelloCorpus.HC (copy hello.hc to HelloCorpus.HC on the boot drive)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.hc` | [hello.hc](hello.hc) created; verification pending |
+| `.hc` | [hello.hc](hello.hc) Syntax and behavior verified |
+
+</details>

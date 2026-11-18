@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "ordinal": 461,
+  "language": "NWScript",
+  "timestamp_utc": "2026-11-18T23:15:05.889278+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/461-idjcgszr",
+      "timestamp_utc": "2026-11-18T23:15:05.970837+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/461-idjcgszr/home",
+        "TMPDIR": "${SCRATCH}/461-idjcgszr/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/461-idjcgszr/.venv/bin/python",
+        "nwn==0.0.23"
+      ],
+      "cwd": "${SCRATCH}/461-idjcgszr",
+      "timestamp_utc": "2026-11-18T23:15:06.091781+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 4 packages in 727ms\nDownloading nwn (4.1MiB)\n Downloaded nwn\nPrepared 3 packages in 1.18s\nInstalled 4 packages in 6ms\n + backports-zstd==1.8.0\n + nwn==0.0.23\n + pyzstd==0.20.0\n + typing-extensions==4.16.0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/461-idjcgszr/home",
+        "TMPDIR": "${SCRATCH}/461-idjcgszr/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/461-idjcgszr/.venv/bin/python",
+        "${SCRATCH}/461-idjcgszr/run_nwscript.py",
+        "hello.nss",
+        "${TOOL_CACHE}/tools/niv-nwn.py-master/source/nwn.py-master/tests/nwscript/nwscript.nss"
+      ],
+      "cwd": "${SCRATCH}/461-idjcgszr",
+      "timestamp_utc": "2026-11-18T23:15:08.120005+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/461-idjcgszr/home",
+        "TMPDIR": "${SCRATCH}/461-idjcgszr/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#461 NWScript/hello.nss": "086295e9f81e79fa0912cb84d648e5fd3471eedc49e75409ae5371b04814620f"
+  },
+  "fixture_sha256": {
+    "run_nwscript.py": {
+      "sha256": "b0705490747515391597a3ae3dcb5bdec5e2897429d3467a350d519f9fb3ec3c",
+      "content_utf8": "from pathlib import Path\nimport sys\nfrom nwn.nwscript.comp import Compiler\nfrom nwn.nwscript import langspec\nfrom nwn.nwscript.vm import VM, Script\n\nsource = Path(sys.argv[1]).resolve()\nspec = Path(sys.argv[2]).resolve()\n\ndef resolve(filename):\n    name = Path(filename).name\n    if name == source.name:\n        return source.read_bytes()\n    if name == \"nwscript.nss\":\n        return spec.read_bytes()\n    return None\n\ncompiler = Compiler(resolve)\nbytecode, debug = compiler.compile(source.name)\nsource.with_suffix(\".ncs\").write_bytes(bytecode)\nif isinstance(debug, bytes):\n    source.with_suffix(\".ndb\").write_bytes(debug)\nelse:\n    source.with_suffix(\".ndb\").write_text(debug)\n\nclass PrintHost:\n    def PrintString(self, value: str) -> None:\n        print(value)\n\nscript = Script.from_compiled(str(source.with_suffix(\"\")))\nwith spec.open(encoding=\"latin-1\") as stream:\n    runtime = VM(script, langspec.read(stream), PrintHost())\nruntime.run()\n"
+    }
+  },
+  "sources": [
+    "https://forums.beamdog.com/uploads/editor/w4/7kqf0pqj21mb.pdf",
+    "https://nwn.beamdog.net/docs/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/niv/nwn.py/tar.gz/master",
+      "ref": "master",
+      "sha256": "bcd9d1ed1d795da39ae2d8a64c643ce607fdbdaa76f17c29d277012a2cf1c13c"
+    },
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "upstream_langspec_sha256": "f9f00eabf55953385ea5dcff968507dacba5cbba9426a1e1655f490c03ebd2b6",
+  "compiled_bytecode_sha256": "392090df4c5b5ca889f9fb1cd00d99a7717adef8f99690e291e42ebcc5e723eb",
+  "toolchain": "nwn.py 0.0.23 with bundled official NWScript compiler and compatible NWScript VM",
+  "reproduction_command": "python run_nwscript.py hello.nss <upstream nwscript.nss>",
+  "semantic_scope": "The bundled official compiler compiled the original NWScript. The compatible VM executed the resulting bytecode and dispatched the computed greeting to the registered PrintString host callback.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

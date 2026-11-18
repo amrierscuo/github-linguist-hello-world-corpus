@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "ordinal": 180,
+  "language": "Eagle",
+  "timestamp_utc": "2026-11-18T23:18:26.000981+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record standalone EAGLE viewer version",
+      "command": [
+        "python3",
+        "${TOOL_CACHE}/tools/fbetancourt-dev-eagle-viewer-main/source/eagle-viewer-main/main.py",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/180-apix3qud",
+      "timestamp_utc": "2026-11-18T23:18:26.037937+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "eagle-viewer 1.0.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/180-apix3qud/home",
+        "TMPDIR": "${SCRATCH}/180-apix3qud/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Parse the exact Eagle design with the published CAD converter",
+      "command": [
+        "python3",
+        "${TOOL_CACHE}/tools/fbetancourt-dev-eagle-viewer-main/source/eagle-viewer-main/main.py",
+        "--sch",
+        "hello.sch",
+        "--json-only",
+        "--no-open"
+      ],
+      "cwd": "${SCRATCH}/180-apix3qud",
+      "timestamp_utc": "2026-11-18T23:18:26.111534+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "{\n  \"name\": \"hello\",\n  \"layers\": {\n    \"91\": {\n      \"name\": \"Nets\",\n      \"color\": \"2\",\n      \"visible\": true,\n      \"active\": true\n    },\n    \"92\": {\n      \"name\": \"Busses\",\n      \"color\": \"1\",\n      \"visible\": true,\n      \"active\": true\n    },\n    \"93\": {\n      \"name\": \"Pins\",\n      \"color\": \"2\",\n      \"visible\": false,\n      \"active\": true\n    },\n    \"94\": {\n      \"name\": \"Symbols\",\n      \"color\": \"4\",\n      \"visible\": true,\n      \"active\": true\n    },\n    \"95\": {\n      \"name\": \"Names\",\n      \"color\": \"7\",\n      \"visible\": true,\n      \"active\": true\n    },\n    \"96\": {\n      \"name\": \"Values\",\n      \"color\": \"7\",\n      \"visible\": true,\n      \"active\": true\n    },\n    \"97\": {\n      \"name\": \"Info\",\n      \"color\": \"7\",\n      \"visible\": true,\n      \"active\": true\n    },\n    \"98\": {\n      \"name\": \"Guide\",\n      \"color\": \"6\",\n      \"visible\": true,\n      \"active\": true\n    }\n  },\n  \"schematic\": {\n    \"instances\": [],\n    \"nets\": [],\n    \"symbols\": {},\n    \"plain\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"Hello, World!\",\n        \"x\": 0.0,\n        \"y\": 0.0,\n        \"size\": 1.778,\n        \"layer\": 97,\n        \"rot\": \"R0\",\n        \"ratio\": 8,\n        \"font\": \"vector\",\n        \"align\": \"bottom-left\"\n      }\n    ],\n    \"sheets\": [\n      {\n        \"number\": 1,\n        \"instances\": [],\n        \"nets\": [],\n        \"plain\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"Hello, World!\",\n            \"x\": 0.0,\n            \"y\": 0.0,\n            \"size\": 1.778,\n            \"layer\": 97,\n            \"rot\": \"R0\",\n            \"ratio\": 8,\n            \"font\": \"vector\",\n            \"align\": \"bottom-left\"\n          }\n        ]\n      }\n    ]\n  },\n  \"board\": {\n    \"elements\": [],\n    \"signals\": [],\n    \"packages\": {},\n    \"dimension\": [],\n    \"plain\": [],\n    \"holes\": []\n  }\n}\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/180-apix3qud/home",
+        "TMPDIR": "${SCRATCH}/180-apix3qud/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Call the published schematic vector renderer directly, including geometry-only designs",
+      "command": [
+        "python3",
+        "-I",
+        "${SCRATCH}/180-apix3qud/export_schematic.py",
+        "${TOOL_CACHE}/tools/fbetancourt-dev-eagle-viewer-main/source/eagle-viewer-main"
+      ],
+      "cwd": "${SCRATCH}/180-apix3qud",
+      "timestamp_utc": "2026-11-18T23:18:26.184251+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/180-apix3qud/home",
+        "TMPDIR": "${SCRATCH}/180-apix3qud/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#180 Eagle/hello.sch": "254292f02f3d9ed10e45ae37b82b23ee0c795fda7bf0cc7c6ef77c4f7c0ac333"
+  },
+  "fixture_sha256": {
+    "export_schematic.py": {
+      "sha256": "a8f19033269a9b0ba9d8e25d0f33eb90b93ec74d6272eb8103d9b997b9f8d256",
+      "content_utf8": "from pathlib import Path\nimport json\nimport sys\n\nsys.path.insert(0, sys.argv[1])\nfrom eagle_to_svg import EagleToSvg\n\ndesign = json.loads(Path(\"design.json\").read_bytes())\nEagleToSvg(design).export_schematic(\"greeting.svg\")\n"
+    }
+  },
+  "sources": [
+    "https://help.autodesk.com/cloudhelp/ENU/Fusion-ECAD/files/ECD-ULP-OBJECT-TYPES.htm",
+    "https://github.com/github-linguist/linguist/blob/main/samples/Eagle/Eagle.sch",
+    "https://github.com/drtrigon/eagle/blob/master/doc/eagle.dtd"
+  ],
+  "previous_verification_log": "examples/#180 Eagle/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/fbetancourt-dev/eagle-viewer/tar.gz/main",
+      "ref": "main",
+      "sha256": "fb1b3b5d5be27cc8f5d73cc87afa22b4a21a9c9f621b01a3c7bda1e74a5bfdc2"
+    }
+  ],
+  "design_json_sha256": "6238b2d0ecd3ba4f5a2dda277aa7e8ea3b00d01435935537f57e8899152d9433",
+  "rendered_text": [
+    "Hello, World!"
+  ],
+  "rendered_svg_sha256": "efa14d43eaf1fe9e5cb7cae8b0239eab8475df0bdd5f3ce75532c7d44139d5ee",
+  "toolchain": "eagle-viewer 1.0.0 standalone EAGLE CAD parser and vector renderer",
+  "reproduction_command": "eagle-viewer --sch hello.sch --json-only --no-open > design.json && python3 export_schematic.py <viewer source>",
+  "semantic_scope": "The compatible Eagle viewer parsed the untouched schematic and its native vector renderer exported the Info-layer text geometry as SVG. The rendered SVG text contains the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

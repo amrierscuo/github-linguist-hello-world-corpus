@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "ordinal": 531,
+  "language": "Pep8",
+  "timestamp_utc": "2026-11-18T23:18:25.782152+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the original official Pep/8 tool asem8",
+      "command": [
+        "g++",
+        "-std=c++98",
+        "-include",
+        "cstring",
+        "-include",
+        "cstdlib",
+        "-include",
+        "cstdio",
+        "asem8.cpp",
+        "-o",
+        "asem8"
+      ],
+      "cwd": "${SCRATCH}/531-d7rtbwl4/tool/Pep8Term",
+      "timestamp_utc": "2026-11-18T23:18:25.833349+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/531-d7rtbwl4/home",
+        "TMPDIR": "${SCRATCH}/531-d7rtbwl4/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Build the original official Pep/8 tool pep8",
+      "command": [
+        "g++",
+        "-std=c++98",
+        "-include",
+        "cstring",
+        "-include",
+        "cstdlib",
+        "-include",
+        "cstdio",
+        "pep8.cpp",
+        "-o",
+        "pep8"
+      ],
+      "cwd": "${SCRATCH}/531-d7rtbwl4/tool/Pep8Term",
+      "timestamp_utc": "2026-11-18T23:18:26.611948+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/531-d7rtbwl4/home",
+        "TMPDIR": "${SCRATCH}/531-d7rtbwl4/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Assemble the unchanged example with the original assembler",
+      "command": [
+        "${SCRATCH}/531-d7rtbwl4/tool/Pep8Term/asem8",
+        "hello.pep"
+      ],
+      "cwd": "${SCRATCH}/531-d7rtbwl4",
+      "timestamp_utc": "2026-11-18T23:18:26.897226+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/531-d7rtbwl4/home",
+        "TMPDIR": "${SCRATCH}/531-d7rtbwl4/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute the assembled code in the official Pep/8 command-line simulator",
+      "command": [
+        "${SCRATCH}/531-d7rtbwl4/tool/Pep8Term/pep8"
+      ],
+      "cwd": "${SCRATCH}/531-d7rtbwl4",
+      "timestamp_utc": "2026-11-18T23:18:26.904344+00:00",
+      "timeout_seconds": 20,
+      "exit_code": 0,
+      "stdout": "64599 bytes RAM free.\n\n(l)oad  e(x)ecute  (d)ump  (t)race  (i)nput  (o)utput  (q)uit: Enter object file name (do not include .pepo): Object file is hello.pepo\n\n(l)oad  e(x)ecute  (d)ump  (t)race  (i)nput  (o)utput  (q)uit: Hello, World!\n\n(l)oad  e(x)ecute  (d)ump  (t)race  (i)nput  (o)utput  (q)uit: ",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/531-d7rtbwl4/home",
+        "TMPDIR": "${SCRATCH}/531-d7rtbwl4/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": "l\nhello\nx\nq\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#531 Pep8/hello.pep": "4c59cf76c58ec0738b1addfccf4e77cdfe14fa40784afbcd04859e509af61261"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.computersystemsbook.com/4th-edition/pep8/"
+  ],
+  "previous_verification_log": "examples/#531 Pep8/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://computersystemsbook.com/go/pep-8-terminal-simul-and-assembler/",
+      "sha256": "ad2f9a36405662ee0c2293d3b38022c64bf0c8bcc2bfab723026a7d800efc07c"
+    }
+  ],
+  "native_executables": [
+    "pep8",
+    "asem8"
+  ],
+  "toolchain": "Stan Warford Pep/8 CLI 8.1.0 assembler and simulator",
+  "reproduction_command": "asem8 hello.pep && pep8 (stdin: l, hello, x, q)",
+  "semantic_scope": "The official Pep/8 command-line assembler assembled the original source. The matching CPU simulator executed the program and emitted the exact greeting from the STRO trap.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

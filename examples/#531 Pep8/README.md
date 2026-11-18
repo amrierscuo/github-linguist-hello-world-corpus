@@ -1,5 +1,18 @@
 # #531 Pep8
 
+## Verified on November 19, 2026
+
+The official Pep/8 command-line assembler assembled the original source. The matching CPU simulator executed the program and emitted the exact greeting from the STRO trap.
+
+Run `asem8 hello.pep && pep8 (stdin: l, hello, x, q)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Pep8`, tipo `programming`, language_id `840372442`.
 
 Print a string finished from scratch in the educational simulator Pep/8.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pep` | [hello.pep](hello.pep) created; verification pending |
+| `.pep` | [hello.pep](hello.pep) Syntax and behavior verified |
+
+</details>

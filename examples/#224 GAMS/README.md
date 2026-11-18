@@ -1,5 +1,16 @@
 # #224 GAMS
 
+## Verified on November 19, 2026
+
+The vendor command-line GAMS runtime executed the original file declarations and put statements. The generated greeting.txt contains the exact greeting.
+
+Run `gams hello.gms lo=2`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gms` | [hello.gms](hello.gms) created; verification pending |
+| `.gms` | [hello.gms](hello.gms) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #305 IRC log
 
+## Verified on November 19, 2026
+
+WeeChat’s real logger plugin replayed the original input. The probe read the exact sender and greeting back from the live buffer.
+
+Run `weechat-headless --no-connect --no-plugin --run <load logger, Python and the recorded replay.py fixture>`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Represent a Hello, World! message in a log IRC WeeChat.
 
 ## Toolchain
@@ -35,4 +46,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.irclog` | [hello.irclog](variants/irclog-5327b982/hello.irclog) created; verification pending |
-| `.weechatlog` | [hello.weechatlog](hello.weechatlog) created; verification pending |
+| `.weechatlog` | [hello.weechatlog](hello.weechatlog) Syntax and behavior verified |
+
+</details>

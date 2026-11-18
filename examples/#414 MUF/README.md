@@ -1,5 +1,16 @@
 # #414 MUF
 
+## Verified on November 19, 2026
+
+Fuzzball loaded the original MUF source through its editor, compiled it, dispatched it as an action and delivered the exact native notification to the test player.
+
+Run `python3 execute_muf.py <fbmuck> <minimal.db> hello.muf in an isolated network namespace`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave756_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Send a Hello, World! message to the local user in a MUCK test environment.
 
 Canonical type `programming`, language_id `219`.
@@ -28,5 +39,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.muf` | [hello.muf](hello.muf) created; verification pending |
+| `.muf` | [hello.muf](hello.muf) Syntax and behavior verified |
 | `.m` | [hello.m](variants/m-f7140aa0/hello.m) created; verification pending |
+
+</details>

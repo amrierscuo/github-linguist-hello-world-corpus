@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "ordinal": 549,
+  "language": "Power Query",
+  "timestamp_utc": "2026-11-18T23:01:39.612374+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/549-co8nmgr4",
+      "timestamp_utc": "2026-11-18T23:01:39.676203+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/549-co8nmgr4/home",
+        "TMPDIR": "${SCRATCH}/549-co8nmgr4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/549-co8nmgr4/.venv/bin/python",
+        "${TOOL_CACHE}/tools/GopalGB-pqtools-master/source/pqtools-master"
+      ],
+      "cwd": "${SCRATCH}/549-co8nmgr4",
+      "timestamp_utc": "2026-11-18T23:01:38.421991+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 1 package in 9ms\n   Building pqtools @ file://${TOOL_CACHE}/tools/GopalGB-pqtools-master/source/pqtools-master\n      Built pqtools @ file://${TOOL_CACHE}/tools/GopalGB-pqtools-master/source/pqtools-master\nPrepared 1 package in 980ms\nInstalled 1 package in 2ms\n + pqtools==0.8.0 (from file://${TOOL_CACHE}/tools/GopalGB-pqtools-master/source/pqtools-master)\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/549-co8nmgr4/home",
+        "TMPDIR": "${SCRATCH}/549-co8nmgr4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Inspect M execution command",
+      "command": [
+        "${SCRATCH}/549-co8nmgr4/.venv/bin/pq",
+        "eval",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/549-co8nmgr4",
+      "timestamp_utc": "2026-11-18T23:01:39.504992+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "usage: pq [-h] [--json] [--write] [--old OLD] [--new NEW] [--name NAME]\n          [--source SOURCE] [--member MEMBER] [--bind NAME=PATH]\n          [--format {json,csv}]\n          {parse,format,check,dependencies,rename,replace-source,eval,list,add}\n          file\n\npositional arguments:\n  {parse,format,check,dependencies,rename,replace-source,eval,list,add}\n  file\n\noptions:\n  -h, --help            show this help message and exit\n  --json\n  --write               atomically replace source after validation\n  --old OLD\n  --new NEW\n  --name NAME           name of the query to add (add)\n  --source SOURCE       complete replacement source for replace-source\n  --member MEMBER       the shared member to evaluate (eval on a section\n                        document)\n  --bind NAME=PATH      bind a let-binding name to a .csv or .json data file\n                        (eval, repeatable)\n  --format {json,csv}   eval output format - csv requires a table result\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/549-co8nmgr4/home",
+        "TMPDIR": "${SCRATCH}/549-co8nmgr4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Evaluate the original M query",
+      "command": [
+        "${SCRATCH}/549-co8nmgr4/.venv/bin/pq",
+        "eval",
+        "hello.pq"
+      ],
+      "cwd": "${SCRATCH}/549-co8nmgr4",
+      "timestamp_utc": "2026-11-18T23:01:39.628160+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/549-co8nmgr4/home",
+        "TMPDIR": "${SCRATCH}/549-co8nmgr4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#549 Power Query/hello.pq": "541b3610166192a017e5688b65fed418c9c8b7748db8151d1809f8ea1f6b292d"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://learn.microsoft.com/en-us/powerquery-m/m-spec-introduction",
+    "https://learn.microsoft.com/en-us/powerquery-m/m-spec-consolidated-grammar"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/GopalGB/pqtools/tar.gz/master",
+      "ref": "master",
+      "sha256": "19e78a3a27a678e193b7cf9fa97f0ecae72aaae3ea6edf92a679c4c7ce7a0ddb"
+    },
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "pqtools 0.8.0 Power Query M interpreter",
+  "reproduction_command": "pq eval hello.pq",
+  "semantic_scope": "The compatible M interpreter evaluated the original let bindings and text concatenation, returning the exact greeting as the query result.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "ordinal": 675,
+  "language": "Soong",
+  "timestamp_utc": "2026-11-18T23:08:22.442526+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Parse the exact Android.bp through Blueprint and emit a Ninja manifest",
+      "command": [
+        "${TOOL_CACHE}/tools/go/dist/go/bin/go",
+        "run",
+        ".",
+        "Android.bp"
+      ],
+      "cwd": "${SCRATCH}/675-zchsij0e",
+      "timestamp_utc": "2026-11-18T23:08:22.744883+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/675-zchsij0e/home",
+        "TMPDIR": "${SCRATCH}/675-zchsij0e/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GOBIN": "${SCRATCH}/675-zchsij0e/bin",
+        "GOPATH": "${TOOL_CACHE}/tools/gopath",
+        "GOCACHE": "${TOOL_CACHE}/tools/gocache",
+        "GOMAXPROCS": "3"
+      }
+    },
+    {
+      "label": "Record Ninja tool version",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ninja",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/675-zchsij0e",
+      "timestamp_utc": "2026-11-18T23:08:24.118887+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "1.11.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/675-zchsij0e/home",
+        "TMPDIR": "${SCRATCH}/675-zchsij0e/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute the generated build rule through Ninja",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ninja",
+        "-f",
+        "build.ninja",
+        "-v",
+        "hello.txt"
+      ],
+      "cwd": "${SCRATCH}/675-zchsij0e",
+      "timestamp_utc": "2026-11-18T23:08:24.128878+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "[1/1] printf 'Hello, World!\\n' > hello.txt\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/675-zchsij0e/home",
+        "TMPDIR": "${SCRATCH}/675-zchsij0e/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "cat",
+        "hello.txt"
+      ],
+      "cwd": "${SCRATCH}/675-zchsij0e",
+      "timestamp_utc": "2026-11-18T23:08:24.138169+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/675-zchsij0e/home",
+        "TMPDIR": "${SCRATCH}/675-zchsij0e/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#675 Soong/Android.bp": "64e6cd7c9a62d31611bb9bfe0972dbbcc8f1d1bedd19e0bf0bbd45e3bc62f71f"
+  },
+  "fixture_sha256": {
+    "go.mod": {
+      "sha256": "d5376e875803874eee5b6c3e47a62b084cff93597b0664cb33b8b69108a817db",
+      "content_utf8": "module corpuscheck\n\ngo 1.25\nrequire github.com/google/blueprint v0.0.0\nreplace github.com/google/blueprint => ./blueprint\n"
+    },
+    "main.go": {
+      "sha256": "628366d57e5cc92b25823e6c2c85ead6c1295aa62677df312f001cd8a12d647f",
+      "content_utf8": "package main\n\nimport (\n    \"fmt\"\n    \"os\"\n    \"strings\"\n    \"github.com/google/blueprint\"\n)\n\nvar packageContext = blueprint.NewPackageContext(\"corpuscheck\")\nvar commandRule = packageContext.StaticRule(\"genrule\", blueprint.RuleParams{Command: \"$cmd\"}, \"cmd\")\n\ntype genrule struct {\n    props struct {\n        Name string\n        Out []string\n        Cmd string\n    }\n}\n\nfunc (rule *genrule) Name() string { return rule.props.Name }\n\nfunc (rule *genrule) GenerateBuildActions(context blueprint.ModuleContext) {\n    command := strings.ReplaceAll(rule.props.Cmd, \"$(out)\", strings.Join(rule.props.Out, \" \"))\n    command = strings.ReplaceAll(command, \"\\n\", \"\\\\n\")\n    context.Build(packageContext, blueprint.BuildParams{\n        Rule: commandRule,\n        Outputs: rule.props.Out,\n        Args: map[string]string{\"cmd\": command},\n\n    })\n}\n\nfunc fail(errors []error) {\n    if len(errors) == 0 { return }\n    for _, problem := range errors { fmt.Fprintln(os.Stderr, problem) }\n    os.Exit(1)\n}\n\nfunc main() {\n    context := blueprint.NewContext()\n    context.RegisterModuleType(\"genrule\", func() (blueprint.Module, []interface{}) {\n        rule := new(genrule)\n        return rule, []interface{}{ &rule.props }\n    })\n    _, errors := context.ParseFileList(\".\", []string{os.Args[1]}, nil)\n    fail(errors)\n    _, errors = context.ResolveDependencies(nil)\n    fail(errors)\n    _, errors = context.PrepareBuildActions(nil)\n    fail(errors)\n    manifest, err := os.Create(\"build.ninja\")\n    if err != nil { panic(err) }\n    if err := context.WriteBuildFile(manifest); err != nil { panic(err) }\n    if err := manifest.Close(); err != nil { panic(err) }\n}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Soong",
+      "url": "https://android.googlesource.com/platform/build/soong/+/refs/heads/main/README.md"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/google/blueprint/tar.gz/master",
+      "ref": "master",
+      "sha256": "763e0cdd1af480660bb98d3f44183ed62401df919c33951723e383b2d2ea7f40"
+    },
+    {
+      "url": "https://go.dev/dl/go1.25.1.linux-amd64.tar.gz",
+      "sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e",
+      "expected_sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e"
+    }
+  ],
+  "observed_ninja": "# ******************************************************************************\n# ***            This file is generated and should not be edited             ***\n# ******************************************************************************\n#\n# This file contains variables, rules, and pools with name prefixes indicating\n# they were generated by the following Go packages:\n#\n#     corpuscheck [from Go package corpuscheck]\n#\nninja_required_version = 1.7.0\n\nrule g.corpuscheck.genrule\n    command = ${cmd}\n\n# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #\n# Module:  corpus_hello_world\n# Variant:\n# Type:    genrule\n# Factory: main.main.func1\n# Defined: Android.bp:1:1\n\nbuild hello.txt: g.corpuscheck.genrule\n    cmd = printf 'Hello, World!\\n' > hello.txt\ndefault hello.txt\n\n",
+  "toolchain": "AOSP Blueprint with a minimal genrule module fixture and Ninja 1.11.1",
+  "reproduction_command": "go run . Android.bp && ninja -f build.ninja hello.txt && cat hello.txt",
+  "semantic_scope": "The upstream Blueprint engine loaded the original Android.bp, instantiated its module, and emitted a real Ninja build. The test host provides the subset of genrule that binds the declared out and cmd properties. Ninja ran the command and created the greeting file.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
