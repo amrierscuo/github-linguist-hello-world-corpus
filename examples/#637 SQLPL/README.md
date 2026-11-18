@@ -1,5 +1,16 @@
 # #637 SQLPL
 
+## Verified on November 18, 2026
+
+The compatible SQL/PSM engine created the procedure and invoked it through JDBC. The registered OUT parameter returned the exact greeting.
+
+Run `java -cp <HSQLDB 2.7.4 jar> Check.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.sql` | [hello.sql](variants/sql-614f3a43/hello.sql) created; verification pending |
-| `.db2` | [hello.db2](hello.db2) created; verification pending |
+| `.db2` | [hello.db2](hello.db2) Syntax and behavior verified |
+
+</details>

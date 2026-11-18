@@ -1,5 +1,16 @@
 # #173 E
 
+## Verified on November 18, 2026
+
+The archived E-on-Java interpreter evaluated the original console sample and emitted the exact greeting.
+
+Run `java -cp <E runtime and dependencies> org.erights.e.elang.interp.Rune hello.e`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Eseguire println in E e stampare Hello, World!.
 
 ## Toolchain
@@ -35,4 +46,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.e` | [hello.e](hello.e) created; verification pending |
+| `.e` | [hello.e](hello.e) Syntax and behavior verified |
+
+</details>

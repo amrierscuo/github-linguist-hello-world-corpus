@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "ordinal": 676,
+  "language": "SourcePawn",
+  "timestamp_utc": "2026-11-18T21:03:27.605119+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile exact SourcePawn plugin using the publisher binary and headers",
+      "command": [
+        "${TOOL_CACHE}/tools/sm-1.12.0.7260/dist/addons/sourcemod/scripting/spcomp64",
+        "-i${TOOL_CACHE}/tools/sm-1.12.0.7260/dist/addons/sourcemod/scripting/include",
+        "hello.sp",
+        "-ohello.smx"
+      ],
+      "cwd": "${SCRATCH}/676-g2wfgwcn",
+      "timestamp_utc": "2026-11-18T21:03:28.434511+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "SourcePawn Compiler 1.12.0.7260\nCopyright (c) 1997-2006 ITB CompuPhase\nCopyright (c) 2004-2024 AlliedModders LLC\n\nCode size:         3536 bytes\nData size:         2296 bytes\nStack/heap size:      16452 bytes\nTotal requirements:   22284 bytes\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/676-g2wfgwcn/home",
+        "TMPDIR": "${SCRATCH}/676-g2wfgwcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/676-g2wfgwcn",
+      "timestamp_utc": "2026-11-18T21:03:28.605828+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/676-g2wfgwcn/home",
+        "TMPDIR": "${SCRATCH}/676-g2wfgwcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/676-g2wfgwcn/.venv/bin/python",
+        "pysmx"
+      ],
+      "cwd": "${SCRATCH}/676-g2wfgwcn",
+      "timestamp_utc": "2026-11-18T21:03:28.735563+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 4 packages in 2.24s\n   Building construct==2.10.68\nDownloading pysmx (2.3MiB)\n Downloaded pysmx\n      Built construct==2.10.68\nPrepared 4 packages in 731ms\nInstalled 4 packages in 15ms\n + construct==2.10.68\n + construct-typing==0.5.6\n + more-bisect==0.1.1\n + pysmx==0.4.0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/676-g2wfgwcn/home",
+        "TMPDIR": "${SCRATCH}/676-g2wfgwcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Run the real compiled plugin through the published SourcePawn-compatible VM",
+      "command": [
+        "${SCRATCH}/676-g2wfgwcn/.venv/bin/python",
+        "runtime-check.py"
+      ],
+      "cwd": "${SCRATCH}/676-g2wfgwcn",
+      "timestamp_utc": "2026-11-18T21:03:31.908363+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "SourcePawnPluginRuntime\n(name: 'str', *args) -> 'Any'\nHello, World!",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/676-g2wfgwcn/home",
+        "TMPDIR": "${SCRATCH}/676-g2wfgwcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#676 SourcePawn/hello.sp": "9adce853405e56e1a5d37b2f24f6a1fa26ce44f253b085c06b5e4749fba1ff21"
+  },
+  "fixture_sha256": {
+    "runtime-check.py": {
+      "sha256": "515200963c052a79552f7a040750e8f64261e7a385b11aad5d7fb0a8a0791b2d",
+      "content_utf8": "import inspect\nfrom smx.plugin import SourcePawnPlugin\np=SourcePawnPlugin(open(\"hello.smx\",\"rb\"))\nr=p.runtime\nprint(type(r).__name__)\nprint(inspect.signature(r.call_function_by_name))\nr.call_function_by_name(\"OnPluginStart\")\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "SourcePawn",
+      "url": "https://wiki.alliedmods.net/Introduction_to_SourcePawn_1.7"
+    },
+    {
+      "title": "SourceMod",
+      "url": "https://www.sourcemod.net/"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/alliedmodders/sourcemod/releases/download/1.12.0.7260/sourcemod-1.12.0-git7260-linux.tar.gz",
+      "name": "sourcemod-1.12.0-git7260-linux.tar.gz",
+      "sha256": "b01719e6143bc7d5bb63aae8086d031574da6ef838f041ba4b8ab72c8c75b888",
+      "release": "1.12.0.7260"
+    },
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "compiled_smx_sha256": "7bf081718aae3ac4dfb40e591f8380e5ec7e38c9486523a88dd2b1cf1cd0f1b8",
+  "toolchain": "AlliedModders spcomp 1.12.0.7260 and pysmx compatible VM",
+  "reproduction_command": "spcomp64 -i <SourceMod include> hello.sp -ohello.smx; python runtime-check.py",
+  "semantic_scope": "The released compiler compiled the original plugin. The published compatible VM executed the actual SMX OnPluginStart entry point and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

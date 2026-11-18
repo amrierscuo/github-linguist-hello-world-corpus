@@ -1,5 +1,16 @@
 # #318 Isabelle ROOT
 
+## Verified on November 18, 2026
+
+Isabelle checked the original ROOT session and theorem. The standard session log recorded evaluation of the original greeting value.
+
+Run `isabelle build -v -D . Hello; isabelle build_log -v Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Define a Isabelle ROOT session that compiles the original greeting theory.
 
 ## Toolchain
@@ -26,3 +37,5 @@ Remaining requirements:
 ## Primary sources
 
 - [https://isabelle.in.tum.de/doc/system.pdf](https://isabelle.in.tum.de/doc/system.pdf)
+
+</details>

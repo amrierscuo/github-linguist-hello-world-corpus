@@ -1,5 +1,16 @@
 # #108 Cangjie
 
+## Verified on November 18, 2026
+
+The published compiler built the unchanged Cangjie program and the resulting console application printed the exact greeting.
+
+Run `source envsetup.sh; cjc hello.cj -o hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Cangjie program that prints Hello, World! followed by newline.
 
 Canonical type: `programming`; `language_id`: `581895317`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cj` | [hello.cj](hello.cj) created; verification pending |
+| `.cj` | [hello.cj](hello.cj) Syntax and behavior verified |
+
+</details>

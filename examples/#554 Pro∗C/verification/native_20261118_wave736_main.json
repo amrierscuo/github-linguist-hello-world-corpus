@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "ordinal": 554,
+  "language": "Pro*C",
+  "timestamp_utc": "2026-11-18T21:06:03.082619+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Precompile unchanged Pro*C example with PostgreSQL embedded SQL compatibility",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ecpg",
+        "-C",
+        "ORACLE",
+        "-o",
+        "hello.c",
+        "hello.pc"
+      ],
+      "cwd": "${SCRATCH}/554-1dvfbxdv",
+      "timestamp_utc": "2026-11-18T21:06:03.195369+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/554-1dvfbxdv/home",
+        "TMPDIR": "${SCRATCH}/554-1dvfbxdv/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the emitted C source with the real embedded SQL library",
+      "command": [
+        "cc",
+        "-I${TOOL_CACHE}/tools/apt/usr/include/postgresql",
+        "hello.c",
+        "-L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-lecpg",
+        "-o",
+        "hello"
+      ],
+      "cwd": "${SCRATCH}/554-1dvfbxdv",
+      "timestamp_utc": "2026-11-18T21:06:03.256030+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/554-1dvfbxdv/home",
+        "TMPDIR": "${SCRATCH}/554-1dvfbxdv/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/554-1dvfbxdv/hello"
+      ],
+      "cwd": "${SCRATCH}/554-1dvfbxdv",
+      "timestamp_utc": "2026-11-18T21:06:03.594849+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/554-1dvfbxdv/home",
+        "TMPDIR": "${SCRATCH}/554-1dvfbxdv/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#554 Pro∗C/hello.pc": "91d874ab714e9d776fa0355487bb9291a8baea005be0bb4b2c30944d081b2af6"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpcc/c-c-programmers-guide.pdf"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "libecpg-dev",
+      "version": "16.15-0ubuntu0.24.04.1",
+      "filename": "pool/main/p/postgresql-16/libecpg-dev_16.15-0ubuntu0.24.04.1_amd64.deb",
+      "sha256": "32a87ab64a031278ba0681bd351468b2541171dec9565d15a932dab9994b92f7",
+      "bytes": 265798,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-16/libecpg-dev_16.15-0ubuntu0.24.04.1_amd64.deb"
+    }
+  ],
+  "toolchain": "PostgreSQL ECPG Oracle compatibility mode",
+  "reproduction_command": "ecpg -C ORACLE -o hello.c hello.pc; cc -I<ecpg include> hello.c -lecpg -o hello; ./hello",
+  "semantic_scope": "The compatible embedded-SQL precompiler translated the unmodified source and preserved its declared C host variable. Running the generated executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

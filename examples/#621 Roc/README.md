@@ -1,5 +1,20 @@
 # #621 Roc
 
+## Verified on November 18, 2026
+
+The published Roc nightly ran the sample with the verified CLI platform and executed its greeting action and emitted the greeting.
+
+Run `roc hello.roc`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+[Prior attempt](verification/native_20261118_wave736_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +53,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.roc` | [hello.roc](hello.roc) created; verification pending |
+| `.roc` | [hello.roc](hello.roc) Syntax and behavior verified |
+
+</details>

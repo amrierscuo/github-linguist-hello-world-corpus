@@ -1,6 +1,6 @@
 --#SET TERMINATOR @
 CREATE PROCEDURE corpus_greeting(OUT greeting VARCHAR(13))
 LANGUAGE SQL
-BEGIN
+BEGIN ATOMIC
     SET greeting = 'Hello, ' || 'World!';
 END@

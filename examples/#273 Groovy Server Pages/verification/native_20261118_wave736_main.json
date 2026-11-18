@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "ordinal": 273,
+  "language": "Groovy Server Pages",
+  "timestamp_utc": "2026-11-18T20:57:10.179700+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${TOOL_CACHE}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/273-u3c3acb7",
+      "timestamp_utc": "2026-11-18T20:57:10.196898+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/273-u3c3acb7/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  2.996 s\n[INFO] Finished at: 2026-11-18T21:57:19+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/273-u3c3acb7/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/273-u3c3acb7/home",
+        "TMPDIR": "${SCRATCH}/273-u3c3acb7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/273-u3c3acb7/home"
+      }
+    },
+    {
+      "label": "Render the exact original template through Apache Grails GSP",
+      "command": [
+        "java",
+        "-cp",
+        "${TOOL_CACHE}/tools/maven-cache/org/apache/grails/grails-gsp/7.0.9/grails-gsp-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/views/grails-gsp-core/7.0.9/grails-gsp-core-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/groovy/groovy-templates/4.0.30/groovy-templates-4.0.30.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/views/grails-web-gsp/7.0.9/grails-web-gsp-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/views/grails-web-taglib/7.0.9/grails-web-taglib-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/web/grails-encoder/7.0.9/grails-encoder-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/groovy/groovy-json/4.0.30/groovy-json-4.0.30.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/web/grails-web-url-mappings/7.0.9/grails-web-url-mappings-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/data/grails-datamapping-validation/7.0.9/grails-datamapping-validation-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/commons-validator/commons-validator/1.9.0/commons-validator-1.9.0.jar:${TOOL_CACHE}/tools/maven-cache/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-context/6.2.16/spring-context-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-aop/6.2.16/spring-aop-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-expression/6.2.16/spring-expression-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/io/micrometer/micrometer-observation/1.15.9/micrometer-observation-1.15.9.jar:${TOOL_CACHE}/tools/maven-cache/io/micrometer/micrometer-commons/1.15.9/micrometer-commons-1.15.9.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/boot/spring-boot/3.5.11/spring-boot-3.5.11.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/grails-codecs/7.0.9/grails-codecs-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/web/grails-web-core/7.0.9/grails-web-core-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/web/grails-web-databinding/7.0.9/grails-web-databinding-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/codecs/grails-codecs-core/7.0.9/grails-codecs-core-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/commons-codec/commons-codec/1.18.0/commons-codec-1.18.0.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/views/grails-taglib/7.0.9/grails-taglib-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/views/grails-web-gsp-taglib/7.0.9/grails-web-gsp-taglib-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/groovy/groovy-xml/4.0.30/groovy-xml-4.0.30.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/web/grails-web-common/7.0.9/grails-web-common-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/databinding/grails-databinding-core/7.0.9/grails-databinding-core-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-webmvc/6.2.16/spring-webmvc-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/web/grails-web-mvc/7.0.9/grails-web-mvc-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-beans/6.2.16/spring-beans-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/views/grails-web-jsp/7.0.9/grails-web-jsp-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/grails-core/7.0.9/grails-core-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:${TOOL_CACHE}/tools/maven-cache/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:${TOOL_CACHE}/tools/maven-cache/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/groovy/groovy/4.0.30/groovy-4.0.30.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-core/6.2.16/spring-core-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-jcl/6.2.16/spring-jcl-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-tx/6.2.16/spring-tx-6.2.16.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/boot/spring-boot-autoconfigure/3.5.11/spring-boot-autoconfigure-3.5.11.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/common/grails-common/7.0.9/grails-common-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/gradle/grails-gradle-common/7.0.9/grails-gradle-common-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/bootstrap/grails-bootstrap/7.0.9/grails-bootstrap-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/gradle/grails-gradle-model/7.0.9/grails-gradle-model-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/data/grails-datastore-core/7.0.9/grails-datastore-core-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/javassist/javassist/3.30.2-GA/javassist-3.30.2-GA.jar:${TOOL_CACHE}/tools/maven-cache/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:${TOOL_CACHE}/tools/maven-cache/org/slf4j/jcl-over-slf4j/2.0.17/jcl-over-slf4j-2.0.17.jar:${TOOL_CACHE}/tools/maven-cache/com/github/ben-manes/caffeine/caffeine/3.2.3/caffeine-3.2.3.jar:${TOOL_CACHE}/tools/maven-cache/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:${TOOL_CACHE}/tools/maven-cache/com/google/errorprone/error_prone_annotations/2.43.0/error_prone_annotations-2.43.0.jar:${TOOL_CACHE}/tools/maven-cache/org/apache/grails/grails-spring/7.0.9/grails-spring-7.0.9.jar:${TOOL_CACHE}/tools/maven-cache/org/springframework/spring-web/6.2.16/spring-web-6.2.16.jar",
+        "groovy.ui.GroovyMain",
+        "check.groovy"
+      ],
+      "cwd": "${SCRATCH}/273-u3c3acb7",
+      "timestamp_utc": "2026-11-18T20:57:19.833445+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/273-u3c3acb7/home\nSLF4J(W): No SLF4J providers were found.\nSLF4J(W): Defaulting to no-operation (NOP) logger implementation\nSLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/273-u3c3acb7/home",
+        "TMPDIR": "${SCRATCH}/273-u3c3acb7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/273-u3c3acb7/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#273 Groovy Server Pages/hello.gsp": "63dc708cf9a3abb90af51a2f295a6c56cd5380fba5f92434b83a8d9401c823e6"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "922edd504b61b89a93032d7ac9917d24aeaef1d7b004219c0d704939be865664",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.apache.grails</groupId><artifactId>grails-gsp</artifactId><version>7.0.9</version></dependency><dependency><groupId>org.apache.grails</groupId><artifactId>grails-core</artifactId><version>7.0.9</version></dependency><dependency><groupId>org.apache.grails</groupId><artifactId>grails-spring</artifactId><version>7.0.9</version></dependency></dependencies></project>\n"
+    },
+    "check.groovy": {
+      "sha256": "e15d28527232772ce7ea9c6b3379b32eec728788f672450d513c73b34ebcb646",
+      "content_utf8": "import org.springframework.context.support.StaticApplicationContext\nimport org.grails.gsp.GroovyPagesTemplateEngine\ndef engine=new GroovyPagesTemplateEngine()\nengine.classLoader = GroovyPagesTemplateEngine.class.classLoader\ndef ctx=new StaticApplicationContext()\nctx.refresh()\nengine.applicationContext=ctx\ndef template=engine.createTemplate(new File(\"hello.gsp\"))\ndef writer = new StringWriter()\ntemplate.make([name:\"World\"]).writeTo(writer)\ndef text=writer.toString().trim()\nassert text==\"Hello, World!\": text\nprintln text\n"
+    }
+  },
+  "sources": [
+    "https://grails.apache.org/docs-legacy-gsp/6.0.0-M1/guide/",
+    "https://grails.apache.org/guides/creating-your-first-grails-app/4/guide/index.html"
+  ],
+  "previous_verification_log": "examples/#273 Groovy Server Pages/verification/native.json",
+  "toolchain": "Apache Grails GSP 7.0.9",
+  "reproduction_command": "java -cp <Grails GSP jars> groovy.ui.GroovyMain check.groovy",
+  "semantic_scope": "The maintained Apache Grails GSP engine rendered the unchanged original template with its model binding. The emitted page contains the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

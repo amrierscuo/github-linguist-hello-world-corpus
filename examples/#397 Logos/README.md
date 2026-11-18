@@ -1,5 +1,18 @@
 # #397 Logos
 
+## Verified on November 18, 2026
+
+The original Logos preprocessor emitted the constructor. The scratch host invoked its unchanged body after GNUstep initialization and captured the exact NSLog greeting.
+
+Run `perl logos.pl hello.xm; compile the recorded GNUstep fixture and run ./test`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Expand %ctor Logos and define an Objective-C constructor that uses NSLog.
 
 ## Toolchain
@@ -38,6 +51,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.xm` | [hello.xm](hello.xm) syntax verified |
+| `.xm` | [hello.xm](hello.xm) Syntax and behavior verified |
 | `.x` | [hello.x](variants/x-bb42e4c6/hello.x) created; verification pending |
 | `.xi` | [hello.xi](variants/xi-347cda4a/hello.xi) created; verification pending |
+
+</details>

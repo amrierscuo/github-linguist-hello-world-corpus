@@ -1,5 +1,16 @@
 # #082 BuildStream
 
+## Verified on November 18, 2026
+
+The official BuildStream project built the unchanged import element. Its artifact checkout materialized a file with the exact expected greeting and newline.
+
+Run `bst --no-interactive build hello.bst; bst --no-interactive artifact checkout --directory artifact hello.bst`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Import hello.txt into a BuildStream artifact and read Hello, World! from the exported artifact.
 
 ## Toolchain
@@ -46,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.bst` | [hello.bst](elements/hello.bst) created; verification pending |
+| `.bst` | [hello.bst](elements/hello.bst) Syntax and behavior verified |
+
+</details>

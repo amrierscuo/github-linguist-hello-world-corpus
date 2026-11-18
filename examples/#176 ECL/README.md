@@ -1,5 +1,16 @@
 # #176 ECL
 
+## Verified on November 18, 2026
+
+The official native ECL compiler compiled the original workunit. Running it returned the expected scalar greeting.
+
+Run `eclcc -platform=hthor -o hello hello.ecl; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Return a Hello, World! scale string as OUTPUT result of a HPCC ECL workunit.
 
 ## Toolchain
@@ -35,5 +46,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ecl` | [hello.ecl](hello.ecl) created; verification pending |
+| `.ecl` | [hello.ecl](hello.ecl) Syntax and behavior verified |
 | `.eclxml` | [hello.eclxml](variants/ext-eclxml-2e65636c786d6c/hello.eclxml) created; verification pending |
+
+</details>

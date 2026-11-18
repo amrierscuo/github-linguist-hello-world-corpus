@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ordinal": 741,
+  "language": "VBA",
+  "timestamp_utc": "2026-11-18T20:40:18.947446+00:00",
+  "platform": "Windows x64",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "artifact_sha256": {
+    "examples/#741 VBA/hello.bas": "2d8b60a6dac247917e0fe3a497e901430668af0fdfaeca8421dd7a429d0ba9d3"
+  },
+  "sources": [
+    {
+      "title": "VBA Debug.Print",
+      "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/print-method"
+    }
+  ],
+  "commands": [
+    {
+      "label": "Execute native VBScript in the Windows console host",
+      "command": [
+        "cscript.exe",
+        "//B",
+        "//Nologo",
+        "//T:15",
+        "program.vbs"
+      ],
+      "cwd": "<isolated test directory>",
+      "exit_code": 0,
+      "timestamp_utc": "2026-11-18T20:40:18.968711+00:00",
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "fixture_sha256": {
+    "program.vbs": {
+      "sha256": "fb93fe7212024cfd93c73e1ad56b77ca4b69496c791d717d50d7953f017bc36b",
+      "content_utf8": "Option Explicit\nPublic Sub HelloWorld()\n    Debug.Print \"Hello, World!\"\nEnd Sub\nDim Debug\nSet Debug = New ImmediateConsole\nCall HelloWorld()\nClass ImmediateConsole\n    Public Sub Print(Value)\n        WScript.StdOut.WriteLine CStr(Value)\n    End Sub\nEnd Class\n",
+      "file_encoding": "UTF-16 LE with BOM, CRLF"
+    }
+  },
+  "toolchain": "Microsoft Windows Script Host VBScript via cscript.exe",
+  "script_host_binary_sha256": "68d296486a41f118e42c1b8e04c207ea89955a85a97487eca534c276b06e7def",
+  "reproduction_command": "cscript.exe //B //Nologo program.vbs",
+  "semantic_scope": "The Microsoft VBScript interpreter executed the unchanged VBA routine in the shared language subset. A console fixture for the VBA Debug object received the exact Debug.Print argument.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

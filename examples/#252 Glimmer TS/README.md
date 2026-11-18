@@ -1,5 +1,18 @@
 # #252 Glimmer TS
 
+## Verified on November 18, 2026
+
+The content-tag compiler and host transpiler processed the unchanged original source. A standalone Glimmer runtime mounted its compiled template and the heading contained the exact greeting.
+
+Run `node render.cjs hello.gts`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Define a Glimmer TS component with greeting typed string and interpolation in the title.
 
 ## Toolchain
@@ -39,4 +52,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gts` | [hello.gts](hello.gts) syntax verified |
+| `.gts` | [hello.gts](hello.gts) Syntax and behavior verified |
+
+</details>

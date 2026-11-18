@@ -1,5 +1,16 @@
 # #829 q
 
+## Verified on November 18, 2026
+
+The published PeachQ implementation executed the unchanged q script. Its console printed the exact greeting.
+
+Run `q hello.q (then close STDIN)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Run a q file that writes greeting.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.q` | [hello.q](hello.q) created; verification pending |
+| `.q` | [hello.q](hello.q) Syntax and behavior verified |
+
+</details>

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "ordinal": 121,
+  "language": "Classic ASP",
+  "timestamp_utc": "2026-11-18T20:40:18.947318+00:00",
+  "platform": "Windows x64",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "artifact_sha256": {
+    "examples/#121 Classic ASP/hello.asp": "dc4ec2177dbe4f87dc304c3c9f1c160c8f5b8ce1e41e80ee3ce7d92dbbdf1d5f"
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms524741(v=vs.90)",
+    "https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525585(v=vs.90)",
+    "https://learn.microsoft.com/en-us/iis/configuration/system.webserver/asp/"
+  ],
+  "commands": [
+    {
+      "label": "Execute native VBScript in the Windows console host",
+      "command": [
+        "cscript.exe",
+        "//B",
+        "//Nologo",
+        "//T:15",
+        "program.vbs"
+      ],
+      "cwd": "<isolated test directory>",
+      "exit_code": 0,
+      "timestamp_utc": "2026-11-18T20:40:18.969303+00:00",
+      "stdout": "text/plain|utf-8\nHello, World!",
+      "stderr": ""
+    }
+  ],
+  "fixture_sha256": {
+    "program.vbs": {
+      "sha256": "8f489735058e41a05a048eafaa3faa9c495aac783abb3ba088309eac78a390a5",
+      "content_utf8": "Option Explicit\nDim Response\nSet Response = New AspResponse\nResponse.ContentType = \"text/plain\"\nResponse.Charset = \"utf-8\"\nResponse.Write \"Hello, \" & \"World!\"\n\nWScript.StdOut.Write Response.ContentType & \"|\" & Response.Charset & vbLf\nWScript.StdOut.Write Response.Body\nClass AspResponse\n    Public ContentType, Charset, Body\n    Private Sub Class_Initialize()\n        Body = \"\"\n    End Sub\n    Public Sub Write(Value)\n        Body = Body & CStr(Value)\n    End Sub\nEnd Class\n",
+      "file_encoding": "UTF-16 LE with BOM, CRLF"
+    }
+  },
+  "toolchain": "Microsoft Windows Script Host VBScript via cscript.exe",
+  "script_host_binary_sha256": "68d296486a41f118e42c1b8e04c207ea89955a85a97487eca534c276b06e7def",
+  "native_http_result": {
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "body_utf8": "Hello, World!"
+  },
+  "reproduction_command": "cscript.exe //B //Nologo program.vbs; request /hello.asp from the local Response fixture",
+  "semantic_scope": "The original embedded VBScript ran in the Microsoft script host using a standalone Classic ASP Response fixture. A private HTTP request returned status 200, the original content type and charset, and the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

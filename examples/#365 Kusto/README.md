@@ -1,5 +1,18 @@
 # #365 Kusto
 
+## Verified on November 18, 2026
+
+ClickHouse’s KQL-compatible runtime evaluated the exact original query and returned the greeting under its declared column.
+
+Run `python check.py with chDB dialect=kusto`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -41,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.csl` | [hello.csl](variants/csl-341667e5/hello.csl) created; verification pending |
-| `.kql` | [hello.kql](hello.kql) syntax verified |
+| `.kql` | [hello.kql](hello.kql) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #121 Classic ASP
 
+## Verified on November 18, 2026
+
+The original embedded VBScript ran in the Microsoft script host using a standalone Classic ASP Response fixture. A private HTTP request returned status 200, the original content type and charset, and the exact greeting.
+
+Run `cscript.exe //B //Nologo program.vbs; request /hello.asp from the local Response fixture`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Classic ASP`, tipo `programming`, `language_id: 8`.
 
 Serve a Classic ASP page in VBScript and write Hello, World! in the response body HTTP text/plain.
@@ -48,4 +61,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.asp` | [hello.asp](hello.asp) created; verification pending |
+| `.asp` | [hello.asp](hello.asp) Syntax and behavior verified |
+
+</details>

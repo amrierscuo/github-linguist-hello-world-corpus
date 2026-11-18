@@ -1,5 +1,16 @@
 # #554 Pro*C
 
+## Verified on November 18, 2026
+
+The compatible embedded-SQL precompiler translated the unmodified source and preserved its declared C host variable. Running the generated executable printed the exact greeting.
+
+Run `ecpg -C ORACLE -o hello.c hello.pc; cc -I<ecpg include> hello.c -lecpg -o hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -42,4 +53,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pc` | [hello.pc](hello.pc) created; verification pending |
+| `.pc` | [hello.pc](hello.pc) Syntax and behavior verified |
+
+</details>

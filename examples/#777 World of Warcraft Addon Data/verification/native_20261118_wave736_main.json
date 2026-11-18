@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "ordinal": 777,
+  "language": "World of Warcraft Addon Data",
+  "timestamp_utc": "2026-11-18T21:08:54.992899+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Stage published WoW addon loader packages from their original lock file",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "cwd": "${SCRATCH}/777-22a_akzp/loader",
+      "timestamp_utc": "2026-11-18T21:08:55.067233+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "\nadded 19 packages in 28s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/777-22a_akzp/home",
+        "TMPDIR": "${SCRATCH}/777-22a_akzp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Bundle the original compatible loader with its documented WASM runtime",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "build.cjs"
+      ],
+      "cwd": "${SCRATCH}/777-22a_akzp/loader",
+      "timestamp_utc": "2026-11-18T21:09:25.788954+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/777-22a_akzp/home",
+        "TMPDIR": "${SCRATCH}/777-22a_akzp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Open exact original TOC and run the Lua file it declares through the published addon loader",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "check.cjs"
+      ],
+      "cwd": "${SCRATCH}/777-22a_akzp/loader",
+      "timestamp_utc": "2026-11-18T21:09:26.063619+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/777-22a_akzp/home",
+        "TMPDIR": "${SCRATCH}/777-22a_akzp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#777 World of Warcraft Addon Data/Greeting.lua": "07219cd9561b41ce1f39209958076c471b17855679c968b42767b0122423c782",
+    "examples/#777 World of Warcraft Addon Data/Greeting.toc": "63348e1d1e7573793789677be5f67e8c00256b4eca405b7855af37c43cfa938e"
+  },
+  "fixture_sha256": {
+    "loader/check.ts": {
+      "sha256": "8550b3b0e2cc67c125607720eaf37537811c145296fde68b0b8c664fe29b1d36",
+      "content_utf8": "import fs from \"node:fs\";\nimport assert from \"node:assert/strict\";\nimport {loadFromFiles,textFile} from \"./src/addons\";\nimport {Runtime} from \"./src/runtime\";\nasync function main() {\n    const files=[\"Greeting.toc\",\"Greeting.lua\"].map(p=>textFile(p,fs.readFileSync(\"../\"+p,\"utf8\")));\n    const addons=await loadFromFiles(\"Greeting\",files);\n    assert.equal(addons.length,1);\n    assert.equal(addons[0].name,\"Greeting\");\n    const messages:string[]=[];\n    const runtime=new Runtime({log(kind,text){if(kind===\"error\") throw Error(text);if(kind===\"chat\")messages.push(text);},requestReload(){throw Error(\"Unexpected reload\");}});\n    await runtime.boot(addons,{w:800,h:600,sv:{}});\n    assert.deepEqual(messages,[\"Hello, World!\"]);\n    console.log(messages[0]);\n    if(typeof (runtime as any).close===\"function\")(runtime as any).close();\n}\nmain().catch(error=>{console.error(error);process.exitCode=1});\n"
+    },
+    "loader/build.cjs": {
+      "sha256": "6eab606868147b17ba04c3b621d3c5bcdcd5742d259b316183347723ed9a1844",
+      "content_utf8": "const fs=require(\"node:fs\"),path=require(\"node:path\");\nconst {build}=require(\"esbuild\");\nbuild({entryPoints:[\"check.ts\"],bundle:true,platform:\"node\",format:\"cjs\",packages:\"external\",outfile:\"check.cjs\",plugins:[{\n  name:\"upstream-vite-imports\",\n  setup(b){\n   b.onResolve({filter:/\\.(?:lua\\?raw|wasm\\?url)$/},a=>({path:a.path.endsWith(\"?url\")?require.resolve(\"wasmoon/dist/glue.wasm\"):path.resolve(a.resolveDir,a.path.slice(0,-4)),namespace:\"data\"}));\n   b.onLoad({filter:/.*/,namespace:\"data\"},a=>({contents:\"export default \"+JSON.stringify(a.path.endsWith(\".wasm\")?a.path:fs.readFileSync(a.path,\"utf8\")),loader:\"js\"}));\n  }\n}]}).catch(error=>{console.error(error);process.exitCode=1;});\n"
+    }
+  },
+  "sources": [
+    "https://github.com/Gethe/wow-ui-source",
+    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_APIDocumentation/Blizzard_APIDocumentation.toc"
+  ],
+  "previous_verification_log": "examples/#777 World of Warcraft Addon Data/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/srrmke/wow-addons-sandbox/tar.gz/main",
+      "ref": "main",
+      "sha256": "e7f648e460fe8751fe1ae71cb895ea4bd57d14372d766aa0b8d3c2701b135379"
+    }
+  ],
+  "toolchain": "WoW Addon Sandbox 0.1.0 with Wasmoon Lua runtime",
+  "reproduction_command": "npm ci --ignore-scripts; node build.cjs; node check.cjs",
+  "semantic_scope": "The compatible addon loader opened the exact original TOC, selected its referenced Lua file and executed it. Its chat hook received the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

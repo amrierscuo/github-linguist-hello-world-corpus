@@ -1,5 +1,16 @@
 # #756 Visual Basic 6.0
 
+## Verified on November 18, 2026
+
+The published compatible tool read the original VBP and BAS, compiled the project and invoked its declared Sub Main. The virtual machine passed the exact greeting to the headless MsgBox callback.
+
+Run `node verify-vb6.mjs <VB6 Studio Web checkout file URL>`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Visual Basic 6 project and show greeting with MsgBox.
 
 Canonical type `programming`, language_id `679594952`.
@@ -28,8 +39,10 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.bas` | [hello.bas](hello.bas) created; verification pending |
+| `.bas` | [hello.bas](hello.bas) Syntax and behavior verified |
 | `.cls` | [hello.cls](variants/cls-699ea095/hello.cls) created; verification pending |
 | `.ctl` | [hello.ctl](variants/ctl-04279ee3/hello.ctl) created; verification pending |
 | `.Dsr` | created by Designer DataReport VB6: an original export of IDE and its stream designer .dsx. is not invented a OLE serialization. |
 | `.frm` | [hello.frm](variants/frm-f409e81b/hello.frm) created; verification pending |
+
+</details>

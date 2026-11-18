@@ -1,5 +1,16 @@
 # #741 VBA
 
+## Verified on November 18, 2026
+
+The Microsoft VBScript interpreter executed the unchanged VBA routine in the shared language subset. A console fixture for the VBA Debug object received the exact Debug.Print argument.
+
+Run `cscript.exe //B //Nologo program.vbs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Run a macro VBA and write greetings in the Immediate Window.
 
 Canonical type `programming`, language_id `399230729`.
@@ -28,7 +39,9 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.bas` | [hello.bas](hello.bas) created; verification pending |
+| `.bas` | [hello.bas](hello.bas) Syntax and behavior verified |
 | `.cls` | [hello.cls](variants/cls-699ea095/hello.cls) created; verification pending |
 | `.frm` | artefatto da generare Un UserForm VBA esportato normalmente richiede il corrispondente stream binario .frx/OleObjectBlob generato da Office. Non viene inventato quel payload. |
 | `.vba` | [hello.vba](variants/vba-e8141d49/hello.vba) created; verification pending |
+
+</details>

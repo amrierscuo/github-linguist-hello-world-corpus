@@ -1,5 +1,18 @@
 # #034 Apex
 
+## Verified on November 18, 2026
+
+The compatible interpreter ran the exact anonymous Apex statements directly as anonymous Apex. System.assertEquals passed and the runtime executed the original System.debug call with the exact greeting.
+
+Run `epex run hello.apex`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Build Hello, World!, control it with System.assertEquals and register it with System.debug in an anonymous Apex block.
 
 ## File
@@ -60,5 +73,7 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.cls` | [CorpusGreeting.cls](variants/ext-cls-2e636c73/CorpusGreeting.cls) created; verification pending |
-| `.apex` | [hello.apex](hello.apex) syntax verified |
+| `.apex` | [hello.apex](hello.apex) Syntax and behavior verified |
 | `.trigger` | [hello.trigger](variants/ext-trigger-2e74726967676572/hello.trigger) created; verification pending |
+
+</details>

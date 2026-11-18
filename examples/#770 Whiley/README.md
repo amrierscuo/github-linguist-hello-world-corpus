@@ -1,5 +1,18 @@
 # #770 Whiley
 
+## Verified on November 18, 2026
+
+The official compiler generated WYIL from the unmodified original. Its interpreter evaluated the greeting function and returned the exact thirteen-byte greeting.
+
+Run `java -cp <Whiley Compiler jars> Check.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Whiley`, tipo `programming`, language_id `888779559`.
 
 Pure Whiley function original greeting() that returns greeting as an array of entire code points, conforms to the string pattern of the Whiley specification.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.whiley` | [hello.whiley](hello.whiley) created; verification pending |
+| `.whiley` | [hello.whiley](hello.whiley) Syntax and behavior verified |
+
+</details>

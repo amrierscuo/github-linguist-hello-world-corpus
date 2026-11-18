@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "ordinal": 108,
+  "language": "Cangjie",
+  "timestamp_utc": "2026-11-18T21:03:27.605658+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build exact original Cangjie with the OpenHarmony published compiler archive",
+      "command": [
+        "bash",
+        "${SCRATCH}/108-whag1tqn/compile-cangjie.sh",
+        "${TOOL_CACHE}/tools/openharmony-cangjie-sdk-736/dist/cangjie/envsetup.sh",
+        "${TOOL_CACHE}/tools/openharmony-cangjie-sdk-736/dist/cangjie/bin/cjc"
+      ],
+      "cwd": "${SCRATCH}/108-whag1tqn",
+      "timestamp_utc": "2026-11-18T21:04:00.633162+00:00",
+      "timeout_seconds": 105,
+      "exit_code": 0,
+      "stdout": "Cangjie Compiler: 1.2.0-alpha.21 (cjnative)\nTarget: x86_64-unknown-linux-gnu\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/108-whag1tqn/home",
+        "TMPDIR": "${SCRATCH}/108-whag1tqn/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#108 Cangjie/hello.cj": "623425bf7af5fc563704b10c972faff23ded9fd704cdda48d2fe72987da25867"
+  },
+  "fixture_sha256": {
+    "compile-cangjie.sh": {
+      "sha256": "875142b4cfc03ae7e7217280091d6ad67c6585f1cdbf18500eb71dffe3b0b02c",
+      "content_utf8": "#!/bin/bash\nset -e\nif test -f \"$1\"; then source \"$1\"; fi\n\"$2\" --version\n\"$2\" hello.cj -o hello\n./hello\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Cangjie primo programma",
+      "url": "https://docs.cangjie-lang.cn/en/docs/1.0.0/user_manual/source_en/first_understanding/hello_world.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://repo.huaweicloud.com/openharmony/compiler/cangjie/1.2.0.alpha.21/cangjie-linux-x64-1.2.0-alpha.21.zip",
+      "sha256": "609feff470cc5ca287b00cfdbe014b8db28c8c33a831bd6c8aba9c2966c14293",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Cangjie native SDK from OpenHarmony preload catalog",
+  "reproduction_command": "source envsetup.sh; cjc hello.cj -o hello; ./hello",
+  "semantic_scope": "The published compiler built the unchanged Cangjie program and the resulting console application printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #273 Groovy Server Pages
 
+## Verified on November 18, 2026
+
+The maintained Apache Grails GSP engine rendered the unchanged original template with its model binding. The emitted page contains the exact greeting.
+
+Run `java -cp <Grails GSP jars> groovy.ui.GroovyMain check.groovy`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Groovy Server Pages`, tipo `programming`, language_id `143`.
 
 Render a GSP text/plain page by interpolating the name model variable.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gsp` | [hello.gsp](hello.gsp) created; verification pending |
+| `.gsp` | [hello.gsp](hello.gsp) Syntax and behavior verified |
+
+</details>

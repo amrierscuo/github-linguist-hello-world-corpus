@@ -1,5 +1,18 @@
 # #777 World of Warcraft Addon Data
 
+## Verified on November 18, 2026
+
+The compatible addon loader opened the exact original TOC, selected its referenced Lua file and executed it. Its chat hook received the exact greeting.
+
+Run `npm ci --ignore-scripts; node build.cjs; node check.cjs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `World of Warcraft Addon Data`, tipo `data`, language_id `396`.
 
 Addon World of Warcraft original: TOC Greeting.toc declares title and version and charge Greeting.lua, which prints `Hello, World!`.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.toc` | [Greeting.toc](Greeting.toc) created; verification pending |
+| `.toc` | [Greeting.toc](Greeting.toc) Syntax and behavior verified |
+
+</details>

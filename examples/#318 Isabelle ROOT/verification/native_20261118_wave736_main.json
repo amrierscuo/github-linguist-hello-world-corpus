@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "ordinal": 318,
+  "language": "Isabelle ROOT",
+  "timestamp_utc": "2026-11-18T20:51:49.481071+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Inspect binary tool dependencies before execution",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "build",
+        "--dry-run",
+        "--no-link",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#isabelle"
+      ],
+      "cwd": "${SCRATCH}/318-vjti_vsd",
+      "timestamp_utc": "2026-11-18T20:51:49.513425+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/318-vjti_vsd/home",
+        "TMPDIR": "${SCRATCH}/318-vjti_vsd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    },
+    {
+      "label": "Execute original example with a pinned Nix binary closure",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "shell",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#isabelle",
+        "--command",
+        "bash",
+        "check.sh"
+      ],
+      "cwd": "${SCRATCH}/318-vjti_vsd",
+      "timestamp_utc": "2026-11-18T20:52:42.136556+00:00",
+      "timeout_seconds": 410,
+      "exit_code": 0,
+      "stdout": "Started at Wed Nov 18 21:52:45 GMT+1 2026 (polyml-for-isabelle-2025-1_x86_64-linux on gysgh)\nISABELLE_TOOL_JAVA_OPTIONS=\"-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m\"\nISABELLE_BUILD_OPTIONS=\"\"\n\nML_PLATFORM=\"x86_64-linux\"\nML_HOME=\"/nix/store/82xny18wcfswvfapyx9rr70x73f72kg8-polyml-for-isabelle-2025-1/bin\"\nML_SYSTEM=\"polyml-for-isabelle-2025-1\"\nML_OPTIONS=\"--minheap 1000\"\n\nSession Pure/Pure\nSession Misc/Tools\nSession HOL/HOL (main)\nSession Unsorted/Hello\nRunning Hello ...\nHello: theory Hello.Hello\nHello: theory Hello.Hello 100% (0.428s cumulated time)\nTiming Hello (8 threads, 0.452s elapsed time, 0.581s cpu time, 0.000s GC time, factor 1.29)\nFinished Hello (0:00:02 elapsed time)\n\nFinished at Wed Nov 18 21:52:51 GMT+1 2026\n0:00:05 elapsed time\nRunning Draft ...\n\nOutput (line 5 of \"Draft/Hello.thy\"):\nconsts\n  greeting :: \"char list\"\n\nOutput (line 8 of \"Draft/Hello.thy\"):\ntheorem greeting_correct: greeting = ''Hello, World!''\n\nOutput (line 11 of \"Draft/Hello.thy\"):\n\"''Hello, World!''\"\n  :: \"char list\"\nFinished Draft (0:00:01 elapsed time)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/318-vjti_vsd/home",
+        "TMPDIR": "${SCRATCH}/318-vjti_vsd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#318 Isabelle ROOT/Hello.thy": "2ccb39c725ea096bc02eac3abc99f8ab9ef3911f0a486480a966bb1729e5a86e",
+    "examples/#318 Isabelle ROOT/ROOT": "cabb147fda5f703e904658e07a2b2cf6b8a5574d8fb7b7c94460642d53b77b20"
+  },
+  "fixture_sha256": {
+    "check.sh": {
+      "sha256": "831a0f741b9899c991a74f7554ccab556dd522c845a039e11e805c83614277f9",
+      "content_utf8": "set -eu\nisabelle build -v -D . Hello\nisabelle build_log -v Hello\nisabelle process_theories -O -f Hello.thy\n"
+    }
+  },
+  "sources": [
+    "https://isabelle.in.tum.de/doc/system.pdf"
+  ],
+  "previous_verification_log": null,
+  "nix_packages": [
+    {
+      "portable_archive": "https://github.com/DavHau/nix-portable/releases/download/v012/nix-portable-x86_64",
+      "portable_archive_sha256": "b409c55904c909ac3aeda3fb1253319f86a89ddd1ba31a5dec33d4a06414c72a",
+      "nixpkgs_revision": "f68407657ad294471eb4b2e65d193df26edf729f",
+      "package": "isabelle"
+    }
+  ],
+  "toolchain": "Isabelle2025-1 via pinned Nix binary closure",
+  "reproduction_command": "isabelle build -v -D . Hello; isabelle build_log -v Hello",
+  "semantic_scope": "Isabelle checked the original ROOT session and theorem. The standard session log recorded evaluation of the original greeting value.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

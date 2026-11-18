@@ -1,5 +1,18 @@
 # #251 Glimmer JS
 
+## Verified on November 18, 2026
+
+The content-tag compiler and host transpiler processed the unchanged original source. A standalone Glimmer runtime mounted its compiled template and the heading contained the exact greeting.
+
+Run `node render.cjs hello.gjs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Define a template-only component Glimmer JS with Hello, World! title.
 
 ## Toolchain
@@ -38,4 +51,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gjs` | [hello.gjs](hello.gjs) syntax verified |
+| `.gjs` | [hello.gjs](hello.gjs) Syntax and behavior verified |
+
+</details>

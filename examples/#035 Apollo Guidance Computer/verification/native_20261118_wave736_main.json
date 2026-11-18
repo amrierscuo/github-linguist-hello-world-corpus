@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "ordinal": 35,
+  "language": "Apollo Guidance Computer",
+  "timestamp_utc": "2026-11-18T21:03:27.174603+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Assemble exact Apollo example using the official built yaYUL console",
+      "command": [
+        "${SCRATCH}/035-978evcqp/agc/yaYUL/yaYUL",
+        "hello.agc"
+      ],
+      "cwd": "${SCRATCH}/035-w5hrm2px",
+      "timestamp_utc": "2026-11-18T21:03:27.218248+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Apollo Guidance Computer (AGC) assembler, version , built Nov 18 2026, target AGC4\n(c)2026 Ronald S. Burkey\nRefer to https://www.ibiblio.org/apollo/index.html for more information.\nPass #1\nPass #2\nPass #3\n000001,000001:                                                                                          \t# Block II AGC example: explicit ASCII codes, one 15-bit word per character.\n000002,000002:                                                                                          \t# ASCII is a convention of this example, not a native AGC text service.\n000003,000003:                                                                                          \t# Starting at octal 4000, load H (octal 00110) into A and hold.\n000004,000004:    4000                                           SETLOC   4000                          \t#\n000005,000005:    4000           34002        START              CA       GREET                         \t#\n000006,000006:    4001           04001        HOLD               TC       HOLD                          \t#\n000007,000007:    4002           00110        GREET              OCT      00110                         \t# 'H'\n000008,000008:    4003           00145                           OCT      00145                         \t# 'e'\n000009,000009:    4004           00154                           OCT      00154                         \t# 'l'\n000010,000010:    4005           00154                           OCT      00154                         \t# 'l'\n000011,000011:    4006           00157                           OCT      00157                         \t# 'o'\n000012,000012:    4007           00054                           OCT      00054                         \t# ','\n000013,000013:    4010           00040                           OCT      00040                         \t# ' '\n000014,000014:    4011           00127                           OCT      00127                         \t# 'W'\n000015,000015:    4012           00157                           OCT      00157                         \t# 'o'\n000016,000016:    4013           00162                           OCT      00162                         \t# 'r'\n000017,000017:    4014           00154                           OCT      00154                         \t# 'l'\n000018,000018:    4015           00144                           OCT      00144                         \t# 'd'\n000019,000019:    4016           00041                           OCT      00041                         \t# '!'\nRemoving the duplicated lines... \n\nSymbol-table file written.\n\n\nUsage Table for Fixed-Memory Banks\n----------------------------------\nBank 00:  0000/2000 words used.\nBank 01:  0000/2000 words used.\nBank 02:  0017/2000 words used.\nBank 03:  0000/2000 words used.\nBank 04:  0000/2000 words used.\nBank 05:  0000/2000 words used.\nBank 06:  0000/2000 words used.\nBank 07:  0000/2000 words used.\nBank 10:  0000/2000 words used.\nBank 11:  0000/2000 words used.\nBank 12:  0000/2000 words used.\nBank 13:  0000/2000 words used.\nBank 14:  0000/2000 words used.\nBank 15:  0000/2000 words used.\nBank 16:  0000/2000 words used.\nBank 17:  0000/2000 words used.\nBank 20:  0000/2000 words used.\nBank 21:  0000/2000 words used.\nBank 22:  0000/2000 words used.\nBank 23:  0000/2000 words used.\nBank 24:  0000/2000 words used.\nBank 25:  0000/2000 words used.\nBank 26:  0000/2000 words used.\nBank 27:  0000/2000 words used.\nBank 30:  0000/2000 words used.\nBank 31:  0000/2000 words used.\nBank 32:  0000/2000 words used.\nBank 33:  0000/2000 words used.\nBank 34:  0000/2000 words used.\nBank 35:  0000/2000 words used.\nBank 36:  0000/2000 words used.\nBank 37:  0000/2000 words used.\nBank 40:  0000/2000 words used.\nBank 41:  0000/2000 words used.\nBank 42:  0000/2000 words used.\nBank 43:  0000/2000 words used.\n\n\nSymbol Table\n------------\n     1,F:   GREET           4002  \t\t                                  \t\t                                  \n  ==============================  \t\t                                  \t\t                                  \n     2,F:   HOLD            4001  \t\t                                  \t\t                                  \n  ==============================  \t\t                                  \t\t                                  \n     3,F:   START           4000  \t\t\n\nUnresolved symbols:  0\nFatal errors:  0\nWarnings:  0\nMultiply-defined symbols:  0\n\nBugger word 65565 at 02,2021.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/035-w5hrm2px/home",
+        "TMPDIR": "${SCRATCH}/035-w5hrm2px/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Select the actual emulator objects without interactive debugger bookkeeping",
+      "command": [
+        "ar",
+        "d",
+        "${SCRATCH}/035-w5hrm2px/libyaAGC-console.a",
+        "Backtrace.o"
+      ],
+      "cwd": "${SCRATCH}/035-w5hrm2px",
+      "timestamp_utc": "2026-11-18T21:03:27.283419+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/035-w5hrm2px/home",
+        "TMPDIR": "${SCRATCH}/035-w5hrm2px/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile a console-only harness against the unchanged real Block II emulator",
+      "command": [
+        "gcc",
+        "-I",
+        "${SCRATCH}/035-978evcqp/agc/yaAGC",
+        "check.c",
+        "${SCRATCH}/035-w5hrm2px/libyaAGC-console.a",
+        "-lm",
+        "-pthread",
+        "-o",
+        "check"
+      ],
+      "cwd": "${SCRATCH}/035-w5hrm2px",
+      "timestamp_utc": "2026-11-18T21:03:27.722818+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/035-w5hrm2px/home",
+        "TMPDIR": "${SCRATCH}/035-w5hrm2px/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the real machine instructions and inspect the native accumulator readback",
+      "command": [
+        "${SCRATCH}/035-w5hrm2px/check",
+        "${SCRATCH}/035-w5hrm2px/hello.agc.bin"
+      ],
+      "cwd": "${SCRATCH}/035-w5hrm2px",
+      "timestamp_utc": "2026-11-18T21:03:28.012687+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "F02[0]=34002\nF02[1]=04001\nF02[2]=00110\nF02[3]=00145\nF02[4]=00154\nF02[5]=00154\nF02[6]=00157\nF02[7]=00054\nF02[8]=00040\nF02[9]=00127\nSTEP=0 A=00000 Z=04000\nSTEP=1 A=00110 Z=04001\nSTEP=2 A=00110 Z=04001\nSTEP=3 A=00110 Z=04001\nSTEP=4 A=00110 Z=04001\nSTEP=5 A=00110 Z=04001\nSTEP=6 A=00110 Z=04001\nSTEP=7 A=00110 Z=04001\nSTEP=8 A=00110 Z=04001\nSTEP=9 A=00110 Z=04001\nSTEP=10 A=00110 Z=04001\nSTEP=11 A=00110 Z=04001\nSTEP=12 A=00110 Z=04001\nSTEP=13 A=00110 Z=04001\nSTEP=14 A=00110 Z=04001\nSTEP=15 A=00110 Z=04001\nSTEP=16 A=00110 Z=04001\nSTEP=17 A=00110 Z=04001\nSTEP=18 A=00110 Z=04001\nSTEP=19 A=00110 Z=04001\nSTEP=20 A=00110 Z=04001\nSTEP=21 A=00110 Z=04001\nSTEP=22 A=00110 Z=04001\nSTEP=23 A=00110 Z=04001\nSTEP=24 A=00110 Z=04001\nSTEP=25 A=00110 Z=04001\nSTEP=26 A=00110 Z=04001\nSTEP=27 A=00110 Z=04001\nSTEP=28 A=00110 Z=04001\nSTEP=29 A=00110 Z=04001\nSTEP=30 A=00110 Z=04001\nSTEP=31 A=00110 Z=04001\nSTEP=32 A=00110 Z=04001\nSTEP=33 A=00110 Z=04001\nSTEP=34 A=00110 Z=04001\nSTEP=35 A=00110 Z=04001\nSTEP=36 A=00110 Z=04001\nSTEP=37 A=00110 Z=04001\nSTEP=38 A=00110 Z=04001\nSTEP=39 A=00110 Z=04001\nA=00110\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/035-w5hrm2px/home",
+        "TMPDIR": "${SCRATCH}/035-w5hrm2px/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#035 Apollo Guidance Computer/hello.agc": "6ae1c4331cb9b49f1316dc0a52e1d18c640dabc1e52459f48093ab030d46940e"
+  },
+  "fixture_sha256": {
+    "check.c": {
+      "sha256": "f4a67871556cc115c19da5322171c07095090b622426cb6c31db1efc60a44629",
+      "content_utf8": "#include <stdio.h>\n#include <string.h>\n#include \"agc_engine.h\"\nvoid BacktraceAdd(agc_t *cpu,int cause) { (void)cpu;(void)cause; }\nint main(int argc,char **argv) {\n    agc_t cpu;\n    memset(&cpu,0,sizeof(cpu));\n    if(agc_engine_init(&cpu,argv[1],NULL,0)!=0)return 2;\n    cpu.Erasable[0][5]=04000;\n    cpu.AllowInterrupt=0;\n    for(int i=0;i<10;i++)printf(\"F02[%d]=%05o\\n\",i,cpu.Fixed[2][i]&077777);\n    for(int i=0;i<40;i++) {\n        agc_engine(&cpu);\n        printf(\"STEP=%d A=%05o Z=%05o\\n\",i,cpu.Erasable[0][0]&077777,cpu.Erasable[0][5]&077777);\n    }\n    printf(\"A=%05o\\n\",cpu.Erasable[0][0]&077777);\n    return 0;\n}\n"
+    }
+  },
+  "sources": [
+    "https://www.ibiblio.org/apollo/assembly_language_manual.html",
+    "https://www.ibiblio.org/apollo/yaYUL.html",
+    "https://github.com/virtualagc/virtualagc"
+  ],
+  "previous_verification_log": "examples/#035 Apollo Guidance Computer/verification/result.json",
+  "yaYUL_binary_sha256": "afa85197e5a6a1b6bd7c55edf38b7f0084c4c8541de2e99b062a60de104a9b67",
+  "native_emulator_archive_sha256": "bb9d0d20bca645c92267e314534aed38d64c10157b7a98113430fdd9016f4cf7",
+  "assembled_memory_image_sha256": "3cb627150c1949983716de9ac684adad4e7e40d9f36643e599c9a3c57bca7517",
+  "emulator_interfaces": {
+    "agc_engine.h": [
+      "  int16_t Erasable[8][0400];\t// Banks 0,1,2 are \"unswitched erasable\".",
+      "  int16_t Erasable[8][0400];\t// Banks 0,1,2 are \"unswitched erasable\".",
+      "int agc_engine (agc_t * State);",
+      "int agc_engine_init (agc_t * State, const char *RomImage,",
+      "void ChannelOutput (agc_t * State, int Channel, int Value);",
+      "int ChannelInput (agc_t * State);"
+    ]
+  },
+  "toolchain": "VirtualAGC yaYUL and libyaAGC native emulator",
+  "reproduction_command": "yaYUL hello.agc; link native emulator check.c; ./check hello.agc.bin",
+  "semantic_scope": "The official assembler and native Block II emulation core processed the unchanged code. Reading its A register confirmed the intended octal greeting byte after executing the original instructions.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

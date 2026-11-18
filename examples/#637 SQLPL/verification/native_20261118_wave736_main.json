@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "ordinal": 637,
+  "language": "SQLPL",
+  "timestamp_utc": "2026-11-18T21:05:06.935891+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${TOOL_CACHE}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/637-i2u2rhkq",
+      "timestamp_utc": "2026-11-18T21:05:06.954265+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/637-i2u2rhkq/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  6.505 s\n[INFO] Finished at: 2026-11-18T22:05:18+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/637-i2u2rhkq/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/637-i2u2rhkq/home",
+        "TMPDIR": "${SCRATCH}/637-i2u2rhkq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/637-i2u2rhkq/home"
+      }
+    },
+    {
+      "label": "Execute the original procedure through the published SQL/PSM implementation",
+      "command": [
+        "java",
+        "-cp",
+        "${TOOL_CACHE}/tools/maven-cache/org/hsqldb/hsqldb/2.7.4/hsqldb-2.7.4.jar",
+        "Check.java"
+      ],
+      "cwd": "${SCRATCH}/637-i2u2rhkq",
+      "timestamp_utc": "2026-11-18T21:05:19.000110+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/637-i2u2rhkq/home\nException in thread \"main\" java.sql.SQLSyntaxErrorException: unexpected token : SET required: ATOMIC : line: 5\n\tat org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\tat org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\tat org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)\n\tat org.hsqldb.jdbc.JDBCStatement.execute(Unknown Source)\n\tat Check.main(Check.java:11)\nCaused by: org.hsqldb.HsqlException: unexpected token : SET required: ATOMIC : line: 5\n\tat org.hsqldb.error.Error.parseError(Unknown Source)\n\tat org.hsqldb.ParserBase.unexpectedTokenRequire(Unknown Source)\n\tat org.hsqldb.ParserBase.readThis(Unknown Source)\n\tat org.hsqldb.ParserRoutine.compileCompoundStatement(Unknown Source)\n\tat org.hsqldb.ParserRoutine.compileSQLProcedureStatementOrNull(Unknown Source)\n\tat org.hsqldb.ParserRoutine.readRoutineSQLBody(Unknown Source)\n\tat org.hsqldb.ParserRoutine.readRoutineBody(Unknown Source)\n\tat org.hsqldb.ParserRoutine.readCreateProcedureOrFunction(Unknown Source)\n\tat org.hsqldb.ParserRoutine.compileCreateProcedureOrFunction(Unknown Source)\n\tat org.hsqldb.ParserDDL.compileCreate(Unknown Source)\n\tat org.hsqldb.ParserCommand.compilePart(Unknown Source)\n\tat org.hsqldb.ParserCommand.compileStatements(Unknown Source)\n\tat org.hsqldb.Session.executeDirectStatement(Unknown Source)\n\tat org.hsqldb.Session.execute(Unknown Source)\n\tat org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)\n\tat org.hsqldb.jdbc.JDBCStatement.execute(Unknown Source)\n\tat Check.main(Check.java:11)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat jdk.compiler/com.sun.tools.javac.launcher.Main.execute(Main.java:484)\n\tat jdk.compiler/com.sun.tools.javac.launcher.Main.run(Main.java:208)\n\tat jdk.compiler/com.sun.tools.javac.launcher.Main.main(Main.java:135)\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/637-i2u2rhkq/home",
+        "TMPDIR": "${SCRATCH}/637-i2u2rhkq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/637-i2u2rhkq/home"
+      }
+    },
+    {
+      "label": "Create the original SQL procedure with a SQL/PSM atomic block and call its OUT parameter",
+      "command": [
+        "java",
+        "-cp",
+        "${TOOL_CACHE}/tools/maven-cache/org/hsqldb/hsqldb/2.7.4/hsqldb-2.7.4.jar",
+        "Check.java"
+      ],
+      "cwd": "${SCRATCH}/637-i2u2rhkq",
+      "timestamp_utc": "2026-11-18T21:05:19.936632+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/637-i2u2rhkq/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/637-i2u2rhkq/home",
+        "TMPDIR": "${SCRATCH}/637-i2u2rhkq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/637-i2u2rhkq/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#637 SQLPL/hello.db2": "c55e4740aa4e5219fe0e088e5b65551464ee9bc543a93270c6319643462b9dd8"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "e92e563eadfbf4ea913438861c215565f99ca91039d40266a31e130888725470",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.hsqldb</groupId><artifactId>hsqldb</artifactId><version>2.7.4</version></dependency></dependencies></project>\n"
+    },
+    "Check.java": {
+      "sha256": "bfd5f5744e0229974ae57da0ffa6acf050c090d466cbd9607ea5f4c2b7c5c228",
+      "content_utf8": "import java.sql.*;\nimport java.nio.file.*;\npublic class Check {\n    public static void main(String[] args) throws Exception {\n        String file=Files.readString(Path.of(\"hello.db2\")).strip();\n        String directive=\"--#SET TERMINATOR @\";\n        if(!file.startsWith(directive) || !file.endsWith(\"@\")) throw new IllegalArgumentException(file);\n        String create=file.substring(directive.length(),file.length()-1);\n        try(Connection con=DriverManager.getConnection(\"jdbc:hsqldb:mem:corpus\",\"SA\",\"\");\n            Statement s=con.createStatement()){\n            s.execute(create);\n            try(CallableStatement call=con.prepareCall(\"CALL corpus_greeting(?)\")){\n                call.registerOutParameter(1,Types.VARCHAR);\n                call.execute();\n                System.out.println(call.getString(1));\n            }\n        }\n    }\n}\n"
+    }
+  },
+  "sources": [
+    "https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=procedures-sql-procedure-body"
+  ],
+  "previous_verification_log": null,
+  "source_changes": [
+    {
+      "path": "examples/#637 SQLPL/hello.db2",
+      "original_sha256": "6870d95af369b436961c1bddbcf4beb5127e9937a16cbdfb19bbbfd1bbf70115",
+      "tested_sha256": "c55e4740aa4e5219fe0e088e5b65551464ee9bc543a93270c6319643462b9dd8",
+      "staged_file": "work/native_target736_20261118/corrected/637/hello.db2",
+      "original_fragment": "\nBEGIN\n",
+      "replacement": "\nBEGIN ATOMIC\n"
+    }
+  ],
+  "toolchain": "HSQLDB 2.7.4 compatible SQL/PSM engine",
+  "reproduction_command": "java -cp <HSQLDB 2.7.4 jar> Check.java",
+  "semantic_scope": "The compatible SQL/PSM engine created the procedure and invoked it through JDBC. The registered OUT parameter returned the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

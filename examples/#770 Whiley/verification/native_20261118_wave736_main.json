@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "ordinal": 770,
+  "language": "Whiley",
+  "timestamp_utc": "2026-11-18T21:08:54.994275+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${TOOL_CACHE}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/770-2q7xssgb",
+      "timestamp_utc": "2026-11-18T21:08:55.015760+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/770-2q7xssgb/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  2.896 s\n[INFO] Finished at: 2026-11-18T22:09:05+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/770-2q7xssgb/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/770-2q7xssgb/home",
+        "TMPDIR": "${SCRATCH}/770-2q7xssgb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/770-2q7xssgb/home"
+      }
+    },
+    {
+      "label": "Compile exact Whiley and execute its original function through the WYIL VM",
+      "command": [
+        "java",
+        "-cp",
+        "${TOOL_CACHE}/tools/maven-cache/org/whiley/wyc/0.10.18/wyc-0.10.18.jar:${TOOL_CACHE}/tools/maven-cache/org/whiley/jmodelgen/0.4.3/jmodelgen-0.4.3.jar",
+        "Check.java"
+      ],
+      "cwd": "${SCRATCH}/770-2q7xssgb",
+      "timestamp_utc": "2026-11-18T21:09:05.298018+00:00",
+      "timeout_seconds": 52,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/770-2q7xssgb/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/770-2q7xssgb/home",
+        "TMPDIR": "${SCRATCH}/770-2q7xssgb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/770-2q7xssgb/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#770 Whiley/hello.whiley": "817c425ced23e306b8f0b9f48c2241693f46e40dcfb51b09bbfabbb05f773a64"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "e0e35e65c3544be4a22b743fafcc16679767bf707001414d276774f2f30e3f79",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.whiley</groupId><artifactId>wyc</artifactId><version>0.10.18</version></dependency></dependencies></project>\n"
+    },
+    "Check.java": {
+      "sha256": "cba3b59a9e9478d213184569582021630255fc7bb2ede6f7af559cc0b7a622b6",
+      "content_utf8": "import java.io.File;\nimport java.nio.charset.StandardCharsets;\nimport wyc.Compiler;\nimport wycc.util.Trie;\nimport wyil.interpreter.Interpreter;\nimport wyil.interpreter.ConcreteSemantics.RValue;\nimport wyil.lang.WyilFile;\npublic class Check {\n    public static void main(String[] args) throws Exception {\n        File root=new File(\".\");\n        Trie src=Trie.fromString(\"hello\");\n        Compiler compiler=new Compiler().setWhileyDir(root).setWyilDir(root).setTarget(src).addSource(src);\n        if(!compiler.run()) throw new IllegalStateException(\"Whiley compilation failed\");\n        WyilFile program=Compiler.readWyilFile(root,src);\n        Interpreter interp=new Interpreter(System.out,program);\n        WyilFile.Type.Function type=new WyilFile.Type.Function(new WyilFile.Type.Void(),new WyilFile.Type.Array(new WyilFile.Type.Int()));\n        var id=WyilFile.QualifiedName.fromString(\"hello::greeting\");\n        var value=(RValue.Array)interp.execute(id,type,interp.new CallStack());\n        byte[] greeting=value.toByteArray();\n        if(greeting.length!=13) throw new IllegalStateException(value.toString());\n        System.out.println(new String(greeting,StandardCharsets.US_ASCII));\n    }\n}\n"
+    }
+  },
+  "sources": [
+    "https://whiley.org/pdfs/WhileyLanguageSpec.pdf",
+    "https://whiley.org/learn/"
+  ],
+  "previous_verification_log": "examples/#770 Whiley/verification/native.json",
+  "toolchain": "Whiley Compiler 0.10.18 and native JVM WYIL interpreter",
+  "reproduction_command": "java -cp <Whiley Compiler jars> Check.java",
+  "semantic_scope": "The official compiler generated WYIL from the unmodified original. Its interpreter evaluated the greeting function and returned the exact thirteen-byte greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

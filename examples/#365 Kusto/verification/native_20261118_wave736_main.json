@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "ordinal": 365,
+  "language": "Kusto",
+  "timestamp_utc": "2026-11-18T20:55:35.064691+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/365-pmqy0iyb",
+      "timestamp_utc": "2026-11-18T20:55:35.150096+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/365-pmqy0iyb/home",
+        "TMPDIR": "${SCRATCH}/365-pmqy0iyb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/365-pmqy0iyb/.venv/bin/python",
+        "chdb==3.7.1",
+        "pyarrow==20.0.0",
+        "pandas==2.3.3"
+      ],
+      "cwd": "${SCRATCH}/365-pmqy0iyb",
+      "timestamp_utc": "2026-11-18T20:55:35.176635+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 7 packages in 10ms\nInstalled 7 packages in 144ms\n + chdb==3.7.1\n + numpy==2.5.5\n + pandas==2.3.3\n + pyarrow==20.0.0\n + python-dateutil==4.0.0\n + pytz==2026.6\n + tzdata==2026.6\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/365-pmqy0iyb/home",
+        "TMPDIR": "${SCRATCH}/365-pmqy0iyb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute exact KQL in the embedded ClickHouse Kusto-compatible dialect",
+      "command": [
+        "${SCRATCH}/365-pmqy0iyb/.venv/bin/python",
+        "check.py"
+      ],
+      "cwd": "${SCRATCH}/365-pmqy0iyb",
+      "timestamp_utc": "2026-11-18T20:55:35.450391+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "{\"greeting\":\"Hello, World!\"}\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/365-pmqy0iyb/home",
+        "TMPDIR": "${SCRATCH}/365-pmqy0iyb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#365 Kusto/hello.kql": "70a3f13183759f7b0b96a2d2ef87da52e07baa0cfadc89a08880c41a92a66b01",
+    "examples/#365 Kusto/verify.ps1": "14ff3eab94b23e6d63810927253c6dfba447cc803b95a635b33d167b08abdeae"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "e15ae32c89e9531c1edd3dc4a5562a7733e1a9482478e213a0df928e8c05c542",
+      "content_utf8": "from chdb import session as chdb_session\nfrom pathlib import Path\nsrc=Path('hello.kql').read_text()\nwith chdb_session.Session(\"./db\") as session:\n    session.query(\"SET allow_experimental_kusto_dialect=1\")\n    session.query(\"SET dialect='kusto'\")\n    print(session.query(src, \"JSONEachRow\"))\n"
+    }
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/kusto/query/print-operator",
+    "https://learn.microsoft.com/en-us/kusto/query/strcat-function",
+    "https://github.com/microsoft/Kusto-Query-Language"
+  ],
+  "previous_verification_log": "examples/#365 Kusto/verification/toolchain.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "chDB 3.7.1 / ClickHouse KQL compatibility",
+  "reproduction_command": "python check.py with chDB dialect=kusto",
+  "semantic_scope": "ClickHouse’s KQL-compatible runtime evaluated the exact original query and returned the greeting under its declared column.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

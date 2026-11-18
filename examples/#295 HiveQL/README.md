@@ -1,5 +1,18 @@
 # #295 HiveQL
 
+## Verified on November 18, 2026
+
+The official Apache Hive SQL driver evaluated the original SELECT against a private local session and returned the exact scalar row.
+
+Run `java -cp <recorded Maven dependencies> RunHive.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -45,3 +58,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.q` | [hello.q](variants/q-b10f5c88/hello.q) created; verification pending |
 | `.hql` | [hello.hql](hello.hql), [hello.hql](variants/q-b10f5c88/hello.hql) created; verification pending |
+
+</details>

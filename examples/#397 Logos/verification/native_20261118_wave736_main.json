@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "ordinal": 397,
+  "language": "Logos",
+  "timestamp_utc": "2026-11-18T21:05:08.282939+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Expand exact original Logos source in its published tool",
+      "command": [
+        "perl",
+        "${TOOL_CACHE}/tools/theos-logos-master/source/logos-master/bin/logos.pl",
+        "hello.xm"
+      ],
+      "cwd": "${SCRATCH}/397-dg5qsj53",
+      "timestamp_utc": "2026-11-18T21:05:08.303891+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "#line 1 \"hello.xm\"\n#import <Foundation/Foundation.h>\n\nstatic __attribute__((constructor)) void _logosLocalCtor_2ad1cba6(int __unused argc, char __unused **argv, char __unused **envp) {\n    NSLog(@\"Hello, World!\");\n}\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/397-dg5qsj53/home",
+        "TMPDIR": "${SCRATCH}/397-dg5qsj53/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile the generated constructor in the native GNUstep host",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/lib/llvm-18/bin/clang",
+        "-fconstant-string-class=NSConstantString",
+        "-fobjc-exceptions",
+        "-I${TOOL_CACHE}/tools/apt/usr/include/GNUstep",
+        "-I${TOOL_CACHE}/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/include",
+        "-I/usr/lib/gcc/x86_64-linux-gnu/13/include",
+        "fixture.m",
+        "-L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-Wl,-z,now",
+        "-L${TOOL_CACHE}/tools/apt/usr/lib",
+        "-lgnustep-base",
+        "/usr/lib/x86_64-linux-gnu/libobjc.so.4.0.0",
+        "-o",
+        "test"
+      ],
+      "cwd": "${SCRATCH}/397-dg5qsj53",
+      "timestamp_utc": "2026-11-18T21:05:08.424471+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/397-dg5qsj53/home",
+        "TMPDIR": "${SCRATCH}/397-dg5qsj53/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Invoke the exact generated constructor after headless GNUstep initialization",
+      "command": [
+        "${SCRATCH}/397-dg5qsj53/test"
+      ],
+      "cwd": "${SCRATCH}/397-dg5qsj53",
+      "timestamp_utc": "2026-11-18T21:05:09.197896+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "2026-11-18 22:05:09.270 test[586:586] Hello, World!\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/397-dg5qsj53/home",
+        "TMPDIR": "${SCRATCH}/397-dg5qsj53/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#397 Logos/hello.xm": "48b3d4725f9cfd8fdf93e38d794ffb1e29a5ec60b7f92af80d42c769dc6f96ea"
+  },
+  "fixture_sha256": {
+    "fixture.m": {
+      "sha256": "a49f25a34b237ec295e418b95b5aed7aa9cf5624be558f171014e61fe7856b82",
+      "content_utf8": "#define __unused __attribute__((unused))\n#line 1 \"hello.xm\"\n#import <Foundation/Foundation.h>\n\nstatic  void _logosLocalCtor_2ad1cba6(int __unused argc, char __unused **argv, char __unused **envp) {\n    NSLog(@\"Hello, World!\");\n}\n\nint main(void){NSAutoreleasePool *p=[NSAutoreleasePool new]; _logosLocalCtor_2ad1cba6(0, 0, 0); [p drain]; return 0;}\n"
+    }
+  },
+  "sources": [
+    "https://theos.dev/docs/logos",
+    "https://theos.dev/docs/logos-syntax",
+    "https://github.com/theos/logos"
+  ],
+  "previous_verification_log": "examples/#397 Logos/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/theos/logos/tar.gz/master",
+      "ref": "master",
+      "sha256": "b520c113d64c7068e0110d04ccc971c0a92a36c50f012eb8a91311caba054716"
+    }
+  ],
+  "toolchain": "Theos Logos and GNUstep native Objective-C",
+  "reproduction_command": "perl logos.pl hello.xm; compile the recorded GNUstep fixture and run ./test",
+  "semantic_scope": "The original Logos preprocessor emitted the constructor. The scratch host invoked its unchanged body after GNUstep initialization and captured the exact NSLog greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

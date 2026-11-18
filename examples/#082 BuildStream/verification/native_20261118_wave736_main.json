@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "ordinal": 82,
+  "language": "BuildStream",
+  "timestamp_utc": "2026-11-18T20:55:33.314625+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/082-u_e_lkw9",
+      "timestamp_utc": "2026-11-18T20:55:33.604505+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/082-u_e_lkw9/home",
+        "TMPDIR": "${SCRATCH}/082-u_e_lkw9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/082-u_e_lkw9/.venv/bin/python",
+        "BuildStream==2.8.1"
+      ],
+      "cwd": "${SCRATCH}/082-u_e_lkw9",
+      "timestamp_utc": "2026-11-18T20:55:33.728841+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 14 packages in 28ms\nInstalled 14 packages in 57ms\n + buildstream==2.8.1\n + click==8.5.1\n + grpcio==1.85.3\n + jinja2==3.1.6\n + markupsafe==3.0.4\n + packaging==26.3\n + pluginbase==1.0.1\n + protobuf==7.36.2\n + psutil==7.2.2\n + pyroaring==1.2.0\n + ruamel-yaml==0.19.1\n + ruamel-yaml-clib==0.2.15\n + typing-extensions==4.16.0\n + ujson==6.1.0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/082-u_e_lkw9/home",
+        "TMPDIR": "${SCRATCH}/082-u_e_lkw9/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Build exact local element with Apache BuildStream",
+      "command": [
+        "${SCRATCH}/082-u_e_lkw9/.venv/bin/bst",
+        "--no-interactive",
+        "build",
+        "hello.bst"
+      ],
+      "cwd": "${SCRATCH}/082-u_e_lkw9",
+      "timestamp_utc": "2026-11-18T20:55:33.954568+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[--:--:--][        ][    main:core activity                 ] START   Build\n[--:--:--][        ][    main:core activity                 ] START   Loading elements\n[00:00:00][        ][    main:core activity                 ] SUCCESS Loading elements\n[--:--:--][        ][    main:core activity                 ] START   Resolving elements\n[00:00:00][        ][    main:core activity                 ] SUCCESS Resolving elements\n[--:--:--][        ][    main:core activity                 ] START   Initializing remote caches\n[00:00:00][        ][    main:core activity                 ] SUCCESS Initializing remote caches\n[--:--:--][        ][    main:core activity                 ] START   Query cache\n[00:00:00][        ][    main:core activity                 ] SUCCESS Query cache\n\nBuildStream Version 2.8.1\n    Session Start: Wednesday, 18-11-2026 at 21:55:35\n    Project:       hello-world-corpus (${SCRATCH}/082-u_e_lkw9)\n    Targets:       hello.bst\n\nUser Configuration\n    Configuration File:      Default Configuration\n    Cache Directory:         /tmp/bst736-mep1xqjx/c/buildstream\n    Log Files:               /tmp/bst736-mep1xqjx/c/buildstream/logs\n    Source Mirrors:          /tmp/bst736-mep1xqjx/c/buildstream/sources\n    Build Area:              /tmp/bst736-mep1xqjx/c/buildstream/build\n    Strict Build Plan:       Yes\n    Maximum Fetch Tasks:     10\n    Maximum Build Tasks:     4\n    Maximum Push Tasks:      4\n    Maximum Network Retries: 2\n\nProject: hello-world-corpus\n\n    Element Plugins\n        import: core plugin\n\n    Source Plugins\n        local: core plugin\n\nPipeline\n   buildable 97ddda48ba657d18d7eb83c04128b69f04b0e57c4f20ab34cef39a6849107737 hello.bst \n===============================================================================\n[--:--:--][97ddda48][   fetch:hello.bst                     ] START   hello-world-corpus/hello/97ddda48-fetch.20261118-215535.log\n[00:00:00][97ddda48][   fetch:hello.bst                     ] SUCCESS hello-world-corpus/hello/97ddda48-fetch.20261118-215535.log\n[--:--:--][97ddda48][   build:hello.bst                     ] START   hello-world-corpus/hello/97ddda48-build.20261118-215535.log\n[--:--:--][97ddda48][   build:hello.bst                     ] START   Staging sources\n[00:00:00][97ddda48][   build:hello.bst                     ] SUCCESS Staging sources\n[--:--:--][97ddda48][   build:hello.bst                     ] START   Caching artifact\n[00:00:00][97ddda48][   build:hello.bst                     ] SUCCESS Caching artifact\n[00:00:00][97ddda48][   build:hello.bst                     ] SUCCESS hello-world-corpus/hello/97ddda48-build.20261118-215535.log\n[00:00:00][        ][    main:core activity                 ] SUCCESS Build\n\nPipeline Summary\n    Total:       1\n    Session:     1\n    Fetch Queue: processed 1, skipped 0, failed 0 \n    Build Queue: processed 1, skipped 0, failed 0 \n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/buildbox-static-736/dist:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/082-u_e_lkw9/home",
+        "TMPDIR": "/tmp/bst736-mep1xqjx",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "XDG_CACHE_HOME": "/tmp/bst736-mep1xqjx/c",
+        "XDG_CONFIG_HOME": "/tmp/bst736-mep1xqjx/conf"
+      }
+    },
+    {
+      "label": "Materialize the verified BuildStream artifact",
+      "command": [
+        "${SCRATCH}/082-u_e_lkw9/.venv/bin/bst",
+        "--no-interactive",
+        "artifact",
+        "checkout",
+        "--directory",
+        "artifact",
+        "hello.bst"
+      ],
+      "cwd": "${SCRATCH}/082-u_e_lkw9",
+      "timestamp_utc": "2026-11-18T20:55:35.838191+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[--:--:--][        ][    main:core activity                 ] START   Loading elements\n[00:00:00][        ][    main:core activity                 ] SUCCESS Loading elements\n[--:--:--][        ][    main:core activity                 ] START   Resolving elements\n[00:00:00][        ][    main:core activity                 ] SUCCESS Resolving elements\n[--:--:--][        ][    main:core activity                 ] START   Initializing remote caches\n[00:00:00][        ][    main:core activity                 ] SUCCESS Initializing remote caches\n[--:--:--][        ][    main:core activity                 ] START   Query cache\n[00:00:00][        ][    main:core activity                 ] SUCCESS Query cache\n[--:--:--][97ddda48][    main:hello.bst                     ] START   Staging dependencies\n[00:00:00][97ddda48][    main:hello.bst                     ] SUCCESS Staging dependencies\n[--:--:--][97ddda48][    main:hello.bst                     ] START   Integrating sandbox\n[00:00:00][97ddda48][    main:hello.bst                     ] SUCCESS Integrating sandbox\n[--:--:--][97ddda48][    main:hello.bst                     ] START   Checking out files in 'artifact'\n[00:00:00][97ddda48][    main:hello.bst                     ] SUCCESS Checking out files in 'artifact'\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/buildbox-static-736/dist:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/082-u_e_lkw9/home",
+        "TMPDIR": "/tmp/bst736-mep1xqjx",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "XDG_CACHE_HOME": "/tmp/bst736-mep1xqjx/c",
+        "XDG_CONFIG_HOME": "/tmp/bst736-mep1xqjx/conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#082 BuildStream/elements/hello.bst": "1e80d82dd30db12bc07c58c5e2a072b14b27db8ce173c18206915aa40b8db694",
+    "examples/#082 BuildStream/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/#082 BuildStream/project.conf": "0b54173a2641c1ca05cdf6baf87b77186b614b646fb3f144c92128e9812c9c18"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.buildstream.build/master/tutorial/first-project.html",
+    "https://docs.buildstream.build/2.3/format_project.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://gitlab.com/BuildGrid/buildbox/buildbox-integration/-/releases/permalink/latest/downloads/buildbox-x86_64-linux-gnu.tgz",
+      "sha256": "3a55195f04a2ae57b5485d4b85859ab95b724f2f2215ed367295dc25001783f8",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "checked_out_artifact_sha256": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+  "toolchain": "Apache BuildStream 2.8.1 and upstream BuildBox",
+  "reproduction_command": "bst --no-interactive build hello.bst; bst --no-interactive artifact checkout --directory artifact hello.bst",
+  "semantic_scope": "The official BuildStream project built the unchanged import element. Its artifact checkout materialized a file with the exact expected greeting and newline.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "ordinal": 34,
+  "language": "Apex",
+  "timestamp_utc": "2026-11-18T20:54:02.480333+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the published compatible interpreter in scratch",
+      "command": [
+        "${TOOL_CACHE}/tools/go/dist/go/bin/go",
+        "build",
+        "-o",
+        "${SCRATCH}/034-eamz3666/epex",
+        "./cmd/epex"
+      ],
+      "cwd": "${TOOL_CACHE}/tools/ipavlic-epex-main/source/epex-main",
+      "timestamp_utc": "2026-11-18T20:54:03.012079+00:00",
+      "timeout_seconds": 185,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/034-eamz3666/home",
+        "TMPDIR": "${SCRATCH}/034-eamz3666/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GOBIN": "${SCRATCH}/034-eamz3666/bin",
+        "GOPATH": "${TOOL_CACHE}/tools/gopath",
+        "GOCACHE": "${TOOL_CACHE}/tools/gocache",
+        "GOMAXPROCS": "3"
+      }
+    },
+    {
+      "label": "Execute the exact Apex statements through the actual compatible interpreter",
+      "command": [
+        "${SCRATCH}/034-eamz3666/epex",
+        "run",
+        "hello.apex"
+      ],
+      "cwd": "${SCRATCH}/034-eamz3666",
+      "timestamp_utc": "2026-11-18T20:54:05.249561+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "DEBUG|Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/034-eamz3666/home",
+        "TMPDIR": "${SCRATCH}/034-eamz3666/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#034 Apex/hello.apex": "0b001cd82c6fc2307a9b5f480e488017e270e610b084ddd19109ecb27debb15d",
+    "examples/#034 Apex/check.cjs": "2ac6efbb6779c049733104629f5e13e520cdab874718436260c66b217434a2bf",
+    "examples/#034 Apex/package.json": "2549fe3466bd9be8c6920403460976d6a0014d5df7bbc03095d95a66c8f39aa0"
+  },
+  "fixture_sha256": {
+    "classes/CorpusGreetingTest.cls": {
+      "sha256": "92dd757e62dc1280228df7d668b11b1d8ffa7319532e30250c801ef860c4a333",
+      "content_utf8": "@IsTest\nprivate class CorpusGreetingTest {\n    @IsTest static void originalAnonymousBody() {\nString greeting = 'Hello, ' + 'World!';\nSystem.assertEquals('Hello, World!', greeting);\nSystem.debug(greeting);\n    }\n}\n"
+    },
+    "epex.json": {
+      "sha256": "3b5f2ee3b3cd374c44abe08ea6869e2d5927fd2af511337f08289071dd793dbf",
+      "content_utf8": "{\"sourceDir\":\".\"}\n"
+    }
+  },
+  "sources": [
+    "https://github.com/apex-dev-tools/apex-parser",
+    "https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-develop-apex-run-anon.html"
+  ],
+  "previous_verification_log": "examples/#034 Apex/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/ipavlic/epex/tar.gz/main",
+      "ref": "main",
+      "sha256": "6ea5868964ea27a3aa620336eb7c84eccf652354455cd6a67670074e64a50f32"
+    },
+    {
+      "url": "https://go.dev/dl/go1.25.1.linux-amd64.tar.gz",
+      "sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e",
+      "expected_sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e"
+    }
+  ],
+  "toolchain": "epex Apex compatible interpreter",
+  "reproduction_command": "epex run hello.apex",
+  "semantic_scope": "The compatible interpreter ran the exact anonymous Apex statements directly as anonymous Apex. System.assertEquals passed and the runtime executed the original System.debug call with the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

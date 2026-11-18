@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "ordinal": 176,
+  "language": "ECL",
+  "timestamp_utc": "2026-11-18T20:51:51.987405+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Fetch the publisher’s public OCI manifest and its digest-verified layers",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/skopeo",
+        "--policy",
+        "${SCRATCH}/176-g3_klrgk/registry-trust.json",
+        "copy",
+        "--override-os",
+        "linux",
+        "--override-arch",
+        "amd64",
+        "docker://docker.io/hpccsystems/platform-core:10.8.14-1",
+        "oci:${TOOL_CACHE}/tools/native-oci-736/hpcc-platform-10.8.14-1-oci:tool"
+      ],
+      "cwd": "${SCRATCH}/176-g3_klrgk",
+      "timestamp_utc": "2026-11-18T20:51:52.029463+00:00",
+      "timeout_seconds": 240,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "time=\"2026-11-18T21:51:53+01:00\" level=fatal msg=\"initializing source docker://hpccsystems/platform-core:10.8.14-1: reading manifest 10.8.14-1 in docker.io/hpccsystems/platform-core: manifest unknown\"\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/176-g3_klrgk/home",
+        "TMPDIR": "${SCRATCH}/176-g3_klrgk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/176-g3_klrgk/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/176-g3_klrgk/unused-public-containers.conf"
+      }
+    },
+    {
+      "label": "Fetch the publisher’s public OCI manifest and its digest-verified layers",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/skopeo",
+        "--policy",
+        "${SCRATCH}/176-g3_klrgk/registry-trust.json",
+        "copy",
+        "--override-os",
+        "linux",
+        "--override-arch",
+        "amd64",
+        "docker://docker.io/hpccsystems/platform-core:10.6.14-1",
+        "oci:${TOOL_CACHE}/tools/native-oci-736/hpcc-platform-10.6.14-1-oci:tool"
+      ],
+      "cwd": "${SCRATCH}/176-g3_klrgk",
+      "timestamp_utc": "2026-11-18T20:51:53.309786+00:00",
+      "timeout_seconds": 240,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "time=\"2026-11-18T21:51:54+01:00\" level=fatal msg=\"initializing source docker://hpccsystems/platform-core:10.6.14-1: reading manifest 10.6.14-1 in docker.io/hpccsystems/platform-core: manifest unknown\"\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/176-g3_klrgk/home",
+        "TMPDIR": "${SCRATCH}/176-g3_klrgk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/176-g3_klrgk/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/176-g3_klrgk/unused-public-containers.conf"
+      }
+    },
+    {
+      "label": "Compile and run the unmodified original ECL workunit from the publisher image",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--ro-bind",
+        "${TOOL_CACHE}/tools/native-oci-736/hpcc-platform-latest-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/176-g3_klrgk",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "/bin/bash",
+        "/work/ecl-run.sh",
+        "/opt/HPCCSystems"
+      ],
+      "cwd": "${SCRATCH}/176-g3_klrgk",
+      "timestamp_utc": "2026-11-18T20:51:54.385286+00:00",
+      "timeout_seconds": 130,
+      "exit_code": 0,
+      "stdout": "9.6.100 community_9.6.100-1\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/176-g3_klrgk/home",
+        "TMPDIR": "${SCRATCH}/176-g3_klrgk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/176-g3_klrgk/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/176-g3_klrgk/unused-public-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#176 ECL/hello.ecl": "75154f2255f1cb58a04ca7a466d1416b3f1bf548a245f4572c4b9cacbd0ad6cb"
+  },
+  "fixture_sha256": {
+    "registry-trust.json": {
+      "sha256": "9651a2f0e4a883cd7495d22c2b93c9de0e3e53ee579370e24573de1029674805",
+      "content_utf8": "{\"default\": [{\"type\": \"insecureAcceptAnything\"}]}"
+    },
+    "ecl-run.sh": {
+      "sha256": "8da13beecd6cc6fddc985c1659c8701fce4b178f8fb17203371f5d1039c10b3b",
+      "content_utf8": "set -eu\nexport PATH=\"$1/bin:$PATH\"\nexport ECLLIB=\"$1\"\nexport LD_LIBRARY_PATH=\"$1/lib:$1/lib64:/usr/local/lib\"\neclcc --version || true\neclcc -platform=hthor -o hello hello.ecl\n./hello\n"
+    }
+  },
+  "sources": [
+    "https://hpccsystems.com/wp-content/uploads/_documents/ECLR_EN_US/OUTPUT.html",
+    "https://hpccsystems.com/training/documentation/learning-ecl/",
+    "https://github.com/hpcc-systems/HPCC-Platform/blob/master/ecl/eclcc/eclcc.hpp"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://docker.io/hpccsystems/platform-core:latest",
+      "digest": "sha256:db4a8e5279b0d261033e595c025ba71ea131dc4f988bf846fae90d3a790e87ed"
+    }
+  ],
+  "toolchain": "HPCC Systems community Linux latest ECL native hthor backend",
+  "reproduction_command": "eclcc -platform=hthor -o hello hello.ecl; ./hello",
+  "semantic_scope": "The official native ECL compiler compiled the original workunit. Running it returned the expected scalar greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

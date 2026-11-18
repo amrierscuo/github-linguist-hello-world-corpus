@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "ordinal": 829,
+  "language": "q",
+  "timestamp_utc": "2026-11-18T20:51:52.563960+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute the original q program in the published q-compatible runtime",
+      "command": [
+        "${TOOL_CACHE}/tools/peachq-standalone-736/dist/q",
+        "hello.q"
+      ],
+      "cwd": "${SCRATCH}/829-xpfjk80y",
+      "timestamp_utc": "2026-11-18T20:52:03.627317+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nq)\\\nq)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/829-xpfjk80y/home",
+        "TMPDIR": "${SCRATCH}/829-xpfjk80y/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": "\\\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#829 q/hello.q": "e98e3f9f20fa2f8947e2e416c28ae17158dc997e5ab56d92232176a95f69105e"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://code.kx.com/q/ref/file-text/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/peachq-org/peachq/releases/latest/download/peachq-linux-x86_64.tar.gz",
+      "sha256": "78c3ebe225e4d42f972b8f0b84c8ee5a2e619bb4d7833bad01030b32b868eb61",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "PeachQ native q-compatible runtime",
+  "reproduction_command": "q hello.q (then close STDIN)",
+  "semantic_scope": "The published PeachQ implementation executed the unchanged q script. Its console printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "ordinal": 756,
+  "language": "Visual Basic 6.0",
+  "timestamp_utc": "2026-11-18T20:55:34.177368+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Load the original project and run the compiled VB6 macro with a headless dialog callback",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "verify-vb6.mjs",
+        "file://${TOOL_CACHE}/tools/wieslawsoltes-VB6-main/source/VB6-main"
+      ],
+      "cwd": "${SCRATCH}/756-0z4_xapt",
+      "timestamp_utc": "2026-11-18T20:55:34.262735+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/756-0z4_xapt/home",
+        "TMPDIR": "${SCRATCH}/756-0z4_xapt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#756 Visual Basic 6.0/hello.bas": "53015c053cd136264fc139ea98886ebb3a353bf339cf18fa5b73c81432633c7f",
+    "examples/#756 Visual Basic 6.0/hello.vbp": "bede8288dd5e858f9d829fa687d4278a6ea92aaf3f116949cf7ef594c3e16106"
+  },
+  "fixture_sha256": {
+    "verify-vb6.mjs": {
+      "sha256": "52b25bb707a0c351a0bd8558c220ac5ec7dec8b891309c33995ac01a87ef2578",
+      "content_utf8": "import fs from 'node:fs';\nimport assert from 'node:assert/strict';\nconst root=process.argv[2];\nconst {importFiles}=await import(root+\"/src/project/formats.js\");\nconst {compileProject}=await import(root+\"/src/language/compiler.js\");\nconst {VirtualMachine}=await import(root+\"/src/runtime/vm.js\");\nconst names=[\"hello.vbp\",\"hello.bas\"];\nconst project=(await importFiles(new Map(names.map(name=>[name,new Uint8Array(fs.readFileSync(name))])))).project;\nassert.equal(project.name,\"CorpusHello\");\nassert.equal(project.startup,\"Sub Main\");\nassert.equal(project.modules.length,1);\nconst compiled=compileProject(project);\nassert.deepEqual(compiled.diagnostics,[]);\nconst captured=[];\nconst vm=new VirtualMachine(compiled,{msgBox(text){captured.push(text);return Promise.resolve(1);}});\nawait vm.start();\nassert.deepEqual(captured,[\"Hello, World!\"]);\nconsole.log(captured[0]);\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "VB6 support",
+      "url": "https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-basic-6/visual-basic-6-support-policy"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/wieslawsoltes/VB6/tar.gz/main",
+      "ref": "main",
+      "sha256": "d31a1ee613a374753f5139818ee2989ced4a4ce02100e4f613791f3ef7122dd8"
+    }
+  ],
+  "toolchain": "VB6 Studio Web 0.6.0 compatible compiler and JS virtual machine",
+  "reproduction_command": "node verify-vb6.mjs <VB6 Studio Web checkout file URL>",
+  "semantic_scope": "The published compatible tool read the original VBP and BAS, compiled the project and invoked its declared Sub Main. The virtual machine passed the exact greeting to the headless MsgBox callback.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

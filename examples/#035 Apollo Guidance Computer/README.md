@@ -1,5 +1,18 @@
 # #035 Apollo Guidance Computer
 
+## Verified on November 18, 2026
+
+The official assembler and native Block II emulation core processed the unchanged code. Reading its A register confirmed the intended octal greeting byte after executing the original instructions.
+
+Run `yaYUL hello.agc; link native emulator check.c; ./check hello.agc.bin`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Represent Hello, World! with 13 words AGC containing ASCII numerical codes; the Block II program loads the first code (H, 00110 octal) in the A register and remains in the HOLD cycle.
 
 ## File
@@ -57,4 +70,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.agc` | [hello.agc](hello.agc) syntax verified |
+| `.agc` | [hello.agc](hello.agc) Syntax and behavior verified |
+
+</details>

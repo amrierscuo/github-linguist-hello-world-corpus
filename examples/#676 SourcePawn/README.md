@@ -1,5 +1,16 @@
 # #676 SourcePawn
 
+## Verified on November 18, 2026
+
+The released compiler compiled the original plugin. The published compatible VM executed the actual SMX OnPluginStart entry point and emitted the exact greeting.
+
+Run `spcomp64 -i <SourceMod include> hello.sp -ohello.smx; python runtime-check.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a SourcePawn plugin that prints greeting to its upload.
 
 Canonical type `programming`, language_id `354`.
@@ -31,3 +42,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.sp` | [hello.sp](hello.sp), [main.sp](variants/inc-dd126fb7/main.sp) created; verification pending |
 | `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |
+
+</details>

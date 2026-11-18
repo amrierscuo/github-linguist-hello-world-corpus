@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "ordinal": 251,
+  "language": "Glimmer JS",
+  "timestamp_utc": "2026-11-18T20:36:01.312658+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run exact template tag output in the published Glimmer runtime and inspect the browser DOM",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "render.cjs",
+        "hello.gjs"
+      ],
+      "cwd": "${SCRATCH}/251-0sabdas8",
+      "timestamp_utc": "2026-11-18T20:36:01.358067+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/251-0sabdas8/home",
+        "TMPDIR": "${SCRATCH}/251-0sabdas8/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false",
+        "NODE_PATH": "${SCRATCH}/251-4ws47lgq/node_modules"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#251 Glimmer JS/check.cjs": "08a11940785cfbf0265c60ba1cf38af58c254697397c93be0c62237501569f2a",
+    "examples/#251 Glimmer JS/hello.gjs": "ab8fe3364ce62f4e58c8bace1d46a324cb47fed553300a2e0f80c260dc3b1b46",
+    "examples/#251 Glimmer JS/package.json": "3b07e51548720c974a072ab462a9749ebdcb3db0d592ba889c8f7737975a9041"
+  },
+  "fixture_sha256": {
+    "render.cjs": {
+      "sha256": "2667a5eb3dcead78628e6a7ad2016ca53750a334054f5167ead4eab18e4fd879",
+      "content_utf8": "const fs=require(\"node:fs\"),{JSDOM}=require(\"jsdom\"),{createRequire}=require(\"node:module\");\nconst dom=new JSDOM(\"<div id='app'></div>\",{pretendToBeVisual:true,url:\"http://localhost/\"});\nconst win=dom.window;\nfor(const key of [\"window\",\"document\",\"Element\",\"HTMLElement\",\"Node\",\"Text\",\"Document\",\"MutationObserver\"])global[key]=win[key];\nglobal.self=win;\nglobal.requestAnimationFrame=win.requestAnimationFrame.bind(win);\nglobal.cancelAnimationFrame=win.cancelAnimationFrame.bind(win);\nconst gl=require(\"@glimmerx/core\");\nconst coreRequire=createRequire(require.resolve(\"@glimmer/core\"));\nconst compiler=coreRequire(\"@glimmer/compiler\");\nconst runtime=coreRequire(\"@glimmer/runtime\");\nconst opcode=coreRequire(\"@glimmer/opcode-compiler\");\nconst fsSrc=fs.readFileSync(process.argv[2],\"utf8\");\nconst content=new (require(\"content-tag\").Preprocessor)().process(fsSrc,{filename:process.argv[2]}).code;\nconst host=require(\"esbuild\").transformSync(content,{loader:\"ts\",format:\"cjs\"}).code;\nconst template=(markup,options)=>{\n const lexicalScope = name => {\n   try { options.eval(name); return true; } catch(error) { if(error instanceof ReferenceError)return false; throw error; }\n };\n const [block,used]=compiler.precompileJSON(markup,{strictMode:true,lexicalScope});\n const t=opcode.templateFactory({block:JSON.stringify(block),id:\"corpus-original\",moduleName:process.argv[2],isStrictMode:true,\n     scope:()=>used.map(name=>options.eval(name))});\n const component=runtime.templateOnlyComponent(process.argv[2],\"Greeting\");\n gl.setComponentTemplate(t,component);\n return component;\n};\nconst result={exports:{}};\nnew Function(\"module\",\"exports\",\"require\",host)(result,result.exports,name=>{\n if(name===\"@ember/template-compiler\")return {template};\n return require(name);\n});\n(async()=>{\n await gl.renderComponent(result.exports.default,document.querySelector(\"#app\"));\n const h=document.querySelector(\"#app h1\");\n if(h?.textContent!==\"Hello, World!\")throw Error(document.body.innerHTML);\n console.log(h.textContent);\n dom.window.close();\n})().catch(e=>{console.error(e);process.exitCode=1;});\n"
+    }
+  },
+  "sources": [
+    "https://github.com/ember-cli/ember-template-imports",
+    "https://github.com/embroider-build/content-tag",
+    "https://github.com/glimmerjs/glimmer-vm"
+  ],
+  "previous_verification_log": "examples/#251 Glimmer JS/verification/result.json",
+  "node_package_lock_sha256": "c1bcd64d50ad6735e529d04a62f708a0ee225803469e35c9930c62594ecb6242",
+  "published_node_tool_versions": {
+    "content-tag": "4.2.1",
+    "@glimmerx/core": "0.6.8",
+    "@glimmer/runtime": "0.94.11",
+    "jsdom": "26.1.0"
+  },
+  "toolchain": "content-tag + GlimmerX 0.6.8",
+  "reproduction_command": "node render.cjs hello.gjs",
+  "semantic_scope": "The content-tag compiler and host transpiler processed the unchanged original source. A standalone Glimmer runtime mounted its compiled template and the heading contained the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
