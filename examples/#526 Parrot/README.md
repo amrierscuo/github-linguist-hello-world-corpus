@@ -1,5 +1,18 @@
 # #526 Parrot
 
+## Verified on November 18, 2026
+
+The original PASM bytes were staged with the suffix selected by the Parrot VM. The native VM used the assembler frontend and the unchanged program emitted the exact greeting.
+
+Run `cp hello.parrot hello.pasm; parrot hello.pasm`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Parrot`, tipo `programming`, language_id `278`.
 
 Provide an original input to the generic VM Parrot and print the greeting.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.parrot` | [hello.parrot](hello.parrot) created; verification pending |
+| `.parrot` | [hello.parrot](hello.parrot) Syntax and behavior verified |
+
+</details>

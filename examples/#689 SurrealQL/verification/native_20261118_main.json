@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "ordinal": 689,
+  "language": "SurrealQL",
+  "timestamp_utc": "2026-11-18T16:14:27.440330+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record SurrealDB version",
+      "command": [
+        "${SCRATCH}/tools/surreal-v4.0.1/dist/surreal",
+        "version"
+      ],
+      "cwd": "${SCRATCH}/689-47xa52po",
+      "timestamp_utc": "2026-11-18T16:14:41.607821+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "4.0.1 for linux on x86_64\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/689-47xa52po/home",
+        "TMPDIR": "${SCRATCH}/689-47xa52po/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute the original query with a local in-memory datastore",
+      "command": [
+        "${SCRATCH}/tools/surreal-v4.0.1/dist/surreal",
+        "sql",
+        "--endpoint",
+        "memory",
+        "--namespace",
+        "corpus",
+        "--database",
+        "greeting",
+        "--json",
+        "--hide-welcome"
+      ],
+      "cwd": "${SCRATCH}/689-47xa52po",
+      "timestamp_utc": "2026-11-18T16:14:41.635351+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "2026-11-18T16:14:41.647736Z  INFO surrealdb::core::kvs::ds: Starting kvs store in mem\n2026-11-18T16:14:41.650046Z  INFO surrealdb::core::kvs::mem: Storage mode: in-memory only (no persist path)\n2026-11-18T16:14:41.650408Z  INFO surrealdb::core::kvs::ds: Started kvs store in memory\n2026-11-18T16:14:41.698502Z  INFO surrealdb::core::kvs::migration: Datastore version recorded version=4.0.1\ncorpus/greeting> [\"Hello, World!\"]\n\ncorpus/greeting> ",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/689-47xa52po/home",
+        "TMPDIR": "${SCRATCH}/689-47xa52po/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": "RETURN \"Hello, \" + \"World\" + \"!\";\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#689 SurrealQL/hello.surql": "e72a74ea508ec2fa7e0463d6077efba7502fb90d537ef74ada870e755627075b"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://surrealdb.com/docs/surrealql/statements/return"
+  ],
+  "previous_verification_log": "examples/#689 SurrealQL/verification/native.json",
+  "toolchain_archives": [
+    {
+      "name": "surreal-v4.0.1.linux-amd64.tgz",
+      "size": 88793430,
+      "url": "https://github.com/surrealdb/surrealdb/releases/download/v4.0.1/surreal-v4.0.1.linux-amd64.tgz",
+      "sha256": "9d9d26313bf3f1aeffd066def9493932c79053fc9bca8f1b39f83d511f65577d",
+      "release": "https://github.com/surrealdb/surrealdb/releases/tag/v4.0.1",
+      "observed_sha256": "9d9d26313bf3f1aeffd066def9493932c79053fc9bca8f1b39f83d511f65577d"
+    }
+  ],
+  "toolchain": "4.0.1 for linux on x86_64",
+  "reproduction_command": "surreal sql --endpoint memory --namespace corpus --database greeting --json < hello.surql",
+  "semantic_scope": "The original SurrealQL expression was evaluated by the native in-memory database engine and returned one exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

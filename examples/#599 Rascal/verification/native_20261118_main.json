@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ordinal": 599,
+  "language": "Rascal",
+  "timestamp_utc": "2026-11-18T16:52:41.580326+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run the unchanged Rascal module from a minimal project",
+      "command": [
+        "java",
+        "-Drascal.path=${SCRATCH}/599-kpz32ypb/src",
+        "-jar",
+        "${SCRATCH}/tools/rascal-0.43.0/rascal-0.43.0.jar",
+        "Hello"
+      ],
+      "cwd": "${SCRATCH}/599-kpz32ypb",
+      "timestamp_utc": "2026-11-18T16:52:41.865228+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "[ERROR] META-INF/RASCAL.MF: Project-Name in RASCAL.MF (corpus-greeting) should be equal to folder name (599-kpz32ypb)\n[INFO] pom.xml: Rascal version is 0.43.0\n[INFO] pom.xml: Project root is |file://${SCRATCH}/599-kpz32ypb/|\n[INFO] pom.xml: Bin folder   is |file://${SCRATCH}/599-kpz32ypb/target/classes|\n[INFO] pom.xml: Source module path is:\n  - |jar+file://${SCRATCH}/tools/rascal-0.43.0/rascal-0.43.0.jar!/org/rascalmpl/library|\n  - |file://${SCRATCH}/599-kpz32ypb/src|\n[INFO] pom.xml: Library module (and classes) path is:\n  - |file://${SCRATCH}/tools/rascal-0.43.0/rascal-0.43.0.jar|\nJob: loading modules\nHello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/599-kpz32ypb/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/599-kpz32ypb/home",
+        "TMPDIR": "${SCRATCH}/599-kpz32ypb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/599-kpz32ypb/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#599 Rascal/Hello.rsc": "fa5863a4624f55a52e715654d071a9fc10f726d14bedf377690e6a5fc75836a1"
+  },
+  "fixture_sha256": {
+    "META-INF/RASCAL.MF": {
+      "sha256": "05e35d8538142d3e875b60b67a7c2cb98f9b74758e3779a1bc559cc36dc63d9d",
+      "content_utf8": "Manifest-Version: 0.0.1\nProject-Name: corpus-greeting\nSource: src\nMain-Module: Hello\nMain-Function: main\n\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Rascal IO",
+      "url": "https://www.rascal-mpl.org/docs/Library/IO/"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://releases.usethesource.io/maven/org/rascalmpl/rascal/0.43.0/rascal-0.43.0.jar",
+      "sha256": "72020e37b55411df16bbfdfac84ee4865218b2ce8c1db80afa1b7ef351c90080",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Rascal 0.43.0",
+  "reproduction_command": "java -Drascal.path=src -jar rascal-0.43.0.jar Hello",
+  "semantic_scope": "The official Rascal interpreter executed the original program unchanged in a minimal project and emitted the expected greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #451 Muse
 
+## Verified on November 18, 2026
+
+The original Emacs Muse publishing engine rendered the unchanged document to HTML with the greeting inside a paragraph.
+
+Run `emacs --batch -Q -L <muse-library> --eval (progn (require (quote muse-html)) (muse-publish-file "hello.muse" "html" "out"))`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Muse`, tipo `prose`, language_id `474864066`.
 
 Publish an original Emacs Muse document in HTML with greeting in the body.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.muse` | [hello.muse](hello.muse) created; verification pending |
+| `.muse` | [hello.muse](hello.muse) Syntax and behavior verified |
+
+</details>

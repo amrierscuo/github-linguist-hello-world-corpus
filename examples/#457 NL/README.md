@@ -1,5 +1,18 @@
 # #457 NL
 
+## Verified on November 18, 2026
+
+The original generated NL file was independently read and optimized by SCIP. Its thirteen original primal variables decode to the greeting.
+
+Run `Read hello.nl with SCIP’s AMPL NL reader, optimize and decode the ordered primal variables`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `NL`, tipo `data`, language_id `241`.
 
 Represent the 13 ASCII codes of greeting as bound variables in an authentic AMPL NL model.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nl` | [hello.nl](hello.nl) created; verification pending |
+| `.nl` | [hello.nl](hello.nl) Syntax and behavior verified |
+
+</details>

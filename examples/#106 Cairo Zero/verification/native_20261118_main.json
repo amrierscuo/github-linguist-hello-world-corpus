@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "ordinal": 106,
+  "language": "Cairo Zero",
+  "timestamp_utc": "2026-11-18T16:52:41.489594+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile unchanged Cairo 0 source to a VM image",
+      "command": [
+        "${SCRATCH}/106-ekl1ct48/.venv/bin/cairo-compile",
+        "hello.cairo",
+        "--output",
+        "program.json"
+      ],
+      "cwd": "${SCRATCH}/106-p6w8bt5a",
+      "timestamp_utc": "2026-11-18T16:52:41.520235+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/106-p6w8bt5a/home",
+        "TMPDIR": "${SCRATCH}/106-p6w8bt5a/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute the original Cairo VM image and obtain its output register",
+      "command": [
+        "${SCRATCH}/106-ekl1ct48/.venv/bin/cairo-run",
+        "--program=program.json",
+        "--layout=small",
+        "--print_output"
+      ],
+      "cwd": "${SCRATCH}/106-p6w8bt5a",
+      "timestamp_utc": "2026-11-18T16:52:45.081785+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "Program output:\n  5735816763073854918203775149089\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/106-p6w8bt5a/home",
+        "TMPDIR": "${SCRATCH}/106-p6w8bt5a/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#106 Cairo Zero/hello.cairo": "055d142634b028cad56fab30a0a40e79a0887dc2fcd75b30b88f56922821880e"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Cairo Zero serialize_word originale",
+      "url": "https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/serialize.cairo"
+    },
+    {
+      "title": "Cairo Zero segmenti e output",
+      "url": "https://docs.cairo-lang.org/cairozero/how_cairo_works/segments.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "decoded_output": "Hello, World!",
+  "toolchain": "StarkWare cairo-lang 0.13.5",
+  "reproduction_command": "cairo-compile hello.cairo --output program.json; cairo-run --program=program.json --layout=small --print_output",
+  "semantic_scope": "The official Cairo 0 compiler generated and executed the exact VM program. The output field element decoded to all thirteen greeting bytes.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

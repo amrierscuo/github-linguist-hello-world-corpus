@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "ordinal": 694,
+  "language": "Swift",
+  "timestamp_utc": "2026-11-18T16:44:33.965937+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Swift version",
+      "command": [
+        "${SCRATCH}/tools/swift-6.2.3/dist/swift-6.2.3-RELEASE-ubuntu24.04/usr/bin/swift",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/694-zhwrs2s0",
+      "timestamp_utc": "2026-11-18T16:45:24.270241+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Swift version 6.2.3 (swift-6.2.3-RELEASE)\nTarget: x86_64-unknown-linux-gnu\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/694-zhwrs2s0/home",
+        "TMPDIR": "${SCRATCH}/694-zhwrs2s0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/swift-6.2.3/dist/swift-6.2.3-RELEASE-ubuntu24.04/usr/bin/swift",
+        "hello.swift"
+      ],
+      "cwd": "${SCRATCH}/694-zhwrs2s0",
+      "timestamp_utc": "2026-11-18T16:45:24.355383+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/694-zhwrs2s0/home",
+        "TMPDIR": "${SCRATCH}/694-zhwrs2s0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#694 Swift/hello.swift": "fbdbac56be9cde55ab0792b1434f216d44556d22474fe1019b45ab0ff12e08d8"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/"
+  ],
+  "previous_verification_log": "examples/#694 Swift/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://download.swift.org/swift-6.2.3-release/ubuntu2404/swift-6.2.3-RELEASE/swift-6.2.3-RELEASE-ubuntu24.04.tar.gz",
+      "sha256": "3e0b8eaf9210131a1756e6a1a9e9103bac83609a0ae604d6f2e791053f98f115"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "libncurses-dev",
+      "version": "6.4+20240113-1ubuntu2.2",
+      "filename": "pool/main/n/ncurses/libncurses-dev_6.4+20240113-1ubuntu2.2_amd64.deb",
+      "sha256": "2c32ce182e90e6636ddb037ba2810cace9e1f076b13fac89034277d8ba943c38",
+      "bytes": 384098,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/libncurses-dev_6.4+20240113-1ubuntu2.2_amd64.deb"
+    },
+    {
+      "name": "libcurl4t64",
+      "version": "8.5.0-2ubuntu10.16",
+      "filename": "pool/main/c/curl/libcurl4t64_8.5.0-2ubuntu10.16_amd64.deb",
+      "sha256": "8196381b41f0078083a2a52b43f7e7ca9b0b79e5325451bf3948e4af7693cd8d",
+      "bytes": 344412,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/curl/libcurl4t64_8.5.0-2ubuntu10.16_amd64.deb"
+    },
+    {
+      "name": "libxml2",
+      "version": "2.9.14+dfsg-1.3ubuntu3.10",
+      "filename": "pool/main/libx/libxml2/libxml2_2.9.14+dfsg-1.3ubuntu3.10_amd64.deb",
+      "sha256": "c5a065f85c1e6f605741e365e40cad71c3ceb0e85e2791400bd35b8896e12ad1",
+      "bytes": 763592,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.14+dfsg-1.3ubuntu3.10_amd64.deb"
+    }
+  ],
+  "toolchain": "Swift version 6.2.3 (swift-6.2.3-RELEASE)",
+  "reproduction_command": "swift hello.swift",
+  "semantic_scope": "The official Swift compiler and runtime evaluated the unchanged script and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

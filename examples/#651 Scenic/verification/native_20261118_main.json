@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "ordinal": 651,
+  "language": "Scenic",
+  "timestamp_utc": "2026-11-18T16:16:18.780522+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Prepare Python packages in this case directory",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--no-compile",
+        "--only-binary=:all:",
+        "--target",
+        "${SCRATCH}/651-_nrf85m4/python",
+        "scenic"
+      ],
+      "cwd": "${SCRATCH}/651-_nrf85m4",
+      "timestamp_utc": "2026-11-18T16:16:18.823476+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "Collecting scenic\n  Downloading scenic-3.1.1-py3-none-any.whl.metadata (6.0 kB)\nCollecting antlr4-python3-runtime~=4.11 (from scenic)\n  Downloading antlr4_python3_runtime-4.13.2-py3-none-any.whl.metadata (304 bytes)\nCollecting attrs>=19.3.0 (from scenic)\n  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)\nCollecting dotmap~=1.3 (from scenic)\n  Downloading dotmap-1.3.30-py3-none-any.whl.metadata (3.2 kB)\nCollecting mapbox_earcut>=0.12.10 (from scenic)\n  Downloading mapbox_earcut-2.1.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (2.5 kB)\nCollecting matplotlib~=3.2 (from scenic)\n  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.3/80.3 kB 2.0 MB/s eta 0:00:00\nCollecting manifold3d>=2.5.1 (from scenic)\n  Downloading manifold3d-3.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (20 kB)\nCollecting networkx>=2.6 (from scenic)\n  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)\nCollecting numpy>=1.24 (from scenic)\n  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)\nCollecting opencv-python~=4.5 (from scenic)\n  Downloading opencv_python-4.14.0.94-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)\nCollecting pegen>=0.3.0 (from scenic)\n  Downloading pegen-0.3.0-py3-none-any.whl.metadata (11 kB)\nCollecting pillow>=9.1 (from scenic)\n  Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)\nCollecting pygame-ce<3,>=2.5.7 (from scenic)\n  Downloading pygame_ce-2.5.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)\nCollecting pyglet<=1.5.26,>=1.5 (from scenic)\n  Downloading pyglet-1.5.26-py3-none-any.whl.metadata (7.6 kB)\nCollecting python-fcl>=0.7 (from scenic)\n  Downloading python_fcl-0.7.0.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)\nCollecting Rtree~=1.0 (from scenic)\n  Downloading rtree-1.4.1-py3-none-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)\nCollecting rv-ltl~=0.1 (from scenic)\n  Downloading rv_ltl-0.1.1-py3-none-any.whl.metadata (1.0 kB)\nCollecting scikit-image~=0.21 (from scenic)\n  Downloading scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (15 kB)\nCollecting scipy>=1.17.0 (from scenic)\n  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 2.5 MB/s eta 0:00:00\nCollecting shapely~=2.0 (from scenic)\n  Downloading shapely-2.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (6.7 kB)\nCollecting trimesh<5,>=4.6.0 (from scenic)\n  Downloading trimesh-4.12.2-py3-none-any.whl.metadata (13 kB)\nCollecting contourpy>=1.0.1 (from matplotlib~=3.2->scenic)\n  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)\nCollecting cycler>=0.10 (from matplotlib~=3.2->scenic)\n  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)\nCollecting fonttools>=4.28.2 (from matplotlib~=3.2->scenic)\n  Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.9/139.9 kB 3.1 MB/s eta 0:00:00\nCollecting kiwisolver>=1.3.1 (from matplotlib~=3.2->scenic)\n  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)\nCollecting packaging>=20.0 (from matplotlib~=3.2->scenic)\n  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting pyparsing>=3 (from matplotlib~=3.2->scenic)\n  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)\nCollecting python-dateutil>=2.7 (from matplotlib~=3.2->scenic)\n  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)\nCollecting Cython (from python-fcl>=0.7->scenic)\n  Downloading cython-3.3.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (13 kB)\nCollecting imageio!=2.35.0,>=2.33 (from scikit-image~=0.21->scenic)\n  Downloading imageio-2.38.2-py3-none-any.whl.metadata (9.7 kB)\nCollecting tifffile>=2022.8.12 (from scikit-image~=0.21->scenic)\n  Downloading tifffile-2026.11.16-py3-none-any.whl.metadata (33 kB)\nCollecting lazy-loader>=0.4 (from scikit-image~=0.21->scenic)\n  Downloading lazy_loader-0.6-py3-none-any.whl.metadata (6.0 kB)\nCollecting tzdata (from python-dateutil>=2.7->matplotlib~=3.2->scenic)\n  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)\nDownloading scenic-3.1.1-py3-none-any.whl (540 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 540.9/540.9 kB 3.4 MB/s eta 0:00:00\nDownloading antlr4_python3_runtime-4.13.2-py3-none-any.whl (144 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.5/144.5 kB 3.0 MB/s eta 0:00:00\nDownloading attrs-26.1.0-py3-none-any.whl (67 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 3.6 MB/s eta 0:00:00\nDownloading dotmap-1.3.30-py3-none-any.whl (11 kB)\nDownloading manifold3d-3.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.3 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 3.7 MB/s eta 0:00:00\nDownloading mapbox_earcut-2.1.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (76 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.8/76.8 kB 1.5 MB/s eta 0:00:00\nDownloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 5.3 MB/s eta 0:00:00\nDownloading networkx-3.7-py3-none-any.whl (2.1 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 6.7 MB/s eta 0:00:00\nDownloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 6.8 MB/s eta 0:00:00\nDownloading opencv_python-4.14.0.94-cp37-abi3-manylinux_2_28_x86_64.whl (77.4 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.4/77.4 MB 12.8 MB/s eta 0:00:00\nDownloading pegen-0.3.0-py3-none-any.whl (35 kB)\nDownloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 15.3 MB/s eta 0:00:00\nDownloading pygame_ce-2.5.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (12.1 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.1/12.1 MB 15.2 MB/s eta 0:00:00\nDownloading pyglet-1.5.26-py3-none-any.whl (1.1 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 9.3 MB/s eta 0:00:00\nDownloading python_fcl-0.7.0.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 13.0 MB/s eta 0:00:00\nDownloading rtree-1.4.1-py3-none-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (507 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 507.6/507.6 kB 15.0 MB/s eta 0:00:00\nDownloading rv_ltl-0.1.1-py3-none-any.whl (6.6 kB)\nDownloading scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (13.6 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 8.8 MB/s eta 0:00:00\nDownloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 18.3 MB/s eta 0:00:00\nDownloading shapely-2.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (2.3 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 19.8 MB/s eta 0:00:00\nDownloading trimesh-4.12.2-py3-none-any.whl (741 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 741.0/741.0 kB 11.1 MB/s eta 0:00:00\nDownloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.2/383.2 kB 19.4 MB/s eta 0:00:00\nDownloading cycler-0.12.1-py3-none-any.whl (8.3 kB)\nDownloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 20.8 MB/s eta 0:00:00\nDownloading imageio-2.38.2-py3-none-any.whl (328 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 328.7/328.7 kB 21.1 MB/s eta 0:00:00\nDownloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 21.0 MB/s eta 0:00:00\nDownloading lazy_loader-0.6-py3-none-any.whl (8.8 kB)\nDownloading packaging-26.3-py3-none-any.whl (129 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 14.6 MB/s eta 0:00:00\nDownloading pyparsing-3.3.3-py3-none-any.whl (126 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 14.6 MB/s eta 0:00:00\nDownloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 12.7 MB/s eta 0:00:00\nDownloading tifffile-2026.11.16-py3-none-any.whl (279 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 279.7/279.7 kB 18.7 MB/s eta 0:00:00\nDownloading cython-3.3.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 21.3 MB/s eta 0:00:00\nDownloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 19.7 MB/s eta 0:00:00\nInstalling collected packages: pyglet, dotmap, antlr4-python3-runtime, tzdata, rv-ltl, Rtree, pyparsing, pygame-ce, pillow, pegen, packaging, numpy, networkx, kiwisolver, fonttools, Cython, cycler, attrs, trimesh, tifffile, shapely, scipy, python-fcl, python-dateutil, opencv-python, mapbox_earcut, manifold3d, lazy-loader, imageio, contourpy, scikit-image, matplotlib, scenic\nSuccessfully installed Cython-3.3.1 Rtree-1.4.1 antlr4-python3-runtime-4.13.2 attrs-26.1.0 contourpy-1.4.0 cycler-0.12.1 dotmap-1.3.30 fonttools-4.68.0 imageio-2.38.2 kiwisolver-1.5.1 lazy-loader-0.6 manifold3d-3.5.5 mapbox_earcut-2.1.0 matplotlib-3.11.2 networkx-3.7 numpy-2.5.5 opencv-python-4.14.0.94 packaging-26.3 pegen-0.3.0 pillow-13.0.0 pygame-ce-2.5.8 pyglet-1.5.26 pyparsing-3.3.3 python-dateutil-4.0.0 python-fcl-0.7.0.11 rv-ltl-0.1.1 scenic-3.1.1 scikit-image-0.26.0 scipy-1.18.1 shapely-2.2.0 tifffile-2026.11.16 trimesh-4.12.2 tzdata-2026.6\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/651-_nrf85m4/home",
+        "TMPDIR": "${SCRATCH}/651-_nrf85m4/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute native consumer and assert the example result",
+      "command": [
+        "/usr/bin/python3",
+        "${SCRATCH}/651-_nrf85m4/check.py"
+      ],
+      "cwd": "${SCRATCH}/651-_nrf85m4",
+      "timestamp_utc": "2026-11-18T16:16:52.492079+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nScenic 3.1.1\n",
+      "stderr": "${SCRATCH}/651-_nrf85m4/python/scenic/core/errors.py:271: UserWarning: unable to install sys.excepthook to format Scenic backtraces\n  warnings.warn(\"unable to install sys.excepthook to format Scenic backtraces\")\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/651-_nrf85m4/home",
+        "TMPDIR": "${SCRATCH}/651-_nrf85m4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/651-_nrf85m4/python",
+        "MPLBACKEND": "Agg"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#651 Scenic/hello.scenic": "f060b6196b504b622bb763fa4d9f10e9263d2bb468f5d4dd42c0eddbdabe421b"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "fc7779d284a05dca151a04b495ddf43de13341cf3d9a6447ee55edbc235b94e1",
+      "content_utf8": "from importlib.metadata import version\nfrom scenic.syntax.translator import scenarioFromFile\nscenario = scenarioFromFile(\"hello.scenic\")\nassert scenario.params[\"greeting\"] == \"Hello, World!\"\nscene,_ = scenario.generate(maxIterations=1)\nassert scene.params[\"greeting\"] == \"Hello, World!\"\nprint(scene.params[\"greeting\"])\nprint(\"Scenic\",version(\"scenic\"))\n"
+    }
+  },
+  "sources": [
+    "https://docs.scenic-lang.org/en/latest/syntax_guide.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "Scenic 3.1.1",
+  "reproduction_command": "Use scenic.syntax.translator.scenarioFromFile(\"hello.scenic\"), generate a scene and assert scene.params[\"greeting\"]",
+  "semantic_scope": "The authentic Scenic compiler evaluated the original parameter and generated a scene carrying its exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

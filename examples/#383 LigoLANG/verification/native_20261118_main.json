@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "ordinal": 383,
+  "language": "LigoLANG",
+  "timestamp_utc": "2026-11-18T16:55:35.991010+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record LIGO CLI version extracted from publisher image",
+      "command": [
+        "${SCRATCH}/tools/ligo-image-0.73.0/ligo",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/383-aod9287r",
+      "timestamp_utc": "2026-11-18T16:55:49.218071+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "0.73.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/383-aod9287r/home",
+        "TMPDIR": "${SCRATCH}/383-aod9287r/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute original source dialect at the official LIGO release",
+      "command": [
+        "${SCRATCH}/tools/ligo-image-0.73.0/ligo",
+        "run",
+        "interpret",
+        "greeting",
+        "--init-file",
+        "hello.ligo",
+        "--syntax",
+        "pascaligo",
+        "--deprecated"
+      ],
+      "cwd": "${SCRATCH}/383-aod9287r",
+      "timestamp_utc": "2026-11-18T16:55:49.334226+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/383-aod9287r/home",
+        "TMPDIR": "${SCRATCH}/383-aod9287r/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#383 LigoLANG/hello.ligo": "fc33fa9d1a2b45b412d17ff3047c77f66bec4511d621ab57fa2355353d31f741"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://gitlab.com/ligolang/ligo",
+    "https://ligolang.org/docs/next/intro/changelog/",
+    "https://gitlab.com/ligolang/ligo/-/merge_requests/2395"
+  ],
+  "previous_verification_log": null,
+  "official_image_layers": [
+    {
+      "repository": "ligolang/ligo",
+      "tag": "0.73.0",
+      "layer_digest": "sha256:2518dd657e2efcc15337c9650dfc0b19dd53583c69482dac69a43beafaa19a64"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "0.73.0",
+      "layer_digest": "sha256:15c8562eecabb659dec260b4aae3a337d52902a358c4c3df7bec4dbbf582fe33"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "0.73.0",
+      "layer_digest": "sha256:65522d1e03697e96dd7fe2130fd3fe84004ea1f4f9d3522fd09ac9acb774bc3f"
+    }
+  ],
+  "toolchain": "LIGO 0.73.0",
+  "reproduction_command": "ligo run interpret greeting --init-file hello.ligo --syntax pascaligo --deprecated",
+  "semantic_scope": "The official LIGO command executable interpreted the original source in its declared dialect and returned the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "ordinal": 172,
+  "language": "Dylan",
+  "timestamp_utc": "2026-11-18T16:38:04.331216+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record native Dylan version",
+      "command": [
+        "${SCRATCH}/tools/dylan-v2026.2.0/dist/opendylan-2026.2/bin/dylan-compiler",
+        "-version"
+      ],
+      "cwd": "${SCRATCH}/172-t8t_7y12",
+      "timestamp_utc": "2026-11-18T16:38:05.514382+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Open Dylan 2026.2\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/dylan-v2026.2.0/dist/opendylan-2026.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/172-t8t_7y12/home",
+        "TMPDIR": "${SCRATCH}/172-t8t_7y12/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Build original Dylan program from its original LID",
+      "command": [
+        "${SCRATCH}/tools/dylan-v2026.2.0/dist/opendylan-2026.2/bin/dylan-compiler",
+        "-build",
+        "hello.lid"
+      ],
+      "cwd": "${SCRATCH}/172-t8t_7y12",
+      "timestamp_utc": "2026-11-18T16:38:05.787970+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "Open Dylan 2026.2\n\nOpened project hello (${SCRATCH}/172-t8t_7y12/hello.hdp)\nProcessing library hello\nLoading namespace for library hello\nUpdating definitions for library dylan\nComputing data models for library dylan\nComputing code models for library dylan\nChecking bindings in library dylan\nPerforming type analysis of library dylan\nOptimizing library dylan\nGenerating code for library dylan\nLinking object files for library dylan\nSaving database for library dylan\nUpdating definitions for library common-dylan\nComputing data models for library common-dylan\nComputing code models for library common-dylan\nChecking bindings in library common-dylan\nPerforming type analysis of library common-dylan\nOptimizing library common-dylan\nGenerating code for library common-dylan\nLinking object files for library common-dylan\nSaving database for library common-dylan\nUpdating definitions for library io\nComputing data models for library io\nComputing code models for library io\nChecking bindings in library io\nPerforming type analysis of library io\nOptimizing library io\nGenerating code for library io\nLinking object files for library io\nSaving database for library io\nUpdating definitions for library hello\nComputing data models for library hello\nComputing code models for library hello\nChecking bindings in library hello\nPerforming type analysis of library hello\nOptimizing library hello\nGenerating code for library hello\nLinking object files for library hello\nSaving database for library hello\nBuild of 'hello' completed\nLinking hello\nBuilding targets: exe within ${SCRATCH}/172-t8t_7y12/_build/build/hello/\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/dylan-v2026.2.0/dist/opendylan-2026.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/172-t8t_7y12/home",
+        "TMPDIR": "${SCRATCH}/172-t8t_7y12/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/172-t8t_7y12/_build/bin/hello"
+      ],
+      "cwd": "${SCRATCH}/172-t8t_7y12",
+      "timestamp_utc": "2026-11-18T16:38:38.998522+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/dylan-v2026.2.0/dist/opendylan-2026.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/172-t8t_7y12/home",
+        "TMPDIR": "${SCRATCH}/172-t8t_7y12/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#172 Dylan/hello.dylan": "1bae099aea4fb5dfaa44568b3fde5dc8308b4f0ae964727a5ec98fe5433b2212",
+    "examples/#172 Dylan/hello.lid": "c3d2aebe0768ac0f73bb1c365c419435f0bb1d5194fa29ebb09a55fdef8b4143",
+    "examples/#172 Dylan/library.dylan": "ab8123ce5c65fb08868666c5db8ee74802fba45e5b9718398c54a45658a2f547"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://opendylan.org/getting-started-cli/hello-world.html",
+    "https://opendylan.org/library-reference/io/format-out.html",
+    "https://opendylan.org/download/index.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "opendylan-2026.2-x86_64-linux.tar.bz2",
+      "size": 151952659,
+      "url": "https://github.com/dylan-lang/opendylan/releases/download/v2026.2.0/opendylan-2026.2-x86_64-linux.tar.bz2",
+      "sha256": "d917efed6d82aae3a31746eee0a46e8095a898d183d730ad8198961b5efa2197",
+      "release": "https://github.com/dylan-lang/opendylan/releases/tag/v2026.2.0",
+      "observed_sha256": "d917efed6d82aae3a31746eee0a46e8095a898d183d730ad8198961b5efa2197"
+    }
+  ],
+  "toolchain": "Open Dylan ['Open Dylan 2026.2']",
+  "reproduction_command": "dylan-compiler -build hello.lid; ./_build/bin/hello",
+  "semantic_scope": "The native Dylan compiler compiled and linked the program. The resulting executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

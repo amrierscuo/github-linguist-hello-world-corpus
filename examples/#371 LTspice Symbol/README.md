@@ -1,5 +1,16 @@
 # #371 LTspice Symbol
 
+## Verified on November 18, 2026
+
+The compatible LTspice symbol reader loaded the original asset and verified the two pins and the exact Value attribute.
+
+Run `python check.py (spicelib AsyReader)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.asy` | [hello.asy](hello.asy) created; verification pending |
+| `.asy` | [hello.asy](hello.asy) Syntax and behavior verified |
+
+</details>

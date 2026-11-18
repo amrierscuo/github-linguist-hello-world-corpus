@@ -1,5 +1,18 @@
 # #123 Click
 
+## Verified on November 18, 2026
+
+The native Click driver evaluated the unchanged active Script, printed the greeting, and exited.
+
+Run `click hello.click`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Click`, tipo `programming`, `language_id: 61`.
 
 Run a Click Active Script that issues Hello, World! and stops the userlevel driver.
@@ -48,4 +61,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.click` | [hello.click](hello.click) created; verification pending |
+| `.click` | [hello.click](hello.click) Syntax and behavior verified |
+
+</details>

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "ordinal": 646,
+  "language": "Sail",
+  "timestamp_utc": "2026-11-18T16:47:59.603322+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Read native Sail version",
+      "command": [
+        "${SCRATCH}/tools/sail-0.20.3-binary/dist/sail/bin/sail",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/646-jdhcgza4",
+      "timestamp_utc": "2026-11-18T16:48:00.103136+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Sail 0.20.3 (sail2 @ 60695b1ea377048f0adc39c62671cd099b2ed9f6)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/646-jdhcgza4/home",
+        "TMPDIR": "${SCRATCH}/646-jdhcgza4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Read the greeting through a Sail interpreter command",
+      "command": [
+        "${SCRATCH}/tools/sail-0.20.3-binary/dist/sail/bin/sail",
+        "-i",
+        "hello.sail"
+      ],
+      "cwd": "${SCRATCH}/646-jdhcgza4",
+      "timestamp_utc": "2026-11-18T16:48:00.145032+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\u001b[91m\u001b[1m    ___       ___       ___       ___ \u001b[0m\n\u001b[91m\u001b[1m   /\\  \\     /\\  \\     /\\  \\     /\\__\\\u001b[0m\n\u001b[91m\u001b[1m  /::\\  \\   /::\\  \\   _\\:\\  \\   /:/  /\u001b[0m\n\u001b[91m\u001b[1m /\\:\\:\\__\\ /::\\:\\__\\ /\\/::\\__\\ /:/__/ \u001b[0m\n\u001b[91m\u001b[1m \\:\\:\\/__/ \\/\\::/  / \\::/\\/__/ \\:\\  \\ \u001b[0m\n\u001b[91m\u001b[1m  \\::/  /    /:/  /   \\:\\__\\    \\:\\__\\\u001b[0m\n\u001b[91m\u001b[1m   \\/__/     \\/__/     \\/__/     \\/__/\u001b[0m\n\nType \u001b[92m:commands\u001b[0m for a list of commands, and \u001b[92m:help\u001b[0m \u001b[93m<command>\u001b[0m for help.\nType expressions to evaluate them.\n\ngreeting\n\u001b[H\u001b[2JResult = \"Hello, World!\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/646-jdhcgza4/home",
+        "TMPDIR": "${SCRATCH}/646-jdhcgza4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      },
+      "stdin": "greeting\n:run\n:quit\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#646 Sail/hello.sail": "73891bbb26d67e9e5f68732f1aa654d5cbe9cc21b6f00ddc23a0eb33c660cd45"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/rems-project/sail",
+    "https://alasdair.github.io/manual.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "sail-Linux-x86_64.tar.gz",
+      "size": 39386838,
+      "url": "https://github.com/rems-project/sail/releases/download/0.20.3-binary/sail-Linux-x86_64.tar.gz",
+      "sha256": "8d7cd75624ece407d7001ad32905a13ae111d5cc1a055404f21510e113207e3f",
+      "release": "https://github.com/rems-project/sail/releases/tag/0.20.3-binary",
+      "observed_sha256": "8d7cd75624ece407d7001ad32905a13ae111d5cc1a055404f21510e113207e3f"
+    }
+  ],
+  "toolchain": "Sail 0.20.3 (sail2 @ 60695b1ea377048f0adc39c62671cd099b2ed9f6)",
+  "reproduction_command": "sail -i hello.sail (interpreter input greeting\n:run)",
+  "semantic_scope": "The native Sail interpreter evaluated the unchanged declared string binding to the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "ordinal": 573,
+  "language": "Q#",
+  "timestamp_utc": "2026-11-18T16:16:18.785687+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Prepare Python packages in this case directory",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--no-compile",
+        "--only-binary=:all:",
+        "--target",
+        "${SCRATCH}/573-pl5_e4hd/python",
+        "qsharp"
+      ],
+      "cwd": "${SCRATCH}/573-pl5_e4hd",
+      "timestamp_utc": "2026-11-18T16:16:18.826498+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "Collecting qsharp\n  Downloading qsharp-1.31.0-py3-none-any.whl.metadata (3.1 kB)\nCollecting qdk>=1.31.0 (from qsharp)\n  Downloading qdk-1.34.0-cp310-abi3-manylinux_2_28_x86_64.whl.metadata (44 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.3/44.3 kB 1.4 MB/s eta 0:00:00\nCollecting pyqir<0.13,>=0.12.8 (from qdk>=1.31.0->qsharp)\n  Downloading pyqir-0.12.8-cp39-abi3-manylinux_2_28_x86_64.whl.metadata (5.0 kB)\nDownloading qsharp-1.31.0-py3-none-any.whl (15 kB)\nDownloading qdk-1.34.0-cp310-abi3-manylinux_2_28_x86_64.whl (8.6 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 5.0 MB/s eta 0:00:00\nDownloading pyqir-0.12.8-cp39-abi3-manylinux_2_28_x86_64.whl (2.1 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 16.0 MB/s eta 0:00:00\nInstalling collected packages: pyqir, qdk, qsharp\nSuccessfully installed pyqir-0.12.8 qdk-1.34.0 qsharp-1.31.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/573-pl5_e4hd/home",
+        "TMPDIR": "${SCRATCH}/573-pl5_e4hd/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute native consumer and assert the example result",
+      "command": [
+        "/usr/bin/python3",
+        "${SCRATCH}/573-pl5_e4hd/check.py"
+      ],
+      "cwd": "${SCRATCH}/573-pl5_e4hd",
+      "timestamp_utc": "2026-11-18T16:16:26.322130+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nQDK wheel 1.31.0\n",
+      "stderr": "${SCRATCH}/573-pl5_e4hd/check.py:3: DeprecationWarning: The 'qsharp' package is deprecated and will be removed in a future release. Please use the 'qdk' package instead. See https://github.com/microsoft/qdk/wiki/Migrating-from-qsharp-to-qdk for migration guidance.\n  import qsharp\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/573-pl5_e4hd/home",
+        "TMPDIR": "${SCRATCH}/573-pl5_e4hd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/573-pl5_e4hd/python",
+        "MPLBACKEND": "Agg"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#573 Q#/Main.qs": "a61c5f63c0be4715f1772ebab27e6f1ebc699b6c471b4d36c0f931e1a3831fc8"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "59a45ab4e90f990e97f8d955ad24163cac9bfcf03ee73d077a7466702ce47af4",
+      "content_utf8": "from pathlib import Path\nfrom importlib.metadata import version\nimport qsharp\nsource=Path(\"Main.qs\").read_text()\nqsharp.init()\nqsharp.eval(source)\nqsharp.eval(\"Corpus.Main()\")\nprint(\"QDK wheel\",version(\"qsharp\"))\n"
+    }
+  },
+  "sources": [
+    "https://learn.microsoft.com/azure/quantum/user-guide/language/statements/calls"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "QDK wheel 1.31.0",
+  "reproduction_command": "Load Main.qs with qsharp.eval and invoke Corpus.Main() on the local QDK interpreter",
+  "semantic_scope": "Microsoft QDK’s Rust-backed Python interpreter loaded the original Q# source and executed Main. Message emitted the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

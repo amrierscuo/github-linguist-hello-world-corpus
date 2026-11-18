@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "ordinal": 766,
+  "language": "WebAssembly Interface Type",
+  "timestamp_utc": "2026-11-18T16:52:42.651586+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/766-bx6_jcbu",
+      "timestamp_utc": "2026-11-18T16:52:42.745677+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/766-bx6_jcbu/home",
+        "TMPDIR": "${SCRATCH}/766-bx6_jcbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${SCRATCH}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/766-bx6_jcbu/.venv/bin/python",
+        "componentize-py==0.18.0",
+        "wasmtime"
+      ],
+      "cwd": "${SCRATCH}/766-bx6_jcbu",
+      "timestamp_utc": "2026-11-18T16:52:42.776746+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 2 packages in 323ms\nDownloading wasmtime (9.1MiB)\n Downloaded wasmtime\nPrepared 1 package in 1.50s\nInstalled 2 packages in 5ms\n + componentize-py==0.18.0\n + wasmtime==50.0.1\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/766-bx6_jcbu/home",
+        "TMPDIR": "${SCRATCH}/766-bx6_jcbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Build a component against the unchanged WIT interface",
+      "command": [
+        "${SCRATCH}/766-bx6_jcbu/.venv/bin/componentize-py",
+        "-d",
+        "hello.wit",
+        "-w",
+        "greeting",
+        "componentize",
+        "--stub-wasi",
+        "greeter_impl",
+        "-o",
+        "greet.wasm"
+      ],
+      "cwd": "${SCRATCH}/766-bx6_jcbu",
+      "timestamp_utc": "2026-11-18T16:52:44.701252+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "Component built successfully\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/766-bx6_jcbu/home",
+        "TMPDIR": "${SCRATCH}/766-bx6_jcbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Call the typed named interface in Wasmtime and verify two inputs",
+      "command": [
+        "${SCRATCH}/766-bx6_jcbu/.venv/bin/python",
+        "run_component.py"
+      ],
+      "cwd": "${SCRATCH}/766-bx6_jcbu",
+      "timestamp_utc": "2026-11-18T16:52:47.331091+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nHello, Reader!\n50.0.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/766-bx6_jcbu/home",
+        "TMPDIR": "${SCRATCH}/766-bx6_jcbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#766 WebAssembly Interface Type/hello.wit": "d10b4ab5065a39c47095dffdc382c56fc065026ee190194a1e9053daca882311"
+  },
+  "fixture_sha256": {
+    "greeter_impl.py": {
+      "sha256": "5ab6e6f187ba9e5e983bd6dff7ba24ab82ef55303fec3128f320141bacce6651",
+      "content_utf8": "from wit_world.exports import Greeter as BaseGreeter\nclass Greeter(BaseGreeter):\n    def greet(self, name: str) -> str:\n        return \"Hello, \" + name + \"!\"\n"
+    },
+    "run_component.py": {
+      "sha256": "d94c4d573a62d8bf6a74fae46d11ecda5bbc990cad3ea1ddd71a3e8c3ceaf4fc",
+      "content_utf8": "from importlib.metadata import version\nfrom wasmtime import Engine, Store\nfrom wasmtime.component import Component, Linker\nengine=Engine()\nstore=Store(engine)\ncomponent=Component.from_file(engine,\"greet.wasm\")\nlinker=Linker(engine)\ninstance=linker.instantiate(store,component)\nindex=component.get_export_index(\"corpus:greeting/greeter\")\nassert index is not None\nfunc_index=component.get_export_index(\"greet\",index)\nassert func_index is not None\nfunc=instance.get_func(store,func_index)\nassert func is not None\nfor name in (\"World\",\"Reader\"):\n    print(func(store,name))\n    func.post_return(store)\nprint(version(\"wasmtime\"))\n"
+    }
+  },
+  "sources": [
+    "https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md",
+    "https://github.com/bytecodealliance/wasm-tools"
+  ],
+  "previous_verification_log": "examples/#766 WebAssembly Interface Type/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "component_sha256": "bca45c692bc8812a08290339dd9a02b07b409c71787aed065eb966fb8cf8aa0c",
+  "toolchain": "componentize-py 0.18.0 / Wasmtime 50.0.1",
+  "reproduction_command": "componentize-py -d hello.wit -w greeting componentize --stub-wasi greeter_impl -o greet.wasm; python run_component.py",
+  "semantic_scope": "Bindings from the unchanged WIT interface produced a WebAssembly component. Wasmtime called the actual named export with two independently asserted inputs.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

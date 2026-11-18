@@ -1,5 +1,20 @@
 # #523 Pact
 
+## Verified on November 18, 2026
+
+The official local Pact REPL evaluated the original let/format expression and returned the greeting.
+
+Run `pact < a REPL input containing (load "hello.pact")`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+[Prior attempt](verification/native_20261118_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Pact`, tipo `programming`, language_id `756774415`.
 
 Evaluate a binding and format of the Pact Kadena language in the local REPL.
@@ -44,4 +59,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pact` | [hello.pact](hello.pact) created; verification pending |
+| `.pact` | [hello.pact](hello.pact) Syntax and behavior verified |
+
+</details>

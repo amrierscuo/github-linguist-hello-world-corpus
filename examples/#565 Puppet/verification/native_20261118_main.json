@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "ordinal": 565,
+  "language": "Puppet",
+  "timestamp_utc": "2026-11-18T16:47:58.025905+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Puppet version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/bin/puppet",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/565-858cn0c0",
+      "timestamp_utc": "2026-11-18T16:47:58.155214+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "8.4.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/565-858cn0c0/home",
+        "TMPDIR": "${SCRATCH}/565-858cn0c0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB": "${SCRATCH}/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/rake-13.0.6/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/semantic_puppet-1.0.4/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/sorted_set-1.0.3/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/net-telnet-0.2.0/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/bundler-2.4.20/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/hocon-1.3.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/webrick-1.8.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/thor-1.3.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-edge-0.7.0/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-edge-0.7.0/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/hocon-1.3.1/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/semantic_puppet-1.0.4/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/sorted_set-1.0.3/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/thor-1.3.1/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby",
+        "XDG_CONFIG_HOME": "${SCRATCH}/565-858cn0c0/xdg",
+        "AUGEAS_LENS_LIB": "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/augeas/lenses/dist"
+      }
+    },
+    {
+      "label": "Validate the original notify manifest",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/bin/puppet",
+        "parser",
+        "validate",
+        "--certname",
+        "corpus.example",
+        "--color",
+        "false",
+        "--confdir",
+        "${SCRATCH}/565-858cn0c0/conf",
+        "--vardir",
+        "${SCRATCH}/565-858cn0c0/var",
+        "--codedir",
+        "${SCRATCH}/565-858cn0c0/code",
+        "--rundir",
+        "${SCRATCH}/565-858cn0c0/run",
+        "--ssldir",
+        "${SCRATCH}/565-858cn0c0/ssl",
+        "--logdir",
+        "${SCRATCH}/565-858cn0c0/logs",
+        "hello.pp"
+      ],
+      "cwd": "${SCRATCH}/565-858cn0c0",
+      "timestamp_utc": "2026-11-18T16:48:13.115394+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/565-858cn0c0/home",
+        "TMPDIR": "${SCRATCH}/565-858cn0c0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB": "${SCRATCH}/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/rake-13.0.6/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/semantic_puppet-1.0.4/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/sorted_set-1.0.3/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/net-telnet-0.2.0/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/bundler-2.4.20/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/hocon-1.3.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/webrick-1.8.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/thor-1.3.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-edge-0.7.0/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-edge-0.7.0/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/hocon-1.3.1/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/semantic_puppet-1.0.4/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/sorted_set-1.0.3/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/thor-1.3.1/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby",
+        "XDG_CONFIG_HOME": "${SCRATCH}/565-858cn0c0/xdg",
+        "AUGEAS_LENS_LIB": "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/augeas/lenses/dist"
+      }
+    },
+    {
+      "label": "Apply the original notify-only manifest in isolated state",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/ruby3.2",
+        "--disable-gems",
+        "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/bin/puppet",
+        "apply",
+        "--certname",
+        "corpus.example",
+        "--color",
+        "false",
+        "--confdir",
+        "${SCRATCH}/565-858cn0c0/conf",
+        "--vardir",
+        "${SCRATCH}/565-858cn0c0/var",
+        "--codedir",
+        "${SCRATCH}/565-858cn0c0/code",
+        "--rundir",
+        "${SCRATCH}/565-858cn0c0/run",
+        "--ssldir",
+        "${SCRATCH}/565-858cn0c0/ssl",
+        "--logdir",
+        "${SCRATCH}/565-858cn0c0/logs",
+        "--no-report",
+        "--logdest",
+        "console",
+        "hello.pp"
+      ],
+      "cwd": "${SCRATCH}/565-858cn0c0",
+      "timestamp_utc": "2026-11-18T16:48:31.175939+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "Notice: Compiled catalog for corpus.example in environment production in 0.12 seconds\nNotice: Hello, World!\nNotice: /Stage[main]/Main/Notify[corpus_greeting]/message: defined 'message' as 'Hello, World!'\nNotice: Applied catalog in 0.01 seconds\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/565-858cn0c0/home",
+        "TMPDIR": "${SCRATCH}/565-858cn0c0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu",
+        "RUBYLIB": "${SCRATCH}/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/rake-13.0.6/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/semantic_puppet-1.0.4/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/sorted_set-1.0.3/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/net-telnet-0.2.0/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/bundler-2.4.20/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/hocon-1.3.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/webrick-1.8.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/thor-1.3.1/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-edge-0.7.0/lib:${SCRATCH}/tools/apt/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/ruby/3.2.0:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/ruby/vendor_ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-edge-0.7.0/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/hocon-1.3.1/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/semantic_puppet-1.0.4/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/sorted_set-1.0.3/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/thor-1.3.1/lib:${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/rubygems-integration/all/gems/concurrent-ruby-1.2.3/lib/concurrent-ruby",
+        "XDG_CONFIG_HOME": "${SCRATCH}/565-858cn0c0/xdg",
+        "AUGEAS_LENS_LIB": "${WORKSPACE}/work/native_batch_20261105/late/puppet/root/usr/share/augeas/lenses/dist"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#565 Puppet/hello.pp": "f1a2b014afae0da85333ecc05e58328315265222cde6b68940840f6f547be6f2"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.puppet.com/docs/puppet/8/types/notify.html"
+  ],
+  "previous_verification_log": "examples/#565 Puppet/verification/native_20261105_batch_blocked_main.json",
+  "ubuntu_archives": [
+    {
+      "name": "ruby3.2",
+      "version": "3.2.3-1ubuntu0.24.04.8",
+      "filename": "pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "sha256": "6f11e297b3508e8db95a5a047126a16ccf1358292049a27e3dc72b88180e779a",
+      "bytes": 50654,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb"
+    },
+    {
+      "name": "libruby3.2",
+      "version": "3.2.3-1ubuntu0.24.04.8",
+      "filename": "pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "sha256": "77c2e98ccfba2c4a4e5edb48ca8c0eb041702e1579eabc40cf07064fd4f3033e",
+      "bytes": 5342224,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb"
+    },
+    {
+      "name": "puppet-agent",
+      "version": "8.4.0-1",
+      "filename": "pool/universe/p/puppet-agent/puppet-agent_8.4.0-1_all.deb",
+      "sha256": "e76b55a3f09bd95db1f50c526f0a66e27b7b88b14225fb02d0ade8840d7601e8",
+      "bytes": 1396290,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/puppet-agent/puppet-agent_8.4.0-1_all.deb"
+    },
+    {
+      "name": "facter",
+      "version": "4.3.0-2",
+      "filename": "pool/universe/f/facter/facter_4.3.0-2_all.deb",
+      "sha256": "4dd4854386d7d9facf579b3fdd3a9b6af6919512a3c25d3ddc1ed88460fb7eb5",
+      "bytes": 155474,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/f/facter/facter_4.3.0-2_all.deb"
+    },
+    {
+      "name": "libaugeas0",
+      "version": "1.14.1-1build2",
+      "filename": "pool/universe/a/augeas/libaugeas0_1.14.1-1build2_amd64.deb",
+      "sha256": "8ade699eab95ed8696c509d4958a189238ba86abebb2734d4b040b3b56dbf2f4",
+      "bytes": 166054,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/a/augeas/libaugeas0_1.14.1-1build2_amd64.deb"
+    }
+  ],
+  "toolchain": "Puppet 8.4.0",
+  "reproduction_command": "puppet parser validate hello.pp; puppet apply --no-report --logdest console hello.pp (with isolated state directories)",
+  "semantic_scope": "Puppet applied the original notify-only manifest and emitted the expected greeting. All state and configuration dirs were disposable.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

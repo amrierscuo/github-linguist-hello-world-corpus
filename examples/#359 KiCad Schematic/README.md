@@ -1,5 +1,18 @@
 # #359 KiCad Schematic
 
+## Verified on November 18, 2026
+
+The official KiCad CLI loaded the original source and used its headless plotter to generate an SVG containing the greeting and rendered vector paths.
+
+Run `kicad-cli sch export svg --output ${SCRATCH}/359-hjpy0a34/out/ hello.kicad_sch`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `KiCad Schematic`, tipo `data`, language_id `622447435`.
 
 Describe a KiCad schema without circuits with a visible text object containing greeting.
@@ -45,6 +58,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.kicad_sch` | [hello.kicad_sch](hello.kicad_sch) created; verification pending |
+| `.kicad_sch` | [hello.kicad_sch](hello.kicad_sch) Syntax and behavior verified |
 | `.kicad_sym` | [hello.kicad_sym](variants/kicad-sym-fe143994/hello.kicad_sym) created; verification pending |
 | `.sch` | [hello.sch](variants/sch-5766dac2/hello.sch) created; verification pending |
+
+</details>

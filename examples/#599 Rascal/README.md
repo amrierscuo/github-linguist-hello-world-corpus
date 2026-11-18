@@ -1,5 +1,16 @@
 # #599 Rascal
 
+## Verified on November 18, 2026
+
+The official Rascal interpreter executed the original program unchanged in a minimal project and emitted the expected greeting.
+
+Run `java -Drascal.path=src -jar rascal-0.43.0.jar Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Perform an entry point Rascal calling IO.println.
 
 Canonical type `programming`, language_id `173616037`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.rsc` | [Hello.rsc](Hello.rsc) created; verification pending |
+| `.rsc` | [Hello.rsc](Hello.rsc) Syntax and behavior verified |
+
+</details>

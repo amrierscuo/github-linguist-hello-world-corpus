@@ -1,5 +1,18 @@
 # #264 Gosu
 
+## Verified on November 18, 2026
+
+The original Gosu class was resolved by its runtime. The published driver invoked its actual static main and observed the greeting.
+
+Run `java -cp <Gosu jars> gw.lang.Gosu -classpath . Run.gsp`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Gosu`, tipo `programming`, language_id `134`.
 
 Define the Gosu Hello class with a main static that concatenates and prints greeting.
@@ -45,7 +58,9 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gs` | [Hello.gs](Hello.gs) created; verification pending |
+| `.gs` | [Hello.gs](Hello.gs) Syntax and behavior verified |
 | `.gst` | [hello.gst](variants/ext-gst-2e677374/hello.gst) created; verification pending |
 | `.gsx` | [CorpusGreeting.gsx](variants/ext-gsx-2e677378/CorpusGreeting.gsx) created; verification pending |
 | `.vark` | [hello.vark](variants/ext-vark-2e7661726b/hello.vark) created; verification pending |
+
+</details>

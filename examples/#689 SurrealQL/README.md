@@ -1,5 +1,18 @@
 # #689 SurrealQL
 
+## Verified on November 18, 2026
+
+The original SurrealQL expression was evaluated by the native in-memory database engine and returned one exact greeting.
+
+Run `surreal sql --endpoint memory --namespace corpus --database greeting --json < hello.surql`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `SurrealQL`, tipo `programming`, language_id `735141027`.
 
 Evaluate a RETURN SurrealQL with string concatenation.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.surql` | [hello.surql](hello.surql) created; verification pending |
+| `.surql` | [hello.surql](hello.surql) Syntax and behavior verified |
+
+</details>

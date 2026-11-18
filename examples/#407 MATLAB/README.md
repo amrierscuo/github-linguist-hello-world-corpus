@@ -1,5 +1,16 @@
 # #407 MATLAB
 
+## Verified on November 18, 2026
+
+GNU Octave executed the original MATLAB-compatible disp script and printed the exact greeting.
+
+Run `octave-cli --no-init-file --no-site-file --no-history --quiet hello.m`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Run a MATLAB script that prints Hello, World!.
 
 Canonical type `programming`, language_id `225`.
@@ -30,4 +41,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.matlab` | [hello.matlab](variants/matlab-67b3d23b/hello.matlab) created; verification pending |
-| `.m` | [hello.m](hello.m) created; verification pending |
+| `.m` | [hello.m](hello.m) Syntax and behavior verified |
+
+</details>

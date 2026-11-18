@@ -1,5 +1,16 @@
 # #795 Xtend
 
+## Verified on November 18, 2026
+
+The official Xtend toolchain compiled the unchanged program to Java and JVM bytecode. The generated class printed the exact greeting.
+
+Run `mvn compile; java -cp <compiled classes and Xtend dependencies> Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.xtend` | [Hello.xtend](Hello.xtend) created; verification pending |
+| `.xtend` | [Hello.xtend](Hello.xtend) Syntax and behavior verified |
+
+</details>

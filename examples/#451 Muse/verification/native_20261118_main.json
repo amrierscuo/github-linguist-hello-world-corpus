@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "ordinal": 451,
+  "language": "Muse",
+  "timestamp_utc": "2026-11-18T16:29:44.828411+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record GNU Emacs version",
+      "command": [
+        "emacs",
+        "--batch",
+        "-Q",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/451-oxkvb3rw",
+      "timestamp_utc": "2026-11-18T16:29:46.239668+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "GNU Emacs 29.3\nCopyright (C) 2024 Free Software Foundation, Inc.\nGNU Emacs comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute copies of GNU Emacs\nunder the terms of the GNU General Public License.\nFor more information about these matters, see the file named COPYING.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/451-oxkvb3rw/home",
+        "TMPDIR": "${SCRATCH}/451-oxkvb3rw/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Publish original Muse to HTML using Emacs batch mode",
+      "command": [
+        "emacs",
+        "--batch",
+        "-Q",
+        "-L",
+        "${SCRATCH}/tools/apt/usr/share/emacs/site-lisp/elpa-src/muse-3.20",
+        "--eval",
+        "(progn (require (quote muse-html)) (muse-publish-file \"hello.muse\" \"html\" \"out\"))"
+      ],
+      "cwd": "${SCRATCH}/451-oxkvb3rw",
+      "timestamp_utc": "2026-11-18T16:29:46.410457+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/451-oxkvb3rw/home",
+        "TMPDIR": "${SCRATCH}/451-oxkvb3rw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#451 Muse/hello.muse": "ce241c4ee2b6e7c5fa36c9c6b6327c58dc069176cca9aad9ff3ed35834f79b3b"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.gnu.org/software/emacs-muse/manual/muse.html"
+  ],
+  "previous_verification_log": "examples/#451 Muse/verification/native.json",
+  "ubuntu_archives": [
+    {
+      "name": "elpa-muse",
+      "version": "3.20+dfsg-8",
+      "filename": "pool/universe/m/muse-el/elpa-muse_3.20+dfsg-8_all.deb",
+      "sha256": "88a15a00a3de3fdd96098068ff4f0c4c5e95f94d636c07d26f2e0ca06dbf5d53",
+      "bytes": 175876,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/m/muse-el/elpa-muse_3.20+dfsg-8_all.deb"
+    }
+  ],
+  "rendered_html_sha256": "0e7641c81e83c328263309d73ca242f96d59f5938786f5f9143479e44a58e209",
+  "toolchain": "GNU Emacs 29.3 / Muse 3.20+dfsg-8",
+  "reproduction_command": "emacs --batch -Q -L <muse-library> --eval (progn (require (quote muse-html)) (muse-publish-file \"hello.muse\" \"html\" \"out\"))",
+  "semantic_scope": "The original Emacs Muse publishing engine rendered the unchanged document to HTML with the greeting inside a paragraph.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

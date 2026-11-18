@@ -1,5 +1,18 @@
 # #527 Parrot Assembly
 
+## Verified on November 18, 2026
+
+The native Parrot VM loaded the original source in its declared input mode and executed the greeting instructions.
+
+Run `parrot hello.pasm`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Parrot Assembly`, tipo `programming`, language_id `279`.
 
 Perform PASM instructions that set the string log and invoke print.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pasm` | [hello.pasm](hello.pasm) created; verification pending |
+| `.pasm` | [hello.pasm](hello.pasm) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #568 PureScript
 
+## Verified on November 18, 2026
+
+The native PureScript compiler compiled the original main. Node executed the compiler-generated JavaScript and printed the exact greeting.
+
+Run `purs compile Main.purs <prelude, effect and console library sources>; import output/Main/index.js and invoke main() with Node`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill PureScript and run main.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.purs` | [Main.purs](Main.purs) created; verification pending |
+| `.purs` | [Main.purs](Main.purs) Syntax and behavior verified |
+
+</details>

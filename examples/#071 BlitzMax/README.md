@@ -1,5 +1,16 @@
 # #071 BlitzMax
 
+## Verified on November 18, 2026
+
+The native BlitzMax compiler used BRL.StandardIO and linked the translated source as a console program. That executable printed the exact greeting.
+
+Run `bmk makeapp -t console -o hello hello.bmx; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.bmx` | [hello.bmx](hello.bmx) created; verification pending |
+| `.bmx` | [hello.bmx](hello.bmx) Syntax and behavior verified |
+
+</details>

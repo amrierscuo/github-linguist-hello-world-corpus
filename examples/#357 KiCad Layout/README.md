@@ -1,5 +1,18 @@
 # #357 KiCad Layout
 
+## Verified on November 18, 2026
+
+The official KiCad CLI loaded the original source and used its headless plotter to generate an SVG containing the greeting and rendered vector paths.
+
+Run `kicad-cli pcb export svg --layers F.Silkscreen,Edge.Cuts -o rendered.svg hello.kicad_pcb`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `KiCad Layout`, tipo `data`, language_id `187`.
 
 Describe a KiCad card with rectangular edge and Hello, World! text on the front screen.
@@ -45,6 +58,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.kicad_pcb` | [hello.kicad_pcb](hello.kicad_pcb) created; verification pending |
+| `.kicad_pcb` | [hello.kicad_pcb](hello.kicad_pcb) Syntax and behavior verified |
 | `.kicad_mod` | [hello.kicad_mod](variants/kicad-mod-72f4d4f5/hello.kicad_mod) created; verification pending |
 | `.kicad_wks` | [hello.kicad_wks](variants/kicad-wks-ff39775a/hello.kicad_wks) created; verification pending |
+
+</details>

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "ordinal": 71,
+  "language": "BlitzMax",
+  "timestamp_utc": "2026-11-18T16:10:43.328646+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record native bmk version",
+      "command": [
+        "${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/bin/bmk",
+        "-v"
+      ],
+      "cwd": "${SCRATCH}/071-dg2jifu1",
+      "timestamp_utc": "2026-11-18T16:11:17.332102+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "bmk 3.61 mt-linux-x64 / gcc 130000 (cpu x16)\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/071-dg2jifu1/home",
+        "TMPDIR": "${SCRATCH}/071-dg2jifu1/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile and link original BlitzMax console app",
+      "command": [
+        "${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/bin/bmk",
+        "makeapp",
+        "-t",
+        "console",
+        "-o",
+        "hello",
+        "hello.bmx"
+      ],
+      "cwd": "${SCRATCH}/071-dg2jifu1",
+      "timestamp_utc": "2026-11-18T16:11:17.414564+00:00",
+      "timeout_seconds": 180,
+      "exit_code": 0,
+      "stdout": "[  0%] Processing:blitz.bmx\n[  1%] Processing:debugger_mt.stdio.bmx\n[  2%] Processing:physfs.bmx\n[  3%] Processing:stdc.bmx\n[  4%] Processing:appstub.bmx\n[  5%] Processing:common.bmx\n[  6%] Processing:io.bmx\n[  7%] Processing:stream.bmx\n[  7%] Processing:textstream.bmx\n[  8%] Processing:standardio.bmx\n[  9%] Processing:hello.bmx\n[ 10%] Compiling:appstub.linux.c\n[ 11%] Compiling:debugger.stdio.glue.c\n[ 12%] Compiling:allchblk.c\n[ 13%] Compiling:alloc.c\n[ 14%] Compiling:backgraph.c\n[ 14%] Compiling:blacklst.c\n[ 15%] Compiling:checksums.c\n[ 16%] Compiling:darwin_stop_world.c\n[ 17%] Compiling:dbg_mlc.c\n[ 18%] Compiling:dyn_load.c\n[ 19%] Compiling:finalize.c\n[ 20%] Compiling:gc_dlopen.c\n[ 21%] Compiling:gcj_mlc.c\n[ 21%] Compiling:headers.c\n[ 22%] Compiling:mach_dep.c\n[ 23%] Compiling:malloc.c\n[ 24%] Compiling:mallocx.c\n[ 25%] Compiling:mark.c\n[ 26%] Compiling:mark_rts.c\n[ 27%] Compiling:misc.c\n[ 28%] Compiling:new_hblk.c\n[ 28%] Compiling:obj_map.c\n[ 29%] Compiling:os_dep.c\n[ 30%] Compiling:pthread_start.c\n[ 31%] Compiling:pthread_stop_world.c\n[ 32%] Compiling:pthread_support.c\n[ 33%] Compiling:ptr_chck.c\n[ 34%] Compiling:reclaim.c\n[ 35%] Compiling:specific.c\n[ 35%] Compiling:thread_local_alloc.c\n[ 36%] Compiling:typd_mlc.c\n[ 37%] Compiling:win32_threads.c\n[ 38%] Compiling:blitz_app.c\n[ 39%] Compiling:blitz_array.c\n[ 40%] Compiling:blitz_atstart.c\n[ 41%] Compiling:blitz_cclib.c\n[ 42%] Compiling:blitz_coverage.c\n[ 42%] Compiling:blitz_debug.c\n[ 43%] Compiling:blitz_enum.c\n[ 44%] Compiling:blitz_ex.c\n[ 45%] Compiling:blitz_gc.c\n[ 46%] Compiling:blitz_handle.c\n[ 47%] Compiling:blitz_incbin.c\n[ 48%] Compiling:blitz_memory.c\n[ 49%] Compiling:blitz_module.c\n[ 50%] Compiling:blitz_object.c\n[ 50%] Compiling:blitz_string.c\n[ 51%] Compiling:blitz_string_ex.cpp\n[ 52%] Compiling:blitz_stringsplit.c\n[ 53%] Compiling:blitz_strto.c\n[ 54%] Compiling:blitz_thread.c\n[ 55%] Compiling:blitz_types.c\n[ 56%] Compiling:blitz_unicode.c\n[ 57%] Compiling:d2fixed.c\n[ 57%] Compiling:d2s.c\n[ 58%] Compiling:f2s.c\n[ 59%] Compiling:tree.c\n[ 60%] Compiling:glue.c\n[ 61%] Compiling:physfs.c\n[ 62%] Compiling:physfs_archiver_7z.c\n[ 63%] Compiling:physfs_archiver_csm.c\n[ 64%] Compiling:physfs_archiver_dir.c\n[ 64%] Compiling:physfs_archiver_grp.c\n[ 65%] Compiling:physfs_archiver_hog.c\n[ 66%] Compiling:physfs_archiver_iso9660.c\n[ 67%] Compiling:physfs_archiver_mvl.c\n[ 68%] Compiling:physfs_archiver_qpak.c\n[ 69%] Compiling:physfs_archiver_slb.c\n[ 70%] Compiling:physfs_archiver_unpacked.c\n[ 71%] Compiling:physfs_archiver_vdf.c\n[ 71%] Compiling:physfs_archiver_wad.c\n[ 72%] Compiling:physfs_archiver_zip.c\n[ 73%] Compiling:physfs_byteorder.c\n[ 74%] Compiling:physfs_platform_android.c\n[ 75%] Compiling:physfs_platform_ogc.c\n[ 76%] Compiling:physfs_platform_os2.c\n[ 77%] Compiling:physfs_platform_playdate.c\n[ 78%] Compiling:physfs_platform_posix.c\n[ 78%] Compiling:physfs_platform_qnx.c\n[ 79%] Compiling:physfs_platform_unix.c\n[ 80%] Compiling:physfs_platform_windows.c\n[ 81%] Compiling:physfs_unicode.c\n[ 82%] Compiling:stdc.c\n[ 83%] Compiling:blitz.bmx.debug.linux.x64.c\n[ 84%] Compiling:debugger_mt.stdio.bmx.debug.linux.x64.c\n[ 85%] Compiling:physfs.bmx.debug.linux.x64.c\n[ 85%] Compiling:stdc.bmx.debug.linux.x64.c\n[ 86%] Compiling:appstub.bmx.debug.linux.x64.c\n[ 87%] Compiling:common.bmx.debug.linux.x64.c\n[ 88%] Compiling:io.bmx.debug.linux.x64.c\n[ 89%] Compiling:stream.bmx.debug.linux.x64.c\n[ 90%] Compiling:textstream.bmx.debug.linux.x64.c\n[ 91%] Compiling:standardio.bmx.debug.linux.x64.c\n[ 92%] Compiling:hello.bmx.console.debug.linux.x64.c\n[ 92%] Archiving:blitz.debug.linux.x64.a\n[ 93%] Archiving:physfs.debug.linux.x64.a\n[ 94%] Archiving:stdc.debug.linux.x64.a\n[ 95%] Archiving:appstub.debug.linux.x64.a\n[ 96%] Archiving:io.debug.linux.x64.a\n[ 97%] Archiving:stream.debug.linux.x64.a\n[ 98%] Archiving:textstream.debug.linux.x64.a\n[ 99%] Archiving:standardio.debug.linux.x64.a\n[100%] Linking:hello\n",
+      "stderr": "ar: ar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/pub.mod/stdc.mod/stdc.debug.linux.x64.acreating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/brl.mod/blitz.mod/blitz.de\nbug.linux.x64.a\nar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/pub.mod/physfs.mod/physfs.debug.linux.x64.a\nar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/brl.mod/stream.mod/stream.debug.linux.x64.a\nar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/brl.mod/io.mod/io.debug.linux.x64.a\nar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/brl.mod/appstub.mod/appstub.debug.linux.x64.a\nar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/brl.mod/standardio.mod/standardio.debug.linux.x64.a\nar: creating ${SCRATCH}/tools/blitzmax-v0.165.3.61.linux.x64/dist/BlitzMax/mod/brl.mod/textstream.mod/textstream.debug.linux.x64.a\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/071-dg2jifu1/home",
+        "TMPDIR": "${SCRATCH}/071-dg2jifu1/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/071-dg2jifu1/hello"
+      ],
+      "cwd": "${SCRATCH}/071-dg2jifu1",
+      "timestamp_utc": "2026-11-18T16:11:27.056829+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/071-dg2jifu1/home",
+        "TMPDIR": "${SCRATCH}/071-dg2jifu1/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#071 BlitzMax/hello.bmx": "1d406bb382bd18ae93fdbacfe74e6de192bf1954e5e9f188a22fd39327bd7d95"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://blitzmax.org/docs/en/setup/get_started/",
+    "https://blitzmax.org/docs/en/api/brl/brl.standardio/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "BlitzMax_linux_x64_0.165.3.61.tar.xz",
+      "size": 177763320,
+      "url": "https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.linux.x64/BlitzMax_linux_x64_0.165.3.61.tar.xz",
+      "sha256": "e11513098d973b6a64254e8b5e6cbdc82e9b637cdd78c76b016cdc5444fe2911",
+      "release": "https://github.com/bmx-ng/bmx-ng/releases/tag/v0.165.3.61.linux.x64",
+      "observed_sha256": "e11513098d973b6a64254e8b5e6cbdc82e9b637cdd78c76b016cdc5444fe2911"
+    }
+  ],
+  "toolchain": "bmk 3.61 mt-linux-x64 / gcc 130000 (cpu x16)",
+  "reproduction_command": "bmk makeapp -t console -o hello hello.bmx; ./hello",
+  "semantic_scope": "The native BlitzMax compiler used BRL.StandardIO and linked the translated source as a console program. That executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

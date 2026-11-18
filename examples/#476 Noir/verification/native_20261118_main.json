@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "ordinal": 476,
+  "language": "Noir",
+  "timestamp_utc": "2026-11-18T16:14:27.433023+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Nargo version",
+      "command": [
+        "${SCRATCH}/tools/noir-v1.0.0/dist/nargo",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/476-_6_h5mbr",
+      "timestamp_utc": "2026-11-18T16:14:31.156879+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "nargo version = 1.0.0\nnoirc version = 1.0.0+275d3ab1a5c916c6ea73e8d6b943f685f574500c\n(git version hash: 275d3ab1a5c916c6ea73e8d6b943f685f574500c, is dirty: false)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/476-_6_h5mbr/home",
+        "TMPDIR": "${SCRATCH}/476-_6_h5mbr/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Check original Noir circuit",
+      "command": [
+        "${SCRATCH}/tools/noir-v1.0.0/dist/nargo",
+        "check"
+      ],
+      "cwd": "${SCRATCH}/476-_6_h5mbr",
+      "timestamp_utc": "2026-11-18T16:14:31.172236+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/476-_6_h5mbr/home",
+        "TMPDIR": "${SCRATCH}/476-_6_h5mbr/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute the circuit witness evaluator",
+      "command": [
+        "${SCRATCH}/tools/noir-v1.0.0/dist/nargo",
+        "execute"
+      ],
+      "cwd": "${SCRATCH}/476-_6_h5mbr",
+      "timestamp_utc": "2026-11-18T16:14:32.279289+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "[corpus_greeting] Circuit witness successfully solved\n[corpus_greeting] Witness saved to target/corpus_greeting.gz\n[corpus_greeting] Circuit output: [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]\n",
+      "stderr": "warning: Return variable contains a constant value\n  ┌─ src/main.nr:2:5\n  │\n2 │     [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]\n  │     ------------------------------------------------------------ This variable contains a value which is constrained to be a constant. Consider removing this value as additional return values increase proving/verification time\n  │\n  = Call stack:\n    1: main\n            at src/main.nr:2:5\n\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/476-_6_h5mbr/home",
+        "TMPDIR": "${SCRATCH}/476-_6_h5mbr/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#476 Noir/Nargo.toml": "1e400c1458e5c7a97729fac99e22a17dced0b79f4a1939df03d4126243206a92",
+    "examples/#476 Noir/src/main.nr": "a8de3ff5a291804a26f3b2012cf235ae6ab6d1df2de718ce025204ecdd85d1f3"
+  },
+  "fixture_sha256": {
+    "Prover.toml": {
+      "sha256": "23960f06d243ecdb362c26a6be827a58e158ea60d97618180c44bc7b25c98000",
+      "content_utf8": "return = [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]\n"
+    }
+  },
+  "sources": [
+    "https://github.com/noir-lang/noir",
+    "https://noir-lang.org/docs/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "noir-x86_64-unknown-linux-musl.tar.gz",
+      "size": 33406076,
+      "url": "https://github.com/noir-lang/noir/releases/download/v1.0.0/noir-x86_64-unknown-linux-musl.tar.gz",
+      "sha256": "4574920052e483b5fb66ab8b892f27ed2be715b8be884b161c4d68b9f7dcabbe",
+      "release": "https://github.com/noir-lang/noir/releases/tag/v1.0.0",
+      "observed_sha256": "4574920052e483b5fb66ab8b892f27ed2be715b8be884b161c4d68b9f7dcabbe"
+    }
+  ],
+  "decoded_public_output": "Hello, World!",
+  "toolchain": "nargo version = 1.0.0\nnoirc version = 1.0.0+275d3ab1a5c916c6ea73e8d6b943f685f574500c\n(git version hash: 275d3ab1a5c916c6ea73e8d6b943f685f574500c, is dirty: false)",
+  "reproduction_command": "nargo check; nargo execute",
+  "semantic_scope": "Nargo compiled the original circuit and executed its witness evaluator. The thirteen public return values decode to the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "ordinal": 669,
+  "language": "Smali",
+  "timestamp_utc": "2026-11-18T16:57:39.761292+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/669-evn1w1cp",
+      "timestamp_utc": "2026-11-18T16:57:39.776683+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/669-evn1w1cp/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  7.253 s\n[INFO] Finished at: 2026-11-18T17:57:52+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/669-evn1w1cp/home",
+        "TMPDIR": "${SCRATCH}/669-evn1w1cp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home"
+      }
+    },
+    {
+      "label": "Assemble the original Smali into Dalvik bytecode",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/tools/maven-cache/org/smali/smali/2.5.2/smali-2.5.2.jar:${SCRATCH}/tools/maven-cache/org/antlr/antlr/3.5.2/antlr-3.5.2.jar:${SCRATCH}/tools/maven-cache/org/antlr/ST4/4.0.8/ST4-4.0.8.jar:${SCRATCH}/tools/maven-cache/org/smali/dexlib2/2.5.2/dexlib2-2.5.2.jar:${SCRATCH}/tools/maven-cache/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:${SCRATCH}/tools/maven-cache/org/smali/util/2.5.2/util-2.5.2.jar:${SCRATCH}/tools/maven-cache/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:${SCRATCH}/tools/maven-cache/com/beust/jcommander/1.64/jcommander-1.64.jar:${SCRATCH}/tools/maven-cache/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar:${SCRATCH}/tools/maven-cache/antlr/antlr/2.7.7/antlr-2.7.7.jar:${SCRATCH}/tools/maven-cache/com/google/guava/guava/27.1-android/guava-27.1-android.jar:${SCRATCH}/tools/maven-cache/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:${SCRATCH}/tools/maven-cache/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:${SCRATCH}/tools/maven-cache/org/checkerframework/checker-compat-qual/2.5.2/checker-compat-qual-2.5.2.jar:${SCRATCH}/tools/maven-cache/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar:${SCRATCH}/tools/maven-cache/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:${SCRATCH}/tools/maven-cache/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar",
+        "org.jf.smali.Main",
+        "assemble",
+        "Hello.smali",
+        "-o",
+        "hello.dex"
+      ],
+      "cwd": "${SCRATCH}/669-evn1w1cp",
+      "timestamp_utc": "2026-11-18T16:57:52.320979+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/669-evn1w1cp/home",
+        "TMPDIR": "${SCRATCH}/669-evn1w1cp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home"
+      }
+    },
+    {
+      "label": "Translate the exact produced DEX to JVM bytecode with dex2jar",
+      "command": [
+        "bash",
+        "${SCRATCH}/tools/dex2jar-2.4/dist/dex-tools-v2.4/d2j-dex2jar.sh",
+        "hello.dex",
+        "-o",
+        "hello.jar"
+      ],
+      "cwd": "${SCRATCH}/669-evn1w1cp",
+      "timestamp_utc": "2026-11-18T16:57:54.154697+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home\ndex2jar hello.dex -> hello.jar\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/669-evn1w1cp/home",
+        "TMPDIR": "${SCRATCH}/669-evn1w1cp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "java",
+        "-cp",
+        "hello.jar",
+        "Hello"
+      ],
+      "cwd": "${SCRATCH}/669-evn1w1cp",
+      "timestamp_utc": "2026-11-18T16:57:54.601807+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/669-evn1w1cp/home",
+        "TMPDIR": "${SCRATCH}/669-evn1w1cp/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/669-evn1w1cp/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#669 Smali/Hello.smali": "63dea45069051727869c30e5ef637fb1636507dc8f9305e580f433e27d9879b3"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "1f3be727be762d4428e220d758ffcb6a832ffadda3a9eabae2b2042defc84fd0",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.smali</groupId><artifactId>smali</artifactId><version>2.5.2</version></dependency></dependencies></project>\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Smali",
+      "url": "https://github.com/google/smali"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/pxb1988/dex2jar/releases/download/v2.4/dex-tools-v2.4.zip",
+      "sha256": "ee7c45eb3c1d2474a6145d8d447e651a736a22d9664b6d3d3be5a5a817dda23a",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Smali 2.5.2 / dex2jar 2.4",
+  "reproduction_command": "smali assemble Hello.smali -o hello.dex; d2j-dex2jar hello.dex -o hello.jar; java -cp hello.jar Hello",
+  "semantic_scope": "Smali compiled the unchanged input into DEX. dex2jar translated that DEX into executable JVM bytecode, and executing its main produced the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #766 WebAssembly Interface Type
 
+## Verified on November 18, 2026
+
+Bindings from the unchanged WIT interface produced a WebAssembly component. Wasmtime called the actual named export with two independently asserted inputs.
+
+Run `componentize-py -d hello.wit -w greeting componentize --stub-wasi greeter_impl -o greet.wasm; python run_component.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `WebAssembly Interface Type`, tipo `data`, language_id `134534086`.
 
 Original WebAssembly WIT interface: the package corpus:greeting defines greeter.greet (string) -> string and the world greeting export the interface.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.wit` | [hello.wit](hello.wit) syntax verified |
+| `.wit` | [hello.wit](hello.wit) Syntax and behavior verified |
+
+</details>

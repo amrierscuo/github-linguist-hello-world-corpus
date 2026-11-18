@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "ordinal": 384,
+  "language": "LilyPond",
+  "timestamp_utc": "2026-11-18T16:38:05.626940+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record LilyPond version",
+      "command": [
+        "${SCRATCH}/tools/lilypond-2.24.4/dist/lilypond-2.24.4/bin/lilypond",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/384-96nwrx67",
+      "timestamp_utc": "2026-11-18T16:38:10.666451+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "GNU LilyPond 2.24.4 (running Guile 2.2)\n\nCopyright (c) 1996--2023 by\n  Han-Wen Nienhuys <hanwen@xs4all.nl>\n  Jan Nieuwenhuizen <janneke@gnu.org>\n  and others.\n\nThis program is free software.  It is covered by the GNU General Public\nLicense and you are welcome to change it and/or distribute copies of it\nunder certain conditions.  Invoke as `lilypond --warranty' for more\ninformation.\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/384-96nwrx67/home",
+        "TMPDIR": "${SCRATCH}/384-96nwrx67/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Typeset exact score to SVG",
+      "command": [
+        "${SCRATCH}/tools/lilypond-2.24.4/dist/lilypond-2.24.4/bin/lilypond",
+        "-dbackend=svg",
+        "-o",
+        "rendered",
+        "hello.ly"
+      ],
+      "cwd": "${SCRATCH}/384-96nwrx67",
+      "timestamp_utc": "2026-11-18T16:38:10.674244+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Processing `hello.ly'\nParsing...\nInterpreting music...\nPreprocessing graphical objects...\nFinding the ideal number of pages...\nFitting music on 1 page...\nDrawing systems...\nwarning: ignoring unsupported formats (pdf)\nSuccess: compilation successfully completed\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/384-96nwrx67/home",
+        "TMPDIR": "${SCRATCH}/384-96nwrx67/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#384 LilyPond/hello.ly": "443141bf743ab8936eb72b0fcd4394ecbb390d5cec42e5ac78d59013761a33a3"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://lilypond.org/doc/v2.24/Documentation/learning/",
+    "https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://gitlab.com/lilypond/lilypond/-/releases/v2.24.4/downloads/lilypond-2.24.4-linux-x86_64.tar.gz",
+      "sha256": "53bc1df875ee56dabe56ae1f0b4550237e0c9acc837b60f0ef8c42fc35a68641",
+      "expected_sha256": null
+    }
+  ],
+  "svg_checks": {
+    "sha256": "ef45db8f7d4655dc0099ee191fe07fd52e388c2c2fa53325bb0df3d37e0a3115",
+    "exact_title": true,
+    "repeated_glyph_path_counts": [
+      [
+        4,
+        141
+      ]
+    ]
+  },
+  "toolchain": "GNU LilyPond 2.24.4 (running Guile 2.2)",
+  "reproduction_command": "lilypond -dbackend=svg -o rendered hello.ly",
+  "semantic_scope": "The original score was typeset by upstream LilyPond. The SVG contains the exact title and the actual vector note glyphs.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

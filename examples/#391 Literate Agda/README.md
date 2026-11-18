@@ -1,5 +1,16 @@
 # #391 Literate Agda
 
+## Verified on November 18, 2026
+
+Agda selected the literate code block, typechecked the original source against the standard IO library and compiled it with the native GHC backend. The executable printed the greeting.
+
+Run `agda --guardedness -i /usr/share/agda-stdlib --compile Hello.lagda; ./Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a literary Agda program that uses IO.Main to print your greeting.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.lagda` | [Hello.lagda](Hello.lagda) created; verification pending |
+| `.lagda` | [Hello.lagda](Hello.lagda) Syntax and behavior verified |
+
+</details>

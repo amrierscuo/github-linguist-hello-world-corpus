@@ -1,5 +1,18 @@
 # #604 ReasonLIGO
 
+## Verified on November 18, 2026
+
+The official LIGO command executable interpreted the original source in its declared dialect and returned the exact greeting.
+
+Run `ligo interpret result --init-file hello.religo --syntax reasonligo`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `ReasonLIGO`, tipo `programming`, language_id `319002153`.
 
 Define and evaluate a string function in the historical dialect ReasonLIGO.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.religo` | [hello.religo](hello.religo) created; verification pending |
+| `.religo` | [hello.religo](hello.religo) Syntax and behavior verified |
+
+</details>

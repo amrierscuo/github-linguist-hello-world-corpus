@@ -1,5 +1,16 @@
 # #714 Terra
 
+## Verified on November 18, 2026
+
+Terra JIT-compiled the original function and invoked the C standard library puts with the greeting.
+
+Run `terra hello.t`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.t` | [hello.t](hello.t) created; verification pending |
+| `.t` | [hello.t](hello.t) Syntax and behavior verified |
+
+</details>

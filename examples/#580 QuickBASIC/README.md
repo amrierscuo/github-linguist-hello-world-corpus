@@ -1,5 +1,16 @@
 # #580 QuickBASIC
 
+## Verified on November 18, 2026
+
+FreeBASIC compiled the original in QuickBASIC compatibility mode. The resulting native executable printed the exact greeting.
+
+Run `fbc -lang qb hello.bas -x hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill in and run QuickBASIC console.
 
 ## Toolchain
@@ -35,3 +46,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.bas` | [hello.bas](hello.bas), [main.bas](variants/bi-5b4ad4e3/main.bas) created; verification pending |
 | `.bi` | [hello.bi](variants/bi-5b4ad4e3/hello.bi) created; verification pending |
+
+</details>

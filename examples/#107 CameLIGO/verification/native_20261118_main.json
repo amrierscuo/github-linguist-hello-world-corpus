@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "ordinal": 107,
+  "language": "CameLIGO",
+  "timestamp_utc": "2026-11-18T16:55:35.989659+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record LIGO CLI version extracted from publisher image",
+      "command": [
+        "${SCRATCH}/tools/ligo-image-1.14.2/ligo",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/107-sas1cwr1",
+      "timestamp_utc": "2026-11-18T16:55:50.926128+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/107-sas1cwr1/home",
+        "TMPDIR": "${SCRATCH}/107-sas1cwr1/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute original source dialect at the official LIGO release",
+      "command": [
+        "${SCRATCH}/tools/ligo-image-1.14.2/ligo",
+        "run",
+        "interpret",
+        "greeting",
+        "--init-file",
+        "hello.mligo"
+      ],
+      "cwd": "${SCRATCH}/107-sas1cwr1",
+      "timestamp_utc": "2026-11-18T16:55:51.055009+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/107-sas1cwr1/home",
+        "TMPDIR": "${SCRATCH}/107-sas1cwr1/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#107 CameLIGO/hello.mligo": "e2fb8dc486929123aa2626ddb467cd9d4733e89194740aa168a2088326dd227b"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "LIGO differenze CameLIGO/OCaml",
+      "url": "https://ligolang.org/docs/faq/cameligo-ocaml-syntax-diff/"
+    },
+    {
+      "title": "LIGO run interpret",
+      "url": "https://ligolang.org/docs/1.14.2/manpages/run%20interpret/"
+    }
+  ],
+  "previous_verification_log": null,
+  "official_image_layers": [
+    {
+      "repository": "ligolang/ligo",
+      "tag": "1.14.2",
+      "layer_digest": "sha256:9559668f6c0e42138530d3f5d01aee2a8872c276b502385090f9888be75adc1b"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "1.14.2",
+      "layer_digest": "sha256:5e956c223819ff0c66070014f10232880e9206936d82643969925a583003fa74"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "1.14.2",
+      "layer_digest": "sha256:863e5982d9137a2e92ec69082e5402f3e18f0704fdd14c65bdab4e1488f58195"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "1.14.2",
+      "layer_digest": "sha256:f7f74fb53c5c92e12d3e43a363b595d037a3cc4799139e5fe2510388e48a9e40"
+    }
+  ],
+  "toolchain": "LIGO 1.14.2",
+  "reproduction_command": "ligo run interpret greeting --init-file hello.mligo",
+  "semantic_scope": "The official LIGO command executable interpreted the original source in its declared dialect and returned the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

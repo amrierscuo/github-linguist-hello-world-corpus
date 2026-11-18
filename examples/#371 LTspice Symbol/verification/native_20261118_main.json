@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "ordinal": 371,
+  "language": "LTspice Symbol",
+  "timestamp_utc": "2026-11-18T16:44:23.796811+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and install versioned Python dependencies in scratch",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--target",
+        "${SCRATCH}/371-di1318xt/deps",
+        "spicelib"
+      ],
+      "cwd": "${SCRATCH}/371-di1318xt",
+      "timestamp_utc": "2026-11-18T16:44:23.834678+00:00",
+      "timeout_seconds": 145,
+      "exit_code": 0,
+      "stdout": "Collecting spicelib\n  Downloading spicelib-1.6.4-py3-none-any.whl.metadata (75 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.8/75.8 kB 1.7 MB/s eta 0:00:00\nCollecting clipin (from spicelib)\n  Downloading clipin-1.0.0-py3-none-any.whl.metadata (8.5 kB)\nCollecting matplotlib (from spicelib)\n  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.3/80.3 kB 6.0 MB/s eta 0:00:00\nCollecting numpy (from spicelib)\n  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)\nCollecting psutil (from spicelib)\n  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)\nCollecting scipy (from spicelib)\n  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 7.6 MB/s eta 0:00:00\nCollecting contourpy>=1.0.1 (from matplotlib->spicelib)\n  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)\nCollecting cycler>=0.10 (from matplotlib->spicelib)\n  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)\nCollecting fonttools>=4.28.2 (from matplotlib->spicelib)\n  Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.9/139.9 kB 8.9 MB/s eta 0:00:00\nCollecting kiwisolver>=1.3.1 (from matplotlib->spicelib)\n  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)\nCollecting packaging>=20.0 (from matplotlib->spicelib)\n  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting pillow>=9 (from matplotlib->spicelib)\n  Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)\nCollecting pyparsing>=3 (from matplotlib->spicelib)\n  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)\nCollecting python-dateutil>=2.7 (from matplotlib->spicelib)\n  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)\nCollecting tzdata (from python-dateutil>=2.7->matplotlib->spicelib)\n  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)\nDownloading spicelib-1.6.4-py3-none-any.whl (264 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 264.4/264.4 kB 17.1 MB/s eta 0:00:00\nDownloading clipin-1.0.0-py3-none-any.whl (25 kB)\nDownloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 42.1 MB/s eta 0:00:00\nDownloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 52.7 MB/s eta 0:00:00\nDownloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 26.1 MB/s eta 0:00:00\nDownloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 46.7 MB/s eta 0:00:00\nDownloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.2/383.2 kB 48.7 MB/s eta 0:00:00\nDownloading cycler-0.12.1-py3-none-any.whl (8.3 kB)\nDownloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 48.9 MB/s eta 0:00:00\nDownloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 39.8 MB/s eta 0:00:00\nUsing cached packaging-26.3-py3-none-any.whl (129 kB)\nDownloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 43.8 MB/s eta 0:00:00\nDownloading pyparsing-3.3.3-py3-none-any.whl (126 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 20.4 MB/s eta 0:00:00\nDownloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 15.9 MB/s eta 0:00:00\nDownloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 38.7 MB/s eta 0:00:00\nInstalling collected packages: tzdata, pyparsing, psutil, pillow, packaging, numpy, kiwisolver, fonttools, cycler, clipin, scipy, python-dateutil, contourpy, matplotlib, spicelib\nSuccessfully installed clipin-1.0.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.5.5 packaging-26.3 pillow-13.0.0 psutil-7.2.2 pyparsing-3.3.3 python-dateutil-4.0.0 scipy-1.18.1 spicelib-1.6.4 tzdata-2026.6\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/371-di1318xt/home",
+        "TMPDIR": "${SCRATCH}/371-di1318xt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PIP_CACHE_DIR": "${SCRATCH}/tools/pip-cache",
+        "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+        "PYTHONPATH": "${SCRATCH}/371-di1318xt/deps"
+      }
+    },
+    {
+      "label": "Load the original symbol using the standalone LTspice symbol reader",
+      "command": [
+        "/usr/bin/python3",
+        "check.py"
+      ],
+      "cwd": "${SCRATCH}/371-di1318xt",
+      "timestamp_utc": "2026-11-18T16:44:41.007373+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "spicelib 1.6.4\nOrderedDict({'Prefix': 'X', 'Value': 'Hello, World!', 'Description': 'Visual greeting fixture; no electrical model'})\n[Text(coord=<spicelib.editor.base_schematic.Point object at 0x7033b926d040>, text='PinName=A;SpiceOrder=1;', size=8, type=<TextTypeEnum.PIN: 6>, textAlignment=<HorAlign.LEFT: 'Left'>, verticalAlignment=<VerAlign.BOTTOM: 'Bottom'>, angle=<ERotation.R0: 0>, visible=True), Text(coord=<spicelib.editor.base_schematic.Point object at 0x7033b926d010>, text='PinName=B;SpiceOrder=2;', size=8, type=<TextTypeEnum.PIN: 6>, textAlignment=<HorAlign.RIGHT: 'Right'>, verticalAlignment=<VerAlign.BOTTOM: 'Bottom'>, angle=<ERotation.R0: 0>, visible=True)]\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/371-di1318xt/home",
+        "TMPDIR": "${SCRATCH}/371-di1318xt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PIP_CACHE_DIR": "${SCRATCH}/tools/pip-cache",
+        "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+        "PYTHONPATH": "${SCRATCH}/371-di1318xt/deps"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#371 LTspice Symbol/hello.asy": "52d9e19383577a9c70bae0ec4c3b905ffcca6950288fcf47e5ffc64db59e7911"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "aa2fbb51bba01b21c0e485861b4bb7e5a4e2dd8e9bcd51af08a9cc0cd691205e",
+      "content_utf8": "from pathlib import Path\nfrom importlib.metadata import version\nfrom spicelib.editor.asy_reader import AsyReader\ns = AsyReader(Path(\"hello.asy\"))\nprint(\"spicelib\",version(\"spicelib\"))\nprint(s.attributes)\nprint(s.pins)\nassert s.attributes[\"Value\"] == \"Hello, World!\"\nassert len(s.pins) == 2\nprint(s.attributes[\"Value\"])\n"
+    }
+  },
+  "sources": [
+    "https://ez.analog.com/other-products/a/documents/DO22731/symbol-file-ad8611-asy-for-ltspice",
+    "https://www.analog.com/en/resources/technical-articles/ltspice-how-to-import-third-party-models.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "spicelib 1.6.4",
+  "reproduction_command": "python check.py (spicelib AsyReader)",
+  "semantic_scope": "The compatible LTspice symbol reader loaded the original asset and verified the two pins and the exact Value attribute.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,16 @@
 # #384 LilyPond
 
+## Verified on November 18, 2026
+
+The original score was typeset by upstream LilyPond. The SVG contains the exact title and the actual vector note glyphs.
+
+Run `lilypond -dbackend=svg -o rendered hello.ly`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Engage a short original LilyPond score with Hello, World! title.
 
 ## Toolchain
@@ -36,3 +47,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.ly` | [hello.ly](hello.ly), [driver.ly](variants/ily-225ac663/driver.ly) created; verification pending |
 | `.ily` | [hello.ily](variants/ily-225ac663/hello.ily) created; verification pending |
+
+</details>

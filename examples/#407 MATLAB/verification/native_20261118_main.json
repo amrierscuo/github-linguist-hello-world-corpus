@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "ordinal": 407,
+  "language": "MATLAB",
+  "timestamp_utc": "2026-11-18T16:29:44.606825+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record GNU Octave CLI version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/octave-cli",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/407-8wxuy7fa",
+      "timestamp_utc": "2026-11-18T16:29:44.632744+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "GNU Octave, version 8.4.0\nCopyright (C) 1993-2023 The Octave Project Developers.\nThis is free software; see the source code for copying conditions.\nThere is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or\nFITNESS FOR A PARTICULAR PURPOSE.\n\nOctave was configured for \"x86_64-pc-linux-gnu\".\n\nAdditional information about Octave is available at https://www.octave.org.\n\nPlease contribute if you find this software useful.\nFor more information, visit https://www.octave.org/get-involved.html\n\nRead https://www.octave.org/bugs.html to learn how to submit bug reports.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/407-8wxuy7fa/home",
+        "TMPDIR": "${SCRATCH}/407-8wxuy7fa/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/octave/packages:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/octave/8.4.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/octave/site:${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "OCTAVE_HOME": "${SCRATCH}/tools/apt/usr",
+        "OCTAVE_EXEC_HOME": "${SCRATCH}/tools/apt/usr"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/octave-cli",
+        "--no-init-file",
+        "--no-site-file",
+        "--no-history",
+        "--quiet",
+        "hello.m"
+      ],
+      "cwd": "${SCRATCH}/407-8wxuy7fa",
+      "timestamp_utc": "2026-11-18T16:29:44.742201+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/407-8wxuy7fa/home",
+        "TMPDIR": "${SCRATCH}/407-8wxuy7fa/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/octave/packages:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/octave/8.4.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/octave/site:${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "OCTAVE_HOME": "${SCRATCH}/tools/apt/usr",
+        "OCTAVE_EXEC_HOME": "${SCRATCH}/tools/apt/usr"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#407 MATLAB/hello.m": "a7c821fc75515533494fb9259e141f9a8206c7aeb15bccdc251747f60d440b60"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "MathWorks disp",
+      "url": "https://www.mathworks.com/help/matlab/ref/disp.html"
+    },
+    {
+      "title": "GNU Octave manuale",
+      "url": "https://docs.octave.org/latest/"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "octave",
+      "version": "8.4.0-1build5",
+      "filename": "pool/universe/o/octave/octave_8.4.0-1build5_amd64.deb",
+      "sha256": "78aced86ae911d97a51fb9535f374188f74642aa1451842770da4abd06caa5f3",
+      "bytes": 9966796,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/o/octave/octave_8.4.0-1build5_amd64.deb"
+    },
+    {
+      "name": "octave-common",
+      "version": "8.4.0-1build5",
+      "filename": "pool/universe/o/octave/octave-common_8.4.0-1build5_all.deb",
+      "sha256": "2ca9fb98c9b09e0a36d9d8a3c6e56bbd3a644116b174819efa4028058dff19ef",
+      "bytes": 5925056,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/o/octave/octave-common_8.4.0-1build5_all.deb"
+    }
+  ],
+  "toolchain": "GNU Octave, version 8.4.0",
+  "reproduction_command": "octave-cli --no-init-file --no-site-file --no-history --quiet hello.m",
+  "semantic_scope": "GNU Octave executed the original MATLAB-compatible disp script and printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

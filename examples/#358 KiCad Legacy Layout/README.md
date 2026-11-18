@@ -1,5 +1,18 @@
 # #358 KiCad Legacy Layout
 
+## Verified on November 18, 2026
+
+The official KiCad CLI loaded the original source and used its headless plotter to generate an SVG containing the greeting and rendered vector paths.
+
+Run `kicad-cli pcb export svg --layers F.Silkscreen,Edge.Cuts -o rendered.svg hello.brd`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `KiCad Legacy Layout`, tipo `data`, language_id `140848857`.
 
 Describe in the legacy format KiCad .brd a text of Hello, World! silkscreen.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.brd` | [hello.brd](hello.brd) created; verification pending |
+| `.brd` | [hello.brd](hello.brd) Syntax and behavior verified |
+
+</details>

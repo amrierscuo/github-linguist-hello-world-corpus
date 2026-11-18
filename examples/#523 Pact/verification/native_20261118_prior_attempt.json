@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "ordinal": 523,
+  "language": "Pact",
+  "timestamp_utc": "2026-11-18T16:10:54.769531+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Record native Pact version",
+      "command": [
+        "${SCRATCH}/tools/pact-v4.13.1/dist/pact",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/523-hvkyt2ot",
+      "timestamp_utc": "2026-11-18T16:10:56.768656+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "pact version 4.13.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/523-hvkyt2ot/home",
+        "TMPDIR": "${SCRATCH}/523-hvkyt2ot/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Load the original Pact program on the native REPL",
+      "command": [
+        "${SCRATCH}/tools/pact-v4.13.1/dist/pact"
+      ],
+      "cwd": "${SCRATCH}/523-hvkyt2ot",
+      "timestamp_utc": "2026-11-18T16:10:56.786658+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 1,
+      "stdout": "\"Loading hello.pact...\"\n",
+      "stderr": "hello.pact:1:0:Error: Cannot resolve print\nAborting execution\nLoad failed\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/523-hvkyt2ot/home",
+        "TMPDIR": "${SCRATCH}/523-hvkyt2ot/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": "(load \"hello.pact\")\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#523 Pact/hello.pact": "2c26178c3fa2f038bfb88b17f3a5669576c9c99dbfa4200e8fda0d433c621cbe"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://pact-language.readthedocs.io/en/latest/pact-functions.html"
+  ],
+  "previous_verification_log": "examples/#523 Pact/verification/native.json",
+  "toolchain_archives": [
+    {
+      "name": "pact-4.13.1-linux-22.04.zip",
+      "size": 20545434,
+      "url": "https://github.com/kadena-io/pact/releases/download/v4.13.1/pact-4.13.1-linux-22.04.zip",
+      "sha256": "",
+      "release": "https://github.com/kadena-io/pact/releases/tag/v4.13.1",
+      "observed_sha256": "164da9ca91800858c32763fb79e35d627aae54680a09c108d3d678b11d7a7503"
+    }
+  ],
+  "blocker": "RuntimeError: Load the original Pact program on the native REPL exited 1: hello.pact:1:0:Error: Cannot resolve print\nAborting execution\nLoad failed"
+}

@@ -1,5 +1,18 @@
 # #466 NetLinx+ERB
 
+## Verified on November 18, 2026
+
+Ruby ERB executed the original render driver and interpolated the original template. The emitted NetLinx source has the expected SEND_STRING instruction.
+
+Run `ruby render.rb`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,5 +52,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.axs.erb` | [hello.axs.erb](hello.axs.erb) syntax verified |
+| `.axs.erb` | [hello.axs.erb](hello.axs.erb) Syntax and behavior verified |
 | `.axi.erb` | [hello.axi.erb](variants/axi-erb-3273de56/hello.axi.erb) created; verification pending |
+
+</details>

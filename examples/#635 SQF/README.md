@@ -1,5 +1,16 @@
 # #635 SQF
 
+## Verified on November 18, 2026
+
+The standalone SQF-VM interpreted the original format/diag_log program and recorded the greeting in its diagnostic output.
+
+Run `sqfvm -a --input-sqf hello.sqf`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -40,3 +51,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.sqf` | [hello.sqf](hello.sqf), [main.sqf](variants/hqf-981d9d8f/main.sqf) created; verification pending |
 | `.hqf` | [hello.hqf](variants/hqf-981d9d8f/hello.hqf) created; verification pending |
+
+</details>

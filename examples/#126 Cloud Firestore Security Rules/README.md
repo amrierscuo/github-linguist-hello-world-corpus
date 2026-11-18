@@ -1,5 +1,18 @@
 # #126 Cloud Firestore Security Rules
 
+## Verified on November 18, 2026
+
+The local official emulator loaded the original rules and the checked-in test driver passed its allow and deny assertions. The demo only used loopback and the emulator UI was disabled.
+
+Run `firebase emulators:exec --only firestore --project demo-corpus "node verify.mjs"`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Cloud Firestore Security Rules`, tipo `data`, `language_id: 407996372`.
 
 Allow public reading of the greetings/hello document only and authenticated creation of the message= Hello, World! field only; deny other scriptures.
@@ -41,3 +54,5 @@ in the work directory and are not included in the corpus.
 - [https://firebase.google.com/docs/firestore/security/get-started](https://firebase.google.com/docs/firestore/security/get-started)
 - [https://firebase.google.com/docs/rules/unit-tests](https://firebase.google.com/docs/rules/unit-tests)
 - [https://firebase.google.com/docs/emulator-suite/connect_firestore](https://firebase.google.com/docs/emulator-suite/connect_firestore)
+
+</details>

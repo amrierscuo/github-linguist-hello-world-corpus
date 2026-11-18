@@ -1,5 +1,16 @@
 # #506 OpenSCAD
 
+## Verified on November 18, 2026
+
+OpenSCAD evaluated the original text argument and generated hundreds of actual mesh vertices on both planes of the specified one-unit extrusion.
+
+Run `openscad -o hello.csg hello.scad; openscad -o hello.stl hello.scad`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Generate a three-dimensional greeting text with OpenSCAD.
 
 Canonical type `programming`, language_id `266`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.scad` | [hello.scad](hello.scad) created; verification pending |
+| `.scad` | [hello.scad](hello.scad) Syntax and behavior verified |
+
+</details>

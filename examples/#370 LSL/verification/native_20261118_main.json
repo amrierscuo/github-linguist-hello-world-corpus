@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ordinal": 370,
+  "language": "LSL",
+  "timestamp_utc": "2026-11-18T16:16:18.782312+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Prepare Python packages in this case directory",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--no-compile",
+        "--only-binary=:all:",
+        "--target",
+        "${SCRATCH}/370-8gscp0yh/python",
+        "lummao"
+      ],
+      "cwd": "${SCRATCH}/370-8gscp0yh",
+      "timestamp_utc": "2026-11-18T16:16:18.832243+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "Collecting lummao\n  Downloading lummao-0.5.2-cp38-abi3-manylinux_2_24_x86_64.whl.metadata (3.9 kB)\nCollecting bytecode<1.0,>=0.14 (from lummao)\n  Downloading bytecode-0.19.2-py3-none-any.whl.metadata (4.6 kB)\nCollecting aiohttp<4.0,>=3.6 (from lummao)\n  Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)\nCollecting aiohappyeyeballs>=2.5.0 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)\nCollecting aiosignal>=1.4.0 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)\nCollecting attrs>=17.3.0 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)\nCollecting frozenlist>=1.1.1 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)\nCollecting multidict<8.0,>=4.5 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)\nCollecting propcache>=0.2.0 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)\nCollecting typing_extensions>=4.4 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)\nCollecting yarl<2.0,>=1.25.1 (from aiohttp<4.0,>=3.6->lummao)\n  Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.6/111.6 kB 3.1 MB/s eta 0:00:00\nCollecting idna>=2.0 (from yarl<2.0,>=1.25.1->aiohttp<4.0,>=3.6->lummao)\n  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)\nDownloading lummao-0.5.2-cp38-abi3-manylinux_2_24_x86_64.whl (3.5 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 5.0 MB/s eta 0:00:00\nDownloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 53.1 MB/s eta 0:00:00\nDownloading bytecode-0.19.2-py3-none-any.whl (43 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.4/43.4 kB 3.8 MB/s eta 0:00:00\nDownloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)\nDownloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)\nDownloading attrs-26.1.0-py3-none-any.whl (67 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 9.4 MB/s eta 0:00:00\nDownloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 18.0 MB/s eta 0:00:00\nDownloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (516 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.8/516.8 kB 52.4 MB/s eta 0:00:00\nDownloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.4/250.4 kB 29.0 MB/s eta 0:00:00\nDownloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 5.9 MB/s eta 0:00:00\nDownloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.0/117.0 kB 17.4 MB/s eta 0:00:00\nDownloading idna-3.20-py3-none-any.whl (69 kB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 9.2 MB/s eta 0:00:00\nInstalling collected packages: typing_extensions, propcache, multidict, idna, frozenlist, bytecode, attrs, aiohappyeyeballs, yarl, aiosignal, aiohttp, lummao\nSuccessfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 attrs-26.1.0 bytecode-0.19.2 frozenlist-1.8.0 idna-3.20 lummao-0.5.2 multidict-7.2.1 propcache-0.5.4 typing_extensions-4.16.0 yarl-1.25.1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/370-8gscp0yh/home",
+        "TMPDIR": "${SCRATCH}/370-8gscp0yh/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute native consumer and assert the example result",
+      "command": [
+        "/usr/bin/python3",
+        "${SCRATCH}/370-8gscp0yh/check.py"
+      ],
+      "cwd": "${SCRATCH}/370-8gscp0yh",
+      "timestamp_utc": "2026-11-18T16:16:27.456635+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nLummao 0.5.2\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/370-8gscp0yh/home",
+        "TMPDIR": "${SCRATCH}/370-8gscp0yh/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/370-8gscp0yh/python",
+        "MPLBACKEND": "Agg"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#370 LSL/hello.lsl": "28efa102dea0f125f0722c1d15b4b5ade5f749c167ec974684d96ba2193160e3"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "6244d19d322b595f8b8ce1077587830f550503be04923a38b6137910577221f5",
+      "content_utf8": "from pathlib import Path\nimport asyncio\nfrom importlib.metadata import version\nimport lummao\nq=lummao.compile_script(Path(\"hello.lsl\").read_bytes())\nmessages=[]\nq.builtin_funcs[\"llOwnerSay\"] = messages.append\nasyncio.run(q.execute())\nassert messages==[\"Hello, World!\"],messages\nprint(messages[0])\nprint(\"Lummao\",version(\"lummao\"))\n"
+    }
+  },
+  "sources": [
+    "https://wiki.secondlife.com/wiki/LSL_Portal",
+    "https://wiki.secondlife.com/wiki/LlOwnerSay",
+    "https://github.com/SaladDais/Lummao"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "Lummao 0.5.2",
+  "reproduction_command": "Compile hello.lsl with Lummao, execute its state machine and capture llOwnerSay locally",
+  "semantic_scope": "The Lummao LSL compiler and runtime processed the original state_entry event. A local llOwnerSay capture received precisely one greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

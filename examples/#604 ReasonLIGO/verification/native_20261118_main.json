@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "ordinal": 604,
+  "language": "ReasonLIGO",
+  "timestamp_utc": "2026-11-18T16:55:39.432032+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record LIGO CLI version extracted from publisher image",
+      "command": [
+        "${SCRATCH}/tools/ligo-image-0.25.0/ligo",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/604-vd8hg0l4",
+      "timestamp_utc": "2026-11-18T16:55:48.613657+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "0.25.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/604-vd8hg0l4/home",
+        "TMPDIR": "${SCRATCH}/604-vd8hg0l4/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute original source dialect at the official LIGO release",
+      "command": [
+        "${SCRATCH}/tools/ligo-image-0.25.0/ligo",
+        "interpret",
+        "result",
+        "--init-file",
+        "hello.religo",
+        "--syntax",
+        "reasonligo"
+      ],
+      "cwd": "${SCRATCH}/604-vd8hg0l4",
+      "timestamp_utc": "2026-11-18T16:55:48.898520+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "\"Hello, World!\"\n",
+      "stderr": "Warning: The old cli is deprecated, use `ligo --help` or `ligo man` to consult the new command syntax\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/604-vd8hg0l4/home",
+        "TMPDIR": "${SCRATCH}/604-vd8hg0l4/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#604 ReasonLIGO/hello.religo": "197cfa15a0fcdedd5618db1639869a3c81d967275309732d440e7784851278f0"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://gitlab.com/ligolang/ligo/-/tree/dev/src/test/contracts"
+  ],
+  "previous_verification_log": "examples/#604 ReasonLIGO/verification/native.json",
+  "official_image_layers": [
+    {
+      "repository": "ligolang/ligo",
+      "tag": "0.25.0",
+      "layer_digest": "sha256:4c040d355e22c5435d5e90a9ff237f03b9b058c4b6be4e6d6189f3a10ed5edb6"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "0.25.0",
+      "layer_digest": "sha256:7935e309fc4e10c5026fb72b710ea12f5266b708993d7ccc15d409ca72de1c1e"
+    },
+    {
+      "repository": "ligolang/ligo",
+      "tag": "0.25.0",
+      "layer_digest": "sha256:e046840dba1a880515afb765392a0508c2aa41816fccfee080d4edf89d164328"
+    }
+  ],
+  "toolchain": "LIGO 0.25.0",
+  "reproduction_command": "ligo interpret result --init-file hello.religo --syntax reasonligo",
+  "semantic_scope": "The official LIGO command executable interpreted the original source in its declared dialect and returned the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ordinal": 457,
+  "language": "NL",
+  "timestamp_utc": "2026-11-18T16:16:18.786268+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Prepare Python packages in this case directory",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--no-compile",
+        "--only-binary=:all:",
+        "--target",
+        "${SCRATCH}/457-z791me1o/python",
+        "pyscipopt"
+      ],
+      "cwd": "${SCRATCH}/457-z791me1o",
+      "timestamp_utc": "2026-11-18T16:16:18.829349+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "Collecting pyscipopt\n  Downloading pyscipopt-6.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)\nCollecting numpy>=1.16.0 (from pyscipopt)\n  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)\nDownloading pyscipopt-6.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (18.2 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 2.9 MB/s eta 0:00:00\nDownloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)\n   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 34.8 MB/s eta 0:00:00\nInstalling collected packages: numpy, pyscipopt\nSuccessfully installed numpy-2.5.5 pyscipopt-6.3.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/457-z791me1o/home",
+        "TMPDIR": "${SCRATCH}/457-z791me1o/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute native consumer and assert the example result",
+      "command": [
+        "/usr/bin/python3",
+        "${SCRATCH}/457-z791me1o/check.py"
+      ],
+      "cwd": "${SCRATCH}/457-z791me1o",
+      "timestamp_utc": "2026-11-18T16:16:29.414546+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nPySCIPOpt 6.3.0 SCIP 10 0 2\n[('x0', 72.0), ('x1', 101.0), ('x2', 108.0), ('x3', 108.0), ('x4', 111.0), ('x5', 44.0), ('x6', 32.0), ('x7', 87.0), ('x8', 111.0), ('x9', 114.0), ('x10', 108.0), ('x11', 100.0), ('x12', 33.0)]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/457-z791me1o/home",
+        "TMPDIR": "${SCRATCH}/457-z791me1o/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/457-z791me1o/python",
+        "MPLBACKEND": "Agg"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#457 NL/hello.nl": "aba2b36b9b37bac0eb0f2614911412a4fb77297fea1d619de97eba89544f788b"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "381c6c778dd36aa128c0ad9262f3b30079135eda1b51b25c0801e5c289d4342d",
+      "content_utf8": "from importlib.metadata import version\nimport re\nfrom pyscipopt import Model\nm=Model()\nm.hideOutput()\nm.readProblem(\"hello.nl\")\nm.optimize()\nassert m.getStatus()==\"optimal\",m.getStatus()\nx=list(m.getVars(transformed=False))\ndef ix(v):\n  k=re.search(r\"\\d+$\",v.name)\n  assert k,v.name\n  return int(k.group())\nx.sort(key=ix)\nsol=m.getBestSol()\nvals=[sol[v] for v in x]\nassert len(vals)==13 and all(abs(round(n)-n)<1e-6 for n in vals),vals\nassert bytes(round(n) for n in vals)==b\"Hello, World!\",[(v.name,sol[v]) for v in x]\nprint(\"Hello, World!\")\nprint(\"PySCIPOpt\",version(\"pyscipopt\"),\"SCIP\",m.getMajorVersion(),m.getMinorVersion(),m.getTechVersion())\nprint([(v.name,sol[v]) for v in x])\n"
+    }
+  },
+  "sources": [
+    "https://pyomo.readthedocs.io/en/stable/api/pyomo.repn.plugins.nl_writer.NLWriter.html",
+    "https://dev.ampl.com/ampl/python/modules.html",
+    "https://www.scipopt.org/doc/html/reader__nl_8h.php"
+  ],
+  "previous_verification_log": "examples/#457 NL/verification/native.json",
+  "toolchain": "PySCIPOpt 6.3.0 SCIP 10 0 2",
+  "reproduction_command": "Read hello.nl with SCIP’s AMPL NL reader, optimize and decode the ordered primal variables",
+  "semantic_scope": "The original generated NL file was independently read and optimized by SCIP. Its thirteen original primal variables decode to the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

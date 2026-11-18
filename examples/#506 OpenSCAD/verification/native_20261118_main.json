@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "ordinal": 506,
+  "language": "OpenSCAD",
+  "timestamp_utc": "2026-11-18T16:36:02.197169+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record OpenSCAD CLI version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/openscad",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/506-nu84q9xc",
+      "timestamp_utc": "2026-11-18T16:36:02.224087+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "OpenSCAD version 2021.01\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/506-nu84q9xc/home",
+        "TMPDIR": "${SCRATCH}/506-nu84q9xc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "QT_QPA_PLATFORM": "offscreen",
+        "QT_PLUGIN_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/qt5/plugins",
+        "QT_QPA_PLATFORM_PLUGIN_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms"
+      }
+    },
+    {
+      "label": "Evaluate and export the original geometry to CSG",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/openscad",
+        "-o",
+        "hello.csg",
+        "hello.scad"
+      ],
+      "cwd": "${SCRATCH}/506-nu84q9xc",
+      "timestamp_utc": "2026-11-18T16:36:02.359164+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/506-nu84q9xc/home",
+        "TMPDIR": "${SCRATCH}/506-nu84q9xc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "QT_QPA_PLATFORM": "offscreen",
+        "QT_PLUGIN_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/qt5/plugins",
+        "QT_QPA_PLATFORM_PLUGIN_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms"
+      }
+    },
+    {
+      "label": "Render the native mesh with the standalone STL exporter",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/openscad",
+        "-o",
+        "hello.stl",
+        "hello.scad"
+      ],
+      "cwd": "${SCRATCH}/506-nu84q9xc",
+      "timestamp_utc": "2026-11-18T16:36:02.388305+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Geometries in cache: 2\nGeometry cache size in bytes: 117016\nCGAL Polyhedrons in cache: 0\nCGAL cache size in bytes: 0\nTotal rendering time: 0:00:00.031\n   Top level object is a 3D object:\n   Facets:       1528\n",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/506-nu84q9xc/home",
+        "TMPDIR": "${SCRATCH}/506-nu84q9xc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "QT_QPA_PLATFORM": "offscreen",
+        "QT_PLUGIN_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/qt5/plugins",
+        "QT_QPA_PLATFORM_PLUGIN_PATH": "${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#506 OpenSCAD/hello.scad": "47726432d583c31d217340334d3ee68036565cceee001dc9480710d202f17604"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "OpenSCAD text",
+      "url": "https://openscad.org/cheatsheet/"
+    },
+    {
+      "title": "OpenSCAD manual text",
+      "url": "https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Text"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "openscad",
+      "version": "2021.01-6build4",
+      "filename": "pool/universe/o/openscad/openscad_2021.01-6build4_amd64.deb",
+      "sha256": "25341fb76f9c1f01619d1770cef18002d1502d6c9db11912ec6eaaf258b04a22",
+      "bytes": 3347824,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/o/openscad/openscad_2021.01-6build4_amd64.deb"
+    },
+    {
+      "name": "libqt5gui5t64",
+      "version": "5.15.13+dfsg-1ubuntu1",
+      "filename": "pool/universe/q/qtbase-opensource-src/libqt5gui5t64_5.15.13+dfsg-1ubuntu1_amd64.deb",
+      "sha256": "e2c8a969c3566bdad2b692c611ec0e6bbeaeed88db55e71bbd4f61a414b89252",
+      "bytes": 3747576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/q/qtbase-opensource-src/libqt5gui5t64_5.15.13+dfsg-1ubuntu1_amd64.deb"
+    },
+    {
+      "name": "fonts-dejavu-core",
+      "version": "2.37-8",
+      "filename": "pool/main/f/fonts-dejavu/fonts-dejavu-core_2.37-8_all.deb",
+      "sha256": "40049660c194f3b8a2541fc7369efebb10e9f94bdac836a2f38fafedd10fa73a",
+      "bytes": 835172,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/f/fonts-dejavu/fonts-dejavu-core_2.37-8_all.deb"
+    }
+  ],
+  "geometry_results": {
+    "vertices": 4584,
+    "extrusion_height": 1,
+    "width": 75.0762,
+    "stl_sha256": "88b2635ebc9cb4043a16dcb91b67eb953e7e15a6243c23681885ac838e6eb643",
+    "evaluated_csg_utf8": "linear_extrude(height = 1, center = false, convexity = 1, scale = [1, 1], $fn = 0, $fa = 12, $fs = 2) {\n\ttext(text = \"Hello, World!\", size = 10, spacing = 1, font = \"\", direction = \"ltr\", language = \"en\", script = \"Latn\", halign = \"left\", valign = \"baseline\", $fn = 0, $fa = 12, $fs = 2);\n}\n\n"
+  },
+  "toolchain": "OpenSCAD version 2021.01",
+  "reproduction_command": "openscad -o hello.csg hello.scad; openscad -o hello.stl hello.scad",
+  "semantic_scope": "OpenSCAD evaluated the original text argument and generated hundreds of actual mesh vertices on both planes of the specified one-unit extrusion.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

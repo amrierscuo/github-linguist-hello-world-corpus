@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "ordinal": 580,
+  "language": "QuickBASIC",
+  "timestamp_utc": "2026-11-18T16:52:41.494263+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the official FreeBASIC compiler version",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc",
+        "-version"
+      ],
+      "cwd": "${SCRATCH}/580-30iundg8",
+      "timestamp_utc": "2026-11-18T16:52:41.526987+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "FreeBASIC Compiler - Version 1.10.1 (2023-12-24), built for linux-x86_64 (64bit)\nCopyright (C) 2004-2023 The FreeBASIC development team.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/580-30iundg8/home",
+        "TMPDIR": "${SCRATCH}/580-30iundg8/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/pulseaudio:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/blas:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the unchanged QuickBASIC console source in the QB dialect",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/early/freebasic/tools/FreeBASIC-1.10.1-linux-x86_64/bin/fbc",
+        "-lang",
+        "qb",
+        "hello.bas",
+        "-x",
+        "hello"
+      ],
+      "cwd": "${SCRATCH}/580-30iundg8",
+      "timestamp_utc": "2026-11-18T16:52:41.785934+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/580-30iundg8/home",
+        "TMPDIR": "${SCRATCH}/580-30iundg8/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/pulseaudio:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/blas:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/580-30iundg8/hello"
+      ],
+      "cwd": "${SCRATCH}/580-30iundg8",
+      "timestamp_utc": "2026-11-18T16:52:44.279590+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/580-30iundg8/home",
+        "TMPDIR": "${SCRATCH}/580-30iundg8/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/lib:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/pulseaudio:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/blas:${WORKSPACE}/work/native_target546_20261105/early/freebasic/root/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#580 QuickBASIC/hello.bas": "d3c87d5573d2813187ed9d1de3fb1e20e001f4dc79c845c0f7c24af26789dae7"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://archive.org/details/ms-quickbasic-4.5"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "FreeBASIC Compiler - Version 1.10.1 (2023-12-24), built for linux-x86_64 (64bit) / QB dialect",
+  "reproduction_command": "fbc -lang qb hello.bas -x hello; ./hello",
+  "semantic_scope": "FreeBASIC compiled the original in QuickBASIC compatibility mode. The resulting native executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

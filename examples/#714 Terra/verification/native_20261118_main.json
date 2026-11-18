@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "ordinal": 714,
+  "language": "Terra",
+  "timestamp_utc": "2026-11-18T16:14:29.128691+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Terra release from usage",
+      "command": [
+        "${SCRATCH}/tools/terra-release-1.2.2/dist/terra-Linux-x86_64-bb02b25/bin/terra",
+        "-h"
+      ],
+      "cwd": "${SCRATCH}/714-b_twt0m5",
+      "timestamp_utc": "2026-11-18T16:14:51.052382+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 255,
+      "stdout": "\nTerra -- A low-level counterpart to Lua\nRelease 1.2.2\n\nHomepage: https://terralang.org/\nProject: https://github.com/terralang/terra\nCommunity: https://terralang.zulipchat.com/\n\nterra [OPTIONS] [source-file] [arguments-to-source-file]\n    -v enable verbose debugging output\n    -g enable debugging symbols\n    -h print this help message\n    -i enter the REPL after processing source files\n    -e 'chunk' : execute command-line 'chunk' of code\n    -  Execute stdin instead of script and stop parsing options\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/714-b_twt0m5/home",
+        "TMPDIR": "${SCRATCH}/714-b_twt0m5/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/tools/terra-release-1.2.2/dist/terra-Linux-x86_64-bb02b25/bin/terra",
+        "hello.t"
+      ],
+      "cwd": "${SCRATCH}/714-b_twt0m5",
+      "timestamp_utc": "2026-11-18T16:14:51.067627+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/714-b_twt0m5/home",
+        "TMPDIR": "${SCRATCH}/714-b_twt0m5/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#714 Terra/hello.t": "af0e617f5ed09905092177cf372bbf629c489551e0e232b6336583e5f0b5542b"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://terralang.org/getting-started.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "terra-Linux-x86_64-bb02b25.tar.xz",
+      "size": 105888248,
+      "url": "https://github.com/terralang/terra/releases/download/release-1.2.2/terra-Linux-x86_64-bb02b25.tar.xz",
+      "sha256": "7359c60f056a0300c1f3cbc11c26f370b62f6b8216190a78739b362ccf432593",
+      "release": "https://github.com/terralang/terra/releases/tag/release-1.2.2",
+      "observed_sha256": "7359c60f056a0300c1f3cbc11c26f370b62f6b8216190a78739b362ccf432593"
+    }
+  ],
+  "toolchain": "Release 1.2.2",
+  "reproduction_command": "terra hello.t",
+  "semantic_scope": "Terra JIT-compiled the original function and invoked the C standard library puts with the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

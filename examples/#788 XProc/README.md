@@ -1,5 +1,16 @@
 # #788 XProc
 
+## Verified on November 18, 2026
+
+The official XProc processor executed the original identity step and serialized the expected greeting element.
+
+Run `java -jar xmlcalabash-app-3.1.0.jar hello.xpl`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,5 +49,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.xpl` | [hello.xpl](hello.xpl) created; verification pending |
+| `.xpl` | [hello.xpl](hello.xpl) Syntax and behavior verified |
 | `.xproc` | [hello.xproc](variants/xproc-8b475bd1/hello.xproc) created; verification pending |
+
+</details>

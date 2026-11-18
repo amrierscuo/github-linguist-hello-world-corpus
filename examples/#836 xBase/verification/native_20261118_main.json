@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "ordinal": 836,
+  "language": "xBase",
+  "timestamp_utc": "2026-11-18T16:06:41.131504+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Harbour build tool version",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "-version"
+      ],
+      "cwd": "${SCRATCH}/836-b9fadr2f",
+      "timestamp_utc": "2026-11-18T16:06:41.152506+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)\nCopyright (c) 1999-present, Viktor Szakats\nhttps://github.com/harbour/core/\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/836-b9fadr2f/home",
+        "TMPDIR": "${SCRATCH}/836-b9fadr2f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "HB_ROOT": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0"
+      }
+    },
+    {
+      "label": "Compile unchanged xBase to a console executable",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0/bin/linux/gcc/hbmk2",
+        "hello.prg",
+        "-gtstd",
+        "-ohello"
+      ],
+      "cwd": "${SCRATCH}/836-b9fadr2f",
+      "timestamp_utc": "2026-11-18T16:06:41.262776+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Harbour 3.2.0 (r2607071000)\nCopyright (c) 1999-2025, https://harbour.github.io/\nCompiling 'hello.prg'...\n\nLines 3, Functions/Procedures 1\nGenerating C source output to '${SCRATCH}/836-b9fadr2f/tmp/hbmk_g5lgch.dir/hello.c'... Done.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/836-b9fadr2f/home",
+        "TMPDIR": "${SCRATCH}/836-b9fadr2f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "HB_ROOT": "${WORKSPACE}/work/native_target546_20261105/middle/harbour/tool/harbour-3.2.0"
+      }
+    },
+    {
+      "label": "Execute freshly linked console program",
+      "command": [
+        "${SCRATCH}/836-b9fadr2f/hello"
+      ],
+      "cwd": "${SCRATCH}/836-b9fadr2f",
+      "timestamp_utc": "2026-11-18T16:06:42.278341+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\nHello, World!",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/836-b9fadr2f/home",
+        "TMPDIR": "${SCRATCH}/836-b9fadr2f/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#836 xBase/hello.prg": "b64fa6fc327f12cf351b4d3517f60a683acfe9e9725e09b6144e461c66c5e838"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://harbour.github.io/"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "Harbour Make (hbmk2) 3.2.0 (r2026-07-07 10:00)",
+  "reproduction_command": "hbmk2 hello.prg -gtstd -ohello; ./hello",
+  "semantic_scope": "Harbour compiled and linked the original xBase source. The resulting console executable printed the expected greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "ordinal": 642,
+  "language": "STON",
+  "timestamp_utc": "2026-11-18T16:52:41.925905+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Evaluate STON using the official Pharo headless image",
+      "command": [
+        "${SCRATCH}/tools/pharo-12-vm/dist/bin/pharo",
+        "--headless",
+        "${SCRATCH}/642-gj5o10q3/Pharo12.0-SNAPSHOT-64bit-7d5f14cb47.image",
+        "st",
+        "check.st",
+        "--quit"
+      ],
+      "cwd": "${SCRATCH}/642-gj5o10q3",
+      "timestamp_utc": "2026-11-18T16:52:49.313122+00:00",
+      "timeout_seconds": 80,
+      "exit_code": 0,
+      "stdout": "Pharo cannot locate the sources file named ${SCRATCH}/642-gj5o10q3/Pharo12.0-64bit-7d5f14c.sources.\n\nPlease check that the file is named properly and is in the\nsame directory as this image.\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/642-gj5o10q3/home",
+        "TMPDIR": "${SCRATCH}/642-gj5o10q3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/pharo-12-vm/dist/lib"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#642 STON/hello.ston": "8447bb74f967a8f7b9c7047061351f5e2fc3baf23544436c4cd1426bae7b0261"
+  },
+  "fixture_sha256": {
+    "check.st": {
+      "sha256": "9e9aac95511473d102829707acd47f65be1767b399e258853c611571d8d529fe",
+      "content_utf8": "|parsed|\nparsed := STON fromString: (FileSystem workingDirectory / 'hello.ston') contents.\nStdio stdout nextPutAll: (parsed at: 'greeting'); lf; flush.\nSmalltalk snapshot: false andQuit: true.\n"
+    }
+  },
+  "sources": [
+    "https://github.com/svenvc/ston/blob/master/ston-spec.md"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://files.pharo.org/get-files/120/pharoImage-x86_64.zip",
+      "sha256": "1fc69710c5febf04e84dd5eff4c10239ac10ad2a2405be93ab049266499eb091",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://files.pharo.org/get-files/120/pharo-vm-Linux-x86_64-stable.zip",
+      "sha256": "1bf7872b90042c81c3309e0bece49869a0b3f706465357d08b2cb40c7ec1f0dc",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Pharo 12 / STON image library",
+  "reproduction_command": "pharo --headless Pharo.image st check.st --quit",
+  "semantic_scope": "Pharo’s native STON library decoded the exact document and returned the exact greeting from its dictionary.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

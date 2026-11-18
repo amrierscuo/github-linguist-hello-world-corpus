@@ -1,5 +1,16 @@
 # #107 CameLIGO
 
+## Verified on November 18, 2026
+
+The official LIGO command executable interpreted the original source in its declared dialect and returned the exact greeting.
+
+Run `ligo run interpret greeting --init-file hello.mligo`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Interpret the greeting value of a CameLIGO module and get Hello, World!.
 
 Canonical type: `programming`; `language_id`: `829207807`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mligo` | [hello.mligo](hello.mligo) created; verification pending |
+| `.mligo` | [hello.mligo](hello.mligo) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #694 Swift
 
+## Verified on November 18, 2026
+
+The official Swift compiler and runtime evaluated the unchanged script and emitted the exact greeting.
+
+Run `swift hello.swift`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Swift`, tipo `programming`, language_id `362`.
 
 Run a Swift source with interpolation string and print.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.swift` | [hello.swift](hello.swift) created; verification pending |
+| `.swift` | [hello.swift](hello.swift) Syntax and behavior verified |
+
+</details>

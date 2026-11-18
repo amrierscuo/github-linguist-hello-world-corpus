@@ -74,7 +74,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #068 | [BitBake](../examples/%23068%20BitBake/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #069 | [Blade](../examples/%23069%20Blade/README.md) | Yes | Pending | Pending | 2/2 | PHP and a complete Laravel application are not set up in this environment; the Blade engine was not run. |
 | #070 | [BlitzBasic](../examples/%23070%20BlitzBasic/README.md) | Yes | Pending | Pending | 2/2 | The Blitz3D compiler and IDE are unavailable; the build and visual output still need checking in the original software. |
-| #071 | [BlitzMax](../examples/%23071%20BlitzMax/README.md) | Yes | Pending | Pending | 1/1 | BlitzMax NG/bmk is unavailable; compilation and execution remain unverified. |
+| #071 | [BlitzMax](../examples/%23071%20BlitzMax/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #072 | [Blueprint](../examples/%23072%20Blueprint/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #073 | [Bluespec](../examples/%23073%20Bluespec/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #074 | [Bluespec BH](../examples/%23074%20Bluespec%20BH/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -109,8 +109,8 @@ This table reports the main sample's status. Variant states are tracked separate
 | #103 | [Caddyfile](../examples/%23103%20Caddyfile/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #104 | [Cadence](../examples/%23104%20Cadence/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
 | #105 | [Cairo](../examples/%23105%20Cairo/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #106 | [Cairo Zero](../examples/%23106%20Cairo%20Zero/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
-| #107 | [CameLIGO](../examples/%23107%20CameLIGO/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
+| #106 | [Cairo Zero](../examples/%23106%20Cairo%20Zero/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #107 | [CameLIGO](../examples/%23107%20CameLIGO/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #108 | [Cangjie](../examples/%23108%20Cangjie/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
 | #109 | [Cap'n Proto](../examples/%23109%20Cap%27n%20Proto/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #110 | [Carbon](../examples/%23110%20Carbon/README.md) | Yes | Pending | Pending | 1/1 | The specific toolchain has not run this sample; syntax and semantics still need verification. |
@@ -126,10 +126,10 @@ This table reports the main sample's status. Variant states are tracked separate
 | #120 | [Clarity](../examples/%23120%20Clarity/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #121 | [Classic ASP](../examples/%23121%20Classic%20ASP/README.md) | Yes | Pending | Pending | 1/1 | Classic ASP requires IIS ASP request context; cscript/WScript VBScript alone does not provide Response. |
 | #122 | [Clean](../examples/%23122%20Clean/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #123 | [Click](../examples/%23123%20Click/README.md) | Yes | Pending | Pending | 1/1 | Click Modular Router userlevel binary is not available; Script configuration has not been parsed/run. |
+| #123 | [Click](../examples/%23123%20Click/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #124 | [Clojure](../examples/%23124%20Clojure/README.md) | Yes | Yes | Yes | 10/10 | Evidence recorded |
 | #125 | [Closure Templates](../examples/%23125%20Closure%20Templates/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #126 | [Cloud Firestore Security Rules](../examples/%23126%20Cloud%20Firestore%20Security%20Rules/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | Firebase Firestore rules emulator and unit test client are not installed/configured; no cloud deployment is needed. |
+| #126 | [Cloud Firestore Security Rules](../examples/%23126%20Cloud%20Firestore%20Security%20Rules/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #127 | [Clue](../examples/%23127%20Clue/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #128 | [CoNLL-U](../examples/%23128%20CoNLL-U/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #129 | [CodeQL](../examples/%23129%20CodeQL/README.md) | Yes | Pending | Pending | 2/2 | CodeQL native CLI is unavailable; query compile/evaluation remains pending and requires no external repository/account. |
@@ -175,7 +175,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #169 | [Dogescript](../examples/%23169%20Dogescript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #170 | [Dotenv](../examples/%23170%20Dotenv/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #171 | [Dune](../examples/%23171%20Dune/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
-| #172 | [Dylan](../examples/%23172%20Dylan/README.md) | Yes | Pending | Pending | 4/4 | The Open Dylan toolchain and libraries are not set up; compilation, linking and execution are pending. |
+| #172 | [Dylan](../examples/%23172%20Dylan/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #173 | [E](../examples/%23173%20E/README.md) | Yes | Pending | Pending | 1/1 | A compatible E-on-Java/rune runtime is not set up; the E interpreter was not run. |
 | #174 | [E-mail](../examples/%23174%20E-mail/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #175 | [EBNF](../examples/%23175%20EBNF/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -267,7 +267,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #261 | [Go Workspace](../examples/%23261%20Go%20Workspace/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #262 | [Godot Resource](../examples/%23262%20Godot%20Resource/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #263 | [Golo](../examples/%23263%20Golo/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #264 | [Gosu](../examples/%23264%20Gosu/README.md) | Yes | Pending | Pending | 4/4 | Gosu compiler/runtime is not configured. |
+| #264 | [Gosu](../examples/%23264%20Gosu/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #265 | [Grace](../examples/%23265%20Grace/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #266 | [Gradle](../examples/%23266%20Gradle/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #267 | [Gradle Kotlin DSL](../examples/%23267%20Gradle%20Kotlin%20DSL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -360,9 +360,9 @@ This table reports the main sample's status. Variant states are tracked separate
 | #354 | [Kaitai Struct](../examples/%23354%20Kaitai%20Struct/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #355 | [KakouneScript](../examples/%23355%20KakouneScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #356 | [KerboScript](../examples/%23356%20KerboScript/README.md) | Yes | Pending | Pending | 1/1 | Kerbal Space Program with the kOS mod/runtime is not available. |
-| #357 | [KiCad Layout](../examples/%23357%20KiCad%20Layout/README.md) | Yes | Pending | Pending | 3/3 | Native KiCad PCB loader/exporter is not available. |
-| #358 | [KiCad Legacy Layout](../examples/%23358%20KiCad%20Legacy%20Layout/README.md) | Yes | Pending | Pending | 1/1 | Native KiCad legacy PCB importer/renderer is not available. |
-| #359 | [KiCad Schematic](../examples/%23359%20KiCad%20Schematic/README.md) | Yes | Pending | Pending | 3/3 | Native KiCad schematic loader/exporter is not available. |
+| #357 | [KiCad Layout](../examples/%23357%20KiCad%20Layout/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
+| #358 | [KiCad Legacy Layout](../examples/%23358%20KiCad%20Legacy%20Layout/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #359 | [KiCad Schematic](../examples/%23359%20KiCad%20Schematic/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #360 | [Kickstart](../examples/%23360%20Kickstart/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #361 | [Kit](../examples/%23361%20Kit/README.md) | Yes | Pending | Pending | 1/1 | The original Kit compiler for Cocoa/macOS is unavailable; the renderer was not run. |
 | #362 | [KoLmafia ASH](../examples/%23362%20KoLmafia%20ASH/README.md) | Yes | Pending | Pending | 1/1 | KoLmafia is not set up; no connection to the game was made. |
@@ -373,8 +373,8 @@ This table reports the main sample's status. Variant states are tracked separate
 | #367 | [LLVM](../examples/%23367%20LLVM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #368 | [LLVM TableGen](../examples/%23368%20LLVM%20TableGen/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #369 | [LOLCODE](../examples/%23369%20LOLCODE/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #370 | [LSL](../examples/%23370%20LSL/README.md) | Yes | Pending | Pending | 2/2 | The LSL runtime is unavailable; the online platform was not accessed. |
-| #371 | [LTspice Symbol](../examples/%23371%20LTspice%20Symbol/README.md) | Yes | Pending | Pending | 1/1 | LTspice is not set up; native parsing and visualization are pending. |
+| #370 | [LSL](../examples/%23370%20LSL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
+| #371 | [LTspice Symbol](../examples/%23371%20LTspice%20Symbol/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #372 | [LabVIEW](../examples/%23372%20LabVIEW/README.md) | Yes | Pending | Pending | 3/3 | Hello.vi must be created natively. References remain unresolved and the class container needs completion. The XML templates have not been verified in LabVIEW. |
 | #373 | [Lambdapi](../examples/%23373%20Lambdapi/README.md) | Yes | Pending | Pending | 1/1 | Lambdapi and the OCaml environment are not set up; type checking and normalization are pending. |
 | #374 | [Langium](../examples/%23374%20Langium/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -386,15 +386,15 @@ This table reports the main sample's status. Variant states are tracked separate
 | #380 | [Leo](../examples/%23380%20Leo/README.md) | Yes | Pending | Pending | 1/1 | The Leo compiler and runtime are not set up; building and local evaluation are pending. |
 | #381 | [Less](../examples/%23381%20Less/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #382 | [Lex](../examples/%23382%20Lex/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #383 | [LigoLANG](../examples/%23383%20LigoLANG/README.md) | Yes | Pending | Pending | 1/1 | A compiler with PascaLIGO support is unavailable; syntax and evaluation checks are pending. |
-| #384 | [LilyPond](../examples/%23384%20LilyPond/README.md) | Yes | Pending | Pending | 2/2 | The LilyPond toolchain, fonts and rendering are not set up; compilation and SVG reading are pending. |
+| #383 | [LigoLANG](../examples/%23383%20LigoLANG/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #384 | [LilyPond](../examples/%23384%20LilyPond/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #385 | [Limbo](../examples/%23385%20Limbo/README.md) | Yes | Pending | Pending | 2/2 | The Limbo compiler and Inferno Dis VM are unavailable; the Sys/Draw imports and runtime are pending. |
 | #386 | [Linear Programming](../examples/%23386%20Linear%20Programming/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #387 | [Linker Script](../examples/%23387%20Linker%20Script/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #388 | [Linux Kernel Module](../examples/%23388%20Linux%20Kernel%20Module/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #389 | [Liquid](../examples/%23389%20Liquid/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #390 | [Liquidsoap](../examples/%23390%20Liquidsoap/README.md) | Yes | Pending | Pending | 1/1 | The Liquidsoap runtime is not set up; parsing, type checking and evaluation are pending. |
-| #391 | [Literate Agda](../examples/%23391%20Literate%20Agda/README.md) | Yes | Pending | Pending | 1/1 | Agda, its standard library and the GHC backend are unavailable; type checking and IO remain pending. |
+| #391 | [Literate Agda](../examples/%23391%20Literate%20Agda/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #392 | [Literate CoffeeScript](../examples/%23392%20Literate%20CoffeeScript/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #393 | [Literate Haskell](../examples/%23393%20Literate%20Haskell/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #394 | [LiveCode Script](../examples/%23394%20LiveCode%20Script/README.md) | Yes | Pending | Pending | 1/1 | The LiveCode engine is not set up; stack loading and the handler check are pending. |
@@ -410,7 +410,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #404 | [M3U](../examples/%23404%20M3U/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #405 | [M4](../examples/%23405%20M4/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #406 | [M4Sugar](../examples/%23406%20M4Sugar/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #407 | [MATLAB](../examples/%23407%20MATLAB/README.md) | Yes | Pending | Pending | 2/2 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #407 | [MATLAB](../examples/%23407%20MATLAB/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #408 | [MAXScript](../examples/%23408%20MAXScript/README.md) | Yes | Pending | Pending | 2/2 | The Autodesk 3ds Max runtime is unavailable. |
 | #409 | [MDX](../examples/%23409%20MDX/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #410 | [MLIR](../examples/%23410%20MLIR/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -454,13 +454,13 @@ This table reports the main sample's status. Variant states are tracked separate
 | #448 | [Motoko](../examples/%23448%20Motoko/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #449 | [Motorola 68K Assembly](../examples/%23449%20Motorola%2068K%20Assembly/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #450 | [Move](../examples/%23450%20Move/README.md) | Yes | Pending | Pending | 1/1 | Original Move compiler/test runner and matching stdlib are not configured. |
-| #451 | [Muse](../examples/%23451%20Muse/README.md) | Yes | Pending | Pending | 1/1 | Emacs Muse publishing engine is not configured. |
+| #451 | [Muse](../examples/%23451%20Muse/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #452 | [Mustache](../examples/%23452%20Mustache/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #453 | [Myghty](../examples/%23453%20Myghty/README.md) | Yes | Pending | Pending | 1/1 | Historical Myghty template runtime/Python compatibility is not configured. |
 | #454 | [NASL](../examples/%23454%20NASL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #455 | [NCL](../examples/%23455%20NCL/README.md) | Yes | Pending | Pending | 1/1 | NCAR NCL interpreter and runtime libraries are not configured. |
 | #456 | [NEON](../examples/%23456%20NEON/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #457 | [NL](../examples/%23457%20NL/README.md) | Yes | Pending | Pending | 1/1 | Original NL generated by Pyomo writer; an independent native NL reader/solver is unavailable. Official AMPL solver-module download endpoint returned HTTP 403. Syntax and solve semantics remain pending. |
+| #457 | [NL](../examples/%23457%20NL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #458 | [NMODL](../examples/%23458%20NMODL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #459 | [NPM Config](../examples/%23459%20NPM%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #460 | [NSIS](../examples/%23460%20NSIS/README.md) | Yes | Yes | Pending | 2/2 | Installer script compiled; installer execution is intentionally not performed in this verification scope. |
@@ -469,7 +469,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #463 | [Nearley](../examples/%23463%20Nearley/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #464 | [Nemerle](../examples/%23464%20Nemerle/README.md) | Yes | Pending | Pending | 1/1 | The Nemerle compiler is not set up. |
 | #465 | [NetLinx](../examples/%23465%20NetLinx/README.md) | Yes | Pending | Pending | 2/2 | The AMX compiler and runtime are not set up; no controller or device was connected. |
-| #466 | [NetLinx+ERB](../examples/%23466%20NetLinx%2BERB/README.md) | Yes | Yes | Pending | 2/2 | The NetLinx compiler and runtime are unavailable; target semantics are pending. |
+| #466 | [NetLinx+ERB](../examples/%23466%20NetLinx%2BERB/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #467 | [NetLogo](../examples/%23467%20NetLogo/README.md) | Yes | Pending | Pending | 1/1 | The NetLogo loader, compiler and runtime are not set up; the model was not opened. |
 | #468 | [NewLisp](../examples/%23468%20NewLisp/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #469 | [Nextflow](../examples/%23469%20Nextflow/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -479,7 +479,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #473 | [Ninja](../examples/%23473%20Ninja/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #474 | [Nit](../examples/%23474%20Nit/README.md) | Yes | Pending | Pending | 1/1 | The Nit compiler and interpreter are not set up. |
 | #475 | [Nix](../examples/%23475%20Nix/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #476 | [Noir](../examples/%23476%20Noir/README.md) | Yes | Pending | Pending | 1/1 | The nargo compiler and runtime are not set up. |
+| #476 | [Noir](../examples/%23476%20Noir/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #477 | [Nu](../examples/%23477%20Nu/README.md) | Yes | Pending | Pending | 1/1 | Nu and Objective-C Foundation are not set up; runtime verification is pending. |
 | #478 | [NumPy](../examples/%23478%20NumPy/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #479 | [Nunjucks](../examples/%23479%20Nunjucks/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -509,7 +509,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #503 | [OpenEdge ABL](../examples/%23503%20OpenEdge%20ABL/README.md) | Yes | Pending | Pending | 3/3 | The Progress OpenEdge runtime is unavailable. |
 | #504 | [OpenQASM](../examples/%23504%20OpenQASM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #505 | [OpenRC runscript](../examples/%23505%20OpenRC%20runscript/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
-| #506 | [OpenSCAD](../examples/%23506%20OpenSCAD/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #506 | [OpenSCAD](../examples/%23506%20OpenSCAD/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #507 | [OpenStep Property List](../examples/%23507%20OpenStep%20Property%20List/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #508 | [OpenType Feature File](../examples/%23508%20OpenType%20Feature%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #509 | [Option List](../examples/%23509%20Option%20List/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
@@ -526,12 +526,12 @@ This table reports the main sample's status. Variant states are tracked separate
 | #520 | [PLSQL](../examples/%23520%20PLSQL/README.md) | Yes | Pending | Pending | 15/16 | A test Oracle Database and SQL*Plus client are unavailable. |
 | #521 | [PLpgSQL](../examples/%23521%20PLpgSQL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #522 | [POV-Ray SDL](../examples/%23522%20POV-Ray%20SDL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #523 | [Pact](../examples/%23523%20Pact/README.md) | Yes | Pending | Pending | 1/1 | Required pact compiler/interpreter and matching host libraries are not configured. |
+| #523 | [Pact](../examples/%23523%20Pact/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #524 | [Pan](../examples/%23524%20Pan/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #525 | [Papyrus](../examples/%23525%20Papyrus/README.md) | Yes | Pending | Pending | 1/1 | Required PapyrusCompiler compiler/interpreter and matching host libraries are not configured. |
-| #526 | [Parrot](../examples/%23526%20Parrot/README.md) | Yes | Pending | Pending | 1/1 | Required parrot compiler/interpreter and matching host libraries are not configured. |
-| #527 | [Parrot Assembly](../examples/%23527%20Parrot%20Assembly/README.md) | Yes | Pending | Pending | 1/1 | Required parrot compiler/interpreter and matching host libraries are not configured. |
-| #528 | [Parrot Internal Representation](../examples/%23528%20Parrot%20Internal%20Representation/README.md) | Yes | Pending | Pending | 1/1 | Required parrot compiler/interpreter and matching host libraries are not configured. |
+| #526 | [Parrot](../examples/%23526%20Parrot/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #527 | [Parrot Assembly](../examples/%23527%20Parrot%20Assembly/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #528 | [Parrot Internal Representation](../examples/%23528%20Parrot%20Internal%20Representation/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #529 | [Pascal](../examples/%23529%20Pascal/README.md) | Yes | Yes | Yes | 7/7 | Evidence recorded |
 | #530 | [Pawn](../examples/%23530%20Pawn/README.md) | Yes | Pending | Pending | 3/3 | Required pawncc compiler/interpreter and matching host libraries are not configured. |
 | #531 | [Pep8](../examples/%23531%20Pep8/README.md) | Yes | Pending | Pending | 1/1 | Required pep8 compiler/interpreter and matching host libraries are not configured. |
@@ -568,22 +568,22 @@ This table reports the main sample's status. Variant states are tracked separate
 | #562 | [Protocol Buffer Text Format](../examples/%23562%20Protocol%20Buffer%20Text%20Format/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #563 | [Public Key](../examples/%23563%20Public%20Key/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #564 | [Pug](../examples/%23564%20Pug/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #565 | [Puppet](../examples/%23565%20Puppet/README.md) | Yes | Pending | Pending | 1/1 | The Puppet parser, catalog and Ruby runtime are not set up. |
+| #565 | [Puppet](../examples/%23565%20Puppet/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #566 | [Pure Data](../examples/%23566%20Pure%20Data/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #567 | [PureBasic](../examples/%23567%20PureBasic/README.md) | Yes | Pending | Pending | 2/2 | The proprietary PureBasic compiler is unavailable. |
-| #568 | [PureScript](../examples/%23568%20PureScript/README.md) | Yes | Pending | Pending | 1/1 | The purs compiler and compatible Spago libraries are not set up. |
+| #568 | [PureScript](../examples/%23568%20PureScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #569 | [Pyret](../examples/%23569%20Pyret/README.md) | Yes | Pending | Pending | 1/1 | The Pyret compiler and runtime are not set up; evaluation is pending. |
 | #570 | [Python](../examples/%23570%20Python/README.md) | Yes | Yes | Yes | 15/17 | Evidence recorded |
 | #571 | [Python console](../examples/%23571%20Python%20console/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #572 | [Python traceback](../examples/%23572%20Python%20traceback/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #573 | [Q#](../examples/%23573%20Q%23/README.md) | Yes | Pending | Pending | 1/1 | The local Q# compiler and runtime are not set up; entry point compatibility still needs to be recorded. |
+| #573 | [Q#](../examples/%23573%20Q%23/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #574 | [QML](../examples/%23574%20QML/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #575 | [QMake](../examples/%23575%20QMake/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #576 | [Qt Script](../examples/%23576%20Qt%20Script/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #577 | [Quake](../examples/%23577%20Quake/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | The CM3/Quake build interpreter is unavailable. |
 | #578 | [QuakeC](../examples/%23578%20QuakeC/README.md) | Yes | Yes | Pending | 1/1 | Quake VM fixture not available; native execution pending. |
 | #579 | [Quartus Simulation IP](../examples/%23579%20Quartus%20Simulation%20IP/README.md) | Yes | Pending | Pending | 1/1 | The Quartus project reader and simulator are not set up. |
-| #580 | [QuickBASIC](../examples/%23580%20QuickBASIC/README.md) | Yes | Pending | Pending | 2/2 | The Microsoft QuickBASIC compiler and DOS runtime are unavailable. |
+| #580 | [QuickBASIC](../examples/%23580%20QuickBASIC/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #581 | [Quint](../examples/%23581%20Quint/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #582 | [R](../examples/%23582%20R/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #583 | [RAML](../examples/%23583%20RAML/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -602,12 +602,12 @@ This table reports the main sample's status. Variant states are tracked separate
 | #596 | [Racket](../examples/%23596%20Racket/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #597 | [Ragel](../examples/%23597%20Ragel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #598 | [Raku](../examples/%23598%20Raku/README.md) | Yes | Yes | Yes | 13/13 | Evidence recorded |
-| #599 | [Rascal](../examples/%23599%20Rascal/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #599 | [Rascal](../examples/%23599%20Rascal/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #600 | [Raw token data](../examples/%23600%20Raw%20token%20data/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #601 | [ReScript](../examples/%23601%20ReScript/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #602 | [Readline Config](../examples/%23602%20Readline%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #603 | [Reason](../examples/%23603%20Reason/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #604 | [ReasonLIGO](../examples/%23604%20ReasonLIGO/README.md) | Yes | Pending | Pending | 1/1 | Required ligo compiler/runtime and matching host resources are not available/configured. |
+| #604 | [ReasonLIGO](../examples/%23604%20ReasonLIGO/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #605 | [Rebol](../examples/%23605%20Rebol/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #606 | [Record Jar](../examples/%23606%20Record%20Jar/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #607 | [Red](../examples/%23607%20Red/README.md) | Yes | Pending | Pending | 2/2 | Required red compiler/runtime and matching host resources are not available/configured. |
@@ -634,27 +634,27 @@ This table reports the main sample's status. Variant states are tracked separate
 | #628 | [Rust](../examples/%23628%20Rust/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #629 | [SAS](../examples/%23629%20SAS/README.md) | Yes | Pending | Pending | 1/1 | The SAS runtime and license are unavailable; parser checks and execution logs are pending. |
 | #630 | [SCSS](../examples/%23630%20SCSS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #631 | [SELinux Policy](../examples/%23631%20SELinux%20Policy/README.md) | Yes | Yes | Pending | 1/1 | The policy behavior was not verified on an SELinux system; operational semantics are pending. |
+| #631 | [SELinux Policy](../examples/%23631%20SELinux%20Policy/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #632 | [SIP](../examples/%23632%20SIP/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #633 | [SMT](../examples/%23633%20SMT/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #634 | [SPARQL](../examples/%23634%20SPARQL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #635 | [SQF](../examples/%23635%20SQF/README.md) | Yes | Pending | Pending | 2/2 | The SQF/Arma runtime is unavailable; checks are pending. |
+| #635 | [SQF](../examples/%23635%20SQF/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #636 | [SQL](../examples/%23636%20SQL/README.md) | Yes | Yes | Yes | 8/8 | Evidence recorded |
 | #637 | [SQLPL](../examples/%23637%20SQLPL/README.md) | Yes | Pending | Pending | 2/2 | A Db2 test instance is unavailable; creation, invocation and parsing are pending. |
 | #638 | [SRecode Template](../examples/%23638%20SRecode%20Template/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #639 | [SSH Config](../examples/%23639%20SSH%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #640 | [STAR](../examples/%23640%20STAR/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #641 | [STL](../examples/%23641%20STL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #642 | [STON](../examples/%23642%20STON/README.md) | Yes | Pending | Pending | 1/1 | The Smalltalk VM and STON library are not set up. |
+| #642 | [STON](../examples/%23642%20STON/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #643 | [SVG](../examples/%23643%20SVG/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #644 | [SWIG](../examples/%23644%20SWIG/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #645 | [Sage](../examples/%23645%20Sage/README.md) | Yes | Pending | Pending | 2/2 | The SageMath runtime is unavailable; a generic Python check is insufficient. |
-| #646 | [Sail](../examples/%23646%20Sail/README.md) | Yes | Pending | Pending | 1/1 | The Sail compiler and prelude are not set up; type checking and REPL checks are pending. |
-| #647 | [Salt](../examples/%23647%20Salt/README.md) | Yes | Pending | Pending | 1/1 | The Salt renderer and state runtime are unavailable; generic YAML does not verify the state. |
+| #646 | [Sail](../examples/%23646%20Sail/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #647 | [Salt](../examples/%23647%20Salt/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #648 | [Sass](../examples/%23648%20Sass/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #649 | [Scala](../examples/%23649%20Scala/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
-| #650 | [Scaml](../examples/%23650%20Scaml/README.md) | Yes | Pending | Pending | 1/1 | The Scalate engine and dependency graph are not set up. |
-| #651 | [Scenic](../examples/%23651%20Scenic/README.md) | Yes | Pending | Pending | 1/1 | The Scenic compiler and simulator are not set up. |
+| #650 | [Scaml](../examples/%23650%20Scaml/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
+| #651 | [Scenic](../examples/%23651%20Scenic/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #652 | [Scheme](../examples/%23652%20Scheme/README.md) | Yes | Yes | Yes | 6/6 | Evidence recorded |
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #654 | [Self](../examples/%23654%20Self/README.md) | Yes | Pending | Pending | 1/1 | The Self VM and standard world are not set up. |
@@ -672,7 +672,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #666 | [Slim](../examples/%23666%20Slim/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #667 | [Slint](../examples/%23667%20Slint/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #668 | [SmPL](../examples/%23668%20SmPL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #669 | [Smali](../examples/%23669%20Smali/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #669 | [Smali](../examples/%23669%20Smali/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #670 | [Smalltalk](../examples/%23670%20Smalltalk/README.md) | Yes | Pending | Pending | 2/2 | The toolchain has not been run; syntax and semantic checks are pending. |
 | #671 | [Smarty](../examples/%23671%20Smarty/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #672 | [Smithy](../examples/%23672%20Smithy/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -692,12 +692,12 @@ This table reports the main sample's status. Variant states are tracked separate
 | #686 | [SubRip Text](../examples/%23686%20SubRip%20Text/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #687 | [SugarSS](../examples/%23687%20SugarSS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #688 | [SuperCollider](../examples/%23688%20SuperCollider/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #689 | [SurrealQL](../examples/%23689%20SurrealQL/README.md) | Yes | Pending | Pending | 1/1 | Required surreal toolchain and matching execution/format resources are not configured. |
+| #689 | [SurrealQL](../examples/%23689%20SurrealQL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #690 | [Survex data](../examples/%23690%20Survex%20data/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #691 | [Svelte](../examples/%23691%20Svelte/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #692 | [Sway](../examples/%23692%20Sway/README.md) | Yes | Pending | Pending | 1/1 | Required forc toolchain and matching execution/format resources are not configured. |
 | #693 | [Sweave](../examples/%23693%20Sweave/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #694 | [Swift](../examples/%23694%20Swift/README.md) | Yes | Pending | Pending | 1/1 | Required swift toolchain and matching execution/format resources are not configured. |
+| #694 | [Swift](../examples/%23694%20Swift/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #695 | [SystemVerilog](../examples/%23695%20SystemVerilog/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #696 | [TI Program](../examples/%23696%20TI%20Program/README.md) | Yes | Pending | Pending | 2/2 | Required TI-Connect toolchain and matching execution/format resources are not configured. |
 | #697 | [TL-Verilog](../examples/%23697%20TL-Verilog/README.md) | Yes | Pending | Pending | 1/1 | Required sandpiper-saas toolchain and matching execution/format resources are not configured. |
@@ -717,7 +717,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #711 | [TeX](../examples/%23711%20TeX/README.md) | Yes | Yes | Yes | 14/14 | Evidence recorded |
 | #712 | [Tea](../examples/%23712%20Tea/README.md) | Yes | Pending | Pending | 1/1 | The TeaTrove compiler and runtime are unavailable; parsing and rendering are pending. |
 | #713 | [Teal](../examples/%23713%20Teal/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #714 | [Terra](../examples/%23714%20Terra/README.md) | Yes | Pending | Pending | 1/1 | The Terra runtime is not set up; JIT and C call checks are pending. |
+| #714 | [Terra](../examples/%23714%20Terra/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #715 | [Terraform Template](../examples/%23715%20Terraform%20Template/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #716 | [Texinfo](../examples/%23716%20Texinfo/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #717 | [Text](../examples/%23717%20Text/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
@@ -769,7 +769,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #763 | [Wavefront Object](../examples/%23763%20Wavefront%20Object/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #764 | [Web Ontology Language](../examples/%23764%20Web%20Ontology%20Language/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #765 | [WebAssembly](../examples/%23765%20WebAssembly/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #766 | [WebAssembly Interface Type](../examples/%23766%20WebAssembly%20Interface%20Type/README.md) | Yes | Yes | Pending | 1/1 | The component implementation and Component Model runtime are unavailable; only the interface was verified. |
+| #766 | [WebAssembly Interface Type](../examples/%23766%20WebAssembly%20Interface%20Type/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #767 | [WebIDL](../examples/%23767%20WebIDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #768 | [WebVTT](../examples/%23768%20WebVTT/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #769 | [Wget Config](../examples/%23769%20Wget%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
@@ -791,14 +791,14 @@ This table reports the main sample's status. Variant states are tracked separate
 | #785 | [XML](../examples/%23785%20XML/README.md) | Yes | Yes | Yes | 112/112 | Evidence recorded |
 | #786 | [XML Property List](../examples/%23786%20XML%20Property%20List/README.md) | Yes | Yes | Yes | 7/7 | Evidence recorded |
 | #787 | [XPages](../examples/%23787%20XPages/README.md) | Yes | Pending | Pending | 1/2 | Domino Designer/XPages is unavailable; component parsing and rendering are pending. |
-| #788 | [XProc](../examples/%23788%20XProc/README.md) | Yes | Pending | Pending | 2/2 | The XProc3 processor is not set up; validation and pipeline checks are pending. |
+| #788 | [XProc](../examples/%23788%20XProc/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #789 | [XQuery](../examples/%23789%20XQuery/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #790 | [XS](../examples/%23790%20XS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #791 | [XSLT](../examples/%23791%20XSLT/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #792 | [Xmake](../examples/%23792%20Xmake/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #793 | [Xojo](../examples/%23793%20Xojo/README.md) | Yes | Pending | Pending | 6/6 | The Xojo IDE and compiler are unavailable; import and invocation are pending. |
 | #794 | [Xonsh](../examples/%23794%20Xonsh/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #795 | [Xtend](../examples/%23795%20Xtend/README.md) | Yes | Pending | Pending | 1/1 | The Xtend/Xbase compiler is not set up; Java generation and execution are pending. |
+| #795 | [Xtend](../examples/%23795%20Xtend/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #796 | [YAML](../examples/%23796%20YAML/README.md) | Yes | Yes | Yes | 10/10 | Evidence recorded |
 | #797 | [YANG](../examples/%23797%20YANG/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #798 | [YARA](../examples/%23798%20YARA/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -839,4 +839,4 @@ This table reports the main sample's status. Variant states are tracked separate
 | #833 | [ucode](../examples/%23833%20ucode/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #834 | [vCard](../examples/%23834%20vCard/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #835 | [wisp](../examples/%23835%20wisp/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #836 | [xBase](../examples/%23836%20xBase/README.md) | Yes | Pending | Pending | 3/3 | The Harbour/xBase compiler and runtime are not set up. |
+| #836 | [xBase](../examples/%23836%20xBase/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |

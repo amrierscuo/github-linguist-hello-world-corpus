@@ -1,5 +1,16 @@
 # #106 Cairo Zero
 
+## Verified on November 18, 2026
+
+The official Cairo 0 compiler generated and executed the exact VM program. The output field element decoded to all thirteen greeting bytes.
+
+Run `cairo-compile hello.cairo --output program.json; cairo-run --program=program.json --layout=small --print_output`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Write in the Cairo Zero output a felt that encodes in ASCII big-endian Hello, World!.
 
 Canonical type: `programming`; `language_id`: `891399890`.
@@ -31,4 +42,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cairo` | [hello.cairo](hello.cairo) created; verification pending |
+| `.cairo` | [hello.cairo](hello.cairo) Syntax and behavior verified |
+
+</details>

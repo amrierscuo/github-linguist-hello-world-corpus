@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "ordinal": 788,
+  "language": "XProc",
+  "timestamp_utc": "2026-11-18T16:36:09.254827+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute the exact XProc pipeline from the official XML Calabash release",
+      "command": [
+        "java",
+        "-jar",
+        "${SCRATCH}/tools/xproc/dist/xmlcalabash-3.1.0/xmlcalabash-app-3.1.0.jar",
+        "hello.xpl"
+      ],
+      "cwd": "${SCRATCH}/788-klbizb9_",
+      "timestamp_utc": "2026-11-18T16:36:14.303184+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><greeting>Hello, World!</greeting>",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/788-klbizb9_/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/788-klbizb9_/home",
+        "TMPDIR": "${SCRATCH}/788-klbizb9_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/788-klbizb9_/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#788 XProc/hello.xpl": "adbf6c14c8931d6526ffef61985c9bbe68cc841f5689b113e18b5862dcbef4ec"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://spec.xproc.org/3.0/xproc/xproc_letter.pdf"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeberg.org/xmlcalabash/xmlcalabash3/releases/download/3.1.0/xmlcalabash-3.1.0.zip",
+      "sha256": "c4e6f3a603aa00839240f337e1df0bb1c2e9ffb3987d7cf1b2d101e485cfcb70",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "XML Calabash 3.1.0",
+  "reproduction_command": "java -jar xmlcalabash-app-3.1.0.jar hello.xpl",
+  "semantic_scope": "The official XProc processor executed the original identity step and serialized the expected greeting element.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

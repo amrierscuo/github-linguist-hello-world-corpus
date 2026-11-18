@@ -1,5 +1,16 @@
 # #650 Scaml
 
+## Verified on November 18, 2026
+
+Scalate compiled and rendered the unchanged Scaml template. Its rendered HTML contains the exact heading.
+
+Run `scala Check.scala using the Scalate runtime`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Rendering an Scaml template.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.scaml` | [hello.scaml](hello.scaml) created; verification pending |
+| `.scaml` | [hello.scaml](hello.scaml) Syntax and behavior verified |
+
+</details>

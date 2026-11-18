@@ -1,5 +1,16 @@
 # #476 Noir
 
+## Verified on November 18, 2026
+
+Nargo compiled the original circuit and executed its witness evaluator. The thirteen public return values decode to the exact greeting.
+
+Run `nargo check; nargo execute`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nr` | [main.nr](src/main.nr) created; verification pending |
+| `.nr` | [main.nr](src/main.nr) Syntax and behavior verified |
+
+</details>

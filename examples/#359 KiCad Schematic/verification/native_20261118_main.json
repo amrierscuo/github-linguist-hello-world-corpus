@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "ordinal": 359,
+  "language": "KiCad Schematic",
+  "timestamp_utc": "2026-11-18T16:29:43.956010+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record native KiCad CLI version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/kicad-cli",
+        "version"
+      ],
+      "cwd": "${SCRATCH}/359-hjpy0a34",
+      "timestamp_utc": "2026-11-18T16:29:44.002808+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "7.0.11\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/359-hjpy0a34/home",
+        "TMPDIR": "${SCRATCH}/359-hjpy0a34/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "KICAD_CONFIG_HOME": "${SCRATCH}/359-hjpy0a34/kicad-config",
+        "KICAD_DOCUMENTS_HOME": "${SCRATCH}/359-hjpy0a34",
+        "QT_QPA_PLATFORM": "offscreen"
+      }
+    },
+    {
+      "label": "Load original KiCad layout and export through native headless SVG backend",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/kicad-cli",
+        "sch",
+        "export",
+        "svg",
+        "--output",
+        "${SCRATCH}/359-hjpy0a34/out/",
+        "hello.kicad_sch"
+      ],
+      "cwd": "${SCRATCH}/359-hjpy0a34",
+      "timestamp_utc": "2026-11-18T16:29:44.338950+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Plotted to '${SCRATCH}/359-hjpy0a34/out/hello.svg'.\nDone\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/359-hjpy0a34/home",
+        "TMPDIR": "${SCRATCH}/359-hjpy0a34/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "KICAD_CONFIG_HOME": "${SCRATCH}/359-hjpy0a34/kicad-config",
+        "KICAD_DOCUMENTS_HOME": "${SCRATCH}/359-hjpy0a34",
+        "QT_QPA_PLATFORM": "offscreen"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#359 KiCad Schematic/hello.kicad_sch": "ed8196337e8656dacd30d87de6f86cf0eeb7108a944437385675780f21081181"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://dev-docs.kicad.org/en/file-formats/sexpr-schematic/",
+    "https://docs.kicad.org/7.0/en/eeschema/eeschema.html"
+  ],
+  "previous_verification_log": "examples/#359 KiCad Schematic/verification/native.json",
+  "ubuntu_archives": [
+    {
+      "name": "kicad",
+      "version": "7.0.11+dfsg-1build4",
+      "filename": "pool/universe/k/kicad/kicad_7.0.11+dfsg-1build4_amd64.deb",
+      "sha256": "893ea995e3a7a2e93af4d6ba36e101d21149bf9b263bf74f01e204b0ef85fa31",
+      "bytes": 36117580,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/k/kicad/kicad_7.0.11+dfsg-1build4_amd64.deb"
+    }
+  ],
+  "svg_outputs": [
+    {
+      "filename": "hello.svg",
+      "sha256": "f001c45825fba15b81f53cc15b3f62ddd8bd25a20ded7374d2c8aedab629cd68",
+      "greeting_in_export": true
+    }
+  ],
+  "toolchain": "KiCad 7.0.11",
+  "reproduction_command": "kicad-cli sch export svg --output ${SCRATCH}/359-hjpy0a34/out/ hello.kicad_sch",
+  "semantic_scope": "The official KiCad CLI loaded the original source and used its headless plotter to generate an SVG containing the greeting and rendered vector paths.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

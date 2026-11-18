@@ -1,5 +1,16 @@
 # #383 LigoLANG
 
+## Verified on November 18, 2026
+
+The official LIGO command executable interpreted the original source in its declared dialect and returned the exact greeting.
+
+Run `ligo run interpret greeting --init-file hello.ligo --syntax pascaligo --deprecated`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Evaluate a constant greeting string in syntax Baseline PascaLIGO .ligo.
 
 ## Toolchain
@@ -35,4 +46,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ligo` | [hello.ligo](hello.ligo) created; verification pending |
+| `.ligo` | [hello.ligo](hello.ligo) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #172 Dylan
 
+## Verified on November 18, 2026
+
+The native Dylan compiler compiled and linked the program. The resulting executable printed the exact greeting.
+
+Run `dylan-compiler -build hello.lid; ./_build/bin/hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out an executable Dylan library and write Hello, World! with format-out.
 
 ## Toolchain
@@ -35,7 +46,9 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.dylan` | [hello.dylan](hello.dylan), [library.dylan](library.dylan) created; verification pending |
+| `.dylan` | [hello.dylan](hello.dylan), [library.dylan](library.dylan) Syntax and behavior verified |
 | `.dyl` | [hello.dyl](variants/ext-dyl-2e64796c/hello.dyl) created; verification pending |
 | `.intr` | [hello.intr](variants/ext-intr-2e696e7472/hello.intr) created; verification pending |
-| `.lid` | [hello.lid](hello.lid) created; verification pending |
+| `.lid` | [hello.lid](hello.lid) Syntax and behavior verified |
+
+</details>

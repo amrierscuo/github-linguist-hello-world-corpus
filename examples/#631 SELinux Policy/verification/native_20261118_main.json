@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "ordinal": 631,
+  "language": "SELinux Policy",
+  "timestamp_utc": "2026-11-18T16:38:06.760901+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record SELinux module tool version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/checkmodule",
+        "-V"
+      ],
+      "cwd": "${SCRATCH}/631-ptflyi4p",
+      "timestamp_utc": "2026-11-18T16:38:06.783971+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Module versions 4-21\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/631-ptflyi4p/home",
+        "TMPDIR": "${SCRATCH}/631-ptflyi4p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PYTHONPATH": "${SCRATCH}/tools/apt/usr/lib/python3/dist-packages"
+      }
+    },
+    {
+      "label": "Compile the original policy to CIL",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/checkmodule",
+        "-M",
+        "-m",
+        "-C",
+        "-o",
+        "corpus_greeting.cil",
+        "hello.te"
+      ],
+      "cwd": "${SCRATCH}/631-ptflyi4p",
+      "timestamp_utc": "2026-11-18T16:38:06.793699+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/631-ptflyi4p/home",
+        "TMPDIR": "${SCRATCH}/631-ptflyi4p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PYTHONPATH": "${SCRATCH}/tools/apt/usr/lib/python3/dist-packages"
+      }
+    },
+    {
+      "label": "Link original module to a minimal offline policy",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/secilc",
+        "-o",
+        "binary.policy",
+        "-f",
+        "contexts",
+        "base.cil",
+        "corpus_greeting.cil"
+      ],
+      "cwd": "${SCRATCH}/631-ptflyi4p",
+      "timestamp_utc": "2026-11-18T16:38:06.805560+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/631-ptflyi4p/home",
+        "TMPDIR": "${SCRATCH}/631-ptflyi4p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PYTHONPATH": "${SCRATCH}/tools/apt/usr/lib/python3/dist-packages"
+      }
+    },
+    {
+      "label": "Query the rule in the compiled binary policy",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/sesearch",
+        "--allow",
+        "-s",
+        "unconfined_t",
+        "-t",
+        "hello_world_t",
+        "-c",
+        "file",
+        "binary.policy"
+      ],
+      "cwd": "${SCRATCH}/631-ptflyi4p",
+      "timestamp_utc": "2026-11-18T16:38:06.837207+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "allow unconfined_t hello_world_t:file { getattr open read };\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/631-ptflyi4p/home",
+        "TMPDIR": "${SCRATCH}/631-ptflyi4p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PYTHONPATH": "${SCRATCH}/tools/apt/usr/lib/python3/dist-packages"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#631 SELinux Policy/hello.te": "206a839ca0f9891a0767db628011f1e7ebe5ab2243a688f5f440170acceebd12"
+  },
+  "fixture_sha256": {
+    "base.cil": {
+      "sha256": "df767beb1291cd51696b78e4e2f408fe003f9c8ef9b035ac4a3dd0a102681a1b",
+      "content_utf8": "(handleunknown deny)\n(mls false)\n(class file (read open getattr write))\n(classorder (file))\n(sid kernel)\n(sidorder (kernel))\n(sensitivity s0)\n(sensitivityorder (s0))\n(level s0 (s0))\n(levelrange r0 (s0 s0))\n(type unconfined_t)\n(role object_r)\n(roletype object_r unconfined_t)\n(user system_u)\n(userrole system_u object_r)\n(userlevel system_u s0)\n(userrange system_u r0)\n(sidcontext kernel (system_u object_r unconfined_t r0))\n(typeattribute cil_gen_require)\n"
+    }
+  },
+  "sources": [
+    "https://github.com/SELinuxProject/selinux-notebook/blob/main/src/modular_policy_statements.md?plain=1"
+  ],
+  "previous_verification_log": "examples/#631 SELinux Policy/verification/toolchain.json",
+  "ubuntu_archives": [
+    {
+      "name": "checkpolicy",
+      "version": "3.5-1",
+      "filename": "pool/universe/c/checkpolicy/checkpolicy_3.5-1_amd64.deb",
+      "sha256": "6e1f4bea961da401cdfeacf58a03579e8d64a7d53ea549578a338397dd07ff67",
+      "bytes": 259668,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/checkpolicy/checkpolicy_3.5-1_amd64.deb"
+    },
+    {
+      "name": "secilc",
+      "version": "3.5-1",
+      "filename": "pool/universe/s/secilc/secilc_3.5-1_amd64.deb",
+      "sha256": "140a81be61ff4d175f28288f44046f5a2470d8175f0cbe33f2e7cc6747ddadb3",
+      "bytes": 17570,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/secilc/secilc_3.5-1_amd64.deb"
+    },
+    {
+      "name": "setools",
+      "version": "4.4.4-1build1",
+      "filename": "pool/universe/s/setools/setools_4.4.4-1build1_amd64.deb",
+      "sha256": "ce0bb73f5a97eb78e7a06cd388bd9de69b3409c4a4f67745db392b54e035252a",
+      "bytes": 40078,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/setools/setools_4.4.4-1build1_amd64.deb"
+    },
+    {
+      "name": "python3-setools",
+      "version": "4.4.4-1build1",
+      "filename": "pool/universe/s/setools/python3-setools_4.4.4-1build1_amd64.deb",
+      "sha256": "01132b5ccdb1326d0a8bfd7f97c5c94cd29808d787731e8927ccd51ba3751ec0",
+      "bytes": 520794,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/setools/python3-setools_4.4.4-1build1_amd64.deb"
+    }
+  ],
+  "toolchain": "SELinux checkmodule Module versions 4-21",
+  "reproduction_command": "checkmodule -M -m -C -o corpus_greeting.cil hello.te; secilc -o binary.policy -f contexts base.cil corpus_greeting.cil; sesearch --allow -s unconfined_t -t hello_world_t -c file binary.policy",
+  "semantic_scope": "The original SELinux policy was compiled and linked offline. A query of the resulting binary policy retrieves exactly the three specified permissions.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

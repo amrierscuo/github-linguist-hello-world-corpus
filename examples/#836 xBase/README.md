@@ -1,5 +1,16 @@
 # #836 xBase
 
+## Verified on November 18, 2026
+
+Harbour compiled and linked the original xBase source. The resulting console executable printed the expected greeting.
+
+Run `hbmk2 hello.prg -gtstd -ohello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill in and run a xBase program.
 
 ## Toolchain
@@ -36,3 +47,5 @@ Verification of the main sample and each variant is recorded separately.
 | `.prg` | [hello.prg](hello.prg), [main.prg](variants/ch-20daa7ca/main.prg) created; verification pending |
 | `.ch` | [hello.ch](variants/ch-20daa7ca/hello.ch) created; verification pending |
 | `.prw` | [hello.prw](variants/prw-1dc8a242/hello.prw) created; verification pending |
+
+</details>

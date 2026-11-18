@@ -1,5 +1,16 @@
 # #669 Smali
 
+## Verified on November 18, 2026
+
+Smali compiled the unchanged input into DEX. dex2jar translated that DEX into executable JVM bytecode, and executing its main produced the greeting.
+
+Run `smali assemble Hello.smali -o hello.dex; d2j-dex2jar hello.dex -o hello.jar; java -cp hello.jar Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Assemble Smali in DEX with a main method that prints greeting.
 
 Canonical type `programming`, language_id `351`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.smali` | [Hello.smali](Hello.smali) created; verification pending |
+| `.smali` | [Hello.smali](Hello.smali) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #573 Q#
 
+## Verified on November 18, 2026
+
+Microsoft QDK’s Rust-backed Python interpreter loaded the original Q# source and executed Main. Message emitted the greeting.
+
+Run `Load Main.qs with qsharp.eval and invoke Corpus.Main() on the local QDK interpreter`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Perform a classic Q# entry point that invokes Message.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.qs` | [Main.qs](Main.qs) created; verification pending |
+| `.qs` | [Main.qs](Main.qs) Syntax and behavior verified |
+
+</details>

@@ -1,1 +1,1 @@
-(let ((name "World")) (print (format "Hello, {}!" [name])))
+(let ((name "World")) (format "Hello, {}!" [name]))

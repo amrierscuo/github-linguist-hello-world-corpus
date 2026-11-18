@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "ordinal": 650,
+  "language": "Scaml",
+  "timestamp_utc": "2026-11-18T16:57:31.824961+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/650-ek40eueo",
+      "timestamp_utc": "2026-11-18T16:57:32.260691+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/650-ek40eueo/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  13.324 s\n[INFO] Finished at: 2026-11-18T17:57:52+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/650-ek40eueo/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/650-ek40eueo/home",
+        "TMPDIR": "${SCRATCH}/650-ek40eueo/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/650-ek40eueo/home"
+      }
+    },
+    {
+      "label": "Compile the separate Scalate renderer fixture",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/tools/maven-cache/org/scalatra/scalate/scalate-core_2.13/1.10.1/scalate-core_2.13-1.10.1.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/scala-library/2.13.14/scala-library-2.13.14.jar:${SCRATCH}/tools/maven-cache/org/scalatra/scalate/scalate-util_2.13/1.10.1/scalate-util_2.13-1.10.1.jar:${SCRATCH}/tools/maven-cache/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/modules/scala-parser-combinators_2.13/2.4.0/scala-parser-combinators_2.13-2.4.0.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/modules/scala-xml_2.13/2.3.0/scala-xml_2.13-2.3.0.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/modules/scala-collection-compat_2.13/2.12.0/scala-collection-compat_2.13-2.12.0.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/scala-compiler/2.13.16/scala-compiler-2.13.16.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/scala-reflect/2.13.16/scala-reflect-2.13.16.jar:${SCRATCH}/tools/maven-cache/io/github/java-diff-utils/java-diff-utils/4.15/java-diff-utils-4.15.jar:${SCRATCH}/tools/maven-cache/org/jline/jline/3.27.1/jline-3.27.1-jdk8.jar",
+        "scala.tools.nsc.Main",
+        "-usejavacp",
+        "Check.scala"
+      ],
+      "cwd": "${SCRATCH}/650-ek40eueo",
+      "timestamp_utc": "2026-11-18T16:57:53.040852+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/650-ek40eueo/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/650-ek40eueo/home",
+        "TMPDIR": "${SCRATCH}/650-ek40eueo/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/650-ek40eueo/home"
+      }
+    },
+    {
+      "label": "Render original Scaml with official Scalate",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/tools/maven-cache/org/scalatra/scalate/scalate-core_2.13/1.10.1/scalate-core_2.13-1.10.1.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/scala-library/2.13.14/scala-library-2.13.14.jar:${SCRATCH}/tools/maven-cache/org/scalatra/scalate/scalate-util_2.13/1.10.1/scalate-util_2.13-1.10.1.jar:${SCRATCH}/tools/maven-cache/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/modules/scala-parser-combinators_2.13/2.4.0/scala-parser-combinators_2.13-2.4.0.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/modules/scala-xml_2.13/2.3.0/scala-xml_2.13-2.3.0.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/modules/scala-collection-compat_2.13/2.12.0/scala-collection-compat_2.13-2.12.0.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/scala-compiler/2.13.16/scala-compiler-2.13.16.jar:${SCRATCH}/tools/maven-cache/org/scala-lang/scala-reflect/2.13.16/scala-reflect-2.13.16.jar:${SCRATCH}/tools/maven-cache/io/github/java-diff-utils/java-diff-utils/4.15/java-diff-utils-4.15.jar:${SCRATCH}/tools/maven-cache/org/jline/jline/3.27.1/jline-3.27.1-jdk8.jar:.",
+        "Check"
+      ],
+      "cwd": "${SCRATCH}/650-ek40eueo",
+      "timestamp_utc": "2026-11-18T16:57:56.163115+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "<html>\n  <body>\n    <h1>Hello, World!</h1>\n  </body>\n</html>\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/650-ek40eueo/home\nSLF4J(W): No SLF4J providers were found.\nSLF4J(W): Defaulting to no-operation (NOP) logger implementation\nSLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/650-ek40eueo/home",
+        "TMPDIR": "${SCRATCH}/650-ek40eueo/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/650-ek40eueo/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#650 Scaml/hello.scaml": "3306cf2e83ceda3a06854cdb234e20d2b0850974838028a36b818fb90aed3868"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "54a81f4def55240521cc24dfe3158873b79b608d73fd726f5a31fa0b593b8c6e",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.scalatra.scalate</groupId><artifactId>scalate-core_2.13</artifactId><version>1.10.1</version></dependency><dependency><groupId>org.scala-lang</groupId><artifactId>scala-compiler</artifactId><version>2.13.16</version></dependency></dependencies></project>\n"
+    },
+    "Check.scala": {
+      "sha256": "1d5d7e94caefbee8bf4841eab6772031a8a12c015f8a7ceff489b905c1b7155b",
+      "content_utf8": "import org.fusesource.scalate.TemplateEngine\nimport java.io.File\nobject Check extends App {\n  val engine = new TemplateEngine\n  engine.sourceDirectories = List(new File(\".\"))\n  val rendered = engine.layout(\"hello.scaml\")\n  require(rendered.replaceAll(\"\\\\s+\", \" \").contains(\"<h1>Hello, World!</h1>\"), rendered)\n  print(rendered)\n}\n"
+    }
+  },
+  "sources": [
+    "https://scalate.github.io/scalate/documentation/scaml-reference.html"
+  ],
+  "previous_verification_log": null,
+  "maven_coordinates": [
+    "org.scalatra.scalate:scalate-core_2.13:1.10.1"
+  ],
+  "toolchain": "Scalate 1.10.1 / Scala 2.13.16",
+  "reproduction_command": "scala Check.scala using the Scalate runtime",
+  "semantic_scope": "Scalate compiled and rendered the unchanged Scaml template. Its rendered HTML contains the exact heading.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

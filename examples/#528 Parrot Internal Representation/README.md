@@ -1,5 +1,18 @@
 # #528 Parrot Internal Representation
 
+## Verified on November 18, 2026
+
+The native Parrot VM loaded the original source in its declared input mode and executed the greeting instructions.
+
+Run `parrot hello.pir`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Parrot Internal Representation`, tipo `programming`, language_id `280`.
 
 Perform a main PIR with local binding and concatenation via print/say.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pir` | [hello.pir](hello.pir) created; verification pending |
+| `.pir` | [hello.pir](hello.pir) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #631 SELinux Policy
 
+## Verified on November 18, 2026
+
+The original SELinux policy was compiled and linked offline. A query of the resulting binary policy retrieves exactly the three specified permissions.
+
+Run `checkmodule -M -m -C -o corpus_greeting.cil hello.te; secilc -o binary.policy -f contexts base.cil corpus_greeting.cil; sesearch --allow -s unconfined_t -t hello_world_t -c file binary.policy`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +51,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.te` | [hello.te](hello.te) syntax verified |
+| `.te` | [hello.te](hello.te) Syntax and behavior verified |
+
+</details>

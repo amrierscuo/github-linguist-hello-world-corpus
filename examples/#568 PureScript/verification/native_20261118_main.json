@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "ordinal": 568,
+  "language": "PureScript",
+  "timestamp_utc": "2026-11-18T16:36:02.467924+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record PureScript compiler version",
+      "command": [
+        "${SCRATCH}/tools/purescript-0.15.16/dist/purescript/purs",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/568-ry30oh5i",
+      "timestamp_utc": "2026-11-18T16:36:04.442322+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "0.15.16\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/568-ry30oh5i/home",
+        "TMPDIR": "${SCRATCH}/568-ry30oh5i/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile the unchanged source and the required library modules",
+      "command": [
+        "${SCRATCH}/tools/purescript-0.15.16/dist/purescript/purs",
+        "compile",
+        "Main.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Control/Applicative.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Control/Apply.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Control/Bind.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Control/Category.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Control/Monad.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Control/Semigroupoid.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Boolean.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/BooleanAlgebra.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Bounded/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Bounded.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/CommutativeRing.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/DivisionRing.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Eq/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Eq.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/EuclideanRing.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Field.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Function.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Functor.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Generic/Rep.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/HeytingAlgebra/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/HeytingAlgebra.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Additive.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Conj.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Disj.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Dual.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Endo.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid/Multiplicative.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Monoid.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/NaturalTransformation.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Ord/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Ord.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Ordering.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Reflectable.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Ring/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Ring.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Semigroup/First.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Semigroup/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Semigroup/Last.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Semigroup.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Semiring/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Semiring.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Show/Generic.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Show.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Symbol.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Unit.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Data/Void.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Prelude.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Record/Unsafe.purs",
+        "${SCRATCH}/tools/purescript-purescript-prelude-v6.0.2/source/purescript-prelude-6.0.2/src/Type/Proxy.purs",
+        "${SCRATCH}/tools/purescript-purescript-effect-v4.0.0/source/purescript-effect-4.0.0/src/Effect/Class.purs",
+        "${SCRATCH}/tools/purescript-purescript-effect-v4.0.0/source/purescript-effect-4.0.0/src/Effect/Uncurried.purs",
+        "${SCRATCH}/tools/purescript-purescript-effect-v4.0.0/source/purescript-effect-4.0.0/src/Effect/Unsafe.purs",
+        "${SCRATCH}/tools/purescript-purescript-effect-v4.0.0/source/purescript-effect-4.0.0/src/Effect.purs",
+        "${SCRATCH}/tools/purescript-purescript-console-v6.1.0/source/purescript-console-6.1.0/src/Effect/Class/Console.purs",
+        "${SCRATCH}/tools/purescript-purescript-console-v6.1.0/source/purescript-console-6.1.0/src/Effect/Console.purs"
+      ],
+      "cwd": "${SCRATCH}/568-ry30oh5i",
+      "timestamp_utc": "2026-11-18T16:36:05.686592+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[ 1 of 57] Compiling Type.Proxy\n[ 2 of 57] Compiling Data.Boolean\n[ 3 of 57] Compiling Control.Semigroupoid\n[ 4 of 57] Compiling Record.Unsafe\n[ 5 of 57] Compiling Data.Void\n[ 6 of 57] Compiling Data.Unit\n[ 7 of 57] Compiling Data.NaturalTransformation\n[ 9 of 57] Compiling Control.Category\n[ 8 of 57] Compiling Data.Symbol\n[10 of 57] Compiling Data.HeytingAlgebra\n[11 of 57] Compiling Data.Semigroup\n[12 of 57] Compiling Data.Semiring\n[13 of 57] Compiling Data.Show\n[14 of 57] Compiling Data.BooleanAlgebra\n[15 of 57] Compiling Data.Eq\n[16 of 57] Compiling Data.Ring\n[17 of 57] Compiling Data.Generic.Rep\n[18 of 57] Compiling Data.Ordering\n[19 of 57] Compiling Data.CommutativeRing\n[20 of 57] Compiling Data.Ord\n[21 of 57] Compiling Data.EuclideanRing\n[22 of 57] Compiling Data.DivisionRing\n[23 of 57] Compiling Data.Field\n[24 of 57] Compiling Data.Function\n[25 of 57] Compiling Data.Monoid\n[26 of 57] Compiling Data.Reflectable\n[27 of 57] Compiling Data.Bounded\n[28 of 57] Compiling Data.Functor\n[29 of 57] Compiling Control.Apply\n[30 of 57] Compiling Data.Monoid.Generic\n[31 of 57] Compiling Data.Bounded.Generic\n[32 of 57] Compiling Control.Applicative\n[33 of 57] Compiling Control.Bind\n[34 of 57] Compiling Control.Monad\n[35 of 57] Compiling Prelude\n[37 of 57] Compiling Data.Ord.Generic\n[36 of 57] Compiling Data.HeytingAlgebra.Generic\n[38 of 57] Compiling Data.Show.Generic\n[39 of 57] Compiling Data.Semiring.Generic\n[40 of 57] Compiling Data.Semigroup.Generic\n[41 of 57] Compiling Data.Monoid.Dual\n[42 of 57] Compiling Data.Monoid.Conj\n[43 of 57] Compiling Data.Monoid.Disj\n[44 of 57] Compiling Data.Semigroup.Last\n[45 of 57] Compiling Data.Ring.Generic\n[46 of 57] Compiling Effect\n[47 of 57] Compiling Data.Eq.Generic\n[48 of 57] Compiling Data.Semigroup.First\n[49 of 57] Compiling Data.Monoid.Endo\n[50 of 57] Compiling Data.Monoid.Additive\n[51 of 57] Compiling Data.Monoid.Multiplicative\n[52 of 57] Compiling Effect.Console\n[53 of 57] Compiling Effect.Unsafe\n[54 of 57] Compiling Effect.Class\n[55 of 57] Compiling Effect.Uncurried\n[56 of 57] Compiling Main\n[57 of 57] Compiling Effect.Class.Console\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/568-ry30oh5i/home",
+        "TMPDIR": "${SCRATCH}/568-ry30oh5i/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GHCRTS": "-N2"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { main } from \"./output/Main/index.js\"; main();"
+      ],
+      "cwd": "${SCRATCH}/568-ry30oh5i",
+      "timestamp_utc": "2026-11-18T16:36:06.294030+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/568-ry30oh5i/home",
+        "TMPDIR": "${SCRATCH}/568-ry30oh5i/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#568 PureScript/Main.purs": "61be2e81395d604345fac42c38c89280b88a2a003da54dc8b1f9cc0c19c10c5b"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.purescript.org/",
+    "https://github.com/purescript/purescript-console"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/purescript/purescript/releases/download/v0.15.16/linux64.tar.gz",
+      "sha256": "44da9efb8a4e14519e8fd5350acc377a4b981e42351a78c53e9f84045bf38e22",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://codeload.github.com/purescript/purescript-prelude/tar.gz/v6.0.2",
+      "ref": "v6.0.2",
+      "sha256": "890204801a57e6fd64e004a6d87ed52d6fe0a0f668ab715dce6ca73bde0fdae8"
+    },
+    {
+      "url": "https://codeload.github.com/purescript/purescript-effect/tar.gz/v4.0.0",
+      "ref": "v4.0.0",
+      "sha256": "e93e9bb898c0b6bba7cfb9972ead7aa8d2773fdcf10f5554cb310beff3164b75"
+    },
+    {
+      "url": "https://codeload.github.com/purescript/purescript-console/tar.gz/v6.1.0",
+      "ref": "v6.1.0",
+      "sha256": "3959911a8388be12f93991d20c7b6a61e5d725259cb2405246e67266a8712daa"
+    }
+  ],
+  "toolchain": "PureScript 0.15.16",
+  "reproduction_command": "purs compile Main.purs <prelude, effect and console library sources>; import output/Main/index.js and invoke main() with Node",
+  "semantic_scope": "The native PureScript compiler compiled the original main. Node executed the compiler-generated JavaScript and printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

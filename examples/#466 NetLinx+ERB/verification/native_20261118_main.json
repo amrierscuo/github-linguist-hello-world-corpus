@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "ordinal": 466,
+  "language": "NetLinx+ERB",
+  "timestamp_utc": "2026-11-18T16:38:04.721032+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the native Ruby engine version",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/ruby3.2",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/466-ii6u5ybn",
+      "timestamp_utc": "2026-11-18T16:38:04.758388+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/466-ii6u5ybn/home",
+        "TMPDIR": "${SCRATCH}/466-ii6u5ybn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0"
+      }
+    },
+    {
+      "label": "Render the exact NetLinx ERB template using the recorded original driver",
+      "command": [
+        "${SCRATCH}/tools/apt/usr/bin/ruby3.2",
+        "--disable-gems",
+        "render.rb"
+      ],
+      "cwd": "${SCRATCH}/466-ii6u5ybn",
+      "timestamp_utc": "2026-11-18T16:38:04.786612+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "PROGRAM_NAME='CorpusGreeting'\n\nDEFINE_START\nSEND_STRING 0,\"'Hello, World!'\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/466-ii6u5ybn/home",
+        "TMPDIR": "${SCRATCH}/466-ii6u5ybn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/tools/apt/usr/lib:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#466 NetLinx+ERB/hello.axs.erb": "8d2c192359c4b05c6b27f070e92d7694821f80b2af1e73faac9e15b1d68e3fe6",
+    "examples/#466 NetLinx+ERB/render.rb": "03b5b78b183bb53aa6c8acc9fc05dac6523fa2ce3a9084f32187b242ca6592d8"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.ruby-lang.org/en/3.2/ERB.html",
+    "https://www.amx.com/ko/site_elements/amx-language-reference-guide-netlinx-programming-language"
+  ],
+  "previous_verification_log": "examples/#466 NetLinx+ERB/verification/toolchain.json",
+  "ubuntu_archives": [
+    {
+      "name": "ruby3.2",
+      "version": "3.2.3-1ubuntu0.24.04.8",
+      "filename": "pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "sha256": "6f11e297b3508e8db95a5a047126a16ccf1358292049a27e3dc72b88180e779a",
+      "bytes": 50654,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/ruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb"
+    },
+    {
+      "name": "libruby3.2",
+      "version": "3.2.3-1ubuntu0.24.04.8",
+      "filename": "pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb",
+      "sha256": "77c2e98ccfba2c4a4e5edb48ca8c0eb041702e1579eabc40cf07064fd4f3033e",
+      "bytes": 5342224,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/r/ruby3.2/libruby3.2_3.2.3-1ubuntu0.24.04.8_amd64.deb"
+    }
+  ],
+  "toolchain": "ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu] / ERB",
+  "reproduction_command": "ruby render.rb",
+  "semantic_scope": "Ruby ERB executed the original render driver and interpolated the original template. The emitted NetLinx source has the expected SEND_STRING instruction.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
