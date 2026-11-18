@@ -1,5 +1,18 @@
 # #199 F*
 
+## Verified on November 18, 2026
+
+The native F-star compiler type-checked the example after exposing its ML effect through FStar.All. The actual generated OCaml program executed the original standard-library greeting call.
+
+Run `fstar --cache_checked_modules Hello.fst; fstar --codegen OCaml --custard_main Hello.main --odir generated Hello.fst; ocamlc Custard.ml -o hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Prior attempt](verification/native_20261118_wave736_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Check the types of an F* function with ML effect that prints Hello, World!, then extract it and execute it.
 
 Canonical type `programming`, language_id `336943375`.
@@ -31,3 +44,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.fst` | [Hello.fst](Hello.fst), [Hello.fst](variants/ext-fsti-2e66737469/Hello.fst) created; verification pending |
 | `.fsti` | [Hello.fsti](variants/ext-fsti-2e66737469/Hello.fsti) created; verification pending |
+
+</details>

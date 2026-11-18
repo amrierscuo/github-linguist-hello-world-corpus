@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "ordinal": 425,
+  "language": "Mercury",
+  "timestamp_utc": "2026-11-18T20:03:10.525376+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Inspect binary tool dependencies before execution",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "build",
+        "--dry-run",
+        "--no-link",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#mercury"
+      ],
+      "cwd": "${SCRATCH}/425-b0xakb6b",
+      "timestamp_utc": "2026-11-18T20:03:10.556163+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/425-b0xakb6b/home",
+        "TMPDIR": "${SCRATCH}/425-b0xakb6b/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    },
+    {
+      "label": "Execute original example with a pinned Nix binary closure",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "shell",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#mercury",
+        "--command",
+        "bash",
+        "build.sh"
+      ],
+      "cwd": "${SCRATCH}/425-b0xakb6b",
+      "timestamp_utc": "2026-11-18T20:03:54.247666+00:00",
+      "timeout_seconds": 300,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Making Mercury/int3s/hello.int3\nMaking Mercury/ints/hello.int\nMaking Mercury/cs/hello.c\nMaking Mercury/os/hello.o\nMaking hello\n",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/425-b0xakb6b/home",
+        "TMPDIR": "${SCRATCH}/425-b0xakb6b/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#425 Mercury/hello.m": "3fb930935fa8ed9e75825aef5bccbeba870f546b2d5d7bf78e18686e3165108c"
+  },
+  "fixture_sha256": {
+    "build.sh": {
+      "sha256": "f3cab2b8a67edbdc6cbef1d5ac11c30836b87f63074b5c13a6c72b791112e2c0",
+      "content_utf8": "set -eu\nmmc --make hello\n./hello\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Mercury programma hello",
+      "url": "https://www.mercurylang.org/information/doc-latest/mercury_user_guide/Hello-world.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "nix_packages": [
+    {
+      "portable_archive": "https://github.com/DavHau/nix-portable/releases/download/v012/nix-portable-x86_64",
+      "portable_archive_sha256": "b409c55904c909ac3aeda3fb1253319f86a89ddd1ba31a5dec33d4a06414c72a",
+      "nixpkgs_revision": "f68407657ad294471eb4b2e65d193df26edf729f",
+      "package": "mercury"
+    }
+  ],
+  "toolchain": "mercury via pinned Nixpkgs f68407657ad2",
+  "reproduction_command": "mmc --make hello; ./hello",
+  "semantic_scope": "A pinned published binary closure provided the native command-line runtime, which evaluated the unchanged original source and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

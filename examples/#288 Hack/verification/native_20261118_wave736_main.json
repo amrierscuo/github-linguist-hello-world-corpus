@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "ordinal": 288,
+  "language": "Hack",
+  "timestamp_utc": "2026-11-18T20:23:34.408154+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--ro-bind",
+        "${TOOL_CACHE}/tools/native-oci-736/hhvm-public-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/288-j2rrx97p",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "/opt/hhvm/4.172.0/bin/hhvm",
+        "/work/hello.hack"
+      ],
+      "cwd": "${SCRATCH}/288-j2rrx97p",
+      "timestamp_utc": "2026-11-18T20:23:34.442025+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/288-j2rrx97p/home",
+        "TMPDIR": "${SCRATCH}/288-j2rrx97p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/288-j2rrx97p/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/288-j2rrx97p/unused-public-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#288 Hack/hello.hack": "e9a7fe061b6ca5a3e54b7301dcc57d98cabeaba4f161bb9ff1b771b1b46a1ddd"
+  },
+  "fixture_sha256": {
+    "registry-trust.json": {
+      "sha256": "9651a2f0e4a883cd7495d22c2b93c9de0e3e53ee579370e24573de1029674805",
+      "content_utf8": "{\"default\": [{\"type\": \"insecureAcceptAnything\"}]}"
+    }
+  },
+  "sources": [
+    "https://docs.hhvm.com/hack/source-code-fundamentals/program-structure/",
+    "https://hacklang.org/"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://docker.io/hhvm/hhvm:latest",
+      "digest": "sha256:42bf7905b489849d2afc19c0b59e9592850a741d88ae55d07d98d111f680a326"
+    }
+  ],
+  "toolchain": "Official HHVM public container CLI",
+  "reproduction_command": "hhvm -m cli hello.hack in the digest-pinned publisher image",
+  "semantic_scope": "The official HHVM executable from its public image evaluated the unchanged Hack source. The isolated root filesystem ran its entry point and printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

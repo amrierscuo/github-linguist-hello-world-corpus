@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "ordinal": 739,
+  "language": "UrWeb",
+  "timestamp_utc": "2026-11-18T20:04:39.801006+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Inspect binary tool dependencies before execution",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "build",
+        "--dry-run",
+        "--no-link",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#urweb"
+      ],
+      "cwd": "${SCRATCH}/739-xq5tdy20",
+      "timestamp_utc": "2026-11-18T20:07:05.599519+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/739-xq5tdy20/home",
+        "TMPDIR": "${SCRATCH}/739-xq5tdy20/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    },
+    {
+      "label": "Execute original example with a pinned Nix binary closure",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "shell",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#urweb",
+        "--command",
+        "bash",
+        "exec.sh",
+        "35943"
+      ],
+      "cwd": "${SCRATCH}/739-xq5tdy20",
+      "timestamp_utc": "2026-11-18T20:07:43.099511+00:00",
+      "timeout_seconds": 180,
+      "exit_code": 0,
+      "stdout": "<!DOCTYPE html><html><head></head><body>Hello, World!</body></html>",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/739-xq5tdy20/home",
+        "TMPDIR": "${SCRATCH}/739-xq5tdy20/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#739 UrWeb/hello.ur": "6ada78fad2de77d1af4c4e8eee42ee61c35f219136e4ecba5335797794ce9708",
+    "examples/#739 UrWeb/hello.urp": "ecabf58a73a33635ac5f5c8cea671f672510c342bcf633e725433abd0676f7f3"
+  },
+  "fixture_sha256": {
+    "exec.sh": {
+      "sha256": "c4532a908fbe5ddf69d2b04f05acb1fb885f7569068d6ca59ccd3f3fb5092583",
+      "content_utf8": "#!/bin/sh\nset -eu\nurweb hello\n./hello.exe -p \"$1\" -a 127.0.0.1 >server.log 2>&1 &\npid=$!\ntrap 'kill \"$pid\" 2>/dev/null || true; wait \"$pid\" 2>/dev/null || true' EXIT\nfor i in $(seq 1 30); do\n  if curl --noproxy '*' -fsS \"http://127.0.0.1:$1/Hello/main\" >answer.html 2>curl.log; then\n    cat answer.html\n    exit 0\n  fi\n  kill -0 \"$pid\" || { cat server.log; exit 2; }\n  sleep 0.25\ndone\ncat server.log\ncat curl.log\nexit 3\n"
+    }
+  },
+  "sources": [
+    "https://www.impredicative.com/ur/tutorial/"
+  ],
+  "previous_verification_log": null,
+  "nix_packages": [
+    {
+      "portable_archive": "https://github.com/DavHau/nix-portable/releases/download/v012/nix-portable-x86_64",
+      "portable_archive_sha256": "b409c55904c909ac3aeda3fb1253319f86a89ddd1ba31a5dec33d4a06414c72a",
+      "nixpkgs_revision": "f68407657ad294471eb4b2e65d193df26edf729f",
+      "package": "urweb"
+    }
+  ],
+  "toolchain": "Ur/Web 20200209 via pinned Nixpkgs",
+  "reproduction_command": "urweb hello; ./hello.exe -a 127.0.0.1 -p <isolated port>; curl /Hello/main",
+  "semantic_scope": "The native Ur/Web compiler built the original project. Its local executable handled an HTTP request and returned the exact greeting in the document body.",
+  "result_assertion": {
+    "successful_command_label": "Execute original example with a pinned Nix binary closure",
+    "observed": "<!DOCTYPE html><html><head></head><body>Hello, World!</body></html>"
+  },
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

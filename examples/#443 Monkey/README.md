@@ -1,5 +1,18 @@
 # #443 Monkey
 
+## Verified on November 18, 2026
+
+The original Monkey compiler compiled the unchanged program to the console C++ target. The generated native application printed the greeting.
+
+Run `transcc_linux -target=stdcpp -build -run hello.monkey`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Monkey`, tipo `programming`, language_id `236`.
 
 Run Main with Print in the original Monkey X language.
@@ -44,5 +57,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.monkey` | [hello.monkey](hello.monkey) created; verification pending |
+| `.monkey` | [hello.monkey](hello.monkey) Syntax and behavior verified |
 | `.monkey2` | [hello.monkey2](variants/monkey2-f16dc421/hello.monkey2) created; verification pending |
+
+</details>

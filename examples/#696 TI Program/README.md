@@ -1,5 +1,18 @@
 # #696 TI Program
 
+## Verified on November 18, 2026
+
+The published TI-BASIC transpiler executed the original listing body and its Disp command produced the exact greeting.
+
+Run `ti842py hello.txt from the inert .8xp.txt listing`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `TI Program`, tipo `programming`, language_id `422`.
 
 Show greeting with Disp in a TI program - BASIC exported as text.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 | Extension | File / status |
 | --- | --- |
 | `.8xp` | [hello.8xp](variants/8xp-e496e607/hello.8xp) syntax verified |
-| `.8xp.txt` | [hello.8xp.txt](hello.8xp.txt) created; verification pending |
+| `.8xp.txt` | [hello.8xp.txt](hello.8xp.txt) Syntax and behavior verified |
+
+</details>

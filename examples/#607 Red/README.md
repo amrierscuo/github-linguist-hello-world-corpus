@@ -1,5 +1,18 @@
 # #607 Red
 
+## Verified on November 18, 2026
+
+The original source emitted the exact greeting through the official native interpreter, with an explicit exit status from the console.
+
+Run `red-cli-066 then do %hello.red and quit 0`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Red`, tipo `programming`, language_id `320`.
 
 Run a Red program with compote string and print.
@@ -44,5 +57,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.red` | [hello.red](hello.red) created; verification pending |
+| `.red` | [hello.red](hello.red) Syntax and behavior verified |
 | `.reds` | [hello.reds](variants/reds-e7c6c4d7/hello.reds) created; verification pending |
+
+</details>

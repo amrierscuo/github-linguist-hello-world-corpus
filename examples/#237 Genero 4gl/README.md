@@ -1,5 +1,16 @@
 # #237 Genero 4gl
 
+## Verified on November 18, 2026
+
+The genuine compatible 4GL compiler compiled the untouched original. The generated console program printed the exact greeting.
+
+Run `4glpc hello.4gl -o hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.4gl` | [hello.4gl](hello.4gl) created; verification pending |
+| `.4gl` | [hello.4gl](hello.4gl) Syntax and behavior verified |
+
+</details>

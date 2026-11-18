@@ -68,10 +68,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#002 2-Dimensional Array/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#002 2-Dimensional Array/hello.2da": "3e324d7019799d42f71815693d83c40414dbfd4e8fa5c86500fd01ae6a241a75"
+      },
       "based_on": null,
       "documentation": "examples/#002 2-Dimensional Array/README.md",
       "supporting_files": [],
@@ -83,10 +85,8 @@
         "https://gemrb.org/GUIScript/functions/LoadTable.html",
         "https://gemrb.org/GUIScript/functions/Table_GetValue.html"
       ],
-      "blockers": [
-        "GemRB native 2DA parser and a configured game resource environment are unavailable."
-      ],
-      "notes": "Chosen dialect: Infinity Engine 2DA V1.0. Whitespace separates values; the greeting is deliberately split across two cells. No custom parser counted as verification."
+      "blockers": [],
+      "notes": "The official Infinity Engine importer loaded the exact V1.0 file. The actual table exposed the two intended columns, and the values combined to the full greeting."
     },
     {
       "language_ordinal": 3,
@@ -922,10 +922,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#019 ActionScript/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#019 ActionScript/HelloWorld.as": "5ee7486b64f63e5163cbaba9a2f7eb9518b5df89231d9904bbf41f2854490729"
+      },
       "based_on": null,
       "documentation": "examples/#019 ActionScript/README.md",
       "supporting_files": [],
@@ -935,11 +937,8 @@
         "https://flex.apache.org/doc/flex/using/flx_mxml_mx.html",
         "https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/text/TextField.html"
       ],
-      "blockers": [
-        "mxmlc e playerglobal.swc non disponibili.",
-        "Runtime SWF compatibile con ActionScript 3 da scegliere; comando di esecuzione e verifica visiva ancora da fissare."
-      ],
-      "notes": "Sorgente creato e confrontato con documentazione primaria; nessuna verifica di compilazione o esecuzione effettuata."
+      "blockers": [],
+      "notes": "Apache Flex compiled the original ActionScript 3 class. The compatible AVM rendered its original TextField in a private framebuffer at runtime and the captured stage displayed the exact Hello World text."
     },
     {
       "language_ordinal": 20,
@@ -7682,10 +7681,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#146 Curry/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#146 Curry/Hello.curry": "04671a2bc65ba7060cd0a5344b5170b9f456996f5d3925f5dc482b63bc99cd02"
+      },
       "based_on": null,
       "documentation": "examples/#146 Curry/README.md",
       "supporting_files": [],
@@ -7695,10 +7696,8 @@
         "https://www.curry-language.org/docs/tutorial/html/curry-tutorial.Ch3.S15.html",
         "https://www.curry-lang.org/pakcs/"
       ],
-      "blockers": [
-        "PAKCS/KiCS2 e il relativo runtime non disponibili; nessun parser Curry è stato eseguito."
-      ],
-      "notes": "Hello.curry dichiara un modulo e l’azione main :: IO (). ++ concatena le stringhe, putStrLn effettua l’IO. La verifica richiede un compilatore Curry autentico, con runtime Prolog/Haskell previsto dalla sua implementazione."
+      "blockers": [],
+      "notes": "The published native Curry evaluator loaded the original definition and ran its actual IO main, printing the exact greeting."
     },
     {
       "language_ordinal": 147,
@@ -8051,10 +8050,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#155 DM/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#155 DM/hello.dm": "cf6258c67a22ceddce4b23f7e05c5b81ad4535cfc6a64f86ea2022b2530ed631"
+      },
       "based_on": null,
       "documentation": "examples/#155 DM/README.md",
       "supporting_files": [],
@@ -8064,10 +8065,8 @@
         "https://www.byond.com/docs/guide/chap08.html",
         "https://www.byond.com/docs/ref/contents.html"
       ],
-      "blockers": [
-        "Toolchain BYOND non preparata; compilazione DM e runtime DreamDaemon restano da eseguire."
-      ],
-      "notes": "hello.dm ridefinisce /world/New(), richiama ..() e usa l’output del mondo. hello.dme include il sorgente per DreamMaker. Il goal è un avvio server locale breve, senza mappe, client o risorse grafiche."
+      "blockers": [],
+      "notes": "The official Linux compiler built the exact DM inputs. Its runtime executed the world’s initialization in an isolated headless namespace and recorded the greeting."
     },
     {
       "language_ordinal": 156,
@@ -12728,10 +12727,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#237 Genero 4gl/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#237 Genero 4gl/hello.4gl": "88ad75cb81963c3544ded420c4b2caedbc64c1714683d2b6d4099c8142640d75"
+      },
       "based_on": null,
       "documentation": "examples/#237 Genero 4gl/README.md",
       "supporting_files": [],
@@ -12741,10 +12742,8 @@
         "https://4js.com/online_documentation/fjs-fgl-manual-html/fgl-topics/c_fgl_programs_019.html",
         "https://4js.com/online_documentation/fjs-fgl-manual-html/fgl-topics/c_fgl_operators_003.html"
       ],
-      "blockers": [
-        "Compilatore/runtime proprietari Genero BDL non preparati; sintassi ed esecuzione pendenti."
-      ],
-      "notes": "MAIN definisce il programma, DISPLAY emette la concatenazione di stringhe mediante ||. La toolchain deve interpretare Genero 4GL; un parser SQL non verifica il blocco programma."
+      "blockers": [],
+      "notes": "The genuine compatible 4GL compiler compiled the untouched original. The generated console program printed the exact greeting."
     },
     {
       "language_ordinal": 238,
@@ -14913,10 +14912,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#277 HIP/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#277 HIP/hello.hip": "ec485380f711b38dba6b96038d4fc0c2de85b69b76e00f985923bfc5473f2f04"
+      },
       "based_on": null,
       "documentation": "examples/#277 HIP/README.md",
       "supporting_files": [],
@@ -14926,10 +14927,8 @@
         "https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/hip_cpp_language_extensions.html",
         "https://rocm.docs.amd.com/projects/HIP/en/latest/tutorial/examples.html"
       ],
-      "blockers": [
-        "HIP compiler, compatible GPU and HIP runtime are not available."
-      ],
-      "notes": "Il saluto deriva dai byte scritti dal kernel. La compilazione come C++ normale ignorerebbe semantica/device HIP e non viene presentata come verifica. Hardware/toolchain assenti."
+      "blockers": [],
+      "notes": "The official HIP CUDA backend compiled the unchanged code and ran the actual GPU kernel. The native device-to-host readback contained the thirteen required bytes."
     },
     {
       "language_ordinal": 278,
@@ -20323,10 +20322,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#352 KFramework/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#352 KFramework/hello.k": "0d6026583e5f20baa1805d0b0f2d54dff78bc1303b2549ff954f5420d8d201c7"
+      },
       "based_on": null,
       "documentation": "examples/#352 KFramework/README.md",
       "supporting_files": [],
@@ -20336,10 +20337,8 @@
         "https://kframework.org/docs/user_manual/",
         "https://github.com/runtimeverification/k"
       ],
-      "blockers": [
-        "K Framework kompile/krun and backend are not configured."
-      ],
-      "notes": "La regola è una vera riscrittura semantica K; manca la toolchain kompile/krun. Non vengono interpretate le regole con un simulatore fatto in casa."
+      "blockers": [],
+      "notes": "The official K Framework compiled the original rewriting semantics. Running the original input produced the expected greeting in the k cell."
     },
     {
       "language_ordinal": 353,
@@ -24072,10 +24071,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#425 Mercury/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#425 Mercury/hello.m": "3fb930935fa8ed9e75825aef5bccbeba870f546b2d5d7bf78e18686e3165108c"
+      },
       "based_on": null,
       "documentation": "examples/#425 Mercury/README.md",
       "supporting_files": [],
@@ -24087,10 +24088,8 @@
           "url": "https://www.mercurylang.org/information/doc-latest/mercury_user_guide/Hello-world.html"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "main dichiara determinismo det e usa !IO per passare lo stato di I/O."
+      "blockers": [],
+      "notes": "A pinned published binary closure provided the native command-line runtime, which evaluated the unchanged original source and emitted the exact greeting."
     },
     {
       "language_ordinal": 425,
@@ -24570,10 +24569,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#438 Modelica/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#438 Modelica/Hello.mo": "a8ab72427110b58e3df5f7a660baa0d5128b6e90bf6d3868fc1d0d0af1f804b5"
+      },
       "based_on": null,
       "documentation": "examples/#438 Modelica/README.md",
       "supporting_files": [],
@@ -24589,10 +24590,8 @@
           "url": "https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Streams.print è eseguito durante l’inizializzazione. Il modello non modifica dispositivi esterni."
+      "blockers": [],
+      "notes": "The original Modelica script compiled and simulated the original model and its initialization emitted the exact greeting."
     },
     {
       "language_ordinal": 439,
@@ -24843,10 +24842,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#443 Monkey/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#443 Monkey/hello.monkey": "2b69923588197cca95f688e7e3d758a52c85fa101d2e2b197fdb08e891d4b4e5"
+      },
       "based_on": null,
       "documentation": "examples/#443 Monkey/README.md",
       "supporting_files": [],
@@ -24855,10 +24856,8 @@
       "sources": [
         "https://github.com/blitz-research/monkey"
       ],
-      "blockers": [
-        "Monkey X transcc compiler/backend is not configured."
-      ],
-      "notes": "Monkey X e Monkey C sono voci distinte; il programma usa Strict, Main:Int e Print. Toolchain assente."
+      "blockers": [],
+      "notes": "The original Monkey compiler compiled the unchanged program to the console C++ target. The generated native application printed the greeting."
     },
     {
       "language_ordinal": 443,
@@ -29903,10 +29902,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#546 Portugol/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#546 Portugol/hello.por": "6c218aa16019352ea57de3d5d609438584ff6b1668662695248db89f13f2fd85"
+      },
       "based_on": null,
       "documentation": "examples/#546 Portugol/README.md",
       "supporting_files": [],
@@ -29916,10 +29917,8 @@
         "https://github.com/UNIVALI-LITE/Portugol-Studio",
         "https://univali-lite.github.io/Portugol-Studio/"
       ],
-      "blockers": [
-        "Compiler/runtime Portugol Studio non preparati."
-      ],
-      "notes": "Il programma usa funcao inicio, cadeia e escreva con argomenti distinti. La forma è Portugol Studio, distinta da VisuAlg/Pascal."
+      "blockers": [],
+      "notes": "The published Portugol Studio JS tokenizer and bytecode compiler processed the original input. Its standalone VM executed the original program and the text output contained the exact greeting."
     },
     {
       "language_ordinal": 547,
@@ -33483,10 +33482,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#607 Red/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#607 Red/hello.red": "2ee4f13e01b2e06c5b331521880dba8cdfe790cf920ecd8a50f404fc2e70bb86"
+      },
       "based_on": null,
       "documentation": "examples/#607 Red/README.md",
       "supporting_files": [],
@@ -33495,10 +33496,8 @@
       "sources": [
         "https://www.red-lang.org/p/documentation.html"
       ],
-      "blockers": [
-        "Required red compiler/runtime and matching host resources are not available/configured."
-      ],
-      "notes": "Sorgente Red originale; toolchain non configurata. Red e Rebol sono verificati separatamente."
+      "blockers": [],
+      "notes": "The original source emitted the exact greeting through the official native interpreter, with an explicit exit status from the console."
     },
     {
       "language_ordinal": 607,
@@ -39172,10 +39171,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#696 TI Program/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#696 TI Program/hello.8xp.txt": "089d30f526f98733ae6aaddaac77d099c7746da1e927b4491eb28cb4c75fad17"
+      },
       "based_on": null,
       "documentation": "examples/#696 TI Program/README.md",
       "supporting_files": [],
@@ -39184,10 +39185,8 @@
       "sources": [
         "https://education.ti.com/en/guidebook/details/en/BF077B5A987B41878D5FA83B6EADFBE5/84pceb"
       ],
-      "blockers": [
-        "Required TI-Connect toolchain and matching execution/format resources are not configured."
-      ],
-      "notes": "Il file canonico .8xp.txt contiene sorgente originale con header PROGRAM e istruzione Disp, non un falso pacchetto binario .8xp. Toolchain/calcolatrice assenti."
+      "blockers": [],
+      "notes": "The published TI-BASIC transpiler executed the original listing body and its Disp command produced the exact greeting."
     },
     {
       "language_ordinal": 697,
@@ -47880,10 +47879,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#804 Zeek/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#804 Zeek/hello.zeek": "6a2602ff0ee31c4ee5d1a5f05e3593f656eb56622b68b97da6961eeea96f73dd"
+      },
       "based_on": null,
       "documentation": "examples/#804 Zeek/README.md",
       "supporting_files": [],
@@ -47892,10 +47893,8 @@
       "sources": [
         "https://docs.zeek.org/en/current/scripting/basics.html"
       ],
-      "blockers": [
-        "Zeek parser/runtime non disponibile."
-      ],
-      "notes": "Solo avvio dello script locale, nessuna cattura interfaccia o rete."
+      "blockers": [],
+      "notes": "A pinned published binary closure provided the native command-line runtime, which evaluated the unchanged original source and emitted the exact greeting."
     },
     {
       "language_ordinal": 804,
@@ -47958,10 +47957,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#806 Zephir/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#806 Zephir/Hello.zep": "a6984710a27379411fd39175c3c918aec23855a881e7aa664f9f2ac3394b2eda"
+      },
       "based_on": null,
       "documentation": "examples/#806 Zephir/README.md",
       "supporting_files": [],
@@ -47970,10 +47971,8 @@
       "sources": [
         "https://docs.zephir-lang.com/0.18/tutorial/"
       ],
-      "blockers": [
-        "Zephir/PHP extension compiler/runtime non predisposti."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The official Zephir generator compiled the unchanged class, and the compiled PHP extension called the original method and printed the greeting."
     },
     {
       "language_ordinal": 807,

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "ordinal": 607,
+  "language": "Red",
+  "timestamp_utc": "2026-11-18T20:19:49.727318+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute the unchanged source as a native Red CLI invocation",
+      "command": [
+        "${TOOL_CACHE}/tools/i386-portable/root/usr/lib/ld-linux.so.2",
+        "${TOOL_CACHE}/tools/red-0.6.4-linux/red-cli-066",
+        "hello.red"
+      ],
+      "cwd": "${SCRATCH}/607-1kelh5nx",
+      "timestamp_utc": "2026-11-18T20:19:49.745046+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 255,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/607-1kelh5nx/home",
+        "TMPDIR": "${SCRATCH}/607-1kelh5nx/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/i386-portable/root/lib/i386-linux-gnu:${TOOL_CACHE}/tools/i386-portable/root/usr/lib/i386-linux-gnu",
+        "REDCLI_NO_COLOR": "1"
+      }
+    },
+    {
+      "label": "Load the original file in the genuine console REPL and explicitly exit successfully",
+      "command": [
+        "${TOOL_CACHE}/tools/i386-portable/root/usr/lib/ld-linux.so.2",
+        "${TOOL_CACHE}/tools/red-0.6.4-linux/red-cli-066"
+      ],
+      "cwd": "${SCRATCH}/607-1kelh5nx",
+      "timestamp_utc": "2026-11-18T20:19:49.815746+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "--== Red 0.6.6 ==-- \nType HELP for starting information. \n\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/607-1kelh5nx/home",
+        "TMPDIR": "${SCRATCH}/607-1kelh5nx/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/i386-portable/root/lib/i386-linux-gnu:${TOOL_CACHE}/tools/i386-portable/root/usr/lib/i386-linux-gnu",
+        "REDCLI_NO_COLOR": "1"
+      },
+      "stdin": "do %hello.red\nquit 0\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#607 Red/hello.red": "2ee4f13e01b2e06c5b331521880dba8cdfe790cf920ecd8a50f404fc2e70bb86"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.red-lang.org/p/documentation.html"
+  ],
+  "previous_verification_log": "examples/#607 Red/verification/native.json",
+  "interpreter_archive_sha256": "625a7cbe17955022078397567c55c473ca3f8f74a54f2253e8d4ab1bccaa5c11",
+  "toolchain": "Red 0.6.6 official Linux CLI",
+  "reproduction_command": "red-cli-066 then do %hello.red and quit 0",
+  "semantic_scope": "The original source emitted the exact greeting through the official native interpreter, with an explicit exit status from the console.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

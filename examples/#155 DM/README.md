@@ -1,5 +1,16 @@
 # #155 DM
 
+## Verified on November 18, 2026
+
+The official Linux compiler built the exact DM inputs. Its runtime executed the world’s initialization in an isolated headless namespace and recorded the greeting.
+
+Run `DreamMaker <original project>; DreamDaemon <compiled world> -invisible -close`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.dm` | [hello.dm](hello.dm) created; verification pending |
+| `.dm` | [hello.dm](hello.dm) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #438 Modelica
 
+## Verified on November 18, 2026
+
+The original Modelica script compiled and simulated the original model and its initialization emitted the exact greeting.
+
+Run `MODELICAPATH=<Modelica libraries> omc run.mos`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Simulate a Model model that prints greeting in the initial algorithm.
 
 Canonical type `programming`, language_id `233`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mo` | [Hello.mo](Hello.mo) created; verification pending |
+| `.mo` | [Hello.mo](Hello.mo) Syntax and behavior verified |
+
+</details>

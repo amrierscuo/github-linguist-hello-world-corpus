@@ -1,5 +1,16 @@
 # #567 PureBasic
 
+## Verified on November 18, 2026
+
+The official compiler built the unmodified example. Its native executable printed the exact greeting after resolving missing bundled allocator linkage aliases.
+
+Run `pbcompiler hello.pb --console --executable hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a PureBasic console program.
 
 ## Toolchain
@@ -35,3 +46,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.pb` | [hello.pb](hello.pb), [main.pb](variants/pbi-e96dcf89/main.pb) created; verification pending |
 | `.pbi` | [hello.pbi](variants/pbi-e96dcf89/hello.pbi) created; verification pending |
+
+</details>

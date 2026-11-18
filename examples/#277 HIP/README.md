@@ -1,5 +1,18 @@
 # #277 HIP
 
+## Verified on November 18, 2026
+
+The official HIP CUDA backend compiled the unchanged code and ran the actual GPU kernel. The native device-to-host readback contained the thirteen required bytes.
+
+Run `hello `.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `HIP`, tipo `programming`, language_id `674379998`.
 
 Run a HIP kernel that writes thirteen byte ASCII on GPU, copy them to the host side and compare the greeting.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.hip` | [hello.hip](hello.hip) created; verification pending |
+| `.hip` | [hello.hip](hello.hip) Syntax and behavior verified |
+
+</details>

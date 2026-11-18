@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "ordinal": 696,
+  "language": "TI Program",
+  "timestamp_utc": "2026-11-18T20:11:36.994000+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/696-58w7rk3h",
+      "timestamp_utc": "2026-11-18T20:11:37.062934+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/696-58w7rk3h/home",
+        "TMPDIR": "${SCRATCH}/696-58w7rk3h/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/696-58w7rk3h/.venv/bin/python",
+        "ti842py"
+      ],
+      "cwd": "${SCRATCH}/696-58w7rk3h",
+      "timestamp_utc": "2026-11-18T20:11:37.090099+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 8 packages in 5ms\nInstalled 8 packages in 14ms\n + basically-ti-basic==0.1.7\n + evdev==2.0.0\n + graphics-py==5.0.1.post1\n + pynput==1.8.2\n + python-xlib==0.33\n + pythondialog==3.5.3\n + six==1.17.0\n + ti842py==0.9.10\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/696-58w7rk3h/home",
+        "TMPDIR": "${SCRATCH}/696-58w7rk3h/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record the published TI-BASIC command line help",
+      "command": [
+        "${SCRATCH}/696-58w7rk3h/.venv/bin/ti842py",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/696-58w7rk3h",
+      "timestamp_utc": "2026-11-18T20:11:37.217551+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "usage: ti842py [-h] [-o OUTFILE] [-n] [-d] [--no-fix-multiplication]\n               [--no-fix-floating-point] [--turbo-draw]\n               [--reset-persistant-data] [-r] [-V]\n               [infile]\n\nTI-BASIC to Python 3 Transpiler\n\npositional arguments:\n  infile                Input file (filename or stdin).\n\noptions:\n  -h, --help            show this help message and exit\n  -o OUTFILE, --out OUTFILE\n                        Optional output file to write to. Defaults to standard\n                        out.\n  -n, --force-normal    Forces the program to not attempt and decompile the\n                        input file. Useful for false positives\n  -d, --force-decompile\n                        Forces the program to attempt to decompile the input\n                        file\n  --no-fix-multiplication\n                        Do not attempt to fix implicit multiplication. For\n                        example, AB -> A*B and A(1) -> A*(1)\n  --no-fix-floating-point\n                        Do not attempt to fix floating point arithmetic\n                        errors. For example, 1.1 * 3 would normally say\n                        3.3000000000000003 instead of 3.3\n  --turbo-draw          Remove the 0.1 second delay between drawing actions\n  --reset-persistant-data\n                        Reset the ti842py persistant data (variables,\n                        matrices, etc)\n  -r, --run             Runs the program after it's done transpiling. Will not\n                        print to stdout\n  -V, --version         show program's version number and exit\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/696-58w7rk3h/home",
+        "TMPDIR": "${SCRATCH}/696-58w7rk3h/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Use the actual TI-BASIC-compatible transpiler on the exact listing body",
+      "command": [
+        "${SCRATCH}/696-58w7rk3h/.venv/bin/ti842py",
+        "hello.txt"
+      ],
+      "cwd": "${SCRATCH}/696-58w7rk3h",
+      "timestamp_utc": "2026-11-18T20:11:37.340802+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "import math\nimport traceback\nimport decimal\nimport inspect\nimport io\nimport tokenize\n\n\ndef decistmt(s):\n\t# Function for parsing a line of code and making all floats into decimal objects\n\n\t# List containing all tokens of new statement\n\tresult = []\n\n\t# Tokenize statement\n\ttokens = tokenize.tokenize(io.BytesIO(s.encode('utf-8')).readline)\n\n\t# Iterate over tokens\n\tfor toknum, tokval, _, _, _ in tokens:\n\n\t\t# Test if current token is a number and contains a '.' in order to detect floats\n\t\tif toknum == tokenize.NUMBER and '.' in tokval: # is float\n\n\t\t\t# Current token is float, so insert a new decimal object into the new statement instead of the current token\n\t\t\t# Example: 3.3 -> decimal.Decimal(\"3.3\")\n\t\t\tresult.extend([\n\t\t\t\t(tokenize.NAME, 'decimal'),\n\t\t\t\t(tokenize.OP, '.'),\n\t\t\t\t(tokenize.NAME, 'Decimal'),\n\t\t\t\t(tokenize.OP, '('),\n\t\t\t\t(tokenize.STRING, repr(tokval)),\n\t\t\t\t(tokenize.OP, ')')\n\t\t\t])\n\t\telse:\n\t\t\t# Current token is not a float, append it to the new statement without modification\n\t\t\tresult.append((toknum, tokval))\n\n\t# Convert token list back into source code\n\treturn tokenize.untokenize(result).decode('utf-8')\n\n\ndef fix_floating_point(f):\n\t# Decorator for fixing floating-point arithmetic within a function\n\tdef wrapper(*args, **kwargs):\n\t\t# Get the source of the function as a list (each element is one line)\n\t\tsrc = inspect.getsource(f).split('\\n')\n\t\t# Initiate variable for creation of new source code. Starts with function definition\n\t\tnewsrc = src[1] + '\\n'\n\n\t\t# Iterate over function source; skip decorator and function definition\n\t\tfor line in src[2:]:\n\t\t\t# Expand tabs for spaces in order to calculate indent size\n\t\t\tline = line.expandtabs(4)\n\n\t\t\t# Calculate amount of indentation for line\n\t\t\tindent = len(line) - len(line.lstrip())\n\n\t\t\t# Parse and adjust line of code with decistmt function defined above, then add to new source code\n\t\t\tnewsrc += '{}{}\\n'.format(' ' * indent, decistmt(line))\n\n\t\t# Exec new source code after adjustments to create a new local function\n\t\texec(newsrc)\n\n\t\t# Call that new function that we just created; has the same name as the decorated function so we can just use f.__name__\n\t\tlocals()[f.__name__]()\n\n\t# Return wrapper function\n\treturn wrapper\n\n\n@fix_floating_point\ndef main():\n\tl1, l2, l3, l4, l5, l6 = ([None for _ in range(0, 999)] for _ in range(6)) # init lists\n\tA = B = C = D = E = F = G = H = I = J = K = L = M = N = O = P = Q = R = S = T = U = V = W = X = Y = Z = θ = 0 # init variables\n\tprint(\"Hello, World!\", sep=\"\")\nif __name__ == '__main__':\n\ttry:\n\t\tmain()\n\texcept:\n\t\ttraceback.print_exc()\n\t\ttry:\n\t\t\timport sys, termios\n\t\t\t# clear stdin on unix-like systems\n\t\t\ttermios.tcflush(sys.stdin, termios.TCIFLUSH)\n\t\texcept ImportError:\n\t\t\tpass\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/696-58w7rk3h/home",
+        "TMPDIR": "${SCRATCH}/696-58w7rk3h/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute the actual emitted code from the original listing",
+      "command": [
+        "${SCRATCH}/696-58w7rk3h/.venv/bin/python",
+        "${SCRATCH}/696-58w7rk3h/translated.py"
+      ],
+      "cwd": "${SCRATCH}/696-58w7rk3h",
+      "timestamp_utc": "2026-11-18T20:11:37.467876+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/696-58w7rk3h/home",
+        "TMPDIR": "${SCRATCH}/696-58w7rk3h/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#696 TI Program/hello.8xp.txt": "089d30f526f98733ae6aaddaac77d099c7746da1e927b4491eb28cb4c75fad17"
+  },
+  "fixture_sha256": {
+    "hello.txt": {
+      "sha256": "3373f213ee99b550057c5437e60689e9bb94cbe7adc9e4c4616d8f2314ffc1f4",
+      "content_utf8": "Disp \"Hello, World!\"\n"
+    },
+    "translated.py": {
+      "sha256": "bd0650dac8dab624394a4a453881d6e316d762cf3168e6db1b6b8705776a9772",
+      "content_utf8": "import math\nimport traceback\nimport decimal\nimport inspect\nimport io\nimport tokenize\n\n\ndef decistmt(s):\n\t# Function for parsing a line of code and making all floats into decimal objects\n\n\t# List containing all tokens of new statement\n\tresult = []\n\n\t# Tokenize statement\n\ttokens = tokenize.tokenize(io.BytesIO(s.encode('utf-8')).readline)\n\n\t# Iterate over tokens\n\tfor toknum, tokval, _, _, _ in tokens:\n\n\t\t# Test if current token is a number and contains a '.' in order to detect floats\n\t\tif toknum == tokenize.NUMBER and '.' in tokval: # is float\n\n\t\t\t# Current token is float, so insert a new decimal object into the new statement instead of the current token\n\t\t\t# Example: 3.3 -> decimal.Decimal(\"3.3\")\n\t\t\tresult.extend([\n\t\t\t\t(tokenize.NAME, 'decimal'),\n\t\t\t\t(tokenize.OP, '.'),\n\t\t\t\t(tokenize.NAME, 'Decimal'),\n\t\t\t\t(tokenize.OP, '('),\n\t\t\t\t(tokenize.STRING, repr(tokval)),\n\t\t\t\t(tokenize.OP, ')')\n\t\t\t])\n\t\telse:\n\t\t\t# Current token is not a float, append it to the new statement without modification\n\t\t\tresult.append((toknum, tokval))\n\n\t# Convert token list back into source code\n\treturn tokenize.untokenize(result).decode('utf-8')\n\n\ndef fix_floating_point(f):\n\t# Decorator for fixing floating-point arithmetic within a function\n\tdef wrapper(*args, **kwargs):\n\t\t# Get the source of the function as a list (each element is one line)\n\t\tsrc = inspect.getsource(f).split('\\n')\n\t\t# Initiate variable for creation of new source code. Starts with function definition\n\t\tnewsrc = src[1] + '\\n'\n\n\t\t# Iterate over function source; skip decorator and function definition\n\t\tfor line in src[2:]:\n\t\t\t# Expand tabs for spaces in order to calculate indent size\n\t\t\tline = line.expandtabs(4)\n\n\t\t\t# Calculate amount of indentation for line\n\t\t\tindent = len(line) - len(line.lstrip())\n\n\t\t\t# Parse and adjust line of code with decistmt function defined above, then add to new source code\n\t\t\tnewsrc += '{}{}\\n'.format(' ' * indent, decistmt(line))\n\n\t\t# Exec new source code after adjustments to create a new local function\n\t\texec(newsrc)\n\n\t\t# Call that new function that we just created; has the same name as the decorated function so we can just use f.__name__\n\t\tlocals()[f.__name__]()\n\n\t# Return wrapper function\n\treturn wrapper\n\n\n@fix_floating_point\ndef main():\n\tl1, l2, l3, l4, l5, l6 = ([None for _ in range(0, 999)] for _ in range(6)) # init lists\n\tA = B = C = D = E = F = G = H = I = J = K = L = M = N = O = P = Q = R = S = T = U = V = W = X = Y = Z = θ = 0 # init variables\n\tprint(\"Hello, World!\", sep=\"\")\nif __name__ == '__main__':\n\ttry:\n\t\tmain()\n\texcept:\n\t\ttraceback.print_exc()\n\t\ttry:\n\t\t\timport sys, termios\n\t\t\t# clear stdin on unix-like systems\n\t\t\ttermios.tcflush(sys.stdin, termios.TCIFLUSH)\n\t\texcept ImportError:\n\t\t\tpass\n"
+    }
+  },
+  "sources": [
+    "https://education.ti.com/en/guidebook/details/en/BF077B5A987B41878D5FA83B6EADFBE5/84pceb"
+  ],
+  "previous_verification_log": "examples/#696 TI Program/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "ti842py TI-BASIC compatible transpiler",
+  "reproduction_command": "ti842py hello.txt from the inert .8xp.txt listing",
+  "semantic_scope": "The published TI-BASIC transpiler executed the original listing body and its Disp command produced the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

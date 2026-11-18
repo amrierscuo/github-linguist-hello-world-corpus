@@ -1,5 +1,16 @@
 # #425 Mercury
 
+## Verified on November 18, 2026
+
+A pinned published binary closure provided the native command-line runtime, which evaluated the unchanged original source and emitted the exact greeting.
+
+Run `mmc --make hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a deterministic Mercury program with me you are threading.
 
 Canonical type `programming`, language_id `229`.
@@ -29,5 +40,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.m` | [hello.m](hello.m) created; verification pending |
+| `.m` | [hello.m](hello.m) Syntax and behavior verified |
 | `.moo` | [hello.moo](variants/moo-3e77aff6/hello.moo) created; verification pending |
+
+</details>

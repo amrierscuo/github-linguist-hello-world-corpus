@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "ordinal": 443,
+  "language": "Monkey",
+  "timestamp_utc": "2026-11-18T20:25:04.203944+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the distributed Monkey transcc C++ bootstrap",
+      "command": [
+        "g++",
+        "-O2",
+        "${SCRATCH}/443-pin5rhh5/monkey/src/transcc/transcc.build/cpptool/main.cpp",
+        "-o",
+        "${SCRATCH}/443-pin5rhh5/transcc"
+      ],
+      "cwd": "${SCRATCH}/443-pin5rhh5/monkey/src/transcc/transcc.build/cpptool",
+      "timestamp_utc": "2026-11-18T20:25:05.359536+00:00",
+      "timeout_seconds": 110,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/443-pin5rhh5/home",
+        "TMPDIR": "${SCRATCH}/443-pin5rhh5/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Confirm native transcc command-line support",
+      "command": [
+        "${SCRATCH}/443-pin5rhh5/monkey/bin/transcc_linux",
+        "-help"
+      ],
+      "cwd": "${SCRATCH}/443-pin5rhh5",
+      "timestamp_utc": "2026-11-18T20:25:25.009821+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 255,
+      "stdout": "TRANS monkey compiler V1.87\nTRANS FAILED: Invalid target\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/443-pin5rhh5/home",
+        "TMPDIR": "${SCRATCH}/443-pin5rhh5/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "List the exact portable native targets from the archived compiler",
+      "command": [
+        "${SCRATCH}/443-pin5rhh5/monkey/bin/transcc_linux"
+      ],
+      "cwd": "${SCRATCH}/443-pin5rhh5",
+      "timestamp_utc": "2026-11-18T20:25:25.019847+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "TRANS monkey compiler V1.87\nTRANS Usage: transcc [-update] [-build] [-run] [-clean] [-config=...] [-target=...] [-cfgfile=...] [-modpath=...] <main_monkey_source_file>\nValid targets: C++_Tool Desktop_Game_(Glfw3) Html5_Game\nValid configs: debug release\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/443-pin5rhh5/home",
+        "TMPDIR": "${SCRATCH}/443-pin5rhh5/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile and execute unchanged Monkey source for the C++ console target",
+      "command": [
+        "${SCRATCH}/443-pin5rhh5/monkey/bin/transcc_linux",
+        "-target=C++_Tool",
+        "-build",
+        "-run",
+        "hello.monkey"
+      ],
+      "cwd": "${SCRATCH}/443-pin5rhh5",
+      "timestamp_utc": "2026-11-18T20:25:25.045611+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "TRANS monkey compiler V1.87\nParsing...\nSemanting...\nTranslating...\nBuilding...\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/443-pin5rhh5/home",
+        "TMPDIR": "${SCRATCH}/443-pin5rhh5/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#443 Monkey/hello.monkey": "2b69923588197cca95f688e7e3d758a52c85fa101d2e2b197fdb08e891d4b4e5"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/blitz-research/monkey"
+  ],
+  "previous_verification_log": "examples/#443 Monkey/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/blitz-research/monkey/tar.gz/develop",
+      "ref": "develop",
+      "sha256": "8ea824fd9ff4b91d39519cb7775400d1463de4874a0d60bd34b217fc05d6dbea"
+    }
+  ],
+  "monkey_compiler_sources": [
+    "src/transcc/transcc.monkey"
+  ],
+  "monkey_configs": [
+    "bin/config.linux.txt",
+    "bin/config.macos.txt",
+    "bin/config.winnt.txt",
+    "modules/trans/config.monkey",
+    "targets/glfw3_angle/template/glfw3/src/glfw_config.h",
+    "targets/glfw3_angle/template/glfw3/src/glfw_config.h.in",
+    "targets/glfw3/template/glfw3/src/glfw_config.h",
+    "targets/glfw3/template/glfw3/src/glfw_config.h.in",
+    "docs/monkeydoc/Programming/App config settings.monkeydoc",
+    "bananas/skn3/config/config.monkey",
+    "bananas/skn3/config/configdemo.monkey",
+    "bananas/beaker/angelfont_example/config.monkey"
+  ],
+  "candidate_targets": [
+    "targets/android/TARGET.MONKEY",
+    "targets/ios/TARGET.MONKEY",
+    "targets/winrt_win8/TARGET.MONKEY",
+    "targets/glfw3_angle/TARGET.MONKEY",
+    "targets/cpptool/TARGET.MONKEY",
+    "targets/html5/TARGET.MONKEY",
+    "targets/android_ouya/TARGET.MONKEY",
+    "targets/flash/TARGET.MONKEY",
+    "targets/glfw3/TARGET.MONKEY",
+    "targets/winrt_winphone8/TARGET.MONKEY",
+    "targets/__deprecated__/glfw/TARGET.MONKEY",
+    "targets/__deprecated__/android/TARGET.MONKEY",
+    "targets/__deprecated__/psm/TARGET.MONKEY",
+    "targets/__deprecated__/android_new/TARGET.MONKEY",
+    "targets/__deprecated__/xna/TARGET.MONKEY"
+  ],
+  "toolchain": "Monkey transcc native stdcpp target",
+  "reproduction_command": "transcc_linux -target=stdcpp -build -run hello.monkey",
+  "semantic_scope": "The original Monkey compiler compiled the unchanged program to the console C++ target. The generated native application printed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

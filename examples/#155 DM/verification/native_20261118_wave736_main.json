@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "ordinal": 155,
+  "language": "DM",
+  "timestamp_utc": "2026-11-18T20:15:00.429890+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the unchanged Dream Maker project through the official Linux CLI",
+      "command": [
+        "${TOOL_CACHE}/tools/i386-portable/root/usr/lib/ld-linux.so.2",
+        "${TOOL_CACHE}/tools/byond-516.1664/dist/byond/bin/DreamMaker",
+        "hello.dme"
+      ],
+      "cwd": "${SCRATCH}/155-o55vxvek",
+      "timestamp_utc": "2026-11-18T20:15:00.468433+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "DM compiler version 516.1664\nloading hello.dme\nsaving hello.dmb\nhello.dmb - 0 errors, 0 warnings (11/18/26 9:15 pm)\nTotal time: 0:00\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/155-o55vxvek/home",
+        "TMPDIR": "${SCRATCH}/155-o55vxvek/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/byond-516.1664/dist/byond/bin:${TOOL_CACHE}/tools/i386-portable/root/lib/i386-linux-gnu:${TOOL_CACHE}/tools/i386-portable/root/usr/lib/i386-linux-gnu"
+      }
+    },
+    {
+      "label": "Start the original world without a display or connectivity",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--bind",
+        "${SCRATCH}/155-o55vxvek",
+        "${SCRATCH}/155-o55vxvek",
+        "--unshare-net",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--",
+        "${TOOL_CACHE}/tools/i386-portable/root/usr/lib/ld-linux.so.2",
+        "${TOOL_CACHE}/tools/byond-516.1664/dist/byond/bin/DreamDaemon",
+        "${SCRATCH}/155-o55vxvek/hello.dmb",
+        "-invisible",
+        "-close"
+      ],
+      "cwd": "${SCRATCH}/155-o55vxvek",
+      "timestamp_utc": "2026-11-18T20:15:00.793690+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Wed Nov 18 21:15:00 2026\nAuto-safety mode: ultrasafe (no file access)\nWorld opened on network port 58633.\nWelcome BYOND! (5.0 Public Version 516.1664)\nHello, World!\nThe BYOND hub reports that port 58633 is not reachable.\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/155-o55vxvek/home",
+        "TMPDIR": "${SCRATCH}/155-o55vxvek/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/byond-516.1664/dist/byond/bin:${TOOL_CACHE}/tools/i386-portable/root/lib/i386-linux-gnu:${TOOL_CACHE}/tools/i386-portable/root/usr/lib/i386-linux-gnu"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#155 DM/hello.dm": "cf6258c67a22ceddce4b23f7e05c5b81ad4535cfc6a64f86ea2022b2530ed631",
+    "examples/#155 DM/hello.dme": "6a0984ac1bd4c244c2268cb9f59f60c46c1f908508b2a73c8bc62803830057e3"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.byond.com/docs/guide/chap08.html",
+    "https://www.byond.com/docs/ref/contents.html"
+  ],
+  "previous_verification_log": null,
+  "portable_library_archives": [
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/libgcc-s1_14.2.0-4ubuntu2%7e24.04.1_i386.deb",
+      "file": "libgcc-s1_14.2.0-4ubuntu2~24.04.1_i386.deb",
+      "sha256": "40879f5dae85f90837ce882527bb85e388fa0e57f7ec4fba2060f1d24ce3dbb7"
+    },
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.39-0ubuntu8.12_i386.deb",
+      "file": "libc6_2.39-0ubuntu8.12_i386.deb",
+      "sha256": "9df3a419c17e1d5148ba881c9c23c61a2fc47de6e78d6bc884e2be74a9a709ac"
+    },
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/libncursesw6_6.4%2b20240113-1ubuntu2.2_i386.deb",
+      "file": "libncursesw6_6.4+20240113-1ubuntu2.2_i386.deb",
+      "sha256": "03107b3ecf94e8b633f3cbf2d4e77802c5f1edd2288c5f0a1c7f010503d62803"
+    },
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/libstdc%2b%2b6_14.2.0-4ubuntu2%7e24.04.1_i386.deb",
+      "file": "libstdc++6_14.2.0-4ubuntu2~24.04.1_i386.deb",
+      "sha256": "899d77d8b4876f545bd362f60cb4aa0263a8033777e9ecca4742c890c4c54a68"
+    },
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/libncurses6_6.4%2b20240113-1ubuntu2.2_i386.deb",
+      "file": "libncurses6_6.4+20240113-1ubuntu2.2_i386.deb",
+      "sha256": "755c2452c44fea41c8d5da0e285eb15ecbed66cd172d873aeb8d24a209fc47ea"
+    },
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/c/curl/libcurl4t64_8.5.0-2ubuntu10.16_i386.deb",
+      "file": "libcurl4t64_8.5.0-2ubuntu10.16_i386.deb",
+      "sha256": "1449dfbe83a39e6880cf8c5f9a98534734b83139f7ef39c7cd851bd4070eb0f8"
+    }
+  ],
+  "toolchain": "BYOND Dream Maker and Dream Daemon 516.1664",
+  "reproduction_command": "DreamMaker <original project>; DreamDaemon <compiled world> -invisible -close",
+  "semantic_scope": "The official Linux compiler built the exact DM inputs. Its runtime executed the world’s initialization in an isolated headless namespace and recorded the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "ordinal": 804,
+  "language": "Zeek",
+  "timestamp_utc": "2026-11-18T20:03:10.527878+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Inspect binary tool dependencies before execution",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "build",
+        "--dry-run",
+        "--no-link",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#zeek"
+      ],
+      "cwd": "${SCRATCH}/804-2o5yg7ba",
+      "timestamp_utc": "2026-11-18T20:03:56.976867+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/804-2o5yg7ba/home",
+        "TMPDIR": "${SCRATCH}/804-2o5yg7ba/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    },
+    {
+      "label": "Execute original example with a pinned Nix binary closure",
+      "command": [
+        "${TOOL_CACHE}/tools/nix-corpus-portable/nix-portable-x86_64",
+        "nix",
+        "shell",
+        "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f#zeek",
+        "--command",
+        "zeek",
+        "-b",
+        "hello.zeek"
+      ],
+      "cwd": "${SCRATCH}/804-2o5yg7ba",
+      "timestamp_utc": "2026-11-18T20:04:38.833946+00:00",
+      "timeout_seconds": 300,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "${SCRATCH}/804-2o5yg7ba/home",
+        "TMPDIR": "${SCRATCH}/804-2o5yg7ba/tmp",
+        "LC_ALL": "C.UTF-8",
+        "NP_LOCATION": "${TOOL_CACHE}/tools/nix-corpus-portable",
+        "NP_BWRAP": "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "NP_RUNTIME": "bwrap",
+        "NP_GIT": "/usr/bin/git",
+        "NIX_PATH": "",
+        "NIX_CONFIG": "sandbox = true\naccept-flake-config = false\nflake-registry =\nwarn-dirty = false\nlog-lines = 15\n"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#804 Zeek/hello.zeek": "6a2602ff0ee31c4ee5d1a5f05e3593f656eb56622b68b97da6961eeea96f73dd"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.zeek.org/en/current/scripting/basics.html"
+  ],
+  "previous_verification_log": null,
+  "nix_packages": [
+    {
+      "portable_archive": "https://github.com/DavHau/nix-portable/releases/download/v012/nix-portable-x86_64",
+      "portable_archive_sha256": "b409c55904c909ac3aeda3fb1253319f86a89ddd1ba31a5dec33d4a06414c72a",
+      "nixpkgs_revision": "f68407657ad294471eb4b2e65d193df26edf729f",
+      "package": "zeek"
+    }
+  ],
+  "toolchain": "zeek via pinned Nixpkgs f68407657ad2",
+  "reproduction_command": "zeek -b hello.zeek",
+  "semantic_scope": "A pinned published binary closure provided the native command-line runtime, which evaluated the unchanged original source and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

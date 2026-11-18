@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "ordinal": 2,
+  "language": "2-Dimensional Array",
+  "timestamp_utc": "2026-11-18T20:11:37.884685+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Generate the source release’s platform header with its official CMake configuration",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/cmake",
+        "-S",
+        "${TOOL_CACHE}/tools/gemrb-gemrb-v0.9.2/source/gemrb-0.9.2",
+        "-B",
+        "${SCRATCH}/002-fdds1cq7/gemrb-config",
+        "-DCMAKE_PREFIX_PATH=${TOOL_CACHE}/tools/apt/usr",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DUSE_OPENGL=OFF",
+        "-DDISABLE_WERROR=ON"
+      ],
+      "cwd": "${SCRATCH}/002-fdds1cq7",
+      "timestamp_utc": "2026-11-18T20:11:37.964226+00:00",
+      "timeout_seconds": 68,
+      "exit_code": 0,
+      "stdout": "-- The C compiler identification is GNU 13.3.0\n-- The CXX compiler identification is GNU 13.3.0\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Detected version: 0.9.2\n-- Git version bool: 0\n-- Performing Test VISIBILITY_HIDDEN\n-- Performing Test VISIBILITY_HIDDEN - Success\n-- Performing Test FALLTHROUGH\n-- Performing Test FALLTHROUGH - Success\n-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.12.so (found suitable version \"3.12.3\", minimum required is \"3\") \n-- Looking for Python libraries and headers: found\n-- Autodetecting SDL backend...\n-- Found SDL 2.0, switching to SDL2 backend.\n-- Found SDL2_mixer: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libSDL2_mixer.so (found version \"2.8.0\") \n-- Looking for SDL_mixer: found\n-- Found ZLIB: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libz.so (found version \"1.3\")  \n-- Looking for Zlib: found\n-- Performing Test Iconv_IS_BUILT_IN\n-- Performing Test Iconv_IS_BUILT_IN - Success\n-- Found Iconv: built in to C library  \n-- Looking for iconv: found\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n-- Found Threads: TRUE  \n-- Found OpenAL: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libopenal.so  \n-- Looking for OpenAL: found\n-- Found Freetype: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libfreetype.so (found version \"2.13.2\") \n-- Looking for Freetype: found\n-- Found PNG: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libpng.so (found version \"1.6.43\") \n-- Looking for libPNG: found\n-- Looking for Ogg Vorbis support: found\n-- Looking for sys/types.h\n-- Looking for sys/types.h - found\n-- Looking for stdint.h\n-- Looking for stdint.h - found\n-- Looking for stddef.h\n-- Looking for stddef.h - found\n-- Check size of uint64_t\n-- Check size of uint64_t - done\n-- Looking for strndup\n-- Looking for strndup - found\n-- Looking for strlcpy\n-- Looking for strlcpy - found\n-- Looking for setenv\n-- Looking for setenv - found\n-- Looking for ldexpf\n-- Looking for ldexpf - found\n-- Looking for realpath\n-- Looking for realpath - found\n-- Looking for mmap\n-- Looking for mmap - found\n-- Looking for _aligned_malloc\n-- Looking for _aligned_malloc - not found\n-- Looking for memalign\n-- Looking for memalign - found\n-- Looking for posix_memalign\n-- Looking for posix_memalign - found\n-- Looking for include file unistd.h\n-- Looking for include file unistd.h - found\n-- Looking for include file langinfo.h\n-- Looking for include file langinfo.h - found\n-- Looking for include file dlfcn.h\n-- Looking for include file dlfcn.h - found\n-- Performing Test PERMITS_OBJECT_TO_FUNCTION_CAST\n-- Performing Test PERMITS_OBJECT_TO_FUNCTION_CAST - Failed\n-- \n-- These are the configured paths:\n--   PREFIX: /usr/local\n--   LIB_DIR: /usr/local/lib/gemrb\n--   PLUGIN_DIR: /usr/local/lib/gemrb/plugins\n--   BIN_DIR: /usr/local/bin\n--   DATA_DIR: /usr/local/share/gemrb\n--   MAN_DIR: /usr/local/share/man/man6\n--   SYSCONF_DIR: /usr/local/etc/gemrb\n--   DOC_DIR: /usr/local/share/doc/gemrb\n--   ICON_DIR: /usr/local/share/pixmaps\n--   SVG_DIR: /usr/local/share/icons/hicolor/scalable/apps\n--   MENU_DIR: /usr/local/share/applications\n-- \n-- Options:\n--   LAYOUT: fhs\n--   NOCOLOR: disabled\n--   STATIC_LINK: disabled\n--   INSOURCEBUILD: disabled\n--   DISABLE_WERROR: ON\n--   WIN32_USE_STDIO: disabled\n--   SDL_BACKEND: SDL2\n--   USE_SDL_CONTROLLER_API: ON\n--   PYTHON_VERSION: 3\n--   OPENGL_BACKEND: None\n--   SANITIZE: None\n-- \n-- Build type: Release\n-- Target bitness: 8*8\n-- \n-- Configuring done (3.4s)\n-- Generating done (0.2s)\n-- Build files have been written to: ${SCRATCH}/002-fdds1cq7/gemrb-config\n",
+      "stderr": "CMake Warning (dev) at CMakeLists.txt:275 (FIND_PACKAGE):\n  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n  are removed.  Run \"cmake --help-policy CMP0148\" for policy details.  Use\n  the cmake_policy command to set the policy and suppress this warning.\n\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\nCMake Warning at CMakeLists.txt:431 (MESSAGE):\n  Looking for VLC: not found!\n\n\nCMake Warning at CMakeLists.txt:432 (MESSAGE):\n  If you want to build the VLC plugin, install VLC first.\n\n\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/002-fdds1cq7/home",
+        "TMPDIR": "${SCRATCH}/002-fdds1cq7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/gemrb:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Link the original upstream GemRB plugin implementation against the packaged native core",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-I${SCRATCH}/002-fdds1cq7/gemrb-config",
+        "-I${TOOL_CACHE}/tools/gemrb-gemrb-v0.9.2/source/gemrb-0.9.2/gemrb/includes",
+        "-I${TOOL_CACHE}/tools/gemrb-gemrb-v0.9.2/source/gemrb-0.9.2/gemrb/core",
+        "-I${TOOL_CACHE}/tools/gemrb-gemrb-v0.9.2/source/gemrb-0.9.2/gemrb/plugins/2DAImporter",
+        "-I${TOOL_CACHE}/tools/apt/usr/include/SDL2",
+        "-I${TOOL_CACHE}/tools/apt/usr/include",
+        "check.cpp",
+        "${TOOL_CACHE}/tools/gemrb-gemrb-v0.9.2/source/gemrb-0.9.2/gemrb/plugins/2DAImporter/2DAImporter.cpp",
+        "${TOOL_CACHE}/tools/apt/usr/lib/gemrb/libgemrb_core.so",
+        "-o",
+        "check"
+      ],
+      "cwd": "${SCRATCH}/002-fdds1cq7",
+      "timestamp_utc": "2026-11-18T20:11:40.847722+00:00",
+      "timeout_seconds": 110,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/002-fdds1cq7/home",
+        "TMPDIR": "${SCRATCH}/002-fdds1cq7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/gemrb:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/002-fdds1cq7/check"
+      ],
+      "cwd": "${SCRATCH}/002-fdds1cq7",
+      "timestamp_utc": "2026-11-18T20:11:46.648883+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/002-fdds1cq7/home",
+        "TMPDIR": "${SCRATCH}/002-fdds1cq7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/gemrb:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#002 2-Dimensional Array/hello.2da": "3e324d7019799d42f71815693d83c40414dbfd4e8fa5c86500fd01ae6a241a75"
+  },
+  "fixture_sha256": {
+    "check.cpp": {
+      "sha256": "4e546cb5872026acb2546afabaf0156a1e9c3a2cae2e56a8df36f6a9a47919b6",
+      "content_utf8": "#include <iostream>\n#include \"2DAImporter.h\"\n#include \"Streams/FileStream.h\"\nint main() {\n    GemRB::p2DAImporter data;\n    if (!data.Open(GemRB::FileStream::OpenFile(\"hello.2da\"))) return 1;\n    if (data.GetRowCount()!=1 || data.GetColumnCount(0)!=2) return 2;\n    if (data.GetColumnName(0)!=\"GREETING\" || data.GetColumnName(1)!=\"TARGET\") return 3;\n    std::cout << data.QueryField(0,0) << ' ' << data.QueryField(0,1) << '\\n';\n}\n"
+    }
+  },
+  "sources": [
+    "https://gibberlings3.github.io/iesdp/file_formats/ie_formats/2da.htm",
+    "https://github.com/gemrb/gemrb/blob/master/gemrb/plugins/2DAImporter/2DAImporter.cpp",
+    "https://gemrb.org/GUIScript/functions/LoadTable.html",
+    "https://gemrb.org/GUIScript/functions/Table_GetValue.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/gemrb/gemrb/tar.gz/v0.9.2",
+      "ref": "v0.9.2",
+      "sha256": "ea614c067483606dab680ab18cd50527f56803bd46e0888e3c786eec05d3bb7d"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "gemrb",
+      "version": "0.9.2+dfsg-1build3",
+      "filename": "pool/multiverse/g/gemrb/gemrb_0.9.2+dfsg-1build3_amd64.deb",
+      "sha256": "69fc7f6ad14ad8ea2624f250c0570fe73f9eb30b8463ec1aa851ec3795988f67",
+      "bytes": 75012,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/multiverse/g/gemrb/gemrb_0.9.2+dfsg-1build3_amd64.deb"
+    }
+  ],
+  "toolchain": "GemRB 0.9.2 native 2DAImporter",
+  "reproduction_command": "g++ check.cpp <2DAImporter.cpp> <libgemrb_core.so> -o check; ./check",
+  "semantic_scope": "The official Infinity Engine importer loaded the exact V1.0 file. The actual table exposed the two intended columns, and the values combined to the full greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #352 KFramework
 
+## Verified on November 18, 2026
+
+The official K Framework compiled the original rewriting semantics. Running the original input produced the expected greeting in the k cell.
+
+Run `kompile hello.k --backend llvm --syntax-module HELLO; krun input.hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `KFramework`, tipo `programming`, language_id `9479532`.
 
 Define a small behavior K that rewrites the hello term in the greeting string value in the k cell.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.k` | [hello.k](hello.k) created; verification pending |
+| `.k` | [hello.k](hello.k) Syntax and behavior verified |
+
+</details>

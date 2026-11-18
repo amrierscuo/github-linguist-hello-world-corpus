@@ -1,5 +1,16 @@
 # #288 Hack
 
+## Verified on November 18, 2026
+
+The official HHVM executable from its public image evaluated the unchanged Hack source. The isolated root filesystem ran its entry point and printed the exact greeting.
+
+Run `hhvm -m cli hello.hack in the digest-pinned publisher image`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -47,3 +58,5 @@ Verification of the main sample and each variant is recorded separately.
 | `.hh` | [hello.hh](variants/hh-bc9ff2ca/hello.hh) created; verification pending |
 | `.hhi` | [hello.hhi](variants/hhi-b673df30/hello.hhi) created; verification pending |
 | `.php` | [hello.php](variants/php-7410d4a4/hello.php) created; verification pending |
+
+</details>

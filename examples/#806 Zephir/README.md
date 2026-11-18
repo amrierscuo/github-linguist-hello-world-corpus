@@ -1,5 +1,16 @@
 # #806 Zephir
 
+## Verified on November 18, 2026
+
+The official Zephir generator compiled the unchanged class, and the compiled PHP extension called the original method and printed the greeting.
+
+Run `php zephir.phar generate; phpize; ./configure; make; php -n -d extension=modules/corpus.so -r 'Corpus\Hello::greet();'`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill in a Zephir class and call us greet from the PHP extension.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.zep` | [Hello.zep](Hello.zep) created; verification pending |
+| `.zep` | [Hello.zep](Hello.zep) Syntax and behavior verified |
+
+</details>

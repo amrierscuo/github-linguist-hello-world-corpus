@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "ordinal": 199,
+  "language": "F*",
+  "timestamp_utc": "2026-11-18T20:06:49.455050+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record current native F-star version and CLI options",
+      "command": [
+        "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin/fstar.exe",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v",
+      "timestamp_utc": "2026-11-18T20:06:51.094658+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "F* 2026.11.15\nplatform=Linux_x86_64\nsystem=Unix\ncompiler=OCaml 5.3.0\ndate=2026-11-15 18:52:39 +0000\ncommit=b92b0f87ce325a6ed0fd78086390fbaf2fc629a1\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Record extraction options supplied by the compiled native CLI",
+      "command": [
+        "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin/fstar.exe",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v",
+      "timestamp_utc": "2026-11-18T20:06:51.219591+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "fstar.exe [options] file[s] [@respfile...]\n  @respfile: read command-line options from respfile\n\n--abort_on <non-negative integer>\n    Abort on the n-th error or warning raised. Useful in combination with\n    --trace_error. Count starts at 1, use 0 to disable. (default 0)\n--admit_smt_queries <true|false>\n    Admit SMT queries, unsafe! (default 'false')\n--admit_except <[symbol|(symbol, id)]>\n    Admit all queries, except those with label ( symbol, id))(e.g.\n    --admit_except '(FStar.Fin.pigeonhole, 1)' or --admit_except\n    FStar.Fin.pigeonhole)\n--compat_pre_typed_indexed_effects\n    Retain untyped indexed effects implicits\n--disallow_unification_guards <true|false>\n    Fail if the SMT guard are produced when the tactic engine re-checks\n    solutions produced by the unifier (default 'false')\n--already_cached <One or more space-separated occurrences of '[+|-]( * | namespace | module)'>\n    Expects all modules whose names or namespaces match the provided options to\n    already have valid .checked files in the include path\n-c, --cache_checked_modules\n    Write a '.checked' file for each module after verification.\n--cache_dir <dir>\n    Read and write .checked files in directory dir\n--cache_off\n    Do not read or write any .checked files\n--print_cache_version\n    Print the version for .checked files and exit.\n--codegen <OCaml|FSharp|KrmlC|KrmlRust|C|Cherry|Plugin>\n    Extract the program with Custard, to the given language: OCaml source, F#\n    source for .NET, karamel's AST for compilation to C or to Rust, or\n    self-contained C11 source. KrmlC and KrmlRust share a printer but not a\n    program: karamel models some modules on the Rust path only, so a .krml built\n    for one target cannot be compiled for the other (section 20). FSharp targets\n    net10.0 and, unlike OCaml, compiles machine integers and floats to .NET's\n    own types rather than to a support library, so it accepts the programs the C\n    backend accepts rather than the ones the OCaml backend does (section 122).\n    Cherry is the C backend extended with reference-counted heap cells for\n    recursive inductive types (experimental, see doc/ref/cherry.md). Plugin\n    builds a compiler plugin: OCaml, with the plugin's own modules as entry\n    points, linked against the compiler's unit (section 13.6)\n--custard_entry <long_name>\n    Entry point for whole-program extraction with --codegen. May be repeated;\n    every occurrence is a root of the extraction. Custard only compiles the\n    definitions reachable from these roots. It does *not* make them run: use\n    --custard_main for that. A module name may be given instead of a definition,\n    which makes the module's top-level effects part of the program without\n    naming anything in it.\n--custard_entrypoints <file>\n    A file of --custard_entry roots, one per line; blank lines and lines whose\n    first non-blank character is # are ignored. May be repeated. A plugin's\n    hand-written realizations call the compiler by OCaml name, through no\n    request Custard can see, so the plugin ships such a file and the compiler\n    build reads it alongside its own.\n--custard_c_no_prefix <module_name>\n    With --codegen C, emit the public definitions of the named module under\n    their unqualified names, as krml's -no-prefix does. May be repeated. This\n    applies only to definitions that are already part of the translation unit's\n    interface -- those named by --custard_entry or --custard_entry_module, which\n    are exactly the ones emitted with external linkage and declared in the\n    generated header. It does not apply to a specialization: a specialized name\n    carries a hint (section 30.15) that is free to change when the\n    monomorphizer's input changes, and is not something another translation unit\n    may depend on. Two public definitions that would share an unqualified name\n    is an error.\n--custard_hoist_locals\n    With --codegen C, place all automatic local declarations at the beginning of\n    each function, keeping initialization at its original execution point.\n    Unsafe moves of variable-length arrays or C++ reference bindings are errors.\n    This does not enable C89 compatibility or initialize uninitialized locals;\n    see --custard_init_locals for that. Not implemented for Cherry or other code\n    generators.\n--custard_init_locals <no|c23|c99|c89>\n    With --codegen C, give every automatic local declaration that has no\n    initializer a zero initializer, as krml's -finitialize-locals does: c23 uses\n    = {}; c99 uses designated struct initializers; c89 uses positional ones.\n    Runs after --custard_hoist_locals, so declarations it moves are\n    zero-initialized too, and their original initialization stays an assignment\n    at its execution point. A variable-length array can be initialized only in\n    c23 mode. Not implemented for Cherry or other code generators.\n--custard_line_comments\n    With --codegen C, write the comments that stand as statements in a function\n    body as C line comments (// ...) framed by an empty // line above and below,\n    as krml's -fline-comments does, instead of block comments. Comments around\n    an expression and comments on top-level declarations stay block comments. A\n    comment with a line ending in a backslash stays a block comment, since a\n    line comment would continue onto the next line. Not implemented for Cherry\n    or other code generators.\n--custard_static_header\n    With --codegen C, emit a single header containing static function\n    definitions and no source file. CInline independently requests inline.\n    Foreign declarations retain extern linkage. -o must name a .h file; the\n    default is Custard.h (or the --custard_unit name). Does not change roots or\n    API names. Non-macro globals, runtime initialization, --custard_main,\n    --custard_split and other code generators are not supported.\n--custard_entry_module <module_name>\n    Every top-level definition of the named module is a root of the extraction.\n    May be repeated. This is how a module is compiled as a library rather than\n    as the program reachable from one entry point, and it is what a test of a\n    module's generated code wants: a definition added to the module is extracted\n    without anyone having to name it. A definition with nothing to extract -- a\n    specification, a proof, an [inline_for_extraction] -- is passed over rather\n    than reported, unlike --custard_entry.\n--target <tag>\n    The configuration to extract for, as a '-'-separated list of atoms such as\n    s3.silicon or s2.qemu-debug (see doc/ref/targets.md). The language of\n    --codegen (c, rust, ocaml or fsharp) is added to it. Each module is\n    extracted from its most specific file whose tag the configuration implies.\n--custard_main <long_name>\n    The definition to invoke when the extracted program starts. It is also a\n    root of the extraction, so --custard_entry need not repeat it. A module name\n    may be given instead, and then the program is that module's top-level\n    effects, as for an OCaml executable. Omit it to extract a program that is\n    meant to be driven by a hand-written wrapper.\n--custard_dump_ir\n    Print the Custard IR of the extracted program to standard output\n--custard_dump_specializations\n    Print, for every definition Custard specialized, how many specializations of\n    it were emitted. Useful to diagnose code bloat and specialization fuel\n    exhaustion.\n--custard_dump_layouts\n    Print the layout Custard computed for every type: erased, collapsed to a\n    single field, or a struct. Useful to understand why a field or argument\n    disappeared from the generated code.\n--custard_type_stats\n    Cherry: print, for every reference-counted record and variant, how many\n    counted references a value holds by value, its approximate size in words,\n    how many function parameters and results take it by value, and for a boxed\n    type the same counts for its heap cell. Large unboxed types that are passed\n    around a lot are candidates for [@@cherry_boxed].\n--custard_warn_any\n    Report every place where Custard lost track of a value's representation: a\n    type it had to leave as 'any', or a coercion it could not eliminate. Because\n    a Custard program is whole and monomorphic, these should be rare, and each\n    one is a place where the generated code is less checked than the rest.\n--custard_fuel <positive_integer>\n    Total number of specializations Custard may create before giving up (default\n    100000). This is a whole-program backstop; --custard_max_specializations is\n    the per-definition limit, and is the one that catches a definition recursing\n    through a monomorphized binder\n--custard_max_specializations <positive_integer>\n    Number of specializations Custard may create for any single definition\n    before giving up (default 10000)\n--custard_norm_budget <positive_integer>\n    Number of reduction steps Custard may spend normalizing any single term -- a\n    specialization key, a substituted argument, or a definition's body -- before\n    giving up (default 10000000). Normalization need not terminate, so without\n    this a definition that diverges under reduction would hang the compiler\n    rather than report an error. A step is a node of work, not a reduction:\n    building a closure's term is charged for every node it copies (section\n    30.12), so this number is much larger than a count of beta steps\n--custard_monomorphize_types <true|false>\n    Monomorphize type binders too, not just type-class dictionaries and binders\n    explicitly marked [@@monomorphize] (default true for --codegen C and\n    --codegen Cherry, which require it, and false otherwise)\n--custard_int128 <true|false>\n    Compile FStar.UInt128 and FStar.Int128 to C's unsigned __int128 and\n    __int128, and FStar.UInt128/FStar.Int128 to .NET's System.UInt128 and\n    System.Int128, rather than to their F* implementations (default true). Only\n    --codegen C and --codegen FSharp are affected; the other backends have no\n    128-bit machine integer. Set to false for a target whose compiler lacks the\n    extension, such as MSVC or any 32-bit target.\n--custard_sizet_width <native|32>\n    Width the direct-to-C and F# backends give FStar.SizeT.t: the target's own\n    size_t (uint64 in F#) by default, or uint32_t (uint32 in F#). Narrowing is\n    *not* sound in general -- it is correct exactly when the program assumes\n    FStar.SizeT.fits_u32, which F* does not check and this flag does not either\n    -- but on a target where a 64-bit index costs a register it is worth a\n    measurable amount (section 95). Only the C and FSharp backends have it;\n    karamel decides this for itself\n--custard_split\n    Write one output file per F* source module instead of one file for the whole\n    program. This is still a single whole-program run. For --codegen OCaml it\n    exists because F*'s hand-written OCaml realizations reference modules\n    Custard compiles, and a single output file would make those references\n    circular; --odir names the directory the files are written to. For --codegen\n    FSharp it does the same and additionally lists the files, in compile order,\n    in the generated project. For the karamel backends it splits the single\n    .krml into one karamel module per F* module, which is what karamel's -bundle\n    and -no-prefix select on, and is required to reproduce a specified crate\n    layout on the Rust path. For --codegen Cherry it instead writes the single C\n    program as one file per F* module (FILE.M.c for the -o file FILE.c) plus\n    FILE.c itself, so that a C compiler can build them in parallel.\n--custard_unit <name>\n    Compile as a named Custard unit and write <name>.cui alongside the generated\n    source. Downstream units pass that file to --custard_link to reuse this\n    unit's code instead of compiling it again. Omit it to build a self-contained\n    whole program.\n--custard_link <file.cui>\n    Link against an already-compiled Custard unit. May be repeated. A definition\n    exported by a linked unit is called rather than recompiled, and its layout\n    decisions are adopted rather than re-derived.\n--custard_extern_type <Lid[=name][@header]>\n    Treat a type as declared by the target rather than by F*: emit no definition\n    for it, spell it <name> if one is given, and include <header> in the\n    generated C if one is given. May be repeated. This is for types whose\n    representation is fixed outside F* and that cannot carry a\n    [@@custard_extern] attribute, such as one declared in a library the program\n    does not own.\n--custard_krml_model <Module>\n    Treat a module as one karamel models itself: emit neither its type\n    declarations nor its definitions, and leave every use of them under the F*\n    name, which is what karamel's Rust backend matches on. May be repeated. Only\n    under --codegen KrmlRust; Pulse.Lib.Slice is registered already. See section\n    20 of doc/ref/custard.md.\n--custard_no_unfold <Lid>\n    Do not unfold this type abbreviation: emit it, and leave every use of it\n    under its own name rather than replacing it by its body. The way to give a\n    monomorphic instance of a polymorphic type a name of its own, which on the\n    karamel path is the name of the emitted C struct. May be repeated. See\n    section 77 of doc/ref/custard.md.\n--custard_dump_cui\n    Print a readable rendering of the unit interfaces this run writes and reads\n-d\n    Enable general debugging, i.e. increase verbosity.\n--debug <debug toggles>\n    Enable specific debug toggles (comma-separated list of debug keys). You can\n    use a '-' at the beginning of a toggle to disable it instead.\n--debug_all\n    Enable all debug toggles. WARNING: this will cause a lot of output!\n--debug_all_modules\n    Enable to make the effect of --debug apply to every module processed by the\n    compiler, including dependencies.\n--defensive <no|warn|error|abort>\n    Enable several internal sanity checks, useful to track bugs and report\n    issues.\n      - if 'no', no checks are performed\n      - if 'warn', checks are performed and raise a warning when they fail\n      - if 'error, like 'warn', but the compiler raises a hard error instead\n      - if 'abort, like 'warn', but the compiler immediately aborts on an error\n    (default 'no')\n--dep <make|graph|full|raw|dune>\n    Output the transitive closure of the full dependency graph in several\n    formats:\n      - 'graph': a format suitable the 'dot' tool from 'GraphViz'\n      - 'full': a format suitable for 'make', including dependences for\n      producing .ml and .krml files\n      - 'make': (deprecated) a format suitable for 'make', including only\n      dependences among source files\n      - 'dune': a format suitable for 'dune', outputting (rule ...) stanzas\n--dump_ast\n    Dump the surface AST of the given file.\n--dump_module <module_name>\n    Print out this module as it passes through the compiler pipeline\n--eager_subtyping\n    Try to solve subtyping constraints at each binder (loses precision but may\n    be slightly more efficient)\n--error_contexts <true|false>\n    Print context information for each error or warning raised (default false)\n--ext <extension knobs>\n    These options are set in extensions option map. Keys are usually namespaces\n    separated by \":\". E.g.,\n    'pulse:verbose=1;my:extension:option=xyz;foo:bar=baz'. These options are\n    typically interpreted by extensions. Any later use of --ext over the same\n    key overrides the old value. An entry 'e' that is not of the form 'a=b' is\n    treated as 'e=1', i.e., 'e' associated with string \"1\".\n--expose_interfaces\n    Explicitly break the abstraction imposed by the interface of any\n    implementation file that appears on the command line (use with care!)\n--message_format <human|json|github|auto>\n    Format of the messages emitted by F*. Using 'auto' will use human messages\n    unless the variable GITHUB_ACTIONS is non-empty, in which case 'github' is\n    used (default `auto`).\n--hide_uvar_nums\n    Don't print unification variable numbers\n--ide\n    JSON-based interactive mode for IDEs (used by VSCode, emacs, neovim, etc.)\n--ide_id_info_off\n    Disable identifier tables in IDE mode (temporary workaround useful in Steel)\n--include <dir>\n    A directory in which to search for files included on the command line\n--print\n    Parses and prettyprints the files included on the command line\n--print_in_place\n    Parses and prettyprints in place the files included on the command line\n-f, --force\n    Force checking the files given as arguments even if they have valid checked\n    files\n--fuel <non-negative integer or pair of non-negative integers>\n    Set initial_fuel and max_fuel at once\n--ifuel <non-negative integer or pair of non-negative integers>\n    Set initial_ifuel and max_ifuel at once\n--initial_fuel <non-negative integer>\n    Number of unrolling of recursive functions to try initially (default 2)\n--initial_ifuel <non-negative integer>\n    Number of unrolling of inductive datatypes to try at first (default 1)\n--keep_query_captions <true|false>\n    Retain comments in the logged SMT queries (requires --log_queries or\n    --log_failing_queries; default true)\n--lang_extensions <extension>\n    Automatically enable the given language extensions based on the file\n    extension; the language extension's .cmxs must be on the include path or\n    loaded with --load_cmxs\n--lax\n    Run the lax-type checker only (admit all verification conditions)\n--load <module>\n    Load OCaml module, compiling it if necessary\n--load_cmxs <module>\n    Load compiled module, fails hard if the module is not already compiled\n--log_types\n    Print types computed for data/val/let-bindings\n--log_queries\n    Log the Z3 queries in several queries-*.smt2 files, as we go\n--log_failing_queries\n    As --log_queries, but only save the failing queries. Each query is saved in\n    its own file regardless of whether they were checked during the same\n    invocation. The SMT2 file names begin with \"failedQueries\"\n--max_fuel <non-negative integer>\n    Number of unrolling of recursive functions to try at most (default 8)\n--max_ifuel <non-negative integer>\n    Number of unrolling of inductive datatypes to try at most (default 2)\n--no_default_includes\n    Ignore the default module search paths\n--no_prelude\n    Do not include the prelude module (FStar.Prelude) when checking the files\n    given in the command line. This is similar to attaching [@@\"no_prelude\"] to\n    the module.\n--no_smt\n    Do not send any queries to the SMT solver, and fail on them instead\n--normalize_pure_terms_for_extraction\n    Extract top-level pure terms after normalizing them. This can lead to very\n    large code, but can result in more partial evaluation and compile-time\n    specialization.\n-o <filename>, --output_to <filename>\n    Write output (checked file, depend file, extracted output, etc) to this\n    file.\n--odir <dir>\n    Place output in directory dir\n--output_deps_to <file>\n    [Deprecated: use -o instead.] Output the result of --dep into this file\n    instead of to standard output.\n--output_ext <ext>\n    When used with --dep dune, controls the target file extension in generated\n    rules. The source file's extension is replaced by this value. For example,\n    --output_ext fst.checked turns Hello.fst into Hello.fst.checked. The\n    generated rules only check files, so the extension must end in \"checked\".\n--prims <file>\n    Use a custom Prims.fst file. Do not use if you do not know exactly what\n    you're doing.\n--print_bound_var_types\n    Print the types of bound variables\n--print_effect_args\n    Print inferred predicate transformers for all computation types\n--print_expected_failures\n    Print the errors generated by declarations marked with expect_failure,\n    useful for debugging error locations\n--print_full_names\n    Print full names of variables\n--print_implicits\n    Print implicit arguments\n--print_universes\n    Print universes\n--print_z3_statistics\n    Print Z3 statistics for each SMT query (details such as relevant modules,\n    facts, etc. for each proof)\n--prn\n    Print full names (deprecated; use --print_full_names instead)\n--proof_recovery\n    Proof recovery mode: before failing an SMT query, retry 3 times, increasing\n    rlimits. If the query goes through after retrying, verification will\n    succeed, but a warning will be emitted. This feature is useful to restore a\n    project after some change to its libraries or F* upgrade. Importantly, then,\n    this option cannot be used in a pragma (#set-options, etc).\n--quake <positive integer or pair of positive integers>\n    Repeats SMT queries to check for robustness\n      - --quake N/M repeats each query checks that it succeeds at least N out of\n      M times, aborting early if possible\n      - --quake N/M/k works as above, except it will unconditionally run M times\n      - --quake N is an alias for --quake N/N\n      - --quake N/k is an alias for --quake N/N/kUsing --quake disables --retry.\n    Queries from the smt_sync tactic are not quake-tested.\n--query_cache\n    Keep a running cache of SMT queries to make verification faster. Only\n    available in the interactive mode. NOTE: This feature is experimental and\n    potentially unsound! Hence why it is not allowed in batch mode (where it is\n    also less useful). If you find a query that is mistakenly accepted with the\n    cache, please report a bug to the F* issue tracker on GitHub.\n--query_stats\n    Print SMT query statistics\n--read_checked_file <path>\n    Read a checked file and dump it to standard output.\n--read_krml_file <path>\n    Read a Karamel binary file (e.g. one written by --codegen KrmlC) and dump it\n    to standard output.\n--record_options\n    Record the state of options used to check each sigelt, useful for the\n    `check_with` attribute and metaprogramming. Note that this implies a\n    performance hit and increases the size of checked files.\n--retry <positive integer>\n    Retry each SMT query N times and succeed on the first try. Using --retry\n    disables --quake.\n--report_assumes <warn|error>\n    Report every use of an escape hatch, include assume, admit, etc.\n--silent\n    Disable all non-critical output\n--smt <path>\n    Path to the Z3 SMT solver (we could eventually support other solvers)\n--smtencoding.elim_box <true|false>\n    Toggle a peephole optimization that eliminates redundant uses of\n    boxing/unboxing in the SMT encoding (default 'false')\n--smtencoding.nl_arith_repr <native|wrapped|boxwrap>\n    Control the representation of non-linear arithmetic functions in the SMT\n    encoding:\n      - if 'boxwrap' use 'Prims.op_Star, Prims.op_Slash, Prims.op_Percent'\n      - if 'native' use '*, div, mod'\n      - if 'wrapped' use '_mul, _div, _mod : Int*Int -> Int'(default 'boxwrap')\n--smtencoding.l_arith_repr <native|boxwrap>\n    Toggle the representation of linear arithmetic functions in the SMT\n    encoding:\n      - if 'boxwrap', use 'Prims.op_Plus, Prims.op_Minus, Prims.op_Minus'\n      - if 'native', use '+, -, -'(default 'boxwrap')\n--stats <true|false>\n    Print some statistics on the time spent in each phase of the compiler\n--tactic_raw_binders\n    Do not use the lexical scope of tactics to improve binder names\n--tactics_failhard\n    Do not recover from metaprogramming errors, and abort if one occurs\n--tactics_info\n    Print some rough information on tactics, such as the time they take to run\n--tactic_trace\n    Print a depth-indexed trace of tactic execution (Warning: very verbose)\n--tactic_trace_d <positive_integer>\n    Trace tactics up to a certain binding depth\n--__tactics_nbe\n    Use NBE to evaluate metaprograms (experimental)\n--tcnorm <true|false>\n    Attempt to normalize definitions marked as tcnorm (default 'true')\n--timing\n    Print the time it takes to verify each top-level definition. This is just an\n    alias for an invocation of the profiler, so it may not work well if combined\n    with --profile. In particular, it implies --profile_group_by_decl.\n--trace_error\n    Attach stack traces on errors\n--ugly\n    Emit output formatted for debugging\n--unthrottle_inductives\n    Let the SMT solver unfold inductive types to arbitrary depths (may affect\n    verifier performance)\n--unsafe_tactic_exec\n    Allow tactics to run external processes. WARNING: checking an untrusted F*\n    file while using this option can have disastrous effects.\n--use_eq_at_higher_order\n    Use equality constraints when comparing higher-order types (Temporary)\n--use_native_tactics <path>\n    Use compiled tactics from path\n--no_plugins\n    Do not run plugins natively and interpret them as usual instead\n--no_tactics\n    Do not run the tactic engine before discharging a VC\n--using_facts_from <One or more space-separated occurrences of '[+|-]( * | namespace | fact id)'>\n    Prunes the context to include only the facts from the given namespace or\n    fact id. Facts can be include or excluded using the [+|-] qualifier. For\n    example --using_facts_from '* -FStarC.Reflection +FStarC.List\n    -FStarC.List.Tot' will remove all facts from FStarC.List.Tot.*, retain all\n    remaining facts from FStarC.List.*, remove all facts from\n    FStarC.Reflection.*, and retain all the rest. Note, the '+' is optional:\n    --using_facts_from 'FStarC.List' is equivalent to --using_facts_from\n    '+FStarC.List'. Multiple uses of this option accumulate, e.g.,\n    --using_facts_from A --using_facts_from B is interpreted as\n    --using_facts_from A^B.\n--__temp_fast_implicits\n    This does nothing and will be removed\n-v, --version\n    Display version number\n--warn_default_effects\n    Warn when (a -> b) is desugared to (a -> Tot b)\n--z3cliopt <option>\n    Z3 command line options\n--z3smtopt <option>\n    Z3 options in smt2 format\n--z3refresh\n    Restart Z3 after each query; useful for ensuring proof robustness\n--z3rlimit <positive_integer>\n    Set the Z3 per-query resource limit (default 5 units, taking roughtly 5s)\n--z3rlimit_factor <positive_integer>\n    Set the Z3 per-query resource limit multiplier. (default 1)\n--z3seed <positive_integer>\n    Set the Z3 random seed (default 0)\n--z3version <version>\n    Set the version of Z3 that is to be used. Default: 5.3.0\n--__no_positivity\n    Don't check positivity of inductive types\n--warn_error <>\n    The [-warn_error] option follows the OCaml syntax, namely:\n      - [r] is a range of warnings (either a number [n], or a range [n..n])\n      - [-r] silences range [r]\n      - [+r] enables range [r] as warnings (NOTE: \"enabling\" an error will\n      downgrade it to a warning)\n      - [@r] makes range [r] fatal.\n--use_nbe <true|false>\n    Use normalization by evaluation as the default normalization strategy\n    (default 'false')\n--trivial_pre_for_unannotated_effectful_fns <true|false>\n    Enforce trivial preconditions for unannotated effectful functions (default\n    'true')\n--with_fstarc\n    Expose compiler internal modules (FStarC namespace). Only for advanced\n    plugins you should probably not use it.\n--__debug_embedding\n    Debug messages for embeddings/unembeddings of natively compiled terms\n--eager_embedding\n    Eagerly embed and unembed terms to primitive operations and plugins: not\n    recommended except for benchmarking\n--profile_group_by_decl\n    Emit profiles grouped by declaration rather than by module\n--profile_component <One or more space-separated occurrences of '[+|-]( * | namespace | module | identifier)'>\n    Specific source locations in the compiler are instrumented with profiling\n    counters. Pass `--profile_component FStarC.TypeChecker` to enable all\n    counters in the FStarC.TypeChecker namespace. This option is a module or\n    namespace selector, like many other options (e.g., `--using_facts_from`)\n--profile <One or more space-separated occurrences of '[+|-]( * | namespace | module)'>\n    Profiling can be enabled when the compiler is processing a given set of\n    source modules. Pass `--profile FStar.Pervasives` to enable profiling when\n    the compiler is processing any module in FStar.Pervasives. This option is a\n    module or namespace selector, like many other options (e.g.,\n    `--using_facts_from`)\n-h, --help\n    Display this information\n--list_debug_keys\n    List all debug keys and exit\n--expand_include <directory>\n    Print all directories that would be transitively included (due to\n    fstar.include files) by including the given directory.\n--list_plugins\n    List all registered plugins and exit\n--locate\n    Print the root of the F* installation and exit\n--locate_lib\n    Print the root of the F* library and exit\n--locate_ocaml\n    Print the root of the built OCaml F* library and exit\n--locate_file <basename>\n    Find a file in F*'s include path and print its absolute path, then exit\n--locate_z3 <version>\n    Locate the executable for a given Z3 version, then exit. The output is\n    either an absolute path, or a name that was found in the PATH. Note: this is\n    the Z3 executable that F* will attempt to call for the given version, but\n    the version check is not performed at this point.\n--ocamlenv\n    With no arguments: print shell code to set up an environment with the OCaml\n    libraries in scope (similar to 'opam env'). With arguments: run a command in\n    that environment. NOTE: this must be the FIRST argument passed to F* and\n    other options are NOT processed.\n--ocamlc\n    A helper. This runs 'ocamlc' in the environment set up by --ocamlenv, for\n    building an F* application bytecode executable.\n--ocamlopt\n    A helper. This runs 'ocamlopt' in the environment set up by --ocamlenv, for\n    building an F* application native executable.\n--ocamlopt_plugin\n    A helper. This runs 'ocamlopt' in the environment set up by --ocamlenv, for\n    building an F* plugin.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Check exact F-star source with the current native compiler",
+      "command": [
+        "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin/fstar.exe",
+        "--cache_checked_modules",
+        "Hello.fst"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v",
+      "timestamp_utc": "2026-11-18T20:06:51.344745+00:00",
+      "timeout_seconds": 105,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "* Error 37 at Hello.fst(3,14-3,16):\n  - Constructor ML not found\n\n1 error was reported (see above)\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Check the same definition with its documented F-star ML effect scope",
+      "command": [
+        "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin/fstar.exe",
+        "--cache_checked_modules",
+        "Hello.fst"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v",
+      "timestamp_utc": "2026-11-18T20:06:51.639012+00:00",
+      "timeout_seconds": 105,
+      "exit_code": 0,
+      "stdout": "Verified module: Hello\nAll verification conditions discharged successfully\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Type-check original F-star and extract it as an OCaml module",
+      "command": [
+        "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin/fstar.exe",
+        "--codegen",
+        "OCaml",
+        "--custard_main",
+        "Hello.main",
+        "--odir",
+        "generated",
+        "Hello.fst"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v",
+      "timestamp_utc": "2026-11-18T20:06:51.914742+00:00",
+      "timeout_seconds": 105,
+      "exit_code": 0,
+      "stdout": "Verified module: Hello\nAll verification conditions discharged successfully\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the complete extracted OCaml program and its published inline IO realization",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ocamlc",
+        "Custard.ml",
+        "-o",
+        "hello"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v/generated",
+      "timestamp_utc": "2026-11-18T20:06:52.591988+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "OCAMLLIB": "${TOOL_CACHE}/tools/apt/usr/lib/ocaml"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ocamlrun",
+        "${SCRATCH}/199-2_iip11v/generated/hello"
+      ],
+      "cwd": "${SCRATCH}/199-2_iip11v",
+      "timestamp_utc": "2026-11-18T20:06:52.619060+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/fstar-v2026.11.15/dist/fstar/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/199-2_iip11v/home",
+        "TMPDIR": "${SCRATCH}/199-2_iip11v/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "OCAMLLIB": "${TOOL_CACHE}/tools/apt/usr/lib/ocaml"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#199 F∗/Hello.fst": "64028b3917f96e67fee5422dab9ef3d05dff98c8ae808f2b8f17c79e7e00dbd5"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "F* guida alla toolchain",
+      "url": "https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html"
+    },
+    {
+      "title": "FStar.IO interfaccia originale",
+      "url": "https://github.com/FStarLang/FStar/blob/master/ulib/FStar.IO.fsti"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "fstar-v2026.11.15-Linux-x86_64.tar.gz",
+      "size": 250620350,
+      "url": "https://github.com/FStarLang/FStar/releases/download/v2026.11.15/fstar-v2026.11.15-Linux-x86_64.tar.gz",
+      "sha256": "375b811af042d36c38641995799c4d4146a521b1db4014efc9d018c713e5177b",
+      "release": "https://github.com/FStarLang/FStar/releases/tag/v2026.11.15",
+      "observed_sha256": "375b811af042d36c38641995799c4d4146a521b1db4014efc9d018c713e5177b"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "ocaml",
+      "version": "4.14.1-1ubuntu1",
+      "filename": "pool/universe/o/ocaml/ocaml_4.14.1-1ubuntu1_amd64.deb",
+      "sha256": "8f15e32a7fa98461a6d15e71643131d2e04cc62ee8c49435d43496f2590bf275",
+      "bytes": 81374768,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/o/ocaml/ocaml_4.14.1-1ubuntu1_amd64.deb"
+    },
+    {
+      "name": "ocaml-findlib",
+      "version": "1.9.6-1build4",
+      "filename": "pool/universe/f/findlib/ocaml-findlib_1.9.6-1build4_amd64.deb",
+      "sha256": "558065a8d99b61841471bb622784d01badeaadc85e91cf50d71aa88efff63888",
+      "bytes": 556502,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/f/findlib/ocaml-findlib_1.9.6-1build4_amd64.deb"
+    },
+    {
+      "name": "z3",
+      "version": "4.8.12-3.1build1",
+      "filename": "pool/universe/z/z3/z3_4.8.12-3.1build1_amd64.deb",
+      "sha256": "3b15884d5f77563b2941f5c679ce9c3d252d098340094f46b891bc57603e3793",
+      "bytes": 5910556,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/z/z3/z3_4.8.12-3.1build1_amd64.deb"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#199 F∗/Hello.fst",
+      "original_sha256": "c26ddf402fb7e9341ca4e536ab8a11959a4f71a1da97c22cebf90139d480fa6b",
+      "tested_sha256": "64028b3917f96e67fee5422dab9ef3d05dff98c8ae808f2b8f17c79e7e00dbd5",
+      "staged_file": "work/native_target736_20261118/corrected/199/Hello.fst",
+      "original_fragment": "module Hello",
+      "replacement": "module Hello\n\nopen FStar.All"
+    }
+  ],
+  "extracted_native_code": "(* Generated by F* Custard extraction. Do not edit. *)\n[@@@ocaml.warning \"-3-5-8-11-20-26-27-28-32-33-34-35-37-39-50-57-60-69-70\"]\n\nlet hello_main (tmp : unit) : unit =\n  ((fun s -> Stdlib.print_string s; Stdlib.flush Stdlib.stdout) \"Hello, World!\\n\")\n\nlet _ = hello_main ()\n\n",
+  "toolchain": "F* 2026.11.15",
+  "reproduction_command": "fstar --cache_checked_modules Hello.fst; fstar --codegen OCaml --custard_main Hello.main --odir generated Hello.fst; ocamlc Custard.ml -o hello; ./hello",
+  "semantic_scope": "The native F-star compiler type-checked the example after exposing its ML effect through FStar.All. The actual generated OCaml program executed the original standard-library greeting call.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#199 F∗/verification/native_20261118_wave736_prior_attempt.json"
+}

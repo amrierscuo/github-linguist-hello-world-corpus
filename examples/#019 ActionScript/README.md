@@ -1,5 +1,16 @@
 # #019 ActionScript
 
+## Verified on November 18, 2026
+
+Apache Flex compiled the original ActionScript 3 class. The compatible AVM rendered its original TextField in a private framebuffer at runtime and the captured stage displayed the exact Hello World text.
+
+Run `mxmlc -output=hello.swf HelloWorld.as; xvfb-run -a ruffle hello.swf; OCR the stage`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `HelloWorld.as` is a **ActionScript 3** document class derived from `Sprite`.
 The manufacturer creates a `TextField`, assigns `Hello World` and adds it to the
 View list. Greetings appear on stage, not in the console.
@@ -35,4 +46,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.as` | [HelloWorld.as](HelloWorld.as) created; verification pending |
+| `.as` | [HelloWorld.as](HelloWorld.as) Syntax and behavior verified |
+
+</details>

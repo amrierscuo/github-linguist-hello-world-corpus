@@ -1,5 +1,18 @@
 # #168 Dockerfile
 
+## Verified on November 18, 2026
+
+Kaniko built the original Dockerfile to a local OCI-compatible image. The actual image’s declared command ran in its unpacked root filesystem and printed the exact greeting.
+
+Run `kaniko --dockerfile=<original> --no-push --tar-path=<local image>; unpack and run the produced image CMD`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Build and execute a container that prints Hello, World! with printf.
 
 ## Toolchain
@@ -39,3 +52,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.dockerfile` | [hello.dockerfile](variants/ext-dockerfile-2e646f636b657266696c65/hello.dockerfile) created; verification pending |
 | `.containerfile` | [hello.containerfile](variants/ext-containerfile-2e636f6e7461696e657266696c65/hello.containerfile) created; verification pending |
+
+</details>

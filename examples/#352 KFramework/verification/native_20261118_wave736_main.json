@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "ordinal": 352,
+  "language": "KFramework",
+  "timestamp_utc": "2026-11-18T20:21:04.490796+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile unchanged K semantics to native executable",
+      "command": [
+        "${TOOL_CACHE}/tools/k-v7.1.337/dist/usr/bin/kompile",
+        "hello.k",
+        "--backend",
+        "llvm",
+        "--syntax-module",
+        "HELLO"
+      ],
+      "cwd": "${SCRATCH}/352-zwx7ov_s",
+      "timestamp_utc": "2026-11-18T20:21:05.934489+00:00",
+      "timeout_seconds": 170,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/352-zwx7ov_s/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/352-zwx7ov_s/home\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/k-v7.1.337/dist/usr/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/352-zwx7ov_s/home",
+        "TMPDIR": "${SCRATCH}/352-zwx7ov_s/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/352-zwx7ov_s/home",
+        "LDFLAGS": "-L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "KLLVM_CXX": "${TOOL_CACHE}/tools/apt/usr/lib/llvm-17/bin/clang++",
+        "CXX": "${TOOL_CACHE}/tools/apt/usr/lib/llvm-17/bin/clang++",
+        "LIBRARY_PATH": "/usr/lib/gcc/x86_64-linux-gnu/13:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Evaluate original term in the official K interpreter",
+      "command": [
+        "${TOOL_CACHE}/tools/k-v7.1.337/dist/usr/bin/krun",
+        "input.hello"
+      ],
+      "cwd": "${SCRATCH}/352-zwx7ov_s",
+      "timestamp_utc": "2026-11-18T20:21:16.514117+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "<k>\n  \"Hello, World!\" ~> .K\n</k>\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/352-zwx7ov_s/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/352-zwx7ov_s/home\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/k-v7.1.337/dist/usr/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/352-zwx7ov_s/home",
+        "TMPDIR": "${SCRATCH}/352-zwx7ov_s/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/352-zwx7ov_s/home",
+        "LDFLAGS": "-L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "KLLVM_CXX": "${TOOL_CACHE}/tools/apt/usr/lib/llvm-17/bin/clang++",
+        "CXX": "${TOOL_CACHE}/tools/apt/usr/lib/llvm-17/bin/clang++",
+        "LIBRARY_PATH": "/usr/lib/gcc/x86_64-linux-gnu/13:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#352 KFramework/hello.k": "0d6026583e5f20baa1805d0b0f2d54dff78bc1303b2549ff954f5420d8d201c7",
+    "examples/#352 KFramework/input.hello": "5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://kframework.org/docs/user_manual/",
+    "https://github.com/runtimeverification/k"
+  ],
+  "previous_verification_log": "examples/#352 KFramework/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/runtimeverification/k/releases/download/v7.1.337/kframework_7.1.337_amd64_ubuntu_noble.deb",
+      "name": "kframework_7.1.337_amd64_ubuntu_noble.deb",
+      "sha256": "3692997e6bfa4be490d24bd9201289d4a05872889c9da725dda21e99d03d6990",
+      "release": "v7.1.337"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "clang-17",
+      "version": "1:17.0.6-9ubuntu1",
+      "filename": "pool/universe/l/llvm-toolchain-17/clang-17_17.0.6-9ubuntu1_amd64.deb",
+      "sha256": "ac1ec77a1ed5afe6d9636e488884ccf70dcb9f0aadcbf3e81c6b95c1e6dfd677",
+      "bytes": 78646,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/l/llvm-toolchain-17/clang-17_17.0.6-9ubuntu1_amd64.deb"
+    },
+    {
+      "name": "libgmp-dev",
+      "version": "2:6.3.0+dfsg-2ubuntu6.1",
+      "filename": "pool/main/g/gmp/libgmp-dev_6.3.0+dfsg-2ubuntu6.1_amd64.deb",
+      "sha256": "a9847b5ecfff791a46cb198f29a06d9d23a20afdfdd434812f2b44ccfb61d46a",
+      "bytes": 340090,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gmp/libgmp-dev_6.3.0+dfsg-2ubuntu6.1_amd64.deb"
+    },
+    {
+      "name": "libmpfr-dev",
+      "version": "4.2.1-1build1.1",
+      "filename": "pool/main/m/mpfr4/libmpfr-dev_4.2.1-1build1.1_amd64.deb",
+      "sha256": "362fcdeb7dff545af83e65a3a972519185efd4a231c23e13d519cf97a5c8e3e4",
+      "bytes": 287642,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/m/mpfr4/libmpfr-dev_4.2.1-1build1.1_amd64.deb"
+    },
+    {
+      "name": "libjemalloc2",
+      "version": "5.3.0-2build1",
+      "filename": "pool/universe/j/jemalloc/libjemalloc2_5.3.0-2build1_amd64.deb",
+      "sha256": "0cccf7701765b5a633b964ed551c2bd1c074cad17daea8fa20a4e9cad0adb5a8",
+      "bytes": 256148,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/j/jemalloc/libjemalloc2_5.3.0-2build1_amd64.deb"
+    }
+  ],
+  "toolchain_driver_config": [],
+  "toolchain": "K Framework v7.1.337",
+  "reproduction_command": "kompile hello.k --backend llvm --syntax-module HELLO; krun input.hello",
+  "semantic_scope": "The official K Framework compiled the original rewriting semantics. Running the original input produced the expected greeting in the k cell.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

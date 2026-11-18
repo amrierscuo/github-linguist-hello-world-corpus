@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "ordinal": 438,
+  "language": "Modelica",
+  "timestamp_utc": "2026-11-18T20:28:17.629423+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Load and simulate the exact model using the official Modelica Standard Library",
+      "command": [
+        "${TOOL_CACHE}/tools/openmodelica-noble/dist/usr/bin/omc",
+        "run.mos"
+      ],
+      "cwd": "${SCRATCH}/438-6rdydy1k",
+      "timestamp_utc": "2026-11-18T20:28:18.090224+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "true\ntrue\nrecord SimulationResult\n    resultFile = \"${SCRATCH}/438-6rdydy1k/Hello_res.mat\",\n    simulationOptions = \"startTime = 0.0, stopTime = 0.1, numberOfIntervals = 500, tolerance = 1e-6, method = 'dassl', fileNamePrefix = 'Hello', options = '', outputFormat = 'mat', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"LOG_STDOUT        | info    | Hello, World!\nLOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 0.0041184,\n    timeBackend = 0.0623053,\n    timeSimCode = 0.0020749,\n    timeTemplates = 0.0037045000000000003,\n    timeCompile = 1.0111439,\n    timeSimulation = 0.0237633,\n    timeTotal = 1.1077273\nend SimulationResult;\n\"\"\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/lib/llvm-18/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/438-6rdydy1k/home",
+        "TMPDIR": "${SCRATCH}/438-6rdydy1k/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/openmodelica-noble/dist/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/openmodelica-noble/dist/usr/lib:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "OPENMODELICAHOME": "${TOOL_CACHE}/tools/openmodelica-noble/dist/usr",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/openmodelica-noble/dist/usr/lib/x86_64-linux-gnu",
+        "OPENMODELICALIBRARY": "${SCRATCH}/438-6rdydy1k/msl/OpenModelica-ModelicaStandardLibrary-efd981a1176f124938d6d6759f7c09e0fbf55ddf",
+        "MODELICAPATH": "${SCRATCH}/438-6rdydy1k/msl/OpenModelica-ModelicaStandardLibrary-efd981a1176f124938d6d6759f7c09e0fbf55ddf",
+        "CPPFLAGS": "-I${TOOL_CACHE}/tools/openmodelica-noble/dist/usr/include/omc -I${TOOL_CACHE}/tools/apt/usr/include",
+        "LDFLAGS": "-L${TOOL_CACHE}/tools/openmodelica-noble/dist/usr/lib/x86_64-linux-gnu -L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#438 Modelica/Hello.mo": "a8ab72427110b58e3df5f7a660baa0d5128b6e90bf6d3868fc1d0d0af1f804b5",
+    "examples/#438 Modelica/run.mos": "65b97d1937b39779df10114a9b5bb45d8c4fa07b0622465d42eb8cdad49736b5"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Modelica linguaggio e specifica",
+      "url": "https://specification.modelica.org/maint/3.6/"
+    },
+    {
+      "title": "OpenModelica scripting",
+      "url": "https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "publisher_library_archives": [],
+  "toolchain": "OpenModelica 1.27.2 / Modelica Standard Library",
+  "reproduction_command": "MODELICAPATH=<Modelica libraries> omc run.mos",
+  "semantic_scope": "The original Modelica script compiled and simulated the original model and its initialization emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

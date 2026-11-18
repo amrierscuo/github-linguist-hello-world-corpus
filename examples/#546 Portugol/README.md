@@ -1,5 +1,16 @@
 # #546 Portugol
 
+## Verified on November 18, 2026
+
+The published Portugol Studio JS tokenizer and bytecode compiler processed the original input. Its standalone VM executed the original program and the text output contained the exact greeting.
+
+Run `node check.cjs <upstream source directory> tokenizer.js parser.js vm.js vmcompiler.js`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.por` | [hello.por](hello.por) created; verification pending |
+| `.por` | [hello.por](hello.por) Syntax and behavior verified |
+
+</details>

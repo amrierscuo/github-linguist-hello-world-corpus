@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "ordinal": 237,
+  "language": "Genero 4gl",
+  "timestamp_utc": "2026-11-18T20:21:05.623046+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile and execute the unchanged original 4GL program in Aubit",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--ro-bind",
+        "${TOOL_CACHE}/tools/native-oci-736/aubit4gl-compat-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/237-w9yl3606",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "/bin/bash",
+        "/work/run-aubit.sh",
+        "/aubit4glsrc"
+      ],
+      "cwd": "${SCRATCH}/237-w9yl3606",
+      "timestamp_utc": "2026-11-18T20:21:05.675140+00:00",
+      "timeout_seconds": 80,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/237-w9yl3606/home",
+        "TMPDIR": "${SCRATCH}/237-w9yl3606/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/237-w9yl3606/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/237-w9yl3606/unused-public-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#237 Genero 4gl/hello.4gl": "88ad75cb81963c3544ded420c4b2caedbc64c1714683d2b6d4099c8142640d75"
+  },
+  "fixture_sha256": {
+    "registry-trust.json": {
+      "sha256": "9651a2f0e4a883cd7495d22c2b93c9de0e3e53ee579370e24573de1029674805",
+      "content_utf8": "{\"default\": [{\"type\": \"insecureAcceptAnything\"}]}"
+    },
+    "run-aubit.sh": {
+      "sha256": "5b9595c0fe2f8ea144c16e5586033c8922a932cf65fa12a356a873dbccaa597b",
+      "content_utf8": "set -eu\nexport AUBITDIR=\"$1\" AUBIT_HOME=\"$1\"\nexport PATH=\"$AUBITDIR/bin:$PATH\"\nexport LD_LIBRARY_PATH=\"$AUBITDIR/lib\"\nexport TERM=xterm\ncd /work\n4glpc hello.4gl -o hello\n./hello\n"
+    }
+  },
+  "sources": [
+    "https://4js.com/online_documentation/fjs-fgl-manual-html/fgl-topics/c_fgl_programs_019.html",
+    "https://4js.com/online_documentation/fjs-fgl-manual-html/fgl-topics/c_fgl_operators_003.html"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://docker.io/map7/aubit4gl:latest",
+      "digest": "sha256:45f75f2aa5adc0d4d7a63cf4e29b90e93ef77ff765ff688d5303f4b9f28b8e49"
+    }
+  ],
+  "toolchain": "Aubit4GL Informix 4GL-compatible OCI toolchain",
+  "reproduction_command": "4glpc hello.4gl -o hello; ./hello",
+  "semantic_scope": "The genuine compatible 4GL compiler compiled the untouched original. The generated console program printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

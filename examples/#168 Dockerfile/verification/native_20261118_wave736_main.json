@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "ordinal": 168,
+  "language": "Dockerfile",
+  "timestamp_utc": "2026-11-18T20:23:34.408474+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the original Dockerfile directly to a local image archive",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--bind",
+        "${SCRATCH}/168-h25cq4r3/builder-root",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/168-h25cq4r3",
+        "/work",
+        "--chdir",
+        "/work",
+        "--ro-bind",
+        "/etc/resolv.conf",
+        "/etc/resolv.conf",
+        "--ro-bind",
+        "/etc/ssl/certs/ca-certificates.crt",
+        "/kaniko/ssl/certs/ca-certificates.crt",
+        "--setenv",
+        "SSL_CERT_FILE",
+        "/kaniko/ssl/certs/ca-certificates.crt",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "/kaniko/executor",
+        "--context=dir:///work",
+        "--dockerfile=/work/Dockerfile",
+        "--no-push",
+        "--no-push-cache",
+        "--tar-path=/work/hello-image.tar",
+        "--destination=corpus-example:local",
+        "--reproducible",
+        "--force"
+      ],
+      "cwd": "${SCRATCH}/168-h25cq4r3",
+      "timestamp_utc": "2026-11-18T20:23:35.077340+00:00",
+      "timeout_seconds": 220,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "\u001b[36mINFO\u001b[0m[0000] Retrieving image manifest alpine:3.22.2      \n\u001b[36mINFO\u001b[0m[0000] Retrieving image alpine:3.22.2 from registry index.docker.io \n\u001b[36mINFO\u001b[0m[0004] Built cross stage deps: map[]                \n\u001b[36mINFO\u001b[0m[0004] Retrieving image manifest alpine:3.22.2      \n\u001b[36mINFO\u001b[0m[0004] Returning cached image manifest              \n\u001b[36mINFO\u001b[0m[0004] Executing 0 build triggers                   \n\u001b[36mINFO\u001b[0m[0004] Building stage 'alpine:3.22.2' [idx: '0', base-idx: '-1'] \n\u001b[36mINFO\u001b[0m[0004] Skipping unpacking as no commands require it. \n\u001b[36mINFO\u001b[0m[0004] CMD [\"printf\", \"Hello, World!\\n\"]            \n\u001b[36mINFO\u001b[0m[0005] Skipping push to container registry due to --no-push flag \n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/168-h25cq4r3/home",
+        "TMPDIR": "${SCRATCH}/168-h25cq4r3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/168-h25cq4r3/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/168-h25cq4r3/unused-public-containers.conf"
+      }
+    },
+    {
+      "label": "Convert the built archive to OCI format using the native registry utility",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/skopeo",
+        "--policy",
+        "${SCRATCH}/168-h25cq4r3/registry-trust.json",
+        "copy",
+        "docker-archive:${SCRATCH}/168-h25cq4r3/hello-image.tar",
+        "oci:${SCRATCH}/168-h25cq4r3/built-oci:greeting"
+      ],
+      "cwd": "${SCRATCH}/168-h25cq4r3",
+      "timestamp_utc": "2026-11-18T20:23:40.220929+00:00",
+      "timeout_seconds": 80,
+      "exit_code": 0,
+      "stdout": "Getting image source signatures\nCopying blob sha256:432d252d258dfbc79f9b642c1f2361eb9c1e3eb107d57a08ee78a5ec580a14c3\nCopying config sha256:8c10bb302dff010dfc3eee48fcb3c537cb069681386b5818aeacfc8a448a1e00\nWriting manifest to image destination\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/168-h25cq4r3/home",
+        "TMPDIR": "${SCRATCH}/168-h25cq4r3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/168-h25cq4r3/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/168-h25cq4r3/unused-public-containers.conf"
+      }
+    },
+    {
+      "label": "Unpack the actual built image into its own root",
+      "command": [
+        "umoci",
+        "unpack",
+        "--rootless",
+        "--image",
+        "${SCRATCH}/168-h25cq4r3/built-oci:greeting",
+        "${SCRATCH}/168-h25cq4r3/built-bundle"
+      ],
+      "cwd": "${SCRATCH}/168-h25cq4r3",
+      "timestamp_utc": "2026-11-18T20:23:40.663599+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/168-h25cq4r3/home",
+        "TMPDIR": "${SCRATCH}/168-h25cq4r3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/168-h25cq4r3/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/168-h25cq4r3/unused-public-containers.conf"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--ro-bind",
+        "${SCRATCH}/168-h25cq4r3/built-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/168-h25cq4r3",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "printf",
+        "Hello, World!\n"
+      ],
+      "cwd": "${SCRATCH}/168-h25cq4r3",
+      "timestamp_utc": "2026-11-18T20:23:40.835242+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/168-h25cq4r3/home",
+        "TMPDIR": "${SCRATCH}/168-h25cq4r3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/168-h25cq4r3/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/168-h25cq4r3/unused-public-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#168 Dockerfile/Dockerfile": "0844c698d5b57de9917f49b6955e71c0c8231ddc34b1e015f3e1e7c4662b77ba",
+    "examples/#168 Dockerfile/check.cjs": "5c5a06cec466b0e0d9fb81450c36e64e489dd8082fbc03f9900790b92102b593",
+    "examples/#168 Dockerfile/package.json": "f89d8e442efc4b789624c7e3635ef006c744af6c8f13f6b91fabe4e751ef1d3d"
+  },
+  "fixture_sha256": {
+    "registry-trust.json": {
+      "sha256": "9651a2f0e4a883cd7495d22c2b93c9de0e3e53ee579370e24573de1029674805",
+      "content_utf8": "{\"default\": [{\"type\": \"insecureAcceptAnything\"}]}"
+    }
+  },
+  "sources": [
+    "https://docs.docker.com/reference/dockerfile/",
+    "https://github.com/rcjsuen/dockerfile-ast"
+  ],
+  "previous_verification_log": "examples/#168 Dockerfile/verification/result.json",
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://gcr.io/kaniko-project/executor:v1.23.2-debug",
+      "digest": "sha256:fb6d29da5792b6b9886bb132d1bb600bec79a47a31e4c152df3e52de9c561a44"
+    }
+  ],
+  "active_builder": "Kaniko official standalone executable",
+  "built_oci_archive_sha256": "32ca5e5326eda68342eda16d8775116b14daa601e5209aa0ab71abb097c227f0",
+  "toolchain": "Google Kaniko v1.23.2 and OCI image utilities",
+  "reproduction_command": "kaniko --dockerfile=<original> --no-push --tar-path=<local image>; unpack and run the produced image CMD",
+  "semantic_scope": "Kaniko built the original Dockerfile to a local OCI-compatible image. The actual image’s declared command ran in its unpacked root filesystem and printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "ordinal": 546,
+  "language": "Portugol",
+  "timestamp_utc": "2026-11-18T20:11:36.993209+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve versioned Node dependencies for this check",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "jsdom@26.1.0"
+      ],
+      "cwd": "${SCRATCH}/546-sliralg6",
+      "timestamp_utc": "2026-11-18T20:11:37.034786+00:00",
+      "timeout_seconds": 140,
+      "exit_code": 0,
+      "stdout": "\nadded 39 packages in 17s\n",
+      "stderr": "npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/546-sliralg6/home",
+        "TMPDIR": "${SCRATCH}/546-sliralg6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "check.cjs",
+        "${TOOL_CACHE}/tools/portugol-studio-portugol-studio-js-master/source/portugol-studio-js-master",
+        "tokenizer.js",
+        "parser.js",
+        "vm.js",
+        "vmcompiler.js"
+      ],
+      "cwd": "${SCRATCH}/546-sliralg6",
+      "timestamp_utc": "2026-11-18T20:11:55.897409+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "[\n  {\n    name: '$undefined',\n    bytecode: [ 1, '<Função desconhecida>', 100, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'escreva',\n    bytecode: [ 23, 0, 100, 24 ],\n    varCount: 1,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'limpa',\n    bytecode: [ 107, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'leia$inteiro',\n    bytecode: [ 101, 102, 25, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'leia$real',\n    bytecode: [ 101, 103, 25, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'leia$cadeia',\n    bytecode: [ 101, 104, 25, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'leia$caracter',\n    bytecode: [ 101, 105, 25, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'leia$logico',\n    bytecode: [ 101, 106, 25, 24 ],\n    varCount: 0,\n    parameters: [],\n    type: 81\n  },\n  {\n    name: 'sorteia',\n    bytecode: [ 23, 0, 23, 1, 55, 'Util', 'sorteia', 2, 25, 24 ],\n    varCount: 2,\n    parameters: [ [Object], [Object] ],\n    type: 96\n  },\n  {\n    name: '#globalInit',\n    bytecode: [ 21, 10, 0, 24 ],\n    bytecodeIndexes: {},\n    varCount: 0\n  },\n  {\n    name: 'inicio',\n    parameters: [],\n    type: 81,\n    bytecode: [\n      1,     'World', 22,\n      0,     1,       'Hello, ',\n      21,    1,       1,\n      23,    0,       21,\n      1,     1,       1,\n      '!\\n', 21,      1,\n      1,     24\n    ],\n    bytecodeIndexes: { '0': 52, '4': 78 },\n    varCount: 1\n  }\n]\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/546-sliralg6/home",
+        "TMPDIR": "${SCRATCH}/546-sliralg6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#546 Portugol/hello.por": "6c218aa16019352ea57de3d5d609438584ff6b1668662695248db89f13f2fd85"
+  },
+  "fixture_sha256": {
+    "check.cjs": {
+      "sha256": "9355f8a089b88a669da333d21b1aa46a8d5f8e593d874500ecd4addfbf77d50b",
+      "content_utf8": "const fs=require(\"fs\"),path=require(\"path\"),{JSDOM}=require(\"jsdom\");\nconst src=process.argv[2];\nconst source=fs.readFileSync(\"hello.por\",\"utf8\");\nconst dom=new JSDOM('<textarea id=\"output\"></textarea>',{runScripts:\"outside-only\"});\nconst win=dom.window;\nwin.source=source;\nwin.errors=[];\nwin.alert=(message)=>win.errors.push(message);\nconst scripts=process.argv.slice(3).map(f=>fs.readFileSync(path.join(src,f),\"utf8\"));\nconst machine=\"\\nlet srcText=window.source;\\nconst tokenizer=new Tokenizer(srcText);\\ntokenizer.tokenize();\\nconst relevantTokens=tokenizer.getRelevantTokens();\\nconst tree=new Parser(relevantTokens,srcText).parse();\\nconst libs={};\\nconst compiler=new Compiler(tree,libs,relevantTokens,srcText);\\ncompiler.compile();\\nconst field=document.getElementById(\\\"output\\\");\\nVMsetup(compiler.functions,libs,compiler.globalCount,srcText,field);\\nlet status=VMrun(100000);\\nfor(let rounds=0;status===STATE_BREATHING && rounds<30;rounds++)status=VMrun(100000);\\nif(status!==STATE_ENDED)throw Error(\\\"VM ended in state \\\"+status);\\nif(window.errors.length)throw Error(window.errors.join(\\\"\\\\n\\\"));\\nconst actual=field.value.trim()||field.textContent.trim();\\nif(actual!==\\\"Hello, World!\\\")throw Error(JSON.stringify(actual));\\nconsole.log(actual);\\n\";\nwin.eval(scripts.join(\"\\n\")+\"\\n\"+machine);\n"
+    }
+  },
+  "sources": [
+    "https://github.com/UNIVALI-LITE/Portugol-Studio",
+    "https://univali-lite.github.io/Portugol-Studio/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/portugol-studio/portugol-studio-js/tar.gz/master",
+      "ref": "master",
+      "sha256": "5e2603ed4558d3a630538bd1f879cd3fdea83eb34037549c231ddcb85824a7a8"
+    }
+  ],
+  "published_dispatcher_excerpt": "();\n\t\tconsole.log(tree.funcoes[0].statements);\n\t\t\n\t\tvar interpreter = new Interpreter(tree,relevantTokens,string_cod,div_saida);\n\t\tinterpreter.run();\n\t}*/\n\t\n\t//var lastvm = false;\n\tvar lastvmState = STATE_ENDED;\n\tvar lastvmTime = 0;\n\tvar lastvmStep = false;\n\t\n\tfunction exemplo(nome)\n\t{\n\t\tif(nome == \"aleatorio\")\n\t\t{\n\t\t\tnome+=  Math.floor(Math.random() * 4);\n\t\t}\n\t\thttpGetAsync(\"exemplos/\"+nome+\".por\",\n\t\tfunction(code)\n\t\t{\n\t\t\teditor.setValue(code, -1); // moves cursor to the start\n\t\t\tlimparErros();\n\t\t}\n\t\t);\n\t\tdocument.getElementById('modalExemplos').style.display = 'none';\n\t}\n\t\n\tfunction executar(btn,passoapasso)\n\t{\n\t\tif(passoapasso && lastvmState == STATE_STEP)\n\t\t{\n\t\t\n\t\t\t// abrir hotbar e animar\n\t\t\t//if(isMobile)\n\t\t\t//{\n\t\t\t\tif(hotbar_yOffset < hotbar_extendedyOffset)\n\t\t\t\tsetHotbarPosition(hotbar_extendedyOffset,true);\n\t\t\t//}\n\t\t\n\t\t\texecutarVM();\n\t\t\treturn;\n\t\t}\n\t\n\t\tlastvmStep = passoapasso;\n\t\tif(btn.value == \"Executar\" && lastvmState == STATE_ENDED)\n\t\t{\n\t\t\tautoSave();\n\t\t\tlimparErros();\n\t\t\tlimpa();\n\t\t\t\n\t\t\t// abrir hotbar e animar\n\t\t\t//if(isMobile)\n\t\t\t//{\n\t\t\t\tif(hotbar_yOffset < hotbar_extendedyOffset)\n\t\t\t\tsetHotbarPosition(hotbar_extendedyOffset,true);\n\t\t\t//}\n\t\t\t\n\t\t\tvar string_cod = editor.getValue();\n\t\t\ttry{\n\t\t\t\t\n\t\t\t\t\n\t\t\t\tstring_cod = string_cod.replace(/\\r\\n/g,\"\\n\");\n\t\t\t\t\n\t\t\t\tvar tokenizer = new Tokenizer(string_cod);\n\t\t\t\tconsole.log(tokenizer.tokenize());\n\t\t\t\tif(!execMesmoComErros && errosAnnot.length > 0)\n\t\t\t\t{\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\t//div_port.innerHTML = tokenizer.formatHTML();\n\t\t\t\t\n\t\t\t\tvar relevantTokens = tokenizer.getRelevantTokens();\n\t\t\t\tvar tree = new Parser(relevantTokens,string_cod).parse();\n\t\t\t\tconsole.log(tree);\n\t\t\t\tif(!execMesmoComErros && errosAnnot.length > 0)\n\t\t\t\t{\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tvar librariesNames = Object.keys(libraries);\n\t\t\t\tfor(var i =0;i<librariesNames.length;i++)\n\t\t\t\t{\n\t\t\t\t\tlibraries[librariesNames[i]].resetar();\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tvar compiler = new Compiler(tree,libraries,relevantTokens,string_cod,div_saida);\n\t\t\t\tcompiler.compile();\n\t\t\t\tif(!execMesmoComErros && errosAnnot.length > 0)\n\t\t\t\t{\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\t//lastvm = new Vm(compiler.functions,string_cod,div_saida);\n\t\t\t\t\n\t\t\t\tmyPortugolCompleter.setCompiler(compiler);\n\t\t\t\t\n\t\t\t\tVMsetup(compiler.functions,libraries,compiler.globalCount,string_cod,div_saida);\n\t\t\t\t\n\t\t\t\ttry{\n\t\t\t\t\tdocument.getElementById(\"hidden\").innerHTML = VMtoString();\n\t\t\t\t}\n\t\t\t\tcatch(e){\n\t\t\t\t\tvar myStackTrace = e.stack || e.stacktrace || \"\";\n\t\t\t\t\tconsole.log(myStackTrace);\n\t\t\t\t}\n\t\t\t\t//lastvmState = lastvm.",
+  "toolchain": "Portugol Studio JS official dialect compiler and VM",
+  "reproduction_command": "node check.cjs <upstream source directory> tokenizer.js parser.js vm.js vmcompiler.js",
+  "semantic_scope": "The published Portugol Studio JS tokenizer and bytecode compiler processed the original input. Its standalone VM executed the original program and the text output contained the exact greeting.",
+  "result_assertion": {
+    "successful_command_label": "Execute exact example",
+    "observed": "Hello, World!"
+  },
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

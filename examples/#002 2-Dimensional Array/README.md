@@ -1,5 +1,16 @@
 # #002 2-Dimensional Array
 
+## Verified on November 18, 2026
+
+The official Infinity Engine importer loaded the exact V1.0 file. The actual table exposed the two intended columns, and the values combined to the full greeting.
+
+Run `g++ check.cpp <2DAImporter.cpp> <libgemrb_core.so> -o check; ./check`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `hello.2da` is a **2DA V1.0** table, a variant used by the Infinity Engine.
 `0` line contains `Hello,` in `GREETING` column and `World!` in column
 `TARGET`. It is an example of data, so it does not print a message independently.
@@ -47,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.2da` | [hello.2da](hello.2da) created; verification pending |
+| `.2da` | [hello.2da](hello.2da) Syntax and behavior verified |
+
+</details>
