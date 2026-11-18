@@ -1,5 +1,16 @@
 # #321 JASS
 
+## Verified on November 18, 2026
+
+The Wurst JASS parser accepted the exact original source. A fixture passed the parsed call into the compatible execution AST and emulated the game debug callback. Invoking the original entry point produced the greeting.
+
+Run `javac JassCheck.java; java -cp <WurstScript jar>:. JassCheck`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Show Hello, World! to players of a map Warcraft III via BJDebugMsg.
 
 Canonical type `programming`, language_id `504860504`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.j` | [hello.j](hello.j) created; verification pending |
+| `.j` | [hello.j](hello.j) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #049 B
 
+## Verified on November 18, 2026
+
+The published native B compiler accepted the unchanged source, and the generated executable printed the exact greeting.
+
+Run `bcause -o greeting hello.b; ./greeting`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `B`, tipo `programming`, `language_id: 700792152`.
 
 Enter the ASCII characters of Hello, World! one at a time via the putchar library of the historical language B.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.b` | [hello.b](hello.b) created; verification pending |
+| `.b` | [hello.b](hello.b) Syntax and behavior verified |
+
+</details>

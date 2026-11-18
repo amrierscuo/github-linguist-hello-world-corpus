@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "ordinal": 202,
+  "language": "FLUX",
+  "timestamp_utc": "2026-11-18T21:35:41.523032+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Build the original Flux compiler from its Ant description",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ant",
+        "jar"
+      ],
+      "cwd": "${SCRATCH}/202-hw4nqrh6/flux",
+      "timestamp_utc": "2026-11-18T21:35:41.630263+00:00",
+      "timeout_seconds": 145,
+      "exit_code": 1,
+      "stdout": "Buildfile: ${SCRATCH}/202-hw4nqrh6/flux/build.xml\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home\n\nBUILD FAILED\nTarget \"jar\" does not exist in the project \"flux\". \n\nTotal time: 0 seconds\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/202-hw4nqrh6/home",
+        "TMPDIR": "${SCRATCH}/202-hw4nqrh6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "ANT_HOME": "${TOOL_CACHE}/tools/apt/usr/share/ant"
+      }
+    },
+    {
+      "label": "Build the default Flux compiler target",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ant"
+      ],
+      "cwd": "${SCRATCH}/202-hw4nqrh6/flux",
+      "timestamp_utc": "2026-11-18T21:35:42.607789+00:00",
+      "timeout_seconds": 145,
+      "exit_code": 0,
+      "stdout": "Buildfile: ${SCRATCH}/202-hw4nqrh6/flux/build.xml\n\nprepare:\n    [mkdir] Created dir: ${SCRATCH}/202-hw4nqrh6/flux/bin\n\ngenerate:\n\nparser-generate:\n\nscanner-generate:\n [java-cup] Opening files...\n [java-cup] Parsing specification from standard input...\n     [jlex] Processing first section -- user code.\n     [jlex] Processing second section -- JLex declarations.\n     [jlex] Processing third section -- lexical rules.\n     [jlex] Creating NFA machine representation.\n     [jlex] NFA comprised of 129 states.\n     [jlex] Working on character classes.:::::::::.:::.:::::::::.::::::.:::.:.........::....:..........::.::.\n     [jlex] NFA has 40 distinct character classes.\n     [jlex] Creating DFA transition table.\n [java-cup] Checking specification...\n [java-cup] Warning: Terminal \"PLUS\" was declared but never used\n     [jlex] Working on DFA states..\n [java-cup] Warning: Terminal \"NUMBER\" was declared but never used\n [java-cup] Building parse tables...\n [java-cup]   Computing non-terminal nullability...\n [java-cup]   Computing first sets...\n     [jlex] .\n     [jlex] .\n     [jlex] .\n [java-cup]   Building state machine...\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n [java-cup]   Filling in tables...\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] .\n     [jlex] \n     [jlex] Minimizing DFA transition table.\n [java-cup]   Checking for non-reduced productions...\n [java-cup] Writing parser...\n     [jlex] 66 states after removal of redundant states.\n     [jlex] Outputting lexical analyzer code.\n [java-cup] Closing files...\n [java-cup] ------- CUP v0.10k Parser Generation Summary -------\n [java-cup]   0 errors and 2 warnings\n [java-cup]   27 terminals, 26 non-terminals, and 49 productions declared, \n [java-cup]   producing 100 unique parse states.\n [java-cup]   2 terminals declared but not used.\n [java-cup]   0 non-terminals declared but not used.\n [java-cup]   0 productions never reduced.\n [java-cup]   0 conflicts detected (0 expected).\n [java-cup]   Code written to \"parser.java\", and \"sym.java\".\n [java-cup] ---------------------------------------------------- (v0.10k)\n     [move] Moving 1 file to ${SCRATCH}/202-hw4nqrh6/flux/src/edu/umass/cs/flux\n     [move] Moving 1 file to ${SCRATCH}/202-hw4nqrh6/flux/src/edu/umass/cs/flux\n     [move] Moving 1 file to ${SCRATCH}/202-hw4nqrh6/flux/src/edu/umass/cs/flux\n\ncompile:\n    [javac] ${SCRATCH}/202-hw4nqrh6/flux/build.xml:55: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds\n    [javac] Compiling 41 source files to ${SCRATCH}/202-hw4nqrh6/flux/bin\n    [javac] Note: Some input files use unchecked or unsafe operations.\n    [javac] Note: Recompile with -Xlint:unchecked for details.\n\nall:\n\nBUILD SUCCESSFUL\nTotal time: 2 seconds\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/202-hw4nqrh6/home",
+        "TMPDIR": "${SCRATCH}/202-hw4nqrh6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "ANT_HOME": "${TOOL_CACHE}/tools/apt/usr/share/ant"
+      }
+    },
+    {
+      "label": "Compile original Flux to the real threaded native server backend",
+      "command": [
+        "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java",
+        "-cp",
+        "${SCRATCH}/202-hw4nqrh6/flux/bin:${SCRATCH}/202-hw4nqrh6/flux/lib/jdsl.jar:${SCRATCH}/202-hw4nqrh6/flux/lib/seda.jar:${SCRATCH}/202-hw4nqrh6/flux/lib/getopt.jar:${SCRATCH}/202-hw4nqrh6/flux/lib/javacuplex.jar",
+        "edu.umass.cs.flux.Main",
+        "-r",
+        "${SCRATCH}/202-hw4nqrh6/generated",
+        "-t",
+        "-d",
+        "graph.dot",
+        "hello.fx"
+      ],
+      "cwd": "${SCRATCH}/202-hw4nqrh6",
+      "timestamp_utc": "2026-11-18T21:35:46.244797+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/202-hw4nqrh6/home",
+        "TMPDIR": "${SCRATCH}/202-hw4nqrh6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "ANT_HOME": "${TOOL_CACHE}/tools/apt/usr/share/ant"
+      }
+    },
+    {
+      "label": "Link generated native Flux server with the exact original host implementation",
+      "command": [
+        "g++",
+        "-std=gnu++11",
+        "-fpermissive",
+        "-include",
+        "cstdio",
+        "-include",
+        "${SCRATCH}/202-hw4nqrh6/flux-host-types.h",
+        "-I",
+        "${SCRATCH}/202-hw4nqrh6/generated",
+        "-I",
+        "${SCRATCH}/202-hw4nqrh6",
+        "-I",
+        "${SCRATCH}/202-hw4nqrh6/flux/src/runtime",
+        "-pthread",
+        "${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp",
+        "${SCRATCH}/202-hw4nqrh6/mImpl.cpp",
+        "-o",
+        "hello"
+      ],
+      "cwd": "${SCRATCH}/202-hw4nqrh6",
+      "timestamp_utc": "2026-11-18T21:35:46.723252+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "In file included from ${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp:6:\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/logger.h: In member function ‘std::string Logger::print_ia_histogram()’:\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/logger.h:266:40: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wformat=]\n  266 |                         sprintf(buf, \"%d \", ia_vector->size());\n      |                                       ~^    ~~~~~~~~~~~~~~~~~\n      |                                        |                   |\n      |                                        int                 std::vector<double>::size_type {aka long unsigned int}\n      |                                       %ld\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/logger.h: In member function ‘std::string Logger::print_completions_histogram()’:\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/logger.h:288:40: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wformat=]\n  288 |                         sprintf(buf, \"%d \", completions_vector->size());\n      |                                       ~^    ~~~~~~~~~~~~~~~~~~~~~~~~~~\n      |                                        |                            |\n      |                                        int                          std::vector<double>::size_type {aka long unsigned int}\n      |                                       %ld\nIn file included from ${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp:7:\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/graphClient.h: In constructor ‘GraphClient::GraphClient(int)’:\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/graphClient.h:57:19: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]\n   57 |             error(\"ERROR opening socket\");\n      |                   ^~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/graphClient.h: In member function ‘void GraphClient::sendMessage(std::string)’:\n${SCRATCH}/202-hw4nqrh6/flux/src/runtime/graphClient.h:89:24: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]\n   89 |                 error (\"ERROR writing to socket\");\n      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp: In function ‘void* GetGreeting_source_handler(void*)’:\n${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp:59:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   59 | }\n      | ^\n${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp: In function ‘void* runAndDelete(void*)’:\n${SCRATCH}/202-hw4nqrh6/generated/mThread.cpp:72:1: warning: no return statement in function returning non-void [-Wreturn-type]\n   72 | }\n      | ^\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/202-hw4nqrh6/home",
+        "TMPDIR": "${SCRATCH}/202-hw4nqrh6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/202-hw4nqrh6/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64",
+        "ANT_HOME": "${TOOL_CACHE}/tools/apt/usr/share/ant"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/202-hw4nqrh6/hello"
+      ],
+      "cwd": "${SCRATCH}/202-hw4nqrh6",
+      "timestamp_utc": "2026-11-18T21:35:47.451618+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/202-hw4nqrh6/home",
+        "TMPDIR": "${SCRATCH}/202-hw4nqrh6/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#202 FLUX/hello.fx": "d9e29ffbb2193b92cdc4f1ce6f0ece38da645f8ffebd3247e92a4b09689c6cdb",
+    "examples/#202 FLUX/mImpl.cpp": "6b3e6e78d9209aece2e6e7e722d91d6973f3e65936320ac0023794fb2f38a078"
+  },
+  "fixture_sha256": {
+    "flux-host-types.h": {
+      "sha256": "e0bc43d0ee7f6973f6161ab75989a7072943f02b32541fff8e65ec17fb1e9239",
+      "content_utf8": "using greeting_chars = char *;\n"
+    },
+    "localStructs.h": {
+      "sha256": "b3adf106d95b8934f690943f2921308b90be5b766c4c8ba250c792de56400201",
+      "content_utf8": "#pragma once\n"
+    }
+  },
+  "sources": [
+    "https://github.com/emeryberger/flux",
+    "https://www.usenix.org/legacy/event/usenix06/tech/full_papers/burns/burns_html/__flux-usenix-06.html",
+    "https://github.com/github-linguist/linguist/tree/main/samples/FLUX"
+  ],
+  "previous_verification_log": "examples/#202 FLUX/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/emeryberger/flux/tar.gz/master",
+      "ref": "master",
+      "sha256": "1f6093589ebb1afb0fa377ed10e11c2a0ccd4da6968c651140c7baa545a69acc"
+    }
+  ],
+  "upstream_root": [
+    "BUGS",
+    "README.md",
+    "index.html",
+    "build.xml",
+    "lib",
+    "src",
+    "LICENSE",
+    "data"
+  ],
+  "upstream_readme": [
+    "Flux\n====\n\nFlux.\n\nsmall readme for now.  questions? -> bburns@cs.umass.edu, emery@cs.umass.edu\n\nRequirements:\n\tSTL\n\tJava 1.5 (http://java.sun.com)\n\tAnt (http://ant.apache.org)\n\nto build:\n\t% ant\n\t\nto run unit tests on the runtime:\n\t% cd src/runtime\n\t% make\n\nto build a server:\n\t% mkdir <my server dir>\n\t% java -cp ./bin:./lib/jdsl.jar:./lib/javacuplex.jar:lib/getopt.jar \\\n\t\tedu.umass.cs.flux.Main -r <my server dir> <server-type> \\\n\t\t<server-opts> src/apps/webserver/webserver\n\t *where <server-type> is:\n\t\t-t [threaded]\n\t\t-b [batched]\n\t\t-e [event]\n\t *where <server-opts> are:\n\t\t-p [threadpool]\n\t\t-S <size> [threadpool size]\n                -d <dot-file-name (graph.dot) by default>\n\t% cp src/apps/webserver/mImpl.cpp <my server dir>\n\t% cd <my server dir>\n\t% compile all .cpp files \n\t\t(sooner or later a Makefile will be auto generated...)\n\t% if the server is an event-based server, compile \n\t\tsrc/runtime/mIOShim.cpp into a shared object file,\n\t\tand add it to the LD_PRELOAD environment variable\n\t% link to the executable (remember to \"-lpthread\")\n\t% ./<my-server-executable> <port> <root>\n\nto build a Java web server:\n\t% mkdir <my server dir>\n\t% java -cp ./bin:./lib/jdsl.jar:./lib/javacuplex.jar:./lib/getopt.jar \\\n\t\tedu.umass.cs.flux.Main -J -r <my server dir> \\\n\t\t<server-type> <server-opts> src/apps/jserver/jserver2\n\t  *where <server-type> is:\n\t\t-t [threaded]\n\t  *where <server-opts> are:\n\t\t-p [threadpool]\n\t\t-S <size> [threadpool size]\n\t% cp src/apps/jserver/mImpl.java <my server dir>\n\t% cd <my server dir>\n\t% javac -classpath /path/to/flux/bin *.java\n\t% java -cp /path/to/flux/bin mThread:./ <port> <root>\n\n"
+  ],
+  "shipped_java_archives": [
+    "lib/jdsl.jar",
+    "lib/seda.jar",
+    "lib/getopt.jar",
+    "lib/javacuplex.jar"
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#202 FLUX/hello.fx",
+      "original_sha256": "056443fc420f9ce0d6451959e65d1973d2decb29b637927cd002d8cf21aefff7",
+      "tested_sha256": "8ba605bf21c67584ac17efc3bf972767aba3b554eb15573823a6b9b0f87cec93",
+      "staged_file": "work/native_target736_20261118/corrected/202/hello.fx",
+      "original_fragment": "GetGreeting() => (char* message);",
+      "replacement": "GetGreeting() => (greeting_chars message);"
+    },
+    {
+      "path": "examples/#202 FLUX/hello.fx",
+      "original_sha256": "8ba605bf21c67584ac17efc3bf972767aba3b554eb15573823a6b9b0f87cec93",
+      "tested_sha256": "87552219100205ea4b3f8f6d820eda6074cd55b910b7f5682661bdd6f720b76f",
+      "staged_file": "work/native_target736_20261118/corrected/202/hello.fx",
+      "original_fragment": "PrintGreeting(char* message)",
+      "replacement": "PrintGreeting(greeting_chars message)"
+    },
+    {
+      "path": "examples/#202 FLUX/hello.fx",
+      "original_sha256": "87552219100205ea4b3f8f6d820eda6074cd55b910b7f5682661bdd6f720b76f",
+      "tested_sha256": "d9e29ffbb2193b92cdc4f1ce6f0ece38da645f8ffebd3247e92a4b09689c6cdb",
+      "staged_file": "work/native_target736_20261118/corrected/202/hello.fx",
+      "original_fragment": "source GetGreeting => PrintGreeting;",
+      "replacement": "GreetingFlow(greeting_chars message) => ();\n\nsource GetGreeting => GreetingFlow;\n\nGreetingFlow = PrintGreeting;"
+    }
+  ],
+  "blocker": "AssertionError: 'Hello, World!\\nHello, World!'",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target736_20261118/harness.py\", line 205, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target736_20261118/langbuild.py\", line 111, in flux\n    c.execute([c.stage/'hello'])\n  File \"${WORKSPACE}/work/native_target736_20261118/harness.py\", line 181, in execute\n    assert actual == 'Hello, World!', repr(actual)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'Hello, World!\\nHello, World!'\n"
+}

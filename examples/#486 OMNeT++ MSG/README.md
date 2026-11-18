@@ -1,5 +1,16 @@
 # #486 OMNeT++ MSG
 
+## Verified on November 18, 2026
+
+The original definitions were used by the actual native OMNeT++ message generator and console simulator. The simulation produced the exact greeting.
+
+Run `opp_makemake -f --deep -o hello; make MODE=release; ./hello -u Cmdenv -f omnetpp.ini --cmdenv-express-mode=false --cmdenv-log-level=info`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Generate the message and start an OMNeT++ network that records greeting.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.msg` | [Greeting.msg](Greeting.msg) created; verification pending |
+| `.msg` | [Greeting.msg](Greeting.msg) Syntax and behavior verified |
+
+</details>

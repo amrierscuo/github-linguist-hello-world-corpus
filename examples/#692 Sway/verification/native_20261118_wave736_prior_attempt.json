@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "ordinal": 692,
+  "language": "Sway",
+  "timestamp_utc": "2026-11-18T21:22:57.894058+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Compile the original script entry point into FuelVM bytecode",
+      "command": [
+        "${TOOL_CACHE}/tools/sway-v0.72.1/dist/forc-binaries/forc",
+        "build"
+      ],
+      "cwd": "${SCRATCH}/692-s4g8wfle",
+      "timestamp_utc": "2026-11-18T21:22:58.426463+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "    \u001b[1;32mBuilding\u001b[0m ${SCRATCH}/692-s4g8wfle\n    \u001b[1;32mFetching\u001b[0m \u001b[1mstd\u001b[0m 0.72.1\n    \u001b[1;32mFetching\u001b[0m from http://ipfs.forc.pub. Note: This can take several minutes.\n    \u001b[1;32mCreating\u001b[0m a new `Forc.lock` file. (Cause: lock file did not exist)\n      \u001b[1;32mAdding\u001b[0m \u001b[1mstd\u001b[0m\n   \u001b[1;32mCompiling\u001b[0m library \u001b[1mstd\u001b[0m (registry+std?0.72.1#Qmaei2ndDdVnwaBbe58vi6dwH1i5qs16wkLRfa6hnPeskK!)\n   \u001b[1;32mCompiling\u001b[0m script \u001b[1mcorpus-greeting\u001b[0m (${SCRATCH}/692-s4g8wfle)\n    \u001b[1;32mFinished\u001b[0m debug [unoptimized + fuel] target(s) [360 B] in 4.45s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/692-s4g8wfle/home",
+        "TMPDIR": "${SCRATCH}/692-s4g8wfle/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the original script entry function in the official FuelVM test runtime",
+      "command": [
+        "${TOOL_CACHE}/tools/sway-v0.72.1/dist/forc-binaries/forc",
+        "test",
+        "original_entry_returns_greeting",
+        "--test-threads",
+        "1"
+      ],
+      "cwd": "${SCRATCH}/692-s4g8wfle",
+      "timestamp_utc": "2026-11-18T21:23:08.349620+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "\u001b[1;31merror:\u001b[0m Nested packages are not supported, please consider separating the nested package at ${SCRATCH}/692-s4g8wfle/home/.forc/registry/std-0.72.1/Qmaei2ndDdVnwaBbe58vi6dwH1i5qs16wkLRfa6hnPeskK from the package at ${SCRATCH}/692-s4g8wfle, or if it makes sense consider creating a workspace.\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/692-s4g8wfle/home",
+        "TMPDIR": "${SCRATCH}/692-s4g8wfle/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#692 Sway/Forc.toml": "b91023d8ecb6d4e6dd63ad6edc73abef432d10c0fcd707a985e8247c9a96cbc3",
+    "examples/#692 Sway/src/main.sw": "54786bd2b54949594df78819cbf523b636d0be98c2c79a5de468d50a3eae5b8e"
+  },
+  "fixture_sha256": {
+    "src/main.sw": {
+      "sha256": "d9977de50431e40cc17201edacb8978077a4b62b1e13f2157b978ec209c5d3ce",
+      "content_utf8": "script;\n\nfn main() -> str[13] {\n    __to_str_array(\"Hello, World!\")\n}\n \n#[test]\nfn original_entry_returns_greeting() {\n    assert(main() == __to_str_array(\"Hello, World!\"));\n}\n"
+    }
+  },
+  "sources": [
+    "https://fuellabs.github.io/sway/v0.31.0/basics/variables.html"
+  ],
+  "previous_verification_log": "examples/#692 Sway/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/FuelLabs/sway/releases/download/v0.72.1/forc-binaries-linux_amd64.tar.gz",
+      "name": "forc-binaries-linux_amd64.tar.gz",
+      "sha256": "1d90387e69ccce595c552654316318975525e89a6d30f86580886aedb1cef517",
+      "release": "v0.72.1"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#692 Sway/src/main.sw",
+      "original_sha256": "cfcbabeca91cfa4f3c31ad3c7a5565690e57cca200afcd81271d1019198f91b2",
+      "tested_sha256": "54786bd2b54949594df78819cbf523b636d0be98c2c79a5de468d50a3eae5b8e",
+      "staged_file": "work/native_target736_20261118/corrected/692/src/main.sw",
+      "original_fragment": "\"Hello, World!\"",
+      "replacement": "__to_str_array(\"Hello, World!\")"
+    }
+  ],
+  "blocker": "RuntimeError: Execute the original script entry function in the official FuelVM test runtime exited 1: \u001b[1;31merror:\u001b[0m Nested packages are not supported, please consider separating the nested package at ${SCRATCH}/692-s4g8wfle/home/.forc/registry/std-0.72.1/Qmaei2ndDdVnwaBbe58vi6dwH1i5qs16wkLRfa6hnPeskK from the package at ${SCRATCH}/692-s4g8wfle, or if it makes sense consider creating a workspace.",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target736_20261118/harness.py\", line 205, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target736_20261118/lane35.py\", line 19, in sway\n    q=c.run('Execute the original script entry function in the official FuelVM test runtime',[exe,'test','original_entry_returns_greeting','--test-threads','1'],env=e,timeout=100)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${WORKSPACE}/work/native_target736_20261118/harness.py\", line 175, in run\n    raise RuntimeError(f'{label} exited {p.returncode}: {msg[-1200:]}')\nRuntimeError: Execute the original script entry function in the official FuelVM test runtime exited 1: \u001b[1;31merror:\u001b[0m Nested packages are not supported, please consider separating the nested package at ${SCRATCH}/692-s4g8wfle/home/.forc/registry/std-0.72.1/Qmaei2ndDdVnwaBbe58vi6dwH1i5qs16wkLRfa6hnPeskK from the package at ${SCRATCH}/692-s4g8wfle, or if it makes sense consider creating a workspace.\n"
+}

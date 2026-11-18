@@ -1,5 +1,18 @@
 # #135 Component Pascal
 
+## Verified on November 18, 2026
+
+The compatible Component Pascal JVM compiler compiled the original module. Calling its exported Say procedure executed the original code, with a recorded headless StdLog adapter.
+
+Run `gpcp StdLog.cp; gpcp Hello.cp; javac Check.java; java Check`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Component Pascal`, tipo `programming`, `language_id: 67`.
 
 Export the Hello.Say command to Component Pascal and write Hello, World! in the BlackBox log.
@@ -48,5 +61,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cp` | [Hello.cp](Hello.cp) created; verification pending |
+| `.cp` | [Hello.cp](Hello.cp) Syntax and behavior verified |
 | `.cps` | [hello.cps](variants/ext-cps-2e637073/hello.cps) created; verification pending |
+
+</details>

@@ -1,4 +1,8 @@
-GetGreeting() => (char* message);
-PrintGreeting(char* message) => ();
+GetGreeting() => (greeting_chars message);
+PrintGreeting(greeting_chars message) => ();
 
-source GetGreeting => PrintGreeting;
+GreetingFlow(greeting_chars message) => ();
+
+source GetGreeting => GreetingFlow;
+
+GreetingFlow = PrintGreeting;

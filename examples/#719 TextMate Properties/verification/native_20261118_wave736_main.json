@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "ordinal": 719,
+  "language": "TextMate Properties",
+  "timestamp_utc": "2026-11-18T21:41:41.434616+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile TextMate upstream settings and glob parser with the native Oniguruma engine",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-funsigned-char",
+        "-include",
+        "${SCRATCH}/719-h7bz7en6/std.h",
+        "-I",
+        "${SCRATCH}/719-h7bz7en6/includes",
+        "-I",
+        "${TOOL_CACHE}/tools/textmate-textmate-master/source/textmate-master/Frameworks/settings/src",
+        "-I",
+        "${TOOL_CACHE}/tools/textmate-textmate-master/source/textmate-master/Frameworks/regexp/src",
+        "-I",
+        "${TOOL_CACHE}/tools/apt/usr/include",
+        "lookup.cc",
+        "${TOOL_CACHE}/tools/textmate-textmate-master/source/textmate-master/Frameworks/settings/src/parser.cc",
+        "${TOOL_CACHE}/tools/textmate-textmate-master/source/textmate-master/Frameworks/regexp/src/parse_glob.cc",
+        "${TOOL_CACHE}/tools/textmate-textmate-master/source/textmate-master/Frameworks/regexp/src/parser_base.cc",
+        "-L",
+        "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "-lonig",
+        "-o",
+        "lookup"
+      ],
+      "cwd": "${SCRATCH}/719-h7bz7en6",
+      "timestamp_utc": "2026-11-18T21:41:41.496934+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "In file included from ${TOOL_CACHE}/tools/textmate-textmate-master/source/textmate-master/Frameworks/regexp/src/parse_glob.cc:3:\n${SCRATCH}/719-h7bz7en6/includes/text/utf8.h:55:41: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]\n   55 |         struct iterator_t : public std::iterator<std::bidirectional_iterator_tag, uint32_t>\n      |                                         ^~~~~~~~\nIn file included from /usr/include/c++/13/bits/stl_algobase.h:65,\n                 from /usr/include/c++/13/algorithm:60,\n                 from ${SCRATCH}/719-h7bz7en6/std.h:2,\n                 from <command-line>:\n/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here\n  127 |     struct _GLIBCXX17_DEPRECATED iterator\n      |                                  ^~~~~~~~\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/719-h7bz7en6/home",
+        "TMPDIR": "${SCRATCH}/719-h7bz7en6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/719-h7bz7en6/lookup"
+      ],
+      "cwd": "${SCRATCH}/719-h7bz7en6",
+      "timestamp_utc": "2026-11-18T21:41:43.359311+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/719-h7bz7en6/home",
+        "TMPDIR": "${SCRATCH}/719-h7bz7en6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#719 TextMate Properties/.tm_properties": "d26a9d43ccce17b3c809088fc244b7bf68bac67c1fd14435ea69b781e415f633"
+  },
+  "fixture_sha256": {
+    "includes/text/utf8.h": {
+      "sha256": "5a34f6385053c4ad93b539c3e05d5cbf0e639545890fe1c43877b030f2778659",
+      "content_utf8": "#pragma once\nnamespace utf8\n{\n\tinline uint32_t to_ch (std::string const& str)\n\t{\n\t\tASSERT(!str.empty());\n\n\t\tuint32_t value = str[0];\n\t\tsize_t mb_length = 1;\n\n\t\tif((value & 0xC0) == 0xC0) // multi-byte\n\t\t{\n\t\t\tASSERT((value & 0xFE) != 0xFE);\n\t\t\twhile(value & (1 << (7-mb_length)))\n\t\t\t\t++mb_length;\n\t\t\tASSERT(str.size() >= mb_length);\n\n\t\t\tvalue = value & ((1 << (7-mb_length))-1);\n\t\t\tfor(ssize_t i = 1; i < mb_length; ++i)\n\t\t\t{\n\t\t\t\tvalue = (value << 6) | (str[i] & 0x3F);\n\t\t\t\tASSERT((str[i] & 0xC0) == 0x80);\n\t\t\t}\n\t\t}\n\t\treturn value;\n\t}\n\n\tinline std::string to_s (uint32_t ch)\n\t{\n\t\tchar res[6];\n\t\tsize_t bitsLeft = 0, strLen = 1;\n\t\tif(ch <= 0x7F) // 0xxxxxxx\n\t\t\tres[0] = ((ch >> (bitsLeft =  0)) & 0x7F) | 0x00;\n\t\telse if(ch <= 0x7FF) // 110xxxxx 10xxxxxx\n\t\t\tres[0] = ((ch >> (bitsLeft =  6)) & 0x1F) | 0xC0;\n\t\telse if(ch <= 0xFFFF) // 1110xxxx 10xxxxxx 10xxxxxx\n\t\t\tres[0] = ((ch >> (bitsLeft = 12)) & 0x0F) | 0xE0;\n\t\telse if(ch <= 0x1FFFFF) // 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx\n\t\t\tres[0] = ((ch >> (bitsLeft = 18)) & 0x07) | 0xF0;\n\t\telse if(ch <= 0x3FFFFFF) // 111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx\n\t\t\tres[0] = ((ch >> (bitsLeft = 24)) & 0x03) | 0xF8;\n\t\telse // if(ch <= 0x7FFFFFFF) // 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx\n\t\t\tres[0] = ((ch >> (bitsLeft = 30)) & 0x01) | 0xFC;\n\n\t\twhile(bitsLeft >= 6)\n\t\t{\n\t\t\tbitsLeft -= 6;\n\t\t\tres[strLen++] = ((ch >> bitsLeft) & 0x3F) | 0x80;\n\t\t}\n\n\t\treturn std::string(res, res + strLen);\n\t}\n\n\ttemplate <typename _Iter>\n\tstruct iterator_t : public std::iterator<std::bidirectional_iterator_tag, uint32_t>\n\t{\n\t\ttypedef iterator_t self;\n\n\t\titerator_t (_Iter const& base_iterator) : base_iterator(base_iterator) { }\n\t\titerator_t () { }\n\n\t\tself& operator++ ()                       { fetch(); std::advance(base_iterator, mb_length); return *this; }\n\t\tself& operator-- ()                       { do { --base_iterator; } while((*base_iterator & 0xC0) == 0x80); return *this; }\n\n\t\tbool operator== (self const& rhs) const   { return base_iterator == rhs.base_iterator; }\n\t\tbool operator!= (self const& rhs) const   { return base_iterator != rhs.base_iterator; }\n\n\t\tuint32_t& operator* ()                    { fetch(); return value; }\n\t\tuint32_t const& operator* () const        { fetch(); return value; }\n\n\t\t_Iter operator& () const                  { return base_iterator; }\n\t\tssize_t length () const                   { fetch(); return mb_length; }\n\n\tprivate:\n\t\tvoid fetch () const\n\t\t{\n\t\t\t_Iter it = base_iterator;\n\t\t\tvalue = *it;\n\t\t\tmb_length = 1;\n\n\t\t\tif((value & 0xC0) == 0xC0) // multi-byte\n\t\t\t{\n\t\t\t\tASSERT((value & 0xFE) != 0xFE);\n\t\t\t\twhile(value & (1 << (7-mb_length)))\n\t\t\t\t\t++mb_length;\n\n\t\t\t\tvalue = value & ((1 << (7-mb_length))-1);\n\t\t\t\tfor(ssize_t i = 1; i < mb_length; ++i)\n\t\t\t\t{\n\t\t\t\t\tvalue = (value << 6) | (*++it & 0x3F);\n\t\t\t\t\tASSERT((*it & 0xC0) == 0x80);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t_Iter base_iterator;\n\t\tmutable uint32_t value;\n\t\tmutable ssize_t mb_length;\n\t};\n\n\ttemplate <typename _BaseIter> iterator_t<_BaseIter> make (_BaseIter const& base) { return iterator_t<_BaseIter>(base); }\n\n\tstruct validate_t\n\t{\n\t\tvalidate_t () : len(0), seen(0), success(true) { }\n\t\tbool is_valid () const { return success && len == 0; }\n\n\t\ttemplate <typename _Iter>\n\t\tbool scan (_Iter const& first, _Iter const& last)\n\t\t{\n\t\t\tfor(_Iter it = first; it != last && success; ++it)\n\t\t\t{\n\t\t\t\ttypename std::iterator_traits<_Iter>::value_type ch = *it;\n\t\t\t\tif(len) // we are in a multi-byte sequence\n\t\t\t\t{\n\t\t\t\t\tif((ch & 0xC0) == 0x80)\n\t\t\t\t\t{\n\t\t\t\t\t\tif(++seen == len)\n\t\t\t\t\t\t\tlen = seen = 0;\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t{\n\t\t\t\t\t\tsuccess = false;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse if((ch & 0xC0) == 0x80)\n\t\t\t\t{\n\t\t\t\t\tsuccess = false;\n\t\t\t\t}\n\t\t\t\telse if((ch & 0x80) == 0x80)\n\t\t\t\t{\n\t\t\t\t\tsize_t numBytes = 1;\n\t\t\t\t\twhile(ch & (1 << (7-numBytes)))\n\t\t\t\t\t\t++numBytes;\n\n\t\t\t\t\tif(numBytes > 6)\n\t\t\t\t\t\tsuccess = false;\n\n\t\t\t\t\tlen = numBytes;\n\t\t\t\t\tseen = 1;\n\t\t\t\t}\n\n// #ifndef NDEBUG\n// \t\t\t\tif(!success)\n// \t\t\t\t{\n// \t\t\t\t\tfprintf(stderr, \"%zu / %zu\\n\", seen, len);\n// \t\t\t\t\tstd::vector<char> v;\n// \t\t\t\t\ttext::hex_dump(first, it + 1, back_inserter(v));\n// \t\t\t\t\tfprintf(stderr, \"%.*s\\n\", (int)v.size(), &v[0]);\n// \t\t\t\t}\n// #endif\n\t\t\t}\n\t\t\treturn success;\n\t\t}\n\n\tprivate:\n\t\tsize_t len, seen;\n\t\tbool success;\n\t};\n\n\ttemplate <typename _Iter>\n\tbool is_valid (_Iter const& first, _Iter const& last)\n\t{\n\t\tvalidate_t validate;\n\t\treturn validate.scan(first, last) && validate.is_valid();\n\t}\n\n\ttemplate <typename T>\n\tstruct multibyte\n\t{\n\t\tstatic bool partial (T ch)       { return ch & 0x80; }\n\t\tstatic bool is_start (T ch)      { return (ch & 0xC0) == 0xC0; }\n\t\tstatic size_t length (T ch)      {\n\t\t\tsize_t numBytes = 1;\n\t\t\tif(is_start(ch))\n\t\t\t{\n\t\t\t\tASSERT((ch & 0xF8) != 0xF8);\n\t\t\t\twhile((ch & (1 << (7-numBytes))) && numBytes < 6)\n\t\t\t\t\t++numBytes;\n\t\t\t}\n\t\t\treturn numBytes;\n\t\t}\n\t};\n\n\tstatic struct { char mask, expect; } const UTF8LengthCodes[] =\n\t{\n\t\t{ 0b10000000, 0b00000000 },\n\t\t{ 0b11100000, 0b11000000 },\n\t\t{ 0b11110000, 0b11100000 },\n\t\t{ 0b11111000, 0b11110000 },\n\t\t{ 0b11111100, 0b11111000 },\n\t\t{ 0b11111110, 0b11111100 },\n\t};\n\n\ttemplate <typename _Iter>\n\t_Iter find_safe_end (_Iter const& first, _Iter const& last)\n\t{\n\t\t_Iter it = last;\n\t\tfor(auto const& code : UTF8LengthCodes)\n\t\t{\n\t\t\tif(it == first || (*--it & code.mask) == code.expect)\n\t\t\t\treturn last;\n\t\t\tif((*it & 0b11000000) == 0b11000000)\n\t\t\t\treturn it;\n\t\t}\n\t\treturn last;\n\t}\n\n\ttemplate <typename _Iter>\n\t_Iter remove_malformed (_Iter it, _Iter const& last)\n\t{\n\t\tauto dst = it;\n\t\twhile(it != last)\n\t\t{\n\t\t\tauto bt = it;\n\t\t\tbool valid = false;\n\t\t\tfor(auto const& code : UTF8LengthCodes)\n\t\t\t{\n\t\t\t\tif(valid = ((*bt & code.mask) == code.expect))\n\t\t\t\t\tbreak;\n\t\t\t\tif(++it == last || (*it & 0b11000000) != 0b10000000)\n\t\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif(valid)\n\t\t\t\t\tdst = dst == bt ? ++it : std::copy(bt, ++it, dst);\n\t\t\telse\tit = ++bt;\n\t\t}\n\t\treturn dst;\n\t}\n\n}\n"
+    },
+    "includes/oak/debug.h": {
+      "sha256": "a3c5c4d7626f34160379f5f273c0a1d4ec9f8279e4edb083debbd437ddb60031",
+      "content_utf8": "#pragma once\n#include <cassert>\n#define ASSERT(value) assert(value)\n"
+    },
+    "std.h": {
+      "sha256": "e19f70ef243060c2caa4ce15bd946d43bce832d998918fbf17099642d29352d0",
+      "content_utf8": "#pragma once\n#include <algorithm>\n#include <cassert>\n#include <cstdint>\n#include <cstdlib>\n#include <cstdio>\n#include <cstring>\n#include <iterator>\n#include <memory>\n#include <string>\n#include <vector>\n#include <utility>\n#ifndef ASSERT\n#define ASSERT(value) assert(value)\n#endif\n#define OS_LOG_DEFAULT 0\ninline void os_log_error(int, const char*, const char* path, int line, int len, const char* source) {\n    std::fprintf(stderr, \"%s line %d invalid input %.*s\\n\", path, line, len, source);\n}\ninline const std::string NULL_STR=\"ï¿¾\";\n"
+    },
+    "lookup.cc": {
+      "sha256": "2551a071fb664f67f16576147e913b86b08a46f6ef78542aba3d76b5ce258a41",
+      "content_utf8": "#include <iostream>\n#include <fstream>\n#include <iterator>\n#include <optional>\n#include \"parser.h\"\n#include \"parse_glob.h\"\n#include <oniguruma.h>\n\nstatic bool matches(const std::string& glob, const std::string& path) {\n    const auto pattern=convert_glob_to_regexp(glob,false);\n    const auto* p=reinterpret_cast<const OnigUChar*>(pattern.data());\n    const auto* q=reinterpret_cast<const OnigUChar*>(path.data());\n    regex_t* compiled=nullptr;\n    OnigErrorInfo error;\n    const auto rc=onig_new(&compiled,p,p+pattern.size(),ONIG_OPTION_NONE,ONIG_ENCODING_UTF8,ONIG_SYNTAX_RUBY,&error);\n    if(rc!=ONIG_NORMAL) throw std::runtime_error(\"invalid settings glob\");\n    auto* region=onig_region_new();\n    const auto outcome=onig_search(compiled,q,q+path.size(),q,q+path.size(),region,ONIG_OPTION_NONE);\n    onig_region_free(region,1);\n    onig_free(compiled);\n    return outcome>=0;\n}\nstatic std::optional<std::string> property(const ini_file_t& properties,const std::string& path) {\n    std::optional<std::string> value;\n    for(const auto& section:properties.sections) {\n        const bool enabled=std::any_of(section.names.begin(),section.names.end(),\n            [&path](const auto& glob){return matches(glob,path);});\n        if(enabled)for(const auto& setting:section.values)if(setting.name==\"GREETING\")value=setting.value;\n    }\n    return value;\n}\nint main() {\n    std::ifstream stream(\".tm_properties\",std::ios::binary);\n    const std::string input{std::istreambuf_iterator<char>(stream),{}};\n    ini_file_t properties(\".tm_properties\");\n    if(!stream.is_open() || parse_ini(input.data(),input.data()+input.size(),properties)!=input.data()+input.size())return 2;\n    OnigEncoding encodings[]={ONIG_ENCODING_UTF8};\n    if(onig_initialize(encodings,1)!=ONIG_NORMAL)return 3;\n    const auto text=property(properties,\"greeting.txt\");\n    const auto markdown=property(properties,\"greeting.md\");\n    onig_end();\n    if(!text || markdown)return 4;\n    std::cout << *text << '\\n';\n}\n"
+    }
+  },
+  "sources": [
+    "https://macromates.com/textmate/manual/settings"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/textmate/textmate/tar.gz/master",
+      "ref": "master",
+      "sha256": "6917d4ca4295bd77a82c56e4909d20b579b6ccdc6972d10535415b470a40d850"
+    }
+  ],
+  "upstream_utf8_header_sha256": "6ea654ab049d0f2469542300660260afe288c4dc922d5f63a5721f29391278f0",
+  "toolchain": "TextMate upstream settings parser, upstream glob conversion and Oniguruma",
+  "reproduction_command": "g++ <TextMate parser.cc, parse_glob.cc and parser_base.cc> lookup.cc -lonig; ./lookup",
+  "semantic_scope": "The upstream settings parser read the unchanged properties file and its glob converter selected which synthetic filename receives the GREETING property. The positive TXT lookup returned the exact greeting and the Markdown control had no value.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

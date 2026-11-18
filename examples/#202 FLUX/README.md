@@ -1,5 +1,20 @@
 # #202 FLUX
 
+## Verified on November 18, 2026
+
+The published Flux compiler generated a real threaded server from the original dataflow program. The linked C++ host handled the dataflow after making its greeting print atomic for the threaded runtime and emitted the exact greeting.
+
+Run `edu.umass.cs.flux.Main -r <generated> -t hello.fx; g++ ...; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+[Prior attempt](verification/native_20261118_wave736_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `FLUX`, tipo `programming`, language_id `106`.
 
 Define in UMass FLUX a GetGreeting source and a PrintGreeting node connected by a stream; C++ implementations print the first event and end.
@@ -46,5 +61,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.fx` | [hello.fx](hello.fx) created; verification pending |
+| `.fx` | [hello.fx](hello.fx) Syntax and behavior verified |
 | `.flux` | [hello.flux](variants/ext-flux-2e666c7578/hello.flux) created; verification pending |
+
+</details>

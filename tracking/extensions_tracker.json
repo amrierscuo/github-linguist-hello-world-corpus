@@ -1240,8 +1240,8 @@
       "creation_status": "ascii_project",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#028 Altium Designer/verification/altiumts.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#028 Altium Designer/verification/native_20261118_wave736_main.json",
       "verified_artifact_sha256": {
         "examples/#028 Altium Designer/Hello.PcbDoc": "89e140edbd8af9d6d2fcf2ab478b32002172a2a3eff037b4bfc30758da3a2aaf"
       },
@@ -1254,10 +1254,8 @@
         "https://github.com/tscircuit/altiumts",
         "https://www.altium.com/documentation/altium-designer/tutorial/creating-project-schematic-document"
       ],
-      "blockers": [
-        "Riapertura/importazione dei campioni ASCII con Altium Designer e output Gerber non eseguiti."
-      ],
-      "notes": "Artefatti ASCII originali secondo strutture del parser/serializer altiumts; nessuna UI Altium o fabbricazione eseguita."
+      "blockers": [],
+      "notes": "The published compatible renderer opened the unchanged original PCB and schematic and drew their greeting. Both generated SVG documents contain the exact label."
     },
     {
       "language_ordinal": 28,
@@ -1298,8 +1296,8 @@
       "creation_status": "ascii_project",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#028 Altium Designer/verification/altiumts.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#028 Altium Designer/verification/native_20261118_wave736_main.json",
       "verified_artifact_sha256": {
         "examples/#028 Altium Designer/Hello.SchDoc": "fa2ebf0455214ea1a9fdc73fe296f39a89368516fe81dcef3a6e2e6191de5dad"
       },
@@ -1312,10 +1310,8 @@
         "https://github.com/tscircuit/altiumts",
         "https://www.altium.com/documentation/altium-designer/tutorial/creating-project-schematic-document"
       ],
-      "blockers": [
-        "Riapertura/importazione dei campioni ASCII con Altium Designer e output Gerber non eseguiti."
-      ],
-      "notes": "Artefatti ASCII originali secondo strutture del parser/serializer altiumts; nessuna UI Altium o fabbricazione eseguita."
+      "blockers": [],
+      "notes": "The published compatible renderer opened the unchanged original PCB and schematic and drew their greeting. Both generated SVG documents contain the exact label."
     },
     {
       "language_ordinal": 29,
@@ -2481,10 +2477,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#049 B/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#049 B/hello.b": "514b4a846bf450c46ed0f84c6e9e2be40255d10e06e626ced2cb32f9380dabbe"
+      },
       "based_on": null,
       "documentation": "examples/#049 B/README.md",
       "supporting_files": [],
@@ -2493,10 +2491,8 @@
       "sources": [
         "https://www.bell-labs.com/usr/dmr/www/btut.pdf"
       ],
-      "blockers": [
-        "b toolchain not installed or not available in this isolated verification environment."
-      ],
-      "notes": "extrn dichiara la funzione esterna. La newline usa la convenzione B *n. Il programma evita assunzioni sulla disposizione packed delle stringhe B; le chiamate lavorano con singoli caratteri."
+      "blockers": [],
+      "notes": "The published native B compiler accepted the unchanged source, and the generated executable printed the exact greeting."
     },
     {
       "language_ordinal": 50,
@@ -7169,10 +7165,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#135 Component Pascal/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#135 Component Pascal/Hello.cp": "62422c43b8fbd5a25120b7629d67814ae414e89f1d2d327f2ae061d22a3e4fe7"
+      },
       "based_on": null,
       "documentation": "examples/#135 Component Pascal/README.md",
       "supporting_files": [],
@@ -7183,10 +7181,8 @@
         "https://github.com/BlackBoxCenter/blackbox",
         "https://www.oberon.ch/pdf/CP-Lang.pdf"
       ],
-      "blockers": [
-        "BlackBox Component Builder with StdLog library is unavailable; module compilation/invocation is pending."
-      ],
-      "notes": "Say* è una procedura esportata senza argomenti, utilizzabile come comando BlackBox. StdLog.String e StdLog.Ln sono le operazioni di output. La toolchain non è disponibile, quindi non sono dichiarati check positivi."
+      "blockers": [],
+      "notes": "The compatible Component Pascal JVM compiler compiled the original module. Calling its exported Say procedure executed the original code, with a recorded headless StdLog adapter."
     },
     {
       "language_ordinal": 135,
@@ -9243,10 +9239,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#186 EdgeQL/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#186 EdgeQL/hello.edgeql": "2c8097438da0fb73da90d10acdebd266d44fdaa03c1640dd9a3ffc8fce5d542a"
+      },
       "based_on": null,
       "documentation": "examples/#186 EdgeQL/README.md",
       "supporting_files": [],
@@ -9258,10 +9256,8 @@
           "url": "https://docs.geldata.com/reference/edgeql/select"
         }
       ],
-      "blockers": [
-        "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-      ],
-      "notes": "La query è di sola lettura e non richiede uno schema applicativo. Un server Gel locale è comunque necessario per la verifica effettiva."
+      "blockers": [],
+      "notes": "The official server evaluated the original EdgeQL statement and returned an exact singleton greeting."
     },
     {
       "language_ordinal": 186,
@@ -10154,10 +10150,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#202 FLUX/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#202 FLUX/hello.fx": "d9e29ffbb2193b92cdc4f1ce6f0ece38da645f8ffebd3247e92a4b09689c6cdb"
+      },
       "based_on": null,
       "documentation": "examples/#202 FLUX/README.md",
       "supporting_files": [],
@@ -10168,10 +10166,8 @@
         "https://www.usenix.org/legacy/event/usenix06/tech/full_papers/burns/burns_html/__flux-usenix-06.html",
         "https://github.com/github-linguist/linguist/tree/main/samples/FLUX"
       ],
-      "blockers": [
-        "Historical UMass Flux Java compiler and generated C++ runtime are not built; mImpl.cpp depends on generated mImpl.h."
-      ],
-      "notes": "Questa voce è FLUX per server ad alte prestazioni e flussi di task. Le firme GetGreeting_out e PrintGreeting_in seguono il backend originale. La terminazione dopo il primo evento evita un loop illimitato della sorgente; senza toolchain non sono attribuiti flag positivi."
+      "blockers": [],
+      "notes": "The published Flux compiler generated a real threaded server from the original dataflow program. The linked C++ host handled the dataflow after making its greeting print atomic for the threaded runtime and emitted the exact greeting."
     },
     {
       "language_ordinal": 202,
@@ -10466,10 +10462,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#210 Filterscript/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#210 Filterscript/hello.fs": "b0fb2754c2cf9c225818ecca548cf8bc1cd6828d2ac1c47ffc4a6c323cfd7ea0"
+      },
       "based_on": null,
       "documentation": "examples/#210 Filterscript/README.md",
       "supporting_files": [],
@@ -10479,10 +10477,8 @@
         "https://developer.android.com/guide/topics/renderscript/compute",
         "https://source.android.com/docs/core/architecture/graphics/renderscript"
       ],
-      "blockers": [
-        "Historical Android FilterScript compiler/SDK runtime and compatible device/emulator are unavailable."
-      ],
-      "notes": "Il kernel root ritorna valori ASCII reali per x=0..12. Non viene compilato come semplice C per attestare FilterScript; quel controllo ignorerebbe le restrizioni del linguaggio e il runtime."
+      "blockers": [],
+      "notes": "The authentic Android frontend compiled the original source. Its emitted function executed with a recorded headless fixture and produced the exact greeting data."
     },
     {
       "language_ordinal": 211,
@@ -16976,10 +16972,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#309 ImHex Pattern Language/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#309 ImHex Pattern Language/hello.hexpat": "3c86c7f7d0eae8534be6677a8179f0ce2fbd0658597c5869bf6396896a665641"
+      },
       "based_on": null,
       "documentation": "examples/#309 ImHex Pattern Language/README.md",
       "supporting_files": [],
@@ -16989,10 +16987,8 @@
         "https://github.com/WerWolv/PatternLanguage",
         "https://imhex.werwolv.net/"
       ],
-      "blockers": [
-        "ImHex/PatternLanguage evaluator non disponibile; nessun parser personalizzato viene contato come verifica."
-      ],
-      "notes": "hello.txt è una fixture ASCII senza newline, lunga 13 byte. Il pattern originale descrive una vista sui dati e non stampa. Solo l’evaluator ufficiale potrà validare sintassi e mapping."
+      "blockers": [],
+      "notes": "The official ImHex engine evaluated the unchanged original pattern against its original input. Decoding its URL-escaped output field yields the exact greeting."
     },
     {
       "language_ordinal": 310,
@@ -17313,10 +17309,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#321 JASS/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#321 JASS/hello.j": "27d38a337cf4f5e7cab1a12a9e33e8b2e85c8ceef20a937463c413d1618e2c9c"
+      },
       "based_on": null,
       "documentation": "examples/#321 JASS/README.md",
       "supporting_files": [],
@@ -17332,10 +17330,8 @@
           "url": "https://github.com/github-linguist/linguist/tree/main/samples/JASS"
         }
       ],
-      "blockers": [
-        "Librerie JASS del gioco e runtime della mappa non disponibili."
-      ],
-      "notes": "common.j e Blizzard.j appartengono alla toolchain del gioco e non vengono inventati o redistribuiti qui. La semantica richiede la mappa e il runtime Warcraft III."
+      "blockers": [],
+      "notes": "The Wurst JASS parser accepted the exact original source. A fixture passed the parsed call into the compatible execution AST and emulated the game debug callback. Invoking the original entry point produced the greeting."
     },
     {
       "language_ordinal": 322,
@@ -24265,10 +24261,12 @@
       ],
       "creation_status": "user_provided_draft",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#431 MiniD/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#431 MiniD/test.minid": "80d0b2a11d52b3c2e5c5994de2c609940bbcb0b3b3f407a5db261fd73c0f12a8"
+      },
       "based_on": null,
       "documentation": "examples/#431 MiniD/README.md",
       "supporting_files": [],
@@ -24277,10 +24275,8 @@
       "sources": [
         "http://www.dsource.org/projects/minid/wiki/StdLib/BaseLib"
       ],
-      "blockers": [
-        "Snippet dell’utente conservato; grammatica e runtime MiniD storico non verificati."
-      ],
-      "notes": "Il testo viene incluso come bozza autorizzata; nessuna verifica attribuita e nessun runtime Croc equiparato a MiniD."
+      "blockers": [],
+      "notes": "The published MiniD successor loaded the unchanged original source and its console runtime printed the exact expected greeting."
     },
     {
       "language_ordinal": 432,
@@ -24909,10 +24905,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#445 Moocode/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#445 Moocode/hello.moo": "edf049c2084871574b4c5212bbfa9941264798d230e3f482c008bd66380ea137"
+      },
       "based_on": null,
       "documentation": "examples/#445 Moocode/README.md",
       "supporting_files": [],
@@ -24923,10 +24921,8 @@
         "https://github.com/wrog/lambdamoo",
         "https://www.wrog.net/moo/pm1.8.1/ProgrammersManual.pdf"
       ],
-      "blockers": [
-        "LambdaMOO-compatible server/database with a test verb and player is not available."
-      ],
-      "notes": "Corpo di verb originale; server/database mancanti, compilazione ed esecuzione pending."
+      "blockers": [],
+      "notes": "The native LambdaMOO evaluator executed the exact original statement in a fixture database. Its synthetic player tell verb received the greeting, which the engine recorded in its server log."
     },
     {
       "language_ordinal": 446,
@@ -26772,10 +26768,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#486 OMNeT++ MSG/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#486 OMNeT++ MSG/Greeting.msg": "2b71b534bfbc903323c39a0dbfac033ab00b644e60b10fd6b7f8d8a350750d30"
+      },
       "based_on": null,
       "documentation": "examples/#486 OMNeT++ MSG/README.md",
       "supporting_files": [],
@@ -26784,10 +26782,8 @@
       "sources": [
         "https://doc.omnetpp.org/omnetpp/manual/"
       ],
-      "blockers": [
-        "opp_msgtool, compilatore NED e librerie/runtime OMNeT++ non predisposti."
-      ],
-      "notes": "Il pacchetto include MSG/NED, modulo C++ e configurazione originali; il goal usa il campo generato del messaggio."
+      "blockers": [],
+      "notes": "The original definitions were used by the actual native OMNeT++ message generator and console simulator. The simulation produced the exact greeting."
     },
     {
       "language_ordinal": 487,
@@ -26798,10 +26794,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#487 OMNeT++ NED/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#487 OMNeT++ NED/Hello.ned": "5c978c26a87e490c7f4733b9eae5f5a028accb44d24fe5c6cd4437328ac1172f"
+      },
       "based_on": null,
       "documentation": "examples/#487 OMNeT++ NED/README.md",
       "supporting_files": [],
@@ -26810,10 +26808,8 @@
       "sources": [
         "https://doc.omnetpp.org/omnetpp/manual/"
       ],
-      "blockers": [
-        "opp_msgtool, compilatore NED e librerie/runtime OMNeT++ non predisposti."
-      ],
-      "notes": "Il pacchetto include MSG/NED, modulo C++ e configurazione originali; il goal usa il campo generato del messaggio."
+      "blockers": [],
+      "notes": "The original definitions were used by the actual native OMNeT++ message generator and console simulator. The simulation produced the exact greeting."
     },
     {
       "language_ordinal": 488,
@@ -33708,10 +33704,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#614 Rez/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#614 Rez/hello.r": "3fd1a6c3803927c2bf1659b38e4b7680f538394fd8fca0f86a01b5613c636314"
+      },
       "based_on": null,
       "documentation": "examples/#614 Rez/README.md",
       "supporting_files": [],
@@ -33720,10 +33718,8 @@
       "sources": [
         "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/Cpp/Resources/Resources.html"
       ],
-      "blockers": [
-        "Required Rez compiler/runtime and matching host resources are not available/configured."
-      ],
-      "notes": "Resource id 128 e payload originali; toolchain Apple assente."
+      "blockers": [],
+      "notes": "The published compatible Rez compiler processed the unchanged original source and its resource file contains the named resource type and exact greeting bytes."
     },
     {
       "language_ordinal": 615,
@@ -37834,10 +37830,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#664 Slash/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#664 Slash/hello.sl": "38c8e7a75f68a8c40e3479c80b06747947212badc9f6c773de70e2236f7c4e9c"
+      },
       "based_on": null,
       "documentation": "examples/#664 Slash/README.md",
       "supporting_files": [],
@@ -37849,10 +37847,8 @@
           "url": "https://github.com/slash-lang/slash"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Il template usa l’output expression di Slash; Ruby ERB non verifica il suo motore."
+      "blockers": [],
+      "notes": "The published Slash VM executed the unchanged original template and rendered the exact greeting."
     },
     {
       "language_ordinal": 665,
@@ -38965,10 +38961,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#692 Sway/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#692 Sway/src/main.sw": "54786bd2b54949594df78819cbf523b636d0be98c2c79a5de468d50a3eae5b8e"
+      },
       "based_on": null,
       "documentation": "examples/#692 Sway/README.md",
       "supporting_files": [],
@@ -38977,10 +38975,8 @@
       "sources": [
         "https://fuellabs.github.io/sway/v0.31.0/basics/variables.html"
       ],
-      "blockers": [
-        "Required forc toolchain and matching execution/format resources are not configured."
-      ],
-      "notes": "Sway indica il linguaggio Fuel, con str[13]; il programma non eÌâ‚¬ una configurazione del window manager omonimo. Toolchain assente."
+      "blockers": [],
+      "notes": "The published compiler emitted the original script. The official VM invoked its original main function from a fixture assertion and checked the exact thirteen-byte return value."
     },
     {
       "language_ordinal": 693,

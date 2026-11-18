@@ -1,5 +1,18 @@
 # #614 Rez
 
+## Verified on November 18, 2026
+
+The published compatible Rez compiler processed the unchanged original source and its resource file contains the named resource type and exact greeting bytes.
+
+Run `Rez -I. hello.r -o hello.rsrc.bin with the recorded TEXT resource definition`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Rez`, tipo `programming`, language_id `498022874`.
 
 Fill out an original Mac Rez TEXT resource with greeting in the payload.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.r` | [hello.r](hello.r) created; verification pending |
+| `.r` | [hello.r](hello.r) Syntax and behavior verified |
+
+</details>

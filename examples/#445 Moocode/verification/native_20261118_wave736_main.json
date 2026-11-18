@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "ordinal": 445,
+  "language": "Moocode",
+  "timestamp_utc": "2026-11-18T21:33:38.158959+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Read the revision of the upstream LambdaMOO source used by the locally built console",
+      "command": [
+        "/usr/bin/git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "${SCRATCH}/445-komq644f/moo",
+      "timestamp_utc": "2026-11-18T21:33:38.186375+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "dc11b0fe6104019176c3f3ac1ef181bc664b7d2f\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/445-he1b2i1l/home",
+        "TMPDIR": "${SCRATCH}/445-he1b2i1l/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute the exact original player verb call in the genuine offline evaluator",
+      "command": [
+        "${SCRATCH}/445-komq644f/moo/moo",
+        "-e",
+        "${SCRATCH}/445-komq644f/moo/Minimal.db",
+        "${SCRATCH}/445-he1b2i1l/test.db"
+      ],
+      "cwd": "${SCRATCH}/445-he1b2i1l",
+      "timestamp_utc": "2026-11-18T21:33:38.199630+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "\nLambdaMOO Emergency Holographic Wizard Mode\n-------------------------------------------\n\"Please state the nature of the wizardly emergency...\"\n(Type `help' for assistance.)\n\n** Now running emergency commands as #3 ...\n\nMOO (#3): => 1\n\nMOO (#3): => {}\n\nMOO (#3): => 0\n\nMOO (#3): Bye.  (saving database)\n\n",
+      "stderr": "Nov 18 22:33:38: CMDLINE: Outbound network connections disabled.\nNov 18 22:33:38: STARTING: Version 1.9.0alpha of the LambdaMOO server\nNov 18 22:33:38:           (Using BSD/TCP protocol)\nNov 18 22:33:38:           (Task timeouts measured in server CPU seconds.)\nNov 18 22:33:38: BEFORE(load): string intern table\nNov 18 22:33:38: LOADING: ${SCRATCH}/445-komq644f/moo/Minimal.db\nNov 18 22:33:38: NAME_LOOKUP: Started new lookup process\nNov 18 22:33:38: LOADING: Reading 4 objects...\nNov 18 22:33:38: LOADING: Done reading 4 objects ...\nNov 18 22:33:38: VALIDATING the object hierarchies ...\nNov 18 22:33:38: VALIDATE: Phase 1: Check for invalid objects ...\nNov 18 22:33:38: VALIDATE: Phase 2: Check for cycles ...\nNov 18 22:33:38: VALIDATE: Phase 3a: Finding delusional parents ...\nNov 18 22:33:38: VALIDATE: Phase 3b: Finding delusional children ...\nNov 18 22:33:38: VALIDATING the object hierarchies ... finished.\nNov 18 22:33:38: LOADING: Reading 1 MOO verb programs...\nNov 18 22:33:38: LOADING: Done reading 1 verb programs...\nNov 18 22:33:38: LOADING: Reading forked and suspended tasks...\nNov 18 22:33:38: LOADING: Reading list of formerly active connections...\nNov 18 22:33:38: LOADING: ${SCRATCH}/445-komq644f/moo/Minimal.db done, will dump new database on ${SCRATCH}/445-he1b2i1l/test.db\nNov 18 22:33:38: AFTER(load): string intern table\nNov 18 22:33:38: INTERN: 0 allocations saved, 0 bytes\nNov 18 22:33:38: INTERN: at end, 6 entries in a 10007 bucket hash table.\nNov 18 22:33:38: AFTER(load): loading server options\nNov 18 22:33:38: Loaded protect cache for 144 builtin functions\nNov 18 22:33:38: AFTER(load): seed random number generator\nNov 18 22:33:38: EMERGENCY_MODE: Entering mode...\nNov 18 22:33:38: > Hello, World!\nNov 18 22:33:38: EMERGENCY_MODE: Leaving mode; won't continue...\nNov 18 22:33:38: DUMPING on ${SCRATCH}/445-he1b2i1l/test.db.#1# ...\nNov 18 22:33:38: DUMPING: Writing 4 objects...\nNov 18 22:33:38: DUMPING: Done writing 4 objects...\nNov 18 22:33:38: DUMPING: Writing 2 MOO verb programs...\nNov 18 22:33:38: DUMPING: Done writing 2 verb programs...\nNov 18 22:33:38: DUMPING: Writing forked and suspended tasks...\nNov 18 22:33:38: DUMPING: Writing list of formerly active connections...\nNov 18 22:33:38: DUMPING on ${SCRATCH}/445-he1b2i1l/test.db.#1# finished\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/445-he1b2i1l/home",
+        "TMPDIR": "${SCRATCH}/445-he1b2i1l/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": ";add_verb(player,{player,\"rxd\",\"tell\"},{\"this\",\"none\",\"this\"})\n;set_verb_code(player,\"tell\",{\"server_log(args[1]);\",\"return 0;\"})\n;player:tell(\"Hello, World!\");\nquit\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#445 Moocode/hello.moo": "edf049c2084871574b4c5212bbfa9941264798d230e3f482c008bd66380ea137"
+  },
+  "fixture_sha256": {
+    "commands.txt": {
+      "sha256": "8be45d0cbad58dbf911ca17e81868961af00d204a34fa067b7bab24b2be4aff0",
+      "content_utf8": ";add_verb(player,{player,\"rxd\",\"tell\"},{\"this\",\"none\",\"this\"})\n;set_verb_code(player,\"tell\",{\"server_log(args[1]);\",\"return 0;\"})\n;player:tell(\"Hello, World!\");\nquit\n"
+    }
+  },
+  "sources": [
+    "https://www.moo.mud.org/",
+    "https://github.com/wrog/lambdamoo",
+    "https://www.wrog.net/moo/pm1.8.1/ProgrammersManual.pdf"
+  ],
+  "previous_verification_log": "examples/#445 Moocode/verification/native.json",
+  "real_source_tag": {
+    "tag": "v1.9.0alpha",
+    "git_commit": "dc11b0fe6104019176c3f3ac1ef181bc664b7d2f",
+    "console_sha256": "abbece32bec2381d5d5a66fc164e93b02daaa053941ccba39bdd419d7e68c212"
+  },
+  "toolchain": "LambdaMOO v1.9.0alpha native offline interpreter",
+  "reproduction_command": "moo -e Minimal.db test.db <commands.txt",
+  "semantic_scope": "The native LambdaMOO evaluator executed the exact original statement in a fixture database. Its synthetic player tell verb received the greeting, which the engine recorded in its server log.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

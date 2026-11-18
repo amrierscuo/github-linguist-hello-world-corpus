@@ -1,5 +1,18 @@
 # #210 Filterscript
 
+## Verified on November 18, 2026
+
+The authentic Android frontend compiled the original source. Its emitted function executed with a recorded headless fixture and produced the exact greeting data.
+
+Run `llvm-rs-cc -I <AOSP RS headers> -target-api 23 -o obj -d obj hello.fs; compile emitted bitcode; link and run the recorded host`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Filterscript`, tipo `programming`, language_id `112`.
 
 Describe an Android FilterScript kernel that writes the ASCII character corresponding to each U8 allocation index of thirteen items.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.fs` | [hello.fs](hello.fs) created; verification pending |
+| `.fs` | [hello.fs](hello.fs) Syntax and behavior verified |
+
+</details>

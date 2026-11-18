@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "ordinal": 28,
+  "language": "Altium Designer",
+  "timestamp_utc": "2026-11-18T21:28:51.080835+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Stage the released Altium-compatible renderer",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--no-save",
+        "altiumts@0.0.95"
+      ],
+      "cwd": "${SCRATCH}/028-ht_sm1_s",
+      "timestamp_utc": "2026-11-18T21:28:51.175514+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "\nadded 7 packages in 30s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/028-ht_sm1_s/home",
+        "TMPDIR": "${SCRATCH}/028-ht_sm1_s/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Render the original PCB and schematic into observable SVG through the published compatible libraries",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "draw.mjs"
+      ],
+      "cwd": "${SCRATCH}/028-ht_sm1_s",
+      "timestamp_utc": "2026-11-18T21:29:23.441292+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/028-ht_sm1_s/home",
+        "TMPDIR": "${SCRATCH}/028-ht_sm1_s/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#028 Altium Designer/Hello.OutJob": "073a71e06894c0e60568c912f3c1326eb7c897ec1323ee93d047340d2600adf8",
+    "examples/#028 Altium Designer/Hello.PcbDoc": "89e140edbd8af9d6d2fcf2ab478b32002172a2a3eff037b4bfc30758da3a2aaf",
+    "examples/#028 Altium Designer/Hello.PrjPCB": "985e3c0a679fcac78d2fb13f77e6ede7a53e4eb08e20fa069ef4f0fe0eff0eff",
+    "examples/#028 Altium Designer/Hello.SchDoc": "fa2ebf0455214ea1a9fdc73fe296f39a89368516fe81dcef3a6e2e6191de5dad",
+    "examples/#028 Altium Designer/verify.mjs": "932ca09bd52c15846ce4fa705d91b3c1df3b11dbb896f4d0cf63efb728361aff"
+  },
+  "fixture_sha256": {
+    "draw.mjs": {
+      "sha256": "3944045fad5cd201236b5ab5f0b6557f5d4b730647dad2353a493973faf5f351",
+      "content_utf8": "import fs from \"node:fs\";\nimport assert from \"node:assert/strict\";\nimport * as a from \"altiumts\";\nconst script=(name)=>fs.readFileSync(name,\"utf8\");\nconst pcb=a.parseAltiumPcbDoc(script(\"Hello.PcbDoc\"),{mode:\"strict\"});\nconst sheet=a.parseAltiumSchDoc(script(\"Hello.SchDoc\"));\nconst pcbSvg=a.serializeAltiumPcbToSvg(pcb);\nconst schSvg=a.serializeAltiumSheetToSvg(sheet);\nfor(const [name,svg] of [[\"pcb\",pcbSvg],[\"schematic\",schSvg]]) {\n    assert.equal(typeof svg,\"string\",name);\n    fs.writeFileSync(name+\".svg\",svg);\n    assert.ok(svg.includes(\"<svg\"),name);\n    assert.ok(svg.includes(\"Hello, World!\"),name+\" greeting missing from rendered content\");\n}\nconsole.log(\"Hello, World!\");\n"
+    }
+  },
+  "sources": [
+    "https://github.com/tscircuit/altiumts",
+    "https://www.altium.com/documentation/altium-designer/tutorial/creating-project-schematic-document"
+  ],
+  "previous_verification_log": "examples/#028 Altium Designer/verification/altiumts.json",
+  "outputs_sha256": {
+    "pcb.svg": "774161693101cd0d573ed0158ca8f908050c9e238b75dee2b463786e21b2fea9",
+    "schematic.svg": "fc97e5af8545ecd9b0809fa9bc1930200e327055e9377146e63ea302d12a950a"
+  },
+  "toolchain": "altiumts 0.0.95 compatible PCB and schematic renderer",
+  "reproduction_command": "node draw.mjs with the pinned npm altiumts release",
+  "semantic_scope": "The published compatible renderer opened the unchanged original PCB and schematic and drew their greeting. Both generated SVG documents contain the exact label.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

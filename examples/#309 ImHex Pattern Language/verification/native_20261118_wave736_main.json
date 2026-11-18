@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "ordinal": 309,
+  "language": "ImHex Pattern Language",
+  "timestamp_utc": "2026-11-18T21:33:37.893462+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the exact published revision of the already compiled native evaluator",
+      "command": [
+        "/usr/bin/git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "${SCRATCH}/309-m_5hdqh2/pattern-language",
+      "timestamp_utc": "2026-11-18T21:33:37.954174+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "fb6ea061f7c8b66ed94b44ff1d3a10ee63a82612\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/309-z__9177f/home",
+        "TMPDIR": "${SCRATCH}/309-z__9177f/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Record published evaluator module versions",
+      "command": [
+        "/usr/bin/git",
+        "submodule",
+        "status",
+        "--recursive"
+      ],
+      "cwd": "${SCRATCH}/309-m_5hdqh2/pattern-language",
+      "timestamp_utc": "2026-11-18T21:33:37.977688+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": " bfffd37e1f804ca4fae1caae106935791696b6a9 external/cli11 (bfffd37)\n 407c905e45ad75fc29bf0f9bb7c5c2fd3475976f external/fmt (407c905)\n 5be84628dc4d7da6281c943888497f8b886b7f5a external/libwolv (5be8462)\n 0fa8d394254886c555d6faccd0a3de819b7d47f8 external/libwolv/libs/utils/lib/jthread/jthread (heads/master)\n cd28490ebf9be803497a9fff733de62295d8288e external/throwing_ptr (heads/master)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/309-z__9177f/home",
+        "TMPDIR": "${SCRATCH}/309-z__9177f/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Apply the original pattern using the actual ImHex command-line VM",
+      "command": [
+        "${SCRATCH}/309-m_5hdqh2/build/cli/plcli",
+        "format",
+        "-p",
+        "hello.hexpat",
+        "-i",
+        "hello.txt",
+        "-o",
+        "result.json",
+        "-f",
+        "json"
+      ],
+      "cwd": "${SCRATCH}/309-z__9177f",
+      "timestamp_utc": "2026-11-18T21:33:38.106501+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/309-z__9177f/home",
+        "TMPDIR": "${SCRATCH}/309-z__9177f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#309 ImHex Pattern Language/hello.hexpat": "3c86c7f7d0eae8534be6677a8179f0ce2fbd0658597c5869bf6396896a665641",
+    "examples/#309 ImHex Pattern Language/hello.txt": "dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/WerWolv/PatternLanguage",
+    "https://imhex.werwolv.net/"
+  ],
+  "previous_verification_log": null,
+  "pattern_evaluator_git": {
+    "project": "https://github.com/WerWolv/PatternLanguage",
+    "tag": "ImHex-v1.38.1",
+    "commit": "fb6ea061f7c8b66ed94b44ff1d3a10ee63a82612",
+    "modules": [
+      " bfffd37e1f804ca4fae1caae106935791696b6a9 external/cli11 (bfffd37)",
+      " 407c905e45ad75fc29bf0f9bb7c5c2fd3475976f external/fmt (407c905)",
+      " 5be84628dc4d7da6281c943888497f8b886b7f5a external/libwolv (5be8462)",
+      " 0fa8d394254886c555d6faccd0a3de819b7d47f8 external/libwolv/libs/utils/lib/jthread/jthread (heads/master)",
+      " cd28490ebf9be803497a9fff733de62295d8288e external/throwing_ptr (heads/master)"
+    ],
+    "cli_sha256": "c69d55e548a502da61b26635be75a4a94a87745da2121b5e84c839b6bc144e0f"
+  },
+  "pattern_json_readback": {
+    "greeting": "Hello%2C%20World%21"
+  },
+  "decoded_greeting": "Hello, World!",
+  "toolchain": "ImHex PatternLanguage v1.38.1 native plcli",
+  "reproduction_command": "plcli format -p hello.hexpat -i hello.txt -o result.json -f json; URL-decode the greeting JSON field",
+  "semantic_scope": "The official ImHex engine evaluated the unchanged original pattern against its original input. Decoding its URL-escaped output field yields the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

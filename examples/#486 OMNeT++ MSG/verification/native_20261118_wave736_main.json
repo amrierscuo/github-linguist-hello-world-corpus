@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "ordinal": 486,
+  "language": "OMNeT++ MSG",
+  "timestamp_utc": "2026-11-18T21:31:04.595058+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/486-fcs1swbu",
+      "timestamp_utc": "2026-11-18T21:31:08.241864+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/486-fcs1swbu/home",
+        "TMPDIR": "${SCRATCH}/486-fcs1swbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/486-fcs1swbu/.venv/bin/python",
+        "scipy==1.16.3",
+        "pandas==2.3.3",
+        "matplotlib==3.10.7",
+        "ipython==9.6.0"
+      ],
+      "cwd": "${SCRATCH}/486-fcs1swbu",
+      "timestamp_utc": "2026-11-18T21:31:08.283966+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 30 packages in 11ms\nInstalled 30 packages in 558ms\n + asttokens==3.0.2\n + contourpy==1.4.0\n + cycler==0.12.1\n + decorator==5.3.1\n + executing==2.3.0\n + fonttools==4.68.0\n + ipython==9.6.0\n + ipython-pygments-lexers==1.1.1\n + jedi==0.20.1\n + kiwisolver==1.5.1\n + matplotlib==3.10.7\n + matplotlib-inline==0.2.2\n + numpy==2.5.5\n + packaging==26.3\n + pandas==2.3.3\n + parso==0.8.7\n + pexpect==4.9.0\n + pillow==13.0.0\n + prompt-toolkit==3.0.53\n + ptyprocess==0.7.0\n + pure-eval==0.2.4\n + pygments==2.21.0\n + pyparsing==3.3.3\n + python-dateutil==4.0.0\n + pytz==2026.6\n + scipy==1.16.3\n + stack-data==0.6.3\n + traitlets==5.16.1\n + tzdata==2026.6\n + wcwidth==0.9.4\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/486-fcs1swbu/home",
+        "TMPDIR": "${SCRATCH}/486-fcs1swbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Generate the native makefile from the original OMNeT++ project fields",
+      "command": [
+        "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/bin/opp_makemake",
+        "-f",
+        "--deep",
+        "-o",
+        "hello"
+      ],
+      "cwd": "${SCRATCH}/486-fcs1swbu",
+      "timestamp_utc": "2026-11-18T21:31:08.997005+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Creating Makefile in ${SCRATCH}/486-fcs1swbu...\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/486-fcs1swbu/.venv/bin:${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/486-fcs1swbu/home",
+        "TMPDIR": "${SCRATCH}/486-fcs1swbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/lib:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "LIBS": "-ldw -lelf",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "CPPFLAGS": "-I${TOOL_CACHE}/tools/apt/usr/include -I${TOOL_CACHE}/tools/apt/usr/include/libxml2",
+        "LDFLAGS": "-L${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/lib -L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu -Wl,--no-as-needed -ldw -lelf",
+        "OMNETPP_ROOT": "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0"
+      }
+    },
+    {
+      "label": "Build the original NED/MSG example and companion C++",
+      "command": [
+        "make",
+        "-j4",
+        "MODE=release"
+      ],
+      "cwd": "${SCRATCH}/486-fcs1swbu",
+      "timestamp_utc": "2026-11-18T21:31:09.124764+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "MSGC: Greeting.msg\nHelloWorld.cc\nGreeting_m.cc\nCreating executable: out/gcc-release//hello\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/486-fcs1swbu/.venv/bin:${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/486-fcs1swbu/home",
+        "TMPDIR": "${SCRATCH}/486-fcs1swbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/lib:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "LIBS": "-ldw -lelf",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "CPPFLAGS": "-I${TOOL_CACHE}/tools/apt/usr/include -I${TOOL_CACHE}/tools/apt/usr/include/libxml2",
+        "LDFLAGS": "-L${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/lib -L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu -Wl,--no-as-needed -ldw -lelf",
+        "OMNETPP_ROOT": "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0"
+      }
+    },
+    {
+      "label": "Run the original simulation from synthetic local inputs",
+      "command": [
+        "${SCRATCH}/486-fcs1swbu/hello",
+        "-u",
+        "Cmdenv",
+        "-f",
+        "omnetpp.ini",
+        "--cmdenv-express-mode=false",
+        "--cmdenv-log-level=info"
+      ],
+      "cwd": "${SCRATCH}/486-fcs1swbu",
+      "timestamp_utc": "2026-11-18T21:31:12.708612+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "OMNeT++ Discrete Event Simulation  (C) 1992-2026 Andras Varga, OpenSim Ltd.\nVersion: 6.5.0, build: 261029-ccd51e11a4, edition: Academic Public License -- NOT FOR COMMERCIAL USE\nSee the license for distribution terms and warranty disclaimer\n\nSetting up Cmdenv...\n\nLoading NED files from .:  1\n\nPreparing for running configuration General, run #0...\nAssigned runID=General-0-20261118-22:31:12-11504\nSetting up network \"GreetingNetwork\"...\nInitializing...\nInitializing module GreetingNetwork, stage 0\nInitializing module GreetingNetwork.greeting, stage 0\n[INFO]\tHello, World!\n\nRunning simulation...\n** Event #1  t=1  on endsimulation (omnetpp::cEndSimulationEvent)    100% completed  (100% total)\n\n<!> Simulation time limit reached -- at t=1s, event #1\n\nCalling finish() at end of Run #0...\n\nEnd.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/486-fcs1swbu/.venv/bin:${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/486-fcs1swbu/home",
+        "TMPDIR": "${SCRATCH}/486-fcs1swbu/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/lib:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "LIBS": "-ldw -lelf",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "CPPFLAGS": "-I${TOOL_CACHE}/tools/apt/usr/include -I${TOOL_CACHE}/tools/apt/usr/include/libxml2",
+        "LDFLAGS": "-L${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0/lib -L${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu -Wl,--no-as-needed -ldw -lelf",
+        "OMNETPP_ROOT": "${TOOL_CACHE}/tools/omnet-omnetpp-6.5.0/dist/omnetpp-6.5.0"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#486 OMNeT++ MSG/Greeting.msg": "2b71b534bfbc903323c39a0dbfac033ab00b644e60b10fd6b7f8d8a350750d30",
+    "examples/#486 OMNeT++ MSG/Hello.ned": "5c978c26a87e490c7f4733b9eae5f5a028accb44d24fe5c6cd4437328ac1172f",
+    "examples/#486 OMNeT++ MSG/HelloWorld.cc": "53e5de42ba5ec40bfe2f3d212025a6a567aa7d4611f8314953900534b8240f9e",
+    "examples/#486 OMNeT++ MSG/omnetpp.ini": "3bc84341a2eca907b25a53cca02ec7f0de28bbf31de0ae865a886780ba123507"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://doc.omnetpp.org/omnetpp/manual/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.5.0/omnetpp-6.5.0-linux-x86_64.tgz",
+      "name": "omnetpp-6.5.0-linux-x86_64.tgz",
+      "sha256": "d4f40a1c8bc17a0d9a95a52b57f4c0476bd11effc2850edeb279d0608b0d5cbd",
+      "release": "omnetpp-6.5.0"
+    },
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "libxml2-dev",
+      "version": "2.9.14+dfsg-1.3ubuntu3.10",
+      "filename": "pool/main/libx/libxml2/libxml2-dev_2.9.14+dfsg-1.3ubuntu3.10_amd64.deb",
+      "sha256": "4cf2446fb0d658e26791f308effc29f8c21befa6460003550f4fa9996d28d3ee",
+      "bytes": 781344,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.9.14+dfsg-1.3ubuntu3.10_amd64.deb"
+    },
+    {
+      "name": "libstdc++6",
+      "version": "14.2.0-4ubuntu2~24.04.1",
+      "filename": "pool/main/g/gcc-14/libstdc++6_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "sha256": "a51f8de7829211db961a31f02158058ad1a95f92ac6d0a5dff6350e2821c54c0",
+      "bytes": 792064,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/libstdc++6_14.2.0-4ubuntu2~24.04.1_amd64.deb"
+    },
+    {
+      "name": "bison",
+      "version": "2:3.8.2+dfsg-1ubuntu0.24.04.1",
+      "filename": "pool/main/b/bison/bison_3.8.2+dfsg-1ubuntu0.24.04.1_amd64.deb",
+      "sha256": "9d75084d1293f68f3c1a2ee677dea5baa4e010bac2d4c455d8e23177e97aa353",
+      "bytes": 748794,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bison/bison_3.8.2+dfsg-1ubuntu0.24.04.1_amd64.deb"
+    },
+    {
+      "name": "flex",
+      "version": "2.6.4-8.2build1",
+      "filename": "pool/main/f/flex/flex_2.6.4-8.2build1_amd64.deb",
+      "sha256": "c5604f55827b50e3f568b4731b7799f86b147454c867be02bc141d9d8ce561ff",
+      "bytes": 300754,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/f/flex/flex_2.6.4-8.2build1_amd64.deb"
+    },
+    {
+      "name": "swig",
+      "version": "4.2.0-2ubuntu1",
+      "filename": "pool/universe/s/swig/swig_4.2.0-2ubuntu1_amd64.deb",
+      "sha256": "5925dc6e25348bdb350c44a9157da350ef608666b2a21f7057222e8b6aebd61d",
+      "bytes": 1186956,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/swig/swig_4.2.0-2ubuntu1_amd64.deb"
+    },
+    {
+      "name": "libdw-dev",
+      "version": "0.190-1.1ubuntu0.1",
+      "filename": "pool/main/e/elfutils/libdw-dev_0.190-1.1ubuntu0.1_amd64.deb",
+      "sha256": "048a3e8444958a013545b7364c5bb339e665fccfd2f504bf5ea62bcaabf575d8",
+      "bytes": 339738,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/libdw-dev_0.190-1.1ubuntu0.1_amd64.deb"
+    },
+    {
+      "name": "libelf-dev",
+      "version": "0.190-1.1ubuntu0.1",
+      "filename": "pool/main/e/elfutils/libelf-dev_0.190-1.1ubuntu0.1_amd64.deb",
+      "sha256": "81affb95c29f7323f2ae24386aaa1f61d311578e3e27c5f78ef7b7d55cd3cf49",
+      "bytes": 68530,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/libelf-dev_0.190-1.1ubuntu0.1_amd64.deb"
+    }
+  ],
+  "toolchain": "OMNeT++ omnetpp-6.5.0",
+  "reproduction_command": "opp_makemake -f --deep -o hello; make MODE=release; ./hello -u Cmdenv -f omnetpp.ini --cmdenv-express-mode=false --cmdenv-log-level=info",
+  "semantic_scope": "The original definitions were used by the actual native OMNeT++ message generator and console simulator. The simulation produced the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

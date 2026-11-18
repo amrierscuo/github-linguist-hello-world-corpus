@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "ordinal": 186,
+  "language": "EdgeQL",
+  "timestamp_utc": "2026-11-18T21:18:08.307205+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute exact EdgeQL against a local isolated publisher server",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "1000",
+        "--gid",
+        "1000",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--ro-bind",
+        "${TOOL_CACHE}/tools/native-oci-736/edgedb-6-standalone-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/186-mdb85_z0",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--ro-bind",
+        "${SCRATCH}/186-mdb85_z0/sandbox-passwd",
+        "/etc/passwd",
+        "--",
+        "/bin/bash",
+        "/work/check.sh",
+        "/usr/lib/x86_64-linux-gnu/gel-server-6/bin/gel-server",
+        "/usr/bin/gel"
+      ],
+      "cwd": "${SCRATCH}/186-mdb85_z0",
+      "timestamp_utc": "2026-11-18T21:18:08.783009+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "[\"Hello, World!\"]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/186-mdb85_z0/home",
+        "TMPDIR": "${SCRATCH}/186-mdb85_z0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/186-mdb85_z0/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/186-mdb85_z0/unused-public-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#186 EdgeQL/hello.edgeql": "2c8097438da0fb73da90d10acdebd266d44fdaa03c1640dd9a3ffc8fce5d542a"
+  },
+  "fixture_sha256": {
+    "registry-trust.json": {
+      "sha256": "9651a2f0e4a883cd7495d22c2b93c9de0e3e53ee579370e24573de1029674805",
+      "content_utf8": "{\"default\": [{\"type\": \"insecureAcceptAnything\"}]}"
+    },
+    "check.sh": {
+      "sha256": "40a9ce8ebc58b2d39d74410d5c80357dcca0ead9ed3fbb473619fe04b511ef26",
+      "content_utf8": "set -eu\n\"$1\" --data-dir=/work/database --runstate-dir=/tmp/gel --bind-address=127.0.0.1 --port=5625 --security=insecure_dev_mode --tls-cert-mode=generate_self_signed >server.log 2>&1 &\np=$!\ntrap 'kill \"$p\" 2>/dev/null || true; wait \"$p\" 2>/dev/null || true' EXIT\nfor i in $(seq 1 100); do\n if \"$2\" --host 127.0.0.1 --port 5625 --user admin --branch main --tls-security insecure --wait-until-available 2s query --output-format=json --file hello.edgeql >answer.json 2>query.log; then\n  cat answer.json; exit 0\n fi\n if ! kill -0 \"$p\"; then cat server.log; cat query.log; exit 2; fi\n sleep 0.35\ndone\ncat server.log; cat query.log\nexit 3\n"
+    },
+    "sandbox-passwd": {
+      "sha256": "6615de6e7b2fd325f42d5adabe2a1727fdb19e5320213e5df8ea4526c22a93a3",
+      "content_utf8": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\n_apt:x:42:65534::/nonexistent:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\ngel:x:999:999:Gel Server:/var/lib/gel:/bin/bash\ncorpus:x:1000:1000:Corpus:/tmp:/bin/bash\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "EdgeQL SELECT",
+      "url": "https://docs.geldata.com/reference/edgeql/select"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://docker.io/edgedb/edgedb:6",
+      "digest": "sha256:897ccc3f16ebd29219e1c8ad82e85798ab2ee069f5ccbf13e9604412210bb918"
+    }
+  ],
+  "toolchain": "Official EdgeDB 6 publisher image and EdgeQL query service",
+  "reproduction_command": "gel query --file hello.edgeql against isolated local Gel/EdgeDB",
+  "semantic_scope": "The official server evaluated the original EdgeQL statement and returned an exact singleton greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

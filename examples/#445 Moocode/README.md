@@ -1,5 +1,18 @@
 # #445 Moocode
 
+## Verified on November 18, 2026
+
+The native LambdaMOO evaluator executed the exact original statement in a fixture database. Its synthetic player tell verb received the greeting, which the engine recorded in its server log.
+
+Run `moo -e Minimal.db test.db <commands.txt`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Moocode`, tipo `programming`, language_id `237`.
 
 Send greeting to the player through a Moocode verb body.
@@ -46,4 +59,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.moo` | [hello.moo](hello.moo) created; verification pending |
+| `.moo` | [hello.moo](hello.moo) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,20 @@
 # #692 Sway
 
+## Verified on November 18, 2026
+
+The published compiler emitted the original script. The official VM invoked its original main function from a fixture assertion and checked the exact thirteen-byte return value.
+
+Run `forc build; forc test original_entry_returns_greeting --test-threads 1 in the recorded isolated project`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+[Prior attempt](verification/native_20261118_wave736_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Sway`, tipo `programming`, language_id `271471144`.
 
 Return a string of 13 characters from an original Sway script.
@@ -44,4 +59,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sw` | [main.sw](src/main.sw) created; verification pending |
+| `.sw` | [main.sw](src/main.sw) Syntax and behavior verified |
+
+</details>

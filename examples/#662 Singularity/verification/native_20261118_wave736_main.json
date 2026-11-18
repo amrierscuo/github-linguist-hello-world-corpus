@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "ordinal": 662,
+  "language": "Singularity",
+  "timestamp_utc": "2026-11-18T21:42:14.179992+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the unchanged Singularity definition using unprivileged Apptainer",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--bind",
+        "${SCRATCH}/662-gbhp2f1d",
+        "${SCRATCH}/662-gbhp2f1d",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--tmpfs",
+        "/run",
+        "--tmpfs",
+        "/tmp",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--chdir",
+        "${SCRATCH}/662-gbhp2f1d",
+        "--",
+        "${SCRATCH}/662-gbhp2f1d/apptainer-portable/usr/bin/apptainer",
+        "build",
+        "--ignore-fakeroot-command",
+        "--mksquashfs-args",
+        "-processors 2",
+        "greeting.sif",
+        "Singularity"
+      ],
+      "cwd": "${SCRATCH}/662-gbhp2f1d",
+      "timestamp_utc": "2026-11-18T21:42:14.789911+00:00",
+      "timeout_seconds": 175,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "WARNING: 'nodev' mount option set on ${SCRATCH}/662-gbhp2f1d, it could be a source of failure during build process\nINFO:    Starting build...\nINFO:    Fetching OCI image...\nINFO:    Extracting OCI image...\nINFO:    Inserting Apptainer configuration...\nINFO:    Adding runscript\nINFO:    Creating SIF file...\nINFO:    Build complete: greeting.sif\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/662-gbhp2f1d/home",
+        "TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "APPTAINER_CACHEDIR": "${SCRATCH}/662-gbhp2f1d/cache",
+        "APPTAINER_TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "APPTAINER_NOHTTPS": "false"
+      }
+    },
+    {
+      "label": "Run the genuine native Apptainer container in a restricted process",
+      "command": [
+        "${SCRATCH}/662-gbhp2f1d/apptainer-portable/usr/bin/apptainer",
+        "run",
+        "--userns",
+        "--unsquash",
+        "--containall",
+        "--no-home",
+        "greeting.sif"
+      ],
+      "cwd": "${SCRATCH}/662-gbhp2f1d",
+      "timestamp_utc": "2026-11-18T21:42:19.707152+00:00",
+      "timeout_seconds": 42,
+      "exit_code": 255,
+      "stdout": "",
+      "stderr": "INFO:    Converting SIF file to temporary sandbox...\nFATAL:   while extracting greeting.sif: root filesystem extraction failed: extract command failed: Apptainer runtime parent: tmp-rootfs-3360845523: error while loading shared libraries: libsubid.so.4: cannot open shared object file: No such file or directory\n: exit status 127\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/662-gbhp2f1d/home",
+        "TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "APPTAINER_CACHEDIR": "${SCRATCH}/662-gbhp2f1d/cache",
+        "APPTAINER_TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "APPTAINER_NOHTTPS": "false"
+      }
+    },
+    {
+      "label": "Inspect the filesystem partition of the SIF built from the original definition",
+      "command": [
+        "${SCRATCH}/662-gbhp2f1d/apptainer-portable/usr/bin/apptainer",
+        "sif",
+        "list",
+        "greeting.sif"
+      ],
+      "cwd": "${SCRATCH}/662-gbhp2f1d",
+      "timestamp_utc": "2026-11-18T21:42:19.779147+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "------------------------------------------------------------------------------\nID   |GROUP   |LINK    |SIF POSITION (start-end)  |TYPE\n------------------------------------------------------------------------------\n1    |1       |NONE    |32176-32253               |Def.FILE\n2    |1       |NONE    |32253-34271               |JSON.Generic\n3    |1       |NONE    |34271-34383               |JSON.Generic\n4    |1       |NONE    |36864-3559424             |FS (Squashfs/*System/amd64)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/662-gbhp2f1d/home",
+        "TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "APPTAINER_CACHEDIR": "${SCRATCH}/662-gbhp2f1d/cache",
+        "APPTAINER_TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "APPTAINER_NOHTTPS": "false"
+      }
+    },
+    {
+      "label": "Extract the actual built root filesystem partition for a restricted native container run",
+      "command": [
+        "/bin/sh",
+        "-c",
+        "\"$1\" sif dump \"$2\" greeting.sif > filesystem.squashfs",
+        "extract",
+        "${SCRATCH}/662-gbhp2f1d/apptainer-portable/usr/bin/apptainer",
+        "4"
+      ],
+      "cwd": "${SCRATCH}/662-gbhp2f1d",
+      "timestamp_utc": "2026-11-18T21:42:19.820521+00:00",
+      "timeout_seconds": 38,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/662-gbhp2f1d/home",
+        "TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "APPTAINER_CACHEDIR": "${SCRATCH}/662-gbhp2f1d/cache",
+        "APPTAINER_TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "APPTAINER_NOHTTPS": "false"
+      }
+    },
+    {
+      "label": "Unpack the built SIF filesystem using its native image format",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/unsquashfs",
+        "-processors",
+        "2",
+        "-d",
+        "built-root",
+        "${SCRATCH}/662-gbhp2f1d/filesystem.squashfs"
+      ],
+      "cwd": "${SCRATCH}/662-gbhp2f1d",
+      "timestamp_utc": "2026-11-18T21:42:19.863390+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "Parallel unsquashfs: Using 2 processors\n444 inodes (152 blocks) to write\n\n\r[===============================================================|] 596/596 100%\n\ncreated 104 files\ncreated 101 directories\ncreated 340 symlinks\ncreated 0 devices\ncreated 0 fifos\ncreated 0 sockets\ncreated 0 hardlinks\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/662-gbhp2f1d/home",
+        "TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "APPTAINER_CACHEDIR": "${SCRATCH}/662-gbhp2f1d/cache",
+        "APPTAINER_TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "APPTAINER_NOHTTPS": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--ro-bind",
+        "${SCRATCH}/662-gbhp2f1d/built-root",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/662-gbhp2f1d",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "/bin/sh",
+        "/.singularity.d/runscript"
+      ],
+      "cwd": "${SCRATCH}/662-gbhp2f1d",
+      "timestamp_utc": "2026-11-18T21:42:19.938760+00:00",
+      "timeout_seconds": 42,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/662-gbhp2f1d/home",
+        "TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "APPTAINER_CACHEDIR": "${SCRATCH}/662-gbhp2f1d/cache",
+        "APPTAINER_TMPDIR": "${SCRATCH}/662-gbhp2f1d/tmp",
+        "APPTAINER_NOHTTPS": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#662 Singularity/Singularity": "3f92e9cdd4e25094f71bc2d1f57a4d28041738bb456860e46567db32c8df974a"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Apptainer definition file",
+      "url": "https://apptainer.org/docs/user/latest/definition_files.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/apptainer/apptainer/releases/download/v1.5.5/apptainer_1.5.5_amd64.deb",
+      "name": "apptainer_1.5.5_amd64.deb",
+      "sha256": "25095d3711504b3e8657dbb2e172ef8db9db43c4503d940c9c36b105db8dce77",
+      "release": "v1.5.5"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "squashfs-tools",
+      "version": "1:4.6.1-1build1",
+      "filename": "pool/main/s/squashfs-tools/squashfs-tools_4.6.1-1build1_amd64.deb",
+      "sha256": "87fae263846bab255d4a51ad9fc623685497ad830db60758dde39589c9fdadcb",
+      "bytes": 189326,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/s/squashfs-tools/squashfs-tools_4.6.1-1build1_amd64.deb"
+    },
+    {
+      "name": "fuse3",
+      "version": "3.14.0-5build1",
+      "filename": "pool/main/f/fuse3/fuse3_3.14.0-5build1_amd64.deb",
+      "sha256": "1e5580eeb72e830f0b242254b2438669a94c9912abf1e2f188b2992f188cc995",
+      "bytes": 25156,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/f/fuse3/fuse3_3.14.0-5build1_amd64.deb"
+    },
+    {
+      "name": "fakeroot",
+      "version": "1.33-1",
+      "filename": "pool/main/f/fakeroot/fakeroot_1.33-1_amd64.deb",
+      "sha256": "d58b7fc73f0b7ae8b9441b0aa41e44ead0d7e4deedf5aaf5696db182eac71031",
+      "bytes": 67216,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/f/fakeroot/fakeroot_1.33-1_amd64.deb"
+    },
+    {
+      "name": "patchelf",
+      "version": "0.18.0-1.1build1",
+      "filename": "pool/universe/p/patchelf/patchelf_0.18.0-1.1build1_amd64.deb",
+      "sha256": "962a43e33cd56061522554898557a038ccbb8aa4e1e0f421b2d6f6adf1f80c60",
+      "bytes": 106300,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/patchelf/patchelf_0.18.0-1.1build1_amd64.deb"
+    },
+    {
+      "name": "libsubid4",
+      "version": "1:4.13+dfsg1-4ubuntu3.2",
+      "filename": "pool/main/s/shadow/libsubid4_4.13+dfsg1-4ubuntu3.2_amd64.deb",
+      "sha256": "ba97fd28c53560a8d2a2261e8f75a7ab4112535b12f9fe1d50970c30051da0da",
+      "bytes": 23442,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/s/shadow/libsubid4_4.13+dfsg1-4ubuntu3.2_amd64.deb"
+    }
+  ],
+  "portable_helper_dependency_sha256": {
+    "libsubid.so.4": "300928d7889c085a8af95c5b5d3929fb948ddb76e4b5e9acd4ca9fe3f3456fef"
+  },
+  "sif_filesystem_partition_sha256": "d3cfa60386d33db0baeda5a1585d95d948923025040400f7f24adf45aa46ae0b",
+  "sif_sha256": "9652b571d4530ae741db74d7437db7a8489e2e54c001ee73778974c2212941bc",
+  "toolchain": "Apptainer v1.5.5 Singularity definition compatibility",
+  "reproduction_command": "apptainer build greeting.sif Singularity; apptainer sif dump <filesystem partition> greeting.sif; unsquashfs; run /.singularity.d/runscript inside a restricted root filesystem",
+  "semantic_scope": "The published compatible builder processed the original definition. The runscript from the actual generated SIF filesystem executed in an isolated native container root and printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

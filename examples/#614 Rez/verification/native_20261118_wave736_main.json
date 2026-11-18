@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "ordinal": 614,
+  "language": "Rez",
+  "timestamp_utc": "2026-11-18T21:22:56.829124+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Configure the upstream HFS resource backend",
+      "command": [
+        "./configure",
+        "--prefix=${SCRATCH}/614-qbww4335/hfs-local"
+      ],
+      "cwd": "${SCRATCH}/614-qbww4335/hfs",
+      "timestamp_utc": "2026-11-18T21:22:57.521448+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "creating cache ./config.cache\nchecking whether make sets ${MAKE}... yes\nchecking for gcc... gcc\nchecking whether the C compiler (gcc -O2 -fcommon ) works... yes\nchecking whether the C compiler (gcc -O2 -fcommon ) is a cross-compiler... no\nchecking whether we are using GNU C... yes\nchecking whether gcc accepts -g... yes\nchecking for a BSD compatible install... /usr/bin/install -c\nchecking for ranlib... ranlib\nchecking how to run the C preprocessor... gcc -E\nchecking whether gcc needs -traditional... no\nchecking for ANSI C header files... yes\nchecking for unistd.h... yes\nchecking for fcntl.h... yes\nchecking for termios.h... yes\nchecking for sys/ioctl.h... yes\nchecking for uid_t in sys/types.h... yes\nchecking for size_t... yes\nchecking for working const... yes\nchecking for strdup... yes\nchecking for strerror... yes\nchecking for strstr... yes\nchecking for strtol... yes\nchecking for setreuid... yes\nchecking for sys_errlist... no\nupdating cache ./config.cache\ncreating ./config.status\ncreating hfsck/Makefile\ncreating linux/Makefile\ncreating Makefile\ncreating config.h\nconfiguring in libhfs\nrunning /bin/sh ./configure  --prefix=${SCRATCH}/614-qbww4335/hfs-local --cache-file=.././config.cache --srcdir=.\nloading cache .././config.cache\nchecking whether make sets ${MAKE}... (cached) yes\nchecking for gcc... (cached) gcc\nchecking whether the C compiler (gcc -O2 -fcommon ) works... yes\nchecking whether the C compiler (gcc -O2 -fcommon ) is a cross-compiler... no\nchecking whether we are using GNU C... (cached) yes\nchecking whether gcc accepts -g... (cached) yes\nchecking for a BSD compatible install... (cached) /usr/bin/install -c\nchecking for ranlib... (cached) ranlib\nchecking whether ln -s works... yes\nchecking how to run the C preprocessor... (cached) gcc -E\nchecking whether gcc needs -traditional... (cached) no\nchecking for ANSI C header files... (cached) yes\nchecking for unistd.h... (cached) yes\nchecking for fcntl.h... (cached) yes\nchecking for size_t... (cached) yes\nchecking whether struct tm is in sys/time.h or time.h... time.h\nchecking for working const... (cached) yes\nchecking for 8-bit clean memcmp... yes\nchecking for mktime... yes\nupdating cache .././config.cache\ncreating ./config.status\ncreating Makefile\ncreating config.h\nconfiguring in librsrc\nrunning /bin/sh ./configure  --prefix=${SCRATCH}/614-qbww4335/hfs-local --cache-file=.././config.cache --srcdir=.\nloading cache .././config.cache\nchecking whether make sets ${MAKE}... (cached) yes\nchecking for gcc... (cached) gcc\nchecking whether the C compiler (gcc -O2 -fcommon ) works... yes\nchecking whether the C compiler (gcc -O2 -fcommon ) is a cross-compiler... no\nchecking whether we are using GNU C... (cached) yes\nchecking whether gcc accepts -g... (cached) yes\nchecking for a BSD compatible install... (cached) /usr/bin/install -c\nchecking for ranlib... (cached) ranlib\nchecking how to run the C preprocessor... (cached) gcc -E\nchecking whether gcc needs -traditional... (cached) no\nchecking for ANSI C header files... (cached) yes\nchecking for unistd.h... (cached) yes\nchecking for fcntl.h... (cached) yes\nchecking for size_t... (cached) yes\nchecking whether struct tm is in sys/time.h or time.h... (cached) time.h\nchecking for working const... (cached) yes\nchecking for mktime... (cached) yes\ncreating ./config.status\ncreating Makefile\ncreating config.h\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/614-qbww4335/home",
+        "TMPDIR": "${SCRATCH}/614-qbww4335/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu",
+        "CFLAGS": "-O2 -fcommon"
+      }
+    },
+    {
+      "label": "Build actual archival native HFS support",
+      "command": [
+        "make",
+        "-C",
+        "libhfs",
+        "-j3"
+      ],
+      "cwd": "${SCRATCH}/614-qbww4335/hfs",
+      "timestamp_utc": "2026-11-18T21:22:58.848173+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "make: Entering directory '${SCRATCH}/614-qbww4335/hfs/libhfs'\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o os.o os.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o data.o data.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o block.o block.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o low.o low.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o medium.o medium.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o file.o file.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o btree.o btree.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o node.o node.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o record.o record.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o volume.o volume.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o hfs.o hfs.c\ngcc -O2 -fcommon  -DHAVE_CONFIG_H   -c -o version.o version.c\nar rc libhfs.a os.o data.o block.o low.o medium.o file.o btree.o node.o record.o volume.o hfs.o version.o \nranlib libhfs.a\nmake: Leaving directory '${SCRATCH}/614-qbww4335/hfs/libhfs'\n",
+      "stderr": "os.c: In function ‘os_open’:\nos.c:86:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]\n   86 |   *priv = (void *) fd;\n      |           ^\nos.c: In function ‘os_close’:\nos.c:103:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  103 |   int fd = (int) *priv;\n      |            ^\nos.c: In function ‘os_same’:\nos.c:122:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  122 |   int fd = (int) *priv;\n      |            ^\nos.c: In function ‘os_seek’:\nos.c:142:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  142 |   int fd = (int) *priv;\n      |            ^\nos.c: In function ‘os_read’:\nos.c:167:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  167 |   int fd = (int) *priv;\n      |            ^\nos.c: In function ‘os_write’:\nos.c:187:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n  187 |   int fd = (int) *priv;\n      |            ^\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/614-qbww4335/home",
+        "TMPDIR": "${SCRATCH}/614-qbww4335/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Configure the real Retro68 resource fork compiler and companion reader",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/cmake",
+        "-S",
+        ".",
+        "-B",
+        "build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_CXX_FLAGS=-include sstream",
+        "-DCMAKE_INSTALL_PREFIX=${SCRATCH}/614-qbww4335/hfs-local",
+        "-DCMAKE_PREFIX_PATH=${TOOL_CACHE}/tools/apt/usr"
+      ],
+      "cwd": "${SCRATCH}/614-qbww4335",
+      "timestamp_utc": "2026-11-18T21:22:59.844604+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "-- The CXX compiler identification is GNU 13.3.0\n-- The C compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Found Boost: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version \"1.83.0\") found components: filesystem system \n-- Found Boost: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version \"1.83.0\") found components: program_options \n-- Found Boost: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version \"1.83.0\") found components: wave filesystem system thread regex program_options \n-- Found BISON: ${TOOL_CACHE}/tools/apt/usr/bin/bison (found suitable version \"3.8.2\", minimum required is \"3.0.2\") \n-- Found Boost: ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version \"1.83.0\") found components: unit_test_framework \n-- Configuring done (1.3s)\n-- Generating done (0.0s)\n-- Build files have been written to: ${SCRATCH}/614-qbww4335/build\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/614-qbww4335/home",
+        "TMPDIR": "${SCRATCH}/614-qbww4335/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Build just the published native resource compiler and reader",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/cmake",
+        "--build",
+        "build",
+        "-j",
+        "4",
+        "--target",
+        "Rez",
+        "ResInfo"
+      ],
+      "cwd": "${SCRATCH}/614-qbww4335",
+      "timestamp_utc": "2026-11-18T21:23:01.288903+00:00",
+      "timeout_seconds": 190,
+      "exit_code": 0,
+      "stdout": "[  5%] Building CXX object ResourceFiles/CMakeFiles/ResourceFiles.dir/ResourceFile.cc.o\n[ 11%] Building CXX object ResourceFiles/CMakeFiles/ResourceFiles.dir/ResourceFork.cc.o\n[ 23%] Building CXX object ResourceFiles/CMakeFiles/ResourceFiles.dir/ResType.cc.o\n[ 23%] Building CXX object ResourceFiles/CMakeFiles/ResourceFiles.dir/BinaryIO.cc.o\n[ 29%] Linking CXX static library libResourceFiles.a\n[ 29%] Built target ResourceFiles\n[ 35%] [BISON][RezParser] Building parser with bison 3.8.2\n[ 41%] Building CXX object Rez/CMakeFiles/RezLib.dir/RezParser.generated.cc.o\n[ 52%] Building CXX object Rez/CMakeFiles/RezLib.dir/RezLexerNextToken.cc.o\n[ 52%] Building CXX object Rez/CMakeFiles/RezLib.dir/RezLexer.cc.o\n[ 58%] Building CXX object Rez/CMakeFiles/RezLib.dir/RezWorld.cc.o\n[ 64%] Building CXX object Rez/CMakeFiles/RezLib.dir/ResourceDefinitions.cc.o\n[ 70%] Building CXX object Rez/CMakeFiles/RezLib.dir/Expression.cc.o\n[ 76%] Building CXX object Rez/CMakeFiles/RezLib.dir/ResourceCompiler.cc.o\n[ 82%] Building CXX object Rez/CMakeFiles/RezLib.dir/Diagnostic.cc.o\n[ 88%] Linking CXX static library libRezLib.a\n[ 88%] Built target RezLib\n[ 94%] Building CXX object Rez/CMakeFiles/Rez.dir/Rez.cc.o\n[100%] Linking CXX executable Rez\n[100%] Built target Rez\n[ 71%] Built target ResourceFiles\n[ 85%] Building CXX object ResourceFiles/CMakeFiles/ResInfo.dir/ResInfo.cc.o\n[100%] Linking CXX executable ResInfo\n[100%] Built target ResInfo\n",
+      "stderr": "RezParser.yy:3.1-37: warning: deprecated directive: ‘%define parser_class_name {RezParser}’, use ‘%define api.parser.class {RezParser}’ [-Wdeprecated]\n    3 | %define parser_class_name {RezParser}\n      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n      | %define api.parser.class {RezParser}\nRezParser.yy: warning: fix-its can be applied.  Rerun with option '--update'. [-Wother]\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/614-qbww4335/home",
+        "TMPDIR": "${SCRATCH}/614-qbww4335/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Compile exact original resource with the upstream compiler",
+      "command": [
+        "${SCRATCH}/614-qbww4335/build/Rez/Rez",
+        "-I.",
+        "hello.r",
+        "-o",
+        "hello.rsrc.bin"
+      ],
+      "cwd": "${SCRATCH}/614-qbww4335",
+      "timestamp_utc": "2026-11-18T21:23:34.470552+00:00",
+      "timeout_seconds": 44,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/614-qbww4335/home",
+        "TMPDIR": "${SCRATCH}/614-qbww4335/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "BISON_PKGDATADIR": "${TOOL_CACHE}/tools/apt/usr/share/bison",
+        "M4": "${TOOL_CACHE}/tools/apt/usr/bin/m4",
+        "CPATH": "${TOOL_CACHE}/tools/apt/usr/include",
+        "LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#614 Rez/hello.r": "3fd1a6c3803927c2bf1659b38e4b7680f538394fd8fca0f86a01b5613c636314"
+  },
+  "fixture_sha256": {
+    "CMakeLists.txt": {
+      "sha256": "666efb91127f7d48b8dfc70f04de72bfd1cb4d6416958b6022b055d6dcdc04d5",
+      "content_utf8": "cmake_minimum_required(VERSION 3.14)\nproject(RezConsole CXX C)\nset(CMAKE_CXX_STANDARD 14)\nadd_subdirectory(\"${TOOL_CACHE}/tools/autc04-Retro68-v2019.8.2/source/Retro68-2019.8.2/ResourceFiles\" ResourceFiles)\nadd_subdirectory(\"${TOOL_CACHE}/tools/autc04-Retro68-v2019.8.2/source/Retro68-2019.8.2/Rez\" Rez)\n"
+    },
+    "Types.r": {
+      "sha256": "4e0de2bb73fb2910c841aaae5fb3dd85a4b8f265a6ea7c14018282bc18ea8a9b",
+      "content_utf8": "type 'TEXT' { string; };\n"
+    }
+  },
+  "sources": [
+    "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/Cpp/Resources/Resources.html"
+  ],
+  "previous_verification_log": "examples/#614 Rez/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/autc04/Retro68/tar.gz/v2019.8.2",
+      "ref": "v2019.8.2",
+      "sha256": "5ef015d28be868abe397404d66b8feb67c2793dedf4da12ac0048545f333ef61"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "filename": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295",
+      "bytes": 11190006,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb"
+    },
+    {
+      "name": "bison",
+      "version": "2:3.8.2+dfsg-1ubuntu0.24.04.1",
+      "filename": "pool/main/b/bison/bison_3.8.2+dfsg-1ubuntu0.24.04.1_amd64.deb",
+      "sha256": "9d75084d1293f68f3c1a2ee677dea5baa4e010bac2d4c455d8e23177e97aa353",
+      "bytes": 748794,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bison/bison_3.8.2+dfsg-1ubuntu0.24.04.1_amd64.deb"
+    },
+    {
+      "name": "libboost-wave-dev",
+      "version": "1.83.0.1ubuntu2",
+      "filename": "pool/universe/b/boost-defaults/libboost-wave-dev_1.83.0.1ubuntu2_amd64.deb",
+      "sha256": "26fe03b5c44240fe4a48f3f1c42fe298b523d17e07544a4421b41f344624238f",
+      "bytes": 4096,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/b/boost-defaults/libboost-wave-dev_1.83.0.1ubuntu2_amd64.deb"
+    },
+    {
+      "name": "libboost-filesystem-dev",
+      "version": "1.83.0.1ubuntu2",
+      "filename": "pool/universe/b/boost-defaults/libboost-filesystem-dev_1.83.0.1ubuntu2_amd64.deb",
+      "sha256": "a2282323219446c474ef7244aee358e6a1f306c6ae61993bd02ed93bc7815419",
+      "bytes": 4096,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/b/boost-defaults/libboost-filesystem-dev_1.83.0.1ubuntu2_amd64.deb"
+    },
+    {
+      "name": "libboost-program-options-dev",
+      "version": "1.83.0.1ubuntu2",
+      "filename": "pool/main/b/boost-defaults/libboost-program-options-dev_1.83.0.1ubuntu2_amd64.deb",
+      "sha256": "e29e7144f831e601b4c8f17ef82cedc05fe9e9e8bb73bfd2488276ba739f6398",
+      "bytes": 4086,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/boost-defaults/libboost-program-options-dev_1.83.0.1ubuntu2_amd64.deb"
+    },
+    {
+      "name": "libboost-thread-dev",
+      "version": "1.83.0.1ubuntu2",
+      "filename": "pool/main/b/boost-defaults/libboost-thread-dev_1.83.0.1ubuntu2_amd64.deb",
+      "sha256": "dfbe38eefc1ed267ac0b24c7af41097ed8b5e7919481852d9172200fad016e61",
+      "bytes": 4088,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/boost-defaults/libboost-thread-dev_1.83.0.1ubuntu2_amd64.deb"
+    },
+    {
+      "name": "libboost-regex-dev",
+      "version": "1.83.0.1ubuntu2",
+      "filename": "pool/main/b/boost-defaults/libboost-regex-dev_1.83.0.1ubuntu2_amd64.deb",
+      "sha256": "b9f511b3f63c16e7a1cde3c5edcfe5a49fa61ba964ef5e36809e3a9201d2e0c5",
+      "bytes": 4324,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/boost-defaults/libboost-regex-dev_1.83.0.1ubuntu2_amd64.deb"
+    }
+  ],
+  "resource_fork_sha256": "cdbb881af15f6da3625d58bfe81b59bb81c66126d57f445761dd7ea05b6e1dad",
+  "toolchain": "Retro68 native Rez v2019.8.2",
+  "reproduction_command": "Rez -I. hello.r -o hello.rsrc.bin with the recorded TEXT resource definition",
+  "semantic_scope": "The published compatible Rez compiler processed the unchanged original source and its resource file contains the named resource type and exact greeting bytes.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

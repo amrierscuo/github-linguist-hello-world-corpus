@@ -1,5 +1,16 @@
 # #309 ImHex Pattern Language
 
+## Verified on November 18, 2026
+
+The official ImHex engine evaluated the unchanged original pattern against its original input. Decoding its URL-escaped output field yields the exact greeting.
+
+Run `plcli format -p hello.hexpat -i hello.txt -o result.json -f json; URL-decode the greeting JSON field`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Mapping 13 byte ASCII Hello, World! with an ImHex pattern.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.hexpat` | [hello.hexpat](hello.hexpat) created; verification pending |
+| `.hexpat` | [hello.hexpat](hello.hexpat) Syntax and behavior verified |
+
+</details>

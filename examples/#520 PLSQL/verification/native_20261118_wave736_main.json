@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "ordinal": 520,
+  "language": "PLSQL",
+  "timestamp_utc": "2026-11-18T21:14:38.072734+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute the unchanged anonymous PL/SQL block with the Oracle-compatible server and a captured output buffer",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--bind",
+        "${SCRATCH}/520-lk9zjvk6/oci-writable",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/520-lk9zjvk6",
+        "/work",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/busybox",
+        "--",
+        "/bin/bash",
+        "/work/run.sh"
+      ],
+      "cwd": "${SCRATCH}/520-lk9zjvk6",
+      "timestamp_utc": "2026-11-18T21:14:42.211408+00:00",
+      "timeout_seconds": 125,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/520-lk9zjvk6/home",
+        "TMPDIR": "${SCRATCH}/520-lk9zjvk6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/520-lk9zjvk6/unused-public-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/520-lk9zjvk6/unused-public-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#520 PLSQL/hello.sql": "4dc4612c1a6e0c621ba83ff89b51622f4afe1cadfaab672d811fbb0e4586170b"
+  },
+  "fixture_sha256": {
+    "registry-trust.json": {
+      "sha256": "9651a2f0e4a883cd7495d22c2b93c9de0e3e53ee579370e24573de1029674805",
+      "content_utf8": "{\"default\": [{\"type\": \"insecureAcceptAnything\"}]}"
+    },
+    "sql-check.sql": {
+      "sha256": "8c28893bc8aeda481d6cd23ab507c9d29ddd1624d7fac9206dc496ae87420270",
+      "content_utf8": "CREATE DATABASE corpus;\nUSE corpus;\nSET sql_mode=ORACLE;\nDELIMITER /\nCREATE PACKAGE DBMS_OUTPUT AS\n   PROCEDURE PUT_LINE(msg VARCHAR2(32767));\nEND;\n/\nCREATE PACKAGE BODY DBMS_OUTPUT AS\n   PROCEDURE PUT_LINE(msg VARCHAR2(32767)) AS\n   BEGIN\n       SET @corpus_output = msg;\n   END;\nEND;\n/\nBEGIN\n  DBMS_OUTPUT.PUT_LINE('Hello, World!');\nEND;\n/\nDELIMITER ;\nSELECT @corpus_output;\n"
+    },
+    "run.sh": {
+      "sha256": "a20686d58961206da2ab382f66b70d4e940569307054d62423a7d1477379d8e1",
+      "content_utf8": "#!/bin/bash\nset -eu\nexport USER=root TMPDIR=/tmp\ns=/work/runtime-db.sock\nmkdir /work/database\nmariadb-install-db --user=root --datadir=/work/database --skip-test-db --skip-name-resolve --force --auth-root-authentication-method=normal >bootstrap.log 2>&1 || { cat bootstrap.log; exit 4; }\nmariadbd --user=root --datadir=/work/database --skip-networking --socket=\"$s\" --pid-file=/work/db.pid >engine.log 2>&1 &\np=$!\ntrap 'kill \"$p\" 2>/dev/null || true;wait \"$p\" 2>/dev/null || true' EXIT\nfor n in $(seq 1 70); do\n if mariadb-admin --no-defaults --socket=\"$s\" -uroot ping >/dev/null 2>&1; then\n   mariadb --no-defaults --socket=\"$s\" -uroot --batch --skip-column-names <sql-check.sql\n   exit 0\n fi\n kill -0 \"$p\" || { cat engine.log; exit 2; }\n sleep 0.3\ndone\ncat engine.log\nexit 3\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Oracle DBMS_OUTPUT",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/DBMS_OUTPUT.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://docker.io/library/mariadb:11.8",
+      "digest": "sha256:75b300c790eec33cd4386d80fc1a938e27604ba70f3eeda25e52874be2aae424"
+    }
+  ],
+  "toolchain": "MariaDB 11.8 ORACLE SQL mode with test DBMS_OUTPUT package",
+  "reproduction_command": "mariadb < sql-check.sql in the isolated Oracle-mode test database",
+  "semantic_scope": "The published Oracle-compatible engine executed the unchanged anonymous PL/SQL block. A fixture package captured the argument that the original block passed to DBMS_OUTPUT.PUT_LINE.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

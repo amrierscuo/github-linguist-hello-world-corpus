@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "ordinal": 321,
+  "language": "JASS",
+  "timestamp_utc": "2026-11-18T21:25:30.597385+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile a reflection-only test host for the released parser and VM",
+      "command": [
+        "javac",
+        "JassCheck.java"
+      ],
+      "cwd": "${SCRATCH}/321-oypee6no",
+      "timestamp_utc": "2026-11-18T21:25:31.005549+00:00",
+      "timeout_seconds": 42,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/321-oypee6no/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/321-oypee6no/home",
+        "TMPDIR": "${SCRATCH}/321-oypee6no/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/321-oypee6no/home"
+      }
+    },
+    {
+      "label": "Parse the exact original JASS and execute the original entry point in the actual VM",
+      "command": [
+        "${TOOL_CACHE}/tools/wurst-v2.1.0/dist/wurst-runtime/bin/java",
+        "-cp",
+        "${TOOL_CACHE}/tools/wurst-v2.1.0/dist/wurst-compiler/wurstscript.jar:.",
+        "JassCheck"
+      ],
+      "cwd": "${SCRATCH}/321-oypee6no",
+      "timestamp_utc": "2026-11-18T21:25:31.987429+00:00",
+      "timeout_seconds": 58,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/321-oypee6no/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/321-oypee6no/home",
+        "TMPDIR": "${SCRATCH}/321-oypee6no/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/321-oypee6no/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#321 JASS/hello.j": "27d38a337cf4f5e7cab1a12a9e33e8b2e85c8ceef20a937463c413d1618e2c9c"
+  },
+  "fixture_sha256": {
+    "JassCheck.java": {
+      "sha256": "8fc17c4a0a2775e8b34e1eabfe1d276860b2ec3afaf111a58e7fe4611844fb5c",
+      "content_utf8": "import java.lang.reflect.*;\nimport java.nio.file.*;\nimport java.util.*;\npublic class JassCheck {\n    static final String A=\"de.peeeq.wurstscript.jassAst.JassAst\";\n    static Object call(Object on,String name,Object... args) throws Exception {\n        Class<?> owner=on instanceof Class?(Class<?>)on:on.getClass();\n        for(Method m:owner.getMethods()) {\n            if(!m.getName().equals(name))continue;\n            Class<?>[] types=m.getParameterTypes();\n            if(!m.isVarArgs() && types.length==args.length) {\n                boolean ok=true;\n                for(int i=0;i<types.length;i++)if(!compatible(types[i],args[i]))ok=false;\n                if(ok){m.setAccessible(true);return m.invoke(on instanceof Class?null:on,args);}\n            }\n            if(m.isVarArgs() && types.length==1) {\n                Class<?> component=types[0].getComponentType();\n                Object arr=Array.newInstance(component,args.length);\n                boolean ok=true;\n                for(int i=0;i<args.length;i++)if(compatible(component,args[i]))Array.set(arr,i,args[i]);else ok=false;\n                if(ok){m.setAccessible(true);return m.invoke(on instanceof Class?null:on,arr);}\n            }\n        }\n        throw new NoSuchMethodException(owner+\" \"+name+\" \"+Arrays.toString(args));\n    }\n    static boolean compatible(Class<?> type,Object arg) {\n        return arg==null?!type.isPrimitive():type.isInstance(arg)||(type==boolean.class&&arg instanceof Boolean)||(type==int.class&&arg instanceof Integer);\n    }\n    static Object ast(String name,Object... args) throws Exception{return call(Class.forName(A),name,args);}\n    static Object make(String name,Object... args)throws Exception{\n        for(Constructor<?> m:Class.forName(name).getConstructors()){\n            Class<?>[] t=m.getParameterTypes();\n            if(t.length!=args.length)continue;\n            boolean ok=true;\n            for(int i=0;i<t.length;i++)if(!compatible(t[i],args[i]))ok=false;\n            if(ok)return m.newInstance(args);\n        }\n        throw new NoSuchMethodException(name);\n    }\n    static List<Object> nodes(Object root,String kind)throws Exception{\n        List<Object> found=new ArrayList<>();\n        if(root.getClass().getSimpleName().equals(kind+\"Context\"))found.add(root);\n        int children=(Integer)call(root,\"getChildCount\");\n        for(int i=0;i<children;i++)found.addAll(nodesAt(root,i,kind));\n        return found;\n    }\n    static List<Object> nodesAt(Object root,int n,String kind)throws Exception{\n        Method m=root.getClass().getMethod(\"getChild\",int.class);m.setAccessible(true);\n        return nodes(m.invoke(root,n),kind);\n    }\n    static Object only(Object root,String kind)throws Exception{\n        List<Object> found=nodes(root,kind);\n        if(found.size()!=1)throw new IllegalArgumentException(kind+\" count \"+found.size());\n        return found.get(0);\n    }\n    static Object fn(String name,Object params,String result,Object... body)throws Exception{\n        return ast(\"JassFunction\",name,params,result,ast(\"JassVars\"),ast(\"JassStatements\",body),false);\n    }\n    public static void main(String[] args)throws Exception {\n        String source=Files.readString(Path.of(\"hello.j\"));\n        Object stream=call(Class.forName(\"org.antlr.v4.runtime.CharStreams\"),\"fromString\",source);\n        Object lexer=make(\"de.peeeq.wurstscript.antlr.JassLexer\",stream);\n        Object tokens=make(\"org.antlr.v4.runtime.CommonTokenStream\",lexer);\n        Object parser=make(\"de.peeeq.wurstscript.antlr.JassParser\",tokens);\n        Object parsed=call(parser,\"compilationUnit\");\n        if(!Integer.valueOf(0).equals(call(parser,\"getNumberOfSyntaxErrors\")))throw new IllegalArgumentException(\"JASS syntax error\");\n        Object function=only(parsed,\"JassFuncDef\");\n        Object signature=only(function,\"JassFuncSignature\");\n        String functionName=call(call(signature,\"ID\"),\"getText\").toString();\n        Object sourceCall=only(function,\"ExprFunctionCall\");\n        String callName=call(call(sourceCall,\"ID\"),\"getText\").toString();\n        Object argument=only(sourceCall,\"JassExprPrimary\");\n        String literal=call(call(argument,\"STRING\"),\"getText\").toString();\n        if(!literal.startsWith(\"\\\"\")||!literal.endsWith(\"\\\"\"))throw new IllegalArgumentException(literal);\n        Object originalCall=ast(\"JassStmtCall\",callName,ast(\"JassExprlist\",ast(\"JassExprStringVal\",literal.substring(1,literal.length()-1))));\n        Object originalFunction=fn(functionName,ast(\"JassSimpleVars\"),\"nothing\",originalCall);\n        Object captured=ast(\"JassSimpleVar\",\"string\",\"corpusCaptured\");\n        Object binding=fn(\"BJDebugMsg\",ast(\"JassSimpleVars\",ast(\"JassSimpleVar\",\"string\",\"msg\")),\"nothing\",\n            ast(\"JassStmtSet\",\"corpusCaptured\",ast(\"JassExprVarAccess\",\"msg\")));\n        Object readback=fn(\"corpusReadback\",ast(\"JassSimpleVars\"),\"string\",\n            ast(\"JassStmtReturn\",ast(\"JassExprVarAccess\",\"corpusCaptured\")));\n        Object program=ast(\"JassProg\",ast(\"JassTypeDefs\"),ast(\"JassVars\",captured),ast(\"JassNatives\"),\n            ast(\"JassFunctions\",originalFunction,binding,readback));\n        Object machine=make(\"de.peeeq.wurstio.jassinterpreter.JassInterpreter\");\n        call(machine,\"loadProgram\",program);\n        Class<?> il=Class.forName(\"de.peeeq.wurstscript.intermediatelang.ILconst\");\n        Object empty=Array.newInstance(il,0);\n        Method eval=machine.getClass().getMethod(\"executeFunction\",String.class,empty.getClass());\n        eval.invoke(machine,functionName,empty);\n        Object value=eval.invoke(machine,\"corpusReadback\",empty);\n        System.out.println(call(value,\"getVal\"));\n    }\n}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "pjass compilatore originale",
+      "url": "https://github.com/lep/pjass"
+    },
+    {
+      "title": "GitHub Linguist esempi JASS",
+      "url": "https://github.com/github-linguist/linguist/tree/main/samples/JASS"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/wurstscript/WurstScript/releases/download/v2.1.0/wurst-compiler-2.1.0-linux-x64.zip",
+      "name": "wurst-compiler-2.1.0-linux-x64.zip",
+      "sha256": "8f7e0594f378bb0b6e46b09bdae3c7119ecea4c7ff9f2200d164e1c1b35b450f",
+      "release": "v2.1.0"
+    }
+  ],
+  "toolchain": "WurstScript v2.1.0 standalone compatible JASS parser and interpreter",
+  "reproduction_command": "javac JassCheck.java; java -cp <WurstScript jar>:. JassCheck",
+  "semantic_scope": "The Wurst JASS parser accepted the exact original source. A fixture passed the parsed call into the compatible execution AST and emulated the game debug callback. Invoking the original entry point produced the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

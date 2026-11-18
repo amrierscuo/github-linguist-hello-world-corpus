@@ -1,5 +1,16 @@
 # #719 TextMate Properties
 
+## Verified on November 18, 2026
+
+The upstream settings parser read the unchanged properties file and its glob converter selected which synthetic filename receives the GREETING property. The positive TXT lookup returned the exact greeting and the Markdown control had no value.
+
+Run `g++ <TextMate parser.cc, parse_glob.cc and parser_base.cc> lookup.cc -lonig; ./lookup`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -31,3 +42,5 @@ Commitments: TextMate/macOS not available; property parser and actual hanging va
 ## Primary sources
 
 - https://macromates.com/textmate/manual/settings
+
+</details>

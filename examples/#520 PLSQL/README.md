@@ -1,5 +1,16 @@
 # #520 PLSQL
 
+## Verified on November 18, 2026
+
+The published Oracle-compatible engine executed the unchanged anonymous PL/SQL block. A fixture package captured the argument that the original block passed to DBMS_OUTPUT.PUT_LINE.
+
+Run `mariadb < sql-check.sql in the isolated Oracle-mode test database`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Perform an Oracle PL/SQL block and read the DBMS_OUTPUT buffer.
 
 Canonical type `programming`, language_id `273`.
@@ -44,3 +55,5 @@ Verification of the main sample and each variant is recorded separately.
 | `.tps` | [hello.tps](variants/tps-599a8ac3/hello.tps) created; verification pending |
 | `.trg` | [hello.trg](variants/trg-cb798897/hello.trg) created; verification pending |
 | `.vw` | [hello.vw](variants/vw-2cbbc276/hello.vw) created; verification pending |
+
+</details>

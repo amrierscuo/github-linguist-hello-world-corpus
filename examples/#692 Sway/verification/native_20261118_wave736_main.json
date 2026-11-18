@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "ordinal": 692,
+  "language": "Sway",
+  "timestamp_utc": "2026-11-18T21:25:30.292944+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the original script entry point into FuelVM bytecode",
+      "command": [
+        "${TOOL_CACHE}/tools/sway-v0.72.1/dist/forc-binaries/forc",
+        "build"
+      ],
+      "cwd": "${SCRATCH}/692-fk9lohh3",
+      "timestamp_utc": "2026-11-18T21:25:30.837908+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "    \u001b[1;32mBuilding\u001b[0m ${SCRATCH}/692-fk9lohh3\n    \u001b[1;32mFetching\u001b[0m \u001b[1mstd\u001b[0m 0.72.1\n    \u001b[1;32mFetching\u001b[0m from http://ipfs.forc.pub. Note: This can take several minutes.\n    \u001b[1;32mCreating\u001b[0m a new `Forc.lock` file. (Cause: lock file did not exist)\n      \u001b[1;32mAdding\u001b[0m \u001b[1mstd\u001b[0m\n   \u001b[1;32mCompiling\u001b[0m library \u001b[1mstd\u001b[0m (registry+std?0.72.1#Qmaei2ndDdVnwaBbe58vi6dwH1i5qs16wkLRfa6hnPeskK!)\n   \u001b[1;32mCompiling\u001b[0m script \u001b[1mcorpus-greeting\u001b[0m (${SCRATCH}/692-fk9lohh3)\n    \u001b[1;32mFinished\u001b[0m debug [unoptimized + fuel] target(s) [360 B] in 3.20s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/sway-forc-user-home",
+        "TMPDIR": "${SCRATCH}/692-fk9lohh3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the original script entry function in the official FuelVM test runtime",
+      "command": [
+        "${TOOL_CACHE}/tools/sway-v0.72.1/dist/forc-binaries/forc",
+        "test",
+        "original_entry_returns_greeting",
+        "--test-threads",
+        "1"
+      ],
+      "cwd": "${SCRATCH}/692-fk9lohh3",
+      "timestamp_utc": "2026-11-18T21:25:35.997666+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "    \u001b[1;32mBuilding\u001b[0m ${SCRATCH}/692-fk9lohh3\n   \u001b[1;32mCompiling\u001b[0m library \u001b[1mstd\u001b[0m (registry+std?0.72.1#Qmaei2ndDdVnwaBbe58vi6dwH1i5qs16wkLRfa6hnPeskK!)\n   \u001b[1;32mCompiling\u001b[0m script \u001b[1mcorpus-greeting\u001b[0m (${SCRATCH}/692-fk9lohh3)\n    \u001b[1;32mFinished\u001b[0m debug [unoptimized + fuel] target(s) [480 B] in 2.76s\n     \u001b[1;32mRunning\u001b[0m 1 test, filtered 0 tests\n      test original_entry_returns_greeting ... \u001b[32mok\u001b[0m (638.5µs, 112 gas)\n\ntest result: \u001b[32mOK\u001b[0m. 1 passed; 0 failed; finished in 638.5µs\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/sway-forc-user-home",
+        "TMPDIR": "${SCRATCH}/692-fk9lohh3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#692 Sway/Forc.toml": "b91023d8ecb6d4e6dd63ad6edc73abef432d10c0fcd707a985e8247c9a96cbc3",
+    "examples/#692 Sway/src/main.sw": "54786bd2b54949594df78819cbf523b636d0be98c2c79a5de468d50a3eae5b8e"
+  },
+  "fixture_sha256": {
+    "src/main.sw": {
+      "sha256": "d9977de50431e40cc17201edacb8978077a4b62b1e13f2157b978ec209c5d3ce",
+      "content_utf8": "script;\n\nfn main() -> str[13] {\n    __to_str_array(\"Hello, World!\")\n}\n \n#[test]\nfn original_entry_returns_greeting() {\n    assert(main() == __to_str_array(\"Hello, World!\"));\n}\n"
+    }
+  },
+  "sources": [
+    "https://fuellabs.github.io/sway/v0.31.0/basics/variables.html"
+  ],
+  "previous_verification_log": "examples/#692 Sway/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/FuelLabs/sway/releases/download/v0.72.1/forc-binaries-linux_amd64.tar.gz",
+      "name": "forc-binaries-linux_amd64.tar.gz",
+      "sha256": "1d90387e69ccce595c552654316318975525e89a6d30f86580886aedb1cef517",
+      "release": "v0.72.1"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#692 Sway/src/main.sw",
+      "original_sha256": "cfcbabeca91cfa4f3c31ad3c7a5565690e57cca200afcd81271d1019198f91b2",
+      "tested_sha256": "54786bd2b54949594df78819cbf523b636d0be98c2c79a5de468d50a3eae5b8e",
+      "staged_file": "work/native_target736_20261118/corrected/692/src/main.sw",
+      "original_fragment": "\"Hello, World!\"",
+      "replacement": "__to_str_array(\"Hello, World!\")"
+    }
+  ],
+  "toolchain": "Fuel Sway v0.72.1 official compiler and FuelVM test runner",
+  "reproduction_command": "forc build; forc test original_entry_returns_greeting --test-threads 1 in the recorded isolated project",
+  "semantic_scope": "The published compiler emitted the original script. The official VM invoked its original main function from a fixture assertion and checked the exact thirteen-byte return value.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#692 Sway/verification/native_20261118_wave736_prior_attempt.json"
+}

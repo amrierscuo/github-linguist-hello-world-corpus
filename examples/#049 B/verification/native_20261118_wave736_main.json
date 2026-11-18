@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "ordinal": 49,
+  "language": "B",
+  "timestamp_utc": "2026-11-18T21:18:08.338836+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the published native B compiler and standard library",
+      "command": [
+        "make",
+        "-j3"
+      ],
+      "cwd": "${SCRATCH}/049-fm2c722_/bcause-src",
+      "timestamp_utc": "2026-11-18T21:18:08.849695+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "cc -std=gnu99 -Wall -Wextra -pedantic -g -O src/compiler/list.c src/compiler/main.c src/compiler/compiler.c -o bcause\ncc -std=gnu99 -Wall -Wextra -pedantic -g -O -nostdlib -c -Wno-incompatible-library-redeclaration -Wno-builtin-declaration-mismatch -ffreestanding -fno-stack-protector src/libb/libb.c -o libb.o\nar rv libb.a libb.o\na - libb.o\nranlib libb.a\n",
+      "stderr": "ar: creating libb.a\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/049-fm2c722_/home",
+        "TMPDIR": "${SCRATCH}/049-fm2c722_/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Read the compatible B compiler command options",
+      "command": [
+        "${SCRATCH}/049-fm2c722_/bcause-src/bcause",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/049-fm2c722_",
+      "timestamp_utc": "2026-11-18T21:18:09.525736+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "Usage: ${SCRATCH}/049-fm2c722_/bcause-src/bcause [options] file...\nOptions:\n-h --help    Display this information.\n-v --version Display compiler version information.\n-o <file>    Place the output into <file>.\n-L<dir>      Location of B library.\n-S           Compile only; do not assemble or link.\n-c           Compile and assemble, but do not link.\n--save-temps Do not delete intermediate files.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/049-fm2c722_/home",
+        "TMPDIR": "${SCRATCH}/049-fm2c722_/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile the original B greeting",
+      "command": [
+        "${SCRATCH}/049-fm2c722_/bcause-src/bcause",
+        "-o",
+        "greeting",
+        "hello.b"
+      ],
+      "cwd": "${SCRATCH}/049-fm2c722_",
+      "timestamp_utc": "2026-11-18T21:18:09.537037+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 1,
+      "stdout": "as greeting.s -o greeting.o\nld -static -nostdlib greeting.o -L. -L/lib64 -L/usr/local/lib -lb -o greeting -z noexecstack\n",
+      "stderr": "ld: cannot find -lb: No such file or directory\n\u001b[1m\u001b[37m${SCRATCH}/049-fm2c722_/bcause-src/bcause: \u001b[1m\u001b[31merror: \u001b[0merror running linker (exit code 1)\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/049-fm2c722_/home",
+        "TMPDIR": "${SCRATCH}/049-fm2c722_/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile against the published B standard library",
+      "command": [
+        "${SCRATCH}/049-fm2c722_/bcause-src/bcause",
+        "-L${SCRATCH}/049-fm2c722_/bcause-src",
+        "-o",
+        "greeting",
+        "hello.b"
+      ],
+      "cwd": "${SCRATCH}/049-fm2c722_",
+      "timestamp_utc": "2026-11-18T21:18:09.554512+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "as greeting.s -o greeting.o\nld -static -nostdlib greeting.o -L${SCRATCH}/049-fm2c722_/bcause-src -L/lib64 -L/usr/local/lib -lb -o greeting -z noexecstack\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/049-fm2c722_/home",
+        "TMPDIR": "${SCRATCH}/049-fm2c722_/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Run the generated B executable",
+      "command": [
+        "${SCRATCH}/049-fm2c722_/greeting"
+      ],
+      "cwd": "${SCRATCH}/049-fm2c722_",
+      "timestamp_utc": "2026-11-18T21:18:09.569797+00:00",
+      "timeout_seconds": 20,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/049-fm2c722_/home",
+        "TMPDIR": "${SCRATCH}/049-fm2c722_/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#049 B/hello.b": "514b4a846bf450c46ed0f84c6e9e2be40255d10e06e626ced2cb32f9380dabbe"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.bell-labs.com/usr/dmr/www/btut.pdf"
+  ],
+  "previous_verification_log": "examples/#049 B/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/spydr06/bcause/tar.gz/main",
+      "ref": "main",
+      "sha256": "8aaf58942cd327790b8073ad10420fa2cd3c74280fad33066f3bcbfbed6c72f4"
+    }
+  ],
+  "package_commands": "Usage: ${SCRATCH}/049-fm2c722_/bcause-src/bcause [options] file...\nOptions:\n-h --help    Display this information.\n-v --version Display compiler version information.\n-o <file>    Place the output into <file>.\n-L<dir>      Location of B library.\n-S           Compile only; do not assemble or link.\n-c           Compile and assemble, but do not link.\n--save-temps Do not delete intermediate files.\n",
+  "toolchain": "BCause B native compatible compiler",
+  "reproduction_command": "bcause -o greeting hello.b; ./greeting",
+  "semantic_scope": "The published native B compiler accepted the unchanged source, and the generated executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

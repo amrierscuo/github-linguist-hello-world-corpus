@@ -1,5 +1,16 @@
 # #664 Slash
 
+## Verified on November 18, 2026
+
+The published Slash VM executed the unchanged original template and rendered the exact greeting.
+
+Run `slash hello.sl`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Evaluate a Slash template and make greetings.
 
 Canonical type `programming`, language_id `349`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sl` | [hello.sl](hello.sl) created; verification pending |
+| `.sl` | [hello.sl](hello.sl) Syntax and behavior verified |
+
+</details>

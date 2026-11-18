@@ -1,5 +1,18 @@
 # #613 RenderScript
 
+## Verified on November 18, 2026
+
+The authentic Android frontend compiled the original source. Its emitted function executed with a recorded headless fixture and produced the exact greeting data.
+
+Run `llvm-rs-cc -I <AOSP RS headers> -target-api 23 -o obj -d obj hello.rs; compile emitted bitcode; link and run the recorded host`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `RenderScript`, tipo `programming`, language_id `323`.
 
 Write greetings via rsDebug in a kernel/script Android RenderScript.
@@ -46,3 +59,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.rs` | [hello.rs](hello.rs), [main.rs](variants/rsh-e00ceaaf/main.rs) created; verification pending |
 | `.rsh` | [hello.rsh](variants/rsh-e00ceaaf/hello.rsh) created; verification pending |
+
+</details>

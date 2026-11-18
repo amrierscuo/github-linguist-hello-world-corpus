@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "ordinal": 613,
+  "language": "RenderScript",
+  "timestamp_utc": "2026-11-18T21:28:51.874389+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Identify shared library dependencies of the official Android RS tool",
+      "command": [
+        "ldd",
+        "${TOOL_CACHE}/tools/AOSP-RS-3289846/llvm-rs-cc"
+      ],
+      "cwd": "${SCRATCH}/613-p8w0qfgd",
+      "timestamp_utc": "2026-11-18T21:28:51.902656+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007fff60be3000)\n\tlibbcinfo.so => ${TOOL_CACHE}/tools/AOSP-RS-3289846/libbcinfo.so (0x00007ac0f8cb6000)\n\tlibclang_android.so => ${TOOL_CACHE}/tools/AOSP-RS-3289846/libclang_android.so (0x00007ac0f7800000)\n\tlibLLVM_android.so => ${TOOL_CACHE}/tools/AOSP-RS-3289846/libLLVM_android.so (0x00007ac0f5800000)\n\tlibc++.so => ${TOOL_CACHE}/tools/AOSP-RS-3289846/libc++.so (0x00007ac0f76ca000)\n\tlibdl.so.2 => ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libdl.so.2 (0x00007ac0f8caf000)\n\tlibpthread.so.0 => ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ac0f8caa000)\n\tlibm.so.6 => ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007ac0f5717000)\n\tlibrt.so.1 => ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/librt.so.1 (0x00007ac0f8ca5000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ac0f8c6d000)\n\tlibc.so.6 => ${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007ac0f5400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ac0f8dd1000)\n\tlibncurses.so.5 => not found\n\tlibtinfo.so.5 => not found\n\tlibncurses.so.5 => not found\n\tlibtinfo.so.5 => not found\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/613-p8w0qfgd/home",
+        "TMPDIR": "${SCRATCH}/613-p8w0qfgd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the exact original Android compute source with the official frontend",
+      "command": [
+        "${TOOL_CACHE}/tools/AOSP-RS-3289846/llvm-rs-cc",
+        "-I",
+        "${TOOL_CACHE}/tools/AOSP-RS-3289846/headers",
+        "-I",
+        "${TOOL_CACHE}/tools/apt/usr/lib/llvm-18/lib/clang/18/include",
+        "-I",
+        "/usr/lib/gcc/x86_64-linux-gnu/13/include",
+        "-target-api",
+        "23",
+        "-o",
+        "obj",
+        "-d",
+        "obj",
+        "hello.rs"
+      ],
+      "cwd": "${SCRATCH}/613-p8w0qfgd",
+      "timestamp_utc": "2026-11-18T21:28:51.921893+00:00",
+      "timeout_seconds": 58,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: Renderscript is deprecated: Please refer to the migration guide (https://developer.android.com/guide/topics/renderscript/migration-guide) for the proposed alternatives.\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/613-p8w0qfgd/home",
+        "TMPDIR": "${SCRATCH}/613-p8w0qfgd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/AOSP-RS-3289846:${TOOL_CACHE}/tools/aosp-ncurses5-x86_64/root/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Lower the official emitted compute bitcode for the local headless test",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/clang-18",
+        "-Wno-override-module",
+        "-c",
+        "${SCRATCH}/613-p8w0qfgd/obj/bc32/hello.bc",
+        "-o",
+        "module.o"
+      ],
+      "cwd": "${SCRATCH}/613-p8w0qfgd",
+      "timestamp_utc": "2026-11-18T21:28:52.047640+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/613-p8w0qfgd/home",
+        "TMPDIR": "${SCRATCH}/613-p8w0qfgd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/AOSP-RS-3289846:${TOOL_CACHE}/tools/aosp-ncurses5-x86_64/root/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Read the actual native entry and helper symbols",
+      "command": [
+        "nm",
+        "-g",
+        "module.o"
+      ],
+      "cwd": "${SCRATCH}/613-p8w0qfgd",
+      "timestamp_utc": "2026-11-18T21:28:52.372241+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "                 U _Z7rsDebugPKci\n0000000000000000 T hello\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/613-p8w0qfgd/home",
+        "TMPDIR": "${SCRATCH}/613-p8w0qfgd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/AOSP-RS-3289846:${TOOL_CACHE}/tools/aosp-ncurses5-x86_64/root/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Link the real compiled Android compute statement with the recorded headless host",
+      "command": [
+        "cc",
+        "${SCRATCH}/613-p8w0qfgd/run.c",
+        "module.o",
+        "-o",
+        "greeting"
+      ],
+      "cwd": "${SCRATCH}/613-p8w0qfgd",
+      "timestamp_utc": "2026-11-18T21:28:52.415580+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/613-p8w0qfgd/home",
+        "TMPDIR": "${SCRATCH}/613-p8w0qfgd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/AOSP-RS-3289846:${TOOL_CACHE}/tools/aosp-ncurses5-x86_64/root/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/613-p8w0qfgd/greeting"
+      ],
+      "cwd": "${SCRATCH}/613-p8w0qfgd",
+      "timestamp_utc": "2026-11-18T21:28:52.489096+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/613-p8w0qfgd/home",
+        "TMPDIR": "${SCRATCH}/613-p8w0qfgd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/AOSP-RS-3289846:${TOOL_CACHE}/tools/aosp-ncurses5-x86_64/root/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#613 RenderScript/hello.rs": "37d4b2bc5141a6beeeb3d4a32c86e5233c6a89dad24a32467ad0e340542dd3f6"
+  },
+  "fixture_sha256": {
+    "run.c": {
+      "sha256": "8a32e3f9424a7373036e9edcc1e8952e2c2302f04356139c0eafd6908e752943",
+      "content_utf8": "#include <stdio.h>\nextern void hello(void);\nvoid captured_debug(const char *text, int data) __asm__(\"_Z7rsDebugPKci\");\nvoid captured_debug(const char *text, int data) { if(data==0) puts(text); }\nint main(void) { hello(); return 0; }\n"
+    }
+  },
+  "sources": [
+    "https://developer.android.com/guide/topics/renderscript/reference/rs_debug"
+  ],
+  "previous_verification_log": "examples/#613 RenderScript/verification/native.json",
+  "android_compiler_archive": {
+    "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/refs/heads/main/tools/linux/bin/llvm-rs-cc?format=TEXT",
+    "base64_sha256": "10f1378600ef1907cb7a86b72ccbbe45e76b68c9f0422cf4a33e3c04b58cb78c",
+    "decoded_sha256": "b56487afa660c56fdd9a632bf427f52d08e5bbd95d80a280bb17cefb7ecfb923"
+  },
+  "android_headers_sha256": "b08d6d5697672ef14b11a8b36c25f9f2427630e8acc252c775bdbeabbe6e3254",
+  "legacy_curses_provenance": [
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.3-2_amd64.deb",
+      "sha256": "d9b8efb37a056e01c46d93c7ef6977aa04ad2586978137d9a3954c15ad5d14c3"
+    },
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2_amd64.deb",
+      "sha256": "d2597b5aec92a930cf549e1b429ad892595813e72ec7814685ea146a9fb715e5"
+    }
+  ],
+  "android_bitcode_sha256": "391465b5413c538490da813221c8397bb38544734708de941d7ed7faa26c43b0",
+  "toolchain": "AOSP RenderScript Clang 3289846 and LLVM host execution",
+  "reproduction_command": "llvm-rs-cc -I <AOSP RS headers> -target-api 23 -o obj -d obj hello.rs; compile emitted bitcode; link and run the recorded host",
+  "semantic_scope": "The authentic Android frontend compiled the original source. Its emitted function executed with a recorded headless fixture and produced the exact greeting data.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
