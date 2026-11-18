@@ -1,5 +1,18 @@
 # #560 Propeller Spin
 
+## Verified on November 18, 2026
+
+The official Spin translator compiled the unchanged source. Host execution of that emitted code dereferenced the returned address and read the exact thirteen-byte data block and NUL terminator.
+
+Run `spin2cpp --ccode hello.spin; gcc -fno-pie -no-pie ...; ./check`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -42,4 +55,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.spin` | [hello.spin](hello.spin) syntax verified |
+| `.spin` | [hello.spin](hello.spin) Syntax and behavior verified |
+
+</details>

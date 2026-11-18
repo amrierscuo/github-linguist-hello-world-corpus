@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "ordinal": 708,
+  "language": "Tape",
+  "timestamp_utc": "2026-11-18T19:47:19.891629+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record VHS version",
+      "command": [
+        "${TOOL_CACHE}/tools/vhs-v0.12.1/dist/vhs_0.12.1_Linux_x86_64/vhs",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/708-gxnkiiv_",
+      "timestamp_utc": "2026-11-18T19:47:37.391467+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "vhs version v0.12.1 (24fa225)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/708-gxnkiiv_/home",
+        "TMPDIR": "${SCRATCH}/708-gxnkiiv_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "VHS_BROWSER_PATH": "${SCRATCH}/708-gxnkiiv_/headless-chrome",
+        "VHS_NO_SANDBOX": "1",
+        "VHS_DOCKER_MODE": "1",
+        "TESSDATA_PREFIX": "${TOOL_CACHE}/tools/apt/usr/share/tesseract-ocr/5/tessdata"
+      }
+    },
+    {
+      "label": "Record the original VHS tape with a private browser shell and terminal",
+      "command": [
+        "${TOOL_CACHE}/tools/vhs-v0.12.1/dist/vhs_0.12.1_Linux_x86_64/vhs",
+        "hello.tape"
+      ],
+      "cwd": "${SCRATCH}/708-gxnkiiv_",
+      "timestamp_utc": "2026-11-18T19:47:37.463149+00:00",
+      "timeout_seconds": 125,
+      "exit_code": 0,
+      "stdout": "Output .gif hello.gif\nSet Shell bash\nSet Width 800\nSet Height 300\nType echo 'Hello, World!'\nEnter 1\nSleep 1s\n",
+      "stderr": "File: hello.tape\nCreating hello.gif...\nHost your GIF on vhs.charm.sh: vhs publish <file>.gif\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/708-gxnkiiv_/home",
+        "TMPDIR": "${SCRATCH}/708-gxnkiiv_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "VHS_BROWSER_PATH": "${SCRATCH}/708-gxnkiiv_/headless-chrome",
+        "VHS_NO_SANDBOX": "1",
+        "VHS_DOCKER_MODE": "1",
+        "TESSDATA_PREFIX": "${TOOL_CACHE}/tools/apt/usr/share/tesseract-ocr/5/tessdata"
+      }
+    },
+    {
+      "label": "Read the final frames of the actual GIF",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-i",
+        "${SCRATCH}/708-gxnkiiv_/hello.gif",
+        "-vf",
+        "scale=iw*2:ih*2",
+        "-update",
+        "1",
+        "-y",
+        "final.png"
+      ],
+      "cwd": "${SCRATCH}/708-gxnkiiv_",
+      "timestamp_utc": "2026-11-18T19:47:42.607620+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/708-gxnkiiv_/home",
+        "TMPDIR": "${SCRATCH}/708-gxnkiiv_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "VHS_BROWSER_PATH": "${SCRATCH}/708-gxnkiiv_/headless-chrome",
+        "VHS_NO_SANDBOX": "1",
+        "VHS_DOCKER_MODE": "1",
+        "TESSDATA_PREFIX": "${TOOL_CACHE}/tools/apt/usr/share/tesseract-ocr/5/tessdata"
+      }
+    },
+    {
+      "label": "Read terminal output independently from the last recorded frame",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/tesseract",
+        "final.png",
+        "stdout",
+        "--psm",
+        "6"
+      ],
+      "cwd": "${SCRATCH}/708-gxnkiiv_",
+      "timestamp_utc": "2026-11-18T19:47:43.133204+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "> echo ‘Hello, World!'\nHello, World!\n>\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/708-gxnkiiv_/home",
+        "TMPDIR": "${SCRATCH}/708-gxnkiiv_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "VHS_BROWSER_PATH": "${SCRATCH}/708-gxnkiiv_/headless-chrome",
+        "VHS_NO_SANDBOX": "1",
+        "VHS_DOCKER_MODE": "1",
+        "TESSDATA_PREFIX": "${TOOL_CACHE}/tools/apt/usr/share/tesseract-ocr/5/tessdata"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#708 Tape/hello.tape": "9be4982a03459e01917d144ed9d6cb7a3c8206142d074a05a0e205f83d294d13"
+  },
+  "fixture_sha256": {
+    "headless-chrome": {
+      "sha256": "2f081e4c488b55d3bcc0fb0d89be10ad518eeddd7ad19ba69321f5d923193e68",
+      "content_utf8": "#!/bin/sh\nexec ${TOOL_CACHE}/tools/chrome-headless-shell-158.0.8127.36/dist/chrome-headless-shell-linux64/chrome-headless-shell --no-sandbox --disable-dev-shm-usage \"$@\"\n"
+    }
+  },
+  "sources": [
+    "https://github.com/charmbracelet/vhs"
+  ],
+  "previous_verification_log": "examples/#708 Tape/verification/toolchain.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/charmbracelet/vhs/releases/download/v0.12.1/vhs_0.12.1_Linux_x86_64.tar.gz",
+      "name": "vhs_0.12.1_Linux_x86_64.tar.gz",
+      "sha256": "eb33787a5b1cebf91fe0b18bd231e2d71d36c1ff4babd99ddac1a6ab411efd10",
+      "release": "v0.12.1"
+    },
+    {
+      "url": "https://storage.googleapis.com/chrome-for-testing-public/158.0.8127.36/linux64/chrome-headless-shell-linux64.zip",
+      "sha256": "2d3a23017323c54fd457a678e4351f895c4076d8050e39d5aa6247f93448b73a",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "ttyd",
+      "version": "1.7.4-1build2",
+      "filename": "pool/universe/t/ttyd/ttyd_1.7.4-1build2_amd64.deb",
+      "sha256": "426dc264f4ead2ebc11d73d26250288b9fe81524b521519ba546b1dab16d134c",
+      "bytes": 402898,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/ttyd/ttyd_1.7.4-1build2_amd64.deb"
+    },
+    {
+      "name": "ffmpeg",
+      "version": "7:6.1.1-3ubuntu5",
+      "filename": "pool/universe/f/ffmpeg/ffmpeg_6.1.1-3ubuntu5_amd64.deb",
+      "sha256": "1a23baace5f2688a47e28119aedae6993cd638e6279a7227dfc52d9a337a1c17",
+      "bytes": 1878920,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/f/ffmpeg/ffmpeg_6.1.1-3ubuntu5_amd64.deb"
+    },
+    {
+      "name": "tesseract-ocr",
+      "version": "5.3.4-1build5",
+      "filename": "pool/universe/t/tesseract/tesseract-ocr_5.3.4-1build5_amd64.deb",
+      "sha256": "2dfac382d77215aee0c3de4a2a2205505d5f2195e72e79b54ad32154fc08da77",
+      "bytes": 327852,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract-ocr_5.3.4-1build5_amd64.deb"
+    }
+  ],
+  "recorded_gif_sha256": "0d519806848ba46660097fb1acdac51e0971985fa14edbd52dddf149253d3e38",
+  "last_frame_sha256": "99c8d3dccc5a0ba5d34574ac7e7540921efcf974c99a923f01bbaf5fab4b1473",
+  "toolchain": "vhs version v0.12.1 (24fa225)",
+  "reproduction_command": "VHS_BROWSER_PATH=<portable headless shell> vhs hello.tape; OCR final frame",
+  "semantic_scope": "VHS used the unchanged tape to drive an isolated shell and recorded the actual terminal. The final frame contained the greeting as its own stdout line.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #455 NCL
 
+## Verified on November 18, 2026
+
+The packaged NCAR NCL interpreter evaluated the unchanged original expression and printed the complete greeting.
+
+Run `ncl -Q hello.ncl`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `NCL`, tipo `programming`, language_id `240`.
 
 Print a chained string in NCAR NCL.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ncl` | [hello.ncl](hello.ncl) created; verification pending |
+| `.ncl` | [hello.ncl](hello.ncl) Syntax and behavior verified |
+
+</details>

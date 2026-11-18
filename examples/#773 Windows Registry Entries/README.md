@@ -1,5 +1,18 @@
 # #773 Windows Registry Entries
 
+## Verified on November 18, 2026
+
+The Windows-compatible reged consumer imported the unchanged file into a disposable binary hive, then exported its persisted key with the exact string value. The host registry was outside the fixture.
+
+Run `reged -C -I registry.hive HKEY_CURRENT_USER hello.reg; reged -x registry.hive HKEY_CURRENT_USER \Software\CorpusGreeting returned.reg`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Windows Registry Entries`, tipo `data`, language_id `969674868`.
 
 File di importazione Windows Registry originale, con valore Message = `Hello, World!` sotto HKCU\Software\CorpusGreeting.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.reg` | [hello.reg](hello.reg) created; verification pending |
+| `.reg` | [hello.reg](hello.reg) Syntax and behavior verified |
+
+</details>

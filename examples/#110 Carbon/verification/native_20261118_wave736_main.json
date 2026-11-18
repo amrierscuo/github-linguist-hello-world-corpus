@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "ordinal": 110,
+  "language": "Carbon",
+  "timestamp_utc": "2026-11-18T19:38:45.017798+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the Carbon nightly compiler and flags",
+      "command": [
+        "${TOOL_CACHE}/tools/carbon-0.0.0-0.nightly.2026.11.11/dist/carbon_toolchain-0.0.0-0.nightly.2026.11.11/bin/carbon",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/110-a1gend8t",
+      "timestamp_utc": "2026-11-18T19:38:45.388916+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Carbon Language toolchain version: 0.0.0-0.nightly.2026.11.11+bd116f5\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/110-a1gend8t/home",
+        "TMPDIR": "${SCRATCH}/110-a1gend8t/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Read the publisher’s selected compiler subcommands",
+      "command": [
+        "${TOOL_CACHE}/tools/carbon-0.0.0-0.nightly.2026.11.11/dist/carbon_toolchain-0.0.0-0.nightly.2026.11.11/bin/carbon",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/110-a1gend8t",
+      "timestamp_utc": "2026-11-18T19:38:45.475399+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Carbon Language toolchain version: 0.0.0-0.nightly.2026.11.11+bd116f5\n\nThis is the unified Carbon Language toolchain driver. Its subcommands provide all of the core behavior of the toolchain, including compilation, linking, and developer tools. Each of these has its own subcommand, and you can pass a specific subcommand to the `help` subcommand to get details about its usage.\n\nUsage:\n  carbon [OPTIONS] build-runtimes [OPTIONS]\n  carbon [OPTIONS] build [OPTIONS] <FILE>... -- [<CLANG-ARG>... -- <EXTRA_CLANG_LINK_ARGS>...]\n  carbon [OPTIONS] clang [<ARG>...]\n  carbon [OPTIONS] compile [OPTIONS] <FILE>... -- [<CLANG-ARG>...]\n  carbon [OPTIONS] config [OPTIONS]\n  carbon [OPTIONS] format [--output=FILE] <FILE>...\n  carbon [OPTIONS] language-server [OPTIONS]\n  carbon [OPTIONS] link [OPTIONS] [<OBJECT_FILE>... -- <EXTRA_CLANG_LINK_ARGS>...]\n  carbon [OPTIONS] lld [OPTIONS] [<ARG>...]\n  carbon [OPTIONS] llvm ar [<ARG>...]\n  carbon [OPTIONS] llvm cgdata [<ARG>...]\n  carbon [OPTIONS] llvm cxxfilt [<ARG>...]\n  carbon [OPTIONS] llvm debuginfod-find [<ARG>...]\n  carbon [OPTIONS] llvm dsymutil [<ARG>...]\n  carbon [OPTIONS] llvm dwp [<ARG>...]\n  carbon [OPTIONS] llvm gsymutil [<ARG>...]\n  carbon [OPTIONS] llvm ifs [<ARG>...]\n  carbon [OPTIONS] llvm libtool-darwin [<ARG>...]\n  carbon [OPTIONS] llvm lipo [<ARG>...]\n  carbon [OPTIONS] llvm ml [<ARG>...]\n  carbon [OPTIONS] llvm mt [<ARG>...]\n  carbon [OPTIONS] llvm nm [<ARG>...]\n  carbon [OPTIONS] llvm objcopy [<ARG>...]\n  carbon [OPTIONS] llvm objdump [<ARG>...]\n  carbon [OPTIONS] llvm rc [<ARG>...]\n  carbon [OPTIONS] llvm readobj [<ARG>...]\n  carbon [OPTIONS] llvm sancov [<ARG>...]\n  carbon [OPTIONS] llvm size [<ARG>...]\n  carbon [OPTIONS] llvm symbolizer [<ARG>...]\n  carbon [OPTIONS] llvm ranlib [<ARG>...]\n  carbon [OPTIONS] llvm lib [<ARG>...]\n  carbon [OPTIONS] llvm dlltool [<ARG>...]\n  carbon [OPTIONS] llvm bitcode-strip [<ARG>...]\n  carbon [OPTIONS] llvm install-name-tool [<ARG>...]\n  carbon [OPTIONS] llvm strip [<ARG>...]\n  carbon [OPTIONS] llvm otool [<ARG>...]\n  carbon [OPTIONS] llvm windres [<ARG>...]\n  carbon [OPTIONS] llvm readelf [<ARG>...]\n  carbon [OPTIONS] llvm addr2line [<ARG>...]\n\nSubcommands:\n  build-runtimes\n          Build Carbon's runtime libraries.\n\n          This subcommand builds Carbon's runtime libraries for a particular code generation target, either in their default location or a specified one.\n\n          Running this command directly is not necessary as Carbon will build and cache runtimes as needed when linking, but building them directly can aid in debugging issues or allow them to be prebuilt, possibly with customized code generation flags, and used explicitly when linking.\n\n  build\n          Compile and then link Carbon and C++ source code into a single executable.\n\n  clang\n          Runs Clang on arguments.\n\n          This is equivalent to running the `clang` command line directly, and provides the full command line interface.\n\n          Use `carbon clang -- ARGS` to pass flags to `clang`. Although there are currently no flags for `carbon clang`, the `--` reserves the ability to add flags in the future.\n\n          This is provided to help guarantee consistent compilation of C++ files, both when Clang is invoked directly and when a Carbon file importing a C++ file results in an indirect Clang invocation.\n\n  compile\n          Compile Carbon source code.\n\n          This subcommand runs the Carbon compiler over input source code, checking it for errors and producing the requested output.\n\n          Error messages are written to the standard error stream.\n\n          Different phases of the compiler can be selected to run, and intermediate state can be written to standard output as these phases progress.\n\n  config\n          Print configuration info for the Carbon toolchain.\n\n          This subcommand displays configuration information for the Carbon toolchain. This can be useful for build systems as well as debugging issues.\n\n  format\n          Format Carbon source code.\n\n  language-server\n          Runs the language server.\n\n  link\n          Link Carbon executables.\n\n          This subcommand links Carbon executables by combining object files.\n\n          TODO: Support linking binary libraries, both archives and shared libraries.\n\n  lld\n          Runs LLD with the provided arguments.\n\n          Note that a specific LLD platform must be selected, and it is actually that particular platform's LLD-driver that is run with the arguments. There is no generic LLD command line.\n\n          For a given platform, this is equivalent to running that platform's LLD alias directly, and provides the full command line interface.\n\n          Use `carbon lld --platform=elf -- ARGS` to separate the `ARGS` forwarded to LLD from the flags passed to the Carbon subcommand.\n\n          Note that typically it is better to use a higher level command to link code, such as invoking `carbon link` with the relevant flags. However, this subcommand supports when you already have a specific invocation using existing command line syntaxes, as well as testing and debugging of the underlying tool.\n\n  llvm\n          Runs LLVM's command line tools with the provided arguments.\n\n          This subcommand provides access to a collection of LLVM's command line tools via further subcommands. For each of these tools, their command line can be provided using positional arguments.\n\n  help\n          Prints help information for the command, including a description, command line usage, and details of each subcommand and option that can be provided.\n\n  version\n          Prints the version of this command.\n\nCommand options:\n  -v, --verbose\n          Enable verbose logging to the stderr stream.\n\n      --runtimes-cache=PATH\n          Specify a custom runtimes cache location.\n\n          By default, the runtimes cache is located in the `carbon_runtimes` subdirectory of `$XDG_CACHE_HOME` (or `$HOME/.cache` if not set). If unable to use either, it will be placed in a temporary directory that is removed when the command completes. This flag overrides that logic with a specific path. It has no effect if --prebuilt-runtimes is set.\n\n      --prebuilt-runtimes=PATH\n          Path to prebuilt runtimes tree.\n\n          If this option is provided, runtimes will not be built on demand and this path will be used instead.\n\n      --no-build-runtimes\n          Enables on-demand building of target-specific runtimes.\n\n          When enabled (the default), any link actions using `clang` will build the necessary runtimes on-demand. This build will use any customization it can from the link command line flags to build the runtimes for the correct target and with any desired features enabled.\n\n          Note: this only has an effect when `--prebuilt-runtimes` are not provided. If there are no prebuilt runtimes and building runtimes is disabled, then it is assumed the installed toolchain has had the necessary target runtimes added to the installation tree in the default searched locations.\n\n      --no-diagnostic-snippets\n          Whether diagnostics show snippets of the source they point at.\n\n          By default a diagnostic shows one view of each file it points into, with the lines between its ranges elided, so a message and a label near it read as one piece of code. `--no-diagnostic-snippets` drops that: each part of a diagnostic is one line, led by its location and the extent of its range, positioned against nothing, which suits a build log.\n\n      --diagnostic-line-numbers[=(all|first)]\n          Which line numbers diagnostics show.\n\n          By default every line of source shown is numbered, and every location has its line and column. With `first`, only the first location in each diagnostic keeps its line and column, normally the one it is reported at. The lines of source are unnumbered, and every other location shows only its file name. Golden test files use `first` so that their expected output doesn't change when lines of a test move.\n\n          Possible values:\n          - all (default)\n          - first\n\n      --terminal-background[=(auto|dark|light)]\n          What the terminal draws its text on, which decides the colors a diagnostic is drawn in.\n\n          By default this is read from `COLORFGBG`, which some terminals set, and is otherwise taken to be dark: guessing dark when the terminal is light costs contrast, while guessing light when it is dark puts pale text on a pale background.\n\n          Possible values:\n          - auto (default)\n          - dark\n          - light\n\n      --color[=(auto|always|never)]\n          Whether to color diagnostics.\n\n          By default, color is used when the error stream is a terminal that is known to render it. `NO_COLOR` in the environment disables it, and `CLICOLOR_FORCE` or `FORCE_COLOR` enables it even when the stream isn't a terminal.\n\n          Possible values:\n          - auto (default)\n          - always\n          - never\n\n      --terminal-unicode[=(auto|always|never)]\n          Whether to draw output with Unicode box drawing characters.\n\n          By default, they are used when the locale says the terminal decodes UTF-8. Drawing them for a terminal that doesn't misaligns every line that isn't plain ASCII, so this is deliberately separate from `--color`.\n\n          Possible values:\n          - auto (default)\n          - always\n          - never\n\n      --fuzzing\n          Configure the command line for fuzzing.\n\n      --include-diagnostic-kind\n          When printing diagnostics, include the diagnostic kind as part of output. This applies to each label as well as to the message.\n\n      --no-threads\n          Controls whether threads are used to build runtimes.\n\n          When enabled (the default), Carbon will try to build runtime libraries using threads to parallelize the operation. How many threads is controlled automatically by the system.\n\n          Disabling threads ensures a single threaded build of the runtimes which can help when there are errors or other output.\n\nFor questions, issues, or bug reports, please use our GitHub project:\n\nhttps://github.com/carbon-language/carbon-lang\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/110-a1gend8t/home",
+        "TMPDIR": "${SCRATCH}/110-a1gend8t/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile and link exact original Carbon source",
+      "command": [
+        "${TOOL_CACHE}/tools/carbon-0.0.0-0.nightly.2026.11.11/dist/carbon_toolchain-0.0.0-0.nightly.2026.11.11/bin/carbon",
+        "compile",
+        "--output=hello.o",
+        "hello.carbon"
+      ],
+      "cwd": "${SCRATCH}/110-a1gend8t",
+      "timestamp_utc": "2026-11-18T19:38:45.537861+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14'\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/110-a1gend8t/home",
+        "TMPDIR": "${SCRATCH}/110-a1gend8t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the shipped official Carbon Core I/O implementation",
+      "command": [
+        "${TOOL_CACHE}/tools/carbon-0.0.0-0.nightly.2026.11.11/dist/carbon_toolchain-0.0.0-0.nightly.2026.11.11/bin/carbon",
+        "compile",
+        "--output=core-io.o",
+        "${TOOL_CACHE}/tools/carbon-0.0.0-0.nightly.2026.11.11/dist/carbon_toolchain-0.0.0-0.nightly.2026.11.11/lib/carbon/core/io.impl.carbon"
+      ],
+      "cwd": "${SCRATCH}/110-a1gend8t",
+      "timestamp_utc": "2026-11-18T19:38:45.770096+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14'\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/110-a1gend8t/home",
+        "TMPDIR": "${SCRATCH}/110-a1gend8t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Link the native Carbon object and official Core I/O",
+      "command": [
+        "${TOOL_CACHE}/tools/carbon-0.0.0-0.nightly.2026.11.11/dist/carbon_toolchain-0.0.0-0.nightly.2026.11.11/bin/carbon",
+        "link",
+        "--output=hello",
+        "hello.o",
+        "core-io.o"
+      ],
+      "cwd": "${SCRATCH}/110-a1gend8t",
+      "timestamp_utc": "2026-11-18T19:38:46.055470+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14'\n\nwarning: future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14'\nwarning: future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14' [-Wgcc-install-dir-libstdcxx]\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/110-a1gend8t/home",
+        "TMPDIR": "${SCRATCH}/110-a1gend8t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/110-a1gend8t/hello"
+      ],
+      "cwd": "${SCRATCH}/110-a1gend8t",
+      "timestamp_utc": "2026-11-18T19:39:04.071755+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/110-a1gend8t/home",
+        "TMPDIR": "${SCRATCH}/110-a1gend8t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#110 Carbon/hello.carbon": "613fb02a823a571028250802ef8e56fa985cc5019c1ef01b1814fe18b03fdbf0"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Carbon esempio originale fissato a commit",
+      "url": "https://github.com/carbon-language/carbon-lang/blob/df3cf9294397bed0db1aae31aa7c3584dce6a075/examples/hello_world.carbon"
+    },
+    {
+      "title": "Carbon driver",
+      "url": "https://github.com/carbon-language/carbon-lang/blob/df3cf9294397bed0db1aae31aa7c3584dce6a075/toolchain/docs/driver.md"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/carbon-language/carbon-lang/releases/download/v0.0.0-0.nightly.2026.11.11/carbon_toolchain-0.0.0-0.nightly.2026.11.11.tar.gz",
+      "sha256": "74315cc4b5494c2c4cd06d5976a969b5a57db5fa09ee3fc1d35f07eb6faf6d7e",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Carbon 0.0.0-0.nightly.2026.11.11",
+  "reproduction_command": "carbon compile hello.carbon -o hello.o; carbon link hello.o -o hello; ./hello",
+  "semantic_scope": "The official nightly Carbon toolchain compiled and linked the original program. The executable produced the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

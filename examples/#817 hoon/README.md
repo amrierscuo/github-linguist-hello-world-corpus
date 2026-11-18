@@ -1,5 +1,16 @@
 # #817 hoon
 
+## Verified on November 18, 2026
+
+Vere’s actual offline evaluator ran the original Hoon expression and produced the declared greeting.
+
+Run `urbit eval < hello.hoon`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Evaluate a Hoon string in the gate of a say generator.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.hoon` | [hello.hoon](hello.hoon) created; verification pending |
+| `.hoon` | [hello.hoon](hello.hoon) Syntax and behavior verified |
+
+</details>

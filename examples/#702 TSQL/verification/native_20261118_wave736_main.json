@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ordinal": 702,
+  "language": "TSQL",
+  "timestamp_utc": "2026-11-18T19:57:28.580453+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve versioned Node dependencies for this check",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "alasql"
+      ],
+      "cwd": "${SCRATCH}/702-lqb_j3j6",
+      "timestamp_utc": "2026-11-18T19:57:28.634275+00:00",
+      "timeout_seconds": 140,
+      "exit_code": 0,
+      "stdout": "\nadded 249 packages in 40s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/702-lqb_j3j6/home",
+        "TMPDIR": "${SCRATCH}/702-lqb_j3j6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "run.cjs"
+      ],
+      "cwd": "${SCRATCH}/702-lqb_j3j6",
+      "timestamp_utc": "2026-11-18T19:58:10.424684+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/702-lqb_j3j6/home",
+        "TMPDIR": "${SCRATCH}/702-lqb_j3j6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#702 TSQL/hello.sql": "9da30f574affddf28ab079771eae8212c4cf9c99862ddf0fcdc40d72d0ded7b4"
+  },
+  "fixture_sha256": {
+    "run.cjs": {
+      "sha256": "5b67f36b2e2c5d18da31c3c652a4f9eede8845a0f11c5d0ab46a150ba6da5d5e",
+      "content_utf8": "const fs=require('node:fs'),assert=require('node:assert/strict');\nconst sql=require(\"alasql\");\nconst exact=fs.readFileSync(\"hello.sql\",\"utf8\");\nconst result=sql(exact);\nconst rows=Array.isArray(result[1])?result[1]:result;\nassert.deepEqual(rows,[{greeting:\"Hello, World!\"}]);\nconsole.log(rows[0].greeting);\n"
+    }
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/sql/t-sql/language-elements/string-operators-transact-sql?view=sql-server-2017"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "AlaSQL 4.23.1 T-SQL-compatible embedded engine",
+  "reproduction_command": "node run.cjs",
+  "semantic_scope": "The standalone compatible SQL engine ran the original T-SQL declaration and expression against an empty local context and returned one exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

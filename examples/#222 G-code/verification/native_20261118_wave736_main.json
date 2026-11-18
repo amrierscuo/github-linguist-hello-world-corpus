@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "ordinal": 222,
+  "language": "G-code",
+  "timestamp_utc": "2026-11-18T19:49:09.377292+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Dispatch the exact original M117 line through Klipper and read virtual display state",
+      "command": [
+        "python3",
+        "${SCRATCH}/222-f3536sgv/check.py"
+      ],
+      "cwd": "${SCRATCH}/222-f3536sgv",
+      "timestamp_utc": "2026-11-18T19:49:09.590658+00:00",
+      "timeout_seconds": 32,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/222-f3536sgv/home",
+        "TMPDIR": "${SCRATCH}/222-f3536sgv/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${TOOL_CACHE}/tools/Klipper3d-klipper-v0.13.0/source/klipper-0.13.0"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#222 G-code/hello.gcode": "51134fe4f9d24d0f56057a638e292166390ce19ab94a593809aed8e420d2be87"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "a6ae930830d01047c07396e9ebc6189e553b5accb1495910d7822f161b21da7b",
+      "content_utf8": "from klippy.gcode import GCodeDispatch\nfrom threading import Lock\nfrom klippy.extras.display_status import DisplayStatus\nfrom pathlib import Path\nfrom types import SimpleNamespace\n\nclass Host:\n    def __init__(self):\n        self.options={\"debuginput\":False}\n        self.reactor=SimpleNamespace(mutex=Lock)\n        self.dispatch=GCodeDispatch(self)\n        self.display=DisplayStatus(self)\n    def get_printer(self): return self\n    def get_reactor(self): return self.reactor\n    def get_start_args(self): return self.options\n    def register_event_handler(self,event,fn): pass\n    def lookup_object(self,name,default=None):\n        if name==\"gcode\": return self.dispatch\n        if name==\"print_stats\": return SimpleNamespace(get_status=lambda t:{\"state\":\"standby\"})\n        return default\n    def command_error(self,text):\n        return RuntimeError(text)\n    def send_event(self,name,*args): pass\n\nh=Host()\nh.dispatch._handle_ready()\nscript=Path(\"hello.gcode\").read_text()\nh.dispatch.run_script(script)\nstate=h.display.get_status(0.0)\nassert state[\"message\"]==\"Hello, World!\",state\nprint(state[\"message\"])\n"
+    }
+  },
+  "sources": [
+    "https://marlinfw.org/docs/gcode/M117.html",
+    "https://github.com/AndyEveritt/GcodeParser"
+  ],
+  "previous_verification_log": "examples/#222 G-code/verification/toolchain.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/Klipper3d/klipper/tar.gz/v0.13.0",
+      "ref": "v0.13.0",
+      "sha256": "e6f7e475724986d93c2e840a77e967615a1ef8defd0477aaa60e59110545eb5b"
+    }
+  ],
+  "toolchain": "Klipper firmware host v0.13.0",
+  "reproduction_command": "PYTHONPATH=<Klipper checkout> python3 check.py",
+  "semantic_scope": "Klipper’s actual G-code dispatcher invoked the M117 display command from the original file. Its display-status module stored the exact message in a fixture without a printer or motion.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

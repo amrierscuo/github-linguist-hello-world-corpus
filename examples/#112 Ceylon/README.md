@@ -1,5 +1,16 @@
 # #112 Ceylon
 
+## Verified on November 18, 2026
+
+The archived original Ceylon CLI compiled the unchanged sample and its JVM runner executed the original definition.
+
+Run `ceylon compile --src source default; ceylon run --run hello default`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out and perform a public function Ceylon printing Hello, World!.
 
 Canonical type: `programming`; `language_id`: `54`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ceylon` | [hello.ceylon](source/hello.ceylon) created; verification pending |
+| `.ceylon` | [hello.ceylon](source/hello.ceylon) Syntax and behavior verified |
+
+</details>

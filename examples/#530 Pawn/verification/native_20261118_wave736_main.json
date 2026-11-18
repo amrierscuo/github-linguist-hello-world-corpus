@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "ordinal": 530,
+  "language": "Pawn",
+  "timestamp_utc": "2026-11-18T19:12:16.839097+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record official Pawn compiler command even if it exits after help",
+      "command": [
+        "${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawncc",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/530-hks9s5ka",
+      "timestamp_utc": "2026-11-18T19:12:16.930630+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 3,
+      "stdout": "Pawn compiler 4.1.7152M                 Copyright (c) 1997-2024, CompuPhase\n\nUsage:   pawncc <filename> [filename...] [options]\n\nOptions:\n         -A<num>  alignment in bytes of the data segment and the stack\n         -a       output assembler code\n         -C<num>  cell size in bits (default=-C32)\n         -c<name> codepage name or number; e.g. 1252 for Windows Latin-1\n         -d<num>  debugging level (default=-d1)\n             0    no symbolic information, no run-time checks\n             1    run-time checks, no symbolic information\n             2    full debug information and dynamic checking\n             3    same as -d2, but implies -O0\n         -e<name> set name of error file (quiet compile)\n         -i<name> path for include files\n         -k<hex>  key for encrypted scripts\n         -l       create list file (preprocess only)\n         -N<name>=<num> specify index number for native function\n         -o<name> set base name of (P-code) output file\n         -O<num>  optimization level (default=-O1)\n             0    no optimization\n             1    core instruction set (JIT-compatible)\n             2    supplemental instruction set\n             3    full instruction set (packed opcodes)\n         -p<name> set the \"prefix\" file; omit name to block default prefix file\n         -r[name] write cross reference report to console or to specified file\n         -S<num>  stack/heap size in cells (default=4096)\n         -s<num>  skip lines from the input file\n         -t<num>  TAB indent size (in character positions, default=8)\n         -T<name> set name of the configuration file to use\n         -V<num>  generate overlay code and instructions; set buffer size\n         -v<num>  verbosity level; 0=quiet, 1=normal, 2=verbose (default=1)\n         -w<num>  disable a specific warning by its number\n         -X<num>  abstract machine size limit in bytes\n         -XD<num> abstract machine data/stack size limit in bytes\n         -\\       use '\\' for escape characters\n         -^       use '^' for escape characters\n         -;[+/-]  require a semicolon to end each statement (default=-)\n         -([+/-]  require parantheses for function invocation (default=-)\n         sym=val  define constant \"sym\" with value \"val\"\n         sym=     define constant \"sym\" with value 0\n\nOptions with a value may optionally separate the value from the option letter\nwith a colon (\":\") or an equal sign (\"=\"). That is, the options \"-d0\", \"-d=0\"\nand \"-d:0\" are all equivalent.\nCompleted successfully\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/530-hks9s5ka/home",
+        "TMPDIR": "${SCRATCH}/530-hks9s5ka/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile original Pawn with explicit matching cell width",
+      "command": [
+        "${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawncc",
+        "-C:32",
+        "-i${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/include",
+        "-ohello32",
+        "hello.pwn"
+      ],
+      "cwd": "${SCRATCH}/530-hks9s5ka",
+      "timestamp_utc": "2026-11-18T19:12:16.972511+00:00",
+      "timeout_seconds": 32,
+      "exit_code": 0,
+      "stdout": "Pawn compiler 4.1.7152M                 Copyright (c) 1997-2024, CompuPhase\n\nCompleted successfully\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/530-hks9s5ka/home",
+        "TMPDIR": "${SCRATCH}/530-hks9s5ka/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the bytecode in the official AMX host",
+      "command": [
+        "${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawnrun",
+        "hello32.amx"
+      ],
+      "cwd": "${SCRATCH}/530-hks9s5ka",
+      "timestamp_utc": "2026-11-18T19:12:16.988576+00:00",
+      "timeout_seconds": 12,
+      "exit_code": 1,
+      "stdout": "Usage: ${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawnrun <filename> [options]\n\nOptions:\n\t-stack\tto monitor stack usage\n\t...\tother options are passed to the script\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/530-hks9s5ka/home",
+        "TMPDIR": "${SCRATCH}/530-hks9s5ka/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the bytecode in the official AMX host",
+      "command": [
+        "${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawnrun",
+        "hello32"
+      ],
+      "cwd": "${SCRATCH}/530-hks9s5ka",
+      "timestamp_utc": "2026-11-18T19:12:17.004037+00:00",
+      "timeout_seconds": 12,
+      "exit_code": 1,
+      "stdout": "Usage: ${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawnrun <filename> [options]\n\nOptions:\n\t-stack\tto monitor stack usage\n\t...\tother options are passed to the script\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/530-hks9s5ka/home",
+        "TMPDIR": "${SCRATCH}/530-hks9s5ka/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile original Pawn with explicit matching cell width",
+      "command": [
+        "${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawncc",
+        "-C:64",
+        "-i${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/include",
+        "-ohello64",
+        "hello.pwn"
+      ],
+      "cwd": "${SCRATCH}/530-hks9s5ka",
+      "timestamp_utc": "2026-11-18T19:12:17.013435+00:00",
+      "timeout_seconds": 32,
+      "exit_code": 0,
+      "stdout": "Pawn compiler 4.1.7152M                 Copyright (c) 1997-2024, CompuPhase\n\nCompleted successfully\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/530-hks9s5ka/home",
+        "TMPDIR": "${SCRATCH}/530-hks9s5ka/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the bytecode in the official AMX host",
+      "command": [
+        "${TOOL_CACHE}/tools/pawn-v4.1.7152/dist/bin/pawnrun",
+        "hello64.amx"
+      ],
+      "cwd": "${SCRATCH}/530-hks9s5ka",
+      "timestamp_utc": "2026-11-18T19:12:17.024504+00:00",
+      "timeout_seconds": 12,
+      "exit_code": 0,
+      "stdout": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Hello, World!",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/530-hks9s5ka/home",
+        "TMPDIR": "${SCRATCH}/530-hks9s5ka/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#530 Pawn/hello.pwn": "df82e2c1ac5e37c8ec51e09adec6406fc2ad6a11b9272e613c4c2cebac351d9c"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://compuphase.com/pawn/pawn.htm"
+  ],
+  "previous_verification_log": "examples/#530 Pawn/verification/native.json",
+  "toolchain_archives": [
+    {
+      "name": "binaries-linux.tgz",
+      "size": 6674641,
+      "url": "https://github.com/compuphase/pawn/releases/download/v4.1.7152/binaries-linux.tgz",
+      "sha256": "",
+      "release": "https://github.com/compuphase/pawn/releases/tag/v4.1.7152",
+      "observed_sha256": "06cf97765b6dafdbc9847e0504e9423bcff1fd4c1549f2d57bbf81fa4760c67f"
+    }
+  ],
+  "amx_headers": [
+    {
+      "cell_width": 32,
+      "sha256": "38ab89b3b0404636cdf6bf285dad196ee6a365b4787d32c4e81c074d2e3dee0b",
+      "header_hex": "b4000000e0f10b0b0000080060000000a4000000b4000000"
+    },
+    {
+      "cell_width": 64,
+      "sha256": "6485286e24a52b863375df63c288f13a35336c8a0157d189ee1adc52207b737b",
+      "header_hex": "f8000000e1f10b0b0000080060000000e8000000f8000000"
+    }
+  ],
+  "toolchain": "CompuPhase Pawn 64-bit AMX",
+  "reproduction_command": "pawncc -C:64 -i<console includes> hello.pwn; pawnrun hello64.amx",
+  "semantic_scope": "The official Pawn compiler compiled the unchanged greeting program and the genuine AMX console runtime printed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

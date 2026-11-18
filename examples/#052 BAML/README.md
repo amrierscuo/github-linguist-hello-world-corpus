@@ -1,5 +1,18 @@
 # #052 BAML
 
+## Verified on November 18, 2026
+
+The official native BAML SDK rendered prompts from the original BAML definitions, called an isolated synthetic HTTP fixture, parsed the valid typed response and rejected a different string literal. The check covers prompt interpolation and response validation.
+
+Run `python local_baml.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `BAML`, tipo `programming`, `language_id: 502521509`.
 
 Define in BAML a Hello function with structured response whose field message is bound to the literal Hello, World!.
@@ -46,4 +59,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.baml` | [generators.baml](baml_src/generators.baml), [hello.baml](baml_src/hello.baml) syntax verified |
+| `.baml` | [generators.baml](baml_src/generators.baml), [hello.baml](baml_src/hello.baml) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #436 Mint
 
+## Verified on November 18, 2026
+
+Mint compiled the original component, and evaluating the emitted browser code in a headless DOM rendered the expected paragraph.
+
+Run `mint build; node render.cjs with jsdom`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Prior attempt](verification/native_20261118_wave736_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Main Mint component and show greeting in a paragraph.
 
 Canonical type `programming`, language_id `968740319`.
@@ -29,4 +42,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mint` | [Main.mint](source/Main.mint) created; verification pending |
+| `.mint` | [Main.mint](source/Main.mint) Syntax and behavior verified |
+
+</details>

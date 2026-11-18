@@ -1,5 +1,16 @@
 # #113 Chapel
 
+## Verified on November 18, 2026
+
+The official Chapel compiler compiled the exact program and its resulting executable printed the greeting.
+
+Run `chpl hello.chpl -o greeting; ./greeting`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Chapel program that prints Hello, World! followed by LF.
 
 Canonical type: `programming`; `language_id`: `55`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.chpl` | [hello.chpl](hello.chpl) created; verification pending |
+| `.chpl` | [hello.chpl](hello.chpl) Syntax and behavior verified |
+
+</details>

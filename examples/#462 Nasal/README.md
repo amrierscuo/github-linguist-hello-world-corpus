@@ -1,5 +1,16 @@
 # #462 Nasal
 
+## Verified on November 18, 2026
+
+The original Nasal print expression ran in its upstream VM and concatenated the parts into the exact greeting.
+
+Run `nasal-bin hello.nas`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nas` | [hello.nas](hello.nas) created; verification pending |
+| `.nas` | [hello.nas](hello.nas) Syntax and behavior verified |
+
+</details>

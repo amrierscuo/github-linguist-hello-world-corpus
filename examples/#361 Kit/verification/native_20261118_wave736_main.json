@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "ordinal": 361,
+  "language": "Kit",
+  "timestamp_utc": "2026-11-18T19:12:16.837450+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Install an independently published compatible Kit CLI",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "grunt",
+        "grunt-codekit"
+      ],
+      "cwd": "${SCRATCH}/361-wyj61j6w",
+      "timestamp_utc": "2026-11-18T19:12:16.861573+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "\nadded 100 packages in 25s\n",
+      "stderr": "npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.\nnpm warn deprecated glob@7.1.7: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/361-wyj61j6w/home",
+        "TMPDIR": "${SCRATCH}/361-wyj61j6w/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Render the untouched Kit template",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/361-wyj61j6w/node_modules/grunt/bin/grunt",
+        "codekit"
+      ],
+      "cwd": "${SCRATCH}/361-wyj61j6w",
+      "timestamp_utc": "2026-11-18T19:12:43.875467+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "Running \"codekit:corpus\" (codekit) task\n\nDone.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/361-wyj61j6w/home",
+        "TMPDIR": "${SCRATCH}/361-wyj61j6w/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#361 Kit/hello.kit": "e3c3912f455d46dd6c061ce88ce813c3dad90d038ea9b6393f390818ee039004"
+  },
+  "fixture_sha256": {
+    "Gruntfile.js": {
+      "sha256": "336ef4f2a8ff8a663224e41bac5ca483ea82d9a2e8f95a99ce3b19d638a16e6d",
+      "content_utf8": "module.exports = function(grunt) { grunt.initConfig({codekit: {corpus:{files:{'hello.html':'hello.kit'}}}}); grunt.loadNpmTasks('grunt-codekit'); };"
+    }
+  },
+  "sources": [
+    "https://codekitapp.com/help/kit/index.html",
+    "https://github.com/bdkjones/Kit"
+  ],
+  "previous_verification_log": null,
+  "native_output_utf8": "<p>Hello, World!</p>",
+  "toolchain": "grunt-codekit 1.2.1",
+  "reproduction_command": "grunt codekit",
+  "semantic_scope": "The compatible Kit renderer executed the original declaration and interpolation. The resulting paragraph contained the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

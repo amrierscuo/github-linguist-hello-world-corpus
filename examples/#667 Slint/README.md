@@ -1,5 +1,16 @@
 # #667 Slint
 
+## Verified on November 18, 2026
+
+The native Slint runtime loaded the untouched component. Its message property and its rendered text in a private framebuffer both matched the greeting.
+
+Run `xvfb-run -a node check.mjs; tesseract frame.png stdout --psm 11`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Slint component with Message and Text properties connected to greeting.
 
 Canonical type `markup`, language_id `119900149`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.slint` | [hello.slint](hello.slint) created; verification pending |
+| `.slint` | [hello.slint](hello.slint) Syntax and behavior verified |
+
+</details>

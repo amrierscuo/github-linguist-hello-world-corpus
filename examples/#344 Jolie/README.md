@@ -1,5 +1,18 @@
 # #344 Jolie
 
+## Verified on November 18, 2026
+
+Jolie loaded its own console library and interpreted the exact process. The Console service printed the exact greeting.
+
+Run `jolie -i <stdlib> -l <extension directories> hello.ol`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Jolie`, tipo `programming`, language_id `998078858`.
 
 Call the Console Jolie library to print the greeting from the main block.
@@ -46,5 +59,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ol` | [hello.ol](hello.ol) created; verification pending |
+| `.ol` | [hello.ol](hello.ol) Syntax and behavior verified |
 | `.iol` | [hello.iol](variants/iol-77ad5fa4/hello.iol) created; verification pending |
+
+</details>

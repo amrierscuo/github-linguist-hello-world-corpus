@@ -1,5 +1,20 @@
 # #442 Mojo
 
+## Verified on November 18, 2026
+
+The official Mojo runtime evaluated the entry point after updating its declaration to def for this compiler and printed the exact greeting.
+
+Run `mojo hello.mojo`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+[Prior attempt](verification/native_20261118_wave736_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Mojo`, tipo `programming`, language_id `1045019587`.
 
 Print greeting from the main fn entry point of Mojo.
@@ -45,4 +60,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mojo` | [hello.mojo](hello.mojo) created; verification pending |
+| `.mojo` | [hello.mojo](hello.mojo) Syntax and behavior verified |
+
+</details>

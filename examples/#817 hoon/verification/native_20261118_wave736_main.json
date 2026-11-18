@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "ordinal": 817,
+  "language": "hoon",
+  "timestamp_utc": "2026-11-18T19:45:38.154079+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Read the native Vere local fake-ship and evaluation flags",
+      "command": [
+        "${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/817-nxg26vem",
+      "timestamp_utc": "2026-11-18T19:45:38.427017+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64: unrecognized option: help\nUrbit: a personal server operating function\nhttps://urbit.org\nVersion 4.6\n\nUsage: ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 [options...] ship_name\nwhere ship_name is a @p phonetic representation of an urbit address\nwithout the leading '~', and options is some subset of the following:\n\n-A, --arvo DIR                Use dir for initial clay sync\n-a, --abort                   Abort aggressively\n-B, --bootstrap PILL          Bootstrap from this pill\n-b, --http-ip IP              Bind HTTP server to this IP address\n-C, --memo-cache-limit LIMIT  Set memo cache max size; 0 means uncapped\n-c, --pier PIER               Create a new urbit in <pier>/\n-D, --replay                  Recompute from events\n-d, --daemon                  Daemon mode; implies -t\n-e, --ethereum URL            Ethereum gateway\n-F, --fake SHIP               Boot fake urbit; also disables networking\n-G, --key-string STRING       Private key string (@uw, see also -k)\n-g, --gc                      Set GC flag\n-I, --inject FILE             Inject event from jamfile\n-i, --import FILE             Import pier state from jamfile\n-J, --ivory-pill PILL         Use custom ivory pill\n-j, --json-trace              Create json trace file in .urb/put/trace\n    --jumbo-bloq BLOQ         Set Ames jumbo frame bloq size\n-K, --kernel-stage STAGE      Start at Hoon kernel version stage\n-k, --key-file KEYS           Private key file (see also -G)\n-L, --local                   Local networking only\n    --loom EXPO               Set loom to binary exponent (31 == 2GB)\n-l, --lite-boot               Most-minimal startup\n-M, --keep-cache-limit LIMIT  Set persistent memo cache max size; 0 means default\n-n, --replay-to NUMBER        Replay up to event\n-P, --profile                 Profiling\n-p, --ames-port PORT          Set the ames port to bind to\n    --http-port PORT          Set the http port to bind to\n    --https-port PORT         Set the https port to bind to\n    --snap-time TIME          Set the snapshotting rate in minutes (> 0)\n-q, --quiet                   Quiet\n-R, --versions                Report urbit build info\n-S, --skip-battery-hashes     Disable battery hashing\n-t, --no-tty                  Disable terminal/tty assumptions\n-u, --bootstrap-url URL       URL from which to download pill\n-v, --verbose                 Verbose\n-w, --name NAME               Initial boot as ~name (with ticket)\n-X, --scry PATH               Scry, write to file, then exit\n-x, --exit                    Exit immediately\n-Y, --scry-into FILE          Optional name of file (for -X)\n-Z, --scry-format FORMAT      Optional file format ('jam', or aura, for -X)\n    --no-demand               Skip demand paging\n    --no-conn                 Do not run control plane\n    --no-dock                 Skip binary \"docking\" on boot\n    --swap                    Use an explicit ephemeral (swap-like) file\n    --swap-to FILE            Specify ephemeral file location\n    --prop-file FILE          Add a prop into the boot sequence\n    --prop-url URL            Download a prop into the boot sequence\n    --prop-name NAME          Download a prop from bootstrap.urbit.org\n    --gc-abort                Abort the process on leaks, implies -g\n\nDevelopment Usage:\n   To create a development ship, use a fakezod:\n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 -F zod -A /path/to/arvo/folder -B /path/to/pill -c zod\n\n   For more information about developing on urbit, see:\n   https://github.com/urbit/urbit/blob/master/CONTRIBUTING.md\n\nSimple Usage: \n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 -c <my-comet> to create a comet (anonymous urbit)\n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 -w <my-planet> -k <my-key-file> if you own a planet\n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 <my-planet or my-comet> to restart an existing urbit\nutilities:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 eval                      evaluate hoon from stdin:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 cram <pier>               jam state:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 dock <pier>               copy binary:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 grab <pier>               measure memory usage:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 info <pier>               print pier info:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 meld <pier>               deduplicate and minimize snapshot:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 melt <pier>               deduplicate snapshot:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 pack <pier>               defragment snapshot:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 play <pier>               recompute events:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 prep <pier>               prepare for upgrade:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 next <pier>               request upgrade:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 queu <pier> <at-event>    cue state:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 chop <pier>               truncate event log:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 roll <pier>               rollover to new epoch:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 vere ARGS <output dir>    download binary:\n\nmars, ipc:\n  boot a pier:\n    ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 boot <pier> <key> <flags> <cache-size>\n  run a pier:\n    ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 work <pier> <key> <flags> <cache-size> <replay-to>\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/817-nxg26vem/home",
+        "TMPDIR": "${SCRATCH}/817-nxg26vem/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Invoke the real generator and its result-producing gate in Vere",
+      "command": [
+        "${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64",
+        "eval"
+      ],
+      "cwd": "${SCRATCH}/817-nxg26vem",
+      "timestamp_utc": "2026-11-18T19:45:38.474844+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "\u001b[38;5;244m[%noun 'Hello, World!']\u001b[0m\r\n",
+      "stderr": "loom: mapped 2048MB\r\nlite: arvo formula 4ce68411\r\nlite: core 641296f\r\nlite: final state 641296f\r\neval (run):\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/817-nxg26vem/home",
+        "TMPDIR": "${SCRATCH}/817-nxg26vem/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": "=/  generator\n  |=  *\n  :-  %say\n  |=  *\n  :-  %noun\n  'Hello, World!'\n=/  result  (generator ~)\n(+.result ~)\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#817 hoon/hello.hoon": "030cbe64a57c4c8dada1549e427615ae1134ed7d10ec673c7697fe8219803221"
+  },
+  "fixture_sha256": {
+    "call.hoon": {
+      "sha256": "4e15b7027fe505ba3a3c3d42f0c8d60441f0ba4aff64524b9d508314000c1900",
+      "content_utf8": "=/  generator\n  |=  *\n  :-  %say\n  |=  *\n  :-  %noun\n  'Hello, World!'\n=/  result  (generator ~)\n(+.result ~)\n"
+    }
+  },
+  "sources": [
+    "https://docs.urbit.org/hoon/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/urbit/vere/releases/download/vere-v4.6/linux-x86_64.tgz",
+      "name": "linux-x86_64.tgz",
+      "sha256": "f332e96d66cb767f847fbf15e04b4f953fd078e610b449fbbc26629ea312a3ae",
+      "release": "vere-v4.6"
+    }
+  ],
+  "published_cli": "${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64: unrecognized option: help\nUrbit: a personal server operating function\nhttps://urbit.org\nVersion 4.6\n\nUsage: ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 [options...] ship_name\nwhere ship_name is a @p phonetic representation of an urbit address\nwithout the leading '~', and options is some subset of the following:\n\n-A, --arvo DIR                Use dir for initial clay sync\n-a, --abort                   Abort aggressively\n-B, --bootstrap PILL          Bootstrap from this pill\n-b, --http-ip IP              Bind HTTP server to this IP address\n-C, --memo-cache-limit LIMIT  Set memo cache max size; 0 means uncapped\n-c, --pier PIER               Create a new urbit in <pier>/\n-D, --replay                  Recompute from events\n-d, --daemon                  Daemon mode; implies -t\n-e, --ethereum URL            Ethereum gateway\n-F, --fake SHIP               Boot fake urbit; also disables networking\n-G, --key-string STRING       Private key string (@uw, see also -k)\n-g, --gc                      Set GC flag\n-I, --inject FILE             Inject event from jamfile\n-i, --import FILE             Import pier state from jamfile\n-J, --ivory-pill PILL         Use custom ivory pill\n-j, --json-trace              Create json trace file in .urb/put/trace\n    --jumbo-bloq BLOQ         Set Ames jumbo frame bloq size\n-K, --kernel-stage STAGE      Start at Hoon kernel version stage\n-k, --key-file KEYS           Private key file (see also -G)\n-L, --local                   Local networking only\n    --loom EXPO               Set loom to binary exponent (31 == 2GB)\n-l, --lite-boot               Most-minimal startup\n-M, --keep-cache-limit LIMIT  Set persistent memo cache max size; 0 means default\n-n, --replay-to NUMBER        Replay up to event\n-P, --profile                 Profiling\n-p, --ames-port PORT          Set the ames port to bind to\n    --http-port PORT          Set the http port to bind to\n    --https-port PORT         Set the https port to bind to\n    --snap-time TIME          Set the snapshotting rate in minutes (> 0)\n-q, --quiet                   Quiet\n-R, --versions                Report urbit build info\n-S, --skip-battery-hashes     Disable battery hashing\n-t, --no-tty                  Disable terminal/tty assumptions\n-u, --bootstrap-url URL       URL from which to download pill\n-v, --verbose                 Verbose\n-w, --name NAME               Initial boot as ~name (with ticket)\n-X, --scry PATH               Scry, write to file, then exit\n-x, --exit                    Exit immediately\n-Y, --scry-into FILE          Optional name of file (for -X)\n-Z, --scry-format FORMAT      Optional file format ('jam', or aura, for -X)\n    --no-demand               Skip demand paging\n    --no-conn                 Do not run control plane\n    --no-dock                 Skip binary \"docking\" on boot\n    --swap                    Use an explicit ephemeral (swap-like) file\n    --swap-to FILE            Specify ephemeral file location\n    --prop-file FILE          Add a prop into the boot sequence\n    --prop-url URL            Download a prop into the boot sequence\n    --prop-name NAME          Download a prop from bootstrap.urbit.org\n    --gc-abort                Abort the process on leaks, implies -g\n\nDevelopment Usage:\n   To create a development ship, use a fakezod:\n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 -F zod -A /path/to/arvo/folder -B /path/to/pill -c zod\n\n   For more information about developing on urbit, see:\n   https://github.com/urbit/urbit/blob/master/CONTRIBUTING.md\n\nSimple Usage: \n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 -c <my-comet> to create a comet (anonymous urbit)\n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 -w <my-planet> -k <my-key-file> if you own a planet\n   ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 <my-planet or my-comet> to restart an existing urbit\nutilities:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 eval                      evaluate hoon from stdin:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 cram <pier>               jam state:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 dock <pier>               copy binary:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 grab <pier>               measure memory usage:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 info <pier>               print pier info:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 meld <pier>               deduplicate and minimize snapshot:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 melt <pier>               deduplicate snapshot:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 pack <pier>               defragment snapshot:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 play <pier>               recompute events:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 prep <pier>               prepare for upgrade:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 next <pier>               request upgrade:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 queu <pier> <at-event>    cue state:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 chop <pier>               truncate event log:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 roll <pier>               rollover to new epoch:\n  ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 vere ARGS <output dir>    download binary:\n\nmars, ipc:\n  boot a pier:\n    ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 boot <pier> <key> <flags> <cache-size>\n  run a pier:\n    ${TOOL_CACHE}/tools/urbit-vere-v4.6/dist/vere-v4.6-linux-x86_64 work <pier> <key> <flags> <cache-size> <replay-to>\n",
+  "toolchain": "Urbit Vere vere-v4.6",
+  "reproduction_command": "urbit eval < hello.hoon",
+  "semantic_scope": "Vere’s actual offline evaluator ran the original Hoon expression and produced the declared greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "ordinal": 773,
+  "language": "Windows Registry Entries",
+  "timestamp_utc": "2026-11-18T19:10:22.551723+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Import the unchanged .reg input into a disposable binary hive",
+      "command": [
+        "/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/sbin/reged",
+        "-C",
+        "-I",
+        "${SCRATCH}/773-mymj8jxh/registry.hive",
+        "HKEY_CURRENT_USER",
+        "hello.reg"
+      ],
+      "cwd": "${SCRATCH}/773-mymj8jxh",
+      "timestamp_utc": "2026-11-18T19:10:22.576257+00:00",
+      "timeout_seconds": 20,
+      "exit_code": 2,
+      "stdout": "reged version 0.1 140201, (c) Petter N Hagen\n--- Import KEY <\\Software\\CorpusGreeting>  [added <Software>]  [added <CorpusGreeting>] \nEND OF IMPORT, file <hello.reg>, operation SUCCEEDED!\n1 keys\n2 new keys added\n1 values total\n\n\nHives that have changed:\n #  Name\n 0  <${SCRATCH}/773-mymj8jxh/registry.hive> - OK \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/773-mymj8jxh/home",
+        "TMPDIR": "${SCRATCH}/773-mymj8jxh/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "/var/tmp/codex-linguist-636-20261118-1000/tools/apt/lib/x86_64-linux-gnu:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/lib:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu/blas:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      },
+      "stdin": "y\n"
+    },
+    {
+      "label": "Export the actual persisted key read by reged",
+      "command": [
+        "/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/sbin/reged",
+        "-x",
+        "${SCRATCH}/773-mymj8jxh/registry.hive",
+        "HKEY_CURRENT_USER",
+        "\\Software\\CorpusGreeting",
+        "returned.reg"
+      ],
+      "cwd": "${SCRATCH}/773-mymj8jxh",
+      "timestamp_utc": "2026-11-18T19:10:22.586159+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "reged version 0.1 140201, (c) Petter N Hagen\nExporting to file 'returned.reg'...\nExporting key 'CorpusGreeting' with 0 subkeys and 1 values...\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/773-mymj8jxh/home",
+        "TMPDIR": "${SCRATCH}/773-mymj8jxh/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "/var/tmp/codex-linguist-636-20261118-1000/tools/apt/lib/x86_64-linux-gnu:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/lib:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu/blas:/var/tmp/codex-linguist-636-20261118-1000/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#773 Windows Registry Entries/hello.reg": "0fba7ab574c108af3a2f969a429a4162e50b0261fb2decc60c155ff7acd2bc5a"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://support.microsoft.com/en-us/topic/how-to-add-modify-or-delete-registry-subkeys-and-values-by-using-a-reg-file-9c7f37cf-a5e9-e1cd-c4fa-2a26218a1a23",
+    "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import"
+  ],
+  "previous_verification_log": "examples/#773 Windows Registry Entries/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://raw.githubusercontent.com/libguestfs/hivex/master/images/minimal",
+      "sha256": "4d97a594c11e5b56a0e0370ee181b9c7c9493ac16b7e7fc2b4e1b0199b6085e1",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "chntpw",
+      "version": "140201-1",
+      "filename": "pool/universe/c/chntpw/chntpw_140201-1_amd64.deb",
+      "sha256": "c19e877582f5cf4f35e017f49c5abd40e21f3b1117413114b4544b4064948953",
+      "bytes": 98974,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/c/chntpw/chntpw_140201-1_amd64.deb"
+    },
+    {
+      "name": "libhivex-bin",
+      "version": "1.3.23-1build7",
+      "filename": "pool/universe/h/hivex/libhivex-bin_1.3.23-1build7_amd64.deb",
+      "sha256": "8ea3f4bf00427fcd2a5833826ce3baad69d2f3115cdad7df866c038557fbeb0b",
+      "bytes": 46354,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/h/hivex/libhivex-bin_1.3.23-1build7_amd64.deb"
+    }
+  ],
+  "input_hive_sha256": "4d97a594c11e5b56a0e0370ee181b9c7c9493ac16b7e7fc2b4e1b0199b6085e1",
+  "updated_hive_sha256": "4fa00b26f5bfa98e46b646a65716740d9c5bb9fcdfeb37463593f92e840e7427",
+  "reexport_utf8": "Windows Registry Editor Version 5.00\r\n\r\n[HKEY_CURRENT_USER\\Software\\CorpusGreeting]\r\n\"Message\"=\"Hello, World!\"\r\n\r\n",
+  "toolchain": "reged version 0.1 140201, (c) Petter N Hagen",
+  "reproduction_command": "reged -C -I registry.hive HKEY_CURRENT_USER hello.reg; reged -x registry.hive HKEY_CURRENT_USER \\Software\\CorpusGreeting returned.reg",
+  "semantic_scope": "The Windows-compatible reged consumer imported the unchanged file into a disposable binary hive, then exported its persisted key with the exact string value. The host registry was outside the fixture.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,16 @@
 # #545 Pony
 
+## Verified on November 18, 2026
+
+The official Pony compiler built the original actor and its native executable sent the exact greeting.
+
+Run `ponyc package; ./package`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pony` | [main.pony](main.pony) created; verification pending |
+| `.pony` | [main.pony](main.pony) Syntax and behavior verified |
+
+</details>

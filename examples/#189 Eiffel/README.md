@@ -1,5 +1,16 @@
 # #189 Eiffel
 
+## Verified on November 18, 2026
+
+Gobo Eiffel compiled and linked the original class. The resulting executable printed the exact greeting.
+
+Run `gec --finalize --cc=gcc hello_world.e; run native executable`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill in a Eiffel root class and print Hello, World! followed by newline.
 
 Canonical type `programming`, language_id `99`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.e` | [hello_world.e](hello_world.e) created; verification pending |
+| `.e` | [hello_world.e](hello_world.e) Syntax and behavior verified |
+
+</details>

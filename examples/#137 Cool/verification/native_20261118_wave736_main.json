@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "ordinal": 137,
+  "language": "Cool",
+  "timestamp_utc": "2026-11-18T19:21:54.523336+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile original Cool source to MIPS assembly",
+      "command": [
+        "${TOOL_CACHE}/tools/stanford-cool-real/coolc",
+        "-o",
+        "greeting.s",
+        "hello.cl"
+      ],
+      "cwd": "${SCRATCH}/137-wbbq4js_",
+      "timestamp_utc": "2026-11-18T19:22:03.468720+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/137-wbbq4js_/home",
+        "TMPDIR": "${SCRATCH}/137-wbbq4js_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the compiler’s actual output in the SPIM MIPS engine",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/spim",
+        "-exception_file",
+        "${TOOL_CACHE}/tools/stanford-cool-real/trap.handler",
+        "-file",
+        "greeting.s"
+      ],
+      "cwd": "${SCRATCH}/137-wbbq4js_",
+      "timestamp_utc": "2026-11-18T19:22:03.510171+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "SPIM Version 8.0 of January 8, 2010\nCopyright 1990-2010, James R. Larus.\nAll Rights Reserved.\nSee the file README for a full copyright notice.\nLoaded: ${TOOL_CACHE}/tools/stanford-cool-real/trap.handler\nThe following symbols are undefined:\nmain\n\nHello, World!\nCOOL program successfully executed\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/137-wbbq4js_/home",
+        "TMPDIR": "${SCRATCH}/137-wbbq4js_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#137 Cool/hello.cl": "28e7c663a60e7cd3f20b2b93803174e222eb240e953395c600e930df54c057ea"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://web.stanford.edu/class/cs143/materials/cool-manual.pdf",
+    "https://web.stanford.edu/class/cs143/"
+  ],
+  "previous_verification_log": "examples/#137 Cool/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://theory.stanford.edu/~aiken/software/cooldist/bin/coolc",
+      "sha256": "33eaa05673953c7d610563d44ee40b6879312c99356641634a6198a827e82d9f",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://theory.stanford.edu/~aiken/software/cooldist/bin/.i686/coolc",
+      "sha256": "0e400ee929e76fd11e39f72a42a601343993f20af18dd3e752f0c98c77fe4bc7",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://theory.stanford.edu/~aiken/software/cooldist/bin/.i686/spim",
+      "sha256": "5bdc7dfa9c9a57ab6ab6131a587cb5f4e41c90a999ccb07159d1a79ac5cb50d1",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://theory.stanford.edu/~aiken/software/cooldist/lib/trap.handler",
+      "sha256": "5439f39d9d2f3d76f190c40b5c14e03c7bd51ccd76151b774ec3811ab14f7b34",
+      "expected_sha256": null
+    }
+  ],
+  "upstream_compiler_dispatcher_utf8": "#!/bin/sh\narch=`arch`\n\nPRG=$0\n#progname=`/bin/basename $0`\nprogname=`basename $0`\n\n# Resolve symlinks, so that the pathname computations below find the\n# directory structure they expect.\nwhile [ -h \"$PRG\" ]; do\n\t# Get the target of the symlink.  N.B.:  We assume that neither the\n\t# link's value nor the pathname leading to it contains \"-> \".\n\tls=`/bin/ls -ld \"$PRG\"`\n\tlink=`/usr/bin/expr \"$ls\" : '.*-> \\(.*\\)$'`\n\t# If the link is absolute, use it as is; otherwise, substitute it\n\t# into the leafname part of $PRG.\n\tcase $link in \n\t    /*) PRG=\"$link\";;\n\t     *) PRG=\"`/usr/bin/dirname $PRG`/$link\"\n\tesac\ndone\n\nCOOL_INST=`/usr/bin/dirname \"$PRG\"`/..\n\n# set environment for spim/xspim\nDEFAULT_TRAP_HANDLER=$COOL_INST/lib/trap.handler\nexport DEFAULT_TRAP_HANDLER\n\nxname=$COOL_INST/bin/.$arch/coolc\n\nif [ -x $xname ]; then\n  exec $xname $*\nelse\n  echo coolc is not compiled for $arch\nfi\n",
+  "official_lib_index": [
+    "?C=N;O=D",
+    "?C=M;O=A",
+    "?C=S;O=A",
+    "?C=D;O=A",
+    "/~aiken/software/cooldist/",
+    "META-INF/",
+    "PA1/",
+    "PA1J/",
+    "PA2/",
+    "PA2J/",
+    "PA3/",
+    "PA3J/",
+    "PA4/",
+    "PA4J/",
+    "PA5/",
+    "PA5J/",
+    "PA6/",
+    "cgen",
+    "java-cup-11a.jar",
+    "java_cup/",
+    "jlex.jar",
+    "lexer",
+    "parser",
+    "semant",
+    "trap.handler",
+    "trap.handler.gc",
+    "trap.handler.nogc",
+    "trap.handler.quiet"
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "spim",
+      "version": "8.0+dfsg-7",
+      "filename": "pool/universe/s/spim/spim_8.0+dfsg-7_amd64.deb",
+      "sha256": "55feeaee8d47719964dd8d4c1d485f69a72fd1f9504346f8f0e83389f1a62057",
+      "bytes": 243044,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/spim/spim_8.0+dfsg-7_amd64.deb"
+    },
+    {
+      "name": "libc6-i386",
+      "version": "2.39-0ubuntu8.12",
+      "filename": "pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb",
+      "sha256": "f3357fcee4a907404f5231381834cf31647326496d5bb4259338a717b3544c89",
+      "bytes": 2786812,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb"
+    }
+  ],
+  "toolchain": "Stanford Cool compiler / SPIM MIPS",
+  "reproduction_command": "coolc -o greeting.s hello.cl; spim -file greeting.s",
+  "semantic_scope": "The Stanford Cool compiler translated the unchanged sample and the MIPS simulator executed the original print expression.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

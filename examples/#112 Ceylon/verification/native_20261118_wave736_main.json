@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ordinal": 112,
+  "language": "Ceylon",
+  "timestamp_utc": "2026-11-18T19:15:32.626619+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the official Ceylon console version",
+      "command": [
+        "${TOOL_CACHE}/tools/ceylon-1.3.3/dist/ceylon-1.3.3/bin/ceylon",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/112-j62595ul",
+      "timestamp_utc": "2026-11-18T19:15:39.362828+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "ceylon version 1.3.3 0d594b3 (Contents May Differ)\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/112-j62595ul/home\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/112-j62595ul/home",
+        "TMPDIR": "${SCRATCH}/112-j62595ul/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/112-j62595ul/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64"
+      }
+    },
+    {
+      "label": "Compile the unchanged Ceylon sample",
+      "command": [
+        "${TOOL_CACHE}/tools/ceylon-1.3.3/dist/ceylon-1.3.3/bin/ceylon",
+        "compile",
+        "--src",
+        "source",
+        "default"
+      ],
+      "cwd": "${SCRATCH}/112-j62595ul",
+      "timestamp_utc": "2026-11-18T19:15:40.098820+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/112-j62595ul/home\nNote: Created module default\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/112-j62595ul/home",
+        "TMPDIR": "${SCRATCH}/112-j62595ul/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/112-j62595ul/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${TOOL_CACHE}/tools/ceylon-1.3.3/dist/ceylon-1.3.3/bin/ceylon",
+        "run",
+        "--run",
+        "hello",
+        "default"
+      ],
+      "cwd": "${SCRATCH}/112-j62595ul",
+      "timestamp_utc": "2026-11-18T19:15:47.791328+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/112-j62595ul/home\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/112-j62595ul/home",
+        "TMPDIR": "${SCRATCH}/112-j62595ul/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/112-j62595ul/home",
+        "JAVA_HOME": "${WORKSPACE}/work/native_target546_20261105/middle/mirah/root/usr/lib/jvm/java-8-openjdk-amd64"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#112 Ceylon/source/hello.ceylon": "b0666d8ce3d8a6f4f55330e47b18eab063740bff3c2c9763ba59568d185ef3a4"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Eclipse Ceylon tour e riga di comando",
+      "url": "https://site.ceylon-lang.dev/documentation/1.2/tour/"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://downloads.ceylon-lang.dev/cli/ceylon-1.3.3.zip",
+      "sha256": "4ec1f1781043ee369c3e225576787ce5518685f2206eafa7d2fd5cfe6ac9923d",
+      "expected_sha256": "4ec1f1781043ee369c3e225576787ce5518685f2206eafa7d2fd5cfe6ac9923d"
+    }
+  ],
+  "toolchain": "ceylon version 1.3.3 0d594b3 (Contents May Differ)",
+  "reproduction_command": "ceylon compile --src source default; ceylon run --run hello default",
+  "semantic_scope": "The archived original Ceylon CLI compiled the unchanged sample and its JVM runner executed the original definition.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "ordinal": 612,
+  "language": "Ren'Py",
+  "timestamp_utc": "2026-11-18T19:23:44.489347+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Start the original RenPy story in a private framebuffer and capture the engine’s dialogue text",
+      "command": [
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 640x480x24 -nolisten tcp",
+        "${TOOL_CACHE}/tools/renpy-8.6.1.26111705/dist/renpy-8.6.1-sdk/renpy.sh",
+        "${SCRATCH}/612-tz1bui_q"
+      ],
+      "cwd": "${SCRATCH}/612-tz1bui_q",
+      "timestamp_utc": "2026-11-18T19:32:01.689261+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "error: XDG_RUNTIME_DIR is invalid or not set in the environment.\nOBSERVED_DIALOGUE=Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/612-tz1bui_q/home",
+        "TMPDIR": "${SCRATCH}/612-tz1bui_q/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "LIBGL_ALWAYS_SOFTWARE": "true",
+        "GALLIUM_DRIVER": "llvmpipe",
+        "SDL_AUDIODRIVER": "dummy",
+        "RENPY_DISABLE_FULLSCREEN": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#612 Ren'Py/game/script.rpy": "2af828a9efd1ae351dad73917117e5ee4784e8b8c1d5a1d4874b4a5cdacb2652"
+  },
+  "fixture_sha256": {
+    "game/zz_corpus_probe.rpy": {
+      "sha256": "0d81cf40b25be6fc25fef6a9a14b620952437e8dfdc9a226a9ae8f2d3fd5e38b",
+      "content_utf8": "init 999 python:\n    def capture_corpus_dialogue(s):\n        if s == \"Hello, World!\":\n            print(\"OBSERVED_DIALOGUE=\"+s)\n            renpy.quit(relaunch=False,status=0)\n        return s\n    config.say_menu_text_filter = capture_corpus_dialogue\n    config.main_menu_music = None\n    config.layers = [ \"master\", \"transient\", \"screens\", \"overlay\" ]\nlabel before_main_menu:\n    jump start\n"
+    }
+  },
+  "sources": [
+    "https://www.renpy.org/doc/html/quickstart.html"
+  ],
+  "previous_verification_log": "examples/#612 Ren'Py/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/renpy/renpy/releases/download/8.6.1.26111705/renpy-8.6.1-sdk.tar.bz2",
+      "name": "renpy-8.6.1-sdk.tar.bz2",
+      "sha256": "4d76d88f690ff7d600218dad3941dfddb88e2104e107367a0600a17364335509",
+      "release": "8.6.1.26111705"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "xvfb",
+      "version": "2:21.1.12-1ubuntu1.9",
+      "filename": "pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb",
+      "sha256": "2011271eabcc2eb460e99995c5ef26e46633e87d04f570e305b62f178f7b452c",
+      "bytes": 877038,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb"
+    },
+    {
+      "name": "libgl1",
+      "version": "1.7.0-1build1",
+      "filename": "pool/main/libg/libglvnd/libgl1_1.7.0-1build1_amd64.deb",
+      "sha256": "e2b2fadeb883f073b566ad1d7874f6702397514d258473e96152a89d4d502a09",
+      "bytes": 101990,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libgl1_1.7.0-1build1_amd64.deb"
+    },
+    {
+      "name": "libsdl2-dev",
+      "version": "2.30.0+dfsg-1ubuntu3.1",
+      "filename": "pool/universe/libs/libsdl2/libsdl2-dev_2.30.0+dfsg-1ubuntu3.1_amd64.deb",
+      "sha256": "8d78c93699aafdb33205ef7712baeefc8d8aa806862fac4c2554f3f8db234da1",
+      "bytes": 1140554,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/libs/libsdl2/libsdl2-dev_2.30.0+dfsg-1ubuntu3.1_amd64.deb"
+    }
+  ],
+  "toolchain": "RenPy 8.6.1.26111705",
+  "reproduction_command": "xvfb-run -a renpy.sh <scratch project>",
+  "semantic_scope": "RenPy processed the unchanged story. A small test callback observed the exact dialogue text received by the engine at the original start label.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

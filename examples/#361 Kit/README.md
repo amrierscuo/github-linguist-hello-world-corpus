@@ -1,5 +1,16 @@
 # #361 Kit
 
+## Verified on November 18, 2026
+
+The compatible Kit renderer executed the original declaration and interpolation. The resulting paragraph contained the exact greeting.
+
+Run `grunt codekit`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.kit` | [hello.kit](hello.kit) created; verification pending |
+| `.kit` | [hello.kit](hello.kit) Syntax and behavior verified |
+
+</details>

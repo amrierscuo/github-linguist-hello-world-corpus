@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "ordinal": 827,
+  "language": "ooc",
+  "timestamp_utc": "2026-11-18T19:59:31.129740+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile original ooc program with the official bundled standard library",
+      "command": [
+        "${SCRATCH}/827-wpv6y5f3/bootstrap/bin/c_rock",
+        "-gc=off",
+        "-o=hello",
+        "hello.ooc"
+      ],
+      "cwd": "${SCRATCH}/827-podf61uc",
+      "timestamp_utc": "2026-11-18T19:59:31.227928+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 1,
+      "stdout": "\n827-podf61uc/hello.ooc:1:8 error Module not found in sourcepath io\n\nimport io\n       ~~\n\n[FAIL]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/827-podf61uc/home",
+        "TMPDIR": "${SCRATCH}/827-podf61uc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "ROCK_DIST": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10",
+        "ROCK_SDK": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk",
+        "OOC_LIBS": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10"
+      }
+    },
+    {
+      "label": "Compile using the bundled standard string routines",
+      "command": [
+        "${SCRATCH}/827-wpv6y5f3/bootstrap/bin/c_rock",
+        "-gc=off",
+        "-o=hello",
+        "hello.ooc"
+      ],
+      "cwd": "${SCRATCH}/827-podf61uc",
+      "timestamp_utc": "2026-11-18T19:59:31.104446+00:00",
+      "timeout_seconds": 80,
+      "exit_code": 0,
+      "stdout": "[ OK ]\n",
+      "stderr": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/structs/HashMap.ooc: In function ‘structs_HashMap__pointerHash’:\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/structs/HashMap.ooc:61:13: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n   61 |     return (key as Pointer) as UInt32\n      |             ^\nIn file included from .libs/ooc/sdk/os/native/TerminalUnix-fwd.h:31,\n                 from .libs/ooc/sdk/os/Terminal-fwd.h:46,\n                 from .libs/ooc/sdk/structs/LinkedList-fwd.h:35,\n                 from .libs/ooc/sdk/lang/Exception-fwd.h:87,\n                 from .libs/ooc/sdk/lang/Character-fwd.h:28,\n                 from .libs/ooc/sdk/lang/BufferIterator-fwd.h:14,\n                 from .libs/ooc/sdk/lang/Buffer-fwd.h:17,\n                 from .libs/ooc/sdk/lang/Abstractions-fwd.h:7,\n                 from .libs/ooc/sdk/os/native/PipeUnix-fwd.h:26,\n                 from .libs/ooc/sdk/os/native/PipeUnix.h:7,\n                 from rock_tmp/ooc/sdk/os/native/PipeUnix.c:3:\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc: In function ‘os_native_PipeUnix__PipeUnix_init_withFDs’:\n.libs/ooc/sdk/os/unistd-fwd.h:45:25: warning: ‘pipe’ accessing 8 bytes in a region of size 4 [-Wstringop-overflow=]\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:21:9: note: in expansion of macro ‘os_unistd__pipe’\n   21 |             pipe(fds)\n      |         ^   ~~~~~~~~~  \n.libs/ooc/sdk/os/unistd-fwd.h:45:25: note: referencing argument 1 of type ‘int[2]’\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:21:9: note: in expansion of macro ‘os_unistd__pipe’\n   21 |             pipe(fds)\n      |         ^   ~~~~~~~~~  \nIn file included from .libs/ooc/sdk/lang/IO-fwd.h:9,\n                 from .libs/ooc/sdk/lang/Format-fwd.h:27,\n                 from .libs/ooc/sdk/lang/Exception-fwd.h:76:\n/usr/include/unistd.h:437:12: note: in a call to function ‘pipe’\n  437 | extern int pipe (int __pipedes[2]) __THROW __wur;\n      |            ^~~~\n.libs/ooc/sdk/os/unistd-fwd.h:45:25: warning: ‘pipe’ accessing 8 bytes in a region of size 4 [-Wstringop-overflow=]\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:23:13: note: in expansion of macro ‘os_unistd__pipe’\n   23 |             if (pipe(fds) < 0) {\n      |             ^~~~~~~~~~~~~~~\n.libs/ooc/sdk/os/unistd-fwd.h:45:25: note: referencing argument 1 of type ‘int[2]’\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:23:13: note: in expansion of macro ‘os_unistd__pipe’\n   23 |             if (pipe(fds) < 0) {\n      |             ^~~~~~~~~~~~~~~\n/usr/include/unistd.h:437:12: note: in a call to function ‘pipe’\n  437 | extern int pipe (int __pipedes[2]) __THROW __wur;\n      |            ^~~~\n.libs/ooc/sdk/os/unistd-fwd.h:45:25: warning: ‘pipe’ accessing 8 bytes in a region of size 4 [-Wstringop-overflow=]\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:31:9: note: in expansion of macro ‘os_unistd__pipe’\n   31 |             pipe(fds)\n      |         ^   ~~~~~~~~~  \n.libs/ooc/sdk/os/unistd-fwd.h:45:25: note: referencing argument 1 of type ‘int[2]’\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:31:9: note: in expansion of macro ‘os_unistd__pipe’\n   31 |             pipe(fds)\n      |         ^   ~~~~~~~~~  \n/usr/include/unistd.h:437:12: note: in a call to function ‘pipe’\n  437 | extern int pipe (int __pipedes[2]) __THROW __wur;\n      |            ^~~~\n.libs/ooc/sdk/os/unistd-fwd.h:45:25: warning: ‘pipe’ accessing 8 bytes in a region of size 4 [-Wstringop-overflow=]\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:33:13: note: in expansion of macro ‘os_unistd__pipe’\n   33 |             if (pipe(fds) < 0) {\n      |             ^~~~~~~~~~~~~~~\n.libs/ooc/sdk/os/unistd-fwd.h:45:25: note: referencing argument 1 of type ‘int[2]’\n   45 | #define os_unistd__pipe pipe\n${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk/os/native/PipeUnix.ooc:33:13: note: in expansion of macro ‘os_unistd__pipe’\n   33 |             if (pipe(fds) < 0) {\n      |             ^~~~~~~~~~~~~~~\n/usr/include/unistd.h:437:12: note: in a call to function ‘pipe’\n  437 | extern int pipe (int __pipedes[2]) __THROW __wur;\n      |            ^~~~\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/827-podf61uc/home",
+        "TMPDIR": "${SCRATCH}/827-podf61uc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "ROCK_DIST": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10",
+        "ROCK_SDK": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk",
+        "OOC_LIBS": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/827-podf61uc/hello"
+      ],
+      "cwd": "${SCRATCH}/827-podf61uc",
+      "timestamp_utc": "2026-11-18T19:59:34.596854+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/827-podf61uc/home",
+        "TMPDIR": "${SCRATCH}/827-podf61uc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "ROCK_DIST": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10",
+        "ROCK_SDK": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10/sdk",
+        "OOC_LIBS": "${TOOL_CACHE}/tools/ooc-lang-rock-v0.9.10/source/rock-0.9.10"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#827 ooc/hello.ooc": "65749fb0563e0a13897b6d42f25c78e92f94a8e71f2060a1710161125dd919ef"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://ooc-lang.org/docs/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/ooc-lang/rock/tar.gz/v0.9.10",
+      "ref": "v0.9.10",
+      "sha256": "39ac190ee457b2ea3c650973899bcf8930daab5b9e7e069eb1bc437a08e8b6e8"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#827 ooc/hello.ooc",
+      "original_sha256": "5c08dad55624a62da3fb271157ee64b184541ff63fc57b58d2199dd0992fada4",
+      "tested_sha256": "65749fb0563e0a13897b6d42f25c78e92f94a8e71f2060a1710161125dd919ef",
+      "staged_file": "work/native_target736_20261118/corrected/827/hello.ooc",
+      "original_fragment": "import io",
+      "replacement": "// The standard String type provides println."
+    }
+  ],
+  "toolchain": "Rock ooc v0.9.10 / C bootstrap",
+  "reproduction_command": "hello ",
+  "semantic_scope": "The official Rock bootstrap and shipped ooc standard library compiled the original program. Its native executable printed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

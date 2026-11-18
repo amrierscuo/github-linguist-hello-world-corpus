@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "ordinal": 94,
+  "language": "CODEOWNERS",
+  "timestamp_utc": "2026-11-18T19:10:21.644555+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "/var/tmp/codex-linguist-636-20261118-1000/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/094-h83uqs3t",
+      "timestamp_utc": "2026-11-18T19:10:21.795544+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/094-h83uqs3t/home",
+        "TMPDIR": "${SCRATCH}/094-h83uqs3t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "/var/tmp/codex-linguist-636-20261118-1000/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/094-h83uqs3t/.venv/bin/python",
+        "codeowners==0.9.0"
+      ],
+      "cwd": "${SCRATCH}/094-h83uqs3t",
+      "timestamp_utc": "2026-11-18T19:10:21.924535+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 1 package in 288ms\nPrepared 1 package in 29ms\nInstalled 1 package in 4ms\n + codeowners==0.9.0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/094-h83uqs3t/home",
+        "TMPDIR": "${SCRATCH}/094-h83uqs3t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Apply the original rules with the original two-path verifier",
+      "command": [
+        "${SCRATCH}/094-h83uqs3t/.venv/bin/python",
+        "verify.py"
+      ],
+      "cwd": "${SCRATCH}/094-h83uqs3t",
+      "timestamp_utc": "2026-11-18T19:10:22.351064+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "codeowners 0.9.0: local path match PASS: [('EMAIL', 'hello@example.invalid')]\nGitHub account eligibility and review assignment remain unverified; email is illustrative.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/094-h83uqs3t/home",
+        "TMPDIR": "${SCRATCH}/094-h83uqs3t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record the actual matcher version and independently compare exact rule hits and misses",
+      "command": [
+        "${SCRATCH}/094-h83uqs3t/.venv/bin/python",
+        "-c",
+        "from codeowners import CodeOwners; import importlib.metadata as m; from pathlib import Path; r=CodeOwners(Path(\"CODEOWNERS\").read_text()); print(m.version(\"codeowners\")); a=r.of(\"hello.txt\"); b=r.of(\"other.txt\"); print(repr(a)); print(repr(b)); assert a==[(\"EMAIL\",\"hello@example.invalid\")] and b==[]"
+      ],
+      "cwd": "${SCRATCH}/094-h83uqs3t",
+      "timestamp_utc": "2026-11-18T19:10:22.472154+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "0.9.0\n[('EMAIL', 'hello@example.invalid')]\n[]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/094-h83uqs3t/home",
+        "TMPDIR": "${SCRATCH}/094-h83uqs3t/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "/var/tmp/codex-linguist-636-20261118-1000/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#094 CODEOWNERS/CODEOWNERS": "dd85d1650512bbd69ff9006fd49ca5d253de21fd824bce69d7a2b5f8ed5ddc3e",
+    "examples/#094 CODEOWNERS/hello.txt": "c98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31",
+    "examples/#094 CODEOWNERS/verify.py": "4e9d97bda350b1f9cb2716c85b861d6c2e19086e08ba1b18818c8fe14ebc25c2",
+    "examples/#094 CODEOWNERS/requirements.txt": "2b0bbc39bc11dec8b43b8d9592ea39095f23b54cad86062d2ba4eeb9bb9428f9"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners",
+    "https://github.com/sbdchd/codeowners"
+  ],
+  "previous_verification_log": "examples/#094 CODEOWNERS/verification/result.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "sbdchd/codeowners 0.9.0",
+  "reproduction_command": "python verify.py with codeowners==0.9.0",
+  "semantic_scope": "The original local ownership matcher applied the exact repository path rule and found the illustrative email for hello.txt. The unmatched path returned no owners. The example uses a deliberately illustrative address.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

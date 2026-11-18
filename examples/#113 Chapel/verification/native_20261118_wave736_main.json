@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "ordinal": 113,
+  "language": "Chapel",
+  "timestamp_utc": "2026-11-18T19:25:39.845654+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the selected Chapel compiler",
+      "command": [
+        "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/bin/chpl",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/113-vijxki9p",
+      "timestamp_utc": "2026-11-18T19:25:40.174951+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "chpl version 2.10.0\n  built with LLVM version 18.1.3\n  available LLVM targets: xtensa, m68k, xcore, x86-64, x86, wasm64, wasm32, ve, systemz, sparcel, sparcv9, sparc, riscv64, riscv32, ppc64le, ppc64, ppc32le, ppc32, nvptx64, nvptx, msp430, mips64el, mips64, mipsel, mips, loongarch64, loongarch32, lanai, hexagon, bpfeb, bpfel, bpf, avr, thumbeb, thumb, armeb, arm, amdgcn, r600, aarch64_32, aarch64_be, aarch64, arm64_32, arm64\nCopyright 2020-2026 Hewlett Packard Enterprise Development LP\nCopyright 2004-2019 Cray Inc.\n(See LICENSE file for more details)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/113-vijxki9p/home",
+        "TMPDIR": "${SCRATCH}/113-vijxki9p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/compiler:${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib/compiler/linux64-x86_64:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CHPL_HOME": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/share/chapel/2.10",
+        "CHPL_RUNTIME_LIB": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib",
+        "CHPL_RUNTIME_INCL": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/include",
+        "CHPL_THIRD_PARTY": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/third-party",
+        "CHPL_LLVM": "system",
+        "CHPL_LLVM_CONFIG": "${TOOL_CACHE}/tools/apt/usr/bin/llvm-config-18",
+        "CHPL_COMM": "none",
+        "CHPL_TARGET_CPU": "none",
+        "CHPL_HWLOC": "system",
+        "CHPL_UNWIND": "system",
+        "CHPL_RE2": "bundled",
+        "CHPL_MEM": "jemalloc",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "PKG_CONFIG_SYSROOT_DIR": "${TOOL_CACHE}/tools/apt"
+      }
+    },
+    {
+      "label": "Inspect installed runtime configurations for this distro build",
+      "command": [
+        "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/share/chapel/2.10/util/chplenv/printchplbuilds.py"
+      ],
+      "cwd": "${SCRATCH}/113-vijxki9p",
+      "timestamp_utc": "2026-11-18T19:25:40.501068+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "                           <Current>              0                    1                    2                    3                    4                 \n     CHPL_TARGET_PLATFORM: linux64              linux64              linux64              linux64              linux64              linux64             \n     CHPL_TARGET_COMPILER: llvm                 llvm                 llvm                 llvm                 llvm                 llvm                \n         CHPL_TARGET_ARCH: x86_64               x86_64               x86_64               x86_64               x86_64               x86_64              \n          CHPL_TARGET_CPU: none                 none                 none                 none                 none                 none                \n        CHPL_LOCALE_MODEL: flat                 flat                 flat                 flat                 flat                 flat                \n                 CHPL_GPU: NA                   NA                   NA                   NA                   NA                   NA                  \n     CHPL_GPU_SDK_VERSION: NA                   NA                   NA                   NA                   NA                   NA                  \n    CHPL_GPU_MEM_STRATEGY: NA                   NA                   NA                   NA                   NA                   NA                  \n                CHPL_COMM: none                 ofi*                 gasnet*              gasnet*              gasnet*              gasnet*             \n      CHPL_COMM_SUBSTRATE: NA                   NA                   smp*                 udp*                 udp*                 udp*                \n      CHPL_GASNET_SEGMENT: NA                   NA                   fast*                fast*                everything*          everything*         \n           CHPL_LIBFABRIC: NA                   bundled*             NA                   NA                   NA                   NA                  \n        CHPL_COMM_OFI_OOB: NA                   pmi2*                NA                   NA                   NA                   NA                  \n               CHPL_TASKS: qthreads             qthreads             qthreads             qthreads             qthreads             qthreads            \n         CHPL_TASKS_DEBUG: -                    -                    -                    -                    -                    -                   \n              CHPL_TIMERS: generic              generic              generic              generic              generic              generic             \n              CHPL_UNWIND: system               system               system               system               system               system              \n          CHPL_TARGET_MEM: jemalloc             jemalloc             jemalloc             jemalloc             cstdlib*             cstdlib*            \n             CHPL_ATOMICS: cstdlib              cstdlib              cstdlib              cstdlib              cstdlib              cstdlib             \n               CHPL_HWLOC: system               system               system               system               system               system              \n                 CHPL_RE2: bundled              bundled              bundled              bundled              bundled              bundled             \n         CHPL_AUX_FILESYS: none                 none                 none                 none                 none                 none                \n             CHPL_LIB_PIC: none                 none                 none                 none                 none                 none                \n        CHPL_SANITIZE_EXE: none                 none                 none                 none                 none                 address*            \n                    MTIME: NA                   Sep 19 00:41         Sep 19 00:41         Sep 19 00:41         Sep 19 00:41         Sep 19 00:41        \n                              5                    6                    7                    8                    9                   10                 \n     CHPL_TARGET_PLATFORM: linux64              linux64              linux64              linux64              linux64              linux64             \n     CHPL_TARGET_COMPILER: llvm                 llvm                 llvm                 clang*               clang*               clang*              \n         CHPL_TARGET_ARCH: x86_64               x86_64               x86_64               x86_64               x86_64               x86_64              \n          CHPL_TARGET_CPU: none                 none                 none                 none                 none                 none                \n        CHPL_LOCALE_MODEL: flat                 flat                 gpu*                 flat                 flat                 flat                \n                 CHPL_GPU: NA                   NA                   cpu*                 NA                   NA                   NA                  \n     CHPL_GPU_SDK_VERSION: NA                   NA                   none*                NA                   NA                   NA                  \n    CHPL_GPU_MEM_STRATEGY: NA                   NA                   array_on_device*     NA                   NA                   NA                  \n                CHPL_COMM: gasnet*              none                 none                 ofi*                 gasnet*              gasnet*             \n      CHPL_COMM_SUBSTRATE: udp*                 NA                   NA                   NA                   smp*                 udp*                \n      CHPL_GASNET_SEGMENT: everything*          NA                   NA                   NA                   fast*                fast*               \n           CHPL_LIBFABRIC: NA                   NA                   NA                   bundled*             NA                   NA                  \n        CHPL_COMM_OFI_OOB: NA                   NA                   NA                   pmi2*                NA                   NA                  \n               CHPL_TASKS: qthreads             qthreads             qthreads             qthreads             qthreads             qthreads            \n         CHPL_TASKS_DEBUG: -                    -                    -                    -                    -                    -                   \n              CHPL_TIMERS: generic              generic              generic              generic              generic              generic             \n              CHPL_UNWIND: system               system               system               system               system               system              \n          CHPL_TARGET_MEM: jemalloc             jemalloc             jemalloc             jemalloc             jemalloc             jemalloc            \n             CHPL_ATOMICS: cstdlib              cstdlib              cstdlib              cstdlib              cstdlib              cstdlib             \n               CHPL_HWLOC: system               system               system               system               system               system              \n                 CHPL_RE2: bundled              bundled              bundled              bundled              bundled              bundled             \n         CHPL_AUX_FILESYS: none                 none                 none                 none                 none                 none                \n             CHPL_LIB_PIC: none                 none                 none                 none                 none                 none                \n        CHPL_SANITIZE_EXE: none                 none                 none                 none                 none                 none                \n                    MTIME: Sep 19 00:41         Sep 19 00:41         Sep 19 00:41         Sep 19 00:41         Sep 19 00:41         Sep 19 00:41        \n                             11                   12                   13                   14                 \n     CHPL_TARGET_PLATFORM: linux64              linux64              linux64              linux64             \n     CHPL_TARGET_COMPILER: clang*               clang*               clang*               clang*              \n         CHPL_TARGET_ARCH: x86_64               x86_64               x86_64               x86_64              \n          CHPL_TARGET_CPU: none                 none                 none                 none                \n        CHPL_LOCALE_MODEL: flat                 flat                 flat                 flat                \n                 CHPL_GPU: NA                   NA                   NA                   NA                  \n     CHPL_GPU_SDK_VERSION: NA                   NA                   NA                   NA                  \n    CHPL_GPU_MEM_STRATEGY: NA                   NA                   NA                   NA                  \n                CHPL_COMM: gasnet*              gasnet*              gasnet*              none                \n      CHPL_COMM_SUBSTRATE: udp*                 udp*                 udp*                 NA                  \n      CHPL_GASNET_SEGMENT: everything*          everything*          everything*          NA                  \n           CHPL_LIBFABRIC: NA                   NA                   NA                   NA                  \n        CHPL_COMM_OFI_OOB: NA                   NA                   NA                   NA                  \n               CHPL_TASKS: qthreads             qthreads             qthreads             qthreads            \n         CHPL_TASKS_DEBUG: -                    -                    -                    -                   \n              CHPL_TIMERS: generic              generic              generic              generic             \n              CHPL_UNWIND: system               system               system               system              \n          CHPL_TARGET_MEM: cstdlib*             cstdlib*             jemalloc             jemalloc            \n             CHPL_ATOMICS: cstdlib              cstdlib              cstdlib              cstdlib             \n               CHPL_HWLOC: system               system               system               system              \n                 CHPL_RE2: bundled              bundled              bundled              bundled             \n         CHPL_AUX_FILESYS: none                 none                 none                 none                \n             CHPL_LIB_PIC: none                 none                 none                 none                \n        CHPL_SANITIZE_EXE: none                 address*             none                 none                \n                    MTIME: Sep 19 00:41         Sep 19 00:41         Sep 19 00:41         Sep 19 00:41        \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/113-vijxki9p/home",
+        "TMPDIR": "${SCRATCH}/113-vijxki9p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/compiler:${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib/compiler/linux64-x86_64:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CHPL_HOME": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/share/chapel/2.10",
+        "CHPL_RUNTIME_LIB": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib",
+        "CHPL_RUNTIME_INCL": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/include",
+        "CHPL_THIRD_PARTY": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/third-party",
+        "CHPL_LLVM": "system",
+        "CHPL_LLVM_CONFIG": "${TOOL_CACHE}/tools/apt/usr/bin/llvm-config-18",
+        "CHPL_COMM": "none",
+        "CHPL_TARGET_CPU": "none",
+        "CHPL_HWLOC": "system",
+        "CHPL_UNWIND": "system",
+        "CHPL_RE2": "bundled",
+        "CHPL_MEM": "jemalloc",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "PKG_CONFIG_SYSROOT_DIR": "${TOOL_CACHE}/tools/apt"
+      }
+    },
+    {
+      "label": "Compile the unchanged program against the publisher-provided runtime",
+      "command": [
+        "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/bin/chpl",
+        "hello.chpl",
+        "--ldflags",
+        "-no-pie -llzma -ludev -lxml2",
+        "-o",
+        "greeting"
+      ],
+      "cwd": "${SCRATCH}/113-vijxki9p",
+      "timestamp_utc": "2026-11-18T19:25:40.774825+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/113-vijxki9p/home",
+        "TMPDIR": "${SCRATCH}/113-vijxki9p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/compiler:${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib/compiler/linux64-x86_64:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CHPL_HOME": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/share/chapel/2.10",
+        "CHPL_RUNTIME_LIB": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib",
+        "CHPL_RUNTIME_INCL": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/include",
+        "CHPL_THIRD_PARTY": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/third-party",
+        "CHPL_LLVM": "system",
+        "CHPL_LLVM_CONFIG": "${TOOL_CACHE}/tools/apt/usr/bin/llvm-config-18",
+        "CHPL_COMM": "none",
+        "CHPL_TARGET_CPU": "none",
+        "CHPL_HWLOC": "system",
+        "CHPL_UNWIND": "system",
+        "CHPL_RE2": "bundled",
+        "CHPL_MEM": "jemalloc",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "PKG_CONFIG_SYSROOT_DIR": "${TOOL_CACHE}/tools/apt"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/113-vijxki9p/greeting"
+      ],
+      "cwd": "${SCRATCH}/113-vijxki9p",
+      "timestamp_utc": "2026-11-18T19:25:53.655468+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/113-vijxki9p/home",
+        "TMPDIR": "${SCRATCH}/113-vijxki9p/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/compiler:${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib/compiler/linux64-x86_64:${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CHPL_HOME": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/share/chapel/2.10",
+        "CHPL_RUNTIME_LIB": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/lib",
+        "CHPL_RUNTIME_INCL": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/runtime/include",
+        "CHPL_THIRD_PARTY": "${TOOL_CACHE}/tools/chapel-2.10.0/dist/usr/lib/chapel/2.10/third-party",
+        "CHPL_LLVM": "system",
+        "CHPL_LLVM_CONFIG": "${TOOL_CACHE}/tools/apt/usr/bin/llvm-config-18",
+        "CHPL_COMM": "none",
+        "CHPL_TARGET_CPU": "none",
+        "CHPL_HWLOC": "system",
+        "CHPL_UNWIND": "system",
+        "CHPL_RE2": "bundled",
+        "CHPL_MEM": "jemalloc",
+        "PKG_CONFIG_PATH": "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig",
+        "PKG_CONFIG_SYSROOT_DIR": "${TOOL_CACHE}/tools/apt"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#113 Chapel/hello.chpl": "412abc477249bbafb580b409cfdcd8f0d0ebaa88fa5a70cfe16032af711ce6ae"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "Chapel primo programma",
+      "url": "https://chapel-lang.org/docs/users-guide/base/hello.html"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "chapel-2.10.0-1.ubuntu24.amd64.deb",
+      "size": 38835394,
+      "url": "https://github.com/chapel-lang/chapel/releases/download/2.10.0/chapel-2.10.0-1.ubuntu24.amd64.deb",
+      "sha256": "8e2c0179f553bbb86eb3b5a064ca16253ea00f939e1371cb5502e35861aba30f",
+      "release": "https://github.com/chapel-lang/chapel/releases/tag/2.10.0",
+      "observed_sha256": "8e2c0179f553bbb86eb3b5a064ca16253ea00f939e1371cb5502e35861aba30f"
+    }
+  ],
+  "packaged_config_utf8": "CHPL_HOST_PLATFORM=linux64\nCHPL_TARGET_PLATFORM=linux64\nCHPL_TARGET_COMPILER=llvm\nCHPL_TARGET_CPU=native\nCHPL_RUNTIME_CPU=none\nCHPL_LOCALE_MODEL=flat\nCHPL_COMM=none\nCHPL_TASKS=qthreads\nCHPL_UNWIND=system\nCHPL_HOST_MEM=jemalloc\nCHPL_TARGET_MEM=jemalloc\nCHPL_ATOMICS=cstdlib\nCHPL_GMP=system\nCHPL_HWLOC=system\nCHPL_RE2=bundled\nCHPL_LLVM=system\nCHPL_LLVM_CONFIG=/usr/bin/llvm-config\nCHPL_LIB_PIC=none\nCHPL_SANITIZE=none\nCHPL_SANITIZE_EXE=none\n",
+  "toolchain": "chpl version 2.10.0",
+  "reproduction_command": "chpl hello.chpl -o greeting; ./greeting",
+  "semantic_scope": "The official Chapel compiler compiled the exact program and its resulting executable printed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

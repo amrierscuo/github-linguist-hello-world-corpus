@@ -1,5 +1,18 @@
 # #222 G-code
 
+## Verified on November 18, 2026
+
+Klipper’s actual G-code dispatcher invoked the M117 display command from the original file. Its display-status module stored the exact message in a fixture without a printer or motion.
+
+Run `PYTHONPATH=<Klipper checkout> python3 check.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -42,4 +55,6 @@ Verification of the main sample and each variant is recorded separately.
 | `.g` | [hello.g](variants/ext-g-2e67/hello.g) created; verification pending |
 | `.cnc` | [hello.cnc](variants/ext-cnc-2e636e63/hello.cnc) created; verification pending |
 | `.gco` | [hello.gco](variants/ext-gco-2e67636f/hello.gco) created; verification pending |
-| `.gcode` | [hello.gcode](hello.gcode) created; verification pending |
+| `.gcode` | [hello.gcode](hello.gcode) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #729 Type Language
 
+## Verified on November 18, 2026
+
+Telethon compiled the unchanged Telegram TL schema into its real serializer class, then wrote and read back the exact greeting with the correct constructor identifier.
+
+Run `python tl.py with Telethon generator and runtime`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a manufacturer in the Type Language TL of Telegram.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.tl` | [hello.tl](hello.tl) created; verification pending |
+| `.tl` | [hello.tl](hello.tl) Syntax and behavior verified |
+
+</details>

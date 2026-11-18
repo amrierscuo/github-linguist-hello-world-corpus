@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "ordinal": 560,
+  "language": "Propeller Spin",
+  "timestamp_utc": "2026-11-18T20:01:27.601345+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile unchanged Spin using the original v7.8.0 C backend",
+      "command": [
+        "${SCRATCH}/560-4l6qczdi/spin/build/spin2cpp",
+        "--ccode",
+        "hello.spin"
+      ],
+      "cwd": "${SCRATCH}/560-311npxsz",
+      "timestamp_utc": "2026-11-18T20:01:27.637424+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/560-311npxsz/home",
+        "TMPDIR": "${SCRATCH}/560-311npxsz/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Build the emitted C and low-address host fixture",
+      "command": [
+        "gcc",
+        "-fno-pie",
+        "-no-pie",
+        "-D_PROPELLER_H_",
+        "-idirafter",
+        "${TOOL_CACHE}/tools/totalspectrum-spin2cpp-v7.8.0/source/spin2cpp-7.8.0/include",
+        "hello.c",
+        "check.c",
+        "-o",
+        "check"
+      ],
+      "cwd": "${SCRATCH}/560-311npxsz",
+      "timestamp_utc": "2026-11-18T20:01:27.652443+00:00",
+      "timeout_seconds": 44,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "hello.c: In function ‘hello_main’:\nhello.c:29:11: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]\n   29 |   return ((int32_t)(((char *)&dat[0])));\n      |           ^\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/560-311npxsz/home",
+        "TMPDIR": "${SCRATCH}/560-311npxsz/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/560-311npxsz/check"
+      ],
+      "cwd": "${SCRATCH}/560-311npxsz",
+      "timestamp_utc": "2026-11-18T20:01:27.778391+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/560-311npxsz/home",
+        "TMPDIR": "${SCRATCH}/560-311npxsz/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#560 Propeller Spin/hello.spin": "512b56bd023e6d19eb2fee4aa5b31f19563f071e3fd87275fac9cb09c439b124"
+  },
+  "fixture_sha256": {
+    "check.c": {
+      "sha256": "8e6405d3c6dde05e5a30bf748517dbda0fa35c0108ea5e6003df1a951f0f42ca",
+      "content_utf8": "#include <stdint.h>\n#include <stdio.h>\n#include <string.h>\n#include \"hello.h\"\nint main(void) {\n    const char *p=(const char *)(uintptr_t)(uint32_t)hello_main();\n    if (strlen(p)!=13 || p[13]!=0) return 2;\n    puts(p);\n    return 0;\n}\n"
+    }
+  },
+  "sources": [
+    "https://github.com/parallaxinc/OpenSpin"
+  ],
+  "previous_verification_log": "examples/#560 Propeller Spin/verification/toolchain.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/totalspectrum/spin2cpp/tar.gz/v7.8.0",
+      "sha256": "08f582b94df3acbf6e033e2f67fdf8762096aec726cb3c5cfdedc3eda7fb12ed"
+    }
+  ],
+  "toolchain": "spin2cpp 7.8.0 and GNU C",
+  "reproduction_command": "spin2cpp --ccode hello.spin; gcc -fno-pie -no-pie ...; ./check",
+  "semantic_scope": "The official Spin translator compiled the unchanged source. Host execution of that emitted code dereferenced the returned address and read the exact thirteen-byte data block and NUL terminator.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

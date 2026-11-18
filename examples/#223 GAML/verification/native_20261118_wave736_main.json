@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "ordinal": 223,
+  "language": "GAML",
+  "timestamp_utc": "2026-11-18T19:41:43.749760+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Read the official GAMA headless launcher flags",
+      "command": [
+        "bash",
+        "${TOOL_CACHE}/tools/gama-2025.06.4/dist/headless/gama-headless.sh",
+        "-help"
+      ],
+      "cwd": "${SCRATCH}/223-mt3a_fck",
+      "timestamp_utc": "2026-11-18T19:42:23.826540+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "******************************************************************\n* GAMA version 2025.6.4                                         *\n* http://gama-platform.org                                       *\n* (c) 2007-2025 UMI 209 UMMISCO IRD/SU & Partners                *\n******************************************************************\n> FLAG  : enable_debug                                  set to________ true\n> FLAG  : enable_logging                                set to________ true\n> FLAG  : use_global_preference_store                   set to________ true\n> JAI   : ImageIO extensions                            loaded for____ BTF|TF8|TIF|TIFF|arx|asc|bmp|btf|gif|jp2|jpeg|jpg|pbm|pgm|png|ppm|tf8|tif|tiff|wbmp\n> GAMA  : version 2025.6.4                              loading on____ Linux 6.6.87.2-microsoft-standard-WSL2, processor amd64, JDK OpenJDK 64-Bit Server VM Ubuntu version 21.0.12.1+1-1-24.04.4-Ubuntu\n> GAMA  : Plugin gama.core                              loaded in_____ 1180ms\n> GAMA  : Plugin gama.extension.bdi                     loaded in_____ 83ms\n> GAMA  : Plugin gama.extension.database                loaded in_____ 122ms\n> GAMA  : Plugin gama.extension.fipa                    loaded in_____ 14ms\n> GAMA  : Snapshot services                             inactive______ (headless mode)\n> GAMA  : Plugin gama.extension.image                   loaded in_____ 34ms\n> GAMA  : Plugin gama.extension.maths                   loaded in_____ 98ms\n> GAMA  : Plugin gama.extension.network                 loaded in_____ 11ms\n> GAMA  : Plugin gama.extension.pedestrian              loaded in_____ 26ms\n> GAMA  : Plugin gama.extension.physics                 loaded in_____ 14ms\n> GAMA  : Plugin gama.extension.serialize               loaded in_____ 10ms\n> GAMA  : Plugin gama.extension.stats                   loaded in_____ 31ms\n> GAMA  : Plugin gama.extension.traffic                 loaded in_____ 30ms\n> GAMA  : Plugin gama.headless                          loaded in_____ 3ms\n> GAML  : Initializing parser                           done in_______ 140ms\n> GAMA  : Plugin gaml.compiler                          loaded in_____ 145ms\n> GAMA  : Loading extensions to 'create'                done in_______ 3ms\n> GAMA  : Loading extensions to 'save'                  done in_______ 71ms\n> GAMA  : Loading extensions to 'draw'                  done in_______ 1ms\n> GAMA  : Loading extensions to 'event'                 done in_______ 0ms\n> GAMA  : Gathering built-in models                     done in_______ 1ms\n> GAMA  : Loading constants                             done in_______ 151ms\n> GAML  : Plugins with language additions               loaded in_____ 2101ms\nWelcome to Gama-platform.org version GAMA 2025.6.4\n\nsh ./gama-headless.sh [Options]\n\nList of available options:\n\t=== Headless Options ===\n\t\t-m [mem]                      -- allocate memory (ex 2048m)\n\t\t-ws [./path/to/ws]            -- manually set a workspace\n\t\t-c                            -- start the console to write xml parameter file\n\t\t-v                            -- verbose mode\n\t\t-hpc [core]                   -- set the number of core available for experimentation\n\t\t-p                            -- start pipeline to interact with another framework\n\t\t-ping_interval [pingInterval] -- when in server mode (socket parameter set), defines in milliseconds the time between each ping packet sent to clients to keep alive the connection. The default value is 10000, set to -1 to deactivate this behaviour.\n\t=== Infos ===\n\t\t-help                         -- get the help of the command line\n\t\t-version                      -- get the the version of gama\n\t=== Library Runner ===\n\t\t-validate                     -- invokes GAMA to validate models present in built-in library and plugins\n\t\t-test                         -- invokes GAMA to execute the tests present in built-in library and plugins and display their results\n\t=== GAMA Headless Runner ===\n\t\t-socket [socketPort]          -- starts socket pipeline to interact with another framework\n\t\t-batch [experimentName] [modelFile.gaml]\n\t\t                              -- Run batch experiment in headless mode\n\t\t-xml [experimentName] [modelFile.gaml] [xmlOutputFile.xml]\n\t\t                              -- build an xml parameter file from a model\n\t\t[xmlHeadlessFile.xml] [outputDirectory]\n\t\t                              -- default usage of GAMA headless\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/223-mt3a_fck/home\nOpenJDK 64-Bit Server VM warning: \nThe hardware does not support invariant tsc (INVTSC) register and/or cannot guarantee tsc synchronization between sockets at startup.\nValues returned via rdtsc() are not guaranteed to be accurate, esp. when comparing values from cross sockets reads. Enabling UseFastUnorderedTimeStamps on non-invariant tsc hardware should be considered experimental.\n\nNov 18, 2026 8:42:29 PM java.util.prefs.FileSystemPreferences$1 run\nINFO: Created user preferences directory.\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/223-mt3a_fck/home",
+        "TMPDIR": "${SCRATCH}/223-mt3a_fck/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/223-mt3a_fck/home"
+      }
+    },
+    {
+      "label": "Execute original GAML init in the official GAMA headless engine",
+      "command": [
+        "bash",
+        "${TOOL_CACHE}/tools/gama-2025.06.4/dist/headless/gama-headless.sh",
+        "input.xml",
+        "${SCRATCH}/223-mt3a_fck/outputs"
+      ],
+      "cwd": "${SCRATCH}/223-mt3a_fck",
+      "timestamp_utc": "2026-11-18T19:42:31.285161+00:00",
+      "timeout_seconds": 105,
+      "exit_code": 0,
+      "stdout": "******************************************************************\n* GAMA version 2025.6.4                                         *\n* http://gama-platform.org                                       *\n* (c) 2007-2025 UMI 209 UMMISCO IRD/SU & Partners                *\n******************************************************************\n> FLAG  : enable_debug                                  set to________ true\n> FLAG  : enable_logging                                set to________ true\n> FLAG  : use_global_preference_store                   set to________ true\n> JAI   : ImageIO extensions                            loaded for____ BTF|TF8|TIF|TIFF|arx|asc|bmp|btf|gif|jp2|jpeg|jpg|pbm|pgm|png|ppm|tf8|tif|tiff|wbmp\n> GAMA  : version 2025.6.4                              loading on____ Linux 6.6.87.2-microsoft-standard-WSL2, processor amd64, JDK OpenJDK 64-Bit Server VM Ubuntu version 21.0.12.1+1-1-24.04.4-Ubuntu\n> GAMA  : Plugin gama.core                              loaded in_____ 1114ms\n> GAMA  : Plugin gama.extension.bdi                     loaded in_____ 75ms\n> GAMA  : Plugin gama.extension.database                loaded in_____ 137ms\n> GAMA  : Plugin gama.extension.fipa                    loaded in_____ 17ms\n> GAMA  : Snapshot services                             inactive______ (headless mode)\n> GAMA  : Plugin gama.extension.image                   loaded in_____ 30ms\n> GAMA  : Plugin gama.extension.maths                   loaded in_____ 63ms\n> GAMA  : Plugin gama.extension.network                 loaded in_____ 5ms\n> GAMA  : Plugin gama.extension.pedestrian              loaded in_____ 16ms\n> GAMA  : Plugin gama.extension.physics                 loaded in_____ 10ms\n> GAMA  : Plugin gama.extension.serialize               loaded in_____ 5ms\n> GAMA  : Plugin gama.extension.stats                   loaded in_____ 21ms\n> GAMA  : Plugin gama.extension.traffic                 loaded in_____ 30ms\n> GAMA  : Plugin gama.headless                          loaded in_____ 3ms\n> GAML  : Initializing parser                           done in_______ 187ms\n> GAMA  : Plugin gaml.compiler                          loaded in_____ 192ms\n> GAMA  : Loading extensions to 'create'                done in_______ 4ms\n> GAMA  : Loading extensions to 'save'                  done in_______ 78ms\n> GAMA  : Loading extensions to 'draw'                  done in_______ 2ms\n> GAMA  : Loading extensions to 'event'                 done in_______ 1ms\n> GAMA  : Gathering built-in models                     done in_______ 3ms\n> GAMA  : Loading constants                             done in_______ 128ms\n> GAML  : Plugins with language additions               loaded in_____ 2023ms\nGAMA configuring and loading...\n> GAML  : Artifacts                                     built in______ 44ms\n",
+      "stderr": "mkdir: missing operand\nTry 'mkdir --help' for more information.\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/223-mt3a_fck/home\nOpenJDK 64-Bit Server VM warning: \nThe hardware does not support invariant tsc (INVTSC) register and/or cannot guarantee tsc synchronization between sockets at startup.\nValues returned via rdtsc() are not guaranteed to be accurate, esp. when comparing values from cross sockets reads. Enabling UseFastUnorderedTimeStamps on non-invariant tsc hardware should be considered experimental.\n\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/223-mt3a_fck/home",
+        "TMPDIR": "${SCRATCH}/223-mt3a_fck/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/223-mt3a_fck/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#223 GAML/hello.gaml": "de1026e65e093cadebff53908d67ae59fb4face24ab157f3077cb151b7b8314d"
+  },
+  "fixture_sha256": {
+    "input.xml": {
+      "sha256": "a77eec3ee16db58d845c25fe6a8c2d11e71effe135b010e975c30e3469b482ad",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Experiment_plan><Simulation id=\"0\" sourcePath=\"hello.gaml\" experiment=\"greeting\" finalStep=\"1\" seed=\"0.0\"/></Experiment_plan>\n"
+    }
+  },
+  "sources": [
+    "https://gama-platform.org/wiki/Introduction",
+    "https://gama-platform.org/wiki/next/ModelOrganization"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/gama-platform/gama/releases/download/2025.06.4/GAMA_2025.06.4_Linux.zip",
+      "name": "GAMA_2025.06.4_Linux.zip",
+      "sha256": "b2260014ada857b220cb80fbc4a511a0edb4a4fa4363e31723799a4079b3bdde",
+      "release": "2025.06.4"
+    }
+  ],
+  "native_readback_utf8": "******************************************************************\n* GAMA version 2025.6.4                                         *\n* http://gama-platform.org                                       *\n* (c) 2007-2025 UMI 209 UMMISCO IRD/SU & Partners                *\n******************************************************************\n> FLAG  : enable_debug                                  set to________ true\n> FLAG  : enable_logging                                set to________ true\n> FLAG  : use_global_preference_store                   set to________ true\n> JAI   : ImageIO extensions                            loaded for____ BTF|TF8|TIF|TIFF|arx|asc|bmp|btf|gif|jp2|jpeg|jpg|pbm|pgm|png|ppm|tf8|tif|tiff|wbmp\n> GAMA  : version 2025.6.4                              loading on____ Linux 6.6.87.2-microsoft-standard-WSL2, processor amd64, JDK OpenJDK 64-Bit Server VM Ubuntu version 21.0.12.1+1-1-24.04.4-Ubuntu\n> GAMA  : Plugin gama.core                              loaded in_____ 1114ms\n> GAMA  : Plugin gama.extension.bdi                     loaded in_____ 75ms\n> GAMA  : Plugin gama.extension.database                loaded in_____ 137ms\n> GAMA  : Plugin gama.extension.fipa                    loaded in_____ 17ms\n> GAMA  : Snapshot services                             inactive______ (headless mode)\n> GAMA  : Plugin gama.extension.image                   loaded in_____ 30ms\n> GAMA  : Plugin gama.extension.maths                   loaded in_____ 63ms\n> GAMA  : Plugin gama.extension.network                 loaded in_____ 5ms\n> GAMA  : Plugin gama.extension.pedestrian              loaded in_____ 16ms\n> GAMA  : Plugin gama.extension.physics                 loaded in_____ 10ms\n> GAMA  : Plugin gama.extension.serialize               loaded in_____ 5ms\n> GAMA  : Plugin gama.extension.stats                   loaded in_____ 21ms\n> GAMA  : Plugin gama.extension.traffic                 loaded in_____ 30ms\n> GAMA  : Plugin gama.headless                          loaded in_____ 3ms\n> GAML  : Initializing parser                           done in_______ 187ms\n> GAMA  : Plugin gaml.compiler                          loaded in_____ 192ms\n> GAMA  : Loading extensions to 'create'                done in_______ 4ms\n> GAMA  : Loading extensions to 'save'                  done in_______ 78ms\n> GAMA  : Loading extensions to 'draw'                  done in_______ 2ms\n> GAMA  : Loading extensions to 'event'                 done in_______ 1ms\n> GAMA  : Gathering built-in models                     done in_______ 3ms\n> GAMA  : Loading constants                             done in_______ 128ms\n> GAML  : Plugins with language additions               loaded in_____ 2023ms\nGAMA configuring and loading...\n> GAML  : Artifacts                                     built in______ 44ms\nmkdir: missing operand\nTry 'mkdir --help' for more information.\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/223-mt3a_fck/home\nOpenJDK 64-Bit Server VM warning: \nThe hardware does not support invariant tsc (INVTSC) register and/or cannot guarantee tsc synchronization between sockets at startup.\nValues returned via rdtsc() are not guaranteed to be accurate, esp. when comparing values from cross sockets reads. Enabling UseFastUnorderedTimeStamps on non-invariant tsc hardware should be considered experimental.\n\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Simulation id=\"0\" >\n</Simulation>\n${SCRATCH}/223-mt3a_fck/hello.gaml model is being compiled...\nHello, World!\n\n.> GAMA  : Simulation running                            for: _________ 15ms\n",
+  "toolchain": "GAMA 2025.06.4",
+  "reproduction_command": "bash gama-headless.sh input.xml outputs",
+  "semantic_scope": "GAMA’s published headless engine instantiated the unchanged model and its global init printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

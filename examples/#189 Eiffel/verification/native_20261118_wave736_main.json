@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "ordinal": 189,
+  "language": "Eiffel",
+  "timestamp_utc": "2026-11-18T19:25:42.387365+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the native Gobo Eiffel compiler version",
+      "command": [
+        "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo/bin/gec",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/189-nuah3izc",
+      "timestamp_utc": "2026-11-18T19:25:43.051276+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "gec version 26.10.18+c84ee2f\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/189-nuah3izc/home",
+        "TMPDIR": "${SCRATCH}/189-nuah3izc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "GOBO": "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo",
+        "GOBO_EIFFEL": "ge"
+      }
+    },
+    {
+      "label": "Build the exact original Eiffel class through its native compiler",
+      "command": [
+        "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo/bin/gec",
+        "--finalize",
+        "hello_world.e"
+      ],
+      "cwd": "${SCRATCH}/189-nuah3izc",
+      "timestamp_utc": "2026-11-18T19:25:43.062696+00:00",
+      "timeout_seconds": 110,
+      "exit_code": 0,
+      "stdout": "Degree 6: 0/0/0 0:0:0.235\nDegree 5: 0/0/0 0:0:0.094\nDegree 4: 0/0/0 0:0:0.049\nDegree 3: 0/0/0 0:0:0.090\nDegree -2: 0/0/0 0:0:0.124\nDegree -3: 0/0/0 0:0:0.082\n\rDegree -4: 0/0/0 0:0:11.890\nTotal Time: 0/0/0 0:0:12.573\n",
+      "stderr": "zigzig: : warning: warning: future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14' [-Wgcc-install-dir-libstdcxx]future releases of the clang compiler will prefer GCC installations containing libstdc++ include directories; '/usr/lib/gcc/x86_64-linux-gnu/13' would be chosen over '/usr/lib/gcc/x86_64-linux-gnu/14' [-Wgcc-install-dir-libstdcxx]\n\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/189-nuah3izc/home",
+        "TMPDIR": "${SCRATCH}/189-nuah3izc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "GOBO": "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo",
+        "GOBO_EIFFEL": "ge"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/189-nuah3izc/hello_world"
+      ],
+      "cwd": "${SCRATCH}/189-nuah3izc",
+      "timestamp_utc": "2026-11-18T19:25:55.868759+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/189-nuah3izc/home",
+        "TMPDIR": "${SCRATCH}/189-nuah3izc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "GOBO": "${TOOL_CACHE}/tools/gobo-gobo-26.10/dist/gobo",
+        "GOBO_EIFFEL": "ge"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#189 Eiffel/hello_world.e": "a94fe4a4351f61fe1e6598e34ce4e1f0fd6c900756be4a32f507f96cb163581c"
+  },
+  "fixture_sha256": {
+    "hello.ecf": {
+      "sha256": "5a3ed875fd10cbf1c5a95e9b28a915241cae5638ea6cc080f20ce4c13dda07a2",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<system xmlns=\"http://www.eiffel.com/developers/xml/configuration-1-16-0\" name=\"hello\">\n <target name=\"hello\">\n   <root class=\"HELLO_WORLD\" feature=\"make\"/>\n   <library name=\"base\" location=\"$GOBO/library/free_elks/library_ge.ecf\"/>\n   <cluster name=\"src\" location=\"./\"/>\n </target>\n</system>\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Eiffel Hello World e compilazione",
+      "url": "https://www.eiffel.org/article/hello_world"
+    },
+    {
+      "title": "Eiffel tutorial del linguaggio",
+      "url": "https://www.eiffel.org/doc/eiffel/ET-_Hello_World"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/gobo-eiffel/gobo/releases/download/gobo-26.10/gobo-linux-x86_64-26.10.18+c84ee2f.tar.xz",
+      "name": "gobo-linux-x86_64-26.10.18+c84ee2f.tar.xz",
+      "sha256": "ebd8840c94d164553b6b94dfef31c72416de67daa8bdf1e8fa868fd3187c9eae",
+      "release": "gobo-26.10"
+    }
+  ],
+  "toolchain": "gec version 26.10.18+c84ee2f",
+  "reproduction_command": "gec --finalize --cc=gcc hello_world.e; run native executable",
+  "semantic_scope": "Gobo Eiffel compiled and linked the original class. The resulting executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "ordinal": 144,
+  "language": "Cuda",
+  "timestamp_utc": "2026-11-18T19:38:44.120632+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record official NVIDIA CUDA compiler version",
+      "command": [
+        "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/bin/nvcc",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/144-2zs8z92q",
+      "timestamp_utc": "2026-11-18T19:38:45.081574+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Feb_21_20:23:50_PST_2025\nCuda compilation tools, release 12.8, V12.8.93\nBuild cuda_12.8.r12.8/compiler.35583870_0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/144-2zs8z92q/home",
+        "TMPDIR": "${SCRATCH}/144-2zs8z92q/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/lib:/usr/lib/wsl/lib"
+      }
+    },
+    {
+      "label": "Query the active GPU and compute capability",
+      "command": [
+        "/usr/lib/wsl/lib/nvidia-smi",
+        "--query-gpu=name,compute_cap,driver_version",
+        "--format=csv,noheader"
+      ],
+      "cwd": "${SCRATCH}/144-2zs8z92q",
+      "timestamp_utc": "2026-11-18T19:38:45.106445+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "NVIDIA GeForce RTX 3070, 8.6, 610.88\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/144-2zs8z92q/home",
+        "TMPDIR": "${SCRATCH}/144-2zs8z92q/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/lib:/usr/lib/wsl/lib"
+      }
+    },
+    {
+      "label": "Compile the untouched CUDA GPU source for Ampere",
+      "command": [
+        "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/bin/nvcc",
+        "-arch=sm_86",
+        "--cudadevrt=none",
+        "--cudart=shared",
+        "-L${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/lib",
+        "-o",
+        "hello",
+        "hello.cu"
+      ],
+      "cwd": "${SCRATCH}/144-2zs8z92q",
+      "timestamp_utc": "2026-11-18T19:38:45.260153+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/144-2zs8z92q/home",
+        "TMPDIR": "${SCRATCH}/144-2zs8z92q/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/lib:/usr/lib/wsl/lib"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/144-2zs8z92q/hello"
+      ],
+      "cwd": "${SCRATCH}/144-2zs8z92q",
+      "timestamp_utc": "2026-11-18T19:38:48.041541+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/144-2zs8z92q/home",
+        "TMPDIR": "${SCRATCH}/144-2zs8z92q/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/cuda-redist-12.8.1/sdk/lib:/usr/lib/wsl/lib"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#144 Cuda/hello.cu": "dbd047013db1eca717928f3a5ec27f5d532b0be0cd8c51748a754d2d5b5b8828"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.nvidia.com/cuda/cuda-programming-guide/index.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-12.8.93-archive.tar.xz",
+      "sha256": "9961b3484b6b71314063709a4f9529654f96782ad39e72bf1e00f070db8210d3",
+      "version": "12.8.93"
+    },
+    {
+      "url": "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-12.8.90-archive.tar.xz",
+      "sha256": "8d566b5fe745c46842dc16945cf36686227536decd2302c372be86da37faca68",
+      "version": "12.8.90"
+    },
+    {
+      "url": "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cccl/linux-x86_64/cuda_cccl-linux-x86_64-12.8.90-archive.tar.xz",
+      "sha256": "0740e9e01e4f15e17c5ab8d68bba4f8ec0eb6b84edccba4ac45112d2d2174e4b",
+      "version": "12.8.90"
+    }
+  ],
+  "toolchain": "NVIDIA CUDA 12.8.1 on NVIDIA GeForce RTX 3070, 8.6, 610.88",
+  "reproduction_command": "hello ",
+  "semantic_scope": "Compiled unchanged with the official NVIDIA compiler and executed on the WSL-mapped NVIDIA GPU, where the kernel printed the greeting and cudaDeviceSynchronize succeeded.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

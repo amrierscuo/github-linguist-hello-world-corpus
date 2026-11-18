@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "ordinal": 292,
+  "language": "Hare",
+  "timestamp_utc": "2026-11-18T19:52:58.041338+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the official QBE backend",
+      "command": [
+        "make",
+        "-j4"
+      ],
+      "cwd": "${SCRATCH}/292-w9_kreq6/qbe",
+      "timestamp_utc": "2026-11-18T19:52:58.092565+00:00",
+      "timeout_seconds": 110,
+      "exit_code": 0,
+      "stdout": "cc -std=c99 -g -Wall -Wextra -Wpedantic -c util.c -o util.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c parse.c -o parse.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c abi.c -o abi.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c cfg.c -o cfg.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c mem.c -o mem.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c ssa.c -o ssa.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c alias.c -o alias.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c load.c -o load.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c copy.c -o copy.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c fold.c -o fold.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c simpl.c -o simpl.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c live.c -o live.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c spill.c -o spill.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c rega.c -o rega.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c emit.c -o emit.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c amd64/targ.c -o amd64/targ.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c amd64/sysv.c -o amd64/sysv.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c amd64/isel.c -o amd64/isel.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c amd64/emit.c -o amd64/emit.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c arm64/targ.c -o arm64/targ.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c arm64/abi.c -o arm64/abi.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c arm64/isel.c -o arm64/isel.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c arm64/emit.c -o arm64/emit.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c rv64/targ.c -o rv64/targ.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c rv64/abi.c -o rv64/abi.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c rv64/isel.c -o rv64/isel.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c rv64/emit.c -o rv64/emit.o\ncc -std=c99 -g -Wall -Wextra -Wpedantic -c main.c -o main.o\ncc  main.o util.o parse.o abi.o cfg.o mem.o ssa.o alias.o load.o  copy.o fold.o simpl.o live.o spill.o rega.o emit.o amd64/targ.o amd64/sysv.o amd64/isel.o amd64/emit.o arm64/targ.o arm64/abi.o arm64/isel.o arm64/emit.o rv64/targ.o rv64/abi.o rv64/isel.o rv64/emit.o -o qbe\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/292-w9_kreq6/prefix/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/292-w9_kreq6/home",
+        "TMPDIR": "${SCRATCH}/292-w9_kreq6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the original Hare compiler",
+      "command": [
+        "make",
+        "-j4"
+      ],
+      "cwd": "${SCRATCH}/292-w9_kreq6/harec",
+      "timestamp_utc": "2026-11-18T19:52:58.137891+00:00",
+      "timeout_seconds": 140,
+      "exit_code": 0,
+      "stdout": "CC\tsrc/check.o\nCC\tsrc/emit.o\nCC\tsrc/eval.o\nCC\tsrc/expr.o\nCC\tsrc/gen.o\nCC\tsrc/genutil.o\nCC\tsrc/identifier.o\nCC\tsrc/lex.o\nCC\tsrc/main.o\nCC\tsrc/mod.o\nCC\tsrc/parse.o\nCC\tsrc/qbe.o\nCC\tsrc/qinstr.o\nCC\tsrc/qtype.o\nCC\tsrc/scope.o\nCC\tsrc/type_store.o\nCC\tsrc/typedef.o\nCC\tsrc/types.o\nCC\tsrc/utf8.o\nCC\tsrc/util.o\nCCLD\t.bin/harec\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/292-w9_kreq6/prefix/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/292-w9_kreq6/home",
+        "TMPDIR": "${SCRATCH}/292-w9_kreq6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the Hare driver against its own runtime",
+      "command": [
+        "make",
+        "-j4",
+        "all"
+      ],
+      "cwd": "${SCRATCH}/292-w9_kreq6/harestd",
+      "timestamp_utc": "2026-11-18T19:52:59.343797+00:00",
+      "timeout_seconds": 240,
+      "exit_code": 0,
+      "stdout": "HAREC\t.cache/rt.ssa\nHAREC\t.cache/types.ssa\nHAREC\t.cache/sort_cmp.ssa\nHAREC\t.cache/endian.ssa\nHAREC\t.cache/format_elf.ssa\nHAREC\t.cache/math_random.ssa\nSCDOC\tdocs/hare-build.1\nSCDOC\tdocs/hare.1\nSCDOC\tdocs/hare-cache.1\nSCDOC\tdocs/hare-deps.1\nSCDOC\tdocs/haredoc.1\nSCDOC\tdocs/hare-tool.1\nSCDOC\tdocs/hare-run.1\nSCDOC\tdocs/hare-test.1\nSCDOC\tdocs/haredoc.5\nSCDOC\tdocs/hare-module.5\nQBE\t.cache/types.s\nQBE\t.cache/sort_cmp.s\nQBE\t.cache/endian.s\nQBE\t.cache/format_elf.s\nQBE\t.cache/math_random.s\nAS\t.cache/types.o\nAS\t.cache/sort_cmp.o\nAS\t.cache/endian.o\nHAREC\t.cache/crypto_math.ssa\nAS\t.cache/format_elf.o\nAS\t.cache/math_random.o\nQBE\t.cache/crypto_math.s\nAS\t.cache/crypto_math.o\nQBE\t.cache/rt.s\nHAREC\t.cache/bytes.ssa\nHAREC\t.cache/errors.ssa\nHAREC\t.cache/math.ssa\nHAREC\t.cache/linux.ssa\nQBE\t.cache/bytes.s\nQBE\t.cache/errors.s\nQBE\t.cache/math.s\nQBE\t.cache/linux.s\nAS\t.cache/bytes.o\nHAREC\t.cache/encoding_utf8.ssa\nAS\t.cache/errors.o\nHAREC\t.cache/io.ssa\nAS\t.cache/linux.o\nHAREC\t.cache/sort.ssa\nQBE\t.cache/encoding_utf8.s\nAS\t.cache/math.o\nAS\t.cache/rt.o\nHAREC\t.cache/types_c.ssa\nAS\t.cache/encoding_utf8.o\nQBE\t.cache/io.s\nHAREC\t.cache/strings.ssa\nQBE\t.cache/types_c.s\nQBE\t.cache/sort.s\nAS\t.cache/io.o\nHAREC\t.cache/hash.ssa\nAS\t.cache/types_c.o\nAS\t.cache/sort.o\nHAREC\t.cache/linux_vdso.ssa\nQBE\t.cache/strings.s\nHAREC\t.cache/ascii.ssa\nHAREC\t.cache/bufio.ssa\nQBE\t.cache/hash.s\nHAREC\t.cache/memio.ssa\nHAREC\t.cache/path.ssa\nQBE\t.cache/linux_vdso.s\nAS\t.cache/strings.o\nQBE\t.cache/ascii.s\nQBE\t.cache/bufio.s\nAS\t.cache/hash.o\nHAREC\t.cache/crypto_sha256.ssa\nQBE\t.cache/memio.s\nAS\t.cache/linux_vdso.o\nHAREC\t.cache/time.ssa\nAS\t.cache/ascii.o\nAS\t.cache/memio.o\nQBE\t.cache/path.s\nHAREC\t.cache/strconv.ssa\nHAREC\t.cache/shlex.ssa\nAS\t.cache/bufio.o\nQBE\t.cache/crypto_sha256.s\nQBE\t.cache/time.s\nQBE\t.cache/shlex.s\nAS\t.cache/crypto_sha256.o\nAS\t.cache/path.o\nAS\t.cache/time.o\nHAREC\t.cache/fs.ssa\nAS\t.cache/shlex.o\nQBE\t.cache/strconv.s\nQBE\t.cache/fs.s\nHAREC\t.cache/unix.ssa\nHAREC\t.cache/os.ssa\nAS\t.cache/fs.o\nAS\t.cache/strconv.o\nQBE\t.cache/os.s\nHAREC\t.cache/fmt.ssa\nQBE\t.cache/unix.s\nHAREC\t.cache/unix_signal.ssa\nAS\t.cache/unix.o\nAS\t.cache/os.o\nQBE\t.cache/fmt.s\nHAREC\t.cache/encoding_hex.ssa\nHAREC\t.cache/hare_lex.ssa\nHAREC\t.cache/unix_tty.ssa\nHAREC\t.cache/dirs.ssa\nHAREC\t.cache/getopt.ssa\nAS\t.cache/fmt.o\nQBE\t.cache/encoding_hex.s\nQBE\t.cache/hare_lex.s\nQBE\t.cache/unix_tty.s\nQBE\t.cache/dirs.s\nAS\t.cache/encoding_hex.o\nHAREC\t.cache/hare_ast.ssa\nAS\t.cache/unix_tty.o\nAS\t.cache/dirs.o\nQBE\t.cache/getopt.s\nAS\t.cache/getopt.o\nQBE\t.cache/hare_ast.s\nHAREC\t.cache/hare_parse.ssa\nAS\t.cache/hare_lex.o\nHAREC\t.cache/hare_unparse.ssa\nAS\t.cache/hare_ast.o\nQBE\t.cache/unix_signal.s\nAS\t.cache/unix_signal.o\nHAREC\t.cache/os_exec.ssa\nQBE\t.cache/os_exec.s\nQBE\t.cache/hare_parse.s\nAS\t.cache/os_exec.o\nAS\t.cache/hare_parse.o\nQBE\t.cache/hare_unparse.s\nHAREC\t.cache/hare_module.ssa\nQBE\t.cache/hare_module.s\nHAREC\t.cache/cmd_hare_build.ssa\nQBE\t.cache/cmd_hare_build.s\nHAREC\t.cache/cmd_hare.ssa\nQBE\t.cache/cmd_hare.s\nAS\t.cache/cmd_hare_build.o\nAS\t.cache/cmd_hare.o\nAS\t.cache/hare_module.o\nAS\t.cache/hare_unparse.o\nLD\t.bin/hare\nHARE\t.bin/hare-configured\nHARE\t.bin/haredoc\nrm .cache/time.s .cache/encoding_utf8.s .cache/hare_ast.s .cache/hare_lex.s .cache/crypto_sha256.s .cache/strings.s .cache/os.s .cache/io.s .cache/fmt.s .cache/dirs.s .cache/shlex.s .cache/cmd_hare_build.s .cache/encoding_hex.s .cache/format_elf.s .cache/unix.s .cache/sort_cmp.s .cache/sort.s .cache/strconv.s .cache/errors.s .cache/getopt.s .cache/math_random.s .cache/linux.s .cache/hash.s .cache/ascii.s .cache/fs.s .cache/bufio.s .cache/types.s .cache/types_c.s .cache/cmd_hare.s .cache/hare_parse.s .cache/path.s .cache/linux_vdso.s .cache/endian.s .cache/bytes.s .cache/os_exec.s .cache/crypto_math.s .cache/hare_unparse.s .cache/math.s .cache/hare_module.s .cache/unix_tty.s .cache/unix_signal.s .cache/memio.s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/292-w9_kreq6/prefix/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/292-w9_kreq6/home",
+        "TMPDIR": "${SCRATCH}/292-w9_kreq6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Evaluate native Hare build using the untouched source",
+      "command": [
+        "${SCRATCH}/292-w9_kreq6/harestd/.bin/hare",
+        "run",
+        "hello.ha"
+      ],
+      "cwd": "${SCRATCH}/292-w9_kreq6",
+      "timestamp_utc": "2026-11-18T19:53:07.045331+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/292-w9_kreq6/prefix/bin:${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/292-w9_kreq6/home",
+        "TMPDIR": "${SCRATCH}/292-w9_kreq6/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "HAREPATH": "${SCRATCH}/292-w9_kreq6/harestd"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#292 Hare/hello.ha": "b0990bab43f881cb1e61c66646d9805173d2ac663444ef1852f2b4f0daaffa7b"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://harelang.org/tutorials/introduction/",
+    "https://docs.harelang.org/fmt/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://c9x.me/compile/release/qbe-1.2.tar.xz",
+      "sha256": "a6d50eb952525a234bf76ba151861f73b7a382ac952d985f2b9af1df5368225d",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://git.sr.ht/~sircmpwn/harec/archive/0.26.0.tar.gz",
+      "sha256": "5581bc16dcf22969c7d33b0f2a9535ba37d4cf1bb39dec252e98ff2781175629",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://git.sr.ht/~sircmpwn/hare/archive/0.26.0.tar.gz",
+      "sha256": "525ee699bdbade390eb1e35525ab9b5b3032c5f42cddce49d9176bbdc9172d04",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "Hare 0.26.0 with QBE 1.2",
+  "reproduction_command": "hare run hello.ha",
+  "semantic_scope": "The official Hare compiler and standard library built the original console program, which printed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

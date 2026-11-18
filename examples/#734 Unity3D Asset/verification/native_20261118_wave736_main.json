@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "ordinal": 734,
+  "language": "Unity3D Asset",
+  "timestamp_utc": "2026-11-18T19:36:53.159267+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/734-nis2s9b3",
+      "timestamp_utc": "2026-11-18T19:36:53.243462+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/734-nis2s9b3/home",
+        "TMPDIR": "${SCRATCH}/734-nis2s9b3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/734-nis2s9b3/.venv/bin/python",
+        "unityparser==1.0.0"
+      ],
+      "cwd": "${SCRATCH}/734-nis2s9b3",
+      "timestamp_utc": "2026-11-18T19:36:53.287254+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 2 packages in 1.26s\n   Building pyyaml==5.1\n      Built pyyaml==5.1\nPrepared 2 packages in 1.91s\nInstalled 2 packages in 4ms\n + pyyaml==5.1\n + unityparser==1.0.0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/734-nis2s9b3/home",
+        "TMPDIR": "${SCRATCH}/734-nis2s9b3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/734-nis2s9b3/.venv/bin/python",
+        "check.py"
+      ],
+      "cwd": "${SCRATCH}/734-nis2s9b3",
+      "timestamp_utc": "2026-11-18T19:36:56.641106+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/734-nis2s9b3/home",
+        "TMPDIR": "${SCRATCH}/734-nis2s9b3/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#734 Unity3D Asset/hello.unity": "4f57920d6e50f323b6acad063bf4979a384959b4e90e74d0103dd6ae5a87c4b5"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "0e481234c35012ee4dadb4e06316b1183c4a983c1d02dace1db0442aeaf4266f",
+      "content_utf8": "from unityparser import UnityDocument\nimport importlib.metadata\ndoc = UnityDocument.load_yaml(\"hello.unity\")\nobjects=doc.filter(class_names=(\"GameObject\",))\ntransforms=doc.filter(class_names=(\"Transform\",))\nassert len(objects)==len(transforms)==1\nassert str(objects[0].anchor) == str(transforms[0].m_GameObject[\"fileID\"])\nassert str(transforms[0].anchor) == str(objects[0].m_Component[0][\"component\"][\"fileID\"])\nassert objects[0].m_Name == \"Hello, World!\"\nprint(objects[0].m_Name)\n"
+    }
+  },
+  "sources": [
+    "https://docs.unity3d.com/Manual/FormatDescription.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "UnityParser 1.0.0 compatible Unity YAML document reader",
+  "reproduction_command": "python check.py",
+  "semantic_scope": "The Unity-specific reader resolved both serialized Unity object types and their reciprocal local file IDs, then read back the exact GameObject name from the original asset.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,16 @@
 # #292 Hare
 
+## Verified on November 18, 2026
+
+The official Hare compiler and standard library built the original console program, which printed the greeting.
+
+Run `hare run hello.ha`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ha` | [hello.ha](hello.ha) created; verification pending |
+| `.ha` | [hello.ha](hello.ha) Syntax and behavior verified |
+
+</details>

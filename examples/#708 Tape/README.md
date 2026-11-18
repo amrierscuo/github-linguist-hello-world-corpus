@@ -1,5 +1,18 @@
 # #708 Tape
 
+## Verified on November 18, 2026
+
+VHS used the unchanged tape to drive an isolated shell and recorded the actual terminal. The final frame contained the greeting as its own stdout line.
+
+Run `VHS_BROWSER_PATH=<portable headless shell> vhs hello.tape; OCR final frame`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +51,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.tape` | [hello.tape](hello.tape) syntax verified |
+| `.tape` | [hello.tape](hello.tape) Syntax and behavior verified |
+
+</details>

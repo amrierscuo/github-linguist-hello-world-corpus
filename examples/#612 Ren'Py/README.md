@@ -1,5 +1,18 @@
 # #612 Ren'Py
 
+## Verified on November 18, 2026
+
+RenPy processed the unchanged story. A small test callback observed the exact dialogue text received by the engine at the original start label.
+
+Run `xvfb-run -a renpy.sh <scratch project>`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Ren'Py`, tipo `programming`, language_id `322`.
 
 Show greeting as a dialogue at the start point of an original Ren’Py project.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.rpy` | [script.rpy](game/script.rpy) created; verification pending |
+| `.rpy` | [script.rpy](game/script.rpy) Syntax and behavior verified |
+
+</details>

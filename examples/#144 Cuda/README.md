@@ -1,5 +1,16 @@
 # #144 Cuda
 
+## Verified on November 18, 2026
+
+Compiled unchanged with the official NVIDIA compiler and executed on the WSL-mapped NVIDIA GPU, where the kernel printed the greeting and cudaDeviceSynchronize succeeded.
+
+Run `hello `.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
 ## Goal
@@ -44,3 +55,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.cu` | [hello.cu](hello.cu), [consumer.cu](variants/ext-cuh-2e637568/consumer.cu) created; verification pending |
 | `.cuh` | [hello.cuh](variants/ext-cuh-2e637568/hello.cuh) created; verification pending |
+
+</details>

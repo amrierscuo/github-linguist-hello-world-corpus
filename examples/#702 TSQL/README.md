@@ -1,5 +1,16 @@
 # #702 TSQL
 
+## Verified on November 18, 2026
+
+The standalone compatible SQL engine ran the original T-SQL declaration and expression against an empty local context and returned one exact greeting.
+
+Run `node run.cjs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sql` | [hello.sql](hello.sql) created; verification pending |
+| `.sql` | [hello.sql](hello.sql) Syntax and behavior verified |
+
+</details>

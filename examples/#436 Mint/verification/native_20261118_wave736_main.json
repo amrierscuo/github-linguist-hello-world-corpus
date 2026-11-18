@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "ordinal": 436,
+  "language": "Mint",
+  "timestamp_utc": "2026-11-18T19:38:43.804752+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the genuine Mint CLI version",
+      "command": [
+        "${TOOL_CACHE}/tools/mint-0.29.0/mint-0.29.0-linux-x86_64",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/436-iv4tfegk",
+      "timestamp_utc": "2026-11-18T19:38:43.942131+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Mint - Help\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nUsage:\n  ${TOOL_CACHE}/tools/mint-0.29.0/mint-0.29.0-linux-x86_64 [flags...] [arg...]\n\nMint Programming Language\n\nFlags:\n  --help   # Displays help for the current command.\n\nSubcommands:\n  build    # Builds the project for production.\n  docs     # Generates API Documentation.\n  format   # Formats \"*.mint\" files.\n  init     # Initializes a new project.\n  install  # Installs dependencies.\n  lint     # Lints the project for syntax and type errors.\n  start    # Starts the development server.\n  test     # Runs the tests defined for the project.\n  tool     # Miscellaneous Tools\n  version  # Shows version.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nAll done in 31μs!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/436-iv4tfegk/home",
+        "TMPDIR": "${SCRATCH}/436-iv4tfegk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Check the unchanged project with the current Mint CLI",
+      "command": [
+        "${TOOL_CACHE}/tools/mint-0.29.0/mint-0.29.0-linux-x86_64",
+        "build"
+      ],
+      "cwd": "${SCRATCH}/436-iv4tfegk",
+      "timestamp_utc": "2026-11-18T19:38:43.958571+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 1,
+      "stdout": "Mint - Building for production\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n░ ERROR (TEST_DIRECTORIES_EMPTY) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n\nThe test-directories field lists all directories (relative to the mint.json \nfile) which contain the test files of the application. \n\nThe test-directories array should not be empty, but it is: \n\n   ┌ mint.json:6:23\n   ├──────────────────────────\n  2│   \"name\": \"hello-world\",\n  3│   \"source-directories\": [\n  4│     \"source\"\n  5│   ],\n  6│   \"test-directories\": []\n   │                       ⌃\n  7│ }\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nThere was an error, exiting...\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/436-iv4tfegk/home",
+        "TMPDIR": "${SCRATCH}/436-iv4tfegk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the unchanged Mint application",
+      "command": [
+        "${TOOL_CACHE}/tools/mint-0.29.0/mint-0.29.0-linux-x86_64",
+        "build"
+      ],
+      "cwd": "${SCRATCH}/436-iv4tfegk",
+      "timestamp_utc": "2026-11-18T19:38:44.023264+00:00",
+      "timeout_seconds": 115,
+      "exit_code": 0,
+      "stdout": "Mint - Building for production\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚙ Clearing the \"dist\" directory... 40μs\n⚙ Building... 343μs\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nBundle size: 55.4KB\nFiles: 5\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nAll done in 126.653ms!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/436-iv4tfegk/home",
+        "TMPDIR": "${SCRATCH}/436-iv4tfegk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Provision a headless DOM for the compiled browser code",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "jsdom@26.1.0",
+        "esbuild@0.25.10"
+      ],
+      "cwd": "${SCRATCH}/436-iv4tfegk",
+      "timestamp_utc": "2026-11-18T19:38:44.220074+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "\nadded 41 packages in 19s\n",
+      "stderr": "npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/436-iv4tfegk/home",
+        "TMPDIR": "${SCRATCH}/436-iv4tfegk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "render.cjs"
+      ],
+      "cwd": "${SCRATCH}/436-iv4tfegk",
+      "timestamp_utc": "2026-11-18T19:39:05.489760+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/436-iv4tfegk/home",
+        "TMPDIR": "${SCRATCH}/436-iv4tfegk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${TOOL_CACHE}/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#436 Mint/source/Main.mint": "9b66fcc5521d3bdfdcd23a95991aeabfa1d6b9e798e23399c76270eeadf2d41b",
+    "examples/#436 Mint/mint.json": "15976f0ba2a7c8b4ae788941b861d4033a333c97aa01b27f1a94c78a8f8fed4e"
+  },
+  "fixture_sha256": {
+    "render.cjs": {
+      "sha256": "0aa2f6f825b6ab064c6d2cb9418920e43ca956468590f5c6d4783ff0c77aaafb",
+      "content_utf8": "const fs=require(\"node:fs\"),path=require(\"node:path\");\nconst {JSDOM}=require(\"jsdom\");\nconst markup=fs.readFileSync(\"dist/index.html\",\"utf8\");\nconst dom=new JSDOM(markup,{url:\"http://localhost/\",runScripts:\"outside-only\",pretendToBeVisual:true});\nconst win=dom.window;\nconst out=require(\"esbuild\").buildSync({entryPoints:[\"./dist/__mint__/main.js\"],bundle:true,write:false,format:\"iife\",platform:\"browser\"});\nwin.eval(out.outputFiles[0].text);\nsetTimeout(()=>{\n const p=[...win.document.querySelectorAll(\"p\")].find(n=>n.textContent.trim()===\"Hello, World!\");\n if(!p){console.error(win.document.body.innerHTML);process.exit(2);}\n console.log(p.textContent.trim());dom.window.close();\n},500);\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Mint Main component",
+      "url": "https://api.mint-lang.com/guide/getting-started/the-main-component"
+    },
+    {
+      "title": "Mint implementazione",
+      "url": "https://github.com/mint-lang/mint"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/mint-lang/mint/releases/download/0.29.0/mint-0.29.0-linux-x86_64",
+      "name": "mint-0.29.0-linux-x86_64",
+      "sha256": "24c45acd79a957f3788798b4f090869ac150fa3c00fb4754f9e0181957f8dcf1",
+      "release": "0.29.0"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#436 Mint/mint.json",
+      "original_sha256": "d19f23e257fd8e1805164cbc5304bd44f15b1306e7372986729ef6cf239d0297",
+      "tested_sha256": "15976f0ba2a7c8b4ae788941b861d4033a333c97aa01b27f1a94c78a8f8fed4e",
+      "staged_file": "work/native_target736_20261118/corrected/436/mint.json",
+      "original_fragment": "\"test-directories\": []",
+      "replacement": "\"test-directories\": [\"tests\"]"
+    }
+  ],
+  "toolchain": "Mint - Help\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nUsage:\n  ${TOOL_CACHE}/tools/mint-0.29.0/mint-0.29.0-linux-x86_64 [flags...] [arg...]\n\nMint Programming Language\n\nFlags:\n  --help   # Displays help for the current command.\n\nSubcommands:\n  build    # Builds the project for production.\n  docs     # Generates API Documentation.\n  format   # Formats \"*.mint\" files.\n  init     # Initializes a new project.\n  install  # Installs dependencies.\n  lint     # Lints the project for syntax and type errors.\n  start    # Starts the development server.\n  test     # Runs the tests defined for the project.\n  tool     # Miscellaneous Tools\n  version  # Shows version.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nAll done in 31μs!",
+  "reproduction_command": "mint build; node render.cjs with jsdom",
+  "semantic_scope": "Mint compiled the original component, and evaluating the emitted browser code in a headless DOM rendered the expected paragraph.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#436 Mint/verification/native_20261118_wave736_prior_attempt.json"
+}

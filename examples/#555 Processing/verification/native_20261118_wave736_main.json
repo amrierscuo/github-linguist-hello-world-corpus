@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "ordinal": 555,
+  "language": "Processing",
+  "timestamp_utc": "2026-11-18T19:33:33.133776+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Read the released Processing CLI options without a desktop session",
+      "command": [
+        "${TOOL_CACHE}/tools/processing-processing-1435-4.5.7/dist/Processing/bin/Processing",
+        "cli",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/555-xucu6n0x",
+      "timestamp_utc": "2026-11-18T19:33:39.619581+00:00",
+      "timeout_seconds": 20,
+      "exit_code": 0,
+      "stdout": "\nCommand line edition for Processing 4.5.7 (Java Mode)\n\n--help               Show this help text. Congratulations.\n\n--sketch=<name>      Specify the sketch folder (required)\n--output=<name>      Specify the output folder (optional and\n                     cannot be the same as the sketch folder.)\n\n--force              The sketch will not build if the output\n                     folder already exists, because the contents\n                     will be replaced. This option erases the\n                     folder first. Use with extreme caution!\n\n--build              Preprocess and compile a sketch into .class files.\n--run                Preprocess, compile, and run a sketch.\n--present            Preprocess, compile, and run a sketch in presentation mode.\n\n--export             Export an application.\n--variant            Specify the platform and architecture (Export only).\n--no-java            Do not embed Java.\n\nStarting with 4.0, the --platform option has been removed\nbecause of the variety of platforms and architectures now available.\nUse the --variant option instead, for instance:\n\nvariant        platform\n-------------  ---------------------------\nmacos-x86_64   macOS (Intel 64-bit)\nmacos-aarch64  macOS (Apple Silicon)\nwindows-amd64  Windows (Intel 64-bit)\nlinux-amd64    Linux (Intel 64-bit)\nlinux-arm      Linux (Raspberry Pi 32-bit)\nlinux-aarch64  Linux (Raspberry Pi 64-bit)\n\nThe --build, --run, --present, or --export must be the final parameter\npassed to Processing. Arguments passed following one of those four will\nbe passed through to the sketch itself, and therefore available to the\nsketch via the 'args' field. To pass options understood by PApplet.main(),\nwrite a custom main() method so that the preprocessor does not add one.\nhttps://github.com/processing/processing4/wiki/Command-Line\n\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Duser.home=${SCRATCH}/555-xucu6n0x/home\nNov 18, 2026 8:33:40 PM java.util.prefs.FileSystemPreferences$1 run\nINFO: Created user preferences directory.\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/555-xucu6n0x/home",
+        "TMPDIR": "${SCRATCH}/555-xucu6n0x/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "LIBGL_ALWAYS_SOFTWARE": "true",
+        "GALLIUM_DRIVER": "llvmpipe",
+        "JAVA_TOOL_OPTIONS": "-Duser.home=${SCRATCH}/555-xucu6n0x/home"
+      }
+    },
+    {
+      "label": "Run the exact original PDE in the published console launcher",
+      "command": [
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 640x480x24 -nolisten tcp",
+        "${TOOL_CACHE}/tools/processing-processing-1435-4.5.7/dist/Processing/bin/Processing",
+        "cli",
+        "--sketch=${SCRATCH}/555-xucu6n0x/Hello",
+        "--run"
+      ],
+      "cwd": "${SCRATCH}/555-xucu6n0x",
+      "timestamp_utc": "2026-11-18T19:33:41.213086+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "Picked up JAVA_TOOL_OPTIONS: -Duser.home=${SCRATCH}/555-xucu6n0x/home\nPicked up JAVA_TOOL_OPTIONS: -Duser.home=${SCRATCH}/555-xucu6n0x/home\nHello, World!\nFinished.\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/555-xucu6n0x/home",
+        "TMPDIR": "${SCRATCH}/555-xucu6n0x/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "LIBGL_ALWAYS_SOFTWARE": "true",
+        "GALLIUM_DRIVER": "llvmpipe",
+        "JAVA_TOOL_OPTIONS": "-Duser.home=${SCRATCH}/555-xucu6n0x/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#555 Processing/Hello/Hello.pde": "506b773351e769384409c35dae9f25df4e8188976e35b9215b729c0df7203111"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://processing.org/reference/println_.html",
+    "https://processing.org/reference/exit_.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7/processing-4.5.7-linux-x64-portable.zip",
+      "name": "processing-4.5.7-linux-x64-portable.zip",
+      "sha256": "b3f04e18f5b3012662663c49558bf05504fcfb7fc73db7e6f558196c00fe92e0",
+      "release": "processing-1435-4.5.7"
+    }
+  ],
+  "bundle_executables": [
+    "Processing/bin/Processing"
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "xvfb",
+      "version": "2:21.1.12-1ubuntu1.9",
+      "filename": "pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb",
+      "sha256": "2011271eabcc2eb460e99995c5ef26e46633e87d04f570e305b62f178f7b452c",
+      "bytes": 877038,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb"
+    },
+    {
+      "name": "libgl1",
+      "version": "1.7.0-1build1",
+      "filename": "pool/main/libg/libglvnd/libgl1_1.7.0-1build1_amd64.deb",
+      "sha256": "e2b2fadeb883f073b566ad1d7874f6702397514d258473e96152a89d4d502a09",
+      "bytes": 101990,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/libg/libglvnd/libgl1_1.7.0-1build1_amd64.deb"
+    },
+    {
+      "name": "libgtk-3-0t64",
+      "version": "3.24.41-4ubuntu1.3",
+      "filename": "pool/main/g/gtk+3.0/libgtk-3-0t64_3.24.41-4ubuntu1.3_amd64.deb",
+      "sha256": "fd61e308234b12d243160798216d0efcb605d83af185bf3414ac99c2ed5166fc",
+      "bytes": 2913080,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/libgtk-3-0t64_3.24.41-4ubuntu1.3_amd64.deb"
+    }
+  ],
+  "toolchain": "Processing processing-1435-4.5.7",
+  "reproduction_command": "xvfb-run -a processing-java --sketch=<directory>/Hello --run",
+  "semantic_scope": "The official Processing compiler built the untouched sketch and its original setup ran in an offscreen display, printed the greeting and exited.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,16 @@
 # #226 GCC Machine Description
 
+## Verified on November 18, 2026
+
+The genuine GCC machine-description generator read the original definition and emitted thirteen C constants. The emitted bytes decode to the exact greeting.
+
+Run `build/genconstants hello.md`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.md` | [hello.md](hello.md) created; verification pending |
+| `.md` | [hello.md](hello.md) Syntax and behavior verified |
+
+</details>

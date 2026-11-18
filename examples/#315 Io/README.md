@@ -1,5 +1,16 @@
 # #315 Io
 
+## Verified on November 18, 2026
+
+The native Io runtime sent println to the string object in the unchanged source and emitted the greeting.
+
+Run `io hello.io`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Send println to a string in the runtime I.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.io` | [hello.io](hello.io) created; verification pending |
+| `.io` | [hello.io](hello.io) Syntax and behavior verified |
+
+</details>

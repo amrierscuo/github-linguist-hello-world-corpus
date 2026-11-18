@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "ordinal": 433,
+  "language": "MiniYAML",
+  "timestamp_utc": "2026-11-18T20:01:27.517632+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Parse the original with the published OpenRA MiniYAML-compatible reader",
+      "command": [
+        "${WORKSPACE}/work/rust_portable/runtime/bin/cargo",
+        "run",
+        "--quiet"
+      ],
+      "cwd": "${SCRATCH}/433-h3q7vh3d",
+      "timestamp_utc": "2026-11-18T20:01:28.306768+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/rust_portable/runtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/433-h3q7vh3d/home",
+        "TMPDIR": "${SCRATCH}/433-h3q7vh3d/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUSTC": "${WORKSPACE}/work/rust_portable/runtime/bin/rustc",
+        "CARGO_HOME": "${TOOL_CACHE}/tools/cargo-quick",
+        "CARGO_TARGET_DIR": "${TOOL_CACHE}/tools/cargo-quick-target",
+        "CARGO_BUILD_JOBS": "3"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#433 MiniYAML/hello.yaml": "a02b7e15969b17e696b80411283911ddc48042f60463ac8024881b8df9d586aa"
+  },
+  "fixture_sha256": {
+    "Cargo.toml": {
+      "sha256": "914ce31ef21fbbbd687bcf48e15cf090be52020799524e2ff2a5c13ed6238347",
+      "content_utf8": "[package]\nname = \"corpus-openra-miniyaml\"\nversion = \"0.0.0\"\nedition = \"2021\"\n[dependencies]\ncnc-formats = { version = \"=0.1.0-alpha.5\", default-features = false, features = [\"miniyaml\"] }\n"
+    },
+    "src/main.rs": {
+      "sha256": "07cd31cf3f72f1a221d069d2a1a440d054255249e318ad2f210fa068fc772545",
+      "content_utf8": "fn main() {\n    let original = std::fs::read_to_string(\"hello.yaml\").unwrap();\n    let doc = cnc_formats::miniyaml::MiniYamlDoc::parse_str(&original).unwrap();\n    let [greeting] = doc.nodes() else { panic!(\"expected one root\"); };\n    let [text] = greeting.children() else { panic!(\"expected one child\"); };\n    assert_eq!(greeting.key(), \"Greeting\");\n    assert_eq!(text.key(), \"Text\");\n    assert!(text.children().is_empty());\n    println!(\"{}\", text.value().unwrap());\n}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "OpenRA MiniYaml",
+      "url": "https://www.openra.net/book/modding/miniyaml/index.html"
+    },
+    {
+      "title": "OpenRA parser originale",
+      "url": "https://github.com/OpenRA/OpenRA/blob/bleed/OpenRA.Game/MiniYaml.cs"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain": "cnc-formats 0.1.0-alpha.5 OpenRA MiniYAML-compatible reader",
+  "reproduction_command": "cargo run --quiet with the recorded reader fixture",
+  "semantic_scope": "The dedicated OpenRA-style MiniYAML reader materialized the exact original file as a two-level tree. Its Greeting/Text value matched the full greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,5 +1,18 @@
 # #137 Cool
 
+## Verified on November 18, 2026
+
+The Stanford Cool compiler translated the unchanged sample and the MIPS simulator executed the original print expression.
+
+Run `coolc -o greeting.s hello.cl; spim -file greeting.s`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Cool`, tipo `programming`, `language_id: 68`.
 
 Define the Main class of Cool language, inherit IO and print greetings through out_string and String.concat.
@@ -47,4 +60,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.cl` | [hello.cl](hello.cl) created; verification pending |
+| `.cl` | [hello.cl](hello.cl) Syntax and behavior verified |
+
+</details>

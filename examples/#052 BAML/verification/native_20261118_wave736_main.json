@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "ordinal": 52,
+  "language": "BAML",
+  "timestamp_utc": "2026-11-18T20:01:27.516727+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/052-mzz29hcn",
+      "timestamp_utc": "2026-11-18T20:01:27.685673+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/052-mzz29hcn/home",
+        "TMPDIR": "${SCRATCH}/052-mzz29hcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/052-mzz29hcn/.venv/bin/python",
+        "baml-py==0.226.2",
+        "pydantic==2.12.5"
+      ],
+      "cwd": "${SCRATCH}/052-mzz29hcn",
+      "timestamp_utc": "2026-11-18T20:01:27.737136+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 6 packages in 9ms\nInstalled 6 packages in 28ms\n + annotated-types==0.8.0\n + baml-py==0.226.2\n + pydantic==2.12.5\n + pydantic-core==2.41.5\n + typing-extensions==4.16.0\n + typing-inspection==0.4.5\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/052-mzz29hcn/home",
+        "TMPDIR": "${SCRATCH}/052-mzz29hcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Inspect the native BAML SDK call/context contract",
+      "command": [
+        "${SCRATCH}/052-mzz29hcn/.venv/bin/python",
+        "check.py"
+      ],
+      "cwd": "${SCRATCH}/052-mzz29hcn",
+      "timestamp_utc": "2026-11-18T20:01:27.969049+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "None\nNone\nNone\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/052-mzz29hcn/home",
+        "TMPDIR": "${SCRATCH}/052-mzz29hcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Evaluate BAML prompt and typed output with a synthetic local provider",
+      "command": [
+        "${SCRATCH}/052-mzz29hcn/.venv/bin/python",
+        "local_baml.py"
+      ],
+      "cwd": "${SCRATCH}/052-mzz29hcn",
+      "timestamp_utc": "2026-11-18T20:01:28.203644+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "2026-11-18T21:01:28.936 [BAML INFO] Function Hello:\n    Client: Fixture (local-fixture) - 1ms. StopReason: stop. Tokens(in/out): unknown/unknown\n    ---PROMPT---\n    system: Return the exact greeting Hello, World! as the message field.\n    This is a greeting for World.\n    Answer in JSON using this schema:\n    {\n      message: \"Hello, World!\",\n    }\n    \n    ---LLM REPLY---\n    {\"message\": \"Hello, World!\"}\n    ---Parsed Response (class Greeting)---\n    {\n      \"message\": \"Hello, World!\"\n    }\n2026-11-18T21:01:28.938 [BAML WARN] Function Hello:\n    Client: Fixture (local-fixture) - 1ms. StopReason: stop. Tokens(in/out): unknown/unknown\n    ---PROMPT---\n    system: Return the exact greeting Hello, World! as the message field.\n    This is a greeting for Other.\n    Answer in JSON using this schema:\n    {\n      message: \"Hello, World!\",\n    }\n    \n    ---LLM REPLY---\n    {\"message\": \"Unexpected\"}\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/052-mzz29hcn/home",
+        "TMPDIR": "${SCRATCH}/052-mzz29hcn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#052 BAML/baml_src/generators.baml": "be22bbb278e73958f8d5e60561fb2dfb4a4251fbf1085fc9adb230c3699fe3f5",
+    "examples/#052 BAML/baml_src/hello.baml": "00d303807404f5e1218ac45e7f3d92108b22999370a03b365ce1645c5251e1c5"
+  },
+  "fixture_sha256": {
+    "check.py": {
+      "sha256": "def46cb3ad2ca8932983d40b563376e200f7ad4e9109f80a05f72eeb514e3f6e",
+      "content_utf8": "import inspect\nfrom baml_py import BamlRuntime\nprint(BamlRuntime.from_files.__doc__)\nprint(BamlRuntime.call_function_sync.__doc__)\nprint(BamlRuntime.create_context_manager.__doc__)\n"
+    },
+    "local_baml.py": {
+      "sha256": "d7affc2206bbc914238f84af61d339515dff4aa61ee4bc11ad12e1ca6160f1e1",
+      "content_utf8": "import json, threading, os\nfrom http.server import BaseHTTPRequestHandler, HTTPServer\nfrom baml_py import BamlRuntime, ClientRegistry\nfrom pydantic import BaseModel\nfrom typing import Literal\nfrom types import ModuleType\nclass Greeting(BaseModel):\n    message: Literal[\"Hello, World!\"]\nmodels=ModuleType(\"models\")\nmodels.Greeting=Greeting\nenums=ModuleType(\"enums\")\nfrom pathlib import Path\nrequests=[]\nclass Handler(BaseHTTPRequestHandler):\n def log_message(self,*args): pass\n def do_POST(self):\n  request=json.loads(self.rfile.read(int(self.headers[\"Content-Length\"])))\n  requests.append(request)\n  body=json.dumps({\"id\":\"corpus-fixture\",\"object\":\"chat.completion\",\"created\":0,\"model\":\"local-fixture\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":json.dumps({\"message\":\"Hello, World!\" if len(requests)==1 else \"Unexpected\"})},\"finish_reason\":\"stop\"}]}).encode()\n  self.send_response(200)\n  self.send_header(\"Content-Type\",\"application/json\")\n  self.send_header(\"Content-Length\",str(len(body)))\n  self.end_headers()\n  self.wfile.write(body)\nsrv=HTTPServer((\"127.0.0.1\",0),Handler)\nthreading.Thread(target=srv.serve_forever,daemon=True).start()\nregistry=ClientRegistry()\nregistry.add_llm_client(\"Fixture\",\"openai-generic\",{\"base_url\":f\"http://127.0.0.1:{srv.server_port}/v1\",\"api_key\":\"synthetic-test\",\"model\":\"local-fixture\"})\nregistry.set_primary(\"Fixture\")\nruntime=BamlRuntime.from_files(\".\", {name:Path(name).read_text() for name in (\"hello.baml\",\"generators.baml\")}, {})\nctx=runtime.create_context_manager()\nvalue=runtime.call_function_sync(\"Hello\",{\"name\":\"World\"},ctx,None,registry,[],{},{})\nassert value.is_ok(),value.unstable_internal_repr()\nparsed=value.cast_to(enums,models,models,False,runtime)\nassert parsed.message==\"Hello, World!\", repr(parsed)\nassert len(requests)==1 and \"This is a greeting for World.\" in json.dumps(requests)\ntry:\n bad=runtime.call_function_sync(\"Hello\",{\"name\":\"Other\"},ctx,None,registry,[],{},{})\n bad.cast_to(enums,models,models,False,runtime)\nexcept Exception as error:\n assert \"Unexpected\" in str(error) or \"literal\" in str(error).lower(), repr(error)\nelse:\n raise AssertionError(\"BAML accepted a wrong string literal\")\nassert \"This is a greeting for Other.\" in json.dumps(requests[1])\nprint(parsed.message)\nsrv.shutdown()\n"
+    }
+  },
+  "sources": [
+    "https://docs.boundaryml.com/ref/baml-cli/generate",
+    "https://github.com/BoundaryML/baml/blob/canary/fern/03-reference/baml/types.mdx",
+    "https://docs.boundaryml.com/ref/baml/test"
+  ],
+  "previous_verification_log": "examples/#052 BAML/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "BoundaryML baml-py 0.226.2",
+  "reproduction_command": "python local_baml.py",
+  "semantic_scope": "The official native BAML SDK rendered prompts from the original BAML definitions, called an isolated synthetic HTTP fixture, parsed the valid typed response and rejected a different string literal. The check covers prompt interpolation and response validation.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

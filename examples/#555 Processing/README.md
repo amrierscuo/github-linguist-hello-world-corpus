@@ -1,5 +1,16 @@
 # #555 Processing
 
+## Verified on November 18, 2026
+
+The official Processing compiler built the untouched sketch and its original setup ran in an offscreen display, printed the greeting and exited.
+
+Run `xvfb-run -a processing-java --sketch=<directory>/Hello --run`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.pde` | [Hello.pde](Hello/Hello.pde) created; verification pending |
+| `.pde` | [Hello.pde](Hello/Hello.pde) Syntax and behavior verified |
+
+</details>

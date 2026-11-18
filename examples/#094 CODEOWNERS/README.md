@@ -1,5 +1,18 @@
 # #094 CODEOWNERS
 
+## Verified on November 18, 2026
+
+The original local ownership matcher applied the exact repository path rule and found the illustrative email for hello.txt. The unmatched path returned no owners. The example uses a deliberately illustrative address.
+
+Run `python verify.py with codeowners==0.9.0`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/result.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Join in an example CODEOWNERS the route / hello.txt to the owner hello@ example.invalid, and check the match with a local parser.
 
 ## Toolchain
@@ -40,3 +53,5 @@ Remaining requirements:
 
 - [https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
 - [https://github.com/sbdchd/codeowners](https://github.com/sbdchd/codeowners)
+
+</details>

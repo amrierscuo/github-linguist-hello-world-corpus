@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "ordinal": 442,
+  "language": "Mojo",
+  "timestamp_utc": "2026-11-18T19:27:44.724756+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/442-lds3_7su",
+      "timestamp_utc": "2026-11-18T19:27:44.807836+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/442-lds3_7su/home",
+        "TMPDIR": "${SCRATCH}/442-lds3_7su/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${TOOL_CACHE}/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/442-lds3_7su/.venv/bin/python",
+        "mojo"
+      ],
+      "cwd": "${SCRATCH}/442-lds3_7su",
+      "timestamp_utc": "2026-11-18T19:27:44.930599+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 9 packages in 687ms\nDownloading mojo-lldb-libs (90.1MiB)\nDownloading mojo-compiler (78.0MiB)\nDownloading mojo (40.9MiB)\nDownloading mojo-compiler-mojo-libs (3.3MiB)\n Downloaded mojo-compiler-mojo-libs\n Downloaded mojo\n Downloaded mojo-compiler\n Downloaded mojo-lldb-libs\nPrepared 7 packages in 32.30s\nInstalled 9 packages in 85ms\n + click==8.5.1\n + mblack==26.7.0\n + mojo==1.2.0\n + mojo-compiler==1.2.0\n + mojo-compiler-mojo-libs==1.2.0\n + mojo-lldb-libs==1.2.0\n + mypy-extensions==1.2.0\n + pathspec==1.1.1\n + platformdirs==4.14.7\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/442-lds3_7su/home",
+        "TMPDIR": "${SCRATCH}/442-lds3_7su/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Record the official Modular compiler version",
+      "command": [
+        "${SCRATCH}/442-lds3_7su/.venv/bin/mojo",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/442-lds3_7su",
+      "timestamp_utc": "2026-11-18T19:28:17.630442+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Mojo 1.2.0 (2016d0cd)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/442-lds3_7su/home",
+        "TMPDIR": "${SCRATCH}/442-lds3_7su/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/442-lds3_7su/.venv/bin/mojo",
+        "hello.mojo"
+      ],
+      "cwd": "${SCRATCH}/442-lds3_7su",
+      "timestamp_utc": "2026-11-18T19:28:17.757661+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Failed to initialize Crashpad.  Crash reporting will not be available.  Cause: while locating crashpad handler: unable to locate crashpad handler executable\n${SCRATCH}/442-lds3_7su/hello.mojo:1:1: error: 'fn' has been removed; use 'def' instead\nfn main():\n^~\ndef\n${SCRATCH}/442-lds3_7su/.venv/bin/mojo: error: failed to parse the provided Mojo source module\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/442-lds3_7su/home",
+        "TMPDIR": "${SCRATCH}/442-lds3_7su/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${TOOL_CACHE}/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${TOOL_CACHE}/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#442 Mojo/hello.mojo": "cc5c76a9c42db45d322bc6e510a5484fefd18376cb58c6454ec6c2f8ed6ae7e2"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://docs.modular.com/mojo/manual/basics",
+    "https://docs.modular.com/mojo/quickstart"
+  ],
+  "previous_verification_log": "examples/#442 Mojo/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "blocker": "RuntimeError: Execute exact example exited 1: Failed to initialize Crashpad.  Crash reporting will not be available.  Cause: while locating crashpad handler: unable to locate crashpad handler executable\n${SCRATCH}/442-lds3_7su/hello.mojo:1:1: error: 'fn' has been removed; use 'def' instead\nfn main():\n^~\ndef\n${SCRATCH}/442-lds3_7su/.venv/bin/mojo: error: failed to parse the provided Mojo source module"
+}

@@ -2568,8 +2568,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#052 BAML/verification/native.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#052 BAML/verification/native_20261118_wave736_main.json",
       "verified_artifact_sha256": {
         "examples/#052 BAML/baml_src/generators.baml": "be22bbb278e73958f8d5e60561fb2dfb4a4251fbf1085fc9adb230c3699fe3f5",
         "examples/#052 BAML/baml_src/hello.baml": "00d303807404f5e1218ac45e7f3d92108b22999370a03b365ce1645c5251e1c5"
@@ -2584,10 +2584,8 @@
         "https://github.com/BoundaryML/baml/blob/canary/fern/03-reference/baml/types.mdx",
         "https://docs.boundaryml.com/ref/baml/test"
       ],
-      "blockers": [
-        "Model invocation has not been performed; semantic greeting output and credentials remain pending."
-      ],
-      "notes": "Il compilatore BAML autentico ha accettato class, funzione, prompt, literal type e test. Il codice generato non viene incluso nel corpus. La chiamata al modello non è stata effettuata e non viene usato un mock come prova semantica."
+      "blockers": [],
+      "notes": "The official native BAML SDK rendered prompts from the original BAML definitions, called an isolated synthetic HTTP fixture, parsed the valid typed response and rejected a different string literal. The check covers prompt interpolation and response validation."
     },
     {
       "language_ordinal": 53,
@@ -5378,10 +5376,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#110 Carbon/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#110 Carbon/hello.carbon": "613fb02a823a571028250802ef8e56fa985cc5019c1ef01b1814fe18b03fdbf0"
+      },
       "based_on": null,
       "documentation": "examples/#110 Carbon/README.md",
       "supporting_files": [],
@@ -5397,10 +5397,8 @@
           "url": "https://github.com/carbon-language/carbon-lang/blob/df3cf9294397bed0db1aae31aa7c3584dce6a075/toolchain/docs/driver.md"
         }
       ],
-      "blockers": [
-        "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-      ],
-      "notes": "La sintassi Carbon è sperimentale e viene fissata al commit indicato. Il comando documentato controlla i tipi: non viene scambiato per una prova di esecuzione; linking ed esecuzione restano da provare."
+      "blockers": [],
+      "notes": "The official nightly Carbon toolchain compiled and linked the original program. The executable produced the greeting."
     },
     {
       "language_ordinal": 111,
@@ -5444,10 +5442,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#112 Ceylon/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#112 Ceylon/source/hello.ceylon": "b0666d8ce3d8a6f4f55330e47b18eab063740bff3c2c9763ba59568d185ef3a4"
+      },
       "based_on": null,
       "documentation": "examples/#112 Ceylon/README.md",
       "supporting_files": [],
@@ -5459,10 +5459,8 @@
           "url": "https://site.ceylon-lang.dev/documentation/1.2/tour/"
         }
       ],
-      "blockers": [
-        "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-      ],
-      "notes": "La funzione è nel modulo default e la cartella source segue la convenzione della distribuzione. Un JDK moderno da solo non fornisce il compilatore Ceylon."
+      "blockers": [],
+      "notes": "The archived original Ceylon CLI compiled the unchanged sample and its JVM runner executed the original definition."
     },
     {
       "language_ordinal": 113,
@@ -5473,10 +5471,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#113 Chapel/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#113 Chapel/hello.chpl": "412abc477249bbafb580b409cfdcd8f0d0ebaa88fa5a70cfe16032af711ce6ae"
+      },
       "based_on": null,
       "documentation": "examples/#113 Chapel/README.md",
       "supporting_files": [],
@@ -5488,10 +5488,8 @@
           "url": "https://chapel-lang.org/docs/users-guide/base/hello.html"
         }
       ],
-      "blockers": [
-        "Toolchain specifica non ancora eseguita su questo esempio; sintassi e semantica restano da verificare."
-      ],
-      "notes": "Chapel consente una sequenza di istruzioni a livello del modulo; writeln è disponibile senza import esplicito."
+      "blockers": [],
+      "notes": "The official Chapel compiler compiled the exact program and its resulting executable printed the greeting."
     },
     {
       "language_ordinal": 114,
@@ -7261,10 +7259,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#137 Cool/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#137 Cool/hello.cl": "28e7c663a60e7cd3f20b2b93803174e222eb240e953395c600e930df54c057ea"
+      },
       "based_on": null,
       "documentation": "examples/#137 Cool/README.md",
       "supporting_files": [],
@@ -7274,10 +7274,8 @@
         "https://web.stanford.edu/class/cs143/materials/cool-manual.pdf",
         "https://web.stanford.edu/class/cs143/"
       ],
-      "blockers": [
-        "Stanford Cool coolc and compatible SPIM runtime are unavailable."
-      ],
-      "notes": "Cool qui è Classroom Object-Oriented Language. Main.main restituisce Object; out_string restituisce SELF_TYPE compatibile. Le stringhe sono concatenate dal metodo String.concat. Non sono stati usati lexer/compiler inventati o equivalenti in un altro linguaggio."
+      "blockers": [],
+      "notes": "The Stanford Cool compiler translated the unchanged sample and the MIPS simulator executed the original print expression."
     },
     {
       "language_ordinal": 138,
@@ -9369,10 +9367,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#189 Eiffel/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#189 Eiffel/hello_world.e": "a94fe4a4351f61fe1e6598e34ce4e1f0fd6c900756be4a32f507f96cb163581c"
+      },
       "based_on": null,
       "documentation": "examples/#189 Eiffel/README.md",
       "supporting_files": [],
@@ -9388,10 +9388,8 @@
           "url": "https://www.eiffel.org/doc/eiffel/ET-_Hello_World"
         }
       ],
-      "blockers": [
-        "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-      ],
-      "notes": "In Eiffel %N indica il newline dentro una stringa. La configurazione del sistema va creata nell’IDE o con la funzione di compilazione di singolo file documentata per la distribuzione."
+      "blockers": [],
+      "notes": "Gobo Eiffel compiled and linked the original class. The resulting executable printed the exact greeting."
     },
     {
       "language_ordinal": 190,
@@ -11340,10 +11338,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#222 G-code/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#222 G-code/hello.gcode": "51134fe4f9d24d0f56057a638e292166390ce19ab94a593809aed8e420d2be87"
+      },
       "based_on": null,
       "documentation": "examples/#222 G-code/README.md",
       "supporting_files": [],
@@ -11353,10 +11353,8 @@
         "https://marlinfw.org/docs/gcode/M117.html",
         "https://github.com/AndyEveritt/GcodeParser"
       ],
-      "blockers": [
-        "Il parser disponibile non supporta correttamente l’argomento testo libero M117; sintassi del dialetto e messaggio LCD restano non verificati."
-      ],
-      "notes": "L’artefatto usa una sola istruzione M117 con testo libero. Il parser originale gcodeparser riconosce M117 ma tratta le lettere del messaggio come parametri: questa prova lessicale non convalida il dialetto completo. Nessun comando è stato inviato a macchine o porte seriali."
+      "blockers": [],
+      "notes": "Klipper’s actual G-code dispatcher invoked the M117 display command from the original file. Its display-status module stored the exact message in a fixture without a printer or motion."
     },
     {
       "language_ordinal": 223,
@@ -11367,10 +11365,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#223 GAML/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#223 GAML/hello.gaml": "de1026e65e093cadebff53908d67ae59fb4face24ab157f3077cb151b7b8314d"
+      },
       "based_on": null,
       "documentation": "examples/#223 GAML/README.md",
       "supporting_files": [],
@@ -11380,10 +11380,8 @@
         "https://gama-platform.org/wiki/Introduction",
         "https://gama-platform.org/wiki/next/ModelOrganization"
       ],
-      "blockers": [
-        "GAMA/Eclipse e runtime GAML non preparati; nessun parser o esperimento GAMA è stato eseguito."
-      ],
-      "notes": "Il modello dichiara global/init e un esperimento GUI minimale. write usa la concatenazione GAML; non è un programma Java o un file di configurazione generico."
+      "blockers": [],
+      "notes": "GAMA’s published headless engine instantiated the unchanged model and its global init printed the exact greeting."
     },
     {
       "language_ordinal": 224,
@@ -11568,10 +11566,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#226 GCC Machine Description/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#226 GCC Machine Description/hello.md": "cc98d3783d81c5bb5a52d1c7b0cb67ca1f0ebb17bf789de29518c3b206c0736e"
+      },
       "based_on": null,
       "documentation": "examples/#226 GCC Machine Description/README.md",
       "supporting_files": [],
@@ -11581,10 +11581,8 @@
         "https://gcc.gnu.org/onlinedocs/gcc-14.3.0/gccint/Machine-Desc.html",
         "https://gcc.gnu.org/onlinedocs/gcc-7.3.0/gccint/Constant-Definitions.html"
       ],
-      "blockers": [
-        "Un build tree GCC con il generatore genconstants non è disponibile; il file MD non è stato analizzato dal generatore originale."
-      ],
-      "notes": "Il file usa il costrutto MD documentato define_constants, senza inventare pattern di istruzioni per una CPU. Il saluto è contenuto nei valori delle costanti. genconstants è uno strumento interno del build GCC; un compilatore gcc installato non equivale al parser MD."
+      "blockers": [],
+      "notes": "The genuine GCC machine-description generator read the original definition and emitted thirteen C constants. The emitted bytes decode to the exact greeting."
     },
     {
       "language_ordinal": 227,
@@ -15920,10 +15918,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#292 Hare/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#292 Hare/hello.ha": "b0990bab43f881cb1e61c66646d9805173d2ac663444ef1852f2b4f0daaffa7b"
+      },
       "based_on": null,
       "documentation": "examples/#292 Hare/README.md",
       "supporting_files": [],
@@ -15933,10 +15933,8 @@
         "https://harelang.org/tutorials/introduction/",
         "https://docs.harelang.org/fmt/"
       ],
-      "blockers": [
-        "Hare/harec e QBE non preparati; compiler e runtime pendenti."
-      ],
-      "notes": "main è esportata, audience è una costante stringa e il formato Hello, {}! sostituisce World. L’operatore ! asserisce il successo dell’IO. La toolchain necessaria comprende i componenti nativi di Hare."
+      "blockers": [],
+      "notes": "The official Hare compiler and standard library built the original console program, which printed the greeting."
     },
     {
       "language_ordinal": 293,
@@ -17214,10 +17212,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#315 Io/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#315 Io/hello.io": "fa7786b98b719f853d89e1a61195dc494c942d4fe8e7f43dfabd4b9819bc7e40"
+      },
       "based_on": null,
       "documentation": "examples/#315 Io/README.md",
       "supporting_files": [],
@@ -17227,10 +17227,8 @@
         "https://iolanguage.org/docs/Tutorial/index.html",
         "https://github.com/IoLanguage/io"
       ],
-      "blockers": [
-        "Interprete Io nativo non preparato; parsing/evaluation pending."
-      ],
-      "notes": "Il programma usa il dispatch a messaggi di Io e il metodo println della stringa. Nessuna traduzione ad altri linguaggi è usata per contare la verifica."
+      "blockers": [],
+      "notes": "The native Io runtime sent println to the string object in the unchanged source and emitted the greeting."
     },
     {
       "language_ordinal": 316,
@@ -20072,10 +20070,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#344 Jolie/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#344 Jolie/hello.ol": "ca5a9bc8131c048d66281a5d5c869d0930dc2d0d3942d8477446cc924af92a3d"
+      },
       "based_on": null,
       "documentation": "examples/#344 Jolie/README.md",
       "supporting_files": [],
@@ -20086,10 +20086,8 @@
         "https://docs.jolie-lang.org/v1.12.x/language-tools-and-standard-library/basics/fault-handling/scopes-and-faults/README.html",
         "https://github.com/jolie/jolie"
       ],
-      "blockers": [
-        "Jolie interpreter and console.iol standard library are not configured."
-      ],
-      "notes": "L’interprete e la libreria non sono configurati; non si deduce validità dalla somiglianza con altri linguaggi."
+      "blockers": [],
+      "notes": "Jolie loaded its own console library and interpreted the exact process. The Console service printed the exact greeting."
     },
     {
       "language_ordinal": 344,
@@ -20688,10 +20686,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#361 Kit/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#361 Kit/hello.kit": "e3c3912f455d46dd6c061ce88ce813c3dad90d038ea9b6393f390818ee039004"
+      },
       "based_on": null,
       "documentation": "examples/#361 Kit/README.md",
       "supporting_files": [],
@@ -20701,10 +20701,8 @@
         "https://codekitapp.com/help/kit/index.html",
         "https://github.com/bdkjones/Kit"
       ],
-      "blockers": [
-        "Compiler originale Kit scritto per Cocoa/macOS non disponibile; renderer non eseguito."
-      ],
-      "notes": "Le direttive sono commenti speciali Kit: assegnazione $audience e sostituzione della variabile. Il saluto non dipende da commenti ordinari ignorati da HTML."
+      "blockers": [],
+      "notes": "The compatible Kit renderer executed the original declaration and interpolation. The resulting paragraph contained the exact greeting."
     },
     {
       "language_ordinal": 362,
@@ -24340,10 +24338,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#433 MiniYAML/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#433 MiniYAML/hello.yaml": "a02b7e15969b17e696b80411283911ddc48042f60463ac8024881b8df9d586aa"
+      },
       "based_on": null,
       "documentation": "examples/#433 MiniYAML/README.md",
       "supporting_files": [],
@@ -24359,10 +24359,8 @@
           "url": "https://github.com/OpenRA/OpenRA/blob/bleed/OpenRA.Game/MiniYaml.cs"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "MiniYaml non è YAML standard: il tab per livello è previsto dal formato. Un parser YAML generico non viene contato come verifica."
+      "blockers": [],
+      "notes": "The dedicated OpenRA-style MiniYAML reader materialized the exact original file as a two-level tree. Its Greeting/Text value matched the full greeting."
     },
     {
       "language_ordinal": 433,
@@ -24458,10 +24456,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#436 Mint/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#436 Mint/source/Main.mint": "9b66fcc5521d3bdfdcd23a95991aeabfa1d6b9e798e23399c76270eeadf2d41b"
+      },
       "based_on": null,
       "documentation": "examples/#436 Mint/README.md",
       "supporting_files": [],
@@ -24477,10 +24477,8 @@
           "url": "https://github.com/mint-lang/mint"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "La sintassi Html è documentata nella guida; la compatibilità con la versione di compiler disponibile deve essere verificata."
+      "blockers": [],
+      "notes": "Mint compiled the original component, and evaluating the emitted browser code in a headless DOM rendered the expected paragraph."
     },
     {
       "language_ordinal": 437,
@@ -24818,10 +24816,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#442 Mojo/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#442 Mojo/hello.mojo": "9bd17c9a18017dbe913dcef9d8d2f2196e6293f8133cc39165af8a3bcda66c53"
+      },
       "based_on": null,
       "documentation": "examples/#442 Mojo/README.md",
       "supporting_files": [],
@@ -24831,10 +24831,8 @@
         "https://docs.modular.com/mojo/manual/basics",
         "https://docs.modular.com/mojo/quickstart"
       ],
-      "blockers": [
-        "Mojo compiler/runtime is not configured."
-      ],
-      "notes": "Sorgente originale; compiler/runtime non configurati."
+      "blockers": [],
+      "notes": "The official Mojo runtime evaluated the entry point after updating its declaration to def for this compiler and printed the exact greeting."
     },
     {
       "language_ordinal": 443,
@@ -25342,10 +25340,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#455 NCL/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#455 NCL/hello.ncl": "a5af890f6696b800e57bf65cbeee3fa6f6a188d1f28fd5e2bf762390f2d086a8"
+      },
       "based_on": null,
       "documentation": "examples/#455 NCL/README.md",
       "supporting_files": [],
@@ -25355,10 +25355,8 @@
         "https://www.ncl.ucar.edu/Document/Functions/Built-in/print.shtml",
         "https://www.ncl.ucar.edu/Document/Manuals/Ref_Manual/NclStatements.shtml"
       ],
-      "blockers": [
-        "NCAR NCL interpreter and runtime libraries are not configured."
-      ],
-      "notes": "Programma originale; runtime non configurato."
+      "blockers": [],
+      "notes": "The packaged NCAR NCL interpreter evaluated the unchanged original expression and printed the complete greeting."
     },
     {
       "language_ordinal": 456,
@@ -25539,10 +25537,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#462 Nasal/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#462 Nasal/hello.nas": "7824df0c6747ddae8aeea1316eb28e54607ab7bc3263dcab206811dd2e608cbb"
+      },
       "based_on": null,
       "documentation": "examples/#462 Nasal/README.md",
       "supporting_files": [],
@@ -25552,10 +25552,8 @@
         "https://wiki.flightgear.org/Creating_new_Nasal_scripts",
         "https://wiki.flightgear.org/Nasal_library"
       ],
-      "blockers": [
-        "Nasal/FlightGear non preparati; runtime pendente."
-      ],
-      "notes": "La variabile audience è passata a print come argomento distinto; il builtin FlightGear concatena gli argomenti e scrive una linea."
+      "blockers": [],
+      "notes": "The original Nasal print expression ran in its upstream VM and concatenated the parts into the exact greeting."
     },
     {
       "language_ordinal": 463,
@@ -27607,10 +27605,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#512 OverpassQL/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#512 OverpassQL/hello.overpassql": "e528c4ec9ca0a76c1be16b9065c7c44414d47d8e1451cc8adabc9bf32e0c7e83"
+      },
       "based_on": null,
       "documentation": "examples/#512 OverpassQL/README.md",
       "supporting_files": [],
@@ -27622,10 +27622,8 @@
           "url": "https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#The_statement_make"
         }
       ],
-      "blockers": [
-        "Motore Overpass locale non disponibile."
-      ],
-      "notes": "make crea un elemento locale e non richiede una query geografica; il motore resta necessario."
+      "blockers": [],
+      "notes": "The native Overpass interpreter executed the original program against isolated synthetic data. The derived element has the required greeting tag."
     },
     {
       "language_ordinal": 513,
@@ -29878,10 +29876,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#545 Pony/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#545 Pony/main.pony": "407189014bd1cdd1f5bfdfc3ea4a50eb18e074a7350688d71f07663710db349d"
+      },
       "based_on": null,
       "documentation": "examples/#545 Pony/README.md",
       "supporting_files": [],
@@ -29891,10 +29891,8 @@
         "https://tutorial.ponylang.io/getting-started/hello-world.html",
         "https://tutorial.ponylang.io/expressions/variables.html"
       ],
-      "blockers": [
-        "Compiler/runtime Pony non preparati."
-      ],
-      "notes": "L’actor Main riceve Env, crea audience e scrive con env.out.print. La concatenazione usa String."
+      "blockers": [],
+      "notes": "The official Pony compiler built the original actor and its native executable sent the exact greeting."
     },
     {
       "language_ordinal": 546,
@@ -30402,10 +30400,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#555 Processing/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#555 Processing/Hello/Hello.pde": "506b773351e769384409c35dae9f25df4e8188976e35b9215b729c0df7203111"
+      },
       "based_on": null,
       "documentation": "examples/#555 Processing/README.md",
       "supporting_files": [],
@@ -30415,10 +30415,8 @@
         "https://processing.org/reference/println_.html",
         "https://processing.org/reference/exit_.html"
       ],
-      "blockers": [
-        "Processing/Java-mode preprocessor e host non preparati."
-      ],
-      "notes": "La directory Hello contiene Hello.pde. setup dichiara una variabile String, chiama println e conclude lo sketch con exit; il preprocessing Processing è distinto da javac su un file C/Java generico."
+      "blockers": [],
+      "notes": "The official Processing compiler built the untouched sketch and its original setup ran in an offscreen display, printed the greeting and exited."
     },
     {
       "language_ordinal": 557,
@@ -30620,8 +30618,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#560 Propeller Spin/verification/toolchain.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#560 Propeller Spin/verification/native_20261118_wave736_main.json",
       "verified_artifact_sha256": {
         "examples/#560 Propeller Spin/hello.spin": "512b56bd023e6d19eb2fee4aa5b31f19563f071e3fd87275fac9cb09c439b124"
       },
@@ -30633,10 +30631,8 @@
       "sources": [
         "https://github.com/parallaxinc/OpenSpin"
       ],
-      "blockers": [
-        "Runtime/emulatore Propeller non preparato; semantica pendente."
-      ],
-      "notes": "DAT definisce13byte ASCII e il terminatore NUL; PUB main restituisce il puntatore alla stringa. Il compiler autentico genera un binario44byte. L’esecuzione del target e la lettura del dato non vengono attribuite alla sola compilazione."
+      "blockers": [],
+      "notes": "The official Spin translator compiled the unchanged source. Host execution of that emitted code dereferenced the returned address and read the exact thirteen-byte data block and NUL terminator."
     },
     {
       "language_ordinal": 561,
@@ -31732,10 +31728,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#579 Quartus Simulation IP/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#579 Quartus Simulation IP/hello.sip": "e1fa770a71a9f0264a111575fa10e6634613811421a4f3136dc289cfcde5be7f"
+      },
       "based_on": null,
       "documentation": "examples/#579 Quartus Simulation IP/README.md",
       "supporting_files": [],
@@ -31745,10 +31743,8 @@
         "https://www.intel.com/content/www/us/en/docs/programmable/683609/23-1/simulation-files.html",
         "https://github.com/github-linguist/linguist/tree/main/samples/Quartus%20Simulation%20IP"
       ],
-      "blockers": [
-        "Quartus project reader e simulatore non predisposti."
-      ],
-      "notes": "MISC_FILE/file join/quartus(sip_path) seguono il formato del campione canonico; il testbench originale è il consumer del riferimento."
+      "blockers": [],
+      "notes": "Tcl evaluated the unchanged SIP with a fixture for Quartus assignment collection. The resolved unchanged simulation source ran in Icarus Verilog and printed the greeting."
     },
     {
       "language_ordinal": 580,
@@ -33645,10 +33641,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#612 Ren'Py/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#612 Ren'Py/game/script.rpy": "2af828a9efd1ae351dad73917117e5ee4784e8b8c1d5a1d4874b4a5cdacb2652"
+      },
       "based_on": null,
       "documentation": "examples/#612 Ren'Py/README.md",
       "supporting_files": [],
@@ -33657,10 +33655,8 @@
       "sources": [
         "https://www.renpy.org/doc/html/quickstart.html"
       ],
-      "blockers": [
-        "Required renpy compiler/runtime and matching host resources are not available/configured."
-      ],
-      "notes": "Sorgente originale label start e statement dialogo, non commento. SDK/lint/display non configurati."
+      "blockers": [],
+      "notes": "RenPy processed the unchanged story. A small test callback observed the exact dialogue text received by the engine at the original start label."
     },
     {
       "language_ordinal": 613,
@@ -36719,10 +36715,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#645 Sage/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#645 Sage/hello.sage": "87cd8d92326d0f8dd6509d4421d0524c7c76ff7ff471349260fc7d0705f784ac"
+      },
       "based_on": null,
       "documentation": "examples/#645 Sage/README.md",
       "supporting_files": [],
@@ -36731,10 +36729,8 @@
       "sources": [
         "https://doc.sagemath.org/html/en/tutorial/"
       ],
-      "blockers": [
-        "SageMath runtime non disponibile; prova Python generica non sufficiente."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "SageMath used its own script loader and preparser to evaluate the exact original file. The Sage runtime printed the expected greeting."
     },
     {
       "language_ordinal": 645,
@@ -37939,10 +37935,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#667 Slint/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#667 Slint/hello.slint": "44a49a0825ece52f3fd24550f33c494977e8cd00492c6cdd8eb1a99323412268"
+      },
       "based_on": null,
       "documentation": "examples/#667 Slint/README.md",
       "supporting_files": [],
@@ -37954,10 +37952,8 @@
           "url": "https://docs.slint.dev/latest/docs/slint/"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Per la semantica visiva serve il backend UI. Il corpus non apre finestre durante un controllo di sola sintassi."
+      "blockers": [],
+      "notes": "The native Slint runtime loaded the untouched component. Its message property and its rendered text in a private framebuffer both matched the greeting."
     },
     {
       "language_ordinal": 668,
@@ -39361,10 +39357,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#702 TSQL/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#702 TSQL/hello.sql": "9da30f574affddf28ab079771eae8212c4cf9c99862ddf0fcdc40d72d0ded7b4"
+      },
       "based_on": null,
       "documentation": "examples/#702 TSQL/README.md",
       "supporting_files": [],
@@ -39373,10 +39371,8 @@
       "sources": [
         "https://learn.microsoft.com/en-us/sql/t-sql/language-elements/string-operators-transact-sql?view=sql-server-2017"
       ],
-      "blockers": [
-        "SQL Server/sqlcmd non disponibili; parser ed esecuzione pendenti."
-      ],
-      "notes": "La variabile Unicode nvarchar viene concatenata con l’operatore + del dialetto TSQL."
+      "blockers": [],
+      "notes": "The standalone compatible SQL engine ran the original T-SQL declaration and expression against an empty local context and returned one exact greeting."
     },
     {
       "language_ordinal": 703,
@@ -39546,8 +39542,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#708 Tape/verification/toolchain.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#708 Tape/verification/native_20261118_wave736_main.json",
       "verified_artifact_sha256": {
         "examples/#708 Tape/hello.tape": "9be4982a03459e01917d144ed9d6cb7a3c8206142d074a05a0e205f83d294d13"
       },
@@ -39559,10 +39555,8 @@
       "sources": [
         "https://github.com/charmbracelet/vhs"
       ],
-      "blockers": [
-        "Registrazione/controllo del video non eseguiti; richiede ttyd, ffmpeg e browser compatibile."
-      ],
-      "notes": "Tape .tape è il linguaggio di registrazione di VHS nella voce canonica. Il parser originale valida il file senza avviare una registrazione."
+      "blockers": [],
+      "notes": "VHS used the unchanged tape to drive an isolated shell and recorded the actual terminal. The final frame contained the greeting as its own stdout line."
     },
     {
       "language_ordinal": 709,
@@ -40759,10 +40753,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#729 Type Language/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#729 Type Language/hello.tl": "e90aaf894b2d6fd94981f51553651df3fd766adfa853cdd1d20a1b4abd8a0557"
+      },
       "based_on": null,
       "documentation": "examples/#729 Type Language/README.md",
       "supporting_files": [],
@@ -40771,10 +40767,8 @@
       "sources": [
         "https://core.telegram.org/mtproto/TL"
       ],
-      "blockers": [
-        "Compiler TL/runtime per schema originale non predisposti."
-      ],
-      "notes": "Lo schema non inventa un constructor ID: il compilatore deve calcolarlo dal costruttore canonico."
+      "blockers": [],
+      "notes": "Telethon compiled the unchanged Telegram TL schema into its real serializer class, then wrote and read back the exact greeting with the correct constructor identifier."
     },
     {
       "language_ordinal": 730,
@@ -40917,10 +40911,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#733 Unified Parallel C/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#733 Unified Parallel C/hello.upc": "6b18eef744cdc57559a8a5a4c7b6a44f390c40eafe434dca27e31863fef3863f"
+      },
       "based_on": null,
       "documentation": "examples/#733 Unified Parallel C/README.md",
       "supporting_files": [],
@@ -40929,10 +40925,8 @@
       "sources": [
         "https://upc.lbl.gov/docs/"
       ],
-      "blockers": [
-        "UPC compiler e runtime shared-memory non predisposti."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The native Berkeley UPC implementation ran the original over two local threads, completed its barrier and emitted the exact greeting once."
     },
     {
       "language_ordinal": 734,
@@ -41125,10 +41119,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#734 Unity3D Asset/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#734 Unity3D Asset/hello.unity": "4f57920d6e50f323b6acad063bf4979a384959b4e90e74d0103dd6ae5a87c4b5"
+      },
       "based_on": null,
       "documentation": "examples/#734 Unity3D Asset/README.md",
       "supporting_files": [],
@@ -41137,10 +41133,8 @@
       "sources": [
         "https://docs.unity3d.com/Manual/FormatDescription.html"
       ],
-      "blockers": [
-        "Unity editor/scene loader non disponibile; compatibilità campi serializzati pending."
-      ],
-      "notes": "Il goal è il nome dell’oggetto nella gerarchia, non un testo UI renderizzato; non sono inseriti GUID o script esterni."
+      "blockers": [],
+      "notes": "The Unity-specific reader resolved both serialized Unity object types and their reciprocal local file IDs, then read back the exact GameObject name from the original asset."
     },
     {
       "language_ordinal": 735,
@@ -42985,10 +42979,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#773 Windows Registry Entries/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#773 Windows Registry Entries/hello.reg": "0fba7ab574c108af3a2f969a429a4162e50b0261fb2decc60c155ff7acd2bc5a"
+      },
       "based_on": null,
       "documentation": "examples/#773 Windows Registry Entries/README.md",
       "supporting_files": [],
@@ -42998,10 +42994,8 @@
         "https://support.microsoft.com/en-us/topic/how-to-add-modify-or-delete-registry-subkeys-and-values-by-using-a-reg-file-9c7f37cf-a5e9-e1cd-c4fa-2a26218a1a23",
         "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import"
       ],
-      "blockers": [
-        "Importazione nativa richiede un hive Windows usa e getta; nessuna modifica al registro corrente eseguita."
-      ],
-      "notes": "Il log contiene soltanto il probe reg /?; tale comando non interpreta il sorgente e non attesta sintassi o semantica. L’importazione non è stata eseguita sul registro corrente."
+      "blockers": [],
+      "notes": "The Windows-compatible reged consumer imported the unchanged file into a disposable binary hive, then exported its persisted key with the exact string value. The host registry was outside the fixture."
     },
     {
       "language_ordinal": 774,
@@ -48334,10 +48328,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#817 hoon/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#817 hoon/hello.hoon": "030cbe64a57c4c8dada1549e427615ae1134ed7d10ec673c7697fe8219803221"
+      },
       "based_on": null,
       "documentation": "examples/#817 hoon/README.md",
       "supporting_files": [],
@@ -48346,10 +48342,8 @@
       "sources": [
         "https://docs.urbit.org/hoon/"
       ],
-      "blockers": [
-        "Urbit pier/compiler Hoon non disponibile; type check del generatore e risultato pending."
-      ],
-      "notes": "Struttura say generator originale: gate esterno produce %say e gate interno restituisce un %noun cord."
+      "blockers": [],
+      "notes": "Vere’s actual offline evaluator ran the original Hoon expression and produced the declared greeting."
     },
     {
       "language_ordinal": 818,
@@ -48634,10 +48628,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#827 ooc/verification/native_20261118_wave736_main.json",
+      "verified_artifact_sha256": {
+        "examples/#827 ooc/hello.ooc": "65749fb0563e0a13897b6d42f25c78e92f94a8e71f2060a1710161125dd919ef"
+      },
       "based_on": null,
       "documentation": "examples/#827 ooc/README.md",
       "supporting_files": [],
@@ -48646,10 +48642,8 @@
       "sources": [
         "https://ooc-lang.org/docs/"
       ],
-      "blockers": [
-        "rock compiler/SDK non predisposti."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The official Rock bootstrap and shipped ooc standard library compiled the original program. Its native executable printed the greeting."
     },
     {
       "language_ordinal": 828,

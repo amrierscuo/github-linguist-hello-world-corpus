@@ -1,5 +1,18 @@
 # #530 Pawn
 
+## Verified on November 18, 2026
+
+The official Pawn compiler compiled the unchanged greeting program and the genuine AMX console runtime printed the greeting.
+
+Run `pawncc -C:64 -i<console includes> hello.pwn; pawnrun hello64.amx`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Pawn`, tipo `programming`, language_id `271`.
 
 Print your greeting through the host console of the original Pawn distribution.
@@ -47,3 +60,5 @@ Verification of the main sample and each variant is recorded separately.
 | `.pwn` | [hello.pwn](hello.pwn), [driver.pwn](variants/inc-dd126fb7/driver.pwn) created; verification pending |
 | `.inc` | [hello.inc](variants/inc-dd126fb7/hello.inc) created; verification pending |
 | `.sma` | [hello.sma](variants/sma-3aced296/hello.sma) created; verification pending |
+
+</details>

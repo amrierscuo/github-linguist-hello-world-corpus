@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "ordinal": 579,
+  "language": "Quartus Simulation IP",
+  "timestamp_utc": "2026-11-18T20:01:28.655562+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Execute the original Tcl-based SIP and collect the simulation input from its documented assignment callback",
+      "command": [
+        "tclsh",
+        "load_sip.tcl"
+      ],
+      "cwd": "${SCRATCH}/579-nmbld0xk",
+      "timestamp_utc": "2026-11-18T20:01:28.730505+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "${SCRATCH}/579-nmbld0xk/hello_tb.v\n",
+      "stderr": "application-specific initialization failed: Can't find a usable init.tcl in the following directories: \n    /usr/share/tcltk/tcl8.6 ${TOOL_CACHE}/tools/apt/usr/lib/tcl8.6 ${TOOL_CACHE}/tools/apt/lib/tcl8.6 ${TOOL_CACHE}/tools/apt/usr/library ${TOOL_CACHE}/tools/apt/library ${TOOL_CACHE}/tools/apt/tcl8.6.14/library ${TOOL_CACHE}/tools/tcl8.6.14/library\n\n\n\nThis probably means that Tcl wasn't installed properly.\n\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/579-nmbld0xk/home",
+        "TMPDIR": "${SCRATCH}/579-nmbld0xk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Record Icarus Verilog simulation version",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/iverilog",
+        "-V"
+      ],
+      "cwd": "${SCRATCH}/579-nmbld0xk",
+      "timestamp_utc": "2026-11-18T20:01:28.754429+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Icarus Verilog version 12.0 (stable) ()\n\nCopyright (c) 2000-2021 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n",
+      "stderr": "sh: 1: ${TOOL_CACHE}/tools/apt/usr/x86_64-linux-gnu/ivl/ivlpp: not found\nUnable to get version from \"${TOOL_CACHE}/tools/apt/usr/x86_64-linux-gnu/ivl/ivlpp -V\"\nsh: 1: ${TOOL_CACHE}/tools/apt/usr/x86_64-linux-gnu/ivl/ivl: not found\nUnable to get version from \"${TOOL_CACHE}/tools/apt/usr/x86_64-linux-gnu/ivl/ivl -V -C\"${SCRATCH}/579-nmbld0xk/tmp/ivrlh775852ef\" -C\"${TOOL_CACHE}/tools/apt/usr/x86_64-linux-gnu/ivl/vvp.conf\"\"\n",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/579-nmbld0xk/home",
+        "TMPDIR": "${SCRATCH}/579-nmbld0xk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the Verilog file resolved by the SIP fixture",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/iverilog",
+        "-B",
+        "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/ivl",
+        "-o",
+        "hello.vvp",
+        "${SCRATCH}/579-nmbld0xk/hello_tb.v"
+      ],
+      "cwd": "${SCRATCH}/579-nmbld0xk",
+      "timestamp_utc": "2026-11-18T20:01:32.829770+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/579-nmbld0xk/home",
+        "TMPDIR": "${SCRATCH}/579-nmbld0xk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the linked testbench on the compatible simulator",
+      "command": [
+        "${TOOL_CACHE}/tools/apt/usr/bin/vvp",
+        "-M",
+        "${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/ivl",
+        "hello.vvp"
+      ],
+      "cwd": "${SCRATCH}/579-nmbld0xk",
+      "timestamp_utc": "2026-11-18T20:01:32.871607+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n${SCRATCH}/579-nmbld0xk/hello_tb.v:4: $finish called at 0 (1s)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/579-nmbld0xk/home",
+        "TMPDIR": "${SCRATCH}/579-nmbld0xk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#579 Quartus Simulation IP/hello.sip": "e1fa770a71a9f0264a111575fa10e6634613811421a4f3136dc289cfcde5be7f",
+    "examples/#579 Quartus Simulation IP/hello_tb.v": "187e7bc57926bf4fd6b0b4d45e246c0b02ef386b838949afb7ee69dd8c6b8955"
+  },
+  "fixture_sha256": {
+    "load_sip.tcl": {
+      "sha256": "aeee4c6199429df9023e1b59701b7c7509a664545a75952796f5375f179847f8",
+      "content_utf8": "set ::quartus(sip_path) [pwd]\nset assignments {}\nproc set_global_assignment {libraryOpt library nameOpt name path} {\n    if {$libraryOpt ne \"-library\" || $nameOpt ne \"-name\"} { error \"invalid assignment\" }\n    lappend ::assignments [list $library $name $path]\n}\nsource hello.sip\nif {[llength $assignments]!=1} {error \"expected one assignment\"}\nlassign [lindex $assignments 0] library name src\nif {$library ne \"corpus_greeting\" || $name ne \"MISC_FILE\"} {error \"wrong assignment\"}\nputs $src\n"
+    }
+  },
+  "sources": [
+    "https://www.intel.com/content/www/us/en/docs/programmable/683609/23-1/simulation-files.html",
+    "https://github.com/github-linguist/linguist/tree/main/samples/Quartus%20Simulation%20IP"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "iverilog",
+      "version": "12.0-2build2",
+      "filename": "pool/universe/i/iverilog/iverilog_12.0-2build2_amd64.deb",
+      "sha256": "f19394cee05ad526e0eb3873bc6c17a5828f56df17fbe2db40cb66513a2d4667",
+      "bytes": 2125764,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/i/iverilog/iverilog_12.0-2build2_amd64.deb"
+    },
+    {
+      "name": "tcl",
+      "version": "8.6.14build1",
+      "filename": "pool/main/t/tcltk-defaults/tcl_8.6.14build1_amd64.deb",
+      "sha256": "4f3faeee46c154ffa5f94383120443a2ba3f9aae30a6ea49ad08e4488d2a8d3f",
+      "bytes": 4124,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/t/tcltk-defaults/tcl_8.6.14build1_amd64.deb"
+    }
+  ],
+  "toolchain": "Icarus Verilog version 12.0 (stable) () / Tcl SIP assignment harness",
+  "reproduction_command": "tclsh load_sip.tcl; iverilog -o hello.vvp <SIP-assigned input>; vvp hello.vvp",
+  "semantic_scope": "Tcl evaluated the unchanged SIP with a fixture for Quartus assignment collection. The resolved unchanged simulation source ran in Icarus Verilog and printed the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

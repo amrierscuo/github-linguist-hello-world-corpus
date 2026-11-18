@@ -1,5 +1,16 @@
 # #110 Carbon
 
+## Verified on November 18, 2026
+
+The official nightly Carbon toolchain compiled and linked the original program. The executable produced the greeting.
+
+Run `carbon compile hello.carbon -o hello.o; carbon link hello.o -o hello; ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Define the Run input function of the current Carbon toolchain to print Hello, World!.
 
 Canonical type: `programming`; `language_id`: `55627273`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.carbon` | [hello.carbon](hello.carbon) created; verification pending |
+| `.carbon` | [hello.carbon](hello.carbon) Syntax and behavior verified |
+
+</details>

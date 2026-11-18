@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "ordinal": 733,
+  "language": "Unified Parallel C",
+  "timestamp_utc": "2026-11-18T19:59:31.129482+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile unchanged UPC using the native Berkeley compiler already built in scratch",
+      "command": [
+        "${SCRATCH}/733-dx4naguz/prefix/bin/upcc",
+        "-network=smp",
+        "-T",
+        "2",
+        "-o",
+        "hello",
+        "hello.upc"
+      ],
+      "cwd": "${SCRATCH}/733-szt8iuln",
+      "timestamp_utc": "2026-11-18T19:59:31.219182+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/733-szt8iuln/home",
+        "TMPDIR": "${SCRATCH}/733-szt8iuln/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Run twice-synchronized UPC source in a private local two-thread execution",
+      "command": [
+        "${SCRATCH}/733-dx4naguz/prefix/bin/upcrun",
+        "-n",
+        "2",
+        "./hello"
+      ],
+      "cwd": "${SCRATCH}/733-szt8iuln",
+      "timestamp_utc": "2026-11-18T19:59:35.913783+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "UPCR: UPC thread 0 of 2 on <test-host> (pshm node 0 of 1, process 0 of 2, pid=2147)\nUPCR: UPC thread 1 of 2 on <test-host> (pshm node 0 of 1, process 1 of 2, pid=2165)\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${TOOL_CACHE}/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/733-szt8iuln/home",
+        "TMPDIR": "${SCRATCH}/733-szt8iuln/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${TOOL_CACHE}/tools/apt/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu:${TOOL_CACHE}/tools/apt/usr/lib:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/blas:${TOOL_CACHE}/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#733 Unified Parallel C/hello.upc": "6b18eef744cdc57559a8a5a4c7b6a44f390c40eafe434dca27e31863fef3863f"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://upc.lbl.gov/docs/"
+  ],
+  "previous_verification_log": null,
+  "cached_native_compiler_sha256": "8b3613418c8f593083495ec02048000000ab9eb995150a1e824b18c29c296888",
+  "compiler_archive_sha256": "65c92f7710e2c6bd3a053cc9d04ac476d991e06d39965214b1580b11447ae4b5",
+  "toolchain": "Berkeley UPC 2022.10.0",
+  "reproduction_command": "upcc -network=smp -T 2 -o hello hello.upc; upcrun -n 2 ./hello",
+  "semantic_scope": "The native Berkeley UPC implementation ran the original over two local threads, completed its barrier and emitted the exact greeting once.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

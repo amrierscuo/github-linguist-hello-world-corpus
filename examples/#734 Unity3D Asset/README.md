@@ -1,5 +1,16 @@
 # #734 Unity3D Asset
 
+## Verified on November 18, 2026
+
+The Unity-specific reader resolved both serialized Unity object types and their reciprocal local file IDs, then read back the exact GameObject name from the original asset.
+
+Run `python check.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Upload an original Unity scene with GameObject greeting.
 
 ## Toolchain
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 | `.mat` | [hello.mat](variants/mat-6b850197/hello.mat) created; verification pending |
 | `.meta` | [greeting.asset.meta](variants/meta-e10ebe20/greeting.asset.meta) created; verification pending |
 | `.prefab` | [hello.prefab](variants/prefab-3814199a/hello.prefab) created; verification pending |
-| `.unity` | [hello.unity](hello.unity) created; verification pending |
+| `.unity` | [hello.unity](hello.unity) Syntax and behavior verified |
+
+</details>

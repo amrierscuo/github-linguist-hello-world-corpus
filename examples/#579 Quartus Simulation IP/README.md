@@ -1,5 +1,16 @@
 # #579 Quartus Simulation IP
 
+## Verified on November 18, 2026
+
+Tcl evaluated the unchanged SIP with a fixture for Quartus assignment collection. The resolved unchanged simulation source ran in Icarus Verilog and printed the greeting.
+
+Run `tclsh load_sip.tcl; iverilog -o hello.vvp <SIP-assigned input>; vvp hello.vvp`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261118_wave736_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Referee a simulation testbench in a SIP Quartus file.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sip` | [hello.sip](hello.sip) created; verification pending |
+| `.sip` | [hello.sip](hello.sip) Syntax and behavior verified |
+
+</details>
