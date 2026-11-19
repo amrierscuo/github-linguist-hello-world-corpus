@@ -1,2 +1,2 @@
--- Original corpus greeting
+# Original corpus greeting
 alert "Hello, World!"

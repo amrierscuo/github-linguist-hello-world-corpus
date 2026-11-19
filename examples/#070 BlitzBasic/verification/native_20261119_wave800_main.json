@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "ordinal": 70,
+  "language": "BlitzBasic",
+  "timestamp_utc": "2026-11-19T18:15:17.750050+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Read the upstream native Blitz command-line compiler options under a detached display",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--bind",
+        "${SCRATCH}/070-zm4u2rtf",
+        "${SCRATCH}/070-zm4u2rtf",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--chdir",
+        "${SCRATCH}/070-zm4u2rtf",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng\\bin\\blitzcc64.exe",
+        "-h"
+      ],
+      "cwd": "${SCRATCH}/070-zm4u2rtf",
+      "timestamp_utc": "2026-11-19T18:15:18.767762+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "wine: created the configuration directory '${SCRATCH}/070-zm4u2rtf/wine'\nlibEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\nlibEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\nUsage: blitzcc [-h|-q|+q|-c|-d|-k|+k|-v|-o exefile] [sourcefile.bb]\r\n-a         : dump asm\r\n-h         : show this help\r\n-q         : quiet mode\r\n+q         : very quiet mode\r\n-c         : compile only\r\n-d         : debug compile\r\n-j         : dump json ast\r\n-k         : dump keywords\r\n+k         : dump keywords and syntax\r\n-llvm      : use llvm\r\n-r         : list available runtimes\r\n-v         : version info\r\n-o exefile : generate executable\r\nXIO:  fatal IO error 2 (No such file or directory) on X server \":99\"\r\n      after 237 requests (223 known processed) with 0 events remaining.\r\nX connection to :99 broken (explicit kill or server shutdown).\r\nXIO:  fatal IO error 2 (No such file or directory) on X server \":99\"\r\n      after 272 requests (168 known processed) with 0 events remaining.\r\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/070-zm4u2rtf/home",
+        "TMPDIR": "${SCRATCH}/070-zm4u2rtf/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/070-zm4u2rtf/wine",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "TESSDATA_PREFIX": "${SCRATCH}/cache/tools/apt/usr/share/tesseract-ocr/5/tessdata",
+        "blitzpath": "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng",
+        "BLITZPATH": "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng",
+        "WINEPATH": "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng\\bin"
+      }
+    },
+    {
+      "label": "Check the exact source and request native compiler assembly",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--bind",
+        "${SCRATCH}/070-zm4u2rtf",
+        "${SCRATCH}/070-zm4u2rtf",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--chdir",
+        "${SCRATCH}/070-zm4u2rtf",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng\\bin\\blitzcc64.exe",
+        "-a",
+        "-c",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\hello.bb"
+      ],
+      "cwd": "${SCRATCH}/070-zm4u2rtf",
+      "timestamp_utc": "2026-11-19T18:15:34.403321+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "libEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\nBlitz3D-NG V2.00\r\nCompiling \"Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\hello.bb\"\r\nParsing...\r\nGenerating...\r\nTranslating...\r\n; ModuleID = 'Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\hello.bb'\r\nsource_filename = \"Z:\\\\var\\\\tmp\\\\codex-linguist-800-20261119-1000\\\\070-zm4u2rtf\\\\hello.bb\"\r\ntarget datalayout = \"e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128\"\r\ntarget triple = \"x86_64-windows-win32\"\r\n\r\n@bbData = global [0 x i64] zeroinitializer\r\n@0 = private unnamed_addr constant [14 x i8] c\"Hello, World!\\00\", align 1\r\n\r\ndefine void @bbMain() local_unnamed_addr {\r\nentry:\r\n  tail call void @_bbRestore(ptr nonnull @bbData)\r\n  %0 = tail call ptr @_bbStrConst(ptr nonnull @0)\r\n  tail call void @bbPrint(ptr %0)\r\n  tail call void @bbEnd()\r\n  ret void\r\n}\r\n\r\ndeclare void @_bbRestore(ptr) local_unnamed_addr\r\n\r\ndeclare void @bbPrint(ptr) local_unnamed_addr\r\n\r\ndeclare ptr @_bbStrConst(ptr) local_unnamed_addr\r\n\r\ndeclare void @bbEnd() local_unnamed_addr\r\nAssembling...\r\nX connection to :99 broken (explicit kill or server shutdown).\r\nX connection to :99 broken (explicit kill or server shutdown).\r\nX connection to :99 broken (explicit kill or server shutdown).\r\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/070-zm4u2rtf/home",
+        "TMPDIR": "${SCRATCH}/070-zm4u2rtf/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/070-zm4u2rtf/wine",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "TESSDATA_PREFIX": "${SCRATCH}/cache/tools/apt/usr/share/tesseract-ocr/5/tessdata",
+        "blitzpath": "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng",
+        "BLITZPATH": "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng",
+        "WINEPATH": "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\070-zm4u2rtf\\blitz3d-ng\\bin"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#070 BlitzBasic/hello.bb": "7a2f28c680292be04431502207cd33663b297b7989a592ac333177fdcc0df05f"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://blitzresearch.itch.io/blitz3d",
+    "https://github.com/blitz-research/blitz3d"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/blitz3d-ng/package/releases/download/edge/blitz3d-ng-edge-windows.zip",
+      "sha256": "fcc6df91c9f1332ed72cfae2eb7fc07e1430f34aa00addcc71f215f8385fa420"
+    },
+    {
+      "url": "https://github.com/Kron4ek/Wine-Builds/releases/download/11.10/wine-11.10-amd64-wow64.tar.xz",
+      "sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9",
+      "expected_sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "xvfb",
+      "version": "2:21.1.12-1ubuntu1.9",
+      "filename": "pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb",
+      "sha256": "2011271eabcc2eb460e99995c5ef26e46633e87d04f570e305b62f178f7b452c",
+      "bytes": 877038,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb"
+    },
+    {
+      "name": "xauth",
+      "version": "1:1.1.2-1build1",
+      "filename": "pool/main/x/xauth/xauth_1.1.2-1build1_amd64.deb",
+      "sha256": "037e70571f39384e28c4ad0db07b44de11f0911ee6c02445560979b417012650",
+      "bytes": 25594,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/x/xauth/xauth_1.1.2-1build1_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    },
+    {
+      "name": "x11-apps",
+      "version": "7.7+11build3",
+      "filename": "pool/main/x/x11-apps/x11-apps_7.7+11build3_amd64.deb",
+      "sha256": "e81cbe75a3e46797bba360205d0ecb45809959c0137b52fda47d321fc556149b",
+      "bytes": 709312,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/x/x11-apps/x11-apps_7.7+11build3_amd64.deb"
+    },
+    {
+      "name": "tesseract-ocr",
+      "version": "5.3.4-1build5",
+      "filename": "pool/universe/t/tesseract/tesseract-ocr_5.3.4-1build5_amd64.deb",
+      "sha256": "2dfac382d77215aee0c3de4a2a2205505d5f2195e72e79b54ad32154fc08da77",
+      "bytes": 327852,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract/tesseract-ocr_5.3.4-1build5_amd64.deb"
+    },
+    {
+      "name": "tesseract-ocr-eng",
+      "version": "1:4.1.0-2",
+      "filename": "pool/universe/t/tesseract-lang/tesseract-ocr-eng_4.1.0-2_all.deb",
+      "sha256": "b1996b3113c78663f4dd16cf18aa1f288b07e9624f8d4a0ddbd7d9b52a234ba7",
+      "bytes": 1818236,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/t/tesseract-lang/tesseract-ocr-eng_4.1.0-2_all.deb"
+    }
+  ],
+  "compiled_greeting_call": "tail call void @bbPrint(ptr %0)",
+  "toolchain": "Blitz3D NG V2.00 Windows compiler and LLVM backend, isolated Wine 11.10",
+  "reproduction_command": "blitzcc64.exe -a -c hello.bb",
+  "semantic_scope": "The native compiler accepted the unchanged .bb. Its generated LLVM IR passes the exact greeting constant to bbPrint and then calls bbEnd.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

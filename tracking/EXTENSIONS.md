@@ -8,7 +8,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #001 | [1C Enterprise](../examples/%23001%201C%20Enterprise/README.md) | `.bsl` | [hello.bsl](../examples/%23001%201C%20Enterprise/variants/ext-bsl-2e62736c/hello.bsl) | Pending | Pending | alias; This variant has not yet been checked with the specified native toolchain. |
 | #001 | [1C Enterprise](../examples/%23001%201C%20Enterprise/README.md) | `.os` | [hello.os](../examples/%23001%201C%20Enterprise/hello.os) | Yes | Yes | existing; Evidence recorded |
 | #002 | [2-Dimensional Array](../examples/%23002%202-Dimensional%20Array/README.md) | `.2da` | [hello.2da](../examples/%23002%202-Dimensional%20Array/hello.2da) | Yes | Yes | existing; Evidence recorded |
-| #003 | [4D](../examples/%23003%204D/README.md) | `.4dm` | [HelloWorld.4dm](../examples/%23003%204D/HelloWorld.4dm) | Pending | Pending | existing; 4D development application and host project are unavailable. |
+| #003 | [4D](../examples/%23003%204D/README.md) | `.4dm` | [HelloWorld.4dm](../examples/%23003%204D/HelloWorld.4dm) | Yes | Yes | existing; Evidence recorded |
 | #004 | [ABAP](../examples/%23004%20ABAP/README.md) | `.abap` | [zhello_world.prog.abap](../examples/%23004%20ABAP/zhello_world.prog.abap) | Yes | Yes | existing; Evidence recorded |
 | #005 | [ABAP CDS](../examples/%23005%20ABAP%20CDS/README.md) | `.asddls` | [zi_hello_world.ddls.asddls](../examples/%23005%20ABAP%20CDS/zi_hello_world.ddls.asddls) | Yes | Yes | existing; Evidence recorded |
 | #006 | [ABNF](../examples/%23006%20ABNF/README.md) | `.abnf` | [hello.abnf](../examples/%23006%20ABNF/hello.abnf) | Yes | Yes | existing; Evidence recorded |
@@ -950,7 +950,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #495 | [Odin](../examples/%23495%20Odin/README.md) | `.odin` | [hello.odin](../examples/%23495%20Odin/hello.odin) | Yes | Yes | existing; Evidence recorded |
 | #496 | [Omgrofl](../examples/%23496%20Omgrofl/README.md) | `.omgrofl` | [hello.omgrofl](../examples/%23496%20Omgrofl/hello.omgrofl) | Yes | Yes | existing; Evidence recorded |
 | #497 | [Opa](../examples/%23497%20Opa/README.md) | `.opa` | [hello.opa](../examples/%23497%20Opa/hello.opa) | Pending | Pending | existing; The historical Opa web compiler and required Node runtime are not set up. |
-| #498 | [Opal](../examples/%23498%20Opal/README.md) | `.opal` | [hello.opal](../examples/%23498%20Opal/hello.opal) | Pending | Pending | existing; The historical runtime or compiler for the .opal dialect has not been identified or set up. |
+| #498 | [Opal](../examples/%23498%20Opal/README.md) | `.opal` | [hello.opal](../examples/%23498%20Opal/hello.opal) | Yes | Yes | existing; Evidence recorded |
 | #499 | [Open Policy Agent](../examples/%23499%20Open%20Policy%20Agent/README.md) | `.rego` | [hello.rego](../examples/%23499%20Open%20Policy%20Agent/hello.rego), [hello_test.rego](../examples/%23499%20Open%20Policy%20Agent/hello_test.rego) | Yes | Yes | existing; Evidence recorded |
 | #502 | [OpenCL](../examples/%23502%20OpenCL/README.md) | `.cl` | [hello.cl](../examples/%23502%20OpenCL/hello.cl) | Yes | Yes | existing; Evidence recorded |
 | #502 | [OpenCL](../examples/%23502%20OpenCL/README.md) | `.opencl` | [hello.opencl](../examples/%23502%20OpenCL/variants/opencl-1927a002/hello.opencl) | Yes | Yes | alias; Evidence recorded |
@@ -1321,7 +1321,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | `.sce` | [hello.sce](../examples/%23653%20Scilab/hello.sce), [main.sce](../examples/%23653%20Scilab/variants/sci-27617630/main.sce) | Yes | Yes | existing; Evidence recorded |
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | `.tst` | [hello.tst](../examples/%23653%20Scilab/variants/tst-04f6df08/hello.tst) | Yes | Yes | adapted; Evidence recorded |
 | #654 | [Self](../examples/%23654%20Self/README.md) | `.self` | [hello.self](../examples/%23654%20Self/hello.self) | Pending | Pending | existing; The Self VM and standard world are not set up. |
-| #655 | [ShaderLab](../examples/%23655%20ShaderLab/README.md) | `.shader` | [hello.shader](../examples/%23655%20ShaderLab/hello.shader) | Pending | Pending | existing; The Unity editor and shader compiler are unavailable; fixed-function compatibility is still untested. |
+| #655 | [ShaderLab](../examples/%23655%20ShaderLab/README.md) | `.shader` | [hello.shader](../examples/%23655%20ShaderLab/hello.shader) | Yes | Yes | existing; Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | `.sh` | [hello.sh](../examples/%23656%20Shell/hello.sh) | Yes | Yes | existing; Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | `.bash` | [hello.bash](../examples/%23656%20Shell/variants/bash-8a9862b8/hello.bash) | Yes | Yes | alias; Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | `.bats` | [hello.bats](../examples/%23656%20Shell/variants/bats-7875b11c/hello.bats) | Pending | Pending | adapted; The original parser, compiler or host has not yet checked this variant. |
@@ -1392,7 +1392,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #695 | [SystemVerilog](../examples/%23695%20SystemVerilog/README.md) | `.vh` | [hello.vh](../examples/%23695%20SystemVerilog/variants/vh-02180d63/hello.vh) | Pending | Pending | adapted; The original parser, compiler or host has not yet checked this variant. |
 | #696 | [TI Program](../examples/%23696%20TI%20Program/README.md) | `.8xp` | [hello.8xp](../examples/%23696%20TI%20Program/variants/8xp-e496e607/hello.8xp) | Yes | Pending | native; Running the program on a TI-84 Plus calculator or emulator remains pending. |
 | #696 | [TI Program](../examples/%23696%20TI%20Program/README.md) | `.8xp.txt` | [hello.8xp.txt](../examples/%23696%20TI%20Program/hello.8xp.txt) | Yes | Yes | existing; Evidence recorded |
-| #697 | [TL-Verilog](../examples/%23697%20TL-Verilog/README.md) | `.tlv` | [hello.tlv](../examples/%23697%20TL-Verilog/hello.tlv) | Pending | Pending | existing; Required sandpiper-saas toolchain and matching execution/format resources are not configured. |
+| #697 | [TL-Verilog](../examples/%23697%20TL-Verilog/README.md) | `.tlv` | [hello.tlv](../examples/%23697%20TL-Verilog/hello.tlv) | Yes | Yes | existing; Evidence recorded |
 | #698 | [TLA](../examples/%23698%20TLA/README.md) | `.tla` | [Hello.tla](../examples/%23698%20TLA/Hello.tla) | Yes | Yes | existing; Evidence recorded |
 | #699 | [TMDL](../examples/%23699%20TMDL/README.md) | `.tmdl` | [model.tmdl](../examples/%23699%20TMDL/model.tmdl), [Greeting.tmdl](../examples/%23699%20TMDL/tables/Greeting.tmdl) | Yes | Yes | existing; Evidence recorded |
 | #700 | [TOML](../examples/%23700%20TOML/README.md) | `.toml` | [hello.toml](../examples/%23700%20TOML/hello.toml) | Yes | Yes | existing; Evidence recorded |

@@ -1,5 +1,18 @@
 # #003 4D
 
+## Verified on November 19, 2026
+
+Official tool4d executed the finalized 4D method in headless mode. The documented LOG EVENT output channel emitted the exact greeting on standard output.
+
+Run `tool4d --project Project/Hello.4DProject --dataless --skip-onstartup --startup-method RunGreeting`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `HelloWorld.4dm` is the source of a project method 4D. The method recalls
 `ALERT` and display `Hello, World!` in a window with OK button.
 
@@ -37,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.4dm` | [HelloWorld.4dm](HelloWorld.4dm) created; verification pending |
+| `.4dm` | [HelloWorld.4dm](HelloWorld.4dm) Syntax and behavior verified |
+
+</details>

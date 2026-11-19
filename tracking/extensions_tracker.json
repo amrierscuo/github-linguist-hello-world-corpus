@@ -97,24 +97,24 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#003 4D/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#003 4D/HelloWorld.4dm": "7d67c0e01a2e070279557aedd3244cfd2374cfd5de740d07dd5b6a1c4f772205"
+      },
       "based_on": null,
       "documentation": "examples/#003 4D/README.md",
       "supporting_files": [],
       "validation_command": "4D IDE: Design > Compiler... > Check Syntax; execute project method HelloWorld (integration steps in README)",
-      "expected_result": "No syntax errors and one alert dialog showing exactly Hello, World!",
+      "expected_result": "Tool4D exits successfully and prints exactly Hello, World! to standard output.",
       "sources": [
         "https://developer.4d.com/docs/commands/alert",
         "https://developer.4d.com/docs/Project/architecture",
         "https://developer.4d.com/docs/Project/compiler"
       ],
-      "blockers": [
-        "4D development application and host project are unavailable."
-      ],
-      "notes": "A genuine project-method source unit is provided. This folder does not claim to contain a complete 4D project. No application execution occurred."
+      "blockers": [],
+      "notes": "Official tool4d executed the finalized 4D method in headless mode. The documented LOG EVENT output channel emitted the exact greeting on standard output."
     },
     {
       "language_ordinal": 4,
@@ -27137,10 +27137,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#498 Opal/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#498 Opal/hello.opal": "a4450e9188773a74f5f99af16c1d652f9861ee112f3e5a38f99006b493924998"
+      },
       "based_on": null,
       "documentation": "examples/#498 Opal/README.md",
       "supporting_files": [],
@@ -27150,10 +27152,8 @@
         "https://github.com/StoneCypher/DeepakChopra_Opal",
         "https://github.com/github-linguist/linguist/blob/main/samples/Opal/DeepakChopra.opal"
       ],
-      "blockers": [
-        "Il runtime/compilatore storico del dialetto .opal non è stato identificato e predisposto."
-      ],
-      "notes": "La scelta di alert e commenti -- segue il campione Linguist/upstream; non viene sostituita con il linguaggio Ruby Opal o con il distinto OPAL algebrico."
+      "blockers": [],
+      "notes": "For the Ruby-to-JavaScript dialect used by the referenced Linguist sample, Opal compiled the corpus source to JavaScript. The compiled code called the browser alert bridge with the exact greeting, which the headless host captured as text."
     },
     {
       "language_ordinal": 499,
@@ -37241,10 +37241,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#655 ShaderLab/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#655 ShaderLab/hello.shader": "45a8a330756bff6f4ebbe50d2af11f758c1cb4bbf117240b92800e3b0506eaaa"
+      },
       "based_on": null,
       "documentation": "examples/#655 ShaderLab/README.md",
       "supporting_files": [],
@@ -37253,10 +37255,8 @@
       "sources": [
         "https://docs.unity3d.com/Manual/SL-Properties.html"
       ],
-      "blockers": [
-        "Unity editor/shader compiler non disponibile; compatibilità fixed-function da provare."
-      ],
-      "notes": "Il goal di formato è la proprieta nominata Hello, World! e il pass che ne consuma il colore, non testo visibile nel rendering."
+      "blockers": [],
+      "notes": "The headless parser resolved the exact greeting as the display label of the typed _Color material property and verified its default RGBA values. The pass uses an HLSL fragment program whose emitted SPIR-V loads the matching property and writes it to the output."
     },
     {
       "language_ordinal": 656,
@@ -39171,10 +39171,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#697 TL-Verilog/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#697 TL-Verilog/hello.tlv": "3db4db31c5753c70e763f41c4a8b109f44ad21e04818dd2c218b45c4882c120a"
+      },
       "based_on": null,
       "documentation": "examples/#697 TL-Verilog/README.md",
       "supporting_files": [],
@@ -39183,10 +39185,8 @@
       "sources": [
         "https://github.com/TL-X-org/tlv-comp"
       ],
-      "blockers": [
-        "Required sandpiper-saas toolchain and matching execution/format resources are not configured."
-      ],
-      "notes": "Il blocco TLV definisce il segnale e lo lega a un wire SV; il saluto eÌâ‚¬ dati hexadecimal, quindi una display del risultato rende il testo. Translator autentico non configurato; flag pending."
+      "blockers": [],
+      "notes": "The upstream compiler lowered the 1a greeting design. The verification adapted its legacy net declaration for Icarus Verilog, which simulated the generated design and emitted the exact greeting."
     },
     {
       "language_ordinal": 698,

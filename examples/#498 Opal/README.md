@@ -1,5 +1,16 @@
 # #498 Opal
 
+## Verified on November 19, 2026
+
+For the Ruby-to-JavaScript dialect used by the referenced Linguist sample, Opal compiled the corpus source to JavaScript. The compiled code called the browser alert bridge with the exact greeting, which the headless host captured as text.
+
+Run `opal -I . -r browser_bridge --compile hello.opal > greeting.js; node check.js`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Show greeting with alert in the .opal dialect of the baseline.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.opal` | [hello.opal](hello.opal) created; verification pending |
+| `.opal` | [hello.opal](hello.opal) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #070 BlitzBasic
 
+## Verified on November 19, 2026
+
+The native compiler accepted the unchanged .bb. Its generated LLVM IR passes the exact greeting constant to bbPrint and then calls bbEnd.
+
+Run `blitzcc64.exe -a -c hello.bb`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry from the corpus's `reference/languages.yml`. The reference and its order remain unchanged. The source was written for this example.
 
 ## Goal
@@ -45,3 +56,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.bb` | [hello.bb](hello.bb), [consumer.bb](variants/ext-decls-2e6465636c73/consumer.bb) created; verification pending |
 | `.decls` | [hello.decls](variants/ext-decls-2e6465636c73/hello.decls) created; verification pending |
+
+</details>

@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "ordinal": 498,
+  "language": "Opal",
+  "timestamp_utc": "2026-11-19T18:18:33.976195+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Stage the versioned official Opal translator into an isolated Gem directory",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/ruby",
+        "${SCRATCH}/cache/tools/apt/usr/bin/gem3.2",
+        "install",
+        "opal",
+        "--version",
+        "1.8.3",
+        "--no-document",
+        "--install-dir",
+        "${SCRATCH}/498-jh14lysq/gems",
+        "--source",
+        "https://rubygems.org/"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:34.004123+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "Building native extensions. This could take a while...\nSuccessfully installed racc-1.8.1\nSuccessfully installed ast-2.4.3\nSuccessfully installed parser-3.3.14.0\nSuccessfully installed base64-0.3.0\nSuccessfully installed opal-1.8.3\n5 gems installed\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems"
+      }
+    },
+    {
+      "label": "Inspect the native Opal compiler command line",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/ruby",
+        "${SCRATCH}/498-jh14lysq/gems/bin/opal",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:39.653990+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Opal v1.8.3\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems"
+      }
+    },
+    {
+      "label": "Run the official Opal compiler on the exact language input with a headless browser API bridge",
+      "command": [
+        "sh",
+        "${SCRATCH}/498-jh14lysq/build.sh",
+        "${SCRATCH}/498-jh14lysq/greeting.js",
+        "${SCRATCH}/cache/tools/apt/usr/bin/ruby",
+        "${SCRATCH}/498-jh14lysq/gems/bin/opal",
+        "-I",
+        "${SCRATCH}/498-jh14lysq",
+        "-r",
+        "browser_bridge",
+        "--compile",
+        "${SCRATCH}/498-jh14lysq/hello.opal"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:39.783785+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "${SCRATCH}/498-jh14lysq/hello.opal:1:13: error: unexpected token tIDENTIFIER\n${SCRATCH}/498-jh14lysq/hello.opal:1: -- Original corpus greeting\n${SCRATCH}/498-jh14lysq/hello.opal:1:             ^~~~~~         \n${SCRATCH}/498-jh14lysq/hello.opal:1:in `-- Original corpus greeting': unexpected token tIDENTIFIER (Opal::SyntaxError)\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/diagnostic/engine.rb:72:in `process'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/base.rb:289:in `on_error'\n\tfrom (eval):3:in `_racc_do_parse_c'\n\tfrom (eval):3:in `do_parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/base.rb:193:in `parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/parser/default_config.rb:32:in `parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/base.rb:241:in `tokenize'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:312:in `block in parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:393:in `re_raise_with_location'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:312:in `parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:298:in `compile'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder_processors.rb:88:in `block in compiled'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cache.rb:43:in `fetch'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder_processors.rb:86:in `compiled'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder_processors.rb:102:in `requires'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder.rb:105:in `build_str'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli.rb:148:in `create_builder'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli.rb:94:in `block in run'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli_runners/compiler.rb:20:in `compile'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli_runners/compiler.rb:147:in `start'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli_runners/compiler.rb:8:in `call'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli.rb:96:in `run'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/exe/opal:20:in `<top (required)>'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/bin/opal:25:in `load'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/bin/opal:25:in `<main>'\n${SCRATCH}/498-jh14lysq/hello.opal:1:in `-- Original corpus greeting': unexpected token tIDENTIFIER (Parser::SyntaxError)\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/diagnostic/engine.rb:72:in `process'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/base.rb:289:in `on_error'\n\tfrom (eval):3:in `_racc_do_parse_c'\n\tfrom (eval):3:in `do_parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/base.rb:193:in `parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/parser/default_config.rb:32:in `parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/parser-3.3.14.0/lib/parser/base.rb:241:in `tokenize'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:312:in `block in parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:393:in `re_raise_with_location'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:312:in `parse'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/compiler.rb:298:in `compile'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder_processors.rb:88:in `block in compiled'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cache.rb:43:in `fetch'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder_processors.rb:86:in `compiled'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder_processors.rb:102:in `requires'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/builder.rb:105:in `build_str'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli.rb:148:in `create_builder'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli.rb:94:in `block in run'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli_runners/compiler.rb:20:in `compile'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli_runners/compiler.rb:147:in `start'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli_runners/compiler.rb:8:in `call'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/lib/opal/cli.rb:96:in `run'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/gems/opal-1.8.3/exe/opal:20:in `<top (required)>'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/bin/opal:25:in `load'\n\tfrom ${SCRATCH}/498-jh14lysq/gems/bin/opal:25:in `<main>'\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Run the official Opal compiler on the exact language input with a headless browser API bridge",
+      "command": [
+        "sh",
+        "${SCRATCH}/498-jh14lysq/build.sh",
+        "${SCRATCH}/498-jh14lysq/greeting.js",
+        "${SCRATCH}/cache/tools/apt/usr/bin/ruby",
+        "${SCRATCH}/498-jh14lysq/gems/bin/opal",
+        "-I",
+        "${SCRATCH}/498-jh14lysq",
+        "-r",
+        "browser_bridge",
+        "--compile",
+        "${SCRATCH}/498-jh14lysq/trial.opal"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:41.153456+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/498-jh14lysq/check.js"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:41.486712+00:00",
+      "timeout_seconds": 22,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Run the official Opal compiler on the exact language input with a headless browser API bridge",
+      "command": [
+        "sh",
+        "${SCRATCH}/498-jh14lysq/build.sh",
+        "${SCRATCH}/498-jh14lysq/greeting.js",
+        "${SCRATCH}/cache/tools/apt/usr/bin/ruby",
+        "${SCRATCH}/498-jh14lysq/gems/bin/opal",
+        "-I",
+        "${SCRATCH}/498-jh14lysq",
+        "-r",
+        "browser_bridge",
+        "--compile",
+        "${SCRATCH}/498-jh14lysq/hello.opal"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:41.960637+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/498-jh14lysq/check.js"
+      ],
+      "cwd": "${SCRATCH}/498-jh14lysq",
+      "timestamp_utc": "2026-11-19T18:18:42.295690+00:00",
+      "timeout_seconds": 22,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/498-jh14lysq/home",
+        "TMPDIR": "${SCRATCH}/498-jh14lysq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "RUBYLIB": "${SCRATCH}/cache/tools/apt/usr/lib/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/ruby/vendor_ruby:${SCRATCH}/cache/tools/apt/usr/lib/ruby/gems:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/3.2.0:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby",
+        "GEM_HOME": "${SCRATCH}/498-jh14lysq/gems",
+        "GEM_PATH": "${SCRATCH}/498-jh14lysq/gems",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#498 Opal/hello.opal": "a4450e9188773a74f5f99af16c1d652f9861ee112f3e5a38f99006b493924998"
+  },
+  "fixture_sha256": {
+    "browser_bridge.rb": {
+      "sha256": "fb40857f4a8a2f9a98235e58a30b6f521b637815f936f4c1067cffc3ecf846c8",
+      "content_utf8": "require 'opal/raw'\n\nmodule Kernel\n  def alert(message)\n    Opal::Raw.call(:alert, message)\n  end\nend\n"
+    },
+    "check.js": {
+      "sha256": "a5162bb2ad8d92b9f9a813dc8ae6c94091308514760f2ad99a6bdbac49f8575b",
+      "content_utf8": "globalThis.alert = message => {\n  if (typeof message !== 'string') throw new TypeError('Expected a string');\n  process.stdout.write(message + '\\n');\n};\nrequire('./greeting.js');\n"
+    },
+    "build.sh": {
+      "sha256": "d82dd517774ec7f56c6335a7ec848fe49f71fc0a291b453286ecb52847e1dd4c",
+      "content_utf8": "#!/bin/sh\nout=$1\nshift\nexec \"$@\" > \"$out\"\n"
+    },
+    "trial.opal": {
+      "sha256": "a4450e9188773a74f5f99af16c1d652f9861ee112f3e5a38f99006b493924998",
+      "content_utf8": "# Original corpus greeting\r\nalert \"Hello, World!\"\r\n"
+    }
+  },
+  "sources": [
+    "https://github.com/StoneCypher/DeepakChopra_Opal",
+    "https://github.com/github-linguist/linguist/blob/main/samples/Opal/DeepakChopra.opal"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [],
+  "source_changes": [
+    {
+      "path": "examples/#498 Opal/hello.opal",
+      "original_sha256": "32d355892bb6575712922605969e67fc05b84f3c0dd158540c4a572df2906a2d",
+      "tested_sha256": "a4450e9188773a74f5f99af16c1d652f9861ee112f3e5a38f99006b493924998",
+      "staged_file": "work/native_target800_20261119/corrected/498/hello.opal",
+      "original_fragment": "-- Original corpus greeting\r\nalert \"Hello, World!\"\r\n",
+      "replacement": "# Original corpus greeting\r\nalert \"Hello, World!\"\r\n"
+    }
+  ],
+  "toolchain_archives": [
+    {
+      "url": "https://rubygems.org/gems/opal-1.8.3.gem",
+      "sha256": "a1c987f8eb9e4e400dcd453dc996cad2e4870466cbfba98e2d29b96d5648dfe0"
+    }
+  ],
+  "generated_javascript_sha256": "ae761361429268ea33776d7dc5f0f4889c1d164a26c0c1e41e35f95b1e2183fc",
+  "toolchain": "Official Opal 1.8.3 Ruby-to-JavaScript compiler and headless Node.js",
+  "reproduction_command": "opal -I . -r browser_bridge --compile hello.opal > greeting.js; node check.js",
+  "semantic_scope": "For the Ruby-to-JavaScript dialect used by the referenced Linguist sample, Opal compiled the corpus source to JavaScript. The compiled code called the browser alert bridge with the exact greeting, which the headless host captured as text.",
+  "verification_sources": [
+    "https://github.com/github-linguist/linguist/blob/main/samples/Opal/DeepakChopra.opal",
+    "https://opalrb.com/docs/guides/master/compiled_ruby.html"
+  ],
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

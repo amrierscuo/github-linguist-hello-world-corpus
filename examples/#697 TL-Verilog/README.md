@@ -1,5 +1,20 @@
 # #697 TL-Verilog
 
+## Verified on November 19, 2026
+
+The upstream compiler lowered the 1a greeting design. The verification adapted its legacy net declaration for Icarus Verilog, which simulated the generated design and emitted the exact greeting.
+
+Run `svgen <recorded inputs>; iverilog -g2012 -s hello -o greeting.vvp <generated SystemVerilog>; vvp greeting.vvp`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `TL-Verilog`, tipo `programming`, language_id `118656070`.
 
 Translate a TL -Verilog signal that brings the 13 byte ASCII greeting to a SV output.
@@ -44,4 +59,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.tlv` | [hello.tlv](hello.tlv) created; verification pending |
+| `.tlv` | [hello.tlv](hello.tlv) Syntax and behavior verified |
+
+</details>

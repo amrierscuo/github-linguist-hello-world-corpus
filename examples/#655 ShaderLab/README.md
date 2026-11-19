@@ -1,5 +1,16 @@
 # #655 ShaderLab
 
+## Verified on November 19, 2026
+
+The headless parser resolved the exact greeting as the display label of the typed _Color material property and verified its default RGBA values. The pass uses an HLSL fragment program whose emitted SPIR-V loads the matching property and writes it to the output.
+
+Run `inspect_shader hello.shader; glslangValidator -D -V -S frag -e frag bound.frag.hlsl; spirv-val bound.spv`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Load a ShaderLab shader with greeting property in the material inspector.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.shader` | [hello.shader](hello.shader) created; verification pending |
+| `.shader` | [hello.shader](hello.shader) Syntax and behavior verified |
+
+</details>

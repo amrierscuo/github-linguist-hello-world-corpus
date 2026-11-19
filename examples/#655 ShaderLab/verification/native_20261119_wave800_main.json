@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "ordinal": 655,
+  "language": "ShaderLab",
+  "timestamp_utc": "2026-11-19T18:27:02.821154+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Configure the original published headless ShaderLab parser",
+      "command": [
+        "cmake",
+        "-S",
+        "${SCRATCH}/cache/tools/shaderlab-5a77355be9a0/tree/ShaderLabParser-5a77355be9a03c7afa6206fecaceda046129c773",
+        "-B",
+        "${SCRATCH}/655-ejtxc9d0/build",
+        "-DSHADER_LAB_PARSER_BUILD_TESTS=OFF",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:02.850049+00:00",
+      "timeout_seconds": 38,
+      "exit_code": 0,
+      "stdout": "-- The C compiler identification is GNU 13.3.0\n-- The CXX compiler identification is GNU 13.3.0\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY\n-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success\n-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY\n-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success\n-- Performing Test COMPILER_HAS_DEPRECATED_ATTR\n-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success\n-- Configuring done (1.0s)\n-- Generating done (0.0s)\n-- Build files have been written to: ${SCRATCH}/655-ejtxc9d0/build\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the native ShaderLab compiler front end",
+      "command": [
+        "cmake",
+        "--build",
+        "${SCRATCH}/655-ejtxc9d0/build",
+        "-j",
+        "3"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:04.491735+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "[ 20%] Building CXX object CMakeFiles/shader_lab_parser.dir/src/Lexer.cpp.o\n[ 60%] Building CXX object CMakeFiles/shader_lab_parser.dir/src/Format.cpp.o\n[ 60%] Building CXX object CMakeFiles/shader_lab_parser.dir/src/Parser.cpp.o\n[ 80%] Building CXX object CMakeFiles/shader_lab_parser.dir/src/TokenHelper.cpp.o\n[100%] Linking CXX static library libshader_lab_parser.a\n[100%] Built target shader_lab_parser\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Link the typed material-property verifier to the native ShaderLab parser",
+      "command": [
+        "g++",
+        "-std=c++20",
+        "-I${SCRATCH}/cache/tools/shaderlab-5a77355be9a0/tree/ShaderLabParser-5a77355be9a03c7afa6206fecaceda046129c773/src",
+        "-I${SCRATCH}/655-ejtxc9d0/build",
+        "${SCRATCH}/655-ejtxc9d0/inspect_shader.cpp",
+        "${SCRATCH}/655-ejtxc9d0/build/libshader_lab_parser.a",
+        "-o",
+        "inspect_shader"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:09.986918+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Parse the original source with the upstream ShaderLab parser",
+      "command": [
+        "${SCRATCH}/655-ejtxc9d0/inspect_shader",
+        "${SCRATCH}/655-ejtxc9d0/hello.shader"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:10.883097+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "line 3:21: unexpected 'Color' in Pass, expected Name, Tags, PackageRequirements, a render state command, or a shader program.\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/655-ejtxc9d0/inspect_shader",
+        "${SCRATCH}/655-ejtxc9d0/candidate.shader"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:10.893573+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/655-ejtxc9d0/inspect_shader",
+        "${SCRATCH}/655-ejtxc9d0/hello.shader"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:10.915950+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the actual HLSL program extracted from the ShaderLab pass to SPIR-V",
+      "command": [
+        "glslangValidator",
+        "-D",
+        "-V",
+        "-S",
+        "frag",
+        "-e",
+        "frag",
+        "-o",
+        "bound.spv",
+        "bound.frag.hlsl"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:10.926175+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "bound.frag.hlsl\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Validate the emitted fragment module",
+      "command": [
+        "spirv-val",
+        "bound.spv"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:11.175028+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Disassemble the native fragment code to verify the actual color binding",
+      "command": [
+        "spirv-dis",
+        "bound.spv"
+      ],
+      "cwd": "${SCRATCH}/655-ejtxc9d0",
+      "timestamp_utc": "2026-11-19T18:27:11.255218+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "; SPIR-V\n; Version: 1.0\n; Generator: Khronos Glslang Reference Front End; 11\n; Bound: 29\n; Schema: 0\n               OpCapability Shader\n          %1 = OpExtInstImport \"GLSL.std.450\"\n               OpMemoryModel Logical GLSL450\n               OpEntryPoint Fragment %frag \"frag\" %_entryPointOutput\n               OpExecutionMode %frag OriginUpperLeft\n               OpSource HLSL 500\n               OpName %frag \"frag\"\n               OpName %_Global \"$Global\"\n               OpMemberName %_Global 0 \"_Color\"\n               OpName %_ \"\"\n               OpName %_entryPointOutput \"@entryPointOutput\"\n               OpDecorate %_Global Block\n               OpMemberDecorate %_Global 0 Offset 0\n               OpDecorate %_ Binding 0\n               OpDecorate %_ DescriptorSet 0\n               OpDecorate %_entryPointOutput Location 0\n       %void = OpTypeVoid\n          %3 = OpTypeFunction %void\n      %float = OpTypeFloat 32\n    %v4float = OpTypeVector %float 4\n    %_Global = OpTypeStruct %v4float\n%_ptr_Uniform__Global = OpTypePointer Uniform %_Global\n          %_ = OpVariable %_ptr_Uniform__Global Uniform\n        %int = OpTypeInt 32 1\n      %int_0 = OpConstant %int 0\n%_ptr_Uniform_v4float = OpTypePointer Uniform %v4float\n%_ptr_Output_v4float = OpTypePointer Output %v4float\n%_entryPointOutput = OpVariable %_ptr_Output_v4float Output\n       %frag = OpFunction %void None %3\n          %5 = OpLabel\n         %27 = OpAccessChain %_ptr_Uniform_v4float %_ %int_0\n         %28 = OpLoad %v4float %27\n               OpStore %_entryPointOutput %28\n               OpReturn\n               OpFunctionEnd\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/655-ejtxc9d0/home",
+        "TMPDIR": "${SCRATCH}/655-ejtxc9d0/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#655 ShaderLab/hello.shader": "45a8a330756bff6f4ebbe50d2af11f758c1cb4bbf117240b92800e3b0506eaaa"
+  },
+  "fixture_sha256": {
+    "inspect_shader.cpp": {
+      "sha256": "4c33309125fe080c436d4b03b1f1f2eb266be24c390d9182e543678cbf703575",
+      "content_utf8": "#include \"Parser.h\"\n#include <array>\n#include <cmath>\n#include <fstream>\n#include <iostream>\n#include <iterator>\n#include <stdexcept>\n#include <string>\n\nint main(int argc, char **argv) {\n    try {\n        if (argc != 2) return 64;\n        std::ifstream input(argv[1]);\n        if (!input) return 66;\n        const std::string source{std::istreambuf_iterator<char>(input), {}};\n        const auto shader = sl_parser::Parser::ParseSource(source);\n        if (!shader.properties || shader.properties->size() != 1 ||\n            shader.sub_shaders.size() != 1) return 65;\n        const auto& color = shader.properties->at(0);\n        if (color.name != \"_Color\" || color.property_type != sl_parser::PropertyDecl::Type::Color ||\n            color.default_numbers.size() != 4) return 65;\n        const std::array<double,4> expected{0.1,0.3,0.5,1.0};\n        for (std::size_t i = 0; i < expected.size(); ++i) {\n            if (std::abs(color.default_numbers[i] - expected[i]) > 0.00001) return 65;\n        }\n        const auto& passes = shader.sub_shaders.at(0).passes;\n        if (passes.size() != 1) return 65;\n        const auto *pass = dynamic_cast<const sl_parser::Pass*>(passes.at(0).get());\n        if (!pass || !pass->shader_program ||\n            pass->shader_program->language != sl_parser::ShaderProgram::Language::HLSL) return 65;\n        std::ofstream program(\"bound.frag.hlsl\");\n        program << pass->shader_program->program;\n        if (!program) return 74;\n        std::cout << color.display_name << '\\n';\n        return 0;\n    } catch (const std::exception& err) {\n        std::cerr << err.what() << '\\n';\n        return 1;\n    }\n}\n"
+    },
+    "candidate.shader": {
+      "sha256": "45a8a330756bff6f4ebbe50d2af11f758c1cb4bbf117240b92800e3b0506eaaa",
+      "content_utf8": "Shader \"Corpus/Hello World\" {\n Properties { _Color (\"Hello, World!\", Color) = (0.1,0.3,0.5,1) }\n SubShader {\n  Pass {\n   HLSLPROGRAM\n   #pragma vertex vert\n   #pragma fragment frag\n\n   float4 _Color;\n\n   float4 vert(float4 position : POSITION) : SV_Position\n   {\n       return position;\n   }\n\n   float4 frag() : SV_Target\n   {\n       return _Color;\n   }\n   ENDHLSL\n  }\n }\n Fallback Off\n}\n"
+    }
+  },
+  "sources": [
+    "https://docs.unity3d.com/Manual/SL-Properties.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/DerpyNewbie/ShaderLabParser/tar.gz/5a77355be9a03c7afa6206fecaceda046129c773",
+      "sha256": "51b1411ee56ae1a4d213650d3c0bb0174a195f5667bb0dab4470bc02fa7fc052",
+      "ref": "5a77355be9a03c7afa6206fecaceda046129c773"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "filename": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295",
+      "bytes": 11190006,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb"
+    },
+    {
+      "name": "glslang-tools",
+      "version": "15.1.0-2~ubuntu0.24.04.2",
+      "filename": "pool/universe/g/glslang/glslang-tools_15.1.0-2~ubuntu0.24.04.2_amd64.deb",
+      "sha256": "8767bba0e4cc781a5de0da3e662f656664cc3b8de2399aef6755bac61137727e",
+      "bytes": 2394874,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/g/glslang/glslang-tools_15.1.0-2~ubuntu0.24.04.2_amd64.deb"
+    },
+    {
+      "name": "spirv-tools",
+      "version": "2025.1~rc1-1~ubuntu0.24.04.2",
+      "filename": "pool/universe/s/spirv-tools/spirv-tools_2025.1~rc1-1~ubuntu0.24.04.2_amd64.deb",
+      "sha256": "529e396c337d15beb8ed0f03fcbeb2a066e5a818e032e197b6ef2d3328dc7ae9",
+      "bytes": 4410456,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2025.1~rc1-1~ubuntu0.24.04.2_amd64.deb"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#655 ShaderLab/hello.shader",
+      "original_sha256": "04dc0d1d7ea85471cfc42d2c71d31808032541442ef15a7628061859bc04e5b9",
+      "tested_sha256": "45a8a330756bff6f4ebbe50d2af11f758c1cb4bbf117240b92800e3b0506eaaa",
+      "staged_file": "work/native_target800_20261119/corrected/655/hello.shader",
+      "original_fragment": "Shader \"Corpus/Hello World\" {\n Properties { _Color (\"Hello, World!\", Color) = (0.1,0.3,0.5,1) }\n SubShader { Pass { Color [_Color] } }\n Fallback Off\n}\n",
+      "replacement": "Shader \"Corpus/Hello World\" {\n Properties { _Color (\"Hello, World!\", Color) = (0.1,0.3,0.5,1) }\n SubShader {\n  Pass {\n   HLSLPROGRAM\n   #pragma vertex vert\n   #pragma fragment frag\n\n   float4 _Color;\n\n   float4 vert(float4 position : POSITION) : SV_Position\n   {\n       return position;\n   }\n\n   float4 frag() : SV_Target\n   {\n       return _Color;\n   }\n   ENDHLSL\n  }\n }\n Fallback Off\n}\n"
+    }
+  ],
+  "compiled_shader_sha256": "c052c6b7dec2cd5ec1136ec55b86d8eb51613c47ca5026a9ce5130df6b288f1d",
+  "toolchain": "DerpyNewbie ShaderLabParser 0.1.0 and glslang SPIR-V tools",
+  "reproduction_command": "inspect_shader hello.shader; glslangValidator -D -V -S frag -e frag bound.frag.hlsl; spirv-val bound.spv",
+  "semantic_scope": "The headless parser resolved the exact greeting as the display label of the typed _Color material property and verified its default RGBA values. The pass uses an HLSL fragment program whose emitted SPIR-V loads the matching property and writes it to the output.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

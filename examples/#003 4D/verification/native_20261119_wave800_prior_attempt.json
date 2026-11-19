@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "ordinal": 3,
+  "language": "4D",
+  "timestamp_utc": "2026-11-19T18:06:48.183915+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Identify exact native dependencies of the publisher tool4d Linux executable",
+      "command": [
+        "ldd",
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d"
+      ],
+      "cwd": "${SCRATCH}/003-98827spn",
+      "timestamp_utc": "2026-11-19T18:06:48.288252+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffd86534000)\n\tlibuuid.so.1 => /lib/x86_64-linux-gnu/libuuid.so.1 (0x000078fae3044000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x000078fae302e000)\n\tlibfreeimage.so.3 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libfreeimage.so.3 (0x000078fae2f73000)\n\tlibsystemd.so.0 => /lib/x86_64-linux-gnu/libsystemd.so.0 (0x000078faddb20000)\n\tlibc++.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc++.so.1 (0x000078fadda22000)\n\tlibc++abi.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc++abi.so.1 (0x000078fae2f37000)\n\tlibunwind.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libunwind.so.1 (0x000078fae2f29000)\n\tlibm.so.6 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libm.so.6 (0x000078fadd939000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000078fadd90b000)\n\tlibc.so.6 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc.so.6 (0x000078fadd600000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000078fae3058000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x000078fae2f18000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000078fadd200000)\n\tlibjxrglue.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libjxrglue.so.0 (0x000078fadd8e8000)\n\tlibjpeg.so.8 => /lib/x86_64-linux-gnu/libjpeg.so.8 (0x000078fadd865000)\n\tlibopenjp2.so.7 => /lib/x86_64-linux-gnu/libopenjp2.so.7 (0x000078fadd59f000)\n\tlibpng16.so.16 => /lib/x86_64-linux-gnu/libpng16.so.16 (0x000078fadd82d000)\n\tlibraw.so.23 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libraw.so.23 (0x000078fadd485000)\n\tlibtiff.so.6 => /lib/x86_64-linux-gnu/libtiff.so.6 (0x000078fadd173000)\n\tlibwebpmux.so.3 => /lib/x86_64-linux-gnu/libwebpmux.so.3 (0x000078fae2f06000)\n\tlibOpenEXR-3_1.so.30 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libOpenEXR-3_1.so.30 (0x000078fadce00000)\n\tlibIex-3_1.so.30 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libIex-3_1.so.30 (0x000078fadcd7d000)\n\tlibImath-3_1.so.29 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libImath-3_1.so.29 (0x000078fadd125000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000078fadd109000)\n\tlibcap.so.2 => /lib/x86_64-linux-gnu/libcap.so.2 (0x000078fadd81e000)\n\tlibgcrypt.so.20 => /lib/x86_64-linux-gnu/libgcrypt.so.20 (0x000078fadcc34000)\n\tliblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x000078fadcc12000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x000078fadcbe0000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000078fadcb26000)\n\tlibjpegxr.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libjpegxr.so.0 (0x000078fadcaeb000)\n\tliblcms2.so.2 => /lib/x86_64-linux-gnu/liblcms2.so.2 (0x000078fadca89000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x000078fadca33000)\n\tlibwebp.so.7 => /lib/x86_64-linux-gnu/libwebp.so.7 (0x000078fadc9b8000)\n\tlibLerc.so.4 => /lib/x86_64-linux-gnu/libLerc.so.4 (0x000078fadc931000)\n\tlibjbig.so.0 => /lib/x86_64-linux-gnu/libjbig.so.0 (0x000078fadc921000)\n\tlibdeflate.so.0 => /lib/x86_64-linux-gnu/libdeflate.so.0 (0x000078fadc90e000)\n\tlibIlmThread-3_1.so.30 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libIlmThread-3_1.so.30 (0x000078fadc904000)\n\tlibgpg-error.so.0 => /lib/x86_64-linux-gnu/libgpg-error.so.0 (0x000078fadc8df000)\n\tlibsharpyuv.so.0 => /lib/x86_64-linux-gnu/libsharpyuv.so.0 (0x000078fadc8d7000)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-98827spn/home",
+        "TMPDIR": "${SCRATCH}/003-98827spn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Identify the official tool4d version",
+      "command": [
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/003-98827spn",
+      "timestamp_utc": "2026-11-19T18:06:48.302352+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "21.0 build 21.100422\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-98827spn/home",
+        "TMPDIR": "${SCRATCH}/003-98827spn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Run the exact 4D method in a disposable project under the official headless CLI",
+      "command": [
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d",
+        "--project",
+        "${SCRATCH}/003-98827spn/project/Project/Hello.4DProject",
+        "--dataless",
+        "--skip-onstartup",
+        "--startup-method",
+        "RunGreeting"
+      ],
+      "cwd": "${SCRATCH}/003-98827spn",
+      "timestamp_utc": "2026-11-19T18:06:48.485473+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tool4d.xbox [554] JSON malformed. Was expecting: \" 0-9 null true false { [. (task=28139, taskName=tool4d)\ntool4d.xbox [550] JSON malformed in ${SCRATCH}/003-98827spn/project/Project/Hello.4DProject, line 1, position 1. (task=28139, taskName=tool4d)\ntool4d.HDLS (Structure \"${SCRATCH}/003-98827spn/project/Project/Hello.4DProject\" doesn't exist.) ()\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-98827spn/home",
+        "TMPDIR": "${SCRATCH}/003-98827spn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Run the official 4D command for standard output in the isolated project",
+      "command": [
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d",
+        "--project",
+        "${SCRATCH}/003-98827spn/project/Project/Hello.4DProject",
+        "--dataless",
+        "--skip-onstartup",
+        "--startup-method",
+        "RunGreeting"
+      ],
+      "cwd": "${SCRATCH}/003-98827spn",
+      "timestamp_utc": "2026-11-19T18:06:51.428199+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tool4d.xbox [554] JSON malformed. Was expecting: \" 0-9 null true false { [. (task=28299, taskName=tool4d)\ntool4d.xbox [550] JSON malformed in ${SCRATCH}/003-98827spn/project/Project/Hello.4DProject, line 1, position 1. (task=28299, taskName=tool4d)\ntool4d.HDLS (Structure \"${SCRATCH}/003-98827spn/project/Project/Hello.4DProject\" doesn't exist.) ()\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-98827spn/home",
+        "TMPDIR": "${SCRATCH}/003-98827spn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#003 4D/HelloWorld.4dm": "9f8e38867c4d04b79f2891e0e871e5fbe9e251b2a421bd9cb83489a4d9ae2e74"
+  },
+  "fixture_sha256": {
+    "project/Project/Hello.4DProject": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_utf8": ""
+    },
+    "project/Project/Sources/catalog.4DCatalog": {
+      "sha256": "ea8cf9c3b051fd5daed85a0bff2690ed93230fdeeef0fe6d4bcae3a529e709ab",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><base name=\"Hello\" uuid=\"2C2828E43075434F8366164D01F6A3A9\"/>\n"
+    },
+    "project/Project/Sources/Methods/RunGreeting.4dm": {
+      "sha256": "6d0ab809dd2cca18878eee18f320eb7ee0e6e39249174b46752bb83f5af9c729",
+      "content_utf8": "HelloWorld\nQUIT 4D\n"
+    }
+  },
+  "sources": [
+    "https://developer.4d.com/docs/commands/alert",
+    "https://developer.4d.com/docs/Project/architecture",
+    "https://developer.4d.com/docs/Project/compiler"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://resources-download.4d.com/release/21.x/21.0/latest/linux/tool4d_Linux.tar.xz",
+      "sha256": "5f2232d4f236483f0c9adefb15561eec01cb9d60b9985f8f9805d5087982fe7d"
+    }
+  ],
+  "ubuntu_archives": [],
+  "blocker": "AssertionError: ",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/resume_4d_run.py\", line 36, in fourd\n    assert after.returncode==0 and 'Hello, World!' in [line.strip() for line in after.stdout.splitlines()]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

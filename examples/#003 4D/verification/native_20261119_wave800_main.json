@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "ordinal": 3,
+  "language": "4D",
+  "timestamp_utc": "2026-11-19T18:09:00.803435+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Identify exact native dependencies of the publisher tool4d Linux executable",
+      "command": [
+        "ldd",
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d"
+      ],
+      "cwd": "${SCRATCH}/003-84wk68nd",
+      "timestamp_utc": "2026-11-19T18:09:00.935218+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007fff19364000)\n\tlibuuid.so.1 => /lib/x86_64-linux-gnu/libuuid.so.1 (0x00007e079fe79000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x00007e079fe63000)\n\tlibfreeimage.so.3 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libfreeimage.so.3 (0x00007e079fda8000)\n\tlibsystemd.so.0 => /lib/x86_64-linux-gnu/libsystemd.so.0 (0x00007e079a920000)\n\tlibc++.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc++.so.1 (0x00007e079a822000)\n\tlibc++abi.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc++abi.so.1 (0x00007e079fd6c000)\n\tlibunwind.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libunwind.so.1 (0x00007e079fd5e000)\n\tlibm.so.6 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libm.so.6 (0x00007e079a739000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007e079fd2e000)\n\tlibc.so.6 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007e079a400000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007e079fe8d000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x00007e079fd1f000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007e079a000000)\n\tlibjxrglue.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libjxrglue.so.0 (0x00007e079a716000)\n\tlibjpeg.so.8 => /lib/x86_64-linux-gnu/libjpeg.so.8 (0x00007e079a693000)\n\tlibopenjp2.so.7 => /lib/x86_64-linux-gnu/libopenjp2.so.7 (0x00007e079a632000)\n\tlibpng16.so.16 => /lib/x86_64-linux-gnu/libpng16.so.16 (0x00007e079a3c8000)\n\tlibraw.so.23 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libraw.so.23 (0x00007e079a2ae000)\n\tlibtiff.so.6 => /lib/x86_64-linux-gnu/libtiff.so.6 (0x00007e0799f73000)\n\tlibwebpmux.so.3 => /lib/x86_64-linux-gnu/libwebpmux.so.3 (0x00007e079fd0d000)\n\tlibOpenEXR-3_1.so.30 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libOpenEXR-3_1.so.30 (0x00007e0799c00000)\n\tlibIex-3_1.so.30 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libIex-3_1.so.30 (0x00007e0799b7d000)\n\tlibImath-3_1.so.29 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libImath-3_1.so.29 (0x00007e0799f25000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007e079a616000)\n\tlibcap.so.2 => /lib/x86_64-linux-gnu/libcap.so.2 (0x00007e079a2a1000)\n\tlibgcrypt.so.20 => /lib/x86_64-linux-gnu/libgcrypt.so.20 (0x00007e0799a34000)\n\tliblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x00007e079a27f000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007e0799a02000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007e0799948000)\n\tlibjpegxr.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libjpegxr.so.0 (0x00007e079990d000)\n\tliblcms2.so.2 => /lib/x86_64-linux-gnu/liblcms2.so.2 (0x00007e07998ab000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007e0799855000)\n\tlibwebp.so.7 => /lib/x86_64-linux-gnu/libwebp.so.7 (0x00007e07997da000)\n\tlibLerc.so.4 => /lib/x86_64-linux-gnu/libLerc.so.4 (0x00007e0799753000)\n\tlibjbig.so.0 => /lib/x86_64-linux-gnu/libjbig.so.0 (0x00007e0799f15000)\n\tlibdeflate.so.0 => /lib/x86_64-linux-gnu/libdeflate.so.0 (0x00007e0799740000)\n\tlibIlmThread-3_1.so.30 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libIlmThread-3_1.so.30 (0x00007e0799f0b000)\n\tlibgpg-error.so.0 => /lib/x86_64-linux-gnu/libgpg-error.so.0 (0x00007e079971b000)\n\tlibsharpyuv.so.0 => /lib/x86_64-linux-gnu/libsharpyuv.so.0 (0x00007e0799713000)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-84wk68nd/home",
+        "TMPDIR": "${SCRATCH}/003-84wk68nd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Identify the official tool4d version",
+      "command": [
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/003-84wk68nd",
+      "timestamp_utc": "2026-11-19T18:09:00.949581+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "21.0 build 21.100422\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-84wk68nd/home",
+        "TMPDIR": "${SCRATCH}/003-84wk68nd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Run the exact 4D method in a disposable project under the official headless CLI",
+      "command": [
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d",
+        "--project",
+        "${SCRATCH}/003-84wk68nd/project/Project/Hello.4DProject",
+        "--dataless",
+        "--skip-onstartup",
+        "--startup-method",
+        "RunGreeting"
+      ],
+      "cwd": "${SCRATCH}/003-84wk68nd",
+      "timestamp_utc": "2026-11-19T18:09:01.125902+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "tool4d.HDLS ([Call of Forbidden Method] ALERT: Hello, World!)[{\"type\":\"projectMethod\",\"name\":\"HelloWorld\",\"line\":1,\"database\":\"Hello\",\"formula\":\"ALERT(\\\"Hello, World!\\\")\"},{\"type\":\"projectMethod\",\"name\":\"RunGreeting\",\"line\":1,\"database\":\"Hello\",\"formula\":\"HelloWorld\"}] ()\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-84wk68nd/home",
+        "TMPDIR": "${SCRATCH}/003-84wk68nd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Run the official 4D command for standard output in the isolated project",
+      "command": [
+        "${SCRATCH}/cache/tools/tool4d-21/linux/bin/tool4d",
+        "--project",
+        "${SCRATCH}/003-84wk68nd/project/Project/Hello.4DProject",
+        "--dataless",
+        "--skip-onstartup",
+        "--startup-method",
+        "RunGreeting"
+      ],
+      "cwd": "${SCRATCH}/003-84wk68nd",
+      "timestamp_utc": "2026-11-19T18:09:02.914122+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/003-84wk68nd/home",
+        "TMPDIR": "${SCRATCH}/003-84wk68nd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": ":${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#003 4D/HelloWorld.4dm": "7d67c0e01a2e070279557aedd3244cfd2374cfd5de740d07dd5b6a1c4f772205"
+  },
+  "fixture_sha256": {
+    "project/Project/Hello.4DProject": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "content_utf8": "{}\n"
+    },
+    "project/Project/Sources/catalog.4DCatalog": {
+      "sha256": "ea8cf9c3b051fd5daed85a0bff2690ed93230fdeeef0fe6d4bcae3a529e709ab",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><base name=\"Hello\" uuid=\"2C2828E43075434F8366164D01F6A3A9\"/>\n"
+    },
+    "project/Project/Sources/Methods/RunGreeting.4dm": {
+      "sha256": "6d0ab809dd2cca18878eee18f320eb7ee0e6e39249174b46752bb83f5af9c729",
+      "content_utf8": "HelloWorld\nQUIT 4D\n"
+    }
+  },
+  "sources": [
+    "https://developer.4d.com/docs/commands/alert",
+    "https://developer.4d.com/docs/Project/architecture",
+    "https://developer.4d.com/docs/Project/compiler"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://resources-download.4d.com/release/21.x/21.0/latest/linux/tool4d_Linux.tar.xz",
+      "sha256": "5f2232d4f236483f0c9adefb15561eec01cb9d60b9985f8f9805d5087982fe7d"
+    }
+  ],
+  "ubuntu_archives": [],
+  "source_changes": [
+    {
+      "path": "examples/#003 4D/HelloWorld.4dm",
+      "original_sha256": "9f8e38867c4d04b79f2891e0e871e5fbe9e251b2a421bd9cb83489a4d9ae2e74",
+      "tested_sha256": "7d67c0e01a2e070279557aedd3244cfd2374cfd5de740d07dd5b6a1c4f772205",
+      "staged_file": "work/native_target800_20261119/corrected/003/HelloWorld.4dm",
+      "original_fragment": "ALERT(\"Hello, World!\")\n",
+      "replacement": "LOG EVENT(Into system standard outputs; \"Hello, World!\")\n"
+    }
+  ],
+  "toolchain": "Official tool4d for Linux, 21.0 build 21.100422",
+  "reproduction_command": "tool4d --project Project/Hello.4DProject --dataless --skip-onstartup --startup-method RunGreeting",
+  "semantic_scope": "Official tool4d executed the finalized 4D method in headless mode. The documented LOG EVENT output channel emitted the exact greeting on standard output.",
+  "updated_expectation": {
+    "semantic_goal": "Send the exact greeting to standard output from a native 4D project method.",
+    "validation_mode": "compile_or_run_headless",
+    "build_command": "tool4d loads the project and checks the method while executing it.",
+    "expected_result": "Tool4D exits successfully and prints exactly Hello, World! to standard output."
+  },
+  "verification_sources": [
+    "https://developer.4d.com/docs/21/commands/log-event",
+    "https://developer.4d.com/docs/Admin/cli"
+  ],
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#003 4D/verification/native_20261119_wave800_prior_attempt.json"
+}

@@ -6,7 +6,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | ---: | --- | --- | --- | --- | --- | --- |
 | #001 | [1C Enterprise](../examples/%23001%201C%20Enterprise/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #002 | [2-Dimensional Array](../examples/%23002%202-Dimensional%20Array/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #003 | [4D](../examples/%23003%204D/README.md) | Yes | Pending | Pending | 1/1 | 4D development application and host project are unavailable. |
+| #003 | [4D](../examples/%23003%204D/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #004 | [ABAP](../examples/%23004%20ABAP/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #005 | [ABAP CDS](../examples/%23005%20ABAP%20CDS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #006 | [ABNF](../examples/%23006%20ABNF/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -73,7 +73,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #067 | [Bison](../examples/%23067%20Bison/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #068 | [BitBake](../examples/%23068%20BitBake/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #069 | [Blade](../examples/%23069%20Blade/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #070 | [BlitzBasic](../examples/%23070%20BlitzBasic/README.md) | Yes | Pending | Pending | 2/2 | The Blitz3D compiler and IDE are unavailable; the build and visual output still need checking in the original software. |
+| #070 | [BlitzBasic](../examples/%23070%20BlitzBasic/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #071 | [BlitzMax](../examples/%23071%20BlitzMax/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #072 | [Blueprint](../examples/%23072%20Blueprint/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #073 | [Bluespec](../examples/%23073%20Bluespec/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -501,7 +501,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #495 | [Odin](../examples/%23495%20Odin/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #496 | [Omgrofl](../examples/%23496%20Omgrofl/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #497 | [Opa](../examples/%23497%20Opa/README.md) | Yes | Pending | Pending | 1/1 | The historical Opa web compiler and required Node runtime are not set up. |
-| #498 | [Opal](../examples/%23498%20Opal/README.md) | Yes | Pending | Pending | 1/1 | The historical runtime or compiler for the .opal dialect has not been identified or set up. |
+| #498 | [Opal](../examples/%23498%20Opal/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #499 | [Open Policy Agent](../examples/%23499%20Open%20Policy%20Agent/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #500 | [OpenAPI Specification v2](../examples/%23500%20OpenAPI%20Specification%20v2/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #501 | [OpenAPI Specification v3](../examples/%23501%20OpenAPI%20Specification%20v3/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
@@ -658,7 +658,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #652 | [Scheme](../examples/%23652%20Scheme/README.md) | Yes | Yes | Yes | 6/6 | Evidence recorded |
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #654 | [Self](../examples/%23654%20Self/README.md) | Yes | Pending | Pending | 1/1 | The Self VM and standard world are not set up. |
-| #655 | [ShaderLab](../examples/%23655%20ShaderLab/README.md) | Yes | Pending | Pending | 1/1 | The Unity editor and shader compiler are unavailable; fixed-function compatibility is still untested. |
+| #655 | [ShaderLab](../examples/%23655%20ShaderLab/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | Yes | Yes | Yes | 16/16 | Evidence recorded |
 | #657 | [ShellCheck Config](../examples/%23657%20ShellCheck%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #658 | [ShellSession](../examples/%23658%20ShellSession/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -700,7 +700,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #694 | [Swift](../examples/%23694%20Swift/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #695 | [SystemVerilog](../examples/%23695%20SystemVerilog/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #696 | [TI Program](../examples/%23696%20TI%20Program/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #697 | [TL-Verilog](../examples/%23697%20TL-Verilog/README.md) | Yes | Pending | Pending | 1/1 | Required sandpiper-saas toolchain and matching execution/format resources are not configured. |
+| #697 | [TL-Verilog](../examples/%23697%20TL-Verilog/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #698 | [TLA](../examples/%23698%20TLA/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #699 | [TMDL](../examples/%23699%20TMDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #700 | [TOML](../examples/%23700%20TOML/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |

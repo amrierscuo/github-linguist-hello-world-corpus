@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "ordinal": 697,
+  "language": "TL-Verilog",
+  "timestamp_utc": "2026-11-19T18:27:03.024720+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the upstream Intel TL-Verilog compiler fork with CMake and the native JDK",
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "build",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f/compiler",
+      "timestamp_utc": "2026-11-19T18:27:03.072065+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "-- Found Java: /usr/bin/java (found suitable version \"21.0.13\", minimum required is \"1.7\") \n-- Configuring done (0.1s)\n-- Generating done (0.0s)\n-- Build files have been written to: ${SCRATCH}/697-gklz6k8f/compiler/build\n",
+      "stderr": "CMake Deprecation Warning at CMakeLists.txt:46 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Warning:\n  Manually-specified variables were not used by the project:\n\n    CMAKE_POLICY_VERSION_MINIMUM\n\n\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home"
+      }
+    },
+    {
+      "label": "Build the actual SVGen Java compiler",
+      "command": [
+        "cmake",
+        "--build",
+        "build",
+        "-j",
+        "3"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f/compiler",
+      "timestamp_utc": "2026-11-19T18:27:03.556976+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "[ 11%] Building Java objects for joptsimple.jar\n[ 22%] Generating CMakeFiles/joptsimple.dir/java_class_filelist\n[ 33%] Creating Java archive joptsimple.jar\n[ 33%] Built target joptsimple\n[ 44%] Building Java objects for tlv.jar\n[ 55%] Generating CMakeFiles/tlv.dir/java_class_filelist\n[ 66%] Creating Java archive tlv.jar\n[ 66%] Built target tlv\n[ 77%] Building Java objects for svgen.jar\n[ 88%] Generating CMakeFiles/svgen.dir/java_class_filelist\n[100%] Creating Java archive svgen.jar\n[100%] Built target svgen\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nNote: Some input files use unchecked or unsafe operations.\nNote: Recompile with -Xlint:unchecked for details.\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nparse/ParseContext.java:490: warning: [removal] Integer(String) in Integer has been deprecated and marked for removal\n\t\t\t\tret = new Integer(int_str);\n\t\t\t\t      ^\n1 warning\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\n./tlv/parse/ParseContext.java:490: warning: [removal] Integer(String) in Integer has been deprecated and marked for removal\n\t\t\t\tret = new Integer(int_str);\n\t\t\t\t      ^\nNote: Some input files use unchecked or unsafe operations.\nNote: Recompile with -Xlint:unchecked for details.\n1 warning\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home"
+      }
+    },
+    {
+      "label": "Read TL-Verilog compiler options",
+      "command": [
+        "${SCRATCH}/697-gklz6k8f/compiler/bin/svgen",
+        "--help"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f/compiler",
+      "timestamp_utc": "2026-11-19T18:27:09.323282+00:00",
+      "timeout_seconds": 20,
+      "exit_code": 100,
+      "stdout": "Not enough arguments.\nUsage: ${SCRATCH}/697-gklz6k8f/compiler/bin/svgen [-h] [-read-only] [-m4inc <m4-incl-path1> [-m4inc ...]] [-m4out <m4-out-file>] [-debug] [<tlv-args>] [-pass <passing-exit-status>] <tlv-[m4-]in-file> <sv-out-file>\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    },
+    {
+      "label": "Compile the exact TL-Verilog example with the upstream SVGen front end",
+      "command": [
+        "${SCRATCH}/697-gklz6k8f/compiler/bin/svgen",
+        "-m4out",
+        "${SCRATCH}/697-gklz6k8f/preprocessed.tlv",
+        "${SCRATCH}/697-gklz6k8f/hello.tlv",
+        "${SCRATCH}/697-gklz6k8f/hello.sv"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f",
+      "timestamp_utc": "2026-11-19T18:27:09.395701+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 12,
+      "stdout": "",
+      "stderr": "sh: 1: /usr/bin/m4: not found\nPicked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nFATAL_BUG(12) (EXCEPTION): File '<unknown>'.  Context within file unknown.\n\tUncaught exception: Index 0 out of bounds for length 0\n\tParse context above may or may not be helpful.\n\nThis resulted from the following exception: \n\tIndex 0 out of bounds for length 0\n\tIn context:\n\tat java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)\n\tat java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)\n\tat java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)\n\tat java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)\n\tat java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)\n\tat java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)\n\tat java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)\n\tat java.base/java.lang.String.checkIndex(String.java:4822)\n\tat java.base/java.lang.StringLatin1.charAt(StringLatin1.java:46)\n\tat java.base/java.lang.String.charAt(String.java:1544)\n\tat tlv.parse.ParseSV.<init>(ParseSV.java:51)\n\tat tlv.parse.SourceFile.parseFile(SourceFile.java:980)\n\tat tlv.parse.SourceFile.process(SourceFile.java:1521)\n\tat tlv.Main.main(Main.java:176)\n\tat AppLauncher.main(AppLauncher.java:9)\nSVGen command: /usr/bin/java -jar ${SCRATCH}/697-gklz6k8f/compiler/bin/../target/svgen.jar -i '${SCRATCH}/697-gklz6k8f/preprocessed.tlv' -o ${SCRATCH}/697-gklz6k8f/hello.sv \nreturned non-zero status (12).\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    },
+    {
+      "label": "Compile the exact TL-Verilog example with the upstream SVGen front end",
+      "command": [
+        "java",
+        "-jar",
+        "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar",
+        "-i",
+        "${SCRATCH}/697-gklz6k8f/hello.tlv",
+        "-o",
+        "${SCRATCH}/697-gklz6k8f/hello.sv"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f",
+      "timestamp_utc": "2026-11-19T18:27:09.567025+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 10,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\nWARNING(1) (FILE-HEADER): File '<unknown>'.  Context within file unknown.\n\tFirst line of every TLV file must be (literally):\n\t\t\"\\TLV_version 1a: tl-x.org\", and it is not.\n\nFATAL_ERROR(10) (NO-PIPE): File '${SCRATCH}/697-gklz6k8f/hello.tlv' Line 9 (char 1), while parsing:\n\t+v------------------------------\n\t>   $message[103:0] = 104'h48656c6c6f2c20576f726c6421;\n\t+^------------------------------\n\tAssignment statement requires pipeline scope.\n\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    },
+    {
+      "label": "Probe the equivalent TL-Verilog 1a spelling with the published pipeline requirement",
+      "command": [
+        "java",
+        "-jar",
+        "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar",
+        "-i",
+        "${SCRATCH}/697-gklz6k8f/try-1a.tlv",
+        "-o",
+        "${SCRATCH}/697-gklz6k8f/hello.sv"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f",
+      "timestamp_utc": "2026-11-19T18:27:09.740148+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    },
+    {
+      "label": "Lower the finalized TL-Verilog source to SystemVerilog",
+      "command": [
+        "java",
+        "-jar",
+        "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar",
+        "-i",
+        "${SCRATCH}/697-gklz6k8f/hello.tlv",
+        "-o",
+        "${SCRATCH}/697-gklz6k8f/hello.sv"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f",
+      "timestamp_utc": "2026-11-19T18:27:09.924690+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    },
+    {
+      "label": "Compile the generated SystemVerilog with Icarus Verilog",
+      "command": [
+        "iverilog",
+        "-B",
+        "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ivl",
+        "-I${SCRATCH}/697-gklz6k8f/compiler/examples/ring",
+        "-I${SCRATCH}/697-gklz6k8f/compiler/verilator/fibo",
+        "-I${SCRATCH}/697-gklz6k8f/compiler/verilog",
+        "-g2012",
+        "-s",
+        "hello",
+        "-o",
+        "${SCRATCH}/697-gklz6k8f/greeting.vvp",
+        "${SCRATCH}/697-gklz6k8f/simulation/main.sv"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f/simulation",
+      "timestamp_utc": "2026-11-19T18:27:10.176990+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "vvp",
+        "-M",
+        "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/ivl",
+        "${SCRATCH}/697-gklz6k8f/greeting.vvp"
+      ],
+      "cwd": "${SCRATCH}/697-gklz6k8f",
+      "timestamp_utc": "2026-11-19T18:27:10.301483+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n${SCRATCH}/697-gklz6k8f/simulation/main.sv:5: $finish called at 1 (1s)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/697-gklz6k8f/home",
+        "TMPDIR": "${SCRATCH}/697-gklz6k8f/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/697-gklz6k8f/home",
+        "TLV_ROOT": "${SCRATCH}/697-gklz6k8f/compiler",
+        "SVGEN_JAR": "${SCRATCH}/697-gklz6k8f/compiler/build/build/svgen.jar"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#697 TL-Verilog/hello.tlv": "3db4db31c5753c70e763f41c4a8b109f44ad21e04818dd2c218b45c4882c120a"
+  },
+  "fixture_sha256": {
+    "try-1a.tlv": {
+      "sha256": "3db4db31c5753c70e763f41c4a8b109f44ad21e04818dd2c218b45c4882c120a",
+      "content_utf8": "\\TLV_version 1a: tl-x.org\n\\SV\nmodule hello;\nwire [103:0] message;\ninitial begin\n  #1; $display(\"%s\", message); $finish;\nend\n\\TLV\n   |greeting\n      @0\n         $message[103:0] = 104'h48656c6c6f2c20576f726c6421;\n         *message = $message;\n\\SV\nendmodule\n"
+    },
+    "simulation/main.sv": {
+      "sha256": "8c822643a10eca6435c05a2b3ebea03665862cd46bb65bf5f6cde42d33c227a7",
+      "content_utf8": "`include \"tlv_hsx.vh\"  //SV\nmodule hello;\nwire [103:0] message;\ninitial begin\n  #1; $display(\"%s\", message); $finish;\nend\n`include \"hello_gen.sv\"\n   /*_|greeting_*/\n      /*_@0_*/\n         assign message_GREETING_00H[103:0] = 104'h48656c6c6f2c20576f726c6421;\n         assign message = message_GREETING_00H; endgenerate\n//SV\nendmodule\n"
+    },
+    "simulation/hello_gen.sv": {
+      "sha256": "e08f01b59ca10f708085b5fb31b48ce3cabe4f2f7944ce41010622a7d97683c2",
+      "content_utf8": "// <Legal notice here>\n\n\n`include \"tlv.vh\"\n\n\n\n\n\n//\n// Scope: |greeting\n//\n\n// For signal \"message\"\nwire [103:0] message_GREETING_00H;\n\n\ngenerate\n\n\n\n   //\n   // Scope: |greeting\n   //\n\n\n   // For signal \"message\"\n\n\n\n\nendgenerate\n\n\n\n//\n// Gated clocks.\n//\n\ngenerate\n\n\n\n   //\n   // Scope: |greeting\n   //\n\n\n\n\n\nendgenerate\n\n\n\ngenerate   // This is awkward, but we need to go into 'generate' context in the line that `includes the declarations file.\n"
+    }
+  },
+  "sources": [
+    "https://github.com/TL-X-org/tlv-comp"
+  ],
+  "previous_verification_log": "examples/#697 TL-Verilog/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/TL-X-org/tlv-comp/tar.gz/8b0a745130a39e6475b82e3653278e269c38402c",
+      "ref": "8b0a745130a39e6475b82e3653278e269c38402c",
+      "sha256": "d4f13e7d29ad6ff390b3910f843c65f76bf241b34933ee656bea58fe1bbc90ca"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "filename": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295",
+      "bytes": 11190006,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb"
+    },
+    {
+      "name": "iverilog",
+      "version": "12.0-2build2",
+      "filename": "pool/universe/i/iverilog/iverilog_12.0-2build2_amd64.deb",
+      "sha256": "f19394cee05ad526e0eb3873bc6c17a5828f56df17fbe2db40cb66513a2d4667",
+      "bytes": 2125764,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/i/iverilog/iverilog_12.0-2build2_amd64.deb"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#697 TL-Verilog/hello.tlv",
+      "original_sha256": "6b003f03150d6e2515c3a7149b74bd360e53aedf704ad99782c0eb3c865f5894",
+      "tested_sha256": "3db4db31c5753c70e763f41c4a8b109f44ad21e04818dd2c218b45c4882c120a",
+      "staged_file": "work/native_target800_20261119/corrected/697/hello.tlv",
+      "original_fragment": "\\m4_TLV_version 1d: tl-x.org\n\\SV\nmodule hello;\nwire [103:0] message;\ninitial begin\n  #1; $display(\"%s\", message); $finish;\nend\n\\TLV\n   $message[103:0] = 104'h48656c6c6f2c20576f726c6421;\n   *message = $message;\n\\SV\nendmodule\n",
+      "replacement": "\\TLV_version 1a: tl-x.org\n\\SV\nmodule hello;\nwire [103:0] message;\ninitial begin\n  #1; $display(\"%s\", message); $finish;\nend\n\\TLV\n   |greeting\n      @0\n         $message[103:0] = 104'h48656c6c6f2c20576f726c6421;\n         *message = $message;\n\\SV\nendmodule\n"
+    }
+  ],
+  "header_alias": {
+    "name": "tlv_hsx.vh",
+    "upstream_path": "verilog/tlv.vh",
+    "sha256": "bfd332a7fd12f1978d76879ce6482832b853fc43e3d5f51a0a31d26a5587a3c0"
+  },
+  "simulator_compatibility": "The original compiler calls a combinational net node. The simulation adapter spells that declaration wire and drops the source-location directive. Signal widths, initialization, assignments, and output operations are preserved.",
+  "generated_sha256": "e8a691f5c7d53bd2624e4319c32a3da87bf2e40e1df48906137db940768d9de5",
+  "toolchain": "TL-X.org SVGen Intel TL-Verilog compiler fork 8b0a745130a3 and Icarus Verilog",
+  "reproduction_command": "svgen <recorded inputs>; iverilog -g2012 -s hello -o greeting.vvp <generated SystemVerilog>; vvp greeting.vvp",
+  "semantic_scope": "The upstream compiler lowered the 1a greeting design. The verification adapted its legacy net declaration for Icarus Verilog, which simulated the generated design and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#697 TL-Verilog/verification/native_20261119_wave800_prior_attempt.json"
+}

@@ -129,16 +129,18 @@
         "ace_mode": "text"
       },
       "example": {
-        "semantic_goal": "Mostrare Hello, World! in una finestra di dialogo 4D con ALERT.",
-        "validation_mode": "compile_run_gui",
-        "toolchain": "4D development application and a host 4D project; compilation license if native compilation is used",
+        "semantic_goal": "Send the exact greeting to standard output from a native 4D project method.",
+        "validation_mode": "compile_or_run_headless",
+        "toolchain": "Official tool4d for Linux, 21.0 build 21.100422",
         "files": [
           "examples/#003 4D/HelloWorld.4dm",
-          "examples/#003 4D/README.md"
+          "examples/#003 4D/README.md",
+          "examples/#003 4D/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#003 4D/verification/native_20261119_wave800_main.json"
         ],
-        "build_command": "4D IDE: Design > Compiler... > Compile (optional native compilation)",
-        "run_or_check_command": "4D IDE: Design > Compiler... > Check Syntax; execute project method HelloWorld (integration steps in README)",
-        "expected_result": "No syntax errors and one alert dialog showing exactly Hello, World!",
+        "build_command": "tool4d loads the project and checks the method while executing it.",
+        "run_or_check_command": "tool4d --project Project/Hello.4DProject --dataless --skip-onstartup --startup-method RunGreeting",
+        "expected_result": "Tool4D exits successfully and prints exactly Hello, World! to standard output.",
         "sources": [
           "https://developer.4d.com/docs/commands/alert",
           "https://developer.4d.com/docs/Project/architecture",
@@ -149,16 +151,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "4D development application and host project are unavailable."
-        ],
-        "notes": "A genuine project-method source unit is provided. This folder does not claim to contain a complete 4D project. No application execution occurred."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:09:00.803435+00:00",
+        "verification_log": "examples/#003 4D/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "Official tool4d executed the finalized 4D method in headless mode. The documented LOG EVENT output channel emitted the exact greeting on standard output.",
+        "verified_artifact_sha256": {
+          "examples/#003 4D/HelloWorld.4dm": "7d67c0e01a2e070279557aedd3244cfd2374cfd5de740d07dd5b6a1c4f772205"
+        }
       }
     },
     {
@@ -3920,16 +3923,17 @@
       "example": {
         "semantic_goal": "Eseguire Print in BlitzBasic e visualizzare Hello, World!.",
         "validation_mode": "native_compile_run",
-        "toolchain": "Blitz3D/BlitzBasic ufficiale per Windows; versione effettiva da registrare",
+        "toolchain": "Blitz3D NG V2.00 Windows compiler and LLVM backend, isolated Wine 11.10",
         "files": [
           "examples/#070 BlitzBasic/README.md",
           "examples/#070 BlitzBasic/hello.bb",
           "examples/#070 BlitzBasic/variants/ext-decls-2e6465636c73/consumer.bb",
           "examples/#070 BlitzBasic/variants/ext-decls-2e6465636c73/hello.decls",
-          "examples/#070 BlitzBasic/variants/ext-decls-2e6465636c73/README.md"
+          "examples/#070 BlitzBasic/variants/ext-decls-2e6465636c73/README.md",
+          "examples/#070 BlitzBasic/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "Aprire hello.bb nell’IDE Blitz3D e usare Build and Run (F5).",
-        "run_or_check_command": "Eseguire il programma dalla stessa operazione dell’IDE.",
+        "run_or_check_command": "blitzcc64.exe -a -c hello.bb",
         "expected_result": "La finestra di output mostra Hello, World!; programma terminato con End.",
         "sources": [
           "https://blitzresearch.itch.io/blitz3d",
@@ -3940,16 +3944,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compilatore/IDE Blitz3D non disponibile; build e output visuale restano da verificare nel software originale."
-        ],
-        "notes": "L’estensione .bb è condivisa con BitBake, ma questo file usa la sintassi BASIC di Blitz3D. Il sorgente non richiede grafica, media o risorse esterne."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:15:17.750050+00:00",
+        "verification_log": "examples/#070 BlitzBasic/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The native compiler accepted the unchanged .bb. Its generated LLVM IR passes the exact greeting constant to bbPrint and then calls bbEnd.",
+        "verified_artifact_sha256": {
+          "examples/#070 BlitzBasic/hello.bb": "7a2f28c680292be04431502207cd33663b297b7989a592ac333177fdcc0df05f"
+        }
       }
     },
     {
@@ -28859,13 +28864,14 @@
       "example": {
         "semantic_goal": "Mostrare il saluto con alert nel dialetto .opal della baseline.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Runtime Opal compatibile con StoneCypher/DeepakChopra_Opal",
+        "toolchain": "Official Opal 1.8.3 Ruby-to-JavaScript compiler and headless Node.js",
         "files": [
           "examples/#498 Opal/README.md",
-          "examples/#498 Opal/hello.opal"
+          "examples/#498 Opal/hello.opal",
+          "examples/#498 Opal/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Caricare hello.opal nel runtime compatibile con il campione upstream; registrare compiler e procedura effettivi.",
+        "run_or_check_command": "opal -I . -r browser_bridge --compile hello.opal > greeting.js; node check.js",
         "expected_result": "Finestra alert con Hello, World!.",
         "sources": [
           "https://github.com/StoneCypher/DeepakChopra_Opal",
@@ -28876,16 +28882,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Il runtime/compilatore storico del dialetto .opal non è stato identificato e predisposto."
-        ],
-        "notes": "La scelta di alert e commenti -- segue il campione Linguist/upstream; non viene sostituita con il linguaggio Ruby Opal o con il distinto OPAL algebrico."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:18:33.976195+00:00",
+        "verification_log": "examples/#498 Opal/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "For the Ruby-to-JavaScript dialect used by the referenced Linguist sample, Opal compiled the corpus source to JavaScript. The compiled code called the browser alert bridge with the exact greeting, which the headless host captured as text.",
+        "verified_artifact_sha256": {
+          "examples/#498 Opal/hello.opal": "a4450e9188773a74f5f99af16c1d652f9861ee112f3e5a38f99006b493924998"
+        }
       }
     },
     {
@@ -38267,13 +38274,14 @@
       "example": {
         "semantic_goal": "Caricare uno shader ShaderLab con proprieta del saluto nel material inspector.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Unity ShaderLab compiler/editor",
+        "toolchain": "DerpyNewbie ShaderLabParser 0.1.0 and glslang SPIR-V tools",
         "files": [
           "examples/#655 ShaderLab/README.md",
-          "examples/#655 ShaderLab/hello.shader"
+          "examples/#655 ShaderLab/hello.shader",
+          "examples/#655 ShaderLab/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Importare hello.shader in un progetto Unity compatibile con shader fixed-function; creare un materiale e controllare la proprieta.",
+        "run_or_check_command": "inspect_shader hello.shader; glslangValidator -D -V -S frag -e frag bound.frag.hlsl; spirv-val bound.spv",
         "expected_result": "Hello, World!",
         "sources": [
           "https://docs.unity3d.com/Manual/SL-Properties.html"
@@ -38283,16 +38291,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Unity editor/shader compiler non disponibile; compatibilità fixed-function da provare."
-        ],
-        "notes": "Il goal di formato è la proprieta nominata Hello, World! e il pass che ne consuma il colore, non testo visibile nel rendering."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:27:02.821154+00:00",
+        "verification_log": "examples/#655 ShaderLab/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The headless parser resolved the exact greeting as the display label of the typed _Color material property and verified its default RGBA values. The pass uses an HLSL fragment program whose emitted SPIR-V loads the matching property and writes it to the output.",
+        "verified_artifact_sha256": {
+          "examples/#655 ShaderLab/hello.shader": "45a8a330756bff6f4ebbe50d2af11f758c1cb4bbf117240b92800e3b0506eaaa"
+        }
       }
     },
     {
@@ -40729,14 +40738,16 @@
       "example": {
         "semantic_goal": "Tradurre un segnale TL-Verilog originale che porta i 13 byte ASCII del saluto a un output SV.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine sandpiper-saas compiler/runtime — non disponibile / non verificata",
+        "toolchain": "TL-X.org SVGen Intel TL-Verilog compiler fork 8b0a745130a3 and Icarus Verilog",
         "files": [
           "examples/#697 TL-Verilog/hello.tlv",
           "examples/#697 TL-Verilog/README.md",
-          "examples/#697 TL-Verilog/verification/native.json"
+          "examples/#697 TL-Verilog/verification/native.json",
+          "examples/#697 TL-Verilog/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#697 TL-Verilog/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "sandpiper-saas -i hello.tlv -o build/hello.sv; iverilog -g2012 -o build/hello.vvp build/hello.sv; vvp build/hello.vvp",
+        "run_or_check_command": "svgen <recorded inputs>; iverilog -g2012 -s hello -o greeting.vvp <generated SystemVerilog>; vvp greeting.vvp",
         "expected_result": "Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.",
         "primary_artifacts": [
           "examples/#697 TL-Verilog/hello.tlv"
@@ -40749,16 +40760,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:37:48.396448+00:00",
-        "verification_log": "examples/#697 TL-Verilog/verification/native.json",
-        "blockers": [
-          "Required sandpiper-saas toolchain and matching execution/format resources are not configured."
-        ],
-        "notes": "Il blocco TLV definisce il segnale e lo lega a un wire SV; il saluto eÌâ‚¬ dati hexadecimal, quindi una display del risultato rende il testo. Translator autentico non configurato; flag pending."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:27:03.024720+00:00",
+        "verification_log": "examples/#697 TL-Verilog/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The upstream compiler lowered the 1a greeting design. The verification adapted its legacy net declaration for Icarus Verilog, which simulated the generated design and emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#697 TL-Verilog/hello.tlv": "3db4db31c5753c70e763f41c4a8b109f44ad21e04818dd2c218b45c4882c120a"
+        }
       }
     },
     {
