@@ -1,5 +1,18 @@
 # #238 Genero per
 
+## Verified on November 19, 2026
+
+The compatible form compiler accepted the recorded legacy SCREEN specification. The static label positions in its compiled XML reconstruct the exact greeting, with no graphical front end.
+
+Run `A4GL_PACKER=XML fcompile hello.per`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,4 +56,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.per` | [hello.per](hello.per) created; verification pending |
+| `.per` | [hello.per](hello.per) Syntax and behavior verified |
+
+</details>

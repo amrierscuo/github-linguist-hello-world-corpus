@@ -1,5 +1,16 @@
 # #477 Nu
 
+## Verified on November 19, 2026
+
+The unchanged Nu program ran in the publisher runtime. Its actual puts operation emitted the exact greeting.
+
+Run `nush hello.nu`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nu` | [hello.nu](hello.nu) created; verification pending |
+| `.nu` | [hello.nu](hello.nu) Syntax and behavior verified |
+
+</details>

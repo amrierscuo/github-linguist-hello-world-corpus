@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "ordinal": 726,
+  "language": "Turing",
+  "timestamp_utc": "2026-11-19T19:36:27.899827+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the unchanged Turing source with the official compatible Turing Plus compiler",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--ro-bind",
+        "${SCRATCH}/cache/tools/tplus61linux64/dist/tplus61linux64/usr/local",
+        "/usr/local",
+        "--bind",
+        "${SCRATCH}/726-xo4mkyq_",
+        "${SCRATCH}/726-xo4mkyq_",
+        "--chdir",
+        "${SCRATCH}/726-xo4mkyq_",
+        "--unshare-net",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin",
+        "--",
+        "/usr/local/bin/tpc",
+        "-o",
+        "greeting",
+        "hello.t"
+      ],
+      "cwd": "${SCRATCH}/726-xo4mkyq_",
+      "timestamp_utc": "2026-11-19T19:36:32.332716+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Turing+ v6.1 (5.6.20) (c) 1986 University of Toronto, (c) 2020 Queen's University at Kingston\n",
+      "stderr": "/usr/bin/ld: warning: TLKCS.o: missing .note.GNU-stack section implies executable stack\n/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/726-xo4mkyq_/home",
+        "TMPDIR": "${SCRATCH}/726-xo4mkyq_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--ro-bind",
+        "${SCRATCH}/cache/tools/tplus61linux64/dist/tplus61linux64/usr/local",
+        "/usr/local",
+        "--bind",
+        "${SCRATCH}/726-xo4mkyq_",
+        "${SCRATCH}/726-xo4mkyq_",
+        "--chdir",
+        "${SCRATCH}/726-xo4mkyq_",
+        "--unshare-net",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin",
+        "--",
+        "./greeting"
+      ],
+      "cwd": "${SCRATCH}/726-xo4mkyq_",
+      "timestamp_utc": "2026-11-19T19:36:46.298017+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/726-xo4mkyq_/home",
+        "TMPDIR": "${SCRATCH}/726-xo4mkyq_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#726 Turing/hello.t": "1918823bb608a0a7b02471b73bc3a22cc7c10ca42702428698037de88e4c37e9"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://compsci.ca/holtsoft/doc/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://research.cs.queensu.ca/home/cordy/pub/downloads/tplus/tplus61linux64.tar.gz",
+      "sha256": "fbcac663cef847ca2ec3b8eda89785446f3ab799c6a69735fbed88b87890f8b3",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "compiled_executable_sha256": "8f9351794f7f2511195a2322feefafef80c5ac76b1d3b2e6701e7105d348d76a",
+  "toolchain": "Turing+ 6.1 Linux x86-64 binary distribution from Queen’s University",
+  "reproduction_command": "tpc -o greeting hello.t && ./greeting",
+  "semantic_scope": "The compatible publisher compiler accepted the unchanged Turing program and its generated native executable emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

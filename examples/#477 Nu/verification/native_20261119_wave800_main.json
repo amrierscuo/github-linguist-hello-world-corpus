@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "ordinal": 477,
+  "language": "Nu",
+  "timestamp_utc": "2026-11-19T19:35:26.147187+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Evaluate the exact source in the official published Nu runtime container",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "${SCRATCH}/cache/tools/offline-oci-nu/bundle/rootfs",
+        "/",
+        "--bind",
+        "${SCRATCH}/477-m6r3ixcb",
+        "/case",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/root",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--chdir",
+        "/case",
+        "--setenv",
+        "HOME",
+        "/case",
+        "--setenv",
+        "TMPDIR",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/aubit4glsrc/bin:/opt/aubit4gl/bin",
+        "--setenv",
+        "LD_LIBRARY_PATH",
+        "/usr/local/lib:/aubit4glsrc/lib:/opt/aubit4gl/lib",
+        "--setenv",
+        "TERM",
+        "xterm",
+        "--chdir",
+        "/work",
+        "--",
+        "/work/mininush",
+        "/case/hello.nu"
+      ],
+      "cwd": "${SCRATCH}/477-m6r3ixcb",
+      "timestamp_utc": "2026-11-19T19:35:26.568058+00:00",
+      "timeout_seconds": 22,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "bwrap: Only the last --chdir option will take effect\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/477-m6r3ixcb/home",
+        "TMPDIR": "${SCRATCH}/477-m6r3ixcb/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#477 Nu/hello.nu": "c5a168716561bdb4db194ef38eb47a38aeed514cb5a8f11f1d035674d10f9a19"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/programming-nu/nu"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://ghcr.io/programming-nu/nu-ubuntu18.04:main",
+      "image_ref": "ghcr.io/programming-nu/nu-ubuntu18.04:main",
+      "digest": "sha256:47f4b46fc367be34e48b80004038baec6e30039465faea651dc4dfa53efc5618",
+      "tools": [
+        "work/mininush",
+        "work/nush",
+        "work/build/x86-linux/nush",
+        "usr/local/bin/nush"
+      ]
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "toolchain": "Official Nu runtime in the pinned programming-nu Linux image",
+  "reproduction_command": "nush hello.nu",
+  "semantic_scope": "The unchanged Nu program ran in the publisher runtime. Its actual puts operation emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

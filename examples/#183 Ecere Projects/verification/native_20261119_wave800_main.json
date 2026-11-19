@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "ordinal": 183,
+  "language": "Ecere Projects",
+  "timestamp_utc": "2026-11-19T19:34:50.178498+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Identify the genuine bundled MinGW C compiler",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\ecere-windows-cli\\gcc\\bin\\gcc.exe",
+        "--version"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\ecere-native-183-4d2007f817",
+      "exit_code": 0,
+      "stdout": "gcc.exe (tdm64-1) 5.1.0\nCopyright (C) 2015 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T19:34:50.276954+00:00"
+    },
+    {
+      "label": "Generate the makefile using the publisher Ecere project compiler",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\ecere-windows-cli\\sdk\\epj2make.exe",
+        "greeting.epj"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\ecere-native-183-4d2007f817",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T19:34:50.431262+00:00"
+    },
+    {
+      "label": "Compile the original eC source and link the project",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\ecere-windows-cli\\gcc\\bin\\mingw32-make.exe",
+        "-f",
+        "greeting.Makefile",
+        "-j1",
+        "PLATFORM=win32",
+        "WINDOWS_TARGET=1",
+        "SHELL=sh.exe"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\ecere-native-183-4d2007f817",
+      "exit_code": 0,
+      "stdout": "Ecere SDK Source Warning: The value of ECERE_SDK_SRC is pointing to an incorrect (<workspace>\\work\\native_target800_20261119\\ecere-windows-cli) location.\necp  -fmessage-length=0  -cpp gcc  -module Greeting    -Wall -DREPOSITORY_VERSION=\"\\\"183-4d2007f817\\\"\" -c greeting.ec -o obj/common.win32/greeting.sym\necc -t win32  -fmessage-length=0  -cpp gcc  -module Greeting    -Wall -DREPOSITORY_VERSION=\"\\\"183-4d2007f817\\\"\"  -c greeting.ec -o obj/common.win32/greeting.c -symbols obj/common.win32/\ngcc  -fmessage-length=0    -Wall -DREPOSITORY_VERSION=\"\\\"183-4d2007f817\\\"\"  -c obj/common.win32/greeting.c -o obj/common.win32/greeting.o\necs -t win32 -console   @obj/common.win32/symbols.lst -symbols obj/common.win32 -o obj/common.win32/Greeting.main.ec\necp  -fmessage-length=0  -cpp gcc  -module Greeting    -Wall -DREPOSITORY_VERSION=\"\\\"183-4d2007f817\\\"\" -c obj/common.win32/Greeting.main.ec -o obj/common.win32/Greeting.main.sym -symbols obj/common.win32/\necc -t win32  -fmessage-length=0  -cpp gcc  -module Greeting    -Wall -DREPOSITORY_VERSION=\"\\\"183-4d2007f817\\\"\"  -c obj/common.win32/Greeting.main.ec -o obj/common.win32/Greeting.main.c -symbols obj/common.win32/\ngcc  -fmessage-length=0    -Wall -DREPOSITORY_VERSION=\"\\\"183-4d2007f817\\\"\"  -c obj/common.win32/Greeting.main.c -o obj/common.win32/Greeting.main.o\ngcc     @obj/common.win32/objects.lst   -mconsole  -lecereCOM -o obj/common.win32/greeting.exe \nstrip  -x --strip-unneeded --remove-section=.comment --remove-section=.note obj/common.win32/greeting.exe\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T19:34:53.128731+00:00"
+    },
+    {
+      "label": "Run the native output as a hidden Windows console process",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\ecere-native-183-4d2007f817\\obj\\common.win32\\greeting.exe"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\ecere-native-183-4d2007f817",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T19:34:53.190908+00:00"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#183 Ecere Projects/greeting.epj": "1e2f3a074f8bd49881a552514b21874e7281911ed0f2380a1bdf3d3f3c4fe2ab",
+    "examples/#183 Ecere Projects/greeting.ec": "9c58bfd8bfda345430a9413bd7719451d9419a69360e4a6fa539bdfc58d7f052"
+  },
+  "fixture_sha256": {},
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/ecere/ecere-sdk/releases/download/0.44.15/setup-ecere-0.44.15-win32.exe",
+      "sha256": "4c804e70b89aad100c62bc8ec2038f58b3bc771fdc9164674bb8499d627afe4e"
+    }
+  ],
+  "isolation": "CREATE_NO_WINDOW, process-local Windows error-dialog suppression and genuine console executables.",
+  "compiled_program_sha256": "633085cefce7c6105e68c8f12e44019c26a0d370108d6de870adf569365fd1a4",
+  "toolchain": "Official Ecere SDK 0.44.15 with its native Windows console compiler",
+  "reproduction_command": "epj2make greeting.epj; mingw32-make -f greeting.Makefile; run the generated Windows console application",
+  "semantic_scope": "The publisher project generator loaded the exact .epj and its source. The native Windows console executable emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

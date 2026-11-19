@@ -1,5 +1,16 @@
 # #183 Ecere Projects
 
+## Verified on November 19, 2026
+
+The publisher project generator loaded the exact .epj and its source. The native Windows console executable emitted the exact greeting.
+
+Run `epj2make greeting.epj; mingw32-make -f greeting.Makefile; run the generated Windows console application`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Describe a project Ecere console with an eC source that prints Hello, World!.
 
 Canonical type `data`, language_id `98`.
@@ -31,4 +42,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.epj` | [greeting.epj](greeting.epj) created; verification pending |
+| `.epj` | [greeting.epj](greeting.epj) Syntax and behavior verified |
+
+</details>

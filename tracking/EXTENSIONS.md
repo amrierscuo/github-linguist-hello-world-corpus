@@ -321,7 +321,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #180 | [Eagle](../examples/%23180%20Eagle/README.md) | `.sch` | [hello.sch](../examples/%23180%20Eagle/hello.sch) | Yes | Yes | existing; Evidence recorded |
 | #180 | [Eagle](../examples/%23180%20Eagle/README.md) | `.brd` | [hello.brd](../examples/%23180%20Eagle/variants/ext-brd-2e627264/hello.brd) | Pending | Pending | adapted; This variant has not yet been checked with the specified native toolchain. |
 | #182 | [Easybuild](../examples/%23182%20Easybuild/README.md) | `.eb` | [HelloWorld-1.0.eb](../examples/%23182%20Easybuild/HelloWorld-1.0.eb) | Yes | Yes | existing; Evidence recorded |
-| #183 | [Ecere Projects](../examples/%23183%20Ecere%20Projects/README.md) | `.epj` | [greeting.epj](../examples/%23183%20Ecere%20Projects/greeting.epj) | Pending | Pending | existing; The native toolchain has not been run; syntax and semantic checks are pending. |
+| #183 | [Ecere Projects](../examples/%23183%20Ecere%20Projects/README.md) | `.epj` | [greeting.epj](../examples/%23183%20Ecere%20Projects/greeting.epj) | Yes | Yes | existing; Evidence recorded |
 | #184 | [Ecmarkup](../examples/%23184%20Ecmarkup/README.md) | `.html` | [hello.html](../examples/%23184%20Ecmarkup/hello.html) | Yes | Yes | existing; Evidence recorded |
 | #185 | [Edge](../examples/%23185%20Edge/README.md) | `.edge` | [hello.edge](../examples/%23185%20Edge/hello.edge) | Yes | Yes | existing; Evidence recorded |
 | #186 | [EdgeQL](../examples/%23186%20EdgeQL/README.md) | `.edgeql` | [hello.edgeql](../examples/%23186%20EdgeQL/hello.edgeql) | Yes | Yes | existing; Evidence recorded |
@@ -443,7 +443,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #234 | [Game Maker Language](../examples/%23234%20Game%20Maker%20Language/README.md) | `.gml` | [hello.gml](../examples/%23234%20Game%20Maker%20Language/hello.gml) | Yes | Yes | existing; Evidence recorded |
 | #236 | [Gemini](../examples/%23236%20Gemini/README.md) | `.gmi` | [hello.gmi](../examples/%23236%20Gemini/hello.gmi) | Yes | Yes | existing; Evidence recorded |
 | #237 | [Genero 4gl](../examples/%23237%20Genero%204gl/README.md) | `.4gl` | [hello.4gl](../examples/%23237%20Genero%204gl/hello.4gl) | Yes | Yes | existing; Evidence recorded |
-| #238 | [Genero per](../examples/%23238%20Genero%20per/README.md) | `.per` | [hello.per](../examples/%23238%20Genero%20per/hello.per) | Pending | Pending | existing; The proprietary Genero form toolchain and frontend are not set up; compilation and rendering are pending. |
+| #238 | [Genero per](../examples/%23238%20Genero%20per/README.md) | `.per` | [hello.per](../examples/%23238%20Genero%20per/hello.per) | Yes | Yes | existing; Evidence recorded |
 | #239 | [Genie](../examples/%23239%20Genie/README.md) | `.gs` | [hello.gs](../examples/%23239%20Genie/hello.gs) | Yes | Yes | existing; Evidence recorded |
 | #240 | [Genshi](../examples/%23240%20Genshi/README.md) | `.kid` | [hello.kid](../examples/%23240%20Genshi/hello.kid) | Yes | Yes | existing; Evidence recorded |
 | #241 | [Gentoo Ebuild](../examples/%23241%20Gentoo%20Ebuild/README.md) | `.ebuild` | [hello-world-1.0.ebuild](../examples/%23241%20Gentoo%20Ebuild/hello-world-1.0.ebuild) | Yes | Yes | existing; Evidence recorded |
@@ -917,7 +917,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #474 | [Nit](../examples/%23474%20Nit/README.md) | `.nit` | [hello.nit](../examples/%23474%20Nit/hello.nit) | Yes | Yes | existing; Evidence recorded |
 | #475 | [Nix](../examples/%23475%20Nix/README.md) | `.nix` | [hello.nix](../examples/%23475%20Nix/hello.nix) | Yes | Yes | existing; Evidence recorded |
 | #476 | [Noir](../examples/%23476%20Noir/README.md) | `.nr` | [main.nr](../examples/%23476%20Noir/src/main.nr) | Yes | Yes | existing; Evidence recorded |
-| #477 | [Nu](../examples/%23477%20Nu/README.md) | `.nu` | [hello.nu](../examples/%23477%20Nu/hello.nu) | Pending | Pending | existing; Nu and Objective-C Foundation are not set up; runtime verification is pending. |
+| #477 | [Nu](../examples/%23477%20Nu/README.md) | `.nu` | [hello.nu](../examples/%23477%20Nu/hello.nu) | Yes | Yes | existing; Evidence recorded |
 | #478 | [NumPy](../examples/%23478%20NumPy/README.md) | `.numpy` | [hello.numpy](../examples/%23478%20NumPy/hello.numpy) | Yes | Yes | existing; Evidence recorded |
 | #478 | [NumPy](../examples/%23478%20NumPy/README.md) | `.numpyw` | [hello.numpyw](../examples/%23478%20NumPy/variants/numpyw-c25621b9/hello.numpyw) | Pending | Pending | alias; This variant has not been checked again with the original parser, compiler or runtime; the main source's verification does not carry over. |
 | #478 | [NumPy](../examples/%23478%20NumPy/README.md) | `.numsc` | [hello.numsc](../examples/%23478%20NumPy/variants/numsc-81e0ad98/hello.numsc) | Pending | Pending | alias; This variant has not been checked again with the original parser, compiler or runtime; the main source's verification does not carry over. The specific historical .numsc consumer was not exercised; the proposed check covers Python grammar and NumPy operations. |
@@ -1446,7 +1446,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #722 | [Toit](../examples/%23722%20Toit/README.md) | `.toit` | [hello.toit](../examples/%23722%20Toit/hello.toit) | Yes | Yes | existing; Evidence recorded |
 | #723 | [Tolk](../examples/%23723%20Tolk/README.md) | `.tolk` | [hello.tolk](../examples/%23723%20Tolk/hello.tolk) | Yes | Yes | existing; Evidence recorded |
 | #725 | [Tree-sitter Query](../examples/%23725%20Tree-sitter%20Query/README.md) | `.scm` | [hello.scm](../examples/%23725%20Tree-sitter%20Query/hello.scm) | Yes | Yes | existing; Evidence recorded |
-| #726 | [Turing](../examples/%23726%20Turing/README.md) | `.t` | [hello.t](../examples/%23726%20Turing/hello.t) | Pending | Pending | existing; The Turing compiler and runtime are not set up. |
+| #726 | [Turing](../examples/%23726%20Turing/README.md) | `.t` | [hello.t](../examples/%23726%20Turing/hello.t) | Yes | Yes | existing; Evidence recorded |
 | #726 | [Turing](../examples/%23726%20Turing/README.md) | `.tu` | [hello.tu](../examples/%23726%20Turing/variants/tu-b8fdb221/hello.tu) | Pending | Pending | adapted; The original parser, compiler or host has not yet checked this variant. |
 | #727 | [Turtle](../examples/%23727%20Turtle/README.md) | `.ttl` | [hello.ttl](../examples/%23727%20Turtle/hello.ttl) | Yes | Yes | existing; Evidence recorded |
 | #728 | [Twig](../examples/%23728%20Twig/README.md) | `.twig` | [hello.twig](../examples/%23728%20Twig/hello.twig) | Yes | Yes | existing; Evidence recorded |
@@ -1723,7 +1723,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #812 | [desktop](../examples/%23812%20desktop/README.md) | `.desktop` | [hello.desktop](../examples/%23812%20desktop/hello.desktop) | Yes | Yes | existing; Evidence recorded |
 | #812 | [desktop](../examples/%23812%20desktop/README.md) | `.desktop.in` | [hello.desktop.in](../examples/%23812%20desktop/variants/desktop-in-8bdb31d7/hello.desktop.in) | Pending | Pending | alias; The original parser, compiler or host has not yet checked this variant. |
 | #813 | [dircolors](../examples/%23813%20dircolors/README.md) | `.dircolors` | [hello.dircolors](../examples/%23813%20dircolors/hello.dircolors) | Yes | Yes | existing; Evidence recorded |
-| #814 | [eC](../examples/%23814%20eC/README.md) | `.ec` | [hello.ec](../examples/%23814%20eC/hello.ec) | Pending | Pending | existing; The Ecere compiler and SDK are not set up. |
+| #814 | [eC](../examples/%23814%20eC/README.md) | `.ec` | [hello.ec](../examples/%23814%20eC/hello.ec) | Yes | Yes | existing; Evidence recorded |
 | #814 | [eC](../examples/%23814%20eC/README.md) | `.eh` | [hello.eh](../examples/%23814%20eC/variants/eh-5ad89293/hello.eh) | Pending | Pending | adapted; The original parser, compiler or host has not yet checked this variant. |
 | #815 | [edn](../examples/%23815%20edn/README.md) | `.edn` | [hello.edn](../examples/%23815%20edn/hello.edn) | Yes | Yes | existing; Evidence recorded |
 | #816 | [fish](../examples/%23816%20fish/README.md) | `.fish` | [hello.fish](../examples/%23816%20fish/hello.fish) | Yes | Yes | existing; Evidence recorded |

@@ -186,7 +186,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #180 | [Eagle](../examples/%23180%20Eagle/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #181 | [Earthly](../examples/%23181%20Earthly/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #182 | [Easybuild](../examples/%23182%20Easybuild/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #183 | [Ecere Projects](../examples/%23183%20Ecere%20Projects/README.md) | Yes | Pending | Pending | 1/1 | The native toolchain has not been run; syntax and semantic checks are pending. |
+| #183 | [Ecere Projects](../examples/%23183%20Ecere%20Projects/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #184 | [Ecmarkup](../examples/%23184%20Ecmarkup/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #185 | [Edge](../examples/%23185%20Edge/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #186 | [EdgeQL](../examples/%23186%20EdgeQL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -241,7 +241,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #235 | [Gemfile.lock](../examples/%23235%20Gemfile.lock/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #236 | [Gemini](../examples/%23236%20Gemini/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #237 | [Genero 4gl](../examples/%23237%20Genero%204gl/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #238 | [Genero per](../examples/%23238%20Genero%20per/README.md) | Yes | Pending | Pending | 1/1 | The proprietary Genero form toolchain and frontend are not set up; compilation and rendering are pending. |
+| #238 | [Genero per](../examples/%23238%20Genero%20per/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #239 | [Genie](../examples/%23239%20Genie/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #240 | [Genshi](../examples/%23240%20Genshi/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #241 | [Gentoo Ebuild](../examples/%23241%20Gentoo%20Ebuild/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -480,7 +480,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #474 | [Nit](../examples/%23474%20Nit/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #475 | [Nix](../examples/%23475%20Nix/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #476 | [Noir](../examples/%23476%20Noir/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #477 | [Nu](../examples/%23477%20Nu/README.md) | Yes | Pending | Pending | 1/1 | Nu and Objective-C Foundation are not set up; runtime verification is pending. |
+| #477 | [Nu](../examples/%23477%20Nu/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #478 | [NumPy](../examples/%23478%20NumPy/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #479 | [Nunjucks](../examples/%23479%20Nunjucks/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #480 | [Nushell](../examples/%23480%20Nushell/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -506,7 +506,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #500 | [OpenAPI Specification v2](../examples/%23500%20OpenAPI%20Specification%20v2/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #501 | [OpenAPI Specification v3](../examples/%23501%20OpenAPI%20Specification%20v3/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #502 | [OpenCL](../examples/%23502%20OpenCL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #503 | [OpenEdge ABL](../examples/%23503%20OpenEdge%20ABL/README.md) | Yes | Pending | Pending | 3/3 | The Progress OpenEdge runtime is unavailable. |
+| #503 | [OpenEdge ABL](../examples/%23503%20OpenEdge%20ABL/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #504 | [OpenQASM](../examples/%23504%20OpenQASM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #505 | [OpenRC runscript](../examples/%23505%20OpenRC%20runscript/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #506 | [OpenSCAD](../examples/%23506%20OpenSCAD/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -729,7 +729,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #723 | [Tolk](../examples/%23723%20Tolk/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #724 | [Tor Config](../examples/%23724%20Tor%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #725 | [Tree-sitter Query](../examples/%23725%20Tree-sitter%20Query/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #726 | [Turing](../examples/%23726%20Turing/README.md) | Yes | Pending | Pending | 2/2 | The Turing compiler and runtime are not set up. |
+| #726 | [Turing](../examples/%23726%20Turing/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #727 | [Turtle](../examples/%23727%20Turtle/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #728 | [Twig](../examples/%23728%20Twig/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #729 | [Type Language](../examples/%23729%20Type%20Language/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -817,7 +817,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #811 | [crontab](../examples/%23811%20crontab/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #812 | [desktop](../examples/%23812%20desktop/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #813 | [dircolors](../examples/%23813%20dircolors/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #814 | [eC](../examples/%23814%20eC/README.md) | Yes | Pending | Pending | 2/2 | The Ecere compiler and SDK are not set up. |
+| #814 | [eC](../examples/%23814%20eC/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #815 | [edn](../examples/%23815%20edn/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #816 | [fish](../examples/%23816%20fish/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #817 | [hoon](../examples/%23817%20hoon/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

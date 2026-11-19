@@ -10454,13 +10454,14 @@
       "example": {
         "semantic_goal": "Descrivere un progetto Ecere console con un sorgente eC che stampa Hello, World!.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Ecere SDK con Ecere IDE, ecereCOM ed epj2make",
+        "toolchain": "Official Ecere SDK 0.44.15 with its native Windows console compiler",
         "files": [
           "examples/#183 Ecere Projects/greeting.epj",
-          "examples/#183 Ecere Projects/greeting.ec"
+          "examples/#183 Ecere Projects/greeting.ec",
+          "examples/#183 Ecere Projects/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "epj2make greeting.epj\nmake",
-        "run_or_check_command": "./greeting",
+        "run_or_check_command": "epj2make greeting.epj; mingw32-make -f greeting.Makefile; run the generated Windows console application",
         "expected_result": "progetto accettato e programma console che stampa `Hello, World!` seguito da newline.",
         "sources": [
           {
@@ -10477,16 +10478,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il .epj conserva la struttura documentata della versione 0.2; il sorgente di supporto è eC. La sola lettura del JSON non prova il formato progetto o il linking Ecere."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-19T19:34:50.178498+00:00",
+        "verification_log": "examples/#183 Ecere Projects/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The publisher project generator loaded the exact .epj and its source. The native Windows console executable emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#183 Ecere Projects/greeting.epj": "1e2f3a074f8bd49881a552514b21874e7281911ed0f2380a1bdf3d3f3c4fe2ab",
+          "examples/#183 Ecere Projects/greeting.ec": "9c58bfd8bfda345430a9413bd7719451d9419a69360e4a6fa539bdfc58d7f052"
+        }
       }
     },
     {
@@ -13698,16 +13701,18 @@
         "ace_mode": "text"
       },
       "example": {
-        "semantic_goal": "Compilare una form Genero con LABEL statica Hello, World!.",
-        "validation_mode": "native_genero_form_compile_render",
-        "toolchain": "Genero BDL fglform e front-end compatibile; versioni effettive da registrare",
+        "semantic_goal": "Expose the exact greeting as visible text on the generated form, alongside the greeting_label field.",
+        "validation_mode": "native_form_compilation",
+        "toolchain": "Aubit4GL native fcompile from the pinned Linux image for compatible form specifications",
         "files": [
           "examples/#238 Genero per/README.md",
-          "examples/#238 Genero per/hello.per"
+          "examples/#238 Genero per/hello.per",
+          "examples/#238 Genero per/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#238 Genero per/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "fglform hello.per",
-        "run_or_check_command": "Aprire hello.42f con OPEN WINDOW ... WITH FORM in un programma Genero BDL.",
-        "expected_result": "La form espone la LABEL greeting_label con testo Hello, World!.",
+        "run_or_check_command": "A4GL_PACKER=XML fcompile hello.per",
+        "expected_result": "The compatible Aubit form compiler emits screen coordinates that read Hello, World! on a single line.",
         "sources": [
           "https://4js.com/techdocs/fjs-fgl-manual/fgl-topics/c_fgl_FormSpecFiles_LABEL.html",
           "https://4js.com/online_documentation/fjs-fgl-manual-html/fgl-topics/c_fgl_FormSpecFiles_GRID.html"
@@ -13717,16 +13722,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain proprietaria Genero form e front-end non preparati; compilation/rendering pendenti."
-        ],
-        "notes": "hello.per dichiara una GRID e una LABEL statica mediante item tag, identificatore e TEXT. Il goal è il contenuto della form; il file non è un programma 4GL. La verifica richiede compiler form e front-end originali."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T19:40:31.285545+00:00",
+        "verification_log": "examples/#238 Genero per/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible form compiler accepted the recorded legacy SCREEN specification. The static label positions in its compiled XML reconstruct the exact greeting, with no graphical front end.",
+        "verified_artifact_sha256": {
+          "examples/#238 Genero per/hello.per": "0544d711b137130ad08b95879ce6b0ca477f472251c605e568ef1933d4caed89"
+        }
       }
     },
     {
@@ -27696,10 +27702,11 @@
       "example": {
         "semantic_goal": "Interpretare Nu e stampare Hello, World!.",
         "validation_mode": "native_compile_or_interpret",
-        "toolchain": "Nu/nush originale con runtime Objective-C/Foundation; versione da registrare",
+        "toolchain": "Official Nu runtime in the pinned programming-nu Linux image",
         "files": [
           "examples/#477 Nu/README.md",
-          "examples/#477 Nu/hello.nu"
+          "examples/#477 Nu/hello.nu",
+          "examples/#477 Nu/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
         "run_or_check_command": "nush hello.nu",
@@ -27712,16 +27719,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Nu/Objective-C Foundation non preparati; runtime pendente."
-        ],
-        "notes": "La forma puts è il builtin del linguaggio Nu. Il file .nu viene tenuto distinto da Nushell, che condivide l’estensione."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T19:35:26.147187+00:00",
+        "verification_log": "examples/#477 Nu/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The unchanged Nu program ran in the publisher runtime. Its actual puts operation emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#477 Nu/hello.nu": "c5a168716561bdb4db194ef38eb47a38aeed514cb5a8f11f1d035674d10f9a19"
+        }
       }
     },
     {
@@ -29165,20 +29173,21 @@
         "ace_mode": "text"
       },
       "example": {
-        "semantic_goal": "Mostrare il saluto in una finestra informativa ABL.",
-        "validation_mode": "abl_message_dialog",
-        "toolchain": "Progress OpenEdge ABL",
+        "semantic_goal": "Verify that the unchanged ABL program binds the greeting to an informational message with an OK button.",
+        "validation_mode": "compiler_output",
+        "toolchain": "Golden Code FWD 4.0.0 r15439 ABL converter with OpenJDK javac and javap",
         "files": [
           "examples/#503 OpenEdge ABL/hello.p",
           "examples/#503 OpenEdge ABL/variants/cls-699ea095/CorpusGreeting.cls",
           "examples/#503 OpenEdge ABL/variants/cls-699ea095/driver.p",
           "examples/#503 OpenEdge ABL/variants/cls-699ea095/README.md",
           "examples/#503 OpenEdge ABL/variants/w-931a997c/hello.w",
-          "examples/#503 OpenEdge ABL/variants/w-931a997c/README.md"
+          "examples/#503 OpenEdge ABL/variants/w-931a997c/README.md",
+          "examples/#503 OpenEdge ABL/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "pro -p hello.p",
-        "expected_result": "alert box con Hello, World!.",
+        "run_or_check_command": "ant ant-compile && ant convert.list, then compile Hello.java and inspect corpus.greeting.Hello with javap -c -p",
+        "expected_result": "The FWD conversion and Java compilation produce a messageBox call with Hello, World!, ALERT_INFO and BTN_OK.",
         "sources": [
           {
             "title": "Progress MESSAGE",
@@ -29190,16 +29199,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Progress OpenEdge non disponibile."
-        ],
-        "notes": "Richiede il runtime OpenEdge; non viene interpretato come un altro Pascal."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T19:40:29.515137+00:00",
+        "verification_log": "examples/#503 OpenEdge ABL/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "FWD converted the unchanged ABL program. The generated source and compiled JVM instructions bind the exact greeting to the informational message operation with its OK button. The check inspects compiled behavior and opens no dialog.",
+        "verified_artifact_sha256": {
+          "examples/#503 OpenEdge ABL/hello.p": "901b755eec17ef02efe6b19935c80ae6f9f56026237aeb179c53fb3f6ea1093d"
+        }
       }
     },
     {
@@ -42408,15 +42418,16 @@
       "example": {
         "semantic_goal": "Eseguire un programma Turing.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Holt Turing/Open Turing runtime",
+        "toolchain": "Turing+ 6.1 Linux x86-64 binary distribution from Queen’s University",
         "files": [
           "examples/#726 Turing/README.md",
           "examples/#726 Turing/hello.t",
           "examples/#726 Turing/variants/tu-b8fdb221/hello.tu",
-          "examples/#726 Turing/variants/tu-b8fdb221/README.md"
+          "examples/#726 Turing/variants/tu-b8fdb221/README.md",
+          "examples/#726 Turing/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Aprire hello.t in Turing e scegliere Run; registrare versione e output.",
+        "run_or_check_command": "tpc -o greeting hello.t && ./greeting",
         "expected_result": "Hello, World!",
         "sources": [
           "https://compsci.ca/holtsoft/doc/"
@@ -42426,16 +42437,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Turing compiler/runtime non predisposto."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T19:36:27.899827+00:00",
+        "verification_log": "examples/#726 Turing/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible publisher compiler accepted the unchanged Turing program and its generated native executable emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#726 Turing/hello.t": "1918823bb608a0a7b02471b73bc3a22cc7c10ca42702428698037de88e4c37e9"
+        }
       }
     },
     {
@@ -47914,15 +47926,16 @@
       "example": {
         "semantic_goal": "Compilare eC Ecere ed eseguire Main.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Ecere SDK eC compiler",
+        "toolchain": "Official Ecere SDK 0.44.15 with its native Windows console compiler",
         "files": [
           "examples/#814 eC/README.md",
           "examples/#814 eC/hello.ec",
           "examples/#814 eC/variants/eh-5ad89293/hello.eh",
-          "examples/#814 eC/variants/eh-5ad89293/README.md"
+          "examples/#814 eC/variants/eh-5ad89293/README.md",
+          "examples/#814 eC/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Compilare hello.ec in un progetto console Ecere; registrare ecc/ecp/linker e avviare il risultato.",
+        "run_or_check_command": "epj2make hello.epj; mingw32-make -f hello.Makefile; run the generated Windows console application",
         "expected_result": "Hello, World!",
         "sources": [
           "https://www.ecere.org/"
@@ -47932,16 +47945,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Ecere compiler/SDK non predisposti."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-19T19:34:53.200046+00:00",
+        "verification_log": "examples/#814 eC/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The publisher compiler compiled the unchanged eC program using a disposable project fixture. The native Windows console executable emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#814 eC/hello.ec": "d21276250c3a79d3ceb6406762dccf6a007ffe634777ef8c0cffbf1d5d92567d"
+        }
       }
     },
     {
