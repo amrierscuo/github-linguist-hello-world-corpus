@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "ordinal": 164,
+  "language": "DenizenScript",
+  "timestamp_utc": "2026-11-19T14:00:46.745503+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/cache/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/164-ihvmzos7",
+      "timestamp_utc": "2026-11-19T14:00:46.802461+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/164-ihvmzos7/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  2.056 s\n[INFO] Finished at: 2026-11-19T15:00:55+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/164-ihvmzos7/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/164-ihvmzos7/home",
+        "TMPDIR": "${SCRATCH}/164-ihvmzos7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/164-ihvmzos7/home"
+      }
+    },
+    {
+      "label": "Compile the unchanged upstream announce command against its released Denizen and Bukkit APIs",
+      "command": [
+        "javac",
+        "-cp",
+        "${SCRATCH}/cache/tools/denizen-native/denizencore.jar:${SCRATCH}/cache/tools/denizen-native/spigot-shaded.jar:${SCRATCH}/cache/tools/maven-cache/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar:${SCRATCH}/cache/tools/maven-cache/org/json/json/20240303/json-20240303.jar:${SCRATCH}/cache/tools/maven-cache/org/ow2/asm/asm/9.4/asm-9.4.jar:${SCRATCH}/cache/tools/maven-cache/org/ow2/asm/asm-commons/9.4/asm-commons-9.4.jar:${SCRATCH}/cache/tools/maven-cache/org/ow2/asm/asm-tree/9.4/asm-tree-9.4.jar:${SCRATCH}/cache/tools/maven-cache/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:${SCRATCH}/cache/tools/maven-cache/redis/clients/jedis/4.3.1/jedis-4.3.1.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongodb-driver-sync/4.8.1/mongodb-driver-sync-4.8.1.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/bson/4.8.1/bson-4.8.1.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongodb-driver-core/4.8.1/mongodb-driver-core-4.8.1.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/bson-record-codec/4.8.1/bson-record-codec-4.8.1.jar:${SCRATCH}/cache/tools/denizen-native/freneticdatasyntax-1.1.jar",
+        "-d",
+        "classes",
+        "${SCRATCH}/164-ihvmzos7/AnnounceCommand.java",
+        "${SCRATCH}/164-ihvmzos7/Denizen.java",
+        "${SCRATCH}/164-ihvmzos7/PlayerTag.java",
+        "${SCRATCH}/164-ihvmzos7/FormattedTextHelper.java",
+        "${SCRATCH}/164-ihvmzos7/Probe.java"
+      ],
+      "cwd": "${SCRATCH}/164-ihvmzos7",
+      "timestamp_utc": "2026-11-19T14:00:56.467753+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/164-ihvmzos7/home\nNote: Some input files use or override a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/164-ihvmzos7/home",
+        "TMPDIR": "${SCRATCH}/164-ihvmzos7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/164-ihvmzos7/home"
+      }
+    },
+    {
+      "label": "Load and run the original Denizen task with a contained console output adapter",
+      "command": [
+        "java",
+        "-cp",
+        "classes:${SCRATCH}/cache/tools/denizen-native/denizencore.jar:${SCRATCH}/cache/tools/denizen-native/spigot-shaded.jar:${SCRATCH}/cache/tools/maven-cache/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar:${SCRATCH}/cache/tools/maven-cache/org/json/json/20240303/json-20240303.jar:${SCRATCH}/cache/tools/maven-cache/org/ow2/asm/asm/9.4/asm-9.4.jar:${SCRATCH}/cache/tools/maven-cache/org/ow2/asm/asm-commons/9.4/asm-commons-9.4.jar:${SCRATCH}/cache/tools/maven-cache/org/ow2/asm/asm-tree/9.4/asm-tree-9.4.jar:${SCRATCH}/cache/tools/maven-cache/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:${SCRATCH}/cache/tools/maven-cache/redis/clients/jedis/4.3.1/jedis-4.3.1.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongodb-driver-sync/4.8.1/mongodb-driver-sync-4.8.1.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/bson/4.8.1/bson-4.8.1.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongodb-driver-core/4.8.1/mongodb-driver-core-4.8.1.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/bson-record-codec/4.8.1/bson-record-codec-4.8.1.jar:${SCRATCH}/cache/tools/denizen-native/freneticdatasyntax-1.1.jar",
+        "Probe"
+      ],
+      "cwd": "${SCRATCH}/164-ihvmzos7",
+      "timestamp_utc": "2026-11-19T14:00:58.705941+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "Observed console: Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/164-ihvmzos7/home\nNov 19, 2026 3:00:59 PM org.bukkit.Bukkit setServer\nINFO: This server is running corpus host fixture version corpus host fixture (Implementing API version corpus host fixture)\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/164-ihvmzos7/home",
+        "TMPDIR": "${SCRATCH}/164-ihvmzos7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/164-ihvmzos7/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#164 DenizenScript/hello.dsc": "5911003428ce8fad9ef5c2911eebbd64100fbad49a5679a19700eceafc1e46b7"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "ab394f559d7c845af6ad917c5c2b47cce1cf838b5d5dfab04b29a362b9472d53",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.yaml</groupId><artifactId>snakeyaml</artifactId><version>1.33</version></dependency><dependency><groupId>org.json</groupId><artifactId>json</artifactId><version>20240303</version></dependency><dependency><groupId>org.ow2.asm</groupId><artifactId>asm</artifactId><version>9.4</version></dependency><dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>9.4</version></dependency><dependency><groupId>org.slf4j</groupId><artifactId>slf4j-api</artifactId><version>2.0.17</version></dependency><dependency><groupId>redis.clients</groupId><artifactId>jedis</artifactId><version>4.3.1</version></dependency><dependency><groupId>org.mongodb</groupId><artifactId>mongodb-driver-sync</artifactId><version>4.8.1</version></dependency></dependencies></project>\n"
+    },
+    "Denizen.java": {
+      "sha256": "ba5d984465502566ed49e8adf10ca83f23a376947bda6b04c50dec11fc53c96c",
+      "content_utf8": "package com.denizenscript.denizen;\npublic class Denizen {\n    public static Denizen getInstance() { throw new AssertionError(\"Unexpected broadcast branch\"); }\n    public org.bukkit.Server getServer() { throw new AssertionError(\"Unexpected server branch\"); }\n}\n"
+    },
+    "PlayerTag.java": {
+      "sha256": "867b38db7dac1dadf7005ee99970b23522e305f32bdcce3c3ffccf176a8ae9b8",
+      "content_utf8": "package com.denizenscript.denizen.objects;\npublic class PlayerTag {\n    public PlayerTag(org.bukkit.entity.Player player) { throw new AssertionError(\"Unexpected player branch\"); }\n    public com.denizenscript.denizencore.flags.AbstractFlagTracker getFlagTracker() { throw new AssertionError(\"Unexpected flag branch\"); }\n}\n"
+    },
+    "FormattedTextHelper.java": {
+      "sha256": "57621bcbcb90bd3daca26cb31c49d178c841ddea7be16ee86602dce2d63a3e71",
+      "content_utf8": "package com.denizenscript.denizen.utilities;\nimport net.md_5.bungee.api.ChatColor;\nimport net.md_5.bungee.api.chat.*;\npublic class FormattedTextHelper {\n    public static BaseComponent[] parse(String message, ChatColor color) {\n        return TextComponent.fromLegacyText(message, color);\n    }\n}\n"
+    },
+    "Probe.java": {
+      "sha256": "8180c91373bd6936ed5c496475ccb21be7108e3bbb444aa6af4b5468eba9ca5e",
+      "content_utf8": "import java.io.*;\nimport java.nio.file.*;\nimport java.util.*;\nimport java.util.logging.Logger;\nimport java.lang.reflect.*;\nimport org.bukkit.*;\nimport org.bukkit.command.*;\nimport net.md_5.bungee.api.chat.*;\nimport com.denizenscript.denizen.scripts.commands.server.AnnounceCommand;\nimport com.denizenscript.denizencore.*;\nimport com.denizenscript.denizencore.scripts.*;\nimport com.denizenscript.denizencore.scripts.containers.core.TaskScriptContainer;\nimport com.denizenscript.denizencore.tags.TagContext;\nimport com.denizenscript.denizencore.utilities.YamlConfiguration;\n\npublic class Probe {\n    static final List<String> messages=new ArrayList<>();\n    static class LocalContext extends TagContext {\n        private final ScriptEntryData data;\n        LocalContext(ScriptEntry entry, ScriptEntryData data) { super(entry); this.data=data; }\n        public ScriptEntryData getScriptEntryData() { return data; }\n    }\n    static class EntryData extends ScriptEntryData {\n        public void transferDataFrom(ScriptEntryData source) {}\n        public TagContext getTagContext() { return new LocalContext(null,this); }\n        public YamlConfiguration save() { return new YamlConfiguration(); }\n        public void load(YamlConfiguration ignored) {}\n    }\n    @SuppressWarnings(\"unchecked\")\n    static <T> T proxy(Class<T> type, InvocationHandler f) {\n        return (T) Proxy.newProxyInstance(type.getClassLoader(),new Class<?>[]{type},f);\n    }\n    static Object defaultValue(Method method) {\n        if (method.getReturnType()==boolean.class) return false;\n        if (method.getReturnType()==int.class) return 0;\n        if (method.getReturnType()==long.class) return 0L;\n        if (method.getReturnType()==String.class) return \"\";\n        return null;\n    }\n    public static void main(String[] args) throws Exception {\n        ConsoleCommandSender.Spigot output=new ConsoleCommandSender.Spigot() {\n            @Override public void sendMessage(BaseComponent... payload) {\n                messages.add(TextComponent.toPlainText(payload));\n            }\n            @Override public void sendMessage(BaseComponent payload) { sendMessage(new BaseComponent[]{payload}); }\n        };\n        var console=proxy(ConsoleCommandSender.class,(o,m,a)->m.getName().equals(\"spigot\") ? output : defaultValue(m));\n        var server=proxy(Server.class,(o,m,a)->switch(m.getName()) {\n            case \"getConsoleSender\" -> console;\n            case \"getLogger\" -> Logger.getLogger(\"corpus\");\n            case \"getName\",\"getVersion\",\"getBukkitVersion\" -> \"corpus host fixture\";\n            case \"getOnlinePlayers\" -> List.of();\n            default -> defaultValue(m);\n        });\n        Bukkit.setServer(server);\n        var platform=proxy(DenizenImplementation.class,(o,m,a)->switch(m.getName()) {\n            case \"getDataFolder\",\"getScriptFolder\" -> new File(\".\");\n            case \"getImplementationName\",\"getImplementationVersion\" -> \"corpus console host\";\n            case \"getEmptyScriptEntryData\" -> new EntryData();\n            case \"getTagContext\" -> new LocalContext(a!=null && a[0] instanceof ScriptEntry entry ? entry : null,new EntryData());\n            case \"cleanseLogString\" -> a[0];\n            case \"canReadFile\",\"canWriteToFile\" -> true;\n            default -> defaultValue(m);\n        });\n        DenizenCore.init(platform);\n        DenizenCore.commandRegistry.registerCommand(AnnounceCommand.class);\n        var document=YamlConfiguration.load(Files.readString(Path.of(\"hello.dsc\")));\n        ScriptRegistry.buildCoreYamlScriptContainers(List.of(document));\n        TaskScriptContainer task=ScriptRegistry.getScriptContainer(\"hello_world\");\n        if (task==null) throw new IllegalStateException(\"Original task was not loaded\");\n        task.run();\n        if (!messages.equals(List.of(\"Hello, World!\"))) throw new AssertionError(messages);\n        System.out.println(\"Observed console: \"+messages.get(0));\n    }\n}\n"
+    }
+  },
+  "sources": [
+    "https://guide.denizenscript.com/guides/first-steps/task-script.html",
+    "https://meta.denizenscript.com/Docs/Commands/Announce"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/DenizenScript/Denizen-Core/tar.gz/master",
+      "ref": "master",
+      "sha256": "8b1c6b4b51d0219eddcb34b2476735474c288314c254dd1f67a5a744580f665e"
+    },
+    {
+      "url": "https://codeload.github.com/DenizenScript/Denizen/tar.gz/dev",
+      "ref": "dev",
+      "sha256": "0edbbbaf69e3ceca8be3c55f698d143f252c95d51ffc1c4680ddeaf82fe45164"
+    },
+    {
+      "url": "https://maven.citizensnpcs.co/repo/com/denizenscript/denizencore/1.91.0-SNAPSHOT/denizencore-1.91.0-20261017.083411-84.jar",
+      "sha256": "3d3ff71711c97095e38f90a9cdf6c160344c400cc5724bdab0696e41e103fb08"
+    },
+    {
+      "url": "https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot-api/1.20.6-R0.1-SNAPSHOT/spigot-api-1.20.6-R0.1-20240613.150924-57-shaded.jar",
+      "sha256": "4d818237569fe3cfc2759463d513fe68200a7d224aba0393c91283ffdb8ae2f3"
+    },
+    {
+      "url": "https://maven.freneticllc.com/com/freneticllc/freneticutilities/freneticdatasyntax/1.1/freneticdatasyntax-1.1.jar",
+      "sha256": "9cb3e3e8fb48bba05a8993020da79dff21eb31bb978ca5653eaa4993874590b9"
+    }
+  ],
+  "builtin_command_sha256": "82587518cae8a81a6ada6f90f9ec9a08af4b09a0c2cf0f6d371b663cba5a05e8",
+  "toolchain": "Released Denizen Core 1.91.0 JVM and unchanged upstream AnnounceCommand",
+  "reproduction_command": "Load the original hello.dsc in Probe against the released Denizen core and Bukkit libraries",
+  "semantic_scope": "The genuine Denizen core loaded the original task and the upstream command used its TO_CONSOLE branch. A Bukkit console adapter captured the greeting verbatim.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

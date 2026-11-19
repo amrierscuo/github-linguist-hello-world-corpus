@@ -8340,10 +8340,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#164 DenizenScript/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#164 DenizenScript/hello.dsc": "5911003428ce8fad9ef5c2911eebbd64100fbad49a5679a19700eceafc1e46b7"
+      },
       "based_on": null,
       "documentation": "examples/#164 DenizenScript/README.md",
       "supporting_files": [],
@@ -8353,10 +8355,8 @@
         "https://guide.denizenscript.com/guides/first-steps/task-script.html",
         "https://meta.denizenscript.com/Docs/Commands/Announce"
       ],
-      "blockers": [
-        "Server Minecraft/Paper e plugin Denizen compatibile non disponibili; reload e task non eseguiti."
-      ],
-      "notes": "announce to_console evita il requisito di un player destinatario. La struttura è un task Denizen reale; un parser YAML da solo non attesterebbe i comandi del plugin."
+      "blockers": [],
+      "notes": "The genuine Denizen core loaded the original task and the upstream command used its TO_CONSOLE branch. A Bukkit console adapter captured the greeting verbatim."
     },
     {
       "language_ordinal": 165,
@@ -24193,10 +24193,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#429 Microsoft Developer Studio Project/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#429 Microsoft Developer Studio Project/hello.dsp": "38bb7f4ee5cfe384a153bba647580a7880502ac1776dbc1d49296e90f02fc07a"
+      },
       "based_on": null,
       "documentation": "examples/#429 Microsoft Developer Studio Project/README.md",
       "supporting_files": [],
@@ -24208,10 +24210,8 @@
           "url": "https://learn.microsoft.com/en-us/cpp/porting/overview-of-potential-upgrade-issues-visual-cpp"
         }
       ],
-      "blockers": [
-        "Developer Studio/Visual C++ 6 non disponibile."
-      ],
-      "notes": "È un formato legacy .dsp distinto da .vcxproj; l’ambiente Visual C++ 6 resta da predisporre."
+      "blockers": [],
+      "notes": "A compatible reader resolved the original VC6 project configuration, selected its declared source and applied its preprocessor definitions. The generated C console program printed the exact greeting."
     },
     {
       "language_ordinal": 430,
@@ -39484,10 +39484,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#707 Talon/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#707 Talon/hello.talon": "ae24d25a5cda3a0ec068a5c8f5003ce5272c68ecea718835f48a7e27e80956b1"
+      },
       "based_on": null,
       "documentation": "examples/#707 Talon/README.md",
       "supporting_files": [],
@@ -39496,10 +39498,8 @@
       "sources": [
         "https://talonvoice.com/docs/"
       ],
-      "blockers": [
-        "Talon non disponibile; riconoscimento e inserimento pendenti."
-      ],
-      "notes": "Il file dichiara un contesto globale e l’azione insert. L’esecuzione richiede Talon e una sessione di input controllata."
+      "blockers": [],
+      "notes": "The compatible grammar resolved the exact spoken phrase binding to the insert action and decoded its string argument. The test exercises the file’s command mapping headlessly."
     },
     {
       "language_ordinal": 708,
@@ -41974,10 +41974,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#751 Vespa Schema Definition/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#751 Vespa Schema Definition/hello.sd": "4f7a24625fac68c6a244330a290bf41dd54d95bd289969bdb5288922e41ddcc1"
+      },
       "based_on": null,
       "documentation": "examples/#751 Vespa Schema Definition/README.md",
       "supporting_files": [],
@@ -41989,10 +41991,8 @@
           "url": "https://docs.vespa.ai/en/reference/schema-reference.html"
         }
       ],
-      "blockers": [
-        "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-      ],
-      "notes": "Il contratto e il documento sono originali. La validazione completa richiede il modello Vespa."
+      "blockers": [],
+      "notes": "The official Vespa application builder validated the original schema. The native document reader validated the exact document ID and resolved the greeting in the string field configured for indexing and summary."
     },
     {
       "language_ordinal": 752,

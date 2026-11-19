@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "ordinal": 423,
+  "language": "Max",
+  "timestamp_utc": "2026-11-19T13:48:47.167226+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Extract the published native Pure Data console package into this test",
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "${SCRATCH}/cache/tools/compatible-puredata-core/puredata-core_0.54.1+ds-4build3_amd64.deb",
+        "${SCRATCH}/423-2wu4przt/pd-dist"
+      ],
+      "cwd": "${SCRATCH}/423-2wu4przt",
+      "timestamp_utc": "2026-11-19T13:48:50.586572+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/423-2wu4przt/home",
+        "TMPDIR": "${SCRATCH}/423-2wu4przt/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Identify the compatible native patch host",
+      "command": [
+        "${SCRATCH}/423-2wu4przt/pd-dist/usr/bin/puredata",
+        "-version"
+      ],
+      "cwd": "${SCRATCH}/423-2wu4przt",
+      "timestamp_utc": "2026-11-19T13:48:50.619986+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Pd-0.54.1 (\"\") compiled for Debian (0.54.1+ds-4build3) on 2024/04/07 at 07:21:28 UTC\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/423-2wu4przt/home",
+        "TMPDIR": "${SCRATCH}/423-2wu4przt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Execute the exact parsed patch wiring under the native Pure Data host",
+      "command": [
+        "${SCRATCH}/423-2wu4przt/pd-dist/usr/bin/puredata",
+        "-noprefs",
+        "-nogui",
+        "-noaudio",
+        "-stderr",
+        "-batch",
+        "-open",
+        "${SCRATCH}/423-2wu4przt/max-to-pd.pd"
+      ],
+      "cwd": "${SCRATCH}/423-2wu4przt",
+      "timestamp_utc": "2026-11-19T13:48:50.947738+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "disabling real-time priority due to missing pd-watchdog (${SCRATCH}/423-2wu4przt/pd-dist/usr/lib/puredata/bin/pd-watchdog)\ngreeting: Hello, World!\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/423-2wu4przt/home",
+        "TMPDIR": "${SCRATCH}/423-2wu4przt/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#423 Max/hello.maxpat": "8c7df2db3b27682ef64b79499d597318a08fb53d10fafc5c5120304c9995c920"
+  },
+  "fixture_sha256": {
+    "max-to-pd.pd": {
+      "sha256": "fad92617da299fc5c59e3695a23f95a961b9a14e8479ba9d772abb89e7b43b80",
+      "content_utf8": "#N canvas 100 100 400 300 12;\n#X msg 60 30 Hello\\, World!;\n#X obj 60 60 print greeting;\n#X obj 230 30 loadbang;\n#X obj 230 65 delay 50;\n#X msg 230 100 \\; pd quit;\n#X connect 0 0 1 0;\n#X connect 2 0 0 0;\n#X connect 2 0 3 0;\n#X connect 3 0 4 0;\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Cycling ’74 message",
+      "url": "https://docs.cycling74.com/reference/message/"
+    },
+    {
+      "title": "Cycling ’74 print",
+      "url": "https://docs.cycling74.com/reference/print/"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/puredata/puredata-core_0.54.1+ds-4build3_amd64.deb",
+      "sha256": "a835472e1df49a2e2e9e656dff760875d51fcb1e0fe862a0c02872339f60d867",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "libportaudio2",
+      "version": "19.6.0-1.2build3",
+      "filename": "pool/universe/p/portaudio19/libportaudio2_19.6.0-1.2build3_amd64.deb",
+      "sha256": "bb4f406736fbb213e905229452261ca8ccf47b678febfeb4ebf53a56088fc159",
+      "bytes": 67896,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/p/portaudio19/libportaudio2_19.6.0-1.2build3_amd64.deb"
+    }
+  ],
+  "compatibility_scope": "The adapter preserves the two Max nodes and uses a fixture trigger to simulate clicking the message.",
+  "adapter_output": [
+    "disabling real-time priority due to missing pd-watchdog (${SCRATCH}/423-2wu4przt/pd-dist/usr/lib/puredata/bin/pd-watchdog)",
+    "greeting: Hello, World!"
+  ],
+  "toolchain": "Native Pure Data console with a recorded Max message-graph adapter",
+  "reproduction_command": "pd -nogui -noaudio -stderr -batch -open max-to-pd.pd after translating the original Max message and print nodes",
+  "semantic_scope": "The compatible patch-graph probe resolved the original port connection. An injected click-equivalent trigger activated the message in the native Pure Data host, which emitted the exact greeting at the print sink.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

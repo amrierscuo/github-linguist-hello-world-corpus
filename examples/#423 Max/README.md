@@ -1,5 +1,16 @@
 # #423 Max
 
+## Verified on November 19, 2026
+
+The compatible patch-graph probe resolved the original port connection. An injected click-equivalent trigger activated the message in the native Pure Data host, which emitted the exact greeting at the print sink.
+
+Run `pd -nogui -noaudio -stderr -batch -open max-to-pd.pd after translating the original Max message and print nodes`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Open a Max patch and send greeting to print object by clicking the message box.
 
 Canonical type `programming`, language_id `227`.
@@ -34,3 +45,5 @@ Verification of the main sample and each variant is recorded separately.
 | `.maxproj` | [hello.maxproj](variants/maxproj-b699244e/hello.maxproj) created; verification pending |
 | `.mxt` | [hello.mxt](variants/mxt-8fccfadd/hello.mxt) created; verification pending |
 | `.pat` | [hello.pat](variants/pat-b636baf1/hello.pat) created; verification pending |
+
+</details>

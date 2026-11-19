@@ -1,5 +1,16 @@
 # #164 DenizenScript
 
+## Verified on November 19, 2026
+
+The genuine Denizen core loaded the original task and the upstream command used its TO_CONSOLE branch. A Bukkit console adapter captured the greeting verbatim.
+
+Run `Load the original hello.dsc in Probe against the released Denizen core and Bukkit libraries`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Run a DenizenScript task that announces Hello, World! in the server console.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.dsc` | [hello.dsc](hello.dsc) created; verification pending |
+| `.dsc` | [hello.dsc](hello.dsc) Syntax and behavior verified |
+
+</details>

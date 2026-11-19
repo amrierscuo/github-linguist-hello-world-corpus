@@ -1,5 +1,16 @@
 # #751 Vespa Schema Definition
 
+## Verified on November 19, 2026
+
+The official Vespa application builder validated the original schema. The native document reader validated the exact document ID and resolved the greeting in the string field configured for indexing and summary.
+
+Run `java -cp <Vespa config-model and document dependencies> ReadSchema.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Validate a Vespa scheme and save a message field readable by summary.
 
 Canonical type `data`, language_id `587879709`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sd` | [hello.sd](hello.sd) created; verification pending |
+| `.sd` | [hello.sd](hello.sd) Syntax and behavior verified |
+
+</details>

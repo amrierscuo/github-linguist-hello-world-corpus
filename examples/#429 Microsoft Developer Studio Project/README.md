@@ -1,5 +1,16 @@
 # #429 Microsoft Developer Studio Project
 
+## Verified on November 19, 2026
+
+A compatible reader resolved the original VC6 project configuration, selected its declared source and applied its preprocessor definitions. The generated C console program printed the exact greeting.
+
+Run `Select CFG and SOURCE from hello.dsp, compile with its mapped debug defines and run the generated console target`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Describe a Microsoft Developer Studio 6 console project with a greeting source C.
 
 Canonical type `data`, language_id `800983837`.
@@ -29,4 +40,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.dsp` | [hello.dsp](hello.dsp) created; verification pending |
+| `.dsp` | [hello.dsp](hello.dsp) Syntax and behavior verified |
+
+</details>

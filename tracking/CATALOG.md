@@ -167,7 +167,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #161 | [Daslang](../examples/%23161%20Daslang/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #162 | [DataWeave](../examples/%23162%20DataWeave/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #163 | [Debian Package Control File](../examples/%23163%20Debian%20Package%20Control%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #164 | [DenizenScript](../examples/%23164%20DenizenScript/README.md) | Yes | Pending | Pending | 1/1 | A Minecraft/Paper server and compatible Denizen plugin are unavailable; the reload and task were not run. |
+| #164 | [DenizenScript](../examples/%23164%20DenizenScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #165 | [Dhall](../examples/%23165%20Dhall/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #166 | [Diff](../examples/%23166%20Diff/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #167 | [DirectX 3D File](../examples/%23167%20DirectX%203D%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -426,13 +426,13 @@ This table reports the main sample's status. Variant states are tracked separate
 | #420 | [Mask](../examples/%23420%20Mask/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #421 | [Mathematical Programming System](../examples/%23421%20Mathematical%20Programming%20System/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #422 | [Maven POM](../examples/%23422%20Maven%20POM/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
-| #423 | [Max](../examples/%23423%20Max/README.md) | Yes | Pending | Pending | 5/5 | The Max runtime is unavailable. |
+| #423 | [Max](../examples/%23423%20Max/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #424 | [MeTTa](../examples/%23424%20MeTTa/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #425 | [Mercury](../examples/%23425%20Mercury/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #426 | [Mermaid](../examples/%23426%20Mermaid/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #427 | [Meson](../examples/%23427%20Meson/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #428 | [Metal](../examples/%23428%20Metal/README.md) | Yes | Pending | Pending | 1/1 | Xcode and the Metal runtime are unavailable on Windows. |
-| #429 | [Microsoft Developer Studio Project](../examples/%23429%20Microsoft%20Developer%20Studio%20Project/README.md) | Yes | Pending | Pending | 1/1 | Developer Studio/Visual C++ 6 is unavailable. |
+| #429 | [Microsoft Developer Studio Project](../examples/%23429%20Microsoft%20Developer%20Studio%20Project/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #430 | [Microsoft Visual Studio Solution](../examples/%23430%20Microsoft%20Visual%20Studio%20Solution/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #431 | [MiniD](../examples/%23431%20MiniD/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #432 | [MiniScript](../examples/%23432%20MiniScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -710,7 +710,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #704 | [TSX](../examples/%23704%20TSX/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #705 | [TXL](../examples/%23705%20TXL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #706 | [Tact](../examples/%23706%20Tact/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #707 | [Talon](../examples/%23707%20Talon/README.md) | Yes | Pending | Pending | 1/1 | Talon is unavailable; recognition and insertion are pending. |
+| #707 | [Talon](../examples/%23707%20Talon/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #708 | [Tape](../examples/%23708%20Tape/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #709 | [Tcl](../examples/%23709%20Tcl/README.md) | Yes | Yes | Yes | 6/6 | Evidence recorded |
 | #710 | [Tcsh](../examples/%23710%20Tcsh/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -754,7 +754,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #748 | [Vento](../examples/%23748%20Vento/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #749 | [Verilog](../examples/%23749%20Verilog/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #750 | [Verse](../examples/%23750%20Verse/README.md) | Yes | Pending | Pending | 1/1 | A test UEFN/Verse runtime is unavailable. |
-| #751 | [Vespa Schema Definition](../examples/%23751%20Vespa%20Schema%20Definition/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #751 | [Vespa Schema Definition](../examples/%23751%20Vespa%20Schema%20Definition/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #752 | [Vim Help File](../examples/%23752%20Vim%20Help%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #753 | [Vim Snippet](../examples/%23753%20Vim%20Snippet/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #754 | [Vim script](../examples/%23754%20Vim%20script/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |

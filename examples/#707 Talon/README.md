@@ -1,5 +1,16 @@
 # #707 Talon
 
+## Verified on November 19, 2026
+
+The compatible grammar resolved the exact spoken phrase binding to the insert action and decoded its string argument. The test exercises the file’s command mapping headlessly.
+
+Run `python evaluate.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.talon` | [hello.talon](hello.talon) created; verification pending |
+| `.talon` | [hello.talon](hello.talon) Syntax and behavior verified |
+
+</details>

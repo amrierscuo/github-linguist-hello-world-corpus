@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "ordinal": 707,
+  "language": "Talon",
+  "timestamp_utc": "2026-11-19T13:55:26.140157+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Prepare a private parser environment",
+      "command": [
+        "python3",
+        "-m",
+        "venv",
+        "${SCRATCH}/707-u2u3ytwk/venv"
+      ],
+      "cwd": "${SCRATCH}/707-u2u3ytwk",
+      "timestamp_utc": "2026-11-19T13:55:26.195963+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/707-u2u3ytwk/home",
+        "TMPDIR": "${SCRATCH}/707-u2u3ytwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    },
+    {
+      "label": "Install Tree-sitter in the private Python environment",
+      "command": [
+        "${SCRATCH}/707-u2u3ytwk/venv/bin/python",
+        "-m",
+        "pip",
+        "--disable-pip-version-check",
+        "install",
+        "tree-sitter==0.25.2"
+      ],
+      "cwd": "${SCRATCH}/707-u2u3ytwk",
+      "timestamp_utc": "2026-11-19T13:55:30.706250+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "Collecting tree-sitter==0.25.2\n  Using cached tree_sitter-0.25.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10.0 kB)\nUsing cached tree_sitter-0.25.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (635 kB)\nInstalling collected packages: tree-sitter\nSuccessfully installed tree-sitter-0.25.2\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/707-u2u3ytwk/home",
+        "TMPDIR": "${SCRATCH}/707-u2u3ytwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    },
+    {
+      "label": "Compile the unmodified upstream Talon grammar",
+      "command": [
+        "gcc",
+        "-fPIC",
+        "-I",
+        "${SCRATCH}/707-u2u3ytwk/package/src",
+        "-c",
+        "${SCRATCH}/707-u2u3ytwk/package/src/parser.c",
+        "-o",
+        "parser.o"
+      ],
+      "cwd": "${SCRATCH}/707-u2u3ytwk",
+      "timestamp_utc": "2026-11-19T13:55:31.695010+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/707-u2u3ytwk/home",
+        "TMPDIR": "${SCRATCH}/707-u2u3ytwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    },
+    {
+      "label": "Compile the unmodified upstream external scanner with C linkage",
+      "command": [
+        "gcc",
+        "-fPIC",
+        "-I",
+        "${SCRATCH}/707-u2u3ytwk/package/src",
+        "-c",
+        "${SCRATCH}/707-u2u3ytwk/package/src/scanner.c",
+        "-o",
+        "scanner.o"
+      ],
+      "cwd": "${SCRATCH}/707-u2u3ytwk",
+      "timestamp_utc": "2026-11-19T13:55:31.870909+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/707-u2u3ytwk/home",
+        "TMPDIR": "${SCRATCH}/707-u2u3ytwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    },
+    {
+      "label": "Link the Talon syntax parser as a local native library",
+      "command": [
+        "g++",
+        "-shared",
+        "-Wl,--no-undefined",
+        "parser.o",
+        "scanner.o",
+        "-o",
+        "libtalon.so"
+      ],
+      "cwd": "${SCRATCH}/707-u2u3ytwk",
+      "timestamp_utc": "2026-11-19T13:55:31.944263+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/707-u2u3ytwk/home",
+        "TMPDIR": "${SCRATCH}/707-u2u3ytwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    },
+    {
+      "label": "Read the exact Talon phrase binding and decode its insertion action from the real grammar",
+      "command": [
+        "${SCRATCH}/707-u2u3ytwk/venv/bin/python",
+        "-I",
+        "${SCRATCH}/707-u2u3ytwk/evaluate.py"
+      ],
+      "cwd": "${SCRATCH}/707-u2u3ytwk",
+      "timestamp_utc": "2026-11-19T13:55:31.986044+00:00",
+      "timeout_seconds": 27,
+      "exit_code": 0,
+      "stdout": "Parsed Talon command: (source_file (matches) (declarations (command_declaration left: (rule (seq (word) (word))) right: (block (expression_statement expression: (action action_name: (identifier) arguments: (argument_list (string (string_content)))))))))\nRecognized rule: hello world\nInsert payload: Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/707-u2u3ytwk/home",
+        "TMPDIR": "${SCRATCH}/707-u2u3ytwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#707 Talon/hello.talon": "ae24d25a5cda3a0ec068a5c8f5003ce5272c68ecea718835f48a7e27e80956b1"
+  },
+  "fixture_sha256": {
+    "evaluate.py": {
+      "sha256": "01f567cd1c0b2372ed13a1b1069b542830b27ed3ead79b884deff293ce1dc281",
+      "content_utf8": "import ast\nimport ctypes\nfrom pathlib import Path\nfrom tree_sitter import Language, Parser\nprogram=Path(\"hello.talon\").read_bytes()\nlib=ctypes.CDLL(str(Path(\"libtalon.so\").resolve()))\nlib.tree_sitter_talon.restype=ctypes.c_void_p\ncapsule=ctypes.pythonapi.PyCapsule_New\ncapsule.argtypes=[ctypes.c_void_p,ctypes.c_char_p,ctypes.c_void_p]\ncapsule.restype=ctypes.py_object\np=Parser(Language(capsule(lib.tree_sitter_talon(),b\"tree_sitter.Language\",None)))\nroot=p.parse(program).root_node\nassert not root.has_error, str(root)\nprint(\"Parsed Talon command:\",root)\ndef children(n):\n    yield n\n    for c in n.named_children:\n        yield from children(c)\ndef span(n):\n    return program[n.start_byte:n.end_byte].decode()\ncommands=[n for n in children(root) if n.type in (\"command\",\"command_declaration\")]\nassert len(commands)==1,[n.type for n in children(root)]\nc=commands[0]\nrule=c.child_by_field_name(\"left\")\nif rule is None:\n    rule=next(n for n in c.named_children if \"rule\" in n.type)\nwords=span(rule).split()\nassert words==[\"hello\",\"world\"],words\ncalls=[n for n in children(c.child_by_field_name(\"right\")) if n.type==\"action\"]\nassert len(calls)==1,[(n.type,span(n)) for n in calls]\ncall=calls[0]\nassert span(call.child_by_field_name(\"action_name\"))==\"insert\"\nargs=[n for n in children(call) if n.type in (\"string\",\"string_literal\")]\nassert len(args)==1,[n.type for n in children(call)]\npayload=ast.literal_eval(span(args[0]))\nassert payload==\"Hello, World!\",repr(payload)\nprint(\"Recognized rule:\",' '.join(words))\nprint(\"Insert payload:\",payload)\n"
+    }
+  },
+  "sources": [
+    "https://talonvoice.com/docs/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/talonhub/tree-sitter-talon/tar.gz/dev",
+      "ref": "dev",
+      "sha256": "6027658224f01b2787ae4aefb6596640f2bfa93e60a6af7ef7879d1c952cb76f"
+    }
+  ],
+  "ubuntu_archives": [],
+  "toolchain": "Talon community native Tree-sitter grammar with a voice-binding semantic probe",
+  "reproduction_command": "python evaluate.py",
+  "semantic_scope": "The compatible grammar resolved the exact spoken phrase binding to the insert action and decoded its string argument. The test exercises the file’s command mapping headlessly.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

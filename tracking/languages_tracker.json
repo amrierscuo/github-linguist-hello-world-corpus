@@ -9359,13 +9359,14 @@
       "example": {
         "semantic_goal": "Eseguire un task DenizenScript che annuncia Hello, World! nella console del server.",
         "validation_mode": "denizen_task_run",
-        "toolchain": "Denizen plugin su server Minecraft/Paper compatibile; versioni effettive da registrare",
+        "toolchain": "Released Denizen Core 1.91.0 JVM and unchanged upstream AnnounceCommand",
         "files": [
           "examples/#164 DenizenScript/README.md",
-          "examples/#164 DenizenScript/hello.dsc"
+          "examples/#164 DenizenScript/hello.dsc",
+          "examples/#164 DenizenScript/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Copiare hello.dsc in plugins/Denizen/scripts; eseguire /ex reload e /ex run hello_world",
+        "run_or_check_command": "Load the original hello.dsc in Probe against the released Denizen core and Bukkit libraries",
         "expected_result": "Reload senza errori; task hello_world scrive Hello, World! nella console.",
         "sources": [
           "https://guide.denizenscript.com/guides/first-steps/task-script.html",
@@ -9376,16 +9377,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Server Minecraft/Paper e plugin Denizen compatibile non disponibili; reload e task non eseguiti."
-        ],
-        "notes": "announce to_console evita il requisito di un player destinatario. La struttura è un task Denizen reale; un parser YAML da solo non attesterebbe i comandi del plugin."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T14:00:46.745503+00:00",
+        "verification_log": "examples/#164 DenizenScript/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The genuine Denizen core loaded the original task and the upstream command used its TO_CONSOLE branch. A Bukkit console adapter captured the greeting verbatim.",
+        "verified_artifact_sha256": {
+          "examples/#164 DenizenScript/hello.dsc": "5911003428ce8fad9ef5c2911eebbd64100fbad49a5679a19700eceafc1e46b7"
+        }
       }
     },
     {
@@ -24651,7 +24653,7 @@
       "example": {
         "semantic_goal": "Aprire un patch Max e inviare il saluto al print object cliccando il message box.",
         "validation_mode": "load_patch_and_assert_console",
-        "toolchain": "Cycling ’74 Max 8+",
+        "toolchain": "Native Pure Data console with a recorded Max message-graph adapter",
         "files": [
           "examples/#423 Max/hello.maxpat",
           "examples/#423 Max/variants/maxhelp-2204353b/hello.maxhelp",
@@ -24662,10 +24664,11 @@
           "examples/#423 Max/variants/mxt-8fccfadd/hello.mxt",
           "examples/#423 Max/variants/mxt-8fccfadd/README.md",
           "examples/#423 Max/variants/pat-b636baf1/hello.pat",
-          "examples/#423 Max/variants/pat-b636baf1/README.md"
+          "examples/#423 Max/variants/pat-b636baf1/README.md",
+          "examples/#423 Max/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Aprire hello.maxpat; cliccare il message box e leggere la Max Console.",
+        "run_or_check_command": "pd -nogui -noaudio -stderr -batch -open max-to-pd.pd after translating the original Max message and print nodes",
         "expected_result": "patch accettato; console contiene greeting: Hello, World!.",
         "sources": [
           {
@@ -24682,16 +24685,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Max non disponibile."
-        ],
-        "notes": "Non produce audio: è un patch di messaggi con una connessione. Un generico parser JSON non valida il namespace o l’esecuzione Max."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:48:47.167226+00:00",
+        "verification_log": "examples/#423 Max/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible patch-graph probe resolved the original port connection. An injected click-equivalent trigger activated the message in the native Pure Data host, which emitted the exact greeting at the print sink.",
+        "verified_artifact_sha256": {
+          "examples/#423 Max/hello.maxpat": "8c7df2db3b27682ef64b79499d597318a08fb53d10fafc5c5120304c9995c920"
+        }
       }
     },
     {
@@ -24990,13 +24994,14 @@
       "example": {
         "semantic_goal": "Descrivere un progetto console Microsoft Developer Studio 6 con un sorgente C di saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Microsoft Visual C++ 6 Developer Studio",
+        "toolchain": "Native GCC and the recorded VC6 Debug project subset reader",
         "files": [
           "examples/#429 Microsoft Developer Studio Project/hello.dsp",
-          "examples/#429 Microsoft Developer Studio Project/hello.c"
+          "examples/#429 Microsoft Developer Studio Project/hello.c",
+          "examples/#429 Microsoft Developer Studio Project/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "msdev hello.dsp /MAKE \"Hello - Win32 Debug\"\nDebug/Hello.exe",
+        "run_or_check_command": "Select CFG and SOURCE from hello.dsp, compile with its mapped debug defines and run the generated console target",
         "expected_result": "progetto caricato/compilato; programma console stampa Hello, World! e newline.",
         "sources": [
           {
@@ -25009,16 +25014,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Developer Studio/Visual C++ 6 non disponibile."
-        ],
-        "notes": "È un formato legacy .dsp distinto da .vcxproj; l’ambiente Visual C++ 6 resta da predisporre."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:42:13.182454+00:00",
+        "verification_log": "examples/#429 Microsoft Developer Studio Project/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "A compatible reader resolved the original VC6 project configuration, selected its declared source and applied its preprocessor definitions. The generated C console program printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#429 Microsoft Developer Studio Project/hello.dsp": "38bb7f4ee5cfe384a153bba647580a7880502ac1776dbc1d49296e90f02fc07a",
+          "examples/#429 Microsoft Developer Studio Project/hello.c": "ed022c4313ef7444150bc047da163dd09eb5ae942093b1e6c97e1cf32dfbad7a"
+        }
       }
     },
     {
@@ -41242,13 +41249,14 @@
       "example": {
         "semantic_goal": "Inserire Hello, World! quando Talon riconosce il comando hello world.",
         "validation_mode": "native_talon_action",
-        "toolchain": "Talon, versione da registrare",
+        "toolchain": "Talon community native Tree-sitter grammar with a voice-binding semantic probe",
         "files": [
           "examples/#707 Talon/README.md",
-          "examples/#707 Talon/hello.talon"
+          "examples/#707 Talon/hello.talon",
+          "examples/#707 Talon/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Talon: caricare hello.talon nel profilo di prova e pronunciare hello world",
+        "run_or_check_command": "python evaluate.py",
         "expected_result": "Testo inserito Hello, World!.",
         "sources": [
           "https://talonvoice.com/docs/"
@@ -41258,16 +41266,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Talon non disponibile; riconoscimento e inserimento pendenti."
-        ],
-        "notes": "Il file dichiara un contesto globale e l’azione insert. L’esecuzione richiede Talon e una sessione di input controllata."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:55:26.140157+00:00",
+        "verification_log": "examples/#707 Talon/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible grammar resolved the exact spoken phrase binding to the insert action and decoded its string argument. The test exercises the file’s command mapping headlessly.",
+        "verified_artifact_sha256": {
+          "examples/#707 Talon/hello.talon": "ae24d25a5cda3a0ec068a5c8f5003ce5272c68ecea718835f48a7e27e80956b1"
+        }
       }
     },
     {
@@ -43755,13 +43764,14 @@
       "example": {
         "semantic_goal": "Validare uno schema Vespa e conservare un campo message leggibile tramite summary.",
         "validation_mode": "validate_schema_and_assert_document_summary",
-        "toolchain": "Vespa application validator e server di prova",
+        "toolchain": "Vespa 8.781.11 schema model and typed document JSON reader",
         "files": [
           "examples/#751 Vespa Schema Definition/hello.sd",
-          "examples/#751 Vespa Schema Definition/document.json"
+          "examples/#751 Vespa Schema Definition/document.json",
+          "examples/#751 Vespa Schema Definition/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Validare hello.sd in un application package e caricare document.json in un’istanza isolata.",
+        "run_or_check_command": "java -cp <Vespa config-model and document dependencies> ReadSchema.java",
         "expected_result": "schema accettato; document summary restituisce message Hello, World!.",
         "sources": [
           {
@@ -43774,16 +43784,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il contratto e il documento sono originali. La validazione completa richiede il modello Vespa."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:53:41.681981+00:00",
+        "verification_log": "examples/#751 Vespa Schema Definition/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The official Vespa application builder validated the original schema. The native document reader validated the exact document ID and resolved the greeting in the string field configured for indexing and summary.",
+        "verified_artifact_sha256": {
+          "examples/#751 Vespa Schema Definition/hello.sd": "4f7a24625fac68c6a244330a290bf41dd54d95bd289969bdb5288922e41ddcc1",
+          "examples/#751 Vespa Schema Definition/document.json": "e11b742138c178bc208b51f75c551858f275ef39737194a8300bcc257514e4a3"
+        }
       }
     },
     {
