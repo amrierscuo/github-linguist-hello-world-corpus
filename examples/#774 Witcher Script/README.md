@@ -1,5 +1,18 @@
 # #774 Witcher Script
 
+## Verified on November 19, 2026
+
+The compatible native AST parser recognized the unchanged, parameterless callable. The semantic probe resolved the single reachable return and evaluated its string literal against the declared type, yielding the exact greeting.
+
+Run `cargo run --quiet (recorded exact upstream parser dependency)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Witcher Script`, tipo `programming`, language_id `686821385`.
 
 Original WitcherScript Global Function CorpusGreeting() that returns `Hello, World!` as string.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ws` | [hello.ws](hello.ws) created; verification pending |
+| `.ws` | [hello.ws](hello.ws) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #610 Redscript
 
+## Verified on November 19, 2026
+
+The actual compiler created a bundle from the original stand-alone function. The native decompiler read its compiled return instruction and recovered the exact greeting. Scope is the deterministic return value in emitted code.
+
+Run `redscript-cli compile -s scripts -b greeting.redscripts && redscript-cli decompile -b greeting.redscripts -o result`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Redscript`, tipo `programming`, language_id `686691365`.
 
 Define an original Redscript function that returns the greeting string.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.reds` | [hello.reds](hello.reds) created; verification pending |
+| `.reds` | [hello.reds](hello.reds) Syntax and behavior verified |
+
+</details>

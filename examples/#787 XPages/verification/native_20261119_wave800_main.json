@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "ordinal": 787,
+  "language": "XPages",
+  "timestamp_utc": "2026-11-19T13:29:18.561512+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/cache/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/787-6fhx42it",
+      "timestamp_utc": "2026-11-19T13:29:18.594302+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/787-6fhx42it/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  31.649 s\n[INFO] Finished at: 2026-11-19T14:30:15+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/787-6fhx42it/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/787-6fhx42it/home",
+        "TMPDIR": "${SCRATCH}/787-6fhx42it/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/787-6fhx42it/home"
+      }
+    },
+    {
+      "label": "Compile the local Faces embedding fixture",
+      "command": [
+        "javac",
+        "-cp",
+        "${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-core/9.0.98/tomcat-embed-core-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/tomcat-annotations-api/9.0.98/tomcat-annotations-api-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-el/9.0.98/tomcat-embed-el-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.98/tomcat-embed-websocket-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.98/tomcat-embed-jasper-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0.jar:${SCRATCH}/cache/tools/maven-cache/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar:${SCRATCH}/cache/tools/maven-cache/javax/interceptor/javax.interceptor-api/1.2/javax.interceptor-api-1.2.jar",
+        "XPagesTest.java"
+      ],
+      "cwd": "${SCRATCH}/787-6fhx42it",
+      "timestamp_utc": "2026-11-19T13:30:15.528461+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/787-6fhx42it/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/787-6fhx42it/home",
+        "TMPDIR": "${SCRATCH}/787-6fhx42it/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/787-6fhx42it/home"
+      }
+    },
+    {
+      "label": "Load the original XPages component by its configuration and render with the compatible Faces tag library",
+      "command": [
+        "java",
+        "-cp",
+        ".:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-core/9.0.98/tomcat-embed-core-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/tomcat-annotations-api/9.0.98/tomcat-annotations-api-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-el/9.0.98/tomcat-embed-el-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.98/tomcat-embed-websocket-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.98/tomcat-embed-jasper-9.0.98.jar:${SCRATCH}/cache/tools/maven-cache/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0.jar:${SCRATCH}/cache/tools/maven-cache/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar:${SCRATCH}/cache/tools/maven-cache/javax/interceptor/javax.interceptor-api/1.2/javax.interceptor-api-1.2.jar",
+        "XPagesTest"
+      ],
+      "cwd": "${SCRATCH}/787-6fhx42it",
+      "timestamp_utc": "2026-11-19T13:30:17.651798+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "HTTP 200\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<section id=\"component\">Hello, World!</section>\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/787-6fhx42it/home\nNov 19, 2026 2:30:20 PM org.apache.coyote.AbstractProtocol init\nINFO: Initializing ProtocolHandler [\"http-nio-127.0.0.1-auto-1\"]\nNov 19, 2026 2:30:20 PM org.apache.catalina.core.StandardService startInternal\nINFO: Starting service [Tomcat]\nNov 19, 2026 2:30:20 PM org.apache.catalina.core.StandardEngine startInternal\nINFO: Starting Servlet engine: [Apache Tomcat/9.0.98]\nNov 19, 2026 2:30:21 PM org.apache.catalina.startup.ContextConfig getDefaultWebXmlFragment\nINFO: No global web.xml found\nNov 19, 2026 2:30:22 PM org.apache.jasper.servlet.TldScanner scanJars\nINFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.\nNov 19, 2026 2:30:22 PM com.sun.faces.config.ConfigureListener contextInitialized\nINFO: Initializing Mojarra 2.2.20 ( 20190731-0756 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''\nNov 19, 2026 2:30:22 PM com.sun.faces.spi.InjectionProviderFactory createInstance\nINFO: JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.\nNov 19, 2026 2:30:23 PM com.sun.faces.config.ConfigureListener contextInitialized\nINFO: Initializing Mojarra 2.2.20 ( 20190731-0756 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''\nNov 19, 2026 2:30:23 PM com.sun.faces.spi.InjectionProviderFactory createInstance\nINFO: JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.\nNov 19, 2026 2:30:23 PM org.apache.coyote.AbstractProtocol start\nINFO: Starting ProtocolHandler [\"http-nio-127.0.0.1-auto-1-46577\"]\nNov 19, 2026 2:30:24 PM org.apache.coyote.AbstractProtocol pause\nINFO: Pausing ProtocolHandler [\"http-nio-127.0.0.1-auto-1-46577\"]\nNov 19, 2026 2:30:24 PM org.apache.catalina.core.StandardService stopInternal\nINFO: Stopping service [Tomcat]\nNov 19, 2026 2:30:24 PM com.sun.faces.config.ConfigureListener contextDestroyed\nWARNING: Unexpected state during contextDestroyed: no ConfigManager instance in current ServletContext but one is expected to exist.\nNov 19, 2026 2:30:24 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalsForLeaks\nWARNING: When running on Java 9 or later you need to add \"--add-opens=java.base/java.lang=ALL-UNNAMED\" to the JVM command line arguments to enable ThreadLocal memory leak detection. Alternatively, you can suppress this warning by disabling ThreadLocal memory leak detection.\nNov 19, 2026 2:30:24 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesRmiTargets\nWARNING: When running on Java 9 or later you need to add \"--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED\" to the JVM command line arguments to enable RMI Target memory leak detection. Alternatively, you can suppress this warning by disabling RMI Target memory leak detection.\nNov 19, 2026 2:30:24 PM org.apache.coyote.AbstractProtocol stop\nINFO: Stopping ProtocolHandler [\"http-nio-127.0.0.1-auto-1-46577\"]\nNov 19, 2026 2:30:24 PM org.apache.coyote.AbstractProtocol destroy\nINFO: Destroying ProtocolHandler [\"http-nio-127.0.0.1-auto-1-46577\"]\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/787-6fhx42it/home",
+        "TMPDIR": "${SCRATCH}/787-6fhx42it/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/787-6fhx42it/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#787 XPages/Greeting.xsp": "325ae62884e289170bf2983bd7a6b2f02fcfc14b872886efe14d91776e5ee3ab",
+    "examples/#787 XPages/Greeting.xsp-config": "71940e0cb569ed0c679caedb12f17eb115c89a07ec10c0274bfc5700993c8d9d"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "d0af720ee3d802ab9334bc75b1342a350d1de40c1c7c2806d6927616e5c1d059",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-core</artifactId><version>9.0.98</version></dependency><dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-el</artifactId><version>9.0.98</version></dependency><dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-websocket</artifactId><version>9.0.98</version></dependency><dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-jasper</artifactId><version>9.0.98</version></dependency><dependency><groupId>javax.annotation</groupId><artifactId>javax.annotation-api</artifactId><version>1.3.2</version></dependency><dependency><groupId>org.glassfish</groupId><artifactId>javax.faces</artifactId><version>2.2.20</version></dependency><dependency><groupId>javax.enterprise</groupId><artifactId>cdi-api</artifactId><version>2.0.SP1</version></dependency><dependency><groupId>javax.inject</groupId><artifactId>javax.inject</artifactId><version>1</version></dependency></dependencies></project>\n"
+    },
+    "web/WEB-INF/corpus.taglib.xml": {
+      "sha256": "34d7f40663815ad8b8b3edf32d87f0e2b057071da3bcad5d4577f62615b7aef2",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<facelet-taglib xmlns=\"http://xmlns.jcp.org/xml/ns/javaee\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd\" version=\"2.2\">\n  <namespace>urn:corpus:greeting</namespace>\n  <tag><tag-name>greeting</tag-name><source>../Greeting.xsp</source></tag>\n</facelet-taglib>\n"
+    },
+    "web/WEB-INF/xsp.taglib.xml": {
+      "sha256": "b7124a00d6b8c246017951393bfc681516ee53e66f808c779b259901d400617e",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<facelet-taglib xmlns=\"http://xmlns.jcp.org/xml/ns/javaee\"\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd\" version=\"2.2\">\n  <namespace>http://www.ibm.com/xsp/core</namespace>\n  <tag><tag-name>view</tag-name><handler-class>com.sun.faces.facelets.tag.ui.CompositionHandler</handler-class></tag>\n  <tag><tag-name>text</tag-name><component><component-type>javax.faces.Output</component-type><renderer-type>javax.faces.Text</renderer-type></component></tag>\n</facelet-taglib>\n"
+    },
+    "web/WEB-INF/faces-config.xml": {
+      "sha256": "4a5dce04713b0297177fbecdd15ae3e2542407dcdef610686a32507c6832ad52",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<faces-config xmlns=\"http://xmlns.jcp.org/xml/ns/javaee\" version=\"2.2\"/>\n"
+    },
+    "web/WEB-INF/web.xml": {
+      "sha256": "74b91acb16aba59859b1e439c801b9692dd835923e03fc617702d69e35fa10b9",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<web-app xmlns=\"http://xmlns.jcp.org/xml/ns/javaee\" version=\"3.1\">\n  <context-param><param-name>com.sun.faces.forceLoadConfiguration</param-name><param-value>true</param-value></context-param>\n  <context-param><param-name>javax.faces.FACELETS_LIBRARIES</param-name><param-value>/WEB-INF/corpus.taglib.xml;/WEB-INF/xsp.taglib.xml</param-value></context-param>\n  <listener><listener-class>com.sun.faces.config.ConfigureListener</listener-class></listener>\n  <servlet><servlet-name>Faces</servlet-name><servlet-class>javax.faces.webapp.FacesServlet</servlet-class><load-on-startup>1</load-on-startup></servlet>\n  <servlet-mapping><servlet-name>Faces</servlet-name><url-pattern>*.xhtml</url-pattern></servlet-mapping>\n</web-app>\n"
+    },
+    "web/index.xhtml": {
+      "sha256": "2d191d6797018fd52bd0d02cd33ae5ba6cf044977df9e16ec3fbd0d8522e7157",
+      "content_utf8": "<ui:composition xmlns:ui=\"http://xmlns.jcp.org/jsf/facelets\" xmlns:corpus=\"urn:corpus:greeting\">\n<section id=\"component\"><corpus:greeting/></section>\n</ui:composition>\n"
+    },
+    "XPagesTest.java": {
+      "sha256": "50bb7b8937fdb2a55da8d3b45ae0abd9f172f320142f8d1e540bdf9ef745764d",
+      "content_utf8": "import java.net.URI;\nimport java.net.http.*;\nimport java.nio.file.*;\nimport java.util.*;\nimport org.apache.catalina.connector.Connector;\nimport org.apache.catalina.Context;\nimport org.apache.catalina.startup.Tomcat;\n\npublic class XPagesTest {\n    public static void main(String[] args) throws Exception {\n        var root=Path.of(\"\").toAbsolutePath();\n        Tomcat server=new Tomcat();\n        server.setBaseDir(root.resolve(\"server\").toString());\n        Connector connector=new Connector();\n        connector.setPort(0);\n        connector.setProperty(\"address\", \"127.0.0.1\");\n        server.setConnector(connector);\n        var context=server.addWebapp(\"\",root.resolve(\"web\").toString());\n        context.setParentClassLoader(XPagesTest.class.getClassLoader());\n        try {\n            server.start();\n            var target=URI.create(\"http://127.0.0.1:\"+connector.getLocalPort()+\"/index.xhtml\");\n            var client=HttpClient.newBuilder().connectTimeout(java.time.Duration.ofSeconds(5)).build();\n            var response=client.send(HttpRequest.newBuilder(target).GET().build(),HttpResponse.BodyHandlers.ofString());\n            System.out.println(\"HTTP \" + response.statusCode());\n            System.out.println(response.body());\n            if (response.statusCode()!=200) throw new IllegalStateException(\"Render failed\");\n        } finally {\n            server.stop();\n            server.destroy();\n        }\n    }\n}\n"
+    }
+  },
+  "sources": [
+    "https://help.hcl-software.com/dom_designer/10.0.1/basic/H_CUSTOM_CONTROLS_IN_ECLIPSE.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain": "Mojarra JSF 2.2.20 and the recorded XPages view/text compatibility tag library",
+  "reproduction_command": "java -cp <JSF and Tomcat dependencies> XPagesTest.java",
+  "semantic_scope": "The harness resolved the original custom control from its XPages configuration. The real JSF Facelets renderer loaded the unchanged view and returned the greeting in the component’s HTML using the recorded XPages tag mapping.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "ordinal": 7,
+  "language": "AGS Script",
+  "timestamp_utc": "2026-11-19T13:16:23.301638+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Compile the exact original AGS room event with the upstream script compiler",
+      "command": [
+        "${SCRATCH}/007-kzgofppw/ags/Compiler/agscc",
+        "-H",
+        "${SCRATCH}/007-vuq7bcvn/minimal-display.ash",
+        "-o",
+        "room1.o",
+        "room1.asc"
+      ],
+      "cwd": "${SCRATCH}/007-vuq7bcvn",
+      "timestamp_utc": "2026-11-19T13:16:23.383939+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 255,
+      "stdout": "agscc v0.1.0 - A Compiler for AGS Script\nCopyright (c) 2021 AGS Team and contributors\n\n--- Compiler Settings ---\nInput: room1.asc\nOutput: room1.o\nHeaders:${SCRATCH}/007-vuq7bcvn/minimal-display.ash\nCustom Macros:\nVersion: 3.6.3.17\nScriptAPIVersion: Highest\nScriptCompatLevel: Highest\nFlags: ExportAll; LineNumbers; EnforceObjectBasedScript; LeftToRightPrecedence; EnforceNewStrings; EnforceNewAudio; \nUnicode mode\n",
+      "stderr": "Error: compile failed at room1.asc, line 1 : Error (line 1): Parse error: unexpected 'function'\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/007-vuq7bcvn/home",
+        "TMPDIR": "${SCRATCH}/007-vuq7bcvn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile the event with its explicit 3.6 return type",
+      "command": [
+        "${SCRATCH}/007-kzgofppw/ags/Compiler/agscc",
+        "-H",
+        "${SCRATCH}/007-vuq7bcvn/minimal-display.ash",
+        "-o",
+        "room1.o",
+        "room1.asc"
+      ],
+      "cwd": "${SCRATCH}/007-vuq7bcvn",
+      "timestamp_utc": "2026-11-19T13:16:23.408557+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "agscc v0.1.0 - A Compiler for AGS Script\nCopyright (c) 2021 AGS Team and contributors\n\n--- Compiler Settings ---\nInput: room1.asc\nOutput: room1.o\nHeaders:${SCRATCH}/007-vuq7bcvn/minimal-display.ash\nCustom Macros:\nVersion: 3.6.3.17\nScriptAPIVersion: Highest\nScriptCompatLevel: Highest\nFlags: ExportAll; LineNumbers; EnforceObjectBasedScript; LeftToRightPrecedence; EnforceNewStrings; EnforceNewAudio; \nUnicode mode\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/007-vuq7bcvn/home",
+        "TMPDIR": "${SCRATCH}/007-vuq7bcvn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the public native AGS object disassembler",
+      "command": [
+        "make",
+        "-j4",
+        "agsdisas"
+      ],
+      "cwd": "${SCRATCH}/007-vuq7bcvn/agsutils",
+      "timestamp_utc": "2026-11-19T13:16:23.421933+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "cc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o ags_cpu.o -c ags_cpu.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o ByteArray.o -c ByteArray.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o Clib32.o -c Clib32.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o DataFile.o -c DataFile.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o Script.o -c Script.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o File.o -c File.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o List.o -c List.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o MemGrow.o -c MemGrow.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o RoomFile.o -c RoomFile.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o StringEscape.o -c StringEscape.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o agsdisas.o -c agsdisas.c\ncc   -Wall -Wextra -Wno-unknown-pragmas -Wno-sign-compare -Wno-switch -Wno-unused -Wno-pointer-sign -Wno-empty-body -Wno-type-limits -o agsdisas agsdisas.o ags_cpu.o ByteArray.o Clib32.o DataFile.o Script.o File.o List.o MemGrow.o RoomFile.o StringEscape.o \n",
+      "stderr": "DataFile.c: In function ‘ADF_find_datafile’:\nDataFile.c:244:59: warning: missing braces around initializer [-Wmissing-braces]\n  244 |         static const struct {const char name[12];} gfn[]= {\n      |                                                           ^\n  245 |         \"game28.dta\", \"ac2game.dta\", \"AC2GAME.DTA\"\n      |         {           } {            } {\n  246 |         };\n      |         }\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/007-vuq7bcvn/home",
+        "TMPDIR": "${SCRATCH}/007-vuq7bcvn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Read the emitted AGS event and Display argument",
+      "command": [
+        "${SCRATCH}/007-vuq7bcvn/agsutils/agsdisas",
+        "room1.o",
+        "room1.s"
+      ],
+      "cwd": "${SCRATCH}/007-vuq7bcvn",
+      "timestamp_utc": "2026-11-19T13:16:23.750985+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/007-vuq7bcvn/home",
+        "TMPDIR": "${SCRATCH}/007-vuq7bcvn/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#007 AGS Script/room1.asc": "5f70e4a3270adea3fad3ebc0e82b0f776f5e6216cea8e3d65d312dffabe95f1c"
+  },
+  "fixture_sha256": {
+    "minimal-display.ash": {
+      "sha256": "c96beb7bf9b8800992f5f685b35a0b1755db46a3a72b8136e875a903a896b01b",
+      "content_utf8": "import void Display(const string message, ...);\n"
+    }
+  },
+  "sources": [
+    "https://adventuregamestudio.github.io/ags-manual/Globalfunctions_Message.html",
+    "https://adventuregamestudio.github.io/ags-manual/EventTypes.html",
+    "https://adventuregamestudio.github.io/ags-manual/DistGame.html"
+  ],
+  "previous_verification_log": null,
+  "compiler_sha256": "0877cd65eec0db6b5d5a79cc6e3e6f1e7823eca8b8172c60351e198f322100e1",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/adventuregamestudio/ags/tar.gz/v3.6.3.17",
+      "ref": "v3.6.3.17",
+      "sha256": "876f517824124d35fe31588d0da89f9279385a0fd38a2b9b1fb7c5a457dcd305"
+    },
+    {
+      "url": "https://codeload.github.com/rofl0r/agsutils/tar.gz/master",
+      "ref": "master",
+      "sha256": "cac7f12355c33f2dc8ad72e9bd96a8af365bcffd5494faea1710e893f6f7c34f"
+    }
+  ],
+  "ubuntu_archives": [],
+  "source_changes": [
+    {
+      "path": "examples/#007 AGS Script/room1.asc",
+      "original_sha256": "e473a7f816a669f52ecc6ed711cf00c1de1aa868843ef6c1332318103f5e4676",
+      "tested_sha256": "5f70e4a3270adea3fad3ebc0e82b0f776f5e6216cea8e3d65d312dffabe95f1c",
+      "staged_file": "work/native_target800_20261119/corrected/007/room1.asc",
+      "original_fragment": "function room_AfterFadeIn()",
+      "replacement": "void room_AfterFadeIn()"
+    }
+  ],
+  "native_disassembly": ".text\n\nroom_AfterFadeIn$0: ; 0 args\n\tsourceline 2\n\tthisaddr 0\n\tsourceline 3\n\tli ax, \"Hello, World!\"\n\tfarpush ax\n\tsetfuncargs 1\n\tli ax, Display^101\n\tfarcall ax\n\tfarsubsp 1\n\tsourceline 4\n\tli ax, 0\n\tret \n.strings\n\"__NEWSCRIPTSTART_minimal-display.ash\"\n\"__NEWSCRIPTSTART_room1.asc\"\n\"Hello, World!\"\n.imports\n000000000000\"Display^101\"\n.exports\n000000000000\"room_AfterFadeIn$0\"\n1:000000000000\n.sections\n\"room1.asc\" = 0\n\n",
+  "blocker": "AssertionError: .text\n\nroom_AfterFadeIn$0: ; 0 args\n\tsourceline 2\n\tthisaddr 0\n\tsourceline 3\n\tli ax, \"Hello, World!\"\n\tfarpush ax\n\tsetfuncargs 1\n\tli ax, Display^101\n\tfarcall ax\n\tfarsubsp 1\n\tsourceline 4\n\tli ax, 0\n\tret \n.strings\n\"__NEWSCRIPTSTART_minimal-display.ash\"\n\"__NEWSCRIPTSTART_room1.asc\"\n\"Hello, World!\"\n.imports\n000000000000\"Display^101\"\n.exports\n000000000000\"room_AfterFadeIn$0\"\n1:000000000000\n.sections\n\"room1.asc\" = 0\n\n",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/programs800.py\", line 29, in ags\n    assert re.search(r'(?im)^room_AfterFadeIn[#^0-9]*\\s*:',decoded),decoded[:3400]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: .text\n\nroom_AfterFadeIn$0: ; 0 args\n\tsourceline 2\n\tthisaddr 0\n\tsourceline 3\n\tli ax, \"Hello, World!\"\n\tfarpush ax\n\tsetfuncargs 1\n\tli ax, Display^101\n\tfarcall ax\n\tfarsubsp 1\n\tsourceline 4\n\tli ax, 0\n\tret \n.strings\n\"__NEWSCRIPTSTART_minimal-display.ash\"\n\"__NEWSCRIPTSTART_room1.asc\"\n\"Hello, World!\"\n.imports\n000000000000\"Display^101\"\n.exports\n000000000000\"room_AfterFadeIn$0\"\n1:000000000000\n.sections\n\"room1.asc\" = 0\n\n\n"
+}

@@ -1,5 +1,16 @@
 # #385 Limbo
 
+## Verified on November 19, 2026
+
+The compatible native Limbo compiler compiled the original module and the real Dis emulator invoked its init function, emitting the exact greeting.
+
+Run `limbo -I <inferno module dir> -o hello.dis hello.b && emu -r <tree> -c1 /dis/hello-corpus.dis`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill out a Limbo module for Inferno that uses Sys->print.
 
 ## Toolchain
@@ -36,3 +47,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.b` | [hello.b](hello.b), [hello.b](variants/m-f7140aa0/hello.b) created; verification pending |
 | `.m` | [hello.m](variants/m-f7140aa0/hello.m) created; verification pending |
+
+</details>

@@ -1,5 +1,18 @@
 # #525 Papyrus
 
+## Verified on November 19, 2026
+
+The compatible native compiler compiled the unchanged event. Decompilation of the actual PEX verified that OnInit passes the exact greeting to the native Debug.Trace call.
+
+Run `Compile CorpusGreeting.psc with Caprica and the recorded host declarations, then inspect the resulting PEX with Champollion`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Papyrus`, tipo `programming`, language_id `277`.
 
 Greetings in the Papyrus log when an original one receives OnInit.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.psc` | [CorpusGreeting.psc](CorpusGreeting.psc) created; verification pending |
+| `.psc` | [CorpusGreeting.psc](CorpusGreeting.psc) Syntax and behavior verified |
+
+</details>

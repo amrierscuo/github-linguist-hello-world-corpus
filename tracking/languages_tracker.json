@@ -343,16 +343,18 @@
       "example": {
         "semantic_goal": "Mostrare Hello, World! nella finestra messaggi AGS dopo il fade-in della stanza iniziale.",
         "validation_mode": "compile_run_gui",
-        "toolchain": "AGS Editor 3.6.x and AGS runtime, template game with configured initial room/player",
+        "toolchain": "AGS 3.6.3.17 native agscc CLI and agsutils agsdisas",
         "files": [
           "examples/#007 AGS Script/room1.asc",
           "examples/#007 AGS Script/README.md",
           "examples/#007 AGS Script/variants/ext-ash-2e617368/greeting.asc",
           "examples/#007 AGS Script/variants/ext-ash-2e617368/hello.ash",
-          "examples/#007 AGS Script/variants/ext-ash-2e617368/README.md"
+          "examples/#007 AGS Script/variants/ext-ash-2e617368/README.md",
+          "examples/#007 AGS Script/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#007 AGS Script/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "AGS Editor: Build > Build EXE after integrating room1.asc and linking Enters room after fade-in event",
-        "run_or_check_command": "Run Compiled/Windows/<Game file name>.exe from the host project's build output",
+        "run_or_check_command": "agscc -H minimal-display.ash -o room1.o room1.asc && agsdisas room1.o room1.s",
         "expected_result": "AGS compilation succeeds; entering the initial room shows the blocking message Hello, World! after fade-in",
         "sources": [
           "https://adventuregamestudio.github.io/ags-manual/Globalfunctions_Message.html",
@@ -364,16 +366,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "AGS Editor/compiler, host game project and resources are unavailable."
-        ],
-        "notes": "A genuine room-script source unit is provided; room event must be linked in Editor. This is not a complete game package and has not been compiled/executed."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:19:52.980075+00:00",
+        "verification_log": "examples/#007 AGS Script/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The native AGS compiler compiled the room event with an explicit return type. The AGS disassembler confirmed that the event passes the exact greeting to its imported Display call.",
+        "verified_artifact_sha256": {
+          "examples/#007 AGS Script/room1.asc": "5f70e4a3270adea3fad3ebc0e82b0f776f5e6216cea8e3d65d312dffabe95f1c"
+        }
       }
     },
     {
@@ -22415,16 +22418,17 @@
       "example": {
         "semantic_goal": "Compilare un modulo Limbo per Inferno che usa Sys->print.",
         "validation_mode": "inferno_limbo_compile_and_dis_execute",
-        "toolchain": "Inferno/Limbo; versione da registrare",
+        "toolchain": "Infernode portable Linux amd64 Limbo compiler and Dis VM",
         "files": [
           "examples/#385 Limbo/README.md",
           "examples/#385 Limbo/hello.b",
           "examples/#385 Limbo/variants/m-f7140aa0/hello.m",
           "examples/#385 Limbo/variants/m-f7140aa0/hello.b",
-          "examples/#385 Limbo/variants/m-f7140aa0/README.md"
+          "examples/#385 Limbo/variants/m-f7140aa0/README.md",
+          "examples/#385 Limbo/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Nel runtime Inferno: limbo -o hello.dis hello.b; ./hello.dis",
+        "run_or_check_command": "limbo -I <inferno module dir> -o hello.dis hello.b && emu -r <tree> -c1 /dis/hello-corpus.dis",
         "expected_result": "Modulo carica Sys e scrive Hello, World! più newline.",
         "sources": [
           "https://www.vitanuova.com/inferno/limbo.html",
@@ -22435,16 +22439,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compilatore Limbo e VM Dis Inferno non disponibili; import Sys/Draw e runtime pending."
-        ],
-        "notes": "init espone l’interfaccia della shell Inferno e carica il modulo Sys autentico. Sys/Draw interfaces provengono dal runtime; non sono stub inclusi nel corpus."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:29:18.533597+00:00",
+        "verification_log": "examples/#385 Limbo/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible native Limbo compiler compiled the original module and the real Dis emulator invoked its init function, emitting the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#385 Limbo/hello.b": "aad0676a4f4d15fc631c51c3543141e77763337b62eebf8763392a9650791c28"
+        }
       }
     },
     {
@@ -30427,14 +30432,15 @@
       "example": {
         "semantic_goal": "Emettere il saluto nel log Papyrus quando una quest originale riceve OnInit.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine compiler/runtime — non disponibile / non verificata",
+        "toolchain": "Caprica native Papyrus CLI v0.3.0 and Champollion PEX decompiler",
         "files": [
           "examples/#525 Papyrus/CorpusGreeting.psc",
           "examples/#525 Papyrus/README.md",
-          "examples/#525 Papyrus/verification/native.json"
+          "examples/#525 Papyrus/verification/native.json",
+          "examples/#525 Papyrus/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "PapyrusCompiler CorpusGreeting.psc -f=TESV_Papyrus_Flags.flg -i=/path/to/SkyrimScripts -o=build; collegare a una quest di prova e attivare OnInit nel gioco locale.",
+        "run_or_check_command": "Compile CorpusGreeting.psc with Caprica and the recorded host declarations, then inspect the resulting PEX with Champollion",
         "expected_result": "Il risultato conforme contiene Hello, World!, secondo l’ambito descritto.",
         "primary_artifacts": [
           "examples/#525 Papyrus/CorpusGreeting.psc"
@@ -30447,16 +30453,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:16:20.506278+00:00",
-        "verification_log": "examples/#525 Papyrus/verification/native.json",
-        "blockers": [
-          "Required PapyrusCompiler compiler/interpreter and matching host libraries are not configured."
-        ],
-        "notes": "Sorgente originale; compilatore e runtime host non disponibili. Evento e chiamata Debug.Trace sono eseguibili nel relativo host."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-19T13:29:47.395029+00:00",
+        "verification_log": "examples/#525 Papyrus/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible native compiler compiled the unchanged event. Decompilation of the actual PEX verified that OnInit passes the exact greeting to the native Debug.Trace call.",
+        "verified_artifact_sha256": {
+          "examples/#525 Papyrus/CorpusGreeting.psc": "51b67909fee4edc05c14d85de8c8944073c62dbadb3474c32e16103056a4ee12"
+        }
       }
     },
     {
@@ -35405,14 +35412,15 @@
       "example": {
         "semantic_goal": "Definire una funzione Redscript originale che restituisce la stringa del saluto.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine redscript compiler/runtime — non disponibile / non verificata",
+        "toolchain": "REDscript CLI v1.0.1 compiler and decompiler",
         "files": [
           "examples/#610 Redscript/hello.reds",
           "examples/#610 Redscript/README.md",
-          "examples/#610 Redscript/verification/native.json"
+          "examples/#610 Redscript/verification/native.json",
+          "examples/#610 Redscript/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "redscript compile con i sorgenti hello.reds e il cache bundle/script resources del proprio Cyberpunk 2077; invocare CorpusGreeting.hello() nel relativo host.",
+        "run_or_check_command": "redscript-cli compile -s scripts -b greeting.redscripts && redscript-cli decompile -b greeting.redscripts -o result",
         "expected_result": "Hello, World! nell’output o nel dato conforme, secondo l’ambito descritto.",
         "primary_artifacts": [
           "examples/#610 Redscript/hello.reds"
@@ -35425,16 +35433,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:26:14.070791+00:00",
-        "verification_log": "examples/#610 Redscript/verification/native.json",
-        "blockers": [
-          "Required redscript compiler/runtime and matching host resources are not available/configured."
-        ],
-        "notes": "Funzione sorgente nel modulo originale; compiler/runtime game non disponibili. Non si deduce parsing dalla sintassi simile ad altri linguaggi."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:36:50.879086+00:00",
+        "verification_log": "examples/#610 Redscript/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The actual compiler created a bundle from the original stand-alone function. The native decompiler read its compiled return instruction and recovered the exact greeting. Scope is the deterministic return value in emitted code.",
+        "verified_artifact_sha256": {
+          "examples/#610 Redscript/hello.reds": "3929e24c18aaf0a15a9f079891916876dec073b6689602cdc67122e9c42ecd2d"
+        }
       }
     },
     {
@@ -45134,14 +45143,15 @@
       "example": {
         "semantic_goal": "Funzione globale WitcherScript originale CorpusGreeting() che restituisce `Hello, World!` come string.",
         "validation_mode": "witcherscript_native_compile_and_function_result_pending",
-        "toolchain": "CD Projekt RED WitcherScript compiler / REDkit — non disponibile / non verificata",
+        "toolchain": "WIDE pinned native tree-sitter WitcherScript grammar and typed constant-return check",
         "files": [
           "examples/#774 Witcher Script/hello.ws",
           "examples/#774 Witcher Script/README.md",
-          "examples/#774 Witcher Script/verification/native.json"
+          "examples/#774 Witcher Script/verification/native.json",
+          "examples/#774 Witcher Script/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "In REDkit / The Witcher 3: aggiungere hello.ws a una mod di prova sotto content/scripts; compilare gli script; invocare CorpusGreeting() da un harness di debug e confrontare il risultato.",
+        "run_or_check_command": "cargo run --quiet (recorded exact upstream parser dependency)",
         "expected_result": "Compilazione riuscita e CorpusGreeting() uguale a Hello, World!.",
         "primary_artifacts": [
           "examples/#774 Witcher Script/hello.ws"
@@ -45155,16 +45165,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:55:17.215673+00:00",
-        "verification_log": "examples/#774 Witcher Script/verification/native.json",
-        "blockers": [
-          "Compilatore/runtime WitcherScript e REDkit assenti."
-        ],
-        "notes": "Ambiente proprietario assente: la funzione è creata, ma nessun parser generico o sola lettura è usato per segnare verifiche positive."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:32:30.089642+00:00",
+        "verification_log": "examples/#774 Witcher Script/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The compatible native AST parser recognized the unchanged, parameterless callable. The semantic probe resolved the single reachable return and evaluated its string literal against the declared type, yielding the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#774 Witcher Script/hello.ws": "0239a5afc875901724b403c428d0fd83883b2206ba8f1d82c5e1d838ddd03594"
+        }
       }
     },
     {
@@ -46282,15 +46293,16 @@
       "example": {
         "semantic_goal": "Caricare un controllo custom XPages configurato per mostrare Hello, World!.",
         "validation_mode": "native_xpages_component",
-        "toolchain": "HCL Domino Designer/XPages, versione da registrare",
+        "toolchain": "Mojarra JSF 2.2.20 and the recorded XPages view/text compatibility tag library",
         "files": [
           "examples/#787 XPages/Greeting.xsp",
           "examples/#787 XPages/Greeting.xsp-config",
           "examples/#787 XPages/README.md",
-          "examples/#787 XPages/variants/xsp-metadata-e08462cd/README.md"
+          "examples/#787 XPages/variants/xsp-metadata-e08462cd/README.md",
+          "examples/#787 XPages/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Domino Designer: importare Greeting.xsp-config e Greeting.xsp nella cartella CustomControls, compilare e inserire il controllo Greeting in una pagina di prova",
+        "run_or_check_command": "java -cp <JSF and Tomcat dependencies> XPagesTest.java",
         "expected_result": "Controllo Greeting renderizzato con Hello, World!.",
         "sources": [
           "https://help.hcl-software.com/dom_designer/10.0.1/basic/H_CUSTOM_CONTROLS_IN_ECLIPSE.html"
@@ -46300,16 +46312,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Domino Designer/XPages non disponibile; parser del componente e rendering pendenti."
-        ],
-        "notes": "L’artefatto canonico .xsp-config registra il controllo, namespace, tag e file composito. La fixture .xsp contiene il valore da renderizzare. Non si attribuisce una verifica XPages alla sola buona formazione XML."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:29:18.561512+00:00",
+        "verification_log": "examples/#787 XPages/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The harness resolved the original custom control from its XPages configuration. The real JSF Facelets renderer loaded the unchanged view and returned the greeting in the component’s HTML using the recorded XPages tag mapping.",
+        "verified_artifact_sha256": {
+          "examples/#787 XPages/Greeting.xsp": "325ae62884e289170bf2983bd7a6b2f02fcfc14b872886efe14d91776e5ee3ab",
+          "examples/#787 XPages/Greeting.xsp-config": "71940e0cb569ed0c679caedb12f17eb115c89a07ec10c0274bfc5700993c8d9d"
+        }
       }
     },
     {

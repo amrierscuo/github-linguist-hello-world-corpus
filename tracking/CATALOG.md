@@ -10,7 +10,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #004 | [ABAP](../examples/%23004%20ABAP/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #005 | [ABAP CDS](../examples/%23005%20ABAP%20CDS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #006 | [ABNF](../examples/%23006%20ABNF/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #007 | [AGS Script](../examples/%23007%20AGS%20Script/README.md) | Yes | Pending | Pending | 2/2 | AGS Editor/compiler, host game project and resources are unavailable. |
+| #007 | [AGS Script](../examples/%23007%20AGS%20Script/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #008 | [AIDL](../examples/%23008%20AIDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #009 | [AL](../examples/%23009%20AL/README.md) | Yes | Pending | Pending | 1/1 | AL compiler alc.exe not found in PATH.; Business Central symbols and sandbox are not configured. |
 | #010 | [ALGOL](../examples/%23010%20ALGOL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -388,7 +388,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #382 | [Lex](../examples/%23382%20Lex/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #383 | [LigoLANG](../examples/%23383%20LigoLANG/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #384 | [LilyPond](../examples/%23384%20LilyPond/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #385 | [Limbo](../examples/%23385%20Limbo/README.md) | Yes | Pending | Pending | 2/2 | The Limbo compiler and Inferno Dis VM are unavailable; the Sys/Draw imports and runtime are pending. |
+| #385 | [Limbo](../examples/%23385%20Limbo/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #386 | [Linear Programming](../examples/%23386%20Linear%20Programming/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #387 | [Linker Script](../examples/%23387%20Linker%20Script/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #388 | [Linux Kernel Module](../examples/%23388%20Linux%20Kernel%20Module/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -528,7 +528,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #522 | [POV-Ray SDL](../examples/%23522%20POV-Ray%20SDL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #523 | [Pact](../examples/%23523%20Pact/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #524 | [Pan](../examples/%23524%20Pan/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #525 | [Papyrus](../examples/%23525%20Papyrus/README.md) | Yes | Pending | Pending | 1/1 | Required PapyrusCompiler compiler/interpreter and matching host libraries are not configured. |
+| #525 | [Papyrus](../examples/%23525%20Papyrus/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #526 | [Parrot](../examples/%23526%20Parrot/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #527 | [Parrot Assembly](../examples/%23527%20Parrot%20Assembly/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #528 | [Parrot Internal Representation](../examples/%23528%20Parrot%20Internal%20Representation/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -613,7 +613,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #607 | [Red](../examples/%23607%20Red/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #608 | [Redcode](../examples/%23608%20Redcode/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #609 | [Redirect Rules](../examples/%23609%20Redirect%20Rules/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
-| #610 | [Redscript](../examples/%23610%20Redscript/README.md) | Yes | Pending | Pending | 1/1 | Required redscript compiler/runtime and matching host resources are not available/configured. |
+| #610 | [Redscript](../examples/%23610%20Redscript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #611 | [Regular Expression](../examples/%23611%20Regular%20Expression/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #612 | [Ren'Py](../examples/%23612%20Ren%27Py/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #613 | [RenderScript](../examples/%23613%20RenderScript/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -777,7 +777,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #771 | [Wikitext](../examples/%23771%20Wikitext/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #772 | [Win32 Message File](../examples/%23772%20Win32%20Message%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #773 | [Windows Registry Entries](../examples/%23773%20Windows%20Registry%20Entries/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #774 | [Witcher Script](../examples/%23774%20Witcher%20Script/README.md) | Yes | Pending | Pending | 1/1 | Compilatore/runtime WitcherScript e REDkit assenti. |
+| #774 | [Witcher Script](../examples/%23774%20Witcher%20Script/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #775 | [Wolfram Language](../examples/%23775%20Wolfram%20Language/README.md) | Yes | Yes | Yes | 9/10 | Evidence recorded |
 | #776 | [Wollok](../examples/%23776%20Wollok/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #777 | [World of Warcraft Addon Data](../examples/%23777%20World%20of%20Warcraft%20Addon%20Data/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -790,7 +790,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #784 | [XCompose](../examples/%23784%20XCompose/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #785 | [XML](../examples/%23785%20XML/README.md) | Yes | Yes | Yes | 112/112 | Evidence recorded |
 | #786 | [XML Property List](../examples/%23786%20XML%20Property%20List/README.md) | Yes | Yes | Yes | 7/7 | Evidence recorded |
-| #787 | [XPages](../examples/%23787%20XPages/README.md) | Yes | Pending | Pending | 1/2 | Domino Designer/XPages is unavailable; component parsing and rendering are pending. |
+| #787 | [XPages](../examples/%23787%20XPages/README.md) | Yes | Yes | Yes | 1/2 | Evidence recorded |
 | #788 | [XProc](../examples/%23788%20XProc/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #789 | [XQuery](../examples/%23789%20XQuery/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #790 | [XS](../examples/%23790%20XS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

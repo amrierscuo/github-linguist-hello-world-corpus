@@ -28744,10 +28744,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#525 Papyrus/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#525 Papyrus/CorpusGreeting.psc": "51b67909fee4edc05c14d85de8c8944073c62dbadb3474c32e16103056a4ee12"
+      },
       "based_on": null,
       "documentation": "examples/#525 Papyrus/README.md",
       "supporting_files": [],
@@ -28756,10 +28758,8 @@
       "sources": [
         "https://ck.uesp.net/wiki/Trace_-_Debug"
       ],
-      "blockers": [
-        "Required PapyrusCompiler compiler/interpreter and matching host libraries are not configured."
-      ],
-      "notes": "Sorgente originale; compilatore e runtime host non disponibili. Evento e chiamata Debug.Trace sono eseguibili nel relativo host."
+      "blockers": [],
+      "notes": "The compatible native compiler compiled the unchanged event. Decompilation of the actual PEX verified that OnInit passes the exact greeting to the native Debug.Trace call."
     },
     {
       "language_ordinal": 526,
@@ -33529,10 +33529,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#610 Redscript/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#610 Redscript/hello.reds": "3929e24c18aaf0a15a9f079891916876dec073b6689602cdc67122e9c42ecd2d"
+      },
       "based_on": null,
       "documentation": "examples/#610 Redscript/README.md",
       "supporting_files": [],
@@ -33541,10 +33543,8 @@
       "sources": [
         "https://wiki.redmodding.org/redscript"
       ],
-      "blockers": [
-        "Required redscript compiler/runtime and matching host resources are not available/configured."
-      ],
-      "notes": "Funzione sorgente nel modulo originale; compiler/runtime game non disponibili. Non si deduce parsing dalla sintassi simile ad altri linguaggi."
+      "blockers": [],
+      "notes": "The actual compiler created a bundle from the original stand-alone function. The native decompiler read its compiled return instruction and recovered the exact greeting. Scope is the deterministic return value in emitted code."
     },
     {
       "language_ordinal": 611,
@@ -42975,10 +42975,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#774 Witcher Script/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#774 Witcher Script/hello.ws": "0239a5afc875901724b403c428d0fd83883b2206ba8f1d82c5e1d838ddd03594"
+      },
       "based_on": null,
       "documentation": "examples/#774 Witcher Script/README.md",
       "supporting_files": [],
@@ -42988,10 +42990,8 @@
         "https://cdprojektred.atlassian.net/wiki/spaces/W3REDkit/pages/36306960/WitcherScript",
         "https://cdprojektred.atlassian.net/wiki/spaces/W3REDkit/pages/36307090/WS+Language+Guide"
       ],
-      "blockers": [
-        "Compilatore/runtime WitcherScript e REDkit assenti."
-      ],
-      "notes": "Ambiente proprietario assente: la funzione è creata, ma nessun parser generico o sola lettura è usato per segnare verifiche positive."
+      "blockers": [],
+      "notes": "The compatible native AST parser recognized the unchanged, parameterless callable. The semantic probe resolved the single reachable return and evaluated its string literal against the declared type, yielding the exact greeting."
     },
     {
       "language_ordinal": 775,
@@ -46710,10 +46710,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#787 XPages/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#787 XPages/Greeting.xsp-config": "71940e0cb569ed0c679caedb12f17eb115c89a07ec10c0274bfc5700993c8d9d"
+      },
       "based_on": null,
       "documentation": "examples/#787 XPages/README.md",
       "supporting_files": [],
@@ -46722,10 +46724,8 @@
       "sources": [
         "https://help.hcl-software.com/dom_designer/10.0.1/basic/H_CUSTOM_CONTROLS_IN_ECLIPSE.html"
       ],
-      "blockers": [
-        "Domino Designer/XPages non disponibile; parser del componente e rendering pendenti."
-      ],
-      "notes": "L’artefatto canonico .xsp-config registra il controllo, namespace, tag e file composito. La fixture .xsp contiene il valore da renderizzare. Non si attribuisce una verifica XPages alla sola buona formazione XML."
+      "blockers": [],
+      "notes": "The harness resolved the original custom control from its XPages configuration. The real JSF Facelets renderer loaded the unchanged view and returned the greeting in the component’s HTML using the recorded XPages tag mapping."
     },
     {
       "language_ordinal": 787,

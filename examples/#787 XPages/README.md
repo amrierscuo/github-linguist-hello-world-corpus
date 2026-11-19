@@ -1,5 +1,16 @@
 # #787 XPages
 
+## Verified on November 19, 2026
+
+The harness resolved the original custom control from its XPages configuration. The real JSF Facelets renderer loaded the unchanged view and returned the greeting in the component’s HTML using the recorded XPages tag mapping.
+
+Run `java -cp <JSF and Tomcat dependencies> XPagesTest.java`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,5 +49,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.xsp-config` | [Greeting.xsp-config](Greeting.xsp-config) created; verification pending |
+| `.xsp-config` | [Greeting.xsp-config](Greeting.xsp-config) Syntax and behavior verified |
 | `.xsp.metadata` | artifact to generate Designer XPages metadata with schema/versione unidentified owners: there is a reliable structure for this compound suffix and no .xsp. control is renamed |
+
+</details>

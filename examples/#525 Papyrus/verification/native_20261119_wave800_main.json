@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "ordinal": 525,
+  "language": "Papyrus",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/Orvid/Caprica/releases/download/v0.3.0/Caprica.v0.3.0.7z",
+      "sha256": "0037e54cf3a1021e976278d9a637e8ae541aaf9ebeb8d274b6c2cfe32f4ee559",
+      "tag": "v0.3.0"
+    },
+    {
+      "url": "https://github.com/Orvid/Champollion/releases/download/v1.3.2/Champollion.v1.3.2.zip",
+      "sha256": "ea53054276ac8006ccd3b323286bfbc6e34a454fa419d08da9bd440cbd31b383",
+      "tag": "v1.3.2"
+    }
+  ],
+  "timestamp_utc": "2026-11-19T13:29:47.395029+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "artifact_sha256": {
+    "examples/#525 Papyrus/CorpusGreeting.psc": "51b67909fee4edc05c14d85de8c8944073c62dbadb3474c32e16103056a4ee12"
+  },
+  "fixture_sha256": {
+    "harness/Form.psc": {
+      "sha256": "54b375af4874cfcfb51b81c48002fd5bbcf79085a1309549fdaa93529dae5735",
+      "content_utf8": "Scriptname Form Hidden\n"
+    },
+    "harness/Quest.psc": {
+      "sha256": "36c9fd133da5fa5fe8580b2701648837f09a45b77567e9379f3a7db4191a77a5",
+      "content_utf8": "Scriptname Quest extends Form Hidden\n"
+    },
+    "harness/Debug.psc": {
+      "sha256": "e2945a511fe4de2ed784058041a7190be3bb363b45eb4dca5d128f7c54538124",
+      "content_utf8": "Scriptname Debug Hidden\nFunction Trace(String asTextToPrint, Int aiSeverity = 0) Global Native\n"
+    },
+    "TESV_Papyrus_Flags.flg": {
+      "sha256": "474a48a7fd2b04f44df468d95a0c67a5880cf5e3746e4ff9e912bdc4af2ae71e",
+      "content_utf8": "Flag Hidden 0\n{\n  Script\n  Property\n}\nFlag Conditional 1\n{\n  Script\n  Variable\n}\n"
+    }
+  },
+  "commands": [
+    {
+      "label": "Read native Caprica CLI syntax",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\papyrus-sdk\\compile\\Caprica.exe",
+        "--help"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m",
+      "exit_code": 4294967295,
+      "stdout": "Caprica Papyrus Compiler v0.3.0\nUsage: Caprica <sourceFile / directory>\nNote that when passing a directory, only Papyrus script files (*.psc) in it will be compiled. Pex (*.pex) and Pex assembly (*.pas) files will be ignored.\n\nGeneral:\n  -? [ --help ]                         Print usage information.\n  -g [ --game ] arg (=starfield)        Set the game type to compile for. Valid\n                                        values are: starfield, skyrim, \n                                        fallout4, fallout76. (default: \n                                        starfield)\n  -i [ --import ] arg                   Set the compiler's import directories.\n  -f [ --flags ] arg                    Set the file defining the user flags.\n  -O [ --optimize ]                     Enable optimizations.\n  -o [ --output ] arg (=<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m)\n                                        Set the directory to save compiler \n                                        output to.\n  -p [ --parallel-compile ]             Compile files in parallel.\n  -R [ --recurse ]                      Recursively compile all scripts in the \n                                        directories passed.\n  -r [ --release ]                      Don't generate DebugOnly code.\n  --final                               Don't generate BetaOnly code.\n  --all-warnings-as-errors              Treat all warnings as if they were \n                                        errors.\n  --disable-all-warnings                Disable all warnings by default.\n  --warning-as-error arg                Treat a specific warning as an error.\n  --disable-warning arg                 Disable a specific warning.\n  --config-file arg (=caprica.cfg)      Load additional options from a config \n                                        file.\n  -q [ --quiet ]                        Do not report progress, only failures.\n  --strict [=arg(=1)] (=0)              Enable strict checking of control flow,\n                                        poisoning, and more sane implicit \n                                        conversions. It is strongly recommended\n                                        to enable these.\n  --ignorecwd                           Do not add the current working \n                                        directory to the beginning of the \n                                        import list.\n\nChampollion Compatibility:\n  --champollion-compat [=arg(=1)] (=1)  Enable a few options that make it \n                                        easier to compile Papyrus code \n                                        decompiled by Champollion.\n  --allow-compiler-identifiers          Allow identifiers to be prefixed with \n                                        ::, which is normally reserved for \n                                        compiler identifiers.\n  --allow-decompiled-struct-references  Allow the name of structs to be \n                                        prefixed with the containing object \n                                        name, followed by a #, then the name of\n                                        the struct.\n\nSkyrim compatibility (default true with '--game=skyrim'):\n  --allow-unknown-events arg (=1)       Allow unknown events to be defined on \n                                        non-native classes. This is encountered\n                                        with some scripts in the base game \n                                        having Events that are not present on \n                                        ObjectReference.\n  --allow-var-shadow-parent arg (=1)    Allow Object variable names in derived \n                                        classes to shadow properties in parent \n                                        classes.\n  --allow-local-shadow-parent arg (=1)  Allow local variable names to shadow \n                                        properties in parent classes.\n  --allow-local-use-before-decl arg (=1)\n                                        Allow local variables to be used before\n                                        they are declared and initialized.\n  --allow-assign-void-method-result arg (=1)\n                                        Allow void method call results to be \n                                        assigned to Objects and Bools.\n\nAdvanced:\n  --allow-negative-literal-as-binary-op arg (=1)\n                                        Allow a negative literal number to be \n                                        parsed as a binary op.\n  --async-read arg (=1)                 Allow async file reading. This is \n                                        primarily useful on SSDs.\n  --async-write arg (=1)                Allow writing output to disk on \n                                        background threads.\n  --dump-asm                            Dump the PEX assembly code for the \n                                        input files.\n  --enable-ck-optimizations arg (=1)    Enable optimizations that the CK \n                                        compiler normally does regardless of \n                                        the -optimize switch.\n  --enable-debug-info arg (=1)          Enable the generation of debug info. \n                                        Disabling this will result in Property \n                                        Groups not showing up in the Creation \n                                        Kit for the compiled script. This also \n                                        removes the line number and struct \n                                        order information.\n  --enable-language-extensions arg (=0) Enable Caprica's extensions to the \n                                        Papyrus language.\n  --resolve-symlinks arg (=0)           Fully resolve symlinks when determining\n                                        file paths.\n\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:29:47.641983+00:00"
+    },
+    {
+      "label": "Read native Champollion CLI syntax",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\papyrus-sdk\\decode\\Champollion.exe",
+        "--help"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m",
+      "exit_code": 0,
+      "stdout": "Champollion PEX decompiler v1.3.2:\n  -h [ --help ]              Display the help message\n  -a [ --asm ] arg           If defined, output assembly file(s) to this \n                             directory\n  -p [ --psc ] arg           Name of the output dir for psc decompilation\n  -r [ --recursive ]         Recursively scan directories for pex files\n  -s [ --recreate-subdirs ]  Recreates directory structure for script in root \n                             of output directory (Fallout 4 only, default \n                             false)\n  -c [ --comment ]           Output assembly in comments of the decompiled psc \n                             file\n  -e [ --header ]            Write header to decompiled psc file\n  -t [ --threaded ]          Run decompilation in parallel mode\n  -g [ --trace ]             Trace the decompilation and output results to \n                             rebuild log\n  --no-dump-tree             Do not dump tree for each node during \n                             decompilation tracing (requires --trace)\n  -d [ --debug-funcs ]       Decompile debug and compiler-generated functions \n                             (default false)\n  --no-debug-line            Do not comment with debug info line numbers on \n                             script lines (default false)\n  -i [ --print-info ]        Print header info from the specified PEX file(s) \n                             and exit\n  --print-compile-time       Print the compile time of the script in format of \n                             {filename}: {time_integer} and exit\n  -v [ --verbose ]           Verbose output\n  -V [ --version ]           Output version number\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:29:47.685710+00:00"
+    },
+    {
+      "label": "Compile the unchanged original application with Caprica",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\papyrus-sdk\\compile\\Caprica.exe",
+        "--game=skyrim",
+        "--import=<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\harness",
+        "--output=<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\out",
+        "--flags=<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\TESV_Papyrus_Flags.flg",
+        "CorpusGreeting.psc"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m",
+      "exit_code": 0,
+      "stdout": "Adding current working directory to import list: <workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\nAdding import directory: <workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\harness\nImporting files...\nImported 7 files.\nAdding file 'CorpusGreeting.psc' to namespace ''.\nCompiling CorpusGreeting.psc\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:29:47.733964+00:00"
+    },
+    {
+      "label": "Decompile the actual generated Papyrus PEX with Champollion",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\papyrus-sdk\\decode\\Champollion.exe",
+        "<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\out\\CorpusGreeting.pex",
+        "-p",
+        "<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\decoded"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m",
+      "exit_code": 0,
+      "stdout": "1 files processed in 0.0012184 s\nDecompiled scripts written to <workspace>\\work\\native_target800_20261119\\papyrus-cli-z622vx2m\\decoded\n\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:29:47.779759+00:00"
+    }
+  ],
+  "compiled_sha256": "25734238529f404a74469cacb8ade1e7a076fc0414ba44b6fa23be8c5abe7275",
+  "native_decompilation": "ScriptName CorpusGreeting Extends Quest\n\n;-- Functions ---------------------------------------\n\n; Skipped compiler generated GetState\n\n; Skipped compiler generated GotoState\n\nEvent OnInit()\n  Debug.Trace(\"Hello, World!\", 0) ; #DEBUG_LINE_NO:4\nEndEvent\n",
+  "toolchain": "Caprica native Papyrus CLI v0.3.0 and Champollion PEX decompiler",
+  "reproduction_command": "Compile CorpusGreeting.psc with Caprica and the recorded host declarations, then inspect the resulting PEX with Champollion",
+  "semantic_scope": "The compatible native compiler compiled the unchanged event. Decompilation of the actual PEX verified that OnInit passes the exact greeting to the native Debug.Trace call.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

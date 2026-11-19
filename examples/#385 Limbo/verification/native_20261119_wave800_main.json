@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "ordinal": 385,
+  "language": "Limbo",
+  "timestamp_utc": "2026-11-19T13:29:18.533597+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the original Limbo init module",
+      "command": [
+        "${SCRATCH}/385-txup5s8s/infernode/Linux/amd64/bin/limbo",
+        "-I",
+        "${SCRATCH}/385-txup5s8s/infernode/module",
+        "-o",
+        "hello.dis",
+        "hello.b"
+      ],
+      "cwd": "${SCRATCH}/385-txup5s8s",
+      "timestamp_utc": "2026-11-19T13:30:49.804839+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/385-txup5s8s/tools:${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/385-txup5s8s/home",
+        "TMPDIR": "${SCRATCH}/385-txup5s8s/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "C_INCLUDE_PATH": "${SCRATCH}/cache/tools/apt/usr/include",
+        "LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+        "BISON_PKGDATADIR": "${SCRATCH}/cache/tools/apt/usr/share/bison",
+        "M4": "${SCRATCH}/cache/tools/apt/usr/bin/m4"
+      }
+    },
+    {
+      "label": "Execute the original compiled Dis module in the command-line VM",
+      "command": [
+        "${SCRATCH}/385-txup5s8s/infernode/emu/Linux/o.emu",
+        "-r${SCRATCH}/385-txup5s8s/infernode",
+        "-c1",
+        "/dis/hello-corpus.dis"
+      ],
+      "cwd": "${SCRATCH}/385-txup5s8s",
+      "timestamp_utc": "2026-11-19T13:30:49.816170+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/385-txup5s8s/tools:${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/385-txup5s8s/home",
+        "TMPDIR": "${SCRATCH}/385-txup5s8s/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "C_INCLUDE_PATH": "${SCRATCH}/cache/tools/apt/usr/include",
+        "LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+        "BISON_PKGDATADIR": "${SCRATCH}/cache/tools/apt/usr/share/bison",
+        "M4": "${SCRATCH}/cache/tools/apt/usr/bin/m4"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#385 Limbo/hello.b": "aad0676a4f4d15fc631c51c3543141e77763337b62eebf8763392a9650791c28"
+  },
+  "fixture_sha256": {
+    "tools/yacc": {
+      "sha256": "3f3e669a11d5bc1e8b3bf4c8153f76e83d533edc6bf607c9b9c5745397b91b85",
+      "content_utf8": "#!/bin/sh\nexec \"${SCRATCH}/cache/tools/apt/usr/bin/bison\" -y \"$@\"\n"
+    }
+  },
+  "sources": [
+    "https://www.vitanuova.com/inferno/limbo.html",
+    "https://www.vitanuova.com/inferno/papers/limbo.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/infernode-os/infernode/tar.gz/master",
+      "ref": "master",
+      "sha256": "9495d21e2972385e0bd48fff3b030be28089dcdf4f726e66740e8ee76fa9be98"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "libxext-dev",
+      "version": "2:1.3.4-1build2",
+      "filename": "pool/main/libx/libxext/libxext-dev_1.3.4-1build2_amd64.deb",
+      "sha256": "b5bdb6724f228cb8eee8cf39cbbe1289dd3f8f06dd022748312df7844c94dcf2",
+      "bytes": 83470,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxext/libxext-dev_1.3.4-1build2_amd64.deb"
+    },
+    {
+      "name": "libxt-dev",
+      "version": "1:1.2.1-1.2build1",
+      "filename": "pool/main/libx/libxt/libxt-dev_1.2.1-1.2build1_amd64.deb",
+      "sha256": "77858926454d10dd7896fc4d1ee158b67bb25e830dd41e60e4a59e79f71b8a8f",
+      "bytes": 393798,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/libx/libxt/libxt-dev_1.2.1-1.2build1_amd64.deb"
+    }
+  ],
+  "compiler_sha256": "d48548b0f4cc06134f67f50ed7bbd64518a4261a3f0543eb99e4d8260e3e37b0",
+  "emulator_sha256": "d859bc5fd2d0613e30c31fb74a7b189e3fb2301b60d0ecd295fdb0f7b47ed88b",
+  "toolchain": "Infernode portable Linux amd64 Limbo compiler and Dis VM",
+  "reproduction_command": "limbo -I <inferno module dir> -o hello.dis hello.b && emu -r <tree> -c1 /dis/hello-corpus.dis",
+  "semantic_scope": "The compatible native Limbo compiler compiled the original module and the real Dis emulator invoked its init function, emitting the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

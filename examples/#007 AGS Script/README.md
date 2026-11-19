@@ -1,5 +1,18 @@
 # #007 AGS Script
 
+## Verified on November 19, 2026
+
+The native AGS compiler compiled the room event with an explicit return type. The AGS disassembler confirmed that the event passes the exact greeting to its imported Display call.
+
+Run `agscc -H minimal-display.ash -o room1.o room1.asc && agsdisas room1.o room1.s`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `room1.asc` is a room script for **Adventure Game Studio (AGS)**.
 `room_AfterFadeIn` operator shows `Hello, World!` in the message window after
 The call is blocking until the player closes the room.
@@ -44,3 +57,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.asc` | [room1.asc](room1.asc), [greeting.asc](variants/ext-ash-2e617368/greeting.asc) created; verification pending |
 | `.ash` | [hello.ash](variants/ext-ash-2e617368/hello.ash) created; verification pending |
+
+</details>
