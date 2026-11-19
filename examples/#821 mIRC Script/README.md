@@ -1,5 +1,16 @@
 # #821 mIRC Script
 
+## Verified on November 19, 2026
+
+The upstream headless engine loaded the unchanged .mrc as a script, ran its hello alias, and returned the exact echo text to the batch harness.
+
+Run `cargo build --offline --release --bin run_greeting; run_greeting hello.mrc`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Upload an alias mIRC that writes greeting in the local window.
 
 ## Toolchain
@@ -33,4 +44,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mrc` | [hello.mrc](hello.mrc) created; verification pending |
+| `.mrc` | [hello.mrc](hello.mrc) Syntax and behavior verified |
+
+</details>

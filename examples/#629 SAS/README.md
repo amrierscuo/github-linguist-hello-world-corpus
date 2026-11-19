@@ -1,5 +1,18 @@
 # #629 SAS
 
+## Verified on November 19, 2026
+
+Upstream StatLang expanded a SAS macro variable and its %PUT statement emitted the exact greeting. This proof covers the SAS macro subset used by the finalized code.
+
+Run `python run_sas.py hello.sas`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +51,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.sas` | [hello.sas](hello.sas) created; verification pending |
+| `.sas` | [hello.sas](hello.sas) Syntax and behavior verified |
+
+</details>

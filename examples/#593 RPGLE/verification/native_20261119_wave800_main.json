@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "ordinal": 593,
+  "language": "RPGLE",
+  "timestamp_utc": "2026-11-19T17:39:20.854576+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/cache/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/593-cafx3ahw",
+      "timestamp_utc": "2026-11-19T17:39:20.870897+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 0,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- dependency:3.8.1:build-classpath (default-cli) @ greeting ---\n[INFO] Wrote classpath file '${SCRATCH}/593-cafx3ahw/classpath.txt'.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  6.390 s\n[INFO] Finished at: 2026-11-19T18:39:49+01:00\n[INFO] ------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-cafx3ahw/home",
+        "TMPDIR": "${SCRATCH}/593-cafx3ahw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home"
+      }
+    },
+    {
+      "label": "Run the actual program with the JaRIKo parser and interpreter",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/rpgJavaInterpreter-core/1.5.0/rpgJavaInterpreter-core-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/kolasu/1.5.0/kolasu-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/rsyntaxtextarea/2.5.8/rsyntaxtextarea-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/autocomplete/2.5.8/autocomplete-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/base/1.4.0/base-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:${SCRATCH}/cache/tools/maven-cache/com/github/doyaaaaaken/kotlin-csv-jvm/0.7.3/kotlin-csv-jvm-0.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test/1.3.50/kotlin-test-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-common/1.3.50/kotlin-test-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-junit/1.3.50/kotlin-test-junit-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-annotations-common/1.3.50/kotlin-test-annotations-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/junit/junit/4.12/junit-4.12.jar:${SCRATCH}/cache/tools/maven-cache/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/sql/1.4.0/sql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:${SCRATCH}/cache/tools/maven-cache/net/sf/jt400/jt400/10.4/jt400-10.4.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/nosql/1.4.0/nosql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongo-java-driver/3.12.1/mongo-java-driver-3.12.1.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/manager/1.4.0/manager-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/jt400/1.4.0/jt400-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4/4.7.2/antlr4-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/ST4/4.1/ST4-4.1.jar:${SCRATCH}/cache/tools/maven-cache/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar:${SCRATCH}/cache/tools/maven-cache/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:${SCRATCH}/cache/tools/maven-cache/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib/1.8.20/kotlin-stdlib-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.20/kotlin-stdlib-common-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/annotations/13.0/annotations-13.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-reflect/1.8.20/kotlin-reflect-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.20/kotlin-stdlib-jdk7-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api-kotlin/1.0.0/log4j-api-kotlin-1.0.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/commons-io/commons-io/2.6/commons-io-2.6.jar:${SCRATCH}/cache/tools/maven-cache/com/github/ajalt/clikt/2.1.0/clikt-2.1.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.5.0/kotlinx-serialization-json-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.5.0/kotlinx-serialization-core-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-cbor-jvm/1.5.0/kotlinx-serialization-cbor-jvm-1.5.0.jar",
+        "RunRpg.java",
+        "${SCRATCH}/593-cafx3ahw"
+      ],
+      "cwd": "${SCRATCH}/593-cafx3ahw",
+      "timestamp_utc": "2026-11-19T17:39:49.833111+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "JaRIKo - Java Rpg Interpreter written in Kotlin\nVersion: 1.5.0\nBranch: master\nRevision: 8ea41ff\nBuildtime: 16-05-2024 09:56:19\n************************************************\n------------------------------------------------------------------------------------\nCreating features factory: com.smeup.rpgparser.interpreter.StandardFeaturesFactory\n------------------------------------------------------------------------------------\nFeature flags status:\n - jariko.features.UnlimitedStringTypeFlag: off\n------------------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-cafx3ahw/home",
+        "TMPDIR": "${SCRATCH}/593-cafx3ahw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home"
+      }
+    },
+    {
+      "label": "Run the actual program with the JaRIKo parser and interpreter",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/rpgJavaInterpreter-core/1.5.0/rpgJavaInterpreter-core-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/kolasu/1.5.0/kolasu-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/rsyntaxtextarea/2.5.8/rsyntaxtextarea-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/autocomplete/2.5.8/autocomplete-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/base/1.4.0/base-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:${SCRATCH}/cache/tools/maven-cache/com/github/doyaaaaaken/kotlin-csv-jvm/0.7.3/kotlin-csv-jvm-0.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test/1.3.50/kotlin-test-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-common/1.3.50/kotlin-test-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-junit/1.3.50/kotlin-test-junit-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-annotations-common/1.3.50/kotlin-test-annotations-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/junit/junit/4.12/junit-4.12.jar:${SCRATCH}/cache/tools/maven-cache/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/sql/1.4.0/sql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:${SCRATCH}/cache/tools/maven-cache/net/sf/jt400/jt400/10.4/jt400-10.4.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/nosql/1.4.0/nosql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongo-java-driver/3.12.1/mongo-java-driver-3.12.1.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/manager/1.4.0/manager-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/jt400/1.4.0/jt400-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4/4.7.2/antlr4-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/ST4/4.1/ST4-4.1.jar:${SCRATCH}/cache/tools/maven-cache/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar:${SCRATCH}/cache/tools/maven-cache/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:${SCRATCH}/cache/tools/maven-cache/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib/1.8.20/kotlin-stdlib-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.20/kotlin-stdlib-common-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/annotations/13.0/annotations-13.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-reflect/1.8.20/kotlin-reflect-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.20/kotlin-stdlib-jdk7-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api-kotlin/1.0.0/log4j-api-kotlin-1.0.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/commons-io/commons-io/2.6/commons-io-2.6.jar:${SCRATCH}/cache/tools/maven-cache/com/github/ajalt/clikt/2.1.0/clikt-2.1.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.5.0/kotlinx-serialization-json-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.5.0/kotlinx-serialization-core-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-cbor-jvm/1.5.0/kotlinx-serialization-cbor-jvm-1.5.0.jar",
+        "RunRpg.java",
+        "${SCRATCH}/593-cafx3ahw/directive"
+      ],
+      "cwd": "${SCRATCH}/593-cafx3ahw",
+      "timestamp_utc": "2026-11-19T17:39:53.020428+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "JaRIKo - Java Rpg Interpreter written in Kotlin\nVersion: 1.5.0\nBranch: master\nRevision: 8ea41ff\nBuildtime: 16-05-2024 09:56:19\n************************************************\n------------------------------------------------------------------------------------\nCreating features factory: com.smeup.rpgparser.interpreter.StandardFeaturesFactory\n------------------------------------------------------------------------------------\nFeature flags status:\n - jariko.features.UnlimitedStringTypeFlag: off\n------------------------------------------------------------------------------------\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-cafx3ahw/home",
+        "TMPDIR": "${SCRATCH}/593-cafx3ahw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home"
+      }
+    },
+    {
+      "label": "Run the actual program with the JaRIKo parser and interpreter",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/rpgJavaInterpreter-core/1.5.0/rpgJavaInterpreter-core-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/kolasu/1.5.0/kolasu-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/rsyntaxtextarea/2.5.8/rsyntaxtextarea-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/autocomplete/2.5.8/autocomplete-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/base/1.4.0/base-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:${SCRATCH}/cache/tools/maven-cache/com/github/doyaaaaaken/kotlin-csv-jvm/0.7.3/kotlin-csv-jvm-0.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test/1.3.50/kotlin-test-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-common/1.3.50/kotlin-test-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-junit/1.3.50/kotlin-test-junit-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-annotations-common/1.3.50/kotlin-test-annotations-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/junit/junit/4.12/junit-4.12.jar:${SCRATCH}/cache/tools/maven-cache/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/sql/1.4.0/sql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:${SCRATCH}/cache/tools/maven-cache/net/sf/jt400/jt400/10.4/jt400-10.4.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/nosql/1.4.0/nosql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongo-java-driver/3.12.1/mongo-java-driver-3.12.1.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/manager/1.4.0/manager-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/jt400/1.4.0/jt400-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4/4.7.2/antlr4-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/ST4/4.1/ST4-4.1.jar:${SCRATCH}/cache/tools/maven-cache/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar:${SCRATCH}/cache/tools/maven-cache/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:${SCRATCH}/cache/tools/maven-cache/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib/1.8.20/kotlin-stdlib-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.20/kotlin-stdlib-common-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/annotations/13.0/annotations-13.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-reflect/1.8.20/kotlin-reflect-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.20/kotlin-stdlib-jdk7-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api-kotlin/1.0.0/log4j-api-kotlin-1.0.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/commons-io/commons-io/2.6/commons-io-2.6.jar:${SCRATCH}/cache/tools/maven-cache/com/github/ajalt/clikt/2.1.0/clikt-2.1.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.5.0/kotlinx-serialization-json-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.5.0/kotlinx-serialization-core-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-cbor-jvm/1.5.0/kotlinx-serialization-cbor-jvm-1.5.0.jar",
+        "RunRpg.java",
+        "${SCRATCH}/593-cafx3ahw/free_block"
+      ],
+      "cwd": "${SCRATCH}/593-cafx3ahw",
+      "timestamp_utc": "2026-11-19T17:39:55.450488+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home\nErrorEvent(error=com.smeup.rpgparser.parsing.parsetreetoast.ParseTreeToAstError: An operation is not implemented: return; at Position(start=Line 4, Column 6, end=Line 4, Column 13) com.smeup.rpgparser.RpgParser$FreeContext, errorEventSource=Parser, absoluteLine=4, sourceReference=SourceReference(sourceReferenceType=Program, sourceId=, relativeLine=4, position=Position(start=Line 4, Column 6, end=Line 4, Column 13)), fragment=      return;)\nException in thread \"main\" com.smeup.rpgparser.parsing.parsetreetoast.ParseTreeToAstError: An operation is not implemented: return; at Position(start=Line 4, Column 6, end=Line 4, Column 13) com.smeup.rpgparser.RpgParser$FreeContext\n\tat com.smeup.rpgparser.parsing.parsetreetoast.ErrorsKt.notImplementOperationException(errors.kt:51)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.ErrorsKt.todo(errors.kt:130)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.ErrorsKt.todo$default(errors.kt:124)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.MiscKt.toAst(misc.kt:1857)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.MiscKt$toAst$mainStmts$1$3.invoke(misc.kt:221)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.MiscKt$toAst$mainStmts$1$3.invoke(misc.kt:220)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.MiscKt.runParserRuleContext(misc.kt:2062)\n\tat com.smeup.rpgparser.parsing.parsetreetoast.MiscKt.toAst(misc.kt:220)\n\tat com.smeup.rpgparser.parsing.facade.RpgParserFacade.createAst(RpgParserFacade.kt:418)\n\tat com.smeup.rpgparser.parsing.facade.RpgParserFacade.parseAndProduceAst(RpgParserFacade.kt:453)\n\tat com.smeup.rpgparser.interpreter.RpgProgram$Companion.fromInputStream(program.kt:76)\n\tat com.smeup.rpgparser.rpginterop.DirRpgProgramFinder.findRpgProgram(rpg_system.kt:115)\n\tat com.smeup.rpgparser.interpreter.SimpleSystemInterface$findProgram$1$1.invoke(system_interface.kt:162)\n\tat com.smeup.rpgparser.interpreter.SimpleSystemInterface$findProgram$1$1.invoke(system_interface.kt:161)\n\tat kotlin.sequences.TransformingSequence$iterator$1.next(Sequences.kt:210)\n\tat kotlin.sequences.FilteringSequence$iterator$1.calcNext(Sequences.kt:170)\n\tat kotlin.sequences.FilteringSequence$iterator$1.hasNext(Sequences.kt:194)\n\tat kotlin.sequences.SequencesKt___SequencesKt.firstOrNull(_Sequences.kt:168)\n\tat com.smeup.rpgparser.interpreter.SimpleSystemInterface$findProgram$1.invoke(system_interface.kt:163)\n\tat com.smeup.rpgparser.interpreter.SimpleSystemInterface$findProgram$1.invoke(system_interface.kt:160)\n\tat com.smeup.rpgparser.interpreter.SimpleSystemInterface.findProgram$lambda$0(system_interface.kt:160)\n\tat java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1228)\n\tat com.smeup.rpgparser.interpreter.SimpleSystemInterface.findProgram(system_interface.kt:160)\n\tat RunRpg.main(RunRpg.java:11)\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-cafx3ahw/home",
+        "TMPDIR": "${SCRATCH}/593-cafx3ahw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home"
+      }
+    },
+    {
+      "label": "Run the actual program with the JaRIKo parser and interpreter",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/rpgJavaInterpreter-core/1.5.0/rpgJavaInterpreter-core-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/kolasu/1.5.0/kolasu-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/rsyntaxtextarea/2.5.8/rsyntaxtextarea-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/autocomplete/2.5.8/autocomplete-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/base/1.4.0/base-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:${SCRATCH}/cache/tools/maven-cache/com/github/doyaaaaaken/kotlin-csv-jvm/0.7.3/kotlin-csv-jvm-0.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test/1.3.50/kotlin-test-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-common/1.3.50/kotlin-test-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-junit/1.3.50/kotlin-test-junit-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-annotations-common/1.3.50/kotlin-test-annotations-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/junit/junit/4.12/junit-4.12.jar:${SCRATCH}/cache/tools/maven-cache/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/sql/1.4.0/sql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:${SCRATCH}/cache/tools/maven-cache/net/sf/jt400/jt400/10.4/jt400-10.4.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/nosql/1.4.0/nosql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongo-java-driver/3.12.1/mongo-java-driver-3.12.1.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/manager/1.4.0/manager-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/jt400/1.4.0/jt400-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4/4.7.2/antlr4-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/ST4/4.1/ST4-4.1.jar:${SCRATCH}/cache/tools/maven-cache/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar:${SCRATCH}/cache/tools/maven-cache/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:${SCRATCH}/cache/tools/maven-cache/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib/1.8.20/kotlin-stdlib-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.20/kotlin-stdlib-common-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/annotations/13.0/annotations-13.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-reflect/1.8.20/kotlin-reflect-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.20/kotlin-stdlib-jdk7-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api-kotlin/1.0.0/log4j-api-kotlin-1.0.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/commons-io/commons-io/2.6/commons-io-2.6.jar:${SCRATCH}/cache/tools/maven-cache/com/github/ajalt/clikt/2.1.0/clikt-2.1.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.5.0/kotlinx-serialization-json-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.5.0/kotlinx-serialization-core-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-cbor-jvm/1.5.0/kotlinx-serialization-cbor-jvm-1.5.0.jar",
+        "RunRpg.java",
+        "${SCRATCH}/593-cafx3ahw/fixed_identifier"
+      ],
+      "cwd": "${SCRATCH}/593-cafx3ahw",
+      "timestamp_utc": "2026-11-19T17:39:57.785687+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "JaRIKo - Java Rpg Interpreter written in Kotlin\nVersion: 1.5.0\nBranch: master\nRevision: 8ea41ff\nBuildtime: 16-05-2024 09:56:19\n************************************************\n------------------------------------------------------------------------------------\nCreating features factory: com.smeup.rpgparser.interpreter.StandardFeaturesFactory\n------------------------------------------------------------------------------------\nFeature flags status:\n - jariko.features.UnlimitedStringTypeFlag: off\n------------------------------------------------------------------------------------\nHello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-cafx3ahw/home",
+        "TMPDIR": "${SCRATCH}/593-cafx3ahw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home"
+      }
+    },
+    {
+      "label": "Run the actual program with the JaRIKo parser and interpreter",
+      "command": [
+        "java",
+        "-cp",
+        "${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/rpgJavaInterpreter-core/1.5.0/rpgJavaInterpreter-core-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/jariko/kolasu/1.5.0/kolasu-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/rsyntaxtextarea/2.5.8/rsyntaxtextarea-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/com/fifesoft/autocomplete/2.5.8/autocomplete-2.5.8.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/base/1.4.0/base-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:${SCRATCH}/cache/tools/maven-cache/com/github/doyaaaaaken/kotlin-csv-jvm/0.7.3/kotlin-csv-jvm-0.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test/1.3.50/kotlin-test-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-common/1.3.50/kotlin-test-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-junit/1.3.50/kotlin-test-junit-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-test-annotations-common/1.3.50/kotlin-test-annotations-common-1.3.50.jar:${SCRATCH}/cache/tools/maven-cache/junit/junit/4.12/junit-4.12.jar:${SCRATCH}/cache/tools/maven-cache/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/sql/1.4.0/sql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:${SCRATCH}/cache/tools/maven-cache/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:${SCRATCH}/cache/tools/maven-cache/net/sf/jt400/jt400/10.4/jt400-10.4.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/nosql/1.4.0/nosql-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/mongodb/mongo-java-driver/3.12.1/mongo-java-driver-3.12.1.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/manager/1.4.0/manager-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/io/github/smeup/reload/jt400/1.4.0/jt400-1.4.0.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4/4.7.2/antlr4-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/ST4/4.1/ST4-4.1.jar:${SCRATCH}/cache/tools/maven-cache/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar:${SCRATCH}/cache/tools/maven-cache/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:${SCRATCH}/cache/tools/maven-cache/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar:${SCRATCH}/cache/tools/maven-cache/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib/1.8.20/kotlin-stdlib-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.20/kotlin-stdlib-common-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/annotations/13.0/annotations-13.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-reflect/1.8.20/kotlin-reflect-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.20/kotlin-stdlib-jdk7-1.8.20.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api-kotlin/1.0.0/log4j-api-kotlin-1.0.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar:${SCRATCH}/cache/tools/maven-cache/commons-io/commons-io/2.6/commons-io-2.6.jar:${SCRATCH}/cache/tools/maven-cache/com/github/ajalt/clikt/2.1.0/clikt-2.1.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/1.5.0/kotlinx-serialization-json-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.5.0/kotlinx-serialization-core-jvm-1.5.0.jar:${SCRATCH}/cache/tools/maven-cache/org/jetbrains/kotlinx/kotlinx-serialization-cbor-jvm/1.5.0/kotlinx-serialization-cbor-jvm-1.5.0.jar",
+        "RunRpg.java",
+        "${SCRATCH}/593-cafx3ahw"
+      ],
+      "cwd": "${SCRATCH}/593-cafx3ahw",
+      "timestamp_utc": "2026-11-19T17:40:00.400375+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "JaRIKo - Java Rpg Interpreter written in Kotlin\nVersion: 1.5.0\nBranch: master\nRevision: 8ea41ff\nBuildtime: 16-05-2024 09:56:19\n************************************************\n------------------------------------------------------------------------------------\nCreating features factory: com.smeup.rpgparser.interpreter.StandardFeaturesFactory\n------------------------------------------------------------------------------------\nFeature flags status:\n - jariko.features.UnlimitedStringTypeFlag: off\n------------------------------------------------------------------------------------\nHello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-cafx3ahw/home",
+        "TMPDIR": "${SCRATCH}/593-cafx3ahw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-cafx3ahw/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#593 RPGLE/hello.rpgle": "918276726ec8fb90efb489368cc41a53df4b44e354a0608cb8d606c635d56ef1"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "4763debec6e71a75022e55b141ad565a04f0ff3fe50fe2c6f32f1787ff77e112",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>io.github.smeup.jariko</groupId><artifactId>rpgJavaInterpreter-core</artifactId><version>1.5.0</version><exclusions><exclusion><groupId>com.github.ziggy42</groupId><artifactId>kolor</artifactId></exclusion></exclusions></dependency></dependencies></project>\n"
+    },
+    "RunRpg.java": {
+      "sha256": "d4b54ac9b3ef8c68c8dd0f73f6034c9613e397e843a80586c11b2f5addf87044",
+      "content_utf8": "import java.io.*;\nimport java.util.*;\nimport com.smeup.rpgparser.execution.RunnerKt;\nimport com.smeup.rpgparser.interpreter.SimpleSystemInterface;\nimport com.smeup.rpgparser.rpginterop.DirRpgProgramFinder;\n\npublic class RunRpg {\n    public static void main(String[] args) {\n        var finders = List.of(new DirRpgProgramFinder(new File(args[0])));\n        var system = new SimpleSystemInterface(new Properties(), finders, System.out);\n        if (system.findProgram(\"hello\") == null) throw new AssertionError(\"Entry unavailable\");\n        var program = RunnerKt.getProgram(\"hello\", system, finders);\n        program.singleCall(List.<String>of());\n    }\n}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "IBM RPG free form",
+      "url": "https://www.ibm.com/docs/en/i/7.5.0?topic=specifications-fully-free-form-statements"
+    }
+  ],
+  "previous_verification_log": null,
+  "source_changes": [
+    {
+      "path": "examples/#593 RPGLE/hello.rpgle",
+      "original_sha256": "66ef89fdc2df125ffa22f38732311c9553e8b643f261c062a7183b55033dd1ec",
+      "tested_sha256": "918276726ec8fb90efb489368cc41a53df4b44e354a0608cb8d606c635d56ef1",
+      "staged_file": "work/native_target800_20261119/corrected/593/hello.rpgle",
+      "original_fragment": "**free\ndsply 'Hello, World!';\n*inlr = *on;\nreturn;\n",
+      "replacement": "     DGREETING         S             13A   INZ('Hello, World!')\n     C     GREETING      DSPLY\n     C                   EVAL      *INLR = *ON\n     C                   RETURN\n"
+    }
+  ],
+  "toolchain": "JaRIKo RPGLE interpreter 1.5.0",
+  "reproduction_command": "java -cp <JaRIKo dependencies> RunRpg.java <source directory>",
+  "semantic_scope": "The compatible RPGLE interpreter loaded the complete source. Its DSPLY sink emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#593 RPGLE/verification/native_20261119_wave800_prior_attempt.json"
+}

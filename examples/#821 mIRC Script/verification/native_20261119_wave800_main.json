@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "ordinal": 821,
+  "language": "mIRC Script",
+  "timestamp_utc": "2026-11-19T17:58:34.234794+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build a console harness against the unchanged upstream mIRC-compatible mSL engine",
+      "command": [
+        "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin/cargo",
+        "build",
+        "--offline",
+        "--release",
+        "--bin",
+        "run_greeting"
+      ],
+      "cwd": "${SCRATCH}/821-xg6g1xv2/engine",
+      "timestamp_utc": "2026-11-19T17:58:39.330477+00:00",
+      "timeout_seconds": 80,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "   Compiling mirage-engine v0.1.1 (${SCRATCH}/821-xg6g1xv2/engine)\n    Finished `release` profile [optimized] target(s) in 40.18s\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/821-xg6g1xv2/home",
+        "TMPDIR": "${SCRATCH}/821-xg6g1xv2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/821-xg6g1xv2/engine/target/release/run_greeting",
+        "hello.mrc"
+      ],
+      "cwd": "${SCRATCH}/821-xg6g1xv2",
+      "timestamp_utc": "2026-11-19T17:59:24.066131+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/821-xg6g1xv2/home",
+        "TMPDIR": "${SCRATCH}/821-xg6g1xv2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#821 mIRC Script/hello.mrc": "dc53d72f77e83eafd9e681fd30f5b03e427e2777819cde7c5768561445b70a03"
+  },
+  "fixture_sha256": {
+    "engine/src/bin/run_greeting.rs": {
+      "sha256": "6bbc45851eaeba00fe5b01a866dd1c6f473ddb0d21349d81adf04a303fb21a7f",
+      "content_utf8": "use mirage_engine::{client::load_script, cmd, eval};\n\nfn main() -> std::io::Result<()> {\n    let input = std::env::args().nth(1).expect(\"script filename\");\n    let source = std::fs::read_to_string(input)?;\n    let mut context = eval::Ctx::default();\n    load_script(&source, &mut context);\n    let body = context.aliases.get(\"hello\").expect(\"hello alias\").clone();\n    cmd::call_alias(&body, Vec::new(), &mut context);\n    assert_eq!(context.out.len(), 1, \"one output line\");\n    let result = &context.out[0];\n    assert_eq!(result.kind, \"echo\");\n    println!(\"{}\", result.text);\n    Ok(())\n}\n"
+    }
+  },
+  "sources": [
+    "https://www.mirc.com/help/html/aliases.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/sp00nznet/mirage/tar.gz/393139586299037215f6b23683995ab52143d771",
+      "ref": "393139586299037215f6b23683995ab52143d771",
+      "sha256": "b4b873c6860d91047bc2f944a6bf92a027f4e9e117ccde734ce9bd7a8912198b"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "7d7fa1d0cfb0fab71a956bb78f41107202c17f30ab56c45288e869a37fd9633d"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "c09c7c646248f14f473f5f7a029af15ee57c3a9f9bc93dfa72d9621938586b82"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "dee75c3c8f9f600ad75bc0c93249e767d3047845a4dd668327ce43ab039ba266"
+    }
+  ],
+  "toolchain": "Mirage mIRC-compatible mSL engine 0.1.1, upstream Git snapshot 393139586299",
+  "reproduction_command": "cargo build --offline --release --bin run_greeting; run_greeting hello.mrc",
+  "semantic_scope": "The upstream headless engine loaded the unchanged .mrc as a script, ran its hello alias, and returned the exact echo text to the batch harness.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

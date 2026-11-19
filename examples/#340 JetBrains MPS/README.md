@@ -1,5 +1,16 @@
 # #340 JetBrains MPS
 
+## Verified on November 19, 2026
+
+The original project descriptors loaded the MPS language, solution and models. The publisher headless generator emitted Java for the source solution. Compiling and running that Java printed the exact greeting.
+
+Run `ant -noinput generate; javac -d classes <generated .java>; java -cp classes <generated main>`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 The `project/` project comes from the official JetBrains **The Simplest Language** sample, distributed under Apache-2.0. Stores `.mps` models, `.mpl` language definition and `.msd` solution descriptor, with the real concept logs and original references.
 
 La proprietà testuale del nodo sandbox è stata cambiata in `Hello, World!`. Cartelle e nomi dei descriptor sono stati accorciati, aggiornando i percorsi del progetto e conservando model roots, namespace, ID e registri, per evitare percorsi eccessivi su Windows. Il generatore ufficiale usa BaseLanguage per generare una classe Java con `main` e stampare quella proprietà. I sorgenti Java generati e le cache non sono inclusi: vanno rigenerati dall'IDE.
@@ -22,6 +33,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mps` | [main@generator.mps](project/languages/l/generator/template/main%40generator.mps), [behavior.mps](project/languages/l/languageModels/behavior.mps), [editor.mps](project/languages/l/languageModels/editor.mps), [structure.mps](project/languages/l/languageModels/structure.mps), [typesystem.mps](project/languages/l/languageModels/typesystem.mps), [sandbox.mps](project/solutions/s/jetbrains/mps/samples/theSimplestLanguage/sandbox/sandbox.mps) created; verification pending |
-| `.mpl` | [Language.mpl](project/languages/l/Language.mpl) created; verification pending |
-| `.msd` | [Solution.msd](project/solutions/s/Solution.msd) created; verification pending |
+| `.mps` | [main@generator.mps](project/languages/l/generator/template/main%40generator.mps), [behavior.mps](project/languages/l/languageModels/behavior.mps), [editor.mps](project/languages/l/languageModels/editor.mps), [structure.mps](project/languages/l/languageModels/structure.mps), [typesystem.mps](project/languages/l/languageModels/typesystem.mps), [sandbox.mps](project/solutions/s/jetbrains/mps/samples/theSimplestLanguage/sandbox/sandbox.mps) Syntax and behavior verified |
+| `.mpl` | [Language.mpl](project/languages/l/Language.mpl) Syntax and behavior verified |
+| `.msd` | [Solution.msd](project/solutions/s/Solution.msd) Syntax and behavior verified |
+
+</details>

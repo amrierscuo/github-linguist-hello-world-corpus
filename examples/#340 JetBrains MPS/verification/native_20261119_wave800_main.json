@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "ordinal": 340,
+  "language": "JetBrains MPS",
+  "timestamp_utc": "2026-11-19T17:50:22.586585+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Generate the real original language and solution with the official headless MPS Ant generator",
+      "command": [
+        "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/jbr/bin/java",
+        "-cp",
+        "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/lib/ant/lib/ant-launcher.jar",
+        "org.apache.tools.ant.launch.Launcher",
+        "-nouserlib",
+        "-lib",
+        "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/lib",
+        "-noinput",
+        "generate"
+      ],
+      "cwd": "${SCRATCH}/340-9i_e73c2",
+      "timestamp_utc": "2026-11-19T17:50:22.822109+00:00",
+      "timeout_seconds": 145,
+      "exit_code": 0,
+      "stdout": "Buildfile: ${SCRATCH}/340-9i_e73c2/build.xml\nTrying to override old definition of datatype antlib:jetbrains.mps.build.ant:module\nTrying to override old definition of datatype antlib:jetbrains.mps.build.ant:module\nTrying to override old definition of datatype antlib:jetbrains.mps.build.ant:module\n\ngenerate:\nTrying to override old definition of datatype antlib:jetbrains.mps.build.ant:module\nTrying to override old definition of datatype antlib:jetbrains.mps.build.ant:module\n[mps:generate] Nested jvmarg is deprecated. Use jvmargs instead.\n[mps:generate] The executed worker's command line does not have the -ea option, which is highly recommended. Task: GenerateTask\n[mps:generate] Generating: strict mode is on, parallel generation is on (4 threads), in-place is on, child warnings are on, static references to replace dynamic is on, skip unmodified models is off\n[mps:generate] Loaded module jetbrains.mps.samples.theSimplestLanguage [language]\n[mps:generate] Loaded module jetbrains.mps.samples.theSimplestLanguage/baseLanguageGenerator [generator]\n[mps:generate] Loaded module jetbrains.mps.samples.theSimplestLanguage.sandbox [solution]\n[mps:generate] Generating:\n[mps:generate]     jetbrains.mps.samples.theSimplestLanguage [language]\n[mps:generate]     jetbrains.mps.samples.theSimplestLanguage/baseLanguageGenerator [generator]\n[mps:generate]     jetbrains.mps.samples.theSimplestLanguage.sandbox [solution]\n[mps:generate] Devkit jetbrains.mps.devkit.aspect.structure has associated plan jetbrains.mps.lang.descriptor.structure@genplan\n[mps:generate] Interpreted plan \"LangStructurePlan\"\n[mps:generate] Generation plan for model jetbrains.mps.samples.theSimplestLanguage.structure defined with an employed devkit\n[mps:generate] Devkit jetbrains.mps.devkit.aspect.typesystem has associated plan jetbrains.mps.lang.descriptor.typesystem@genplan\n[mps:generate] Interpreted plan \"LangTypesystemPlan\"\n[mps:generate] Generation plan for model jetbrains.mps.samples.theSimplestLanguage.typesystem defined with an employed devkit\n[mps:generate] Devkit jetbrains.mps.devkit.language-descriptor has associated plan jetbrains.mps.lang.descriptor.descriptor@genplan\n[mps:generate] Interpreted plan \"LangDescriptorPlan\"\n[mps:generate] Generation plan for model jetbrains.mps.samples.theSimplestLanguage@descriptor defined with an employed devkit\n[mps:generate] Cycle #1: [jetbrains.mps.samples.theSimplestLanguage]\n[mps:generate] Cycle #1: [jetbrains.mps.samples.theSimplestLanguage#1222955937368]\n[mps:generate] \"generate\" target execution time: 8051 ms\n[mps:generate] \"textGen\" target execution time: 2686 ms\n[mps:generate] \"compile\" target execution time: 2446 ms\n[mps:generate] Other targets execution time: 455 ms; configure: 303 ms, reloadClasses: 84 ms, preloadModels: 34 ms, reconcile: 14 ms, cleanup: 8 ms, copyBinaries: 5 ms, copyTraceInfo: 4 ms, auxCompile: 3 ms, configure: 0 ms, checkParameters: 0 ms, make: 0 ms\n\nBUILD SUCCESSFUL\nTotal time: 1 minute 21 seconds\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home\n[mps:generate] Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home\n[mps:generate] 2026-11-19 18:51:28,731 WARNING - jetbrains.mps.smodel.language.LanguageRegistry - Failed to load classes for some modules. Set log level to debug for more info.\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/340-9i_e73c2/home",
+        "TMPDIR": "${SCRATCH}/340-9i_e73c2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_HOME": "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/jbr",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home",
+        "IDEA_PROPERTIES": "${SCRATCH}/340-9i_e73c2/headless.properties"
+      }
+    },
+    {
+      "label": "Compile the generated Java sources",
+      "command": [
+        "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/jbr/bin/javac",
+        "-d",
+        "${SCRATCH}/340-9i_e73c2/classes",
+        "${SCRATCH}/340-9i_e73c2/project/solutions/s/source_gen/jetbrains/mps/samples/theSimplestLanguage/sandbox/sandbox/Hello.java"
+      ],
+      "cwd": "${SCRATCH}/340-9i_e73c2",
+      "timestamp_utc": "2026-11-19T17:51:45.213301+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/340-9i_e73c2/home",
+        "TMPDIR": "${SCRATCH}/340-9i_e73c2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_HOME": "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/jbr",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home",
+        "IDEA_PROPERTIES": "${SCRATCH}/340-9i_e73c2/headless.properties"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/jbr/bin/java",
+        "-cp",
+        "${SCRATCH}/340-9i_e73c2/classes",
+        "jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox.Hello"
+      ],
+      "cwd": "${SCRATCH}/340-9i_e73c2",
+      "timestamp_utc": "2026-11-19T17:51:46.018923+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/340-9i_e73c2/home",
+        "TMPDIR": "${SCRATCH}/340-9i_e73c2/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_HOME": "${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/jbr",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Dapple.awt.UIElement=true -Duser.home=${SCRATCH}/340-9i_e73c2/home",
+        "IDEA_PROPERTIES": "${SCRATCH}/340-9i_e73c2/headless.properties"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#340 JetBrains MPS/project/.mps/encodings.xml": "35e068de75a499c0974585f01b4668c56f946dcba3a8238f4c1a5b6a467aa5aa",
+    "examples/#340 JetBrains MPS/project/.mps/migration.xml": "457bf1612995f4b29ee59fb667652a487a778237321469bab945f3e8e2a35274",
+    "examples/#340 JetBrains MPS/project/.mps/misc.xml": "719ec3e3f073990cda42880f9b766d998787a5ab97d50f60ea942a65d315ce72",
+    "examples/#340 JetBrains MPS/project/.mps/modules.xml": "b27ec3dc06e2b15e35bfb931e84d6ac4ac8ebd565dd49eb96acaea45e08ffd9a",
+    "examples/#340 JetBrains MPS/project/.mps/vcs.xml": "0987c3d075c43996e78f1df9099e8b885db10a1487e93d1e7626703651a08dbc",
+    "examples/#340 JetBrains MPS/project/.mps/version.xml": "85be04d89dd624a161818997586e6f6f735ada255707ce1e9b4c06e8a57e389e",
+    "examples/#340 JetBrains MPS/project/languages/l/Language.mpl": "2f6c9032bbc220df83b0494e26ed99f5bdecd4b0d5966def2fd4151712d39c68",
+    "examples/#340 JetBrains MPS/project/languages/l/generator/template/main@generator.mps": "6d1389bcacb02c433cfd913457587ff2d969b06ce967f1bfedbda4e69fb3d289",
+    "examples/#340 JetBrains MPS/project/languages/l/languageModels/behavior.mps": "f9af8c985351c6cb9ad880fa10babc610e80289853ba38ce3a09c2411990e546",
+    "examples/#340 JetBrains MPS/project/languages/l/languageModels/editor.mps": "fc8c7b329b0be74f18613741d6b3e7f8a49b7cb83b8b6174266ceeb8545f8170",
+    "examples/#340 JetBrains MPS/project/languages/l/languageModels/structure.mps": "76a8da98d2b6269817af35dcd4fd2da1c62603763a59e0498af4491de19a19aa",
+    "examples/#340 JetBrains MPS/project/languages/l/languageModels/typesystem.mps": "b11a87e5ca2d947f84140ec806a70eb48a2fd567ca2ad996b730a7fa8e944778",
+    "examples/#340 JetBrains MPS/project/solutions/s/Solution.msd": "1c6f39ab55307580015dc20b0814a66025e9c303baba3f76d736d593b0b480c0",
+    "examples/#340 JetBrains MPS/project/solutions/s/jetbrains/mps/samples/theSimplestLanguage/sandbox/sandbox.mps": "a9cc3bb68797b0a3f0af2c27959835a15b66dd8b8e7482e848dcd8d36966163a"
+  },
+  "fixture_sha256": {
+    "headless.properties": {
+      "sha256": "0a15090c68af77f36df5f1838dbdd29cd42a13b372dd09022ebc7a2db360c89c",
+      "content_utf8": "idea.config.path=${SCRATCH}/340-9i_e73c2/ide-config\nidea.system.path=${SCRATCH}/340-9i_e73c2/ide-cache\nidea.log.path=${SCRATCH}/340-9i_e73c2/logs\n"
+    },
+    "build.xml": {
+      "sha256": "23230b32454e783d65c69972089ea14a3de335fccfc89df131f5a3fd06e55d5f",
+      "content_utf8": "<project name=\"Greeting\" xmlns:mps=\"antlib:jetbrains.mps.build.ant\" default=\"generate\">\n  <property name=\"artifacts.mps\" location=\"${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2\"/>\n  <taskdef uri=\"antlib:jetbrains.mps.build.ant\" resource=\"jetbrains/mps/build/ant/antlib.xml\">\n    <classpath>\n      <pathelement location=\"${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/lib/ant/lib/ant-mps.jar\"/>\n      <fileset dir=\"${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2/lib\"><include name=\"*.jar\"/></fileset>\n    </classpath>\n  </taskdef>\n  <target name=\"generate\">\n    <mps:generate mpshome=\"${SCRATCH}/cache/tools/jetbrains-mps-2026.1.2/dist/MPS 2026.1.2\" fork=\"true\">\n      <jvmarg value=\"-Djava.awt.headless=true\"/>\n      <chunk><module file=\"${SCRATCH}/340-9i_e73c2/project/languages/l/Language.mpl\"/><module file=\"${SCRATCH}/340-9i_e73c2/project/solutions/s/Solution.msd\"/></chunk>\n    </mps:generate>\n  </target>\n</project>\n"
+    }
+  },
+  "sources": [
+    "https://github.com/JetBrains/MPS/tree/master/samples/_theSimplestLanguage",
+    "https://www.jetbrains.com/help/mps/fast-track-to-mps.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://download.jetbrains.com/mps/2026.1/MPS-2026.1.2.tar.gz",
+      "checksum_url": "https://download.jetbrains.com/mps/2026.1/MPS-2026.1.2.tar.gz.sha256",
+      "sha256": "295019532aaf7b84e0e766f30e598c96152a6624f49a672d028e586775682d5c"
+    }
+  ],
+  "ubuntu_archives": [],
+  "generated_java": [
+    {
+      "path": "project/solutions/s/source_gen/jetbrains/mps/samples/theSimplestLanguage/sandbox/sandbox/Hello.java",
+      "sha256": "fd1e68890c96e29a4321d0e80136291c7904876056e65a107b7eb4a5a83b03fc"
+    }
+  ],
+  "toolchain": "JetBrains MPS 2026.1.2 publisher Ant generator and bundled JetBrains Runtime",
+  "reproduction_command": "ant -noinput generate; javac -d classes <generated .java>; java -cp classes <generated main>",
+  "semantic_scope": "The original project descriptors loaded the MPS language, solution and models. The publisher headless generator emitted Java for the source solution. Compiling and running that Java printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

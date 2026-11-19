@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "ordinal": 629,
+  "language": "SAS",
+  "timestamp_utc": "2026-11-19T17:47:29.393506+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Run the published SAS DATA step using the upstream compatible interpreter",
+      "command": [
+        "${SCRATCH}/629-_f1i23dy/venv/bin/python",
+        "${SCRATCH}/629-98mx6k4y/run_sas.py",
+        "hello.sas"
+      ],
+      "cwd": "${SCRATCH}/629-98mx6k4y",
+      "timestamp_utc": "2026-11-19T17:47:29.441627+00:00",
+      "timeout_seconds": 50,
+      "exit_code": 0,
+      "stdout": "Saved dataset _null_ to library work\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/629-98mx6k4y/home",
+        "TMPDIR": "${SCRATCH}/629-98mx6k4y/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/cache/tools/Stryve-Analytics-StatLang-main/source/StatLang-main"
+      }
+    },
+    {
+      "label": "Try the compatible SAS macro processor and its real log output with a minimal equivalent example",
+      "command": [
+        "${SCRATCH}/629-_f1i23dy/venv/bin/python",
+        "${SCRATCH}/629-98mx6k4y/run_sas.py",
+        "macro_greeting.sas"
+      ],
+      "cwd": "${SCRATCH}/629-98mx6k4y",
+      "timestamp_utc": "2026-11-19T17:48:05.446275+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "MACRO: Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/629-98mx6k4y/home",
+        "TMPDIR": "${SCRATCH}/629-98mx6k4y/tmp",
+        "LC_ALL": "C.UTF-8",
+        "PYTHONPATH": "${SCRATCH}/cache/tools/Stryve-Analytics-StatLang-main/source/StatLang-main"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#629 SAS/hello.sas": "c7ad245d3d01e10d0266e3f0390f4cc1f37ea7f61bcb62d02dc50eaadb368691"
+  },
+  "fixture_sha256": {
+    "run_sas.py": {
+      "sha256": "d4907a98ec3ee626dfdc5b1ddee13735305f0901f32938dd4cbd3d0ec2365f83",
+      "content_utf8": "from pathlib import Path\nimport sys\nfrom stat_lang.interpreter import SASInterpreter\n\nSASInterpreter().run_code(Path(sys.argv[1]).read_text(encoding=\"utf-8\"))\n"
+    },
+    "macro_greeting.sas": {
+      "sha256": "51f28039e198f1db68c2fa25842601e39d99479a9ad0909ef4c610d0b71a108e",
+      "content_utf8": "%let greeting=Hello, World!;\n%put &greeting;\n"
+    }
+  },
+  "sources": [
+    "https://support.sas.com/documentation/cdl/en/basess/58133/HTML/default/a002108635.htm"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/Stryve-Analytics/StatLang/tar.gz/main",
+      "ref": "main",
+      "sha256": "954acb728da5a612a598c3de13803079fc1fddafb91ac5418fe766f6f2224ea3"
+    }
+  ],
+  "blocker": "AssertionError: MACRO: Hello, World!\n",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/resume_quick.py\", line 47, in sas\n    assert observes_greeting(native), native.stdout+native.stderr[-1800:]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: MACRO: Hello, World!\n\n"
+}

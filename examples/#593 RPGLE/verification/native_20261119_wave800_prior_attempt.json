@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "ordinal": 593,
+  "language": "RPGLE",
+  "timestamp_utc": "2026-11-19T13:24:20.774320+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Resolve and run the recorded Maven toolchain",
+      "command": [
+        "${WORKSPACE}/work/tools_421_440/maven/apache-maven-3.9.9/bin/mvn",
+        "-ntp",
+        "-B",
+        "-Dmaven.repo.local=${SCRATCH}/cache/tools/maven-cache",
+        "org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath",
+        "-Dmdep.outputFile=classpath.txt"
+      ],
+      "cwd": "${SCRATCH}/593-99fotk02",
+      "timestamp_utc": "2026-11-19T13:24:21.112746+00:00",
+      "timeout_seconds": 150,
+      "exit_code": 1,
+      "stdout": "[INFO] Scanning for projects...\n[INFO] \n[INFO] ------------------------< corpus.test:greeting >------------------------\n[INFO] Building greeting 1.0\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[WARNING] The POM for io.github.smeup.reload:base:jar:1.5.1 is missing, no dependency information available\n[WARNING] The POM for io.github.smeup.reload:sql:jar:1.5.1 is missing, no dependency information available\n[WARNING] The POM for io.github.smeup.reload:nosql:jar:1.5.1 is missing, no dependency information available\n[WARNING] The POM for io.github.smeup.reload:manager:jar:1.5.1 is missing, no dependency information available\n[WARNING] The POM for io.github.smeup.reload:jt400:jar:1.5.1 is missing, no dependency information available\n[WARNING] The POM for com.github.ajalt:clikt:jar:3.5.2 is missing, no dependency information available\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD FAILURE\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  23.404 s\n[INFO] Finished at: 2026-11-19T14:25:07+01:00\n[INFO] ------------------------------------------------------------------------\n[ERROR] Failed to execute goal on project greeting: Could not resolve dependencies for project corpus.test:greeting:jar:1.0\n[ERROR] dependency: io.github.smeup.reload:base:jar:1.5.1 (compile)\n[ERROR] \tCould not find artifact io.github.smeup.reload:base:jar:1.5.1 in central (https://repo.maven.apache.org/maven2)\n[ERROR] dependency: io.github.smeup.reload:sql:jar:1.5.1 (compile)\n[ERROR] \tCould not find artifact io.github.smeup.reload:sql:jar:1.5.1 in central (https://repo.maven.apache.org/maven2)\n[ERROR] dependency: io.github.smeup.reload:nosql:jar:1.5.1 (compile)\n[ERROR] \tCould not find artifact io.github.smeup.reload:nosql:jar:1.5.1 in central (https://repo.maven.apache.org/maven2)\n[ERROR] dependency: io.github.smeup.reload:manager:jar:1.5.1 (compile)\n[ERROR] \tCould not find artifact io.github.smeup.reload:manager:jar:1.5.1 in central (https://repo.maven.apache.org/maven2)\n[ERROR] dependency: io.github.smeup.reload:jt400:jar:1.5.1 (compile)\n[ERROR] \tCould not find artifact io.github.smeup.reload:jt400:jar:1.5.1 in central (https://repo.maven.apache.org/maven2)\n[ERROR] dependency: com.github.ajalt:clikt:jar:3.5.2 (runtime)\n[ERROR] \tCould not find artifact com.github.ajalt:clikt:jar:3.5.2 in central (https://repo.maven.apache.org/maven2)\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-99fotk02/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/593-99fotk02/home",
+        "TMPDIR": "${SCRATCH}/593-99fotk02/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/593-99fotk02/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#593 RPGLE/hello.rpgle": "66ef89fdc2df125ffa22f38732311c9553e8b643f261c062a7183b55033dd1ec"
+  },
+  "fixture_sha256": {
+    "pom.xml": {
+      "sha256": "fce9e6a0fa0e482f1c3435adeea225f303b9bd7fec4c48873a27695decd963d0",
+      "content_utf8": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\">\n  <modelVersion>4.0.0</modelVersion><groupId>corpus.test</groupId><artifactId>greeting</artifactId><version>1.0</version>\n  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>\n  <dependencies><dependency><groupId>io.github.smeup.jariko</groupId><artifactId>rpgJavaInterpreter-core</artifactId><version>v1.9.0</version><exclusions><exclusion><groupId>com.github.ziggy42</groupId><artifactId>kolor</artifactId></exclusion></exclusions></dependency></dependencies></project>\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "IBM RPG free form",
+      "url": "https://www.ibm.com/docs/en/i/7.5.0?topic=specifications-fully-free-form-statements"
+    }
+  ],
+  "previous_verification_log": null,
+  "blocker": "RuntimeError: Resolve and run the recorded Maven toolchain exited 1: Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-99fotk02/home",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/retry_lane.py\", line 32, in rpg_run\n    cp=classpath(c)\n       ^^^^^^^^^^^^\n  File \"${WORKSPACE}/work/native_target736_20261118/jvm_cases.py\", line 28, in classpath\n    mv(c,'org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath','-Dmdep.outputFile=classpath.txt')\n  File \"${WORKSPACE}/work/native_target736_20261118/jvm_cases.py\", line 25, in mv\n    return c.run('Resolve and run the recorded Maven toolchain',[MAVEN,'-ntp','-B','-Dmaven.repo.local='+str(TOOLS/'maven-cache'),*goals],env=java_env(c),timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 176, in run\n    raise RuntimeError(f'{label} exited {p.returncode}: {msg[-1200:]}')\nRuntimeError: Resolve and run the recorded Maven toolchain exited 1: Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/593-99fotk02/home\n"
+}

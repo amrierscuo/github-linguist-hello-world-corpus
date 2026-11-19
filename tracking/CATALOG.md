@@ -343,7 +343,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #337 | [JavaScript](../examples/%23337%20JavaScript/README.md) | Yes | Yes | Yes | 25/25 | Evidence recorded |
 | #338 | [JavaScript+ERB](../examples/%23338%20JavaScript%2BERB/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #339 | [Jest Snapshot](../examples/%23339%20Jest%20Snapshot/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #340 | [JetBrains MPS](../examples/%23340%20JetBrains%20MPS/README.md) | Yes | Pending | Pending | 3/3 | The adapted official project was not opened, generated or run in MPS. Concept resolution and version compatibility are pending. |
+| #340 | [JetBrains MPS](../examples/%23340%20JetBrains%20MPS/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #341 | [Jinja](../examples/%23341%20Jinja/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #342 | [Jison](../examples/%23342%20Jison/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #343 | [Jison Lex](../examples/%23343%20Jison%20Lex/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -596,7 +596,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #590 | [RON](../examples/%23590%20RON/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #591 | [ROS Interface](../examples/%23591%20ROS%20Interface/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #592 | [RPC](../examples/%23592%20RPC/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #593 | [RPGLE](../examples/%23593%20RPGLE/README.md) | Yes | Pending | Pending | 2/2 | IBM i and the ILE RPG compiler are unavailable. |
+| #593 | [RPGLE](../examples/%23593%20RPGLE/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #594 | [RPM Spec](../examples/%23594%20RPM%20Spec/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #595 | [RUNOFF](../examples/%23595%20RUNOFF/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #596 | [Racket](../examples/%23596%20Racket/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
@@ -632,7 +632,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #626 | [RouterOS Script](../examples/%23626%20RouterOS%20Script/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #627 | [Ruby](../examples/%23627%20Ruby/README.md) | Yes | Yes | Yes | 22/22 | Evidence recorded |
 | #628 | [Rust](../examples/%23628%20Rust/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #629 | [SAS](../examples/%23629%20SAS/README.md) | Yes | Pending | Pending | 1/1 | The SAS runtime and license are unavailable; parser checks and execution logs are pending. |
+| #629 | [SAS](../examples/%23629%20SAS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #630 | [SCSS](../examples/%23630%20SCSS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #631 | [SELinux Policy](../examples/%23631%20SELinux%20Policy/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #632 | [SIP](../examples/%23632%20SIP/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -824,7 +824,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #818 | [iCalendar](../examples/%23818%20iCalendar/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #819 | [jq](../examples/%23819%20jq/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #820 | [kvlang](../examples/%23820%20kvlang/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #821 | [mIRC Script](../examples/%23821%20mIRC%20Script/README.md) | Yes | Pending | Pending | 1/1 | The mIRC runtime is unavailable. |
+| #821 | [mIRC Script](../examples/%23821%20mIRC%20Script/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #822 | [mcfunction](../examples/%23822%20mcfunction/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #823 | [mdsvex](../examples/%23823%20mdsvex/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #824 | [mupad](../examples/%23824%20mupad/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
