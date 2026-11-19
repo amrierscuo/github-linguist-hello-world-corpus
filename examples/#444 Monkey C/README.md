@@ -1,5 +1,18 @@
 # #444 Monkey C
 
+## Verified on November 19, 2026
+
+The official compiler built the exact project against the recorded fenix7 profile. The official isolated simulator ran it and emitted the exact greeting.
+
+Run `monkeyc -f monkey.jungle -d fenix7 -g -o greeting.prg -y <ephemeral DER key>; monkeydo greeting.prg fenix7`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Monkey C`, tipo `programming`, language_id `231751931`.
 
 Launch a Garmin Connect IQ application and write greetings on the simulator console.
@@ -45,4 +58,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mc` | [GreetingApp.mc](source/GreetingApp.mc) created; verification pending |
+| `.mc` | [GreetingApp.mc](source/GreetingApp.mc) Syntax and behavior verified |
+
+</details>

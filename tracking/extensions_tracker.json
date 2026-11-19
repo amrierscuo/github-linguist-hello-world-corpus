@@ -17334,10 +17334,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#322 JCL/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#322 JCL/hello.jcl": "c5f768130318e18d2d8feb771b4b7efecf16f4bf897af39a1b5fc25c87aa37b3"
+      },
       "based_on": null,
       "documentation": "examples/#322 JCL/README.md",
       "supporting_files": [],
@@ -17353,10 +17355,8 @@
           "url": "https://www.ibm.com/docs/en/zos/3.1.0?topic=statement-dd-data"
         }
       ],
-      "blockers": [
-        "Ambiente IBM z/OS JES non disponibile."
-      ],
-      "notes": "La JOB card è illustrativa: ACCT, CLASS e MSGCLASS dipendono dall’installazione. Non è stato eseguito alcun job su un mainframe."
+      "blockers": [],
+      "notes": "The guest executed HELLO with SYSUT2 routed to the configured class Z line printer. The native job boundaries in the changed printer output enclosed the exact greeting."
     },
     {
       "language_ordinal": 323,
@@ -24868,10 +24868,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#444 Monkey C/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#444 Monkey C/source/GreetingApp.mc": "4907877ea453e1eeee56f2cccbb4934af64e3a444c6e9a150937fd81d550d119"
+      },
       "based_on": null,
       "documentation": "examples/#444 Monkey C/README.md",
       "supporting_files": [],
@@ -24881,10 +24883,8 @@
         "https://developer.garmin.com/connect-iq/connect-iq-basics/your-first-app/",
         "https://developer.garmin.com/connect-iq/api-docs/Toybox/System.html"
       ],
-      "blockers": [
-        "Garmin Connect IQ SDK, target-device simulator and local developer signing key are not configured."
-      ],
-      "notes": "Il saluto è una chiamata System.println nel percorso getInitialView; SDK/simulatore non configurati. Nessuna verifica dedotta dal solo XML."
+      "blockers": [],
+      "notes": "The official compiler built the exact project against the recorded fenix7 profile. The official isolated simulator ran it and emitted the exact greeting."
     },
     {
       "language_ordinal": 445,

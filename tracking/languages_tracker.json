@@ -18624,12 +18624,14 @@
       "example": {
         "semantic_goal": "Copiare una riga Hello, World! da dati in-stream allo spool SYSOUT con IEBGENER.",
         "validation_mode": "zos_job_and_spool_assertion",
-        "toolchain": "IBM z/OS JES e utility IEBGENER",
+        "toolchain": "Hercules Hyperion 4.9.1 and MVS 3.8J Turnkey 5",
         "files": [
-          "examples/#322 JCL/hello.jcl"
+          "examples/#322 JCL/hello.jcl",
+          "examples/#322 JCL/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#322 JCL/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Sottoporre hello.jcl a JES in una coda di prova e leggere SYSUT2.",
+        "run_or_check_command": "Boot the isolated Turnkey 5 guest using the recorded Hercules script, submit hello.jcl and read prt/prt00f.txt",
         "expected_result": "step COPY con RC 0; SYSUT2 contiene Hello, World!.",
         "sources": [
           {
@@ -18646,16 +18648,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Ambiente IBM z/OS JES non disponibile."
-        ],
-        "notes": "La JOB card è illustrativa: ACCT, CLASS e MSGCLASS dipendono dall’installazione. Non è stato eseguito alcun job su un mainframe."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T14:11:24.272346+00:00",
+        "verification_log": "examples/#322 JCL/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The guest executed HELLO with SYSUT2 routed to the configured class Z line printer. The native job boundaries in the changed printer output enclosed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#322 JCL/hello.jcl": "c5f768130318e18d2d8feb771b4b7efecf16f4bf897af39a1b5fc25c87aa37b3"
+        }
       }
     },
     {
@@ -25848,7 +25851,7 @@
       "example": {
         "semantic_goal": "Avviare una applicazione Garmin Connect IQ e scrivere il saluto sulla console del simulatore.",
         "validation_mode": "native_garmin_monkey_c_application",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Garmin Connect IQ 8.4.1 compiler and native fenix7 simulator",
         "files": [
           "examples/#444 Monkey C/manifest.xml",
           "examples/#444 Monkey C/monkey.jungle",
@@ -25857,10 +25860,11 @@
           "examples/#444 Monkey C/resources/icon.png",
           "examples/#444 Monkey C/resources/strings.xml",
           "examples/#444 Monkey C/source/GreetingApp.mc",
-          "examples/#444 Monkey C/verification/native.json"
+          "examples/#444 Monkey C/verification/native.json",
+          "examples/#444 Monkey C/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "monkeyc -f monkey.jungle -d fenix7 -y developer_key.der -o build/greeting.prg; connectiq; monkeydo build/greeting.prg fenix7",
+        "run_or_check_command": "monkeyc -f monkey.jungle -d fenix7 -g -o greeting.prg -y <ephemeral DER key>; monkeydo greeting.prg fenix7",
         "expected_result": "Hello, World!",
         "sources": [
           "https://developer.garmin.com/connect-iq/connect-iq-basics/your-first-app/",
@@ -25871,16 +25875,22 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:09:13.643194+00:00",
-        "verification_log": "examples/#444 Monkey C/verification/native.json",
-        "blockers": [
-          "Garmin Connect IQ SDK, target-device simulator and local developer signing key are not configured."
-        ],
-        "notes": "Il saluto è una chiamata System.println nel percorso getInitialView; SDK/simulatore non configurati. Nessuna verifica dedotta dal solo XML."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T14:17:19.770600+00:00",
+        "verification_log": "examples/#444 Monkey C/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The official compiler built the exact project against the recorded fenix7 profile. The official isolated simulator ran it and emitted the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#444 Monkey C/manifest.xml": "c9365758227243fc93679e98eff9c3b8eddf3006ea7236f05746d8289a73db89",
+          "examples/#444 Monkey C/monkey.jungle": "f3b7481625aa5612d799bace04e16b551870157881221686bf692735f5d7c4c3",
+          "examples/#444 Monkey C/resources/drawables.xml": "e14e27f07c46096d564c6eef4198e0ff370f603ef0bdbe246680e561cee82c66",
+          "examples/#444 Monkey C/resources/icon.png": "e78124e097cf9c040a09dd3b91c4321edf1494927249e54e948073cb296500dc",
+          "examples/#444 Monkey C/resources/strings.xml": "897e672948dc4afe8dd3792bac56c124d7dea7156e8d7b9f47bc1dcd4e6b6ff0",
+          "examples/#444 Monkey C/source/GreetingApp.mc": "4907877ea453e1eeee56f2cccbb4934af64e3a444c6e9a150937fd81d550d119"
+        }
       }
     },
     {

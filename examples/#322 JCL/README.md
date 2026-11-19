@@ -1,5 +1,18 @@
 # #322 JCL
 
+## Verified on November 19, 2026
+
+The guest executed HELLO with SYSUT2 routed to the configured class Z line printer. The native job boundaries in the changed printer output enclosed the exact greeting.
+
+Run `Boot the isolated Turnkey 5 guest using the recorded Hercules script, submit hello.jcl and read prt/prt00f.txt`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Copy a Hello, World! line from in-stream data to spool SYSOUT with IEBGENER.
 
 Canonical type `programming`, language_id `316620079`.
@@ -29,4 +42,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.jcl` | [hello.jcl](hello.jcl) created; verification pending |
+| `.jcl` | [hello.jcl](hello.jcl) Syntax and behavior verified |
+
+</details>

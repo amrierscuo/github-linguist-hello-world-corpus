@@ -4,5 +4,5 @@
 //SYSUT1 DD *
 Hello, World!
 /*
-//SYSUT2 DD SYSOUT=*
+//SYSUT2 DD SYSOUT=Z
 //SYSIN DD DUMMY

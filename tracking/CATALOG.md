@@ -325,7 +325,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #319 | [J](../examples/%23319%20J/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #320 | [JAR Manifest](../examples/%23320%20JAR%20Manifest/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #321 | [JASS](../examples/%23321%20JASS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #322 | [JCL](../examples/%23322%20JCL/README.md) | Yes | Pending | Pending | 1/1 | The IBM z/OS JES environment is unavailable. |
+| #322 | [JCL](../examples/%23322%20JCL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #323 | [JFlex](../examples/%23323%20JFlex/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #324 | [JSON](../examples/%23324%20JSON/README.md) | Yes | Yes | Yes | 22/22 | Evidence recorded |
 | #325 | [JSON with Comments](../examples/%23325%20JSON%20with%20Comments/README.md) | Yes | Yes | Yes | 19/19 | Evidence recorded |
@@ -447,7 +447,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #441 | [Module Management System](../examples/%23441%20Module%20Management%20System/README.md) | Yes | Pending | Pending | 2/2 | OpenVMS with MMS/MMK is not available. |
 | #442 | [Mojo](../examples/%23442%20Mojo/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #443 | [Monkey](../examples/%23443%20Monkey/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #444 | [Monkey C](../examples/%23444%20Monkey%20C/README.md) | Yes | Pending | Pending | 1/1 | Garmin Connect IQ SDK, target-device simulator and local developer signing key are not configured. |
+| #444 | [Monkey C](../examples/%23444%20Monkey%20C/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #445 | [Moocode](../examples/%23445%20Moocode/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #446 | [MoonBit](../examples/%23446%20MoonBit/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #447 | [MoonScript](../examples/%23447%20MoonScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

@@ -606,7 +606,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #317 | [Isabelle](../examples/%23317%20Isabelle/README.md) | `.thy` | [Hello.thy](../examples/%23317%20Isabelle/Hello.thy) | Yes | Yes | existing; Evidence recorded |
 | #319 | [J](../examples/%23319%20J/README.md) | `.ijs` | [hello.ijs](../examples/%23319%20J/hello.ijs), [version.ijs](../examples/%23319%20J/version.ijs) | Yes | Yes | existing; Evidence recorded |
 | #321 | [JASS](../examples/%23321%20JASS/README.md) | `.j` | [hello.j](../examples/%23321%20JASS/hello.j) | Yes | Yes | existing; Evidence recorded |
-| #322 | [JCL](../examples/%23322%20JCL/README.md) | `.jcl` | [hello.jcl](../examples/%23322%20JCL/hello.jcl) | Pending | Pending | existing; The IBM z/OS JES environment is unavailable. |
+| #322 | [JCL](../examples/%23322%20JCL/README.md) | `.jcl` | [hello.jcl](../examples/%23322%20JCL/hello.jcl) | Yes | Yes | existing; Evidence recorded |
 | #323 | [JFlex](../examples/%23323%20JFlex/README.md) | `.flex` | [hello.flex](../examples/%23323%20JFlex/variants/flex-1e75c1a3/hello.flex) | Pending | Pending | alias; This variant has not been checked again with the original parser, compiler or runtime; the main source's verification does not carry over. |
 | #323 | [JFlex](../examples/%23323%20JFlex/README.md) | `.jflex` | [hello.jflex](../examples/%23323%20JFlex/hello.jflex) | Yes | Yes | existing; Evidence recorded |
 | #324 | [JSON](../examples/%23324%20JSON/README.md) | `.json` | [hello.json](../examples/%23324%20JSON/hello.json) | Yes | Yes | existing; Evidence recorded |
@@ -868,7 +868,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #442 | [Mojo](../examples/%23442%20Mojo/README.md) | `.mojo` | [hello.mojo](../examples/%23442%20Mojo/hello.mojo) | Yes | Yes | existing; Evidence recorded |
 | #443 | [Monkey](../examples/%23443%20Monkey/README.md) | `.monkey` | [hello.monkey](../examples/%23443%20Monkey/hello.monkey) | Yes | Yes | existing; Evidence recorded |
 | #443 | [Monkey](../examples/%23443%20Monkey/README.md) | `.monkey2` | [hello.monkey2](../examples/%23443%20Monkey/variants/monkey2-f16dc421/hello.monkey2) | Pending | Pending | adapted; This variant has not been checked again with the original parser, compiler or runtime; the main source's verification does not carry over. |
-| #444 | [Monkey C](../examples/%23444%20Monkey%20C/README.md) | `.mc` | [GreetingApp.mc](../examples/%23444%20Monkey%20C/source/GreetingApp.mc) | Pending | Pending | existing; Garmin Connect IQ SDK, target-device simulator and local developer signing key are not configured. |
+| #444 | [Monkey C](../examples/%23444%20Monkey%20C/README.md) | `.mc` | [GreetingApp.mc](../examples/%23444%20Monkey%20C/source/GreetingApp.mc) | Yes | Yes | existing; Evidence recorded |
 | #445 | [Moocode](../examples/%23445%20Moocode/README.md) | `.moo` | [hello.moo](../examples/%23445%20Moocode/hello.moo) | Yes | Yes | existing; Evidence recorded |
 | #446 | [MoonBit](../examples/%23446%20MoonBit/README.md) | `.mbt` | [main.mbt](../examples/%23446%20MoonBit/cmd/main/main.mbt) | Yes | Yes | existing; Evidence recorded |
 | #447 | [MoonScript](../examples/%23447%20MoonScript/README.md) | `.moon` | [hello.moon](../examples/%23447%20MoonScript/hello.moon) | Yes | Yes | existing; Evidence recorded |

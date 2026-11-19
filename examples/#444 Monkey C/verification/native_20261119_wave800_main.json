@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "ordinal": 444,
+  "language": "Monkey C",
+  "timestamp_utc": "2026-11-19T14:17:19.770600+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Generate a disposable local simulator-build signing key",
+      "command": [
+        "openssl",
+        "genpkey",
+        "-algorithm",
+        "RSA",
+        "-pkeyopt",
+        "rsa_keygen_bits:4096",
+        "-out",
+        "test-sign.pem"
+      ],
+      "cwd": "${SCRATCH}/444-ugmqd0xd",
+      "timestamp_utc": "2026-11-19T14:17:26.484824+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".................+...+...............+.+..+....+.....+..........+...+......+..+.......+............+...+.....+...+..........+...+..+...+.+.........+............+..+......+....+...+..+......+......+.+..................+......+...+..+...+...+...+.+..............+.......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..+.......+.........+...+..+.........+.........+.............+..+.+...........+.+..+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..+...+........+....+...+..+.+...+...........+.+............+...+..+......+......+.........................+........+.............+.........+....................+...+.............+..+.......+.........+..+...+..........+......+...+..+.........+....+...............+..+..........+......+.........+...+..+...+......+..........+.....+.........+...............+..........+....................+.......+........+.......+..............+.+...+.................+..........+.....+......+...+...................+..+...+............+...+...+.........+.+.....+....+.........+..+...............+.......+.....+.+..+....+........+.............+...+......+......+...+..+.......+...........+.+.....+......+.......+...+...+.........+.....+......+.........+...............+..................+............+...+.........+.+...............+...+..+....+..............+....+...........+....+..+...............+...+..........+..+.+....................+.........+...+..........+..+...+......+.......+..+...+....+..............+.........+......+.......+..+.......+.....+.+..............+...+.+.........+..+...+......+....+...+.....+............+.+......+........+.+......+...+.....+............+.........+....+.......................+..........+...+......+......+..............+................+............+...+........+.......+..+.+..+....+.....+......+............+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n.....+..+.......+..+.+.....+....+........+..........+.....+.+.....+.+..............+.....................+...+......+.+...+...............+...+...+......+...........+...+.......+..+.+.........+...+..+.+...............+..+.........+.+..+...+.............+.........+........+....+.....+...+.+..+.......+.....+.+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.............+......+...+.....+......+.+.....+.........+.+.....+...+.+.....+....+...+.........+......+.....+.......+..+.+...+......+.........+..+....+......+..+.+..+.......+......+.....+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...+.........+......+..........+..............+......+.............+......+......+..............+............+...+.+...+..+.+..+................+.....+.+...+.....+......+......+....+..+.......+......+...............+..........................+.+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/444-ugmqd0xd/home",
+        "TMPDIR": "${SCRATCH}/444-ugmqd0xd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home"
+      }
+    },
+    {
+      "label": "Convert the disposable key to the SDK-required private DER format",
+      "command": [
+        "openssl",
+        "pkcs8",
+        "-topk8",
+        "-in",
+        "test-sign.pem",
+        "-outform",
+        "DER",
+        "-nocrypt",
+        "-out",
+        "test-sign.der"
+      ],
+      "cwd": "${SCRATCH}/444-ugmqd0xd",
+      "timestamp_utc": "2026-11-19T14:17:28.911014+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/444-ugmqd0xd/home",
+        "TMPDIR": "${SCRATCH}/444-ugmqd0xd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home"
+      }
+    },
+    {
+      "label": "Compile the exact Monkey C project and its resources for fenix7",
+      "command": [
+        "${SCRATCH}/cache/tools/garmin-connectiq-8.4.1-linux/dist/bin/monkeyc",
+        "-f",
+        "monkey.jungle",
+        "-d",
+        "fenix7",
+        "-g",
+        "-o",
+        "greeting.prg",
+        "-y",
+        "test-sign.der"
+      ],
+      "cwd": "${SCRATCH}/444-ugmqd0xd",
+      "timestamp_utc": "2026-11-19T14:17:28.928890+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "BUILD SUCCESSFUL\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home\nPERMISSIONS\nEND\nDATA\nstatics:\n  CLASSDEF\n    APPTYPE 127\n    MODULEID statics\n      globals 0 MODULE @globals;\n      globals/Rez 0 MODULE @globals/Rez;\n      globals/Rez/Drawables 0 MODULE @globals/Rez/Drawables;\n      globals/Rez/Strings 0 MODULE @globals/Rez/Strings;\n  END\nglobals:\n  CLASSDEF\n    APPTYPE 127\n    MODULEID globals\n      <init> 3 METHOD @<initReturnFunction>;\n      GreetingApp 5 CLASS @globals/GreetingApp;\n      GreetingView 5 CLASS @globals/GreetingView;\n      Rez 5 MODULE globals/Rez;\n      Toybox 0 NULL;\n  END\nglobals/Rez:\n  CLASSDEF\n    APPTYPE 127\n    MODULEID globals/Rez\n    PARENT globals\n      <init> 3 METHOD @globals/Rez/<init>;\n      Drawables 5 MODULE globals/Rez/Drawables;\n      Strings 5 MODULE globals/Rez/Strings;\n  END\nglobals/GreetingView:\n  CLASSDEF\n    APPTYPE 127\n    EXTENDS @Toybox_WatchUi_View\n    PARENT globals\n      View 7 CLASS @Toybox_WatchUi_View;\n      <init> 3 METHOD @globals/GreetingView/<init>;\n      initialize 1 METHOD @globals/GreetingView/initialize;\n  END\nglobals/GreetingApp:\n  CLASSDEF\n    APPTYPE 127\n    EXTENDS @Toybox_Application_AppBase\n    PARENT globals\n      AppBase 7 CLASS @Toybox_Application_AppBase;\n      <init> 3 METHOD @globals/GreetingApp/<init>;\n      getInitialView 1 METHOD @globals/GreetingApp/getInitialView;\n      initialize 1 METHOD @globals/GreetingApp/initialize;\n  END\nglobals/Rez/Drawables:\n  CLASSDEF\n    APPTYPE 127\n    MODULEID globals/Rez/Drawables\n    PARENT globals/Rez\n      <init> 3 METHOD @<initReturnFunction>;\n      LauncherIcon 0 NULL;\n  END\nglobals/Rez/Strings:\n  CLASSDEF\n    APPTYPE 127\n    MODULEID globals/Rez/Strings\n    PARENT globals/Rez\n      <init> 3 METHOD @<initReturnFunction>;\n      AppName 0 NULL;\n  END\nstrHello__World__1498789909:\n  STRING \"Hello, World!\" ;\nEND\n\nCODE\n<returnFunction>:\n    argc 1\n    return\n<returnFunction>_func_end:\n<initReturnFunction>:\n    return\n<initReturnFunction>_func_end:\nglobals/Rez/<init>:\n    getmv Toybox_Application initResources\n    frpush\n    getself\n    spush Rez\n    invokem 3\n    popv\n    return\nglobals/Rez/<init>_func_end:\nglobals/GreetingView/<init>:\n    getselfv View\n    getsv <init>\n    invokemz\n    return\nglobals/GreetingView/<init>_func_end:\nglobals/GreetingApp/<init>:\n    getselfv AppBase\n    getsv <init>\n    invokemz\n    return\nglobals/GreetingApp/<init>_func_end:\nglobals/GreetingView/initialize:\n    argc 1\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_14_26_14_47_start:\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_14_28:\n    getselfv View\n    getsv initialize\n    invokemz\n    popv\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_14_26_14_47_stop:\n    return\nglobals/GreetingView/initialize_func_end:\nglobals/GreetingApp/getInitialView:\n    argc 1\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_7_30_10_4_start:\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_8_8:\n    getmv Toybox_System println\n    frpush\n    news @strHello__World__1498789909\n    invokem 2\n    popv\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_9_8:\n    ipush1 1\n    newa\n    dup 0\n    ipushz\n    getselfv GreetingView\n    newc\n    dup 0\n    getsv initialize\n    dup 1\n    invokem 1\n    popv\n    aputv\n    return\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_7_30_10_4_stop:\nglobals/GreetingApp/getInitialView_func_end:\nglobals/GreetingApp/initialize:\n    argc 1\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_6_26_6_50_start:\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_6_28:\n    getselfv AppBase\n    getsv initialize\n    invokemz\n    popv\n_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_6_26_6_50_stop:\n    return\nglobals/GreetingApp/initialize_func_end:\nEND\n\nDEBUG\ndebugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_gen_006_B3906_00_source_Rez_mcgen_481102812:\n  STRING \"${SCRATCH}/444-ugmqd0xd/gen/006-B3906-00/source/Rez.mcgen\" ;\ndebugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013:\n  STRING \"${SCRATCH}/444-ugmqd0xd/source/GreetingApp.mc\" ;\ndebugstr_init__1818100338:\n  STRING \"<init>\" ;\ndebugstrgetInitialView_593169107:\n  STRING \"getInitialView\" ;\ndebugstrinitialize_871091088:\n  STRING \"initialize\" ;\nEND\nLINKTABLE\n    : Toybox_SensorLogging SensorLoggingStats\n    : Toybox_SensorLogging SensorLogger\n    : Toybox_UserProfile UserActivityHistoryIterator\n    : Toybox_UserProfile UserActivity\n    : Toybox_UserProfile Profile\n    : Toybox_Ant EncryptionInvalidSettingsException\n    : Toybox_Ant BurstPayloadIterator\n    : Toybox_Ant ChannelAssignment\n    : Toybox_Ant GenericChannel\n    : Toybox_Ant BurstListener\n    : Toybox_Ant DeviceConfig\n    : Toybox_Ant Message\n    : Toybox_Ant BurstPayload\n    : Toybox_Ant UnableToAcquireChannelException\n    : Toybox_Ant UnableToAcquireEncryptedChannelException\n    : Toybox_Ant CryptoConfig\n    : Toybox_Activity ProfileInfo\n    : Toybox_Activity WorkoutStepInfo\n    : Toybox_Activity Info\n    : Toybox_Activity WorkoutIntervalStep\n    : Toybox_Activity WorkoutStep\n    : Toybox_Time RealTimeClockNotValidException\n    : Toybox_Time Duration\n    : Toybox_Time LocalMoment\n    : Toybox_Time Moment\n    : Toybox_Math FirFilter\n    : Toybox_Math IirFilter\n    : Toybox_Math Filter\n    : Toybox_BluetoothLowEnergy BleDelegate\n    : Toybox_BluetoothLowEnergy UuidFormatException\n    : Toybox_BluetoothLowEnergy ProfileRegistrationException\n    : Toybox_BluetoothLowEnergy Iterator\n    : Toybox_BluetoothLowEnergy InvalidRequestException\n    : Toybox_BluetoothLowEnergy ScanResult\n    : Toybox_BluetoothLowEnergy Device\n    : Toybox_BluetoothLowEnergy Characteristic\n    : Toybox_BluetoothLowEnergy Service\n    : Toybox_BluetoothLowEnergy DevicePairException\n    : Toybox_BluetoothLowEnergy Uuid\n    : Toybox_BluetoothLowEnergy Descriptor\n    : Toybox_System UnexpectedAppTypeException\n    : Toybox_System ConnectionInfo\n    : Toybox_System CiqInstallInfo\n    : Toybox_System Intent\n    : Toybox_System ClockTime\n    : Toybox_System PreviousOperationNotCompleteException\n    : Toybox_System AppNotInstalledException\n    : Toybox_System AppInfo\n    : Toybox_System DeviceSettings\n    : Toybox_System Stats\n    : Toybox_System ServiceDelegate\n    : Toybox_Test AssertException\n    : Toybox_Test Test\n    : Toybox_Test Logger\n    : Toybox_ActivityPrompts ActivityPromptDelegate\n    : Toybox_ActivityPrompts ActivityPrompt\n    : Toybox_Cryptography KeyPair\n    : Toybox_Cryptography CipherBasedMessageAuthenticationCode\n    : Toybox_Cryptography InvalidBlockSizeException\n    : Toybox_Cryptography Hash\n    : Toybox_Cryptography HashBasedMessageAuthenticationCode\n    : Toybox_Cryptography Cipher\n    : Toybox_Cryptography KeyAgreement\n    : Toybox_Cryptography Key\n    : Toybox_StringUtil InvalidHexStringException\n    : Toybox_Background ExitDataSizeLimitException\n    : Toybox_Background MessageSizeLimitException\n    : Toybox_Background InvalidBackgroundTimeException\n    : Toybox_SensorHistory SensorSample\n    : Toybox_SensorHistory SensorHistoryIterator\n    : Toybox_Complications Complication\n    : Toybox_Complications Id\n    : Toybox_Complications Iterator\n    : Toybox_Complications ComplicationNotFoundException\n    : Toybox_Position Info\n    : Toybox_Position Location\n    : Toybox_Attention BacklightOnTooLongException\n    : Toybox_Attention VibeProfile\n    : Toybox_Attention ToneProfile\n    : Toybox_Communications SyncDelegate\n    : Toybox_Communications MailboxIterator\n    : Toybox_Communications Message\n    : Toybox_Communications ConnectionListener\n    : Toybox_Communications PhoneAppMessage\n    : Toybox_Communications OAuthMessage\n    : Toybox_Media SyncDelegate\n    : Toybox_Media CacheStatistics\n    : Toybox_Media PlaybackProfile\n    : Toybox_Media ContentRefIterator\n    : Toybox_Media AudioFormat\n    : Toybox_Media ContentMetadata\n    : Toybox_Media ContentDelegate\n    : Toybox_Media ProviderIconInfo\n    : Toybox_Media Content\n    : Toybox_Media SystemButton\n    : Toybox_Media AlbumArt\n    : Toybox_Media mediaEncoding\n    : Toybox_Media CustomButton\n    : Toybox_Media ContentIterator\n    : Toybox_Media ContentRef\n    : Toybox_Media ActiveContent\n    : Toybox_Media PlayerColors\n    : Toybox_Lang Dictionary\n    : Toybox_Lang InvalidOptionsException\n    : Toybox_Lang Symbol\n    : Toybox_Lang Rez\n    : Toybox_Lang String\n    : Toybox_Lang JsonData\n    : Toybox_Lang SymbolNotAllowedException\n    : Toybox_Lang InvalidValueException\n    : Toybox_Lang Number\n    : Toybox_Lang Char\n    : Toybox_Lang WeakReference\n    : Toybox_Lang ByteArray\n    : Toybox_Lang Boolean\n    : Toybox_Lang SerializationException\n    : Toybox_Lang test\n    : Toybox_Lang Fonts\n    : Toybox_Lang Method\n    : Toybox_Lang Double\n    : Toybox_Lang OperationNotAllowedException\n    : Toybox_Lang Strings\n    : Toybox_Lang Exception\n    : Toybox_Lang Array\n    : Toybox_Lang Drawables\n    : Toybox_Lang Float\n    : Toybox_Lang ResourceId\n    : Toybox_Lang ValueOutOfBoundsException\n    : Toybox_Lang Long\n    : Toybox_Lang StorageFullException\n    : Toybox_Lang BackgroundRez\n    : Toybox_Lang Object\n    : Toybox_Lang UnexpectedTypeException\n    : Toybox_Lang GlanceRez\n    : Toybox_PersistedContent Iterator\n    : Toybox_PersistedContent Waypoint\n    : Toybox_PersistedContent Course\n    : Toybox_PersistedContent Workout\n    : Toybox_PersistedContent Route\n    : Toybox_PersistedContent Track\n    : Toybox_Graphics BitmapReference\n    : Toybox_Graphics Dc\n    : Toybox_Graphics FontReference\n    : Toybox_Graphics VectorFont\n    : Toybox_Graphics AffineTransform\n    : Toybox_Graphics BufferedBitmap\n    : Toybox_Graphics InvalidBitmapResourceException\n    : Toybox_Graphics BoundingBox\n    : Toybox_Graphics OutOfGraphicsMemoryException\n    : Toybox_Graphics ResourceReference\n    : Toybox_Graphics InvalidPaletteException\n    : Toybox_Graphics BufferedBitmapReference\n    : Toybox_Graphics BitmapTexture\n    : Toybox_Weather HourlyForecast\n    : Toybox_Weather CurrentConditions\n    : Toybox_Weather DailyForecast\n    : Toybox_ActivityMonitor HeartRateIterator\n    : Toybox_ActivityMonitor ActiveMinutes\n    : Toybox_ActivityMonitor HeartRateSample\n    : Toybox_ActivityMonitor Info\n    : Toybox_ActivityMonitor History\n    : Toybox_AntPlus ResistanceSettings\n    : Toybox_AntPlus ShiftingListener\n    : Toybox_AntPlus ManufacturerInfo\n    : Toybox_AntPlus SimulationSettings\n    : Toybox_AntPlus TorqueEffectivenessPedalSmoothness\n    : Toybox_AntPlus BikeCadenceInfo\n    : Toybox_AntPlus PedalPowerBalance\n    : Toybox_AntPlus BikeSpeedInfo\n    : Toybox_AntPlus AntPlusNotAllowedException\n    : Toybox_AntPlus CommonData\n    : Toybox_AntPlus CalculatedPower\n    : Toybox_AntPlus FitnessEquipmentListener\n    : Toybox_AntPlus FitnessEquipmentData\n    : Toybox_AntPlus SensorPosition\n    : Toybox_AntPlus FitnessEquipmentMode\n    : Toybox_AntPlus LightNetwork\n    : Toybox_AntPlus ShiftingStatus\n    : Toybox_AntPlus ProductInfo\n    : Toybox_AntPlus BikeLight\n    : Toybox_AntPlus BikeSpeedCadenceInfo\n    : Toybox_AntPlus DeviceState\n    : Toybox_AntPlus BatteryStatus\n    : Toybox_AntPlus RunningDynamicsData\n    : Toybox_AntPlus DeviceListener\n    : Toybox_AntPlus BikeRadarListener\n    : Toybox_AntPlus CalculatedCadence\n    : Toybox_AntPlus BikeSpeedListener\n    : Toybox_AntPlus CalculatedWheelDistance\n    : Toybox_AntPlus RadarTarget\n    : Toybox_AntPlus CalculatedWheelSpeed\n    : Toybox_AntPlus BikeSpeed\n    : Toybox_AntPlus Device\n    : Toybox_AntPlus UserSettings\n    : Toybox_AntPlus BikePower\n    : Toybox_AntPlus BikeCadence\n    : Toybox_AntPlus FitnessEquipment\n    : Toybox_AntPlus BikeSpeedCadenceListener\n    : Toybox_AntPlus LightNetworkListener\n    : Toybox_AntPlus TargetPowerSettings\n    : Toybox_AntPlus BikeRadar\n    : Toybox_AntPlus Shifting\n    : Toybox_AntPlus RunningDynamics\n    : Toybox_AntPlus RunningDynamicsListener\n    : Toybox_AntPlus BikeSpeedCadence\n    : Toybox_AntPlus BikeCadenceListener\n    : Toybox_AntPlus DerailleurStatus\n    : Toybox_AntPlus BikePowerListener\n    : Toybox_ActivityRecording Session\n    : Toybox_Timer Timer\n    : Toybox_Authentication Message\n    : Toybox_Authentication OAuthMessage\n    : Toybox_WatchUi ActionMenuDelegate\n    : Toybox_WatchUi MapMarker\n    : Toybox_WatchUi ClickEvent\n    : Toybox_WatchUi ViewLoop\n    : Toybox_WatchUi AnimationDelegate\n    : Toybox_WatchUi Button\n    : Toybox_WatchUi ComplicationDrawableRef\n    : Toybox_WatchUi CustomMenu\n    : Toybox_WatchUi CheckboxMenuItem\n    : Toybox_WatchUi MapView\n    : Toybox_WatchUi InputEvent\n    : Toybox_WatchUi WatchFace\n    : Toybox_WatchUi InvalidPointException\n    : Toybox_WatchUi PickerFactory\n    : Toybox_WatchUi Drawable\n    : Toybox_WatchUi GlanceViewDelegate\n    : Toybox_WatchUi PickerDelegate\n    : Toybox_WatchUi DataField\n    : Toybox_WatchUi ToggleMenuItem\n    : Toybox_WatchUi TextPicker\n    : Toybox_WatchUi InputDelegate\n    : Toybox_WatchUi FontResource\n    : Toybox_WatchUi Selectable\n    : Toybox_WatchUi Menu\n    : Toybox_WatchUi ProgressBar\n    : Toybox_WatchUi WatchFacePowerInfo\n    : Toybox_WatchUi InvalidSelectableStateException\n    : Toybox_WatchUi AnimationResource\n    : Toybox_WatchUi BitmapResource\n    : Toybox_WatchUi ViewLoopDelegate\n    : Toybox_WatchUi Text\n    : Toybox_WatchUi Layer\n    : Toybox_WatchUi MenuInputDelegate\n    : Toybox_WatchUi ReviewResponseToken\n    : Toybox_WatchUi InvalidMenuItemTypeException\n    : Toybox_WatchUi TextArea\n    : Toybox_WatchUi ConfirmationDelegate\n    : Toybox_WatchUi BehaviorDelegate\n    : Toybox_WatchUi TransparentProgressBar\n    : Toybox_WatchUi SelectableEvent\n    : Toybox_WatchUi FlickEvent\n    : Toybox_WatchUi MapTrackView\n    : Toybox_WatchUi CheckboxMenu\n    : Toybox_WatchUi NumberPicker\n    : Toybox_WatchUi SwipeEvent\n    : Toybox_WatchUi Menu2InputDelegate\n    : Toybox_WatchUi Confirmation\n    : Toybox_WatchUi AnimationLayer\n    : Toybox_WatchUi GlanceView\n    : Toybox_WatchUi ViewLoopFactory\n    : Toybox_WatchUi SimpleDataField\n    : Toybox_WatchUi TextPickerDelegate\n    : Toybox_WatchUi KeyEvent\n    : Toybox_WatchUi DragEvent\n    : Toybox_WatchUi Bitmap\n    : Toybox_WatchUi DataFieldAlert\n    : Toybox_WatchUi Picker\n    : Toybox_WatchUi ActionMenuItem\n    : Toybox_WatchUi MenuItem\n    : Toybox_WatchUi WatchFaceDelegate\n    : Toybox_WatchUi CustomMenuItem\n    : Toybox_WatchUi View\n    : Toybox_WatchUi NumberPickerDelegate\n    : Toybox_WatchUi IconMenuItem\n    : Toybox_WatchUi ActionMenu\n    : Toybox_WatchUi MapPolyline\n    : Toybox_WatchUi Menu2\n    : Toybox_FitContributor Field\n    : Toybox_Application AudioContentProviderApp\n    : Toybox_Application ObjectStoreAccessException\n    : Toybox_Application AppBase\n    : Toybox_Notifications NotificationMessage\n    : Toybox_Sensor AccelerometerData\n    : Toybox_Sensor SensorDelegate\n    : Toybox_Sensor GyroscopeData\n    : Toybox_Sensor MagnetometerData\n    : Toybox_Sensor SensorData\n    : Toybox_Sensor Info\n    : Toybox_Sensor SensorInfoIterator\n    : Toybox_Sensor SensorInfo\n    : Toybox_Sensor TooManySensorDataListenersException\n    : Toybox_Sensor HeartRateData\n    : Toybox_Time_Gregorian Info\n    : Toybox_Application_WatchFaceConfig Color\n    : Toybox_Application_WatchFaceConfig ComplicationRef\n    : Toybox_Application_WatchFaceConfig Id\n    : Toybox_Application_WatchFaceConfig Settings\n    : Toybox_Application_Properties InvalidKeyException\nEND\nLINENUM\n    @globals/Rez/<init> @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_gen_006_B3906_00_source_Rez_mcgen_481102812 @debugstr_init__1818100338 7\n    @globals/GreetingView/<init> @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstr_init__1818100338 13\n    @globals/GreetingApp/<init> @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstr_init__1818100338 5\n    @globals/GreetingView/initialize @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrinitialize_871091088 14\n    @_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_14_28 @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrinitialize_871091088 14\n    @globals/GreetingApp/getInitialView @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrgetInitialView_593169107 7\n    @_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_9_8 @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrgetInitialView_593169107 9\n    @_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_8_8 @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrgetInitialView_593169107 8\n    @globals/GreetingApp/initialize @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrinitialize_871091088 6\n    @_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_6_28 @debugstr_var_tmp_codex_linguist_800_20261119_1000_444_ugmqd0xd_source_GreetingApp_mc_57939013 @debugstrinitialize_871091088 6\nEND\nRESOURCES\n  SYMBOLTABLE\n    Drawables @resource_cmp_bitmaps_jump_table\n    Strings @resource_cmp_strings_jump_table\n  END\nresource_cmp_bitmaps_jump_table:\n  SYMBOLTABLE\n    LauncherIcon @resource_cmp_LauncherIcon\n  END\nresource_cmp_strings_jump_table:\n  SYMBOLTABLE\n    <valyrian> @resource_cmp_valyrian\n  END\nresource_cmp_LauncherIcon:\nBYTES 0\n0x0C 0x11 0xEE 0x5E 0x00 0x00 0x07 0x8D 0x00 0x28 0x00 0x28 0xFF 0xFF 0x20 0x20 \n0x00 0x30 0x08 0x00 0x00 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 \n0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 \n0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC4 0xC1 0xD4 0xC5 0xC0 0xD5 0xC4 0xC1 \n0xD4 0xC5 0xC0 0xD5 0xC4 0xC1 0xD4 0xC5 0xC0 0xD5 0xC4 0xC1 0xD4 0xC5 0xC0 0xD5 \n0xC4 0xC1 0xD4 0xC5 0xC0 0xD5 0xC4 0xC1 0xD4 0xC5 0xC0 0xD5 0xC4 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD1 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC5 \n0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC1 \n0xD5 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC5 0xC1 0xD5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD0 0xC5 0xC0 0xD5 0xC4 0xC1 0xC4 0xD1 \n0xC4 0xD1 0xC4 0xC1 0xD4 0xC5 0xC0 0xC5 0xD0 0xC5 0xD0 0xC5 0xC0 0xD5 0xC4 0xC1 \n0xC4 0xD1 0xC4 0xD1 0xC4 0xC1 0xD4 0xC5 0xC0 0xC5 0xD0 0xC5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 \n0xC5 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xC5 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 \n0xD5 0xC1 0xC5 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC4 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC1 0xC4 0xD5 0xC1 0xC4 0xD5 0xC1 0xD4 \n0xC1 0xD5 0xC0 0xD5 0xC5 0xC0 0xD5 0xC1 0xD4 0xC1 0xD5 0xC0 0xD5 0xC5 0xC0 0xD5 \n0xC1 0xD4 0xC1 0xD5 0xC0 0xD5 0xC5 0xC0 0xD5 0xC1 0xC4 0xD1 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD4 0xC1 0xD5 0xC0 0xD5 0xC1 0xC4 0xC1 \n0xD5 0xC0 0xC5 0xD1 0xC4 0xD1 0xC5 0xC4 0xC1 0xD5 0xC0 0xC5 0xD1 0xC4 0xD1 0xC5 \n0xC4 0xC1 0xD5 0xC0 0xC5 0xD1 0xC4 0xD1 0xC5 0xD4 0xC1 0xC5 0xD1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC1 0xD4 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 0xC5 \n0xD1 0xC5 0xD5 0xC1 0xC5 0xC5 0xD1 0xC5 0xD1 0xC5 0xD5 0xC1 0xC5 0xD1 0xC5 0xC1 \n0xD5 0xC1 0xD5 0xC5 0xD1 0xC5 0xC1 0xC5 0xD1 0xC5 0xD5 0xC0 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC0 0xD5 0xC0 0xC5 0xD4 0xC1 0xD4 0xC1 \n0xC4 0xD1 0xC4 0xC1 0xD4 0xC1 0xD4 0xC1 0xC4 0xD1 0xC4 0xD5 0xC0 0xC5 0xD4 0xC1 \n0xD4 0xC5 0xC0 0xD5 0xC4 0xC1 0xD4 0xC5 0xC0 0xC5 0xC1 0xD5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xD5 \n0xC1 0xC5 0xD1 0xC5 0xD1 0xC5 0xC1 0xD5 0xC5 0xC1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 \n0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC0 0xD5 0xC0 0xD5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD0 0xC5 0xD5 0xC0 0xD5 0xC4 0xC1 0xC4 \n0xD1 0xC4 0xC5 0xD0 0xC5 0xD4 0xC1 0xC4 0xD1 0xC4 0xD1 0xC4 0xD1 0xC4 0xD1 0xC4 \n0xC1 0xC4 0xD1 0xC4 0xC1 0xD4 0xC1 0xC4 0xD5 0xC1 0xC5 0xD5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD5 0xC1 0xC4 0xD1 0xC5 0xC1 0xD5 0xC1 \n0xC5 0xD1 0xC5 0xC5 0xC1 0xC5 0xD1 0xC5 0xD5 0xC1 0xD5 0xC5 0xC1 0xD5 0xC5 0xC1 \n0xD5 0xC5 0xC1 0xD5 0xC5 0xC1 0xD5 0xC1 0xC5 0xD0 0xC5 0xC1 0xD4 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC1 0xD5 0xC1 0xC4 0xD1 0xC5 0xC1 0xD5 0xC0 0xD5 0xC5 \n0xD0 0xC5 0xD1 0xC4 0xD1 0xC5 0xD4 0xC1 0xC5 0xD0 0xC5 0xD1 0xC4 0xC1 0xD5 0xC4 \n0xD1 0xC5 0xD0 0xC5 0xD1 0xC4 0xC5 0xD1 0xC4 0xD5 0xC1 0xD5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC1 0xC5 0xD0 0xC5 0xC5 0xD1 0xC4 0xC1 \n0xD5 0xC1 0xC4 0xD1 0xC5 0xD0 0xC5 0xD1 0xC4 0xC1 0xC5 0xC4 0xD1 0xC5 0xC0 0xD5 \n0xC1 0xC4 0xD5 0xC1 0xC4 0xD1 0xC5 0xD1 0xC5 0xC1 0xD4 0xC1 0xC4 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD4 0xC1 0xD5 0xC1 0xD4 0xC1 0xD5 0xC5 \n0xC0 0xD5 0xC5 0xC1 0xD5 0xC1 0xC5 0xC1 0xD5 0xC5 0xD1 0xC5 0xD1 0xC5 0xD1 0xC5 \n0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD0 0xC5 0xD0 0xC5 0xC5 0xD1 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD1 0xC5 0xC4 0xD1 0xC5 0xC5 0xC0 0xD5 \n0xC1 0xC5 0xD0 0xC5 0xC4 0xD1 0xC4 0xD5 0xC0 0xD5 0xC0 0xC5 0xD4 0xC1 0xC4 0xC5 \n0xC0 0xD5 0xC0 0xC5 0xD4 0xC1 0xC5 0xC5 0xC1 0xD5 0xC0 0xC5 0xD1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC4 0xD1 0xC5 0xC1 0xD4 0xC1 0xD5 0xC1 \n0xD4 0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 0xC1 0xD5 0xC1 0xC5 0xD1 0xC5 0xD1 \n0xC5 0xD1 0xC5 0xD1 0xC5 0xD5 0xC0 0xD5 0xC0 0xD5 0xC5 0xD1 0xC4 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC1 0xC4 0xD1 0xC5 0xC1 0xD4 0xC1 0xC5 0xD1 0xC5 0xC5 \n0xC1 0xD5 0xC4 0xD1 0xC5 0xD4 0xC1 0xD4 0xC1 0xD4 0xC1 0xD4 0xC1 0xC4 0xD1 0xC4 \n0xD5 0xC0 0xC5 0xC4 0xD1 0xC5 0xD1 0xC5 0xC5 0xD1 0xC4 0xC1 0xD5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD0 0xC5 0xD1 0xC5 0xD5 0xC0 0xD5 0xC0 \n0xD5 0xC1 0xC5 0xD1 0xC4 0xC1 0xC5 0xD1 0xC5 0xC5 0xD1 0xC5 0xD5 0xC1 0xC5 0xD1 \n0xC5 0xC5 0xD1 0xC5 0xC1 0xC4 0xC1 0xD4 0xC1 0xC5 0xD1 0xC5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD5 0xC1 0xC5 0xD0 0xC5 0xC1 0xC5 0xD5 \n0xC0 0xD5 0xC0 0xC5 0xD1 0xC5 0xD1 0xC4 0xD1 0xC5 0xC4 0xC1 0xC5 0xD4 0xC1 0xC5 \n0xD0 0xC5 0xD1 0xC4 0xD1 0xD5 0xC5 0xC1 0xD5 0xC0 0xC5 0xD4 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC0 0xD5 0xC5 0xC1 0xD5 0xC4 0xD1 0xC5 \n0xC1 0xC5 0xD5 0xC1 0xC4 0xD5 0xC1 0xC5 0xC4 0xD1 0xC5 0xD1 0xC4 0xD1 0xC5 0xD0 \n0xC5 0xC1 0xC4 0xD1 0xC5 0xC0 0xD5 0xC0 0xD5 0xC5 0xD1 0xC5 0xD5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC5 0xC1 0xD4 0xC1 0xC5 0xD1 0xC4 0xD1 \n0xC4 0xD1 0xC5 0xD0 0xC5 0xC1 0xD4 0xC1 0xD5 0xC1 0xD4 0xC1 0xC5 0xD1 0xC5 0xC5 \n0xD1 0xC5 0xD5 0xC1 0xC5 0xD5 0xC1 0xC5 0xC1 0xD4 0xC1 0xC4 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD1 0xC5 0xC1 0xD4 0xC1 0xD5 0xC0 0xD5 0xC1 0xC5 0xC5 \n0xD1 0xC5 0xC0 0xD5 0xC1 0xD5 0xC5 0xC1 0xD4 0xC1 0xC5 0xD5 0xC0 0xC5 0xD0 0xC5 \n0xC0 0xD5 0xC0 0xD5 0xC0 0xC5 0xD0 0xC5 0xD1 0xC5 0xD1 0xC5 0xD1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD1 0xC5 0xC1 0xD5 0xC4 0xC1 0xD4 0xC1 \n0xC4 0xD5 0xC1 0xC5 0xD4 0xC1 0xD4 0xC1 0xC5 0xD5 0xC0 0xC5 0xD1 0xC5 0xC5 0xD1 \n0xC5 0xC1 0xD5 0xC5 0xD1 0xC5 0xC5 0xD1 0xC4 0xC5 0xC0 0xD5 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC4 0xD1 0xC4 0xC1 0xD5 0xC1 0xD5 0xC5 \n0xD1 0xC5 0xD0 0xC5 0xC1 0xC5 0xC1 0xD5 0xC0 0xC5 0xD1 0xC5 0xD5 0xC0 0xD5 0xC0 \n0xD5 0xC4 0xC1 0xC4 0xC1 0xD4 0xC1 0xC5 0xD1 0xC5 0xD1 0xC5 0xC0 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC1 0xC5 0xD5 0xC1 0xC4 0xD5 0xC1 0xC4 \n0xC1 0xD5 0xC1 0xD5 0xC4 0xD1 0xC5 0xD5 0xC1 0xD5 0xC4 0xC1 0xD5 0xC1 0xC5 0xD1 \n0xC5 0xD1 0xC5 0xD1 0xC5 0xD1 0xC5 0xD0 0xC5 0xD0 0xC5 0xD1 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD4 0xC1 0xD5 0xC0 0xD5 0xC1 0xD5 0xC1 \n0xD4 0xC1 0xC4 0xC1 0xD5 0xC1 0xD4 0xC1 0xC4 0xC1 0xD5 0xC1 0xC4 0xD1 0xC4 0xC5 \n0xC1 0xD4 0xC1 0xD5 0xC4 0xC1 0xD5 0xC5 0xC1 0xC5 0xC4 0xC1 0xD5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC1 0xD4 0xC1 0xD5 0xC1 0xC4 0xD1 0xC5 0xC0 0xC5 0xD1 \n0xC5 0xD5 0xC1 0xD5 0xC0 0xC5 0xC1 0xD5 0xC1 0xD5 0xC0 0xD5 0xC1 0xC5 0xD1 0xC5 \n0xD0 0xC5 0xC5 0xC0 0xD5 0xC1 0xC4 0xD1 0xC4 0xD1 0xD5 0xC5 0xC0 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC0 0xD5 0xC1 0xC5 0xD5 0xC1 0xD4 0xC5 \n0xC0 0xC5 0xD1 0xC4 0xD5 0xC1 0xD4 0xC5 0xD0 0xC5 0xC5 0xC1 0xD4 0xC5 0xD0 0xC5 \n0xC5 0xD1 0xC5 0xD1 0xC5 0xD5 0xC1 0xC5 0xD1 0xC5 0xC0 0xD5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC5 0xC1 0xD5 0xC0 0xC5 0xD5 0xC1 0xD5 \n0xC1 0xD5 0xC4 0xC1 0xC5 0xD1 0xC5 0xC1 0xC5 0xD1 0xC4 0xD1 0xC5 0xC1 0xD5 0xC1 \n0xD4 0xC1 0xD4 0xC1 0xC4 0xC1 0xD4 0xC1 0xC4 0xD5 0xC1 0xC5 0xD5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD0 0xC5 0xD5 0xC1 0xD4 0xC1 0xC4 0xC1 \n0xD4 0xC1 0xD5 0xC1 0xD5 0xC4 0xD1 0xC5 0xD0 0xC5 0xD1 0xC5 0xD0 0xC5 0xC1 0xD5 \n0xC1 0xC5 0xC1 0xD5 0xC1 0xD5 0xC1 0xD5 0xC1 0xC5 0xD0 0xC5 0xC0 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD5 0xC1 0xC4 0xD1 0xC5 0xC1 0xD5 0xC5 \n0xC1 0xD5 0xC0 0xC5 0xC1 0xD5 0xC0 0xC5 0xC5 0xD1 0xC4 0xC5 0xC1 0xD5 0xC4 0xC1 \n0xD4 0xC5 0xD0 0xC5 0xD4 0xC1 0xC4 0xD5 0xC1 0xD4 0xC5 0xD1 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC1 0xD5 0xC1 0xC4 0xD1 0xC5 0xC1 0xD4 0xC5 0xD1 0xC4 \n0xD1 0xC5 0xC5 0xD1 0xC4 0xC1 0xD5 0xC1 0xD4 0xC5 0xC1 0xD5 0xC4 0xD1 0xC5 0xD1 \n0xC5 0xC1 0xD5 0xC1 0xC5 0xD5 0xC1 0xC5 0xD0 0xC5 0xC1 0xC5 0xD0 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xC0 0xD5 0xC1 0xC5 0xD0 0xC5 0xC1 0xD5 0xC0 0xC5 \n0xC1 0xD4 0xC1 0xD5 0xC1 0xD5 0xC4 0xD1 0xC5 0xD1 0xC4 0xD1 0xC5 0xC1 0xD4 0xC5 \n0xD0 0xC5 0xC1 0xD4 0xC1 0xC5 0xD0 0xC5 0xC5 0xD1 0xC4 0xD1 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD4 0xC1 0xD5 0xC5 0xD0 0xC5 0xD1 0xC5 \n0xD5 0xC1 0xC4 0xD5 0xC0 0xC5 0xC1 0xC5 0xC0 0xC5 0xD1 0xC5 0xC1 0xD5 0xC1 0xC5 \n0xC1 0xD5 0xC4 0xC1 0xD5 0xC0 0xC5 0xD1 0xC5 0xD1 0xC5 0xC5 0xD1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD1 0xC5 0xC0 0xD5 0xC1 0xC5 0xC4 0xD1 \n0xC4 0xD1 0xC5 0xC1 0xD5 0xC1 0xD4 0xD1 0xC5 0xD5 0xC1 0xD4 0xC5 0xC0 0xD5 0xC0 \n0xD5 0xC1 0xD5 0xC1 0xC5 0xD5 0xC1 0xD4 0xC1 0xC4 0xD1 0xC4 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD1 0xC5 0xC4 0xD1 0xC5 0xC1 0xD4 0xC1 0xD5 0xC1 \n0xC5 0xC1 0xD4 0xC1 0xD4 0xC5 0xC1 0xC5 0xD0 0xC5 0xC1 0xC5 0xD1 0xC5 0xC1 0xD5 \n0xC5 0xC0 0xC5 0xD4 0xC1 0xD4 0xC1 0xC5 0xD5 0xC1 0xC5 0xD1 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC1 0xC4 0xD1 0xC5 0xC1 0xD4 0xC5 0xC1 0xD5 0xC1 0xD4 \n0xC5 0xD1 0xC5 0xC5 0xC1 0xD5 0xC0 0xD5 0xC5 0xD1 0xC4 0xD1 0xC4 0xD5 0xC0 0xC5 \n0xD1 0xC5 0xD1 0xC5 0xC1 0xC5 0xD5 0xC0 0xC5 0xD0 0xC5 0xD0 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xD5 0xC1 0xC5 0xD0 0xC5 0xD1 0xC5 0xD5 0xC0 0xC5 0xC1 \n0xD5 0xC0 0xD5 0xC0 0xD5 0xC1 0xD5 0xC1 0xC4 0xD1 0xC5 0xC5 0xD1 0xC5 0xD1 0xC4 \n0xC5 0xD0 0xC5 0xD0 0xC5 0xD0 0xC5 0xD1 0xC5 0xC5 0xD1 0xC5 0xC1 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 0xC5 0xD0 0xC5 0xD5 0xC1 0xC5 0xD0 0xC5 0xC1 0xD5 0xC4 \n0xC1 0xD5 0xC1 0xC5 0xD1 0xC4 0xC5 0xD1 0xC5 0xC5 0xD0 0xC5 0xC0 0xC5 0xC5 0xD1 \n0xC5 0xC1 0xD5 0xC5 0xC1 0xD5 0xC1 0xC4 0xD1 0xC5 0xC0 0xD5 0xC5 0x00 0x00 0x00 \n0x00 0x00 0x00 0x00 0x00 ;\nresource_cmp_valyrian:\n  SYMBOLTABLE\n    AppName @valyrian_AppName\n  END\nvalyrian_AppName:\n\tSTRING \"Corpus Greeting\";\nEND\nEXCEPTIONS\nEND\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/444-ugmqd0xd/home",
+        "TMPDIR": "${SCRATCH}/444-ugmqd0xd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home"
+      }
+    },
+    {
+      "label": "Resolve the genuine simulator shared libraries",
+      "command": [
+        "ldd",
+        "${SCRATCH}/cache/tools/garmin-connectiq-8.4.1-linux/dist/bin/simulator"
+      ],
+      "cwd": "${SCRATCH}/444-ugmqd0xd",
+      "timestamp_utc": "2026-11-19T14:17:36.489904+00:00",
+      "timeout_seconds": 22,
+      "exit_code": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007ffce09ce000)\n\tlibudev.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libudev.so.1 (0x000070014d7ee000)\n\tlibrt.so.1 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/librt.so.1 (0x000070014d7e9000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000070014d7c5000)\n\tlibsecret-1.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libsecret-1.so.0 (0x000070014bba1000)\n\tlibusb-1.0.so.0 => /lib/x86_64-linux-gnu/libusb-1.0.so.0 (0x000070014d7a5000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000070014b800000)\n\tlibexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x000070014bb73000)\n\tlibpthread.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libpthread.so.0 (0x000070014bb6e000)\n\tlibgthread-2.0.so.0 => /lib/x86_64-linux-gnu/libgthread-2.0.so.0 (0x000070014bb69000)\n\tlibXext.so.6 => /lib/x86_64-linux-gnu/libXext.so.6 (0x000070014bb55000)\n\tlibX11.so.6 => /lib/x86_64-linux-gnu/libX11.so.6 (0x000070014b6c2000)\n\tlibxkbcommon.so.0 => /lib/x86_64-linux-gnu/libxkbcommon.so.0 (0x000070014bb0c000)\n\tlibXxf86vm.so.1 => /lib/x86_64-linux-gnu/libXxf86vm.so.1 (0x000070014bb05000)\n\tlibSM.so.6 => /lib/x86_64-linux-gnu/libSM.so.6 (0x000070014bafb000)\n\tlibatk-1.0.so.0 => /lib/x86_64-linux-gnu/libatk-1.0.so.0 (0x000070014bad1000)\n\tlibgio-2.0.so.0 => /lib/x86_64-linux-gnu/libgio-2.0.so.0 (0x000070014b4f2000)\n\tlibglib-2.0.so.0 => /lib/x86_64-linux-gnu/libglib-2.0.so.0 (0x000070014b3a9000)\n\tlibgdk-3.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgdk-3.so.0 (0x000070014b2ae000)\n\tlibgtk-3.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgtk-3.so.0 (0x000070014aa00000)\n\tlibfreetype.so.6 => /lib/x86_64-linux-gnu/libfreetype.so.6 (0x000070014b1e2000)\n\tlibpng16.so.16 => /lib/x86_64-linux-gnu/libpng16.so.16 (0x000070014ba97000)\n\tlibdl.so.2 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libdl.so.2 (0x000070014ba90000)\n\tlibcairo.so.2 => /lib/x86_64-linux-gnu/libcairo.so.2 (0x000070014a8bc000)\n\tlibpangocairo-1.0.so.0 => /lib/x86_64-linux-gnu/libpangocairo-1.0.so.0 (0x000070014ba7f000)\n\tlibgdk_pixbuf-2.0.so.0 => /lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0 (0x000070014a88e000)\n\tlibpango-1.0.so.0 => /lib/x86_64-linux-gnu/libpango-1.0.so.0 (0x000070014a823000)\n\tlibgobject-2.0.so.0 => /lib/x86_64-linux-gnu/libgobject-2.0.so.0 (0x000070014a7c0000)\n\tlibwebkit2gtk-4.0.so.37 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37 (0x0000700144e00000)\n\tlibsoup-2.4.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libsoup-2.4.so.1 (0x000070014a722000)\n\tlibjavascriptcoregtk-4.0.so.18 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.0.so.18 (0x0000700142e00000)\n\tlibjpeg.so.8 => /lib/x86_64-linux-gnu/libjpeg.so.8 (0x000070014a69f000)\n\tlibpangoft2-1.0.so.0 => /lib/x86_64-linux-gnu/libpangoft2-1.0.so.0 (0x000070014a684000)\n\tlibfontconfig.so.1 => /lib/x86_64-linux-gnu/libfontconfig.so.1 (0x000070014a633000)\n\tlibm.so.6 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libm.so.6 (0x0000700144d17000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000070014a605000)\n\tlibc.so.6 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000700142a00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000070014d823000)\n\tlibcap.so.2 => /lib/x86_64-linux-gnu/libcap.so.2 (0x000070014b1d1000)\n\tlibgcrypt.so.20 => /lib/x86_64-linux-gnu/libgcrypt.so.20 (0x0000700142cb7000)\n\tlibxcb.so.1 => /lib/x86_64-linux-gnu/libxcb.so.1 (0x0000700142c8e000)\n\tlibICE.so.6 => /lib/x86_64-linux-gnu/libICE.so.6 (0x0000700144cfb000)\n\tlibuuid.so.1 => /lib/x86_64-linux-gnu/libuuid.so.1 (0x0000700142c84000)\n\tlibgmodule-2.0.so.0 => /lib/x86_64-linux-gnu/libgmodule-2.0.so.0 (0x0000700142c7d000)\n\tlibmount.so.1 => /lib/x86_64-linux-gnu/libmount.so.1 (0x0000700142c30000)\n\tlibselinux.so.1 => /lib/x86_64-linux-gnu/libselinux.so.1 (0x00007001429d3000)\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x0000700142939000)\n\tlibfribidi.so.0 => /lib/x86_64-linux-gnu/libfribidi.so.0 (0x000070014291b000)\n\tlibcairo-gobject.so.2 => /lib/x86_64-linux-gnu/libcairo-gobject.so.2 (0x0000700142c24000)\n\tlibepoxy.so.0 => /lib/x86_64-linux-gnu/libepoxy.so.0 (0x00007001427f8000)\n\tlibwayland-client.so.0 => /lib/x86_64-linux-gnu/libwayland-client.so.0 (0x0000700142c14000)\n\tlibwayland-cursor.so.0 => /lib/x86_64-linux-gnu/libwayland-cursor.so.0 (0x00007001427ee000)\n\tlibwayland-egl.so.1 => /lib/x86_64-linux-gnu/libwayland-egl.so.1 (0x00007001427e9000)\n\tlibXi.so.6 => /lib/x86_64-linux-gnu/libXi.so.6 (0x00007001427d6000)\n\tlibXcursor.so.1 => /lib/x86_64-linux-gnu/libXcursor.so.1 (0x00007001427ca000)\n\tlibXdamage.so.1 => /lib/x86_64-linux-gnu/libXdamage.so.1 (0x00007001427c5000)\n\tlibXfixes.so.3 => /lib/x86_64-linux-gnu/libXfixes.so.3 (0x00007001427bd000)\n\tlibXcomposite.so.1 => /lib/x86_64-linux-gnu/libXcomposite.so.1 (0x00007001427b8000)\n\tlibXrandr.so.2 => /lib/x86_64-linux-gnu/libXrandr.so.2 (0x00007001427ab000)\n\tlibXinerama.so.1 => /lib/x86_64-linux-gnu/libXinerama.so.1 (0x00007001427a6000)\n\tlibharfbuzz.so.0 => /lib/x86_64-linux-gnu/libharfbuzz.so.0 (0x0000700142697000)\n\tlibatk-bridge-2.0.so.0 => /lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0 (0x000070014265b000)\n\tlibbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x0000700142647000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x0000700142639000)\n\tlibXrender.so.1 => /lib/x86_64-linux-gnu/libXrender.so.1 (0x000070014262d000)\n\tlibxcb-render.so.0 => /lib/x86_64-linux-gnu/libxcb-render.so.0 (0x000070014261c000)\n\tlibxcb-shm.so.0 => /lib/x86_64-linux-gnu/libxcb-shm.so.0 (0x0000700142617000)\n\tlibpixman-1.so.0 => /lib/x86_64-linux-gnu/libpixman-1.so.0 (0x0000700142568000)\n\tlibthai.so.0 => /lib/x86_64-linux-gnu/libthai.so.0 (0x000070014255d000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x0000700142551000)\n\tlibatomic.so.1 => /lib/x86_64-linux-gnu/libatomic.so.1 (0x0000700142544000)\n\tlibwebpmux.so.3 => /lib/x86_64-linux-gnu/libwebpmux.so.3 (0x0000700142536000)\n\tlibicudata.so.72 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libicudata.so.72 (0x0000700140600000)\n\tlibicui18n.so.72 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libicui18n.so.72 (0x0000700140200000)\n\tlibsystemd.so.0 => /lib/x86_64-linux-gnu/libsystemd.so.0 (0x0000700142456000)\n\tlibjpeg.so.62 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libjpeg.so.62 (0x0000700140569000)\n\tlibicuuc.so.72 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libicuuc.so.72 (0x0000700140002000)\n\tlibxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x000070013fe20000)\n\tlibsqlite3.so.0 => /lib/x86_64-linux-gnu/libsqlite3.so.0 (0x000070013fcb8000)\n\tlibxslt.so.1 => /lib/x86_64-linux-gnu/libxslt.so.1 (0x0000700142413000)\n\tliblcms2.so.2 => /lib/x86_64-linux-gnu/liblcms2.so.2 (0x000070013fc56000)\n\tlibwoff2dec.so.1.0.2 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libwoff2dec.so.1.0.2 (0x0000700142405000)\n\tlibgpg-error.so.0 => /lib/x86_64-linux-gnu/libgpg-error.so.0 (0x00007001423e0000)\n\tlibgstallocators-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstallocators-1.0.so.0 (0x00007001423d6000)\n\tlibgstapp-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstapp-1.0.so.0 (0x0000700140553000)\n\tlibgstbase-1.0.so.0 => /lib/x86_64-linux-gnu/libgstbase-1.0.so.0 (0x000070013fbd1000)\n\tlibgstreamer-1.0.so.0 => /lib/x86_64-linux-gnu/libgstreamer-1.0.so.0 (0x000070013fa7e000)\n\tlibgstpbutils-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so.0 (0x000070013fa3b000)\n\tlibgstaudio-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so.0 (0x000070013f9b6000)\n\tlibgsttag-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgsttag-1.0.so.0 (0x000070013f975000)\n\tlibgstvideo-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so.0 (0x000070013f8a0000)\n\tlibgstgl-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstgl-1.0.so.0 (0x000070013f80d000)\n\tlibgstfft-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgstfft-1.0.so.0 (0x0000700140548000)\n\tlibflite.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite.so.1 (0x000070013f7cf000)\n\tlibflite_usenglish.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_usenglish.so.1 (0x000070013f7a3000)\n\tlibflite_cmu_grapheme_lang.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_grapheme_lang.so.1 (0x000070014053d000)\n\tlibflite_cmu_grapheme_lex.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_grapheme_lex.so.1 (0x000070013f400000)\n\tlibflite_cmu_indic_lang.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_indic_lang.so.1 (0x000070013f77b000)\n\tlibflite_cmu_indic_lex.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_indic_lex.so.1 (0x0000700140530000)\n\tlibflite_cmulex.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmulex.so.1 (0x000070013f6e4000)\n\tlibflite_cmu_time_awb.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_time_awb.so.1 (0x000070013ee00000)\n\tlibflite_cmu_us_awb.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_us_awb.so.1 (0x000070013ea00000)\n\tlibflite_cmu_us_kal16.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_us_kal16.so.1 (0x000070013e600000)\n\tlibflite_cmu_us_kal.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_us_kal.so.1 (0x000070013e49b000)\n\tlibflite_cmu_us_rms.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_us_rms.so.1 (0x000070013e000000)\n\tlibflite_cmu_us_slt.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libflite_cmu_us_slt.so.1 (0x000070013dc00000)\n\tlibwebpdemux.so.2 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libwebpdemux.so.2 (0x000070013f6dd000)\n\tlibwebp.so.7 => /lib/x86_64-linux-gnu/libwebp.so.7 (0x000070013f662000)\n\tlibavif.so.15 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libavif.so.15 (0x000070013f63a000)\n\tlibharfbuzz-icu.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libharfbuzz-icu.so.0 (0x000070013f635000)\n\tlibenchant-2.so.2 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libenchant-2.so.2 (0x000070013f628000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x000070013f3ea000)\n\tlibhyphen.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libhyphen.so.0 (0x000070013f3e2000)\n\tlibwayland-server.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libwayland-server.so.0 (0x000070013f3cc000)\n\tlibmanette-0.2.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libmanette-0.2.so.0 (0x000070013f39c000)\n\tlibseccomp.so.2 => /lib/x86_64-linux-gnu/libseccomp.so.2 (0x000070013f37c000)\n\tlibgbm.so.1 => /lib/x86_64-linux-gnu/libgbm.so.1 (0x000070013f375000)\n\tlibdrm.so.2 => /lib/x86_64-linux-gnu/libdrm.so.2 (0x000070013f35e000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x000070013f34a000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x000070013f2f6000)\n\tlibXau.so.6 => /lib/x86_64-linux-gnu/libXau.so.6 (0x000070013f2f0000)\n\tlibXdmcp.so.6 => /lib/x86_64-linux-gnu/libXdmcp.so.6 (0x000070013f2e8000)\n\tlibbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x000070013f2d2000)\n\tlibblkid.so.1 => /lib/x86_64-linux-gnu/libblkid.so.1 (0x000070013dbc5000)\n\tlibgraphite2.so.3 => /lib/x86_64-linux-gnu/libgraphite2.so.3 (0x000070013e9da000)\n\tlibatspi.so.0 => /lib/x86_64-linux-gnu/libatspi.so.0 (0x000070013db8b000)\n\tlibdbus-1.so.3 => /lib/x86_64-linux-gnu/libdbus-1.so.3 (0x000070013db3c000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x000070013db19000)\n\tlibdatrie.so.1 => /lib/x86_64-linux-gnu/libdatrie.so.1 (0x000070013f2c7000)\n\tliblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x000070013daf7000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x000070013dac5000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000070013da0b000)\n\tlibicuuc.so.74 => /lib/x86_64-linux-gnu/libicuuc.so.74 (0x000070013d600000)\n\tlibwoff2common.so.1.0.2 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libwoff2common.so.1.0.2 (0x000070013f2c0000)\n\tlibunwind.so.8 => /lib/x86_64-linux-gnu/libunwind.so.8 (0x000070013d9f0000)\n\tlibdw.so.1 => /lib/x86_64-linux-gnu/libdw.so.1 (0x000070013d93c000)\n\tliborc-0.4.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/liborc-0.4.so.0 (0x000070013d88a000)\n\tlibGL.so.1 => /lib/x86_64-linux-gnu/libGL.so.1 (0x000070013d579000)\n\tlibEGL.so.1 => /lib/x86_64-linux-gnu/libEGL.so.1 (0x000070013d878000)\n\tlibX11-xcb.so.1 => /lib/x86_64-linux-gnu/libX11-xcb.so.1 (0x000070013f2b7000)\n\tlibgudev-1.0.so.0 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libgudev-1.0.so.0 (0x000070013d86b000)\n\tlibasound.so.2 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libasound.so.2 (0x000070013d46f000)\n\tlibsharpyuv.so.0 => /lib/x86_64-linux-gnu/libsharpyuv.so.0 (0x000070013edf8000)\n\tlibdav1d.so.6 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libdav1d.so.6 (0x000070013d29e000)\n\tlibgav1.so.1 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libgav1.so.1 (0x000070013d1b5000)\n\tlibrav1e.so.0 => /lib/x86_64-linux-gnu/librav1e.so.0 (0x000070013ce00000)\n\tlibSvtAv1Enc.so.1 => /lib/x86_64-linux-gnu/libSvtAv1Enc.so.1 (0x000070013c400000)\n\tlibaom.so.3 => /lib/x86_64-linux-gnu/libaom.so.3 (0x000070013be00000)\n\tlibyuv.so.0 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libyuv.so.0 (0x000070013cd5b000)\n\tlibevdev.so.2 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libevdev.so.2 (0x000070013d84d000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x000070013bc53000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x000070013d82b000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x000070013cc92000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x000070013d189000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x000070013dff8000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x000070013d81e000)\n\tlibmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x000070013d80f000)\n\tlibicudata.so.74 => /lib/x86_64-linux-gnu/libicudata.so.74 (0x0000700139e00000)\n\tlibelf.so.1 => /lib/x86_64-linux-gnu/libelf.so.1 (0x000070013d16a000)\n\tlibGLdispatch.so.0 => /lib/x86_64-linux-gnu/libGLdispatch.so.0 (0x000070013bb9b000)\n\tlibGLX.so.0 => /lib/x86_64-linux-gnu/libGLX.so.0 (0x000070013d137000)\n\tlibabsl_synchronization.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20220623 (0x000070013d125000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x000070013cc8b000)\n\tlibresolv.so.2 => ${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/libresolv.so.2 (0x000070013cc79000)\n\tlibabsl_graphcycles_internal.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20220623 (0x000070013cc71000)\n\tlibabsl_stacktrace.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20220623 (0x000070013cc6c000)\n\tlibabsl_symbolize.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20220623 (0x000070013cc64000)\n\tlibabsl_time.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_time.so.20220623 (0x000070013cc50000)\n\tlibabsl_malloc_internal.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20220623 (0x000070013cc4a000)\n\tlibabsl_base.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_base.so.20220623 (0x000070013cc44000)\n\tlibabsl_spinlock_wait.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20220623 (0x000070013cc3f000)\n\tlibabsl_raw_logging_internal.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20220623 (0x000070013cc3a000)\n\tlibabsl_debugging_internal.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20220623 (0x000070013cc31000)\n\tlibabsl_demangle_internal.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20220623 (0x000070013cc27000)\n\tlibabsl_strings.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20220623 (0x000070013c3e2000)\n\tlibabsl_time_zone.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20220623 (0x000070013c3c8000)\n\tlibabsl_int128.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_int128.so.20220623 (0x000070013c3c1000)\n\tlibabsl_strings_internal.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20220623 (0x000070013c3bb000)\n\tlibabsl_throw_delegate.so.20220623 => ${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20220623 (0x000070013c3b4000)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/444-ugmqd0xd/home",
+        "TMPDIR": "${SCRATCH}/444-ugmqd0xd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home"
+      }
+    },
+    {
+      "label": "Execute the compiled sample in the genuine Garmin simulator on an isolated virtual display",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--bind",
+        "${SCRATCH}/444-ugmqd0xd",
+        "${SCRATCH}/444-ugmqd0xd",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--unshare-net",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--cap-add",
+        "CAP_NET_ADMIN",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--chdir",
+        "${SCRATCH}/444-ugmqd0xd",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "sh",
+        "isolated-simulator.sh",
+        "${SCRATCH}/cache/tools/garmin-connectiq-8.4.1-linux/dist/bin/simulator",
+        "${SCRATCH}/cache/tools/garmin-connectiq-8.4.1-linux/dist/bin/monkeydo",
+        "${SCRATCH}/444-ugmqd0xd/greeting.prg",
+        "fenix7"
+      ],
+      "cwd": "${SCRATCH}/444-ugmqd0xd",
+      "timestamp_utc": "2026-11-19T14:17:36.531806+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 124,
+      "stdout": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/444-ugmqd0xd/home",
+        "TMPDIR": "${SCRATCH}/444-ugmqd0xd/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/garmin-gtk40/root/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/444-ugmqd0xd/home"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#444 Monkey C/manifest.xml": "c9365758227243fc93679e98eff9c3b8eddf3006ea7236f05746d8289a73db89",
+    "examples/#444 Monkey C/monkey.jungle": "f3b7481625aa5612d799bace04e16b551870157881221686bf692735f5d7c4c3",
+    "examples/#444 Monkey C/resources/drawables.xml": "e14e27f07c46096d564c6eef4198e0ff370f603ef0bdbe246680e561cee82c66",
+    "examples/#444 Monkey C/resources/icon.png": "e78124e097cf9c040a09dd3b91c4321edf1494927249e54e948073cb296500dc",
+    "examples/#444 Monkey C/resources/strings.xml": "897e672948dc4afe8dd3792bac56c124d7dea7156e8d7b9f47bc1dcd4e6b6ff0",
+    "examples/#444 Monkey C/source/GreetingApp.mc": "4907877ea453e1eeee56f2cccbb4934af64e3a444c6e9a150937fd81d550d119"
+  },
+  "fixture_sha256": {
+    "isolated-simulator.sh": {
+      "sha256": "530d30f95a912e6b5b9c4510dfb6807300bae70b7bf565a883a77b03c9e7d5b9",
+      "content_utf8": "#!/bin/sh\nset -eu\npython3 -I -c 'import socket,fcntl,struct; s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM); q=struct.pack(\"16sH22x\",b\"lo\",0); r=fcntl.ioctl(s.fileno(),0x8913,q); fcntl.ioctl(s.fileno(),0x8914,struct.pack(\"16sH22x\",b\"lo\",struct.unpack_from(\"H\",r,16)[0]|1))'\nsimulator=$1\nlauncher=$2\nresult=$3\nprofile=$4\n\"$simulator\" > simulator.log 2>&1 &\npid=$!\ntrap 'kill \"$pid\" 2>/dev/null || true; tail -60 simulator.log' EXIT\nsleep 5\n\"$launcher\" \"$result\" \"$profile\"\n"
+    }
+  },
+  "sources": [
+    "https://developer.garmin.com/connect-iq/connect-iq-basics/your-first-app/",
+    "https://developer.garmin.com/connect-iq/api-docs/Toybox/System.html"
+  ],
+  "previous_verification_log": "examples/#444 Monkey C/verification/native.json",
+  "ubuntu_archives": [
+    {
+      "name": "xvfb",
+      "version": "2:21.1.12-1ubuntu1.9",
+      "filename": "pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb",
+      "sha256": "2011271eabcc2eb460e99995c5ef26e46633e87d04f570e305b62f178f7b452c",
+      "bytes": 877038,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/x/xorg-server/xvfb_21.1.12-1ubuntu1.9_amd64.deb"
+    },
+    {
+      "name": "xauth",
+      "version": "1:1.1.2-1build1",
+      "filename": "pool/main/x/xauth/xauth_1.1.2-1build1_amd64.deb",
+      "sha256": "037e70571f39384e28c4ad0db07b44de11f0911ee6c02445560979b417012650",
+      "bytes": 25594,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/x/xauth/xauth_1.1.2-1build1_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "simulator_legacy_libraries": [
+    {
+      "archive": "libabsl20220623_20220623.1-1+deb12u2_amd64.deb",
+      "sha256": "3fb1a98ff3a1b7b27cd3b2544e033af3bc3419d82f33bbe3f3d5faa07b400eb5"
+    },
+    {
+      "archive": "libavif15_0.11.1-1+deb12u1_amd64.deb",
+      "sha256": "c79d57f0f62d67d2353765592fb4f519119392befa53d27a34c9d0348cd580a3"
+    },
+    {
+      "archive": "libdav1d6_1.0.0-2+deb12u1_amd64.deb",
+      "sha256": "197f08108242177aeae4c04aac11825c39b7d18598191ab769f910687ccb387f"
+    },
+    {
+      "archive": "libflite1_2.2-7_amd64.deb",
+      "sha256": "5945190970be7d4a1f71fb6f7e3e340ba2675e770605df0754051d617a6c5ee6"
+    },
+    {
+      "archive": "libgav1-1_0.18.0-1+b1_amd64.deb",
+      "sha256": "4cf64c4e1168f3c7e858bb4a71f2c5bea9a36dd448cdcc2154a551ac146e293b"
+    },
+    {
+      "archive": "libicu72_72.1-3+deb12u1_amd64.deb",
+      "sha256": "f7f6f99c6d7b025914df2447fc93e11d22c44c0c8bdd8b6f36691c9e7ddcef88"
+    },
+    {
+      "archive": "libjavascriptcoregtk-4.0-18_2.50.6-1~deb12u2_amd64.deb",
+      "sha256": "1d48ed4e910f0bb01847d26eac6de8735256d301f68ab7024a555346ecb2739a"
+    },
+    {
+      "archive": "libjpeg62-turbo_2.1.5-4_amd64.deb",
+      "sha256": "5504299ad0e3c0a9ca9f962a68a650a040db52f9f416a109e74df48d55601d3f"
+    },
+    {
+      "archive": "libsoup2.4-1_2.74.3-1+deb12u1_amd64.deb",
+      "sha256": "d3eac276ef1db0230cba32b68f510eb694d25fd35b7c970c965d8fcc3398d319"
+    },
+    {
+      "archive": "libwebkit2gtk-4.0-37_2.50.6-1~deb12u2_amd64.deb",
+      "sha256": "00e5ebcc4dfe8cff350f7fdc8724855bf2a8b983fa3eba44a110bcb57e5cb82d"
+    },
+    {
+      "archive": "libwoff1_1.0.2-3+b1_amd64.deb",
+      "sha256": "729e4f26caf0456c811401a385060029657badde8069bbc19fa865e0e16a8d6f"
+    },
+    {
+      "archive": "libyuv0_0.0~git20230123.b2528b0-1_amd64.deb",
+      "sha256": "48225793c486310600459d08a417dca0c28cbaf184047c09c82aff19107aa6f2"
+    }
+  ],
+  "sdk_sha256": "62f38d08636617c8e8af05db6705a71fc03c051561cecfd045434cbeb6c1ef2a",
+  "toolchain_archives": [
+    {
+      "url": "https://media.githubusercontent.com/media/blackshadev/garmin-connectiq-tools/main/devices.tar.gz",
+      "sha256": "55db0539c246c34d3076618874c4b53ec7353395f0ff459bb09c29c6b549f72a",
+      "expected_sha256": null
+    }
+  ],
+  "device_profile_files": [
+    "fenix7/system_icon_dark__hint_button_left_bottom.svg",
+    "fenix7/system_icon_dark__about.svg",
+    "fenix7/map_toggle_option_2.png",
+    "fenix7/system_icon_light__hint_button_left_top.svg",
+    "fenix7/system_icon_destructive__hint_button_left_middle.svg",
+    "fenix7/map_toggle_option_1.png",
+    "fenix7/system_icon_positive__hint_button_right_bottom.svg",
+    "fenix7/confirmation_icon__hint_completion.svg",
+    "fenix7/system_icon_destructive__discard.svg",
+    "fenix7/menu2_check_on.png",
+    "fenix7/map_toggle_option_3.png",
+    "fenix7/system_icon_dark__search.svg",
+    "fenix7/system_icon_destructive__warning.svg",
+    "fenix7/system_icon_positive__hint_button_left_middle.svg",
+    "fenix7/system_icon_dark__warning.svg",
+    "fenix7/system_icon_light__revert.svg",
+    "fenix7/dtoggle_off.png",
+    "fenix7/system_icon_destructive__hint_button_right_bottom.svg",
+    "fenix7/fenix7.api.debug.xml",
+    "fenix7/system_icon_dark__revert.svg",
+    "fenix7/system_icon_destructive__hint_button_right_top.svg",
+    "fenix7/map_zoom_in.png",
+    "fenix7/system_icon_positive__check.svg",
+    "fenix7/system_icon_positive__hint_button_left_top.svg",
+    "fenix7/confirmation_icon__hint_reject.svg",
+    "fenix7/compiler.json",
+    "fenix7/system_icon_light__warning.svg",
+    "fenix7/personality.mss",
+    "fenix7/system_icon_destructive__hint_button_left_bottom.svg",
+    "fenix7/system_icon_light__cancel.svg",
+    "fenix7/fenix7.png",
+    "fenix7/system_icon_light__discard.svg",
+    "fenix7/system_icon_light__hint_button_right_top.svg",
+    "fenix7/system_icon_light__about.svg",
+    "fenix7/system_icon_dark__save.svg",
+    "fenix7/system_icon_light__check.svg",
+    "fenix7/system_icon_light__question.svg",
+    "fenix7/simulator.json",
+    "fenix7/confirmation_icon__hint_keep.svg",
+    "fenix7/system_icon_dark__question.svg"
+  ],
+  "compiled_sha256": "d4158ea12d85873db7f2ee3adf2d24b40ed4e5f1e777790a88967fb26574a1e4",
+  "toolchain": "Garmin Connect IQ 8.4.1 compiler and native fenix7 simulator",
+  "reproduction_command": "monkeyc -f monkey.jungle -d fenix7 -g -o greeting.prg -y <ephemeral DER key>; monkeydo greeting.prg fenix7",
+  "semantic_scope": "The official compiler built the exact project against the recorded fenix7 profile. The official isolated simulator ran it and emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
