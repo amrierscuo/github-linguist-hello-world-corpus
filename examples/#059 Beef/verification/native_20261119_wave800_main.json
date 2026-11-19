@@ -1,0 +1,70 @@
+{
+  "ordinal": 59,
+  "language": "Beef",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain_archives": [
+    {
+      "archive_sha256": "fcce6aa255d5872f668afe40b21b8633ca972ccf34edf9421896d8beda612cc4",
+      "source": "https://github.com/beefytech/Beef/releases/download/0.43.5/BeefSetup_0_43_5.exe"
+    }
+  ],
+  "timestamp_utc": "2026-11-19T13:04:17.174077+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "commands": [
+    {
+      "label": "Identify available BeefBuild switches",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\beef-sdk\\bin\\BeefBuild.exe",
+        "-help"
+      ],
+      "cwd": "<isolated build folder>",
+      "exit_code": 0,
+      "stdout": "BeefBuild [args]\n  If no arguments are specified, a build will occur using current working directory as the workspace.\n    -config=<config>        Sets the config (defaults to Debug)\n    -generate               Generates startup code for an empty project\n    -new                    Creates a new workspace and project\n    -platform=<platform>    Sets the platform (defaults to system platform)\n    -run                    Compile and run the startup project in the workspace\n    -test                   Run tests in the workspace\n    -verbosity=<verbosity>  Set verbosity level to: quiet/minimal/normal/detailed/diagnostic\n    -version                Get version\n    -workspace=<path>       Sets workspace path (defaults to current working directory)\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:04:17.455333+00:00"
+    },
+    {
+      "label": "Compile and link the original Beef greeting",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\beef-sdk\\bin\\BeefBuild.exe",
+        "-workspace=<workspace>\\work\\native_target800_20261119\\beef-cli-stage",
+        "-config=Release",
+        "-platform=Win64"
+      ],
+      "cwd": "<isolated build folder>",
+      "exit_code": 0,
+      "stdout": "[                              ]\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b******************************\nBeef compilation time: 0.52s\nFrontend time: 0.41s\nComptime execution time: 0.07s\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:04:18.867954+00:00"
+    },
+    {
+      "label": "Execute the generated console program",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\beef-cli-stage\\build\\Release_Win64\\HelloWorld\\HelloWorld.exe"
+      ],
+      "cwd": "<isolated build folder>",
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "timestamp_utc": "2026-11-19T13:04:18.976637+00:00"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#059 Beef/src/Program.bf": "dbcba35c09754120f004790e4c1919b7e6ef36379bd50a3522c05f360829c9a9"
+  },
+  "fixture_sha256": {
+    "BeefProj.toml": {
+      "sha256": "703b95b9950da1e3e166ed5a61950e84dc626a40f5c2276e3a85146df1f0ab72",
+      "content_utf8": "FileVersion = 1\n\n[Project]\nName = \"HelloWorld\"\nStartupObject = \"CorpusGreeting.Program\"\n"
+    },
+    "BeefSpace.toml": {
+      "sha256": "c8ea27ec2aed06d235d56046094f76f37e4282cfb036a4cd0ee48a5ca946a17f",
+      "content_utf8": "FileVersion = 1\nProjects = {HelloWorld = {Path = \".\"}, corlib = {Path = \"../beef-sdk/BeefLibs/corlib\"}}\n\n[Workspace]\nStartupProject = \"HelloWorld\"\n"
+    }
+  },
+  "toolchain": "BeefyTech BeefBuild 0.43.5 x64 native console toolchain",
+  "reproduction_command": "BeefBuild -workspace=<isolated project> -config=Release -platform=Win64 && run the generated console program",
+  "semantic_scope": "The official CLI built the original Beef source in a minimal console workspace. The native executable printed the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

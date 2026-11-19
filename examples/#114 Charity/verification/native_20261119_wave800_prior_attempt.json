@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "ordinal": 114,
+  "language": "Charity",
+  "timestamp_utc": "2026-11-19T13:08:16.952057+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Inspect the archived executable ABI",
+      "command": [
+        "file",
+        "${SCRATCH}/114-2uy4jctg/charity-bin/charity/charity"
+      ],
+      "cwd": "${SCRATCH}/114-2uy4jctg",
+      "timestamp_utc": "2026-11-19T13:08:17.063018+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "${SCRATCH}/114-2uy4jctg/charity-bin/charity/charity: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.0.0, not stripped\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/114-2uy4jctg/home",
+        "TMPDIR": "${SCRATCH}/114-2uy4jctg/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#114 Charity/hello.ch": "afc0c9648931f9f0236800e52c2e4b4bd08ab73c2702a84b54cee8ada7ecf348"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/github-linguist/linguist/blob/main/samples/Charity/example.ch",
+    "https://cspages.ucalgary.ca/~robin/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/mietek/charity-lang/tar.gz/master",
+      "ref": "master",
+      "sha256": "36cb857b01c4a0f8fd2f6f90359e7fb9502f9f5f80f39ce852f3d7f6657520c9"
+    }
+  ],
+  "original_binary_archive_sha256": "952cc7759326c50d6477c34411ffe8021c177dc057ecc64e91eaa2f1feaeb998",
+  "ubuntu_archives": [
+    {
+      "name": "libc6-i386",
+      "version": "2.39-0ubuntu8.12",
+      "filename": "pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb",
+      "sha256": "f3357fcee4a907404f5231381834cf31647326496d5bb4259338a717b3544c89",
+      "bytes": 2786812,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb"
+    }
+  ],
+  "blocker": "UnboundLocalError: cannot access local variable 'p' where it is not associated with a value",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/older800.py\", line 30, in charity\n    print('charity-help',p.returncode,p.stdout[:1000],p.stderr[:600],flush=True)\n                         ^\nUnboundLocalError: cannot access local variable 'p' where it is not associated with a value\n"
+}

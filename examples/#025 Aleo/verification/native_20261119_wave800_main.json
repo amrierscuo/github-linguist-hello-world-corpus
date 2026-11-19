@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "ordinal": 25,
+  "language": "Aleo",
+  "timestamp_utc": "2026-11-19T13:13:38.272995+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the pinned Rust compiler version",
+      "command": [
+        "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin/rustc",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/025-ajf_jj2a",
+      "timestamp_utc": "2026-11-19T13:13:38.299540+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "rustc 1.96.0 (ac68faa20 2026-05-25)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/025-ajf_jj2a/home",
+        "TMPDIR": "${SCRATCH}/025-ajf_jj2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "CARGO_HOME": "${SCRATCH}/cache/tools/rust-cargo",
+        "CARGO_TARGET_DIR": "${SCRATCH}/cache/tools/snarkvm-cargo-targets",
+        "CARGO_BUILD_JOBS": "3",
+        "RUST_BACKTRACE": "0",
+        "CARGO_TERM_COLOR": "never"
+      }
+    },
+    {
+      "label": "Build a probe against the exact release of the genuine snarkVM evaluator",
+      "command": [
+        "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin/cargo",
+        "build"
+      ],
+      "cwd": "${SCRATCH}/025-ajf_jj2a",
+      "timestamp_utc": "2026-11-19T13:13:38.325802+00:00",
+      "timeout_seconds": 1000,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "    Updating crates.io index\n     Locking 302 packages to latest Rust 1.96.0 compatible versions\n      Adding generic-array v0.14.7 (available: v0.14.9)\n   Compiling corpus_greeting v0.1.0 (${SCRATCH}/025-ajf_jj2a)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 31.97s\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/025-ajf_jj2a/home",
+        "TMPDIR": "${SCRATCH}/025-ajf_jj2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "CARGO_HOME": "${SCRATCH}/cache/tools/rust-cargo",
+        "CARGO_TARGET_DIR": "${SCRATCH}/cache/tools/snarkvm-cargo-targets",
+        "CARGO_BUILD_JOBS": "3",
+        "RUST_BACKTRACE": "0",
+        "CARGO_TERM_COLOR": "never"
+      }
+    },
+    {
+      "label": "Evaluate the original program in the network-disconnected native snarkVM",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--bind",
+        "${SCRATCH}/025-ajf_jj2a",
+        "${SCRATCH}/025-ajf_jj2a",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--unshare-net",
+        "--unshare-user",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--chdir",
+        "${SCRATCH}/025-ajf_jj2a",
+        "--",
+        "${SCRATCH}/cache/tools/snarkvm-cargo-targets/debug/corpus_greeting"
+      ],
+      "cwd": "${SCRATCH}/025-ajf_jj2a",
+      "timestamp_utc": "2026-11-19T13:14:09.352449+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "Output: [\n  72u8,\n  101u8,\n  108u8,\n  108u8,\n  111u8,\n  44u8,\n  32u8,\n  87u8,\n  111u8,\n  114u8,\n  108u8,\n  100u8,\n  33u8\n]\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/025-ajf_jj2a/home",
+        "TMPDIR": "${SCRATCH}/025-ajf_jj2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "CARGO_HOME": "${SCRATCH}/cache/tools/rust-cargo",
+        "CARGO_TARGET_DIR": "${SCRATCH}/cache/tools/snarkvm-cargo-targets",
+        "CARGO_BUILD_JOBS": "3",
+        "RUST_BACKTRACE": "0",
+        "CARGO_TERM_COLOR": "never"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#025 Aleo/hello.aleo": "602ef3ccd2c3dafb542941d3d08621d54c44a3f786eeb4e14ea3e229abc56963"
+  },
+  "fixture_sha256": {
+    "Cargo.toml": {
+      "sha256": "54786ec1f35296ca822844d9209bbbf47a619420a0cdd65e51503d63b4cfeffb",
+      "content_utf8": "[package]\nname = \"corpus_greeting\"\nversion = \"0.1.0\"\nedition = \"2024\"\n\n[dependencies]\nsnarkvm = { version = \"=4.13.1\", default-features = false, features = [\"console\", \"circuit\", \"synthesizer\"] }\nrand = \"0.10\"\n"
+    },
+    "src/main.rs": {
+      "sha256": "72a6f679a04c7cb477c2fe4a8b1d438ab1a8b30004c6cff832304576e824edc8",
+      "content_utf8": "use rand::rng;\nuse snarkvm::circuit::AleoV0;\nuse snarkvm::prelude::{MainnetV0, PrivateKey, Process, Program, Value};\nuse std::error::Error;\nuse std::fs;\n\nfn main() -> Result<(), Box<dyn Error>> {\n    let bytes = fs::read_to_string(\"hello.aleo\")?;\n    let program: Program<MainnetV0> = bytes.parse()?;\n    let process = Process::<MainnetV0>::load()?;\n    process.lock().add_program(&program)?;\n    let mut randomness = rng();\n    let private_key = PrivateKey::new(&mut randomness)?;\n    let authorization = process.authorize::<AleoV0, _>(\n        &private_key, program.id(), \"greeting\", Vec::<Value<MainnetV0>>::new().into_iter(), &mut randomness,\n    )?;\n    let response = process.evaluate::<AleoV0>(authorization)?;\n    for output in response.outputs() {\n        println!(\"Output: {output}\");\n    }\n    Ok(())\n}\n"
+    }
+  },
+  "sources": [
+    "https://docs.aleo.org/build/aleo-instructions/reference/types/index.html",
+    "https://github.com/ProvableHQ/sdk"
+  ],
+  "previous_verification_log": "examples/#025 Aleo/verification/aleo-wasm.json",
+  "toolchain_archives": [
+    {
+      "url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "7d7fa1d0cfb0fab71a956bb78f41107202c17f30ab56c45288e869a37fd9633d"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "c09c7c646248f14f473f5f7a029af15ee57c3a9f9bc93dfa72d9621938586b82"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "dee75c3c8f9f600ad75bc0c93249e767d3047845a4dd668327ce43ab039ba266"
+    }
+  ],
+  "compiler_sha256": "ba4b837efb6612dfa8d941c5a72b8a50d1d03a0f36216743b173949aa8d9eb75",
+  "normalized_ascii": [
+    72,
+    101,
+    108,
+    108,
+    111,
+    44,
+    32,
+    87,
+    111,
+    114,
+    108,
+    100,
+    33
+  ],
+  "toolchain": "ProvableHQ snarkVM 4.13.1 native authorization and offline evaluator",
+  "reproduction_command": "cargo build && target/debug/corpus_greeting",
+  "semantic_scope": "The native snarkVM parsed the unchanged source, evaluated greeting offline and returned a public array whose ASCII decoding is the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

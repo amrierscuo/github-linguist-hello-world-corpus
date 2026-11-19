@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "ordinal": 114,
+  "language": "Charity",
+  "timestamp_utc": "2026-11-19T13:13:41.050228+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Inspect the archived executable ABI",
+      "command": [
+        "file",
+        "${SCRATCH}/114-1obx2z3w/charity-bin/charity/charity"
+      ],
+      "cwd": "${SCRATCH}/114-1obx2z3w",
+      "timestamp_utc": "2026-11-19T13:13:41.156541+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "${SCRATCH}/114-1obx2z3w/charity-bin/charity/charity: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.0.0, not stripped\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/114-1obx2z3w/home",
+        "TMPDIR": "${SCRATCH}/114-1obx2z3w/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Evaluate a minimal Charity REPL form with the original reference binary",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/lib32/ld-linux.so.2",
+        "--library-path",
+        "${SCRATCH}/cache/tools/apt/usr/lib32",
+        "${SCRATCH}/114-1obx2z3w/charity-bin/charity/charity"
+      ],
+      "cwd": "${SCRATCH}/114-1obx2z3w/charity-bin/charity",
+      "timestamp_utc": "2026-11-19T13:13:41.169555+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "stdout": "\nThe Charity System, version 1.99.1 (beta)\n Charity Development Group - Jul. 2000\n\nCharity>> \"Hello, World!\" : list(char)\nCharity>> \n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/114-1obx2z3w/home",
+        "TMPDIR": "${SCRATCH}/114-1obx2z3w/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      },
+      "stdin": "\"Hello, World!\".\n"
+    },
+    {
+      "label": "Run the exact corrected example in the original Charity interpreter",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/lib32/ld-linux.so.2",
+        "--library-path",
+        "${SCRATCH}/cache/tools/apt/usr/lib32",
+        "${SCRATCH}/114-1obx2z3w/charity-bin/charity/charity"
+      ],
+      "cwd": "${SCRATCH}/114-1obx2z3w/charity-bin/charity",
+      "timestamp_utc": "2026-11-19T13:13:41.198743+00:00",
+      "timeout_seconds": 16,
+      "exit_code": 0,
+      "stdout": "\nThe Charity System, version 1.99.1 (beta)\n Charity Development Group - Jul. 2000\n\nCharity>> \"Hello, World!\" : list(char)\nCharity>> \n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/114-1obx2z3w/home",
+        "TMPDIR": "${SCRATCH}/114-1obx2z3w/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      },
+      "stdin": "\"Hello, World!\".\n"
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#114 Charity/hello.ch": "9062dbcdcb5018e0dd393395c1e65eb6cefef65b04bea7f06df3f3d69ec8a956"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://github.com/github-linguist/linguist/blob/main/samples/Charity/example.ch",
+    "https://cspages.ucalgary.ca/~robin/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/mietek/charity-lang/tar.gz/master",
+      "ref": "master",
+      "sha256": "36cb857b01c4a0f8fd2f6f90359e7fb9502f9f5f80f39ce852f3d7f6657520c9"
+    }
+  ],
+  "original_binary_archive_sha256": "952cc7759326c50d6477c34411ffe8021c177dc057ecc64e91eaa2f1feaeb998",
+  "ubuntu_archives": [
+    {
+      "name": "libc6-i386",
+      "version": "2.39-0ubuntu8.12",
+      "filename": "pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb",
+      "sha256": "f3357fcee4a907404f5231381834cf31647326496d5bb4259338a717b3544c89",
+      "bytes": 2786812,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb"
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "examples/#114 Charity/hello.ch",
+      "original_sha256": "afc0c9648931f9f0236800e52c2e4b4bd08ab73c2702a84b54cee8ada7ecf348",
+      "tested_sha256": "9062dbcdcb5018e0dd393395c1e65eb6cefef65b04bea7f06df3f3d69ec8a956",
+      "staged_file": "work/native_target800_20261119/corrected/114/hello.ch",
+      "original_fragment": "% Bozza fornita dall'utente; sintassi e primitive da confermare.\ndef hello : unit =\n    putStrLn \"Hello, World!\"\n",
+      "replacement": "\"Hello, World!\".\n"
+    }
+  ],
+  "toolchain": "University of Calgary Charity Linux/i386 reference interpreter 2000-09-28",
+  "reproduction_command": "Run the original i386 binary from its PRELUDE directory and supply hello.ch on standard input",
+  "semantic_scope": "The original interpreter evaluated the corrected Charity expression. Its resulting character list is displayed as the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#114 Charity/verification/native_20261119_wave800_prior_attempt.json"
+}

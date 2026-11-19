@@ -1,5 +1,18 @@
 # #025 Aleo
 
+## Verified on November 19, 2026
+
+The native snarkVM parsed the unchanged source, evaluated greeting offline and returned a public array whose ASCII decoding is the exact greeting.
+
+Run `cargo build && target/debug/corpus_greeting`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/aleo-wasm.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Aleo`, tipo `programming`, `language_id: 566431048`.
 `hello.aleo` is written in Aleo Instructions. The `greeting` function, without
 arguments, builds a public array of thirteen `u8` that encodes
@@ -56,4 +69,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.aleo` | [hello.aleo](hello.aleo) syntax verified |
+| `.aleo` | [hello.aleo](hello.aleo) Syntax and behavior verified |
+
+</details>

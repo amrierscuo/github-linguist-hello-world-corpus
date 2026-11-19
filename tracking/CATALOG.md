@@ -28,7 +28,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #022 | [Adobe Font Metrics](../examples/%23022%20Adobe%20Font%20Metrics/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #023 | [Agda](../examples/%23023%20Agda/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #024 | [Aiken](../examples/%23024%20Aiken/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #025 | [Aleo](../examples/%23025%20Aleo/README.md) | Yes | Yes | Pending | 1/1 | Complete offline SnarkVM execution and its parameter initialization remain pending; no completed VM output was obtained. |
+| #025 | [Aleo](../examples/%23025%20Aleo/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #026 | [Alloy](../examples/%23026%20Alloy/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #027 | [Alpine Abuild](../examples/%23027%20Alpine%20Abuild/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #028 | [Altium Designer](../examples/%23028%20Altium%20Designer/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
@@ -62,7 +62,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #056 | [BQN](../examples/%23056%20BQN/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #057 | [Ballerina](../examples/%23057%20Ballerina/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #058 | [Batchfile](../examples/%23058%20Batchfile/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #059 | [Beef](../examples/%23059%20Beef/README.md) | Yes | Pending | Pending | 1/1 | BeefBuild.exe toolchain not installed or not available in this isolated verification environment. |
+| #059 | [Beef](../examples/%23059%20Beef/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #060 | [Befunge](../examples/%23060%20Befunge/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #061 | [Bend](../examples/%23061%20Bend/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #062 | [Berry](../examples/%23062%20Berry/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -117,7 +117,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #111 | [CartoCSS](../examples/%23111%20CartoCSS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #112 | [Ceylon](../examples/%23112%20Ceylon/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #113 | [Chapel](../examples/%23113%20Chapel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #114 | [Charity](../examples/%23114%20Charity/README.md) | Yes | Pending | Pending | 1/1 | The draft def/putStrLn grammar is unconfirmed; no Charity interpreter was run. |
+| #114 | [Charity](../examples/%23114%20Charity/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #115 | [Checksums](../examples/%23115%20Checksums/README.md) | Yes | Yes | Yes | 12/12 | Evidence recorded |
 | #116 | [ChucK](../examples/%23116%20ChucK/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #117 | [Circom](../examples/%23117%20Circom/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -376,7 +376,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #370 | [LSL](../examples/%23370%20LSL/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #371 | [LTspice Symbol](../examples/%23371%20LTspice%20Symbol/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #372 | [LabVIEW](../examples/%23372%20LabVIEW/README.md) | Yes | Pending | Pending | 3/3 | Hello.vi must be created natively. References remain unresolved and the class container needs completion. The XML templates have not been verified in LabVIEW. |
-| #373 | [Lambdapi](../examples/%23373%20Lambdapi/README.md) | Yes | Pending | Pending | 1/1 | Lambdapi and the OCaml environment are not set up; type checking and normalization are pending. |
+| #373 | [Lambdapi](../examples/%23373%20Lambdapi/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #374 | [Langium](../examples/%23374%20Langium/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #375 | [Lark](../examples/%23375%20Lark/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #376 | [Lasso](../examples/%23376%20Lasso/README.md) | Yes | Pending | Pending | 4/4 | The Lasso9 runtime is unavailable; checks are pending. |
@@ -477,7 +477,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #471 | [Nickel](../examples/%23471%20Nickel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #472 | [Nim](../examples/%23472%20Nim/README.md) | Yes | Yes | Yes | 5/5 | Evidence recorded |
 | #473 | [Ninja](../examples/%23473%20Ninja/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #474 | [Nit](../examples/%23474%20Nit/README.md) | Yes | Pending | Pending | 1/1 | The Nit compiler and interpreter are not set up. |
+| #474 | [Nit](../examples/%23474%20Nit/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #475 | [Nix](../examples/%23475%20Nix/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #476 | [Noir](../examples/%23476%20Noir/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #477 | [Nu](../examples/%23477%20Nu/README.md) | Yes | Pending | Pending | 1/1 | Nu and Objective-C Foundation are not set up; runtime verification is pending. |
@@ -629,7 +629,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #623 | [Roff](../examples/%23623%20Roff/README.md) | Yes | Yes | Yes | 28/28 | Evidence recorded |
 | #624 | [Roff Manpage](../examples/%23624%20Roff%20Manpage/README.md) | Yes | Yes | Yes | 20/20 | Evidence recorded |
 | #625 | [Rouge](../examples/%23625%20Rouge/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #626 | [RouterOS Script](../examples/%23626%20RouterOS%20Script/README.md) | Yes | Pending | Pending | 1/1 | The RouterOS runtime is unavailable; parsing and execution are pending. |
+| #626 | [RouterOS Script](../examples/%23626%20RouterOS%20Script/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #627 | [Ruby](../examples/%23627%20Ruby/README.md) | Yes | Yes | Yes | 22/22 | Evidence recorded |
 | #628 | [Rust](../examples/%23628%20Rust/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #629 | [SAS](../examples/%23629%20SAS/README.md) | Yes | Pending | Pending | 1/1 | The SAS runtime and license are unavailable; parser checks and execution logs are pending. |

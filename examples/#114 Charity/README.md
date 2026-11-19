@@ -1,5 +1,18 @@
 # #114 Charity
 
+## Verified on November 19, 2026
+
+The original interpreter evaluated the corrected Charity expression. Its resulting character list is displayed as the exact greeting.
+
+Run `Run the original i386 binary from its PRELUDE directory and supply hello.ch on standard input`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `hello.ch` retains the draft proposed by the user. **Non è un esempio Charity convalidato**: the `def hello : unit` statement and the primitive `putStrLn` remain to be confirmed with the original manual and the original Charity interpreter.
 
 Textual artifact created as draft; syntax and behavior not verified. The presence of the `.ch` extension does not show that the program is accepted by language.
@@ -18,4 +31,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.ch` | [hello.ch](hello.ch) created; verification pending |
+| `.ch` | [hello.ch](hello.ch) Syntax and behavior verified |
+
+</details>

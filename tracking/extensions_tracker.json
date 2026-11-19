@@ -1152,8 +1152,8 @@
       "creation_status": "existing",
       "artifact_created": true,
       "syntax_verified": true,
-      "semantic_verified": false,
-      "verification_log": "examples/#025 Aleo/verification/aleo-wasm.json",
+      "semantic_verified": true,
+      "verification_log": "examples/#025 Aleo/verification/native_20261119_wave800_main.json",
       "verified_artifact_sha256": {
         "examples/#025 Aleo/hello.aleo": "602ef3ccd2c3dafb542941d3d08621d54c44a3f786eeb4e14ea3e229abc56963"
       },
@@ -1166,10 +1166,8 @@
         "https://docs.aleo.org/build/aleo-instructions/reference/types/index.html",
         "https://github.com/ProvableHQ/sdk"
       ],
-      "blockers": [
-        "Complete offline SnarkVM execution and its parameter initialization remain pending; no completed VM output was obtained."
-      ],
-      "notes": "Official Program.fromString accepts program/signature and rejects an unknown instruction in parse-only mode. Previous SDK attempt has no complete runtime evidence. Transient XHR artifacts moved to workspace scratch. No on-chain deployment."
+      "blockers": [],
+      "notes": "The native snarkVM parsed the unchanged source, evaluated greeting offline and returned a public array whose ASCII decoding is the exact greeting."
     },
     {
       "language_ordinal": 26,
@@ -2746,10 +2744,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#059 Beef/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#059 Beef/src/Program.bf": "dbcba35c09754120f004790e4c1919b7e6ef36379bd50a3522c05f360829c9a9"
+      },
       "based_on": null,
       "documentation": "examples/#059 Beef/README.md",
       "supporting_files": [],
@@ -2758,10 +2758,8 @@
       "sources": [
         "https://www.beeflang.org/docs/getting-start/"
       ],
-      "blockers": [
-        "BeefBuild.exe toolchain not installed or not available in this isolated verification environment."
-      ],
-      "notes": "Usa la funzione main statica e Console.WriteLine della libreria Beef. BeefBuild non è presente: nessuna compilazione o esecuzione è attestata."
+      "blockers": [],
+      "notes": "The official CLI built the original Beef source in a minimal console workspace. The native executable printed the exact greeting."
     },
     {
       "language_ordinal": 60,
@@ -5489,10 +5487,12 @@
       ],
       "creation_status": "user_provided_draft",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#114 Charity/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#114 Charity/hello.ch": "9062dbcdcb5018e0dd393395c1e65eb6cefef65b04bea7f06df3f3d69ec8a956"
+      },
       "based_on": null,
       "documentation": "examples/#114 Charity/README.md",
       "supporting_files": [],
@@ -5502,10 +5502,8 @@
         "https://github.com/github-linguist/linguist/blob/main/samples/Charity/example.ch",
         "https://cspages.ucalgary.ca/~robin/"
       ],
-      "blockers": [
-        "Grammatica della bozza def/putStrLn non confermata; nessun interprete Charity eseguito."
-      ],
-      "notes": "Bozza esplicitamente fornita e autorizzata dall’utente; non presentata come programma Charity valido."
+      "blockers": [],
+      "notes": "The original interpreter evaluated the corrected Charity expression. Its resulting character list is displayed as the exact greeting."
     },
     {
       "language_ordinal": 115,
@@ -21157,10 +21155,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#373 Lambdapi/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#373 Lambdapi/hello.lp": "50706f2fccf24790ab83b04c7afa6b43fadcffbfc649325feb1bbd8b0859f0a5"
+      },
       "based_on": null,
       "documentation": "examples/#373 Lambdapi/README.md",
       "supporting_files": [],
@@ -21170,10 +21170,8 @@
         "https://lambdapi.readthedocs.io/en/stable/commands.html",
         "https://lambdapi.readthedocs.io/en/stable/queries.html"
       ],
-      "blockers": [
-        "Lambdapi/ambiente OCaml non preparati; controllo del tipo e normalizzazione pendenti."
-      ],
-      "notes": "Nat, zero, succ e List sono dichiarati nel file, senza librerie implicite. n32 ecc. definiscono numeri unari; greeting concatena i valori cons/nil. type e compute richiedono il motore di elaborazione originale."
+      "blockers": [],
+      "notes": "The actual proof assistant type-checked and normalized the original greeting. Its resulting list of thirteen natural numbers decodes to the exact ASCII string."
     },
     {
       "language_ordinal": 374,
@@ -26138,10 +26136,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#474 Nit/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#474 Nit/hello.nit": "6f9630775ee0887bf3c1b297e58c5da65e04e0faa33c964a9f3df143829375d7"
+      },
       "based_on": null,
       "documentation": "examples/#474 Nit/README.md",
       "supporting_files": [],
@@ -26151,10 +26151,8 @@
         "https://nitlanguage.org/tools/nit.html",
         "https://nitlanguage.org/doc/"
       ],
-      "blockers": [
-        "Compiler/interprete Nit non preparato."
-      ],
-      "notes": "La var audience viene interpolata nella stringa Nit con {audience}; print emette il saluto."
+      "blockers": [],
+      "notes": "The genuine Nit bootstrap generated a standalone compiler. The compiled program ran the interpolation and emitted the greeting."
     },
     {
       "language_ordinal": 475,
@@ -35231,10 +35229,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#626 RouterOS Script/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#626 RouterOS Script/hello.rsc": "301d919ce6b3894599bc1e60a8ebf93aa2c4ac332a73362cb29ef9490059b9d1"
+      },
       "based_on": null,
       "documentation": "examples/#626 RouterOS Script/README.md",
       "supporting_files": [],
@@ -35243,10 +35243,8 @@
       "sources": [
         "https://help.mikrotik.com/docs/spaces/ROS/pages/47579229/Scripting"
       ],
-      "blockers": [
-        "Runtime RouterOS non disponibile; esecuzione e parser pendenti."
-      ],
-      "notes": "Script con variabile locale, concatenazione e :put; richiede un ambiente RouterOS di prova."
+      "blockers": [],
+      "notes": "The vendor RouterOS console parsed and executed the exact script bytes transported as an escaped serial command. Its actual console output contained the greeting. The VM ran with no network interfaces and a disposable disk snapshot."
     },
     {
       "language_ordinal": 627,

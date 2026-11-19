@@ -1,5 +1,16 @@
 # #626 RouterOS Script
 
+## Verified on November 19, 2026
+
+The vendor RouterOS console parsed and executed the exact script bytes transported as an escaped serial command. Its actual console output contained the greeting. The VM ran with no network interfaces and a disposable disk snapshot.
+
+Run `python3 -I serial_replay.py <qemu-system-x86_64> <firmware> <chr.img> hello.rsc`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.rsc` | [hello.rsc](hello.rsc) created; verification pending |
+| `.rsc` | [hello.rsc](hello.rsc) Syntax and behavior verified |
+
+</details>

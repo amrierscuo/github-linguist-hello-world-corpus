@@ -1,5 +1,16 @@
 # #474 Nit
 
+## Verified on November 19, 2026
+
+The genuine Nit bootstrap generated a standalone compiler. The compiled program ran the interpolation and emitted the greeting.
+
+Run `nitc hello.nit -o hello && ./hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.nit` | [hello.nit](hello.nit) created; verification pending |
+| `.nit` | [hello.nit](hello.nit) Syntax and behavior verified |
+
+</details>

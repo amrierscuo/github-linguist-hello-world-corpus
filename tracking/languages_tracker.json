@@ -1395,15 +1395,16 @@
       "example": {
         "semantic_goal": "Costruire e restituire come output pubblico Aleo un array di 13 u8 contenente esattamente i byte ASCII di Hello, World!.",
         "validation_mode": "native_snarkvm_parse_offline_vm",
-        "toolchain": "Node.js 22.20.0; official @provablehq/wasm 0.12.0 mainnet; @provablehq/sdk 0.12.0 installed",
+        "toolchain": "ProvableHQ snarkVM 4.13.1 native authorization and offline evaluator",
         "files": [
           "examples/#025 Aleo/hello.aleo",
           "examples/#025 Aleo/README.md",
           "examples/#025 Aleo/verification/aleo-wasm.json",
-          "examples/#025 Aleo/verify.cjs"
+          "examples/#025 Aleo/verify.cjs",
+          "examples/#025 Aleo/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "node verify.cjs .tools/node_modules hello.aleo --syntax-only; node verify.cjs .tools/node_modules hello.aleo",
+        "run_or_check_command": "cargo build && target/debug/corpus_greeting",
         "expected_result": "Parser exits 0 and rejects unknown instruction; VM output expected [72u8, 101u8, 108u8, 108u8, 111u8, 44u8, 32u8, 87u8, 111u8, 114u8, 108u8, 100u8, 33u8] (VM result pending).",
         "sources": [
           "https://docs.aleo.org/build/aleo-instructions/reference/types/index.html",
@@ -1415,18 +1416,15 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T10:58:02.551881+00:00",
-        "verification_log": "examples/#025 Aleo/verification/aleo-wasm.json",
-        "blockers": [
-          "Complete offline SnarkVM execution and its parameter initialization remain pending; no completed VM output was obtained."
-        ],
-        "notes": "Official Program.fromString accepts program/signature and rejects an unknown instruction in parse-only mode. Previous SDK attempt has no complete runtime evidence. Transient XHR artifacts moved to workspace scratch. No on-chain deployment.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:13:38.272995+00:00",
+        "verification_log": "examples/#025 Aleo/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The native snarkVM parsed the unchanged source, evaluated greeting offline and returned a public array whose ASCII decoding is the exact greeting.",
         "verified_artifact_sha256": {
-          "examples/#025 Aleo/hello.aleo": "602ef3ccd2c3dafb542941d3d08621d54c44a3f786eeb4e14ea3e229abc56963",
-          "examples/#025 Aleo/verify.cjs": "e5023efcf0aa6685682cfff71f3ceb5a5b0e9649e87874e00ebf086374a69a40"
+          "examples/#025 Aleo/hello.aleo": "602ef3ccd2c3dafb542941d3d08621d54c44a3f786eeb4e14ea3e229abc56963"
         }
       }
     },
@@ -3316,14 +3314,15 @@
       "example": {
         "semantic_goal": "Compilare un’applicazione console Beef e stampare Hello, World! da Program.Main.",
         "validation_mode": "native_workspace_compile_run",
-        "toolchain": "BeefBuild.exe — non disponibile / non verificata",
+        "toolchain": "BeefyTech BeefBuild 0.43.5 x64 native console toolchain",
         "files": [
           "examples/#059 Beef/README.md",
           "examples/#059 Beef/src/Program.bf",
-          "examples/#059 Beef/verification/native.json"
+          "examples/#059 Beef/verification/native.json",
+          "examples/#059 Beef/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "BeefBuild",
-        "run_or_check_command": "In una copia di lavoro: BeefBuild -new; sostituire src/Program.bf con il sorgente fornito; BeefBuild -run",
+        "run_or_check_command": "BeefBuild -workspace=<isolated project> -config=Release -platform=Win64 && run the generated console program",
         "expected_result": "Workspace compilato senza errori; console Hello, World! seguito da newline.",
         "sources": [
           "https://www.beeflang.org/docs/getting-start/"
@@ -3333,16 +3332,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T11:29:39.487277+00:00",
-        "verification_log": "examples/#059 Beef/verification/native.json",
-        "blockers": [
-          "BeefBuild.exe toolchain not installed or not available in this isolated verification environment."
-        ],
-        "notes": "Usa la funzione main statica e Console.WriteLine della libreria Beef. BeefBuild non è presente: nessuna compilazione o esecuzione è attestata."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-19T13:04:17.174077+00:00",
+        "verification_log": "examples/#059 Beef/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The official CLI built the original Beef source in a minimal console workspace. The native executable printed the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#059 Beef/src/Program.bf": "dbcba35c09754120f004790e4c1919b7e6ef36379bd50a3522c05f360829c9a9"
+        }
       }
     },
     {
@@ -6449,13 +6449,15 @@
       "example": {
         "semantic_goal": "Conservare la bozza Charity dell’utente, da correggere/verificare con grammatica e runtime originali.",
         "validation_mode": "user_provided_draft_pending_grammar",
-        "toolchain": "Charity originale; manuale operativo e interprete da recuperare",
+        "toolchain": "University of Calgary Charity Linux/i386 reference interpreter 2000-09-28",
         "files": [
           "examples/#114 Charity/README.md",
-          "examples/#114 Charity/hello.ch"
+          "examples/#114 Charity/hello.ch",
+          "examples/#114 Charity/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#114 Charity/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Procedura da confermare: caricare hello.ch con l’interprete Charity originale dopo controllo della grammatica.",
+        "run_or_check_command": "Run the original i386 binary from its PRELUDE directory and supply hello.ch on standard input",
         "expected_result": "Hello, World!, se la definizione viene adattata e accettata dal runtime.",
         "sources": [
           "https://github.com/github-linguist/linguist/blob/main/samples/Charity/example.ch",
@@ -6466,16 +6468,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Grammatica della bozza def/putStrLn non confermata; nessun interprete Charity eseguito."
-        ],
-        "notes": "Bozza esplicitamente fornita e autorizzata dall’utente; non presentata come programma Charity valido."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:13:41.050228+00:00",
+        "verification_log": "examples/#114 Charity/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The original interpreter evaluated the corrected Charity expression. Its resulting character list is displayed as the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#114 Charity/hello.ch": "9062dbcdcb5018e0dd393395c1e65eb6cefef65b04bea7f06df3f3d69ec8a956"
+        }
       }
     },
     {
@@ -21755,13 +21758,14 @@
       "example": {
         "semantic_goal": "Definire in Lambdapi una lista di13numeri naturali che codifica ASCII Hello, World!.",
         "validation_mode": "native_lambdapi_typecheck_normalization",
-        "toolchain": "Lambdapi originale; versione da registrare",
+        "toolchain": "4.0.0 native theorem prover",
         "files": [
           "examples/#373 Lambdapi/README.md",
-          "examples/#373 Lambdapi/hello.lp"
+          "examples/#373 Lambdapi/hello.lp",
+          "examples/#373 Lambdapi/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "lambdapi check hello.lp",
-        "run_or_check_command": "lambdapi check hello.lp",
+        "run_or_check_command": "lambdapi check hello.lp (in the recorded minimal package)",
         "expected_result": "greeting è ben tipato; compute normalizza i13naturali72,101,108,108,111,44,32,87,111,114,108,100,33.",
         "sources": [
           "https://lambdapi.readthedocs.io/en/stable/commands.html",
@@ -21772,16 +21776,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Lambdapi/ambiente OCaml non preparati; controllo del tipo e normalizzazione pendenti."
-        ],
-        "notes": "Nat, zero, succ e List sono dichiarati nel file, senza librerie implicite. n32 ecc. definiscono numeri unari; greeting concatena i valori cons/nil. type e compute richiedono il motore di elaborazione originale."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:58:19.631891+00:00",
+        "verification_log": "examples/#373 Lambdapi/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The actual proof assistant type-checked and normalized the original greeting. Its resulting list of thirteen natural numbers decodes to the exact ASCII string.",
+        "verified_artifact_sha256": {
+          "examples/#373 Lambdapi/hello.lp": "50706f2fccf24790ab83b04c7afa6b43fadcffbfc649325feb1bbd8b0859f0a5"
+        }
       }
     },
     {
@@ -27474,13 +27479,14 @@
       "example": {
         "semantic_goal": "Interpretare o compilare Nit e stampare Hello, World!.",
         "validation_mode": "native_compile_or_interpret",
-        "toolchain": "Nit/nitc originali; versione da registrare",
+        "toolchain": "Nit native standalone compiler v0.8",
         "files": [
           "examples/#474 Nit/README.md",
-          "examples/#474 Nit/hello.nit"
+          "examples/#474 Nit/hello.nit",
+          "examples/#474 Nit/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "nit hello.nit",
+        "run_or_check_command": "nitc hello.nit -o hello && ./hello",
         "expected_result": "Hello, World! seguito da newline; exit0.",
         "sources": [
           "https://nitlanguage.org/tools/nit.html",
@@ -27491,16 +27497,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compiler/interprete Nit non preparato."
-        ],
-        "notes": "La var audience viene interpolata nella stringa Nit con {audience}; print emette il saluto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T13:06:19.369156+00:00",
+        "verification_log": "examples/#474 Nit/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The genuine Nit bootstrap generated a standalone compiler. The compiled program ran the interpolation and emitted the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#474 Nit/hello.nit": "6f9630775ee0887bf3c1b297e58c5da65e04e0faa33c964a9f3df143829375d7"
+        }
       }
     },
     {
@@ -36484,13 +36491,14 @@
       "example": {
         "semantic_goal": "Eseguire uno script RouterOS che stampa Hello, World!.",
         "validation_mode": "native_routeros_script",
-        "toolchain": "RouterOS Script, versione da registrare",
+        "toolchain": "MikroTik RouterOS Cloud Hosted Router 6.49.17 in local QEMU serial mode",
         "files": [
           "examples/#626 RouterOS Script/README.md",
-          "examples/#626 RouterOS Script/hello.rsc"
+          "examples/#626 RouterOS Script/hello.rsc",
+          "examples/#626 RouterOS Script/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "RouterOS: import hello.rsc",
+        "run_or_check_command": "python3 -I serial_replay.py <qemu-system-x86_64> <firmware> <chr.img> hello.rsc",
         "expected_result": "Hello, World! nella console RouterOS.",
         "sources": [
           "https://help.mikrotik.com/docs/spaces/ROS/pages/47579229/Scripting"
@@ -36500,16 +36508,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime RouterOS non disponibile; esecuzione e parser pendenti."
-        ],
-        "notes": "Script con variabile locale, concatenazione e :put; richiede un ambiente RouterOS di prova."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:50:23.801343+00:00",
+        "verification_log": "examples/#626 RouterOS Script/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The vendor RouterOS console parsed and executed the exact script bytes transported as an escaped serial command. Its actual console output contained the greeting. The VM ran with no network interfaces and a disposable disk snapshot.",
+        "verified_artifact_sha256": {
+          "examples/#626 RouterOS Script/hello.rsc": "301d919ce6b3894599bc1e60a8ebf93aa2c4ac332a73362cb29ef9490059b9d1"
+        }
       }
     },
     {

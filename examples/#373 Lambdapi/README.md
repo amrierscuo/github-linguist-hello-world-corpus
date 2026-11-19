@@ -1,5 +1,16 @@
 # #373 Lambdapi
 
+## Verified on November 19, 2026
+
+The actual proof assistant type-checked and normalized the original greeting. Its resulting list of thirteen natural numbers decodes to the exact ASCII string.
+
+Run `lambdapi check hello.lp (in the recorded minimal package)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,4 +54,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.lp` | [hello.lp](hello.lp) created; verification pending |
+| `.lp` | [hello.lp](hello.lp) Syntax and behavior verified |
+
+</details>

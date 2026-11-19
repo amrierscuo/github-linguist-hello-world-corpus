@@ -1,5 +1,18 @@
 # #059 Beef
 
+## Verified on November 19, 2026
+
+The official CLI built the original Beef source in a minimal console workspace. The native executable printed the exact greeting.
+
+Run `BeefBuild -workspace=<isolated project> -config=Release -platform=Win64 && run the generated console program`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica: `Beef`, tipo `programming`, `language_id: 545626333`.
 
 Fill out a Beef console application and print Hello, World! from Program.Main.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.bf` | [Program.bf](src/Program.bf) created; verification pending |
+| `.bf` | [Program.bf](src/Program.bf) Syntax and behavior verified |
+
+</details>
