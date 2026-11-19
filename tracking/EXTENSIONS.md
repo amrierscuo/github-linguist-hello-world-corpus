@@ -1320,7 +1320,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | `.sci` | [hello.sci](../examples/%23653%20Scilab/variants/sci-27617630/hello.sci) | Yes | Yes | adapted; Evidence recorded |
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | `.sce` | [hello.sce](../examples/%23653%20Scilab/hello.sce), [main.sce](../examples/%23653%20Scilab/variants/sci-27617630/main.sce) | Yes | Yes | existing; Evidence recorded |
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | `.tst` | [hello.tst](../examples/%23653%20Scilab/variants/tst-04f6df08/hello.tst) | Yes | Yes | adapted; Evidence recorded |
-| #654 | [Self](../examples/%23654%20Self/README.md) | `.self` | [hello.self](../examples/%23654%20Self/hello.self) | Pending | Pending | existing; The Self VM and standard world are not set up. |
+| #654 | [Self](../examples/%23654%20Self/README.md) | `.self` | [hello.self](../examples/%23654%20Self/hello.self) | Yes | Yes | existing; Evidence recorded |
 | #655 | [ShaderLab](../examples/%23655%20ShaderLab/README.md) | `.shader` | [hello.shader](../examples/%23655%20ShaderLab/hello.shader) | Yes | Yes | existing; Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | `.sh` | [hello.sh](../examples/%23656%20Shell/hello.sh) | Yes | Yes | existing; Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | `.bash` | [hello.bash](../examples/%23656%20Shell/variants/bash-8a9862b8/hello.bash) | Yes | Yes | alias; Evidence recorded |

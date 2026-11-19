@@ -37215,10 +37215,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#654 Self/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#654 Self/hello.self": "e8e4a1ea20ec2bb4c43015fb7a178bdffb0e1fca93cb53df40bf1a57fa327a82"
+      },
       "based_on": null,
       "documentation": "examples/#654 Self/README.md",
       "supporting_files": [],
@@ -37227,10 +37229,8 @@
       "sources": [
         "https://handbook.selflanguage.org/"
       ],
-      "blockers": [
-        "VM Self e standard world non predisposti."
-      ],
-      "notes": ""
+      "blockers": [],
+      "notes": "The upstream Self VM initialized the standard world without graphics and evaluated the unchanged hello.self file. Its printLine message emitted the exact greeting on the VM output stream (captured as stderr), and the VM exited successfully."
     },
     {
       "language_ordinal": 655,

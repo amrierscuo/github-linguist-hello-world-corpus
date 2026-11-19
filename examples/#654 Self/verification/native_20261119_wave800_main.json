@@ -1,0 +1,602 @@
+{
+  "schema_version": 1,
+  "ordinal": 654,
+  "language": "Self",
+  "timestamp_utc": "2026-11-19T21:41:17.102683+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the native C++ compiler version",
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai",
+      "timestamp_utc": "2026-11-19T21:35:49.199165+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Record the native CMake version",
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai",
+      "timestamp_utc": "2026-11-19T21:35:50.079128+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "cmake version 3.28.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Link a disposable C++ preflight executable with the staged 32-bit libraries",
+      "command": [
+        "g++",
+        "-m32",
+        "-I/usr/include/x86_64-linux-gnu",
+        "-I/usr/include/x86_64-linux-gnu/c++/13",
+        "-I${SCRATCH}/cache/tools/apt/usr/include",
+        "-B${SCRATCH}/cache/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/32/",
+        "-B${SCRATCH}/cache/tools/apt/usr/lib32/",
+        "-L${SCRATCH}/654-_sam1bai/relocated-linker",
+        "-L${SCRATCH}/cache/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/32",
+        "-L${SCRATCH}/cache/tools/apt/usr/lib32",
+        "-Wl,--dynamic-linker=${SCRATCH}/cache/tools/apt/usr/lib32/ld-linux.so.2",
+        "-Wl,--disable-new-dtags",
+        "-Wl,-rpath,${SCRATCH}/cache/tools/apt/usr/lib32",
+        "${SCRATCH}/654-_sam1bai/link32.cpp",
+        "-o",
+        "${SCRATCH}/654-_sam1bai/link32"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai",
+      "timestamp_utc": "2026-11-19T21:35:54.080472+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Confirm Ubuntu WSL can execute the staged i386 ELF binary",
+      "command": [
+        "${SCRATCH}/654-_sam1bai/link32"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai",
+      "timestamp_utc": "2026-11-19T21:36:02.230808+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Self i386 linker ready\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Initialize local version metadata for the official source archive",
+      "command": [
+        "git",
+        "init",
+        "-q",
+        "--template="
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:36:10.345537+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GIT_CONFIG_GLOBAL": "/dev/null",
+        "GIT_CONFIG_NOSYSTEM": "1"
+      }
+    },
+    {
+      "label": "Give the extracted archive the matching release tag",
+      "command": [
+        "git",
+        "-c",
+        "user.name=Corpus verification",
+        "-c",
+        "user.email=verification@example.invalid",
+        "commit",
+        "-q",
+        "--allow-empty",
+        "-m",
+        "Source archive release 2024.1"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:36:10.492846+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GIT_CONFIG_GLOBAL": "/dev/null",
+        "GIT_CONFIG_NOSYSTEM": "1"
+      }
+    },
+    {
+      "label": "Tag the local version metadata as the source archive release",
+      "command": [
+        "git",
+        "tag",
+        "2024.1"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:36:10.614327+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GIT_CONFIG_GLOBAL": "/dev/null",
+        "GIT_CONFIG_NOSYSTEM": "1"
+      }
+    },
+    {
+      "label": "Configure the publisher Self VM in release mode with X11 disabled",
+      "command": [
+        "cmake",
+        "-S",
+        "${SCRATCH}/654-_sam1bai/self-src",
+        "-B",
+        "${SCRATCH}/654-_sam1bai/self-src/build",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+        "-DSELF_X11=OFF",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY",
+        "-DCMAKE_C_FLAGS=-I/usr/include/x86_64-linux-gnu -I${SCRATCH}/cache/tools/apt/usr/include",
+        "-DCMAKE_CXX_FLAGS=-I/usr/include/x86_64-linux-gnu -I${SCRATCH}/cache/tools/apt/usr/include -I/usr/include/x86_64-linux-gnu/c++/13",
+        "-DCMAKE_C_COMPILER=gcc",
+        "-DCMAKE_CXX_COMPILER=g++",
+        "-DCMAKE_EXE_LINKER_FLAGS=-B${SCRATCH}/cache/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/32/ -B${SCRATCH}/cache/tools/apt/usr/lib32/ -L${SCRATCH}/654-_sam1bai/relocated-linker -L${SCRATCH}/cache/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/32 -L${SCRATCH}/cache/tools/apt/usr/lib32 -Wl,--dynamic-linker=${SCRATCH}/cache/tools/apt/usr/lib32/ld-linux.so.2 -Wl,--disable-new-dtags -Wl,-rpath,${SCRATCH}/cache/tools/apt/usr/lib32"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:36:10.623725+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "-- The C compiler identification is GNU 13.3.0\n-- The CXX compiler identification is GNU 13.3.0\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /usr/bin/gcc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/g++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- The ASM compiler identification is GNU\n-- Found assembler: /usr/bin/gcc\n-- Preparing for Linux on i386\n-- Preparing Self VM 2023.1.13 (build 2024.1)\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n-- Found Threads: TRUE  \n-- Configuring for default Release\n-- Configuring done (3.0s)\n-- Generating done (0.0s)\n-- Build files have been written to: ${SCRATCH}/654-_sam1bai/self-src/build\n",
+      "stderr": "CMake Deprecation Warning at CMakeLists.txt:11 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Deprecation Warning at vm/CMakeLists.txt:13 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Deprecation Warning at tools/CMakeLists.txt:8 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Warning (dev) in vm/CMakeLists.txt:\n  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.\n  Run \"cmake --help-policy CMP0043\" for policy details.  Use the cmake_policy\n  command to set the policy and suppress this warning.\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\nCMake Warning (dev) in vm/CMakeLists.txt:\n  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.\n  Run \"cmake --help-policy CMP0043\" for policy details.  Use the cmake_policy\n  command to set the policy and suppress this warning.\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\nCMake Warning (dev) in vm/CMakeLists.txt:\n  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.\n  Run \"cmake --help-policy CMP0043\" for policy details.  Use the cmake_policy\n  command to set the policy and suppress this warning.\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\nCMake Warning:\n  Manually-specified variables were not used by the project:\n\n    CMAKE_POLICY_VERSION_MINIMUM\n\n\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the upstream native Self VM",
+      "command": [
+        "cmake",
+        "--build",
+        "${SCRATCH}/654-_sam1bai/self-src/build",
+        "-j",
+        "4"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:36:13.720092+00:00",
+      "timeout_seconds": 420,
+      "exit_code": 2,
+      "stdout": "[  0%] Building CXX object vm/CMakeFiles/makeDeps.dir/build_support/makeDeps.cpp.o\n[  0%] Generating Browse\n[  0%] Building CXX object tools/CMakeFiles/AddTrailingNewline.dir/src/AddTrailingNewline.cpp.o\n[  1%] Creating ${SCRATCH}/654-_sam1bai/self-src/build/incls/vmDate.cpp\n[  2%] Generating Compare\n[  2%] Built target create_vmDate\n[  2%] Generating Script\n[  3%] Building C object tools/CMakeFiles/cmprev.dir/src/cmprev.c.o\n[  4%] Generating expandNames\n[  4%] Generating get_arch\n[  4%] Generating profile\n[  5%] Generating sdiffc\n[  5%] Built target shellscripts\n[  5%] Building C object tools/CMakeFiles/dangling.dir/src/dangling.c.o\n[  5%] Linking C executable dangling\n[  5%] Linking C executable cmprev\n[  5%] Built target dangling\n[  5%] Linking CXX executable AddTrailingNewline\n[  6%] Building CXX object tools/CMakeFiles/isLink.dir/src/isLink.cpp.o\n[  6%] Built target cmprev\n[  6%] Building C object tools/CMakeFiles/linked.dir/src/linked.c.o\n[  7%] Linking C executable linked\n[  7%] Built target AddTrailingNewline\n[  7%] Building CXX object tools/CMakeFiles/rself.dir/src/rself.cpp.o\n[  7%] Built target linked\n[  8%] Building CXX object tools/CMakeFiles/runBinary.dir/src/runBinary.cpp.o\n[  8%] Linking CXX executable isLink\n[  9%] Linking CXX executable makeDeps\n[  9%] Linking CXX executable runBinary\n[  9%] Built target isLink\n[  9%] Linking CXX executable rself\n[  9%] Building CXX object tools/CMakeFiles/zap.dir/src/zap.cpp.o\n[  9%] Built target rself\n[  9%] Built target runBinary\n[  9%] Built target makeDeps\n[  9%] Generating ../incls/_precompiled.hh\nNew database:\n\treading database: ${SCRATCH}/654-_sam1bai/self-src/build/includeDB\n\tcomputing closures\n\twriting individual include files\n\tcreating unixPrims.cpp\n\tcreating unixPrims.glue.cpp\n\tcreating aCompiler.cpp\n\tcreating aCompiler_i386.cpp\n\tcreating aNode.cpp\n\tcreating abstract_interpreter.cpp\n\tcreating addrDesc.cpp\n\tcreating addrDesc_i386.cpp\n\tcreating ageTable.cpp\n\tcreating allocZone_i386.S\n\tcreating allocation.cpp\n\tcreating asm.cpp\n\tcreating asmPrims_i386.S\n\tcreating asm_i386.cpp\n\tcreating assignmentMap.cpp\n\tcreating asyncMalloc.cpp\n\tcreating basicBlock.cpp\n\tcreating bitVector.cpp\n\tcreating blist.cpp\n\tcreating blockMap.cpp\n\tcreating blockOop.cpp\n\tcreating branchSet.cpp\n\tcreating byteCodes.cpp\n\tcreating byteVectorMap.cpp\n\tcreating byteVectorOop.cpp\n\tcreating cacheStub.cpp\n\tcreating cacheStub_i386.cpp\n\tcreating callgraph.cpp\n\tcreating clist.cpp\n\tcreating codeGen.cpp\n\tcreating codeGen_i386.cpp\n\tcreating codeLikeSlotsMap.cpp\n\tcreating codeSlotsMap.cpp\n\tcreating codeTable.cpp\n\tcreating complexLookup.cpp\n\tcreating conversion.cpp\n\tcreating conversion_i386.cpp\n\tcreating countPattern.cpp\n\tcreating countPattern_i386.cpp\n\tcreating countStub.cpp\n\tcreating countStub_i386.cpp\n\tcreating deadBlockNode_i386.cpp\n\tcreating debug.cpp\n\tcreating debugPrintable.cpp\n\tcreating defUse.cpp\n\tcreating deps.cpp\n\tcreating diDesc.cpp\n\tcreating diDesc_i386.cpp\n\tcreating disasm.cpp\n\tcreating disasm_i386.cpp\n\tcreating dynLink.cpp\n\tcreating enum_i386.S\n\tcreating enumeration.cpp\n\tcreating errorCodes.cpp\n\tcreating errorCodes_unix.cpp\n\tcreating eventlog.cpp\n\tcreating exec.cpp\n\tcreating expr.cpp\n\tcreating fcompiler.cpp\n\tcreating fcompiler_i386.cpp\n\tcreating fctProxyMap.cpp\n\tcreating fctProxyOop.cpp\n\tcreating fields.cpp\n\tcreating fields_i386.cpp\n\tcreating files.cpp\n\tcreating floatMap.cpp\n\tcreating floatOop.cpp\n\tcreating foreignOop.cpp\n\tcreating fprofiler.cpp\n\tcreating frame.cpp\n\tcreating framePieces.cpp\n\tcreating framePieces_i386.cpp\n\tcreating frame_i386.cpp\n\tcreating frame_format.cpp\n\tcreating frame_format_i386.cpp\n\tcreating frame_iterator.cpp\n\tcreating frame_iterator_i386.cpp\n\tcreating fscope.cpp\n\tcreating genHelper.cpp\n\tcreating genHelper_i386.cpp\n\tcreating generation.cpp\n\tcreating glue.cpp\n\tcreating glueCheckSum.cpp\n\tcreating glueDefs.cpp\n\tcreating glueSupport.cpp\n\tcreating hprofiler.cpp\n\tcreating immediateMap.cpp\n\tcreating init.cpp\n\tcreating inlining.cpp\n\tcreating interpreter.cpp\n\tcreating interruptedCtx.cpp\n\tcreating interruptedCtx_i386.cpp\n\tcreating interruptedCtx_unix.cpp\n\tcreating itimer.cpp\n\tcreating itimer_unix.cpp\n\tcreating key.cpp\n\tcreating kinds.cpp\n\tcreating label.cpp\n\tcreating labelSet.cpp\n\tcreating list.cpp\n\tcreating longRegString.cpp\n\tcreating longRegString_i386.cpp\n\tcreating lprintf.cpp\n\tcreating machineCache.cpp\n\tcreating machineCache_unix.cpp\n\tcreating map.cpp\n\tcreating mapMap.cpp\n\tcreating mapOop.cpp\n\tcreating mapTable.cpp\n\tcreating mapVtbls.cpp\n\tcreating markMap.cpp\n\tcreating markOop.cpp\n\tcreating memOop.cpp\n\tcreating mirrorMap.cpp\n\tcreating mirrorOop.cpp\n\tcreating miscPrims.cpp\n\tcreating monitor.cpp\n\tcreating monitorHooks.cpp\n\tcreating monitorHooks_unix.cpp\n\tcreating monitorPieces.cpp\n\tcreating monitorPieces_unix.cpp\n\tcreating monitorWindow.cpp\n\tcreating nameDesc.cpp\n\tcreating ncode.cpp\n\tcreating nlrSupport.cpp\n\tcreating nmethod.cpp\n\tcreating nmethodScopes.cpp\n\tcreating nmethod_i386.cpp\n\tcreating nmln.cpp\n\tcreating node.cpp\n\tcreating nodeGen.cpp\n\tcreating node_i386.cpp\n\tcreating nprofiler.copygraph.cpp\n\tcreating nprofiler.cpp\n\tcreating oTable.cpp\n\tcreating objVectorMap.cpp\n\tcreating objVectorOop.cpp\n\tcreating oop.cpp\n\tcreating oopClosures.cpp\n\tcreating oopsOop.cpp\n\tcreating opc_i386.cpp\n\tcreating opcode.cpp\n\tcreating os.cpp\n\tcreating os_unix.cpp\n\tcreating parser.cpp\n\tcreating pcDesc.cpp\n\tcreating pinsn_i386.cpp\n\tcreating platformWindow.cpp\n\tcreating positionTable.cpp\n\tcreating preg.cpp\n\tcreating prim.cpp\n\tcreating print.cpp\n\tcreating process.cpp\n\tcreating processMap.cpp\n\tcreating processOop.cpp\n\tcreating profilerMap.cpp\n\tcreating profilerOop.cpp\n\tcreating proxyMap.cpp\n\tcreating proxyOop.cpp\n\tcreating quartzPrims.cpp\n\tcreating quartzWindow.cpp\n\tcreating rSet.cpp\n\tcreating recompile.cpp\n\tcreating regAlloc.cpp\n\tcreating registerLocator.cpp\n\tcreating registerLocator_i386.cpp\n\tcreating registerState.cpp\n\tcreating registerState_i386.cpp\n\tcreating registerString.cpp\n\tcreating registerString_i386.cpp\n\tcreating regs.cpp\n\tcreating regs_i386.cpp\n\tcreating require.cpp\n\tcreating rscope.cpp\n\tcreating runtime.cpp\n\tcreating runtime_i386.cpp\n\tcreating runtime_asm_gcc_i386.S\n\tcreating scanner.cpp\n\tcreating scopeDesc.cpp\n\tcreating scopeDescRecorder.cpp\n\tcreating search.cpp\n\tcreating search_i386.cpp\n\tcreating selfMonitor.cpp\n\tcreating send.cpp\n\tcreating sendDesc.cpp\n\tcreating sendDesc_i386.cpp\n\tcreating shell.cpp\n\tcreating sic.cpp\n\tcreating sicExpr.cpp\n\tcreating sicInline.cpp\n\tcreating sicPrimline.cpp\n\tcreating sicScope.cpp\n\tcreating sicSplit.cpp\n\tcreating sic_i386.cpp\n\tcreating sig.cpp\n\tcreating sig_unix.cpp\n\tcreating signalBlocker_unix.cpp\n\tcreating simpleLookup.cpp\n\tcreating slist.cpp\n\tcreating slot.cpp\n\tcreating slotDesc.cpp\n\tcreating slotIterator.cpp\n\tcreating slotList.cpp\n\tcreating slotRef.cpp\n\tcreating slotType.cpp\n\tcreating slotsMap.cpp\n\tcreating slotsMapDeps.cpp\n\tcreating slotsOop.cpp\n\tcreating smiMap.cpp\n\tcreating smiOop.cpp\n\tcreating space.cpp\n\tcreating spaceSize.cpp\n\tcreating stack.cpp\n\tcreating stacking_interpreter.cpp\n\tcreating str.cpp\n\tcreating stringMap.cpp\n\tcreating stringOop.cpp\n\tcreating stringTable.cpp\n\tcreating stringUtil.cpp\n\tcreating stubs_i386.cpp\n\tcreating table.cpp\n\tcreating target.cpp\n\tcreating timer.cpp\n\tcreating timer_unix.cpp\n\tcreating tracing.cpp\n\tcreating trapdoors.cpp\n\tcreating trapdoors_i386.cpp\n\tcreating uncommonBranch.cpp\n\tcreating uncommonBranch_i386.cpp\n\tcreating universe.cpp\n\tcreating universe.more.cpp\n\tcreating util.cpp\n\tcreating vframe.cpp\n\tcreating vframeMap.cpp\n\tcreating vframeOop.cpp\n\tcreating vframe_i386.cpp\n\tcreating vmStrings.cpp\n\tcreating xlibPrims.cpp\n\tcreating xlibWindow.cpp\n\tcreating zone.cpp\n\tcreating zoneHeap.cpp\n\twriting grand include file\n\twriting dependencies file\n[ 10%] Linking CXX executable zap\n[ 11%] Generating ../incls/_precompiled.hh.gch\n[ 11%] Built target zap\n",
+      "stderr": "${SCRATCH}/654-_sam1bai/self-src/vm/build_support/makeDeps.cpp: In member function ‘void FileName::check_length()’:\n${SCRATCH}/654-_sam1bai/self-src/vm/build_support/makeDeps.cpp:398:22: warning: ‘%s’ directive writing up to 8191 bytes into a region of size between 1 and 8192 [-Wformat-overflow=]\n  398 |     sprintf( buf, \"%s%s%s is too long; %d >= %d\\n\",\n      |                      ^~\n${SCRATCH}/654-_sam1bai/self-src/vm/build_support/makeDeps.cpp:398:19: note: directive argument in the range [32, 2147483647]\n  398 |     sprintf( buf, \"%s%s%s is too long; %d >= %d\\n\",\n      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from ${SCRATCH}/cache/tools/apt/usr/include/stdio.h:980,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/build_support/makeDeps.cpp:65:\nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘void FileName::check_length()’ at ${SCRATCH}/654-_sam1bai/self-src/vm/build_support/makeDeps.cpp:398:12:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 24 and 24605 bytes into a destination of size 8192\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\nIn file included from /usr/include/features.h:394,\n                 from /usr/include/time.h:25,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_includes_unix.hh:19,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_os_includes_pd.hh.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os_includes.hh:13,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_precompiled.hh:4:\n/usr/include/features-time64.h:20:10: fatal error: bits/wordsize.h: No such file or directory\n   20 | #include <bits/wordsize.h>\n      |          ^~~~~~~~~~~~~~~~~\ncompilation terminated.\ngmake[2]: *** [vm/CMakeFiles/Self.dir/build.make:74: incls/_precompiled.hh.gch] Error 1\ngmake[1]: *** [CMakeFiles/Makefile2:222: vm/CMakeFiles/Self.dir/all] Error 2\ngmake: *** [Makefile:91: all] Error 2\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-_sam1bai/home",
+        "TMPDIR": "${SCRATCH}/654-_sam1bai/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build the upstream native Self VM",
+      "command": [
+        "cmake",
+        "--build",
+        "${SCRATCH}/654-_sam1bai/self-src/build",
+        "-j",
+        "4"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:37:44.379846+00:00",
+      "timeout_seconds": 420,
+      "exit_code": 2,
+      "stdout": "[  3%] Built target shellscripts\n[  4%] Built target makeDeps\n[  4%] Built target AddTrailingNewline\n[  5%] Built target cmprev\n[  5%] Built target dangling\n[  6%] Built target linked\n[  7%] Built target runBinary\n[  8%] Built target isLink\n[  8%] Built target rself\n[  9%] Creating ${SCRATCH}/654-_sam1bai/self-src/build/incls/vmDate.cpp\n[ 10%] Built target zap\n[ 10%] Built target create_vmDate\n[ 11%] Generating ../incls/_precompiled.hh.gch\n[ 12%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/disasm.cpp.o\n[ 12%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/asm.cpp.o\n[ 12%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/fields.cpp.o\n[ 13%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/label.cpp.o\n[ 14%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/pcDesc.cpp.o\n[ 14%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/nameDesc.cpp.o\n[ 14%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/regs.cpp.o\n[ 14%] Building CXX object vm/CMakeFiles/Self.dir/src/any/asm/scopeDesc.cpp.o\n[ 14%] Building CXX object vm/CMakeFiles/Self.dir/src/any/fast_compiler/blist.cpp.o\n[ 15%] Building CXX object vm/CMakeFiles/Self.dir/src/any/fast_compiler/codeGen.cpp.o\n[ 15%] Building CXX object vm/CMakeFiles/Self.dir/src/any/fast_compiler/fcompiler.cpp.o\n[ 16%] Building CXX object vm/CMakeFiles/Self.dir/src/any/fast_compiler/fscope.cpp.o\n[ 16%] Building CXX object vm/CMakeFiles/Self.dir/src/any/fast_compiler/registerState.cpp.o\n[ 16%] Building CXX object vm/CMakeFiles/Self.dir/src/any/fast_compiler/registerString.cpp.o\n[ 17%] Building CXX object vm/CMakeFiles/Self.dir/src/any/interpreter/abstract_interpreter.cpp.o\n[ 17%] Building CXX object vm/CMakeFiles/Self.dir/src/any/interpreter/interpreter.cpp.o\n[ 17%] Building CXX object vm/CMakeFiles/Self.dir/src/any/interpreter/stacking_interpreter.cpp.o\n[ 18%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/cacheStub.cpp.o\n[ 18%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/complexLookup.cpp.o\n[ 19%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/deps.cpp.o\n[ 19%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/diDesc.cpp.o\n[ 19%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/key.cpp.o\n[ 20%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/sendDesc.cpp.o\n[ 20%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/simpleLookup.cpp.o\n[ 20%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/slotRef.cpp.o\n[ 21%] Building CXX object vm/CMakeFiles/Self.dir/src/any/lookup/target.cpp.o\n[ 21%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/ageTable.cpp.o\n[ 22%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/enumeration.cpp.o\n[ 22%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/generation.cpp.o\n[ 22%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/mapTable.cpp.o\n[ 23%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/mapVtbls.cpp.o\n[ 23%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/oopClosures.cpp.o\n[ 23%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/oTable.cpp.o\n[ 24%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/rSet.cpp.o\n[ 24%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/search.cpp.o\n[ 25%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/slotIterator.cpp.o\n[ 25%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/slotList.cpp.o\n[ 25%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/space.cpp.o\n[ 26%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/spaceSize.cpp.o\n[ 26%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/stringTable.cpp.o\n[ 26%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/universe.cpp.o\n[ 27%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/universe.more.cpp.o\n[ 27%] Building CXX object vm/CMakeFiles/Self.dir/src/any/memory/vmStrings.cpp.o\n[ 28%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/assignmentMap.cpp.o\n[ 28%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/blockMap.cpp.o\n[ 28%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/blockOop.cpp.o\n[ 29%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/byteVectorMap.cpp.o\n[ 29%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/byteVectorOop.cpp.o\n[ 30%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/codeLikeSlotsMap.cpp.o\n[ 30%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/codeSlotsMap.cpp.o\n[ 30%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/fctProxyMap.cpp.o\n[ 31%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/fctProxyOop.cpp.o\n[ 31%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/floatOop.cpp.o\n[ 31%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/floatMap.cpp.o\n[ 32%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/foreignOop.cpp.o\n[ 32%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/immediateMap.cpp.o\n[ 33%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/map.cpp.o\n[ 33%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/mapMap.cpp.o\n[ 33%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/mapOop.cpp.o\n[ 34%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/markMap.cpp.o\n[ 34%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/markOop.cpp.o\n[ 34%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/memOop.cpp.o\n[ 35%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/mirrorMap.cpp.o\n[ 35%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/mirrorOop.cpp.o\n[ 36%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/objVectorMap.cpp.o\n[ 36%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/objVectorOop.cpp.o\n[ 36%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/oop.cpp.o\n[ 37%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/oopsOop.cpp.o\n[ 37%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/processMap.cpp.o\n[ 37%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/processOop.cpp.o\n[ 38%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/profilerMap.cpp.o\n[ 38%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/profilerOop.cpp.o\n[ 39%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/proxyMap.cpp.o\n[ 39%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/proxyOop.cpp.o\n[ 39%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/slotDesc.cpp.o\n[ 40%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/slotsMap.cpp.o\n[ 40%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/slotsMapDeps.cpp.o\n[ 40%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/slotsOop.cpp.o\n[ 41%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/slotType.cpp.o\n[ 41%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/smiMap.cpp.o\n[ 42%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/smiOop.cpp.o\n[ 42%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/stringMap.cpp.o\n[ 42%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/stringOop.cpp.o\n[ 43%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/vframeMap.cpp.o\n[ 43%] Building CXX object vm/CMakeFiles/Self.dir/src/any/objects/vframeOop.cpp.o\n[ 43%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/errorCodes.cpp.o\n[ 44%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/itimer.cpp.o\n[ 44%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/monitorWindow.cpp.o\n[ 45%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/os.cpp.o\n[ 45%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/platformWindow.cpp.o\n[ 45%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/sig.cpp.o\n[ 46%] Building CXX object vm/CMakeFiles/Self.dir/src/any/os/timer.cpp.o\n[ 46%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/branchSet.cpp.o\n[ 46%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/byteCodes.cpp.o\n[ 47%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/expr.cpp.o\n[ 48%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/labelSet.cpp.o\n[ 48%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/kinds.cpp.o\n[ 48%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/list.cpp.o\n[ 48%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/parser.cpp.o\n[ 49%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/positionTable.cpp.o\n[ 49%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/scanner.cpp.o\n[ 50%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/send.cpp.o\n[ 50%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/slot.cpp.o\n[ 50%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/str.cpp.o\n[ 51%] Building CXX object vm/CMakeFiles/Self.dir/src/any/parser/stringUtil.cpp.o\n[ 51%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/dynLink.cpp.o\n[ 51%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/glue.cpp.o\n[ 52%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/glueCheckSum.cpp.o\n[ 52%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/glueDefs.cpp.o\n[ 53%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/glueSupport.cpp.o\n[ 53%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/miscPrims.cpp.o\n[ 53%] Building CXX object vm/CMakeFiles/Self.dir/src/any/prims/prim.cpp.o\n[ 54%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/aCompiler.cpp.o\n[ 54%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/allocation.cpp.o\n[ 54%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/asyncMalloc.cpp.o\n[ 55%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/callgraph.cpp.o\n[ 55%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/clist.cpp.o\n[ 56%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/conversion.cpp.o\n[ 56%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/debug.cpp.o\n[ 56%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/debugPrintable.cpp.o\n[ 57%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/eventlog.cpp.o\n[ 57%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/files.cpp.o\n[ 57%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/frame.cpp.o\n[ 58%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/frame_format.cpp.o\n[ 58%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/frame_iterator.cpp.o\n[ 59%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/framePieces.cpp.o\n[ 59%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/hprofiler.cpp.o\n[ 59%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/init.cpp.o\n[ 60%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/interruptedCtx.cpp.o\n[ 60%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/lprintf.cpp.o\n[ 60%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/machineCache.cpp.o\n[ 61%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/monitor.cpp.o\n[ 61%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/monitorHooks.cpp.o\n[ 62%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/monitorPieces.cpp.o\n[ 62%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/nlrSupport.cpp.o\n[ 62%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/nprofiler.copygraph.cpp.o\n[ 63%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/nprofiler.cpp.o\n[ 63%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/print.cpp.o\n[ 63%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/process.cpp.o\n[ 64%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/recompile.cpp.o\n[ 64%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/registerLocator.cpp.o\n[ 65%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/runtime.cpp.o\n[ 65%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/selfMonitor.cpp.o\n[ 65%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/shell.cpp.o\n[ 66%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/stack.cpp.o\n[ 66%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/table.cpp.o\n[ 66%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/uncommonBranch.cpp.o\n[ 67%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/util.cpp.o\n[ 67%] Building CXX object vm/CMakeFiles/Self.dir/src/any/runtime/vframe.cpp.o\n[ 68%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/aNode.cpp.o\n[ 68%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/basicBlock.cpp.o\n[ 68%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/bitVector.cpp.o\n[ 69%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/defUse.cpp.o\n[ 69%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/genHelper.cpp.o\n[ 70%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/inlining.cpp.o\n[ 70%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/longRegString.cpp.o\n[ 70%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/node.cpp.o\n[ 71%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/nodeGen.cpp.o\n[ 71%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/opcode.cpp.o\n[ 71%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/preg.cpp.o\n[ 72%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/regAlloc.cpp.o\n[ 72%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/rscope.cpp.o\n[ 73%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/sic.cpp.o\n[ 73%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/sicExpr.cpp.o\n[ 73%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/sicInline.cpp.o\n[ 74%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/sicPrimline.cpp.o\n[ 74%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/sicScope.cpp.o\n[ 74%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/sicSplit.cpp.o\n[ 75%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/slist.cpp.o\n[ 75%] Building CXX object vm/CMakeFiles/Self.dir/src/any/sic/tracing.cpp.o\n[ 76%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/addrDesc.cpp.o\n[ 76%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/codeTable.cpp.o\n[ 76%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/countPattern.cpp.o\n[ 77%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/countStub.cpp.o\n[ 77%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/ncode.cpp.o\n[ 77%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/fprofiler.cpp.o\n[ 78%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/nmethod.cpp.o\n[ 78%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/nmethodScopes.cpp.o\n[ 79%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/nmln.cpp.o\n[ 79%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/scopeDescRecorder.cpp.o\n[ 79%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/trapdoors.cpp.o\n[ 80%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/zone.cpp.o\n[ 80%] Building CXX object vm/CMakeFiles/Self.dir/src/any/zone/zoneHeap.cpp.o\n[ 80%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/asm/asm_i386.cpp.o\n[ 81%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/asm/disasm_i386.cpp.o\n[ 81%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/asm/fields_i386.cpp.o\n[ 82%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/asm/regs_i386.cpp.o\n[ 82%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/fast_compiler/codeGen_i386.cpp.o\n[ 82%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/fast_compiler/fcompiler_i386.cpp.o\n[ 83%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/fast_compiler/registerState_i386.cpp.o\n[ 83%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/fast_compiler/registerString_i386.cpp.o\n[ 83%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/lookup/cacheStub_i386.cpp.o\n[ 84%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/lookup/diDesc_i386.cpp.o\n[ 84%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/lookup/sendDesc_i386.cpp.o\n[ 85%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/memory/search_i386.cpp.o\n[ 85%] Building ASM object vm/CMakeFiles/Self.dir/src/i386/prims/asmPrims_i386.S.o\n[ 85%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/aCompiler_i386.cpp.o\n[ 86%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/conversion_i386.cpp.o\n[ 86%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/frame_format_i386.cpp.o\n[ 86%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/frame_i386.cpp.o\n[ 87%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/frame_iterator_i386.cpp.o\n[ 87%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/framePieces_i386.cpp.o\n[ 88%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/interruptedCtx_i386.cpp.o\n[ 88%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/registerLocator_i386.cpp.o\n[ 89%] Building ASM object vm/CMakeFiles/Self.dir/src/i386/runtime/runtime_asm_gcc_i386.S.o\n[ 89%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/runtime_i386.cpp.o\n[ 89%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/stubs_i386.cpp.o\n[ 90%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/uncommonBranch_i386.cpp.o\n[ 90%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/runtime/vframe_i386.cpp.o\n[ 90%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/sic/deadBlockNode_i386.cpp.o\n[ 91%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/sic/genHelper_i386.cpp.o\n[ 91%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/sic/longRegString_i386.cpp.o\n[ 91%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/sic/node_i386.cpp.o\n[ 92%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/sic/sic_i386.cpp.o\n[ 92%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/zone/addrDesc_i386.cpp.o\n[ 93%] Building ASM object vm/CMakeFiles/Self.dir/src/i386/zone/allocZone_i386.S.o\n[ 93%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/zone/countPattern_i386.cpp.o\n[ 93%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/zone/countStub_i386.cpp.o\n[ 94%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/zone/nmethod_i386.cpp.o\n[ 94%] Building CXX object vm/CMakeFiles/Self.dir/src/i386/zone/trapdoors_i386.cpp.o\n[ 94%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/os/errorCodes_unix.cpp.o\n[ 95%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/os/itimer_unix.cpp.o\n[ 95%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/os/os_unix.cpp.o\n[ 96%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/os/sig_unix.cpp.o\n[ 96%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/os/signalBlocker_unix.cpp.o\n[ 96%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/os/timer_unix.cpp.o\n[ 97%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/prims/unixPrims.cpp.o\n[ 97%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/prims/unixPrims.glue.cpp.o\n[ 97%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/runtime/interruptedCtx_unix.cpp.o\n[ 98%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/runtime/machineCache_unix.cpp.o\n[ 98%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/runtime/monitorHooks_unix.cpp.o\n[ 99%] Building CXX object vm/CMakeFiles/Self.dir/src/unix/runtime/monitorPieces_unix.cpp.o\n[ 99%] Building CXX object vm/CMakeFiles/Self.dir/__/objects/glue/stat_glue.cpp.o\n[ 99%] Building CXX object vm/CMakeFiles/Self.dir/__/objects/glue/termcap_glue.cpp.o\n[100%] Building CXX object vm/CMakeFiles/Self.dir/__/objects/glue/transcendental_glue.cpp.o\n[100%] Building CXX object vm/CMakeFiles/Self.dir/__/incls/vmDate.cpp.o\n[100%] Linking CXX executable Self\n",
+      "stderr": "${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp: In function ‘void print_option_primitives(bool)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp:259:20: warning: comparison with string literal results in unspecified behavior [-Waddress]\n  259 |       ? ( flagName != initialValue )                                   \\\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/debug.hh:130:5: note: in expansion of macro ‘ListPrimName’\n  130 |     template(DirPath, const char*, \"<str>\", StringPrimType, \"\",               \\\n      |     ^~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/debug.hh:189:5: note: in expansion of macro ‘FOR_ALL_MISC_DEBUG_PRIMS’\n  189 |     FOR_ALL_MISC_DEBUG_PRIMS(template)\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp:267:3: note: in expansion of macro ‘FOR_ALL_DEBUG_PRIMS’\n  267 |   FOR_ALL_DEBUG_PRIMS(ListPrimName)\n      |   ^~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp:259:20: warning: comparison with string literal results in unspecified behavior [-Waddress]\n  259 |       ? ( flagName != initialValue )                                   \\\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/debug.hh:136:5: note: in expansion of macro ‘ListPrimName’\n  136 |     template(SpyDisplay, const char*, \"<str>\", StringPrimType,                \\\n      |     ^~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/debug.hh:189:5: note: in expansion of macro ‘FOR_ALL_MISC_DEBUG_PRIMS’\n  189 |     FOR_ALL_MISC_DEBUG_PRIMS(template)\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp:267:3: note: in expansion of macro ‘FOR_ALL_DEBUG_PRIMS’\n  267 |   FOR_ALL_DEBUG_PRIMS(ListPrimName)\n      |   ^~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp:259:20: warning: comparison with string literal results in unspecified behavior [-Waddress]\n  259 |       ? ( flagName != initialValue )                                   \\\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/debug.hh:141:5: note: in expansion of macro ‘ListPrimName’\n  141 |     template(SpyFont, const char*, \"<str>\", StringPrimType, \"\",               \\\n      |     ^~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/debug.hh:189:5: note: in expansion of macro ‘FOR_ALL_MISC_DEBUG_PRIMS’\n  189 |     FOR_ALL_MISC_DEBUG_PRIMS(template)\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/objects/oop.cpp:267:3: note: in expansion of macro ‘FOR_ALL_DEBUG_PRIMS’\n  267 |   FOR_ALL_DEBUG_PRIMS(ListPrimName)\n      |   ^~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp: In static member function ‘static bool OS::expand_user_name(const char*, const char*, char*&)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:70:22: warning: ‘' exceeds ’ directive writing 10 bytes into a region of size between 0 and 4145 [-Wformat-overflow=]\n   70 |     sprintf(err, \"'%s' exceeds %ld in length\",\n      |                      ^~~~~~~~~~\nIn file included from ${SCRATCH}/cache/tools/apt/usr/include/stdio.h:980,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_includes_unix.hh:26,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_os_includes_pd.hh.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os_includes.hh:13,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_precompiled.hh:4,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_os.cpp.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:12:\nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘static bool OS::expand_user_name(const char*, const char*, char*&)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:70:12:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 25 and 4170 bytes into a destination of size 4146\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp: In static member function ‘static char* OS::expand_unix_dir(const char*, char*)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:27:22: warning: ‘%s’ directive writing between 4096 and 2147483645 bytes into a region of size 4145 [-Wformat-overflow=]\n   27 |       sprintf(err, \"'%s' exceeds %d chars in length\", in, max_path_length);\n      |                      ^~\nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘static char* OS::expand_unix_dir(const char*, char*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:27:14:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 4128 and 2147483677 bytes into a destination of size 4146\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp: In static member function ‘static char* OS::ExpandDir_prim(const char*, void*)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:27:22: warning: ‘%s’ directive writing between 4096 and 2147483645 bytes into a region of size 4145 [-Wformat-overflow=]\n   27 |       sprintf(err, \"'%s' exceeds %d chars in length\", in, max_path_length);\n      |                      ^~\nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘static char* OS::expand_unix_dir(const char*, char*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:27:14,\n    inlined from ‘static char* OS::ExpandDir_prim(const char*, void*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os.cpp:220:34:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 4128 and 2147483677 bytes into a destination of size 4146\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp: In member function ‘int32 LabelSet::RecordLabelInfo(AbstractByteCode*, oop, int32, LabelOccurrence, int32)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:60:18: warning: ‘%s’ directive writing up to 8191 bytes into a region of size 8186 [-Wformat-overflow=]\n   60 |           \"Label %s is multiply defined at bytecodes %d and %d\",\n      |                  ^~\n   61 |           psb,\n      |           ~~~     \nIn file included from ${SCRATCH}/cache/tools/apt/usr/include/stdio.h:980,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_includes_unix.hh:26,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_os_includes_pd.hh.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/os/os_includes.hh:13,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_precompiled.hh:4,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_labelSet.cpp.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:8:\nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘int32 LabelSet::RecordLabelInfo(AbstractByteCode*, oop, int32, LabelOccurrence, int32)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:59:16:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 48 and 8259 bytes into a destination of size 8192\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp: In member function ‘int32 LabelSet::RecordLabelInfo(AbstractByteCode*, oop, int32, LabelOccurrence, int32)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:47:22: warning: ‘%s’ directive writing up to 8191 bytes into a region of size 8186 [-Wformat-overflow=]\n   47 |               \"Label %s has stack depth %d at bytecode %d, \"\n      |                      ^~\n   48 |               \"but has differing stack depth %d at bytecode %d\",\n   49 |               psb,\n      |               ~~~     \nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘int32 LabelSet::RecordLabelInfo(AbstractByteCode*, oop, int32, LabelOccurrence, int32)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:46:14:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 86 and 8317 bytes into a destination of size 8192\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp: In function ‘int32 LabelSet::RecordLabelInfo(AbstractByteCode*, oop, int32, LabelOccurrence, int32)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:47:22: warning: ‘%s’ directive writing up to 8191 bytes into a region of size 8186 [-Wformat-overflow=]\n   47 |               \"Label %s has stack depth %d at bytecode %d, \"\n      |                      ^~\n   48 |               \"but has differing stack depth %d at bytecode %d\",\n   49 |               psb,\n      |               ~~~     \nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘int32 LabelSet::RecordLabelInfo(AbstractByteCode*, oop, int32, LabelOccurrence, int32)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:46:14:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 86 and 8317 bytes into a destination of size 8192\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp: In member function ‘bool LabelSet::ResolveLabel(AbstractByteCode*, oop, objVectorOop, int32)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:107:27: warning: ‘%s’ directive writing up to 8191 bytes into a region of size 8186 [-Wformat-overflow=]\n  107 |       sprintf(buf, \"Label %s is undefined\", psb);\n      |                           ^~                ~~~\nIn function ‘int sprintf(char*, const char*, ...)’,\n    inlined from ‘bool LabelSet::ResolveLabel(AbstractByteCode*, oop, objVectorOop, int32)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/parser/labelSet.cpp:107:14:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:30:34: note: ‘__builtin___sprintf_chk’ output between 20 and 8211 bytes into a destination of size 8192\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\nIn file included from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_prim_table_arch_pd.hh.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/prims/prim_table_arch.hh:7,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/prims/prim.cpp:2393:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/prims/prim_table_arch_i386.hh:8:19: warning: cast between incompatible function types from ‘void (*)(pc_t)’ {aka ‘void (*)(char*)’} to ‘fntype’ {aka ‘oopClass* (*)(...)’} [-Wcast-function-type]\n    8 |   \"NonLifoAbort\", fntype(&NLRSupport::non_lifo_abort),\n      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nIn function ‘int32 true_size_of_malloced_obj(int32*)’,\n    inlined from ‘void* selfs_malloc(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:401:39,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:338:20: warning: array subscript -1 is outside array bounds of ‘char [2147483647]’ [-Warray-bounds=]\n  338 |   return p[s_offset] & ~3; // some mallocs use low-order bit as flag\n      |          ~~~~~~~~~~^\nIn function ‘void* selfs_malloc(size_t)’,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [1, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:385:30: note: at offset -4 into object of size [1, 1048576] allocated by ‘malloc’\n  385 |         result= (char*)malloc(size);\n      |                        ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [1, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\nIn function ‘int32 true_size_of_malloced_obj(int32*)’,\n    inlined from ‘void* selfs_malloc(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:401:39,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘static void* CHeapObj::operator new(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:62:31:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:338:20: warning: array subscript -1 is outside array bounds of ‘char [2147483647]’ [-Warray-bounds=]\n  338 |   return p[s_offset] & ~3; // some mallocs use low-order bit as flag\n      |          ~~~~~~~~~~^\nIn function ‘void* selfs_malloc(size_t)’,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘static void* CHeapObj::operator new(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:62:31:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [1, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\nIn function ‘int32 true_size_of_malloced_obj(int32*)’,\n    inlined from ‘void* selfs_malloc(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:401:39,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘static void* CHeapObj::operator new(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:62:31:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:338:20: warning: array subscript -1 is outside array bounds of ‘char [2147483647]’ [-Warray-bounds=]\n  338 |   return p[s_offset] & ~3; // some mallocs use low-order bit as flag\n      |          ~~~~~~~~~~^\nIn function ‘void* selfs_malloc(size_t)’,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘static void* CHeapObj::operator new(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:62:31:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [1, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:385:30: note: at offset -4 into object of size [1, 1048576] allocated by ‘malloc’\n  385 |         result= (char*)malloc(size);\n      |                        ~~~~~~^~~~~~\nIn function ‘int32 true_size_of_malloced_obj(int32*)’,\n    inlined from ‘void* selfs_malloc(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:401:39,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘ResourceAreaChunk::ResourceAreaChunk(fint, ResourceAreaChunk*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:77:32:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:338:20: warning: array subscript -1 is outside array bounds of ‘char [2147483647]’ [-Warray-bounds=]\n  338 |   return p[s_offset] & ~3; // some mallocs use low-order bit as flag\n      |          ~~~~~~~~~~^\nIn function ‘void* selfs_malloc(size_t)’,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘ResourceAreaChunk::ResourceAreaChunk(fint, ResourceAreaChunk*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:77:32:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [102400, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\nIn function ‘int32 true_size_of_malloced_obj(int32*)’,\n    inlined from ‘void* selfs_malloc(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:401:39,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘ResourceAreaChunk::ResourceAreaChunk(fint, ResourceAreaChunk*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:77:32:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:338:20: warning: array subscript -1 is outside array bounds of ‘char [2147483647]’ [-Warray-bounds=]\n  338 |   return p[s_offset] & ~3; // some mallocs use low-order bit as flag\n      |          ~~~~~~~~~~^\nIn function ‘void* selfs_malloc(size_t)’,\n    inlined from ‘char* AllocateHeap(int32, const char*, bool)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.hh:256:34,\n    inlined from ‘ResourceAreaChunk::ResourceAreaChunk(fint, ResourceAreaChunk*)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:77:32:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [102400, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:385:30: note: at offset -4 into object of size [102400, 1048576] allocated by ‘malloc’\n  385 |         result= (char*)malloc(size);\n      |                        ~~~~~~^~~~~~\nIn function ‘int32 true_size_of_malloced_obj(int32*)’,\n    inlined from ‘void* selfs_malloc(size_t)’ at ${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:401:39:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:338:20: warning: array subscript -1 is outside array bounds of ‘char [2147483647]’ [-Warray-bounds=]\n  338 |   return p[s_offset] & ~3; // some mallocs use low-order bit as flag\n      |          ~~~~~~~~~~^\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp: In function ‘void* selfs_malloc(size_t)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [1, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:385:30: note: at offset -4 into object of size [1, 1048576] allocated by ‘malloc’\n  385 |         result= (char*)malloc(size);\n      |                        ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/runtime/allocation.cpp:375:33: note: at offset -4 into object of size [1, 2147483647] allocated by ‘malloc’\n  375 |     char* result = (char*)malloc(size);\n      |                           ~~~~~~^~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/sic/basicBlock.cpp:191:15: warning: ‘void duChecker(PRegBBIndex*)’ defined but not used [-Wunused-function]\n  191 |   static void duChecker(PRegBBIndex* p) {\n      |               ^~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/asm/asm_i386.cpp: In member function ‘void Assembler::addOffset(OperandType, bool, bool)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/asm/asm_i386.cpp:159:43: warning: enumerated and non-enumerated type in conditional expression [-Wextra]\n  159 |    doAddOffset(t, isEmbedded, (isRelative ? addrDesc::isRelativeMask : 0));\n      |                                ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/fast_compiler/codeGen_i386.cpp: In member function ‘void CodeGen::nonLifoTrap(RegisterState*)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/fast_compiler/codeGen_i386.cpp:1030:24: warning: cast between incompatible function types from ‘void (*)(pc_t)’ {aka ‘void (*)(char*)’} to ‘fntype’ {aka ‘oopClass* (*)(...)’} [-Wcast-function-type]\n 1030 |                        fntype(&NLRSupport::non_lifo_abort),\n      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/runtime/frame_i386.cpp:49: warning: ignoring ‘#pragma warn_unusedarg off’ [-Wunknown-pragmas]\n   49 | # pragma warn_unusedarg off\n      | \n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/runtime/stubs_i386.cpp:10: warning: ignoring ‘#pragma warn_unusedarg off’ [-Wunknown-pragmas]\n   10 | # pragma warn_unusedarg off\n      | \n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/sic/deadBlockNode_i386.cpp: In function ‘void initDeadBlockNode()’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/sic/deadBlockNode_i386.cpp:17:31: warning: cast between incompatible function types from ‘void (*)(pc_t)’ {aka ‘void (*)(char*)’} to ‘fntype’ {aka ‘oopClass* (*)(...)’} [-Wcast-function-type]\n   17 |       = getPrimDescOfFunction(fntype(&NLRSupport::non_lifo_abort), true);\n      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_precompiled.hh:136,\n                 from ${SCRATCH}/654-_sam1bai/self-src/build/incls/_deadBlockNode_i386.cpp.incl:1,\n                 from ${SCRATCH}/654-_sam1bai/self-src/vm/src/i386/sic/deadBlockNode_i386.cpp:9:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/sic/node.hh: At global scope:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/sic/node.hh:741:17: warning: inline function ‘virtual void CallNode::makeUses(BB*)’ used but never defined\n  741 |     inline void makeUses(BB* bb);\n      |                 ^~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/any/sic/node.hh:743:17: warning: inline function ‘virtual void CallNode::markAllocated(fint*, fint*)’ used but never defined\n  743 |     inline void markAllocated(fint* use_count, fint* def_count);\n      |                 ^~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_unix.cpp: In static member function ‘static void OS::core_dump()’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_unix.cpp:435:44: warning: cast between incompatible function types from ‘__sighandler_t’ {aka ‘void (*)(int)’} to ‘Signal_Handler_t’ {aka ‘void (*)(int, siginfo_t*, ucontext_t*)’} [-Wcast-function-type]\n  435 |   SignalInterface::install_signal(SIGABRT, Signal_Handler_t(SIG_DFL));\n      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_unix.cpp: In static member function ‘static FILE* OS::start_decompressing_snapshot(FILE*, const char*)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_unix.cpp:770:12: warning: ignoring return value of ‘int seteuid(__uid_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  770 |     seteuid(getuid()); // just in case someone makes Self setuid...\n      |     ~~~~~~~^~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/os_unix.cpp:771:12: warning: ignoring return value of ‘int setegid(__gid_t)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  771 |     setegid(getgid());\n      |     ~~~~~~~^~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/sig_unix.cpp: In static member function ‘static void SignalInterface::initialize_platform(bool)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/sig_unix.cpp:87:34: warning: cast between incompatible function types from ‘int32 (*)(int)’ {aka ‘int (*)(int)’} to ‘Signal_Handler_t’ {aka ‘void (*)(int, siginfo_t*, ucontext_t*)’} [-Wcast-function-type]\n   87 |   install_signal(SIGTSTP,        Signal_Handler_t(ctrl_z_handler));\n      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/sig_unix.cpp:88:34: warning: cast between incompatible function types from ‘int32 (*)(int)’ {aka ‘int (*)(int)’} to ‘Signal_Handler_t’ {aka ‘void (*)(int, siginfo_t*, ucontext_t*)’} [-Wcast-function-type]\n   88 |   install_signal(SIGCONT,        Signal_Handler_t(ctrl_z_handler));\n      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/sig_unix.cpp: In static member function ‘static void SignalInterface::install_signal(int, Signal_Handler_t)’:\n${SCRATCH}/654-_sam1bai/self-src/vm/src/unix/os/sig_unix.cpp:155:23: warning: cast between incompatible function types from ‘Signal_Handler_t’ {aka ‘void (*)(int, siginfo_t*, ucontext_t*)’} to ‘void (*)(int)’ [-Wcast-function-type]\n  155 |   action.sa_handler = (void (*)(int))handler;\n      |                       ^~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libncurses.so.6 when searching for libncurses.so.6\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libncurses.so.6 when searching for libncurses.so.6\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libncurses.so.6 when searching for libncurses.so.6\n/usr/bin/ld: cannot find libncurses.so.6: No such file or directory\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libncurses.so.6 when searching for libncurses.so.6\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libncurses.so.6 when searching for libncurses.so.6\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.a when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.a when searching for -ltinfo\n/usr/bin/ld: cannot find -ltinfo: No such file or directory\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.a when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.a when searching for -ltinfo\n/usr/bin/ld: cannot find -ltinfo: No such file or directory\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\n/usr/bin/ld: skipping incompatible /usr/lib/x86_64-linux-gnu/libtinfo.so when searching for -ltinfo\ncollect2: error: ld returned 1 exit status\ngmake[2]: *** [vm/CMakeFiles/Self.dir/build.make:4380: vm/Self] Error 1\ngmake[1]: *** [CMakeFiles/Makefile2:223: vm/CMakeFiles/Self.dir/all] Error 2\ngmake: *** [Makefile:91: all] Error 2\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-p0x3hgu7/home",
+        "TMPDIR": "${SCRATCH}/654-p0x3hgu7/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Authenticate the official Ubuntu package index",
+      "command": [
+        "gpgv",
+        "--keyring",
+        "/usr/share/keyrings/ubuntu-archive-keyring.gpg",
+        "${SCRATCH}/654-pjedbp2a/InRelease"
+      ],
+      "cwd": "${SCRATCH}/654-pjedbp2a",
+      "timestamp_utc": "2026-11-19T21:41:22.182935+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "gpgv: Signature made Thu Nov 19 20:12:49 2026 CET\ngpgv:                using RSA key F6ECB3762474EDA9D21B7022871920D1991BC93C\ngpgv: Good signature from \"Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>\"\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Extract the authenticated libncurses-dev i386 package into the local test directory",
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "${SCRATCH}/654-pjedbp2a/libncurses-dev_6.4+20240113-1ubuntu2.2_i386.deb",
+        "${SCRATCH}/654-pjedbp2a/terminal-libs"
+      ],
+      "cwd": "${SCRATCH}/654-pjedbp2a",
+      "timestamp_utc": "2026-11-19T21:41:25.004094+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Extract the authenticated libncurses6 i386 package into the local test directory",
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "${SCRATCH}/654-pjedbp2a/libncurses6_6.4+20240113-1ubuntu2.2_i386.deb",
+        "${SCRATCH}/654-pjedbp2a/terminal-libs"
+      ],
+      "cwd": "${SCRATCH}/654-pjedbp2a",
+      "timestamp_utc": "2026-11-19T21:41:25.975752+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Extract the authenticated libtinfo6 i386 package into the local test directory",
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "${SCRATCH}/654-pjedbp2a/libtinfo6_6.4+20240113-1ubuntu2.2_i386.deb",
+        "${SCRATCH}/654-pjedbp2a/terminal-libs"
+      ],
+      "cwd": "${SCRATCH}/654-pjedbp2a",
+      "timestamp_utc": "2026-11-19T21:41:26.160836+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Configure the final Self link to use only the staged i386 terminal libraries",
+      "command": [
+        "cmake",
+        "-S",
+        "${SCRATCH}/654-_sam1bai/self-src",
+        "-B",
+        "${SCRATCH}/654-_sam1bai/self-src/build",
+        "-DCMAKE_EXE_LINKER_FLAGS=-B${SCRATCH}/cache/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/32/ -B${SCRATCH}/cache/tools/apt/usr/lib32/ -L${SCRATCH}/654-_sam1bai/relocated-linker -L${SCRATCH}/cache/tools/apt/usr/lib/gcc/x86_64-linux-gnu/13/32 -L${SCRATCH}/cache/tools/apt/usr/lib32 -Wl,--dynamic-linker=${SCRATCH}/cache/tools/apt/usr/lib32/ld-linux.so.2 -Wl,--disable-new-dtags -Wl,-rpath,${SCRATCH}/cache/tools/apt/usr/lib32 -L${SCRATCH}/654-pjedbp2a/terminal-libs/usr/lib/i386-linux-gnu -Wl,-rpath,${SCRATCH}/654-pjedbp2a/terminal-libs/usr/lib/i386-linux-gnu"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:41:26.175877+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "-- Preparing for Linux on i386\n-- Preparing Self VM 2023.1.13 (build 2024.1)\n-- Configuring for default Release\n-- Configuring done (12.0s)\n-- Generating done (1.6s)\n-- Build files have been written to: ${SCRATCH}/654-_sam1bai/self-src/build\n",
+      "stderr": "CMake Deprecation Warning at CMakeLists.txt:11 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Deprecation Warning at vm/CMakeLists.txt:13 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Deprecation Warning at tools/CMakeLists.txt:8 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Warning (dev) in vm/CMakeLists.txt:\n  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.\n  Run \"cmake --help-policy CMP0043\" for policy details.  Use the cmake_policy\n  command to set the policy and suppress this warning.\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\nCMake Warning (dev) in vm/CMakeLists.txt:\n  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.\n  Run \"cmake --help-policy CMP0043\" for policy details.  Use the cmake_policy\n  command to set the policy and suppress this warning.\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\nCMake Warning (dev) in vm/CMakeLists.txt:\n  Policy CMP0043 is not set: Ignore COMPILE_DEFINITIONS_<Config> properties.\n  Run \"cmake --help-policy CMP0043\" for policy details.  Use the cmake_policy\n  command to set the policy and suppress this warning.\nThis warning is for project developers.  Use -Wno-dev to suppress it.\n\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/654-pjedbp2a/terminal-libs/usr/lib/i386-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Build the upstream native Self VM",
+      "command": [
+        "cmake",
+        "--build",
+        "${SCRATCH}/654-_sam1bai/self-src/build",
+        "-j",
+        "4"
+      ],
+      "cwd": "${SCRATCH}/654-_sam1bai/self-src",
+      "timestamp_utc": "2026-11-19T21:41:48.318315+00:00",
+      "timeout_seconds": 420,
+      "exit_code": 0,
+      "stdout": "[  3%] Built target shellscripts\n[  4%] Creating ${SCRATCH}/654-_sam1bai/self-src/build/incls/vmDate.cpp\n[  4%] Built target create_vmDate\n[  5%] Linking C executable cmprev\n[  5%] Linking CXX executable makeDeps\n[  5%] Linking CXX executable AddTrailingNewline\n[  5%] Linking C executable dangling\n[  6%] Built target dangling\n[  6%] Built target cmprev\n[  6%] Built target AddTrailingNewline\n[  6%] Built target makeDeps\n[  7%] Linking C executable linked\n[  7%] Built target linked\n[  7%] Linking CXX executable runBinary\n[  8%] Built target runBinary\n[  9%] Linking CXX executable zap\n[  9%] Linking CXX executable isLink\n[ 10%] Built target isLink\n[ 10%] Linking CXX executable rself\n[ 10%] Built target rself\n[ 10%] Built target zap\n[ 10%] Building CXX object vm/CMakeFiles/Self.dir/__/incls/vmDate.cpp.o\n[ 10%] Linking CXX executable Self\n[100%] Built target Self\n",
+      "stderr": "/usr/bin/ld: warning: CMakeFiles/Self.dir/src/i386/zone/allocZone_i386.S.o: missing .note.GNU-stack section implies executable stack\n/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker\n/usr/bin/ld: CMakeFiles/Self.dir/src/i386/runtime/runtime_asm_gcc_i386.S.o: warning: relocation against `processSemaphore' in read-only section `.text'\n/usr/bin/ld: warning: creating DT_TEXTREL in a PIE\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/654-pjedbp2a/terminal-libs/usr/lib/i386-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    },
+    {
+      "label": "Build the standard console-only Self world and load the exact hello.self file",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/654-pjedbp2a",
+        "${SCRATCH}/654-pjedbp2a",
+        "--chdir",
+        "${SCRATCH}/654-pjedbp2a",
+        "--unshare-pid",
+        "--unshare-net",
+        "--die-with-parent",
+        "--",
+        "${SCRATCH}/654-_sam1bai/self-src/build/vm/Self",
+        "-f",
+        "${SCRATCH}/654-_sam1bai/self-src/objects/worldBuilder.self",
+        "-b",
+        "${SCRATCH}/654-_sam1bai/self-src/objects",
+        "-o",
+        "none",
+        "-f2",
+        "${SCRATCH}/654-pjedbp2a/hello.self",
+        "-f3",
+        "${SCRATCH}/654-pjedbp2a/exit-self.self"
+      ],
+      "cwd": "${SCRATCH}/654-pjedbp2a",
+      "timestamp_utc": "2026-11-19T21:41:57.420636+00:00",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Self Virtual Machine Version 2023.1/13, Thu 19 Nov 26 22:41:48 Linux i386 (2024.1)\nCopyright 1989-2016 AUTHORS (type _Credits for credits)\n\nfor I386:  LogVMMessages = true\nfor I386:  PrintScriptName  = true\nfor I386:  Inline = true\nfor I386:  SICDeferUncommonBranches = false (not implemented)\nfor I386:  SICReplaceOnStack = false (not implemented)\nfor I386:  SaveOutgoingArgumentsOfPatchedFrames = true\nReading ${SCRATCH}/654-_sam1bai/self-src/objects/worldBuilder.self...\nBuilding from base: ${SCRATCH}/654-_sam1bai/self-src/objects\n         init file: ${SCRATCH}/654-_sam1bai/self-src/objects/core/init.self\nAbout to load basic world\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/init.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/allCore.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/systemStructure.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/defaultBehavior.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/rootTraits.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/coreObjects.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/errorHandling.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/block.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/blockTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/nil.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/boolean.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/number.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/integer.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/integerIteration.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/smallInt.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/smallIntTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/float.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/collection.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/indexable.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/vector.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/sequence.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/sortedSequence.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/sending.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/list.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/sortedList.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/collector.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/string.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/stringTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/priorityQueue.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/tree.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/orderedSet.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/setAndDictionary.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/orderedDictionary.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/idSetAndDictionary.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/universalSetAndDictionary.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/customizableSetAndDictionary.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/annotation.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/moduleInfo.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/selector.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/message.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/time.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/pair.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/point.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/rectangle.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/oldStyleRectangle.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/visibility.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/mirror.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/metaCollections.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/mirrorProgramming.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/slot.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/snapshotAction.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/hosts.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/quartzHosts.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/caseStatement.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/generatedCases.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/systemOddballs.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/memoryState.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/bigInt.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/random.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/path.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/bytecodeFormat.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/profiling.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/profiler.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/shell.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/textLines.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/methodText.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/selectionText.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/activationText.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/fakeSlot.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/fakeSlotsIterator.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/absBCInterpreter.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/absBCBytecodes.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/selectorFinder.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/methodDisassembler.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/branchTargetFinder.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/leafMethodTester.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/localAccessFinder.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/stackSizeInterp.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/streams.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/processesAndIO.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/ping.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/interceptor.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/serializer.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/processStack.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/processStatus.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/processErrors.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/process.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/semaphore.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/barrier.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/scheduler.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/sharedSetAndDictionary.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/foreign.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/all_OS.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/abstract_OS.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/unix.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/glue/unixPrims_wrappers.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/unix_stdin.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/fileStream.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/stdin.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/stat.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/glue/stat_wrappers.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/sharedQueue.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/monitor.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/lock.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/channel.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/programmingSupport.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/inspect.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/enumerating.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/browsing.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/history.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/transporter.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/objectScanner.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/transporterFiles.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/bootstrapFile.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/bufferedBootstrapFile.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/beamOut.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/beamIn.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/fastTransporter.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/chain.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/fileOut.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/module.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/annotator.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/incrementalSaving.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/programmingLog.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/diff.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/primitives.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/shortcuts.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/glue/transcendental_wrappers.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/ttySupport.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/termcap.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/glue/termcap_wrappers.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/tty.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/defaultPreferences.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/debugger.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/coreUserProfile.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/prompt.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/int32and64.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/systemLog.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/about.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/core/coreVersion.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/glue/primitiveMaker.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/allTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/tests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/programmingTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/debugTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/lowLevelTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/numberTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/deltablue.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/sicTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/branchTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/nicTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/testSuite.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/languageTests.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/cons.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/benchmarks.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/richards.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/parser.self...\nreading ${SCRATCH}/654-_sam1bai/self-src/objects/tests/parseNodes.self...\nUI2 (Morphic) not chosen on command line\nUI1 (X11 Only) not chosen on command line\nreading ${SCRATCH}/654-pjedbp2a/hello.self...\nHello, World!\nreading ${SCRATCH}/654-pjedbp2a/exit-self.self...\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/654-pjedbp2a/home",
+        "TMPDIR": "${SCRATCH}/654-pjedbp2a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/654-pjedbp2a/terminal-libs/usr/lib/i386-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib32:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "/usr/include/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/include",
+        "CPLUS_INCLUDE_PATH": "/usr/include/x86_64-linux-gnu/c++/13"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#654 Self/hello.self": "e8e4a1ea20ec2bb4c43015fb7a178bdffb0e1fca93cb53df40bf1a57fa327a82"
+  },
+  "fixture_sha256": {
+    "relocated-linker/libc.so": {
+      "sha256": "d200d858935758d856a1e38c79815f60773adb400546c504777c9d3736355001",
+      "content_utf8": "/* GNU ld script\n   Use the shared library, but some functions are only in\n   the static library, so try that secondarily.  */\nOUTPUT_FORMAT(elf32-i386)\nGROUP ( ${SCRATCH}/cache/tools/apt/usr/lib32/libc.so.6 ${SCRATCH}/cache/tools/apt/usr/lib32/libc_nonshared.a  AS_NEEDED ( ${SCRATCH}/cache/tools/apt/usr/lib32/ld-linux.so.2 ) )\n"
+    },
+    "link32.cpp": {
+      "sha256": "3daa0375893ef2c0ef2caf13ed61d8fd82f0436e0b57bf8b854c821a16f11e29",
+      "content_utf8": "#include <iostream>\nstatic_assert(sizeof(void*) == 4, \"32-bit pointers required\");\nint main() { std::cout << \"Self i386 linker ready\\n\"; }\n"
+    },
+    "exit-self.self": {
+      "sha256": "7bb9d34fb08c58f329aa5b592022bd9235a3a460ee7bf6146e369a8030a54c29",
+      "content_utf8": "_Quit.\n"
+    }
+  },
+  "sources": [
+    "https://handbook.selflanguage.org/2024.1/build.html",
+    "https://handbook.selflanguage.org/2024.1/vmref.html"
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "filename": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295",
+      "bytes": 11190006,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb"
+    },
+    {
+      "name": "gcc-multilib",
+      "version": "4:13.2.0-7ubuntu1",
+      "filename": "pool/main/g/gcc-defaults/gcc-multilib_13.2.0-7ubuntu1_amd64.deb",
+      "sha256": "535a70c8c10cb3444500e9bc8b7fcc344f1a4cc528c645e62d39ee54ccf75628",
+      "bytes": 1474,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-multilib_13.2.0-7ubuntu1_amd64.deb"
+    },
+    {
+      "name": "gcc-13-multilib",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "filename": "pool/main/g/gcc-13/gcc-13-multilib_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "64831d1b25f7d9dbf820ab81d69adb3df8a2c362c71434aa29988eca707fac84",
+      "bytes": 880,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/gcc-13-multilib_13.3.0-6ubuntu2~24.04.1_amd64.deb"
+    },
+    {
+      "name": "libc6-i386",
+      "version": "2.39-0ubuntu8.12",
+      "filename": "pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb",
+      "sha256": "f3357fcee4a907404f5231381834cf31647326496d5bb4259338a717b3544c89",
+      "bytes": 2786812,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-i386_2.39-0ubuntu8.12_amd64.deb"
+    },
+    {
+      "name": "libc6-dev-i386",
+      "version": "2.39-0ubuntu8.12",
+      "filename": "pool/main/g/glibc/libc6-dev-i386_2.39-0ubuntu8.12_amd64.deb",
+      "sha256": "4836a2d2d7b3a74b099d39c685f3256607309b21949223e1800486f339e49665",
+      "bytes": 1446956,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev-i386_2.39-0ubuntu8.12_amd64.deb"
+    },
+    {
+      "name": "lib32gcc-13-dev",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "filename": "pool/main/g/gcc-13/lib32gcc-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "0850e0555c86f2ce7a954158eb47df42d7645bfa4f12f29ea2df76459c930ac0",
+      "bytes": 2380426,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/lib32gcc-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb"
+    },
+    {
+      "name": "lib32gcc-s1",
+      "version": "14.2.0-4ubuntu2~24.04.1",
+      "filename": "pool/main/g/gcc-14/lib32gcc-s1_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "sha256": "1802dc75345ccce457b44110a3819ca74ff8c33fc62394a78d0e59a11c0cf770",
+      "bytes": 92278,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/lib32gcc-s1_14.2.0-4ubuntu2~24.04.1_amd64.deb"
+    },
+    {
+      "name": "lib32stdc++6",
+      "version": "14.2.0-4ubuntu2~24.04.1",
+      "filename": "pool/main/g/gcc-14/lib32stdc++6_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "sha256": "1fa581633023bd973015f0a9148c7c3f229cf9a6a55cfbffc4688644e9305ba3",
+      "bytes": 814430,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-14/lib32stdc++6_14.2.0-4ubuntu2~24.04.1_amd64.deb"
+    },
+    {
+      "name": "lib32stdc++-13-dev",
+      "version": "13.3.0-6ubuntu2~24.04.1",
+      "filename": "pool/main/g/gcc-13/lib32stdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "sha256": "b4ebe1e2095e5d4377fa916abeded686ec76832bf593f06afda5ad1302037e2c",
+      "bytes": 1150410,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gcc-13/lib32stdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    },
+    {
+      "name": "libncurses-dev",
+      "version": "6.4+20240113-1ubuntu2.2",
+      "architecture": "i386",
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/libncurses-dev_6.4+20240113-1ubuntu2.2_i386.deb",
+      "sha256": "cd5bd4b4600583dd497eab753a07c87328489d5a6a1887b28baf866121a6457f"
+    },
+    {
+      "name": "libncurses6",
+      "version": "6.4+20240113-1ubuntu2.2",
+      "architecture": "i386",
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/libncurses6_6.4+20240113-1ubuntu2.2_i386.deb",
+      "sha256": "755c2452c44fea41c8d5da0e285eb15ecbed66cd172d873aeb8d24a209fc47ea"
+    },
+    {
+      "name": "libtinfo6",
+      "version": "6.4+20240113-1ubuntu2.2",
+      "architecture": "i386",
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/libtinfo6_6.4+20240113-1ubuntu2.2_i386.deb",
+      "sha256": "1fdac8de555caa978d471dbe319fc580e99eea50b04f7bf561bf4b540abdf3a5"
+    }
+  ],
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/russellallen/self/tar.gz/2024.1",
+      "ref": "2024.1",
+      "sha256": "6703a0453f9df0411282965561113d726ba24f5b39450871fe225a67e5a2b615"
+    }
+  ],
+  "source_archive_build_metadata": "Initialize only local Git metadata. The VM and object source files are unchanged.",
+  "vm_sha256": "03a615fa5ba882c3cba8ee0321f250a40e626f42ab63dbf1ff567adcf00c9781",
+  "vm_version_banner": "Self Virtual Machine Version 2023.1/13, Thu 19 Nov 26 22:41:48 Linux i386 (2024.1)",
+  "greeting": {
+    "stream": "stderr",
+    "value": "Hello, World!"
+  },
+  "isolation": "X11 disabled at build time. The standard world was loaded with -o none in a namespace without networking.",
+  "updated_expectation": {
+    "build_command": "Configure and build the upstream 32-bit Self 2024.1 VM with CMake and SELF_X11=OFF."
+  },
+  "toolchain": "Self 2024.1 upstream 32-bit Linux VM and standard world",
+  "reproduction_command": "printf '_Quit.\\n' > exit-self.self && Self -f /path/to/Self/objects/worldBuilder.self -b /path/to/Self/objects -o none -f2 hello.self -f3 exit-self.self",
+  "semantic_scope": "The upstream Self VM initialized the standard world without graphics and evaluated the unchanged hello.self file. Its printLine message emitted the exact greeting on the VM output stream (captured as stderr), and the VM exited successfully.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

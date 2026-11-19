@@ -657,7 +657,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #651 | [Scenic](../examples/%23651%20Scenic/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #652 | [Scheme](../examples/%23652%20Scheme/README.md) | Yes | Yes | Yes | 6/6 | Evidence recorded |
 | #653 | [Scilab](../examples/%23653%20Scilab/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
-| #654 | [Self](../examples/%23654%20Self/README.md) | Yes | Pending | Pending | 1/1 | The Self VM and standard world are not set up. |
+| #654 | [Self](../examples/%23654%20Self/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #655 | [ShaderLab](../examples/%23655%20ShaderLab/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #656 | [Shell](../examples/%23656%20Shell/README.md) | Yes | Yes | Yes | 16/16 | Evidence recorded |
 | #657 | [ShellCheck Config](../examples/%23657%20ShellCheck%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |

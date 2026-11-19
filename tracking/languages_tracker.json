@@ -38240,13 +38240,14 @@
       "example": {
         "semantic_goal": "Valutare un messaggio printLine nel mondo standard Self.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "Self VM e standard world",
+        "toolchain": "Self 2024.1 upstream 32-bit Linux VM and standard world",
         "files": [
           "examples/#654 Self/README.md",
-          "examples/#654 Self/hello.self"
+          "examples/#654 Self/hello.self",
+          "examples/#654 Self/verification/native_20261119_wave800_main.json"
         ],
-        "build_command": null,
-        "run_or_check_command": "Nel mondo standard Self valutare hello.self tramite fileIn; registrare VM/world e output.",
+        "build_command": "Configure and build the upstream 32-bit Self 2024.1 VM with CMake and SELF_X11=OFF.",
+        "run_or_check_command": "printf '_Quit.\\n' > exit-self.self && Self -f /path/to/Self/objects/worldBuilder.self -b /path/to/Self/objects -o none -f2 hello.self -f3 exit-self.self",
         "expected_result": "Hello, World!",
         "sources": [
           "https://handbook.selflanguage.org/"
@@ -38256,16 +38257,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "VM Self e standard world non predisposti."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T21:41:17.102683+00:00",
+        "verification_log": "examples/#654 Self/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The upstream Self VM initialized the standard world without graphics and evaluated the unchanged hello.self file. Its printLine message emitted the exact greeting on the VM output stream (captured as stderr), and the VM exited successfully.",
+        "verified_artifact_sha256": {
+          "examples/#654 Self/hello.self": "e8e4a1ea20ec2bb4c43015fb7a178bdffb0e1fca93cb53df40bf1a57fa327a82"
+        }
       }
     },
     {
