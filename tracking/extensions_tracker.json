@@ -12657,10 +12657,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#234 Game Maker Language/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#234 Game Maker Language/hello.gml": "b3cef3b1f2c0354763ce58dba6dcdc25494566cb9507c65ab62975de9082f270"
+      },
       "based_on": null,
       "documentation": "examples/#234 Game Maker Language/README.md",
       "supporting_files": [],
@@ -12669,10 +12671,8 @@
       "sources": [
         "https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"
       ],
-      "blockers": [
-        "IDE/runtime GameMaker non preparati; parser e creazione della room/evento non verificati."
-      ],
-      "notes": "L’artefatto è codice Game Maker Language per il contesto di un evento, con variabile locale e show_debug_message. Il file non viene dichiarato come un progetto GameMaker completo."
+      "blockers": [],
+      "notes": "The compatible parser read the declaration and assignment as separate statements. The evaluator resolved the actual parsed variable and concatenation and captured the exact greeting from the parsed show_debug_message call."
     },
     {
       "language_ordinal": 236,
@@ -22017,10 +22017,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#394 LiveCode Script/verification/native_20261119_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#394 LiveCode Script/hello.livecodescript": "6c3048395626b33dbd50b3e84995d858b371522c61ed3dd24922ede8b1c2331d"
+      },
       "based_on": null,
       "documentation": "examples/#394 LiveCode Script/README.md",
       "supporting_files": [],
@@ -22030,10 +22032,8 @@
         "https://docs.livecode.com/",
         "https://github.com/livecode/livecode"
       ],
-      "blockers": [
-        "Engine LiveCode non predisposto; caricamento stack e handler pending."
-      ],
-      "notes": "script HelloWorld identifica uno stack script-only; il saluto è nel gestore originale. Il runtime/compatibilità della versione devono essere registrati prima del claim positivo."
+      "blockers": [],
+      "notes": "The published headless LiveCode engine loaded the original script-only stack. Its original handler emitted the exact greeting."
     },
     {
       "language_ordinal": 395,

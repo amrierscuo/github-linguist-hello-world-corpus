@@ -1,5 +1,16 @@
 # #394 LiveCode Script
 
+## Verified on November 19, 2026
+
+The published headless LiveCode engine loaded the original script-only stack. Its original handler emitted the exact greeting.
+
+Run `livecode-server driver.lc`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Upload a script-only LiveCode stack and invoke helloWorld.
 
 ## Toolchain
@@ -34,4 +45,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.livecodescript` | [hello.livecodescript](hello.livecodescript) created; verification pending |
+| `.livecodescript` | [hello.livecodescript](hello.livecodescript) Syntax and behavior verified |
+
+</details>

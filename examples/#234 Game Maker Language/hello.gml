@@ -1,2 +1,3 @@
-var greeting = "Hello, " + "World!";
+var greeting;
+greeting = "Hello, " + "World!";
 show_debug_message(greeting);

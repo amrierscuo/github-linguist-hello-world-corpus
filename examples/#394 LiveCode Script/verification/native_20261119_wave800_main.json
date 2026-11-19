@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "ordinal": 394,
+  "language": "LiveCode Script",
+  "timestamp_utc": "2026-11-19T14:04:37.290658+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Load the original script-only stack and dispatch its named handler through the actual server",
+      "command": [
+        "${SCRATCH}/394-es9hryro/engine/livecode-community-server",
+        "${SCRATCH}/394-es9hryro/driver.lc"
+      ],
+      "cwd": "${SCRATCH}/394-es9hryro",
+      "timestamp_utc": "2026-11-19T14:04:47.290675+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "stdout": "Hello, World!",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/394-es9hryro/home",
+        "TMPDIR": "${SCRATCH}/394-es9hryro/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/394-es9hryro/engine:${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#394 LiveCode Script/hello.livecodescript": "6c3048395626b33dbd50b3e84995d858b371522c61ed3dd24922ede8b1c2331d"
+  },
+  "fixture_sha256": {
+    "driver.lc": {
+      "sha256": "f1d9ed91d59a7d9e64b40d83d09df4c85d3bc2a4bfe9d97db3cb1328c7176dc9",
+      "content_utf8": "<?lc\nstart using stack \"hello.livecodescript\"\nhelloWorld\n?>"
+    }
+  },
+  "sources": [
+    "https://docs.livecode.com/",
+    "https://github.com/livecode/livecode"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://archive.org/download/live-code-community-server-for-linux-all-versions/Linux%2064-Bit/LiveCodeCommunityServer-9_6_3-Linux-x86_64.zip",
+      "referenced_by": "https://openxtalk.org/OXTDownloads.html",
+      "sha256": "e7f92cf82074b69349307c1b904014d3949284546659ce72fb032972d99dcb76"
+    }
+  ],
+  "ubuntu_archives": [],
+  "toolchain": "LiveCode Community Server 9.6.3 Linux x86-64",
+  "reproduction_command": "livecode-server driver.lc",
+  "semantic_scope": "The published headless LiveCode engine loaded the original script-only stack. Its original handler emitted the exact greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

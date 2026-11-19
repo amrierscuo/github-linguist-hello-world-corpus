@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "ordinal": 314,
+  "language": "Inno Setup",
+  "timestamp_utc": "2026-11-19T14:04:10.197861+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the installed decoded-script library version",
+      "command": [
+        "${SCRATCH}/314-s83o9o37/venv/bin/python",
+        "-I",
+        "-m",
+        "pip",
+        "show",
+        "binary-refinery"
+      ],
+      "cwd": "${SCRATCH}/314-afkxdj8l",
+      "timestamp_utc": "2026-11-19T14:04:13.938428+00:00",
+      "timeout_seconds": 25,
+      "exit_code": 0,
+      "stdout": "Name: binary-refinery\nVersion: 0.11.3\nSummary: A toolkit to transform and refine (mostly) binary data.\nHome-page: https://github.com/binref/refinery/\nAuthor: Jesko Huettenhain\nAuthor-email: \nLicense: \nLocation: ${SCRATCH}/314-s83o9o37/venv/lib/python3.12/site-packages\nRequires: colorama, colorama, cython, defusedxml, lief, msgpack, numpy, numpy, numpy, numpy, numpy, numpy, numpy, numpy, numpy, numpy, numpy, numpy, pure-magic-rs, pycryptodomex, pyperclip, pyperclip, pyperclip, pyperclip, setuptools, toml, wheel\nRequired-by: \n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/314-afkxdj8l/home",
+        "TMPDIR": "${SCRATCH}/314-afkxdj8l/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    },
+    {
+      "label": "Decode the real Inno Setup compiler output without opening its wizard",
+      "command": [
+        "${SCRATCH}/314-s83o9o37/venv/bin/python",
+        "-I",
+        "${SCRATCH}/314-afkxdj8l/read_ifps.py",
+        "${WORKSPACE}/work/native_target800_20261119/inno-cli-s_fmawv4/hello-world-setup.exe"
+      ],
+      "cwd": "${SCRATCH}/314-afkxdj8l",
+      "timestamp_utc": "2026-11-19T14:04:28.857492+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Inno signature (data: 'bytearray', unit: 'Unit | None' = None)\nInno APIs ['_constants_without_script', '_script_emulator', 'ifps']\nIFPS APIs ['IFPSAPI', 'IFPSClasses', 'IFPSEvents', 'IFPSFile', 'IFPSSignature', 'IFPSType', 'IFPSTypeBase']\nexternal class TWizardForm;\nexternal class TMAINFORM;\nexternal class TUninstallProgressForm;\n\ntypedef AnyMethod = ProcPtr()\ntypedef Boolean = U08\ntypedef Integer = S32\ntypedef TMsgBoxType = U08\n\nglobal WIZARDFORM: TWizardForm\nglobal MAINFORM: TMAINFORM\nglobal UNINSTALLPROGRESSFORM: TUninstallProgressForm\n\nexternal function MsgBox(Text: UnicodeString, Typ: TMsgBoxType, Buttons: Integer): Integer\n\nprocedure !MAIN()\nbegin\n  0x00  0  Ret\nend;\n\nprocedure InitializeWizard()\nbegin\n  0x00  0  PushType      S32\n  0x05  1  PushType      S32\n  0x0A  2  Assign        LocalVar2 := 0\n  0x19  2  PushType      TMsgBoxType\n  0x1E  3  Assign        LocalVar3 := 0\n  0x2A  3  PushType      UnicodeString\n  0x2F  4  Assign        LocalVar4 := 'Hello, World!'\n  0x58  4  PushVar       LocalVar1\n  0x5E  5  Call          MsgBox\n  0x63  5  Pop\n  0x64  4  Pop\n  0x65  3  Pop\n  0x66  2  Pop\n  0x67  1  Pop\n  0x68  0  Ret\nend;\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/314-afkxdj8l/home",
+        "TMPDIR": "${SCRATCH}/314-afkxdj8l/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "PIP_CACHE_DIR": "${SCRATCH}/cache/tools/pip-cache"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#314 Inno Setup/hello.iss": "a5904edbfd0a07f73631a3442496f606ac7e0b0cb08bb1a66541cb91de4ee853"
+  },
+  "fixture_sha256": {
+    "read_ifps.py": {
+      "sha256": "53539059191c0858771268bf6152cae502b0653937a4b0c5695d6f3a1892e0cf",
+      "content_utf8": "import inspect\nfrom pathlib import Path\nfrom refinery.lib.inno.archive import InnoArchive\nfrom refinery.lib.inno import ifps\nimport sys\ndata=Path(sys.argv[1]).read_bytes()\nprint(\"Inno signature\",inspect.signature(InnoArchive))\nprint(\"Inno APIs\",[n for n in dir(InnoArchive) if \"script\" in n.lower() or \"ifps\" in n.lower()])\nprint(\"IFPS APIs\",[n for n in dir(ifps) if \"script\" in n.lower() or \"ifps\" in n.lower()])\napp=InnoArchive(data)\nfor name in (\"ifps\",\"script\",\"get_ifps\",\"get_script\",\"compiled_code\",\"get_compiled_script\"):\n    item=getattr(app,name,None)\n    if item is None:continue\n    value=item() if callable(item) else item\n    if isinstance(value,(bytes,bytearray,memoryview)):\n        value=ifps.IFPSFile(value)\n    for method in (\"disassembly\",\"disassemble\",\"dump\"):\n        fn=getattr(value,method,None)\n        if fn is not None:\n            d=fn() if callable(fn) else fn\n            if not isinstance(d,(str,bytes)): d=\"\\n\".join(map(str,d))\n            print(d)\n            break\n"
+    }
+  },
+  "sources": [
+    "https://jrsoftware.org/ishelp/topic_setupsection.htm",
+    "https://jrsoftware.org/ishelp/topic_scriptevents.htm",
+    "https://jrsoftware.org/ishelp/topic_isxfunc_msgbox.htm"
+  ],
+  "previous_verification_log": null,
+  "compiled_sha256": "1d7d9a04423e05ca2d46f6a044a8ff6a437e0b140aa4a21799e2711b9c201351",
+  "native_compiler_commands": [
+    {
+      "label": "Compile the original installer with the publisher’s native Inno Setup CLI",
+      "command": [
+        "<workspace>\\work\\native_target800_20261119\\inno-sdk\\app\\ISCC.exe",
+        "/Qp",
+        "/O<workspace>\\work\\native_target800_20261119\\inno-cli-s_fmawv4",
+        "<workspace>\\work\\native_target800_20261119\\inno-cli-s_fmawv4\\hello.iss"
+      ],
+      "cwd": "<workspace>\\work\\native_target800_20261119\\inno-cli-s_fmawv4",
+      "stdout": "\n\nPreprocessing\nParsing [Setup] section, line 2\nParsing [Setup] section, line 3\nParsing [Setup] section, line 4\nParsing [Setup] section, line 5\nParsing [Setup] section, line 6\nParsing [Setup] section, line 7\nReading file (WizardImageFile)\nReading file (WizardSmallImageFile)\nPreparing Setup program executable\nUpdating version info (SETUP.E32)\nDetermining language code pages\nMessages in script file\nReading default messages from Default.isl\nMessages in script file\nReading [Code] section\nCompiling [Code] section\nCreating setup files\nCompressing Setup program executable\nUpdating version info (SETUP.EXE)\nUpdating manifest (SETUP.EXE)",
+      "stderr": "",
+      "exit_code": 0
+    }
+  ],
+  "toolchain_archives": [
+    {
+      "url": "https://constexpr.org/innoextract/files/innoextract-1.9-linux.tar.xz",
+      "sha256": "008efe5011476ccc4aae17c3e22038b5a1bc5c7aad2b9d4d869537bf3874d21f",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://github.com/jrsoftware/issrc/releases/download/is-6_2_2/innosetup-6.2.2.exe",
+      "sha256": "8117d10d00a2ad33a1390978ea3872861c330e087914410a6377b22c4c5b8563",
+      "expected_sha256": null
+    }
+  ],
+  "ubuntu_archives": [],
+  "compiled_ifps_callback": "procedure InitializeWizard()\nbegin\n  0x00  0  PushType      S32\n  0x05  1  PushType      S32\n  0x0A  2  Assign        LocalVar2 := 0\n  0x19  2  PushType      TMsgBoxType\n  0x1E  3  Assign        LocalVar3 := 0\n  0x2A  3  PushType      UnicodeString\n  0x2F  4  Assign        LocalVar4 := 'Hello, World!'\n  0x58  4  PushVar       LocalVar1\n  0x5E  5  Call          MsgBox\n  0x63  5  Pop\n  0x64  4  Pop\n  0x65  3  Pop\n  0x66  2  Pop\n  0x67  1  Pop\n  0x68  0  Ret\nend;",
+  "toolchain": "Inno Setup 6.2.2 native Windows compiler and independent Binary Refinery IFPS decoder",
+  "reproduction_command": "ISCC /Qp hello.iss and the recorded compiled IFPS reader",
+  "semantic_scope": "The official compiler accepted the exact source. The independent decoder read the genuine compiled InitializeWizard bytecode and resolved the greeting argument and MsgBox call.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

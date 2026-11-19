@@ -1,5 +1,16 @@
 # #314 Inno Setup
 
+## Verified on November 19, 2026
+
+The official compiler accepted the exact source. The independent decoder read the genuine compiled InitializeWizard bytecode and resolved the greeting argument and MsgBox call.
+
+Run `ISCC /Qp hello.iss and the recorded compiled IFPS reader`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Show Hello, World! when it initializes the wizard of an Inno Setup installer.
 
 ## Toolchain
@@ -37,3 +48,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.iss` | [hello.iss](hello.iss), [driver.iss](variants/isl-41200207/driver.iss) created; verification pending |
 | `.isl` | [hello.isl](variants/isl-41200207/hello.isl) created; verification pending |
+
+</details>

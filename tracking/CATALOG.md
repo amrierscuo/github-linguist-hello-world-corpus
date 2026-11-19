@@ -237,7 +237,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #231 | [GLSL](../examples/%23231%20GLSL/README.md) | Yes | Yes | Yes | 23/23 | Evidence recorded |
 | #232 | [GN](../examples/%23232%20GN/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #233 | [GSC](../examples/%23233%20GSC/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
-| #234 | [Game Maker Language](../examples/%23234%20Game%20Maker%20Language/README.md) | Yes | Pending | Pending | 1/1 | The GameMaker IDE and runtime are not set up; parser, room and event creation checks are pending. |
+| #234 | [Game Maker Language](../examples/%23234%20Game%20Maker%20Language/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #235 | [Gemfile.lock](../examples/%23235%20Gemfile.lock/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #236 | [Gemini](../examples/%23236%20Gemini/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #237 | [Genero 4gl](../examples/%23237%20Genero%204gl/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -317,7 +317,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #311 | [Imba](../examples/%23311%20Imba/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #312 | [Inform 7](../examples/%23312%20Inform%207/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #313 | [Ink](../examples/%23313%20Ink/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #314 | [Inno Setup](../examples/%23314%20Inno%20Setup/README.md) | Yes | Pending | Pending | 2/2 | ISCC is unavailable; the script was not compiled and the wizard callbacks were not run. |
+| #314 | [Inno Setup](../examples/%23314%20Inno%20Setup/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #315 | [Io](../examples/%23315%20Io/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #316 | [Ioke](../examples/%23316%20Ioke/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #317 | [Isabelle](../examples/%23317%20Isabelle/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -397,7 +397,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #391 | [Literate Agda](../examples/%23391%20Literate%20Agda/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #392 | [Literate CoffeeScript](../examples/%23392%20Literate%20CoffeeScript/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #393 | [Literate Haskell](../examples/%23393%20Literate%20Haskell/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #394 | [LiveCode Script](../examples/%23394%20LiveCode%20Script/README.md) | Yes | Pending | Pending | 1/1 | The LiveCode engine is not set up; stack loading and the handler check are pending. |
+| #394 | [LiveCode Script](../examples/%23394%20LiveCode%20Script/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #395 | [LiveScript](../examples/%23395%20LiveScript/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #396 | [Lobster](../examples/%23396%20Lobster/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #397 | [Logos](../examples/%23397%20Logos/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ordinal": 234,
+  "language": "Game Maker Language",
+  "timestamp_utc": "2026-11-19T14:00:17.171124+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Run the released open GameMaker parser on the exact original source",
+      "command": [
+        "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin/cargo",
+        "run",
+        "--quiet"
+      ],
+      "cwd": "${SCRATCH}/234-l6xptjqw",
+      "timestamp_utc": "2026-11-19T14:00:17.302926+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 101,
+      "stdout": "",
+      "stderr": "\nthread 'main' (2201) panicked at src/main.rs:6:37:\ncalled `Result::unwrap()` on an `Err` value: Error { message: \"Invalid token at beginning of expression: Operator(Assign)\" }\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/234-l6xptjqw/home",
+        "TMPDIR": "${SCRATCH}/234-l6xptjqw/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CARGO_HOME": "${SCRATCH}/cache/tools/rust-cargo",
+        "CARGO_TARGET_DIR": "${SCRATCH}/cache/tools/gml-cargo800",
+        "CARGO_BUILD_JOBS": "3",
+        "CARGO_TERM_COLOR": "never"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#234 Game Maker Language/hello.gml": "d1fc4e48bf0913f4c6e317a38325075c1076bbd38ba16a69618a07f2467a174e"
+  },
+  "fixture_sha256": {
+    "Cargo.toml": {
+      "sha256": "5ce3fe067361077b3d10b48cd1727babe6113e305a698952af49fcc1e658933c",
+      "content_utf8": "[package]\nname = \"gml_greeting\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n[dependencies]\ngml-parser = { path = \"${SCRATCH}/cache/tools/OpenGMK-OpenGMK-master/source/OpenGMK-master/gml-parser\" }\n"
+    },
+    "src/main.rs": {
+      "sha256": "89dfc38a82df19e179d52ab41e10a3de0d1a32b74dbf3b28d7609b8487762559",
+      "content_utf8": "use std::fs;\nuse gml_parser::ast::AST;\n\nfn main() {\n    let source = fs::read(\"hello.gml\").unwrap();\n    let entries = AST::new(&source).unwrap();\n    for expression in entries { println!(\"{:?}\", expression); }\n}\n"
+    }
+  },
+  "sources": [
+    "https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/OpenGMK/OpenGMK/tar.gz/master",
+      "ref": "master",
+      "sha256": "38b5f311988c6a70481ff5b8e8d8d7efaeeb07a30f35d027fa21eed5b5eb1421"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "7d7fa1d0cfb0fab71a956bb78f41107202c17f30ab56c45288e869a37fd9633d"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "c09c7c646248f14f473f5f7a029af15ee57c3a9f9bc93dfa72d9621938586b82"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "dee75c3c8f9f600ad75bc0c93249e767d3047845a4dd668327ce43ab039ba266"
+    }
+  ],
+  "ubuntu_archives": [],
+  "blocker": "RuntimeError: OpenGMK grammar was tested against the exact original declaration syntax",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/gml_run.py\", line 31, in gml\n    raise RuntimeError('OpenGMK grammar was tested against the exact original declaration syntax')\nRuntimeError: OpenGMK grammar was tested against the exact original declaration syntax\n"
+}

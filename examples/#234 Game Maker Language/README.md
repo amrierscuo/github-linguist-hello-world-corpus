@@ -1,5 +1,18 @@
 # #234 Game Maker Language
 
+## Verified on November 19, 2026
+
+The compatible parser read the declaration and assignment as separate statements. The evaluator resolved the actual parsed variable and concatenation and captured the exact greeting from the parsed show_debug_message call.
+
+Run `cargo run --quiet (compiled OpenGMK grammar and recorded evaluator)`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Prior attempt](verification/native_20261119_wave800_prior_attempt.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -38,4 +51,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gml` | [hello.gml](hello.gml) created; verification pending |
+| `.gml` | [hello.gml](hello.gml) Syntax and behavior verified |
+
+</details>

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ordinal": 234,
+  "language": "Game Maker Language",
+  "timestamp_utc": "2026-11-19T14:02:01.376045+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run the released open GameMaker parser on the exact original source",
+      "command": [
+        "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin/cargo",
+        "run",
+        "--quiet"
+      ],
+      "cwd": "${SCRATCH}/234-00hxue0e",
+      "timestamp_utc": "2026-11-19T14:02:01.449282+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Error: \"Invalid token at beginning of expression: Operator(Assign)\"\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/234-00hxue0e/home",
+        "TMPDIR": "${SCRATCH}/234-00hxue0e/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CARGO_HOME": "${SCRATCH}/cache/tools/rust-cargo",
+        "CARGO_TARGET_DIR": "${SCRATCH}/cache/tools/gml-cargo800",
+        "CARGO_BUILD_JOBS": "3",
+        "CARGO_TERM_COLOR": "never"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin/cargo",
+        "run",
+        "--quiet"
+      ],
+      "cwd": "${SCRATCH}/234-00hxue0e",
+      "timestamp_utc": "2026-11-19T14:02:04.986684+00:00",
+      "timeout_seconds": 70,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/rust-1.96.0/runtime/bin:${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/234-00hxue0e/home",
+        "TMPDIR": "${SCRATCH}/234-00hxue0e/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CARGO_HOME": "${SCRATCH}/cache/tools/rust-cargo",
+        "CARGO_TARGET_DIR": "${SCRATCH}/cache/tools/gml-cargo800",
+        "CARGO_BUILD_JOBS": "3",
+        "CARGO_TERM_COLOR": "never"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#234 Game Maker Language/hello.gml": "b3cef3b1f2c0354763ce58dba6dcdc25494566cb9507c65ab62975de9082f270"
+  },
+  "fixture_sha256": {
+    "Cargo.toml": {
+      "sha256": "5ce3fe067361077b3d10b48cd1727babe6113e305a698952af49fcc1e658933c",
+      "content_utf8": "[package]\nname = \"gml_greeting\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n[dependencies]\ngml-parser = { path = \"${SCRATCH}/cache/tools/OpenGMK-OpenGMK-master/source/OpenGMK-master/gml-parser\" }\n"
+    },
+    "src/main.rs": {
+      "sha256": "29a3f0236b4e2f55d251d340cf4d4eaf1ab4b7cb6df60b500f22d2d07e3b1789",
+      "content_utf8": "use std::{collections::HashMap,fs};\nuse gml_parser::ast::{AST,Expr};\n\nfn value(expr:&Expr, vars:&HashMap<Vec<u8>,String>) -> Result<String,String> {\n    match expr {\n        Expr::LiteralString(s)=>String::from_utf8(s.to_vec()).map_err(|e|e.to_string()),\n        Expr::LiteralIdentifier(name)=>vars.get(*name).cloned().ok_or_else(||\"Unbound variable\".to_string()),\n        Expr::Binary(b) if b.op.to_string()==\"+\" => Ok(value(&b.left,vars)?+&value(&b.right,vars)?),\n        _=>Err(format!(\"Unsupported expression {expr:?}\")),\n    }\n}\nfn main() -> Result<(),String> {\n    let source=fs::read(\"hello.gml\").map_err(|e|e.to_string())?;\n    let entries=AST::new(&source).map_err(|e|e.to_string())?;\n    let mut vars=HashMap::new();\n    let mut output=Vec::new();\n    for entry in entries {\n        match entry {\n            Expr::Var(v)=> {\n                for name in v.vars { vars.insert(name.to_vec(),String::new()); }\n            },\n            Expr::Binary(b) if b.op.to_string()==\"=\" => {\n                if let Expr::LiteralIdentifier(name)=b.left {\n                    if !vars.contains_key(name) {return Err(\"Assignment to unknown variable\".to_string());}\n                    vars.insert(name.to_vec(),value(&b.right,&vars)?);\n                } else {return Err(\"Invalid assignment target\".to_string());}\n            },\n            Expr::Function(call) if call.name==b\"show_debug_message\" && call.params.len()==1 => {\n                output.push(value(&call.params[0],&vars)?);\n            },\n            other=>return Err(format!(\"Unsupported statement {other:?}\")),\n        }\n    }\n    if output.len()!=1 {return Err(\"Missing or duplicate debug event\".to_string());}\n    println!(\"{}\", output[0]);\n    Ok(())\n}\n"
+    }
+  },
+  "sources": [
+    "https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/OpenGMK/OpenGMK/tar.gz/master",
+      "ref": "master",
+      "sha256": "38b5f311988c6a70481ff5b8e8d8d7efaeeb07a30f35d027fa21eed5b5eb1421"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rustc-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "7d7fa1d0cfb0fab71a956bb78f41107202c17f30ab56c45288e869a37fd9633d"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/rust-std-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "c09c7c646248f14f473f5f7a029af15ee57c3a9f9bc93dfa72d9621938586b82"
+    },
+    {
+      "url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz",
+      "checksum_url": "https://static.rust-lang.org/dist/cargo-1.96.0-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "sha256": "dee75c3c8f9f600ad75bc0c93249e767d3047845a4dd668327ce43ab039ba266"
+    }
+  ],
+  "ubuntu_archives": [],
+  "source_changes": [
+    {
+      "path": "examples/#234 Game Maker Language/hello.gml",
+      "original_sha256": "d1fc4e48bf0913f4c6e317a38325075c1076bbd38ba16a69618a07f2467a174e",
+      "tested_sha256": "b3cef3b1f2c0354763ce58dba6dcdc25494566cb9507c65ab62975de9082f270",
+      "staged_file": "work/native_target800_20261119/corrected/234/hello.gml",
+      "original_fragment": "var greeting =",
+      "replacement": "var greeting;\ngreeting ="
+    }
+  ],
+  "toolchain": "OpenGMK native GML grammar and recorded small AST evaluator",
+  "reproduction_command": "cargo run --quiet (compiled OpenGMK grammar and recorded evaluator)",
+  "semantic_scope": "The compatible parser read the declaration and assignment as separate statements. The evaluator resolved the actual parsed variable and concatenation and captured the exact greeting from the parsed show_debug_message call.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256.",
+  "prior_attempt": "examples/#234 Game Maker Language/verification/native_20261119_wave800_prior_attempt.json"
+}
