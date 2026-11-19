@@ -10345,12 +10345,13 @@
       "example": {
         "semantic_goal": "Eseguire un target Earthly che produce un file contenente Hello, World! seguito da LF.",
         "validation_mode": "build_recipe_and_assert_artifact",
-        "toolchain": "Earthly 0.8+ con backend BuildKit e ambiente per immagini Linux",
+        "toolchain": "Earthly 0.8.16 and matching earthly/buildkitd v0.8.16 in offline Alpine Linux guest",
         "files": [
-          "examples/#181 Earthly/Earthfile"
+          "examples/#181 Earthly/Earthfile",
+          "examples/#181 Earthly/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "earthly +greeting",
+        "run_or_check_command": "earthly --config /etc/earthly-local.yml --buildkit-host tcp://192.0.2.17:8372 --artifact +greeting/greeting.txt ./greeting.txt",
         "expected_result": "artefatto locale greeting.txt, esattamente 14 byte `Hello, World!\\n`.",
         "sources": [
           {
@@ -10363,16 +10364,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain nativa non ancora eseguita: le verifiche di sintassi e semantica restano pendenti."
-        ],
-        "notes": "Il target salva soltanto un artefatto locale. L’immagine Alpine è fissata alla serie 3.20; riproduzione stretta richiede anche il digest dell’immagine. Il backend container non è stato predisposto."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:39:00.709066+00:00",
+        "verification_log": "examples/#181 Earthly/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The native Earthly build ran the unchanged Earthfile. The guest verified and exported the exact 14-byte greeting.txt artifact using the recorded Alpine base image.",
+        "verified_artifact_sha256": {
+          "examples/#181 Earthly/Earthfile": "61f4544c9f01fce8a49190e8a3a9985c2988b2ec7f7db440467acb4ac70bb081"
+        }
       }
     },
     {
@@ -11759,17 +11761,18 @@
       "example": {
         "semantic_goal": "Inviare println a una stringa Fancy contenente il saluto.",
         "validation_mode": "native_fancy_rubinius",
-        "toolchain": "Required authentic toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "Fancy historical upstream C++ interpreter 09145cf7f638",
         "files": [
           "examples/#205 Fancy/hello.fy",
           "examples/#205 Fancy/README.md",
           "examples/#205 Fancy/verification/native.json",
           "examples/#205 Fancy/variants/ext-fancypack-2e66616e63797061636b/greeting.fy",
           "examples/#205 Fancy/variants/ext-fancypack-2e66616e63797061636b/hello.fancypack",
-          "examples/#205 Fancy/variants/ext-fancypack-2e66616e63797061636b/README.md"
+          "examples/#205 Fancy/variants/ext-fancypack-2e66616e63797061636b/README.md",
+          "examples/#205 Fancy/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "fancy hello.fy",
+        "run_or_check_command": "configure; make; fancy hello.fy",
         "expected_result": "Una riga Hello, World!.",
         "sources": [
           "https://github.com/bakkdoor/fancy"
@@ -11779,16 +11782,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:21:54.585785+00:00",
-        "verification_log": "examples/#205 Fancy/verification/native.json",
-        "blockers": [
-          "Fancy and its required Rubinius VM are unavailable."
-        ],
-        "notes": "La sintassi a invio di messaggi segue il progetto bakkdoor/fancy. Il runtime non è disponibile."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T18:39:00.708867+00:00",
+        "verification_log": "examples/#205 Fancy/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The historical Fancy interpreter parsed and executed the exact source and its println call produced the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#205 Fancy/hello.fy": "fa7786b98b719f853d89e1a61195dc494c942d4fe8e7f43dfabd4b9819bc7e40"
+        }
       }
     },
     {

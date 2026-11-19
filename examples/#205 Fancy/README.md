@@ -1,5 +1,18 @@
 # #205 Fancy
 
+## Verified on November 19, 2026
+
+The historical Fancy interpreter parsed and executed the exact source and its println call produced the greeting.
+
+Run `configure; make; fancy hello.fy`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Fancy`, tipo `programming`, language_id `109`.
 
 Send println to a Fancy string containing greeting.
@@ -46,3 +59,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.fy` | [hello.fy](hello.fy), [greeting.fy](variants/ext-fancypack-2e66616e63797061636b/greeting.fy) created; verification pending |
 | `.fancypack` | [hello.fancypack](variants/ext-fancypack-2e66616e63797061636b/hello.fancypack) created; verification pending |
+
+</details>

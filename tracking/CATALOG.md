@@ -184,7 +184,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #178 | [EJS](../examples/%23178%20EJS/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #179 | [EQ](../examples/%23179%20EQ/README.md) | Yes | Pending | Pending | 1/1 | The Jkop project's EQ compiler and runtime could not be located; syntax and method invocation were not checked. |
 | #180 | [Eagle](../examples/%23180%20Eagle/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #181 | [Earthly](../examples/%23181%20Earthly/README.md) | Yes | Pending | Pending | Nomi speciali / altra modalità | The native toolchain has not been run; syntax and semantic checks are pending. |
+| #181 | [Earthly](../examples/%23181%20Earthly/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #182 | [Easybuild](../examples/%23182%20Easybuild/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #183 | [Ecere Projects](../examples/%23183%20Ecere%20Projects/README.md) | Yes | Pending | Pending | 1/1 | The native toolchain has not been run; syntax and semantic checks are pending. |
 | #184 | [Ecmarkup](../examples/%23184%20Ecmarkup/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -208,7 +208,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #202 | [FLUX](../examples/%23202%20FLUX/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #203 | [FPP](../examples/%23203%20FPP/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #204 | [Factor](../examples/%23204%20Factor/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #205 | [Fancy](../examples/%23205%20Fancy/README.md) | Yes | Pending | Pending | 2/2 | Fancy and its required Rubinius VM are unavailable. |
+| #205 | [Fancy](../examples/%23205%20Fancy/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #206 | [Fantom](../examples/%23206%20Fantom/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #207 | [Faust](../examples/%23207%20Faust/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #208 | [Fennel](../examples/%23208%20Fennel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

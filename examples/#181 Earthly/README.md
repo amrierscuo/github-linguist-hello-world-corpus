@@ -1,5 +1,16 @@
 # #181 Earthly
 
+## Verified on November 19, 2026
+
+The native Earthly build ran the unchanged Earthfile. The guest verified and exported the exact 14-byte greeting.txt artifact using the recorded Alpine base image.
+
+Run `earthly --config /etc/earthly-local.yml --buildkit-host tcp://192.0.2.17:8372 --artifact +greeting/greeting.txt ./greeting.txt`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Run a Earthly target that produces a Hello, World! file followed by LF.
 
 Canonical type `programming`, language_id `963512632`.
@@ -21,3 +32,5 @@ Initial state: created; syntax and behavioral verification pending. native toolc
 Sources of linguaggio/formato and original implementations:
 
 - [Earthfile reference](https://docs.earthly.dev/docs/earthfile)
+
+</details>

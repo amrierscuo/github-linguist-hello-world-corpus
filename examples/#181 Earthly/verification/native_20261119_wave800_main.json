@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "ordinal": 181,
+  "language": "Earthly",
+  "timestamp_utc": "2026-11-19T18:39:00.709066+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the private offline image server from Go standard library",
+      "command": [
+        "${SCRATCH}/cache/tools/go/dist/go/bin/go",
+        "build",
+        "-trimpath",
+        "-o",
+        "${SCRATCH}/181-bkj79xto/guestfs/usr/local/bin/fixture-registry",
+        "${SCRATCH}/181-bkj79xto/registry.go"
+      ],
+      "cwd": "${SCRATCH}/181-bkj79xto",
+      "timestamp_utc": "2026-11-19T18:39:35.174660+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/181-bkj79xto/home",
+        "TMPDIR": "${SCRATCH}/181-bkj79xto/tmp",
+        "LC_ALL": "C.UTF-8",
+        "GOBIN": "${SCRATCH}/181-bkj79xto/bin",
+        "GOPATH": "${SCRATCH}/cache/tools/gopath",
+        "GOCACHE": "${SCRATCH}/cache/tools/gocache",
+        "GOMAXPROCS": "3",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      }
+    },
+    {
+      "label": "Build the exact original Earthfile within a Linux guest using the matching vendor BuildKit",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/qemu-system-x86_64",
+        "-machine",
+        "pc,accel=tcg",
+        "-m",
+        "2304",
+        "-smp",
+        "2",
+        "-display",
+        "none",
+        "-serial",
+        "stdio",
+        "-monitor",
+        "none",
+        "-nic",
+        "none",
+        "-no-reboot",
+        "-L",
+        "${SCRATCH}/181-bkj79xto/firmware",
+        "-kernel",
+        "${SCRATCH}/cache/tools/earthly-guest/kernel/boot/vmlinuz-virt",
+        "-initrd",
+        "${SCRATCH}/181-bkj79xto/guest.cpio.gz",
+        "-append",
+        "console=ttyS0 rdinit=/init panic=1 loglevel=3"
+      ],
+      "cwd": "${SCRATCH}/181-bkj79xto",
+      "timestamp_utc": "2026-11-19T18:40:00.948182+00:00",
+      "timeout_seconds": 230,
+      "exit_code": 0,
+      "stdout": "CORPUS-EARTHLY-START\r\n61f4544c9f01fce8a49190e8a3a9985c2988b2ec7f7db440467acb4ac70bb081  Earthfile\r\nearthly version v0.8.16 c48905267920d5599e849e8e043f801c6baab94a linux/amd64; Alpine Linux \r\nloading config values from \"/etc/earthly-local.yml\"\r\n\u001b[34m            frontend\u001b[0m | Unable to detect Docker or Podman. Use --verbose to see details (or errors)\r\n\u001b[35m           buildkitd\u001b[0m | Connecting to tcp://192.0.2.17:8372...\r\n\u001b[35m           buildkitd\u001b[0m | ...Done\r\n\u001b[35m           buildkitd\u001b[0m | Version github.com/earthly/buildkit v0.8.16 531b303aa8ec03c29c2ceaa140eb0a6d32e6f6f3\r\n\u001b[35m           buildkitd\u001b[0m | Platforms: linux/amd64 (native) linux/386\r\n\u001b[35m           buildkitd\u001b[0m | Utilization: 0 other builds, 0/0 op load\r\n\u001b[35m           buildkitd\u001b[0m | GC stats: 0 B cache, avg GC duration 0s, all-time GC duration 1ms, last GC duration 0s, last cleared 0 B\r\n\u001b[36m           bootstrap\u001b[0m | Bootstrapping successful.\r\n\u001b[36m Init 🚀\u001b[0m\r\n\u001b[36m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\n\u001b[35m           buildkitd\u001b[0m | Connecting to tcp://192.0.2.17:8372...\r\n\u001b[35m           buildkitd\u001b[0m | ...Done\r\n\u001b[35m           buildkitd\u001b[0m | Version github.com/earthly/buildkit v0.8.16 531b303aa8ec03c29c2ceaa140eb0a6d32e6f6f3\r\n\u001b[35m           buildkitd\u001b[0m | Platforms: linux/amd64 (native) linux/386\r\n\u001b[35m           buildkitd\u001b[0m | Utilization: 0 other builds, 0/0 op load\r\n\u001b[35m           buildkitd\u001b[0m | GC stats: 0 B cache, avg GC duration 0s, all-time GC duration 1ms, last GC duration 0s, last cleared 0 B\r\n\r\n\u001b[36m Build 🔧\u001b[0m\r\n\u001b[36m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\n\u001b[91mWarning: No git binary found\u001b[0m\r\n\u001b[33m           +greeting\u001b[0m | --> FROM +base\r\n\u001b[92m         alpine:3.20\u001b[0m | --> Load metadata alpine:3.20 linux/amd64\r\n\u001b[33m           +greeting\u001b[0m | --> FROM alpine:3.20\r\n\u001b[33m           +greeting\u001b[0m | [----------] 100% FROM alpine:3.20\u001b[K\r\n\u001b[33m           +greeting\u001b[0m | --> RUN printf 'Hello, World!\\n' > /greeting.txt\r\n\u001b[94m              output\u001b[0m | --> exporting outputs\r\n\r\n\u001b[90m Push Summary ⏫ (disabled)\u001b[0m\r\n\u001b[90m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\nTo enable pushing use earthly --push\r\n\r\n\u001b[90m Local Output Summary 🎁 (disabled)\u001b[0m\r\n\u001b[90m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\n\r\n\r\n\u001b[32m========================== 🌍 Earthly Build  ✅ SUCCESS ==========================\u001b[0m\r\n\r\nloading config values from \"/etc/earthly-local.yml\"\r\n\u001b[34m            frontend\u001b[0m | Unable to detect Docker or Podman. Use --verbose to see details (or errors)\r\n\u001b[36m Init 🚀\u001b[0m\r\n\u001b[36m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\n\u001b[35m           buildkitd\u001b[0m | Connecting to tcp://192.0.2.17:8372...\r\n\u001b[35m           buildkitd\u001b[0m | ...Done\r\n\u001b[35m           buildkitd\u001b[0m | Version github.com/earthly/buildkit v0.8.16 531b303aa8ec03c29c2ceaa140eb0a6d32e6f6f3\r\n\u001b[35m           buildkitd\u001b[0m | Platforms: linux/amd64 (native) linux/386\r\n\u001b[35m           buildkitd\u001b[0m | Utilization: 0 other builds, 0/0 op load\r\n\u001b[35m           buildkitd\u001b[0m | GC stats: 0 B cache, avg GC duration 0s, all-time GC duration 1ms, last GC duration 0s, last cleared 0 B\r\n\r\n\u001b[36m Build 🔧\u001b[0m\r\n\u001b[36m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\n\u001b[91mWarning: No git binary found\u001b[0m\r\n\u001b[36m           +greeting\u001b[0m | --> FROM +base\r\n\u001b[33m         alpine:3.20\u001b[0m | --> Load metadata alpine:3.20 linux/amd64\r\n\u001b[36m           +greeting\u001b[0m | --> FROM alpine:3.20\r\n\u001b[36m           +greeting\u001b[0m | [----------] 100% FROM alpine:3.20\u001b[K\r\n\u001b[36m           +greeting\u001b[0m | *\u001b[32mcached\u001b[0m* --> RUN printf 'Hello, World!\\n' > /greeting.txt\r\n\u001b[36m           +greeting\u001b[0m | --> SAVE ARTIFACT /greeting.txt +greeting/greeting.txt AS LOCAL greeting.txt\r\n\u001b[92m              output\u001b[0m | --> exporting outputs\r\n\u001b[94m              output\u001b[0m | sent 1 file stat\r\n\u001b[92m              output\u001b[0m | [----------] 100% exporting outputs\u001b[K\r\n\u001b[95m              output\u001b[0m | --> exporting outputs\r\n\u001b[95m              output\u001b[0m | [----------] 100% exporting outputs\u001b[K\r\n\r\n\u001b[90m Push Summary ⏫ (disabled)\u001b[0m\r\n\u001b[90m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\nTo enable pushing use earthly --push\r\n\r\n\u001b[33m Local Output Summary 🎁 (single artifact)\u001b[0m\r\n\u001b[33m————————————————————————————————————————————————————————————————————————————————\u001b[0m\r\n\r\nArtifact \u001b[34m+greeting/greeting.txt\u001b[0m output as greeting.txt\r\nArtifact \u001b[34m+greeting/greeting.txt\u001b[0m output as ./greeting.txt\r\n\r\n\r\n\u001b[32m========================== 🌍 Earthly Build  ✅ SUCCESS ==========================\u001b[0m\r\n\r\nCORPUS-ARTIFACT\r\nHello, World!\r\nc98c24b677eff44860afea6f493bbaec5bb1c4cbb209c6fc2bbb47f66ff2ad31  greeting.txt\r\nCORPUS-EARTHLY-COMPLETE\r\n[   16.537553] reboot: Power down\r\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/181-bkj79xto/home",
+        "TMPDIR": "${SCRATCH}/181-bkj79xto/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "QEMU_MODULE_DIR": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/qemu"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#181 Earthly/Earthfile": "61f4544c9f01fce8a49190e8a3a9985c2988b2ec7f7db440467acb4ac70bb081"
+  },
+  "fixture_sha256": {
+    "registry.go": {
+      "sha256": "d0d9ef06d4643a41759d0499fbf61f0b8fda0c21c8a98e6d21dfc3137e955f0c",
+      "content_utf8": "package main\n\nimport (\n    \"crypto/sha256\"\n    \"encoding/hex\"\n    \"fmt\"\n    \"log\"\n    \"net/http\"\n    \"os\"\n    \"path/filepath\"\n    \"regexp\"\n    \"strings\"\n)\n\nfunc main() {\n    base := \"/opt/registry\"\n    pattern := regexp.MustCompile(\"^sha256:[0-9a-f]{64}$\")\n    manifest, err := os.ReadFile(filepath.Join(base,\"manifest\"))\n    if err != nil { log.Fatal(err) }\n    hash := sha256.Sum256(manifest)\n    digest := \"sha256:\" + hex.EncodeToString(hash[:])\n    http.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {\n        w.Header().Set(\"Docker-Distribution-Api-Version\",\"registry/2.0\")\n        p := strings.Split(strings.Trim(r.URL.Path,\"/\"),\"/\")\n        if r.URL.Path == \"/v2/\" { fmt.Fprint(w,\"{}\"); return }\n        if len(p)<4 || p[0]!=\"v2\" { http.NotFound(w,r); return }\n        item := p[len(p)-1]\n        switch p[len(p)-2] {\n        case \"manifests\":\n            if item!=\"3.20\" && item!=digest { http.NotFound(w,r); return }\n            w.Header().Set(\"Content-Type\",\"application/vnd.oci.image.manifest.v1+json\")\n            w.Header().Set(\"Docker-Content-Digest\",digest)\n            http.ServeFile(w,r,filepath.Join(base,\"manifest\"))\n        case \"blobs\":\n            if !pattern.MatchString(item) { http.NotFound(w,r); return }\n            w.Header().Set(\"Docker-Content-Digest\",item)\n            http.ServeFile(w,r,filepath.Join(base,strings.TrimPrefix(item,\"sha256:\")))\n        default:\n            http.NotFound(w,r)\n        }\n    })\n    log.Fatal(http.ListenAndServe(\"127.0.0.1:5000\",nil))\n}\n"
+    },
+    "buildkit.toml": {
+      "sha256": "d51f47d37e4efc4c912a7d0349aafb0171a89b5470c700d8db49f948ba157dba",
+      "content_utf8": "[registry.\"docker.io\"]\n  mirrors = [\"127.0.0.1:5000\"]\n[registry.\"127.0.0.1:5000\"]\n  http = true\n  insecure = true\n"
+    },
+    "earthly-local.yml": {
+      "sha256": "bee14188208b33fd863fa9826101cedf88e77bbb5a6594867fb727801aa46bff",
+      "content_utf8": "global:\n  tls_enabled: false\n"
+    },
+    "guest-init.sh": {
+      "sha256": "3715ac965b535d7fe4d3f32ac407d7e521a191108debe302dcbd700d9d63ca8c",
+      "content_utf8": "#!/bin/sh\nexport PATH=/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin\nexport HOME=/root CI=true EARTHLY_DISABLE_ANALYTICS=true EARTHLY_CI=true\numask 077\nif [ \"${1:-}\" != \"mounted-root\" ]; then\n    mkdir -p /run/regular-root\n    mount -t tmpfs -o size=1630m tmpfs /run/regular-root || poweroff -f\n    for data in /bin /usr /lib /sbin /etc /case /opt /root /init; do\n        cp -a \"$data\" /run/regular-root/ || poweroff -f\n    done\n    mkdir -p /run/regular-root/proc /run/regular-root/sys /run/regular-root/dev /run/regular-root/run /run/regular-root/tmp\n    chmod 1777 /run/regular-root/tmp\n    exec switch_root /run/regular-root /init mounted-root\nfi\nmount -t proc proc /proc\nmount -t sysfs sys /sys\nmount -t cgroup2 none /sys/fs/cgroup\nmount -t devtmpfs dev /dev\nmkdir -p /dev/pts /dev/shm /run/buildkit\nmount -t devpts devpts /dev/pts\nmount -t tmpfs shm /dev/shm\nip link set lo up\nip addr add 192.0.2.17/32 dev lo\ntrap 'printf \"CORPUS-EARTHLY-FAIL\\n\"; tail -65 /tmp/buildkit.log; poweroff -f' EXIT\nset -eu\nfixture-registry >/tmp/registry.log 2>&1 &\nendpoint=tcp://192.0.2.17:8372\nbuildkitd --config /etc/buildkit/buildkitd.toml --root /run/buildkit-data --addr \"$endpoint\" --oci-worker-snapshotter=native --oci-worker-net=host --containerd-worker=false >/tmp/buildkit.log 2>&1 &\nbk=$!\ni=0\nwhile ! buildctl --addr \"$endpoint\" debug workers >/dev/null 2>&1; do\n    kill -0 \"$bk\"\n    sleep 1\n    i=$((i+1))\n    [ \"$i\" -lt 25 ]\ndone\ncd /case\necho \"CORPUS-EARTHLY-START\"\nsha256sum Earthfile\nearthly --version\nearthly --config /etc/earthly-local.yml --buildkit-host \"$endpoint\" +greeting\nif [ ! -f greeting.txt ]; then\n    earthly --config /etc/earthly-local.yml --buildkit-host \"$endpoint\" --artifact +greeting/greeting.txt ./greeting.txt\nfi\n[ \"$(wc -c < greeting.txt | tr -d ' ')\" = \"14\" ]\necho \"CORPUS-ARTIFACT\"\ncat greeting.txt\nsha256sum greeting.txt\necho \"CORPUS-EARTHLY-COMPLETE\"\ntrap - EXIT\npoweroff -f\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "Earthfile reference",
+      "url": "https://docs.earthly.dev/docs/earthfile"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/linux-virt-6.6.142-r0.apk",
+      "sha256": "0d84e30c04c52426b0bf10b01616c45f7d0c5384a59552e4c4a6caeb13a3f6e7"
+    },
+    {
+      "url": "https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/alpine-minirootfs-3.20.10-x86_64.tar.gz",
+      "sha256": "0d44a414245f043ae56872a23762e6c9bee585da2cbe4aa81cbd0331eaf53223"
+    },
+    {
+      "name": "docker.io/earthly/buildkitd:v0.8.16",
+      "digest": "sha256:df483abef0ed8562883c455d467e2afd915d7aa9979f5b0cb20cb1f6d431fcd9"
+    },
+    {
+      "name": "docker.io/library/alpine:3.20",
+      "digest": "sha256:c64c687cbea9300178b30c95835354e34c4e4febc4badfe27102879de0483b5e"
+    },
+    {
+      "url": "https://github.com/earthly/earthly/releases/download/v0.8.16/earthly-linux-amd64",
+      "sha256": "3ef3163c81bdd10e28ab31cd96e35c1856d97478c8ce7f20954b8bea7a598404",
+      "expected_sha256": null
+    },
+    {
+      "url": "https://go.dev/dl/go1.25.1.linux-amd64.tar.gz",
+      "sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e",
+      "expected_sha256": "7716a0d940a0f6ae8e1f3b3f4f36299dc53e31b16840dbd171254312c41ca12e"
+    }
+  ],
+  "buildkit_executable_sha256": {
+    "buildctl": "141faad964666646b2f5244c97f1a4015ae2778ee8d182712bfe9b7c8a6f9c7c",
+    "buildkit-runc": "929cac4fa09b9421e346da44eb4f79d2df54d9eb4986bac87b4b0892d8b72091",
+    "buildkitd": "ed104ee62faf2ab2f55f5af874a0c2d946c42c4e93b2d42852d1f5dfc9da7a74",
+    "earth_debugger": "581ecfa8418e8f614e44fb905f808bbac422e0258961b85b986ce2d8e5d0d273"
+  },
+  "ubuntu_archives": [
+    {
+      "name": "qemu-system-x86",
+      "version": "1:8.2.2+ds-0ubuntu1.18",
+      "filename": "pool/main/q/qemu/qemu-system-x86_8.2.2+ds-0ubuntu1.18_amd64.deb",
+      "sha256": "14602e262627adac030329d2cecfee5f6c0938b34566ff2ea2d4c9a9eb02430d",
+      "bytes": 11222476,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/q/qemu/qemu-system-x86_8.2.2+ds-0ubuntu1.18_amd64.deb"
+    },
+    {
+      "name": "qemu-system-data",
+      "version": "1:8.2.2+ds-0ubuntu1.18",
+      "filename": "pool/main/q/qemu/qemu-system-data_8.2.2+ds-0ubuntu1.18_all.deb",
+      "sha256": "a14b88d864859bd61c8a3274971da4ecb7da6cec15be6c265d0d411f783d5f2e",
+      "bytes": 1796342,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/q/qemu/qemu-system-data_8.2.2+ds-0ubuntu1.18_all.deb"
+    },
+    {
+      "name": "qemu-system-common",
+      "version": "1:8.2.2+ds-0ubuntu1.18",
+      "filename": "pool/main/q/qemu/qemu-system-common_8.2.2+ds-0ubuntu1.18_amd64.deb",
+      "sha256": "0a0b744f31e87d72dd0465436b8dfbb1ef9f574ecd0d5a2e9dd8c5cb7d0fef1f",
+      "bytes": 1255316,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/q/qemu/qemu-system-common_8.2.2+ds-0ubuntu1.18_amd64.deb"
+    },
+    {
+      "name": "seabios",
+      "version": "1.16.3-2",
+      "filename": "pool/main/s/seabios/seabios_1.16.3-2_all.deb",
+      "sha256": "cac4e59a66c834d19cae751c22ab3a0391c22f78010fd11aa2e3fe630e6bc0e0",
+      "bytes": 174648,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/s/seabios/seabios_1.16.3-2_all.deb"
+    }
+  ],
+  "toolchain": "Earthly 0.8.16 and matching earthly/buildkitd v0.8.16 in offline Alpine Linux guest",
+  "reproduction_command": "earthly --config /etc/earthly-local.yml --buildkit-host tcp://192.0.2.17:8372 --artifact +greeting/greeting.txt ./greeting.txt",
+  "semantic_scope": "The native Earthly build ran the unchanged Earthfile. The guest verified and exported the exact 14-byte greeting.txt artifact using the recorded Alpine base image.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
