@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "ordinal": 699,
+  "language": "TMDL",
+  "timestamp_utc": "2026-11-19T12:40:07.594640+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Create tool-only Python virtual environment",
+      "command": [
+        "${SCRATCH}/cache/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "venv",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      "cwd": "${SCRATCH}/699-o1eez_i_",
+      "timestamp_utc": "2026-11-19T12:40:13.666714+00:00",
+      "timeout_seconds": 65,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\nCreating virtual environment at: .venv\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/699-o1eez_i_/home",
+        "TMPDIR": "${SCRATCH}/699-o1eez_i_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/cache/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/cache/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Materialize native bindings in scratch environment",
+      "command": [
+        "${SCRATCH}/cache/tools/uv/dist/uv-x86_64-unknown-linux-gnu/uv",
+        "pip",
+        "install",
+        "--python",
+        "${SCRATCH}/699-o1eez_i_/.venv/bin/python",
+        "sidemantic[dax]"
+      ],
+      "cwd": "${SCRATCH}/699-o1eez_i_",
+      "timestamp_utc": "2026-11-19T12:40:31.692725+00:00",
+      "timeout_seconds": 135,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Resolved 22 packages in 5.22s\nInstalled 22 packages in 2.56s\n + annotated-doc==0.0.7\n + annotated-types==0.8.0\n + antlr4-python3-runtime==4.13.2\n + click==8.5.1\n + duckdb==2.0.0\n + jinja2==3.1.6\n + markdown-it-py==4.3.0\n + markupsafe==3.0.4\n + mdurl==0.1.2\n + pydantic==2.14.3\n + pydantic-core==2.50.4\n + pygments==2.21.0\n + pyyaml==6.0.3\n + rich==15.0.0\n + shellingham==1.5.4\n + sidemantic==0.13.1\n + sidemantic-dax==0.13.1\n + sidemantic-rs==0.13.1\n + sqlglot==30.33.0\n + typer==0.29.2\n + typing-extensions==4.16.0\n + typing-inspection==0.4.5\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/699-o1eez_i_/home",
+        "TMPDIR": "${SCRATCH}/699-o1eez_i_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/cache/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/cache/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/699-o1eez_i_/.venv/bin/python",
+        "${SCRATCH}/699-o1eez_i_/evaluate_measure.py"
+      ],
+      "cwd": "${SCRATCH}/699-o1eez_i_",
+      "timestamp_utc": "2026-11-19T12:40:42.322715+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "sidemantic 0.13.1; duckdb 2.0.0; SQL SELECT CAST(? AS VARCHAR)\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/699-o1eez_i_/home",
+        "TMPDIR": "${SCRATCH}/699-o1eez_i_/tmp",
+        "LC_ALL": "C.UTF-8",
+        "UV_CACHE_DIR": "${SCRATCH}/cache/tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${SCRATCH}/cache/tools/uv-python",
+        "UV_NO_PROGRESS": "1"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#699 TMDL/model.tmdl": "b1f6a9eaad09f040b4c96dffe5a3022d46f259d9d795ae61907fc40c0976cd52",
+    "examples/#699 TMDL/tables/Greeting.tmdl": "b750d508632e88fb39103edf89025f6b090d5b16ce9b79f703d8bec1e1d042d1"
+  },
+  "fixture_sha256": {
+    "evaluate_measure.py": {
+      "sha256": "341a9231513f69cd5fb6b5efcf3d51d88e67738e0e44aaf2fc77e844245fb1c8",
+      "content_utf8": "from pathlib import Path\nfrom importlib.metadata import version\nfrom sidemantic.adapters.tmdl import TMDLAdapter\nfrom sidemantic_dax import String, parse_expression\nimport duckdb\n\ngraph = TMDLAdapter().parse(Path.cwd())\nmodels = graph.models.values() if isinstance(graph.models, dict) else graph.models\nmodel, = [model for model in models if model.name == \"Greeting\"]\nmetrics = model.metrics.values() if isinstance(model.metrics, dict) else model.metrics\nmeasure, = [metric for metric in metrics if metric.name == \"Hello\"]\nassert measure.expression_language == \"dax\"\nliteral = parse_expression(measure.dax)\nassert isinstance(literal, String) and literal == measure._dax_ast\nassert measure.format == \"@\"\nconnection = duckdb.connect(\":memory:\")\nprint(\"sidemantic \" + version(\"sidemantic\") + \"; duckdb \" + duckdb.__version__ + \"; SQL SELECT CAST(? AS VARCHAR)\", file=__import__(\"sys\").stderr)\nresult = connection.execute(\"SELECT CAST(? AS VARCHAR) AS greeting\", [literal.value]).fetchall()\nprint(result[0][0])\n"
+    }
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/analysis-services/tmdl/tmdl-overview?view=asallproducts-allversions"
+  ],
+  "previous_verification_log": "examples/#699 TMDL/verification/native.json",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5",
+      "expected_sha256": null
+    }
+  ],
+  "toolchain": "sidemantic 0.13.1; duckdb 2.0.0 with native Rust DAX parser",
+  "reproduction_command": "python evaluate_measure.py",
+  "semantic_scope": "Sidemantic loaded the unchanged TMDL project and its measure. The native DAX parser produced a typed constant string for the measure. The test selected that value as a string through a parameterized DuckDB query.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

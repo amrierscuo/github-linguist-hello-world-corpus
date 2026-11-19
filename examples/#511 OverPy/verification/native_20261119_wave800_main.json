@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "ordinal": 511,
+  "language": "OverPy",
+  "timestamp_utc": "2026-11-19T12:34:17.763635+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Stage the published OverPy compiler",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "overpy"
+      ],
+      "cwd": "${SCRATCH}/511-v25u5r84",
+      "timestamp_utc": "2026-11-19T12:34:17.799449+00:00",
+      "timeout_seconds": 80,
+      "exit_code": 0,
+      "stdout": "\nadded 1 package in 25s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/511-v25u5r84/home",
+        "TMPDIR": "${SCRATCH}/511-v25u5r84/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Compile the original player event rule and preserve the generated Workshop program",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/511-v25u5r84/decode-workshop.cjs"
+      ],
+      "cwd": "${SCRATCH}/511-v25u5r84",
+      "timestamp_utc": "2026-11-19T12:34:46.010681+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "rule (\"Greeting\") {\n    event {\n        Ongoing - Each Player;\n        All;\n        All;\n    }\n    actions {\n        Big Message(Event Player, Custom String(\"Hello, World!\"));\n    }\n}\n\n\n",
+      "stderr": "[\"OverPyCompiler\",\"OverPyDecompiler\",\"actionKw\",\"annotations\",\"compile\",\"computeCustomGameSettingsSchema\",\"constantValues\",\"customGameSettingsSchema\",\"decompileAllRules\",\"eventKw\",\"eventPlayerKw\",\"eventSlotKw\",\"eventTeamKw\",\"heroKw\",\"mapKw\",\"opyConstants\",\"opyFuncs\",\"opyKeywords\",\"opyMacros\",\"opyMemberFuncs\",\"opyModules\",\"opyStringEntities\",\"overpyTemplate\",\"preprocessingDirectives\",\"readyPromise\",\"ruleKw\",\"stringKw\",\"valueFuncKw\"]\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/511-v25u5r84/home",
+        "TMPDIR": "${SCRATCH}/511-v25u5r84/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#511 OverPy/hello.opy": "c10d9d1298ebe4039f4748ceeb4b8fb71ae1a831a99bd0f60c15acd27f7cdaed"
+  },
+  "fixture_sha256": {
+    "package.json": {
+      "sha256": "51f8ef20f5139356f58c099f36a470be4de892830910c2a7d304ee2843bceb1f",
+      "content_utf8": "{\"private\":true,\"name\":\"corpus-overpy\"}\n"
+    },
+    "decode-workshop.cjs": {
+      "sha256": "bd6da2b3c301e2aa467d28688ecfff7fd934ead57459e3be78fb54517082de62",
+      "content_utf8": "const fs=require(\"node:fs\"), assert=require(\"node:assert/strict\");\nconst native=require(\"overpy\");\nasync function main() {\n    const api=Object.keys(native).sort();\n    const compiled=await native.compile(fs.readFileSync(\"hello.opy\",\"utf8\"),\"en-US\");\n    const generated=typeof compiled === \"string\" ? compiled : compiled.result;\n    fs.writeFileSync(\"workshop.ow\",generated);\n    console.error(JSON.stringify(api));\n    console.log(generated);\n}\nmain().catch(error => { console.error(error); process.exitCode=1; });\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "OverPy original compiler",
+      "url": "https://github.com/Zezombye/overpy"
+    }
+  ],
+  "previous_verification_log": "examples/#511 OverPy/verification/native_20261104_followup_main.json",
+  "npm_version": "9.7.21",
+  "workshop_sha256": "d522213100b9cf7d3ed25d6c6bf9c4134f7d16cd5225f5394cc3fe7b944c0c49",
+  "toolchain": "OverPy 9.7.21 Workshop compiler",
+  "reproduction_command": "node decode-workshop.cjs",
+  "semantic_scope": "OverPy compiled the original rule. The generated Workshop code binds it to the ongoing player event and emits Big Message to Event Player with the exact custom string. Scope is the compiler output and its event/action mapping.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

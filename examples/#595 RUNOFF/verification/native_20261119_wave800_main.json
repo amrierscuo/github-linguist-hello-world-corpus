@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "ordinal": 595,
+  "language": "RUNOFF",
+  "timestamp_utc": "2026-11-19T12:43:21.085525+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Build the archived compatible converter from its historical Unix source",
+      "command": [
+        "gcc",
+        "-std=gnu89",
+        "-DLOCAL",
+        "-fcommon",
+        "-Wno-int-conversion",
+        "-Wno-incompatible-pointer-types",
+        "-include",
+        "stdlib.h",
+        "-include",
+        "string.h",
+        "rnotroff.c",
+        "-o",
+        "rnotroff",
+        "-lm"
+      ],
+      "cwd": "${SCRATCH}/595-1z0q0dwk",
+      "timestamp_utc": "2026-11-19T12:43:25.425891+00:00",
+      "timeout_seconds": 40,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "rnotroff.c: In function ‘error’:\nrnotroff.c:763:17: warning: format not a string literal and no format arguments [-Wformat-security]\n  763 |                 fprintf(stderr, s1);\n      |                 ^~~~~~~\nrnotroff.c: In function ‘list’:\nrnotroff.c:1401:38: warning: format ‘%f’ expects argument of type ‘float *’, but argument 3 has type ‘double *’ [-Wformat=]\n 1401 |                 if (sscanf(curarg, \"%f%c\", &listspc, &su) != EOF) {\n      |                                     ~^     ~~~~~~~~\n      |                                      |     |\n      |                                      |     double *\n      |                                      float *\n      |                                     %lf\nrnotroff.c: In function ‘pagesize’:\nrnotroff.c:1515:30: warning: format ‘%f’ expects argument of type ‘float *’, but argument 3 has type ‘double *’ [-Wformat=]\n 1515 |         if (sscanf(curarg, \"%f%c, %f%c\", &height, &hu, &width, &wu) == EOF)\n      |                             ~^           ~~~~~~~\n      |                              |           |\n      |                              float *     double *\n      |                             %lf\nrnotroff.c:1515:36: warning: format ‘%f’ expects argument of type ‘float *’, but argument 5 has type ‘double *’ [-Wformat=]\n 1515 |         if (sscanf(curarg, \"%f%c, %f%c\", &height, &hu, &width, &wu) == EOF)\n      |                                   ~^                   ~~~~~~\n      |                                    |                   |\n      |                                    float *             double *\n      |                                   %lf\nrnotroff.c: In function ‘paragraph’:\nrnotroff.c:1546:38: warning: format ‘%f’ expects argument of type ‘float *’, but argument 3 has type ‘double *’ [-Wformat=]\n 1546 |                 if (sscanf(curarg, \"%f%c, %f%c, %f%c\", &indent, &iu,\n      |                                     ~^                 ~~~~~~~\n      |                                      |                 |\n      |                                      float *           double *\n      |                                     %lf\nrnotroff.c:1546:44: warning: format ‘%f’ expects argument of type ‘float *’, but argument 5 has type ‘double *’ [-Wformat=]\n 1546 |                 if (sscanf(curarg, \"%f%c, %f%c, %f%c\", &indent, &iu,\n      |                                           ~^\n      |                                            |\n      |                                            float *\n      |                                           %lf\n 1547 |                     &paraspc, &su, &testpage, &tu) != EOF) {\n      |                     ~~~~~~~~                \n      |                     |\n      |                     double *\nrnotroff.c:1546:50: warning: format ‘%f’ expects argument of type ‘float *’, but argument 7 has type ‘double *’ [-Wformat=]\n 1546 |                 if (sscanf(curarg, \"%f%c, %f%c, %f%c\", &indent, &iu,\n      |                                                 ~^\n      |                                                  |\n      |                                                  float *\n      |                                                 %lf\n 1547 |                     &paraspc, &su, &testpage, &tu) != EOF) {\n      |                                    ~~~~~~~~~      \n      |                                    |\n      |                                    double *\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/595-1z0q0dwk/home",
+        "TMPDIR": "${SCRATCH}/595-1z0q0dwk/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Convert the untouched RUNOFF document into troff requests",
+      "command": [
+        "./rnotroff",
+        "-n"
+      ],
+      "cwd": "${SCRATCH}/595-1z0q0dwk",
+      "timestamp_utc": "2026-11-19T12:43:27.011130+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": ".so runoffmacros\n.TT 0 1 1\nHello corpus\n.RT\n.na\nHello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/595-1z0q0dwk/home",
+        "TMPDIR": "${SCRATCH}/595-1z0q0dwk/tmp",
+        "LC_ALL": "C.UTF-8"
+      },
+      "stdin": ".TITLE Hello corpus\n.NO JUSTIFY\nHello, World!\n"
+    },
+    {
+      "label": "Render the converted document with GNU troff",
+      "command": [
+        "/usr/bin/groff",
+        "-Tascii",
+        "hello.troff"
+      ],
+      "cwd": "${SCRATCH}/595-1z0q0dwk",
+      "timestamp_utc": "2026-11-19T12:43:27.028217+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "\n\n\n\n     Hello, World!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n     Hello corpus\n\n\n",
+      "stderr": "troff:runoffmacros:7: warning: macro 'hy0' not defined (possibly missing space after 'hy')\ntroff:runoffmacros:8: warning: macro 'ev1' not defined (possibly missing space after 'ev')\ntroff:runoffmacros:11: warning: macro 'hy0' not defined (possibly missing space after 'hy')\ntroff:runoffmacros:12: error: environment stack underflow\ntroff:runoffmacros:13: warning: macro 'ev2' not defined (possibly missing space after 'ev')\ntroff:runoffmacros:18: error: environment stack underflow\ntroff:runoffmacros:25: error: can't write read-only register\ntroff:hello.troff:2: warning: macro 'ev1' not defined (possibly missing space after 'ev')\ntroff:hello.troff:4: error: environment stack underflow\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/595-1z0q0dwk/home",
+        "TMPDIR": "${SCRATCH}/595-1z0q0dwk/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#595 RUNOFF/hello.rno": "dffa05beedec1d89196a238d31324fe31858c7c38b155a8c5b2105a7324d95da"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    {
+      "title": "RUNOFF manual DEC",
+      "url": "https://bitsavers.org/pdf/dec/vax/vms/5.0/AA-LA51A-TE_VAX_DIGITAL_Standard_Runoff_Reference_Manual_Apr88.pdf"
+    }
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://www.tuhs.org/Usenet/comp.sources.unix/1985-July/004514.html",
+      "sha256": "3fe18df8017bf46b554190e7bdb4d2be7b5b5b36ffb2b4afb82396ce4528e35e",
+      "authors": "Ian F. Darwin, Geoff Collyer, Leslie Goldsmith; University of Toronto"
+    }
+  ],
+  "rehosted_source": {
+    "archived_c_sha256": "3b8eb514b786d428f07c024d86f60b7924d371eeea98b09b88ee1e21d081b326",
+    "compiled_c_sha256": "2f2da97f09c4e0e2d300699557a1b1c0082ab2858d5cccf983dd303692321565",
+    "local_tool_adaptation": "Rename the pre-POSIX getline helper to avoid libc symbol collision."
+  },
+  "converted_troff_stdout": ".so runoffmacros\n.TT 0 1 1\nHello corpus\n.RT\n.na\nHello, World!\n",
+  "ubuntu_archives": [],
+  "toolchain": "University of Toronto rnotroff (1985) and GNU groff",
+  "reproduction_command": "rnotroff -n < hello.rno > hello.troff && groff -Tascii hello.troff",
+  "semantic_scope": "The historical compatible converter parsed the untouched DEC RUNOFF document and translated it to troff. The rendered page contains the greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

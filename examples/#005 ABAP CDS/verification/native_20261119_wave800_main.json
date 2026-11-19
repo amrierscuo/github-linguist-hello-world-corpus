@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "ordinal": 5,
+  "language": "ABAP CDS",
+  "timestamp_utc": "2026-11-19T12:16:05.611897+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Stage the abaplint compiler and CDS translator",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+        "install",
+        "--ignore-scripts",
+        "--save-exact",
+        "@abaplint/transpiler@2.14.34",
+        "@abaplint/core@2.120.105"
+      ],
+      "cwd": "${SCRATCH}/005-tpd11gph",
+      "timestamp_utc": "2026-11-19T12:16:10.789783+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "\nadded 14 packages in 35s\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/005-tpd11gph/home",
+        "TMPDIR": "${SCRATCH}/005-tpd11gph/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Enable string projection in the locally staged abaplint relational emitter",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/005-tpd11gph/literal-projection.cjs"
+      ],
+      "cwd": "${SCRATCH}/005-tpd11gph",
+      "timestamp_utc": "2026-11-19T12:16:48.737794+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/005-tpd11gph/home",
+        "TMPDIR": "${SCRATCH}/005-tpd11gph/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "execute-cds.cjs",
+        "zi_hello_world.ddls.asddls"
+      ],
+      "cwd": "${SCRATCH}/005-tpd11gph",
+      "timestamp_utc": "2026-11-19T12:16:48.967755+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "(node:682) ExperimentalWarning: SQLite is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\nCREATE TABLE 't000' ('mandt' NCHAR(3) COLLATE RTRIM, PRIMARY KEY('mandt'));\nCREATE VIEW \"zi_hello_world\" AS SELECT \"t000\".\"mandt\" AS \"client\", 'Hello, World!' AS \"greeting\" FROM \"t000\";\n",
+      "environment": {
+        "PATH": "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/005-tpd11gph/home",
+        "TMPDIR": "${SCRATCH}/005-tpd11gph/tmp",
+        "LC_ALL": "C.UTF-8",
+        "npm_config_cache": "${SCRATCH}/cache/tools/npm-cache",
+        "npm_config_update_notifier": "false",
+        "npm_config_audit": "false",
+        "npm_config_fund": "false"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#005 ABAP CDS/zi_hello_world.ddls.asddls": "f5b00f836607d70badcaf1a90590839aedacc9bd88725c082696fd4a8134fe37"
+  },
+  "fixture_sha256": {
+    "package.json": {
+      "sha256": "5776503d122bbba1d2dfaf3d23b874a89c700c13f890ae5357823fc4383c29df",
+      "content_utf8": "{\"name\":\"isolated-cds-test\",\"private\":true}\n"
+    },
+    "t000.tabl.xml": {
+      "sha256": "7d523f543e22888f439fe45441378ba60ff6689908d248f0e3ed8e3cb6908c01",
+      "content_utf8": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<abapGit version=\"v1.0.0\" serializer=\"LCL_OBJECT_TABL\" serializer_version=\"v1.0.0\">\n  <asx:abap xmlns:asx=\"http://www.sap.com/abapxml\" version=\"1.0\">\n    <asx:values>\n      <DD02V>\n        <TABNAME>T000</TABNAME>\n        <DDLANGUAGE>E</DDLANGUAGE>\n        <TABCLASS>TRANSP</TABCLASS>\n        <DDTEXT>Corpus test clients</DDTEXT>\n        <CONTFLAG>A</CONTFLAG>\n        <EXCLASS>1</EXCLASS>\n      </DD02V>\n      <DD09L>\n        <TABNAME>T000</TABNAME>\n        <AS4LOCAL>A</AS4LOCAL>\n        <TABKAT>0</TABKAT>\n        <TABART>APPL0</TABART>\n        <BUFALLOW>N</BUFALLOW>\n      </DD09L>\n      <DD03P_TABLE>\n        <DD03P>\n          <TABNAME>T000</TABNAME>\n          <FIELDNAME>MANDT</FIELDNAME>\n          <DDLANGUAGE>E</DDLANGUAGE>\n          <POSITION>0001</POSITION>\n          <KEYFLAG>X</KEYFLAG>\n          <ADMINFIELD>0</ADMINFIELD>\n          <INTTYPE>C</INTTYPE>\n          <INTLEN>000006</INTLEN>\n          <NOTNULL>X</NOTNULL>\n          <DATATYPE>CHAR</DATATYPE>\n          <LENG>000003</LENG>\n          <MASK>  CHAR</MASK>\n        </DD03P>\n      </DD03P_TABLE>\n    </asx:values>\n  </asx:abap>\n</abapGit>\n"
+    },
+    "execute-cds.cjs": {
+      "sha256": "12d798465a490ecd13a7dd62c73588aed63ba2a48bec866442e6f91f482ceeba",
+      "content_utf8": "const fs = require(\"node:fs\");\nconst {DatabaseSync} = require(\"node:sqlite\");\nconst {Transpiler} = require(\"@abaplint/transpiler\");\nconst assert = require(\"node:assert/strict\");\n\nasync function execute() {\n    const sourceFiles = [process.argv[2], \"t000.tabl.xml\"].map(filename => ({\n        filename,\n        contents: fs.readFileSync(filename, \"utf8\")\n    }));\n    const output = await new Transpiler().runRaw(sourceFiles);\n    const queries = output.databaseSetup.schemas.sqlite;\n    const db = new DatabaseSync(\":memory:\");\n    for (const entry of queries) {\n        console.error(entry.trim());\n        db.exec(entry);\n    }\n    assert.equal(db.prepare(\"SELECT count(*) FROM zi_hello_world\").get()[\"count(*)\"], 0);\n    db.prepare(\"INSERT INTO t000 (mandt) VALUES (?)\").run(\"123\");\n    const result = db.prepare(\"SELECT client, greeting FROM zi_hello_world\").get();\n    assert.equal(result.client, \"123\");\n    assert.equal(result.greeting, \"Hello, World!\");\n    console.log(result.greeting);\n}\nexecute().catch(error => { console.error(error); process.exitCode = 1; });\n"
+    },
+    "literal-projection.cjs": {
+      "sha256": "120d85ffb72deecb17ed3f03690e2f46295a80f3e806d3b60c0214998996d4dc",
+      "content_utf8": "const fs = require(\"node:fs\");\nconst path = require(\"node:path\");\nconst assert = require(\"node:assert/strict\");\n\nconst main = require.resolve(\"@abaplint/transpiler\");\nconst source = path.join(path.dirname(main), \"db\", \"cds_database_view.js\");\nlet body = fs.readFileSync(source, \"utf8\");\nconst field = \"const field = node.findDirectExpression(cds.CDSPrefixedName);\";\nassert.equal(body.split(field).length, 2);\nbody = body.replace(field, field + \"\\n        const literal = node.findDirectExpression(cds.CDSString);\");\nconst condition = \"child === field || child === as\";\nassert.equal(body.split(condition).length, 2);\nbody = body.replace(condition, \"child === field || child === literal || child === as\");\nconst missing = 'if (field === undefined) {';\nassert.equal(body.split(missing).length, 2);\nbody = body.replace(missing, 'if (literal) {\\n            const alias = as?.findDirectExpression(cds.CDSName);\\n            if (!alias) return this.unsupported(\"string projection requires an alias\");\\n            return this.expression(literal) + \" AS \" + this.quote(this.name(alias));\\n        }\\n        ' + missing);\nfs.writeFileSync(source, body);\n"
+    }
+  },
+  "sources": [
+    "https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/abencds_v2_views.htm",
+    "https://help.sap.com/docs/ABAP_PLATFORM/f2e545608079437ab165c105649b89db/4ed24bd56e391014adc9fffe4e204223.html?version=1709.008",
+    "https://rules.abaplint.org/"
+  ],
+  "previous_verification_log": "examples/#005 ABAP CDS/verification/abaplint.json",
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/abaplint/transpiler/tar.gz/main",
+      "ref": "main",
+      "sha256": "c4127770b095047928184d56a9a5d102025e2a31ff6d9b4fb12b2a711f83d223"
+    }
+  ],
+  "package_lock_sha256": "db8dee0efa45d170f9778551985a96d63a03bb4c76304cfda67b285830ec4f3e",
+  "toolchain": "abaplint/transpiler 2.14.34 with abaplint/core 2.120.105 plus local string projection support and Node SQLite",
+  "reproduction_command": "node literal-projection.cjs && node execute-cds.cjs zi_hello_world.ddls.asddls",
+  "semantic_scope": "The abaplint parser and relational transpiler translated the original CDS to SQLite. A small adapter routes projected string literals through the transpiler’s existing SQL literal emitter. Querying the generated view after creating and populating its declared client table produced the expected client and greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

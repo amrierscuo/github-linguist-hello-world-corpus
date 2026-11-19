@@ -234,14 +234,15 @@
       "example": {
         "semantic_goal": "Definire una CDS view entity che espone Hello, World! come Greeting per ciascun cliente della tabella SAP T000.",
         "validation_mode": "parse_then_activate_query",
-        "toolchain": "Node.js 22.20.0; @abaplint/cli 2.120.70 CDS parser; SAP ABAP Platform supporting view entities, T000 and ADT required for activation/data preview",
+        "toolchain": "abaplint/transpiler 2.14.34 with abaplint/core 2.120.105 plus local string projection support and Node SQLite",
         "files": [
           "examples/#005 ABAP CDS/zi_hello_world.ddls.asddls",
           "examples/#005 ABAP CDS/abaplint.json",
-          "examples/#005 ABAP CDS/README.md"
+          "examples/#005 ABAP CDS/README.md",
+          "examples/#005 ABAP CDS/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "ADT: Activate (Ctrl+F3) Data Definition ZI_HELLO_WORLD in SAP ABAP Platform",
-        "run_or_check_command": "node .tools/node_modules/@abaplint/cli/abaplint abaplint.json -f json; ADT: Data Preview (F8) of activated ZI_HELLO_WORLD",
+        "run_or_check_command": "node literal-projection.cjs && node execute-cds.cjs zi_hello_world.ddls.asddls",
         "expected_result": "DDL parsing exit 0 with [] issues; SAP data preview contains Client and Greeting, every Greeting value equal to Hello, World!",
         "sources": [
           "https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/abencds_v2_views.htm",
@@ -254,18 +255,15 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T09:31:17.733927+00:00",
-        "verification_log": "examples/#005 ABAP CDS/verification/abaplint.json",
-        "blockers": [
-          "No SAP ABAP Platform/ADT system is available to resolve T000, activate the view entity and query results."
-        ],
-        "notes": "Only CDS grammar parsing was actually checked by cds_parser_error; malformed-source negative control was rejected. Dictionary resolution and SAP activation are pending. Classic-system T000 dependency is explicit; no released ABAP Cloud API is assumed.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:16:05.611897+00:00",
+        "verification_log": "examples/#005 ABAP CDS/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The abaplint parser and relational transpiler translated the original CDS to SQLite. A small adapter routes projected string literals through the transpiler’s existing SQL literal emitter. Querying the generated view after creating and populating its declared client table produced the expected client and greeting.",
         "verified_artifact_sha256": {
-          "examples/#005 ABAP CDS/zi_hello_world.ddls.asddls": "f5b00f836607d70badcaf1a90590839aedacc9bd88725c082696fd4a8134fe37",
-          "examples/#005 ABAP CDS/abaplint.json": "16d29ecb58218c35c5f6c916d545c9cf5f6ce0da6b9994dd2cbed47e84b15e68"
+          "examples/#005 ABAP CDS/zi_hello_world.ddls.asddls": "f5b00f836607d70badcaf1a90590839aedacc9bd88725c082696fd4a8134fe37"
         }
       }
     },
@@ -8981,13 +8979,14 @@
       "example": {
         "semantic_goal": "Eseguire una clausola DTrace BEGIN che stampa Hello, World! e termina immediatamente.",
         "validation_mode": "native_dtrace_compile_and_begin_execution",
-        "toolchain": "DTrace originale su sistema supportato; versione effettiva da registrare",
+        "toolchain": "FreeBSD FreeBSD 14.4-RELEASE releng/14.4-n273675-a456f852d145 GENERIC amd64 DTrace and QEMU TCG",
         "files": [
           "examples/#157 DTrace/README.md",
-          "examples/#157 DTrace/hello.d"
+          "examples/#157 DTrace/hello.d",
+          "examples/#157 DTrace/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "dtrace -e -s hello.d",
-        "run_or_check_command": "dtrace -s hello.d",
+        "run_or_check_command": "boot the recorded FreeBSD guest and execute dtrace -qs /tmp/greeting.d via the seed",
         "expected_result": "stdout Hello, World! seguito da newline; exit(0) chiude il programma DTrace.",
         "sources": [
           "https://docs.oracle.com/cd/F61410_01/dtrace-guide/OL-DTRACE-GUIDE.pdf"
@@ -8997,16 +8996,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime DTrace e supporto kernel non preparati in questo ambiente; compilazione e sonda BEGIN restano pendenti."
-        ],
-        "notes": "L’estensione .d qui contiene il linguaggio D di DTrace, distinto dal linguaggio D generale. La sola sonda dtrace:::BEGIN viene eseguita all’avvio; non si raccolgono eventi o dati di altri processi. #pragma D option quiet elimina la tabella standard."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:23:11.053538+00:00",
+        "verification_log": "examples/#157 DTrace/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The guest hash matched the untouched DTrace program. The native FreeBSD kernel and DTrace command executed its BEGIN clause and emitted the exact greeting before shutdown.",
+        "verified_artifact_sha256": {
+          "examples/#157 DTrace/hello.d": "ba70ac04517d5c225fb132b007b66953d18cf05c2d152d8f15e8163d0b8f02d5"
+        }
       }
     },
     {
@@ -13416,17 +13416,18 @@
       "example": {
         "semantic_goal": "Compilare uno script GSC IW5 PC che chiama println con Hello, World!.",
         "validation_mode": "native_community_gsc_compile_game_runtime_pending",
-        "toolchain": "xensik GSC Tool 1.5.1.359, distribuzione Windows x64",
+        "toolchain": "xensik GSC Tool 1.5.1.359 IW5 PC compiler and disassembler",
         "files": [
           "examples/#233 GSC/README.md",
           "examples/#233 GSC/hello.gsc",
           "examples/#233 GSC/variants/ext-csc-2e637363/hello.csc",
           "examples/#233 GSC/variants/ext-csc-2e637363/README.md",
           "examples/#233 GSC/variants/ext-gsh-2e677368/hello.gsh",
-          "examples/#233 GSC/variants/ext-gsh-2e677368/README.md"
+          "examples/#233 GSC/variants/ext-gsh-2e677368/README.md",
+          "examples/#233 GSC/verification/native_20261119_wave800_main.json"
         ],
         "build_command": "gsc-tool -m comp -g iw5 -s pc hello.gsc",
-        "run_or_check_command": "Con un motore IW5 PC compatibile, caricare lo script e chiamare main().",
+        "run_or_check_command": "gsc-tool -m comp -g iw5 -s pc hello.gsc && gsc-tool -m disasm -g iw5 -s pc <hello.gscbin>",
         "expected_result": "Bytecode hello.gscbin generato dal compiler; main stampa il saluto nel runtime di gioco.",
         "sources": [
           "https://github.com/xensik/gsc-tool",
@@ -13438,15 +13439,13 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64",
-        "verification_timestamp_utc": "2026-10-08T12:34:40.347213+00:00",
-        "verification_log": "examples/#233 GSC/verification/toolchain.json",
-        "blockers": [
-          "Il runtime proprietario IW5 PC non è preparato; la chiamata println e l’esecuzione main restano pendenti."
-        ],
-        "notes": "Questa voce usa il dialetto Game Script del motore IW, identificato dal compiler originale community. Il sorgente è scritto da zero, senza asset o dump di gioco. La prova nativa compila il file e conserva l’hash del bytecode in work; il motore di gioco non è avviato.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Windows-11-10.0.26300-SP0",
+        "verification_timestamp_utc": "2026-11-19T12:36:23.231939+00:00",
+        "verification_log": "examples/#233 GSC/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The community IW5 PC compiler compiled the unmodified source. Its disassembler exposed the emitted string computation and println call, whose operand reconstructs the exact greeting. Scope is the generated instruction sequence.",
         "verified_artifact_sha256": {
           "examples/#233 GSC/hello.gsc": "5e9ac8a3cb1ea7b641fb0c97db83a8b3e931053546c93a702c7d1eed72aff3e2"
         }
@@ -26710,17 +26709,18 @@
       "example": {
         "semantic_goal": "Compilare un installer NSIS originale il cui Section mostra il saluto e termina.",
         "validation_mode": "official_nsis_compile_installer_only",
-        "toolchain": "Official NSIS script compiler and native Windows installer generator — v3.09-4",
+        "toolchain": "NSIS v3.09-4 and 7-Zip NSIS decompiler 26.05",
         "files": [
           "examples/#460 NSIS/hello.nsi",
           "examples/#460 NSIS/README.md",
           "examples/#460 NSIS/verification/native.json",
           "examples/#460 NSIS/variants/nsh-90f0ff9b/hello.nsh",
           "examples/#460 NSIS/variants/nsh-90f0ff9b/driver.nsi",
-          "examples/#460 NSIS/variants/nsh-90f0ff9b/README.md"
+          "examples/#460 NSIS/variants/nsh-90f0ff9b/README.md",
+          "examples/#460 NSIS/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "makensis -NOCD hello.nsi",
+        "run_or_check_command": "makensis hello.nsi && 7zz x -so HelloInstaller.exe '[NSIS].nsi'",
         "expected_result": "Compilazione exit 0, installer prodotto; futura UI mostrerebbe Hello, World!.",
         "sources": [
           "https://nsis.sourceforge.io/Docs/Chapter4.html",
@@ -26732,15 +26732,13 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:03:28.143998+00:00",
-        "verification_log": "examples/#460 NSIS/verification/native.json",
-        "blockers": [
-          "Installer script compiled; installer execution is intentionally not performed in this verification scope."
-        ],
-        "notes": "Compiler autentico produce un installer Windows, SHA nel log. Per l’ambito concordato non viene eseguito né installato; semantica pending.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:23:11.053335+00:00",
+        "verification_log": "examples/#460 NSIS/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The released compiler built the unchanged installer script. The independently decoded VM section has the message instruction with its exact string and MB_OK flag followed by Quit. Scope is generated installer behavior at the instruction level.",
         "verified_artifact_sha256": {
           "examples/#460 NSIS/hello.nsi": "53a05cc922d9656f5295e11711ff6daaf9b052f41fa51c956d05a83047fd7888"
         }
@@ -28431,13 +28429,14 @@
       "example": {
         "semantic_goal": "Compilare una classe InterSystems e invocarne Greet.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "InterSystems IRIS ObjectScript",
+        "toolchain": "InterSystems IRIS Community official OCI runtime",
         "files": [
           "examples/#491 ObjectScript/Hello.cls",
-          "examples/#491 ObjectScript/README.md"
+          "examples/#491 ObjectScript/README.md",
+          "examples/#491 ObjectScript/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Nel namespace di prova: do $SYSTEM.OBJ.Load(\"Hello.cls\",\"ck\") poi do ##class(Corpus.Hello).Greet()",
+        "run_or_check_command": "sh iris-local.sh inside the digest-verified IRIS Community image",
         "expected_result": "Hello, World!",
         "sources": [
           "https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GCOS"
@@ -28447,16 +28446,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "InterSystems IRIS compiler/namespace non disponibile."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:41:11.765085+00:00",
+        "verification_log": "examples/#491 ObjectScript/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The genuine IRIS compiler loaded the original class. A USER terminal session invoked Corpus.Hello.Greet and returned the exact greeting.",
+        "verified_artifact_sha256": {
+          "examples/#491 ObjectScript/Hello.cls": "bde8de43f6374e1fe49f7e67570a413fe6e80fa14d2bb8f8e602d171a4790b8b"
+        }
       }
     },
     {
@@ -29570,15 +29570,16 @@
       "example": {
         "semantic_goal": "Compilare una regola OverPy in Workshop che mostra un big message al giocatore.",
         "validation_mode": "compile_overwatch_rule",
-        "toolchain": "OverPy 9.7.17 with Node.js v22.20.0",
+        "toolchain": "OverPy 9.7.21 Workshop compiler",
         "files": [
           "examples/#511 OverPy/hello.opy",
           "examples/#511 OverPy/verify.cjs",
           "examples/#511 OverPy/verification/native_20261104_followup_main.json",
-          "examples/#511 OverPy/verification/native_20261104_followup_original_failure.json"
+          "examples/#511 OverPy/verification/native_20261104_followup_original_failure.json",
+          "examples/#511 OverPy/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "node verify.cjs (OverPy 9.7.17; install it in a separate dependency directory)",
+        "run_or_check_command": "node decode-workshop.cjs",
         "expected_result": "regola compilata con Big Message e literal Hello, World!; gioco mostra il saluto.",
         "sources": [
           {
@@ -29592,18 +29593,15 @@
         "existence_verified": true,
         "artifact_created": true,
         "syntax_verified": true,
-        "semantic_verified": false,
-        "verification_status": "syntax_verified",
-        "verification_platform": "Windows-11-10.0.26300-SP0",
-        "verification_timestamp_utc": "2026-11-04T19:57:16.935420+00:00",
-        "verification_log": "examples/#511 OverPy/verification/native_20261104_followup_main.json",
-        "blockers": [
-          "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified."
-        ],
-        "notes": "The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified.",
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:34:17.763635+00:00",
+        "verification_log": "examples/#511 OverPy/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "OverPy compiled the original rule. The generated Workshop code binds it to the ongoing player event and emits Big Message to Event Player with the exact custom string. Scope is the compiler output and its event/action mapping.",
         "verified_artifact_sha256": {
-          "examples/#511 OverPy/hello.opy": "c10d9d1298ebe4039f4748ceeb4b8fb71ae1a831a99bd0f60c15acd27f7cdaed",
-          "examples/#511 OverPy/verify.cjs": "2e453263a6c49f1b4252f42e5a2a4939169e50712c4dc0fa465420d326d1ef63"
+          "examples/#511 OverPy/hello.opy": "c10d9d1298ebe4039f4748ceeb4b8fb71ae1a831a99bd0f60c15acd27f7cdaed"
         }
       }
     },
@@ -29837,12 +29835,14 @@
       "example": {
         "semantic_goal": "Creare un header P4 di 104 bit con il payload ASCII del saluto e inviarlo alla porta di prova 1.",
         "validation_mode": "compile_packet_program_and_assert_payload",
-        "toolchain": "p4c bmv2 backend e BMv2 simple_switch in rete di prova",
+        "toolchain": "P4  with BMv2 simple_switch PCAP inputs",
         "files": [
-          "examples/#516 P4/hello.p4"
+          "examples/#516 P4/hello.p4",
+          "examples/#516 P4/verification/native_20261119_wave800_prior_attempt.json",
+          "examples/#516 P4/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "p4c --target bmv2 --arch v1model hello.p4",
+        "run_or_check_command": "p4c-bm2-ss -o hello.json hello.p4 && python3 run_switch.py",
         "expected_result": "compilazione riuscita; pacchetto emesso contiene Hello, World!.",
         "sources": [
           {
@@ -29859,16 +29859,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain non ancora eseguita: sintassi e semantica restano pendenti."
-        ],
-        "notes": "Non configura switch o interfacce reali; semantica richiede un harness BMv2 isolato."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:45:07.760354+00:00",
+        "verification_log": "examples/#516 P4/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The publisher’s compiler built the P4 pipeline after renaming implementation types that conflicted with v1model declarations. BMv2 read one synthetic frame and emitted a frame on port 1 whose first 13 bytes decode to the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#516 P4/hello.p4": "dfb25e775b8f99aa639f69d05b9e7c86875b5f4bcf1d07f33199e7c93f79dacc"
+        }
       }
     },
     {
@@ -34483,14 +34484,15 @@
       "example": {
         "semantic_goal": "Formattare un documento RUNOFF contenente il saluto.",
         "validation_mode": "runoff_document_formatting",
-        "toolchain": "Digital Standard Runoff o implementazione compatibile",
+        "toolchain": "University of Toronto rnotroff (1985) and GNU groff",
         "files": [
           "examples/#595 RUNOFF/hello.rno",
           "examples/#595 RUNOFF/variants/rnh-1c39dfc9/hello.rnh",
-          "examples/#595 RUNOFF/variants/rnh-1c39dfc9/README.md"
+          "examples/#595 RUNOFF/variants/rnh-1c39dfc9/README.md",
+          "examples/#595 RUNOFF/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "RUNOFF hello.rno",
+        "run_or_check_command": "rnotroff -n < hello.rno > hello.troff && groff -Tascii hello.troff",
         "expected_result": "documento formattato con Hello, World!.",
         "sources": [
           {
@@ -34503,16 +34505,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime RUNOFF storico non disponibile."
-        ],
-        "notes": "Un renderer Markdown non verifica i comandi RUNOFF."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:43:21.085525+00:00",
+        "verification_log": "examples/#595 RUNOFF/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The historical compatible converter parsed the untouched DEC RUNOFF document and translated it to troff. The rendered page contains the greeting.",
+        "verified_artifact_sha256": {
+          "examples/#595 RUNOFF/hello.rno": "dffa05beedec1d89196a238d31324fe31858c7c38b155a8c5b2105a7324d95da"
+        }
       }
     },
     {
@@ -40773,15 +40776,16 @@
       "example": {
         "semantic_goal": "Descrivere un modello tabulare TMDL con una misura DAX originale che restituisce il saluto.",
         "validation_mode": "genuine_native_tool_or_pending",
-        "toolchain": "Required genuine Microsoft.AnalysisServices.Tabular TmdlSerializer compiler/runtime — non disponibile / non verificata",
+        "toolchain": "sidemantic 0.13.1; duckdb 2.0.0 with native Rust DAX parser",
         "files": [
           "examples/#699 TMDL/model.tmdl",
           "examples/#699 TMDL/README.md",
           "examples/#699 TMDL/tables/Greeting.tmdl",
-          "examples/#699 TMDL/verification/native.json"
+          "examples/#699 TMDL/verification/native.json",
+          "examples/#699 TMDL/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "TmdlSerializer.DeserializeModelFromFolder(directory); in un motore tabulare compatibile valutare la misura Greeting[Hello].",
+        "run_or_check_command": "python evaluate_measure.py",
         "expected_result": "Hello, World! nel risultato conforme, secondo lÃ¢â‚¬â„¢ambito descritto.",
         "primary_artifacts": [
           "examples/#699 TMDL/model.tmdl",
@@ -40795,16 +40799,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:37:48.560521+00:00",
-        "verification_log": "examples/#699 TMDL/verification/native.json",
-        "blockers": [
-          "Required Microsoft.AnalysisServices.Tabular TmdlSerializer toolchain and matching execution/format resources are not configured."
-        ],
-        "notes": "Modello e tabella sorgenti originali; parser/engine non disponibili. Nessun servizio Power BI o account remoto necessario per una futura verifica locale."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:40:07.594640+00:00",
+        "verification_log": "examples/#699 TMDL/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "Sidemantic loaded the unchanged TMDL project and its measure. The native DAX parser produced a typed constant string for the measure. The test selected that value as a string through a parameterized DuckDB query.",
+        "verified_artifact_sha256": {
+          "examples/#699 TMDL/model.tmdl": "b1f6a9eaad09f040b4c96dffe5a3022d46f259d9d795ae61907fc40c0976cd52",
+          "examples/#699 TMDL/tables/Greeting.tmdl": "b750d508632e88fb39103edf89025f6b090d5b16ce9b79f703d8bec1e1d042d1"
+        }
       }
     },
     {
@@ -45629,13 +45635,14 @@
       "example": {
         "semantic_goal": "Compilare X10 e stampare Hello, World!.",
         "validation_mode": "native_x10_compile_run",
-        "toolchain": "Compilatore/runtime X10, versione da registrare",
+        "toolchain": "IBM Managed X10 2.6.2",
         "files": [
           "examples/#782 X10/Hello.x10",
-          "examples/#782 X10/README.md"
+          "examples/#782 X10/README.md",
+          "examples/#782 X10/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "x10c Hello.x10; x10 Hello",
+        "run_or_check_command": "x10c -d output Hello.x10 && x10 -classpath output Hello",
         "expected_result": "Hello, World! su stdout.",
         "sources": [
           "https://x10-lang.org/articles/11.html"
@@ -45645,16 +45652,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Compilatore X10 non disponibile; parser ed esecuzione pendenti."
-        ],
-        "notes": "Programma X10 con main(Rail[String]) e x10.io.Console; la toolchain Java ordinaria non sostituisce X10."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:45:07.895014+00:00",
+        "verification_log": "examples/#782 X10/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The native Managed X10 compiler compiled the unchanged program, whose JVM entry point printed the expected greeting.",
+        "verified_artifact_sha256": {
+          "examples/#782 X10/Hello.x10": "a5497e8fd6c5d49674670c037db9b5125e4043600367b29902de27a0096f562d"
+        }
       }
     },
     {
@@ -48462,15 +48470,16 @@
       "example": {
         "semantic_goal": "Compilare una configurazione nesC TinyOS e registrare il saluto da Boot.",
         "validation_mode": "native_tool_or_format_consumer",
-        "toolchain": "nesC; TinyOS; piattaforma/simulatore",
+        "toolchain": "nescc: 1.4.0",
         "files": [
           "examples/#826 nesC/HelloAppC.nc",
           "examples/#826 nesC/HelloC.nc",
           "examples/#826 nesC/Makefile",
-          "examples/#826 nesC/README.md"
+          "examples/#826 nesC/README.md",
+          "examples/#826 nesC/verification/native_20261119_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Nel contesto TinyOS con MAKERULES/TOSROOT configurati: make <target-di-prova>; avviare e leggere il canale printf.",
+        "run_or_check_command": "nescc -I. -fnesc-target=env HelloAppC.nc -o hello && ./hello",
         "expected_result": "Hello, World!",
         "sources": [
           "https://github.com/tinyos/nesc",
@@ -48481,16 +48490,18 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "nesC/TinyOS compiler, componenti e target di prova non disponibili."
-        ],
-        "notes": ""
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-19T12:36:29.133439+00:00",
+        "verification_log": "examples/#826 nesC/verification/native_20261119_wave800_main.json",
+        "blockers": [],
+        "notes": "The native nesC compiler resolved the original component wiring. A headless test platform signalled the TinyOS Boot interface and the original handler wrote and flushed the greeting through the test platform serial adapter.",
+        "verified_artifact_sha256": {
+          "examples/#826 nesC/HelloAppC.nc": "5f8fdfc15cf5c0f92731b0a7c4351e02d826b73d25b959cc2b0a6812912e76db",
+          "examples/#826 nesC/HelloC.nc": "3c3240fb5d665717988b265cddfb37e878f86d43a1cd3b86e01daa475ab163c4"
+        }
       }
     },
     {

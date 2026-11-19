@@ -1,5 +1,18 @@
 # #460 NSIS
 
+## Verified on November 19, 2026
+
+The released compiler built the unchanged installer script. The independently decoded VM section has the message instruction with its exact string and MB_OK flag followed by Quit. Scope is generated installer behavior at the instruction level.
+
+Run `makensis hello.nsi && 7zz x -so HelloInstaller.exe '[NSIS].nsi'`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `NSIS`, tipo `programming`, language_id `242`.
 
 Fill out an original NSIS installer whose Section shows greeting and ends.
@@ -47,3 +60,5 @@ Verification of the main sample and each variant is recorded separately.
 | --- | --- |
 | `.nsi` | [hello.nsi](hello.nsi), [driver.nsi](variants/nsh-90f0ff9b/driver.nsi) created; verification pending |
 | `.nsh` | [hello.nsh](variants/nsh-90f0ff9b/hello.nsh) created; verification pending |
+
+</details>

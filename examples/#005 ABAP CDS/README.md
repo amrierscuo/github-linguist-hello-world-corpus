@@ -1,5 +1,18 @@
 # #005 ABAP CDS
 
+## Verified on November 19, 2026
+
+The abaplint parser and relational transpiler translated the original CDS to SQLite. A small adapter routes projected string literals through the transpiler’s existing SQL literal emitter. Querying the generated view after creating and populating its declared client table produced the expected client and greeting.
+
+Run `node literal-projection.cjs && node execute-cds.cjs zi_hello_world.ddls.asddls`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/abaplint.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 `zi_hello_world.ddls.asddls` defines the view entity `ZI_Hello_World`: for each
 customer present in the table SAP `T000` exposes `Client` and the constant value
 `Hello, World!` in `Greeting` column. It is a data definition, not a
@@ -48,4 +61,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.asddls` | [zi_hello_world.ddls.asddls](zi_hello_world.ddls.asddls) syntax verified |
+| `.asddls` | [zi_hello_world.ddls.asddls](zi_hello_world.ddls.asddls) Syntax and behavior verified |
+
+</details>

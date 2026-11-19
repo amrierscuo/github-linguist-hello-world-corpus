@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "ordinal": 782,
+  "language": "X10",
+  "timestamp_utc": "2026-11-19T12:45:07.895014+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Compile the exact X10 source using Managed X10",
+      "command": [
+        "${SCRATCH}/782-0_0mxdz4/x10/bin/x10c",
+        "-d",
+        "output",
+        "Hello.x10"
+      ],
+      "cwd": "${SCRATCH}/782-0_0mxdz4",
+      "timestamp_utc": "2026-11-19T12:45:25.374764+00:00",
+      "timeout_seconds": 100,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/782-0_0mxdz4/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/782-0_0mxdz4/home",
+        "TMPDIR": "${SCRATCH}/782-0_0mxdz4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/782-0_0mxdz4/home",
+        "X10_HOME": "${SCRATCH}/782-0_0mxdz4/x10",
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64"
+      }
+    },
+    {
+      "label": "Execute exact example",
+      "command": [
+        "${SCRATCH}/782-0_0mxdz4/x10/bin/x10",
+        "-classpath",
+        "output",
+        "Hello"
+      ],
+      "cwd": "${SCRATCH}/782-0_0mxdz4",
+      "timestamp_utc": "2026-11-19T12:45:35.133988+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Duser.home=${SCRATCH}/782-0_0mxdz4/home\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/782-0_0mxdz4/home",
+        "TMPDIR": "${SCRATCH}/782-0_0mxdz4/tmp",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true -Duser.home=${SCRATCH}/782-0_0mxdz4/home",
+        "X10_HOME": "${SCRATCH}/782-0_0mxdz4/x10",
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#782 X10/Hello.x10": "a5497e8fd6c5d49674670c037db9b5125e4043600367b29902de27a0096f562d"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://x10-lang.org/articles/11.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://downloads.sourceforge.net/project/x10/x10/2.6.2/x10-2.6.2_linux_x86_64.tgz",
+      "sha256": "8632f2a7b32946a362fe5d4bd17a425fa3644e7a43955662e026376c5bdf4cc1"
+    }
+  ],
+  "toolchain": "IBM Managed X10 2.6.2",
+  "reproduction_command": "x10c -d output Hello.x10 && x10 -classpath output Hello",
+  "semantic_scope": "The native Managed X10 compiler compiled the unchanged program, whose JVM entry point printed the expected greeting.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

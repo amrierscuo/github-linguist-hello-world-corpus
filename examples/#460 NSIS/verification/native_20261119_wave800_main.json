@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "ordinal": 460,
+  "language": "NSIS",
+  "timestamp_utc": "2026-11-19T12:23:11.053335+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record Linux NSIS compiler version",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/makensis",
+        "-VERSION"
+      ],
+      "cwd": "${SCRATCH}/460-lc4vk__a",
+      "timestamp_utc": "2026-11-19T12:23:11.076548+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "v3.09-4",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/460-lc4vk__a/home",
+        "TMPDIR": "${SCRATCH}/460-lc4vk__a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "NSISDIR": "${SCRATCH}/cache/tools/apt/usr/share/nsis",
+        "NSISCONFDIR": "${SCRATCH}/cache/tools/apt/etc"
+      }
+    },
+    {
+      "label": "Compile the untouched source into the NSIS installer bytecode",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/makensis",
+        "-V3",
+        "hello.nsi"
+      ],
+      "cwd": "${SCRATCH}/460-lc4vk__a",
+      "timestamp_utc": "2026-11-19T12:23:15.856132+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "MakeNSIS v3.09-4 - Copyright 1999-2023 Contributors\nSee the file COPYING for license details.\nCredits can be found in the Users Manual.\n\nProcessing config: ${SCRATCH}/cache/tools/apt/etc/nsisconf.nsh\nProcessing script file: \"hello.nsi\" (UTF8)\n\nProcessed 1 file, writing output (x86-unicode):\n\nOutput: \"HelloInstaller.exe\"\nInstall: 1 page (64 bytes), 1 section (4120 bytes), 3 instructions (84 bytes), 24 strings (604 bytes), 1 language table (194 bytes).\n\nUsing zlib compression.\n\nEXE header size:               98816 / 100352 bytes\nInstall code:                    497 / 3410 bytes\nInstall data:                      0 / 0 bytes\nCRC (0xD0A398C1):                  4 / 4 bytes\n\nTotal size:                    99317 / 103766 bytes (95.7%)\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/460-lc4vk__a/home",
+        "TMPDIR": "${SCRATCH}/460-lc4vk__a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "NSISDIR": "${SCRATCH}/cache/tools/apt/usr/share/nsis",
+        "NSISCONFDIR": "${SCRATCH}/cache/tools/apt/etc"
+      }
+    },
+    {
+      "label": "Decode the generated NSIS VM instructions and string table",
+      "command": [
+        "${SCRATCH}/cache/tools/nsis-7zip-26.05/dist/7z2605-linux-x86_64/7zz",
+        "x",
+        "-so",
+        "HelloInstaller.exe",
+        "[NSIS].nsi"
+      ],
+      "cwd": "${SCRATCH}/460-lc4vk__a",
+      "timestamp_utc": "2026-11-19T12:23:19.509147+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "; NSIS script (UTF-8) NSIS-Park-1 Unicode\r\n; Install\r\n\r\nUnicode true\r\nSetCompressor zlib\r\n\r\n; --------------------\r\n; HEADER SIZE: 3382\r\n; START HEADER SIZE: 300\r\n; MAX STRING LENGTH: 1024\r\n; STRING CHARS: 302\r\n\r\nOutFile [NSIS].exe\r\n!include WinMessages.nsh\r\n\r\n\r\n\r\n; --------------------\r\n; LANG TABLES: 1\r\n; LANG STRINGS: 46\r\n\r\nName \"Corpus Greeting\"\r\nBrandingText \"Nullsoft Install System v3.09-4\"\r\n\r\n; LANG: 1033\r\nLangString LSTR_0 1033 \"Nullsoft Install System v3.09-4\"\r\nLangString LSTR_1 1033 \"\u0001肂 Setup\"\r\nLangString LSTR_2 1033 \"Corpus Greeting\"\r\nLangString LSTR_30 1033 \"Copy Details To Clipboard\"\r\nLangString LSTR_36 1033 Custom\r\nLangString LSTR_37 1033 Cancel\r\nLangString LSTR_38 1033 \": Installing\"\r\nLangString LSTR_39 1033 \"Show &details\"\r\nLangString LSTR_40 1033 Completed\r\nLangString LSTR_41 1033 \"< &Back\"\r\nLangString LSTR_42 1033 \"&Next >\"\r\nLangString LSTR_43 1033 \"Click Next to continue.\"\r\nLangString LSTR_44 1033 \": Completed\"\r\nLangString LSTR_45 1033 &Close\r\n\r\n\r\nInstType $(LSTR_36)    ;  Custom\r\n; wininit = \u0002␤\\wininit.ini\r\n\r\n\r\n; --------------------\r\n; PAGES: 2\r\n\r\n; Page 0\r\nPage instfiles\r\n  CompletedText $(LSTR_40)    ;  Completed\r\n  DetailsButtonText $(LSTR_39)    ;  \"Show &details\"\r\n\r\n/*\r\n; Page 1\r\nPage COMPLETED\r\n*/\r\n\r\n\r\n; --------------------\r\n; SECTIONS: 1\r\n; COMMANDS: 3\r\n\r\nSection Greeting ; Section_0\r\n  MessageBox MB_OK \"Hello, World!\"\r\n  Quit\r\nSectionEnd\r\n\r\n\r\n\r\n; --------------------\r\n; UNREFERENCED STRINGS:\r\n\r\n/*\r\n1 ProgramFilesDir\r\n17 CommonFilesDir\r\n32 \"C:\\Program Files\"\r\n49 \u0002₁\r\n52 \"\u0002₁\\Common Files\"\r\n68 \u0002㒑\r\n*/\r\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/460-lc4vk__a/home",
+        "TMPDIR": "${SCRATCH}/460-lc4vk__a/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "NSISDIR": "${SCRATCH}/cache/tools/apt/usr/share/nsis",
+        "NSISCONFDIR": "${SCRATCH}/cache/tools/apt/etc"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#460 NSIS/hello.nsi": "53a05cc922d9656f5295e11711ff6daaf9b052f41fa51c956d05a83047fd7888"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://nsis.sourceforge.io/Docs/Chapter4.html",
+    "https://nsis.sourceforge.io/Docs/"
+  ],
+  "previous_verification_log": "examples/#460 NSIS/verification/native.json",
+  "ubuntu_archives": [
+    {
+      "name": "nsis",
+      "version": "3.09-4ubuntu1",
+      "filename": "pool/universe/n/nsis/nsis_3.09-4ubuntu1_amd64.deb",
+      "sha256": "9e061bef1a8b611aeb2ea76d9a3bd7722b960ca1a9dff8e38d2ab51e5a8f5e5b",
+      "bytes": 319510,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/nsis/nsis_3.09-4ubuntu1_amd64.deb"
+    },
+    {
+      "name": "nsis-common",
+      "version": "3.09-4ubuntu1",
+      "filename": "pool/universe/n/nsis/nsis-common_3.09-4ubuntu1_all.deb",
+      "sha256": "49471b9debdee4751ebb4caf6b705cc4c678eebfaecefbe56362258893f85859",
+      "bytes": 968106,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/nsis/nsis-common_3.09-4ubuntu1_all.deb"
+    }
+  ],
+  "installer_sha256": "16ff5b12ee0d6173b45807e941a5c5aedb1a5f0998f28d39f0dc1698c2ba371d",
+  "toolchain_archives": [
+    {
+      "url": "https://github.com/myfreeer/7z-build-nsis/releases/download/26.05/7z2605-linux-x86_64.tar.gz",
+      "sha256": "e951b28bbf5b1cff6c5c0bfd2025e27aabd17e27b252875e08f0e208dc5b7121",
+      "expected_sha256": null
+    }
+  ],
+  "decoded_section": "\r\nSection Greeting ; Section_0\r\n  MessageBox MB_OK \"Hello, World!\"\r\n  Quit\r\nSectionEnd",
+  "toolchain": "NSIS v3.09-4 and 7-Zip NSIS decompiler 26.05",
+  "reproduction_command": "makensis hello.nsi && 7zz x -so HelloInstaller.exe '[NSIS].nsi'",
+  "semantic_scope": "The released compiler built the unchanged installer script. The independently decoded VM section has the message instruction with its exact string and MB_OK flag followed by Quit. Scope is generated installer behavior at the instruction level.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "ordinal": 516,
+  "language": "P4",
+  "timestamp_utc": "2026-11-19T12:36:28.497458+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": false,
+  "semantic_verified": false,
+  "commands": [
+    {
+      "label": "Record P4 compiler backend version",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--hostname",
+        "corpus-sandbox",
+        "--ro-bind",
+        "${SCRATCH}/cache/tools/oci/p4-bmv2-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/516-1id687_i",
+        "/work",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--",
+        "/usr/local/bin/p4c-bm2-ss",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/516-1id687_i",
+      "timestamp_utc": "2026-11-19T12:36:28.529665+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/usr/local/bin/p4c-bm2-ss\nVersion 1.2.5.19 (SHA:  BUILD: Release)\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/516-1id687_i/home",
+        "TMPDIR": "${SCRATCH}/516-1id687_i/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/516-1id687_i/public-only-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/516-1id687_i/isolated-containers.conf"
+      }
+    },
+    {
+      "label": "Compile the original P4 into its BMv2 pipeline",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-pid",
+        "--unshare-uts",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--hostname",
+        "corpus-sandbox",
+        "--ro-bind",
+        "${SCRATCH}/cache/tools/oci/p4-bmv2-bundle/rootfs",
+        "/",
+        "--proc",
+        "/proc",
+        "--dev",
+        "/dev",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/516-1id687_i",
+        "/work",
+        "--setenv",
+        "HOME",
+        "/tmp",
+        "--setenv",
+        "PATH",
+        "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "--chdir",
+        "/work",
+        "--unshare-net",
+        "--",
+        "/usr/local/bin/p4c-bm2-ss",
+        "-o",
+        "/work/hello.json",
+        "/work/hello.p4"
+      ],
+      "cwd": "${SCRATCH}/516-1id687_i",
+      "timestamp_utc": "2026-11-19T12:36:30.920698+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "/work/hello.p4(6): [--Werror=duplicate] error: Parser duplicates Parser.\nparser Parser(packet_in packet, out Headers h, inout Metadata m, inout standard_metadata_t sm) {\n       ^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(718)\nparser Parser<H, M>(packet_in b,\n       ^^^^^^\n/work/hello.p4(10): [--Werror=duplicate] error: Ingress duplicates Ingress.\ncontrol Ingress(inout Headers h, inout Metadata m, inout standard_metadata_t sm) {\n        ^^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(731)\ncontrol Ingress<H, M>(inout H hdr,\n        ^^^^^^^\n/work/hello.p4(13): [--Werror=duplicate] error: Egress duplicates Egress.\ncontrol Egress(inout Headers h, inout Metadata m, inout standard_metadata_t sm) { apply { } }\n        ^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(735)\ncontrol Egress<H, M>(inout H hdr,\n        ^^^^^^\n/work/hello.p4(15): [--Werror=duplicate] error: Deparser duplicates Deparser.\ncontrol Deparser(packet_out packet, in Headers h) { apply { packet.emit(h.greeting); } }\n        ^^^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(752)\ncontrol Deparser<H>(packet_out b, in H hdr);\n        ^^^^^^^^\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/516-1id687_i/home",
+        "TMPDIR": "${SCRATCH}/516-1id687_i/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "REGISTRY_AUTH_FILE": "${SCRATCH}/516-1id687_i/public-only-auth.json",
+        "CONTAINERS_CONF": "${SCRATCH}/516-1id687_i/isolated-containers.conf"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#516 P4/hello.p4": "814e649aa627525e820b7deddc580a74b42386fdb4a694e1a0b9e806954c1569"
+  },
+  "fixture_sha256": {
+    "image-transport-policy.json": {
+      "sha256": "cde3a9b4e1f004c30f02144f68bcc6d8019f5522e60b9daf25d370a940f06ef2",
+      "content_utf8": "{\"default\":[{\"type\":\"insecureAcceptAnything\"}]}\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "P4 specification",
+      "url": "https://p4.org/p4-spec/docs/P4-16-v1.2.5.html"
+    },
+    {
+      "title": "p4c v1model",
+      "url": "https://github.com/p4lang/p4c/blob/main/p4include/v1model.p4"
+    }
+  ],
+  "previous_verification_log": null,
+  "ubuntu_archives": [
+    {
+      "name": "skopeo",
+      "version": "1.13.3+ds1-2ubuntu0.24.04.3",
+      "filename": "pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb",
+      "sha256": "d908a86538f6d4bc49ea9c7423e5fb279a5c8cfc1f9bc7bd505f8bfe25d29be3",
+      "bytes": 6176576,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/s/skopeo/skopeo_1.13.3+ds1-2ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "umoci",
+      "version": "0.4.7+ds-4ubuntu0.24.04.3",
+      "filename": "pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb",
+      "sha256": "3e943ee618a610c8fec181c7f2aa06f149e5292dfe73b70bf64901db744a776d",
+      "bytes": 2203364,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/universe/u/umoci/umoci_0.4.7+ds-4ubuntu0.24.04.3_amd64.deb"
+    },
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "oci_sources": [
+    {
+      "reference": "docker://docker.io/p4lang/p4c:latest",
+      "verified_oci_manifest": "sha256:6bee5fbc6773a05f5c34014570196115725e213807a3947a9a02d3db3c9257a4"
+    }
+  ],
+  "blocker": "RuntimeError: Compile the original P4 into its BMv2 pipeline exited 1: /work/hello.p4(6): [--Werror=duplicate] error: Parser duplicates Parser.\nparser Parser(packet_in packet, out Headers h, inout Metadata m, inout standard_metadata_t sm) {\n       ^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(718)\nparser Parser<H, M>(packet_in b,\n       ^^^^^^\n/work/hello.p4(10): [--Werror=duplicate] error: Ingress duplicates Ingress.\ncontrol Ingress(inout Headers h, inout Metadata m, inout standard_metadata_t sm) {\n        ^^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(731)\ncontrol Ingress<H, M>(inout H hdr,\n        ^^^^^^^\n/work/hello.p4(13): [--Werror=duplicate] error: Egress duplicates Egress.\ncontrol Egress(inout Headers h, inout Metadata m, inout standard_metadata_t sm) { apply { } }\n        ^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(735)\ncontrol Egress<H, M>(inout H hdr,\n        ^^^^^^\n/work/hello.p4(15): [--Werror=duplicate] error: Deparser duplicates Deparser.\ncontrol Deparser(packet_out packet, in Headers h) { apply { packet.emit(h.greeting); } }\n        ^^^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(752)\ncontrol Deparser<H>(packet_out b, in H hdr);\n        ^^^^^^^^",
+  "local_traceback": "Traceback (most recent call last):\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 206, in execute_case\n    callback(case)\n  File \"${WORKSPACE}/work/native_target800_20261119/p4_800.py\", line 51, in p4_case\n    c.run('Compile the original P4 into its BMv2 pipeline',confined(c,root,[compiler,'-o','/work/hello.json','/work/hello.p4']),env=env,timeout=90)\n  File \"${WORKSPACE}/work/native_target800_20261119/harness.py\", line 176, in run\n    raise RuntimeError(f'{label} exited {p.returncode}: {msg[-1200:]}')\nRuntimeError: Compile the original P4 into its BMv2 pipeline exited 1: /work/hello.p4(6): [--Werror=duplicate] error: Parser duplicates Parser.\nparser Parser(packet_in packet, out Headers h, inout Metadata m, inout standard_metadata_t sm) {\n       ^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(718)\nparser Parser<H, M>(packet_in b,\n       ^^^^^^\n/work/hello.p4(10): [--Werror=duplicate] error: Ingress duplicates Ingress.\ncontrol Ingress(inout Headers h, inout Metadata m, inout standard_metadata_t sm) {\n        ^^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(731)\ncontrol Ingress<H, M>(inout H hdr,\n        ^^^^^^^\n/work/hello.p4(13): [--Werror=duplicate] error: Egress duplicates Egress.\ncontrol Egress(inout Headers h, inout Metadata m, inout standard_metadata_t sm) { apply { } }\n        ^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(735)\ncontrol Egress<H, M>(inout H hdr,\n        ^^^^^^\n/work/hello.p4(15): [--Werror=duplicate] error: Deparser duplicates Deparser.\ncontrol Deparser(packet_out packet, in Headers h) { apply { packet.emit(h.greeting); } }\n        ^^^^^^^^\n/usr/local/share/p4c/p4include/v1model.p4(752)\ncontrol Deparser<H>(packet_out b, in H hdr);\n        ^^^^^^^^\n"
+}

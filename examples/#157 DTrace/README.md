@@ -1,5 +1,16 @@
 # #157 DTrace
 
+## Verified on November 19, 2026
+
+The guest hash matched the untouched DTrace program. The native FreeBSD kernel and DTrace command executed its BEGIN clause and emitted the exact greeting before shutdown.
+
+Run `boot the recorded FreeBSD guest and execute dtrace -qs /tmp/greeting.d via the seed`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
 ## Goal
@@ -42,4 +53,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.d` | [hello.d](hello.d) created; verification pending |
+| `.d` | [hello.d](hello.d) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,18 @@
 # #511 OverPy
 
+## Verified on November 19, 2026
+
+OverPy compiled the original rule. The generated Workshop code binds it to the ongoing player event and emits Big Message to Event Player with the exact custom string. Scope is the compiler output and its event/action mapping.
+
+Run `node decode-workshop.cjs`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native_20261104_followup_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 ## Latest recorded verification
 
 **Syntax verified; behavior pending** on November 4, 2026.
@@ -75,6 +88,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.opy` | [hello.opy](hello.opy) syntax verified; behavior pending |
+| `.opy` | [hello.opy](hello.opy) Syntax and behavior verified |
+</details>
 
 </details>

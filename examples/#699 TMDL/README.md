@@ -1,5 +1,18 @@
 # #699 TMDL
 
+## Verified on November 19, 2026
+
+Sidemantic loaded the unchanged TMDL project and its measure. The native DAX parser produced a typed constant string for the measure. The test selected that value as a string through a parameterized DuckDB query.
+
+Run `python evaluate_measure.py`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `TMDL`, tipo `data`, language_id `769162295`.
 
 Describe a tabular TMDL model with an original DAX size that returns greeting.
@@ -44,4 +57,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.tmdl` | [model.tmdl](model.tmdl), [Greeting.tmdl](tables/Greeting.tmdl) created; verification pending |
+| `.tmdl` | [model.tmdl](model.tmdl), [Greeting.tmdl](tables/Greeting.tmdl) Syntax and behavior verified |
+
+</details>

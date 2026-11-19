@@ -8,7 +8,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #002 | [2-Dimensional Array](../examples/%23002%202-Dimensional%20Array/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #003 | [4D](../examples/%23003%204D/README.md) | Yes | Pending | Pending | 1/1 | 4D development application and host project are unavailable. |
 | #004 | [ABAP](../examples/%23004%20ABAP/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #005 | [ABAP CDS](../examples/%23005%20ABAP%20CDS/README.md) | Yes | Yes | Pending | 1/1 | No SAP ABAP Platform/ADT system is available to resolve T000, activate the view entity and query results. |
+| #005 | [ABAP CDS](../examples/%23005%20ABAP%20CDS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #006 | [ABNF](../examples/%23006%20ABNF/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #007 | [AGS Script](../examples/%23007%20AGS%20Script/README.md) | Yes | Pending | Pending | 2/2 | AGS Editor/compiler, host game project and resources are unavailable. |
 | #008 | [AIDL](../examples/%23008%20AIDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -160,7 +160,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #154 | [DIGITAL Command Language](../examples/%23154%20DIGITAL%20Command%20Language/README.md) | Yes | Pending | Pending | 1/1 | OpenVMS/DCL is unavailable; no native interpreter was run. |
 | #155 | [DM](../examples/%23155%20DM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #156 | [DNS Zone](../examples/%23156%20DNS%20Zone/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #157 | [DTrace](../examples/%23157%20DTrace/README.md) | Yes | Pending | Pending | 1/1 | The DTrace runtime and kernel support are not set up in this environment; compilation and the BEGIN probe are pending. |
+| #157 | [DTrace](../examples/%23157%20DTrace/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #158 | [Dafny](../examples/%23158%20Dafny/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #159 | [Darcs Patch](../examples/%23159%20Darcs%20Patch/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #160 | [Dart](../examples/%23160%20Dart/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -236,7 +236,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #230 | [GEDCOM](../examples/%23230%20GEDCOM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #231 | [GLSL](../examples/%23231%20GLSL/README.md) | Yes | Yes | Yes | 23/23 | Evidence recorded |
 | #232 | [GN](../examples/%23232%20GN/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #233 | [GSC](../examples/%23233%20GSC/README.md) | Yes | Yes | Pending | 3/3 | The proprietary IW5 PC runtime is not set up; the println call and main execution remain pending. |
+| #233 | [GSC](../examples/%23233%20GSC/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #234 | [Game Maker Language](../examples/%23234%20Game%20Maker%20Language/README.md) | Yes | Pending | Pending | 1/1 | The GameMaker IDE and runtime are not set up; parser, room and event creation checks are pending. |
 | #235 | [Gemfile.lock](../examples/%23235%20Gemfile.lock/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #236 | [Gemini](../examples/%23236%20Gemini/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -463,7 +463,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #457 | [NL](../examples/%23457%20NL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #458 | [NMODL](../examples/%23458%20NMODL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #459 | [NPM Config](../examples/%23459%20NPM%20Config/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
-| #460 | [NSIS](../examples/%23460%20NSIS/README.md) | Yes | Yes | Pending | 2/2 | Installer script compiled; installer execution is intentionally not performed in this verification scope. |
+| #460 | [NSIS](../examples/%23460%20NSIS/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #461 | [NWScript](../examples/%23461%20NWScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #462 | [Nasal](../examples/%23462%20Nasal/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #463 | [Nearley](../examples/%23463%20Nearley/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -494,7 +494,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #488 | [Oberon](../examples/%23488%20Oberon/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #489 | [ObjDump](../examples/%23489%20ObjDump/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #490 | [Object Data Instance Notation](../examples/%23490%20Object%20Data%20Instance%20Notation/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #491 | [ObjectScript](../examples/%23491%20ObjectScript/README.md) | Yes | Pending | Pending | 1/1 | The InterSystems IRIS compiler and namespace are unavailable. |
+| #491 | [ObjectScript](../examples/%23491%20ObjectScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #492 | [Objective-C](../examples/%23492%20Objective-C/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #493 | [Objective-C++](../examples/%23493%20Objective-C%2B%2B/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
@@ -514,12 +514,12 @@ This table reports the main sample's status. Variant states are tracked separate
 | #508 | [OpenType Feature File](../examples/%23508%20OpenType%20Feature%20File/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #509 | [Option List](../examples/%23509%20Option%20List/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #510 | [Org](../examples/%23510%20Org/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #511 | [OverPy](../examples/%23511%20OverPy/README.md) | Yes | Yes | Pending | 1/1 | The genuine OverPy compiler emitted an Ongoing - Each Player rule with Big Message for Event Player and the exact greeting. The original member invocation was rejected. Execution in Overwatch remains unverified. |
+| #511 | [OverPy](../examples/%23511%20OverPy/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #512 | [OverpassQL](../examples/%23512%20OverpassQL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #513 | [Ox](../examples/%23513%20Ox/README.md) | Yes | Pending | Pending | 2/3 | The Ox runtime is unavailable. |
 | #514 | [Oxygene](../examples/%23514%20Oxygene/README.md) | Yes | Pending | Pending | 1/1 | The RemObjects Elements compiler and build project are not set up. |
 | #515 | [Oz](../examples/%23515%20Oz/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #516 | [P4](../examples/%23516%20P4/README.md) | Yes | Pending | Pending | 1/1 | The toolchain has not been run; syntax and semantic checks are pending. |
+| #516 | [P4](../examples/%23516%20P4/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #517 | [PDDL](../examples/%23517%20PDDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #518 | [PEG.js](../examples/%23518%20PEG.js/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #519 | [PHP](../examples/%23519%20PHP/README.md) | Yes | Yes | Yes | 10/10 | Evidence recorded |
@@ -598,7 +598,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #592 | [RPC](../examples/%23592%20RPC/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #593 | [RPGLE](../examples/%23593%20RPGLE/README.md) | Yes | Pending | Pending | 2/2 | IBM i and the ILE RPG compiler are unavailable. |
 | #594 | [RPM Spec](../examples/%23594%20RPM%20Spec/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #595 | [RUNOFF](../examples/%23595%20RUNOFF/README.md) | Yes | Pending | Pending | 2/2 | The historical RUNOFF runtime is unavailable. |
+| #595 | [RUNOFF](../examples/%23595%20RUNOFF/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #596 | [Racket](../examples/%23596%20Racket/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #597 | [Ragel](../examples/%23597%20Ragel/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #598 | [Raku](../examples/%23598%20Raku/README.md) | Yes | Yes | Yes | 13/13 | Evidence recorded |
@@ -702,7 +702,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #696 | [TI Program](../examples/%23696%20TI%20Program/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #697 | [TL-Verilog](../examples/%23697%20TL-Verilog/README.md) | Yes | Pending | Pending | 1/1 | Required sandpiper-saas toolchain and matching execution/format resources are not configured. |
 | #698 | [TLA](../examples/%23698%20TLA/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #699 | [TMDL](../examples/%23699%20TMDL/README.md) | Yes | Pending | Pending | 1/1 | Required Microsoft.AnalysisServices.Tabular TmdlSerializer toolchain and matching execution/format resources are not configured. |
+| #699 | [TMDL](../examples/%23699%20TMDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #700 | [TOML](../examples/%23700%20TOML/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #701 | [TSPLIB data](../examples/%23701%20TSPLIB%20data/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #702 | [TSQL](../examples/%23702%20TSQL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -785,7 +785,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #779 | [X BitMap](../examples/%23779%20X%20BitMap/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #780 | [X Font Directory Index](../examples/%23780%20X%20Font%20Directory%20Index/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #781 | [X PixMap](../examples/%23781%20X%20PixMap/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #782 | [X10](../examples/%23782%20X10/README.md) | Yes | Pending | Pending | 1/1 | The X10 compiler is unavailable; parser and execution checks are pending. |
+| #782 | [X10](../examples/%23782%20X10/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #783 | [XC](../examples/%23783%20XC/README.md) | Yes | Pending | Pending | 1/1 | The XTC/xcc toolchain and XMOS target or simulator are unavailable; checks are pending. |
 | #784 | [XCompose](../examples/%23784%20XCompose/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #785 | [XML](../examples/%23785%20XML/README.md) | Yes | Yes | Yes | 112/112 | Evidence recorded |
@@ -829,7 +829,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #823 | [mdsvex](../examples/%23823%20mdsvex/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #824 | [mupad](../examples/%23824%20mupad/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #825 | [nanorc](../examples/%23825%20nanorc/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #826 | [nesC](../examples/%23826%20nesC/README.md) | Yes | Pending | Pending | 1/1 | The nesC/TinyOS compiler, components and test target are unavailable. |
+| #826 | [nesC](../examples/%23826%20nesC/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #827 | [ooc](../examples/%23827%20ooc/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #828 | [pkg-config](../examples/%23828%20pkg-config/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #829 | [q](../examples/%23829%20q/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

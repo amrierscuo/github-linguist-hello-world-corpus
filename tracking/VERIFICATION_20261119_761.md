@@ -1,0 +1,21 @@
+# Verification of 761 main examples on November 19, 2026
+
+This batch recorded 11 new behavior checks. The corpus contains 762 main examples with verified syntax and 761 with verified behavior, out of 836.
+
+Tools ran from the terminal or in isolated headless environments. This batch used no .NET or Mono toolchain. Open a record for the exact inputs, toolchain, observed results and verification scope.
+
+The [previous checkpoint](VERIFICATION_20261119_750.md) records the earlier checks in this session.
+
+- **#005 ABAP CDS**. The abaplint parser and relational transpiler translated the original CDS to SQLite. A small adapter routes projected string literals through the transpiler’s existing SQL literal emitter. Querying the generated view after creating and populating its declared client table produced the expected client and greeting. The same evidence covers `.asddls`. [Evidence](../examples/%23005%20ABAP%20CDS/verification/native_20261119_wave800_main.json).
+- **#157 DTrace**. The guest hash matched the untouched DTrace program. The native FreeBSD kernel and DTrace command executed its BEGIN clause and emitted the exact greeting before shutdown. The same evidence covers `.d`. [Evidence](../examples/%23157%20DTrace/verification/native_20261119_wave800_main.json).
+- **#233 GSC**. The community IW5 PC compiler compiled the unmodified source. Its disassembler exposed the emitted string computation and println call, whose operand reconstructs the exact greeting. Scope is the generated instruction sequence. The same evidence covers `.gsc`. [Evidence](../examples/%23233%20GSC/verification/native_20261119_wave800_main.json).
+- **#460 NSIS**. The released compiler built the unchanged installer script. The independently decoded VM section has the message instruction with its exact string and MB_OK flag followed by Quit. Scope is generated installer behavior at the instruction level. [Evidence](../examples/%23460%20NSIS/verification/native_20261119_wave800_main.json).
+- **#491 ObjectScript**. The genuine IRIS compiler loaded the original class. A USER terminal session invoked Corpus.Hello.Greet and returned the exact greeting. The same evidence covers `.cls`. [Evidence](../examples/%23491%20ObjectScript/verification/native_20261119_wave800_main.json).
+- **#511 OverPy**. OverPy compiled the original rule. The generated Workshop code binds it to the ongoing player event and emits Big Message to Event Player with the exact custom string. Scope is the compiler output and its event/action mapping. The same evidence covers `.opy`. [Evidence](../examples/%23511%20OverPy/verification/native_20261119_wave800_main.json).
+- **#516 P4**. The publisher’s compiler built the P4 pipeline after renaming implementation types that conflicted with v1model declarations. BMv2 read one synthetic frame and emitted a frame on port 1 whose first 13 bytes decode to the greeting. The same evidence covers `.p4`. [Evidence](../examples/%23516%20P4/verification/native_20261119_wave800_main.json).
+- **#595 RUNOFF**. The historical compatible converter parsed the untouched DEC RUNOFF document and translated it to troff. The rendered page contains the greeting. The same evidence covers `.rno`. [Evidence](../examples/%23595%20RUNOFF/verification/native_20261119_wave800_main.json).
+- **#699 TMDL**. Sidemantic loaded the unchanged TMDL project and its measure. The native DAX parser produced a typed constant string for the measure. The test selected that value as a string through a parameterized DuckDB query. The same evidence covers `.tmdl`. [Evidence](../examples/%23699%20TMDL/verification/native_20261119_wave800_main.json).
+- **#782 X10**. The native Managed X10 compiler compiled the unchanged program, whose JVM entry point printed the expected greeting. The same evidence covers `.x10`. [Evidence](../examples/%23782%20X10/verification/native_20261119_wave800_main.json).
+- **#826 nesC**. The native nesC compiler resolved the original component wiring. A headless test platform signalled the TinyOS Boot interface and the original handler wrote and flushed the greeting through the test platform serial adapter. The same evidence covers `.nc`. [Evidence](../examples/%23826%20nesC/verification/native_20261119_wave800_main.json).
+
+908 of 1,749 language and extension pairs now have verified behavior.

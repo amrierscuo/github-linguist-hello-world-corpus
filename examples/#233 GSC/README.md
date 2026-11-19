@@ -1,5 +1,18 @@
 # #233 GSC
 
+## Verified on November 19, 2026
+
+The community IW5 PC compiler compiled the unmodified source. Its disassembler exposed the emitted string computation and println call, whose operand reconstructs the exact greeting. Scope is the generated instruction sequence.
+
+Run `gsc-tool -m comp -g iw5 -s pc hello.gsc && gsc-tool -m disasm -g iw5 -s pc <hello.gscbin>`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+[Earlier evidence](verification/toolchain.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voice and canonical order of the `reference/languages.yml` of the corpus.Sources and fixtures are original.
 
 ## Goal
@@ -43,6 +56,8 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.gsc` | [hello.gsc](hello.gsc) syntax verified |
+| `.gsc` | [hello.gsc](hello.gsc) Syntax and behavior verified |
 | `.csc` | [hello.csc](variants/ext-csc-2e637363/hello.csc) created; verification pending |
 | `.gsh` | [hello.gsh](variants/ext-gsh-2e677368/hello.gsh) created; verification pending |
+
+</details>

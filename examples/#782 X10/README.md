@@ -1,5 +1,16 @@
 # #782 X10
 
+## Verified on November 19, 2026
+
+The native Managed X10 compiler compiled the unchanged program, whose JVM entry point printed the expected greeting.
+
+Run `x10c -d output Hello.x10 && x10 -classpath output Hello`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261119_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.x10` | [Hello.x10](Hello.x10) created; verification pending |
+| `.x10` | [Hello.x10](Hello.x10) Syntax and behavior verified |
+
+</details>
