@@ -29751,17 +29751,18 @@
       "example": {
         "semantic_goal": "Eseguire main Ox e stampare il saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Ox Console/OxMetrics e oxstd",
+        "toolchain": "Ox 10.033 (Browser_32), published OxRun WebAssembly worker libox-BESqAKjh.js in Node.js v22.20.0",
         "files": [
           "examples/#513 Ox/hello.ox",
           "examples/#513 Ox/variants/oxh-134bfc42/hello.oxh",
           "examples/#513 Ox/variants/oxh-134bfc42/hello.ox",
           "examples/#513 Ox/variants/oxh-134bfc42/README.md",
-          "examples/#513 Ox/variants/oxo-fd2a94bd/README.md"
+          "examples/#513 Ox/variants/oxo-fd2a94bd/README.md",
+          "examples/#513 Ox/verification/native_20261120_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "oxl hello.ox",
-        "expected_result": "stdout Hello, World! seguito da newline.",
+        "run_or_check_command": "node oxrun_worker_runner.cjs oxrun_assets.json hello.ox with the files and digests recorded in the evidence",
+        "expected_result": "The OxRun worker emits Hello, World! on its stdout stream and reports Ox exit code 0.",
         "sources": [
           {
             "title": "Ox documentation",
@@ -29773,16 +29774,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Runtime Ox non disponibile."
-        ],
-        "notes": "Ox è il linguaggio econometrico di Jurgen Doornik; non viene sostituito con un compiler C."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-20T22:19:00.551241+00:00",
+        "verification_log": "examples/#513 Ox/verification/native_20261120_wave800_main.json",
+        "blockers": [],
+        "notes": "The published Ox compiler and runtime loaded their packaged standard library, compiled the original hello.ox and ran its main function. The worker emitted the exact greeting and reported exit code 0 in a headless WSL process.",
+        "verified_artifact_sha256": {
+          "examples/#513 Ox/hello.ox": "bdef0abb835a3cd933e3ab35458b600f14cf93ff1f371f7bff8cfb69364caf8d"
+        }
       }
     },
     {

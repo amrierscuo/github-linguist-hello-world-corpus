@@ -516,7 +516,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #510 | [Org](../examples/%23510%20Org/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #511 | [OverPy](../examples/%23511%20OverPy/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #512 | [OverpassQL](../examples/%23512%20OverpassQL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #513 | [Ox](../examples/%23513%20Ox/README.md) | Yes | Pending | Pending | 2/3 | The Ox runtime is unavailable. |
+| #513 | [Ox](../examples/%23513%20Ox/README.md) | Yes | Yes | Yes | 2/3 | Evidence recorded |
 | #514 | [Oxygene](../examples/%23514%20Oxygene/README.md) | Yes | Pending | Pending | 1/1 | The RemObjects Elements compiler and build project are not set up. |
 | #515 | [Oz](../examples/%23515%20Oz/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #516 | [P4](../examples/%23516%20P4/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

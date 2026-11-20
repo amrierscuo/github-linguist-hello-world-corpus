@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "ordinal": 513,
+  "language": "Ox",
+  "timestamp_utc": "2026-11-20T22:19:00.551241+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the headless Node.js host for the original OxRun worker",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/513-gvavt7oy",
+        "${SCRATCH}/513-gvavt7oy",
+        "--chdir",
+        "${SCRATCH}/513-gvavt7oy",
+        "--unshare-net",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/513-gvavt7oy",
+      "timestamp_utc": "2026-11-20T22:19:06.143913+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/513-gvavt7oy/home",
+        "TMPDIR": "${SCRATCH}/513-gvavt7oy/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Compile and run the unchanged hello.ox in the published OxRun WebAssembly engine",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--bind",
+        "${SCRATCH}/513-gvavt7oy",
+        "${SCRATCH}/513-gvavt7oy",
+        "--chdir",
+        "${SCRATCH}/513-gvavt7oy",
+        "--unshare-net",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--",
+        "${WORKSPACE}/work/native_batch_20261105/early/grace/node/node-v22.20.0-linux-x64/bin/node",
+        "${SCRATCH}/513-gvavt7oy/oxrun_worker_runner.cjs",
+        "${SCRATCH}/513-gvavt7oy/oxrun_assets.json",
+        "${SCRATCH}/513-gvavt7oy/hello.ox"
+      ],
+      "cwd": "${SCRATCH}/513-gvavt7oy",
+      "timestamp_utc": "2026-11-20T22:19:09.754566+00:00",
+      "timeout_seconds": 55,
+      "exit_code": 0,
+      "stdout": "{\"oxExitCode\":0,\"stdout\":[\"\",\"Ox 10.033 (Browser_32) (C) J.A. Doornik, 1994-2026 (oxlang.dev)\",\"Hello, World!\",\"\"],\"stderr\":[],\"statuses\":[\"Downloading data...\",\"Downloading data... (10376302/10376302)\",\"Running...\",\"Initialized\",\"Ready...\",\"Ready...\",\"main...\"],\"readAssets\":[\"https://oxrun.dev/assets/libox-BESqAKjh.js\",\"https://oxrun.dev/assets/libox.data\",\"https://oxrun.dev/assets/libox.wasm\"]}\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/513-gvavt7oy/home",
+        "TMPDIR": "${SCRATCH}/513-gvavt7oy/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#513 Ox/hello.ox": "bdef0abb835a3cd933e3ab35458b600f14cf93ff1f371f7bff8cfb69364caf8d"
+  },
+  "fixture_sha256": {
+    "oxrun_worker_runner.cjs": {
+      "sha256": "0a716b6c39b7b47ca4a1a89a2876739d88688824e9da245b34f1109acecb97e3",
+      "content_utf8": "const fs = require('node:fs');\nconst path = require('node:path');\nconst vm = require('node:vm');\nconst { performance } = require('node:perf_hooks');\nconst { webcrypto } = require('node:crypto');\n\nconst manifestPath = path.resolve(process.argv[2]);\nconst manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));\nconst input = new TextDecoder('utf-8', { fatal: true }).decode(fs.readFileSync(process.argv[3]));\nconst files = new Map(Object.entries(manifest.assets));\nconst readAssets = [];\nconst statuses = [];\nconst stdout = [];\nconst stderr = [];\nlet phase = 'loading';\nlet finished = false;\nlet context;\n\nfunction resource(value) {\n    const url = new URL(typeof value === 'string' || value instanceof URL ? value : value.url, manifest.worker);\n    const name = files.get(url.href);\n    if (typeof name !== 'string' || !/^[a-z0-9_.-]+$/i.test(name) || name === '.' || name === '..') {\n        throw new Error('Worker requested an asset outside the recorded set: ' + url.href);\n    }\n    readAssets.push(url.href);\n    return fs.readFileSync(path.join(path.dirname(manifestPath), name));\n}\n\nfunction deliver(message) {\n    queueMicrotask(() => {\n        if (!finished) {\n            try {\n                context.onmessage({ data: message });\n            } catch (error) {\n                fail(error);\n            }\n        }\n    });\n}\n\nfunction fail(error) {\n    if (finished) return;\n    finished = true;\n    clearTimeout(deadline);\n    const detail = { error: String(error.stack || error), phase, statuses, stdout, stderr, readAssets };\n    process.stderr.write(JSON.stringify(detail) + '\\n', () => process.exit(1));\n}\n\nfunction reply(message) {\n    switch (message.target) {\n        case 'status':\n            statuses.push(message.status);\n            if (message.status !== 'Ready...') return;\n            if (phase === 'loading') {\n                phase = 'file';\n                deliver({ target:'file', name:'hello.ox', encoding:'utf8', content:input, preMain:true });\n            } else if (phase === 'file') {\n                phase = 'running';\n                deliver({ target:'runmain', args:['-I/ox/include;/ox;/apps', '/hello.ox'],\n                    preMain:true, local:false, fileName:'hello.ox' });\n            }\n            return;\n        case 'stdout':\n            stdout.push(String(message.content));\n            return;\n        case 'stderr':\n            stderr.push(String(message.content));\n            return;\n        case 'tick':\n            deliver({ target:'tock', id:message.id });\n            return;\n        case 'setimmediate':\n            deliver({ target:'setimmediate' });\n            return;\n        case 'main': {\n            if (phase !== 'running' || !Number.isInteger(message.value)) {\n                fail(new Error('Unexpected Ox worker result.'));\n                return;\n            }\n            finished = true;\n            clearTimeout(deadline);\n            const result = { oxExitCode:message.value, stdout, stderr, statuses, readAssets };\n            process.stdout.write(JSON.stringify(result) + '\\n', () => process.exit(message.value === 0 ? 0 : 1));\n            return;\n        }\n        case 'ShowDrawWindow':\n            fail(new Error('Unexpected drawing window request from the Ox example.'));\n            return;\n        default:\n            return;\n    }\n}\n\nconst deadline = setTimeout(() => fail(new Error('No Ox result in 40 seconds.')), 40000);\nprocess.on('unhandledRejection', fail);\ncontext = vm.createContext({\n    ArrayBuffer, SharedArrayBuffer, Uint8Array, WebAssembly, URL,\n    Response, Headers, TextEncoder, TextDecoder, performance,\n    crypto: webcrypto,\n    setTimeout, clearTimeout, setInterval, clearInterval, queueMicrotask,\n    location: new URL(manifest.worker),\n    navigator: { hardwareConcurrency: 2, userAgent: 'OxRun local worker test' },\n    WorkerGlobalScope: class WorkerGlobalScope {},\n    onmessage: null,\n    postMessage: reply,\n    importScripts: (...urls) => urls.forEach(url => vm.runInContext(resource(url).toString('utf8'), context, { filename:url })),\n    fetch: async url => {\n        const pathname = new URL(typeof url === 'string' || url instanceof URL ? url : url.url, manifest.worker).pathname;\n        const type = pathname.endsWith('.wasm') ? 'application/wasm' : 'application/octet-stream';\n        const bytes = resource(url);\n        return new Response(bytes, { headers:{ 'Content-Type':type, 'Content-Length':String(bytes.length) } });\n    },\n});\nvm.runInContext('globalThis.self = globalThis;',context);\ntry {\n    vm.runInContext(resource(manifest.worker).toString('utf8'), context, { filename:manifest.worker, timeout:15000 });\n} catch (error) {\n    fail(error);\n}\n"
+    },
+    "oxrun_assets.json": {
+      "sha256": "9cf2e5444aa45338dcb6be0406bb87f4c2fbc5955eb4ae9b1a0d5fd2d6d8895d",
+      "content_utf8": "{\n  \"worker\": \"https://oxrun.dev/assets/libox-BESqAKjh.js\",\n  \"assets\": {\n    \"https://oxrun.dev/assets/libox-BESqAKjh.js\": \"libox-BESqAKjh.js\",\n    \"https://oxrun.dev/assets/libox.wasm\": \"libox.wasm\",\n    \"https://oxrun.dev/assets/libox.data\": \"libox.data\"\n  }\n}\n"
+    }
+  },
+  "sources": [
+    "https://doornik.com/page_download.html",
+    "https://oxrun.dev/",
+    "https://oxrun.dev/assets/OxRun-C33bXbh_.js",
+    "https://oxrun.dev/assets/libox-BESqAKjh.js"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://oxrun.dev/assets/OxRun-C33bXbh_.js",
+      "sha256": "d20f6a28f670942ae12c46f1f3e37dbe860cf06fb85828e649ac6f92444733dd",
+      "bytes": 4419
+    },
+    {
+      "url": "https://oxrun.dev/assets/libox-BESqAKjh.js",
+      "sha256": "58775b0d0235e09a9dff022e158d5de81328eadefae960b15cde5b7cb3d30954",
+      "bytes": 130195
+    },
+    {
+      "url": "https://oxrun.dev/assets/libox.wasm",
+      "sha256": "0f5fc9c48af721fc3e8c7636a72020f72f38fd2d336c70c146c93d4d63a0c82c",
+      "bytes": 1741972
+    },
+    {
+      "url": "https://oxrun.dev/assets/libox.data",
+      "sha256": "d9e73a4abebd85750ba031d6bed680934288a3da0b4787f91a61213d02fe373b",
+      "bytes": 10376302
+    }
+  ],
+  "standard_library_headers": [
+    "/ox/include/oxstd.oxh"
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "observed_ox_worker_result": {
+    "oxExitCode": 0,
+    "stdout": [
+      "",
+      "Ox 10.033 (Browser_32) (C) J.A. Doornik, 1994-2026 (oxlang.dev)",
+      "Hello, World!",
+      ""
+    ],
+    "stderr": [],
+    "statuses": [
+      "Downloading data...",
+      "Downloading data... (10376302/10376302)",
+      "Running...",
+      "Initialized",
+      "Ready...",
+      "Ready...",
+      "main..."
+    ],
+    "readAssets": [
+      "https://oxrun.dev/assets/libox-BESqAKjh.js",
+      "https://oxrun.dev/assets/libox.data",
+      "https://oxrun.dev/assets/libox.wasm"
+    ]
+  },
+  "isolation": "The published worker loaded the recorded WebAssembly and standard-library files from disk and received the source in a network namespace without external connectivity.",
+  "updated_expectation": {
+    "expected_result": "The OxRun worker emits Hello, World! on its stdout stream and reports Ox exit code 0."
+  },
+  "toolchain": "Ox 10.033 (Browser_32), published OxRun WebAssembly worker libox-BESqAKjh.js in Node.js v22.20.0",
+  "reproduction_command": "node oxrun_worker_runner.cjs oxrun_assets.json hello.ox with the files and digests recorded in the evidence",
+  "semantic_scope": "The published Ox compiler and runtime loaded their packaged standard library, compiled the original hello.ox and ran its main function. The worker emitted the exact greeting and reported exit code 0 in a headless WSL process.",
+  "ox_runtime_banner": "Ox 10.033 (Browser_32) (C) J.A. Doornik, 1994-2026 (oxlang.dev)",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
