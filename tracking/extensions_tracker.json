@@ -42425,15 +42425,17 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#757 Volt/verification/native_20261120_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#757 Volt/hello.volt": "4bb2d34805aab913c0c86f8b75bbfdfeb736b6d5fe8e5797a48218011a8c2e07"
+      },
       "based_on": null,
       "documentation": "examples/#757 Volt/README.md",
       "supporting_files": [],
       "validation_command": "volta hello.volt -o hello\n./hello",
-      "expected_result": "stdout Hello, World! e newline.",
+      "expected_result": "The native Linux executable exits 0 and writes Hello, World! followed by a newline.",
       "sources": [
         {
           "title": "Volt language",
@@ -42444,10 +42446,8 @@
           "url": "https://github.com/VoltLang/Volta"
         }
       ],
-      "blockers": [
-        "Volta compiler e libreria Watt non disponibili."
-      ],
-      "notes": "Volt è il linguaggio D-like del progetto VoltLang, distinto da V e dai template Phalcon Volt."
+      "blockers": [],
+      "notes": "Volta compiled the unchanged bytes of hello.volt with Watt from a temporary src/main.volt copy. The linked x86-64 Linux executable ran in WSL, printed the exact greeting on stdout and exited 0."
     },
     {
       "language_ordinal": 758,

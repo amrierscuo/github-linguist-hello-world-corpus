@@ -1511,7 +1511,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #756 | [Visual Basic 6.0](../examples/%23756%20Visual%20Basic%206.0/README.md) | `.ctl` | [hello.ctl](../examples/%23756%20Visual%20Basic%206.0/variants/ctl-04279ee3/hello.ctl) | Pending | Pending | adapted; The original parser, compiler or host has not yet checked this variant. |
 | #756 | [Visual Basic 6.0](../examples/%23756%20Visual%20Basic%206.0/README.md) | `.Dsr` | To generate | Pending | Pending | blocked; The VB6 DataReport designer requires an original IDE export and its .dsx designer stream. No OLE serialization was fabricated. |
 | #756 | [Visual Basic 6.0](../examples/%23756%20Visual%20Basic%206.0/README.md) | `.frm` | [hello.frm](../examples/%23756%20Visual%20Basic%206.0/variants/frm-f409e81b/hello.frm) | Pending | Pending | adapted; The original parser, compiler or host has not yet checked this variant. |
-| #757 | [Volt](../examples/%23757%20Volt/README.md) | `.volt` | [hello.volt](../examples/%23757%20Volt/hello.volt) | Pending | Pending | existing; The Volta compiler and Watt library are unavailable. |
+| #757 | [Volt](../examples/%23757%20Volt/README.md) | `.volt` | [hello.volt](../examples/%23757%20Volt/hello.volt) | Yes | Yes | existing; Evidence recorded |
 | #758 | [Vue](../examples/%23758%20Vue/README.md) | `.vue` | [Hello.vue](../examples/%23758%20Vue/Hello.vue) | Yes | Yes | existing; Evidence recorded |
 | #759 | [Vyper](../examples/%23759%20Vyper/README.md) | `.vy` | [hello.vy](../examples/%23759%20Vyper/hello.vy) | Yes | Yes | existing; Evidence recorded |
 | #760 | [WDL](../examples/%23760%20WDL/README.md) | `.wdl` | [hello.wdl](../examples/%23760%20WDL/hello.wdl) | Yes | Yes | existing; Evidence recorded |

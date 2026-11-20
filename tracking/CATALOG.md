@@ -760,7 +760,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #754 | [Vim script](../examples/%23754%20Vim%20script/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #755 | [Visual Basic .NET](../examples/%23755%20Visual%20Basic%20.NET/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #756 | [Visual Basic 6.0](../examples/%23756%20Visual%20Basic%206.0/README.md) | Yes | Yes | Yes | 4/5 | Evidence recorded |
-| #757 | [Volt](../examples/%23757%20Volt/README.md) | Yes | Pending | Pending | 1/1 | The Volta compiler and Watt library are unavailable. |
+| #757 | [Volt](../examples/%23757%20Volt/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #758 | [Vue](../examples/%23758%20Vue/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #759 | [Vyper](../examples/%23759%20Vyper/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #760 | [WDL](../examples/%23760%20WDL/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

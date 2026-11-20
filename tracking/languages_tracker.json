@@ -44216,13 +44216,14 @@
       "example": {
         "semantic_goal": "Compilare un programma Volt con il modulo watt.io e stampare il saluto.",
         "validation_mode": "compile_and_run",
-        "toolchain": "Volt Volta compiler e Watt standard library",
+        "toolchain": "Volta 03253933 with Watt 0e16aeab, Battery v0.1.25 and LLVM 14",
         "files": [
-          "examples/#757 Volt/hello.volt"
+          "examples/#757 Volt/hello.volt",
+          "examples/#757 Volt/verification/native_20261120_wave800_main.json"
         ],
-        "build_command": null,
-        "run_or_check_command": "volta hello.volt -o hello\n./hello",
-        "expected_result": "stdout Hello, World! e newline.",
+        "build_command": "Copy hello.volt unchanged to src/main.volt in the recorded temporary project, then run battery config /path/to/Volta /path/to/Watt . and battery -j 4 build",
+        "run_or_check_command": "battery config /path/to/Volta /path/to/Watt . && battery -j 4 build && ./corpusGreeting",
+        "expected_result": "The native Linux executable exits 0 and writes Hello, World! followed by a newline.",
         "sources": [
           {
             "title": "Volt language",
@@ -44238,16 +44239,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Volta compiler e libreria Watt non disponibili."
-        ],
-        "notes": "Volt è il linguaggio D-like del progetto VoltLang, distinto da V e dai template Phalcon Volt."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-20T21:06:51.775841+00:00",
+        "verification_log": "examples/#757 Volt/verification/native_20261120_wave800_main.json",
+        "blockers": [],
+        "notes": "Volta compiled the unchanged bytes of hello.volt with Watt from a temporary src/main.volt copy. The linked x86-64 Linux executable ran in WSL, printed the exact greeting on stdout and exited 0.",
+        "verified_artifact_sha256": {
+          "examples/#757 Volt/hello.volt": "4bb2d34805aab913c0c86f8b75bbfdfeb736b6d5fe8e5797a48218011a8c2e07"
+        }
       }
     },
     {
