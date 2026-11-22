@@ -21323,10 +21323,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#376 Lasso/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#376 Lasso/hello.lasso9": "d14bbe0b20f4b5e8c8691bf03a8dadc548be880e3067d1bf83ae4f90f2c12764"
+      },
       "based_on": null,
       "documentation": "examples/#376 Lasso/README.md",
       "supporting_files": [],
@@ -21336,10 +21338,8 @@
         "https://lassoguide.com/operations/command-line-tools.html",
         "https://lassoguide.com/language/variables.html"
       ],
-      "blockers": [
-        "Runtime Lasso9 non disponibile; verifiche pendenti."
-      ],
-      "notes": "Il blocco <?lasso dichiara local audience; stdoutnl scrive il risultato della concatenazione. Il riferimento #audience usa lo scope locale Lasso9."
+      "blockers": [],
+      "notes": "The native Lasso compiler accepted the original hello.lasso9 and GCC linked the resulting object. The offline executable wrote the greeting Hello, World! on one line followed by two empty lines. The process remained active after the greeting and the harness stopped it after 30 seconds (exit 124)."
     },
     {
       "language_ordinal": 377,

@@ -379,7 +379,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #373 | [Lambdapi](../examples/%23373%20Lambdapi/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #374 | [Langium](../examples/%23374%20Langium/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #375 | [Lark](../examples/%23375%20Lark/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #376 | [Lasso](../examples/%23376%20Lasso/README.md) | Yes | Pending | Pending | 4/4 | The Lasso9 runtime is unavailable; checks are pending. |
+| #376 | [Lasso](../examples/%23376%20Lasso/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #377 | [Latte](../examples/%23377%20Latte/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #378 | [Lean](../examples/%23378%20Lean/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #379 | [Lean 4](../examples/%23379%20Lean%204/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
