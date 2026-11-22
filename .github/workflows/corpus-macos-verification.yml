@@ -1,0 +1,112 @@
+name: Corpus macOS verification
+
+on:
+  push:
+    branches: [codex/corpus-macos-20261122]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 10
+    steps:
+      - name: Fetch exact public corpus snapshot
+        env:
+          SOURCE_COMMIT: 9c6c61df12a183d74e2179e3a2457d805f03ba69
+          GIT_TERMINAL_PROMPT: '0'
+        run: |
+          git init --quiet corpus
+          git -C corpus fetch --no-tags --depth 1 https://github.com/amrierscuo/github-linguist-hello-world-corpus.git "$SOURCE_COMMIT"
+          git -C corpus checkout --detach FETCH_HEAD
+          test "$(git -C corpus rev-parse HEAD)" = "$SOURCE_COMMIT"
+
+      - name: Verify AppleScript and probe Metal
+        shell: bash
+        run: |
+          cd corpus
+          python3 - <<'PY'
+          from datetime import datetime, timezone
+          import hashlib
+          import json
+          from pathlib import Path
+          import platform
+          import subprocess
+          import tempfile
+
+          def check(ordinal, language, source, commands, cwd, fixtures=None):
+              proof = {
+                  'schema_version': 1,
+                  'ordinal': ordinal,
+                  'language': language,
+                  'timestamp_utc': datetime.now(timezone.utc).isoformat(),
+                  'platform': platform.platform(),
+                  'artifact_sha256': {str(source): hashlib.sha256(source.read_bytes()).hexdigest()},
+                  'commands': [],
+                  'fixture_sha256': fixtures or {},
+              }
+              for label, args in commands:
+                  result = subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=120)
+                  proof['commands'].append({
+                      'label': label,
+                      'command': args,
+                      'exit_code': result.returncode,
+                      'stdout': result.stdout,
+                      'stderr': result.stderr,
+                  })
+              print('CORPUS_PROOF ' + json.dumps(proof), flush=True)
+
+          with tempfile.TemporaryDirectory() as scratch:
+              location = Path(scratch)
+              source = Path('examples/#036 AppleScript/hello.applescript')
+              (location / source.name).write_bytes(source.read_bytes())
+              check(36, 'AppleScript', source, [
+                  ('Identify macOS version', ['sw_vers']),
+                  ('Identify AppleScript version', ['osascript', '-e', 'AppleScript\'s version']),
+                  ('Compile original script', ['osacompile', '-o', 'hello.scpt', 'hello.applescript']),
+                  ('Run compiled script', ['osascript', 'hello.scpt']),
+              ], location)
+
+              source = Path('examples/#428 Metal/hello.metal')
+              (location / source.name).write_bytes(source.read_bytes())
+              fixture = '''
+          import Foundation
+          import Metal
+
+          guard let device = MTLCreateSystemDefaultDevice() else {
+              FileHandle.standardError.write(Data("Metal device unavailable\\n".utf8))
+              exit(2)
+          }
+          let library = try device.makeLibrary(URL: URL(fileURLWithPath: CommandLine.arguments[1]))
+          guard let function = library.makeFunction(name: "greeting"),
+                let queue = device.makeCommandQueue(),
+                let buffer = device.makeBuffer(length: 13, options: .storageModeShared),
+                let command = queue.makeCommandBuffer(),
+                let encoder = command.makeComputeCommandEncoder() else { exit(3) }
+          let pipeline = try device.makeComputePipelineState(function: function)
+          encoder.setComputePipelineState(pipeline)
+          encoder.setBuffer(buffer, offset: 0, index: 0)
+          encoder.dispatchThreads(MTLSize(width: 13, height: 1, depth: 1),
+                                  threadsPerThreadgroup: MTLSize(width: 13, height: 1, depth: 1))
+          encoder.endEncoding()
+          command.commit()
+          command.waitUntilCompleted()
+          guard command.status == .completed else { exit(4) }
+          let bytes = Data(bytes: buffer.contents(), count: 13)
+          guard let text = String(data: bytes, encoding: .utf8) else { exit(5) }
+          print(text)
+          '''.lstrip()
+              (location / 'verify.swift').write_text(fixture, encoding='utf-8')
+              check(428, 'Metal', source, [
+                  ('Identify Xcode', ['xcodebuild', '-version']),
+                  ('Identify Metal compiler', ['xcrun', '-sdk', 'macosx', 'metal', '--version']),
+                  ('Compile original Metal source', ['xcrun', '-sdk', 'macosx', 'metal', '-c', 'hello.metal', '-o', 'hello.air']),
+                  ('Link compiled library', ['xcrun', '-sdk', 'macosx', 'metallib', 'hello.air', '-o', 'hello.metallib']),
+                  ('Build headless Swift host', ['xcrun', 'swiftc', 'verify.swift', '-o', 'verify-metal']),
+                  ('Run Metal kernel and read buffer', ['sh', '-c', 'test -x ./verify-metal && ./verify-metal hello.metallib']),
+              ], location, {'verify.swift': {
+                  'sha256': hashlib.sha256(fixture.encode()).hexdigest(),
+                  'content_utf8': fixture,
+              }})
+          PY
