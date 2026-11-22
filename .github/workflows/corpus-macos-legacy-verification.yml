@@ -58,7 +58,7 @@ jobs:
               framework = frameworks[0]
           else:
               libraries = [path for path in (stage / 'python').rglob('Python')
-                           if path.is_file() and not path.is_symlink()]
+                           if path.parent.name == '2.7' and path.is_file() and not path.is_symlink()]
               print('Python package framework payloads:', [str(p.relative_to(stage)) for p in libraries], flush=True)
               assert len(libraries) == 1, libraries
               framework = stage / 'Frameworks/Python.framework'
@@ -115,6 +115,7 @@ jobs:
           import json
           import os
           import platform
+          import re
           import socket
           import subprocess
           import time
@@ -159,6 +160,20 @@ jobs:
                                           'stdout': result.stdout[:10000], 'stderr': result.stderr[:10000]})
           executable = stage / 'corpus-greeting.js'
           if receipt['commands'][-1]['exit_code'] == 0 and executable.is_file():
+              args = ['npm', 'install', '--ignore-scripts', '--omit=dev', '--no-audit', '--no-fund']
+              package_json = stage / 'package.json'
+              receipt['generated_package_json'] = json.loads(package_json.read_text(encoding='utf-8'))
+              install = subprocess.run(args, cwd=stage, env=env, stdin=subprocess.DEVNULL,
+                                       capture_output=True, text=True, timeout=130)
+              receipt['commands'].append({'label': 'Stage the compiler-generated runtime dependencies', 'command': args,
+                                          'exit_code': install.returncode, 'stdout': install.stdout[:4000],
+                                          'stderr': install.stderr[:4000]})
+              lock = stage / 'package-lock.json'
+              if lock.is_file():
+                  receipt['package_lock_sha256'] = sha256(lock.read_bytes()).hexdigest()
+                  receipt['resolved_dependencies'] = {name: row.get('version') for name, row in
+                                                       json.loads(lock.read_text())['packages'].items()}
+          if executable.is_file() and receipt['commands'][-1]['exit_code'] == 0:
               with socket.socket() as listener:
                   listener.bind(('127.0.0.1', 0))
                   port = listener.getsockname()[1]
@@ -190,7 +205,7 @@ jobs:
                    'stopped_after_observation': stopped},
                   {'label': 'Read the output at the loopback HTTP endpoint', 'command': ['GET', url],
                    'http_status': response_status, 'stdout': response_body, 'stderr': '',
-                   'exit_code': 0 if response_status == 200 and '<h1>Hello, World!</h1>' in response_body else 1},
+                   'exit_code': 0 if response_status == 200 and re.search(r'<h1(?:\s[^>]*)?>Hello, World!</h1>', response_body) else 1},
               ])
           print('Output files:', sorted(p.name for p in stage.iterdir()), flush=True)
           print('CORPUS_PROOF ' + json.dumps(receipt), flush=True)
