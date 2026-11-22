@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "ordinal": 428,
+  "language": "Metal",
+  "timestamp_utc": "2026-11-22T16:51:34.075587+00:00",
+  "platform": "macOS-15.8.2-arm64-arm-64bit-Mach-O",
+  "artifact_sha256": {
+    "examples/#428 Metal/hello.metal": "b84772b5979d58d1198163c2c40fe4b4956a7e638f5708e94d183ba184077237"
+  },
+  "commands": [
+    {
+      "label": "Identify Xcode",
+      "command": [
+        "xcodebuild",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "Xcode 16.4\nBuild version 16F6\n",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Identify Metal compiler",
+      "command": [
+        "xcrun",
+        "-sdk",
+        "macosx",
+        "metal",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Apple metal version 32023.620 (metalfe-32023.620)\nTarget: air64-apple-darwin24.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/metal/current/bin\n",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Compile original Metal source",
+      "command": [
+        "xcrun",
+        "-sdk",
+        "macosx",
+        "metal",
+        "-c",
+        "hello.metal",
+        "-o",
+        "hello.air"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Link compiled library",
+      "command": [
+        "xcrun",
+        "-sdk",
+        "macosx",
+        "metallib",
+        "hello.air",
+        "-o",
+        "hello.metallib"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Build headless Swift host",
+      "command": [
+        "xcrun",
+        "swiftc",
+        "verify.swift",
+        "-o",
+        "verify-metal"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Run Metal kernel and read buffer",
+      "command": [
+        "sh",
+        "-c",
+        "test -x ./verify-metal && ./verify-metal hello.metallib"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    }
+  ],
+  "fixture_sha256": {
+    "verify.swift": {
+      "sha256": "4829328b33c9fe53a2647c3985c5801ef915afb4506a164244fdefb0fe973447",
+      "content_utf8": "import Foundation\nimport Metal\n\nguard let device = MTLCreateSystemDefaultDevice() else {\n    FileHandle.standardError.write(Data(\"Metal device unavailable\\n\".utf8))\n    exit(2)\n}\nlet library = try device.makeLibrary(URL: URL(fileURLWithPath: CommandLine.arguments[1]))\nguard let function = library.makeFunction(name: \"greeting\"),\n      let queue = device.makeCommandQueue(),\n      let buffer = device.makeBuffer(length: 13, options: .storageModeShared),\n      let command = queue.makeCommandBuffer(),\n      let encoder = command.makeComputeCommandEncoder() else { exit(3) }\nlet pipeline = try device.makeComputePipelineState(function: function)\nencoder.setComputePipelineState(pipeline)\nencoder.setBuffer(buffer, offset: 0, index: 0)\nencoder.dispatchThreads(MTLSize(width: 13, height: 1, depth: 1),\n                        threadsPerThreadgroup: MTLSize(width: 13, height: 1, depth: 1))\nencoder.endEncoding()\ncommand.commit()\ncommand.waitUntilCompleted()\nguard command.status == .completed else { exit(4) }\nlet bytes = Data(bytes: buffer.contents(), count: 13)\nguard let text = String(data: bytes, encoding: .utf8) else { exit(5) }\nprint(text)\n"
+    }
+  },
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": "Apple metal 32023.620, metallib, Swift and Metal runtime from Xcode 16.4 on macOS 15.8.2 (arm64)",
+  "reproduction_command": "xcrun -sdk macosx metal -c hello.metal -o hello.air && xcrun -sdk macosx metallib hello.air -o hello.metallib && xcrun swiftc verify.swift -o verify-metal && ./verify-metal hello.metallib",
+  "semantic_scope": "The Apple Metal compiler accepted the original shader and metallib linked it. A Swift host dispatched the greeting kernel on a Metal device, waited for completion and printed exactly `Hello, World!` from the 13-byte result buffer. The proof includes the Swift host source.",
+  "updated_expectation": {
+    "build_command": "xcrun -sdk macosx metal -c hello.metal -o hello.air && xcrun -sdk macosx metallib hello.air -o hello.metallib",
+    "expected_result": "Hello, World!"
+  },
+  "source_commit": "9c6c61df12a183d74e2179e3a2457d805f03ba69",
+  "workflow_commit": "37dd2d196e326fe29d2863ac344adf9f733490ba",
+  "workflow_run": "https://github.com/amrierscuo/github-linguist-hello-world-corpus/actions/runs/45046147262",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

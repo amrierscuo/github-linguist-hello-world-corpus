@@ -1,5 +1,16 @@
 # #036 AppleScript
 
+## Verified on November 22, 2026
+
+The native osacompile accepted the original source on macOS. The compiled script ran with osascript and returned exactly `Hello, World!` with exit code 0.
+
+Run `osacompile -o hello.scpt hello.applescript && osascript hello.scpt`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261122_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Restituire la stringa Hello, World! dallo script AppleScript e farla mostrare da osascript su stdout.
 
 ## File
@@ -47,5 +58,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.applescript` | [hello.applescript](hello.applescript) created; verification pending |
+| `.applescript` | [hello.applescript](hello.applescript) Syntax and behavior verified |
 | `.scpt` | [hello.scpt](variants/ext-scpt-2e73637074/hello.scpt) created; verification pending |
+
+</details>

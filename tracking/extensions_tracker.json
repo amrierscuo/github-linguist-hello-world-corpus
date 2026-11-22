@@ -1660,23 +1660,23 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#036 AppleScript/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#036 AppleScript/hello.applescript": "1de13a23b4f708dd53425124bf2f5ba38a9d2b0c7fae7a89cf4d55842ceb2886"
+      },
       "based_on": null,
       "documentation": "examples/#036 AppleScript/README.md",
       "supporting_files": [],
       "validation_command": "osascript hello.applescript",
-      "expected_result": "Compilazione exit 0. osascript: exit 0 e stdout esattamente Hello, World! seguito da newline.",
+      "expected_result": "Hello, World!",
       "sources": [
         "https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_handlers.html",
         "https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html"
       ],
-      "blockers": [
-        "Ambiente corrente Windows: runtime AppleScript/macOS non disponibile; nessun parser o interprete AppleScript eseguito."
-      ],
-      "notes": "Sorgente confrontata con la documentazione Apple. La consultazione del manuale non è una verifica di sintassi o runtime."
+      "blockers": [],
+      "notes": "The native osacompile accepted the original source on macOS. The compiled script ran with osascript and returned exactly `Hello, World!` with exit code 0."
     },
     {
       "language_ordinal": 36,
@@ -24169,25 +24169,25 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#428 Metal/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#428 Metal/hello.metal": "b84772b5979d58d1198163c2c40fe4b4956a7e638f5708e94d183ba184077237"
+      },
       "based_on": null,
       "documentation": "examples/#428 Metal/README.md",
       "supporting_files": [],
       "validation_command": "xcrun -sdk macosx metal -c hello.metal -o build/hello.air",
-      "expected_result": "kernel compilato; dispatch di 13 thread produce bytes ASCII Hello, World!.",
+      "expected_result": "Hello, World!",
       "sources": [
         {
           "title": "Apple Metal Shading Language specification",
           "url": "https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf"
         }
       ],
-      "blockers": [
-        "Xcode e runtime Metal non disponibili su Windows."
-      ],
-      "notes": "La semantica richiede anche un host Metal con buffer e dispatch; la compilazione da sola non viene contata come esecuzione."
+      "blockers": [],
+      "notes": "The Apple Metal compiler accepted the original shader and metallib linked it. A Swift host dispatched the greeting kernel on a Metal device, waited for completion and printed exactly `Hello, World!` from the 13-byte result buffer. The proof includes the Swift host source."
     },
     {
       "language_ordinal": 429,

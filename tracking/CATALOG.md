@@ -39,7 +39,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #033 | [ApacheConf](../examples/%23033%20ApacheConf/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #034 | [Apex](../examples/%23034%20Apex/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #035 | [Apollo Guidance Computer](../examples/%23035%20Apollo%20Guidance%20Computer/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #036 | [AppleScript](../examples/%23036%20AppleScript/README.md) | Yes | Pending | Pending | 2/2 | The current environment is Windows. The AppleScript/macOS runtime is unavailable; no AppleScript parser or interpreter was run. |
+| #036 | [AppleScript](../examples/%23036%20AppleScript/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #037 | [Arc](../examples/%23037%20Arc/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #038 | [ArkTS](../examples/%23038%20ArkTS/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #039 | [AsciiDoc](../examples/%23039%20AsciiDoc/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
@@ -431,7 +431,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #425 | [Mercury](../examples/%23425%20Mercury/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #426 | [Mermaid](../examples/%23426%20Mermaid/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #427 | [Meson](../examples/%23427%20Meson/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
-| #428 | [Metal](../examples/%23428%20Metal/README.md) | Yes | Pending | Pending | 1/1 | Xcode and the Metal runtime are unavailable on Windows. |
+| #428 | [Metal](../examples/%23428%20Metal/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #429 | [Microsoft Developer Studio Project](../examples/%23429%20Microsoft%20Developer%20Studio%20Project/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #430 | [Microsoft Visual Studio Solution](../examples/%23430%20Microsoft%20Visual%20Studio%20Solution/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #431 | [MiniD](../examples/%23431%20MiniD/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |

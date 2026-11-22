@@ -1,5 +1,16 @@
 # #428 Metal
 
+## Verified on November 22, 2026
+
+The Apple Metal compiler accepted the original shader and metallib linked it. A Swift host dispatched the greeting kernel on a Metal device, waited for completion and printed exactly `Hello, World!` from the 13-byte result buffer. The proof includes the Swift host source.
+
+Run `xcrun -sdk macosx metal -c hello.metal -o hello.air && xcrun -sdk macosx metallib hello.air -o hello.metallib && xcrun swiftc verify.swift -o verify-metal && ./verify-metal hello.metallib`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261122_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Fill in a Metal kernel that writes the 13 bytes of greeting in a buffer.
 
 Canonical type `programming`, language_id `230`.
@@ -28,4 +39,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.metal` | [hello.metal](hello.metal) created; verification pending |
+| `.metal` | [hello.metal](hello.metal) Syntax and behavior verified |
+
+</details>

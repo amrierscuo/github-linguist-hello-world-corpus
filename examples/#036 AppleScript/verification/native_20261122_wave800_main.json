@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "ordinal": 36,
+  "language": "AppleScript",
+  "timestamp_utc": "2026-11-22T16:51:33.834683+00:00",
+  "platform": "macOS-15.8.2-arm64-arm-64bit-Mach-O",
+  "artifact_sha256": {
+    "examples/#036 AppleScript/hello.applescript": "1de13a23b4f708dd53425124bf2f5ba38a9d2b0c7fae7a89cf4d55842ceb2886"
+  },
+  "commands": [
+    {
+      "label": "Identify macOS version",
+      "command": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t15.8.2\nBuildVersion:\t\t24H232\n",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Identify AppleScript version",
+      "command": [
+        "osascript",
+        "-e",
+        "AppleScript's version"
+      ],
+      "exit_code": 0,
+      "stdout": "2.8\n",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Compile original script",
+      "command": [
+        "osacompile",
+        "-o",
+        "hello.scpt",
+        "hello.applescript"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    },
+    {
+      "label": "Run compiled script",
+      "command": [
+        "osascript",
+        "hello.scpt"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "cwd": "${SCRATCH}"
+    }
+  ],
+  "fixture_sha256": {},
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": "AppleScript 2.8, osacompile and osascript on macOS 15.8.2 (arm64)",
+  "reproduction_command": "osacompile -o hello.scpt hello.applescript && osascript hello.scpt",
+  "semantic_scope": "The native osacompile accepted the original source on macOS. The compiled script ran with osascript and returned exactly `Hello, World!` with exit code 0.",
+  "updated_expectation": {
+    "build_command": "osacompile -o hello.scpt hello.applescript",
+    "expected_result": "Hello, World!"
+  },
+  "source_commit": "9c6c61df12a183d74e2179e3a2457d805f03ba69",
+  "workflow_commit": "37dd2d196e326fe29d2863ac344adf9f733490ba",
+  "workflow_run": "https://github.com/amrierscuo/github-linguist-hello-world-corpus/actions/runs/45046147262",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}
