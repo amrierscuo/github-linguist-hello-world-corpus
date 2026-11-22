@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "ordinal": 411,
+  "language": "MQL4",
+  "timestamp_utc": "2026-11-22T19:42:21.503899+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run the native Windows program with a private virtual display, network disabled and Wine Mono disabled",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/411-tfmc6wyl",
+        "${SCRATCH}/411-tfmc6wyl",
+        "--bind",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "--chdir",
+        "${SCRATCH}/411-tfmc6wyl",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "sh",
+        "${SCRATCH}/411-tfmc6wyl/portable-wrapper.sh",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\\metaeditor.exe",
+        "/portable",
+        "/compile:Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\\MQL4\\Scripts\\hello.mq4",
+        "/log"
+      ],
+      "cwd": "${SCRATCH}/411-tfmc6wyl",
+      "timestamp_utc": "2026-11-22T19:42:41.073438+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 1,
+      "stdout": "libEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/411-tfmc6wyl/home",
+        "TMPDIR": "${SCRATCH}/411-tfmc6wyl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/412-qj66hean/wine-prefix",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "XDG_RUNTIME_DIR": "${SCRATCH}/411-tfmc6wyl/headless-state",
+        "CORPUS_WINESERVER": "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wineserver"
+      }
+    },
+    {
+      "label": "Run the native Windows program with a private virtual display, network disabled and Wine Mono disabled",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/411-tfmc6wyl",
+        "${SCRATCH}/411-tfmc6wyl",
+        "--bind",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "--chdir",
+        "${SCRATCH}/411-tfmc6wyl",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "python3",
+        "${SCRATCH}/411-tfmc6wyl/monitor-terminal.py",
+        "${SCRATCH}/411-tfmc6wyl/terminal",
+        "\\bhello\\s+[^:]*:\\s+Hello, World!\\s*$",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\\terminal.exe",
+        "/portable",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal-start.ini"
+      ],
+      "cwd": "${SCRATCH}/411-tfmc6wyl",
+      "timestamp_utc": "2026-11-22T19:43:06.398927+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "libEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\n0\t20:43:17.790\thello EURUSD,M1: Hello, World!\nClose message sent to top-level windows of process \"terminal.exe\" with PID 32.\r\nClose request exit code: 0\nTerminal exit code: 0\nX connection to :99 broken (explicit kill or server shutdown).\r\nX connection to :99 broken (explicit kill or server shutdown).\r\nX connection to :99 broken (explicit kill or server shutdown).\r\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/411-tfmc6wyl/home",
+        "TMPDIR": "${SCRATCH}/411-tfmc6wyl/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/412-qj66hean/wine-prefix",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "XDG_RUNTIME_DIR": "${SCRATCH}/411-tfmc6wyl/headless-state"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#411 MQL4/hello.mq4": "f97d1299408cbd67a769be91bb4e09de4eb12cb4fbe30883b58254efc7760fc7"
+  },
+  "fixture_sha256": {
+    "portable-wrapper.sh": {
+      "sha256": "c8874c62ae853ff325dda4a5e0be2ffd41ab875463e2cd7a7cde6fc96a8107d3",
+      "content_utf8": "#!/bin/sh\nset -eu\n\"$@\" &\npid=$!\ntrap 'kill \"$pid\" 2>/dev/null || true' EXIT\nstatus=0\nwait \"$pid\" || status=$?\nif [ -n \"${CORPUS_WINESERVER:-}\" ]; then\n    \"$CORPUS_WINESERVER\" -w\nfi\nexit \"$status\"\n"
+    },
+    "terminal-start.ini": {
+      "sha256": "ff67bb2e9904233aa35d7de01b8ff3ea7903aedbf61b20ecf97c657760eb448a",
+      "content_utf8": "AutoConfiguration=false\nEnableDDE=false\nEnableNews=false\nProxyEnable=false\nFTPEnable=false\nExpertsEnable=true\nExpertsDllImport=false\nExpertsExpImport=false\nExpertsTrades=false\nSymbol=EURUSD\nPeriod=M1\nScript=hello\n"
+    },
+    "monitor-terminal.py": {
+      "sha256": "412c7441dd5b7a9256fc6d478cf5342b6ecbf9a3f28deb0dee0504f1af4b2ffd",
+      "content_utf8": "\nfrom pathlib import Path\nimport re\nimport subprocess\nimport sys\nimport time\n\nterminal = Path(sys.argv[1])\ngreeting = re.compile(sys.argv[2], re.IGNORECASE)\nwine, *command = sys.argv[3:]\nclient = subprocess.Popen([wine, *command])\ndeadline = time.monotonic() + 45\n\ndef observed_greeting():\n    for folder in (terminal / 'MQL4/Logs', terminal / 'logs'):\n        for path in folder.glob('*.log'):\n            data = path.read_bytes()\n            encoding = 'utf-16' if data.startswith((b'\\xff\\xfe', b'\\xfe\\xff')) else 'utf-8-sig'\n            for line in data.decode(encoding, errors='replace').splitlines():\n                if greeting.search(line):\n                    return line\n    return None\n\nwhile client.poll() is None and time.monotonic() < deadline:\n    line = observed_greeting()\n    if line:\n        print(line, flush=True)\n        request = subprocess.run([wine, 'taskkill.exe', '/IM', 'terminal.exe'], timeout=12)\n        print(f'Close request exit code: {request.returncode}', flush=True)\n        result = client.wait(timeout=22)\n        print(f'Terminal exit code: {result}', flush=True)\n        sys.exit(result)\n    time.sleep(0.4)\n\nif client.poll() is not None:\n    print(f'Terminal exit code: {client.returncode}', flush=True)\n    sys.exit(client.returncode if observed_greeting() else 2)\nsys.exit(124)\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "MetaQuotes MQL4 OnStart",
+      "url": "https://docs.mql4.com/basis/function/events#onstart"
+    },
+    {
+      "title": "MetaQuotes Print",
+      "url": "https://docs.mql4.com/common/print"
+    },
+    "https://www.metatrader4.com/en/trading-platform/help/service/start_conf_file",
+    "https://github.com/wine-mirror/wine/blob/wine-11.10/programs/taskkill/taskkill.c"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "official_url": "https://download.terminal.free/cdn/web/metaquotes.software.corp/mt4/MetaTrader4.pkg.zip",
+      "zip_bytes": 215961067,
+      "zip_sha256": "3040bb76ef761bbc184d191118b34ba8e8bc2fdfa4d5e5a18b255662b2e755f5",
+      "payload": {
+        "size": 216489353,
+        "xar_checksum": "e6df4809ebe7b22321cdae658d12fd51dd6d3f1f",
+        "sha256": "d3797fc4ffe441eaa74b6c7346dd1b4896a947269fbd85b23b4eafcc93298bcf",
+        "signature": "1f8b0800000000000003ecbd59b3e3d8"
+      },
+      "windows_payload_sha256": "0bd32afaa773e80c84df19eabc4697ba7cfb7be7caa42550d45c9f5473eb05f1",
+      "windows_files": 390,
+      "windows_uncompressed_bytes": 68625587,
+      "native_pe": {
+        "metaeditor.exe": {
+          "sha256": "da45046f2b4573f835c9cedf8173ac49f457abeb58dbb22353a26c756c2ab623",
+          "pe_format": "0x10b",
+          "clr_directory": [
+            0,
+            0
+          ]
+        },
+        "terminal.exe": {
+          "sha256": "266541b90aa201c4391f36e59ddc3fb5b0c8a81191ff1ac1982c6ca3bef52345",
+          "pe_format": "0x10b",
+          "clr_directory": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "url": "https://github.com/Kron4ek/Wine-Builds/releases/download/11.10/wine-11.10-amd64-wow64.tar.xz",
+      "sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9",
+      "expected_sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9"
+    }
+  ],
+  "wine_kernel32_sha256": "047e0cd3e3f89d6a02591c8b245e1b974cde9983ccc243e2b5cf1baa3afd649c",
+  "ubuntu_archives": [
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "virtual_display": "Own Xvfb server with no display attached to the user desktop.",
+  "compiler_log": "\r\n\r\nZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\\MQL4\\Scripts\\hello.mq4 : information: compiling 'hello.mq4'\r\nResult: 0 errors, 0 warnings, 80 msec elapsed\r\n",
+  "compiled_artifact_sha256": "9f0799b87b1341a8eaea0bc0759fa6a353978d8ae502644579431dbf3d58bc2d",
+  "terminal_logs": {
+    "MQL4/Logs/20261122.log": "0\t20:43:09.205\tCompiling 'MACD Sample'\r\n0\t20:43:09.205\tCompiling 'Moving Average'\r\n0\t20:43:09.810\tCompiling 'Accelerator'\r\n0\t20:43:09.810\tCompiling 'Accumulation'\r\n0\t20:43:09.810\tCompiling 'Alligator'\r\n0\t20:43:09.811\tCompiling 'ATR'\r\n0\t20:43:09.811\tCompiling 'Awesome'\r\n0\t20:43:09.811\tCompiling 'Bands'\r\n0\t20:43:09.811\tCompiling 'Bears'\r\n0\t20:43:09.811\tCompiling 'Bulls'\r\n0\t20:43:09.811\tCompiling 'CCI'\r\n0\t20:43:09.811\tCompiling 'Custom Moving Averages'\r\n0\t20:43:09.811\tCompiling 'Heiken Ashi'\r\n0\t20:43:09.811\tCompiling 'Ichimoku'\r\n0\t20:43:09.811\tCompiling 'iExposure'\r\n0\t20:43:09.811\tCompiling 'MACD'\r\n0\t20:43:09.811\tCompiling 'Momentum'\r\n0\t20:43:09.811\tCompiling 'OsMA'\r\n0\t20:43:09.811\tCompiling 'Parabolic'\r\n0\t20:43:09.811\tCompiling 'RSI'\r\n0\t20:43:09.811\tCompiling 'Stochastic'\r\n0\t20:43:09.811\tCompiling 'ZigZag'\r\n0\t20:43:09.812\tCompiling 'SimplePanel'\r\n0\t20:43:12.216\tCompiling 'PeriodConverter'\r\n0\t20:43:12.218\tCompiling 'DLLSampleTester'\r\n0\t20:43:12.219\tCompiling 'PipeClient'\r\n0\t20:43:12.219\tCompiling 'PipeClientPure'\r\n0\t20:43:12.992\tCompiling 'stdlib'\r\n0\t20:43:17.780\tScript hello EURUSD,M1: loaded successfully\r\n3\t20:43:17.790\thello EURUSD,M1: cannot refresh history [4073]\r\n0\t20:43:17.790\thello EURUSD,M1: initialized\r\n0\t20:43:17.790\thello EURUSD,M1: Hello, World!\r\n0\t20:43:17.790\thello EURUSD,M1: uninit reason 0\r\n0\t20:43:17.792\tScript hello EURUSD,M1: removed\r\n",
+    "logs/metaeditor.log": "",
+    "logs/20261122.log": "0\t20:43:08.490\tLiveUpdate: update Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\\MQL4 folder started\r\n0\t20:43:08.550\tLiveUpdate: update Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\\MQL4 folder finished\r\n0\t20:43:08.906\tMetaTrader 4 build 1476 started (MetaQuotes Software Corp.)\r\n0\t20:43:08.908\tWindows 10 Pro x64, UAC, 16 x Intel Core i7-10700  @ 2.90GHz, Memory: 15170 / 15954 Mb, Disk: 870 / 1006 Gb, GMT+1\r\n0\t20:43:08.908\tData Folder: Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal\r\n0\t20:43:09.178\tSources recompilation started\r\n0\t20:43:13.493\tSources recompilation finished (28 compiled in 4315 msec)\r\n0\t20:43:13.494\tStarted with configuration file 'Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\411-tfmc6wyl\\terminal-start.ini'\r\n1\t20:43:14.988\tMQL Base: failed connect to server\r\n2\t20:43:17.780\tScript hello EURUSD,M1: loaded successfully\r\n2\t20:43:17.792\tScript hello EURUSD,M1: removed\r\n1\t20:43:20.644\tMQL5.community: authorization failed\r\n0\t20:43:21.194\tMetaTrader 4 build 1476 stopped\r\n"
+  },
+  "observed_greeting_lines": [
+    "0\t20:43:17.790\thello EURUSD,M1: Hello, World!"
+  ],
+  "toolchain": "Official MetaQuotes MetaTrader 4 build 1476 with MetaEditor PE32; isolated Wine 11.10",
+  "reproduction_command": "metaeditor.exe /portable /compile:<absolute Windows path to hello.mq4> /log; terminal.exe /portable <absolute Windows path to terminal-start.ini>; request window close via Wine taskkill.exe /IM terminal.exe after observing the greeting",
+  "semantic_scope": "The official MetaEditor compiled the original hello.mq4 into an EX4 file. The official MetaTrader 4 terminal ran the hello script from its startup configuration and recorded the exact `Hello, World!` greeting in the script log. It ran inside an isolated Xvfb display without network access and closed with exit code 0.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

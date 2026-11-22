@@ -414,7 +414,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #408 | [MAXScript](../examples/%23408%20MAXScript/README.md) | Yes | Pending | Pending | 2/2 | The Autodesk 3ds Max runtime is unavailable. |
 | #409 | [MDX](../examples/%23409%20MDX/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #410 | [MLIR](../examples/%23410%20MLIR/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #411 | [MQL4](../examples/%23411%20MQL4/README.md) | Yes | Pending | Pending | 2/2 | The MetaTrader 4 toolchain is unavailable. |
+| #411 | [MQL4](../examples/%23411%20MQL4/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #412 | [MQL5](../examples/%23412%20MQL5/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #413 | [MTML](../examples/%23413%20MTML/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #414 | [MUF](../examples/%23414%20MUF/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |

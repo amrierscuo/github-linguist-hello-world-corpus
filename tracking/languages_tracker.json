@@ -23934,15 +23934,16 @@
       "example": {
         "semantic_goal": "Eseguire uno script MQL4 che scrive il saluto nel registro locale.",
         "validation_mode": "compile_and_run",
-        "toolchain": "MetaTrader 4 MetaEditor/compiler",
+        "toolchain": "Official MetaQuotes MetaTrader 4 build 1476 with MetaEditor PE32; isolated Wine 11.10",
         "files": [
           "examples/#411 MQL4/hello.mq4",
           "examples/#411 MQL4/variants/mqh-c969556a/hello.mqh",
           "examples/#411 MQL4/variants/mqh-c969556a/driver.mq4",
-          "examples/#411 MQL4/variants/mqh-c969556a/README.md"
+          "examples/#411 MQL4/variants/mqh-c969556a/README.md",
+          "examples/#411 MQL4/verification/native_20261122_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Compilare hello.mq4 in MetaEditor; eseguire lo script nel terminale di prova.",
+        "run_or_check_command": "metaeditor.exe /portable /compile:<absolute Windows path to hello.mq4> /log; terminal.exe /portable <absolute Windows path to terminal-start.ini>; request window close via Wine taskkill.exe /IM terminal.exe after observing the greeting",
         "expected_result": "compilazione senza errori; registro Experts contiene Hello, World!.",
         "sources": [
           {
@@ -23959,16 +23960,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain MetaTrader 4 non disponibile."
-        ],
-        "notes": "Non apre ordini, non legge account e non usa rete. È uno script locale, non un expert advisor operativo."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-22T19:42:21.503899+00:00",
+        "verification_log": "examples/#411 MQL4/verification/native_20261122_wave800_main.json",
+        "blockers": [],
+        "notes": "The official MetaEditor compiled the original hello.mq4 into an EX4 file. The official MetaTrader 4 terminal ran the hello script from its startup configuration and recorded the exact `Hello, World!` greeting in the script log. It ran inside an isolated Xvfb display without network access and closed with exit code 0.",
+        "verified_artifact_sha256": {
+          "examples/#411 MQL4/hello.mq4": "f97d1299408cbd67a769be91bb4e09de4eb12cb4fbe30883b58254efc7760fc7"
+        }
       }
     },
     {
