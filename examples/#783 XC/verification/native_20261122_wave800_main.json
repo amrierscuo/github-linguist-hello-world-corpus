@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "ordinal": 783,
+  "language": "XC",
+  "timestamp_utc": "2026-11-22T17:13:51.490792+00:00",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.31",
+  "artifact_sha256": {
+    "examples/#783 XC/hello.xc": "f66f6091ba08a45e5549a0422352f199d724b73153b85ccff69f7ef17b29e708"
+  },
+  "toolchain_image": "ghcr.io/xmos/xcore_builder@sha256:cb301ec2c847d622a4a779a7fbbb131eba0c8f1931f53b938516b09529065e16",
+  "commands": [
+    {
+      "label": "Identify XMOS xcc",
+      "command": [
+        "/XMOS/XTC/15.3.0/bin/xcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "xcc: Build 29-89e0f73, May-30-2024\nXTC version: 15.3.0\nCopyright (C) XMOS Limited 2008-2024. All Rights Reserved.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "Identify XMOS xsim",
+      "command": [
+        "/XMOS/XTC/15.3.0/bin/xsim",
+        "--version"
+      ],
+      "exit_code": 1,
+      "stdout": "Build 49-a48068c, May-30-2024\nCopyright (C) XMOS Limited 2008-2024. All Rights Reserved.\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile original .xc with the XMOS XC frontend",
+      "command": [
+        "/XMOS/XTC/15.3.0/bin/xcc",
+        "-target=XCORE-AI-EXPLORER",
+        "hello.xc",
+        "-o",
+        "hello.xe"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "Run the resulting xCORE executable on the simulator",
+      "command": [
+        "/XMOS/XTC/15.3.0/bin/xsim",
+        "hello.xe"
+      ],
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": ""
+    }
+  ],
+  "target": "XCORE-AI-EXPLORER",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "toolchain": "XMOS XTC 15.3.0, xcc and xsim, XCORE-AI-EXPLORER target in the official Linux x86-64 XMOS builder image",
+  "reproduction_command": "xcc -target=XCORE-AI-EXPLORER hello.xc -o hello.xe && xsim hello.xe",
+  "semantic_scope": "The official XMOS XC compiler compiled the original .xc source and linked an xCORE executable. The XMOS xsim simulator ran that executable offline and printed exactly `Hello, World!` with exit code 0.",
+  "updated_expectation": {
+    "build_command": "xcc -target=XCORE-AI-EXPLORER hello.xc -o hello.xe",
+    "expected_result": "Hello, World!"
+  },
+  "sources": [
+    "https://www.xmos.com/software-tools",
+    "https://www.xmos.com/documentation/XM-014363-PC/html/tools-guide/tools-ref/cmd-line-tools/xcc-manual/xcc-manual.html"
+  ],
+  "workflow_commit": "28b427ff59c5741f8d4e8d82e2de5c243735bbaa",
+  "workflow_run": "https://github.com/amrierscuo/github-linguist-hello-world-corpus/actions/runs/45048216881",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

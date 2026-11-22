@@ -157,7 +157,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #151 | [D](../examples/%23151%20D/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #152 | [D-ObjDump](../examples/%23152%20D-ObjDump/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #153 | [D2](../examples/%23153%20D2/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #154 | [DIGITAL Command Language](../examples/%23154%20DIGITAL%20Command%20Language/README.md) | Yes | Pending | Pending | 1/1 | OpenVMS/DCL is unavailable; no native interpreter was run. |
+| #154 | [DIGITAL Command Language](../examples/%23154%20DIGITAL%20Command%20Language/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #155 | [DM](../examples/%23155%20DM/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #156 | [DNS Zone](../examples/%23156%20DNS%20Zone/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #157 | [DTrace](../examples/%23157%20DTrace/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
@@ -786,7 +786,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #780 | [X Font Directory Index](../examples/%23780%20X%20Font%20Directory%20Index/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #781 | [X PixMap](../examples/%23781%20X%20PixMap/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #782 | [X10](../examples/%23782%20X10/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #783 | [XC](../examples/%23783%20XC/README.md) | Yes | Pending | Pending | 1/1 | The XTC/xcc toolchain and XMOS target or simulator are unavailable; checks are pending. |
+| #783 | [XC](../examples/%23783%20XC/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #784 | [XCompose](../examples/%23784%20XCompose/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |
 | #785 | [XML](../examples/%23785%20XML/README.md) | Yes | Yes | Yes | 112/112 | Evidence recorded |
 | #786 | [XML Property List](../examples/%23786%20XML%20Property%20List/README.md) | Yes | Yes | Yes | 7/7 | Evidence recorded |

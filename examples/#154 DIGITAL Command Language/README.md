@@ -1,5 +1,16 @@
 # #154 DIGITAL Command Language
 
+## Verified on November 22, 2026
+
+The OpenVMX DCL interpreter, built from the pinned upstream source, executed the original command procedure through standard input. The assignment concatenated the two strings, WRITE SYS$OUTPUT printed exactly `Hello, World!`, and the process returned the DCL success status 1 specified by EXIT 1.
+
+Run `DCL.EXE < hello.com`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261122_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 The canonical entry and order come from the corpus's `reference/languages.yml`. Sources and fixtures are original; any dumps or bundles come from the stated tools.
 
 ## Goal
@@ -39,4 +50,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.com` | [hello.com](hello.com) created; verification pending |
+| `.com` | [hello.com](hello.com) Syntax and behavior verified |
+
+</details>

@@ -1,5 +1,16 @@
 # #783 XC
 
+## Verified on November 22, 2026
+
+The official XMOS XC compiler compiled the original .xc source and linked an xCORE executable. The XMOS xsim simulator ran that executable offline and printed exactly `Hello, World!` with exit code 0.
+
+Run `xcc -target=XCORE-AI-EXPLORER hello.xc -o hello.xe && xsim hello.xe`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261122_wave800_main.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Canonical entry and order from reference/languages.yml. The source and fixtures are original.
 
 ## Goal
@@ -38,4 +49,6 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.xc` | [hello.xc](hello.xc) created; verification pending |
+| `.xc` | [hello.xc](hello.xc) Syntax and behavior verified |
+
+</details>

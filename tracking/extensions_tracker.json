@@ -8011,10 +8011,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#154 DIGITAL Command Language/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#154 DIGITAL Command Language/hello.com": "bda24ec6acbf86603985fd87a9f573d6aec81e151af20997828dbd3d951093e6"
+      },
       "based_on": null,
       "documentation": "examples/#154 DIGITAL Command Language/README.md",
       "supporting_files": [],
@@ -8024,10 +8026,8 @@
         "https://docs.vmssoftware.com/vsi-openvms-dcl-dictionary-a-m/",
         "https://docs.vmssoftware.com/vsi-openvms-dcl-dictionary-n-z/"
       ],
-      "blockers": [
-        "OpenVMS/DCL non disponibile; nessun interprete nativo è stato eseguito."
-      ],
-      "notes": "Il file .com è una procedura DIGITAL Command Language. Ogni riga di comando comincia con $, greeting è un simbolo stringa e WRITE usa SYS$OUTPUT. Lo status OpenVMS 1 indica successo; non è il codice POSIX di errore 1."
+      "blockers": [],
+      "notes": "The OpenVMX DCL interpreter, built from the pinned upstream source, executed the original command procedure through standard input. The assignment concatenated the two strings, WRITE SYS$OUTPUT printed exactly `Hello, World!`, and the process returned the DCL success status 1 specified by EXIT 1."
     },
     {
       "language_ordinal": 155,
@@ -43465,22 +43465,22 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#783 XC/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#783 XC/hello.xc": "f66f6091ba08a45e5549a0422352f199d724b73153b85ccff69f7ef17b29e708"
+      },
       "based_on": null,
       "documentation": "examples/#783 XC/README.md",
       "supporting_files": [],
       "validation_command": "xcc -target=<target-XMOS-di-prova> hello.xc -o hello.xe; xsim hello.xe",
-      "expected_result": "Hello, World! nel terminale del simulatore/target.",
+      "expected_result": "Hello, World!",
       "sources": [
         "https://www.xmos.com/download/XMOS-Programming-Guide-%28documentation%29%28F%29.pdf"
       ],
-      "blockers": [
-        "XTC/xcc e target/simulatore XMOS non disponibili; verifiche pendenti."
-      ],
-      "notes": "Sorgente xC originale con entry point e IO stdio. Occorre una toolchain/target XMOS; compilare come C con GCC non verificherebbe xC."
+      "blockers": [],
+      "notes": "The official XMOS XC compiler compiled the original .xc source and linked an xCORE executable. The XMOS xsim simulator ran that executable offline and printed exactly `Hello, World!` with exit code 0."
     },
     {
       "language_ordinal": 785,
