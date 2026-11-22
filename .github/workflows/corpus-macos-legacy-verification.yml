@@ -1,0 +1,125 @@
+name: Legacy compiler verification
+
+on:
+  push:
+    branches: [codex/corpus-macos-legacy-20261122]
+    paths: [.github/workflows/corpus-macos-legacy-verification.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: macos-15-intel
+    timeout-minutes: 12
+    steps:
+      - name: Fetch the exact corpus snapshot
+        env:
+          SOURCE_COMMIT: 5e6c4391ced56263f84a02d6fc6adc0e75233352
+          GIT_TERMINAL_PROMPT: '0'
+        run: |
+          git init --quiet corpus
+          git -C corpus fetch --no-tags --depth 1 https://github.com/amrierscuo/github-linguist-hello-world-corpus.git "$SOURCE_COMMIT"
+          git -C corpus checkout --detach FETCH_HEAD
+          test "$(git -C corpus rev-parse HEAD)" = "$SOURCE_COMMIT"
+
+      - name: Run the official Cycript command-line runtime
+        continue-on-error: true
+        shell: bash
+        run: |
+          stage="$(mktemp -d)"
+          export stage
+          export CYCRIPT_URL='https://cache.saurik.com/cycript/mac/cycript_0.9.594.zip'
+          curl -fsSL --retry 2 --max-time 70 "$CYCRIPT_URL" -o "$stage/cycript.zip"
+          ditto -x -k "$stage/cycript.zip" "$stage/sdk"
+          cd corpus
+          python3 - <<'PY'
+          from datetime import datetime, timezone
+          from hashlib import sha256
+          from pathlib import Path
+          import json
+          import os
+          import platform
+          import subprocess
+
+          stage = Path(os.environ['stage'])
+          source = Path('examples/#147 Cycript/hello.cy')
+          (stage / source.name).write_bytes(source.read_bytes())
+          programs = sorted(path for path in (stage / 'sdk').rglob('cycript') if path.is_file() and os.access(path, os.X_OK))
+          assert len(programs) == 1, programs
+          exe = str(programs[0])
+          receipt = {
+              'schema_version': 1, 'ordinal': 147, 'language': 'Cycript',
+              'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
+              'artifact_sha256': {str(source): sha256(source.read_bytes()).hexdigest()},
+              'toolchain_archives': [{'url': os.environ['CYCRIPT_URL'], 'sha256': sha256((stage / 'cycript.zip').read_bytes()).hexdigest()}],
+              'commands': [],
+          }
+          for label, args in [
+              ('Identify the official Cycript binary', ['file', exe]),
+              ('Read Cycript compiler version and options', [exe, '--help']),
+              ('Compile original Cycript source', [exe, '-c', source.name]),
+              ('Execute original Cycript source with JavaScriptCore', [exe, source.name]),
+          ]:
+              result = subprocess.run(args, cwd=stage, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=30)
+              command = [arg.replace(str(stage), '${SCRATCH}') for arg in args]
+              receipt['commands'].append({'label': label, 'command': command, 'exit_code': result.returncode,
+                                          'stdout': result.stdout, 'stderr': result.stderr})
+          print('CORPUS_PROOF ' + json.dumps(receipt), flush=True)
+          PY
+
+      - name: Extract the historical Opa compiler without installing the package
+        shell: bash
+        run: |
+          stage="$(mktemp -d)"
+          export stage
+          export PACKAGE_URL='https://github.com/MLstate/opalang/releases/download/v4308/opa-1.1.1.dmg'
+          curl -fsSL --retry 2 --max-time 70 "$PACKAGE_URL" -o "$stage/opa.dmg"
+          mkdir "$stage/mounted"
+          hdiutil attach -nobrowse -noautoopen -readonly -mountpoint "$stage/mounted" "$stage/opa.dmg"
+          trap 'hdiutil detach "$stage/mounted"' EXIT
+          find "$stage/mounted" -maxdepth 3 -type f -print
+          package="$(find "$stage/mounted" -maxdepth 3 -name '*.pkg' -print -quit)"
+          test -n "$package"
+          pkgutil --expand-full "$package" "$stage/package"
+          cd corpus
+          python3 - <<'PY'
+          from datetime import datetime, timezone
+          from hashlib import sha256
+          from pathlib import Path
+          import json
+          import os
+          import platform
+          import subprocess
+
+          stage = Path(os.environ['stage'])
+          source = Path('examples/#497 Opa/hello.opa')
+          (stage / source.name).write_bytes(source.read_bytes())
+          programs = sorted(path for path in (stage / 'package').rglob('opa')
+                            if path.is_file() and path.parent.name == 'bin' and os.access(path, os.X_OK))
+          assert programs, 'No Opa compiler executable in the package'
+          print('Compiler positions:', [str(p.relative_to(stage)) for p in programs], flush=True)
+          program = programs[0]
+          env = os.environ.copy()
+          env['PATH'] = str(program.parent) + ':' + env['PATH']
+          receipt = {
+              'schema_version': 1, 'ordinal': 497, 'language': 'Opa',
+              'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
+              'artifact_sha256': {str(source): sha256(source.read_bytes()).hexdigest()},
+              'toolchain_archives': [{'url': env['PACKAGE_URL'], 'sha256': sha256((stage / 'opa.dmg').read_bytes()).hexdigest()}],
+              'commands': [],
+          }
+          for label, args in [
+              ('Identify official Opa binary', ['file', str(program)]),
+              ('Identify Opa compiler version', [str(program), '--version']),
+              ('Read Opa command-line options', [str(program), '--help']),
+              ('Compile original Opa source', [str(program), '-o', 'corpus-greeting.js', source.name]),
+          ]:
+              result = subprocess.run(args, cwd=stage, env=env, stdin=subprocess.DEVNULL,
+                                      capture_output=True, text=True, timeout=90)
+              command = [arg.replace(str(stage), '${SCRATCH}') for arg in args]
+              receipt['commands'].append({'label': label, 'command': command, 'exit_code': result.returncode,
+                                          'stdout': result.stdout[:10000], 'stderr': result.stderr[:10000]})
+          print('Output files:', sorted(p.name for p in stage.iterdir()), flush=True)
+          print('CORPUS_PROOF ' + json.dumps(receipt), flush=True)
+          PY
