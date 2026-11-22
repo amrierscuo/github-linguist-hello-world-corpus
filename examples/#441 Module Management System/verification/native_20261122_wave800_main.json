@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "ordinal": 441,
+  "language": "Module Management System",
+  "timestamp_utc": "2026-11-22T20:47:15.726379+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run the original MMS description in the offline OpenVMX guest",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/qemu-system-x86_64",
+        "-L",
+        "${SCRATCH}/cache/tools/apt/usr/share/qemu",
+        "-accel",
+        "tcg",
+        "-m",
+        "768",
+        "-display",
+        "none",
+        "-serial",
+        "stdio",
+        "-monitor",
+        "none",
+        "-nodefaults",
+        "-nic",
+        "none",
+        "-no-reboot",
+        "-snapshot",
+        "-kernel",
+        "${SCRATCH}/openvmx-dc365b-release-cut-a/vmlinuz",
+        "-initrd",
+        "${SCRATCH}/openvmx-dc365b-release-cut-a/initramfs-ovmx-slim.cpio.gz",
+        "-append",
+        "console=ttyS0 loglevel=3 no_timer_check",
+        "-drive",
+        "file=${SCRATCH}/openvmx-dc365b-release-cut-a/ovmx-distrib.img,format=raw,if=virtio",
+        "-bios",
+        "${SCRATCH}/cache/tools/apt/usr/share/seabios/bios-256k.bin"
+      ],
+      "timestamp_utc": "2026-11-22T20:47:15.745326+00:00",
+      "exit_code": 0,
+      "stdout": "OVMX/Linux -- SYSKRNL (Linux kernel)\n\n    OpenVMX V0.7-15 - OpenVMS-compatible\n    22-NOV-2026 20:47:31.66\n\n%STDRV-I-STARTUP, OpenVMX startup begun at 22-NOV-2026 20:47:34.19\n\n%%%%%%%%%%%  OPCOM  22-NOV-2026 20:47:34.23  %%%%%%%%%%%\nOperator _OVMX$OPA0: has been enabled, username SYSTEM\n\n\n%%%%%%%%%%%  OPCOM  22-NOV-2026 20:47:34.52  %%%%%%%%%%%\nOperator status for operator _OVMX$OPA0:\nCENTRAL, PRINTER, TAPES, DISKS, DEVICES, CARDS, NETWORK, CLUSTER, SECURITY,\nLICENSE, OPER1, OPER2, OPER3, OPER4, OPER5, OPER6, OPER7, OPER8, OPER9, OPER10,\nOPER11, OPER12\n\nThe OVMX system is now executing the site-specific startup commands.\n%RUN-S-PROC_ID, identification of created process is 10000004\u0007\n\n Welcome to the OpenVMX X86_64 Operating System, Version V0.7-15 (OpenVMS-compatible)\n\nUsername: SYSTEM\nPassword: \n Welcome to OpenVMX V0.7-15 - OpenVMS-compatible\u001b[c\u001b\\\u001bZ\u001b[0c\n%SET-W-NOTSET, error modifying OPA0:\n-SET-I-UNKTERM, unknown terminal type\n$ CREATE DESCRIP.MMS\nHELLO :\n\t@ WRITE SYS$OUTPUT \"Hello, World!\"\n*EXIT*\n$ TYPE DESCRIP.MMS\nHELLO :\n\t@ WRITE SYS$OUTPUT \"Hello, World!\"\n$ WRITE SYS$OUTPUT F$SEARCH(\"DESCRIP.MMS\")\nSYS$SYSROOT:[SYSMGR]DESCRIP.MMS;1\n$ CREATE CORPUS_RULES.MMS\n! No inference rules required for HELLO\n*EXIT*\n$ WRITE SYS$OUTPUT F$SEARCH(\"CORPUS_RULES.MMS\")\nSYS$SYSROOT:[SYSMGR]CORPUS_RULES.MMS;1\n$ MMK :== $SYS$SYSTEM:MMK.EXE\n$ MMK /DESCRIPTION=SYS$SYSROOT:[SYSMGR]DESCRIP.MMS /RULES_FILE=SYS$SYSROOT:[SYSM\nGR]CORPUS_RULES.MMS /VERIFY=ALL /LOG HELLO\n%NONAME-I-1021, message number 202670347\n  unknown status code\n%NONAME-I-1020, message number 202670339\n  unknown status code\n%NONAME-I-1023, message number 202670363\n  unknown status code\n%NONAME-I-1024, message number 202670371\n  unknown status code\n%NONAME-I-1028, message number 202670403\n  unknown status code\nWRITE SYS$OUTPUT \"Hello, World!\"\nHello, World!\n\n%DCL-E-ABORT, image SYS$SYSTEM:MMK.EXE exited with error status %X00000001\n$ WRITE SYS$OUTPUT \"MMK_STATUS \", $STATUS\nMMK_STATUS %X0000002C\n$ ",
+      "stderr": "",
+      "qemu_shutdown_status": 0
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#441 Module Management System/descrip.mms": "4451655170d79a5b7d4705ca6f969d0e27892409526cdfe2835bd5157bf43f98"
+  },
+  "fixture_sha256": {
+    "CORPUS_RULES.MMS": {
+      "sha256": "1f320d8b6f31efce0747c315accd1dbf33581661a03c13d704091724fefcbde1",
+      "content_utf8": "! No inference rules required for HELLO\n"
+    }
+  },
+  "sources": [
+    "https://docs.vmssoftware.com/docs/vsi-decset-for-openvms-guide-to-the-module-management-system.pdf",
+    "https://github.com/3dl-dev/vms/actions/runs/44997605174",
+    "https://docs.vmssoftware.com/vsi-openvms-programming-concepts-manual-volume-i/",
+    "https://github.com/3dl-dev/vms/blob/dc365b3286cbc607007ddc9bd482c0d6ef98b15c/src/vmsdcl/dcl_cmd_process.c"
+  ],
+  "previous_verification_log": "examples/#441 Module Management System/verification/native.json",
+  "toolchain_archives": [
+    {
+      "github_run": 44997605174,
+      "artifact": 14745558167,
+      "sha256": "645076b9614ce80c3625d8e2b82da4ad67c723f5a089a961e1f2838f89b8e025",
+      "url": "https://github.com/3dl-dev/vms/actions/runs/44997605174/artifacts/14745558167",
+      "repository_revision": "dc365b3286cbc607007ddc9bd482c0d6ef98b15c",
+      "members": {
+        "vmlinuz": {
+          "bytes": 8950784,
+          "sha256": "8c6d9fb79662da7107a326e731ac475acaca24754b42b24c00b960b9962b00db"
+        },
+        "initramfs-ovmx-slim.cpio.gz": {
+          "bytes": 641469,
+          "sha256": "5e37196e175f73d417c0e05b6a79861247cda5afbc56ace3de03fbf067f9ad76"
+        },
+        "ovmx-distrib.img": {
+          "bytes": 134217728,
+          "sha256": "fb010444aaf5c7259f3736059342ee37dc3ad7afc7d5f0c6baf04a66ce750ccd"
+        }
+      }
+    }
+  ],
+  "digest_source": "https://api.github.com/repos/3dl-dev/vms/actions/artifacts/14745558167",
+  "vms_completion_status": {
+    "image": 1,
+    "image_condition": "SS$_NORMAL",
+    "dcl_status": 44
+  },
+  "toolchain": "OpenVMX x86-64 from commit dc365b3286cbc607007ddc9bd482c0d6ef98b15c with MadGoat MMK in headless QEMU",
+  "reproduction_command": "MMK /DESCRIPTION=SYS$SYSROOT:[SYSMGR]DESCRIP.MMS /RULES_FILE=SYS$SYSROOT:[SYSMGR]CORPUS_RULES.MMS /VERIFY=ALL /LOG HELLO",
+  "semantic_scope": "The offline OpenVMX guest read back the original description. MMK selected HELLO and ran its DCL recipe, which printed the exact line `Hello, World!`. MMK returned VMS condition 1 (SS$_NORMAL). The OpenVMX DCL launcher displayed an abort label and exposed its own failure value %X0000002C in $STATUS.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

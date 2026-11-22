@@ -24741,10 +24741,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#441 Module Management System/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#441 Module Management System/descrip.mms": "4451655170d79a5b7d4705ca6f969d0e27892409526cdfe2835bd5157bf43f98"
+      },
       "based_on": null,
       "documentation": "examples/#441 Module Management System/README.md",
       "supporting_files": [],
@@ -24753,10 +24755,8 @@
       "sources": [
         "https://docs.vmssoftware.com/docs/vsi-decset-for-openvms-guide-to-the-module-management-system.pdf"
       ],
-      "blockers": [
-        "OpenVMS with MMS/MMK is not available."
-      ],
-      "notes": "Target e azione DCL originali; nessun ambiente OpenVMS disponibile."
+      "blockers": [],
+      "notes": "The offline OpenVMX guest read back the original description. MMK selected HELLO and ran its DCL recipe, which printed the exact line `Hello, World!`. MMK returned VMS condition 1 (SS$_NORMAL). The OpenVMX DCL launcher displayed an abort label and exposed its own failure value %X0000002C in $STATUS."
     },
     {
       "language_ordinal": 441,

@@ -1,5 +1,18 @@
 # #441 Module Management System
 
+## Verified on November 22, 2026
+
+The offline OpenVMX guest read back the original description. MMK selected HELLO and ran its DCL recipe, which printed the exact line `Hello, World!`. MMK returned VMS condition 1 (SS$_NORMAL). The OpenVMX DCL launcher displayed an abort label and exposed its own failure value %X0000002C in $STATUS.
+
+Run `MMK /DESCRIPTION=SYS$SYSROOT:[SYSMGR]DESCRIP.MMS /RULES_FILE=SYS$SYSROOT:[SYSMGR]CORPUS_RULES.MMS /VERIFY=ALL /LOG HELLO`.
+
+[Commands, toolchain, output and SHA-256](verification/native_20261122_wave800_main.json).
+
+[Earlier evidence](verification/native.json).
+
+<details>
+<summary>Earlier instructions and evidence</summary>
+
 Voce canonica `Module Management System`, tipo `programming`, language_id `235`.
 
 Invoke WRITE SYS $ OUTPUT from an OpenVMS Module Management System target.
@@ -44,5 +57,7 @@ Verification of the main sample and each variant is recorded separately.
 
 | Extension | File / status |
 | --- | --- |
-| `.mms` | [descrip.mms](descrip.mms) created; verification pending |
+| `.mms` | [descrip.mms](descrip.mms) Syntax and behavior verified |
 | `.mmk` | [hello.mmk](variants/mmk-3528f1de/hello.mmk) created; verification pending |
+
+</details>

@@ -25736,16 +25736,17 @@
       "example": {
         "semantic_goal": "Invocare WRITE SYS$OUTPUT da un target del Module Management System OpenVMS.",
         "validation_mode": "native_openvms_mms_target",
-        "toolchain": "Required genuine toolchain not available/configured — non disponibile / non verificata",
+        "toolchain": "OpenVMX x86-64 from commit dc365b3286cbc607007ddc9bd482c0d6ef98b15c with MadGoat MMK in headless QEMU",
         "files": [
           "examples/#441 Module Management System/descrip.mms",
           "examples/#441 Module Management System/README.md",
           "examples/#441 Module Management System/verification/native.json",
           "examples/#441 Module Management System/variants/mmk-3528f1de/hello.mmk",
-          "examples/#441 Module Management System/variants/mmk-3528f1de/README.md"
+          "examples/#441 Module Management System/variants/mmk-3528f1de/README.md",
+          "examples/#441 Module Management System/verification/native_20261122_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "MMS /DESCRIPTION=descrip.mms HELLO",
+        "run_or_check_command": "MMK /DESCRIPTION=SYS$SYSROOT:[SYSMGR]DESCRIP.MMS /RULES_FILE=SYS$SYSROOT:[SYSMGR]CORPUS_RULES.MMS /VERIFY=ALL /LOG HELLO",
         "expected_result": "Hello, World!",
         "sources": [
           "https://docs.vmssoftware.com/docs/vsi-decset-for-openvms-guide-to-the-module-management-system.pdf"
@@ -25755,16 +25756,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": "Windows x64, Ubuntu 24.04 WSL2 for Linux tools",
-        "verification_timestamp_utc": "2026-10-08T13:03:25.697869+00:00",
-        "verification_log": "examples/#441 Module Management System/verification/native.json",
-        "blockers": [
-          "OpenVMS with MMS/MMK is not available."
-        ],
-        "notes": "Target e azione DCL originali; nessun ambiente OpenVMS disponibile."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-22T20:47:15.726379+00:00",
+        "verification_log": "examples/#441 Module Management System/verification/native_20261122_wave800_main.json",
+        "blockers": [],
+        "notes": "The offline OpenVMX guest read back the original description. MMK selected HELLO and ran its DCL recipe, which printed the exact line `Hello, World!`. MMK returned VMS condition 1 (SS$_NORMAL). The OpenVMX DCL launcher displayed an abort label and exposed its own failure value %X0000002C in $STATUS.",
+        "verified_artifact_sha256": {
+          "examples/#441 Module Management System/descrip.mms": "4451655170d79a5b7d4705ca6f969d0e27892409526cdfe2835bd5157bf43f98"
+        }
       }
     },
     {

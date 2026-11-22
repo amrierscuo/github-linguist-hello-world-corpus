@@ -444,7 +444,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #438 | [Modelica](../examples/%23438%20Modelica/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #439 | [Modula-2](../examples/%23439%20Modula-2/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #440 | [Modula-3](../examples/%23440%20Modula-3/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
-| #441 | [Module Management System](../examples/%23441%20Module%20Management%20System/README.md) | Yes | Pending | Pending | 2/2 | OpenVMS with MMS/MMK is not available. |
+| #441 | [Module Management System](../examples/%23441%20Module%20Management%20System/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #442 | [Mojo](../examples/%23442%20Mojo/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #443 | [Monkey](../examples/%23443%20Monkey/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #444 | [Monkey C](../examples/%23444%20Monkey%20C/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
