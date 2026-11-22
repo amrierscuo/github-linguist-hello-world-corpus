@@ -1,0 +1,146 @@
+name: Offline MQL verification
+
+on:
+  push:
+    branches: [codex/corpus-mql-20261122]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - ordinal: 411
+            version: 4
+            image: docker.io/ea31337/ea-tester@sha256:251d23ae2959761bba67541dcc84d80b6ec47f55763c4fb401cd4f1f0f1cdf5d
+          - ordinal: 412
+            version: 5
+            image: docker.io/ea31337/ea-tester:dev-mt5
+    env:
+      SOURCE_COMMIT: 03cdd1d38041a5055ab685e6778d90fa7f4e60bb
+      IMAGE: ${{ matrix.image }}
+      MQL_VERSION: ${{ matrix.version }}
+      ORDINAL: ${{ matrix.ordinal }}
+      GIT_TERMINAL_PROMPT: '0'
+    steps:
+      - name: Fetch the public script bytes
+        run: |
+          git init --quiet corpus
+          git -C corpus fetch --no-tags --depth 1 https://github.com/amrierscuo/github-linguist-hello-world-corpus.git "$SOURCE_COMMIT"
+          git -C corpus checkout --detach FETCH_HEAD
+          test "$(git -C corpus rev-parse HEAD)" = "$SOURCE_COMMIT"
+
+      - name: Invoke MetaEditor and the offline desktop runtime in a virtual display
+        shell: bash
+        run: |
+          stage="$(mktemp -d)"
+          chmod 755 "$stage"
+          cp "corpus/examples/#$ORDINAL MQL$MQL_VERSION/hello.mq$MQL_VERSION" "$stage/"
+          cat > "$stage/run.py" <<'PY'
+          from datetime import datetime, timezone
+          from hashlib import sha256
+          import json
+          import os
+          from pathlib import Path
+          import platform
+          import re
+          import shutil
+          import subprocess
+          import tempfile
+          import time
+
+          number = int(os.environ['MQL_VERSION'])
+          ordinal = int(os.environ['ORDINAL'])
+          name = 'MQL' + str(number)
+          source = Path('/input') / f'hello.mq{number}'
+          evidence = {
+              'schema_version': 1, 'ordinal': ordinal, 'language': name,
+              'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
+              'artifact_sha256': {f'examples/#{ordinal} {name}/{source.name}': sha256(source.read_bytes()).hexdigest()},
+              'toolchain_image': os.environ['IMAGE_DIGEST'], 'commands': [],
+          }
+          def read_log(path, start=0):
+              data = path.read_bytes()
+              encoding = 'utf-16-le' if data.startswith(b'\xff\xfe') or data[:180].count(b'\0') > 18 else 'utf-8'
+              return data[start:].decode(encoding, errors='replace').lstrip('\ufeff')
+
+          editors = []
+          for root in (Path('/home'), Path('/root'), Path('/opt')):
+              for program in root.glob('**/drive_c/**/metaeditor*.exe'):
+                  directory = str(program.parent).lower()
+                  if f'metatrader {number}' in directory or program.name.lower() == ('metaeditor64.exe' if number == 5 else 'metaeditor.exe'):
+                      editors.append(program)
+          if not editors or not all(shutil.which(name) for name in ('wine', 'xvfb-run', 'python3')):
+              evidence['blocker'] = 'A compatible preinstalled MetaEditor, Wine or Xvfb is missing.'
+              print('CORPUS_PROOF ' + json.dumps(evidence), flush=True)
+              raise SystemExit(0)
+
+          editor = sorted(editors, key=lambda path: (f'metatrader {number}' not in str(path).lower(), len(path.parts)))[0]
+          prefix = str(editor).split('/drive_c/', 1)[0]
+          terminal_name = 'terminal64.exe' if number == 5 else 'terminal.exe'
+          terminal = editor.with_name(terminal_name)
+          env = os.environ.copy()
+          env.update({'WINEPREFIX': prefix, 'WINEDLLOVERRIDES': 'mscoree,mshtml=', 'WINEDEBUG': '-all'})
+          evidence['toolchain_editor'] = str(editor)
+          evidence['toolchain_terminal'] = str(terminal)
+          evidence['editor_sha256'] = sha256(editor.read_bytes()).hexdigest()
+
+          with tempfile.TemporaryDirectory(prefix='corpus-mql-') as directory:
+              stage = Path(directory)
+              sample = stage / f'CorpusGreeting.mq{number}'
+              sample.write_bytes(source.read_bytes())
+              log = stage / 'compile.log'
+              def windows(path):
+                  return 'Z:' + str(path).replace('/', '\\')
+
+              command = ['xvfb-run', '-a', 'wine', str(editor), '/portable', '/compile:' + windows(sample), '/log:' + windows(log)]
+              result = subprocess.run(command, cwd=editor.parent, env=env, stdin=subprocess.DEVNULL,
+                                      capture_output=True, text=True, timeout=95)
+              compiled = sample.with_suffix('.ex' + str(number))
+              output = read_log(log) if log.is_file() else ''
+              evidence['commands'].append({'label': 'Compile the original script bytes in MetaEditor', 'command': command,
+                                          'exit_code': result.returncode, 'stdout': output, 'stderr': result.stderr})
+              evidence['compiled_sha256'] = sha256(compiled.read_bytes()).hexdigest() if compiled.is_file() else None
+              if compiled.is_file() and terminal.is_file() and re.search(r'\b0 errors?\b', output, re.I):
+                  destination = editor.parent / name / 'Scripts' / compiled.name
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copyfile(compiled, destination)
+                  ini = stage / 'terminal.ini'
+                  ini.write_text('[StartUp]\nSymbol=EURUSD\nPeriod=M1\nScript=CorpusGreeting\n', encoding='ascii')
+                  log_dirs = (editor.parent / 'logs', editor.parent / name / 'Logs')
+                  existing = {file: file.stat().st_size for root in log_dirs for file in root.glob('*.log')}
+                  command = ['xvfb-run', '-a', 'wine', str(terminal), '/portable', '/config:' + windows(ini)]
+                  terminal_log = stage / 'terminal.log'
+                  with terminal_log.open('wb') as trace:
+                      process = subprocess.Popen(command, cwd=editor.parent, env=env, stdin=subprocess.DEVNULL,
+                                                 stdout=trace, stderr=subprocess.STDOUT, start_new_session=True)
+                      logged = ''
+                      end = time.monotonic() + 40
+                      try:
+                          while process.poll() is None and time.monotonic() < end:
+                              logged = '\n'.join(read_log(file, existing.get(file, 0))
+                                                 for root in log_dirs for file in root.glob('*.log'))
+                              if re.search(r'CorpusGreeting[^\r\n]*Hello, World!', logged, re.I):
+                                  break
+                              time.sleep(0.7)
+                      finally:
+                          if process.poll() is None:
+                              os.killpg(process.pid, 15)
+                          process.wait(timeout=12)
+                  evidence['commands'].append({'label': 'Run the exact compiled script on an offline chart', 'command': command,
+                                              'exit_code': process.returncode, 'stdout': logged[-14000:],
+                                              'stderr': terminal_log.read_text(errors='replace')[-3000:]})
+          print('CORPUS_PROOF ' + json.dumps(evidence), flush=True)
+          PY
+          docker pull --platform linux/amd64 "$IMAGE"
+          IMAGE_DIGEST="$(docker image inspect "$IMAGE" --format '{{index .RepoDigests 0}}')"
+          export IMAGE_DIGEST
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
+            --env IMAGE_DIGEST --env MQL_VERSION --env ORDINAL \
+            --mount "type=bind,source=$stage,target=/input,readonly" \
+            --entrypoint /bin/bash "$IMAGE" -lc 'python3 /input/run.py'
