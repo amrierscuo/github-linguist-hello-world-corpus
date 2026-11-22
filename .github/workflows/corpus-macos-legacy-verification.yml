@@ -52,8 +52,18 @@ jobs:
           native = stage / 'sdk/Cycript.lib/cycript-apl'
           assert native.is_file() and os.access(native, os.X_OK)
           exe = str(native)
-          framework = next(path for path in (stage / 'python').rglob('Python.framework')
-                           if (path / 'Versions/2.7/Python').is_file())
+          frameworks = [path for path in (stage / 'python').rglob('Python.framework')
+                        if (path / 'Versions/2.7/Python').is_file()]
+          if frameworks:
+              framework = frameworks[0]
+          else:
+              libraries = [path for path in (stage / 'python').rglob('Python')
+                           if path.is_file() and not path.is_symlink()]
+              print('Python package framework payloads:', [str(p.relative_to(stage)) for p in libraries], flush=True)
+              assert len(libraries) == 1, libraries
+              framework = stage / 'Frameworks/Python.framework'
+              (framework / 'Versions').mkdir(parents=True)
+              (framework / 'Versions/2.7').symlink_to(libraries[0].parent, target_is_directory=True)
           env = os.environ | {'DYLD_FRAMEWORK_PATH': str(framework.parent),
                               'DYLD_LIBRARY_PATH': str(native.parent),
                               'PYTHONHOME': str(framework / 'Versions/2.7')}
@@ -105,7 +115,10 @@ jobs:
           import json
           import os
           import platform
+          import socket
           import subprocess
+          import time
+          from urllib.request import urlopen
 
           stage = Path(os.environ['stage'])
           source = Path('examples/#497 Opa/hello.opa')
@@ -122,8 +135,9 @@ jobs:
           env = os.environ.copy()
           env['PATH'] = str(program.parent) + ':' + env['PATH']
           stdlib = next((path for path in contents if path.name == 'stdlib' and path.parent.name == 'opa'), None)
-          if stdlib:
-              env['MLSTATELIBS'] = str(stdlib.parent)
+          assert stdlib is not None
+          env['MLSTATELIBS'] = str(stdlib.parents[2])
+          env['NODE_PATH'] = os.pathsep.join(str(path) for path in contents if path.name == 'node_modules' and path.is_dir())
           receipt = {
               'schema_version': 1, 'ordinal': 497, 'language': 'Opa',
               'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
@@ -135,6 +149,7 @@ jobs:
               ('Identify official Opa binary', ['file', str(program)]),
               ('Identify Opa compiler version', [str(program), '--version']),
               ('Read Opa command-line options', [str(program), '--help']),
+              ('Identify the Node.js host', ['node', '--version']),
               ('Compile original Opa source', [str(program), '-o', 'corpus-greeting.js', source.name]),
           ]:
               result = subprocess.run(args, cwd=stage, env=env, stdin=subprocess.DEVNULL,
@@ -142,6 +157,41 @@ jobs:
               command = [arg.replace(str(stage), '${SCRATCH}') for arg in args]
               receipt['commands'].append({'label': label, 'command': command, 'exit_code': result.returncode,
                                           'stdout': result.stdout[:10000], 'stderr': result.stderr[:10000]})
+          executable = stage / 'corpus-greeting.js'
+          if receipt['commands'][-1]['exit_code'] == 0 and executable.is_file():
+              with socket.socket() as listener:
+                  listener.bind(('127.0.0.1', 0))
+                  port = listener.getsockname()[1]
+              args = ['node', executable.name, '-a', '127.0.0.1', '-p', str(port)]
+              url = f'http://127.0.0.1:{port}/'
+              response_body = ''
+              response_status = None
+              with (stage / 'server.log').open('wb') as output:
+                  process = subprocess.Popen(args, cwd=stage, env=env, stdin=subprocess.DEVNULL,
+                                             stdout=output, stderr=subprocess.STDOUT)
+                  try:
+                      until = time.monotonic() + 25
+                      while process.poll() is None and time.monotonic() < until:
+                          try:
+                              with urlopen(url, timeout=2) as response:
+                                  response_status = response.status
+                                  response_body = response.read(65536).decode('utf-8')
+                              break
+                          except OSError:
+                              time.sleep(0.4)
+                  finally:
+                      stopped = process.poll() is None
+                      if stopped:
+                          process.terminate()
+                      process.wait(timeout=10)
+              receipt['commands'].extend([
+                  {'label': 'Run the compiled Opa server on loopback', 'command': args, 'exit_code': process.returncode,
+                   'stdout': (stage / 'server.log').read_text(errors='replace')[:10000], 'stderr': '',
+                   'stopped_after_observation': stopped},
+                  {'label': 'Read the output at the loopback HTTP endpoint', 'command': ['GET', url],
+                   'http_status': response_status, 'stdout': response_body, 'stderr': '',
+                   'exit_code': 0 if response_status == 200 and '<h1>Hello, World!</h1>' in response_body else 1},
+              ])
           print('Output files:', sorted(p.name for p in stage.iterdir()), flush=True)
           print('CORPUS_PROOF ' + json.dumps(receipt), flush=True)
           PY
