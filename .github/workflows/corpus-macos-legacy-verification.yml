@@ -30,8 +30,12 @@ jobs:
           stage="$(mktemp -d)"
           export stage
           export CYCRIPT_URL='https://cache.saurik.com/cycript/mac/cycript_0.9.594.zip'
+          export PYTHON27_URL='https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg'
           curl -fsSL --retry 2 --max-time 70 "$CYCRIPT_URL" -o "$stage/cycript.zip"
           ditto -x -k "$stage/cycript.zip" "$stage/sdk"
+          curl -fsSL --retry 2 --max-time 70 "$PYTHON27_URL" -o "$stage/python.pkg"
+          test "$(md5 -q "$stage/python.pkg")" = 'ce98eeb7bdf806685adc265ec1444463'
+          pkgutil --expand-full "$stage/python.pkg" "$stage/python"
           cd corpus
           python3 - <<'PY'
           from datetime import datetime, timezone
@@ -45,27 +49,33 @@ jobs:
           stage = Path(os.environ['stage'])
           source = Path('examples/#147 Cycript/hello.cy')
           (stage / source.name).write_bytes(source.read_bytes())
-          programs = sorted(path for path in (stage / 'sdk').rglob('cycript') if path.is_file() and os.access(path, os.X_OK))
-          assert len(programs) == 1, programs
-          exe = str(programs[0])
-          executable_type = subprocess.check_output(['file', '-b', exe], text=True)
-          print('Cycript launcher type:', executable_type.strip(), flush=True)
-          launcher = ['/bin/bash', exe] if 'text' in executable_type.lower() else [exe]
+          native = stage / 'sdk/Cycript.lib/cycript-apl'
+          assert native.is_file() and os.access(native, os.X_OK)
+          exe = str(native)
+          framework = next(path for path in (stage / 'python').rglob('Python.framework')
+                           if (path / 'Versions/2.7/Python').is_file())
+          env = os.environ | {'DYLD_FRAMEWORK_PATH': str(framework.parent),
+                              'DYLD_LIBRARY_PATH': str(native.parent),
+                              'PYTHONHOME': str(framework / 'Versions/2.7')}
           receipt = {
               'schema_version': 1, 'ordinal': 147, 'language': 'Cycript',
               'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
               'artifact_sha256': {str(source): sha256(source.read_bytes()).hexdigest()},
-              'toolchain_archives': [{'url': os.environ['CYCRIPT_URL'], 'sha256': sha256((stage / 'cycript.zip').read_bytes()).hexdigest()}],
+              'toolchain_archives': [
+                  {'url': os.environ['CYCRIPT_URL'], 'sha256': sha256((stage / 'cycript.zip').read_bytes()).hexdigest()},
+                  {'url': os.environ['PYTHON27_URL'], 'sha256': sha256((stage / 'python.pkg').read_bytes()).hexdigest()},
+              ],
               'commands': [],
           }
           for label, args in [
               ('Identify the official Cycript binary', ['file', exe]),
-              ('Read Cycript compiler version and options', [*launcher, '--help']),
-              ('Compile original Cycript source', [*launcher, '-c', source.name]),
-              ('Execute original Cycript source with JavaScriptCore', [*launcher, source.name]),
+              ('Read Cycript compiler version and options', [exe, '--help']),
+              ('Compile original Cycript source', [exe, '-c', source.name]),
+              ('Execute original Cycript source with JavaScriptCore', [exe, source.name]),
           ]:
               try:
-                  result = subprocess.run(args, cwd=stage, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=30)
+                  result = subprocess.run(args, cwd=stage, env=env, stdin=subprocess.DEVNULL,
+                                          capture_output=True, text=True, timeout=30)
               except OSError as error:
                   result = subprocess.CompletedProcess(args, 126, '', str(error))
               command = [arg.replace(str(stage), '${SCRATCH}') for arg in args]
@@ -100,13 +110,20 @@ jobs:
           stage = Path(os.environ['stage'])
           source = Path('examples/#497 Opa/hello.opa')
           (stage / source.name).write_bytes(source.read_bytes())
-          programs = sorted(path for path in (stage / 'package').rglob('opa')
-                            if path.is_file() and path.parent.name == 'bin' and os.access(path, os.X_OK))
+          contents = list((stage / 'package').rglob('*'))
+          print('Package layout:', [str(path.relative_to(stage)) for path in contents
+                                    if path.name in ('opa', 'opa-bin', 'opa.exe', 'opa.sh', 'Payload', 'PackageInfo', 'stdlib')][:45], flush=True)
+          programs = sorted((path for path in contents if path.name in ('opa', 'opa-bin', 'opa.exe', 'opa.sh')
+                             and path.is_file() and os.access(path, os.X_OK)),
+                            key=lambda path: (path.name != 'opa', path.parent.name != 'bin', len(path.parts)))
           assert programs, 'No Opa compiler executable in the package'
           print('Compiler positions:', [str(p.relative_to(stage)) for p in programs], flush=True)
           program = programs[0]
           env = os.environ.copy()
           env['PATH'] = str(program.parent) + ':' + env['PATH']
+          stdlib = next((path for path in contents if path.name == 'stdlib' and path.parent.name == 'opa'), None)
+          if stdlib:
+              env['MLSTATELIBS'] = str(stdlib.parent)
           receipt = {
               'schema_version': 1, 'ordinal': 497, 'language': 'Opa',
               'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
