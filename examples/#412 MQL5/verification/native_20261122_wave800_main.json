@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "ordinal": 412,
+  "language": "MQL5",
+  "timestamp_utc": "2026-11-22T19:29:22.405399+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run the native Windows program with a private virtual display, network disabled and Wine Mono disabled",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/412-kzltweiq",
+        "${SCRATCH}/412-kzltweiq",
+        "--bind",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "--chdir",
+        "${SCRATCH}/412-kzltweiq",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "sh",
+        "${SCRATCH}/412-kzltweiq/portable-wrapper.sh",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\metaeditor64.exe",
+        "/portable",
+        "/compile:Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Scripts\\hello.mq5",
+        "/log:Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\metaeditor-compile.log"
+      ],
+      "cwd": "${SCRATCH}/412-kzltweiq",
+      "timestamp_utc": "2026-11-22T19:30:09.925462+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 1,
+      "stdout": "libEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/412-kzltweiq/home",
+        "TMPDIR": "${SCRATCH}/412-kzltweiq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/412-qj66hean/wine-prefix",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "XDG_RUNTIME_DIR": "${SCRATCH}/412-kzltweiq/headless-state",
+        "CORPUS_WINESERVER": "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wineserver"
+      }
+    },
+    {
+      "label": "Run the native Windows program with a private virtual display, network disabled and Wine Mono disabled",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/412-kzltweiq",
+        "${SCRATCH}/412-kzltweiq",
+        "--bind",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "${SCRATCH}/412-qj66hean/wine-prefix",
+        "--chdir",
+        "${SCRATCH}/412-kzltweiq",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "sh",
+        "${SCRATCH}/412-kzltweiq/portable-wrapper.sh",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\terminal64.exe",
+        "/portable",
+        "/config:Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal-start.ini"
+      ],
+      "cwd": "${SCRATCH}/412-kzltweiq",
+      "timestamp_utc": "2026-11-22T19:30:35.479509+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "libEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/412-kzltweiq/home",
+        "TMPDIR": "${SCRATCH}/412-kzltweiq/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/412-qj66hean/wine-prefix",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "XDG_RUNTIME_DIR": "${SCRATCH}/412-kzltweiq/headless-state",
+        "CORPUS_WINESERVER": "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wineserver"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#412 MQL5/hello.mq5": "31f4ff8835619c3e15facddcc12a8bee7198a12cfa41166058956a1940ff1ce6"
+  },
+  "fixture_sha256": {
+    "portable-wrapper.sh": {
+      "sha256": "c8874c62ae853ff325dda4a5e0be2ffd41ab875463e2cd7a7cde6fc96a8107d3",
+      "content_utf8": "#!/bin/sh\nset -eu\n\"$@\" &\npid=$!\ntrap 'kill \"$pid\" 2>/dev/null || true' EXIT\nstatus=0\nwait \"$pid\" || status=$?\nif [ -n \"${CORPUS_WINESERVER:-}\" ]; then\n    \"$CORPUS_WINESERVER\" -w\nfi\nexit \"$status\"\n"
+    },
+    "terminal-start.ini": {
+      "sha256": "e3ba5e6609b6a4849b284ef43090c9d83bfa900a0a08a671923677d5325493e0",
+      "content_utf8": "[Experts]\nEnabled=1\nAllowLiveTrading=0\nAllowDllImport=0\n[StartUp]\nSymbol=EURUSD\nPeriod=M1\nScript=hello\nShutdownTerminal=1\n"
+    }
+  },
+  "sources": [
+    {
+      "title": "MetaQuotes MQL5 OnStart",
+      "url": "https://www.mql5.com/en/docs/event_handlers/onstart"
+    },
+    {
+      "title": "MetaQuotes MQL5 Print",
+      "url": "https://www.mql5.com/en/docs/common/print"
+    },
+    "https://www.metatrader5.com/en/terminal/help/start_advanced/start",
+    "https://www.metatrader5.com/en/metaeditor/help/beginning/integration_ide"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "official_url": "https://download.terminal.free/cdn/web/metaquotes.software.corp/mt5/MetaTrader5.pkg.zip",
+      "zip_bytes": 480194735,
+      "zip_sha256": "b4e92a34a2b911358a9310a32ef779beba72bd05c525db757cf05cf386eec0cc",
+      "payload": {
+        "size": 480496233,
+        "xar_checksum": "8ef04b6fe0f6796f0ca82381535757283ed42c6f",
+        "sha256": "cac93c20205b7856e548a6a21353b0486270b94064214dee493f617b17008c0b"
+      },
+      "windows_payload_sha256": "3fb0aef84b0359bb97a926b12971de0843b77d88fe8aaa7ae14f882ca46c9b80",
+      "windows_files": 803,
+      "windows_uncompressed_bytes": 340854130,
+      "native_pe": {
+        "metaeditor64.exe": {
+          "machine": "0x8664",
+          "pe_format": "0x20b",
+          "clr_directory": [
+            0,
+            0
+          ],
+          "sha256": "86a329d303b067f3d2a3e7a095d1c4cd0a6339df515244d20421395645aabcbc"
+        },
+        "terminal64.exe": {
+          "machine": "0x8664",
+          "pe_format": "0x20b",
+          "clr_directory": [
+            0,
+            0
+          ],
+          "sha256": "b72f5a62c9c22ab2f0ddd4d83202a2f6d93aa396e0ba5483b30c35f46b59b448"
+        }
+      }
+    },
+    {
+      "url": "https://github.com/Kron4ek/Wine-Builds/releases/download/11.10/wine-11.10-amd64-wow64.tar.xz",
+      "sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9",
+      "expected_sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9"
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "virtual_display": "Own Xvfb server with no display attached to the user desktop.",
+  "compiler_log": "\r\n\r\nZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Scripts\\hello.mq5 : information: compiling 'hello.mq5'\r\n : information: generating code\r\n : information: generating code 3%\r\n : information: generating code 6%\r\n : information: generating code 9%\r\n : information: generating code 12%\r\n : information: generating code 15%\r\n : information: generating code 18%\r\n : information: generating code 21%\r\n : information: generating code 24%\r\n : information: generating code 27%\r\n : information: generating code 30%\r\n : information: generating code 33%\r\n : information: generating code 36%\r\n : information: generating code 39%\r\n : information: generating code 42%\r\n : information: generating code 45%\r\n : information: generating code 48%\r\n : information: generating code 51%\r\n : information: generating code 54%\r\n : information: generating code 57%\r\n : information: generating code 60%\r\n : information: generating code 63%\r\n : information: generating code 66%\r\n : information: generating code 69%\r\n : information: generating code 72%\r\n : information: generating code 75%\r\n : information: generating code 78%\r\n : information: generating code 81%\r\n : information: generating code 84%\r\n : information: generating code 87%\r\n : information: generating code 90%\r\n : information: generating code 93%\r\n : information: generating code 95%\r\n : information: generating code 100%\r\n : information: code generated\r\nResult: 0 errors, 0 warnings, 250 msec elapsed, cpu='X64 Regular'\r\n",
+  "compiled_artifact_sha256": "80bb39e7265c2cc88d7b21faca20143ebf799d8c6337c8d2b56d6dc9ece593ab",
+  "terminal_logs": {
+    "MQL5/Logs/20261122.log": "OR\t0\t20:30:46.958\thello (EURUSD,M1)\tHello, World!\r\n",
+    "logs/metaeditor.log": "0\t2026.11.22 20:30:31.060\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Scripts\\hello.mq5 - 0 errors, 0 warnings, 250 msec elapsed, cpu='X64 Regular'\r\n\r\n0\t2026.11.22 20:30:39.672\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BlackCrows WhiteSoldiers CCI.mq5 - 0 errors, 0 warnings, 357 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:39.680\tCompiler\tcompiled BlackCrows WhiteSoldiers CCI.mq5\r\n0\t2026.11.22 20:30:39.996\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BlackCrows WhiteSoldiers MFI.mq5 - 0 errors, 0 warnings, 312 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:39.999\tCompiler\tcompiled BlackCrows WhiteSoldiers MFI.mq5\r\n0\t2026.11.22 20:30:40.314\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BlackCrows WhiteSoldiers RSI.mq5 - 0 errors, 0 warnings, 310 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:40.317\tCompiler\tcompiled BlackCrows WhiteSoldiers RSI.mq5\r\n0\t2026.11.22 20:30:40.607\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BlackCrows WhiteSoldiers Stoch.mq5 - 0 errors, 0 warnings, 286 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:40.609\tCompiler\tcompiled BlackCrows WhiteSoldiers Stoch.mq5\r\n0\t2026.11.22 20:30:40.900\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Engulfing CCI.mq5 - 0 errors, 0 warnings, 287 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:40.903\tCompiler\tcompiled BullishBearish Engulfing CCI.mq5\r\n0\t2026.11.22 20:30:41.206\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Engulfing MFI.mq5 - 0 errors, 0 warnings, 299 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:41.209\tCompiler\tcompiled BullishBearish Engulfing MFI.mq5\r\n0\t2026.11.22 20:30:41.513\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Engulfing RSI.mq5 - 0 errors, 0 warnings, 300 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:41.516\tCompiler\tcompiled BullishBearish Engulfing RSI.mq5\r\n0\t2026.11.22 20:30:41.821\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Engulfing Stoch.mq5 - 0 errors, 0 warnings, 301 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:41.824\tCompiler\tcompiled BullishBearish Engulfing Stoch.mq5\r\n0\t2026.11.22 20:30:42.126\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Harami CCI.mq5 - 0 errors, 0 warnings, 297 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:42.129\tCompiler\tcompiled BullishBearish Harami CCI.mq5\r\n0\t2026.11.22 20:30:42.433\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Harami MFI.mq5 - 0 errors, 0 warnings, 299 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:42.436\tCompiler\tcompiled BullishBearish Harami MFI.mq5\r\n0\t2026.11.22 20:30:42.739\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Harami RSI.mq5 - 0 errors, 0 warnings, 299 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:42.742\tCompiler\tcompiled BullishBearish Harami RSI.mq5\r\n0\t2026.11.22 20:30:43.062\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish Harami Stoch.mq5 - 0 errors, 0 warnings, 315 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:43.065\tCompiler\tcompiled BullishBearish Harami Stoch.mq5\r\n0\t2026.11.22 20:30:43.374\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish MeetingLines CCI.mq5 - 0 errors, 0 warnings, 304 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:43.377\tCompiler\tcompiled BullishBearish MeetingLines CCI.mq5\r\n0\t2026.11.22 20:30:43.695\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish MeetingLines MFI.mq5 - 0 errors, 0 warnings, 313 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:43.698\tCompiler\tcompiled BullishBearish MeetingLines MFI.mq5\r\n0\t2026.11.22 20:30:44.005\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish MeetingLines RSI.mq5 - 0 errors, 0 warnings, 303 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:44.008\tCompiler\tcompiled BullishBearish MeetingLines RSI.mq5\r\n0\t2026.11.22 20:30:44.314\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\BullishBearish MeetingLines Stoch.mq5 - 0 errors, 0 warnings, 301 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:44.317\tCompiler\tcompiled BullishBearish MeetingLines Stoch.mq5\r\n0\t2026.11.22 20:30:44.621\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\DarkCloud PiercingLine CCI.mq5 - 0 errors, 0 warnings, 299 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:44.624\tCompiler\tcompiled DarkCloud PiercingLine CCI.mq5\r\n0\t2026.11.22 20:30:44.938\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\DarkCloud PiercingLine MFI.mq5 - 0 errors, 0 warnings, 309 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:44.941\tCompiler\tcompiled DarkCloud PiercingLine MFI.mq5\r\n0\t2026.11.22 20:30:45.245\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\DarkCloud PiercingLine RSI.mq5 - 0 errors, 0 warnings, 299 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:45.248\tCompiler\tcompiled DarkCloud PiercingLine RSI.mq5\r\n0\t2026.11.22 20:30:45.560\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\DarkCloud PiercingLine Stoch.mq5 - 0 errors, 0 warnings, 307 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:45.563\tCompiler\tcompiled DarkCloud PiercingLine Stoch.mq5\r\n0\t2026.11.22 20:30:45.871\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\HangingMan Hammer CCI.mq5 - 0 errors, 0 warnings, 304 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:45.874\tCompiler\tcompiled HangingMan Hammer CCI.mq5\r\n0\t2026.11.22 20:30:46.187\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\HangingMan Hammer MFI.mq5 - 0 errors, 0 warnings, 309 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:46.190\tCompiler\tcompiled HangingMan Hammer MFI.mq5\r\n0\t2026.11.22 20:30:46.512\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\HangingMan Hammer RSI.mq5 - 0 errors, 0 warnings, 317 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:46.515\tCompiler\tcompiled HangingMan Hammer RSI.mq5\r\n0\t2026.11.22 20:30:46.843\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\HangingMan Hammer Stoch.mq5 - 0 errors, 0 warnings, 323 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:46.846\tCompiler\tcompiled HangingMan Hammer Stoch.mq5\r\n0\t2026.11.22 20:30:47.161\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\MorningEvening StarDoji CCI.mq5 - 0 errors, 0 warnings, 310 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:47.165\tCompiler\tcompiled MorningEvening StarDoji CCI.mq5\r\n0\t2026.11.22 20:30:47.484\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\MorningEvening StarDoji MFI.mq5 - 0 errors, 0 warnings, 315 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:47.487\tCompiler\tcompiled MorningEvening StarDoji MFI.mq5\r\n0\t2026.11.22 20:30:47.800\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\MorningEvening StarDoji RSI.mq5 - 0 errors, 0 warnings, 309 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:47.804\tCompiler\tcompiled MorningEvening StarDoji RSI.mq5\r\n0\t2026.11.22 20:30:48.118\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Experts\\Free Robots\\MorningEvening StarDoji Stoch.mq5 - 0 errors, 0 warnings, 309 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:48.121\tCompiler\tcompiled MorningEvening StarDoji Stoch.mq5\r\n0\t2026.11.22 20:30:48.343\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Indicators\\Free Indicators\\Camarilla Channel.mq5 - 0 errors, 0 warnings, 197 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:48.345\tCompiler\tcompiled Camarilla Channel.mq5\r\n0\t2026.11.22 20:30:48.522\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Indicators\\Free Indicators\\DeMark Channel.mq5 - 0 errors, 0 warnings, 172 msec elapsed without optimizations, cpu='X64 Regular'\r\n0\t2026.11.22 20:30:48.525\tCompiler\tcompiled DeMark Channel.mq5\r\n0\t2026.11.22 20:30:48.697\tCompile\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5\\Indicators\\Free Indicators\\Donchian Channel.mq5 - 0 errors, 0 warnings\r\n",
+    "logs/20261122.log": "IS\t0\t20:30:37.656\tTerminal\tupdate Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5 folder started\r\nDK\t0\t20:30:37.869\tTerminal\tupdate Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\\MQL5 folder finished\r\nMG\t0\t20:30:38.475\tStartup\tsuccessfully initialized from start config \"Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal-start.ini\"\r\nMN\t0\t20:30:38.981\tTerminal\tMetaTrader 5 x64 build 4865 started for MetaQuotes Ltd.\r\nFJ\t0\t20:30:38.982\tTerminal\tWindows 10 build 19045 on Wine 11.10 Linux 6.6.87.2-microsoft-standard-WSL2, 16 x Intel Core i7-10700  @ 2.90GHz, x64, 14 / 15 Gb memory, 872 / 1006 Gb disk, GMT+1\r\nMO\t0\t20:30:38.982\tTerminal\tZ:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal\r\nHJ\t0\t20:30:38.982\tTerminal\tlaunched with Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\412-kzltweiq\\terminal-start.ini\r\nJJ\t0\t20:30:39.013\tCompiler\tfull recompilation has been started\r\nRQ\t2\t20:30:39.203\tMQL5.community\tauthorization failed\r\nCK\t0\t20:30:46.949\tScripts\tscript hello (EURUSD,M1) loaded successfully\r\nCS\t0\t20:30:46.958\tScripts\tscript hello (EURUSD,M1) closes terminal with code 0\r\nOD\t0\t20:30:46.958\tScripts\tscript hello (EURUSD,M1) removed\r\nQM\t0\t20:30:48.678\tTerminal\texit with code 0\r\nCK\t0\t20:30:49.141\tTerminal\tstopped with 0\r\nGR\t0\t20:30:49.250\tTerminal\tshutdown with 0\r\n"
+  },
+  "observed_greeting_lines": [
+    "OR\t0\t20:30:46.958\thello (EURUSD,M1)\tHello, World!"
+  ],
+  "toolchain": "Official MetaQuotes 64-bit MetaEditor and MetaTrader 5; isolated Wine 11.10",
+  "reproduction_command": "metaeditor64.exe /portable /compile:<hello.mq5> /log:<compile.log> followed by terminal64.exe /portable /config:<terminal-start.ini>",
+  "semantic_scope": "MetaEditor compiled the original hello.mq5 into an EX5 file. The official MetaTrader 5 terminal ran the compiled script from its startup configuration and recorded `Hello, World!` in the script log. Compilation and execution used a private virtual display and a network-isolated Wine prefix with Wine Mono disabled.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

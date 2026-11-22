@@ -23992,15 +23992,16 @@
       "example": {
         "semantic_goal": "Eseguire uno script MQL5 che scrive il saluto nel registro locale.",
         "validation_mode": "compile_and_run",
-        "toolchain": "MetaTrader 5 MetaEditor/compiler",
+        "toolchain": "Official MetaQuotes 64-bit MetaEditor and MetaTrader 5; isolated Wine 11.10",
         "files": [
           "examples/#412 MQL5/hello.mq5",
           "examples/#412 MQL5/variants/mqh-c969556a/hello.mqh",
           "examples/#412 MQL5/variants/mqh-c969556a/driver.mq5",
-          "examples/#412 MQL5/variants/mqh-c969556a/README.md"
+          "examples/#412 MQL5/variants/mqh-c969556a/README.md",
+          "examples/#412 MQL5/verification/native_20261122_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Compilare hello.mq5 in MetaEditor; eseguire lo script nel terminale di prova.",
+        "run_or_check_command": "metaeditor64.exe /portable /compile:<hello.mq5> /log:<compile.log> followed by terminal64.exe /portable /config:<terminal-start.ini>",
         "expected_result": "compilazione senza errori; registro Experts contiene Hello, World!.",
         "sources": [
           {
@@ -24017,16 +24018,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Toolchain MetaTrader 5 non disponibile."
-        ],
-        "notes": "Esempio distinto da MQL4. Nessuna funzione di trading o comunicazione."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-22T19:29:22.405399+00:00",
+        "verification_log": "examples/#412 MQL5/verification/native_20261122_wave800_main.json",
+        "blockers": [],
+        "notes": "MetaEditor compiled the original hello.mq5 into an EX5 file. The official MetaTrader 5 terminal ran the compiled script from its startup configuration and recorded `Hello, World!` in the script log. Compilation and execution used a private virtual display and a network-isolated Wine prefix with Wine Mono disabled.",
+        "verified_artifact_sha256": {
+          "examples/#412 MQL5/hello.mq5": "31f4ff8835619c3e15facddcc12a8bee7198a12cfa41166058956a1940ff1ce6"
+        }
       }
     },
     {
