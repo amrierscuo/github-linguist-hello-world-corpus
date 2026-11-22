@@ -150,7 +150,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #144 | [Cuda](../examples/%23144%20Cuda/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #145 | [Cue Sheet](../examples/%23145%20Cue%20Sheet/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #146 | [Curry](../examples/%23146%20Curry/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #147 | [Cycript](../examples/%23147%20Cycript/README.md) | Yes | Pending | Pending | 1/1 | Cycript/JavaScriptCore with C bindings is unavailable in the current environment; parsing and FFI checks are pending. |
+| #147 | [Cycript](../examples/%23147%20Cycript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #148 | [Cylc](../examples/%23148%20Cylc/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #149 | [Cypher](../examples/%23149%20Cypher/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #150 | [Cython](../examples/%23150%20Cython/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |

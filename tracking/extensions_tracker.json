@@ -7696,10 +7696,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#147 Cycript/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#147 Cycript/hello.cy": "f1b6565385b0e2c93a3f26e6a9cc845d7a27b344e0f5fb7760f82042b4adeb50"
+      },
       "based_on": null,
       "documentation": "examples/#147 Cycript/README.md",
       "supporting_files": [],
@@ -7709,10 +7711,8 @@
         "https://www.cycript.org/manual/",
         "https://www.cycript.org/"
       ],
-      "blockers": [
-        "Cycript/JavaScriptCore con binding C non disponibili nell’ambiente corrente; parsing e FFI restano pendenti."
-      ],
-      "notes": "Il sorgente combina concatenazione ECMAScript e il cast Cycript (typedef const char *). La chiamata puts richiede le dichiarazioni libc disponibili nel runtime Cycript. Il file va verificato nel motore originale: Node.js non interpreta questa sintassi FFI."
+      "blockers": [],
+      "notes": "The standalone Cycript compiler accepted the original hello.cy and emitted JavaScript. The native runtime ran the original file with JavaScriptCore and the C FFI in an offline WSL sandbox. A copy of the native bridge database declared the libc puts symbol for this standalone build. The invocation returned 0 and printed exactly Hello, World! followed by one newline."
     },
     {
       "language_ordinal": 148,

@@ -1,0 +1,543 @@
+{
+  "schema_version": 1,
+  "ordinal": 147,
+  "language": "Cycript",
+  "timestamp_utc": "2026-11-22T21:25:49.265713+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Record the standalone build options",
+      "command": [
+        "${SCRATCH}/cycript-standalone-97bec/source/config.status",
+        "--config"
+      ],
+      "cwd": "${SCRATCH}/147-vh02tvug",
+      "timestamp_utc": "2026-11-22T21:25:49.693955+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "'--prefix=${SCRATCH}/cycript-standalone-97bec/install' '--disable-attach' '--enable-javascript=JavaScriptCore' 'LDFLAGS=-L${SCRATCH}/cycript-standalone-97bec/ubuntu-deps/usr/lib/x86_64-linux-gnu -L${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu' 'CPPFLAGS=-I${SCRATCH}/cycript-standalone-97bec/ubuntu-deps/usr/include -I${SCRATCH}/cache/tools/apt/usr/include' 'PKG_CONFIG=${SCRATCH}/cycript-standalone-97bec/pkg-config-relocated' 'PKG_CONFIG_PATH=${SCRATCH}/cycript-standalone-97bec/ubuntu-deps/usr/lib/x86_64-linux-gnu/pkgconfig:${SCRATCH}/cycript-standalone-97bec/ubuntu-deps/usr/share/pkgconfig:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pkgconfig'\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/147-vh02tvug/home",
+        "TMPDIR": "${SCRATCH}/147-vh02tvug/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile the original Cycript program to JavaScript",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-pid",
+        "--unshare-ipc",
+        "--unshare-uts",
+        "--hostname",
+        "corpus-cycript",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/147-vh02tvug",
+        "${SCRATCH}/147-vh02tvug",
+        "--chdir",
+        "${SCRATCH}/147-vh02tvug",
+        "--setenv",
+        "LD_LIBRARY_PATH",
+        "${SCRATCH}/147-vh02tvug/ffi-library:${SCRATCH}/cycript-standalone-97bec/install/lib:${SCRATCH}/cycript-standalone-97bec/ubuntu-deps/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+        "--",
+        "${SCRATCH}/cycript-standalone-97bec/install/bin/cycript",
+        "-c",
+        "${SCRATCH}/147-vh02tvug/hello.cy"
+      ],
+      "cwd": "${SCRATCH}/147-vh02tvug",
+      "timestamp_utc": "2026-11-22T21:25:51.657352+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "var greeting;greeting=\"Hello, World!\";puts(char.constant().pointerTo()(greeting))",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/147-vh02tvug/home",
+        "TMPDIR": "${SCRATCH}/147-vh02tvug/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Run the exact Cycript file with its C FFI",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-pid",
+        "--unshare-ipc",
+        "--unshare-uts",
+        "--hostname",
+        "corpus-cycript",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/147-vh02tvug",
+        "${SCRATCH}/147-vh02tvug",
+        "--chdir",
+        "${SCRATCH}/147-vh02tvug",
+        "--setenv",
+        "LD_LIBRARY_PATH",
+        "${SCRATCH}/147-vh02tvug/ffi-library:${SCRATCH}/cycript-standalone-97bec/install/lib:${SCRATCH}/cycript-standalone-97bec/ubuntu-deps/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+        "--",
+        "${SCRATCH}/cycript-standalone-97bec/install/bin/cycript",
+        "${SCRATCH}/147-vh02tvug/hello.cy"
+      ],
+      "cwd": "${SCRATCH}/147-vh02tvug",
+      "timestamp_utc": "2026-11-22T21:25:53.305846+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/147-vh02tvug/home",
+        "TMPDIR": "${SCRATCH}/147-vh02tvug/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#147 Cycript/hello.cy": "f1b6565385b0e2c93a3f26e6a9cc845d7a27b344e0f5fb7760f82042b4adeb50"
+  },
+  "fixture_sha256": {},
+  "sources": [
+    "https://www.cycript.org/manual/",
+    "https://www.cycript.org/",
+    "https://github.com/simpzan/cycript/tree/97bec96b43b66ab78af95d2b6c6c24f0d0a8006a",
+    "https://www.cycript.org/manual/"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/simpzan/cycript/tar.gz/97bec96b43b66ab78af95d2b6c6c24f0d0a8006a",
+      "revision": "97bec96b43b66ab78af95d2b6c6c24f0d0a8006a",
+      "source_sha256": "d4dfc9b99e3208d13403cddf0f2cf5d6658420bda2b258b7b5a92396bfe355d0",
+      "binary_sha256": "e0783f0d0c843f27e81ae9316c956fa426155e42d6a41906c2598a69e6327a19"
+    }
+  ],
+  "build_adaptations": [
+    {
+      "path": "configure",
+      "upstream_sha256": "bf2f6214f86290d55fb00029f12c50089d0c98bd6bcf6ead74e6e6aea05f606a",
+      "build_sha256": "0207a68f5b97141cb094fc4e4d4218a81a855e0c4f19ce9d758784bcd9a2e3d8"
+    },
+    {
+      "path": "libcycript.py",
+      "upstream_sha256": "02952a7c8541238ba92ca524c2bb5e060a049dbf5afe4a745821de4ce7529893",
+      "build_sha256": "b68bb363a959875f157ff6373f0b3246c28808802d6a7a38acc9ca49dccf0f72"
+    }
+  ],
+  "cxxflags": "-g -O2 -fno-delete-null-pointer-checks -Wno-nonnull-compare -flifetime-dse=1",
+  "ubuntu_archives": [
+    {
+      "Package": "libjavascriptcoregtk-4.1-0",
+      "Version": "2.52.6-0ubuntu0.24.04.2",
+      "Architecture": "amd64",
+      "Filename": "pool/main/w/webkit2gtk/libjavascriptcoregtk-4.1-0_2.52.6-0ubuntu0.24.04.2_amd64.deb",
+      "Size": "8156236",
+      "Installed-Size": "31624",
+      "SHA256": "ef4483cc2a26f0f9a432eb784a927f45a6f9efa5b48e9e1d187ffa8361a845f4"
+    },
+    {
+      "Package": "libjavascriptcoregtk-4.1-dev",
+      "Version": "2.52.6-0ubuntu0.24.04.2",
+      "Architecture": "amd64",
+      "Filename": "pool/universe/w/webkit2gtk/libjavascriptcoregtk-4.1-dev_2.52.6-0ubuntu0.24.04.2_amd64.deb",
+      "Size": "69848",
+      "Installed-Size": "746",
+      "SHA256": "aa39a3d140aa6663a1e3a5ce5594254cbe47ce162c2e295525101ce4a26e6cce"
+    },
+    {
+      "Package": "libuv1-dev",
+      "Version": "1.48.0-1.1build1",
+      "Architecture": "amd64",
+      "Filename": "pool/main/libu/libuv1/libuv1-dev_1.48.0-1.1build1_amd64.deb",
+      "Size": "135986",
+      "Installed-Size": "638",
+      "SHA256": "fbb84f374b3aa516c7fe897db9abe1263dc8cd93b619d82e0efa7d7676297962"
+    },
+    {
+      "Package": "libuv1t64",
+      "Version": "1.48.0-1.1build1",
+      "Architecture": "amd64",
+      "Filename": "pool/main/libu/libuv1/libuv1t64_1.48.0-1.1build1_amd64.deb",
+      "Size": "97288",
+      "Installed-Size": "264",
+      "SHA256": "72a1856b30af1e533494ab90742a2446f4491b15ddebcade6661a6e8d61b4359"
+    },
+    {
+      "Package": "libsqlite3-dev",
+      "Version": "3.45.1-1ubuntu2.9",
+      "Architecture": "amd64",
+      "Filename": "pool/main/s/sqlite3/libsqlite3-dev_3.45.1-1ubuntu2.9_amd64.deb",
+      "Size": "911066",
+      "Installed-Size": "3323",
+      "SHA256": "f5d920c94cd4729145547eeefb07e6269f78dc68f9a83e1a087baba47dd33429"
+    },
+    {
+      "Package": "libsqlite3-0",
+      "Version": "3.45.1-1ubuntu2.9",
+      "Architecture": "amd64",
+      "Filename": "pool/main/s/sqlite3/libsqlite3-0_3.45.1-1ubuntu2.9_amd64.deb",
+      "Size": "701804",
+      "Installed-Size": "1731",
+      "SHA256": "e04c9d3cf7d0fc4d63332bea2395280550a0b5daef35d19c3c079fc2e96a92e5"
+    },
+    {
+      "Package": "libglib2.0-dev",
+      "Version": "2.80.0-6ubuntu3.10",
+      "Architecture": "amd64",
+      "Filename": "pool/main/g/glib2.0/libglib2.0-dev_2.80.0-6ubuntu3.10_amd64.deb",
+      "Size": "1860604",
+      "Installed-Size": "10782",
+      "SHA256": "6d1d88d68192256603c0de05d084b8ef06ed9b16753215ec2c1ef9ef5fa15014"
+    },
+    {
+      "Package": "libglib2.0-0t64",
+      "Version": "2.80.0-6ubuntu3.10",
+      "Architecture": "amd64",
+      "Filename": "pool/main/g/glib2.0/libglib2.0-0t64_2.80.0-6ubuntu3.10_amd64.deb",
+      "Size": "1547558",
+      "Installed-Size": "4195",
+      "SHA256": "ff1b650f655b36dfe202fdbae6bb02b363c7257b6dd23e4f95ab61f716190df3"
+    },
+    {
+      "Package": "libpcre2-dev",
+      "Version": "10.42-4ubuntu2.2",
+      "Architecture": "amd64",
+      "Filename": "pool/main/p/pcre2/libpcre2-dev_10.42-4ubuntu2.2_amd64.deb",
+      "Size": "737246",
+      "Installed-Size": "2542",
+      "SHA256": "572714fe3fbe1b49ffb4c5a483223c663a51948e0d8590add1620917326f3d21"
+    },
+    {
+      "Package": "libpcre2-8-0",
+      "Version": "10.42-4ubuntu2.2",
+      "Architecture": "amd64",
+      "Filename": "pool/main/p/pcre2/libpcre2-8-0_10.42-4ubuntu2.2_amd64.deb",
+      "Size": "228546",
+      "Installed-Size": "636",
+      "SHA256": "f41da7cb7e979d6b037ea92650c72ec8ec532ec3c93aa8d5b997207de56695ea"
+    }
+  ],
+  "parser_generator_package": {
+    "Package": "bison",
+    "Version": "2:3.0.4.dfsg-1",
+    "Architecture": "amd64",
+    "Size": "259466",
+    "Filename": "pool/main/b/bison/bison_3.0.4.dfsg-1_amd64.deb",
+    "SHA256": "019012354e9b35a9b269360dd83b49b84c19cb2888e69c06b9a816054ebbcafa"
+  },
+  "node_standard_library": {
+    "repository": "nodejs/node-v0.x-archive",
+    "revision": "ed0d1c384cd4578f7168633c838f1252bddb260e",
+    "modules": [
+      {
+        "file": "_debugger.js",
+        "bytes": 40972,
+        "git_blob_sha1": "8c831d74971e2fcc58c022ec76990fcb2651ed2d"
+      },
+      {
+        "file": "_http_agent.js",
+        "bytes": 8432,
+        "git_blob_sha1": "96797b2e8228126750ad4332f5c780214e728504"
+      },
+      {
+        "file": "_http_client.js",
+        "bytes": 17297,
+        "git_blob_sha1": "8c5c9232acccefaaef7caf991372045e71d25bf7"
+      },
+      {
+        "file": "_http_common.js",
+        "bytes": 6869,
+        "git_blob_sha1": "8edc6713940c74d6cc02bdef046e7e891f00bd0f"
+      },
+      {
+        "file": "_http_incoming.js",
+        "bytes": 5632,
+        "git_blob_sha1": "a252c114bf84a37a324e1e5185092fc90a4bf5b8"
+      },
+      {
+        "file": "_http_outgoing.js",
+        "bytes": 17144,
+        "git_blob_sha1": "7f61aac35edae8c0f7730b88311b82302aef78d8"
+      },
+      {
+        "file": "_http_server.js",
+        "bytes": 15799,
+        "git_blob_sha1": "876e2f9081b8fdc82b1c99765d057dac9590a8b9"
+      },
+      {
+        "file": "_linklist.js",
+        "bytes": 2166,
+        "git_blob_sha1": "048e933ee3a7251ffc8c708e9c8bdfeddbdd7142"
+      },
+      {
+        "file": "_stream_duplex.js",
+        "bytes": 2526,
+        "git_blob_sha1": "474a31303d97d0ba43b718c73e4c57d878c371ce"
+      },
+      {
+        "file": "_stream_passthrough.js",
+        "bytes": 1656,
+        "git_blob_sha1": "7a9102aedc7e8aa2c11c29c1f037e71587e99c20"
+      },
+      {
+        "file": "_stream_readable.js",
+        "bytes": 25447,
+        "git_blob_sha1": "5afb8c6998aca434e02b01bc23b6bd4c589e83d2"
+      },
+      {
+        "file": "_stream_transform.js",
+        "bytes": 7261,
+        "git_blob_sha1": "3c6bb9db9683b50371bcb47057ebdfb23d079788"
+      },
+      {
+        "file": "_stream_writable.js",
+        "bytes": 13989,
+        "git_blob_sha1": "70da498da3e2333e920dc9c02ffa1e7235454dea"
+      },
+      {
+        "file": "_tls_common.js",
+        "bytes": 5838,
+        "git_blob_sha1": "113abbcc1f603d78d49a34279aa6cef3a0dddf64"
+      },
+      {
+        "file": "_tls_legacy.js",
+        "bytes": 23658,
+        "git_blob_sha1": "e3872f4a6c6b2477b56713eb5ab508929e5328cc"
+      },
+      {
+        "file": "_tls_wrap.js",
+        "bytes": 27690,
+        "git_blob_sha1": "3ac354178bc6f8271fe1354d20a9c7bb2db44109"
+      },
+      {
+        "file": "assert.js",
+        "bytes": 10602,
+        "git_blob_sha1": "58f320d68364f53d126aaa2e5b624738e05f5987"
+      },
+      {
+        "file": "buffer.js",
+        "bytes": 24113,
+        "git_blob_sha1": "13f701ba2d2db1cf2a8e4474295a10ed97f72abb"
+      },
+      {
+        "file": "child_process.js",
+        "bytes": 36205,
+        "git_blob_sha1": "7e64ae683e1df409ebf6c95223d576a9ad1d4dc1"
+      },
+      {
+        "file": "cluster.js",
+        "bytes": 21241,
+        "git_blob_sha1": "e05de4568bc696b84dac2bd912a3ab2cec4e9373"
+      },
+      {
+        "file": "console.js",
+        "bytes": 3369,
+        "git_blob_sha1": "5d4077ab7e1635c58bcf5662253b9daf30181cb8"
+      },
+      {
+        "file": "constants.js",
+        "bytes": 1196,
+        "git_blob_sha1": "816dc853e1bb51798be763e95a200513cca619d1"
+      },
+      {
+        "file": "crypto.js",
+        "bytes": 19746,
+        "git_blob_sha1": "8f80fff1594a3a6dbc46dcb9950b994720d8b6d3"
+      },
+      {
+        "file": "dgram.js",
+        "bytes": 12562,
+        "git_blob_sha1": "582b6203660870e047d296821e8ab4af8bd63f3b"
+      },
+      {
+        "file": "dns.js",
+        "bytes": 9669,
+        "git_blob_sha1": "45349718521328b3c2d6c719fa6b1cddfd991740"
+      },
+      {
+        "file": "domain.js",
+        "bytes": 7436,
+        "git_blob_sha1": "4121ede82ccb055884c89890d3dd544ea96de87a"
+      },
+      {
+        "file": "events.js",
+        "bytes": 8936,
+        "git_blob_sha1": "f8c651feac69217237b019f697a0b22fec1464ef"
+      },
+      {
+        "file": "freelist.js",
+        "bytes": 1804,
+        "git_blob_sha1": "561ca53458c2b8de59177fd102c783158d372564"
+      },
+      {
+        "file": "fs.js",
+        "bytes": 48171,
+        "git_blob_sha1": "daeb20e747eae110077783969ac30b8ca0664459"
+      },
+      {
+        "file": "http.js",
+        "bytes": 3715,
+        "git_blob_sha1": "c0b2b0af1128e0afc5f24e0d3b23663eb82de671"
+      },
+      {
+        "file": "https.js",
+        "bytes": 3728,
+        "git_blob_sha1": "4c2731ab581c5d706e970468f7e7558ce78b1335"
+      },
+      {
+        "file": "module.js",
+        "bytes": 15131,
+        "git_blob_sha1": "0f1f38c7bb0c7320ba37581677136d6bdd54be00"
+      },
+      {
+        "file": "net.js",
+        "bytes": 38351,
+        "git_blob_sha1": "67109895bbb96322e222aef6f8ca42290ff55f42"
+      },
+      {
+        "file": "os.js",
+        "bytes": 2332,
+        "git_blob_sha1": "79cef00a4ae5ba2bcf8f7f0350f2745a8e518275"
+      },
+      {
+        "file": "path.js",
+        "bytes": 16432,
+        "git_blob_sha1": "937bc792cd61357f5c7a36f943e3207c091cb656"
+      },
+      {
+        "file": "punycode.js",
+        "bytes": 13955,
+        "git_blob_sha1": "8a959552d87cb5deca4be8986ae1800143da963c"
+      },
+      {
+        "file": "querystring.js",
+        "bytes": 5918,
+        "git_blob_sha1": "0f317fc30b8e262ed211a645259e17a3097ad227"
+      },
+      {
+        "file": "readline.js",
+        "bytes": 36586,
+        "git_blob_sha1": "4676bccb3fb2090b1512f463d2eea9a246ce0e91"
+      },
+      {
+        "file": "repl.js",
+        "bytes": 29415,
+        "git_blob_sha1": "3bb145bb44f7a14f93db452c4869be4caab901b6"
+      },
+      {
+        "file": "smalloc.js",
+        "bytes": 3458,
+        "git_blob_sha1": "994b3f281bae2282593abb3ee45daac2479ca1b4"
+      },
+      {
+        "file": "stream.js",
+        "bytes": 3579,
+        "git_blob_sha1": "83815e8404975e4cac3aab2a32281a88be1d009f"
+      },
+      {
+        "file": "string_decoder.js",
+        "bytes": 7425,
+        "git_blob_sha1": "84ac9a9d4453a40ad1b7539976379c5d7490789f"
+      },
+      {
+        "file": "sys.js",
+        "bytes": 1275,
+        "git_blob_sha1": "6dc415c31f86c1f9106befe09ae79ece5b28bf04"
+      },
+      {
+        "file": "timers.js",
+        "bytes": 15149,
+        "git_blob_sha1": "d64f25e296f9630b5c337a85c3673d9db1a2c838"
+      },
+      {
+        "file": "tls.js",
+        "bytes": 8275,
+        "git_blob_sha1": "aebafc1bd93678fd66e56a2b334cf76197f9a1c5"
+      },
+      {
+        "file": "tty.js",
+        "bytes": 3654,
+        "git_blob_sha1": "3d5c2a664930b00ae906ac635fd138e05c433110"
+      },
+      {
+        "file": "url.js",
+        "bytes": 23315,
+        "git_blob_sha1": "f4b24ee38fb2027ab5e3f67703ef4c7d1c2a9962"
+      },
+      {
+        "file": "util.js",
+        "bytes": 20098,
+        "git_blob_sha1": "4fed8311a0902a4070444a621e657373fbbd9784"
+      },
+      {
+        "file": "vm.js",
+        "bytes": 2793,
+        "git_blob_sha1": "653c27c0d857f39ef115719831df9d1a9375f00c"
+      },
+      {
+        "file": "zlib.js",
+        "bytes": 16941,
+        "git_blob_sha1": "a85e8efb51813898cecc5904bd33487df99fae46"
+      }
+    ]
+  },
+  "libffi_runtime": {
+    "sha256": "00f593fe192f2851b8ce23b25cec2488d769beb5a8f63e8c9e563071e1075153",
+    "package": "libffi8:amd64\t3.4.6-1build1"
+  },
+  "c_ffi_bridge": {
+    "binding": {
+      "name": "puts",
+      "system": 1,
+      "flags": 0,
+      "code": "(extern \"C\" int puts(const char *))"
+    },
+    "original_database_sha256": "ff40d95fef87bd3ca45e44cef697287c33c8fdc2de02039700dc7536d9dd5c00",
+    "test_database_sha256": "4af6a198038300b2f241cbc8d5d606cdfd9d9efb57e6b4d1e020cd671f13425c",
+    "library_sha256": "7f578e927d226feed51b509ed0aae1876bb2d2488b66823addfd174ce88dcd98"
+  },
+  "compiled_script_sha256": "b80258f9bade71bd2b95ffc8f9af8de521b2575c55a77161551cd6cae366dcd8",
+  "toolchain": "Cycript 0.9 at revision 97bec96 with attach disabled, GNU Bison 3.0.4, JavaScriptCoreGTK 4.1 and libffi",
+  "reproduction_command": "export LD_LIBRARY_PATH=\"<private-ffi-library>:$LD_LIBRARY_PATH\" && cycript -c hello.cy && cycript hello.cy",
+  "semantic_scope": "The standalone Cycript compiler accepted the original hello.cy and emitted JavaScript. The native runtime ran the original file with JavaScriptCore and the C FFI in an offline WSL sandbox. A copy of the native bridge database declared the libc puts symbol for this standalone build. The invocation returned 0 and printed exactly Hello, World! followed by one newline.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

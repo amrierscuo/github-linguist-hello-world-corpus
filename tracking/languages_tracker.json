@@ -8445,13 +8445,14 @@
       "example": {
         "semantic_goal": "Usare l’interoperabilità C di Cycript per passare il saluto a puts.",
         "validation_mode": "native_cycript_ffi_run",
-        "toolchain": "Cycript con JavaScriptCore e binding libc, su piattaforma supportata; versione effettiva da registrare",
+        "toolchain": "Cycript 0.9 at revision 97bec96 with attach disabled, GNU Bison 3.0.4, JavaScriptCoreGTK 4.1 and libffi",
         "files": [
           "examples/#147 Cycript/README.md",
-          "examples/#147 Cycript/hello.cy"
+          "examples/#147 Cycript/hello.cy",
+          "examples/#147 Cycript/verification/native_20261122_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "cycript hello.cy",
+        "run_or_check_command": "export LD_LIBRARY_PATH=\"<private-ffi-library>:$LD_LIBRARY_PATH\" && cycript -c hello.cy && cycript hello.cy",
         "expected_result": "puts emette Hello, World! e newline.",
         "sources": [
           "https://www.cycript.org/manual/",
@@ -8462,16 +8463,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Cycript/JavaScriptCore con binding C non disponibili nell’ambiente corrente; parsing e FFI restano pendenti."
-        ],
-        "notes": "Il sorgente combina concatenazione ECMAScript e il cast Cycript (typedef const char *). La chiamata puts richiede le dichiarazioni libc disponibili nel runtime Cycript. Il file va verificato nel motore originale: Node.js non interpreta questa sintassi FFI."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-22T21:25:49.265713+00:00",
+        "verification_log": "examples/#147 Cycript/verification/native_20261122_wave800_main.json",
+        "blockers": [],
+        "notes": "The standalone Cycript compiler accepted the original hello.cy and emitted JavaScript. The native runtime ran the original file with JavaScriptCore and the C FFI in an offline WSL sandbox. A copy of the native bridge database declared the libc puts symbol for this standalone build. The invocation returned 0 and printed exactly Hello, World! followed by one newline.",
+        "verified_artifact_sha256": {
+          "examples/#147 Cycript/hello.cy": "f1b6565385b0e2c93a3f26e6a9cc845d7a27b344e0f5fb7760f82042b4adeb50"
+        }
       }
     },
     {

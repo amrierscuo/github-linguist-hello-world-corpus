@@ -270,7 +270,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #144 | [Cuda](../examples/%23144%20Cuda/README.md) | `.cuh` | [hello.cuh](../examples/%23144%20Cuda/variants/ext-cuh-2e637568/hello.cuh) | Pending | Pending | adapted; This variant has not yet been checked with the specified native toolchain. |
 | #145 | [Cue Sheet](../examples/%23145%20Cue%20Sheet/README.md) | `.cue` | [hello.cue](../examples/%23145%20Cue%20Sheet/hello.cue) | Yes | Yes | existing; Evidence recorded |
 | #146 | [Curry](../examples/%23146%20Curry/README.md) | `.curry` | [Hello.curry](../examples/%23146%20Curry/Hello.curry) | Yes | Yes | existing; Evidence recorded |
-| #147 | [Cycript](../examples/%23147%20Cycript/README.md) | `.cy` | [hello.cy](../examples/%23147%20Cycript/hello.cy) | Pending | Pending | existing; Cycript/JavaScriptCore with C bindings is unavailable in the current environment; parsing and FFI checks are pending. |
+| #147 | [Cycript](../examples/%23147%20Cycript/README.md) | `.cy` | [hello.cy](../examples/%23147%20Cycript/hello.cy) | Yes | Yes | existing; Evidence recorded |
 | #148 | [Cylc](../examples/%23148%20Cylc/README.md) | `.cylc` | [flow.cylc](../examples/%23148%20Cylc/flow.cylc) | Yes | Yes | existing; Evidence recorded |
 | #149 | [Cypher](../examples/%23149%20Cypher/README.md) | `.cyp` | [hello.cyp](../examples/%23149%20Cypher/variants/ext-cyp-2e637970/hello.cyp) | Pending | Pending | alias; This variant has not yet been checked with the specified native toolchain. |
 | #149 | [Cypher](../examples/%23149%20Cypher/README.md) | `.cypher` | [hello.cypher](../examples/%23149%20Cypher/hello.cypher) | Yes | Yes | existing; Evidence recorded |
