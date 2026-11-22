@@ -1,0 +1,88 @@
+name: XC native xCORE verification
+
+on:
+  push:
+    branches: [codex/corpus-xc-20261122]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      SOURCE_COMMIT: 5e6c4391ced56263f84a02d6fc6adc0e75233352
+      XCORE_IMAGE: ghcr.io/xmos/xcore_builder@sha256:cb301ec2c847d622a4a779a7fbbb131eba0c8f1931f53b938516b09529065e16
+      GIT_TERMINAL_PROMPT: '0'
+    steps:
+      - name: Fetch the public XC sample
+        run: |
+          git init --quiet corpus
+          git -C corpus fetch --no-tags --depth 1 https://github.com/amrierscuo/github-linguist-hello-world-corpus.git "$SOURCE_COMMIT"
+          git -C corpus checkout --detach FETCH_HEAD
+          test "$(git -C corpus rev-parse HEAD)" = "$SOURCE_COMMIT"
+
+      - name: Compile XC and run the xCORE simulator offline
+        shell: bash
+        run: |
+          stage="$(mktemp -d)"
+          cp 'corpus/examples/#783 XC/hello.xc' "$stage/hello.xc"
+          chmod 755 "$stage"
+          cat > "$stage/verify.py" <<'PY'
+          from datetime import datetime, timezone
+          from hashlib import sha256
+          from pathlib import Path
+          import json
+          import os
+          import platform
+          import shutil
+          import subprocess
+          import tempfile
+
+          source = Path('/input/hello.xc')
+          digest = sha256(source.read_bytes()).hexdigest()
+          compiler = shutil.which('xcc')
+          simulator = shutil.which('xsim')
+          assert compiler and simulator, 'The public XMOS builder image has no xcc/xsim in its configured PATH'
+          proof = {
+              'schema_version': 1, 'ordinal': 783, 'language': 'XC',
+              'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
+              'artifact_sha256': {'examples/#783 XC/hello.xc': digest},
+              'toolchain_image': os.environ['XCORE_IMAGE'], 'commands': [],
+          }
+
+          with tempfile.TemporaryDirectory() as cwd:
+              shutil.copyfile(source, Path(cwd) / source.name)
+              def check(label, command, timeout=30):
+                  result = subprocess.run(command, cwd=cwd, capture_output=True, text=True, timeout=timeout)
+                  proof['commands'].append({'label': label, 'command': command, 'exit_code': result.returncode,
+                                            'stdout': result.stdout, 'stderr': result.stderr})
+                  return result
+
+              check('Identify XMOS xcc', [compiler, '--version'])
+              check('Identify XMOS xsim', [simulator, '--version'])
+              for target in ('XCORE-AI-EXPLORER', 'XS1-L1A'):
+                  result = check('Compile original .xc with the XMOS XC frontend',
+                                 [compiler, '-target=' + target, 'hello.xc', '-o', 'hello.xe'])
+                  if result.returncode == 0:
+                      result = check('Run the resulting xCORE executable on the simulator', [simulator, 'hello.xe'], timeout=90)
+                      if result.returncode == 0 and 'Hello, World!' in result.stdout.splitlines():
+                          proof['target'] = target
+                          break
+              print('CORPUS_PROOF ' + json.dumps(proof), flush=True)
+          PY
+          docker pull --platform linux/amd64 "$XCORE_IMAGE"
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
+            --env XCORE_IMAGE --mount "type=bind,source=$stage,target=/input,readonly" \
+            --entrypoint /bin/bash "$XCORE_IMAGE" -lc '
+              set -eu
+              if ! command -v xcc >/dev/null; then
+                for initializer in /opt/XMOS/XTC/*/SetEnv /opt/xmos/XTC/*/SetEnv /home/*/XMOS/XTC/*/SetEnv; do
+                  if [ -f "$initializer" ]; then source "$initializer"; break; fi
+                done
+              fi
+              if ! command -v xcc >/dev/null; then
+                find /opt /usr/local /home -maxdepth 6 -type f \( -name xcc -o -name SetEnv -o -name SetEnv.sh \) -print
+              fi
+              python3 /input/verify.py'
