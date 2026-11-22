@@ -1,0 +1,165 @@
+name: Xojo and REALbasic debug verification
+
+on:
+  push:
+    branches: [codex/corpus-xojo-20261122]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      SOURCE_COMMIT: 03cdd1d38041a5055ab685e6778d90fa7f4e60bb
+      GIT_TERMINAL_PROMPT: '0'
+    steps:
+      - name: Prepare the exact source and a virtual display
+        run: |
+          git init --quiet corpus
+          git -C corpus fetch --no-tags --depth 1 https://github.com/amrierscuo/github-linguist-hello-world-corpus.git "$SOURCE_COMMIT"
+          git -C corpus checkout --detach FETCH_HEAD
+          test "$(git -C corpus rev-parse HEAD)" = "$SOURCE_COMMIT"
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xvfb xauth xterm libgtk-3-0t64 libwebkit2gtk-4.1-0
+
+      - name: Check the original modules with Xojo IDE Communicator
+        shell: bash
+        run: |
+          cd corpus
+          python3 - <<'PY'
+          from datetime import datetime, timezone
+          from hashlib import file_digest, sha256
+          import html
+          import json
+          import os
+          from pathlib import Path
+          import platform
+          import re
+          import signal
+          import socket
+          import subprocess
+          import tarfile
+          import tempfile
+          import time
+          from urllib.parse import urlsplit
+          from urllib.request import urlopen
+
+          release = 'https://xojo.com/download/'
+          root = Path(tempfile.mkdtemp(prefix='corpus-xojo-'))
+          archive = root / 'xojo.tgz'
+          with urlopen(release, timeout=20) as response:
+              page = html.unescape(response.read(2_000_000).decode('utf-8')).replace('\\/', '/')
+          address = re.search(r'https://files\.xojo\.com/Xojo/Xojo2026r31/xojo2026r31\.tgz\?[^"\s<>]+', page)
+          assert address is not None, 'Xojo 2026r3.1 Linux x86-64 archive link is unavailable'
+          try:
+              with urlopen(address.group(), timeout=35) as response, archive.open('wb') as destination:
+                  size = 0
+                  while chunk := response.read(1024 * 1024):
+                      size += len(chunk)
+                      assert size <= 650_000_000, 'Unexpected archive size'
+                      destination.write(chunk)
+          except OSError as error:
+              raise RuntimeError(f'Official archive transfer failed ({getattr(error, "code", type(error).__name__)})') from None
+          with archive.open('rb') as data:
+              archive_sha = file_digest(data, 'sha256').hexdigest()
+          with tarfile.open(archive) as bundle:
+              bundle.extractall(root / 'sdk', filter='data')
+          programs = [file for file in (root / 'sdk').rglob('Xojo') if file.is_file() and os.access(file, os.X_OK)]
+          assert programs, 'The official archive did not contain an executable Xojo IDE'
+          binary = sorted(programs, key=lambda file: len(file.parts))[0]
+          dependencies = subprocess.run(['ldd', str(binary)], capture_output=True, text=True)
+          print('\n'.join(line for line in dependencies.stdout.splitlines() if 'not found' in line), flush=True)
+
+          def exchange(end, process):
+              while process.poll() is None and time.monotonic() < end:
+                  try:
+                      with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as conn:
+                          conn.settimeout(45)
+                          conn.connect('/tmp/XojoIDE')
+                          conn.sendall(b'{"protocol":2}\0')
+                          script = 'DoCommand("RunApp")\nPrint "RunApp dispatched"'
+                          conn.sendall(json.dumps({'script': script, 'tag': 'corpus-debug'}).encode() + b'\0')
+                          message = bytearray()
+                          while b'corpus-debug' not in message or not message.endswith(b'\0'):
+                              received = conn.recv(8192)
+                              if not received:
+                                  break
+                              message.extend(received)
+                              assert len(message) < 300000
+                          return script, message.decode('utf-8', errors='replace').replace('\0', '\n')
+                  except (ConnectionRefusedError, FileNotFoundError):
+                      time.sleep(0.5)
+              raise RuntimeError('The IDE Communicator socket did not become available')
+
+          def verify(ordinal, name, module, filename, function_name):
+              source = Path(f'examples/#{ordinal} {name}') / filename
+              stage = root / str(ordinal)
+              stage.mkdir()
+              (stage / filename).write_bytes(source.read_bytes())
+              output = stage / 'greeting.txt'
+              app = f'''#tag Class
+          Protected Class App
+          Inherits ConsoleApplication
+
+            #tag Event
+              Function Run(args() As String) As Integer
+                Var file As New FolderItem("{output}", FolderItem.PathModes.Native)
+                Var writer As TextOutputStream = TextOutputStream.Create(file)
+                writer.WriteLine({module}.{function_name}())
+                writer.Close
+                Return 0
+              End Function
+            #tag EndEvent
+          End Class
+          #tag EndClass
+          '''
+              project = ('Type=Console\nRBProjectVersion=2026.031\nMinIDEVersion=20070100\n'
+                         'OrigIDEVersion=20260301\nClass=App;App.xojo_code;&h0000000000000001;&h0000000000000000;false\n'
+                         f'Module={module};{filename};&h0000000000000002;&h0000000000000000;false\n'
+                         'AppProjectWindowCount=0\nBuildAppName=CorpusGreeting\n')
+              (stage / 'App.xojo_code').write_text(app, encoding='utf-8')
+              (stage / 'CorpusGreeting.xojo_project').write_text(project, encoding='utf-8')
+              command = ['xvfb-run', '-a', str(binary), str(stage / 'CorpusGreeting.xojo_project')]
+              log_path = stage / 'ide.log'
+              response = ''
+              error = ''
+              script = ''
+              with log_path.open('wb') as log:
+                  process = subprocess.Popen(command, cwd=stage, stdin=subprocess.DEVNULL,
+                                             stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+                  try:
+                      script, response = exchange(time.monotonic() + 65, process)
+                      until = time.monotonic() + 40
+                      while not output.is_file() and process.poll() is None and time.monotonic() < until:
+                          time.sleep(0.5)
+                  except (OSError, RuntimeError) as exc:
+                      error = str(exc)
+                  finally:
+                      if process.poll() is None:
+                          os.killpg(process.pid, signal.SIGTERM)
+                      try:
+                          process.wait(timeout=10)
+                      except subprocess.TimeoutExpired:
+                          os.killpg(process.pid, signal.SIGKILL)
+                          process.wait()
+              greeting = output.read_text(encoding='utf-8-sig') if output.is_file() else ''
+              fixture = {'App.xojo_code': app, 'CorpusGreeting.xojo_project': project}
+              proof = {
+                  'schema_version': 1, 'ordinal': ordinal, 'language': name, 'platform': platform.platform(),
+                  'timestamp_utc': datetime.now(timezone.utc).isoformat(),
+                  'artifact_sha256': {str(source): sha256(source.read_bytes()).hexdigest()},
+                  'toolchain_archives': [{'source_page': release, 'path': urlsplit(address.group()).path, 'sha256': archive_sha}],
+                  'fixture_sha256': {name: {'sha256': sha256(value.encode()).hexdigest(), 'content_utf8': value}
+                                     for name, value in fixture.items()},
+                  'commands': [{'label': 'Compile and run the imported module in Xojo debug mode via IPC',
+                                'command': command, 'script': script, 'ipc_response': response,
+                                'exit_code': 0 if greeting == 'Hello, World!\n' else 1,
+                                'stdout': greeting, 'stderr': error + '\n' + log_path.read_text(errors='replace')[-6000:]}],
+              }
+              print('CORPUS_PROOF ' + json.dumps(proof), flush=True)
+
+          verify(793, 'Xojo', 'CorpusGreeting', 'CorpusGreeting.xojo_code', 'Greeting')
+          verify(587, 'REALbasic', 'Greeting', 'Greeting.rbbas', 'Message')
+          PY
