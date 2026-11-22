@@ -403,7 +403,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #397 | [Logos](../examples/%23397%20Logos/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #398 | [Logtalk](../examples/%23398%20Logtalk/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #399 | [LookML](../examples/%23399%20LookML/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
-| #400 | [LoomScript](../examples/%23400%20LoomScript/README.md) | Yes | Pending | Pending | 1/1 | The historical Loom compiler and runtime are not set up; building and launching the application are pending. |
+| #400 | [LoomScript](../examples/%23400%20LoomScript/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #401 | [Lua](../examples/%23401%20Lua/README.md) | Yes | Yes | Yes | 8/8 | Evidence recorded |
 | #402 | [Luau](../examples/%23402%20Luau/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #403 | [M](../examples/%23403%20M/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |

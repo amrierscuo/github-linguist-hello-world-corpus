@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "ordinal": 400,
+  "language": "LoomScript",
+  "timestamp_utc": "2026-11-22T18:13:31.208464+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Configure upstream 64-bit LoomSDK and its bundled Lua runtime",
+      "command": [
+        "cmake",
+        "-S",
+        "${SCRATCH}/400-ptggcwas/LoomSDK",
+        "-B",
+        "${SCRATCH}/400-ptggcwas/loom-build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DLOOM_BUILD_64BIT=1",
+        "-DLOOM_BUILD_JIT=0",
+        "-DSDL_SHARED=OFF",
+        "-DVIDEO_X11=OFF",
+        "-DVIDEO_WAYLAND=OFF"
+      ],
+      "cwd": "${SCRATCH}/400-ptggcwas",
+      "timestamp_utc": "2026-11-22T17:07:42.861001+00:00",
+      "timeout_seconds": 160,
+      "exit_code": 0,
+      "stdout": "-- The C compiler identification is GNU 13.3.0\n-- The CXX compiler identification is GNU 13.3.0\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Found PkgConfig: /usr/bin/pkg-config (found version \"1.8.1\") \n-- 0.4.0 :: 4 :: 0 :: 4 :: 2.0\n-- Performing Test HAVE_GCC_ATOMICS\n-- Performing Test HAVE_GCC_ATOMICS - Success\n-- Performing Test HAVE_GCC_PREFERRED_STACK_BOUNDARY\n-- Performing Test HAVE_GCC_PREFERRED_STACK_BOUNDARY - Failed\n-- Performing Test HAVE_GCC_FVISIBILITY\n-- Performing Test HAVE_GCC_FVISIBILITY - Success\n-- Performing Test HAVE_GCC_WALL\n-- Performing Test HAVE_GCC_WALL - Success\n-- Performing Test HAVE_GCC_WSHADOW\n-- Performing Test HAVE_GCC_WSHADOW - Success\n-- Performing Test HAVE_NO_UNDEFINED\n-- Performing Test HAVE_NO_UNDEFINED - Success\n-- Performing Test HAVE_MMX\n-- Performing Test HAVE_MMX - Success\n-- Performing Test HAVE_3DNOW\n-- Performing Test HAVE_3DNOW - Success\n-- Performing Test HAVE_SSE\n-- Performing Test HAVE_SSE - Success\n-- Performing Test HAVE_SSE2\n-- Performing Test HAVE_SSE2 - Success\n-- Performing Test HAVE_ALTIVEC_H_HDR\n-- Performing Test HAVE_ALTIVEC_H_HDR - Failed\n-- Performing Test HAVE_ALTIVEC\n-- Performing Test HAVE_ALTIVEC - Failed\n-- Looking for sys/types.h\n-- Looking for sys/types.h - found\n-- Looking for stdio.h\n-- Looking for stdio.h - found\n-- Looking for stdlib.h\n-- Looking for stdlib.h - found\n-- Looking for stddef.h\n-- Looking for stddef.h - found\n-- Looking for stdarg.h\n-- Looking for stdarg.h - found\n-- Looking for malloc.h\n-- Looking for malloc.h - found\n-- Looking for memory.h\n-- Looking for memory.h - found\n-- Looking for string.h\n-- Looking for string.h - found\n-- Looking for strings.h\n-- Looking for strings.h - found\n-- Looking for inttypes.h\n-- Looking for inttypes.h - found\n-- Looking for stdint.h\n-- Looking for stdint.h - found\n-- Looking for ctype.h\n-- Looking for ctype.h - found\n-- Looking for math.h\n-- Looking for math.h - found\n-- Looking for iconv.h\n-- Looking for iconv.h - found\n-- Looking for signal.h\n-- Looking for signal.h - found\n-- Looking for 8 include files dlfcn.h, ..., float.h\n-- Looking for 8 include files dlfcn.h, ..., float.h - found\n-- Check size of size_t\n-- Check size of size_t - done\n-- Looking for M_PI\n-- Looking for M_PI - found\n-- Performing Test HAVE_MPROTECT\n-- Performing Test HAVE_MPROTECT - Success\n-- Looking for strtod\n-- Looking for strtod - found\n-- Looking for malloc\n-- Looking for malloc - found\n-- Looking for calloc\n-- Looking for calloc - found\n-- Looking for realloc\n-- Looking for realloc - found\n-- Looking for free\n-- Looking for free - found\n-- Looking for getenv\n-- Looking for getenv - found\n-- Looking for setenv\n-- Looking for setenv - found\n-- Looking for putenv\n-- Looking for putenv - found\n-- Looking for unsetenv\n-- Looking for unsetenv - found\n-- Looking for qsort\n-- Looking for qsort - found\n-- Looking for abs\n-- Looking for abs - found\n-- Looking for bcopy\n-- Looking for bcopy - found\n-- Looking for memset\n-- Looking for memset - found\n-- Looking for memcpy\n-- Looking for memcpy - found\n-- Looking for memmove\n-- Looking for memmove - found\n-- Looking for memcmp\n-- Looking for memcmp - found\n-- Looking for strlen\n-- Looking for strlen - found\n-- Looking for strlcpy\n-- Looking for strlcpy - found\n-- Looking for strlcat\n-- Looking for strlcat - found\n-- Looking for strdup\n-- Looking for strdup - found\n-- Looking for _strrev\n-- Looking for _strrev - not found\n-- Looking for _strupr\n-- Looking for _strupr - not found\n-- Looking for _strlwr\n-- Looking for _strlwr - not found\n-- Looking for strchr\n-- Looking for strchr - found\n-- Looking for strrchr\n-- Looking for strrchr - found\n-- Looking for strstr\n-- Looking for strstr - found\n-- Looking for itoa\n-- Looking for itoa - not found\n-- Looking for _ltoa\n-- Looking for _ltoa - not found\n-- Looking for _uitoa\n-- Looking for _uitoa - not found\n-- Looking for _ultoa\n-- Looking for _ultoa - not found\n-- Looking for strtol\n-- Looking for strtol - found\n-- Looking for strtoul\n-- Looking for strtoul - found\n-- Looking for _i64toa\n-- Looking for _i64toa - not found\n-- Looking for _ui64toa\n-- Looking for _ui64toa - not found\n-- Looking for strtoll\n-- Looking for strtoll - found\n-- Looking for strtoull\n-- Looking for strtoull - found\n-- Looking for atoi\n-- Looking for atoi - found\n-- Looking for atof\n-- Looking for atof - found\n-- Looking for strcmp\n-- Looking for strcmp - found\n-- Looking for strncmp\n-- Looking for strncmp - found\n-- Looking for _stricmp\n-- Looking for _stricmp - not found\n-- Looking for strcasecmp\n-- Looking for strcasecmp - found\n-- Looking for _strnicmp\n-- Looking for _strnicmp - not found\n-- Looking for strncasecmp\n-- Looking for strncasecmp - found\n-- Looking for vsscanf\n-- Looking for vsscanf - found\n-- Looking for vsnprintf\n-- Looking for vsnprintf - found\n-- Looking for fseeko\n-- Looking for fseeko - found\n-- Looking for fseeko64\n-- Looking for fseeko64 - found\n-- Looking for sigaction\n-- Looking for sigaction - found\n-- Looking for setjmp\n-- Looking for setjmp - found\n-- Looking for nanosleep\n-- Looking for nanosleep - found\n-- Looking for sysconf\n-- Looking for sysconf - found\n-- Looking for sysctlbyname\n-- Looking for sysctlbyname - not found\n-- Looking for pow in m\n-- Looking for pow in m - found\n-- Looking for atan\n-- Looking for atan - found\n-- Looking for atan2\n-- Looking for atan2 - found\n-- Looking for ceil\n-- Looking for ceil - found\n-- Looking for copysign\n-- Looking for copysign - found\n-- Looking for cos\n-- Looking for cos - found\n-- Looking for cosf\n-- Looking for cosf - found\n-- Looking for fabs\n-- Looking for fabs - found\n-- Looking for floor\n-- Looking for floor - found\n-- Looking for log\n-- Looking for log - found\n-- Looking for pow\n-- Looking for pow - found\n-- Looking for scalbn\n-- Looking for scalbn - found\n-- Looking for sin\n-- Looking for sin - found\n-- Looking for sinf\n-- Looking for sinf - found\n-- Looking for sqrt\n-- Looking for sqrt - found\n-- Looking for sqrtf\n-- Looking for sqrtf - found\n-- Looking for tan\n-- Looking for tan - found\n-- Looking for tanf\n-- Looking for tanf - found\n-- Looking for acos\n-- Looking for acos - found\n-- Looking for asin\n-- Looking for asin - found\n-- Looking for iconv_open in iconv\n-- Looking for iconv_open in iconv - not found\n-- Looking for alloca.h\n-- Looking for alloca.h - found\n-- Looking for alloca\n-- Looking for alloca - not found\n-- Performing Test HAVE_SA_SIGACTION\n-- Performing Test HAVE_SA_SIGACTION - Success\n-- Looking for dlopen\n-- Looking for dlopen - found\n-- Performing Test OSS_FOUND\n-- Performing Test OSS_FOUND - Success\n-- Looking for alsa/asoundlib.h\n-- Looking for alsa/asoundlib.h - not found\n-- Checking for module 'libpulse-simple'\n--   Package 'libpulse-simple', required by 'virtual:world', not found\n-- Checking for module 'esound'\n--   Package 'esound', required by 'virtual:world', not found\n-- Looking for audio/audiolib.h\n-- Looking for audio/audiolib.h - not found\n-- Looking for sndio.h\n-- Looking for sndio.h - not found\n-- Performing Test HAVE_VIDEO_RPI\n-- Performing Test HAVE_VIDEO_RPI - Failed\n-- Checking for modules 'mirclient;mircommon'\n--   Package 'mirclient', required by 'virtual:world', not found\n--   Package 'mircommon', required by 'virtual:world', not found\n-- Checking for module 'egl'\n--   Package 'egl', required by 'virtual:world', not found\n-- Checking for module 'xkbcommon'\n--   Package 'xkbcommon', required by 'virtual:world', not found\n-- Performing Test HAVE_VIDEO_OPENGL\n-- Performing Test HAVE_VIDEO_OPENGL - Failed\n-- Performing Test HAVE_VIDEO_OPENGL_EGL\n-- Performing Test HAVE_VIDEO_OPENGL_EGL - Failed\n-- Performing Test HAVE_VIDEO_OPENGLES_V1\n-- Performing Test HAVE_VIDEO_OPENGLES_V1 - Failed\n-- Performing Test HAVE_VIDEO_OPENGLES_V2\n-- Performing Test HAVE_VIDEO_OPENGLES_V2 - Failed\n-- Performing Test HAVE_VIDEO_VIVANTE_VDK\n-- Performing Test HAVE_VIDEO_VIVANTE_VDK - Failed\n-- Performing Test HAVE_VIDEO_VIVANTE_EGL_FB\n-- Performing Test HAVE_VIDEO_VIVANTE_EGL_FB - Failed\n-- Performing Test HAVE_INPUT_EVENTS\n-- Performing Test HAVE_INPUT_EVENTS - Success\n-- Performing Test HAVE_INPUT_KD\n-- Performing Test HAVE_INPUT_KD - Success\n-- Looking for libudev.h\n-- Looking for libudev.h - not found\n-- Looking for dbus/dbus.h\n-- Looking for dbus/dbus.h - not found\n-- Performing Test HAVE_INPUT_TSLIB\n-- Performing Test HAVE_INPUT_TSLIB - Failed\n-- Looking for hid_init in usbhid\n-- Looking for hid_init in usbhid - not found\n-- Looking for usb.h\n-- Looking for usb.h - not found\n-- Looking for libusb.h\n-- Looking for libusb.h - not found\n-- Looking for hid_init in usb\n-- Looking for hid_init in usb - not found\n-- Performing Test HAVE_USBHID\n-- Performing Test HAVE_USBHID - Failed\n-- Performing Test HAVE_PTHREADS\n-- Performing Test HAVE_PTHREADS - Success\n-- Performing Test HAVE_RECURSIVE_MUTEXES\n-- Performing Test HAVE_RECURSIVE_MUTEXES - Success\n-- Performing Test HAVE_PTHREADS_SEM\n-- Performing Test HAVE_PTHREADS_SEM - Success\n-- Performing Test HAVE_SEM_TIMEDWAIT\n-- Performing Test HAVE_SEM_TIMEDWAIT - Success\n-- Performing Test HAVE_PTHREAD_NP_H\n-- Performing Test HAVE_PTHREAD_NP_H - Failed\n-- Looking for pthread_setname_np\n-- Looking for pthread_setname_np - found\n-- Looking for pthread_set_name_np\n-- Looking for pthread_set_name_np - not found\n-- Looking for linux/version.h\n-- Looking for linux/version.h - found\n-- \n-- SDL2 was configured with the following options:\n-- \n-- Platform: Linux-6.6.87.2-microsoft-standard-WSL2\n-- 64-bit:   TRUE\n-- Compiler: /usr/bin/cc\n-- \n-- Subsystems:\n--   Atomic:\tON\n--   Audio:\tON\n--   Video:\tON\n--   Render:\tON\n--   Events:\tON\n--   Joystick:\tON\n--   Haptic:\tON\n--   Power:\tON\n--   Threads:\tON\n--   Timers:\tON\n--   File:\tON\n--   Loadso:\tON\n--   CPUinfo:\tON\n--   Filesystem:\tON\n--   Dlopen:\tON\n-- \n-- Options:\n--   3DNOW                  (Wanted: ON): ON\n--   ALSA                   (Wanted: ON): OFF\n--   ALSA_SHARED            (Wanted: ON): OFF\n--   ALTIVEC                (Wanted: ON): OFF\n--   ARTS                   (Wanted: ON): OFF\n--   ARTS_SHARED            (Wanted: ON): OFF\n--   ASSEMBLY               (Wanted: ON): ON\n--   ASSERTIONS             (Wanted: auto): auto\n--   CLOCK_GETTIME          (Wanted: OFF): OFF\n--   DIRECTFB_SHARED        (Wanted: OFF): OFF\n--   DIRECTX                (Wanted: OFF): OFF\n--   DISKAUDIO              (Wanted: ON): ON\n--   DUMMYAUDIO             (Wanted: ON): ON\n--   ESD                    (Wanted: ON): OFF\n--   ESD_SHARED             (Wanted: ON): OFF\n--   FUSIONSOUND            (Wanted: OFF): OFF\n--   FUSIONSOUND_SHARED     (Wanted: OFF): OFF\n--   GCC_ATOMICS            (Wanted: ON): ON\n--   INPUT_TSLIB            (Wanted: ON): OFF\n--   LIBC                   (Wanted: ON): ON\n--   MIR_SHARED             (Wanted: ON): OFF\n--   MMX                    (Wanted: ON): ON\n--   NAS                    (Wanted: ON): OFF\n--   NAS_SHARED             (Wanted: ON): OFF\n--   OSS                    (Wanted: ON): ON\n--   PTHREADS               (Wanted: ON): ON\n--   PTHREADS_SEM           (Wanted: ON): ON\n--   PULSEAUDIO             (Wanted: ON): OFF\n--   PULSEAUDIO_SHARED      (Wanted: ON): OFF\n--   RENDER_D3D             (Wanted: OFF): OFF\n--   RPATH                  (Wanted: ON): ON\n--   SDL_DLOPEN             (Wanted: ON): ON\n--   SNDIO                  (Wanted: ON): OFF\n--   SSE                    (Wanted: ON): ON\n--   SSE2                   (Wanted: ON): ON\n--   SSEMATH                (Wanted: ON): ON\n--   VIDEO_COCOA            (Wanted: OFF): OFF\n--   VIDEO_DIRECTFB         (Wanted: OFF): OFF\n--   VIDEO_DUMMY            (Wanted: ON): ON\n--   VIDEO_MIR              (Wanted: ON): OFF\n--   VIDEO_OPENGL           (Wanted: ON): OFF\n--   VIDEO_OPENGLES         (Wanted: ON): OFF\n--   VIDEO_RPI              (Wanted: ON): OFF\n--   VIDEO_VIVANTE          (Wanted: ON): OFF\n--   VIDEO_WAYLAND          (Wanted: OFF): OFF\n--   VIDEO_WAYLAND_QT_TOUCH (Wanted: OFF): OFF\n--   VIDEO_X11              (Wanted: OFF): OFF\n--   VIDEO_X11_XCURSOR      (Wanted: OFF): OFF\n--   VIDEO_X11_XINERAMA     (Wanted: OFF): OFF\n--   VIDEO_X11_XINPUT       (Wanted: OFF): OFF\n--   VIDEO_X11_XRANDR       (Wanted: OFF): OFF\n--   VIDEO_X11_XSCRNSAVER   (Wanted: OFF): OFF\n--   VIDEO_X11_XSHAPE       (Wanted: OFF): OFF\n--   VIDEO_X11_XVM          (Wanted: OFF): OFF\n--   WAYLAND_SHARED         (Wanted: OFF): OFF\n--   X11_SHARED             (Wanted: OFF): OFF\n-- \n--  CFLAGS:        -g -O3 -DHAVE_LINUX_VERSION_H\n--  EXTRA_CFLAGS:  -D_REENTRANT -mfpmath=387 -msse2 -msse -m3dnow -mmmx -Wshadow -Wall -fvisibility=hidden \n--  EXTRA_LDFLAGS: -Wl,--no-undefined;-pthread\n--  EXTRA_LIBS:    m\n-- \n--  Build Shared Library: OFF\n--  Build Static Library: ON\n-- \n-- If something was not detected, although the libraries\n-- were installed, then make sure you have set the\n-- CFLAGS and LDFLAGS environment variables correctly.\n-- \n-- Configuring done (11.4s)\n-- Generating done (0.1s)\n-- Build files have been written to: ${SCRATCH}/400-ptggcwas/loom-build\n",
+      "stderr": "CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\nCMake Deprecation Warning at loom/vendor/sdl2/CMakeLists.txt:5 (cmake_minimum_required):\n  Compatibility with CMake < 3.5 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n  CMake that the project does not need compatibility with older versions.\n\n\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/400-ptggcwas/home",
+        "TMPDIR": "${SCRATCH}/400-ptggcwas/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack"
+      }
+    },
+    {
+      "label": "Build upstream lsc and loomexec with the recorded POSIX header change",
+      "command": [
+        "cmake",
+        "--build",
+        "${SCRATCH}/400-ptggcwas/loom-build",
+        "--target",
+        "lsc",
+        "loomexec",
+        "-j",
+        "3",
+        "--",
+        "-s"
+      ],
+      "cwd": "${SCRATCH}/400-fwfmgrpc",
+      "timestamp_utc": "2026-11-22T17:31:12.080188+00:00",
+      "timeout_seconds": 650,
+      "exit_code": 0,
+      "stdout": "[ 26%] Built target SDL2-static\n[ 27%] Building C object loom/vendor/CMakeFiles/LoomVendor.dir/minimp3/minimp3.c.o\n[ 27%] Linking CXX static library libLoomVendor.a\n[ 60%] Built target LoomVendor\n[ 60%] Building CXX object loom/common/CMakeFiles/LoomCommon.dir/platform/platformHttpAndroid.cpp.o\n[ 60%] Linking CXX static library libLoomCommon.a\n[ 74%] Built target LoomCommon\n[ 75%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/common/lsLog.cpp.o\n[ 75%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/assets/lmAssets.cpp.o\n[ 75%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Debugger/lmObjectInspector.cpp.o\n[ 75%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Metrics/lmMetrics.cpp.o\n[ 75%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Platform/lmFile.cpp.o\n[ 77%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Platform/lmPlatform.cpp.o\n[ 77%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Reflection/lmAssembly.cpp.o\n[ 77%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Reflection/lmType.cpp.o\n[ 77%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/auxiliar.c.o\n[ 77%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/buffer.c.o\n[ 78%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/except.c.o\n[ 78%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/inet.c.o\n[ 78%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/io.c.o\n[ 78%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/lmSocket.cpp.o\n[ 78%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/luasocket.c.o\n[ 79%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/mime.c.o\n[ 79%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/options.c.o\n[ 79%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/select.c.o\n[ 79%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/tcp.c.o\n[ 79%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/timeout.c.o\n[ 80%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/udp.c.o\n[ 80%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/unix.c.o\n[ 80%] Building C object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Socket/usocket.c.o\n[ 80%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/Utils/lmSystemUtilsPackage.cpp.o\n[ 80%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/XML/lmXMLNode.cpp.o\n[ 81%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmBaseDelegate.cpp.o\n[ 81%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmBootstrap.cpp.o\n[ 81%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmByteArray.cpp.o\n[ 81%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmCommandLine.cpp.o\n[ 81%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmConsole.cpp.o\n[ 82%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmCoroutine.cpp.o\n[ 82%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmDate.cpp.o\n[ 82%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmDebug.cpp.o\n[ 82%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmDictionary.cpp.o\n[ 82%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmFunction.cpp.o\n[ 83%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmGC.cpp.o\n[ 83%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmIO.cpp.o\n[ 83%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmJSON.cpp.o\n[ 83%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmMath.cpp.o\n[ 83%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmNativeDelegate.cpp.o\n[ 85%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmNumber.cpp.o\n[ 85%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmObject.cpp.o\n[ 85%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmPackageSystem.cpp.o\n[ 85%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmProcess.cpp.o\n[ 85%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmProfiler.cpp.o\n[ 86%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmRandom.cpp.o\n[ 86%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmString.cpp.o\n[ 86%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmTelemetry.cpp.o\n[ 86%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmVM.cpp.o\n[ 86%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/system/lmVector.cpp.o\n[ 87%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/test/lmBenchmarkNativeClass.cpp.o\n[ 87%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/test/lmPackageBenchmark.cpp.o\n[ 87%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/test/lmPackageTest.cpp.o\n[ 87%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/test/lmTestDelegate.cpp.o\n[ 87%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/test/lmTestManagedNative.cpp.o\n[ 88%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/test/lmTestNativeClass.cpp.o\n[ 88%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/lsLuaBridge.cpp.o\n[ 88%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/lsNativeDelegate.cpp.o\n[ 88%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/lsNativeInterface.cpp.o\n[ 88%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsAssembly.cpp.o\n[ 89%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsByteCode.cpp.o\n[ 89%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsFieldInfo.cpp.o\n[ 89%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsJitByteCode.cpp.o\n[ 89%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsMethodInfo.cpp.o\n[ 89%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsModule.cpp.o\n[ 90%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsPropertyInfo.cpp.o\n[ 90%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/reflection/lsType.cpp.o\n[ 90%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/runtime/lsClassRT.cpp.o\n[ 90%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/runtime/lsInstanceRT.cpp.o\n[ 90%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/runtime/lsLuaState.cpp.o\n[ 91%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/runtime/lsProfiler.cpp.o\n[ 91%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/runtime/lsRuntime.cpp.o\n[ 91%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/runtime/lsTypeValidatorRT.cpp.o\n[ 91%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsAssemblyReader.cpp.o\n[ 91%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsAssemblyWriter.cpp.o\n[ 93%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsBinReader.cpp.o\n[ 93%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsBinWriter.cpp.o\n[ 93%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsFieldInfoReader.cpp.o\n[ 93%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsFieldInfoWriter.cpp.o\n[ 93%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsMemberInfoReader.cpp.o\n[ 94%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsMemberInfoWriter.cpp.o\n[ 94%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsMethodReader.cpp.o\n[ 94%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsMethodWriter.cpp.o\n[ 94%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsModuleReader.cpp.o\n[ 94%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsModuleWriter.cpp.o\n[ 95%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsPropertyInfoReader.cpp.o\n[ 95%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsPropertyInfoWriter.cpp.o\n[ 95%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsTypeReader.cpp.o\n[ 95%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/serialize/lsTypeWriter.cpp.o\n[ 95%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/builders/lsAssemblyBuilder.cpp.o\n[ 95%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/builders/lsModuleBuilder.cpp.o\n[ 96%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/builders/lsTypeBuilder.cpp.o\n[ 96%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsAlias.cpp.o\n[ 96%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsBC.cpp.o\n[ 96%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsBuildInfo.cpp.o\n[ 96%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsCompiler.cpp.o\n[ 97%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsCompilerLog.cpp.o\n[ 97%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsJitBC.cpp.o\n[ 97%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsJitTypeCompiler.cpp.o\n[ 97%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsLexer.cpp.o\n[ 97%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsParser.cpp.o\n[ 98%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsScope.cpp.o\n[ 98%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsToken.cpp.o\n[ 98%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsTraversalVisitor.cpp.o\n[ 98%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsTypeCompiler.cpp.o\n[ 98%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsTypeCompilerBase.cpp.o\n[100%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/compiler/lsTypeQualifyVisitor.cpp.o\n[100%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/compiler/lmLSCompiler.cpp.o\n[100%] Building CXX object loom/script/CMakeFiles/LoomScript.dir/native/core/compiler/lmPackageCompiler.cpp.o\n[100%] Linking CXX static library libLoomScript.a\n[100%] Built target LoomScript\n[100%] Building CXX object tools/lsc/CMakeFiles/lsc.dir/src/main.cpp.o\n[100%] Linking CXX executable lsc\n[100%] Built target lsc\n[ 26%] Built target SDL2-static\n[ 60%] Built target LoomVendor\n[ 73%] Built target LoomCommon\n[ 98%] Built target LoomScript\n[100%] Building CXX object tools/loomexec/CMakeFiles/loomexec.dir/src/main.cpp.o\n[100%] Linking CXX executable loomexec\n[100%] Built target loomexec\n",
+      "stderr": "${SCRATCH}/400-ptggcwas/LoomSDK/loom/script/native/core/system/Socket/options.c: In function ‘opt_meth_setoption’:\n${SCRATCH}/400-ptggcwas/LoomSDK/loom/script/native/core/system/Socket/options.c:37:43: warning: ‘%.35s’ directive writing up to 35 bytes into a region of size 25 [-Wformat-overflow=]\n   37 |         sprintf(msg, \"unsupported option `%.35s'\", name);\n      |                                           ^~~~~\nIn file included from ${SCRATCH}/cache/tools/apt/usr/include/stdio.h:980,\n                 from ${SCRATCH}/400-ptggcwas/LoomSDK/loom/vendor/lua/src/lauxlib.h:13,\n                 from ${SCRATCH}/400-ptggcwas/LoomSDK/loom/script/native/core/system/Socket/options.c:9:\nIn function ‘sprintf’,\n    inlined from ‘opt_meth_setoption’ at ${SCRATCH}/400-ptggcwas/LoomSDK/loom/script/native/core/system/Socket/options.c:37:9:\n${SCRATCH}/cache/tools/apt/usr/include/bits/stdio2.h:30:10: note: ‘__builtin___sprintf_chk’ output between 22 and 57 bytes into a destination of size 45\n   30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   31 |                                   __glibc_objsize (__s), __fmt,\n      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   32 |                                   __va_arg_pack ());\n      |                                   ~~~~~~~~~~~~~~~~~\n/usr/bin/ld: ../../loom/vendor/libLoomVendor.a(loslib.c.o): in function `os_tmpname':\nloslib.c:(.text+0x264): warning: the use of `tmpnam' is dangerous, better use `mkstemp'\n/usr/bin/ld: ../../loom/vendor/libLoomVendor.a(loslib.c.o): in function `os_tmpname':\nloslib.c:(.text+0x264): warning: the use of `tmpnam' is dangerous, better use `mkstemp'\n",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/400-fwfmgrpc/home",
+        "TMPDIR": "${SCRATCH}/400-fwfmgrpc/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "CPATH": "${SCRATCH}/cache/tools/apt/usr/include:${SCRATCH}/cache/tools/apt/usr/include/x86_64-linux-gnu",
+        "LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu"
+      }
+    },
+    {
+      "label": "Compile the official System library",
+      "command": [
+        "${SCRATCH}/400-ptggcwas/loom-build/tools/lsc/lsc",
+        "--root",
+        "${SCRATCH}/400-runtime-q_flltlt/sdk",
+        "--project",
+        "${SCRATCH}/400-runtime-q_flltlt/sdk",
+        "System.build"
+      ],
+      "cwd": "${SCRATCH}/400-runtime-q_flltlt/sdk",
+      "exit_code": 0,
+      "stdout": "LSC - Release Interpreted Compiler\nRoot set to ${SCRATCH}/400-runtime-q_flltlt/sdk\n\nProject folder set to ${SCRATCH}/400-runtime-q_flltlt/sdk\n\nBuilding System.build\nSDK: ${SCRATCH}/400-runtime-q_flltlt/sdk\nCompiling: System\n",
+      "stderr": ""
+    },
+    {
+      "label": "Compile the official Loom library",
+      "command": [
+        "${SCRATCH}/400-ptggcwas/loom-build/tools/lsc/lsc",
+        "--root",
+        "${SCRATCH}/400-runtime-q_flltlt/sdk",
+        "--project",
+        "${SCRATCH}/400-runtime-q_flltlt/sdk",
+        "Loom.build"
+      ],
+      "cwd": "${SCRATCH}/400-runtime-q_flltlt/sdk",
+      "exit_code": 0,
+      "stdout": "LSC - Release Interpreted Compiler\nRoot set to ${SCRATCH}/400-runtime-q_flltlt/sdk\n\nProject folder set to ${SCRATCH}/400-runtime-q_flltlt/sdk\n\nBuilding Loom.build\nSDK: ${SCRATCH}/400-runtime-q_flltlt/sdk\nCompiling: Loom\n",
+      "stderr": ""
+    },
+    {
+      "label": "Configure the upstream LoomPlayer with X11 and OpenGL",
+      "command": [
+        "cmake",
+        "-S",
+        "${SCRATCH}/400-ptggcwas/LoomSDK",
+        "-B",
+        "${SCRATCH}/400-runtime-q_flltlt/loom-player-build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DLOOM_BUILD_64BIT=1",
+        "-DLOOM_BUILD_JIT=0",
+        "-DSDL_SHARED=OFF",
+        "-DVIDEO_X11=ON",
+        "-DVIDEO_WAYLAND=OFF",
+        "-DVIDEO_OPENGL=ON"
+      ],
+      "exit_code": 0,
+      "stdout": "--   VIDEO_X11_XSHAPE       (Wanted: ON): ON\n--   VIDEO_X11_XVM          (Wanted: ON): OFF\n--   WAYLAND_SHARED         (Wanted: OFF): OFF\n--   X11_SHARED             (Wanted: ON): ON\n-- \n--  CFLAGS:        -g -O3 -DHAVE_LINUX_VERSION_H\n--  EXTRA_CFLAGS:  -D_REENTRANT -mfpmath=387 -msse2 -msse -m3dnow -mmmx -Wshadow -Wall -fvisibility=hidden \n--  EXTRA_LDFLAGS: -Wl,--no-undefined;-pthread\n--  EXTRA_LIBS:    m;GL\n-- \n--  Build Shared Library: OFF\n--  Build Static Library: ON\n-- \n-- If something was not detected, although the libraries\n-- were installed, then make sure you have set the\n-- CFLAGS and LDFLAGS environment variables correctly.\n-- \n-- Configuring done (47.6s)\n-- Generating done (0.2s)\n-- Build files have been written to: ${SCRATCH}/400-runtime-q_flltlt/loom-player-build"
+    },
+    {
+      "label": "Select the installed Xext shared library for SDL",
+      "command": [
+        "cmake",
+        "-S",
+        "${SCRATCH}/400-ptggcwas/LoomSDK",
+        "-B",
+        "${SCRATCH}/400-runtime-q_flltlt/loom-player-build",
+        "-DXEXT_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXext.so.6"
+      ],
+      "exit_code": 0,
+      "stdout": "--   VIDEO_X11_XSHAPE       (Wanted: ON): ON\n--   VIDEO_X11_XVM          (Wanted: ON): OFF\n--   WAYLAND_SHARED         (Wanted: OFF): OFF\n--   X11_SHARED             (Wanted: ON): ON\n-- \n--  CFLAGS:        -g -O3 -DHAVE_LINUX_VERSION_H\n--  EXTRA_CFLAGS:  -D_REENTRANT -mfpmath=387 -msse2 -msse -m3dnow -mmmx -Wshadow -Wall -fvisibility=hidden \n--  EXTRA_LDFLAGS: -Wl,--no-undefined;-pthread\n--  EXTRA_LIBS:    m;GL\n-- \n--  Build Shared Library: OFF\n--  Build Static Library: ON\n-- \n-- If something was not detected, although the libraries\n-- were installed, then make sure you have set the\n-- CFLAGS and LDFLAGS environment variables correctly.\n-- \n-- Configuring done (10.5s)\n-- Generating done (3.5s)\n-- Build files have been written to: ${SCRATCH}/400-runtime-q_flltlt/loom-player-build"
+    },
+    {
+      "label": "Build LoomPlayer",
+      "command": [
+        "cmake",
+        "--build",
+        "${SCRATCH}/400-runtime-q_flltlt/loom-player-build",
+        "--target",
+        "LoomPlayer",
+        "-j",
+        "3",
+        "--",
+        "-s"
+      ],
+      "exit_code": 0,
+      "stdout": "[ 69%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/core/linux/SDL_ibus.c.o\n[ 69%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/core/linux/SDL_udev.c.o\n[ 69%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/haptic/linux/SDL_syshaptic.c.o\n[ 69%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/joystick/linux/SDL_sysjoystick.c.o\n[ 69%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/thread/pthread/SDL_systhread.c.o\n[ 69%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/thread/pthread/SDL_sysmutex.c.o\n[ 70%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/thread/pthread/SDL_syscond.c.o\n[ 70%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/thread/pthread/SDL_systls.c.o\n[ 70%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/thread/pthread/SDL_syssem.c.o\n[ 70%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/power/linux/SDL_syspower.c.o\n[ 70%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/filesystem/unix/SDL_sysfilesystem.c.o\n[ 71%] Building C object loom/vendor/sdl2/CMakeFiles/SDL2-static.dir/src/timer/unix/SDL_systimer.c.o\n[ 71%] Linking C static library libSDL2.a\n[ 71%] Built target SDL2-static\n[ 93%] Built target LoomScript\n[100%] Built target LoomCore\n[100%] Linking CXX executable LoomPlayer\n/usr/bin/ld: ../loom/vendor/libLoomVendor.a(loslib.c.o): in function `os_tmpname':\nloslib.c:(.text+0x264): warning: the use of `tmpnam' is dangerous, better use `mkstemp'\n[100%] Built target LoomPlayer"
+    },
+    {
+      "label": "Compile the original HelloWorld.ls and link Main.loom",
+      "command": [
+        "${SCRATCH}/400-ptggcwas/loom-build/tools/lsc/lsc",
+        "--root",
+        "${SCRATCH}/400-runtime-q_flltlt/sdk/",
+        "--project",
+        "${SCRATCH}/400-runtime-q_flltlt/app",
+        "HelloWorld.build"
+      ],
+      "cwd": "${SCRATCH}/400-runtime-q_flltlt/app",
+      "exit_code": 0,
+      "stdout": "LSC - Release Interpreted Compiler\nRoot set to ${SCRATCH}/400-runtime-q_flltlt/sdk/\n\nProject folder set to ${SCRATCH}/400-runtime-q_flltlt/app\n\nBuilding HelloWorld.build\nSDK: ${SCRATCH}/400-runtime-q_flltlt/sdk/\nCompiling: Main\nLinking: System\nLinking: Loom\nCompile successful: ./bin/Main.loom\n",
+      "stderr": ""
+    },
+    {
+      "label": "Run Main.loom with native LoomPlayer inside Xvfb",
+      "command": [
+        "xvfb-run",
+        "--auto-servernum",
+        "--server-num=177",
+        "--server-args=-screen 0 640x480x24 -nolisten tcp",
+        "timeout",
+        "--kill-after=3s",
+        "8s",
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "${SCRATCH}/400-runtime-q_flltlt/loom-player-build/application/LoomPlayer",
+        "${SCRATCH}/400-runtime-q_flltlt/app/bin/Main.loom"
+      ],
+      "cwd": "${SCRATCH}/400-runtime-q_flltlt/app",
+      "exit_code": 124,
+      "stdout": "     asset  Loaded '${SCRATCH}/400-runtime-q_flltlt/app/bin/Main.loom', 355.4 KiB (363897 bytes)\n      core  Loom (Linux Release) built on Nov 22 2026 at 19:06:36\nALSA lib confmisc.c:855:(parse_card) cannot find card '0'\nALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory\nALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings\nALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory\nALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name\nALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory\nALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory\nALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default\nAL lib: alsa_open_playback: Could not open playback device 'default': No such file or directory\n     sound  Could not open OpenAL device.\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n       app  ----------\n       app  HelloWorld\n       app  ----------\nHello, World!\n     asset  Failed to connect to asset server localhost:12340\n     asset  Failed to connect to asset server localhost:12340\n",
+      "stderr": "",
+      "environment": {
+        "XDG_RUNTIME_DIR": "${SCRATCH}/400-runtime-q_flltlt/runtime-private",
+        "XDG_DATA_HOME": "${SCRATCH}/400-runtime-q_flltlt/runtime-data",
+        "XDG_CACHE_HOME": "${SCRATCH}/400-runtime-q_flltlt/runtime-cache",
+        "XDG_CONFIG_HOME": "${SCRATCH}/400-runtime-q_flltlt/runtime-config",
+        "SDL_VIDEODRIVER": "x11",
+        "SDL_AUDIODRIVER": "dummy",
+        "LIBGL_ALWAYS_SOFTWARE": "1",
+        "TMPDIR": "${SCRATCH}/400-runtime-q_flltlt",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+        "LC_ALL": "C"
+      },
+      "exit_reason": "The timeout stopped the application loop after eight seconds."
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#400 LoomScript/HelloWorld.ls": "df4ed9c2e2414d4b61a81bef93231e828d48c503cac5a2f3adccee8ebebf6843"
+  },
+  "fixture_sha256": {
+    "src/HelloWorld.build": {
+      "sha256": "2292f893608d7ae7477db2dd7c8bfce04bbdf3c47b19f83e0cd39729a5a3ab3b",
+      "content_utf8": "{\n  \"name\": \"Main\",\n  \"version\": \"1.0\",\n  \"executable\": true,\n  \"references\": [\n    \"System\",\n    \"Loom\"\n  ],\n  \"outputDir\": \"./bin\",\n  \"modules\": [\n    {\n      \"name\": \"Main\",\n      \"version\": \"1.0\",\n      \"sourcePath\": [\n        \".\"\n      ]\n    }\n  ]\n}"
+    }
+  },
+  "sources": [
+    "https://github.com/LoomSDK/LoomSDK",
+    "https://github.com/LoomSDK/LoomSDK/blob/master/sdk/src/loom/Application.ls"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "url": "https://codeload.github.com/LoomSDK/LoomSDK/tar.gz/c6ff83f99b313f402326948c57661908933dabdd",
+      "ref": "c6ff83f99b313f402326948c57661908933dabdd",
+      "sha256": "a5a4772ae8667f7d89c4d877695fb3ed640060309d0744c16d20ec47e98bc7ed"
+    }
+  ],
+  "toolchain_source_changes": [
+    {
+      "file": "loom/vendor/minimp3/libc.h",
+      "original_sha256": "d7a30de39263a1d22df6a861e49453325329ba94726035003f8437628c84ab93",
+      "built_sha256": "91ffe451c02d6f4f747f4e125b4951b9c5e624b0fcb57421660e4a0af6400251",
+      "replacements": [
+        {
+          "from": "#ifndef __int8_t_defined",
+          "to": "#if defined(_MSC_VER) && !defined(__int8_t_defined)"
+        }
+      ]
+    },
+    {
+      "file": "loom/script/runtime/lsRuntime.h",
+      "original_sha256": "9a4be16e6edb775532c3d49dd83ce79698d103f895544961059dda89263f3d61",
+      "built_sha256": "339aff8c6dbbffc46ea91344946c2a7e1e837fb2c0ed9e21c63dcd281710694c",
+      "replacements": [
+        {
+          "from": "#include <cxxabi.h>",
+          "to": ""
+        },
+        {
+          "from": "#include <typeinfo>",
+          "to": "#include <typeinfo>\n#ifdef HAVE_CXA_DEMANGLE\n#include <cxxabi.h>\n#endif"
+        }
+      ]
+    }
+  ],
+  "ubuntu_archives": [
+    {
+      "name": "cmake",
+      "version": "3.28.3-1build7",
+      "filename": "pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+      "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295",
+      "bytes": 11190006,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb"
+    },
+    {
+      "name": "libasound2-dev",
+      "version": "1.2.11-1ubuntu0.3",
+      "filename": "pool/main/a/alsa-lib/libasound2-dev_1.2.11-1ubuntu0.3_amd64.deb",
+      "sha256": "b83795b1ba0e40cfa8363359fd17a06260838d8ae0f315531771a62f7c7e215a",
+      "bytes": 115386,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/a/alsa-lib/libasound2-dev_1.2.11-1ubuntu0.3_amd64.deb"
+    },
+    {
+      "name": "libcurl4-openssl-dev",
+      "version": "8.5.0-2ubuntu10.16",
+      "filename": "pool/main/c/curl/libcurl4-openssl-dev_8.5.0-2ubuntu10.16_amd64.deb",
+      "sha256": "371ce08af1c08bf5757467b306a040ea1d40de4e9c4acf20cabc3dde3c18a9b6",
+      "bytes": 446636,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/c/curl/libcurl4-openssl-dev_8.5.0-2ubuntu10.16_amd64.deb"
+    }
+  ],
+  "compiler_artifacts": {
+    "System.loomlib": "0a9634806dd89484e04dd2a074bc6ef5bb3c7b49530621820fca92ce688e489c",
+    "Loom.loomlib": "ba2140ef677cca13a05f9996f9e5cfc4fa0e7d648e3147fb577c6d625b19656e",
+    "Main.loom": "24c70c2a89cef7b25cfedf4892450db6d1c40595416f6efd4eaca6edb354e7e8",
+    "LoomPlayer": "aedc4f854bf8ff006383ec361b02937a8a58a70464da2929a94e5859f270a458"
+  },
+  "player_package_preflight": {
+    "libglx-dev": {
+      "version": "1.7.0-1build1",
+      "size": 14176,
+      "expanded": 89088,
+      "sha256": "0e2654950a881c20b640a3af590add2e0b612b8c0fdd945761fc695e1b6eb797"
+    },
+    "libgl-dev": {
+      "version": "1.7.0-1build1",
+      "size": 102444,
+      "expanded": 1396736,
+      "sha256": "b7145fd8f8abe20d5cb436d2eae9b3235bd91be6fbddac581620d16763bd9250"
+    },
+    "libglew2.2": {
+      "version": "2.2.0-4build1",
+      "size": 187350,
+      "expanded": 955392,
+      "sha256": "ffef730aac883b1cb1641eae6149da4091a890330d786916f29ea10de362ba9e"
+    },
+    "libopengl0": {
+      "version": "1.7.0-1build1",
+      "size": 32780,
+      "expanded": 224256,
+      "sha256": "da36bd4d30c13b40b697fa8b72cc09d309ff36a5bd9750341ef78492bf3f3966"
+    },
+    "libglu1-mesa": {
+      "version": "9.0.2-1.1build1",
+      "size": 151722,
+      "expanded": 378880,
+      "sha256": "4288833eebfbf6b00d1ae98159f429e1f7f6398288c9305edeeb185d9ed048d9"
+    },
+    "libopengl-dev": {
+      "version": "1.7.0-1build1",
+      "size": 3454,
+      "expanded": 21504,
+      "sha256": "da50e2804e80391e5c3d7f61af70b41ff6d0d20e4862136ceb8828000637c273"
+    },
+    "libglu1-mesa-dev": {
+      "version": "9.0.2-1.1build1",
+      "size": 237154,
+      "expanded": 993280,
+      "sha256": "d1dcb06e6e09645e9ba0a3f6cab4f732a5c7bf72728032be0b41fa6c0932a396"
+    },
+    "libglew-dev": {
+      "version": "2.2.0-4build1",
+      "size": 280410,
+      "expanded": 2764800,
+      "sha256": "3a359b7fbb18e853e494bf6a21b6b7ad4f95bb2ce04c79e8f49cb4350d753186"
+    }
+  },
+  "runtime_packages": [
+    "libgl1:amd64\t1.7.0-1build1",
+    "libxext6:amd64\t2:1.3.4-1build2",
+    "xvfb\t2:21.1.12-1ubuntu1.6"
+  ],
+  "player_native_libraries": {
+    "OpenGL": {
+      "symlink": "${SCRATCH}/400-runtime-q_flltlt/loom-player-link/libGL.so",
+      "target": "/usr/lib/x86_64-linux-gnu/libGL.so.1.7.0",
+      "target_sha256": "67f471213576d225d38347a0b6d2a08a231980685301ff6461bd74d3994e5027"
+    },
+    "Xext": {
+      "variable": "XEXT_LIB",
+      "new_value": "/usr/lib/x86_64-linux-gnu/libXext.so.6",
+      "new_value_sha256": "2907e6a996465de5b32a0dd10534d4416b87f1dee5670aaa7b19301a1fc93f44"
+    }
+  },
+  "player_build_environment": {
+    "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+    "LIBRARY_PATH": "${SCRATCH}/400-runtime-q_flltlt/loom-player-link:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+    "CPATH": "${SCRATCH}/cache/tools/apt/usr/include:${SCRATCH}/cache/tools/apt/usr/include/x86_64-linux-gnu",
+    "CMAKE_INCLUDE_PATH": "${SCRATCH}/cache/tools/apt/usr/include:${SCRATCH}/cache/tools/apt/usr/include/x86_64-linux-gnu",
+    "CMAKE_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu",
+    "LC_ALL": "C"
+  },
+  "updated_expectation": {
+    "semantic_goal": "Start the LoomScript application and emit the greeting from its run method.",
+    "expected_result": "Hello, World!"
+  },
+  "toolchain": "LoomSDK c6ff83f99b313f402326948c57661908933dabdd, Linux x86-64 Release, interpreted Lua, Xvfb",
+  "reproduction_command": "cd \"$LOOM_PROJECT\" && mkdir -p bin && \"$LOOM_LSC\" --root \"$LOOM_SDK/\" --project \"$LOOM_PROJECT\" HelloWorld.build && SDL_VIDEODRIVER=x11 SDL_AUDIODRIVER=dummy LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a -s '-screen 0 640x480x24 -nolisten tcp' timeout --kill-after=3s 8s stdbuf -oL -eL \"$LOOM_PLAYER\" \"$LOOM_PROJECT/bin/Main.loom\"",
+  "semantic_scope": "The pinned LoomScript compiler built Main.loom from the unchanged HelloWorld.ls and the recorded project fixture. The native LoomPlayer ran the resulting assembly in an isolated Xvfb display. HelloWorld.run printed the exact line `Hello, World!`. The application loop was stopped after eight seconds by the test timeout, which returned 124. The log also records unavailable audio and failed connection attempts to the optional localhost asset server.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

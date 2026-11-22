@@ -22330,23 +22330,23 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#400 LoomScript/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#400 LoomScript/HelloWorld.ls": "df4ed9c2e2414d4b61a81bef93231e828d48c503cac5a2f3adccee8ebebf6843"
+      },
       "based_on": null,
       "documentation": "examples/#400 LoomScript/README.md",
       "supporting_files": [],
       "validation_command": "Inserire HelloWorld.ls come classe principale del progetto Loom; loom build; loom run",
-      "expected_result": "run invoca base initialization e trace emette Hello, World!.",
+      "expected_result": "Hello, World!",
       "sources": [
         "https://github.com/LoomSDK/LoomSDK",
         "https://github.com/LoomSDK/LoomSDK/blob/master/sdk/src/loom/Application.ls"
       ],
-      "blockers": [
-        "Loom compiler/runtime storico non predisposto; build/avvio applicazione pending."
-      ],
-      "notes": "È il linguaggio LoomScript del Loom Native SDK per applicazioni/giochi. La classe estende loom.Application e mantiene super.run come indicato dal codice vendor. Non è un SDK blockchain omonimo."
+      "blockers": [],
+      "notes": "The pinned LoomScript compiler built Main.loom from the unchanged HelloWorld.ls and the recorded project fixture. The native LoomPlayer ran the resulting assembly in an isolated Xvfb display. HelloWorld.run printed the exact line `Hello, World!`. The application loop was stopped after eight seconds by the test timeout, which returned 124. The log also records unavailable audio and failed connection attempts to the optional localhost asset server."
     },
     {
       "language_ordinal": 401,
