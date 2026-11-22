@@ -500,7 +500,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #495 | [Odin](../examples/%23495%20Odin/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #496 | [Omgrofl](../examples/%23496%20Omgrofl/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #497 | [Opa](../examples/%23497%20Opa/README.md) | Yes | Pending | Pending | 1/1 | The historical Opa web compiler and required Node runtime are not set up. |
+| #497 | [Opa](../examples/%23497%20Opa/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #498 | [Opal](../examples/%23498%20Opal/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #499 | [Open Policy Agent](../examples/%23499%20Open%20Policy%20Agent/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #500 | [OpenAPI Specification v2](../examples/%23500%20OpenAPI%20Specification%20v2/README.md) | Yes | Yes | Yes | Nomi speciali / altra modalità | Evidence recorded |

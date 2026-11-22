@@ -27110,10 +27110,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#497 Opa/verification/native_20261122_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#497 Opa/hello.opa": "ef68de8d5f78273b9d1703c34a8819e7999e06efccdb8782629731c9ca5706ee"
+      },
       "based_on": null,
       "documentation": "examples/#497 Opa/README.md",
       "supporting_files": [],
@@ -27123,10 +27125,8 @@
         "https://github.com/MLstate/opalang",
         "https://github.com/github-linguist/linguist/blob/main/samples/Opa/hello_syntax2.opa"
       ],
-      "blockers": [
-        "Compilatore Opa web storico e runtime Node richiesto non predisposti."
-      ],
-      "notes": "Server.start e sintassi page:function sono conformi al campione canonico; verificare l’opzione del compilatore scelto prima del test."
+      "blockers": [],
+      "notes": "The native Opa compiler accepted the original hello.opa. The generated JavaScript ran with the Opa runtime in a private network namespace. A loopback HTTP request returned status 200 and the page contained an h1 element whose exact text was Hello, World!"
     },
     {
       "language_ordinal": 498,

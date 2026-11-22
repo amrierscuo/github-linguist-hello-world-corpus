@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "ordinal": 497,
+  "language": "Opa",
+  "timestamp_utc": "2026-11-22T20:25:10.253413+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Identify the native Opa compiler built from official source",
+      "command": [
+        "${SCRATCH}/opa-native-424b369/source-historical/_build/bin/opa",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/497-feaqv3dy",
+      "timestamp_utc": "2026-11-22T20:25:10.279991+00:00",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Opa compiler (c) MLstate -- version 1.2.0 -- build 0\n",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/497-feaqv3dy/home",
+        "TMPDIR": "${SCRATCH}/497-feaqv3dy/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Compile the original Opa main example",
+      "command": [
+        "${SCRATCH}/opa-native-424b369/source-historical/_build/bin/opa",
+        "-o",
+        "corpus-greeting.js",
+        "${SCRATCH}/497-feaqv3dy/hello.opa"
+      ],
+      "cwd": "${SCRATCH}/497-feaqv3dy",
+      "timestamp_utc": "2026-11-22T20:25:17.938248+00:00",
+      "timeout_seconds": 85,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/497-feaqv3dy/home",
+        "TMPDIR": "${SCRATCH}/497-feaqv3dy/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Identify the official Node.js binary for Opa",
+      "command": [
+        "${SCRATCH}/opa-native-424b369/node-v22.20.0",
+        "--version"
+      ],
+      "cwd": "${SCRATCH}/497-02d_7vd3",
+      "timestamp_utc": "2026-11-22T20:28:32.694564+00:00",
+      "timeout_seconds": 20,
+      "exit_code": 0,
+      "stdout": "v22.20.0\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/497-02d_7vd3/home",
+        "TMPDIR": "${SCRATCH}/497-02d_7vd3/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    },
+    {
+      "label": "Run the compiled Opa app and inspect the loopback HTTP response",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-pid",
+        "--unshare-ipc",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/497-02d_7vd3",
+        "${SCRATCH}/497-02d_7vd3",
+        "--chdir",
+        "${SCRATCH}/497-02d_7vd3",
+        "--setenv",
+        "NODE_PATH",
+        "${SCRATCH}/opa-native-424b369/source-historical/_build:${SCRATCH}/opa-native-424b369/source-historical/_build/lib/opa/static:${SCRATCH}/opa-native-424b369/source-historical/_build/lib/opa/stdlib:${SCRATCH}/opa-native-424b369/source-historical/_build/lib/opa/stdlib/stdlib.qmljs:${SCRATCH}/opa-native-424b369/npm-deps/node_modules",
+        "--",
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "${SCRATCH}/497-02d_7vd3/probe-opa-http.py",
+        "${SCRATCH}/opa-native-424b369/node-v22.20.0",
+        "${SCRATCH}/497-feaqv3dy/corpus-greeting.js"
+      ],
+      "cwd": "${SCRATCH}/497-02d_7vd3",
+      "timestamp_utc": "2026-11-22T20:28:32.767662+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "stdout": "{\"http_status\": 200, \"headings\": [\"Hello, World!\"]}\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin",
+        "HOME": "${SCRATCH}/497-02d_7vd3/home",
+        "TMPDIR": "${SCRATCH}/497-02d_7vd3/tmp",
+        "LC_ALL": "C.UTF-8"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#497 Opa/hello.opa": "ef68de8d5f78273b9d1703c34a8819e7999e06efccdb8782629731c9ca5706ee"
+  },
+  "fixture_sha256": {
+    "probe-opa-http.py": {
+      "sha256": "8fe129f556dec1e2e34de1cde9960a5f7e4881903acf154be5fbe0f6a0b0bddb",
+      "content_utf8": "\nfrom html.parser import HTMLParser\nfrom http.client import HTTPConnection, HTTPException\nimport json\nfrom pathlib import Path\nimport subprocess\nimport sys\nimport time\n\n\nclass Headings(HTMLParser):\n    def __init__(self):\n        super().__init__()\n        self.headings = []\n        self.in_heading = False\n\n    def handle_starttag(self, tag, attributes):\n        if tag == 'h1':\n            self.headings.append('')\n            self.in_heading = True\n\n    def handle_endtag(self, tag):\n        if tag == 'h1':\n            self.in_heading = False\n\n    def handle_data(self, data):\n        if self.in_heading:\n            self.headings[-1] += data\n\n\nnode, script = map(Path, sys.argv[1:3])\nport = 8080\nlog_path = Path('opa-server.log')\nwith log_path.open('wb') as log:\n    server = subprocess.Popen([node, script, '--port', str(port)], cwd=script.parent,\n                              stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT)\n    try:\n        deadline = time.monotonic() + 18\n        while time.monotonic() < deadline and server.poll() is None:\n            connection = HTTPConnection('127.0.0.1', port, timeout=1.5)\n            try:\n                connection.request('GET', '/')\n                response = connection.getresponse()\n                body = response.read(1_000_001)\n                assert len(body) <= 1_000_000, 'Opa response exceeded the test limit'\n                Path('opa-response.html').write_bytes(body)\n                headings = Headings()\n                headings.feed(body.decode('utf-8'))\n                print(json.dumps({'http_status': response.status, 'headings': headings.headings}), flush=True)\n                sys.exit(0 if response.status == 200 and 'Hello, World!' in headings.headings else 2)\n            except (OSError, HTTPException):\n                time.sleep(0.3)\n            finally:\n                connection.close()\n        raise RuntimeError(f'Server did not answer the HTTP request. Child exit: {server.poll()}')\n    finally:\n        if server.poll() is None:\n            server.terminate()\n            try:\n                server.wait(timeout=4)\n            except subprocess.TimeoutExpired:\n                server.kill()\n                server.wait()\n"
+    }
+  },
+  "sources": [
+    "https://github.com/MLstate/opalang",
+    "https://github.com/github-linguist/linguist/blob/main/samples/Opa/hello_syntax2.opa",
+    "https://github.com/MLstate/opalang/tree/424b369160ce693406cece6ac033d75d85f5df4f",
+    "https://github.com/ocaml/opam-repository-archive/blob/f5b3f8867e235645eb04f5ddf94ac85bb34d9c23/packages/ocaml-base-compiler/ocaml-base-compiler.4.02.3/opam"
+  ],
+  "previous_verification_log": null,
+  "compiler_wrapper_sha256": "c1c9398d0d2af1d45aa21dafd9b79ceefa0b2fa1852320a182abb6fb5907eddd",
+  "compiler_binary_sha256": "e9eae0e850ebe09a88c3ba58008267a24d2adf986106d24788102e3dd90d4e75",
+  "opa_compiler_version": "Opa compiler (c) MLstate -- version 1.2.0 -- build 0",
+  "opa_source_sha256": "4ddf1507b05a38a092ac7b6a67c22d34074407ecc69fad8db26f0ceabab8784e",
+  "node_runtime_sha256": "b1cbec894e45a5814b6ab756e1e14f8a76516273197e67e0412b57c1e10d0d9f",
+  "javascript_artifact_sha256": "c93d5ffb4fc6b06c247f78ef3b1fb8829690cf7214517bb26da3ea856f223ac1",
+  "staged_package_manifests": {
+    "package.json": {
+      "name": "link",
+      "version": "1.2.0",
+      "main": "corpus-greeting.js",
+      "dependencies": {
+        "stdlib.core.web.server.opx": "1.2.0",
+        "opabsl.opp": "1.2.0",
+        "opa-js-runtime-cps": "1.2.0"
+      }
+    }
+  },
+  "runtime_packages": [
+    {
+      "name": "intl-messageformat",
+      "version": "1.3.0",
+      "url": "https://registry.npmjs.org/intl-messageformat/-/intl-messageformat-1.3.0.tgz",
+      "bytes": 182452,
+      "integrity": "sha512-dtj6VJ0Ul/DFyAksbEtOzsslkfuEu7r/d/oi8XltZgDLH3aUzxNkcb6SbguhHTi1RyPGtdWsfx6Q7qJGUySpow==",
+      "sha256": "44f79315d9b8a48aac293f14fbefee1dceca76e080ef728b0ba5f83b2500ba30"
+    },
+    {
+      "name": "intl-messageformat-parser",
+      "version": "1.2.0",
+      "url": "https://registry.npmjs.org/intl-messageformat-parser/-/intl-messageformat-parser-1.2.0.tgz",
+      "bytes": 33128,
+      "integrity": "sha512-2qnIxfkrrzKAXR9m+rUqWb2yzeRX78k1l7+MU4ji7i4TIUyAIOo3KGV4hPKElRNyD40AAoAQdw1XXs5umB/usA==",
+      "sha256": "bdd18a2802209965972aa3d98e90eea08746e2dabe7955cf0a257ec5a21cbc42"
+    },
+    {
+      "name": "intl",
+      "version": "1.2.5",
+      "url": "https://registry.npmjs.org/intl/-/intl-1.2.5.tgz",
+      "bytes": 3104795,
+      "integrity": "sha512-rK0KcPHeBFBcqsErKSpvZnrOmWOj+EmDkyJ57e90YWaQNqbcivcqmKDlHEeNprDWOsKzPsh1BfSpPQdDvclHVw==",
+      "sha256": "6b29f5bedfa098118692da21a00c35bcf1e04204d7951208c13cfd25d485dd1c"
+    }
+  ],
+  "node_server_log": "BslLogger.open_out: Couldn't open file 'access.log'\nBslLogger.open_out: Couldn't open file 'access.log'\nBslLogger.open_out: Couldn't open file 'error.log'\nBslLogger.open_out: Couldn't open file 'error.log'\n(node:3) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.\n(Use `node-v22.20.0 --trace-deprecation ...` to show where the warning was created)\nHttp serving on http://<test-host>:8080\n",
+  "http_body_sha256": "a0536c85e125a4a77ec9b7b9b34d057baa1e8ed990a09ec91f6ad4c420bddf33",
+  "http_observation": {
+    "http_status": 200,
+    "headings": [
+      "Hello, World!"
+    ]
+  },
+  "toolchain": "Opa 1.2.0 source revision 424b369, OCaml 4.02.3 and Node.js v22.20.0",
+  "reproduction_command": "opa -o corpus-greeting.js hello.opa; node corpus-greeting.js --port 8080; GET http://127.0.0.1:8080/",
+  "semantic_scope": "The native Opa compiler accepted the original hello.opa. The generated JavaScript ran with the Opa runtime in a private network namespace. A loopback HTTP request returned status 200 and the page contained an h1 element whose exact text was Hello, World!",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

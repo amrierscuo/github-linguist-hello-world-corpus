@@ -949,7 +949,7 @@ Copied aliases do not automatically inherit the original file's checks. Drafts a
 | #494 | [Objective-J](../examples/%23494%20Objective-J/README.md) | `.sj` | [hello.sj](../examples/%23494%20Objective-J/variants/sj-c6e9356b/hello.sj) | Yes | Yes | created; Evidence recorded |
 | #495 | [Odin](../examples/%23495%20Odin/README.md) | `.odin` | [hello.odin](../examples/%23495%20Odin/hello.odin) | Yes | Yes | existing; Evidence recorded |
 | #496 | [Omgrofl](../examples/%23496%20Omgrofl/README.md) | `.omgrofl` | [hello.omgrofl](../examples/%23496%20Omgrofl/hello.omgrofl) | Yes | Yes | existing; Evidence recorded |
-| #497 | [Opa](../examples/%23497%20Opa/README.md) | `.opa` | [hello.opa](../examples/%23497%20Opa/hello.opa) | Pending | Pending | existing; The historical Opa web compiler and required Node runtime are not set up. |
+| #497 | [Opa](../examples/%23497%20Opa/README.md) | `.opa` | [hello.opa](../examples/%23497%20Opa/hello.opa) | Yes | Yes | existing; Evidence recorded |
 | #498 | [Opal](../examples/%23498%20Opal/README.md) | `.opal` | [hello.opal](../examples/%23498%20Opal/hello.opal) | Yes | Yes | existing; Evidence recorded |
 | #499 | [Open Policy Agent](../examples/%23499%20Open%20Policy%20Agent/README.md) | `.rego` | [hello.rego](../examples/%23499%20Open%20Policy%20Agent/hello.rego), [hello_test.rego](../examples/%23499%20Open%20Policy%20Agent/hello_test.rego) | Yes | Yes | existing; Evidence recorded |
 | #502 | [OpenCL](../examples/%23502%20OpenCL/README.md) | `.cl` | [hello.cl](../examples/%23502%20OpenCL/hello.cl) | Yes | Yes | existing; Evidence recorded |
