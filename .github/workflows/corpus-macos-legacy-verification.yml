@@ -48,6 +48,9 @@ jobs:
           programs = sorted(path for path in (stage / 'sdk').rglob('cycript') if path.is_file() and os.access(path, os.X_OK))
           assert len(programs) == 1, programs
           exe = str(programs[0])
+          executable_type = subprocess.check_output(['file', '-b', exe], text=True)
+          print('Cycript launcher type:', executable_type.strip(), flush=True)
+          launcher = ['/bin/bash', exe] if 'text' in executable_type.lower() else [exe]
           receipt = {
               'schema_version': 1, 'ordinal': 147, 'language': 'Cycript',
               'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'platform': platform.platform(),
@@ -57,11 +60,14 @@ jobs:
           }
           for label, args in [
               ('Identify the official Cycript binary', ['file', exe]),
-              ('Read Cycript compiler version and options', [exe, '--help']),
-              ('Compile original Cycript source', [exe, '-c', source.name]),
-              ('Execute original Cycript source with JavaScriptCore', [exe, source.name]),
+              ('Read Cycript compiler version and options', [*launcher, '--help']),
+              ('Compile original Cycript source', [*launcher, '-c', source.name]),
+              ('Execute original Cycript source with JavaScriptCore', [*launcher, source.name]),
           ]:
-              result = subprocess.run(args, cwd=stage, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=30)
+              try:
+                  result = subprocess.run(args, cwd=stage, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=30)
+              except OSError as error:
+                  result = subprocess.CompletedProcess(args, 126, '', str(error))
               command = [arg.replace(str(stage), '${SCRATCH}') for arg in args]
               receipt['commands'].append({'label': label, 'command': command, 'exit_code': result.returncode,
                                           'stdout': result.stdout, 'stderr': result.stderr})
@@ -78,9 +84,8 @@ jobs:
           mkdir "$stage/mounted"
           hdiutil attach -nobrowse -noautoopen -readonly -mountpoint "$stage/mounted" "$stage/opa.dmg"
           trap 'hdiutil detach "$stage/mounted"' EXIT
-          find "$stage/mounted" -maxdepth 3 -type f -print
-          package="$(find "$stage/mounted" -maxdepth 3 -name '*.pkg' -print -quit)"
-          test -n "$package"
+          package="$stage/mounted/opa-4308.pkg"
+          test -f "$package"
           pkgutil --expand-full "$package" "$stage/package"
           cd corpus
           python3 - <<'PY'
