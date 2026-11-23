@@ -30159,10 +30159,12 @@
       ],
       "creation_status": "existing",
       "artifact_created": true,
-      "syntax_verified": false,
-      "semantic_verified": false,
-      "verification_log": null,
-      "verified_artifact_sha256": {},
+      "syntax_verified": true,
+      "semantic_verified": true,
+      "verification_log": "examples/#550 PowerBuilder/verification/native_20261123_wave800_main.json",
+      "verified_artifact_sha256": {
+        "examples/#550 PowerBuilder/u_hello.sru": "027ff3b92525e295aa7046084eff2e52462a16e6afb91a68a90907eba2cc6180"
+      },
       "based_on": null,
       "documentation": "examples/#550 PowerBuilder/README.md",
       "supporting_files": [],
@@ -30171,10 +30173,8 @@
       "sources": [
         "https://www.appeon.com/system/files/product-manual/powerscript_reference_v2021.pdf"
       ],
-      "blockers": [
-        "Ambiente PowerBuilder non preparato; import/compilazione/esecuzione pendenti."
-      ],
-      "notes": "Il sorgente esportato .sru definisce un oggetto nonvisuale e una funzione pubblica PowerScript. MessageBox emette il saluto; il valore di ritorno è0."
+      "blockers": [],
+      "notes": "The genuine Appeon compiler imported the unchanged u_hello.sru into a local library and built a test application that calls greet(). The matching runtime showed the exact greeting and the function returned 0. The observer read the dialog in a private virtual display and the process exited with code 0. The test application passes the method result to Win32 ExitProcess after writing it to a local result file."
     },
     {
       "language_ordinal": 550,

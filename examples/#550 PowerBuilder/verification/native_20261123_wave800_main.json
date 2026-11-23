@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "ordinal": 550,
+  "language": "PowerBuilder",
+  "timestamp_utc": "2026-11-23T11:53:46.905482+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "syntax_verified": true,
+  "semantic_verified": true,
+  "commands": [
+    {
+      "label": "Run the native Windows program with a private virtual display, network disabled and Wine Mono disabled",
+      "command": [
+        "${SCRATCH}/cache/tools/apt/usr/bin/bwrap",
+        "--ro-bind",
+        "/",
+        "/",
+        "--unshare-user",
+        "--uid",
+        "0",
+        "--gid",
+        "0",
+        "--unshare-net",
+        "--unshare-ipc",
+        "--unshare-pid",
+        "--die-with-parent",
+        "--dev",
+        "/dev",
+        "--proc",
+        "/proc",
+        "--tmpfs",
+        "/tmp",
+        "--tmpfs",
+        "/mnt",
+        "--bind",
+        "${SCRATCH}/550-3x2zf1a8",
+        "${SCRATCH}/550-3x2zf1a8",
+        "--bind",
+        "${SCRATCH}/550-jxjgalg5/wine-prefix",
+        "${SCRATCH}/550-jxjgalg5/wine-prefix",
+        "--chdir",
+        "${SCRATCH}/550-3x2zf1a8",
+        "--",
+        "xvfb-run",
+        "-a",
+        "-s",
+        "-screen 0 1024x768x24 -nolisten tcp",
+        "sh",
+        "${SCRATCH}/550-3x2zf1a8/portable-wrapper.sh",
+        "${SCRATCH}/cache/tools/wine-portable-11.10/dist/wine-11.10-amd64-wow64/bin/wine",
+        "cmd.exe",
+        "/d",
+        "/c",
+        "Z:\\var\\tmp\\codex-linguist-800-20261119-1000\\550-3x2zf1a8\\build.cmd"
+      ],
+      "cwd": "${SCRATCH}/550-3x2zf1a8",
+      "timestamp_utc": "2026-11-23T11:54:06.257736+00:00",
+      "timeout_seconds": 95,
+      "exit_code": 0,
+      "stdout": "reg: The operation completed successfully\r\nlibEGL warning: DRI3 error: Could not get DRI3 device\nlibEGL warning: Ensure your X server supports DRI3 to get accelerated rendering\nPBORCA_LibraryCreate status=0\r\nPBORCA_SessionSetLibraryList status=0\r\nPBORCA bootstrap application status=0\r\nPBORCA_CompileEntryImport u_hello.sru bytes=407 status=0\r\nPBORCA_CompileEntryImport corpus_hello.sra bytes=689 status=0\r\nPBORCA select imported application status=0\r\nPBORCA_ApplicationRebuild status=0\r\nPBORCA_ExecutableCreate status=0\r\ntitle=Corpus greeting\r\nmessage=Hello, World!\r\nchild_exit_code=0\r\nX connection to :99 broken (explicit kill or server shutdown).\r\nX connection to :99 broken (explicit kill or server shutdown).\r\nX connection to :99 broken (explicit kill or server shutdown).\r\n",
+      "stderr": "",
+      "environment": {
+        "PATH": "${SCRATCH}/cache/tools/apt/usr/bin:/usr/bin:/bin",
+        "HOME": "${SCRATCH}/550-3x2zf1a8/home",
+        "TMPDIR": "${SCRATCH}/550-3x2zf1a8/tmp",
+        "LC_ALL": "C.UTF-8",
+        "LD_LIBRARY_PATH": "${SCRATCH}/cache/tools/apt/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu:${SCRATCH}/cache/tools/apt/usr/lib:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/pulseaudio:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/blas:${SCRATCH}/cache/tools/apt/usr/lib/x86_64-linux-gnu/lapack",
+        "WINEPREFIX": "${SCRATCH}/550-jxjgalg5/wine-prefix",
+        "WINEARCH": "wow64",
+        "WINEDLLOVERRIDES": "mscoree,mshtml=",
+        "WINEDEBUG": "-all",
+        "XDG_RUNTIME_DIR": "${SCRATCH}/550-3x2zf1a8/headless-state"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "examples/#550 PowerBuilder/u_hello.sru": "027ff3b92525e295aa7046084eff2e52462a16e6afb91a68a90907eba2cc6180"
+  },
+  "fixture_sha256": {
+    "corpus_hello.sra": {
+      "sha256": "ccf2ea8aaa6b3afce987d77a7079cbb583aa056ae715c400c8fb5651ccc96ec8",
+      "content_utf8": "$PBExportHeader$corpus_hello.sra\nforward\nglobal type corpus_hello from application\nend type\nend forward\n\nglobal type corpus_hello from application\nstring appname = \"Corpus test harness\"\nend type\nglobal corpus_hello corpus_hello\n\ntype prototypes\nsubroutine ExitProcess(ulong exit_code) library \"kernel32.dll\"\nend prototypes\n\nevent open;\nu_hello greeter\ninteger result, output_file\ngreeter = create u_hello\nresult = greeter.greet()\ndestroy greeter\noutput_file = FileOpen(\"greet-return.txt\", LineMode!, Write!, LockWrite!, Replace!)\nif output_file > 0 then\n    FileWrite(output_file, String(result))\n    FileClose(output_file)\nend if\nExitProcess(result)\nend event\n",
+      "line_ending": "CRLF"
+    },
+    "build.cmd": {
+      "sha256": "c111c3a4d96deb3c767591f35c5e26224886f1c90102e05e4a9ab715aee2868a",
+      "content_utf8": "@echo off\nreg add \"HKLM\\Software\\Sybase\\PowerBuilder Runtime\\22.2.0.3289\" /v Location /t REG_SZ /d \"%CD%\" /f /reg:32\nif errorlevel 1 exit /b %errorlevel%\norca_import.exe\nif errorlevel 1 exit /b %errorlevel%\nif not exist corpus_hello.pbl exit /b 20\nif not exist corpus_hello.exe exit /b 21\nobserve_message.exe\nexit /b %errorlevel%\n",
+      "line_ending": "CRLF"
+    },
+    "portable-wrapper.sh": {
+      "sha256": "c8874c62ae853ff325dda4a5e0be2ffd41ab875463e2cd7a7cde6fc96a8107d3",
+      "content_utf8": "#!/bin/sh\nset -eu\n\"$@\" &\npid=$!\ntrap 'kill \"$pid\" 2>/dev/null || true' EXIT\nstatus=0\nwait \"$pid\" || status=$?\nif [ -n \"${CORPUS_WINESERVER:-}\" ]; then\n    \"$CORPUS_WINESERVER\" -w\nfi\nexit \"$status\"\n"
+    }
+  },
+  "sources": [
+    "https://www.appeon.com/system/files/product-manual/powerscript_reference_v2021.pdf",
+    "https://docs.appeon.com/pb2022/orca_guide/XREF_73854_PBORCA.html",
+    "https://docs.appeon.com/pb2022/orca_guide/XREF_80726_PBORCA.html",
+    "https://docs.appeon.com/pb2022/orca_guide/XREF_96406_PBORCA.html",
+    "https://docs.appeon.com/pb2022/application_techniques/Using_external_functions.html",
+    "https://docs.appeon.com/pb2022r3/application_techniques/PowerBuilder_runtime_files.html",
+    "https://docs.appeon.com/pb2022r3/installation_guide_for_pb/planning_overview.html"
+  ],
+  "previous_verification_log": null,
+  "toolchain_archives": [
+    {
+      "name": "PowerBuilder Runtime",
+      "url": "https://file.appeon.com/download/APB/2022/R3/GA/build_3289/PowerBuilderRuntime-3289.zip",
+      "version": "22.2.0.3289",
+      "archive_sha256": "5f084bf3da1d2cc0b1914ab3fbfbe2c45c96743b3a7783f95b0bf8d174d1ef1a",
+      "setup_sha256": "6832acf714cd25b2816193599637de5408444cb9ec8c4d6a3e449e1fb3f5d7a7"
+    },
+    {
+      "name": "PowerBuilder Utilities",
+      "url": "https://file.appeon.com/download/APB/2022/R3/GA/build_3289/PowerBuilderUtilities-3289.zip",
+      "version": "22.2.0.3289",
+      "archive_sha256": "f97d5c03b2b94ed49de60b10c8adc4a0cfe72ce19a0456c530fb06def33356e0",
+      "setup_sha256": "3f2b5575fb2e8554b764edde8740f9c9117192797ae8675ca55d45caf6f07a34"
+    },
+    {
+      "url": "https://github.com/Kron4ek/Wine-Builds/releases/download/11.10/wine-11.10-amd64-wow64.tar.xz",
+      "sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9",
+      "expected_sha256": "14792da5d655657f81c5a2968d43ed137adcf4a14c5db036d048f54cf4c632f9"
+    }
+  ],
+  "observer_source": "#define UNICODE\n#define _UNICODE\n#include <windows.h>\n#include <stdio.h>\n#include <wchar.h>\n\ntypedef struct {\n    DWORD pid;\n    HWND dialog;\n    WCHAR title[128];\n    WCHAR message[128];\n} Observation;\n\nstatic BOOL CALLBACK observe_control(HWND control, LPARAM arg) {\n    Observation *observation = (Observation *)arg;\n    WCHAR class_name[32], text[128] = {0};\n    DWORD_PTR length = 0;\n    if (!GetClassNameW(control, class_name, ARRAYSIZE(class_name)) || wcscmp(class_name, L\"Static\")) {\n        return TRUE;\n    }\n    if (SendMessageTimeoutW(control, WM_GETTEXT, ARRAYSIZE(text), (LPARAM)text,\n                            SMTO_BLOCK | SMTO_ABORTIFHUNG, 300, &length) && length) {\n        if (wcscmp(text, L\"Hello, World!\") == 0) {\n            wcscpy(observation->message, text);\n            return FALSE;\n        }\n    }\n    return TRUE;\n}\n\nstatic BOOL CALLBACK observe_window(HWND window, LPARAM arg) {\n    Observation *observation = (Observation *)arg;\n    DWORD owner;\n    WCHAR class_name[64], title[128];\n    GetWindowThreadProcessId(window, &owner);\n    if (owner != observation->pid || !GetClassNameW(window, class_name, ARRAYSIZE(class_name)) ||\n        wcscmp(class_name, L\"#32770\") || !GetWindowTextW(window, title, ARRAYSIZE(title))) {\n        return TRUE;\n    }\n    if (wcscmp(title, L\"Corpus greeting\") != 0) {\n        fwprintf(stderr, L\"Unexpected child dialog: %ls\\n\", title);\n        return TRUE;\n    }\n    EnumChildWindows(window, observe_control, arg);\n    if (!observation->message[0]) {\n        return TRUE;\n    }\n    observation->dialog = window;\n    wcscpy(observation->title, title);\n    return FALSE;\n}\n\nint main(void) {\n    STARTUPINFOW startup = {0};\n    PROCESS_INFORMATION process = {0};\n    DWORD exit_code = 1;\n    int result = 1;\n    startup.cb = sizeof(startup);\n    if (!CreateProcessW(L\".\\\\corpus_hello.exe\", NULL, NULL, NULL, FALSE, 0, NULL, NULL,\n                        &startup, &process)) {\n        fwprintf(stderr, L\"CreateProcessW failed: %lu\\n\", GetLastError());\n        return 1;\n    }\n    CloseHandle(process.hThread);\n    Observation observation = { .pid = process.dwProcessId };\n    const ULONGLONG deadline = GetTickCount64() + 15000;\n    while (GetTickCount64() < deadline && WaitForSingleObject(process.hProcess, 0) == WAIT_TIMEOUT) {\n        EnumWindows(observe_window, (LPARAM)&observation);\n        if (observation.dialog) {\n            HWND button = GetDlgItem(observation.dialog, IDOK);\n            wprintf(L\"title=%ls\\nmessage=%ls\\n\", observation.title, observation.message);\n            fflush(stdout);\n            if (button && PostMessageW(button, BM_CLICK, 0, 0) &&\n                WaitForSingleObject(process.hProcess, 10000) == WAIT_OBJECT_0 &&\n                GetExitCodeProcess(process.hProcess, &exit_code)) {\n                wprintf(L\"child_exit_code=%lu\\n\", exit_code);\n                result = exit_code == 0 ? 0 : 1;\n            }\n            break;\n        }\n        Sleep(150);\n    }\n    if (result != 0) {\n        fwprintf(stderr, L\"The greeting dialog or clean child exit was not observed.\\n\");\n        if (WaitForSingleObject(process.hProcess, 0) == WAIT_TIMEOUT) {\n            TerminateProcess(process.hProcess, 2);\n        }\n    }\n    CloseHandle(process.hProcess);\n    return result;\n}\n",
+  "observer_compiler": "Zig 0.15.2, zig cc -target x86_64-windows-gnu -std=c11 -O2 -luser32",
+  "import_driver_source": "#include <windows.h>\n#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int level;\n    const char *number;\n    const char *text;\n    unsigned int column;\n    unsigned int line;\n} CompileError;\n\ntypedef void (CALLBACK *ErrorCallback)(const CompileError *, void *);\ntypedef HANDLE (WINAPI *SessionOpen)(void);\ntypedef void (WINAPI *SessionClose)(HANDLE);\ntypedef void (WINAPI *SessionGetError)(HANDLE, char *, int);\ntypedef int (WINAPI *LibraryCreate)(HANDLE, const char *, const char *);\ntypedef int (WINAPI *SetLibraryList)(HANDLE, const char **, int);\ntypedef int (WINAPI *SetApplication)(HANDLE, const char *, const char *);\ntypedef int (WINAPI *CompileImport)(HANDLE, const char *, const char *, int, const char *,\n                                    const char *, long, ErrorCallback, void *);\ntypedef int (WINAPI *ApplicationRebuild)(HANDLE, int, ErrorCallback, void *);\ntypedef void (CALLBACK *LinkCallback)(const void *, void *);\ntypedef int (WINAPI *ExecutableCreate)(HANDLE, const char *, const char *, const char *,\n                                       LinkCallback, void *, int *, int, long, void *);\n\nenum { APPLICATION = 0, USER_OBJECT = 6 };\n\nstatic void CALLBACK report_error(const CompileError *error, void *unused) {\n    (void)unused;\n    fprintf(stderr, \"%u:%u level=%d %s %s\\n\", error->line, error->column, error->level,\n            error->number ? error->number : \"\", error->text ? error->text : \"\");\n}\n\nstatic int import_file(CompileImport compile, HANDLE session, const char *library,\n                       const char *filename, const char *name, int type) {\n    char buffer[4097];\n    FILE *source = fopen(filename, \"rb\");\n    if (!source) {\n        perror(filename);\n        return 1;\n    }\n    size_t length = fread(buffer, 1, sizeof(buffer) - 1, source);\n    int invalid = ferror(source) || !feof(source) || length == 0;\n    fclose(source);\n    if (invalid) {\n        fprintf(stderr, \"Could not read bounded source: %s\\n\", filename);\n        return 1;\n    }\n    buffer[length] = '\\0';\n    int result = compile(session, library, name, type, \"Local corpus verification\",\n                         buffer, (long)length, report_error, NULL);\n    printf(\"PBORCA_CompileEntryImport %s bytes=%zu status=%d\\n\", filename, length, result);\n    return result;\n}\n\nint main(void) {\n    setvbuf(stdout, NULL, _IONBF, 0);\n    char library[MAX_PATH], application_exe[MAX_PATH], icon[MAX_PATH];\n    DWORD length = GetFullPathNameA(\"corpus_hello.pbl\", ARRAYSIZE(library), library, NULL);\n    if (!length || length >= ARRAYSIZE(library)) {\n        fputs(\"Could not resolve the local library path.\\n\", stderr);\n        return 1;\n    }\n    length = GetFullPathNameA(\"corpus_hello.exe\", ARRAYSIZE(application_exe), application_exe, NULL);\n    if (!length || length >= ARRAYSIZE(application_exe)) {\n        fputs(\"Could not resolve the local executable path.\\n\", stderr);\n        return 1;\n    }\n    length = GetFullPathNameA(\"PowerBuilderCompiler.ico\", ARRAYSIZE(icon), icon, NULL);\n    if (!length || length >= ARRAYSIZE(icon) || GetFileAttributesA(icon) == INVALID_FILE_ATTRIBUTES) {\n        fputs(\"Could not resolve the staged compiler icon.\\n\", stderr);\n        return 1;\n    }\n    HMODULE orca = LoadLibraryW(L\"pborc.dll\");\n    if (!orca) {\n        fprintf(stderr, \"LoadLibraryW(pborc.dll) failed: %lu\\n\", GetLastError());\n        return 1;\n    }\n\n    SessionOpen open = (SessionOpen)GetProcAddress(orca, \"PBORCA_SessionOpenA\");\n    SessionClose close = (SessionClose)GetProcAddress(orca, \"PBORCA_SessionClose\");\n    SessionGetError get_error = (SessionGetError)GetProcAddress(orca, \"PBORCA_SessionGetError\");\n    LibraryCreate create = (LibraryCreate)GetProcAddress(orca, \"PBORCA_LibraryCreate\");\n    SetLibraryList set_libraries = (SetLibraryList)GetProcAddress(orca, \"PBORCA_SessionSetLibraryList\");\n    SetApplication set_application = (SetApplication)GetProcAddress(orca, \"PBORCA_SessionSetCurrentAppl\");\n    CompileImport compile = (CompileImport)GetProcAddress(orca, \"PBORCA_CompileEntryImport\");\n    ApplicationRebuild rebuild = (ApplicationRebuild)GetProcAddress(orca, \"PBORCA_ApplicationRebuild\");\n    ExecutableCreate executable = (ExecutableCreate)GetProcAddress(orca, \"PBORCA_ExecutableCreate\");\n    if (!open || !close || !get_error || !create || !set_libraries || !set_application || !compile ||\n        !rebuild || !executable) {\n        fputs(\"The required native ORCA exports are missing.\\n\", stderr);\n        return 1;\n    }\n\n    HANDLE session = open();\n    if (!session) {\n        fputs(\"PBORCA_SessionOpenA did not open a session.\\n\", stderr);\n        return 1;\n    }\n    const char *libraries[] = {library};\n    int result = create(session, library, \"Corpus verification staging\");\n    printf(\"PBORCA_LibraryCreate status=%d\\n\", result);\n    if (result == 0) {\n        result = set_libraries(session, libraries, ARRAYSIZE(libraries));\n        printf(\"PBORCA_SessionSetLibraryList status=%d\\n\", result);\n    }\n    if (result == 0) {\n        result = set_application(session, NULL, NULL);\n        printf(\"PBORCA bootstrap application status=%d\\n\", result);\n    }\n    if (result == 0) {\n        result = import_file(compile, session, library, \"u_hello.sru\", \"u_hello\", USER_OBJECT);\n    }\n    if (result == 0) {\n        result = import_file(compile, session, library, \"corpus_hello.sra\", \"corpus_hello\", APPLICATION);\n    }\n    close(session);\n    if (result != 0) {\n        FreeLibrary(orca);\n        return 1;\n    }\n\n    session = open();\n    if (!session) {\n        fputs(\"PBORCA_SessionOpenA did not reopen the application library.\\n\", stderr);\n        FreeLibrary(orca);\n        return 1;\n    }\n    result = set_libraries(session, libraries, ARRAYSIZE(libraries));\n    if (result == 0) {\n        result = set_application(session, library, \"corpus_hello\");\n    }\n    printf(\"PBORCA select imported application status=%d\\n\", result);\n    if (result == 0) {\n        result = rebuild(session, 0, report_error, NULL);\n        printf(\"PBORCA_ApplicationRebuild status=%d\\n\", result);\n    }\n    if (result == 0) {\n        int include_library_in_executable[] = {0};\n        result = executable(session, application_exe, icon, NULL, NULL, NULL,\n                            include_library_in_executable, ARRAYSIZE(include_library_in_executable), 0, NULL);\n        printf(\"PBORCA_ExecutableCreate status=%d\\n\", result);\n        if (result != 0) {\n            char error[1024] = {0};\n            get_error(session, error, sizeof(error));\n            fprintf(stderr, \"ORCA executable generation: %s\\n\", error);\n        }\n    }\n    close(session);\n    FreeLibrary(orca);\n    return result == 0 ? 0 : 1;\n}\n",
+  "import_driver_compiler": "Zig 0.15.2, zig cc -target x86-windows-gnu -std=c11 -O2 -Wno-cast-function-type-mismatch",
+  "toolchain_files": {
+    "PBAccessibility.dll": {
+      "sha256": "4853185649d006e99d87054d12d00718f671f2cc14ddb03661c123d0056fcfd1",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "libjcc.dll": {
+      "sha256": "493b73e4e19454423e3f448a1d12d1de322f6e72453f5ff8c9d265e838784065",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "libjtml.dll": {
+      "sha256": "74424febf2fce78d4f76069a4744267adad6ce9cd344247434ec236838046bee",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "libjutils.dll": {
+      "sha256": "3dd22d5567c69abb0c285b7ba0d85ef4aea0333b7eb171905dd4a23510d8be1f",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "libsybunic.dll": {
+      "sha256": "02b5a31080a9027f3789dcf45376249e95e2b68dad7ac0b4957e813e25167092",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "mfc120u.dll": {
+      "sha256": "c2d0e285e2333a9c620be04a5747881af0d5615da32226886e659ff31a9761cc",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "mfc140u.dll": {
+      "sha256": "c40f10440f654522575969a1c03564a257162dcf697a4551eec851cbfa007090",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "msvcp140.dll": {
+      "sha256": "0b275c9db276e1fdf5cf920e0d70d06b52c8a3204aa98e9369fb5a5c92b4c7c8",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "msvcr120.dll": {
+      "sha256": "1c8449f417566dd0fd69dc21ef77d46b9475fbaac731da35bdc71669f22242c8",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "nlwnsck.dll": {
+      "sha256": "b5bd04e26fe935598683b7eb2e359a40bd4a1698ffe5265d50ead3b30cd8f083",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbCSI.dll": {
+      "sha256": "6a659d69a99830b8610c52f3d8cc5ad9a3e6efb66173237ed267ef84b54f99cd",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbUIS.dll": {
+      "sha256": "60c6c778949e24f83ccedd80a8709c856b868aef06355ac8c4872bbc320668ce",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbacc.dll": {
+      "sha256": "6e02702b7cae8165995dc15448cde0bafe3edb10c48adcd675ccdf331e2c397d",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbase.dll": {
+      "sha256": "be753bdf57a24ec180d6b96b490eca86197beb3fc162f7e6e3fdfc38c8c7da28",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbcomrt.dll": {
+      "sha256": "8e9d7336353c9411c5fe6ce8450b442a711700db9eea2269f30d44fc87812404",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdpl.dll": {
+      "sha256": "e55eeeeae8b40615e27090f11ba77469c9e32c92a0632738c7200c2ea2d2648c",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdwe.dll": {
+      "sha256": "808de3a7e35e97262ac22e74c7e8825c72afa30b3c51c682d0445ef2cc0bdf73",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbole.dll": {
+      "sha256": "c7417dc99beb46e9d1e866ecebb99fb27a2843ef89dcdd0107206b9b237f5edc",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbresource.dll": {
+      "sha256": "cf189694d48d81739ed5f3291b099dc631f43a3f27c24b416f4c727a12c3e36c",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbshr.dll": {
+      "sha256": "3237a9c919cd57c36a11a1383995812c1c1a81b135b03e71d25618cebd1a183e",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbsysfunc.dll": {
+      "sha256": "dd5812ddbab13ca5998e16f1e5ca1dd6b3590f1e1778b64368e6e24f8521cbf6",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbvm.dll": {
+      "sha256": "3ef3ed98ec8fa3bb6f476282a897205d9b6d16af55ce53fbcbef193b6590445f",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdwr220.pbd": {
+      "sha256": "d9b190bf42c1df833f1c210f7c8aedbbb309317dca0b61d68e4fdf3cd9ff21fe"
+    },
+    "runtimepackage.ini": {
+      "sha256": "7743bd8573e9e37dacb123664782e9219c4ac50243ac3a733a2910cba9f4c7ac"
+    },
+    "pbapl.dll": {
+      "sha256": "0f1308394a732034ded63f6e11fc4a7bdeba984e9eceb5b13d7df318018e9eeb",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbcgr.dll": {
+      "sha256": "87a949253ac40deff83666762e2d90d01aa4189d4fbf24ac5032b84d7fe65407",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbcmp.dll": {
+      "sha256": "e782344a0f4d999e153084e212b5cb3fe0bd743691085a961d85a6a16f255823",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdev.dll": {
+      "sha256": "e9c8a66ab986a5c495da9acc079dc3a21a14537ce6b654043d9d78f27dd36e98",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdpp.dll": {
+      "sha256": "abdde06c4a47067ebee4eb09b8fad78789f4e2de482e3e32f0fae78d362869be",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdts.dll": {
+      "sha256": "9503a94eef1f8e4c643bb096b6b0564da142a88486dcdd951d1739886ba5e8d3",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbdwp.dll": {
+      "sha256": "df2a438c57a500ba8732fe2f407ef8ac6d65f32af1b00f227fed64a28a483ecd",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbeas.dll": {
+      "sha256": "4046f077799222ba4c21afce350d6d1facbd38fd32f47c28b41cec2f44d18013",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbgshare.dll": {
+      "sha256": "06f08e6a93e96e97e9db1f665be9ed059badaeb3711b6ef56259b03b533a6828",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pblib.dll": {
+      "sha256": "0f8c040a1794dc34e2b71a3d72e753cd3c9973eb6098c9b4f5777a5046744bf7",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pborc.dll": {
+      "sha256": "b0a25a4718530d619ac3bdaaa937f900d3de654f69a47cf436a93152da2d8f68",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbscr.dll": {
+      "sha256": "a2b16a22e40e9f62d78b39349e9d18647732478c59834b9df83aaf133acbed98",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbsql.dll": {
+      "sha256": "087c808899ef6381964b4c4e51de023bd3924bedb3d82440bbf56c9e60d2c88d",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbsys.dll": {
+      "sha256": "f75a2cd593794faf6b1bc304b57e78203fad44200b8830e0b540c17cddd7c775",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbudo.dll": {
+      "sha256": "81565a039a967e3fed53922a6a4614133f22bc07d36c5efebfddfacd39e259cf",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbwed.dll": {
+      "sha256": "49d38abdd2694195368f42dcedd203381218074d4d617da73d8028bf8c8cb37f",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "pbcompile.dll": {
+      "sha256": "d3d7dcb8af8da65288e069602b06213c4aa829c3a01e50c384dea1c15f1c6174",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "vcruntime140.dll": {
+      "sha256": "679332b7b30f4957c8a25bdd7bf2872efebaaf5237777b5b47807cc75006664d",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "PowerBuilderCompiler.ico": {
+      "sha256": "357d178e92b25471bb17913e3e98460fe71b189aee323dc58a0670b942d62b55"
+    },
+    "orca_import.exe": {
+      "sha256": "184038bebc1e4e0a1da06c50a0457c0dc7b55f095eb4216cdfcb46b124558645",
+      "format": "PE32 i386",
+      "clr_directory": "absent"
+    },
+    "observe_message.exe": {
+      "sha256": "059dc9e2a771c833cd6daf6cc4d53860e8712134999bd98ac2c4846d40d7e22b",
+      "format": "PE32+ x86_64",
+      "clr_directory": "absent"
+    }
+  },
+  "ubuntu_archives": [
+    {
+      "name": "bubblewrap",
+      "version": "0.9.0-1ubuntu0.3",
+      "filename": "pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb",
+      "sha256": "2461f1beee9cb04c8942739fe1a2b37e7b7c2a3d518f0779dc75f9245baa3094",
+      "bytes": 50436,
+      "archive_url": "https://archive.ubuntu.com/ubuntu/pool/main/b/bubblewrap/bubblewrap_0.9.0-1ubuntu0.3_amd64.deb"
+    }
+  ],
+  "virtual_display": "Own Xvfb server with no display attached to the user desktop.",
+  "compiled_sha256": {
+    "corpus_hello.exe": "447a7fad485d9b1810dba8962a6f1e7153f71cbcdda246aaece37aa79b51b05f",
+    "corpus_hello.pbl": "58ca4dd80ceab09d473890cbf6b567312f38db21a5ca06484d1037f38c744014"
+  },
+  "observed": {
+    "title": "Corpus greeting",
+    "message": "Hello, World!",
+    "greet_return": 0,
+    "process_exit": 0
+  },
+  "toolchain": "Appeon PowerBuilder 2022 R3 22.2.0.3289, native ORCA and Runtime x86, Wine 11.10",
+  "reproduction_command": "In the isolated Wine prefix run build.cmd, which invokes orca_import.exe and observe_message.exe",
+  "semantic_scope": "The genuine Appeon compiler imported the unchanged u_hello.sru into a local library and built a test application that calls greet(). The matching runtime showed the exact greeting and the function returned 0. The observer read the dialog in a private virtual display and the process exited with code 0. The test application passes the method result to Win32 ExitProcess after writing it to a local result file.",
+  "path_normalization": "Temporary paths use stable placeholders. Source hashes refer to the repository files listed in artifact_sha256."
+}

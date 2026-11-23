@@ -31984,7 +31984,7 @@
       "example": {
         "semantic_goal": "Importare un user object PowerBuilder e mostrare Hello, World! chiamando greet.",
         "validation_mode": "native_compile_or_interpret",
-        "toolchain": "Appeon PowerBuilder originale; versione da registrare",
+        "toolchain": "Appeon PowerBuilder 2022 R3 22.2.0.3289, native ORCA and Runtime x86, Wine 11.10",
         "files": [
           "examples/#550 PowerBuilder/README.md",
           "examples/#550 PowerBuilder/u_hello.sru",
@@ -31994,10 +31994,11 @@
           "examples/#550 PowerBuilder/variants/sra-88988218/corpus_hello.sra",
           "examples/#550 PowerBuilder/variants/sra-88988218/README.md",
           "examples/#550 PowerBuilder/variants/srw-92c044a7/w_hello.srw",
-          "examples/#550 PowerBuilder/variants/srw-92c044a7/README.md"
+          "examples/#550 PowerBuilder/variants/srw-92c044a7/README.md",
+          "examples/#550 PowerBuilder/verification/native_20261123_wave800_main.json"
         ],
         "build_command": null,
-        "run_or_check_command": "Importare u_hello.sru in una libreria PowerBuilder; istanziare u_hello e chiamare greet().",
+        "run_or_check_command": "In the isolated Wine prefix run build.cmd, which invokes orca_import.exe and observe_message.exe",
         "expected_result": "MessageBox mostra Hello, World!.",
         "sources": [
           "https://www.appeon.com/system/files/product-manual/powerscript_reference_v2021.pdf"
@@ -32007,16 +32008,17 @@
         "implementation_status": "created",
         "existence_verified": true,
         "artifact_created": true,
-        "syntax_verified": false,
-        "semantic_verified": false,
-        "verification_status": "blocked",
-        "verification_platform": null,
-        "verification_timestamp_utc": null,
-        "verification_log": null,
-        "blockers": [
-          "Ambiente PowerBuilder non preparato; import/compilazione/esecuzione pendenti."
-        ],
-        "notes": "Il sorgente esportato .sru definisce un oggetto nonvisuale e una funzione pubblica PowerScript. MessageBox emette il saluto; il valore di ritorno è0."
+        "syntax_verified": true,
+        "semantic_verified": true,
+        "verification_status": "verified",
+        "verification_platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "verification_timestamp_utc": "2026-11-23T11:53:46.905482+00:00",
+        "verification_log": "examples/#550 PowerBuilder/verification/native_20261123_wave800_main.json",
+        "blockers": [],
+        "notes": "The genuine Appeon compiler imported the unchanged u_hello.sru into a local library and built a test application that calls greet(). The matching runtime showed the exact greeting and the function returned 0. The observer read the dialog in a private virtual display and the process exited with code 0. The test application passes the method result to Win32 ExitProcess after writing it to a local result file.",
+        "verified_artifact_sha256": {
+          "examples/#550 PowerBuilder/u_hello.sru": "027ff3b92525e295aa7046084eff2e52462a16e6afb91a68a90907eba2cc6180"
+        }
       }
     },
     {

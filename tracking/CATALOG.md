@@ -553,7 +553,7 @@ This table reports the main sample's status. Variant states are tracked separate
 | #547 | [PostCSS](../examples/%23547%20PostCSS/README.md) | Yes | Yes | Yes | 2/2 | Evidence recorded |
 | #548 | [PostScript](../examples/%23548%20PostScript/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #549 | [Power Query](../examples/%23549%20Power%20Query/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
-| #550 | [PowerBuilder](../examples/%23550%20PowerBuilder/README.md) | Yes | Pending | Pending | 4/4 | The PowerBuilder environment is not set up; import, compilation and execution remain pending. |
+| #550 | [PowerBuilder](../examples/%23550%20PowerBuilder/README.md) | Yes | Yes | Yes | 4/4 | Evidence recorded |
 | #551 | [PowerShell](../examples/%23551%20PowerShell/README.md) | Yes | Yes | Yes | 3/3 | Evidence recorded |
 | #552 | [Praat](../examples/%23552%20Praat/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
 | #553 | [Prisma](../examples/%23553%20Prisma/README.md) | Yes | Yes | Yes | 1/1 | Evidence recorded |
